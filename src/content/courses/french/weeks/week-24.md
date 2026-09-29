@@ -6,7 +6,7 @@
 | | Resource | How to use it |
 |---|---|---|
 | 🎧 | [Coffee Break French — Season 2](https://coffeebreaklanguages.com/coffeebreakfrench/) | Lessons 24–26. |
-| 📗 | [Lawless French — Passé composé vs imparfait](https://www.lawlessfrench.com/grammar/passe-compose-vs-imparfait/) | Read on Monday. |
+| 📗 | [Lawless French — Passé composé vs imparfait](https://www.lawlessfrench.com/) | Search the site for "Passé composé vs imparfait". Read on Monday. |
 | 🌐 | [Kwiziq French](https://french.kwiziq.com/) | Search "passé composé vs imparfait". This topic needs many quizzes. |
 | 🎧 | [Français Facile — RFI](https://francaisfacile.rfi.fr/) | A2 news items (*faits divers*) with transcripts. |
 | 🌐 | [TV5MONDE Apprendre — A2](https://apprendre.tv5monde.com/) | Saturday: an A2 exercise on a story. |

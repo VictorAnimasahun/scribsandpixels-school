@@ -6,7 +6,7 @@
 | | Resource | How to use it |
 |---|---|---|
 | 🎧 | [Coffee Break French — Season 2](https://coffeebreaklanguages.com/coffeebreakfrench/) | Lessons 36–38. |
-| 📗 | [Lawless French — Relative pronouns](https://www.lawlessfrench.com/grammar/relative-pronouns/) | Read on Monday. |
+| 📗 | [Lawless French — Relative pronouns](https://www.lawlessfrench.com/) | Search the site for "Relative pronouns". Read on Monday. |
 | 🌐 | [Kwiziq French](https://french.kwiziq.com/) | Search "qui vs que", "relative pronoun où", "ce qui ce que". |
 | 📗 | *Short Stories in French for Intermediate Learners* | Story 1, chapters 5+; start Story 2. |
 | 🌐 | [TV5MONDE Apprendre — A2](https://apprendre.tv5monde.com/) | Saturday: an A2 exercise. |

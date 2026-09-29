@@ -6,7 +6,7 @@
 | | Resource | How to use it |
 |---|---|---|
 | 🎧 | [Coffee Break French — Season 3](https://coffeebreaklanguages.com/coffeebreakfrench/) | Lessons 15–17. |
-| 📗 | [Lawless French — Subjunctive](https://www.lawlessfrench.com/grammar/subjunctive/) | Read on Monday and Tuesday. |
+| 📗 | [Lawless French — Subjunctive](https://www.lawlessfrench.com/) | Search the site for "Subjunctive". Read on Monday and Tuesday. |
 | 🌐 | [Kwiziq French](https://french.kwiziq.com/) | Search "subjonctif présent", "il faut que". |
 | 🎧 | [innerFrench](https://innerfrench.com/) | Your main podcast from now on: 2 episodes a week. |
 | 🎧 | [Journal en français facile — RFI](https://francaisfacile.rfi.fr/) | Start listening daily (10 min) with the transcript. |

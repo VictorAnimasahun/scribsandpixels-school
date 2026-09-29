@@ -6,7 +6,7 @@
 | | Resource | How to use it |
 |---|---|---|
 | 📺 | [Leila Gharani](https://www.youtube.com/@LeilaGharani) | Search "Excel Tables" and "data validation drop-down". |
-| 🌐 | [Exceljet — Structured references](https://exceljet.net/articles/structured-references-in-excel-tables) | Read on Monday. |
+| 🌐 | [Exceljet — Structured references](https://exceljet.net/glossary/structured-reference) | Read on Monday. |
 | 🌐 | [Excel Skills for Business: Intermediate II (Coursera)](https://www.coursera.org/learn/excel-intermediate-2) | Data validation module. |
 | 📊 | `NaijaMart_Sales_2025.xlsx` · `Customers_Clean.xlsx` | |
 

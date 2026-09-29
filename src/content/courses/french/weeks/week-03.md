@@ -8,7 +8,7 @@
 | 🎧 | [Language Transfer — Complete French](https://www.languagetransfer.org/french) | Tracks 21–30. |
 | 🎧 | [Coffee Break French — Season 1](https://coffeebreaklanguages.com/coffeebreakfrench/) | Lessons 6–8. |
 | 🌐 | [Kwiziq French](https://french.kwiziq.com/) | Search "definite articles", "indefinite articles", "il y a". |
-| 📗 | [Lawless French — Articles](https://www.lawlessfrench.com/grammar/articles/) | Read after Tuesday's lesson. |
+| 📗 | [Lawless French — Articles](https://www.lawlessfrench.com/) | Search the site for "Articles". Read after Tuesday's lesson. |
 | 📗 | *Grammaire progressive du français — Débutant* | Chapters on articles and gender, if you have the book. |
 
 ## Day 1 — Monday

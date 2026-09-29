@@ -8,7 +8,7 @@
 | 🎧 | [Coffee Break French — Season 2](https://coffeebreaklanguages.com/coffeebreakfrench/) | Lessons 6–8. |
 | 📺 | [Learn French with Alexa](https://www.youtube.com/@learnfrenchwithalexa) | Search "passé composé avoir". |
 | 🌐 | [Kwiziq French](https://french.kwiziq.com/) | Search "passé composé with avoir", "irregular past participles". |
-| 📗 | [Lawless French — Passé composé](https://www.lawlessfrench.com/grammar/passe-compose/) | Read on Monday. |
+| 📗 | [Lawless French — Passé composé](https://www.lawlessfrench.com/) | Search the site for "Passé composé". Read on Monday. |
 | 📗 | *Short Stories in French for Beginners* (Olly Richards) | Start Story 1 this week: one chapter a day in your Speak & Listen block. |
 
 ## Day 1 — Monday

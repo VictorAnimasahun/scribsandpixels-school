@@ -6,7 +6,7 @@
 | | Resource | How to use it |
 |---|---|---|
 | 🎧 | [Coffee Break French — Season 1](https://coffeebreaklanguages.com/coffeebreakfrench/) | Lessons 33–35. |
-| 📗 | [Lawless French — Asking questions](https://www.lawlessfrench.com/grammar/asking-questions/) | Read on Monday. |
+| 📗 | [Lawless French — Asking questions](https://www.lawlessfrench.com/) | Search the site for "Asking questions". Read on Monday. |
 | 🌐 | [Kwiziq French](https://french.kwiziq.com/) | Search "inversion", "quel", "savoir vs connaître". |
 | 📺 | [Learn French with Alexa](https://www.youtube.com/@learnfrenchwithalexa) | Search "questions in French". |
 | 🌐 | [Tandem](https://www.tandem.net/) | Saturday: a 15-minute call or a long message exchange. |

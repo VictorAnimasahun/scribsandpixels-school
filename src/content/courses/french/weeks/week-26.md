@@ -6,7 +6,7 @@
 | | Resource | How to use it |
 |---|---|---|
 | 🎧 | [Coffee Break French — Season 2](https://coffeebreaklanguages.com/coffeebreakfrench/) | Lessons 30–32. |
-| 📗 | [Lawless French — Comparatives](https://www.lawlessfrench.com/grammar/comparatives/) | Read on Monday. |
+| 📗 | [Lawless French — Comparatives](https://www.lawlessfrench.com/) | Search the site for "Comparatives". Read on Monday. |
 | 🌐 | [Kwiziq French](https://french.kwiziq.com/) | Search "comparative", "superlative", "meilleur vs mieux". |
 | 🌐 | [TV5MONDE Apprendre — A2](https://apprendre.tv5monde.com/) | Friday: 2 A2 exercises as a check. |
 | 🌐 | [Kwiziq French](https://french.kwiziq.com/) | Friday: take an A2 test. |

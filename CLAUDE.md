@@ -11,6 +11,10 @@ Brainstorming and UI/UX design happen on claude.ai; final decisions and designs 
    - The first learner (Victor) started June 2026, passed the Week 1 quiz (100%) and is on Week 2.
    - Audience: Nigeria + Canada job markets. Examples use Nigerian context (Naira, Lagos, Abuja).
    - Phase 2–6 `topics` in course.ts were inferred from each phase's resources; the original plan only lists resources and milestones for those phases.
+2. **Le français de A à Z** (`french`), **complete**: 52 written weeks, A0 → B1, ~1 h/day. `src/content/courses/french/overview.md` has the phases, full syllabus, resources and the Year 2 (B2 / NCLC 7, TCF/TEF Canada) outline. Mock exams: DELF A1 (Wk 17), A2 (Wk 34), B1 (Wk 50), TCF Canada diagnostic (Wk 51).
+3. **Excel: Zero to Expert** (`excel`), **complete**: 24 written weeks, beginner → Power Query/Power Pivot/VBA → MO-210/MO-211 certification prep. `overview.md` + `weeks/`. Uses the fictional **NaijaMart** retail datasets in `excel/datasets/` (regenerate with `python3 generate.py`, fixed seed); answer keys in the lessons were computed from those files, so **don't change the generator without recomputing every "Check:" figure**.
+
+French and Excel have `overview.md` (human-readable framework) but no `course.ts` yet, so they aren't registered in `src/content/index.ts`. Their week files are still validated by `npm test`.
 
 More courses will follow; nothing may assume a single course. To add one: a new folder under `src/content/courses/`, register it in `src/content/index.ts` and `scripts/sync-functions.ts`.
 

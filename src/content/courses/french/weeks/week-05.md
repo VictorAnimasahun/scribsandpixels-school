@@ -8,7 +8,7 @@
 | 🎧 | [Language Transfer — Complete French](https://www.languagetransfer.org/french) | Tracks 39–46. |
 | 🎧 | [Coffee Break French — Season 1](https://coffeebreaklanguages.com/coffeebreakfrench/) | Lessons 12–14. |
 | 🌐 | [Kwiziq French](https://french.kwiziq.com/) | Search "-er verbs present tense", "ne…pas". |
-| 📗 | [Lawless French — Present tense](https://www.lawlessfrench.com/grammar/present-tense/) | Read on Monday. |
+| 📗 | [Lawless French — Present tense](https://www.lawlessfrench.com/) | Search the site for "Present tense". Read on Monday. |
 | 🌐 | [Tandem](https://www.tandem.net/) | Saturday: create your profile. |
 
 ## Day 1 — Monday

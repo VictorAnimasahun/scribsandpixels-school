@@ -7,7 +7,7 @@
 |---|---|---|
 | 🎧 | [Coffee Break French — Season 3](https://coffeebreaklanguages.com/coffeebreakfrench/) | Lessons 10–12. |
 | 🌐 | [Kwiziq French](https://french.kwiziq.com/) | Search "celui celle", "le mien la mienne". |
-| 📗 | [Lawless French — Demonstrative pronouns](https://www.lawlessfrench.com/grammar/demonstrative-pronouns/) | Read on Monday. |
+| 📗 | [Lawless French — Demonstrative pronouns](https://www.lawlessfrench.com/) | Search the site for "Demonstrative pronouns". Read on Monday. |
 | 📱 | [Mauril](https://mauril.ca/) | 10 minutes a day. |
 | 🌐 | [TV5MONDE Apprendre — A2](https://apprendre.tv5monde.com/) | Saturday: an A2 exercise on media. |
 

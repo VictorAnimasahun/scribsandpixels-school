@@ -7,7 +7,7 @@
 |---|---|---|
 | 🎧 | [Coffee Break French — Season 3](https://coffeebreaklanguages.com/coffeebreakfrench/) | Lessons 33–35. |
 | 🌐 | [Kwiziq French](https://french.kwiziq.com/) | Search "connectors cause consequence", "malgré vs bien que". |
-| 📗 | [Lawless French — Conjunctions](https://www.lawlessfrench.com/grammar/conjunctions/) | Keep it open as a reference. |
+| 📗 | [Lawless French — Conjunctions](https://www.lawlessfrench.com/) | Search the site for "Conjunctions". Keep it open as a reference. |
 | 🎧 | [innerFrench](https://innerfrench.com/) | 2 episodes on social topics. Note how Hugo structures arguments. |
 | 🌐 | [TV5MONDE Apprendre — B1](https://apprendre.tv5monde.com/) | Saturday: a B1 exercise on society. |
 

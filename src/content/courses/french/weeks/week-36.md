@@ -7,7 +7,7 @@
 |---|---|---|
 | 🎧 | [Coffee Break French — Season 3](https://coffeebreaklanguages.com/coffeebreakfrench/) | Lessons 18–20. |
 | 🌐 | [Kwiziq French](https://french.kwiziq.com/) | Search "subjunctive after emotions", "subjunctive vs indicative", "bien que". |
-| 📗 | [Lawless French — Subjunctive triggers](https://www.lawlessfrench.com/grammar/subjunctive/) | Keep the trigger list open all week. |
+| 📗 | [Lawless French — Subjunctive triggers](https://www.lawlessfrench.com/) | Search the site for "Subjunctive triggers". Keep the trigger list open all week. |
 | 🎧 | [innerFrench](https://innerfrench.com/) | 2 episodes this week. |
 | 🎧 | [Journal en français facile — RFI](https://francaisfacile.rfi.fr/) | 10 minutes daily. |
 

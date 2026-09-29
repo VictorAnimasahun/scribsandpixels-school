@@ -6,7 +6,7 @@
 | | Resource | How to use it |
 |---|---|---|
 | 🎧 | [Coffee Break French — Season 2](https://coffeebreaklanguages.com/coffeebreakfrench/) | Lessons 18–20. |
-| 📗 | [Lawless French — Indirect object pronouns](https://www.lawlessfrench.com/grammar/indirect-object-pronouns/) | Read on Monday. |
+| 📗 | [Lawless French — Indirect object pronouns](https://www.lawlessfrench.com/) | Search the site for "Indirect object pronouns". Read on Monday. |
 | 🌐 | [Kwiziq French](https://french.kwiziq.com/) | Search "lui leur", "COD vs COI", "manquer". |
 | 📗 | *Short Stories in French for Beginners* | Story 4 this week. |
 | 🌐 | [TV5MONDE Apprendre — A2](https://apprendre.tv5monde.com/) | Saturday: an A2 exercise on communication or relationships. |

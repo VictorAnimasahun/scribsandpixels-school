@@ -6,7 +6,7 @@
 | | Resource | How to use it |
 |---|---|---|
 | 🎧 | [Coffee Break French — Season 2](https://coffeebreaklanguages.com/coffeebreakfrench/) | Lessons 15–17. |
-| 📗 | [Lawless French — Direct object pronouns](https://www.lawlessfrench.com/grammar/direct-object-pronouns/) | Read on Monday. |
+| 📗 | [Lawless French — Direct object pronouns](https://www.lawlessfrench.com/) | Search the site for "Direct object pronouns". Read on Monday. |
 | 🌐 | [Kwiziq French](https://french.kwiziq.com/) | Search "direct object pronouns", "pronoun position". |
 | 📗 | *Short Stories in French for Beginners* | Story 3 this week. |
 | 🌐 | [TV5MONDE Apprendre — A2](https://apprendre.tv5monde.com/) | Saturday: any A2 exercise. |

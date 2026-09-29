@@ -6,7 +6,7 @@
 | | Resource | How to use it |
 |---|---|---|
 | 🎧 | [Coffee Break French — Season 2](https://coffeebreaklanguages.com/coffeebreakfrench/) | Lessons 33–35. |
-| 📗 | [Lawless French — Futur simple](https://www.lawlessfrench.com/grammar/future/) | Read on Monday. |
+| 📗 | [Lawless French — Futur simple](https://www.lawlessfrench.com/) | Search the site for "Futur simple". Read on Monday. |
 | 🌐 | [Kwiziq French](https://french.kwiziq.com/) | Search "futur simple", "irregular future stems", "si clauses". |
 | 📗 | *Short Stories in French for Intermediate Learners* (Olly Richards) | Start Story 1 this week: one chapter a day. |
 | 🎧 | [innerFrench](https://innerfrench.com/) | One episode this week. Pause and note 5 words. |

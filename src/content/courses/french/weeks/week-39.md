@@ -6,7 +6,7 @@
 | | Resource | How to use it |
 |---|---|---|
 | 🎧 | [Coffee Break French — Season 3](https://coffeebreaklanguages.com/coffeebreakfrench/) | Lessons 27–29. |
-| 📗 | [Lawless French — Si clauses](https://www.lawlessfrench.com/grammar/si-clauses/) | Read on Monday. |
+| 📗 | [Lawless French — Si clauses](https://www.lawlessfrench.com/) | Search the site for "Si clauses". Read on Monday. |
 | 🌐 | [Kwiziq French](https://french.kwiziq.com/) | Search "conditionnel passé", "si clauses". |
 | 🎧 | [innerFrench](https://innerfrench.com/) | 2 episodes. |
 | 🌐 | [TV5MONDE Apprendre — B1](https://apprendre.tv5monde.com/) | Saturday: a B1 exercise. |

@@ -7,7 +7,7 @@
 |---|---|---|
 | 🎧 | [Language Transfer — Complete French](https://www.languagetransfer.org/french) | Tracks 81–86. |
 | 🎧 | [Coffee Break French — Season 1](https://coffeebreaklanguages.com/coffeebreakfrench/) | Lessons 27–29. |
-| 📗 | [Lawless French — C'est vs il est](https://www.lawlessfrench.com/grammar/cest-vs-il-est/) | Read on Thursday. |
+| 📗 | [Lawless French — C'est vs il est](https://www.lawlessfrench.com/) | Search the site for "C'est vs il est". Read on Thursday. |
 | 🌐 | [Kwiziq French](https://french.kwiziq.com/) | Search "irregular feminine adjectives", "c'est vs il est". |
 | 📺 | [Easy French](https://www.youtube.com/@EasyFrench) | Sunday: watch an episode and describe two of the people interviewed. |
 

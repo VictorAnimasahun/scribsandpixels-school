@@ -7,7 +7,7 @@
 |---|---|---|
 | 🎧 | [Coffee Break French — Season 3](https://coffeebreaklanguages.com/coffeebreakfrench/) | Lessons 21–23. |
 | 🌐 | [Kwiziq French](https://french.kwiziq.com/) | Search "plus-que-parfait". |
-| 📗 | [Lawless French — Pluperfect](https://www.lawlessfrench.com/grammar/pluperfect/) | Read on Monday. |
+| 📗 | [Lawless French — Pluperfect](https://www.lawlessfrench.com/) | Search the site for "Pluperfect". Read on Monday. |
 | 🎧 | [innerFrench](https://innerfrench.com/) | 2 episodes this week. |
 | 🎧 | [Journal en français facile — RFI](https://francaisfacile.rfi.fr/) | 10 minutes daily. |
 

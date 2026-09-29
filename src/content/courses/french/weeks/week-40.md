@@ -6,7 +6,7 @@
 | | Resource | How to use it |
 |---|---|---|
 | 🎧 | [Coffee Break French — Season 3](https://coffeebreaklanguages.com/coffeebreakfrench/) | Lessons 30–32. |
-| 📗 | [Lawless French — Double pronouns](https://www.lawlessfrench.com/grammar/double-object-pronouns/) | Read on Monday. |
+| 📗 | [Lawless French — Double pronouns](https://www.lawlessfrench.com/) | Search the site for "Double pronouns". Read on Monday. |
 | 🌐 | [Kwiziq French](https://french.kwiziq.com/) | Search "double pronouns order", "dont", "lequel". |
 | 🎧 | [innerFrench](https://innerfrench.com/) | 2 episodes. |
 | 🌐 | [TV5MONDE Apprendre — B1](https://apprendre.tv5monde.com/) | Saturday: a B1 exercise. |

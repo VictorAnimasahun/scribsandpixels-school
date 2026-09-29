@@ -7,7 +7,7 @@
 |---|---|---|
 | 🎧 | [Language Transfer — Complete French](https://www.languagetransfer.org/french) | Tracks 75–80. |
 | 🎧 | [Coffee Break French — Season 1](https://coffeebreaklanguages.com/coffeebreakfrench/) | Lessons 24–26. |
-| 📗 | [Lawless French — Adjective position](https://www.lawlessfrench.com/grammar/adjectives/) | Read on Wednesday. |
+| 📗 | [Lawless French — Adjective position](https://www.lawlessfrench.com/) | Search the site for "Adjective position". Read on Wednesday. |
 | 🌐 | [Kwiziq French](https://french.kwiziq.com/) | Search "BAGS adjectives", "colours agreement". |
 | 🌐 | [TV5MONDE Apprendre — A1](https://apprendre.tv5monde.com/) | Saturday: an A1 exercise on housing (*le logement*). |
 

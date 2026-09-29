@@ -7,7 +7,7 @@
 |---|---|---|
 | 🎧 | [Coffee Break French — Season 1](https://coffeebreaklanguages.com/coffeebreakfrench/) | Lessons 39–40, the end of Season 1! 🎉 |
 | 🌐 | [Kwiziq French](https://french.kwiziq.com/) | Search "lire écrire dire", "large numbers". |
-| 📗 | [Lawless French — Numbers](https://www.lawlessfrench.com/vocabulary/numbers/) | Review the number rules on Monday. |
+| 📗 | [Lawless French — Numbers](https://www.lawlessfrench.com/) | Search the site for "Numbers". Review the number rules on Monday. |
 | 🎧 | [Podcast Français Facile](https://www.podcastfrancaisfacile.com/) | Search "au téléphone" and "au bureau" dialogues. |
 | 🌐 | [TV5MONDE Apprendre — A1](https://apprendre.tv5monde.com/) | Saturday: an A1 exercise on work. |
 

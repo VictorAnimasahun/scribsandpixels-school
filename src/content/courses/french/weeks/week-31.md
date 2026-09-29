@@ -6,7 +6,7 @@
 | | Resource | How to use it |
 |---|---|---|
 | 🎧 | [Coffee Break French — Season 3](https://coffeebreaklanguages.com/coffeebreakfrench/) | Lessons 4–6. |
-| 📗 | [Lawless French — Conditional](https://www.lawlessfrench.com/grammar/conditional/) | Read on Monday. |
+| 📗 | [Lawless French — Conditional](https://www.lawlessfrench.com/) | Search the site for "Conditional". Read on Monday. |
 | 🌐 | [Kwiziq French](https://french.kwiziq.com/) | Search "conditionnel présent", "si + imparfait". |
 | 📱 | [Mauril](https://mauril.ca/) | 10 minutes a day. |
 | 📗 | *Short Stories in French for Intermediate Learners* | Story 3 (finish) and start Story 4. |

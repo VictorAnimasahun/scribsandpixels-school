@@ -6,7 +6,7 @@
 | | Resource | How to use it |
 |---|---|---|
 | 🎧 | [Coffee Break French — Season 2](https://coffeebreaklanguages.com/coffeebreakfrench/) | Lessons 27–29. |
-| 📗 | [Lawless French — Y and En](https://www.lawlessfrench.com/grammar/adverbial-pronouns/) | Read on Monday and Tuesday. |
+| 📗 | [Lawless French — Y and En](https://www.lawlessfrench.com/) | Search the site for "Y and En". Read on Monday and Tuesday. |
 | 🌐 | [Kwiziq French](https://french.kwiziq.com/) | Search "pronoun y", "pronoun en". |
 | 🎧 | [Podcast Français Facile](https://www.podcastfrancaisfacile.com/) | Search "à l'hôtel", "à l'aéroport", "à la gare". |
 | 🌐 | [TV5MONDE Apprendre — A2](https://apprendre.tv5monde.com/) | Saturday: an A2 exercise on travel. |
