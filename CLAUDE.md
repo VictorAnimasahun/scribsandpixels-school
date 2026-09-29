@@ -3,6 +3,7 @@
 A multi-course online school for adult self-learners with day jobs. Its core idea is **accountability over content**: the school gives the daily structure, the review loop, streaks and nudges, and links out to free external resources (YouTube, freeCodeCamp, CS50, books) for the actual teaching.
 
 ## Workflow
+Open tasks live in `TODO.md`; keep it updated. Test build: https://victoranimasahun.github.io/scribsandpixels-school/ (GitHub Pages, auto-deploys from `main`).
 Brainstorming and UI/UX design happen on claude.ai; final decisions and designs come back here to build. The user works across Claude Code on this Mac and Claude Code on the web (claude.ai/code), so **commit and push finished work to `main`**, otherwise the other side starts from a stale repo.
 
 ## Courses
