@@ -9,7 +9,8 @@
     "lint": "oxlint",
     "preview": "vite preview",
     "test": "vitest run",
-    "sync:functions": "node scripts/sync-functions.ts"
+    "sync:functions": "node scripts/sync-functions.ts",
+    "check:python": "node scripts/check-python-sandboxes.mjs"
   },
   "dependencies": {
     "@formulajs/formulajs": "^4.6.1",

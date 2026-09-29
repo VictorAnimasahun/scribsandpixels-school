@@ -64,7 +64,7 @@ tasks:
     tests: |
       assert convert_to_naira(10) == 15500, "should return 15500"
 ```
-- A task needs `expectOutput` (lines that must appear) and/or `tests` (Python asserts run after the learner's code).
+- A task needs `expectOutput` (lines that must appear) and/or `tests` (Python asserts run after the learner's code). Tests can read `__output__` (everything the program printed) and `__code__` (the learner's source), e.g. to require a loop instead of `max()`.
 - Before committing, run each task against a reference solution (see git history for the Week 1–2 check).
 
 ## `web`

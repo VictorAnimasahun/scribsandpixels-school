@@ -76,6 +76,11 @@ Create a shopping list program:
 - Print how many items are left using `len()`
 - Loop through and print each item with its position number (hint: use `enumerate()` — look it up)
 
+**Code it here:**
+
+::sandbox py-w02-d1-lists
+
+
 ### Log (10 min)
 
 ## Day 2 — Tuesday
@@ -127,10 +132,16 @@ else:
 - Calculate and print the average (sum of all scores divided by number of scores)
 - Print whether the average is a pass (50 and above) or fail
 
-Hint for average:
+:::hint
 ```python
 average = sum(scores) / len(scores)
 ```
+:::
+
+**Code it here:**
+
+::sandbox py-w02-d2-grades
+
 
 ### Log (10 min)
 
@@ -261,6 +272,11 @@ Write a function called `describe_list` that:
 
 Call it with 3 different lists.
 
+**Code it here:** hidden tests call your functions, including tricky cases.
+
+::sandbox py-w02-d4-helpers
+
+
 ### Log (10 min)
 
 ## Day 5 — Friday
@@ -328,11 +344,17 @@ Write a program that:
 - Each new entry adds to the file (doesn't wipe it)
 - After saving, reads and prints all previous entries
 
-Hint for date:
+:::hint
 ```python
 from datetime import date
 today = str(date.today())
 ```
+:::
+
+**Code it here:**
+
+::sandbox py-w02-d5-journal
+
 
 ### Log (10 min)
 

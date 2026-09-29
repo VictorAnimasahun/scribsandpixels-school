@@ -111,7 +111,7 @@ export default function PythonSandbox({ sandbox }: Props) {
               <span>{taskState[i]?.passed ? '✅' : taskState[i] ? '❌' : '⬜'} {task.prompt}</span>
               {task.stdin && <small className="muted">Input used: {task.stdin.join(' ⏎ ')}</small>}
               {taskState[i] && !taskState[i].passed && <small className="fail-detail">{taskState[i].detail}</small>}
-              {task.hint && <details><summary>Hint</summary>{task.hint}</details>}
+              {task.hint && taskState[i] && !taskState[i].passed && <details><summary>💡 Hint</summary>{task.hint}</details>}
             </li>
           ))}
         </ol>

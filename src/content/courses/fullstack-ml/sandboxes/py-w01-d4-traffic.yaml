@@ -1,0 +1,21 @@
+# Week 1 · Day 4 mini-task
+id: py-w01-d4-traffic
+kind: python
+title: "Lagos traffic light"
+description: "Ask for a colour. red → Stop!, yellow → Get ready!, green → Go!, anything else → That's not a traffic light colour! Accept any capitalisation."
+starter: |
+  colour = input("Traffic light colour: ")
+tasks:
+  - prompt: "red → Stop!"
+    stdin: ["red"]
+    expectOutput: ["Stop!"]
+  - prompt: "yellow → Get ready!"
+    stdin: ["yellow"]
+    expectOutput: ["Get ready!"]
+  - prompt: "GREEN (capitals) → Go!"
+    stdin: ["GREEN"]
+    expectOutput: ["Go!"]
+    hint: "colour.lower() turns GREEN into green before you compare."
+  - prompt: "blue → That's not a traffic light colour!"
+    stdin: ["blue"]
+    expectOutput: ["That's not a traffic light colour!"]

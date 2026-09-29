@@ -174,10 +174,11 @@ export default function SheetSandbox({ sandbox }: Props) {
               <li key={i} className={ok ? 'pass' : ''}>
                 <span>{ok ? '✅' : '⬜'} {task.prompt}</span>
                 {!ok && raw && !raw.startsWith('=') && task.formula && <small className="fail-detail">Use a formula (start with =), not a typed number.</small>}
+                {!ok && !raw && <small className="muted">Hint and answer unlock after you try.</small>}
                 <span className="task-actions">
                   <button className="link" onClick={() => setSelected(task.cell)}>Go to {task.cell}</button>
-                  {task.hint && <details><summary>Hint</summary>{task.hint}</details>}
-                  <button className="link" onClick={() => { if (confirm('Fill in the model answer for this task?')) setCells((c) => { const next = { ...c! }; applySolution(sandbox, task, (ref, v) => { next[ref] = v }); return next }) }}>Show answer</button>
+                  {raw && task.hint && <details><summary>💡 Hint</summary>{task.hint}</details>}
+                  {raw && <button className="link" onClick={() => { if (confirm('Fill in the model answer for this task?')) setCells((c) => { const next = { ...c! }; applySolution(sandbox, task, (ref, v) => { next[ref] = v }); return next }) }}>Show answer</button>}
                 </span>
               </li>
             )

@@ -147,3 +147,16 @@ table.grid { border-collapse: collapse; font-size: 13px; }
 .challenge-banner { display: flex; justify-content: space-between; gap: 10px; background: #fff4d6; border-radius: 10px; padding: 10px 12px; }
 .verdict, .heard { margin: 0; font-weight: 600; }
 .challenges ol, .saved ul { margin: 6px 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; }
+
+details.reveal { margin: 10px 0; border: 1px dashed var(--line); border-radius: 10px; padding: 8px 12px; background: #fbfcf7; }
+details.reveal > summary { cursor: pointer; color: var(--green); font-weight: 600; font-size: 14px; }
+details.reveal[open] { background: #fff; }
+
+/* code editor key bar (useful on phones, harmless on desktop) */
+.code-editor { display: flex; flex-direction: column; gap: 6px; }
+.keybar { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 2px; }
+.keybar button { flex: 0 0 auto; min-width: 44px; min-height: 40px; padding: 6px 10px; font: 600 15px ui-monospace, Menlo, monospace; background: #eef3e9; border-color: #d5e0d0; }
+@media (max-width: 640px) {
+  /* iOS zooms into inputs under 16px; keep them at 16px on phones */
+  textarea.code, textarea.stdin, .formula-bar input, .text-answer input, .cell-input { font-size: 16px; }
+}

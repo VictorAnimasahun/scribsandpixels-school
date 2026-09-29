@@ -7,12 +7,14 @@
 
 const PYODIDE_URL = 'https://cdn.jsdelivr.net/pyodide/v314.0.7/full/'
 
+type PyDict = { set(key: string, value: unknown): void }
+
 type Pyodide = {
   setStdout(options: { write: (buffer: Uint8Array) => number }): void
   setStderr(options: { write: (buffer: Uint8Array) => number }): void
   setStdin(options: { stdin: () => string | undefined }): void
   runPythonAsync(code: string, options?: { globals?: unknown }): Promise<unknown>
-  globals: { get(name: string): () => unknown }
+  globals: { get(name: string): () => PyDict }
 }
 
 export type RunRequest = { id: number; code: string; stdin: string[]; tests?: string }
@@ -55,7 +57,15 @@ self.onmessage = async (event: MessageEvent<RunRequest>) => {
   }
 
   const lines = [...stdin]
-  py.setStdout({ write: (b) => (post({ id, type: 'out', text: decoder.decode(b) }), b.length) })
+  let printed = ''
+  py.setStdout({
+    write: (b) => {
+      const text = decoder.decode(b)
+      printed += text
+      post({ id, type: 'out', text })
+      return b.length
+    },
+  })
   py.setStderr({ write: (b) => (post({ id, type: 'err', text: decoder.decode(b) }), b.length) })
   py.setStdin({
     stdin: () => {
@@ -68,7 +78,12 @@ self.onmessage = async (event: MessageEvent<RunRequest>) => {
   const globals = py.globals.get('dict')()
   try {
     await py.runPythonAsync(code, { globals })
-    if (tests) await py.runPythonAsync(tests, { globals })
+    if (tests) {
+      // Tests can inspect what the program printed and how it was written.
+      globals.set('__output__', printed)
+      globals.set('__code__', code)
+      await py.runPythonAsync(tests, { globals })
+    }
     post({ id, type: 'done', ok: true })
   } catch (error) {
     const message = cleanTraceback(String((error as Error).message ?? error))

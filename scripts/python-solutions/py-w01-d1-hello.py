@@ -1,0 +1,5 @@
+print("Hello, world!")
+print("My name is Emeka")
+print("I am learning to code")
+print("One day I will be a software engineer")
+print(1550 * 20)

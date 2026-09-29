@@ -1,0 +1,36 @@
+# Week 2 · Day 5 mini-task
+id: py-w02-d5-journal
+kind: python
+title: "Daily journal"
+description: "Save journal entries to a file with today's date, and read them back. Files work in the browser too."
+starter: |
+  from datetime import date
+
+  def save_entry(text):
+      # Append "YYYY-MM-DD: text" as a new line to journal.txt
+      pass
+
+  def read_entries():
+      # Return a list of the lines in journal.txt (no newline characters)
+      pass
+tasks:
+  - prompt: "save_entry adds a line like 2026-09-29: text to journal.txt (appending, never wiping)."
+    tests: |
+      import os
+      from datetime import date
+      if os.path.exists("journal.txt"):
+          os.remove("journal.txt")
+      save_entry("First day")
+      save_entry("Second day")
+      lines = open("journal.txt").read().splitlines()
+      assert len(lines) == 2, "Two saves should give two lines. Are you using mode 'a'?"
+      assert lines[0] == f"{date.today()}: First day", f"Line 1 should be '{date.today()}: First day'"
+  - prompt: "read_entries() returns the lines as a list, without the \\n at the end."
+    tests: |
+      import os
+      if os.path.exists("journal.txt"):
+          os.remove("journal.txt")
+      save_entry("Hello")
+      entries = read_entries()
+      assert isinstance(entries, list) and len(entries) == 1, "Return a list with one item per line"
+      assert entries[0].endswith("Hello") and not entries[0].endswith("\n"), "Strip the newline"

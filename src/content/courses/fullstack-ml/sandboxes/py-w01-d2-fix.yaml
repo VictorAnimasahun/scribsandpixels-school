@@ -1,0 +1,13 @@
+# Week 1 · Day 2: read the error, fix the bug
+id: py-w01-d2-fix
+kind: python
+title: "Bug hunt: text + numbers"
+description: "This program crashes. Run it, read the error message, then fix it. Programmers do this all day."
+starter: |
+  name = "Ngozi"
+  age = 29
+  print("My name is " + name + " and I am " + age + " years old")
+tasks:
+  - prompt: "The program runs without an error and prints: My name is Ngozi and I am 29 years old"
+    expectOutput: ["My name is Ngozi and I am 29 years old"]
+    hint: "You can't add text and a number. Turn the number into text with str(age)."

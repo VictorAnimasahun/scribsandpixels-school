@@ -23,6 +23,18 @@ starter: |
 
   print("Quiz over!", name, "you scored", score, "out of 3")
 tasks:
-  - prompt: "Plays through with answers and prints the score line (inputs: Ada, abuja, then two more answers)."
+  - prompt: "It asks for the name plus 3 questions (inputs: Ada, abuja, x, x)."
     stdin: ["Ada", "abuja", "x", "x"]
-    expectOutput: ["Hello, Ada", "Correct!", "out of 3"]
+    expectOutput: ["Hello, Ada", "Correct!"]
+    tests: |
+      assert __output__.count("?") >= 4, "Ask 3 quiz questions (each ending with ?)"
+  - prompt: "All answers wrong → Quiz over! Ada you scored 0 out of 3"
+    stdin: ["Ada", "x", "x", "x"]
+    expectOutput: ["you scored 0 out of 3"]
+    tests: |
+      assert __output__.count("?") >= 4, "Ask 3 quiz questions"
+  - prompt: "Only the first answer right → you scored 1 out of 3 (each question can add a point)"
+    stdin: ["Ada", "abuja", "x", "x"]
+    expectOutput: ["you scored 1 out of 3"]
+    tests: |
+      assert __code__.count("score") >= 4, "Questions 2 and 3 should add to score too"

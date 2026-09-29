@@ -1,0 +1,23 @@
+# Week 1 · Day 5 practice
+id: py-w01-d5-loops
+kind: python
+title: "Loop workout"
+description: "Times tables, even numbers and a running total, all with loops."
+starter: |
+  number = int(input("Which times table? "))
+  for i in range(1, 11):
+      print(number, "x", i, "=", number * i)
+tasks:
+  - prompt: "7 → the full 7 times table, ending with 7 x 10 = 70"
+    stdin: ["7"]
+    expectOutput: ["7 x 1 = 7", "7 x 10 = 70"]
+  - prompt: "Then add up 1 + 2 + … + 100 with a loop and print the total (5050). No typing 5050!"
+    stdin: ["7"]
+    tests: |
+      assert "5050" in __output__, "Print the total of 1 to 100"
+      assert "5050" not in __code__, "Let the loop calculate it"
+      assert "for" in __code__ or "while" in __code__, "Use a loop"
+  - prompt: "Finally, print only the EVEN results of the times table on a line starting with Even: (for 7 → Even: 14 28 42 56 70)"
+    stdin: ["7"]
+    expectOutput: ["Even: 14 28 42 56 70"]
+    hint: "Collect even results in a list, then print(\"Even:\", *evens). Or build a string."

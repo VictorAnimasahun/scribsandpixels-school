@@ -1,0 +1,19 @@
+# Week 1 · Day 1 practice
+id: py-w01-d1-hello
+kind: python
+title: "Your first programs"
+description: "print() is how your program talks. Make it say hello, introduce yourself, and do a sum."
+starter: |
+  # Write your first line of Python below, then press Run.
+tasks:
+  - prompt: "Print exactly: Hello, world!"
+    expectOutput: ["Hello, world!"]
+    hint: "print(\"Hello, world!\"): the quotes make it text."
+  - prompt: "Print at least 3 more lines about yourself (4 lines of output in total)."
+    tests: |
+      lines = [l for l in __output__.splitlines() if l.strip()]
+      assert len(lines) >= 4, f"Only {len(lines)} line(s) printed. Add more print() lines."
+  - prompt: "Print the answer to 1550 × 20 by letting Python calculate it (don't type 31000 yourself)."
+    tests: |
+      assert "31000" in __output__, "Print the result of 1550 * 20"
+      assert "1550" in __code__ and "*" in __code__, "Let Python do the maths: print(1550 * 20)"

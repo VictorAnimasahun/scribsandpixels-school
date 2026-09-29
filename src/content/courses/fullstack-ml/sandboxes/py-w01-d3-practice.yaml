@@ -1,0 +1,22 @@
+# Week 1 · Day 3 practice: input() + maths
+id: py-w01-d3-practice
+kind: python
+title: "Split the bill"
+description: "Ask for a bill amount and the number of friends; print what each person pays, rounded to 2 decimals."
+starter: |
+  bill = input("Bill amount (₦): ")
+  people = input("How many people? ")
+  # Convert both, divide, round to 2 decimals, print
+tasks:
+  - prompt: "A ₦10000 bill for 4 people → prints 2500"
+    stdin: ["10000", "4"]
+    expectOutput: ["2500"]
+    hint: "float(bill) / int(people)"
+  - prompt: "A ₦10000 bill for 3 people → prints 3333.33 (use round(x, 2))"
+    stdin: ["10000", "3"]
+    expectOutput: ["3333.33"]
+  - prompt: "Also print how many naira are left over if everyone pays whole thousands. ₦10000 for 3 → each pays 3000, 1000 left over (use // and %)."
+    stdin: ["10000", "3"]
+    expectOutput: ["1000"]
+    tests: |
+      assert "//" in __code__ or "%" in __code__, "Use // or % for the whole-thousands part"

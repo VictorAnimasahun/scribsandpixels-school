@@ -4,6 +4,7 @@ import App from '../App.tsx'
 import { catalog, findCourse, type CatalogCourse } from '../content/catalog.ts'
 import { DEFAULT_QUIZ_RULES } from '../content/quizzes.ts'
 import { drawAttempt, gateDaysForWeek, gateStatus, seededRandom } from '../domain/quizGate.ts'
+import { foldAnswers } from './foldAnswers.ts'
 import { QuizPlayer } from './QuizPlayer.tsx'
 import { SandboxHost } from './sandboxes/SandboxHost.tsx'
 import { sandboxes, SANDBOX_EMBED } from '../content/sandboxes.ts'
@@ -20,7 +21,7 @@ function Html({ text }: { text: string }) {
 function Markdown({ text }: { text: string }) {
   const parts: ({ md: string } | { sandbox: string })[] = []
   let buffer: string[] = []
-  for (const line of text.split('\n')) {
+  for (const line of foldAnswers(text).split('\n')) {
     const m = line.match(SANDBOX_EMBED)
     if (m) {
       parts.push({ md: buffer.join('\n') }, { sandbox: m[1] })

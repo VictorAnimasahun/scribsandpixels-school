@@ -61,7 +61,7 @@ describe('parseWeek on the real course', () => {
 
   it('keeps code blocks intact, including # comments', () => {
     const miniTask = week1.days[2].blocks.find((b) => b.kind === 'mini-task')!
-    expect(miniTask.body).toContain('# Hint — your structure:')
+    expect(miniTask.body).toContain('# Your structure:')
     expect(miniTask.body).toContain('naira = usd * 1550')
   })
 

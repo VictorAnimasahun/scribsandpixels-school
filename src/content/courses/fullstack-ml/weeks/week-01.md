@@ -46,6 +46,11 @@ print("Hello, world!")
 ```
 8. Press Enter. You just wrote your first program.
 
+**Now in the browser:** the same first programs, with automatic checks.
+
+::sandbox py-w01-d1-hello
+
+
 ### Mini-Task
 Write 3 more print statements about yourself. Example:
 ```python
@@ -101,6 +106,11 @@ print(age + name)
 ```
 Read the error message. Write it in your log. This error message is teaching you something.
 
+**Bug hunt:** run this, read the error, fix it.
+
+::sandbox py-w01-d2-fix
+
+
 ### Mini-Task
 Create a Python script (a `.py` file, not just the terminal) called `about_me.py`:
 1. Open Notepad (Windows) or TextEdit (Mac)
@@ -109,6 +119,11 @@ Create a Python script (a `.py` file, not just the terminal) called `about_me.py
 4. Save it as `about_me.py` on your Desktop
 5. In the terminal, navigate to Desktop: `cd Desktop`
 6. Run it: `python about_me.py`
+
+**Code it here** (then also save it as about_me.py on your computer):
+
+::sandbox py-w01-d2-variables
+
 
 ### Log (10 min)
 Update `week1_log.txt`
@@ -148,21 +163,28 @@ Run it. Type your name and age when it asks. See what happens.
 
 Now break it: remove the `int()` conversion. Try to add 1 to age. Read the error. Write it down.
 
+**Extra practice:** input() and maths.
+
+::sandbox py-w01-d3-practice
+
+
 ### Mini-Task
 Build a **Simple Naira Calculator**:
 - Ask the user to enter an amount in USD
 - Multiply it by 1550 (approximate exchange rate)
 - Print the result in Naira
 
+Try to write it yourself first. The hint is folded away for when you're really stuck.
+
+:::hint
 ```python
-# Hint — your structure:
+# Your structure:
 usd = input("Enter amount in USD: ")
 usd = float(usd)
 naira = usd * 1550
 print("That is", naira, "Naira")
 ```
-
-Try to write it yourself first before looking at the hint.
+:::
 
 **Code it here:** real Python in your browser, with automatic checks.
 
@@ -209,6 +231,11 @@ else:
 
 Run it 3 times with different ages (10, 16, 25). Confirm it works correctly.
 
+**Code it here:**
+
+::sandbox py-w01-d4-vote
+
+
 ### Mini-Task
 **Lagos Traffic Light Program:**
 Ask the user to type a colour (red, yellow, or green).
@@ -216,6 +243,11 @@ Print what a driver should do at that colour.
 Add a message for any other input: "That's not a traffic light colour!"
 
 Write it yourself from scratch. No hints today.
+
+**Code it here:** no hints until you've tried.
+
+::sandbox py-w01-d4-traffic
+
 
 ### Log (10 min)
 
@@ -257,6 +289,11 @@ for i in range(1, 11):
 ```
 
 Run it. Try different numbers. Now modify it: print only the even results.
+
+**Loop workout:**
+
+::sandbox py-w01-d5-loops
+
 
 ### Mini-Task
 **Countdown Timer:**

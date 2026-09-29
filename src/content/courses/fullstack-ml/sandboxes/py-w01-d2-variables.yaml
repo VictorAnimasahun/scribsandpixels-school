@@ -1,0 +1,25 @@
+# Week 2 · Day 2 practice + mini-task (about_me)
+id: py-w01-d2-variables
+kind: python
+title: "About me: variables"
+description: "Store facts about yourself in variables, then use them in sentences and calculations."
+starter: |
+  name = "Emeka"
+  age = 35
+  # Add city and dream_job, then print a sentence that uses all four.
+tasks:
+  - prompt: "Create variables name (text), age (a whole number), city (text) and dream_job (text)."
+    tests: |
+      assert isinstance(name, str) and name.strip(), "name should be text"
+      assert isinstance(age, int), "age should be a whole number, no quotes: age = 35"
+      assert isinstance(city, str) and city.strip(), "add a city variable"
+      assert isinstance(dream_job, str) and dream_job.strip(), "add a dream_job variable"
+  - prompt: "Print one sentence that includes all four values."
+    tests: |
+      for value in (name, str(age), city, dream_job):
+          assert value in __output__, f"Your output doesn't include {value!r}"
+  - prompt: "Create next_year = your age next year (use age, don't type the number) and print it."
+    tests: |
+      assert next_year == age + 1, "next_year should be age + 1"
+      assert "age + 1" in __code__.replace("age+1", "age + 1"), "Calculate it from age"
+      assert str(age + 1) in __output__, "Print next_year"

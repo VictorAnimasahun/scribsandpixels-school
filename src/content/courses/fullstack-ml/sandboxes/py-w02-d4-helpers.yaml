@@ -1,0 +1,29 @@
+# Week 2 · Day 4 practice + mini-task
+id: py-w02-d4-helpers
+kind: python
+title: "Functions that work on lists"
+description: "Write reusable functions, including one with a default parameter, and one that finds the largest number without max()."
+starter: |
+  def get_passing_scores(scores, pass_mark=50):
+      pass
+
+  def get_average(scores):
+      pass
+
+  def largest(numbers):
+      # No max() allowed: use a loop
+      pass
+tasks:
+  - prompt: "get_passing_scores([45, 72, 38, 91]) returns [72, 91]; with pass_mark=40 it returns [45, 72, 91]."
+    tests: |
+      assert get_passing_scores([45, 72, 38, 91]) == [72, 91]
+      assert get_passing_scores([45, 72, 38, 91], pass_mark=40) == [45, 72, 91]
+  - prompt: "get_average([10, 20, 30]) returns 20, and get_average([]) returns 0 instead of crashing."
+    tests: |
+      assert get_average([10, 20, 30]) == 20
+      assert get_average([]) == 0, "An empty list should give 0, not a ZeroDivisionError"
+  - prompt: "largest([3, 17, 8]) returns 17, largest([-5, -2]) returns -2, without using max()."
+    tests: |
+      assert largest([3, 17, 8]) == 17
+      assert largest([-5, -2]) == -2, "Careful: start with the first item, not 0"
+      assert "max(" not in __code__, "No max() allowed"

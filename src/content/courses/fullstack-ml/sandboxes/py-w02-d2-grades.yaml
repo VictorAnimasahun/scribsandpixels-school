@@ -1,0 +1,21 @@
+# Week 2 · Day 2 mini-task
+id: py-w02-d2-grades
+kind: python
+title: "Grade calculator"
+description: "Work out the highest, lowest and average score, and whether the class passed."
+starter: |
+  scores = [45, 72, 38, 91, 55]
+tasks:
+  - prompt: "Store highest, lowest and average (sum ÷ count) in variables with those names."
+    tests: |
+      assert highest == 91 and lowest == 38, "Use max() and min()"
+      assert abs(average - 60.2) < 0.01, "average = sum(scores) / len(scores)"
+  - prompt: "Print Pass if the average is 50 or more, otherwise Fail."
+    expectOutput: ["Pass"]
+  - prompt: "Store the top three scores, highest first, in top_three (sort + slice)."
+    tests: |
+      assert top_three == [91, 72, 55], f"top_three should be [91, 72, 55], got {top_three}"
+    hint: "sorted(scores, reverse=True)[:3]"
+  - prompt: "Is 72 in the list? Store the answer (True/False) in has_72 using the in keyword."
+    tests: |
+      assert has_72 is True and " in scores" in __code__, "has_72 = 72 in scores"

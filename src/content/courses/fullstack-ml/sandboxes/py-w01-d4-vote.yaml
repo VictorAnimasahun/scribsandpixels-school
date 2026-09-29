@@ -1,0 +1,24 @@
+# Week 1 · Day 4 practice
+id: py-w01-d4-vote
+kind: python
+title: "Can I vote?"
+description: "if / elif / else: print the right message for each age."
+starter: |
+  age = int(input("How old are you? "))
+
+  if age >= 18:
+      print("You can vote in Nigeria!")
+  # Add an elif for 16 and 17, and an else
+tasks:
+  - prompt: "25 → You can vote in Nigeria!"
+    stdin: ["25"]
+    expectOutput: ["You can vote in Nigeria!"]
+  - prompt: "16 → Almost! Two more years."
+    stdin: ["16"]
+    expectOutput: ["Almost! Two more years."]
+  - prompt: "10 → You are still a child."
+    stdin: ["10"]
+    expectOutput: ["You are still a child."]
+  - prompt: "Exactly 18 → You can vote in Nigeria! (check your >=)"
+    stdin: ["18"]
+    expectOutput: ["You can vote in Nigeria!"]

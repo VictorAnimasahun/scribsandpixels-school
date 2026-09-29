@@ -1,0 +1,21 @@
+# Week 2 · Day 1 practice + mini-task
+id: py-w02-d1-lists
+kind: python
+title: "Shopping list"
+description: "Create, change and loop through a list of Nigerian foods."
+starter: |
+  foods = ["rice", "beans", "yam", "plantain", "egusi"]
+  # 1. append "suya"  2. remove "beans"  3. print how many items
+tasks:
+  - prompt: "Add \"suya\" and remove \"beans\" using list methods (foods ends with 5 items)."
+    tests: |
+      assert "suya" in foods and "beans" not in foods, "append suya, remove beans"
+      assert len(foods) == 5, f"foods has {len(foods)} items, expected 5"
+      assert ".append(" in __code__ and ".remove(" in __code__, "Use append() and remove()"
+  - prompt: "Print every item with its number, starting at 1: 1. rice … 5. suya"
+    expectOutput: ["1. rice", "5. suya"]
+    hint: "for number, food in enumerate(foods, start=1): print(f\"{number}. {food}\")"
+  - prompt: "Store the first and last items in first and last using indexes (last with a negative index)."
+    tests: |
+      assert first == foods[0] and last == foods[-1], "first = foods[0], last = foods[-1]"
+      assert "[-1]" in __code__, "Use the negative index [-1]"
