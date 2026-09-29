@@ -23,6 +23,7 @@ const RESOURCE_KINDS: Record<string, ResourceKind> = {
   '🎧': 'audio',
   '🔊': 'interactive',
   '📊': 'dataset',
+  '📱': 'interactive',
 }
 
 const DEFAULT_MINUTES: Record<BlockKind, number> = {
