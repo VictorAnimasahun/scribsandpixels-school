@@ -3,5 +3,7 @@ import { defineConfig } from 'vite'
 
 // https://vite.dev/config/
 export default defineConfig({
+  // GitHub Pages serves the site from /scribsandpixels-school/
+  base: process.env.GITHUB_PAGES ? '/scribsandpixels-school/' : '/',
   plugins: [react()],
 })

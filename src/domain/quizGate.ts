@@ -1,7 +1,8 @@
 import { DEFAULT_QUIZ_RULES, type Blueprint, type Difficulty, type Question, type QuizRules } from '../content/quizzes.ts'
 
 /*
- * Gate quizzes: a pop-up quiz that blocks the day until passed.
+ * Gate quizzes: a pop-up quiz that blocks the day until passed. They appear
+ * 1–2 times a week on random days (gateDaysForWeek).
  * - Each attempt draws the blueprint's mix of difficulties from the bank,
  *   preferring questions the learner hasn't seen, so a retry covers the same
  *   topics at the same difficulty with different questions.
@@ -47,6 +48,27 @@ export function drawAttempt(bank: Question[], blueprint: Blueprint, seenOldestFi
     picked.push(...[...unseen, ...seen].slice(0, want))
   }
   return picked
+}
+
+function hashString(text: string): number {
+  let h = 0x811c9dc5
+  for (let i = 0; i < text.length; i++) {
+    h ^= text.charCodeAt(i)
+    h = Math.imul(h, 0x01000193)
+  }
+  return h >>> 0
+}
+
+/**
+ * Gates are not daily: each week a learner gets 1 or 2 gates on random days
+ * (Mon–Sat), and the pattern differs week to week and learner to learner.
+ * Deterministic per (learner, course, week) so it's stable across reloads and
+ * devices but can't be predicted from the content.
+ */
+export function gateDaysForWeek(learnerSeed: string, courseSlug: string, week: number): number[] {
+  const random = seededRandom(hashString(`${learnerSeed}:${courseSlug}:${week}`))
+  const count = random() < 0.5 ? 1 : 2
+  return shuffle([1, 2, 3, 4, 5, 6], random).slice(0, count).sort((a, b) => a - b)
 }
 
 function normalise(text: string, { accents, caseSensitive }: { accents: boolean; caseSensitive: boolean }): string {

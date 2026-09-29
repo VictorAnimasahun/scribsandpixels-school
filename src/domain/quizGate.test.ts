@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import type { Question } from '../content/quizzes.ts'
-import { drawAttempt, gateStatus, gradeAttempt, isLocked, markAnswer, seededRandom } from './quizGate.ts'
+import { drawAttempt, gateDaysForWeek, gateStatus, gradeAttempt, isLocked, markAnswer, seededRandom } from './quizGate.ts'
 
 const q = (id: string, difficulty: Question['difficulty']): Question => ({ id, difficulty, type: 'truefalse', prompt: id, answer: true })
 const bank = [
@@ -81,5 +81,26 @@ describe('gateStatus', () => {
     expect(gateStatus(failed, t(30))).toEqual({ kind: 'cooldown', until: t(65), attempt: 2 })
     expect(isLocked(gateStatus(failed, t(30)))).toBe(true)
     expect(gateStatus(failed, t(65))).toEqual({ kind: 'open', attempt: 2 })
+  })
+})
+
+describe('gateDaysForWeek', () => {
+  it('schedules 1 or 2 gates on distinct study days, stable for the same learner and week', () => {
+    for (let week = 1; week <= 52; week++) {
+      const days = gateDaysForWeek('learner-1', 'french', week)
+      expect(days.length === 1 || days.length === 2).toBe(true)
+      expect(new Set(days).size).toBe(days.length)
+      days.forEach((d) => expect(d >= 1 && d <= 6).toBe(true))
+      expect(gateDaysForWeek('learner-1', 'french', week)).toEqual(days)
+    }
+  })
+
+  it('varies across weeks and learners (irregular, not predictable)', () => {
+    const patterns = new Set(Array.from({ length: 52 }, (_, i) => gateDaysForWeek('learner-1', 'french', i + 1).join(',')))
+    expect(patterns.size).toBeGreaterThan(10)
+    const counts = Array.from({ length: 52 }, (_, i) => gateDaysForWeek('learner-1', 'french', i + 1).length)
+    expect(counts).toContain(1)
+    expect(counts).toContain(2)
+    expect(gateDaysForWeek('learner-2', 'french', 5)).not.toEqual(gateDaysForWeek('learner-1', 'french', 5)) // almost surely
   })
 })

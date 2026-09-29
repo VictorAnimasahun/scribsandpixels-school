@@ -16,7 +16,7 @@ Brainstorming and UI/UX design happen on claude.ai; final decisions and designs 
 
 French and Excel have `overview.md` (human-readable framework) but no `course.ts` yet, so they aren't registered in `src/content/index.ts`. Their week files are still validated by `npm test`.
 
-**Daily quizzes (all courses):** 3 per study day: a **gate** (pops up before the lesson, tests the previous day, blocks the dashboard until 70% is passed, 60-min cooldown on failure, retries draw different questions of the same topics and difficulty from a bank) + **rapid-fire** (timed) + **brain teaser**. Rules and format: `src/content/QUIZZES.md`; engine: `src/domain/quizGate.ts`; banks: `courses/<slug>/quizzes/week-NN.yaml`, validated by `npm test`. Samples done: French Week 1, Excel Week 1 (~200 questions each); all other weeks still need banks.
+**Daily quizzes (all courses):** every study day has **rapid-fire** (timed) + **brain teaser**; a **gate** appears only **1–2 times a week on random days** (pops up before the lesson, tests the previous day, blocks the dashboard until 70% is passed, 60-min cooldown on failure, retries draw different questions of the same topics and difficulty from a bank). Every day still has a gate bank, since any day can be picked. Rules and format: `src/content/QUIZZES.md`; engine: `src/domain/quizGate.ts`; banks: `courses/<slug>/quizzes/week-NN.yaml`, validated by `npm test`. Samples done: French Week 1, Excel Week 1 (~200 questions each); all other weeks still need banks, written a slice at a time (the user doesn't want mass generation).
 
 More courses will follow; nothing may assume a single course. To add one: a new folder under `src/content/courses/`, register it in `src/content/index.ts` and `scripts/sync-functions.ts`.
 

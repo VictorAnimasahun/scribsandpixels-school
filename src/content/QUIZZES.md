@@ -5,13 +5,15 @@ Applies to **every course**. Each written week has a matching quiz file:
 
 ## The rules
 
-Every study day (Mon–Sat) has **3 quizzes**:
+Every study day (Mon–Sat) has **2 quizzes**, plus a **gate** on random days:
 
-| # | Quiz | When | Gating |
-|---|---|---|---|
-| 1 | **Gate** (checkpoint) | Pops up **before** the day's lesson. Tests the **previous day** (Monday tests the **previous week**; Week 1 Day 1 tests the course overview) | **Blocks the dashboard and all learning materials until passed** |
-| 2 | **Rapid-fire** | After the lesson | Timed per question; required to complete the day |
-| 3 | **Brain teaser** | After practice | Harder, applied questions; required to complete the day |
+| Quiz | When | Gating |
+|---|---|---|
+| **Rapid-fire** | After the lesson, every day | Timed per question; required to complete the day |
+| **Brain teaser** | After practice, every day | Harder, applied questions; required to complete the day |
+| **Gate** (checkpoint) | **Random: 1–2 times a week, on random days**, a different pattern each week and for each learner (`gateDaysForWeek`). Pops up before the day's lesson and tests the **previous day** (on a Monday: the previous week) | **Blocks the dashboard and all learning materials until passed** |
+
+Because any day can be picked, **every day still needs a gate bank** in the quiz file.
 
 **Gate rules** (defaults in `DEFAULT_QUIZ_RULES`, `src/content/quizzes.ts`):
 - **Pass mark 70%.**
