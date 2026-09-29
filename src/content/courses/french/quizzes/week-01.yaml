@@ -1,0 +1,299 @@
+# French · Week 1 quizzes. Format and rules: src/content/QUIZZES.md
+week: 1
+days:
+
+  # ─────────────────────────── DAY 1 ───────────────────────────
+  - day: 1
+    gate:
+      title: "Checkpoint: how this course works"
+      covers: "Course overview: daily structure, rules and tools"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w01-d1-g01, difficulty: easy, type: mcq, prompt: "How many minutes a day does this course ask for, Monday to Saturday?", choices: ["About 20", "About 60", "About 120", "About 180"], answer: 1 }
+        - { id: fr-w01-d1-g02, difficulty: easy, type: truefalse, prompt: "Sunday is a full lesson day with new grammar.", answer: false, explain: "Sunday is rest plus 30–60 minutes of enjoyable French, no grammar." }
+        - { id: fr-w01-d1-g03, difficulty: easy, type: mcq, prompt: "Which block comes first every day?", choices: ["Lesson", "Log", "Review", "Speak & Listen"], answer: 2 }
+        - { id: fr-w01-d1-g04, difficulty: easy, type: mcq, prompt: "Which app is used for daily flashcards?", choices: ["Duolingo", "Anki", "Tandem", "Kwiziq"], answer: 1 }
+        - { id: fr-w01-d1-g05, difficulty: easy, type: truefalse, prompt: "You should speak French out loud every day, even when alone.", answer: true }
+        - { id: fr-w01-d1-g06, difficulty: easy, type: mcq, prompt: "What is the target level after 12 months?", choices: ["A1", "A2", "B1", "C1"], answer: 2 }
+        - { id: fr-w01-d1-g07, difficulty: medium, type: order, prompt: "Put the daily blocks in order.", items: ["Review", "Lesson", "Practice", "Speak & Listen", "Log"] }
+        - { id: fr-w01-d1-g08, difficulty: medium, type: mcq, prompt: "How should you learn a new noun like 'table'?", choices: ["table", "une table", "the table", "tables"], answer: 1, explain: "Gender is part of the word: always learn the article with it." }
+        - { id: fr-w01-d1-g09, difficulty: medium, type: mcq, prompt: "Which notebook section collects your mistakes?", choices: ["Leçons", "Journal", "Mes erreurs", "Vocabulaire"], answer: 2 }
+        - { id: fr-w01-d1-g10, difficulty: medium, type: truefalse, prompt: "The best way to learn a word is alone, e.g. 'manger = to eat'.", answer: false, explain: "Learn words in sentences: 'Je mange du riz.'" }
+        - { id: fr-w01-d1-g11, difficulty: medium, type: mcq, prompt: "How many minutes is the daily Lesson block?", choices: ["10", "15", "20", "45"], answer: 2 }
+        - { id: fr-w01-d1-g12, difficulty: medium, type: match, prompt: "Match each block to its length.", pairs: [["Review", "10 min"], ["Lesson", "20 min"], ["Practice", "15 min"], ["Log", "5 min"]] }
+        - { id: fr-w01-d1-g13, difficulty: medium, type: mcq, prompt: "What do you record in your recording diary on Weeks 1, 8, 17, 26…?", choices: ["A song", "A 1-minute self-introduction", "Your Anki stats", "A dictation"], answer: 1 }
+        - { id: fr-w01-d1-g14, difficulty: medium, type: truefalse, prompt: "A mistake written in 'Mes erreurs' becomes part of your personal curriculum.", answer: true }
+        - { id: fr-w01-d1-g15, difficulty: medium, type: mcq, prompt: "Which free site gives interactive video exercises from A1 to B2?", choices: ["TV5MONDE Apprendre", "WordReference", "Forvo", "Le Conjugueur"], answer: 0 }
+        - { id: fr-w01-d1-g16, difficulty: hard, type: mcq, prompt: "Why does NCLC 7 in French matter for Canada?", choices: ["It's required for a tourist visa", "It adds up to 50 CRS points and opens French-speaker draws", "It replaces the English test", "It's needed to open a bank account"], answer: 1 }
+        - { id: fr-w01-d1-g17, difficulty: hard, type: mcq, prompt: "Roughly how many hours of study does Alliance Française estimate for B1?", choices: ["60–100", "160–200", "360–400", "800+"], answer: 2 }
+        - { id: fr-w01-d1-g18, difficulty: hard, type: multi, prompt: "Which are rules of this course? (Select all.)", choices: ["Speak from Day 1", "Anki every day", "Skip review when busy", "Learn words in sentences", "Gender is part of the word"], answers: [0, 1, 3, 4] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Greetings speed round"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fr-w01-d1-rf01, difficulty: easy, type: mcq, prompt: "Hello (daytime)", choices: ["Bonsoir", "Bonjour", "Salut", "Au revoir"], answer: 1 }
+          - { id: fr-w01-d1-rf02, difficulty: easy, type: mcq, prompt: "Good evening", choices: ["Bonsoir", "Bonne nuit", "Bonjour", "À demain"], answer: 0 }
+          - { id: fr-w01-d1-rf03, difficulty: easy, type: mcq, prompt: "Goodbye", choices: ["Merci", "Pardon", "Au revoir", "De rien"], answer: 2 }
+          - { id: fr-w01-d1-rf04, difficulty: easy, type: mcq, prompt: "Thank you", choices: ["S'il vous plaît", "Merci", "Excusez-moi", "Oui"], answer: 1 }
+          - { id: fr-w01-d1-rf05, difficulty: easy, type: mcq, prompt: "You're welcome", choices: ["De rien", "Merci", "À bientôt", "Salut"], answer: 0 }
+          - { id: fr-w01-d1-rf06, difficulty: easy, type: text, prompt: "Type: see you tomorrow", accept: ["À demain", "a demain"] }
+          - { id: fr-w01-d1-rf07, difficulty: easy, type: mcq, prompt: "Please (to a stranger)", choices: ["S'il te plaît", "S'il vous plaît", "Pardon", "Merci"], answer: 1 }
+          - { id: fr-w01-d1-rf08, difficulty: easy, type: truefalse, prompt: "'Salut' is fine with your new boss.", answer: false }
+          - { id: fr-w01-d1-rf09, difficulty: easy, type: mcq, prompt: "Sorry! (you bumped into someone)", choices: ["Pardon !", "Merci !", "Bonjour !", "Salut !"], answer: 0 }
+          - { id: fr-w01-d1-rf10, difficulty: easy, type: text, prompt: "Type: see you soon", accept: ["À bientôt", "a bientot"] }
+      - kind: brain-teaser
+        title: "Tu or vous?"
+        questions:
+          - { id: fr-w01-d1-bt01, difficulty: medium, type: mcq, prompt: "You meet your friend's 70-year-old grandmother. You say…", choices: ["Salut, ça va ?", "Bonjour Madame, comment allez-vous ?", "Coucou !", "Bonsoir, tu vas bien ?"], answer: 1 }
+          - { id: fr-w01-d1-bt02, difficulty: medium, type: mcq, prompt: "You address a group of three friends. Which 'you'?", choices: ["tu", "vous", "on", "il"], answer: 1, explain: "Vous is also the plural 'you'." }
+          - { id: fr-w01-d1-bt03, difficulty: medium, type: text, prompt: "It's 7 pm. You walk into a pharmacy. What's the first thing you say (with the pharmacist's title, a woman)?", accept: ["Bonsoir, Madame", "Bonsoir Madame"] }
+          - { id: fr-w01-d1-bt04, difficulty: hard, type: multi, prompt: "In which situations must you use 'vous'? (Select all.)", choices: ["A shopkeeper", "Your little cousin", "A police officer", "A job interviewer", "Your best friend"], answers: [0, 2, 3] }
+          - { id: fr-w01-d1-bt05, difficulty: hard, type: order, prompt: "Build the polite phrase: Excuse me, madam, please.", items: ["Excusez-moi,", "Madame,", "s'il vous plaît."] }
+
+  # ─────────────────────────── DAY 2 ───────────────────────────
+  - day: 2
+    gate:
+      title: "Checkpoint: greetings and politeness"
+      covers: "Week 1 · Day 1: greetings, tu/vous, politeness"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w01-d2-g01, difficulty: easy, type: mcq, prompt: "What do you say when entering a shop at 10 am?", choices: ["Bonsoir", "Bonjour", "Salut", "Au revoir"], answer: 1 }
+        - { id: fr-w01-d2-g02, difficulty: easy, type: mcq, prompt: "Merci means…", choices: ["Please", "Sorry", "Thank you", "Hello"], answer: 2 }
+        - { id: fr-w01-d2-g03, difficulty: easy, type: mcq, prompt: "Au revoir means…", choices: ["Goodbye", "Good evening", "See you soon", "Welcome"], answer: 0 }
+        - { id: fr-w01-d2-g04, difficulty: easy, type: truefalse, prompt: "'Bonsoir' is used in the evening.", answer: true }
+        - { id: fr-w01-d2-g05, difficulty: easy, type: mcq, prompt: "Which one is informal?", choices: ["Bonjour", "Salut", "Au revoir", "Merci"], answer: 1 }
+        - { id: fr-w01-d2-g06, difficulty: easy, type: text, prompt: "Type the French for 'yes'.", accept: ["oui"] }
+        - { id: fr-w01-d2-g07, difficulty: medium, type: mcq, prompt: "'Please' to a friend is…", choices: ["S'il vous plaît", "S'il te plaît", "Pardon", "De rien"], answer: 1 }
+        - { id: fr-w01-d2-g08, difficulty: medium, type: mcq, prompt: "Someone says 'Merci !'. You answer…", choices: ["Bonjour", "De rien", "Pardon", "Salut"], answer: 1 }
+        - { id: fr-w01-d2-g09, difficulty: medium, type: text, prompt: "Type 'see you tomorrow' in French.", accept: ["À demain"] }
+        - { id: fr-w01-d2-g10, difficulty: medium, type: truefalse, prompt: "In France it's rude not to say 'Bonjour' when you enter a shop.", answer: true }
+        - { id: fr-w01-d2-g11, difficulty: medium, type: match, prompt: "Match French to English.", pairs: [["Merci beaucoup", "Thank you very much"], ["Excusez-moi", "Excuse me"], ["À bientôt", "See you soon"], ["De rien", "You're welcome"]] }
+        - { id: fr-w01-d2-g12, difficulty: medium, type: mcq, prompt: "'Vous' is used for…", choices: ["Only friends", "Only children", "Strangers, elders, work, and more than one person", "Only family"], answer: 2 }
+        - { id: fr-w01-d2-g13, difficulty: medium, type: mcq, prompt: "You get someone's attention in a shop. You say…", choices: ["Excusez-moi, Madame !", "Salut !", "De rien !", "À demain !"], answer: 0 }
+        - { id: fr-w01-d2-g14, difficulty: medium, type: text, prompt: "Type 'good evening, sir' in French.", accept: ["Bonsoir, Monsieur", "Bonsoir Monsieur"] }
+        - { id: fr-w01-d2-g15, difficulty: medium, type: mcq, prompt: "'Madame' and 'Monsieur' after 'Bonjour' are…", choices: ["Rude", "Polite and common", "Only for letters", "Only in Canada"], answer: 1 }
+        - { id: fr-w01-d2-g16, difficulty: hard, type: multi, prompt: "Which are correct ways to leave? (Select all.)", choices: ["Au revoir", "À bientôt", "Bonjour", "À demain", "Merci beaucoup"], answers: [0, 1, 3] }
+        - { id: fr-w01-d2-g17, difficulty: hard, type: text, prompt: "Politely ask a stranger for help: 'Excuse me, sir, please.'", accept: ["Excusez-moi, Monsieur, s'il vous plaît", "Excusez-moi Monsieur s'il vous plaît", "Pardon, Monsieur, s'il vous plaît"] }
+        - { id: fr-w01-d2-g18, difficulty: hard, type: mcq, prompt: "Your colleague (same age, you're friends) leaves work. Best reply?", choices: ["Au revoir, Monsieur, à demain.", "Salut, à demain !", "Bonjour !", "Bonsoir, comment allez-vous ?"], answer: 1 }
+    quizzes:
+      - kind: rapid-fire
+        title: "Alphabet sprint"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fr-w01-d2-rf01, difficulty: easy, type: mcq, prompt: "The letter pronounced 'jé' is…", choices: ["J", "G", "I", "E"], answer: 1 }
+          - { id: fr-w01-d2-rf02, difficulty: easy, type: mcq, prompt: "The letter pronounced 'ji' is…", choices: ["G", "J", "I", "Y"], answer: 1 }
+          - { id: fr-w01-d2-rf03, difficulty: easy, type: mcq, prompt: "The letter E is pronounced…", choices: ["ee", "euh", "ay", "eh"], answer: 1 }
+          - { id: fr-w01-d2-rf04, difficulty: easy, type: mcq, prompt: "The letter I is pronounced…", choices: ["eye", "ee", "euh", "ay"], answer: 1 }
+          - { id: fr-w01-d2-rf05, difficulty: easy, type: mcq, prompt: "'i grec' is the letter…", choices: ["I", "G", "Y", "X"], answer: 2 }
+          - { id: fr-w01-d2-rf06, difficulty: easy, type: mcq, prompt: "'double vé' is…", choices: ["V", "W", "U", "B"], answer: 1 }
+          - { id: fr-w01-d2-rf07, difficulty: easy, type: mcq, prompt: "é is called…", choices: ["accent grave", "accent aigu", "circonflexe", "cédille"], answer: 1 }
+          - { id: fr-w01-d2-rf08, difficulty: easy, type: mcq, prompt: "ç makes the sound…", choices: ["k", "s", "ch", "g"], answer: 1 }
+          - { id: fr-w01-d2-rf09, difficulty: easy, type: mcq, prompt: "Which accent sounds like 'ay'?", choices: ["è", "é", "ê", "à"], answer: 1 }
+          - { id: fr-w01-d2-rf10, difficulty: easy, type: truefalse, prompt: "à and a are pronounced the same.", answer: true }
+      - kind: brain-teaser
+        title: "Spell it right"
+        questions:
+          - { id: fr-w01-d2-bt01, difficulty: medium, type: text, prompt: "Someone spells: 'jé - a - bé - o - en'. Type the name.", accept: ["Gabon"], explain: "G = jé, A, B = bé, O, N = en." }
+          - { id: fr-w01-d2-bt02, difficulty: medium, type: order, prompt: "Order the letters as spelled: 'ji - euh - u - dé - i' ", items: ["J", "E", "U", "D", "I"] }
+          - { id: fr-w01-d2-bt03, difficulty: medium, type: mcq, prompt: "How do you ask 'How is that spelled?'", choices: ["Comment ça va ?", "Comment ça s'écrit ?", "Comment tu t'appelles ?", "Qu'est-ce que c'est ?"], answer: 1 }
+          - { id: fr-w01-d2-bt04, difficulty: hard, type: mcq, prompt: "Why does 'où' have an accent but 'ou' doesn't?", choices: ["Different sound", "Different meaning: where vs or", "It's optional", "Plural form"], answer: 1 }
+          - { id: fr-w01-d2-bt05, difficulty: hard, type: match, prompt: "Match the accent to its job.", pairs: [["é", "sound 'ay'"], ["ç", "c sounds like s"], ["ë", "say the vowel separately"], ["ù", "only changes meaning"]] }
+
+  # ─────────────────────────── DAY 3 ───────────────────────────
+  - day: 3
+    gate:
+      title: "Checkpoint: alphabet and accents"
+      covers: "Week 1 · Day 2: the alphabet and accents"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w01-d3-g01, difficulty: easy, type: mcq, prompt: "How is the letter G said?", choices: ["ji", "jé", "gé", "gi"], answer: 1 }
+        - { id: fr-w01-d3-g02, difficulty: easy, type: mcq, prompt: "How is the letter J said?", choices: ["jé", "ji", "jay", "ja"], answer: 1 }
+        - { id: fr-w01-d3-g03, difficulty: easy, type: mcq, prompt: "How is the letter H said?", choices: ["ash", "aitch", "ha", "hé"], answer: 0 }
+        - { id: fr-w01-d3-g04, difficulty: easy, type: mcq, prompt: "How is Z said?", choices: ["zi", "zed", "zé", "zet"], answer: 1 }
+        - { id: fr-w01-d3-g05, difficulty: easy, type: truefalse, prompt: "The letter E sounds like 'euh'.", answer: true }
+        - { id: fr-w01-d3-g06, difficulty: easy, type: mcq, prompt: "Which letter is 'i grec'?", choices: ["I", "Y", "G", "J"], answer: 1 }
+        - { id: fr-w01-d3-g07, difficulty: medium, type: mcq, prompt: "What does the cédille in 'français' do?", choices: ["Makes c sound like s", "Makes c sound like k", "Makes the word plural", "Nothing"], answer: 0 }
+        - { id: fr-w01-d3-g08, difficulty: medium, type: mcq, prompt: "Which word has an accent aigu?", choices: ["mère", "café", "fête", "Noël"], answer: 1 }
+        - { id: fr-w01-d3-g09, difficulty: medium, type: mcq, prompt: "Which word has an accent grave?", choices: ["été", "très", "forêt", "ça"], answer: 1 }
+        - { id: fr-w01-d3-g10, difficulty: medium, type: mcq, prompt: "The circonflexe in 'forêt' often replaces a lost letter. Which?", choices: ["r", "s", "t", "n"], answer: 1 }
+        - { id: fr-w01-d3-g11, difficulty: medium, type: text, prompt: "Type the letter spelled 'ku'.", accept: ["Q", "q"] }
+        - { id: fr-w01-d3-g12, difficulty: medium, type: match, prompt: "Match the letter to its French name.", pairs: [["G", "jé"], ["J", "ji"], ["W", "double vé"], ["Y", "i grec"]] }
+        - { id: fr-w01-d3-g13, difficulty: medium, type: truefalse, prompt: "The accent in 'à' changes the sound of the a.", answer: false, explain: "à only distinguishes meaning (à = to/at, a = has)." }
+        - { id: fr-w01-d3-g14, difficulty: medium, type: mcq, prompt: "'Comment ça s'écrit ?' means…", choices: ["How are you?", "How is it spelled?", "What's your name?", "Where is it?"], answer: 1 }
+        - { id: fr-w01-d3-g15, difficulty: medium, type: order, prompt: "Order the letters spelled 'en - i - jé - é - er': ", items: ["N", "I", "G", "E", "R"] }
+        - { id: fr-w01-d3-g16, difficulty: hard, type: text, prompt: "Someone spells 'a - bé - u - ji - a'. Type the city.", accept: ["Abuja"] }
+        - { id: fr-w01-d3-g17, difficulty: hard, type: multi, prompt: "Which words contain an accent that changes the SOUND? (Select all.)", choices: ["café", "où", "très", "à", "fête"], answers: [0, 2, 4] }
+        - { id: fr-w01-d3-g18, difficulty: hard, type: text, prompt: "Spell 'KANO' using French letter names, separated by spaces.", accept: ["ka a en o", "ka - a - en - o", "ka-a-en-o"] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Être and numbers 0–10"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fr-w01-d3-rf01, difficulty: easy, type: mcq, prompt: "je ___", choices: ["es", "suis", "est", "êtes"], answer: 1 }
+          - { id: fr-w01-d3-rf02, difficulty: easy, type: mcq, prompt: "tu ___", choices: ["es", "suis", "est", "sont"], answer: 0 }
+          - { id: fr-w01-d3-rf03, difficulty: easy, type: mcq, prompt: "elle ___", choices: ["es", "suis", "est", "êtes"], answer: 2 }
+          - { id: fr-w01-d3-rf04, difficulty: easy, type: mcq, prompt: "vous ___", choices: ["est", "sommes", "êtes", "es"], answer: 2 }
+          - { id: fr-w01-d3-rf05, difficulty: easy, type: mcq, prompt: "7", choices: ["six", "sept", "huit", "cinq"], answer: 1 }
+          - { id: fr-w01-d3-rf06, difficulty: easy, type: mcq, prompt: "4", choices: ["trois", "cinq", "quatre", "quatorze"], answer: 2 }
+          - { id: fr-w01-d3-rf07, difficulty: easy, type: text, prompt: "Type 9 in French", accept: ["neuf"] }
+          - { id: fr-w01-d3-rf08, difficulty: easy, type: text, prompt: "Type 2 in French", accept: ["deux"] }
+          - { id: fr-w01-d3-rf09, difficulty: easy, type: mcq, prompt: "dix =", choices: ["6", "10", "2", "12"], answer: 1 }
+          - { id: fr-w01-d3-rf10, difficulty: easy, type: mcq, prompt: "Nice to meet you (said by a woman)", choices: ["Enchanté", "Enchantée", "Bonjour", "Merci"], answer: 1 }
+      - kind: brain-teaser
+        title: "Introduce yourself"
+        questions:
+          - { id: fr-w01-d3-bt01, difficulty: medium, type: order, prompt: "Build: My name is Chidi.", items: ["Je", "m'appelle", "Chidi."] }
+          - { id: fr-w01-d3-bt02, difficulty: medium, type: text, prompt: "Ask a stranger their name (formal).", accept: ["Comment vous appelez-vous ?", "Comment vous appelez-vous"] }
+          - { id: fr-w01-d3-bt03, difficulty: medium, type: mcq, prompt: "Find the mistake: 'Il es professeur.'", choices: ["Il → Elle", "es → est", "professeur → professeure", "No mistake"], answer: 1 }
+          - { id: fr-w01-d3-bt04, difficulty: hard, type: text, prompt: "Translate: You (formal) are Madame Diallo?", accept: ["Vous êtes Madame Diallo ?", "Vous êtes Madame Diallo"] }
+          - { id: fr-w01-d3-bt05, difficulty: hard, type: text, prompt: "What's quatre + cinq? Answer in French.", accept: ["neuf"] }
+
+  # ─────────────────────────── DAY 4 ───────────────────────────
+  - day: 4
+    gate:
+      title: "Checkpoint: être, names and 0–10"
+      covers: "Week 1 · Day 3: je m'appelle, être (singular + vous), numbers 0–10"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w01-d4-g01, difficulty: easy, type: mcq, prompt: "je ___ (être)", choices: ["suis", "es", "est", "êtes"], answer: 0 }
+        - { id: fr-w01-d4-g02, difficulty: easy, type: mcq, prompt: "il ___ (être)", choices: ["suis", "es", "est", "êtes"], answer: 2 }
+        - { id: fr-w01-d4-g03, difficulty: easy, type: mcq, prompt: "cinq =", choices: ["4", "5", "6", "15"], answer: 1 }
+        - { id: fr-w01-d4-g04, difficulty: easy, type: mcq, prompt: "huit =", choices: ["8", "7", "6", "3"], answer: 0 }
+        - { id: fr-w01-d4-g05, difficulty: easy, type: text, prompt: "Type 3 in French.", accept: ["trois"] }
+        - { id: fr-w01-d4-g06, difficulty: easy, type: mcq, prompt: "'Je m'appelle' means…", choices: ["I am called / my name is", "I call you", "I like", "I live"], answer: 0 }
+        - { id: fr-w01-d4-g07, difficulty: medium, type: text, prompt: "Complete: Vous ___ Madame Okeke ?", accept: ["êtes"] }
+        - { id: fr-w01-d4-g08, difficulty: medium, type: text, prompt: "Complete: Tu ___ à Lagos ?", accept: ["es"] }
+        - { id: fr-w01-d4-g09, difficulty: medium, type: mcq, prompt: "A man says 'Nice to meet you'. He writes…", choices: ["Enchanté", "Enchantée", "Enchantés", "Enchanter"], answer: 0 }
+        - { id: fr-w01-d4-g10, difficulty: medium, type: mcq, prompt: "'Comment tu t'appelles ?' is…", choices: ["Formal", "Informal", "Plural", "Past tense"], answer: 1 }
+        - { id: fr-w01-d4-g11, difficulty: medium, type: order, prompt: "Count up: put in order.", items: ["zéro", "un", "deux", "trois", "quatre"] }
+        - { id: fr-w01-d4-g12, difficulty: medium, type: match, prompt: "Match the numbers.", pairs: [["six", "6"], ["sept", "7"], ["neuf", "9"], ["dix", "10"]] }
+        - { id: fr-w01-d4-g13, difficulty: medium, type: text, prompt: "Type 'I am Nigerian' (a man).", accept: ["Je suis nigérian"] }
+        - { id: fr-w01-d4-g14, difficulty: medium, type: mcq, prompt: "Which is correct?", choices: ["Elle suis ingénieure.", "Elle est ingénieure.", "Elle es ingénieure.", "Elle êtes ingénieure."], answer: 1 }
+        - { id: fr-w01-d4-g15, difficulty: medium, type: truefalse, prompt: "'vous êtes' can be said to one person (formal).", answer: true }
+        - { id: fr-w01-d4-g16, difficulty: hard, type: text, prompt: "What's dix − trois? Answer in French.", accept: ["sept"] }
+        - { id: fr-w01-d4-g17, difficulty: hard, type: text, prompt: "Translate: My name is Ada. I am a student (female).", accept: ["Je m'appelle Ada. Je suis étudiante", "Je m'appelle Ada, je suis étudiante"] }
+        - { id: fr-w01-d4-g18, difficulty: hard, type: multi, prompt: "Which sentences are correct? (Select all.)", choices: ["Tu es fatigué ?", "Je es là.", "Vous êtes Monsieur Bello ?", "Il est à Kano.", "Elle suis ici."], answers: [0, 2, 3] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Silent or pronounced?"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fr-w01-d4-rf01, difficulty: easy, type: truefalse, prompt: "The t in 'petit' (alone) is pronounced.", answer: false }
+          - { id: fr-w01-d4-rf02, difficulty: easy, type: truefalse, prompt: "The c in 'avec' is pronounced.", answer: true }
+          - { id: fr-w01-d4-rf03, difficulty: easy, type: truefalse, prompt: "The final e in 'France' is pronounced.", answer: false }
+          - { id: fr-w01-d4-rf04, difficulty: easy, type: truefalse, prompt: "The r in 'bonjour' is pronounced.", answer: true }
+          - { id: fr-w01-d4-rf05, difficulty: easy, type: truefalse, prompt: "The s in 'vous' (alone) is pronounced.", answer: false }
+          - { id: fr-w01-d4-rf06, difficulty: easy, type: truefalse, prompt: "The f in 'neuf' is pronounced.", answer: true }
+          - { id: fr-w01-d4-rf07, difficulty: easy, type: truefalse, prompt: "'parler' ends with a pronounced r.", answer: false, explain: "-er verb endings sound like 'ay'." }
+          - { id: fr-w01-d4-rf08, difficulty: easy, type: truefalse, prompt: "The l in 'avril' is pronounced.", answer: true }
+          - { id: fr-w01-d4-rf09, difficulty: easy, type: truefalse, prompt: "The d in 'grand' (alone) is pronounced.", answer: false }
+          - { id: fr-w01-d4-rf10, difficulty: easy, type: mcq, prompt: "The consonants usually pronounced at the end spell…", choices: ["CaReFuL", "SToP", "PaRiS", "NeVeR"], answer: 0 }
+      - kind: brain-teaser
+        title: "Sound detective"
+        questions:
+          - { id: fr-w01-d4-bt01, difficulty: medium, type: mcq, prompt: "In 'vous êtes', what happens between the words?", choices: ["Nothing", "A liaison: the s sounds like z", "The ê is silent", "The v is silent"], answer: 1 }
+          - { id: fr-w01-d4-bt02, difficulty: medium, type: multi, prompt: "Which words have a nasal vowel? (Select all.)", choices: ["bonjour", "France", "merci", "vin", "salut"], answers: [0, 1, 3] }
+          - { id: fr-w01-d4-bt03, difficulty: medium, type: mcq, prompt: "'tu' vs 'tout': the difference is…", choices: ["No difference", "u (lips round, 'ee') vs ou ('oo')", "The t", "The length"], answer: 1 }
+          - { id: fr-w01-d4-bt04, difficulty: hard, type: multi, prompt: "Where is there a liaison? (Select all.)", choices: ["les amis", "vous êtes", "ils sont", "deux enfants", "un livre"], answers: [0, 1, 3] }
+          - { id: fr-w01-d4-bt05, difficulty: hard, type: text, prompt: "How many letters are silent in 'petits'? (Type a number)", accept: ["2", "deux"], explain: "t and s at the end are silent: 'p'tee'." }
+
+  # ─────────────────────────── DAY 5 ───────────────────────────
+  - day: 5
+    gate:
+      title: "Checkpoint: the sounds of French"
+      covers: "Week 1 · Day 4: silent letters, nasal vowels, u/ou, liaison, r"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w01-d5-g01, difficulty: easy, type: truefalse, prompt: "Final -e is usually silent (madame, table).", answer: true }
+        - { id: fr-w01-d5-g02, difficulty: easy, type: truefalse, prompt: "Most final consonants are pronounced.", answer: false }
+        - { id: fr-w01-d5-g03, difficulty: easy, type: mcq, prompt: "Which word ends with a pronounced consonant?", choices: ["petit", "grand", "avec", "vous"], answer: 2 }
+        - { id: fr-w01-d5-g04, difficulty: easy, type: mcq, prompt: "The French r is made…", choices: ["with the tongue tip", "at the back of the throat", "with the lips", "it's silent"], answer: 1 }
+        - { id: fr-w01-d5-g05, difficulty: easy, type: mcq, prompt: "'-er' at the end of 'parler' sounds like…", choices: ["air", "ay", "er", "silent"], answer: 1 }
+        - { id: fr-w01-d5-g06, difficulty: easy, type: truefalse, prompt: "'dessus' and 'dessous' sound the same.", answer: false }
+        - { id: fr-w01-d5-g07, difficulty: medium, type: mcq, prompt: "What is a liaison?", choices: ["A silent letter", "Pronouncing a silent final consonant before a vowel", "An accent", "A nasal vowel"], answer: 1 }
+        - { id: fr-w01-d5-g08, difficulty: medium, type: mcq, prompt: "'les amis' sounds like…", choices: ["lay amee", "lay-zamee", "less amis", "lez-a-miss"], answer: 1 }
+        - { id: fr-w01-d5-g09, difficulty: medium, type: multi, prompt: "Which contain a nasal vowel? (Select all.)", choices: ["non", "pain", "ami", "enfant", "merci"], answers: [0, 1, 3] }
+        - { id: fr-w01-d5-g10, difficulty: medium, type: mcq, prompt: "In a nasal vowel, the n or m…", choices: ["is pronounced strongly", "disappears into the nose sound", "becomes a d", "doubles"], answer: 1 }
+        - { id: fr-w01-d5-g11, difficulty: medium, type: mcq, prompt: "Which of these has NO liaison?", choices: ["vous avez", "deux enfants", "ils sont", "les amis"], answer: 2 }
+        - { id: fr-w01-d5-g12, difficulty: medium, type: match, prompt: "Match the word to what's silent.", pairs: [["salut", "t"], ["grand", "d"], ["France", "e"], ["vous", "s"]] }
+        - { id: fr-w01-d5-g13, difficulty: medium, type: truefalse, prompt: "In 'deux enfants', the x is pronounced like z.", answer: true }
+        - { id: fr-w01-d5-g14, difficulty: medium, type: mcq, prompt: "Which pair shows u vs ou?", choices: ["tu / tout", "vin / vent", "le / les", "bon / beau"], answer: 0 }
+        - { id: fr-w01-d5-g15, difficulty: medium, type: mcq, prompt: "Which letters are usually pronounced at the end of a word?", choices: ["C, R, F, L", "S, T, D, X", "P, B, G, Z", "none"], answer: 0 }
+        - { id: fr-w01-d5-g16, difficulty: hard, type: multi, prompt: "Which final letters are silent here? 'Les petits enfants parlent' (Select all.)", choices: ["s of les (before petits)", "s of petits (before enfants)", "s of enfants", "ent of parlent"], answers: [0, 2, 3], explain: "petits_enfants has a liaison: that s is heard as z. The s of les before a consonant, the s of enfants and verb endings -ent are silent." }
+        - { id: fr-w01-d5-g17, difficulty: hard, type: mcq, prompt: "Why is the c pronounced in 'avec' but the t silent in 'salut'?", choices: ["Random", "C is one of the CaReFuL consonants", "Because of the accent", "Because avec is plural"], answer: 1 }
+        - { id: fr-w01-d5-g18, difficulty: hard, type: text, prompt: "How many syllables do you pronounce in 'madame'? (number)", accept: ["2", "deux"] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Ça va? Quick replies"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fr-w01-d5-rf01, difficulty: easy, type: mcq, prompt: "Ça va ? — (fine, thanks)", choices: ["Ça va bien, merci.", "Au revoir.", "Je m'appelle Ada.", "De rien."], answer: 0 }
+          - { id: fr-w01-d5-rf02, difficulty: easy, type: mcq, prompt: "Comment allez-vous ? is…", choices: ["informal", "formal", "a goodbye", "a question about age"], answer: 1 }
+          - { id: fr-w01-d5-rf03, difficulty: easy, type: mcq, prompt: "'Pas mal' means…", choices: ["Very bad", "Not bad", "Bad", "Tired"], answer: 1 }
+          - { id: fr-w01-d5-rf04, difficulty: easy, type: mcq, prompt: "And you? (formal)", choices: ["Et toi ?", "Et vous ?", "Et lui ?", "Et moi ?"], answer: 1 }
+          - { id: fr-w01-d5-rf05, difficulty: easy, type: mcq, prompt: "Have a good day!", choices: ["Bonne soirée !", "Bonne journée !", "Bonne nuit !", "Bon appétit !"], answer: 1 }
+          - { id: fr-w01-d5-rf06, difficulty: easy, type: mcq, prompt: "Have a good evening!", choices: ["Bonne soirée !", "Bonjour !", "Bonne journée !", "Salut !"], answer: 0 }
+          - { id: fr-w01-d5-rf07, difficulty: easy, type: text, prompt: "Type: I'm fine, thank you (formal: Je vais…)", accept: ["Je vais bien, merci", "Je vais bien merci"] }
+          - { id: fr-w01-d5-rf08, difficulty: easy, type: mcq, prompt: "'Bof…' means roughly…", choices: ["Great!", "Meh / so-so", "Goodbye", "Thank you"], answer: 1 }
+          - { id: fr-w01-d5-rf09, difficulty: easy, type: truefalse, prompt: "'Et toi ?' is formal.", answer: false }
+          - { id: fr-w01-d5-rf10, difficulty: easy, type: mcq, prompt: "Très bien =", choices: ["Very well", "Not well", "Too bad", "So-so"], answer: 0 }
+      - kind: brain-teaser
+        title: "Build the conversation"
+        questions:
+          - { id: fr-w01-d5-bt01, difficulty: medium, type: order, prompt: "Put this formal dialogue in order.", items: ["Bonjour Madame, comment allez-vous ?", "Très bien, merci. Et vous ?", "Je vais bien, merci.", "Au revoir, Madame. Bonne journée !"] }
+          - { id: fr-w01-d5-bt02, difficulty: medium, type: order, prompt: "Put this informal chat in order.", items: ["Salut ! Ça va ?", "Ça va bien. Et toi ?", "Pas mal, merci.", "Salut, à demain !"] }
+          - { id: fr-w01-d5-bt03, difficulty: medium, type: mcq, prompt: "French phone numbers are usually said…", choices: ["digit by digit", "in pairs", "in threes", "backwards"], answer: 1 }
+          - { id: fr-w01-d5-bt04, difficulty: hard, type: mcq, prompt: "Find the register mistake: 'Bonjour Monsieur le directeur, ça va ? Et toi ?'", choices: ["Bonjour", "Monsieur", "Et toi ? (should be Et vous ?)", "No mistake"], answer: 2 }
+          - { id: fr-w01-d5-bt05, difficulty: hard, type: text, prompt: "You're leaving a shop at 7 pm. Say goodbye and wish the shopkeeper (a man) a good evening.", accept: ["Au revoir, Monsieur. Bonne soirée !", "Au revoir Monsieur, bonne soirée", "Au revoir, Monsieur, bonne soirée"] }
+
+  # ─────────────────────────── DAY 6 ───────────────────────────
+  - day: 6
+    gate:
+      title: "Checkpoint: small talk"
+      covers: "Week 1 · Day 5: ça va, comment allez-vous, leaving phrases, phone numbers"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w01-d6-g01, difficulty: easy, type: mcq, prompt: "Ça va ? is…", choices: ["formal", "informal", "a goodbye", "a thank you"], answer: 1 }
+        - { id: fr-w01-d6-g02, difficulty: easy, type: mcq, prompt: "Formal 'How are you?'", choices: ["Ça va ?", "Comment allez-vous ?", "Et toi ?", "Quoi de neuf ?"], answer: 1 }
+        - { id: fr-w01-d6-g03, difficulty: easy, type: mcq, prompt: "'Bonne journée' is said when…", choices: ["arriving", "leaving", "eating", "sleeping"], answer: 1 }
+        - { id: fr-w01-d6-g04, difficulty: easy, type: truefalse, prompt: "'Et vous ?' means 'And you?' (formal).", answer: true }
+        - { id: fr-w01-d6-g05, difficulty: easy, type: mcq, prompt: "Pas très bien =", choices: ["Very well", "Not very well", "Not bad", "Fine"], answer: 1 }
+        - { id: fr-w01-d6-g06, difficulty: easy, type: text, prompt: "Type 'very well' in French.", accept: ["Très bien"] }
+        - { id: fr-w01-d6-g07, difficulty: medium, type: text, prompt: "Answer formally: 'Comment allez-vous ?' → I'm well, thank you. And you?", accept: ["Je vais bien, merci. Et vous ?", "Je vais bien merci et vous", "Très bien, merci. Et vous ?"] }
+        - { id: fr-w01-d6-g08, difficulty: medium, type: mcq, prompt: "Choose the correct leaving phrase at 8 pm.", choices: ["Bonne journée !", "Bonne soirée !", "Bonjour !", "Bon matin !"], answer: 1 }
+        - { id: fr-w01-d6-g09, difficulty: medium, type: order, prompt: "Order: Hello Madam, how are you? (formal)", items: ["Bonjour", "Madame,", "comment", "allez-vous ?"] }
+        - { id: fr-w01-d6-g10, difficulty: medium, type: match, prompt: "Match the reply to its mood.", pairs: [["Très bien !", "great"], ["Pas mal.", "fairly good"], ["Bof…", "so-so"], ["Pas très bien.", "not good"]] }
+        - { id: fr-w01-d6-g11, difficulty: medium, type: mcq, prompt: "A French number '06 12 34 56 78' is read…", choices: ["zéro-six, douze, trente-quatre…", "six, un, deux, trois…", "sixty-one million…", "digit by digit only"], answer: 0 }
+        - { id: fr-w01-d6-g12, difficulty: medium, type: truefalse, prompt: "You can say 'Ça va ?' to a close friend.", answer: true }
+        - { id: fr-w01-d6-g13, difficulty: medium, type: mcq, prompt: "'Enchantée, Tunde. Moi, je suis Madame Leroy.' Who is speaking?", choices: ["A man", "A woman", "A child", "Tunde"], answer: 1, explain: "Enchantée with -e: a woman speaks." }
+        - { id: fr-w01-d6-g14, difficulty: medium, type: text, prompt: "Ask a friend how they are (2 words).", accept: ["Ça va ?", "Ça va", "Ca va"] }
+        - { id: fr-w01-d6-g15, difficulty: medium, type: mcq, prompt: "Which reply to 'Merci !' is right?", choices: ["De rien !", "Merci !", "Ça va !", "Enchanté !"], answer: 0 }
+        - { id: fr-w01-d6-g16, difficulty: hard, type: order, prompt: "Order the whole exchange.", items: ["Bonjour Madame, comment allez-vous ?", "Très bien, merci. Et vous ?", "Je vais bien, merci. Je m'appelle Tunde.", "Enchantée, Tunde.", "Au revoir, Madame. Bonne journée !"] }
+        - { id: fr-w01-d6-g17, difficulty: hard, type: mcq, prompt: "Which line mixes tu and vous wrongly?", choices: ["Salut, ça va ? Et toi ?", "Bonjour Monsieur, comment allez-vous ?", "Comment allez-vous ? Et toi ?", "Bonsoir Madame. Bonne soirée !"], answer: 2 }
+        - { id: fr-w01-d6-g18, difficulty: hard, type: text, prompt: "Translate: Good evening, sir. How are you? (formal)", accept: ["Bonsoir, Monsieur. Comment allez-vous ?", "Bonsoir Monsieur, comment allez-vous ?", "Bonsoir Monsieur comment allez-vous"] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Week 1 lightning round"
+        secondsPerQuestion: 7
+        questions:
+          - { id: fr-w01-d6-rf01, difficulty: easy, type: mcq, prompt: "tu ___ (être)", choices: ["es", "est", "suis", "êtes"], answer: 0 }
+          - { id: fr-w01-d6-rf02, difficulty: easy, type: mcq, prompt: "6", choices: ["six", "dix", "sept", "cinq"], answer: 0 }
+          - { id: fr-w01-d6-rf03, difficulty: easy, type: mcq, prompt: "Letter pronounced 'ji'", choices: ["G", "J", "I", "Y"], answer: 1 }
+          - { id: fr-w01-d6-rf04, difficulty: easy, type: mcq, prompt: "Good evening", choices: ["Bonsoir", "Bonjour", "Salut", "Bonne nuit"], answer: 0 }
+          - { id: fr-w01-d6-rf05, difficulty: easy, type: mcq, prompt: "You're welcome", choices: ["Merci", "De rien", "Pardon", "À bientôt"], answer: 1 }
+          - { id: fr-w01-d6-rf06, difficulty: easy, type: truefalse, prompt: "The s in 'vous_êtes' is heard as z.", answer: true }
+          - { id: fr-w01-d6-rf07, difficulty: easy, type: text, prompt: "Type 8 in French", accept: ["huit"] }
+          - { id: fr-w01-d6-rf08, difficulty: easy, type: mcq, prompt: "vous ___ (être)", choices: ["êtes", "est", "sommes", "es"], answer: 0 }
+          - { id: fr-w01-d6-rf09, difficulty: easy, type: mcq, prompt: "Formal 'you' for a stranger", choices: ["tu", "vous", "il", "on"], answer: 1 }
+          - { id: fr-w01-d6-rf10, difficulty: easy, type: mcq, prompt: "Have a good day", choices: ["Bonne journée", "Bonne soirée", "Bonsoir", "Bonne nuit"], answer: 0 }
+          - { id: fr-w01-d6-rf11, difficulty: easy, type: text, prompt: "Type 10 in French", accept: ["dix"] }
+          - { id: fr-w01-d6-rf12, difficulty: easy, type: mcq, prompt: "The accent in 'ça' is…", choices: ["cédille", "aigu", "grave", "tréma"], answer: 0 }
+      - kind: brain-teaser
+        title: "Week 1 challenge"
+        questions:
+          - { id: fr-w01-d6-bt01, difficulty: hard, type: text, prompt: "Write your full introduction in one line: Hello, my name is Kemi, I'm in Lagos. (Use: Bonjour, je m'appelle…, je suis à…)", accept: ["Bonjour, je m'appelle Kemi, je suis à Lagos", "Bonjour, je m'appelle Kemi. Je suis à Lagos", "Bonjour je m'appelle Kemi je suis à Lagos"] }
+          - { id: fr-w01-d6-bt02, difficulty: hard, type: mcq, prompt: "Which sentence has TWO mistakes? ", choices: ["Je suis à Abuja.", "Tu es étudiante ?", "Vous es Madame Eze ? Et toi ?", "Il est à Kano."], answer: 2, explain: "vous êtes (not es), and Et vous (not Et toi) with vous." }
+          - { id: fr-w01-d6-bt03, difficulty: hard, type: text, prompt: "Spell OYO with French letter names, separated by spaces.", accept: ["o i grec o", "o - i grec - o"] }
+          - { id: fr-w01-d6-bt04, difficulty: hard, type: text, prompt: "sept + trois − cinq = ? (answer in French)", accept: ["cinq"] }
+          - { id: fr-w01-d6-bt05, difficulty: hard, type: multi, prompt: "You're at a job interview. Which lines are appropriate? (Select all.)", choices: ["Bonjour Madame.", "Salut !", "Enchanté(e).", "Comment allez-vous ?", "Et toi ?"], answers: [0, 2, 3] }

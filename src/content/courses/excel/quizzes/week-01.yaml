@@ -1,0 +1,299 @@
+# Excel · Week 1 quizzes. Format and rules: src/content/QUIZZES.md
+week: 1
+days:
+
+  # ─────────────────────────── DAY 1 ───────────────────────────
+  - day: 1
+    gate:
+      title: "Checkpoint: how this course works"
+      covers: "Course overview: structure, rules, tools, datasets"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w01-d1-g01, difficulty: easy, type: mcq, prompt: "How long is this Excel course?", choices: ["6 weeks", "12 weeks", "24 weeks", "52 weeks"], answer: 2 }
+        - { id: xl-w01-d1-g02, difficulty: easy, type: mcq, prompt: "What's the name of the fictional company in every exercise?", choices: ["NaijaMart", "LagosShop", "ExcelCorp", "Jumia"], answer: 0 }
+        - { id: xl-w01-d1-g03, difficulty: easy, type: truefalse, prompt: "You should copy-paste formulas from the lessons to save time.", answer: false, explain: "Rule 1: type every formula." }
+        - { id: xl-w01-d1-g04, difficulty: easy, type: mcq, prompt: "What happens on Saturdays?", choices: ["Rest", "Project day", "Exam", "Nothing new"], answer: 1 }
+        - { id: xl-w01-d1-g05, difficulty: easy, type: mcq, prompt: "What is the free alternative to desktop Excel?", choices: ["Excel for the web", "Notepad", "Word", "PowerPoint"], answer: 0 }
+        - { id: xl-w01-d1-g06, difficulty: easy, type: truefalse, prompt: "Every exercise has an expected answer you should check against.", answer: true }
+        - { id: xl-w01-d1-g07, difficulty: medium, type: order, prompt: "Put the daily blocks in order.", items: ["Review", "Lesson", "Practice", "Mini-task", "Log"] }
+        - { id: xl-w01-d1-g08, difficulty: medium, type: mcq, prompt: "Which certification exams does the course prepare you for?", choices: ["MO-210 and MO-211", "AZ-900", "PL-300 only", "CompTIA A+"], answer: 0 }
+        - { id: xl-w01-d1-g09, difficulty: medium, type: mcq, prompt: "Which feature (Week 18) works only in Excel for Windows?", choices: ["PivotTables", "Power Pivot", "Charts", "XLOOKUP"], answer: 1 }
+        - { id: xl-w01-d1-g10, difficulty: medium, type: truefalse, prompt: "Raw data, calculations and reports should live on separate sheets.", answer: true }
+        - { id: xl-w01-d1-g11, difficulty: medium, type: mcq, prompt: "How many orders are in sales_2025.csv?", choices: ["240", "1,200", "2,400", "24,000"], answer: 2 }
+        - { id: xl-w01-d1-g12, difficulty: medium, type: match, prompt: "Match the dataset to its content.", pairs: [["sales_2025.csv", "every 2025 order"], ["products.csv", "product catalogue"], ["employees.csv", "staff list"], ["messy_customers.csv", "dirty data to clean"]] }
+        - { id: xl-w01-d1-g13, difficulty: medium, type: mcq, prompt: "What should you learn one of every day?", choices: ["A chart type", "A keyboard shortcut", "A macro", "A DAX measure"], answer: 1 }
+        - { id: xl-w01-d1-g14, difficulty: medium, type: truefalse, prompt: "XLOOKUP and dynamic arrays need Microsoft 365 or Excel 2021+.", answer: true }
+        - { id: xl-w01-d1-g15, difficulty: medium, type: mcq, prompt: "Roughly how many hours does the whole course take?", choices: ["~25", "~75", "~150", "~500"], answer: 2 }
+        - { id: xl-w01-d1-g16, difficulty: hard, type: text, prompt: "What were NaijaMart's 2025 net sales after discounts? (digits only, no ₦ or commas)", accept: ["834046700"] }
+        - { id: xl-w01-d1-g17, difficulty: hard, type: multi, prompt: "Which are rules of this course? (Select all.)", choices: ["Type every formula", "Keyboard first", "Check your numbers", "Merge cells everywhere", "Build a portfolio"], answers: [0, 1, 2, 4] }
+        - { id: xl-w01-d1-g18, difficulty: hard, type: mcq, prompt: "Why does the course use one dataset (NaijaMart) all the way through?", choices: ["It's cheaper", "So answers can be checked and skills build on the same data", "Excel can't open other files", "It's required by Microsoft"], answer: 1 }
+    quizzes:
+      - kind: rapid-fire
+        title: "Name that part"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w01-d1-rf01, difficulty: easy, type: mcq, prompt: "The file itself (.xlsx) is a…", choices: ["worksheet", "workbook", "cell", "range"], answer: 1 }
+          - { id: xl-w01-d1-rf02, difficulty: easy, type: mcq, prompt: "One box in the grid is a…", choices: ["cell", "range", "sheet", "ribbon"], answer: 0 }
+          - { id: xl-w01-d1-rf03, difficulty: easy, type: mcq, prompt: "A1:C10 is a…", choices: ["cell", "range", "formula", "sheet"], answer: 1 }
+          - { id: xl-w01-d1-rf04, difficulty: easy, type: mcq, prompt: "Shows the active cell's address (top left)", choices: ["Formula bar", "Name Box", "Status bar", "Ribbon"], answer: 1 }
+          - { id: xl-w01-d1-rf05, difficulty: easy, type: mcq, prompt: "Shows a cell's real content", choices: ["Formula bar", "Name Box", "Status bar", "Tab"], answer: 0 }
+          - { id: xl-w01-d1-rf06, difficulty: easy, type: mcq, prompt: "Shows Sum/Average/Count of a selection", choices: ["Status bar", "Ribbon", "Name Box", "Formula bar"], answer: 0 }
+          - { id: xl-w01-d1-rf07, difficulty: easy, type: text, prompt: "How many cells in A1:C4?", accept: ["12"] }
+          - { id: xl-w01-d1-rf08, difficulty: easy, type: mcq, prompt: "The last column of a sheet is…", choices: ["Z", "ZZ", "XFD", "AAA"], answer: 2 }
+          - { id: xl-w01-d1-rf09, difficulty: easy, type: truefalse, prompt: "A cell can display 10% but contain 0.1.", answer: true }
+          - { id: xl-w01-d1-rf10, difficulty: easy, type: mcq, prompt: "The menus at the top are called the…", choices: ["Ribbon", "Toolbar", "Taskbar", "Dock"], answer: 0 }
+      - kind: brain-teaser
+        title: "Think in ranges"
+        questions:
+          - { id: xl-w01-d1-bt01, difficulty: medium, type: text, prompt: "How many cells are in B2:E6?", accept: ["20"], explain: "4 columns (B–E) × 5 rows (2–6)." }
+          - { id: xl-w01-d1-bt02, difficulty: medium, type: text, prompt: "Write the range for the first 3 columns and first 5 rows.", accept: ["A1:C5"] }
+          - { id: xl-w01-d1-bt03, difficulty: medium, type: mcq, prompt: "You select 10, 25, 7, 40, 18. The status bar Average shows…", choices: ["18", "20", "25", "100"], answer: 1 }
+          - { id: xl-w01-d1-bt04, difficulty: hard, type: text, prompt: "The range D10:D1009 covers how many cells?", accept: ["1000"] }
+          - { id: xl-w01-d1-bt05, difficulty: hard, type: mcq, prompt: "How do you jump straight to cell K5000 without scrolling?", choices: ["Type K5000 in the Name Box and press Enter", "Press F2", "Ctrl+Z", "Double-click the tab"], answer: 0 }
+
+  # ─────────────────────────── DAY 2 ───────────────────────────
+  - day: 2
+    gate:
+      title: "Checkpoint: the Excel window"
+      covers: "Week 1 · Day 1: workbook, sheet, cell, range, Name Box, formula bar, status bar"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w01-d2-g01, difficulty: easy, type: mcq, prompt: "A workbook contains…", choices: ["only one cell", "one or more sheets", "only charts", "one row"], answer: 1 }
+        - { id: xl-w01-d2-g02, difficulty: easy, type: mcq, prompt: "Cell B3 is in…", choices: ["column 3, row B", "column B, row 3", "sheet B, page 3", "range B:3"], answer: 1 }
+        - { id: xl-w01-d2-g03, difficulty: easy, type: mcq, prompt: "Where do you type D20 to jump there?", choices: ["Status bar", "Name Box", "Ribbon", "Sheet tab"], answer: 1 }
+        - { id: xl-w01-d2-g04, difficulty: easy, type: truefalse, prompt: "Worksheet tabs are at the bottom of the window.", answer: true }
+        - { id: xl-w01-d2-g05, difficulty: easy, type: mcq, prompt: "Which part shows a cell's real content?", choices: ["Formula bar", "Name Box", "Status bar", "Title bar"], answer: 0 }
+        - { id: xl-w01-d2-g06, difficulty: easy, type: mcq, prompt: "How many rows does a sheet have?", choices: ["65,536", "1,048,576", "100,000", "Unlimited"], answer: 1 }
+        - { id: xl-w01-d2-g07, difficulty: medium, type: text, prompt: "How many cells in A1:D5?", accept: ["20"] }
+        - { id: xl-w01-d2-g08, difficulty: medium, type: mcq, prompt: "Where can you see the sum of selected cells without a formula?", choices: ["Status bar", "Formula bar", "Name Box", "File menu"], answer: 0 }
+        - { id: xl-w01-d2-g09, difficulty: medium, type: truefalse, prompt: "Formatting changes the value stored in a cell.", answer: false }
+        - { id: xl-w01-d2-g10, difficulty: medium, type: mcq, prompt: "Right-clicking the status bar lets you…", choices: ["Delete the sheet", "Show Min/Max and other stats", "Change fonts", "Print"], answer: 1 }
+        - { id: xl-w01-d2-g11, difficulty: medium, type: match, prompt: "Match the term.", pairs: [["Workbook", "the file"], ["Worksheet", "one grid"], ["Cell", "one box"], ["Range", "a block of cells"]] }
+        - { id: xl-w01-d2-g12, difficulty: medium, type: text, prompt: "Write the range from B2 to B10.", accept: ["B2:B10"] }
+        - { id: xl-w01-d2-g13, difficulty: medium, type: mcq, prompt: "Which tab holds most formatting buttons?", choices: ["Home", "Data", "Review", "View"], answer: 0 }
+        - { id: xl-w01-d2-g14, difficulty: medium, type: mcq, prompt: "The last column letter is…", choices: ["ZZZ", "XFD", "IV", "AZ"], answer: 1 }
+        - { id: xl-w01-d2-g15, difficulty: medium, type: truefalse, prompt: "A range can be a single row, e.g. A1:M1.", answer: true }
+        - { id: xl-w01-d2-g16, difficulty: hard, type: text, prompt: "How many cells are in C3:H12?", accept: ["60"] }
+        - { id: xl-w01-d2-g17, difficulty: hard, type: mcq, prompt: "A cell shows 15% and the formula bar shows 0.15. What is stored?", choices: ["15", "0.15", "15%", "Text"], answer: 1 }
+        - { id: xl-w01-d2-g18, difficulty: hard, type: text, prompt: "You select A1:A5 containing 2, 4, 6, 8, 10. What Average does the status bar show?", accept: ["6"] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Data entry reflexes"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w01-d2-rf01, difficulty: easy, type: mcq, prompt: "Edit a cell without erasing it", choices: ["F2", "F4", "Delete", "Esc"], answer: 0 }
+          - { id: xl-w01-d2-rf02, difficulty: easy, type: mcq, prompt: "Undo", choices: ["Ctrl+Y", "Ctrl+Z", "Ctrl+U", "Ctrl+X"], answer: 1 }
+          - { id: xl-w01-d2-rf03, difficulty: easy, type: mcq, prompt: "Redo", choices: ["Ctrl+Y", "Ctrl+Z", "Ctrl+R", "Ctrl+D"], answer: 0 }
+          - { id: xl-w01-d2-rf04, difficulty: easy, type: mcq, prompt: "Cancel what you're typing", choices: ["Enter", "Esc", "Tab", "F2"], answer: 1 }
+          - { id: xl-w01-d2-rf05, difficulty: easy, type: mcq, prompt: "Text aligns…", choices: ["left", "right", "centre", "top"], answer: 0 }
+          - { id: xl-w01-d2-rf06, difficulty: easy, type: mcq, prompt: "Numbers align…", choices: ["left", "right", "centre", "bottom"], answer: 1 }
+          - { id: xl-w01-d2-rf07, difficulty: easy, type: mcq, prompt: "Keep the 0 in 08031234567: type first…", choices: ["'", "=", "#", "0"], answer: 0 }
+          - { id: xl-w01-d2-rf08, difficulty: easy, type: mcq, prompt: "Enter then moves…", choices: ["down", "right", "up", "nowhere"], answer: 0 }
+          - { id: xl-w01-d2-rf09, difficulty: easy, type: mcq, prompt: "Tab moves…", choices: ["down", "right", "left", "to the next sheet"], answer: 1 }
+          - { id: xl-w01-d2-rf10, difficulty: easy, type: truefalse, prompt: "A left-aligned number is probably stored as text.", answer: true }
+      - kind: brain-teaser
+        title: "AutoFill logic"
+        questions:
+          - { id: xl-w01-d2-bt01, difficulty: medium, type: text, prompt: "You type 5 and 10 in two cells, select both and drag down 3 more cells. What's the last value?", accept: ["25"] }
+          - { id: xl-w01-d2-bt02, difficulty: medium, type: text, prompt: "You type 'Monday' and AutoFill down 3 cells. What's in the last one?", accept: ["Thursday"] }
+          - { id: xl-w01-d2-bt03, difficulty: medium, type: mcq, prompt: "You type 08031234567 without an apostrophe. Excel shows…", choices: ["08031234567", "8031234567", "#VALUE!", "0803"], answer: 1 }
+          - { id: xl-w01-d2-bt04, difficulty: hard, type: mcq, prompt: "A column of amounts is left-aligned and SUM gives 0. Most likely cause?", choices: ["The column is too narrow", "The numbers are stored as text", "The sheet is protected", "AutoSave is off"], answer: 1 }
+          - { id: xl-w01-d2-bt05, difficulty: hard, type: text, prompt: "You type Jan in A1 and AutoFill down to A12. What's in A12?", accept: ["Dec"] }
+
+  # ─────────────────────────── DAY 3 ───────────────────────────
+  - day: 3
+    gate:
+      title: "Checkpoint: entering and editing data"
+      covers: "Week 1 · Day 2: data types, editing keys, leading zeros, AutoFill, inserting rows"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w01-d3-g01, difficulty: easy, type: mcq, prompt: "Which key edits the active cell?", choices: ["F2", "F5", "F4", "F1"], answer: 0 }
+        - { id: xl-w01-d3-g02, difficulty: easy, type: mcq, prompt: "Ctrl+Z does…", choices: ["Redo", "Undo", "Zoom", "Save"], answer: 1 }
+        - { id: xl-w01-d3-g03, difficulty: easy, type: truefalse, prompt: "Dates are really numbers in Excel.", answer: true }
+        - { id: xl-w01-d3-g04, difficulty: easy, type: mcq, prompt: "The small square at the bottom-right of a selected cell is the…", choices: ["fill handle", "Name Box", "anchor", "cursor"], answer: 0 }
+        - { id: xl-w01-d3-g05, difficulty: easy, type: mcq, prompt: "Text is aligned…", choices: ["left by default", "right by default", "centre by default", "justified"], answer: 0 }
+        - { id: xl-w01-d3-g06, difficulty: easy, type: mcq, prompt: "Delete key on a selected cell…", choices: ["deletes the row", "clears the content", "deletes the sheet", "undoes"], answer: 1 }
+        - { id: xl-w01-d3-g07, difficulty: medium, type: mcq, prompt: "How do you keep the leading 0 of a phone number?", choices: ["Type it twice", "Start with an apostrophe", "Bold it", "Use Ctrl+0"], answer: 1 }
+        - { id: xl-w01-d3-g08, difficulty: medium, type: text, prompt: "You fill 1, 2 then drag to 10 cells. What's in the 10th?", accept: ["10"] }
+        - { id: xl-w01-d3-g09, difficulty: medium, type: mcq, prompt: "How do you insert a row above row 5?", choices: ["Right-click row 5 → Insert", "Ctrl+Z", "Delete row 4", "F2"], answer: 0 }
+        - { id: xl-w01-d3-g10, difficulty: medium, type: truefalse, prompt: "A number stored as text can break formulas.", answer: true }
+        - { id: xl-w01-d3-g11, difficulty: medium, type: match, prompt: "Match key to action.", pairs: [["F2", "edit cell"], ["Esc", "cancel typing"], ["Ctrl+Z", "undo"], ["Ctrl+Y", "redo"]] }
+        - { id: xl-w01-d3-g12, difficulty: medium, type: mcq, prompt: "AutoFill from 'March' down 2 cells gives…", choices: ["March, March", "April, May", "Mar, Apr", "1, 2"], answer: 1 }
+        - { id: xl-w01-d3-g13, difficulty: medium, type: mcq, prompt: "A date typed as '15/13/2025' stays left-aligned. Why?", choices: ["Excel read it as text (month 13 doesn't exist)", "It's too long", "It's a formula", "The cell is locked"], answer: 0 }
+        - { id: xl-w01-d3-g14, difficulty: medium, type: truefalse, prompt: "Tab after typing moves the cursor down.", answer: false }
+        - { id: xl-w01-d3-g15, difficulty: medium, type: mcq, prompt: "To create 5, 10, 15… you should…", choices: ["Type 5, drag", "Type 5 and 10, select both, drag", "Type 15, drag up", "Use F4"], answer: 1 }
+        - { id: xl-w01-d3-g16, difficulty: hard, type: text, prompt: "You type 100 and 90, select both and drag 4 more cells. What's the last value?", accept: ["50"] }
+        - { id: xl-w01-d3-g17, difficulty: hard, type: multi, prompt: "Which entries will Excel store as TEXT? (Select all.)", choices: ["'0803", "Lagos", "145000", "NM-00001", "2025-03-15"], answers: [0, 1, 3] }
+        - { id: xl-w01-d3-g18, difficulty: hard, type: mcq, prompt: "You typed 30 phone numbers without apostrophes. Fastest fix for new entries?", choices: ["Format the column as Text before typing", "Bold the column", "Sort the column", "Insert a row"], answer: 0 }
+    quizzes:
+      - kind: rapid-fire
+        title: "Shortcut sprint"
+        secondsPerQuestion: 7
+        questions:
+          - { id: xl-w01-d3-rf01, difficulty: easy, type: mcq, prompt: "Jump to the bottom of the data", choices: ["Ctrl+↓", "Ctrl+End", "Page Down", "Shift+↓"], answer: 0 }
+          - { id: xl-w01-d3-rf02, difficulty: easy, type: mcq, prompt: "Go to A1", choices: ["Ctrl+Home", "Home", "Ctrl+A", "F5"], answer: 0 }
+          - { id: xl-w01-d3-rf03, difficulty: easy, type: mcq, prompt: "Last used cell", choices: ["Ctrl+End", "End", "Ctrl+↓", "Alt+End"], answer: 0 }
+          - { id: xl-w01-d3-rf04, difficulty: easy, type: mcq, prompt: "Select to the bottom of the data", choices: ["Ctrl+Shift+↓", "Shift+↓", "Ctrl+↓", "Alt+↓"], answer: 0 }
+          - { id: xl-w01-d3-rf05, difficulty: easy, type: mcq, prompt: "Select the whole column", choices: ["Ctrl+Space", "Shift+Space", "Ctrl+A", "Alt+Space"], answer: 0 }
+          - { id: xl-w01-d3-rf06, difficulty: easy, type: mcq, prompt: "Select the whole row", choices: ["Shift+Space", "Ctrl+Space", "Ctrl+R", "Shift+R"], answer: 0 }
+          - { id: xl-w01-d3-rf07, difficulty: easy, type: mcq, prompt: "Select the whole data region", choices: ["Ctrl+A", "Ctrl+S", "Ctrl+D", "Ctrl+E"], answer: 0 }
+          - { id: xl-w01-d3-rf08, difficulty: easy, type: mcq, prompt: "Next sheet", choices: ["Ctrl+Page Down", "Ctrl+Tab", "Alt+→", "Page Down"], answer: 0 }
+          - { id: xl-w01-d3-rf09, difficulty: easy, type: text, prompt: "Last row number of sales_2025 (header in row 1)?", accept: ["2401"] }
+          - { id: xl-w01-d3-rf10, difficulty: easy, type: text, prompt: "Last column letter of sales_2025?", accept: ["M"] }
+      - kind: brain-teaser
+        title: "Explore the data"
+        questions:
+          - { id: xl-w01-d3-bt01, difficulty: medium, type: text, prompt: "Total units sold in sales_2025 (sum of column J)?", accept: ["22129", "22,129"] }
+          - { id: xl-w01-d3-bt02, difficulty: medium, type: text, prompt: "Which product is in row 101?", accept: ["Milo 1kg Refill"] }
+          - { id: xl-w01-d3-bt03, difficulty: medium, type: text, prompt: "Highest UnitPrice in the data? (digits only)", accept: ["649000", "649,000"] }
+          - { id: xl-w01-d3-bt04, difficulty: hard, type: text, prompt: "OrderID in the last row?", accept: ["NM-02400"] }
+          - { id: xl-w01-d3-bt05, difficulty: hard, type: order, prompt: "Order the keystrokes to select all of column J's data from J2: ", items: ["Click J2", "Hold Ctrl+Shift", "Press ↓"] }
+
+  # ─────────────────────────── DAY 4 ───────────────────────────
+  - day: 4
+    gate:
+      title: "Checkpoint: navigating big data"
+      covers: "Week 1 · Day 3: navigation and selection shortcuts, exploring sales_2025"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w01-d4-g01, difficulty: easy, type: mcq, prompt: "Ctrl+Home goes to…", choices: ["A1", "the last cell", "the next sheet", "row 1 of the column"], answer: 0 }
+        - { id: xl-w01-d4-g02, difficulty: easy, type: mcq, prompt: "Ctrl+↓ jumps to…", choices: ["the edge of the data below", "the next sheet", "row 1,048,576 always", "A1"], answer: 0 }
+        - { id: xl-w01-d4-g03, difficulty: easy, type: mcq, prompt: "Shift+Space selects…", choices: ["the row", "the column", "the sheet", "one cell"], answer: 0 }
+        - { id: xl-w01-d4-g04, difficulty: easy, type: mcq, prompt: "Ctrl+Space selects…", choices: ["the column", "the row", "everything", "nothing"], answer: 0 }
+        - { id: xl-w01-d4-g05, difficulty: easy, type: truefalse, prompt: "Ctrl+A selects the current data region.", answer: true }
+        - { id: xl-w01-d4-g06, difficulty: easy, type: mcq, prompt: "How many orders are in sales_2025?", choices: ["2,400", "2,401", "1,200", "22,129"], answer: 0 }
+        - { id: xl-w01-d4-g07, difficulty: medium, type: text, prompt: "Last row number of the data (with header)?", accept: ["2401"] }
+        - { id: xl-w01-d4-g08, difficulty: medium, type: text, prompt: "Header of the last column (M)?", accept: ["PaymentMethod"] }
+        - { id: xl-w01-d4-g09, difficulty: medium, type: mcq, prompt: "Lowest UnitPrice in the data?", choices: ["₦4,200", "₦7,500", "₦9,500", "₦12,500"], answer: 1 }
+        - { id: xl-w01-d4-g10, difficulty: medium, type: mcq, prompt: "Ctrl+Shift+↓ from J2…", choices: ["selects J2 to the last value", "moves to J2401", "deletes the column", "sorts"], answer: 0 }
+        - { id: xl-w01-d4-g11, difficulty: medium, type: match, prompt: "Match the shortcut.", pairs: [["Ctrl+Home", "go to A1"], ["Ctrl+End", "last used cell"], ["Ctrl+Page Down", "next sheet"], ["Ctrl+A", "select data"]] }
+        - { id: xl-w01-d4-g12, difficulty: medium, type: text, prompt: "Sum of Units (column J)? digits only", accept: ["22129"] }
+        - { id: xl-w01-d4-g13, difficulty: medium, type: truefalse, prompt: "On a Mac, most Ctrl shortcuts use Cmd instead.", answer: true }
+        - { id: xl-w01-d4-g14, difficulty: medium, type: mcq, prompt: "Most expensive product in the data?", choices: ["iPhone 13 (Refurbished)", "Dell Inspiron 15", "Hisense 55\" 4K TV", "Solar Generator 1kVA"], answer: 1 }
+        - { id: xl-w01-d4-g15, difficulty: medium, type: mcq, prompt: "How do you show Min and Max in the status bar?", choices: ["Right-click the status bar and tick them", "Press F9", "Home → Styles", "They're always shown"], answer: 0 }
+        - { id: xl-w01-d4-g16, difficulty: hard, type: text, prompt: "OrderID in row 1001?", accept: ["NM-01000"] }
+        - { id: xl-w01-d4-g17, difficulty: hard, type: order, prompt: "Keyboard only: from anywhere, select every OrderID below the header.", items: ["Ctrl+Home (go to A1)", "↓ (move to A2)", "Ctrl+Shift+↓ (select to the last order)"] }
+        - { id: xl-w01-d4-g18, difficulty: hard, type: mcq, prompt: "Ctrl+↓ stops at row 57 in a column of 2,400 values. Why?", choices: ["Row 58 is empty (a gap in the data)", "Excel limit", "The sheet is protected", "Row 57 is bold"], answer: 0 }
+    quizzes:
+      - kind: rapid-fire
+        title: "File formats"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w01-d4-rf01, difficulty: easy, type: mcq, prompt: "Normal Excel workbook", choices: [".xlsx", ".csv", ".txt", ".xlsm"], answer: 0 }
+          - { id: xl-w01-d4-rf02, difficulty: easy, type: mcq, prompt: "Workbook with macros", choices: [".xlsm", ".xlsx", ".csv", ".pdf"], answer: 0 }
+          - { id: xl-w01-d4-rf03, difficulty: easy, type: mcq, prompt: "Values only, one sheet, no formatting", choices: [".csv", ".xlsx", ".xlsm", ".docx"], answer: 0 }
+          - { id: xl-w01-d4-rf04, difficulty: easy, type: mcq, prompt: "New sheet shortcut", choices: ["Shift+F11", "F11", "Ctrl+N", "Alt+F1"], answer: 0 }
+          - { id: xl-w01-d4-rf05, difficulty: easy, type: mcq, prompt: "Rename a sheet", choices: ["Double-click its tab", "F2 on a cell", "Ctrl+R", "Delete"], answer: 0 }
+          - { id: xl-w01-d4-rf06, difficulty: easy, type: truefalse, prompt: "Saving as .csv keeps your formulas.", answer: false }
+          - { id: xl-w01-d4-rf07, difficulty: easy, type: truefalse, prompt: "Saving as .csv keeps multiple sheets.", answer: false }
+          - { id: xl-w01-d4-rf08, difficulty: easy, type: mcq, prompt: "Best file name", choices: ["NaijaMart_Sales_2025.xlsx", "Book1 final FINAL (2).xlsx", "new.xlsx", "asdf.xlsx"], answer: 0 }
+          - { id: xl-w01-d4-rf09, difficulty: easy, type: mcq, prompt: "Copy a sheet", choices: ["Right-click tab → Move or Copy", "Ctrl+C on a cell", "Shift+F11", "Delete tab"], answer: 0 }
+          - { id: xl-w01-d4-rf10, difficulty: easy, type: mcq, prompt: "AutoSave works when the file is on…", choices: ["OneDrive/SharePoint", "a USB stick", "email", "the desktop only"], answer: 0 }
+      - kind: brain-teaser
+        title: "Don't lose your work"
+        questions:
+          - { id: xl-w01-d4-bt01, difficulty: medium, type: mcq, prompt: "You open a CSV, add a chart and a second sheet, and save as CSV. What survives?", choices: ["Everything", "Only the values of the active sheet", "Only the chart", "Nothing"], answer: 1 }
+          - { id: xl-w01-d4-bt02, difficulty: medium, type: order, prompt: "Order the first steps with any CSV you receive.", items: ["Open the CSV", "File → Save As", "Choose Excel Workbook (.xlsx)", "Start working"] }
+          - { id: xl-w01-d4-bt03, difficulty: medium, type: mcq, prompt: "Why keep a Data_backup copy of the Data sheet?", choices: ["To recover if you damage the data", "Excel requires it", "To make the file faster", "For printing"], answer: 0 }
+          - { id: xl-w01-d4-bt04, difficulty: hard, type: mcq, prompt: "A colleague needs to import your data into accounting software that only reads plain text. You send…", choices: [".csv", ".xlsm", ".xlsx with charts", "a screenshot"], answer: 0 }
+          - { id: xl-w01-d4-bt05, difficulty: hard, type: multi, prompt: "Which are lost when saving as .csv? (Select all.)", choices: ["Formulas (only results kept)", "Formatting", "Extra sheets", "Cell values of the active sheet", "Charts"], answers: [0, 1, 2, 4] }
+
+  # ─────────────────────────── DAY 5 ───────────────────────────
+  - day: 5
+    gate:
+      title: "Checkpoint: sheets, saving and file types"
+      covers: "Week 1 · Day 4: managing sheets, .xlsx vs .xlsm vs .csv, naming, AutoSave"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w01-d5-g01, difficulty: easy, type: mcq, prompt: "Shift+F11 inserts…", choices: ["a new sheet", "a new row", "a chart", "a comment"], answer: 0 }
+        - { id: xl-w01-d5-g02, difficulty: easy, type: mcq, prompt: "Files with macros must be saved as…", choices: [".xlsm", ".xlsx", ".csv", ".txt"], answer: 0 }
+        - { id: xl-w01-d5-g03, difficulty: easy, type: truefalse, prompt: "A .csv file can hold several sheets.", answer: false }
+        - { id: xl-w01-d5-g04, difficulty: easy, type: mcq, prompt: "How do you colour a sheet tab?", choices: ["Right-click tab → Tab Color", "Home → Fill", "Ctrl+1", "View → Color"], answer: 0 }
+        - { id: xl-w01-d5-g05, difficulty: easy, type: mcq, prompt: "Your working files should be…", choices: [".xlsx", ".csv", ".txt", ".pdf"], answer: 0 }
+        - { id: xl-w01-d5-g06, difficulty: easy, type: truefalse, prompt: "Double-clicking a sheet tab lets you rename it.", answer: true }
+        - { id: xl-w01-d5-g07, difficulty: medium, type: mcq, prompt: "What should you do first with a CSV before working on it?", choices: ["Save it as .xlsx", "Print it", "Email it", "Delete row 1"], answer: 0 }
+        - { id: xl-w01-d5-g08, difficulty: medium, type: mcq, prompt: "Move or Copy with 'Create a copy' ticked…", choices: ["duplicates the sheet", "moves it only", "deletes it", "renames it"], answer: 0 }
+        - { id: xl-w01-d5-g09, difficulty: medium, type: match, prompt: "Match format to use.", pairs: [[".xlsx", "normal working file"], [".xlsm", "file with macros"], [".csv", "raw data exchange"], [".pdf", "sending a printed report"]] }
+        - { id: xl-w01-d5-g10, difficulty: medium, type: truefalse, prompt: "AutoSave needs the file stored on OneDrive or SharePoint.", answer: true }
+        - { id: xl-w01-d5-g11, difficulty: medium, type: mcq, prompt: "Which name follows good practice?", choices: ["Payroll_March_2025.xlsx", "payroll new new.xlsx", "Book3.xlsx", "final(1).xlsx"], answer: 0 }
+        - { id: xl-w01-d5-g12, difficulty: medium, type: mcq, prompt: "Ctrl+Page Up…", choices: ["goes to the previous sheet", "scrolls up one page", "goes to A1", "undoes"], answer: 0 }
+        - { id: xl-w01-d5-g13, difficulty: medium, type: truefalse, prompt: "Saving a workbook as .xlsx removes its macros.", answer: true }
+        - { id: xl-w01-d5-g14, difficulty: medium, type: mcq, prompt: "How do you make Summary the first sheet?", choices: ["Drag its tab to the left", "Rename it '1'", "Press Ctrl+1", "Sort the sheets"], answer: 0 }
+        - { id: xl-w01-d5-g15, difficulty: medium, type: mcq, prompt: "A CSV shows only values. What happens to a formula when saved as CSV?", choices: ["Its result is kept, the formula is lost", "It's kept", "It's turned into a macro", "It shows #REF!"], answer: 0 }
+        - { id: xl-w01-d5-g16, difficulty: hard, type: multi, prompt: "Your workbook has 3 sheets, charts and a macro. Which formats lose something? (Select all.)", choices: [".csv", ".xlsx", ".xlsm", ".txt"], answers: [0, 1, 3] }
+        - { id: xl-w01-d5-g17, difficulty: hard, type: order, prompt: "Create a safe backup copy of the Data sheet.", items: ["Right-click the Data tab", "Move or Copy…", "Tick Create a copy", "Rename it Data_backup"] }
+        - { id: xl-w01-d5-g18, difficulty: hard, type: mcq, prompt: "You edited a CSV for 2 hours, added formatting and saved with Ctrl+S (still .csv). Next day the formatting is gone. What should you have done?", choices: ["Save As .xlsx before working", "Use bigger fonts", "Turn off AutoSave", "Save twice"], answer: 0 }
+    quizzes:
+      - kind: rapid-fire
+        title: "Copy & paste reflexes"
+        secondsPerQuestion: 7
+        questions:
+          - { id: xl-w01-d5-rf01, difficulty: easy, type: mcq, prompt: "Copy", choices: ["Ctrl+C", "Ctrl+V", "Ctrl+X", "Ctrl+D"], answer: 0 }
+          - { id: xl-w01-d5-rf02, difficulty: easy, type: mcq, prompt: "Cut", choices: ["Ctrl+X", "Ctrl+C", "Ctrl+Z", "Ctrl+K"], answer: 0 }
+          - { id: xl-w01-d5-rf03, difficulty: easy, type: mcq, prompt: "Paste", choices: ["Ctrl+V", "Ctrl+P", "Ctrl+B", "Ctrl+A"], answer: 0 }
+          - { id: xl-w01-d5-rf04, difficulty: easy, type: mcq, prompt: "Fill down", choices: ["Ctrl+D", "Ctrl+R", "Ctrl+F", "Ctrl+L"], answer: 0 }
+          - { id: xl-w01-d5-rf05, difficulty: easy, type: mcq, prompt: "Fill right", choices: ["Ctrl+R", "Ctrl+D", "Ctrl+E", "Ctrl+T"], answer: 0 }
+          - { id: xl-w01-d5-rf06, difficulty: easy, type: mcq, prompt: "Today's date", choices: ["Ctrl+;", "Ctrl+:", "Ctrl+D", "Ctrl+T"], answer: 0 }
+          - { id: xl-w01-d5-rf07, difficulty: easy, type: mcq, prompt: "Paste Special (Windows)", choices: ["Ctrl+Alt+V", "Ctrl+Shift+V", "Alt+V", "Ctrl+V twice"], answer: 0 }
+          - { id: xl-w01-d5-rf08, difficulty: easy, type: mcq, prompt: "Paste results, not formulas", choices: ["Paste Special → Values", "Paste Special → Formats", "Transpose", "Cut"], answer: 0 }
+          - { id: xl-w01-d5-rf09, difficulty: easy, type: mcq, prompt: "Turn a row into a column", choices: ["Transpose", "Values", "Formats", "Fill down"], answer: 0 }
+          - { id: xl-w01-d5-rf10, difficulty: easy, type: truefalse, prompt: "Double-clicking the fill handle fills down as far as the neighbouring column goes.", answer: true }
+      - kind: brain-teaser
+        title: "Paste Special puzzles"
+        questions:
+          - { id: xl-w01-d5-bt01, difficulty: medium, type: mcq, prompt: "You copy a cell with =J2*K2 and paste Values. What's pasted?", choices: ["The formula", "The result number", "Nothing", "The format only"], answer: 1 }
+          - { id: xl-w01-d5-bt02, difficulty: medium, type: mcq, prompt: "Headers A1:M1 pasted with Transpose into A8 end up in…", choices: ["A8:M8", "A8:A20", "A8 only", "M8:A8"], answer: 1, explain: "13 headers become 13 rows: A8 to A20." }
+          - { id: xl-w01-d5-bt03, difficulty: medium, type: mcq, prompt: "You cut C2:C10 and paste in F2. What happens to C2:C10?", choices: ["It stays", "It becomes empty", "It shows #REF!", "It's copied twice"], answer: 1 }
+          - { id: xl-w01-d5-bt04, difficulty: hard, type: text, prompt: "You type 'Checked' in F1, select F1:F10 and press Ctrl+D. How many cells say Checked?", accept: ["10"] }
+          - { id: xl-w01-d5-bt05, difficulty: hard, type: mcq, prompt: "Fastest way to copy a formula from N2 down to row 2401 next to a full column?", choices: ["Double-click N2's fill handle", "Drag for 2,400 rows", "Type it 2,400 times", "Ctrl+R"], answer: 0 }
+
+  # ─────────────────────────── DAY 6 ───────────────────────────
+  - day: 6
+    gate:
+      title: "Checkpoint: copy, paste and Paste Special"
+      covers: "Week 1 · Day 5: copy/cut/paste, fill down/right, Paste Special, today's date"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w01-d6-g01, difficulty: easy, type: mcq, prompt: "Ctrl+D does…", choices: ["Fill down", "Delete", "Duplicate sheet", "Date"], answer: 0 }
+        - { id: xl-w01-d6-g02, difficulty: easy, type: mcq, prompt: "Ctrl+X does…", choices: ["Cut", "Close", "Copy", "Exit"], answer: 0 }
+        - { id: xl-w01-d6-g03, difficulty: easy, type: mcq, prompt: "Ctrl+; inserts…", choices: ["today's date", "a semicolon", "a formula", "a row"], answer: 0 }
+        - { id: xl-w01-d6-g04, difficulty: easy, type: truefalse, prompt: "Paste Special → Values pastes results, not formulas.", answer: true }
+        - { id: xl-w01-d6-g05, difficulty: easy, type: mcq, prompt: "Ctrl+R does…", choices: ["Fill right", "Refresh", "Redo", "Rename"], answer: 0 }
+        - { id: xl-w01-d6-g06, difficulty: easy, type: mcq, prompt: "Transpose turns…", choices: ["rows into columns", "text into numbers", "formulas into values", "colours into fonts"], answer: 0 }
+        - { id: xl-w01-d6-g07, difficulty: medium, type: mcq, prompt: "Cut vs copy: after pasting, the original is…", choices: ["removed (cut) / kept (copy)", "kept (cut) / removed (copy)", "always removed", "always kept"], answer: 0 }
+        - { id: xl-w01-d6-g08, difficulty: medium, type: mcq, prompt: "Paste Special shortcut on Windows?", choices: ["Ctrl+Alt+V", "Ctrl+Shift+P", "Alt+P", "F7"], answer: 0 }
+        - { id: xl-w01-d6-g09, difficulty: medium, type: match, prompt: "Match the Paste Special option.", pairs: [["Values", "results only"], ["Formats", "look only"], ["Transpose", "rows ↔ columns"], ["Column widths", "widths only"]] }
+        - { id: xl-w01-d6-g10, difficulty: medium, type: truefalse, prompt: "Double-clicking the fill handle fills down to the end of the adjacent data.", answer: true }
+        - { id: xl-w01-d6-g11, difficulty: medium, type: text, prompt: "5 headers in A1:E1 are transposed into G1. Which cell holds the last header?", accept: ["G5"] }
+        - { id: xl-w01-d6-g12, difficulty: medium, type: mcq, prompt: "You need to send numbers without the formulas behind them. You…", choices: ["Copy → Paste Special → Values", "Cut", "Transpose", "Ctrl+D"], answer: 0 }
+        - { id: xl-w01-d6-g13, difficulty: medium, type: mcq, prompt: "Ctrl+D with F1:F5 selected copies…", choices: ["F1 into F2:F5", "F5 into F1:F4", "nothing", "F1 to G1"], answer: 0 }
+        - { id: xl-w01-d6-g14, difficulty: medium, type: truefalse, prompt: "Ctrl+; puts a date that updates every day.", answer: false, explain: "It types today's date as a fixed value. =TODAY() updates." }
+        - { id: xl-w01-d6-g15, difficulty: medium, type: mcq, prompt: "Copy formatting only, fast:", choices: ["Paste Special → Formats (or Format Painter)", "Ctrl+X", "Transpose", "Values"], answer: 0 }
+        - { id: xl-w01-d6-g16, difficulty: hard, type: mcq, prompt: "You paste Values of a NetSales column over itself. What changes?", choices: ["Formulas become fixed numbers; they no longer update", "Nothing", "Numbers become text", "The column is deleted"], answer: 0 }
+        - { id: xl-w01-d6-g17, difficulty: hard, type: order, prompt: "Turn a column of formulas into fixed values in place.", items: ["Select the column", "Ctrl+C", "Ctrl+Alt+V", "Choose Values", "OK"] }
+        - { id: xl-w01-d6-g18, difficulty: hard, type: text, prompt: "13 headers (A1:M1) transposed into A8. Last cell used? ", accept: ["A20"] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Week 1 lightning round"
+        secondsPerQuestion: 7
+        questions:
+          - { id: xl-w01-d6-rf01, difficulty: easy, type: mcq, prompt: "Edit cell", choices: ["F2", "F4", "F5", "F9"], answer: 0 }
+          - { id: xl-w01-d6-rf02, difficulty: easy, type: mcq, prompt: "Go to A1", choices: ["Ctrl+Home", "Ctrl+End", "Home", "Ctrl+A"], answer: 0 }
+          - { id: xl-w01-d6-rf03, difficulty: easy, type: mcq, prompt: "New sheet", choices: ["Shift+F11", "Ctrl+N", "F11", "Ctrl+T"], answer: 0 }
+          - { id: xl-w01-d6-rf04, difficulty: easy, type: mcq, prompt: "Fill down", choices: ["Ctrl+D", "Ctrl+R", "Ctrl+F", "Ctrl+E"], answer: 0 }
+          - { id: xl-w01-d6-rf05, difficulty: easy, type: mcq, prompt: "Macro file", choices: [".xlsm", ".xlsx", ".csv", ".xls"], answer: 0 }
+          - { id: xl-w01-d6-rf06, difficulty: easy, type: mcq, prompt: "Undo", choices: ["Ctrl+Z", "Ctrl+Y", "Ctrl+U", "Esc"], answer: 0 }
+          - { id: xl-w01-d6-rf07, difficulty: easy, type: text, prompt: "Cells in A1:B5?", accept: ["10"] }
+          - { id: xl-w01-d6-rf08, difficulty: easy, type: mcq, prompt: "Select whole column", choices: ["Ctrl+Space", "Shift+Space", "Ctrl+A", "Alt+C"], answer: 0 }
+          - { id: xl-w01-d6-rf09, difficulty: easy, type: mcq, prompt: "Keep phone's leading 0", choices: ["'", "=", "+", "#"], answer: 0 }
+          - { id: xl-w01-d6-rf10, difficulty: easy, type: mcq, prompt: "Paste results only", choices: ["Values", "Formats", "Transpose", "All"], answer: 0 }
+          - { id: xl-w01-d6-rf11, difficulty: easy, type: truefalse, prompt: "Numbers align right by default.", answer: true }
+          - { id: xl-w01-d6-rf12, difficulty: easy, type: mcq, prompt: "Last used cell", choices: ["Ctrl+End", "End", "Ctrl+↓", "F5"], answer: 0 }
+      - kind: brain-teaser
+        title: "Week 1 challenge"
+        questions:
+          - { id: xl-w01-d6-bt01, difficulty: hard, type: text, prompt: "In sales_2025, what's the date of the first order? (YYYY-MM-DD)", accept: ["2025-01-01"] }
+          - { id: xl-w01-d6-bt02, difficulty: hard, type: order, prompt: "Order a safe workflow for a new CSV report.", items: ["Open the CSV", "Save As .xlsx", "Copy the data sheet as a backup", "Add your analysis sheets", "Save with a clear file name"] }
+          - { id: xl-w01-d6-bt03, difficulty: hard, type: mcq, prompt: "A colleague's SUM of a phone-number column returns 0. The phones have leading zeros. Why?", choices: ["They're stored as text (as they should be)", "SUM is broken", "The file is .xlsx", "Phones are too long"], answer: 0 }
+          - { id: xl-w01-d6-bt04, difficulty: hard, type: multi, prompt: "Which facts about sales_2025.csv are true? (Select all.)", choices: ["2,400 orders", "13 columns (A–M)", "Last OrderID NM-02400", "Units total 2,400", "Highest UnitPrice ₦649,000"], answers: [0, 1, 2, 4] }
+          - { id: xl-w01-d6-bt05, difficulty: hard, type: text, prompt: "You select UnitPrice for 3 orders: 14,500 / 129,000 / 7,500. What Sum does the status bar show? (digits only)", accept: ["151000"] }
