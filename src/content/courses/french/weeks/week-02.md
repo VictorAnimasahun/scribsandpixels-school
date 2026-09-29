@@ -77,6 +77,11 @@ Make the adjective agree:
 
 **Check:** 1. nigériane 2. françaises 3. ghanéen 4. canadiennes 5. belge
 
+**Sandbox:** make nationalities agree with who is speaking.
+
+::sandbox fr-w02-intro
+
+
 ### Speak & Listen (10 min)
 - Language Transfer tracks 13–14.
 - Say each pair from the table aloud and feel the ending change: *français / française*.
@@ -110,6 +115,11 @@ Fill in *en, au, aux* or *à*:
 1. Je travaille ___ Canada.  2. Elle habite ___ Dakar, ___ Sénégal.  3. Ils sont ___ France.  4. Nous sommes ___ États-Unis.  5. Tu es ___ Montréal ?
 
 **Check:** 1. au 2. à, au 3. en 4. aux 5. à
+
+**Sandbox:** switch to the "Where" tab and practise en / au / aux / à.
+
+::sandbox fr-w02-intro
+
 
 ### Speak & Listen (10 min)
 - Language Transfer tracks 15–16.

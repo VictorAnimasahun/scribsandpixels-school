@@ -1,0 +1,19 @@
+id: web-main
+kind: web
+title: "Web playground"
+description: "HTML, CSS and JavaScript with a live preview: your first web pages start here (Week 3 onwards)."
+main: true
+html: |
+  <h1>Hello, Lagos!</h1>
+  <p>Edit me, then press the button.</p>
+  <button id="hello">Click me</button>
+css: |
+  body { font-family: system-ui, sans-serif; padding: 16px; }
+  h1 { color: #164f3b; }
+  button { padding: 8px 14px; }
+js: |
+  const button = document.querySelector('#hello');
+  button.addEventListener('click', () => {
+    button.textContent = 'Hello!';
+    console.log('Button clicked');
+  });

@@ -5,13 +5,30 @@ import { catalog, findCourse, type CatalogCourse } from '../content/catalog.ts'
 import { DEFAULT_QUIZ_RULES } from '../content/quizzes.ts'
 import { drawAttempt, gateDaysForWeek, gateStatus, seededRandom } from '../domain/quizGate.ts'
 import { QuizPlayer } from './QuizPlayer.tsx'
+import { SandboxHost } from './sandboxes/SandboxHost.tsx'
+import { sandboxes, SANDBOX_EMBED } from '../content/sandboxes.ts'
 import { href, useRoute } from './router.ts'
 import { dayKey, resetProgress, update, useStore, type State } from './store.ts'
 import './viewer.css'
 
-function Markdown({ text }: { text: string }) {
+function Html({ text }: { text: string }) {
   const html = useMemo(() => (marked.parse(text, { async: false }) as string).replace(/<a href=/g, '<a target="_blank" rel="noreferrer" href='), [text])
   return <div className="md" dangerouslySetInnerHTML={{ __html: html }} />
+}
+
+/** Markdown where a line `::sandbox <id>` becomes a live sandbox. */
+function Markdown({ text }: { text: string }) {
+  const parts: ({ md: string } | { sandbox: string })[] = []
+  let buffer: string[] = []
+  for (const line of text.split('\n')) {
+    const m = line.match(SANDBOX_EMBED)
+    if (m) {
+      parts.push({ md: buffer.join('\n') }, { sandbox: m[1] })
+      buffer = []
+    } else buffer.push(line)
+  }
+  parts.push({ md: buffer.join('\n') })
+  return <>{parts.map((p, i) => ('sandbox' in p ? <SandboxHost key={i} id={p.sandbox} compact /> : p.md.trim() ? <Html key={i} text={p.md} /> : null))}</>
 }
 
 // ─── Gate lock ────────────────────────────────────────────────────────────
@@ -135,6 +152,20 @@ function CoursePage({ course }: { course: CatalogCourse }) {
         <>
           <button onClick={() => setShowOverview(!showOverview)}>{showOverview ? 'Hide' : 'Show'} course overview</button>
           {showOverview && <Markdown text={course.overview.replace(/^# .+\n/, '')} />}
+        </>
+      )}
+      {sandboxes.some((x) => x.course === course.slug && x.main) && (
+        <>
+          <h3>🧪 Sandboxes</h3>
+          <div className="cards">
+            {sandboxes.filter((x) => x.course === course.slug && x.main).map((x) => (
+              <a key={x.id} className="card" href={href.sandbox(course.slug, x.id)}>
+                <strong>{x.title}</strong>
+                <span>{x.description}</span>
+              </a>
+            ))}
+          </div>
+          <h3>Weeks</h3>
         </>
       )}
       <div className="list">
@@ -312,6 +343,12 @@ export function Viewer() {
   if (route.page === 'home' || !course) page = <Home />
   else if (route.page === 'course') page = <CoursePage course={course} />
   else if (route.page === 'week') page = <WeekPage course={course} week={route.week} />
+  else if (route.page === 'sandbox') page = (
+    <>
+      <p className="crumbs"><a href={href.home()}>Courses</a> / <a href={href.course(course.slug)}>{course.title}</a></p>
+      <SandboxHost id={route.id} />
+    </>
+  )
   else page = <DayPage key={`${route.week}-${route.day}`} course={course} week={route.week} day={route.day} />
 
   return (

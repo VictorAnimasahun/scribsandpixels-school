@@ -12,7 +12,9 @@
     "sync:functions": "node scripts/sync-functions.ts"
   },
   "dependencies": {
+    "@formulajs/formulajs": "^4.6.1",
     "@supabase/supabase-js": "^2.117.1",
+    "fast-formula-parser": "^1.0.19",
     "marked": "^18.0.14",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",

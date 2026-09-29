@@ -196,6 +196,11 @@ def convert_to_naira(usd_amount):
 ```
 Call it 3 times with different amounts. Print each result.
 
+**Code it here:** hidden tests call your functions.
+
+::sandbox py-w02-d3-functions
+
+
 ### Log (10 min)
 
 ## Day 4 — Thursday
@@ -403,6 +408,11 @@ while True:
     else:
         print("Invalid choice. Try again.")
 ```
+
+**Build it here:** file reading and writing works in the browser too.
+
+::sandbox py-w02-d6-contacts
+
 
 ### FreeCodeCamp (30 min)
 Complete steps 11–30 of the Cat Photo App:

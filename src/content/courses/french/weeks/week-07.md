@@ -79,6 +79,11 @@ Choose the right article:
 
 **Check:** 1. du 2. le 3. de la 4. de 5. de l' 6. des
 
+**Sandbox:** mix du / de la / des with foods and drinks. The builder explains every mistake.
+
+::sandbox fr-w07-market
+
+
 ### Speak & Listen (10 min)
 - Language Transfer tracks 57–58.
 - Say what you eat and drink at each meal: *Au petit-déjeuner, je mange du pain et je bois du thé.*
@@ -119,6 +124,11 @@ Translate:
 1. a kilo of rice  2. a lot of friends  3. a bottle of water  4. too much sugar  5. How much is it? It's 20 euros.
 
 **Check:** 1. un kilo de riz 2. beaucoup d'amis 3. une bouteille d'eau 4. trop de sucre 5. C'est combien ? Ça fait vingt euros.
+
+**Sandbox: au marché.** Combine quantities and foods, hear them, then do the challenges.
+
+::sandbox fr-w07-market
+
 
 ### Speak & Listen (10 min)
 - Language Transfer tracks 59–60.

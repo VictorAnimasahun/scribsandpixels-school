@@ -15,6 +15,13 @@
 - [ ] Excel Weeks 2–24
 - [ ] Fullstack + ML Weeks 1–2 (and later weeks as they're written)
 
+## Sandboxes (a slice at a time)
+- [x] Engines: French phrase builder, Excel spreadsheet, Python, web playground
+- [x] French W1, W2, W7 + main lab · Excel W2, W6 + playground · Fullstack W1–2 tasks + Python/web playgrounds
+- [ ] More French lesson sets (add each to `fr-main` include)
+- [ ] More Excel task sheets (every formula week)
+- [ ] Web-sandbox auto-checks (tasks are instructions only for now)
+
 ## Content
 - [ ] Fullstack + ML: write Weeks 3+ (only Weeks 1–2 exist)
 - [ ] French: Year 2 (B2 / NCLC 7) weeks, if wanted

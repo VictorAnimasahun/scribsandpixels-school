@@ -1,0 +1,11 @@
+id: xl-main
+kind: sheet
+title: "Excel playground"
+description: "A live spreadsheet loaded with 30 NaijaMart orders. Type any formula: SUM, IF, SUMIFS, XLOOKUP, TEXTJOIN, PMT… Click a cell to see its formula."
+main: true
+dataset:
+  file: sales_2025
+  rows: 30
+  columns: [OrderDate, Region, Product, Category, Units, UnitPrice, DiscountPct, PaymentMethod]
+cols: 14
+rows: 40

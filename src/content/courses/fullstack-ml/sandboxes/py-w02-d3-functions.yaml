@@ -1,0 +1,33 @@
+# Week 2 · Day 3 practice + mini-task
+id: py-w02-d3-functions
+kind: python
+title: "Your first functions"
+description: "Write multiply, is_adult and convert_to_naira. Hidden tests call your functions."
+starter: |
+  def multiply(a, b):
+      # return the product
+      pass
+
+  def is_adult(age):
+      # True if 18 or over
+      pass
+
+  def convert_to_naira(usd_amount):
+      # 1 USD = 1550 Naira
+      pass
+
+  print(multiply(3, 4))
+tasks:
+  - prompt: "multiply(3, 4) returns 12 and multiply(0, 9) returns 0."
+    tests: |
+      assert multiply(3, 4) == 12, "multiply(3, 4) should be 12"
+      assert multiply(0, 9) == 0, "multiply(0, 9) should be 0"
+  - prompt: "is_adult(18) is True, is_adult(17) is False."
+    tests: |
+      assert is_adult(18) is True, "is_adult(18) should be True"
+      assert is_adult(17) is False, "is_adult(17) should be False"
+  - prompt: "convert_to_naira(10) returns 15500 (return, not print)."
+    tests: |
+      assert convert_to_naira(10) == 15500, "convert_to_naira(10) should return 15500"
+      assert convert_to_naira(0) == 0
+    hint: "Use return usd_amount * 1550"

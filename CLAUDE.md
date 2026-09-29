@@ -19,6 +19,8 @@ French and Excel have `overview.md` (human-readable framework) but no `course.ts
 
 **Daily quizzes (all courses):** every study day has **rapid-fire** (timed) + **brain teaser**; a **gate** appears only **1–2 times a week on random days** (pops up before the lesson, tests the previous day, blocks the dashboard until 70% is passed, 60-min cooldown on failure, retries draw different questions of the same topics and difficulty from a bank). Every day still has a gate bank, since any day can be picked. Rules and format: `src/content/QUIZZES.md`; engine: `src/domain/quizGate.ts`; banks: `courses/<slug>/quizzes/week-NN.yaml`, validated by `npm test`. Samples done: French Week 1, Excel Week 1 (~200 questions each); all other weeks still need banks, written a slice at a time (the user doesn't want mass generation).
 
+**Sandboxes (all courses):** subject-native playgrounds, as a course's main resource (`main: true`, listed on the course page) and/or embedded in lessons with a `::sandbox <id>` line. Kinds: `phrases` (French builder with agreement checks, speech), `sheet` (spreadsheet engine in `src/domain/sheet.ts`), `python` (Pyodide in a worker), `web` (HTML/CSS/JS preview). Rules and format: `src/content/SANDBOXES.md`. Done so far: French W1, W2, W7 + main lab; Excel W2, W6 + playground; Fullstack W1 D3/D5/D6, W2 D3/D6 + Python and web playgrounds.
+
 More courses will follow; nothing may assume a single course. To add one: a new folder under `src/content/courses/`, register it in `src/content/index.ts` and `scripts/sync-functions.ts`.
 
 ## Architecture

@@ -1,0 +1,33 @@
+# Week 6 · Conditional maths on 40 NaijaMart orders.
+id: xl-w06-sumifs
+kind: sheet
+title: "Regional summary"
+description: "40 orders with NetSales already calculated. Answer the manager's questions with COUNTIFS, SUMIFS and friends."
+dataset:
+  file: sales_2025
+  rows: 40
+  columns: [Region, Category, Units, UnitPrice, DiscountPct, PaymentMethod]
+cells:
+  G1: NetSales
+  I1: Question
+  J1: Answer
+  I2: Orders from Lagos
+  I3: Net sales in Lagos
+  I4: Net sales in Abuja
+  I5: Lagos Phones orders
+  I6: Net sales paid by POS
+  I7: Transfer orders ≥ ₦100,000
+  I8: Biggest single order in Ibadan
+cols: 10
+rows: 42
+formulaFill:
+  # NetSales for every data row (the sandbox fills G2:G41)
+  G: "=C{r}*D{r}*(1-E{r}/100)"
+tasks:
+  - { prompt: "J2: how many orders came from Lagos?", cell: J2, expect: 18, formula: true, hint: "=COUNTIF(A2:A41,\"Lagos\")" }
+  - { prompt: "J3: net sales in Lagos.", cell: J3, expect: 4003450, formula: true, hint: "=SUMIFS(G2:G41,A2:A41,\"Lagos\")" }
+  - { prompt: "J4: net sales in Abuja.", cell: J4, expect: 1679850, formula: true, hint: "=SUMIFS(G2:G41,A2:A41,\"Abuja\")" }
+  - { prompt: "J5: Lagos orders in the Phones category (two conditions).", cell: J5, expect: 2, formula: true, hint: "=COUNTIFS(A2:A41,\"Lagos\",B2:B41,\"Phones\")" }
+  - { prompt: "J6: net sales paid by POS.", cell: J6, expect: 3332250, formula: true, hint: "=SUMIFS(G2:G41,F2:F41,\"POS\")" }
+  - { prompt: "J7: Transfer orders with net sales of at least ₦100,000.", cell: J7, expect: 10, formula: true, hint: "=COUNTIFS(F2:F41,\"Transfer\",G2:G41,\">=100000\")" }
+  - { prompt: "J8: the biggest single order (net) in Ibadan.", cell: J8, expect: 4334400, formula: true, hint: "=MAXIFS(G2:G41,A2:A41,\"Ibadan\")" }

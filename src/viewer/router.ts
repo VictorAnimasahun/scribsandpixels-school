@@ -5,6 +5,7 @@ export type Route =
   | { page: 'course'; slug: string }
   | { page: 'week'; slug: string; week: number }
   | { page: 'day'; slug: string; week: number; day: number }
+  | { page: 'sandbox'; slug: string; id: string }
   | { page: 'mockup' }
 
 export function parseRoute(hash: string): Route {
@@ -14,6 +15,7 @@ export function parseRoute(hash: string): Route {
   const slug = parts[1]
   const week = Number(parts[3])
   const day = Number(parts[5])
+  if (parts[2] === 's' && parts[3]) return { page: 'sandbox', slug, id: parts[3] }
   if (parts[2] === 'w' && week && parts[4] === 'd' && day) return { page: 'day', slug, week, day }
   if (parts[2] === 'w' && week) return { page: 'week', slug, week }
   return { page: 'course', slug }
@@ -24,6 +26,7 @@ export const href = {
   course: (slug: string) => `#/c/${slug}`,
   week: (slug: string, week: number) => `#/c/${slug}/w/${week}`,
   day: (slug: string, week: number, day: number) => `#/c/${slug}/w/${week}/d/${day}`,
+  sandbox: (slug: string, id: string) => `#/c/${slug}/s/${id}`,
 }
 
 export function useRoute(): Route {

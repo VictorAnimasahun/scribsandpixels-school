@@ -1,0 +1,12 @@
+id: py-main
+kind: python
+title: "Python playground"
+description: "Real Python 3, running in your browser. Write, run, break things, fix them. Lines in the Input box are fed to input()."
+main: true
+starter: |
+  # Your Python playground. Press Run (or Ctrl+Enter).
+  name = input("What is your name? ")
+  print("Hello,", name)
+
+  for i in range(1, 4):
+      print(i, "x 7 =", i * 7)

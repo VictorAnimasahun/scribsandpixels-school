@@ -1,0 +1,100 @@
+# Week 7 · À table ! Build market and meal phrases; hear them; say them.
+id: fr-w07-market
+kind: phrases
+title: "Au marché"
+description: "Mix quantities, foods and articles into real French. Wrong agreement? The builder tells you why. Tap 🔊 to hear it, 🎤 to say it."
+voice: fr-FR
+patterns:
+  - id: quantity
+    label: "Asking for a quantity"
+    slots:
+      - { id: start, fixed: "Je voudrais" }
+      - id: qty
+        label: "Quantity"
+        options:
+          - { text: "un kilo de", en: "a kilo of", needs: { food: [solid] }, why: "You buy solid food by the kilo, not drinks." }
+          - { text: "deux kilos de", en: "two kilos of", needs: { food: [solid] }, why: "You buy solid food by the kilo, not drinks." }
+          - { text: "une bouteille de", en: "a bottle of", needs: { food: [liquid] }, why: "A bottle holds a liquid." }
+          - { text: "un litre de", en: "a litre of", needs: { food: [liquid] }, why: "Litres are for liquids." }
+          - { text: "un paquet de", en: "a packet of", needs: { food: [packet] }, why: "That doesn't come in a packet." }
+          - { text: "une douzaine de", en: "a dozen", needs: { food: [countable] }, why: "A dozen = 12 items you can count, like eggs." }
+          - { text: "un peu de", en: "a little" }
+          - { text: "beaucoup de", en: "a lot of" }
+      - id: food
+        label: "Food"
+        options:
+          - { text: "riz", en: "rice", tags: [solid, packet] }
+          - { text: "tomates", en: "tomatoes", tags: [solid, countable] }
+          - { text: "oignons", en: "onions", tags: [solid, countable] }
+          - { text: "œufs", en: "eggs", tags: [countable] }
+          - { text: "piment", en: "chilli", tags: [solid] }
+          - { text: "pâtes", en: "pasta", tags: [solid, packet] }
+          - { text: "sucre", en: "sugar", tags: [solid, packet] }
+          - { text: "biscuits", en: "biscuits", tags: [packet, countable] }
+          - { text: "eau", en: "water", tags: [liquid] }
+          - { text: "lait", en: "milk", tags: [liquid] }
+          - { text: "huile", en: "oil", tags: [liquid] }
+          - { text: "jus d'orange", en: "orange juice", tags: [liquid] }
+      - { id: end, fixed: ", s'il vous plaît." }
+
+  - id: partitive
+    label: "Eating & drinking (du / de la / des)"
+    slots:
+      - id: verb
+        label: "Action"
+        options:
+          - { text: "Je mange", en: "I eat", needs: { food: [food] }, why: "You eat food, you drink drinks: try « Je bois »." }
+          - { text: "Je bois", en: "I drink", needs: { food: [drink] }, why: "You can't drink that! Try « Je mange »." }
+          - { text: "J'achète", en: "I buy" }
+          - { text: "Je prends", en: "I'll have" }
+          - { text: "Je ne mange pas", en: "I don't eat", tags: [negative], needs: { art: [neg], food: [food] }, why: "After a negative, du/de la/des become « de » (and you don't « eat » drinks)." }
+      - id: art
+        label: "Article"
+        options:
+          - { text: "du", en: "some (m.)", tags: [pos], needs: { food: [m, sg] }, why: "« du » only goes with a masculine singular noun." }
+          - { text: "de la", en: "some (f.)", tags: [pos], needs: { food: [f, sg] }, why: "« de la » only goes with a feminine singular noun." }
+          - { text: "des", en: "some (pl.)", tags: [pos], needs: { food: [pl] }, why: "« des » only goes with a plural noun." }
+          - { text: "de", en: "any (after a negative)", tags: [neg], needs: { verb: [negative] }, why: "Plain « de » is only for negatives: « je ne mange pas de… »." }
+      - id: food
+        label: "Food or drink"
+        options:
+          - { text: "riz", en: "rice", tags: [m, sg, food] }
+          - { text: "pain", en: "bread", tags: [m, sg, food] }
+          - { text: "poulet", en: "chicken", tags: [m, sg, food] }
+          - { text: "poisson", en: "fish", tags: [m, sg, food] }
+          - { text: "viande", en: "meat", tags: [f, sg, food] }
+          - { text: "salade", en: "salad", tags: [f, sg, food] }
+          - { text: "tomates", en: "tomatoes", tags: [f, pl, food] }
+          - { text: "œufs", en: "eggs", tags: [m, pl, food] }
+          - { text: "haricots", en: "beans", tags: [m, pl, food] }
+          - { text: "lait", en: "milk", tags: [m, sg, drink] }
+          - { text: "jus", en: "juice", tags: [m, sg, drink] }
+          - { text: "thé", en: "tea", tags: [m, sg, drink] }
+          - { text: "eau", en: "water", tags: [f, sg, drink] }
+          - { text: "bière", en: "beer", tags: [f, sg, drink] }
+      - { id: end, fixed: "." }
+
+  - id: haggle
+    label: "Market talk"
+    slots:
+      - id: line
+        label: "Phrase"
+        options:
+          - { text: "Bonjour Madame, c'est combien ?", en: "Hello madam, how much is it?" }
+          - { text: "Ça coûte combien, le kilo ?", en: "How much is a kilo?" }
+          - { text: "C'est trop cher !", en: "That's too expensive!" }
+          - { text: "Vous faites un prix ?", en: "Can you do me a price?" }
+          - { text: "D'accord, je prends deux kilos.", en: "OK, I'll take two kilos." }
+          - { text: "Je vous dois combien ?", en: "How much do I owe you?" }
+          - { text: "Voilà, merci. Bonne journée !", en: "There you go, thanks. Have a good day!" }
+
+challenges:
+  - { prompt: "I would like a kilo of tomatoes, please.", pattern: quantity, answer: { qty: "un kilo de", food: "tomates" } }
+  - { prompt: "I would like a bottle of water, please.", pattern: quantity, answer: { qty: "une bouteille de", food: "eau" } }
+  - { prompt: "I would like a dozen eggs, please.", pattern: quantity, answer: { qty: "une douzaine de", food: "œufs" } }
+  - { prompt: "I would like a packet of pasta, please.", pattern: quantity, answer: { qty: "un paquet de", food: "pâtes" } }
+  - { prompt: "I drink milk.", pattern: partitive, answer: { verb: "Je bois", art: "du", food: "lait" } }
+  - { prompt: "I eat meat.", pattern: partitive, answer: { verb: "Je mange", art: "de la", food: "viande" } }
+  - { prompt: "I'm buying eggs.", pattern: partitive, answer: { verb: "J'achète", art: "des", food: "œufs" } }
+  - { prompt: "I don't eat fish.", pattern: partitive, answer: { verb: "Je ne mange pas", art: "de", food: "poisson" } }
+  - { prompt: "I'll have water.", pattern: partitive, answer: { verb: "Je prends", art: "de la", food: "eau" } }

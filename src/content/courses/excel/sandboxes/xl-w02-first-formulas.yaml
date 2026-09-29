@@ -1,0 +1,24 @@
+# Week 2 · First formulas on the first 10 NaijaMart orders.
+id: xl-w02-first-formulas
+kind: sheet
+title: "First formulas"
+description: "The first 10 orders of 2025. Build GrossSales and NetSales, then the totals. Each task turns green when your cell is right."
+dataset:
+  file: sales_2025
+  rows: 10
+  columns: [Region, Product, Units, UnitPrice, DiscountPct]
+cells:
+  F1: GrossSales
+  G1: NetSales
+  E12: Total
+  E13: Average
+cols: 8
+rows: 14
+tasks:
+  - { prompt: "F2: gross sales for order 1 (Units × UnitPrice).", cell: F2, expect: 14500, formula: true, hint: "=C2*D2" }
+  - { prompt: "G2: net sales after discount. DiscountPct is a whole number (5 = 5%).", cell: G2, expect: 14500, formula: true, hint: "=F2*(1-E2/100)" }
+  - { prompt: "Fill F and G down to row 11. G4 (Enugu, 5% off) should be…", cell: G4, expect: 35625, formula: true, hint: "Copy G2 down: the references move with it.", solutionFill: { F: "=C{r}*D{r}", G: "=F{r}*(1-E{r}/100)" } }
+  - { prompt: "F12: total gross sales (SUM).", cell: F12, expect: 1336500, formula: true, hint: "=SUM(F2:F11)" }
+  - { prompt: "G12: total net sales.", cell: G12, expect: 1327275, formula: true, hint: "=SUM(G2:G11)" }
+  - { prompt: "G13: average net sale (AVERAGE).", cell: G13, expect: 132727.5, formula: true, hint: "=AVERAGE(G2:G11)" }
+  - { prompt: "C12: total units sold.", cell: C12, expect: 41, formula: true, hint: "=SUM(C2:C11)" }

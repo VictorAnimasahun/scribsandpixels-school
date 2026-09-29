@@ -1,0 +1,28 @@
+# Week 1 · Day 6 weekly project
+id: py-w01-d6-quiz
+kind: python
+title: "Nigeria quiz game"
+description: "Finish the quiz: 3 questions, a score counter, and the final score out of 3."
+starter: |
+  name = input("Welcome! What is your name? ")
+  print("Hello,", name, "! Let's play a quiz.")
+
+  score = 0
+
+  # Question 1
+  answer1 = input("What is the capital of Nigeria? ").lower()
+  if answer1 == "abuja":
+      print("Correct!")
+      score = score + 1
+  else:
+      print("Wrong! The answer is Abuja.")
+
+  # Question 2 — write this yourself
+
+  # Question 3 — write this yourself
+
+  print("Quiz over!", name, "you scored", score, "out of 3")
+tasks:
+  - prompt: "Plays through with answers and prints the score line (inputs: Ada, abuja, then two more answers)."
+    stdin: ["Ada", "abuja", "x", "x"]
+    expectOutput: ["Hello, Ada", "Correct!", "out of 3"]

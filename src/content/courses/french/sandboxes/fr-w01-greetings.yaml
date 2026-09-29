@@ -1,0 +1,77 @@
+# Week 1 · Bonjour ! Greet the right person the right way (tu vs vous).
+id: fr-w01-greetings
+kind: phrases
+title: "Greetings lab"
+description: "Match the greeting to the person and the time of day. The builder catches tu/vous mix-ups."
+voice: fr-FR
+patterns:
+  - id: greet
+    label: "Greet someone"
+    slots:
+      - id: hello
+        label: "Greeting"
+        options:
+          - { text: "Bonjour", en: "Hello (day)" }
+          - { text: "Bonsoir", en: "Good evening" }
+          - { text: "Salut", en: "Hi (friends)", needs: { who: [friend] }, why: "« Salut » is only for friends. Use Bonjour/Bonsoir with Madame or Monsieur." }
+      - id: who
+        label: "Person"
+        options:
+          - { text: "Madame", en: "Madam", tags: [formal] }
+          - { text: "Monsieur", en: "Sir", tags: [formal] }
+          - { text: "Kemi", en: "(your friend Kemi)", tags: [friend] }
+          - { text: "Tunde", en: "(your friend Tunde)", tags: [friend] }
+      - { id: comma, fixed: "," }
+      - id: ask
+        label: "Question"
+        options:
+          - { text: "comment allez-vous ?", en: "how are you? (formal)", needs: { who: [formal] }, why: "Use « ça va ? » with a friend: « allez-vous » is formal." }
+          - { text: "ça va ?", en: "how's it going? (informal)", needs: { who: [friend] }, why: "« Ça va ? » is too casual for Madame/Monsieur: use « comment allez-vous ? »." }
+          - { text: "vous allez bien ?", en: "are you well? (formal)", needs: { who: [formal] }, why: "« Vous » is formal: use « tu vas bien ? » with a friend." }
+          - { text: "tu vas bien ?", en: "are you well? (informal)", needs: { who: [friend] }, why: "« Tu » is informal: use « vous allez bien ? » with Madame/Monsieur." }
+
+  - id: reply
+    label: "Answer"
+    slots:
+      - id: how
+        label: "How you are"
+        options:
+          - { text: "Très bien", en: "Very well" }
+          - { text: "Ça va bien", en: "Fine" }
+          - { text: "Pas mal", en: "Not bad" }
+          - { text: "Bof", en: "So-so" }
+      - { id: thanks, fixed: ", merci." }
+      - id: back
+        label: "Ask back"
+        options:
+          - { text: "Et vous ?", en: "And you? (formal)" }
+          - { text: "Et toi ?", en: "And you? (informal)" }
+
+  - id: bye
+    label: "Leave"
+    slots:
+      - id: bye
+        label: "Goodbye"
+        options:
+          - { text: "Au revoir", en: "Goodbye" }
+          - { text: "À bientôt", en: "See you soon" }
+          - { text: "À demain", en: "See you tomorrow" }
+          - { text: "Salut", en: "Bye (friends)", needs: { who: [friend] }, why: "« Salut » is only for friends." }
+      - id: who
+        label: "Person"
+        options:
+          - { text: "Madame", en: "Madam", tags: [formal] }
+          - { text: "Monsieur", en: "Sir", tags: [formal] }
+          - { text: "Kemi", en: "(friend)", tags: [friend] }
+      - { id: comma, fixed: "." }
+      - id: wish
+        label: "Wish"
+        options:
+          - { text: "Bonne journée !", en: "Have a good day!" }
+          - { text: "Bonne soirée !", en: "Have a good evening!" }
+
+challenges:
+  - { prompt: "Greet your friend Kemi casually and ask how it's going.", pattern: greet, answer: { hello: "Salut", who: "Kemi", ask: "ça va ?" } }
+  - { prompt: "It's 8 pm. Greet a man formally and ask how he is.", pattern: greet, answer: { hello: "Bonsoir", who: "Monsieur", ask: "comment allez-vous ?" } }
+  - { prompt: "Say: Very well, thanks. And you? (to your boss)", pattern: reply, answer: { how: "Très bien", back: "Et vous ?" } }
+  - { prompt: "Leave a shop: Goodbye madam. Have a good day!", pattern: bye, answer: { bye: "Au revoir", who: "Madame", wish: "Bonne journée !" } }

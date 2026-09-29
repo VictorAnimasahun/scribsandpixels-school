@@ -53,6 +53,11 @@ Which greeting? Write the answer.
 
 Make 10 Anki cards from the table (French on the front).
 
+**Try it live:** build greetings in the sandbox, hear them, and say them back.
+
+::sandbox fr-w01-greetings
+
+
 ### Speak & Listen (10 min)
 - Language Transfer tracks 1–2.
 - Say every greeting in the table out loud 3 times. Check *bonjour* and *merci* on Forvo.
@@ -201,6 +206,11 @@ Write two dialogues of 6 lines each:
 2. Formal: you meet your new manager.
 
 Then read both aloud.
+
+**Sandbox:** build formal and informal exchanges and check your tu/vous.
+
+::sandbox fr-w01-greetings
+
 
 ### Speak & Listen (10 min)
 - Language Transfer tracks 9–10.

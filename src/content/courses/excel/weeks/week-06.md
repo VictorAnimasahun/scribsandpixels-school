@@ -63,6 +63,11 @@ Extend your Summary table:
 
 **Check:** Lagos ₦321,703,800 · Groceries ₦157,534,275 (the top category) · Wholesale ₦409,543,290 · Transfer ₦352,411,740 · Lagos Phones **96 orders, ₦44,661,850**
 
+**Sandbox:** answer the manager's questions with COUNTIFS / SUMIFS / MAXIFS on 40 orders.
+
+::sandbox xl-w06-sumifs
+
+
 ### Mini-Task (10 min)
 Units sold per category with SUMIFS on column J. **Check:** Groceries 8,102 · Computers 199.
 

@@ -1,0 +1,43 @@
+# Week 2 · Day 6 weekly project (files work in the browser too!)
+id: py-w02-d6-contacts
+kind: python
+title: "Contact book"
+description: "Finish view_all_contacts and search_contact. Hidden tests add contacts and search for them."
+starter: |
+  def add_contact(name, phone):
+      with open("contacts.txt", "a") as file:
+          file.write(name + "," + phone + "\n")
+      print("Contact saved!")
+
+  def view_all_contacts():
+      # Open contacts.txt and print every line
+      # Handle the case where the file doesn't exist yet
+      pass
+
+  def search_contact(search_name):
+      # Loop through the file, split by comma, print the match or "Not found"
+      pass
+tasks:
+  - prompt: "view_all_contacts() doesn't crash when contacts.txt doesn't exist yet."
+    tests: |
+      import os
+      if os.path.exists("contacts.txt"):
+          os.remove("contacts.txt")
+      view_all_contacts()
+  - prompt: "search_contact finds a saved contact and prints its phone number."
+    tests: |
+      import io, os, contextlib
+      if os.path.exists("contacts.txt"):
+          os.remove("contacts.txt")
+      add_contact("Ngozi", "08031234567")
+      out = io.StringIO()
+      with contextlib.redirect_stdout(out):
+          search_contact("Ngozi")
+      assert "08031234567" in out.getvalue(), "search_contact('Ngozi') should print her phone number"
+  - prompt: "search_contact prints Not found for an unknown name."
+    tests: |
+      import io, contextlib
+      out = io.StringIO()
+      with contextlib.redirect_stdout(out):
+          search_contact("Zzz")
+      assert "not found" in out.getvalue().lower(), "should print Not found"

@@ -164,6 +164,11 @@ print("That is", naira, "Naira")
 
 Try to write it yourself first before looking at the hint.
 
+**Code it here:** real Python in your browser, with automatic checks.
+
+::sandbox py-w01-d3-naira
+
+
 ### Log (10 min)
 
 ## Day 4 — Thursday
@@ -258,6 +263,11 @@ Run it. Try different numbers. Now modify it: print only the even results.
 Ask the user for a number. Count down from that number to 1. Then print "Blast off!"
 Write it with a `while` loop.
 
+**Code it here:**
+
+::sandbox py-w01-d5-countdown
+
+
 ### Log (10 min)
 
 ## Day 6 — Saturday
@@ -300,6 +310,11 @@ else:
 
 print("Quiz over!", name, "you scored", score, "out of 3")
 ```
+
+**Build it here** (and still save a copy as a .py file on your computer):
+
+::sandbox py-w01-d6-quiz
+
 
 ### Mini-Task (30 min)
 Go to FreeCodeCamp and complete **steps 1–10** of the Cat Photo App (HTML):

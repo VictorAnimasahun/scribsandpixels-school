@@ -73,6 +73,11 @@ On the Data sheet:
 
 **Check:** N2 = ₦14,500 · O2 = ₦14,500 (no discount) · total net sales **₦834,046,700**
 
+**Sandbox:** do the same exercise on 10 orders right here. Tasks tick green when your cell is right.
+
+::sandbox xl-w02-first-formulas
+
+
 ### Mini-Task (10 min)
 In P1 type **DiscountAmount**, and in P2 a formula for how much discount was given (Gross − Net). Fill down. **Check:** total ₦73,631,100.
 

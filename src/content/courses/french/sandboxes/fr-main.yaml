@@ -1,0 +1,9 @@
+# The course's free-play sandbox: every phrase set so far, in one place.
+# Add each new lesson sandbox to `include` as it's written.
+id: fr-main
+kind: phrases
+title: "French phrase lab"
+description: "Free play with everything you've learned: build sentences, hear them in French, and practise saying them."
+main: true
+voice: fr-FR
+include: [fr-w01-greetings, fr-w02-intro, fr-w07-market]

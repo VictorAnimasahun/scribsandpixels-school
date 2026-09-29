@@ -1,0 +1,84 @@
+# Week 2 · Qui suis-je ? être + nationality agreement.
+id: fr-w02-intro
+kind: phrases
+title: "Who is who?"
+description: "Build sentences with être and a nationality. Masculine, feminine, singular, plural: the builder checks every ending."
+voice: fr-FR
+patterns:
+  - id: nationality
+    label: "Nationality with être"
+    slots:
+      - id: who
+        label: "Who"
+        options:
+          - { text: "Je", label: "Je (a man)", en: "I (man)", tags: [p1s, m, sg] }
+          - { text: "Je", label: "Je (a woman)", en: "I (woman)", tags: [p1s, f, sg] }
+          - { text: "Il", en: "He", tags: [p3s, m, sg] }
+          - { text: "Elle", en: "She", tags: [p3s, f, sg] }
+          - { text: "Nous", label: "Nous (men / mixed)", en: "We (men or mixed)", tags: [p1p, m, pl] }
+          - { text: "Ils", en: "They (men / mixed)", tags: [p3p, m, pl] }
+          - { text: "Elles", en: "They (women)", tags: [p3p, f, pl] }
+      - id: be
+        label: "être"
+        options:
+          - { text: "suis", en: "am", needs: { who: [p1s] }, why: "« suis » only goes with « je »." }
+          - { text: "est", en: "is", needs: { who: [p3s] }, why: "« est » goes with il / elle." }
+          - { text: "sommes", en: "are (we)", needs: { who: [p1p] }, why: "« sommes » only goes with « nous »." }
+          - { text: "sont", en: "are (they)", needs: { who: [p3p] }, why: "« sont » goes with ils / elles." }
+      - id: nat
+        label: "Nationality"
+        options:
+          - { text: "nigérian", needs: { who: [m, sg] }, why: "« nigérian » is masculine singular: add -e for a woman, -s for plural." }
+          - { text: "nigériane", needs: { who: [f, sg] }, why: "« nigériane » is feminine singular." }
+          - { text: "nigérians", needs: { who: [m, pl] }, why: "« nigérians » is masculine (or mixed) plural." }
+          - { text: "nigérianes", needs: { who: [f, pl] }, why: "« nigérianes » is feminine plural." }
+          - { text: "canadien", needs: { who: [m, sg] }, why: "-ien → -ienne for a woman." }
+          - { text: "canadienne", needs: { who: [f, sg] }, why: "« canadienne » is feminine singular." }
+          - { text: "canadiens", needs: { who: [m, pl] }, why: "« canadiens » is masculine plural." }
+          - { text: "canadiennes", needs: { who: [f, pl] }, why: "« canadiennes » is feminine plural." }
+          - { text: "français", needs: { who: [m] }, why: "« français » is masculine (singular and plural are the same!)." }
+          - { text: "française", needs: { who: [f, sg] }, why: "« française » is feminine singular." }
+          - { text: "françaises", needs: { who: [f, pl] }, why: "« françaises » is feminine plural." }
+          - { text: "belge", needs: { who: [sg] }, why: "« belge » is singular (same for men and women)." }
+          - { text: "belges", needs: { who: [pl] }, why: "« belges » is plural." }
+      - { id: end, fixed: "." }
+
+  - id: place
+    label: "Where: en / au / aux / à"
+    slots:
+      - id: start
+        label: "Start"
+        options:
+          - { text: "J'habite", en: "I live" }
+          - { text: "Je travaille", en: "I work" }
+          - { text: "Je voudrais habiter", en: "I'd like to live" }
+      - id: prep
+        label: "Preposition"
+        options:
+          - { text: "au", needs: { where: [mcountry] }, why: "« au » is for masculine countries (au Nigeria, au Canada)." }
+          - { text: "en", needs: { where: [fcountry] }, why: "« en » is for feminine countries (en France, en Belgique)." }
+          - { text: "aux", needs: { where: [plcountry] }, why: "« aux » is for plural countries (aux États-Unis)." }
+          - { text: "à", needs: { where: [city] }, why: "Use « à » with a city." }
+      - id: where
+        label: "Place"
+        options:
+          - { text: "Nigeria", tags: [mcountry] }
+          - { text: "Canada", tags: [mcountry] }
+          - { text: "Sénégal", tags: [mcountry] }
+          - { text: "France", tags: [fcountry] }
+          - { text: "Belgique", tags: [fcountry] }
+          - { text: "Côte d'Ivoire", tags: [fcountry] }
+          - { text: "États-Unis", tags: [plcountry] }
+          - { text: "Lagos", tags: [city] }
+          - { text: "Montréal", tags: [city] }
+          - { text: "Paris", tags: [city] }
+      - { id: end, fixed: "." }
+
+challenges:
+  - { prompt: "I am Nigerian (you're a woman).", pattern: nationality, answer: { who: "Je (a woman)", be: "suis", nat: "nigériane" } }
+  - { prompt: "They are Canadian (a group of women).", pattern: nationality, answer: { who: "Elles", be: "sont", nat: "canadiennes" } }
+  - { prompt: "He is French.", pattern: nationality, answer: { who: "Il", be: "est", nat: "français" } }
+  - { prompt: "We are Nigerian (mixed group).", pattern: nationality, answer: { who: "Nous (men / mixed)", be: "sommes", nat: "nigérians" } }
+  - { prompt: "I'd like to live in Canada.", pattern: place, answer: { start: "Je voudrais habiter", prep: "au", where: "Canada" } }
+  - { prompt: "I work in France.", pattern: place, answer: { start: "Je travaille", prep: "en", where: "France" } }
+  - { prompt: "I live in Lagos.", pattern: place, answer: { start: "J'habite", prep: "à", where: "Lagos" } }
