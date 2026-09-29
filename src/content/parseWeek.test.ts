@@ -73,6 +73,19 @@ describe('parseWeek on the real course', () => {
   })
 })
 
+describe('every week file in every course', () => {
+  const files = import.meta.glob<string>('./courses/*/weeks/*.md', { query: '?raw', import: 'default', eager: true })
+  for (const [path, markdown] of Object.entries(files)) {
+    it(`parses ${path}`, () => {
+      const week = parseWeek(markdown, path)
+      expect(path).toContain(`week-${String(week.number).padStart(2, '0')}.md`)
+      expect(week.days).toHaveLength(6)
+      expect(week.quiz.length).toBeGreaterThan(0)
+      expect(week.resources.length).toBeGreaterThan(0)
+    })
+  }
+})
+
 describe('parseWeek errors', () => {
   it('rejects a day on the wrong weekday', () => {
     const md = '# Week 3 — Test\n\n## Day 2 — Monday\n**Topic:** x\n\n### Review (30 min)\nhi\n'

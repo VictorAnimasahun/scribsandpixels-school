@@ -20,6 +20,9 @@ const RESOURCE_KINDS: Record<string, ResourceKind> = {
   '📕': 'book',
   '🌐': 'interactive',
   '🧩': 'practice',
+  '🎧': 'audio',
+  '🔊': 'interactive',
+  '📊': 'dataset',
 }
 
 const DEFAULT_MINUTES: Record<BlockKind, number> = {
@@ -82,8 +85,9 @@ function parseResources(lines: string[], source: string, line: number): Resource
     .filter(([, title]) => title && title !== 'Resource')
     .map(([emoji, titleCell, note]) => {
       const link = titleCell.match(/\[(.+?)\]\((.+?)\)/)
-      if (!link) throw new ContentError(source, line, `resource "${titleCell}" needs a [title](url) link`)
-      return { kind: RESOURCE_KINDS[emoji] ?? 'reading', title: link[1], url: link[2], ...(note ? { note } : {}) }
+      const title = link ? link[1] : titleCell.replace(/^\*+|\*+$/g, '').trim()
+      if (!title) throw new ContentError(source, line, 'resource row has no title')
+      return { kind: RESOURCE_KINDS[emoji] ?? 'reading', title, ...(link ? { url: link[2] } : {}), ...(note ? { note } : {}) }
     })
 }
 
