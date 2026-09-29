@@ -1,0 +1,121 @@
+EmployeeID,FirstName,LastName,Department,JobTitle,Region,HireDate,DateOfBirth,MonthlySalary,Gender,Email,Phone
+E001,Nneka,Abubakar,Sales,Sales Associate,Lagos,2022-12-10,1983-12-12,178000,M,nneka.abubakar@naijamart.ng,08166595678
+E002,Ngozi,Onyeka,Finance,Finance Analyst,Lagos,2022-05-21,1982-01-07,455000,M,ngozi.onyeka@naijamart.ng,08023396170
+E003,Tunde,Suleiman,Sales,Senior Sales Associate,Abuja,2024-05-27,1977-03-22,225000,F,tunde.suleiman@naijamart.ng,08161867484
+E004,Yusuf,Bello,Operations,Operations Manager,Lagos,2024-12-03,1996-11-27,806000,F,yusuf.bello@naijamart.ng,08063801941
+E005,Amaka,Abubakar,Sales,Sales Associate,Kano,2023-06-19,1982-03-08,182000,F,amaka.abubakar@naijamart.ng,08164638405
+E006,Uche,Adebayo,Operations,Logistics Officer,Kano,2024-03-14,1996-12-04,267000,F,uche.adebayo@naijamart.ng,09056403879
+E007,Bola,Ibrahim,Finance,Finance Manager,Abuja,2023-07-31,1977-08-30,804000,M,bola.ibrahim@naijamart.ng,07037810660
+E008,Hauwa,Garba,Sales,Store Manager,Abuja,2016-04-13,1972-11-27,588000,F,hauwa.garba@naijamart.ng,08062380931
+E009,Aisha,Nwosu,HR,HR Officer,Ibadan,2020-03-15,1986-08-09,255000,F,aisha.nwosu@naijamart.ng,08136981074
+E010,Chidi,Chukwu,IT,Software Developer,Enugu,2021-11-25,1991-10-07,566000,M,chidi.chukwu@naijamart.ng,08168567888
+E011,Hauwa,Okonkwo,Sales,Senior Sales Associate,Kano,2020-10-29,1982-02-01,172000,F,hauwa.okonkwo@naijamart.ng,08023987709
+E012,Kemi,Okafor,Marketing,Social Media Manager,Abuja,2022-12-16,1988-09-17,714000,M,kemi.okafor@naijamart.ng,08137752859
+E013,Chidi,Eze,Operations,Inventory Clerk,Abuja,2017-01-09,1984-10-23,183000,M,chidi.eze@naijamart.ng,08135610108
+E014,Chioma,Obi,IT,Data Analyst,Abuja,2024-05-18,1988-10-09,439000,F,chioma.obi@naijamart.ng,08029759742
+E015,Emeka,Okonkwo,Sales,Sales Associate,Lagos,2023-12-02,1989-07-16,182000,M,emeka.okonkwo@naijamart.ng,07031080300
+E016,Dayo,Nwosu,Sales,Sales Associate,Kano,2022-04-13,1995-12-29,188000,F,dayo.nwosu@naijamart.ng,08062855234
+E017,Chioma,Onyeka,Finance,Accountant,Lagos,2025-02-19,1974-04-24,279000,M,chioma.onyeka@naijamart.ng,08027778192
+E018,Chioma,Afolabi,Finance,Finance Manager,Lagos,2020-08-24,1981-10-29,688000,M,chioma.afolabi@naijamart.ng,07034478371
+E019,Adaeze,Balogun,HR,HR Manager,Enugu,2020-08-05,1983-03-01,770000,M,adaeze.balogun@naijamart.ng,08039587637
+E020,Tolu,Adeyemi,HR,HR Manager,Lagos,2021-02-16,1986-04-25,779000,M,tolu.adeyemi@naijamart.ng,08028309993
+E021,Kelechi,Balogun,Sales,Sales Associate,Abuja,2019-07-29,1983-01-08,178000,M,kelechi.balogun@naijamart.ng,08021469262
+E022,Hauwa,Adeyemi,IT,Data Analyst,Lagos,2017-09-09,1989-09-01,443000,M,hauwa.adeyemi@naijamart.ng,08034021750
+E023,Zainab,Obi,Marketing,Social Media Manager,Abuja,2020-07-18,1995-11-01,607000,F,zainab.obi@naijamart.ng,08039404624
+E024,Maryam,Adebayo,Operations,Inventory Clerk,Port Harcourt,2024-08-06,1986-01-07,178000,F,maryam.adebayo@naijamart.ng,08035300411
+E025,Uche,Okonkwo,Sales,Store Manager,Abuja,2019-10-16,1996-12-04,786000,M,uche.okonkwo@naijamart.ng,08069937662
+E026,Kemi,Balogun,IT,IT Support,Ibadan,2020-04-24,1994-02-08,229000,F,kemi.balogun@naijamart.ng,07035942507
+E027,Emeka,Danjuma,Sales,Sales Associate,Ibadan,2018-06-01,1983-12-10,178000,F,emeka.danjuma@naijamart.ng,08063046484
+E028,Ifeanyi,Ibrahim,Marketing,Social Media Manager,Port Harcourt,2020-06-01,1990-04-17,626000,F,ifeanyi.ibrahim@naijamart.ng,07032927412
+E029,Zainab,Adebayo,Finance,Finance Manager,Lagos,2023-04-22,1994-08-27,683000,F,zainab.adebayo@naijamart.ng,08165541823
+E030,Bisi,Garba,Operations,Inventory Clerk,Lagos,2023-03-19,1992-11-07,206000,M,bisi.garba@naijamart.ng,08161492866
+E031,Emeka,Ibrahim,Sales,Sales Associate,Lagos,2023-01-13,1993-11-18,179000,F,emeka.ibrahim@naijamart.ng,08036698759
+E032,Ngozi,Obi,IT,Software Developer,Lagos,2016-12-19,1985-08-21,627000,F,ngozi.obi@naijamart.ng,08168612411
+E033,Nneka,Chukwu,Operations,Inventory Clerk,Abuja,2016-07-08,1976-08-16,198000,M,nneka.chukwu@naijamart.ng,08063592775
+E034,Amaka,Okonkwo,HR,HR Officer,Enugu,2022-06-08,1986-06-27,248000,M,amaka.okonkwo@naijamart.ng,08032993796
+E035,Halima,Chukwu,Operations,Inventory Clerk,Kano,2021-06-18,1973-09-22,192000,F,halima.chukwu@naijamart.ng,08161588175
+E036,Musa,Suleiman,Marketing,Marketing Officer,Abuja,2024-02-06,1981-04-06,263000,F,musa.suleiman@naijamart.ng,09052187878
+E037,Nneka,Adebayo,Sales,Sales Associate,Lagos,2018-02-06,1995-06-24,165000,M,nneka.adebayo@naijamart.ng,08063125613
+E038,Hauwa,Nwosu,IT,Data Analyst,Port Harcourt,2023-01-01,1987-07-09,444000,F,hauwa.nwosu@naijamart.ng,08028045858
+E039,Bisi,Onyeka,Sales,Senior Sales Associate,Abuja,2016-01-16,1976-01-05,162000,M,bisi.onyeka@naijamart.ng,07036004175
+E040,Bisi,Bello,Marketing,Marketing Officer,Abuja,2019-11-13,1972-11-22,278000,F,bisi.bello@naijamart.ng,08038884678
+E041,Sani,Okafor,Operations,Operations Manager,Enugu,2024-08-27,1997-03-14,610000,M,sani.okafor@naijamart.ng,08063105552
+E042,Ifeanyi,Garba,Sales,Senior Sales Associate,Abuja,2016-04-18,1971-10-01,197000,F,ifeanyi.garba@naijamart.ng,08037538453
+E043,Ibrahim,Garba,Operations,Inventory Clerk,Abuja,2017-01-15,1997-10-23,207000,F,ibrahim.garba@naijamart.ng,08036958444
+E044,Tolu,Garba,Sales,Store Manager,Ibadan,2016-06-19,1970-02-26,642000,F,tolu.garba@naijamart.ng,07034368065
+E045,Kelechi,Garba,Sales,Sales Associate,Lagos,2015-07-28,1989-01-01,171000,M,kelechi.garba@naijamart.ng,08166883517
+E046,Adaeze,Onyeka,Operations,Inventory Clerk,Lagos,2019-10-28,1984-12-05,185000,M,adaeze.onyeka@naijamart.ng,09051052311
+E047,Zainab,Uzor,Sales,Senior Sales Associate,Abuja,2022-11-24,1993-12-31,204000,F,zainab.uzor@naijamart.ng,07031724613
+E048,Amaka,Olawale,Sales,Senior Sales Associate,Lagos,2017-03-23,1972-04-25,181000,F,amaka.olawale@naijamart.ng,09053197762
+E049,Chidi,Onyeka,Marketing,Social Media Manager,Kano,2016-11-21,1974-06-06,733000,M,chidi.onyeka@naijamart.ng,08133986689
+E050,Tolu,Adebayo,Sales,Sales Associate,Enugu,2017-08-22,1986-08-05,222000,F,tolu.adebayo@naijamart.ng,08135547344
+E051,Funmi,Balogun,Sales,Store Manager,Lagos,2019-10-30,1974-02-16,637000,M,funmi.balogun@naijamart.ng,07036368559
+E052,Ngozi,Adebayo,Sales,Store Manager,Port Harcourt,2021-04-19,1978-05-14,725000,F,ngozi.adebayo@naijamart.ng,08064651841
+E053,Ada,Nwosu,IT,Data Analyst,Port Harcourt,2024-03-18,1978-04-12,433000,M,ada.nwosu@naijamart.ng,08133825439
+E054,Uche,Afolabi,Sales,Store Manager,Lagos,2022-09-20,1982-01-09,585000,F,uche.afolabi@naijamart.ng,08069070967
+E055,Chioma,Balogun,Sales,Sales Associate,Lagos,2020-04-17,1976-09-13,171000,F,chioma.balogun@naijamart.ng,08024900166
+E056,Ngozi,Afolabi,Finance,Finance Manager,Enugu,2021-11-25,1990-03-25,650000,F,ngozi.afolabi@naijamart.ng,08062996330
+E057,Segun,Musa,IT,IT Support,Port Harcourt,2023-07-04,1993-04-17,240000,F,segun.musa@naijamart.ng,08066098503
+E058,Funmi,Bello,Finance,Finance Analyst,Abuja,2020-05-06,1983-03-20,355000,F,funmi.bello@naijamart.ng,07037158186
+E059,Emeka,Bello,Operations,Inventory Clerk,Lagos,2024-06-01,1975-03-21,178000,M,emeka.bello@naijamart.ng,07031072042
+E060,Maryam,Suleiman,Sales,Senior Sales Associate,Lagos,2017-09-17,1991-10-26,206000,F,maryam.suleiman@naijamart.ng,08034020989
+E061,Amaka,Ibrahim,Operations,Operations Manager,Port Harcourt,2019-09-22,1989-05-18,765000,M,amaka.ibrahim@naijamart.ng,08068843716
+E062,Tunde,Balogun,Operations,Operations Manager,Lagos,2016-07-09,1987-01-31,683000,M,tunde.balogun@naijamart.ng,08038413791
+E063,Ibrahim,Musa,Sales,Senior Sales Associate,Lagos,2023-06-27,1977-06-01,175000,F,ibrahim.musa@naijamart.ng,08021669001
+E064,Bola,Afolabi,Sales,Senior Sales Associate,Abuja,2021-09-01,1972-01-11,202000,M,bola.afolabi@naijamart.ng,08022334217
+E065,Kemi,Adeyemi,Sales,Senior Sales Associate,Lagos,2020-08-30,1993-04-21,187000,M,kemi.adeyemi@naijamart.ng,07031953316
+E066,Kemi,Garba,Sales,Senior Sales Associate,Lagos,2023-05-19,1973-06-16,178000,M,kemi.garba@naijamart.ng,08032036017
+E067,Nneka,Balogun,HR,HR Officer,Port Harcourt,2015-09-17,1984-05-19,257000,M,nneka.balogun@naijamart.ng,07034761242
+E068,Ifeanyi,Abubakar,Operations,Operations Manager,Port Harcourt,2015-10-11,1990-11-23,612000,F,ifeanyi.abubakar@naijamart.ng,08132012808
+E069,Aisha,Suleiman,Sales,Sales Associate,Lagos,2018-06-14,1996-01-03,214000,M,aisha.suleiman@naijamart.ng,09059963596
+E070,Maryam,Nwosu,Sales,Senior Sales Associate,Ibadan,2021-12-09,1986-08-30,191000,M,maryam.nwosu@naijamart.ng,08069585834
+E071,Uche,Adeyemi,Sales,Sales Associate,Enugu,2018-02-20,1989-04-09,202000,F,uche.adeyemi@naijamart.ng,08064232601
+E072,Uche,Okafor,Sales,Senior Sales Associate,Lagos,2021-03-23,1983-07-28,193000,M,uche.okafor@naijamart.ng,07038681396
+E073,Musa,Garba,Sales,Store Manager,Port Harcourt,2024-09-13,1980-05-26,750000,F,musa.garba@naijamart.ng,07032463574
+E074,Musa,Bello,IT,IT Support,Abuja,2024-02-25,1983-12-31,262000,M,musa.bello@naijamart.ng,08022984370
+E075,Amaka,Chukwu,Operations,Inventory Clerk,Abuja,2015-10-24,1983-10-25,154000,F,amaka.chukwu@naijamart.ng,07039509945
+E076,Funmi,Olawale,HR,HR Manager,Lagos,2018-02-24,1978-05-10,722000,F,funmi.olawale@naijamart.ng,07038489903
+E077,Bisi,Ibrahim,IT,Software Developer,Kano,2018-11-17,1988-09-02,493000,M,bisi.ibrahim@naijamart.ng,08026947864
+E078,Sani,Chukwu,Marketing,Social Media Manager,Ibadan,2019-06-24,1973-04-17,620000,M,sani.chukwu@naijamart.ng,08028501239
+E079,Musa,Onyeka,Sales,Store Manager,Lagos,2016-02-03,1990-06-08,611000,F,musa.onyeka@naijamart.ng,08164480975
+E080,Kelechi,Nwosu,Finance,Accountant,Lagos,2018-05-22,1992-04-07,333000,F,kelechi.nwosu@naijamart.ng,08164828676
+E081,Yusuf,Musa,Sales,Senior Sales Associate,Abuja,2017-09-04,1990-02-02,189000,M,yusuf.musa@naijamart.ng,09059284574
+E082,Tolu,Bello,Sales,Sales Associate,Lagos,2023-01-14,1975-08-30,169000,F,tolu.bello@naijamart.ng,08026366517
+E083,Ibrahim,Danjuma,Operations,Inventory Clerk,Ibadan,2016-03-12,1977-06-30,172000,F,ibrahim.danjuma@naijamart.ng,08161121385
+E084,Kelechi,Uzor,Finance,Finance Analyst,Kano,2018-01-18,1992-06-21,427000,F,kelechi.uzor@naijamart.ng,09054903470
+E085,Ada,Bello,Operations,Logistics Officer,Abuja,2023-02-07,1970-09-03,253000,F,ada.bello@naijamart.ng,08064880974
+E086,Ifeanyi,Bello,Finance,Finance Analyst,Lagos,2020-08-31,1995-08-28,457000,F,ifeanyi.bello@naijamart.ng,07031410498
+E087,Chioma,Olawale,Sales,Senior Sales Associate,Lagos,2024-01-17,1997-04-22,188000,F,chioma.olawale@naijamart.ng,08136298540
+E088,Uche,Danjuma,Sales,Sales Associate,Ibadan,2016-12-31,1986-01-02,165000,F,uche.danjuma@naijamart.ng,08029098986
+E089,Kemi,Musa,Finance,Finance Analyst,Kano,2022-08-04,1985-09-19,408000,F,kemi.musa@naijamart.ng,08036319047
+E090,Kelechi,Suleiman,Sales,Senior Sales Associate,Abuja,2018-10-30,1995-11-21,222000,M,kelechi.suleiman@naijamart.ng,08066166388
+E091,Chioma,Adeyemi,HR,HR Manager,Enugu,2024-05-18,1994-11-29,638000,F,chioma.adeyemi@naijamart.ng,08061464379
+E092,Tolu,Suleiman,Finance,Finance Manager,Abuja,2015-04-18,1985-08-16,603000,M,tolu.suleiman@naijamart.ng,08067422747
+E093,Tolu,Olawale,Sales,Store Manager,Lagos,2019-05-14,1993-02-23,672000,M,tolu.olawale@naijamart.ng,08133207347
+E094,Yusuf,Abubakar,Sales,Senior Sales Associate,Abuja,2024-05-09,1979-12-10,200000,F,yusuf.abubakar@naijamart.ng,09053456105
+E095,Chioma,Musa,Sales,Store Manager,Abuja,2016-07-03,1983-09-10,760000,F,chioma.musa@naijamart.ng,09052633320
+E096,Musa,Okonkwo,Sales,Store Manager,Lagos,2017-04-26,1981-06-18,716000,F,musa.okonkwo@naijamart.ng,08137246329
+E097,Tolu,Nwosu,Marketing,Marketing Officer,Port Harcourt,2019-08-25,1977-10-18,215000,F,tolu.nwosu@naijamart.ng,08031447812
+E098,Sani,Uzor,Finance,Finance Analyst,Kano,2018-02-15,1989-09-16,390000,F,sani.uzor@naijamart.ng,08039387362
+E099,Chidi,Afolabi,Sales,Senior Sales Associate,Kano,2015-08-15,1972-03-01,215000,F,chidi.afolabi@naijamart.ng,07037395077
+E100,Nneka,Ibrahim,Sales,Senior Sales Associate,Enugu,2021-08-03,1972-09-09,188000,F,nneka.ibrahim@naijamart.ng,08061405960
+E101,Kemi,Onyeka,Sales,Senior Sales Associate,Kano,2018-10-26,1996-02-01,212000,M,kemi.onyeka@naijamart.ng,09058599526
+E102,Bola,Obi,IT,Data Analyst,Lagos,2019-11-22,1988-03-26,387000,F,bola.obi@naijamart.ng,08063946847
+E103,Ifeanyi,Obi,Finance,Finance Manager,Lagos,2015-11-04,1971-07-01,642000,M,ifeanyi.obi@naijamart.ng,08064572221
+E104,Tunde,Ibrahim,Marketing,Marketing Officer,Ibadan,2024-10-05,1975-06-21,235000,M,tunde.ibrahim@naijamart.ng,08035701550
+E105,Femi,Adeyemi,Sales,Senior Sales Associate,Lagos,2021-07-03,1970-03-02,208000,F,femi.adeyemi@naijamart.ng,08135409066
+E106,Musa,Olawale,Sales,Senior Sales Associate,Abuja,2021-03-06,1997-01-31,170000,M,musa.olawale@naijamart.ng,08037749369
+E107,Uche,Abubakar,Marketing,Marketing Officer,Ibadan,2015-11-08,1972-02-17,244000,M,uche.abubakar@naijamart.ng,08162733641
+E108,Tunde,Uzor,Sales,Store Manager,Lagos,2016-04-07,1976-10-04,621000,F,tunde.uzor@naijamart.ng,08036011243
+E109,Segun,Obi,Operations,Inventory Clerk,Lagos,2021-07-01,1977-12-09,163000,F,segun.obi@naijamart.ng,08168357801
+E110,Hauwa,Musa,HR,HR Manager,Abuja,2020-10-20,1986-12-23,607000,M,hauwa.musa@naijamart.ng,08065365111
+E111,Obinna,Afolabi,IT,Software Developer,Ibadan,2020-03-08,1990-10-20,480000,M,obinna.afolabi@naijamart.ng,08163991209
+E112,Kelechi,Eze,HR,HR Officer,Lagos,2016-07-13,1970-11-20,219000,M,kelechi.eze@naijamart.ng,08168411085
+E113,Kelechi,Chukwu,HR,HR Officer,Abuja,2023-11-08,1986-03-24,249000,M,kelechi.chukwu@naijamart.ng,08169103074
+E114,Amaka,Bello,Finance,Finance Manager,Lagos,2023-08-08,1992-04-05,723000,M,amaka.bello@naijamart.ng,08026645550
+E115,Chidi,Uzor,Sales,Sales Associate,Lagos,2020-01-02,1979-12-21,221000,M,chidi.uzor@naijamart.ng,08037284924
+E116,Bisi,Obi,IT,Data Analyst,Lagos,2017-04-19,1989-01-03,393000,F,bisi.obi@naijamart.ng,08061971226
+E117,Uche,Nwosu,Sales,Senior Sales Associate,Lagos,2023-05-19,1977-12-12,207000,F,uche.nwosu@naijamart.ng,09055364135
+E118,Kelechi,Adebayo,Finance,Finance Analyst,Port Harcourt,2022-04-12,1972-08-06,378000,M,kelechi.adebayo@naijamart.ng,08028876969
+E119,Aisha,Okonkwo,Sales,Sales Associate,Port Harcourt,2015-06-03,1991-08-26,220000,M,aisha.okonkwo@naijamart.ng,09052869687
+E120,Musa,Nwosu,Marketing,Marketing Officer,Lagos,2020-09-08,1984-11-08,252000,M,musa.nwosu@naijamart.ng,08029250461

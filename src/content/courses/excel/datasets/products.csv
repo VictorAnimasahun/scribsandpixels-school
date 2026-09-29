@@ -1,0 +1,41 @@
+ProductID,Product,Category,Supplier,UnitCost,UnitPrice,ReorderLevel
+P001,Tecno Spark 20,Phones,Transsion Nigeria,118000,145000,15
+P002,Infinix Hot 40,Phones,Transsion Nigeria,132000,162000,15
+P003,Samsung Galaxy A15,Phones,Samsung West Africa,165000,205000,10
+P004,iPhone 13 (Refurbished),Phones,iStore Lagos,520000,640000,5
+P005,Oraimo Power Bank 20000mAh,Accessories,Oraimo,14500,21000,40
+P006,Oraimo FreePods 4,Accessories,Oraimo,17000,25500,30
+P007,Phone Charger (Fast),Accessories,Oraimo,4200,7500,60
+P008,HP 250 G9 Laptop,Computers,HP Nigeria,480000,585000,6
+P009,Lenovo IdeaPad 3,Computers,Lenovo Distribution,455000,560000,6
+P010,Dell Inspiron 15,Computers,Dell Nigeria,530000,649000,5
+P011,Wireless Mouse,Accessories,Logitech Africa,5500,9500,50
+P012,"LG 43"" Smart TV",TV & Audio,LG Electronics,285000,349000,8
+P013,"Hisense 55"" 4K TV",TV & Audio,Hisense Nigeria,410000,499000,5
+P014,JBL Flip 6 Speaker,TV & Audio,Harman Africa,98000,129000,10
+P015,Sound Bar 2.1,TV & Audio,Hisense Nigeria,72000,95000,10
+P016,Thermocool Freezer 200L,Appliances,Haier Thermocool,265000,318000,6
+P017,Binatone Blender,Appliances,Binatone,21000,29500,25
+P018,Scanfrost Gas Cooker,Appliances,Scanfrost,185000,229000,6
+P019,"Standing Fan 18""",Appliances,Binatone,28000,38500,20
+P020,Microwave Oven 20L,Appliances,Scanfrost,68000,86000,10
+P021,Solar Generator 1kVA,Power,Lumos Solar,390000,475000,4
+P022,Inverter Battery 200Ah,Power,Lumos Solar,290000,355000,4
+P023,Surge Protector,Power,Oraimo,7800,12500,40
+P024,Rice 50kg (Local),Groceries,Mama Gold Mills,68000,78000,30
+P025,Vegetable Oil 5L,Groceries,Power Oil,14500,17500,50
+P026,Indomie Carton (40),Groceries,Dufil Prima,11200,13500,60
+P027,Milo 1kg Refill,Groceries,Nestle Nigeria,7400,9200,50
+P028,Peak Milk Tin (24),Groceries,FrieslandCampina,13800,16500,40
+P029,Semovita 10kg,Groceries,Flour Mills Nigeria,9800,11800,40
+P030,Sugar 1kg (x10),Groceries,Dangote Sugar,12500,15000,40
+P031,Ankara Fabric (6 yards),Fashion,Kano Textiles,12000,18500,30
+P032,Men's Senator Wear,Fashion,Aba Tailors Co-op,22000,35000,20
+P033,Women's Ankara Dress,Fashion,Aba Tailors Co-op,19000,31000,20
+P034,Sneakers (Unisex),Fashion,Aba Footwear,16000,26000,25
+P035,School Bag,Fashion,Aba Footwear,7500,12500,30
+P036,Office Chair,Furniture,Mouka Furniture,58000,79000,8
+P037,Study Desk,Furniture,Mouka Furniture,46000,64000,8
+P038,Mattress 6x6,Furniture,Mouka,142000,178000,6
+P039,Printer Paper A4 (Box),Office,Paper Mills Ltd,19500,24500,25
+P040,HP Ink Cartridge 305,Office,HP Nigeria,9800,14500,30

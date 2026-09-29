@@ -1,0 +1,316 @@
+CustomerID,FullName,Phone,Email,City,DateJoined,TotalSpend
+C0090,  Dayo Onyeka,0905 709 2312,dayo.onyeka@gmail.com,Lagos State,10/12/2023,223000
+C0262,  Adaeze Abubakar,0703 540 4004,,Lag0s,04/27/2024,"₦788,000"
+C0245,"Ibrahim, Ngozi",+2349055251865,ngozi1@yahoo.com,"Ibadan, Oyo",2023-11-13,"861,000.00"
+C0180,AISHA CHUKWU,+2348167637920,aisha.chukwu@gmail.com,PH,2024-02-28,"244,000.00"
+C0141,  Sani Ibrahim,0803 298 0475,sani20@yahoo.com,FCT Abuja,03/30/2025,282000
+C0071,bola nwosu,0803 196 0282,,ibadan,2023-10-08,"₦719,000"
+C0093,  Adaeze Chukwu,0803 988 9100,,Port Harcourt,14-Oct-2022,"₦87,000"
+C0229,"Adeyemi, Maryam",,MARYAM.ADEYEMI@GMAIL.COM,Ibadan,24-Jun-2022,5000
+C0299,  Amaka Danjuma,+2348137821918,,Lagos,01/08/2024,711000
+C0130,bisi adebayo,+2348137151211,BISI.ADEBAYO@GMAIL.COM,port harcourt,01/05/2023,537000
+C0179,zainab obi,+2348038154731,ZAINAB.OBI@GMAIL.COM,kano,02-Jan-2023,"₦334,000"
+C0104,Dayo  Musa,,dayo7@yahoo.com, Lagos ,27-Mar-2022,"₦587,000"
+C0211,Femi  Bello,08162894140,femi47@yahoo.com,ABUJA,31/08/2022,104000
+C0190,KELECHI EZE,07034991046,KELECHI.EZE@GMAIL.COM,Ibadan,22/01/2023,257000
+C0081,"Abubakar, Kelechi",+2349051486555,kelechi.abubakar@gmail.com,ibadan,09/01/2023,"₦549,000"
+C0048,Sani Bello,+2349052434057,,lagos,28/11/2022,"₦811,000"
+C0181,aisha balogun,+2348164476585,aisha.balogun@gmail.com,Kano,17/12/2024,341000
+C0077,"Okonkwo, Yusuf",234-703-407-0899,yusuf9@yahoo.com,Kano,24-May-2024,N/A
+C0277,Sani  Danjuma,09052814902,sani99@yahoo.com,Enugu,07-Jul-2024,"₦332,000"
+C0135,TOLU SULEIMAN,08065283769,tolu65@yahoo.com,Kano,03/29/2025,N/A
+C0200,  Ifeanyi Uzor,234-803-945-1218,IFEANYI.UZOR@GMAIL.COM,KANO ,2023-06-26,"583,000.00"
+C0148,ibrahim uzor,,ibrahim.uzor@gmail.com,Enugu,2024-07-22,N/A
+C0231,CHIDI CHUKWU,08066216944,CHIDI.CHUKWU@GMAIL.COM,port harcourt,08/03/2023,591000
+C0095,"Bello, Ada",234-813-229-8054,,ABUJA,10/03/2025,N/A
+C0299,  Amaka Danjuma,+2348137821918,,Lagos,01/08/2024,711000
+C0267,Ngozi Abubakar,0813 111 0565,NGOZI.ABUBAKAR@GMAIL.COM,KANO ,23-Dec-2022,"₦750,000"
+C0186,TUNDE AFOLABI,,,ibadan,23/11/2023,"₦19,000"
+C0259,Kemi  Musa,0813 285 4840,kemi.musa@gmail.com,Port Harcourt,12/07/2023,N/A
+C0042,"Ibrahim, Sani",234-813-213-2451,sani.ibrahim@gmail.com,Port Harcourt,05/19/2024,578000
+C0157,FEMI BALOGUN,234-905-704-6843,FEMI.BALOGUN@GMAIL.COM,ABUJA,18/03/2024,"640,000.00"
+C0272,Tunde Okafor,,, Lagos ,2024-03-22,"₦776,000"
+C0268,OBINNA ADEYEMI,234-803-510-0358,,LAGOS,10/12/2022,"33,000.00"
+C0271,Halima Olawale,234-816-505-4694,,port harcourt,04/23/2024,"238,000.00"
+C0082,ifeanyi ibrahim,+2348064908040,IFEANYI.IBRAHIM@GMAIL.COM,Enugu,04/12/2024,"₦374,000"
+C0252,  Musa Obi,0813 656 3410,musa.obi@gmail.com,port harcourt,02/27/2024,N/A
+C0144,"Nwosu, Dayo",234-806-477-7543,dayo16@yahoo.com,Abuja,30/09/2023,514000
+C0258,hauwa okafor,+2348034688264,,Kano,28/02/2024,"862,000.00"
+C0025,Ibrahim Garba,09054079470,ibrahim.garba@gmail.com,Ibadan,17/09/2023,N/A
+C0052,  Zainab Nwosu,234-905-303-1847,zainab83@yahoo.com,Abuja ,2022-04-01,N/A
+C0173,Tunde  Onyeka,+2348163920569,tunde.onyeka@gmail.com,Ibadan,2024-07-30,"₦60,000"
+C0045,Segun Garba,,segun.garba@gmail.com,PH,03/12/2023,N/A
+C0244,"Olawale, Zainab",0816 839 4913,ZAINAB.OLAWALE@GMAIL.COM,enugu,29-Jun-2023,"₦779,000"
+C0281,  Funmi Chukwu,+2347034028378,funmi42@yahoo.com,Port-Harcourt,01/06/2025,"₦599,000"
+C0155,ngozi nwosu,+2347034579283,NGOZI.NWOSU@GMAIL.COM,KANO ,2023-10-03,"841,000.00"
+C0172,Tunde Bello,0813 229 2298,TUNDE.BELLO@GMAIL.COM,abuja,14/10/2023,232000
+C0193,Yusuf Onyeka,234-703-926-2929,,enugu,2024-03-31,"₦58,000"
+C0048,Sani Bello,+2349052434057,,lagos,28/11/2022,"₦811,000"
+C0024,NNEKA DANJUMA,,nneka.danjuma@gmail.com,Ibadan,03/09/2022,N/A
+C0256,HALIMA GARBA,+2348067426340,HALIMA.GARBA@GMAIL.COM,PH,2022-02-11,"802,000.00"
+C0201,Tunde  Olawale,234-803-436-4342,,Lagos State,03/30/2023,"322,000.00"
+C0149,"Nwosu, Bola",,bola.nwosu@gmail.com,lagos,08/04/2025,N/A
+C0101,  Hauwa Okonkwo,,,kano,28/07/2023,N/A
+C0242,Adaeze Balogun,09055285631,adaeze.balogun@gmail.com,ibadan,26/02/2023,"₦179,000"
+C0062,Musa Onyeka,234-703-943-5643,musa.onyeka@gmail.com,enugu,20/06/2022,497000
+C0219,  Ifeanyi Abubakar,+2348131883166,ifeanyi57@yahoo.com,Abuja,15-Jun-2023,80000
+C0182,"Nwosu, Obinna",,obinna72@yahoo.com,Kano,2023-07-17,"882,000.00"
+C0099,Aisha Garba,+2348061577361,aisha85@yahoo.com,Abuja ,09/21/2023,"455,000.00"
+C0197,YUSUF BALOGUN,234-813-778-0575,yusuf.balogun@gmail.com, Lagos ,13-May-2024,"₦45,000"
+C0191,adaeze adebayo,08068310668,adaeze97@yahoo.com,Abuja ,29/10/2023,"154,000.00"
+C0005,chioma chukwu,234-703-704-4571,,ENUGU,29/12/2022,"₦298,000"
+C0213,Bisi  Danjuma,0803 301 1943,bisi.danjuma@gmail.com,Ibadan,04/02/2023,N/A
+C0020,"Adebayo, Ngozi",0803 554 0649,NGOZI.ADEBAYO@GMAIL.COM,LAGOS,03/28/2023,"₦814,000"
+C0027,emeka okonkwo,0703 752 2672,EMEKA.OKONKWO@GMAIL.COM,FCT Abuja,2025-01-06,740000
+C0014,OBINNA UZOR,+2347036109637,OBINNA.UZOR@GMAIL.COM,ENUGU,2023-07-20,"524,000.00"
+C0162,Ngozi Onyeka,+2348138825391,NGOZI.ONYEKA@GMAIL.COM,Enugu,23-Jan-2023,473000
+C0138,Bisi  Olawale,,bisi.olawale@gmail.com,ENUGU,05/27/2022,"886,000.00"
+C0076,"Adebayo, Ibrahim",+2348133800479,ibrahim29@yahoo.com,ibadan,14-May-2024,"492,000.00"
+C0031,Halima Balogun,0803 893 3413,halima88@yahoo.com,kano,2023-04-13,"383,000.00"
+C0010,"Nwosu, Kemi",234-806-303-1504,,Ibadan,2024-02-09,N/A
+C0225,Musa  Musa,234-806-764-4307,musa.musa@gmail.com,Port-Harcourt,24/10/2022,"₦183,000"
+C0037,  Obinna Suleiman,+2348032030672,OBINNA.SULEIMAN@GMAIL.COM,Ibadan,2023-01-21,N/A
+C0119,SANI EZE,,sani91@yahoo.com,FCT Abuja,02/19/2023,N/A
+C0170,TOLU EZE,0905 622 4812,TOLU.EZE@GMAIL.COM,Lagos State,2024-06-26,N/A
+C0273,Chioma  Afolabi,0803 106 2377,,port harcourt,11/28/2023,225000
+C0059,Femi  Suleiman,+2348131782177,femi12@yahoo.com,Port Harcourt,2024-12-01,"₦486,000"
+C0034,"Nwosu, Uche",,UCHE.NWOSU@GMAIL.COM,LAGOS,11/09/2022,548000
+C0028,"Obi, Amaka",+2347031771752,amaka42@yahoo.com,enugu,14-May-2022,216000
+C0226,Zainab  Chukwu,234-905-359-6791,ZAINAB.CHUKWU@GMAIL.COM, Lagos ,02/09/2024,N/A
+C0183,Emeka  Abubakar,0905 422 7195,emeka37@yahoo.com,enugu,2025-02-18,260000
+C0110,  Ada Eze,+2348032300294,ada1@yahoo.com,Abuja,25-Jan-2023,N/A
+C0079,  Chioma Garba,07037737183,CHIOMA.GARBA@GMAIL.COM,KANO ,01/07/2022,"₦198,000"
+C0276,  Hauwa Abubakar,,HAUWA.ABUBAKAR@GMAIL.COM, Lagos ,01/22/2022,"28,000.00"
+C0096,"Bello, Ibrahim",+2348067128330,ibrahim.bello@gmail.com,port harcourt,05/01/2023,N/A
+C0153,Aisha  Uzor,234-803-103-9423,aisha.uzor@gmail.com,kano,06/03/2025,"643,000.00"
+C0185,"Suleiman, Bisi",0703 221 3635,,Abuja,2024-01-12,"₦247,000"
+C0139,  Aisha Olawale,+2349055471374,aisha.olawale@gmail.com,ENUGU,27-Jun-2023,"₦291,000"
+C0217,Bola  Okafor,0905 379 1046,bola.okafor@gmail.com,port harcourt,25/12/2023,N/A
+C0294,Chidi  Chukwu,+2347032097970,chidi26@yahoo.com,KANO ,2024-10-12,N/A
+C0063,  Dayo Olawale,0803 780 5394,DAYO.OLAWALE@GMAIL.COM,Enugu,2022-01-23,111000
+C0083,chioma uzor,08131010735,chioma49@yahoo.com,"Ibadan, Oyo",2022-02-27,"₦387,000"
+C0207,  Bisi Okafor,0816 609 9186,bisi18@yahoo.com,port harcourt,25/05/2024,692000
+C0260,yusuf okonkwo,234-806-676-8073,yusuf89@yahoo.com, Lagos ,01/24/2023,N/A
+C0118,  Adaeze Nwosu,0803 644 3480,ADAEZE.NWOSU@GMAIL.COM,Lagos,29-Apr-2024,N/A
+C0184,  Chioma Eze,0806 660 6593,chioma.eze@gmail.com,lagos,22-Mar-2022,"₦152,000"
+C0264,hauwa musa,234-803-295-3993,HAUWA.MUSA@GMAIL.COM,KANO ,03/11/2022,N/A
+C0233,"Abubakar, Yusuf",234-806-211-6782,,ABUJA,01-Dec-2023,N/A
+C0065,HAUWA OBI,0905 852 3358,HAUWA.OBI@GMAIL.COM,PH,2023-11-15,812000
+C0123,"Nwosu, Chioma",0803 606 5236,CHIOMA.NWOSU@GMAIL.COM,Abuja ,2024-11-17,N/A
+C0223,OBINNA ONYEKA,+2349056759183,obinna10@yahoo.com,Port Harcourt,12-Feb-2025,"₦17,000"
+C0086,yusuf adeyemi,234-816-712-4845,YUSUF.ADEYEMI@GMAIL.COM,enugu,12/01/2022,"740,000.00"
+C0171,Hauwa  Okafor,+2349052188701,hauwa.okafor@gmail.com,Port-Harcourt,20/05/2022,"₦583,000"
+C0254,"Onyeka, Tolu",0703 714 4399,,PH,05/04/2023,177000
+C0136,Tolu Abubakar,0816 768 2159,tolu.abubakar@gmail.com,KANO ,01-Jun-2022,N/A
+C0136,Tolu Abubakar,0816 768 2159,tolu.abubakar@gmail.com,KANO ,01-Jun-2022,N/A
+C0169,Ifeanyi  Olawale,0803 546 6199,,Abuja,2025-01-30,328000
+C0199,zainab onyeka,234-806-617-6415,ZAINAB.ONYEKA@GMAIL.COM,Port Harcourt,2023-03-08,"₦389,000"
+C0022,Ifeanyi  Eze,+2348166877624,IFEANYI.EZE@GMAIL.COM,Lagos,2022-05-21,N/A
+C0156,bola olawale,+2348062138827,BOLA.OLAWALE@GMAIL.COM,"Ibadan, Oyo",21/06/2022,627000
+C0258,hauwa okafor,+2348034688264,,Kano,28/02/2024,"862,000.00"
+C0192,Chidi Okafor,234-816-799-1011,chidi84@yahoo.com,Abuja ,16/02/2022,"₦480,000"
+C0073,ibrahim onyeka,+2348137016804,ibrahim45@yahoo.com,ibadan,2024-07-15,N/A
+C0092,uche abubakar,,uche.abubakar@gmail.com,ibadan,12/07/2023,527000
+C0215,  Aisha Uzor,,aisha.uzor@gmail.com,Abuja ,08/12/2022,N/A
+C0040,"Ibrahim, Hauwa",234-813-546-3653,HAUWA.IBRAHIM@GMAIL.COM,Port-Harcourt,2022-08-09,"863,000.00"
+C0050,  Zainab Uzor,+2348036518321,zainab.uzor@gmail.com,FCT Abuja,01/02/2022,"₦480,000"
+C0284,MARYAM UZOR,+2348036792631,maryam6@yahoo.com,Lagos State,10/23/2023,802000
+C0212,SANI ADEBAYO,,,enugu,02-Apr-2022,"₦891,000"
+C0046,FUNMI CHUKWU,+2348031921415,funmi21@yahoo.com,KANO ,07/21/2024,890000
+C0257,Tolu  Okafor,09059643688,tolu59@yahoo.com,Ibadan,10/16/2022,N/A
+C0293,bisi adeyemi,07035564409,BISI.ADEYEMI@GMAIL.COM,kano,02/28/2023,"227,000.00"
+C0015,TOLU ADEYEMI,+2348131590359,TOLU.ADEYEMI@GMAIL.COM,ABUJA,2022-07-22,40000
+C0125,  Obinna Olawale,09057901394,,enugu,08/18/2023,N/A
+C0016,Tunde  Ibrahim,,tunde.ibrahim@gmail.com,LAGOS,04-Sep-2024,"866,000.00"
+C0163,Segun  Bello,,SEGUN.BELLO@GMAIL.COM,ENUGU,06/13/2023,"₦158,000"
+C0221,yusuf chukwu,234-803-173-1754,YUSUF.CHUKWU@GMAIL.COM,Lagos,29-Jul-2023,"584,000.00"
+C0026,"Nwosu, Chioma",09057705567,,"Ibadan, Oyo",05/09/2022,"₦380,000"
+C0003,  Tolu Obi,,tolu.obi@gmail.com,kano,2024-09-15,N/A
+C0109,KEMI AFOLABI,+2349054278474,KEMI.AFOLABI@GMAIL.COM,Lag0s,01/09/2022,"184,000.00"
+C0068,Hauwa  Obi,0813 480 9384,hauwa62@yahoo.com,"Ibadan, Oyo",2023-01-18,"599,000.00"
+C0002,Ibrahim Uzor,0803 174 5963,IBRAHIM.UZOR@GMAIL.COM,ibadan,16-Aug-2022,N/A
+C0189,"Abubakar, Hauwa",09053661722,HAUWA.ABUBAKAR@GMAIL.COM,Lag0s,11/26/2023,"695,000.00"
+C0287,"Abubakar, Amaka",,amaka.abubakar@gmail.com,ENUGU,13/04/2023,371000
+C0113,Segun  Eze,0816 558 2181,segun79@yahoo.com,LAGOS,27/03/2023,847000
+C0049,BISI ONYEKA,0703 184 6700,,Lag0s,2022-06-06,"₦588,000"
+C0019,"Ibrahim, Maryam",234-703-966-4252,,Port-Harcourt,12-Oct-2023,"630,000.00"
+C0160,Adaeze  Adebayo,234-806-553-7532,adaeze.adebayo@gmail.com,enugu,18-Aug-2022,337000
+C0168,chidi uzor,234-806-166-5872,chidi.uzor@gmail.com,ENUGU,2023-01-13,N/A
+C0159,Tolu  Garba,+2348032338595,tolu.garba@gmail.com,KANO ,2025-01-07,N/A
+C0295,bisi suleiman,234-905-713-3645,bisi.suleiman@gmail.com,Abuja,2024-03-08,"₦469,000"
+C0117,Femi  Musa,0905 983 6465,,"Ibadan, Oyo",2024-05-14,"239,000.00"
+C0253,Halima Onyeka,+2348169593547,halima27@yahoo.com,ENUGU,30-Jun-2023,"₦284,000"
+C0134,ADAEZE IBRAHIM,0813 288 6854,,Port-Harcourt,29-Jun-2022,"266,000.00"
+C0053,yusuf adeyemi,0905 604 8782,,enugu,2024-10-06,177000
+C0198,BISI UZOR,08169581335,bisi3@yahoo.com,Port-Harcourt,09-Jan-2024,N/A
+C0234,tunde olawale,08166228181,TUNDE.OLAWALE@GMAIL.COM,abuja,04/13/2023,N/A
+C0060,kemi uzor,234-813-350-6121,kemi.uzor@gmail.com,kano,2022-01-12,657000
+C0017,"Olawale, Musa",+2349051608873,MUSA.OLAWALE@GMAIL.COM,Enugu,14/10/2024,34000
+C0013,Ada Adeyemi,,ada.adeyemi@gmail.com,"Ibadan, Oyo",03-Dec-2022,275000
+C0208,MUSA CHUKWU,08163239298,musa33@yahoo.com,Lagos State,16/12/2023,"₦215,000"
+C0296,Ngozi  Adeyemi,,NGOZI.ADEYEMI@GMAIL.COM,Ibadan,07/15/2022,603000
+C0047,ada okonkwo,07036962639,,Lag0s,2024-07-31,"527,000.00"
+C0056,Emeka  Okafor,234-803-413-4050,EMEKA.OKAFOR@GMAIL.COM,Enugu,10-Jul-2023,"594,000.00"
+C0204,bola okonkwo,+2348167107123,bola76@yahoo.com,ibadan,23/10/2024,"275,000.00"
+C0151,kemi danjuma,0803 237 4783,kemi32@yahoo.com,ibadan,07/03/2023,509000
+C0248,"Bello, Ada",0816 954 1509,ada43@yahoo.com,Kano,01/31/2023,"₦430,000"
+C0087,"Onyeka, Maryam",0905 906 2059,,"Ibadan, Oyo",12/09/2024,"₦516,000"
+C0008,aisha ibrahim,234-806-451-3804,aisha85@yahoo.com,Lag0s,27/07/2022,N/A
+C0084,Kemi  Balogun,0803 604 1238,kemi45@yahoo.com,Lagos,01/21/2025,"852,000.00"
+C0011,"Okafor, Chioma",234-816-537-9875,CHIOMA.OKAFOR@GMAIL.COM,Ibadan,04-May-2024,"₦598,000"
+C0136,Tolu Abubakar,0816 768 2159,tolu.abubakar@gmail.com,KANO ,01-Jun-2022,N/A
+C0246,UCHE EZE,,UCHE.EZE@GMAIL.COM,port harcourt,2022-09-15,"315,000.00"
+C0224,Ifeanyi  Okonkwo,08133996012,ifeanyi35@yahoo.com,FCT Abuja,13/09/2024,N/A
+C0174,YUSUF NWOSU,0703 356 0607,yusuf.nwosu@gmail.com, Lagos ,29-Mar-2025,16000
+C0085,Ngozi  Garba,08031593145,ngozi91@yahoo.com,ibadan,01/17/2022,"632,000.00"
+C0122,tolu nwosu,0813 758 8960,,Ibadan,2023-11-01,"₦576,000"
+C0058,Chidi  Abubakar,,chidi49@yahoo.com,"Ibadan, Oyo",2023-05-04,"374,000.00"
+C0112,  Ada Balogun,+2348133105106,,enugu,19/10/2023,"583,000.00"
+C0124,Halima  Eze,,HALIMA.EZE@GMAIL.COM,kano,13-Sep-2023,344000
+C0279,tunde eze,09051049590,tunde62@yahoo.com,lagos,13/04/2023,N/A
+C0029,Ifeanyi  Olawale,0813 657 4676,IFEANYI.OLAWALE@GMAIL.COM,LAGOS,2025-01-12,"₦164,000"
+C0146,FUNMI OKAFOR,09052683242,,KANO ,07/14/2022,N/A
+C0241,Tunde Eze,+2348138989528,,Port-Harcourt,01-Nov-2024,715000
+C0067,FEMI GARBA,,femi30@yahoo.com, Lagos ,03/06/2024,482000
+C0150,Tunde Chukwu,+2348162832189,tunde77@yahoo.com,enugu,2024-06-07,"₦102,000"
+C0103,Yusuf  Onyeka,,,Enugu,2024-08-02,N/A
+C0236,"Suleiman, Funmi",0703 100 7813,,Lagos State,2024-10-29,107000
+C0051,  Musa Onyeka,,,Port-Harcourt,30-Mar-2025,"606,000.00"
+C0038,"Adeyemi, Tolu",,tolu.adeyemi@gmail.com,ibadan,2024-11-21,N/A
+C0043,"Obi, Ifeanyi",234-816-947-2515,ifeanyi68@yahoo.com,ENUGU,08/04/2022,N/A
+C0270,"Chukwu, Bola",234-816-307-7054,BOLA.CHUKWU@GMAIL.COM,Abuja,12/15/2023,331000
+C0089,Ngozi Garba,09053243978,ngozi.garba@gmail.com,Kano,25/12/2022,"479,000.00"
+C0033,zainab okonkwo,234-703-767-4707,ZAINAB.OKONKWO@GMAIL.COM,LAGOS,27/04/2024,531000
+C0088,Nneka  Garba,+2348069515940,nneka11@yahoo.com, Lagos ,26/01/2024,N/A
+C0070,  Hauwa Garba,234-703-100-6227,hauwa.garba@gmail.com,Enugu,04-Jul-2024,"833,000.00"
+C0120,tunde suleiman,09059933580,TUNDE.SULEIMAN@GMAIL.COM,Port Harcourt,2023-01-15,683000
+C0194,sani afolabi,,SANI.AFOLABI@GMAIL.COM,KANO ,16/04/2022,"₦389,000"
+C0032,YUSUF CHUKWU,+2348038163775,yusuf.chukwu@gmail.com,Lag0s,09/24/2023,"₦658,000"
+C0216,"Afolabi, Musa",+2348136978921,,ENUGU,20/01/2024,136000
+C0143,  Ada Ibrahim,0816 188 0935,ada71@yahoo.com,Enugu,23-Nov-2024,882000
+C0195,Tolu Olawale,0806 535 8792,tolu.olawale@gmail.com,ENUGU,04/04/2025,605000
+C0240,Segun Obi,07031083901,,Abuja ,20-Nov-2022,145000
+C0300,  Tolu Okafor,,TOLU.OKAFOR@GMAIL.COM,abuja,10/22/2022,"₦186,000"
+C0075,Maryam  Obi,234-703-351-9819,maryam.obi@gmail.com,Lag0s,17/09/2024,N/A
+C0152,tolu okafor,,TOLU.OKAFOR@GMAIL.COM,Enugu,07-Feb-2024,"318,000.00"
+C0265,Aisha Adebayo,234-816-911-1630,AISHA.ADEBAYO@GMAIL.COM, Lagos ,22/05/2023,387000
+C0155,ngozi nwosu,+2347034579283,NGOZI.NWOSU@GMAIL.COM,KANO ,2023-10-03,"841,000.00"
+C0012,Musa  Bello,+2348136265892,musa21@yahoo.com,Enugu,27/03/2024,"863,000.00"
+C0287,"Abubakar, Amaka",,amaka.abubakar@gmail.com,ENUGU,13/04/2023,371000
+C0178,Tolu Garba,,tolu.garba@gmail.com,LAGOS,11/01/2022,"₦338,000"
+C0230,Ibrahim Eze,0703 159 5727,,Abuja,09/12/2022,"₦851,000"
+C0069,"Onyeka, Tolu",08035295323,tolu.onyeka@gmail.com,abuja,04/11/2023,"₦689,000"
+C0127,Chioma  Eze,0806 883 0191,,port harcourt,07/09/2023,N/A
+C0035,  Ngozi Abubakar,234-803-709-4084,,Port Harcourt,2023-12-07,213000
+C0203,"Okafor, Ada",0703 938 2980,, Lagos ,23-Apr-2023,N/A
+C0021,  Tunde Eze,08135706400,tunde38@yahoo.com,abuja,25/09/2022,"346,000.00"
+C0298,tunde chukwu,,tunde.chukwu@gmail.com,abuja,04/09/2023,242000
+C0140,  Femi Afolabi,07032676712,,ibadan,05/08/2022,49000
+C0091,maryam eze,+2349059997164,maryam25@yahoo.com,PH,2023-07-06,"₦741,000"
+C0251,NNEKA DANJUMA,08033250813,NNEKA.DANJUMA@GMAIL.COM,port harcourt,2025-01-15,543000
+C0247,bola eze,0816 199 8679,,PH,05/25/2024,N/A
+C0137,TUNDE ADEYEMI,234-813-201-7706,TUNDE.ADEYEMI@GMAIL.COM,Lagos State,25-Sep-2022,N/A
+C0030,Uche  Adeyemi,08163580322,uche.adeyemi@gmail.com,Abuja ,09/02/2022,"626,000.00"
+C0269,CHIDI SULEIMAN,,chidi.suleiman@gmail.com,Lag0s,2024-07-27,"305,000.00"
+C0167,YUSUF EZE,0813 848 4522,,Port Harcourt,02/01/2023,"5,000.00"
+C0078,Dayo Afolabi,+2348165661934,dayo.afolabi@gmail.com,lagos,2023-02-02,N/A
+C0291,Nneka Adebayo,0803 222 7742,NNEKA.ADEBAYO@GMAIL.COM,Abuja ,2024-05-04,137000
+C0283,"Olawale, Femi",0806 425 8726,FEMI.OLAWALE@GMAIL.COM,PH,01/01/2022,"97,000.00"
+C0255,  Emeka Nwosu,234-813-528-0512,,enugu,27/04/2024,"₦25,000"
+C0072,Funmi  Chukwu,09055186060,FUNMI.CHUKWU@GMAIL.COM,abuja,2024-01-12,236000
+C0288,SANI OLAWALE,234-703-111-0433,,KANO ,2024-09-15,"342,000.00"
+C0121,  Nneka Ibrahim,09057699257,,Port-Harcourt,30/08/2024,"658,000.00"
+C0285,"Abubakar, Ibrahim",,ibrahim88@yahoo.com,ENUGU,14/12/2023,"441,000.00"
+C0129,"Okafor, Bola",234-703-597-1892,bola82@yahoo.com,Ibadan,13-Jun-2024,N/A
+C0154,  Femi Garba,,femi.garba@gmail.com,port harcourt,2024-01-09,"₦178,000"
+C0111,maryam garba,234-905-286-1379,,abuja,03/05/2022,N/A
+C0292,segun ibrahim,+2348167627160,segun93@yahoo.com,ENUGU,2022-03-22,"168,000.00"
+C0263,"Uzor, Bola",234-905-584-4675,,enugu,2022-01-27,N/A
+C0188,Yusuf Eze,,yusuf44@yahoo.com,KANO ,05/14/2023,"₦529,000"
+C0133,Chidi  Adeyemi,09052347027,chidi32@yahoo.com,ENUGU,29/04/2024,"₦680,000"
+C0218,halima bello,,HALIMA.BELLO@GMAIL.COM,Port Harcourt,08-Apr-2024,824000
+C0237,"Afolabi, Chidi",08139277696,chidi90@yahoo.com,Abuja,2022-02-03,"₦796,000"
+C0106,Uche Adebayo,+2349059233808,,ibadan,2023-01-02,102000
+C0177,Hauwa Eze,07039085838,hauwa.eze@gmail.com,Ibadan,17-May-2022,"₦339,000"
+C0282,Dayo Garba,+2349055897349,dayo57@yahoo.com,kano,02-Jan-2024,262000
+C0147,Obinna  Adeyemi,+2348139033517,OBINNA.ADEYEMI@GMAIL.COM,Port Harcourt,03/02/2022,188000
+C0061,Maryam  Danjuma,+2348065831990,maryam.danjuma@gmail.com,FCT Abuja,17-Apr-2023,N/A
+C0094,halima adeyemi,+2348034150337,,ENUGU,2023-12-21,423000
+C0131,Segun Garba,08035996926,segun95@yahoo.com,ENUGU,2023-02-11,354000
+C0227,ADAEZE OKAFOR,+2348166926644,,kano,14-Feb-2023,"803,000.00"
+C0006,tunde obi,0806 615 7448,tunde.obi@gmail.com,Kano,2023-04-02,"705,000.00"
+C0261,Kelechi Okonkwo,07039768046,KELECHI.OKONKWO@GMAIL.COM,Enugu,07/11/2023,345000
+C0250,"Eze, Maryam",09057033788,maryam6@yahoo.com,Kano,2023-01-14,"433,000.00"
+C0228,"Adebayo, Amaka",,AMAKA.ADEBAYO@GMAIL.COM,Kano,10/05/2022,13000
+C0297,Sani Olawale,+2347039819867,,Abuja,24/10/2022,277000
+C0041,Tunde  Olawale,,,Port Harcourt,01-Nov-2024,"775,000.00"
+C0039,Obinna Uzor,08166752049,,KANO ,2025-03-19,N/A
+C0064,  Chioma Okonkwo,234-803-510-1375,CHIOMA.OKONKWO@GMAIL.COM,abuja,2024-08-25,"₦424,000"
+C0238,uche adebayo,234-816-568-2428,uche91@yahoo.com,Enugu,30-Nov-2023,N/A
+C0036,  Ada Bello,08136134679,,port harcourt,14-Mar-2025,N/A
+C0232,  Funmi Chukwu,,,"Ibadan, Oyo",02/10/2025,N/A
+C0018,"Bello, Ada",234-806-648-1789,ada.bello@gmail.com,enugu,11-Oct-2024,"₦735,000"
+C0221,yusuf chukwu,234-803-173-1754,YUSUF.CHUKWU@GMAIL.COM,Lagos,29-Jul-2023,"584,000.00"
+C0128,maryam afolabi,,maryam32@yahoo.com,"Ibadan, Oyo",17-Oct-2022,"360,000.00"
+C0004,Uche Adebayo,234-703-117-2273,uche80@yahoo.com,ABUJA,2022-05-02,"₦56,000"
+C0108,  Zainab Okafor,234-813-381-9909,ZAINAB.OKAFOR@GMAIL.COM,KANO ,2023-07-16,"283,000.00"
+C0132,Tunde  Danjuma,+2347039518144,tunde46@yahoo.com,ibadan,08/26/2022,"218,000.00"
+C0205,HAUWA IBRAHIM,+2347035934323,,FCT Abuja,10/07/2022,"₦874,000"
+C0235,  Bisi Okafor,0806 799 8588,,KANO ,13/12/2024,"732,000.00"
+C0130,bisi adebayo,+2348137151211,BISI.ADEBAYO@GMAIL.COM,port harcourt,01/05/2023,537000
+C0286,"Ibrahim, Adaeze",234-703-238-0421,ADAEZE.IBRAHIM@GMAIL.COM,FCT Abuja,04/01/2025,"₦411,000"
+C0126,"Nwosu, Tunde",,,"Ibadan, Oyo",2024-06-17,"27,000.00"
+C0196,  Maryam Obi,,maryam.obi@gmail.com,ENUGU,19-Mar-2023,"427,000.00"
+C0057,  Musa Adebayo,08138249945,musa45@yahoo.com,Port Harcourt,08-Jul-2023,869000
+C0218,halima bello,,HALIMA.BELLO@GMAIL.COM,Port Harcourt,08-Apr-2024,824000
+C0158,hauwa suleiman,234-806-987-9090,hauwa.suleiman@gmail.com,Lag0s,2023-05-27,"697,000.00"
+C0100,segun garba,+2348069084071,,kano,12/03/2023,882000
+C0098,Tolu  Okonkwo,08162687167,TOLU.OKONKWO@GMAIL.COM,"Ibadan, Oyo",11/09/2023,N/A
+C0271,Halima Olawale,234-816-505-4694,,port harcourt,04/23/2024,"238,000.00"
+C0066,Musa  Uzor,,musa95@yahoo.com,Port-Harcourt,2022-05-23,N/A
+C0023,Sani Olawale,+2348133436397,sani.olawale@gmail.com,KANO ,2023-12-28,"875,000.00"
+C0274,Adaeze  Obi,0813 882 0281,adaeze.obi@gmail.com,Port-Harcourt,2022-03-01,"739,000.00"
+C0166,zainab adeyemi,08038507977,ZAINAB.ADEYEMI@GMAIL.COM,LAGOS,2022-03-22,853000
+C0007,IFEANYI OKAFOR,+2349056469627,IFEANYI.OKAFOR@GMAIL.COM,Abuja,27/02/2023,"544,000.00"
+C0116,adaeze balogun,,ADAEZE.BALOGUN@GMAIL.COM,"Ibadan, Oyo",15-Aug-2022,"267,000.00"
+C0266,emeka abubakar,09054935073,emeka70@yahoo.com,Abuja,07/29/2023,149000
+C0209,  Adaeze Okonkwo,0905 864 0682,adaeze.okonkwo@gmail.com, Lagos ,06/30/2024,"₦128,000"
+C0025,Ibrahim Garba,09054079470,ibrahim.garba@gmail.com,Ibadan,17/09/2023,N/A
+C0161,AMAKA DANJUMA,234-905-460-9963,,ABUJA,2023-04-19,"245,000.00"
+C0107,"Onyeka, Bola",,BOLA.ONYEKA@GMAIL.COM,abuja,08/27/2022,"88,000.00"
+C0083,chioma uzor,08131010735,chioma49@yahoo.com,"Ibadan, Oyo",2022-02-27,"₦387,000"
+C0289,"Abubakar, Funmi",0905 968 1824,funmi33@yahoo.com,Kano,03/28/2023,"557,000.00"
+C0220,kelechi chukwu,08165969028,kelechi46@yahoo.com,Port-Harcourt,09/01/2023,248000
+C0114,Amaka  Okonkwo,,amaka76@yahoo.com,"Ibadan, Oyo",02/06/2022,24000
+C0176,Chioma  Okonkwo,234-803-264-8572,chioma.okonkwo@gmail.com,Ibadan,2024-10-25,"₦765,000"
+C0210,Adaeze  Adebayo,+2348031865778,ADAEZE.ADEBAYO@GMAIL.COM,Abuja,18/03/2022,"764,000.00"
+C0097,Maryam  Olawale,+2349056904697,maryam2@yahoo.com,Lagos State,2024-08-03,N/A
+C0168,chidi uzor,234-806-166-5872,chidi.uzor@gmail.com,ENUGU,2023-01-13,N/A
+C0145,  Yusuf Afolabi,,,kano,2022-10-15,N/A
+C0187,  Aisha Okonkwo,234-816-535-5476,aisha92@yahoo.com, Lagos ,2023-12-08,N/A
+C0080,"Musa, Femi",0803 463 0744,,LAGOS,16/04/2024,113000
+C0164,  Maryam Okafor,0803 586 8957,maryam.okafor@gmail.com, Lagos ,13/11/2022,585000
+C0074,Ngozi Chukwu,+2348132263047,ngozi.chukwu@gmail.com,ibadan,12-Jul-2022,"473,000.00"
+C0290,BISI CHUKWU,234-803-334-3727,BISI.CHUKWU@GMAIL.COM,Abuja,03/21/2024,"362,000.00"
+C0115,TOLU CHUKWU,08132914203,,FCT Abuja,10-Mar-2023,"57,000.00"
+C0142,Bisi Garba,+2349056760370,BISI.GARBA@GMAIL.COM,Abuja,09/02/2024,268000
+C0243,Obinna Garba,08064058363,,Lagos,2024-05-16,"651,000.00"
+C0239,"Afolabi, Dayo",+2348133816906,,Enugu,06/11/2024,"₦801,000"
+C0206,  Zainab Nwosu,0806 737 5502,zainab14@yahoo.com,kano,28/02/2024,N/A
+C0044,YUSUF IBRAHIM,0703 832 1306,yusuf.ibrahim@gmail.com,ibadan,01/01/2022,"195,000.00"
+C0222,Bola Adeyemi,,BOLA.ADEYEMI@GMAIL.COM,Ibadan,20-May-2024,N/A
+C0055,Chidi  Onyeka,08068392835,chidi.onyeka@gmail.com,Ibadan,04/13/2024,"816,000.00"
+C0275,"Garba, Ada",08032805968,ADA.GARBA@GMAIL.COM,Ibadan,07/23/2023,893000
+C0001,"Nwosu, Dayo",,DAYO.NWOSU@GMAIL.COM,Ibadan,2023-04-24,N/A
+C0104,Dayo  Musa,,dayo7@yahoo.com, Lagos ,27-Mar-2022,"₦587,000"
+C0175,"Danjuma, Obinna",+2348062975821,obinna98@yahoo.com,PH,16-Jan-2025,N/A
+C0009,Sani Bello,07036533099,SANI.BELLO@GMAIL.COM,port harcourt,07/04/2023,N/A
+C0214,  Bola Uzor,,BOLA.UZOR@GMAIL.COM,port harcourt,05/12/2022,N/A
+C0054,tolu nwosu,+2348062654109,TOLU.NWOSU@GMAIL.COM,LAGOS,01/08/2024,524000
+C0105,IBRAHIM MUSA,09053095608,ibrahim29@yahoo.com,FCT Abuja,12/29/2022,527000
+C0102,Adaeze  Abubakar,234-703-110-0219,adaeze53@yahoo.com,Enugu,2024-09-18,N/A
+C0278,Nneka Obi,,nneka.obi@gmail.com,Kano,16/02/2022,25000
+C0280,Hauwa Olawale,+2348135667740,hauwa4@yahoo.com,PH,2025-01-28,716000
+C0249,Halima  Eze,234-905-932-7083,,ENUGU,06/09/2024,131000
+C0202,Ada Eze,07035351919,,Lagos State,06/23/2023,"562,000.00"
+C0165,"Balogun, Ibrahim",0806 903 5073,IBRAHIM.BALOGUN@GMAIL.COM,Lagos,05/16/2024,710000

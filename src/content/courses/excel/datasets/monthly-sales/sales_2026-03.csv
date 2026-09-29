@@ -1,0 +1,269 @@
+OrderID,OrderDate,Region,Store,Salesperson,CustomerType,ProductID,Product,Category,Units,UnitPrice,DiscountPct,PaymentMethod
+NM-10576,2026-03-01,Lagos,Lagos - Ikeja,Ngozi Olawale,Online,P030,Sugar 1kg (x10),Groceries,12,15000,0,Transfer
+NM-10577,2026-03-01,Lagos,Lagos - Ikeja,Tolu Eze,Retail,P027,Milo 1kg Refill,Groceries,8,9200,0,Transfer
+NM-10578,2026-03-01,Lagos,Lagos - Surulere,Adaeze Garba,Online,P035,School Bag,Fashion,9,12500,0,Transfer
+NM-10579,2026-03-01,Kano,Kano - Sabon Gari,Bisi Onyeka,Wholesale,P031,Ankara Fabric (6 yards),Fashion,80,18500,10,POS
+NM-10580,2026-03-01,Lagos,Lagos - Lekki,Uche Musa,Retail,P033,Women's Ankara Dress,Fashion,5,31000,10,Cash
+NM-10581,2026-03-01,Abuja,Abuja - Garki,Femi Suleiman,Online,P040,HP Ink Cartridge 305,Office,10,14500,0,Transfer
+NM-10582,2026-03-01,Port Harcourt,Port Harcourt - GRA,Nneka Olawale,Retail,P038,Mattress 6x6,Furniture,1,178000,0,Card
+NM-10583,2026-03-02,Lagos,Lagos - Lekki,Uche Musa,Wholesale,P035,School Bag,Fashion,70,12500,10,Transfer
+NM-10584,2026-03-02,Ibadan,Ibadan - Bodija,Tunde Adebayo,Online,P001,Tecno Spark 20,Phones,3,145000,10,Transfer
+NM-10585,2026-03-02,Port Harcourt,Port Harcourt - GRA,Ibrahim Danjuma,Retail,P025,Vegetable Oil 5L,Groceries,10,17500,0,POS
+NM-10586,2026-03-02,Ibadan,Ibadan - Bodija,Bisi Olawale,Online,P006,Oraimo FreePods 4,Accessories,12,25500,10,Transfer
+NM-10587,2026-03-02,Abuja,Abuja - Garki,Bola Okafor,Wholesale,P029,Semovita 10kg,Groceries,56,11800,15,Cash
+NM-10588,2026-03-02,Lagos,Lagos - Surulere,Dayo Suleiman,Retail,P037,Study Desk,Furniture,9,64000,5,Cash
+NM-10589,2026-03-03,Lagos,Lagos - Ikeja,Chioma Onyeka,Retail,P025,Vegetable Oil 5L,Groceries,5,17500,0,Card
+NM-10590,2026-03-03,Abuja,Abuja - Wuse,Tunde Eze,Retail,P026,Indomie Carton (40),Groceries,8,13500,0,Cash
+NM-10591,2026-03-03,Port Harcourt,Port Harcourt - GRA,Nneka Olawale,Retail,P008,HP 250 G9 Laptop,Computers,2,585000,15,POS
+NM-10592,2026-03-03,Lagos,Lagos - Lekki,Uche Uzor,Retail,P007,Phone Charger (Fast),Accessories,6,7500,0,Card
+NM-10593,2026-03-03,Enugu,Enugu - Independence Layout,Emeka Garba,Retail,P007,Phone Charger (Fast),Accessories,10,7500,0,Transfer
+NM-10594,2026-03-03,Lagos,Lagos - Surulere,Dayo Suleiman,Wholesale,P019,"Standing Fan 18""",Appliances,48,38500,10,Cash
+NM-10595,2026-03-03,Abuja,Abuja - Garki,Femi Suleiman,Retail,P032,Men's Senator Wear,Fashion,4,35000,0,Transfer
+NM-10596,2026-03-03,Kano,Kano - Sabon Gari,Bisi Onyeka,Wholesale,P015,Sound Bar 2.1,TV & Audio,8,95000,10,POS
+NM-10597,2026-03-04,Ibadan,Ibadan - Bodija,Bisi Olawale,Retail,P020,Microwave Oven 20L,Appliances,9,86000,0,Cash
+NM-10598,2026-03-04,Kano,Kano - Sabon Gari,Bisi Onyeka,Retail,P006,Oraimo FreePods 4,Accessories,7,25500,0,Transfer
+NM-10599,2026-03-04,Ibadan,Ibadan - Bodija,Bisi Olawale,Retail,P032,Men's Senator Wear,Fashion,8,35000,5,POS
+NM-10600,2026-03-05,Lagos,Lagos - Lekki,Uche Uzor,Retail,P032,Men's Senator Wear,Fashion,8,35000,5,Transfer
+NM-10601,2026-03-05,Lagos,Lagos - Surulere,Adaeze Garba,Wholesale,P007,Phone Charger (Fast),Accessories,50,7500,15,POS
+NM-10602,2026-03-05,Lagos,Lagos - Ikeja,Chioma Onyeka,Retail,P011,Wireless Mouse,Accessories,10,9500,15,Cash
+NM-10603,2026-03-05,Lagos,Lagos - Surulere,Dayo Suleiman,Wholesale,P014,JBL Flip 6 Speaker,TV & Audio,12,129000,10,POS
+NM-10604,2026-03-05,Port Harcourt,Port Harcourt - GRA,Nneka Olawale,Retail,P024,Rice 50kg (Local),Groceries,11,78000,5,Card
+NM-10605,2026-03-05,Ibadan,Ibadan - Bodija,Tolu Bello,Retail,P023,Surge Protector,Power,11,12500,0,Transfer
+NM-10606,2026-03-05,Abuja,Abuja - Garki,Bola Okafor,Wholesale,P027,Milo 1kg Refill,Groceries,16,9200,15,Cash
+NM-10607,2026-03-05,Kano,Kano - Sabon Gari,Maryam Chukwu,Online,P006,Oraimo FreePods 4,Accessories,9,25500,15,Transfer
+NM-10608,2026-03-05,Abuja,Abuja - Garki,Bola Okafor,Online,P036,Office Chair,Furniture,10,79000,10,Transfer
+NM-10609,2026-03-06,Abuja,Abuja - Garki,Femi Suleiman,Retail,P025,Vegetable Oil 5L,Groceries,9,17500,0,Cash
+NM-10610,2026-03-06,Enugu,Enugu - Independence Layout,Zainab Obi,Online,P005,Oraimo Power Bank 20000mAh,Accessories,7,21000,0,Cash
+NM-10611,2026-03-06,Lagos,Lagos - Lekki,Ifeanyi Adebayo,Retail,P038,Mattress 6x6,Furniture,1,178000,5,Transfer
+NM-10612,2026-03-06,Abuja,Abuja - Garki,Zainab Eze,Retail,P035,School Bag,Fashion,12,12500,0,POS
+NM-10613,2026-03-06,Abuja,Abuja - Wuse,Bola Musa,Online,P027,Milo 1kg Refill,Groceries,2,9200,5,Transfer
+NM-10614,2026-03-06,Port Harcourt,Port Harcourt - GRA,Segun Chukwu,Wholesale,P001,Tecno Spark 20,Phones,8,145000,10,Cash
+NM-10615,2026-03-06,Lagos,Lagos - Surulere,Kelechi Garba,Retail,P007,Phone Charger (Fast),Accessories,11,7500,0,Cash
+NM-10616,2026-03-06,Port Harcourt,Port Harcourt - GRA,Segun Chukwu,Retail,P019,"Standing Fan 18""",Appliances,12,38500,15,Card
+NM-10617,2026-03-06,Kano,Kano - Sabon Gari,Hauwa Danjuma,Retail,P027,Milo 1kg Refill,Groceries,7,9200,0,Transfer
+NM-10618,2026-03-06,Enugu,Enugu - Independence Layout,Dayo Abubakar,Retail,P008,HP 250 G9 Laptop,Computers,2,585000,0,POS
+NM-10619,2026-03-06,Kano,Kano - Sabon Gari,Maryam Chukwu,Wholesale,P027,Milo 1kg Refill,Groceries,25,9200,15,Transfer
+NM-10620,2026-03-06,Abuja,Abuja - Garki,Zainab Eze,Retail,P016,Thermocool Freezer 200L,Appliances,2,318000,0,POS
+NM-10621,2026-03-06,Enugu,Enugu - Independence Layout,Zainab Obi,Retail,P002,Infinix Hot 40,Phones,3,162000,0,Transfer
+NM-10622,2026-03-06,Abuja,Abuja - Garki,Bola Okafor,Online,P023,Surge Protector,Power,7,12500,5,Transfer
+NM-10623,2026-03-07,Lagos,Lagos - Surulere,Adaeze Garba,Retail,P005,Oraimo Power Bank 20000mAh,Accessories,9,21000,0,Cash
+NM-10624,2026-03-07,Kano,Kano - Sabon Gari,Maryam Chukwu,Retail,P023,Surge Protector,Power,4,12500,10,Card
+NM-10625,2026-03-07,Port Harcourt,Port Harcourt - GRA,Nneka Olawale,Retail,P017,Binatone Blender,Appliances,5,29500,0,Transfer
+NM-10626,2026-03-07,Abuja,Abuja - Garki,Zainab Eze,Online,P030,Sugar 1kg (x10),Groceries,9,15000,5,Transfer
+NM-10627,2026-03-07,Ibadan,Ibadan - Bodija,Tunde Adebayo,Retail,P024,Rice 50kg (Local),Groceries,3,78000,5,Transfer
+NM-10628,2026-03-07,Kano,Kano - Sabon Gari,Maryam Chukwu,Retail,P011,Wireless Mouse,Accessories,1,9500,5,Transfer
+NM-10629,2026-03-07,Enugu,Enugu - Independence Layout,Dayo Abubakar,Retail,P017,Binatone Blender,Appliances,12,29500,0,POS
+NM-10630,2026-03-08,Abuja,Abuja - Garki,Bola Okafor,Retail,P013,"Hisense 55"" 4K TV",TV & Audio,3,499000,5,Cash
+NM-10631,2026-03-08,Abuja,Abuja - Wuse,Bola Musa,Retail,P009,Lenovo IdeaPad 3,Computers,1,560000,10,POS
+NM-10632,2026-03-08,Abuja,Abuja - Garki,Zainab Eze,Retail,P026,Indomie Carton (40),Groceries,11,13500,0,Cash
+NM-10633,2026-03-08,Lagos,Lagos - Surulere,Adaeze Garba,Retail,P039,Printer Paper A4 (Box),Office,4,24500,0,Cash
+NM-10634,2026-03-09,Port Harcourt,Port Harcourt - GRA,Nneka Olawale,Online,P007,Phone Charger (Fast),Accessories,6,7500,0,Cash
+NM-10635,2026-03-09,Lagos,Lagos - Lekki,Uche Musa,Retail,P005,Oraimo Power Bank 20000mAh,Accessories,1,21000,0,POS
+NM-10636,2026-03-09,Lagos,Lagos - Surulere,Kelechi Garba,Retail,P001,Tecno Spark 20,Phones,3,145000,0,Cash
+NM-10637,2026-03-09,Ibadan,Ibadan - Bodija,Tunde Adebayo,Wholesale,P026,Indomie Carton (40),Groceries,84,13500,10,Transfer
+NM-10638,2026-03-09,Port Harcourt,Port Harcourt - GRA,Ibrahim Danjuma,Retail,P007,Phone Charger (Fast),Accessories,12,7500,15,Transfer
+NM-10639,2026-03-09,Abuja,Abuja - Wuse,Tunde Eze,Online,P033,Women's Ankara Dress,Fashion,7,31000,5,Transfer
+NM-10640,2026-03-10,Port Harcourt,Port Harcourt - GRA,Ibrahim Danjuma,Retail,P033,Women's Ankara Dress,Fashion,8,31000,0,Card
+NM-10641,2026-03-10,Lagos,Lagos - Surulere,Dayo Suleiman,Online,P023,Surge Protector,Power,6,12500,0,Transfer
+NM-10642,2026-03-10,Kano,Kano - Sabon Gari,Bisi Onyeka,Retail,P035,School Bag,Fashion,4,12500,0,Cash
+NM-10643,2026-03-10,Port Harcourt,Port Harcourt - GRA,Segun Chukwu,Retail,P006,Oraimo FreePods 4,Accessories,5,25500,5,Transfer
+NM-10644,2026-03-10,Lagos,Lagos - Surulere,Adaeze Garba,Online,P005,Oraimo Power Bank 20000mAh,Accessories,10,21000,0,Transfer
+NM-10645,2026-03-10,Kano,Kano - Sabon Gari,Hauwa Danjuma,Online,P007,Phone Charger (Fast),Accessories,7,7500,0,Cash
+NM-10646,2026-03-10,Abuja,Abuja - Wuse,Chidi Uzor,Wholesale,P025,Vegetable Oil 5L,Groceries,80,17500,15,POS
+NM-10647,2026-03-11,Abuja,Abuja - Wuse,Chidi Uzor,Wholesale,P005,Oraimo Power Bank 20000mAh,Accessories,49,21000,10,Cash
+NM-10648,2026-03-11,Lagos,Lagos - Lekki,Uche Musa,Retail,P027,Milo 1kg Refill,Groceries,5,9200,10,Transfer
+NM-10649,2026-03-11,Ibadan,Ibadan - Bodija,Bisi Olawale,Retail,P028,Peak Milk Tin (24),Groceries,9,16500,0,Transfer
+NM-10650,2026-03-11,Lagos,Lagos - Lekki,Ifeanyi Adebayo,Retail,P017,Binatone Blender,Appliances,6,29500,0,POS
+NM-10651,2026-03-11,Kano,Kano - Sabon Gari,Maryam Chukwu,Retail,P024,Rice 50kg (Local),Groceries,9,78000,0,POS
+NM-10652,2026-03-11,Abuja,Abuja - Wuse,Chidi Uzor,Retail,P029,Semovita 10kg,Groceries,7,11800,0,POS
+NM-10653,2026-03-11,Lagos,Lagos - Ikeja,Chioma Onyeka,Retail,P026,Indomie Carton (40),Groceries,1,13500,0,Cash
+NM-10654,2026-03-11,Lagos,Lagos - Lekki,Ifeanyi Adebayo,Online,P019,"Standing Fan 18""",Appliances,6,38500,0,Transfer
+NM-10655,2026-03-12,Port Harcourt,Port Harcourt - GRA,Ibrahim Danjuma,Retail,P024,Rice 50kg (Local),Groceries,11,78000,0,Cash
+NM-10656,2026-03-12,Enugu,Enugu - Independence Layout,Zainab Obi,Retail,P001,Tecno Spark 20,Phones,2,145000,5,Transfer
+NM-10657,2026-03-12,Kano,Kano - Sabon Gari,Hauwa Danjuma,Retail,P032,Men's Senator Wear,Fashion,1,35000,0,Transfer
+NM-10658,2026-03-12,Port Harcourt,Port Harcourt - GRA,Segun Chukwu,Retail,P031,Ankara Fabric (6 yards),Fashion,9,18500,5,Cash
+NM-10659,2026-03-12,Lagos,Lagos - Lekki,Uche Musa,Online,P039,Printer Paper A4 (Box),Office,4,24500,5,Transfer
+NM-10660,2026-03-12,Port Harcourt,Port Harcourt - GRA,Ibrahim Danjuma,Online,P024,Rice 50kg (Local),Groceries,8,78000,5,Transfer
+NM-10661,2026-03-12,Abuja,Abuja - Wuse,Chidi Uzor,Retail,P006,Oraimo FreePods 4,Accessories,6,25500,0,Card
+NM-10662,2026-03-12,Ibadan,Ibadan - Bodija,Tolu Bello,Online,P025,Vegetable Oil 5L,Groceries,4,17500,5,Cash
+NM-10663,2026-03-13,Port Harcourt,Port Harcourt - GRA,Nneka Olawale,Online,P035,School Bag,Fashion,11,12500,5,Transfer
+NM-10664,2026-03-13,Abuja,Abuja - Wuse,Tunde Eze,Online,P027,Milo 1kg Refill,Groceries,9,9200,5,POS
+NM-10665,2026-03-13,Lagos,Lagos - Lekki,Ifeanyi Adebayo,Retail,P025,Vegetable Oil 5L,Groceries,8,17500,0,Transfer
+NM-10666,2026-03-13,Kano,Kano - Sabon Gari,Bisi Onyeka,Retail,P017,Binatone Blender,Appliances,8,29500,10,Cash
+NM-10667,2026-03-13,Kano,Kano - Sabon Gari,Hauwa Danjuma,Online,P025,Vegetable Oil 5L,Groceries,9,17500,0,Transfer
+NM-10668,2026-03-13,Kano,Kano - Sabon Gari,Bisi Onyeka,Retail,P039,Printer Paper A4 (Box),Office,5,24500,5,Transfer
+NM-10669,2026-03-13,Abuja,Abuja - Wuse,Bola Musa,Retail,P007,Phone Charger (Fast),Accessories,1,7500,0,Transfer
+NM-10670,2026-03-13,Port Harcourt,Port Harcourt - GRA,Nneka Olawale,Retail,P017,Binatone Blender,Appliances,9,29500,15,Cash
+NM-10671,2026-03-13,Ibadan,Ibadan - Bodija,Tunde Adebayo,Retail,P024,Rice 50kg (Local),Groceries,1,78000,5,Cash
+NM-10672,2026-03-14,Enugu,Enugu - Independence Layout,Zainab Obi,Retail,P030,Sugar 1kg (x10),Groceries,8,15000,0,Transfer
+NM-10673,2026-03-14,Enugu,Enugu - Independence Layout,Zainab Obi,Retail,P026,Indomie Carton (40),Groceries,7,13500,0,POS
+NM-10674,2026-03-14,Lagos,Lagos - Surulere,Adaeze Garba,Retail,P023,Surge Protector,Power,10,12500,10,Cash
+NM-10675,2026-03-14,Abuja,Abuja - Wuse,Bola Musa,Retail,P023,Surge Protector,Power,9,12500,0,Cash
+NM-10676,2026-03-14,Enugu,Enugu - Independence Layout,Emeka Garba,Wholesale,P028,Peak Milk Tin (24),Groceries,40,16500,10,POS
+NM-10677,2026-03-14,Abuja,Abuja - Wuse,Bola Musa,Retail,P033,Women's Ankara Dress,Fashion,2,31000,0,Transfer
+NM-10678,2026-03-14,Abuja,Abuja - Garki,Bola Okafor,Retail,P029,Semovita 10kg,Groceries,7,11800,0,Transfer
+NM-10679,2026-03-15,Lagos,Lagos - Surulere,Kelechi Garba,Retail,P005,Oraimo Power Bank 20000mAh,Accessories,6,21000,5,Cash
+NM-10680,2026-03-15,Lagos,Lagos - Surulere,Dayo Suleiman,Retail,P035,School Bag,Fashion,1,12500,0,Card
+NM-10681,2026-03-15,Port Harcourt,Port Harcourt - GRA,Nneka Olawale,Online,P030,Sugar 1kg (x10),Groceries,5,15000,0,Card
+NM-10682,2026-03-15,Enugu,Enugu - Independence Layout,Emeka Garba,Online,P011,Wireless Mouse,Accessories,2,9500,5,Cash
+NM-10683,2026-03-15,Lagos,Lagos - Lekki,Uche Musa,Retail,P026,Indomie Carton (40),Groceries,2,13500,0,POS
+NM-10684,2026-03-16,Abuja,Abuja - Garki,Zainab Eze,Online,P033,Women's Ankara Dress,Fashion,9,31000,5,Transfer
+NM-10685,2026-03-16,Port Harcourt,Port Harcourt - GRA,Ibrahim Danjuma,Wholesale,P007,Phone Charger (Fast),Accessories,30,7500,10,Cash
+NM-10686,2026-03-16,Ibadan,Ibadan - Bodija,Bisi Olawale,Wholesale,P040,HP Ink Cartridge 305,Office,40,14500,10,POS
+NM-10687,2026-03-16,Port Harcourt,Port Harcourt - GRA,Ibrahim Danjuma,Retail,P007,Phone Charger (Fast),Accessories,6,7500,5,POS
+NM-10688,2026-03-16,Lagos,Lagos - Ikeja,Tolu Eze,Retail,P040,HP Ink Cartridge 305,Office,8,14500,0,Transfer
+NM-10689,2026-03-16,Lagos,Lagos - Ikeja,Chioma Onyeka,Retail,P028,Peak Milk Tin (24),Groceries,6,16500,0,POS
+NM-10690,2026-03-16,Abuja,Abuja - Wuse,Tunde Eze,Online,P025,Vegetable Oil 5L,Groceries,6,17500,5,Transfer
+NM-10691,2026-03-16,Abuja,Abuja - Wuse,Tunde Eze,Retail,P032,Men's Senator Wear,Fashion,9,35000,0,POS
+NM-10692,2026-03-16,Ibadan,Ibadan - Bodija,Bisi Olawale,Retail,P006,Oraimo FreePods 4,Accessories,10,25500,0,POS
+NM-10693,2026-03-17,Lagos,Lagos - Ikeja,Tolu Eze,Online,P006,Oraimo FreePods 4,Accessories,11,25500,0,Transfer
+NM-10694,2026-03-17,Port Harcourt,Port Harcourt - GRA,Ibrahim Danjuma,Online,P031,Ankara Fabric (6 yards),Fashion,10,18500,0,Transfer
+NM-10695,2026-03-17,Enugu,Enugu - Independence Layout,Emeka Garba,Retail,P029,Semovita 10kg,Groceries,1,11800,0,Transfer
+NM-10696,2026-03-17,Port Harcourt,Port Harcourt - GRA,Nneka Olawale,Retail,P025,Vegetable Oil 5L,Groceries,1,17500,0,Transfer
+NM-10697,2026-03-17,Port Harcourt,Port Harcourt - GRA,Segun Chukwu,Retail,P035,School Bag,Fashion,8,12500,0,Cash
+NM-10698,2026-03-17,Ibadan,Ibadan - Bodija,Tunde Adebayo,Wholesale,P032,Men's Senator Wear,Fashion,21,35000,10,POS
+NM-10699,2026-03-17,Abuja,Abuja - Wuse,Bola Musa,Retail,P033,Women's Ankara Dress,Fashion,9,31000,0,POS
+NM-10700,2026-03-17,Lagos,Lagos - Ikeja,Chioma Onyeka,Retail,P034,Sneakers (Unisex),Fashion,2,26000,0,POS
+NM-10701,2026-03-17,Abuja,Abuja - Garki,Zainab Eze,Retail,P035,School Bag,Fashion,6,12500,0,Cash
+NM-10702,2026-03-17,Abuja,Abuja - Wuse,Chidi Uzor,Retail,P039,Printer Paper A4 (Box),Office,2,24500,0,POS
+NM-10703,2026-03-18,Lagos,Lagos - Ikeja,Ngozi Olawale,Retail,P026,Indomie Carton (40),Groceries,10,13500,0,Cash
+NM-10704,2026-03-18,Lagos,Lagos - Ikeja,Ngozi Olawale,Online,P024,Rice 50kg (Local),Groceries,7,78000,0,Cash
+NM-10705,2026-03-18,Abuja,Abuja - Wuse,Bola Musa,Wholesale,P031,Ankara Fabric (6 yards),Fashion,33,18500,15,Transfer
+NM-10706,2026-03-18,Enugu,Enugu - Independence Layout,Emeka Garba,Retail,P035,School Bag,Fashion,7,12500,0,Cash
+NM-10707,2026-03-18,Lagos,Lagos - Ikeja,Ngozi Olawale,Retail,P029,Semovita 10kg,Groceries,3,11800,0,Cash
+NM-10708,2026-03-18,Abuja,Abuja - Garki,Bola Okafor,Online,P007,Phone Charger (Fast),Accessories,3,7500,0,Cash
+NM-10709,2026-03-18,Port Harcourt,Port Harcourt - GRA,Nneka Olawale,Retail,P014,JBL Flip 6 Speaker,TV & Audio,3,129000,10,Transfer
+NM-10710,2026-03-18,Lagos,Lagos - Ikeja,Chioma Onyeka,Wholesale,P024,Rice 50kg (Local),Groceries,10,78000,10,Card
+NM-10711,2026-03-18,Lagos,Lagos - Ikeja,Tolu Eze,Retail,P015,Sound Bar 2.1,TV & Audio,9,95000,5,POS
+NM-10712,2026-03-18,Kano,Kano - Sabon Gari,Bisi Onyeka,Retail,P028,Peak Milk Tin (24),Groceries,1,16500,0,Cash
+NM-10713,2026-03-18,Abuja,Abuja - Wuse,Bola Musa,Online,P025,Vegetable Oil 5L,Groceries,6,17500,0,Transfer
+NM-10714,2026-03-18,Lagos,Lagos - Ikeja,Tolu Eze,Online,P040,HP Ink Cartridge 305,Office,2,14500,5,Transfer
+NM-10715,2026-03-18,Lagos,Lagos - Ikeja,Tolu Eze,Online,P006,Oraimo FreePods 4,Accessories,10,25500,0,Cash
+NM-10716,2026-03-19,Lagos,Lagos - Lekki,Ifeanyi Adebayo,Retail,P002,Infinix Hot 40,Phones,1,162000,5,Transfer
+NM-10717,2026-03-19,Abuja,Abuja - Wuse,Bola Musa,Retail,P028,Peak Milk Tin (24),Groceries,7,16500,10,Cash
+NM-10718,2026-03-19,Lagos,Lagos - Ikeja,Tolu Eze,Retail,P029,Semovita 10kg,Groceries,5,11800,5,Cash
+NM-10719,2026-03-19,Lagos,Lagos - Ikeja,Chioma Onyeka,Retail,P028,Peak Milk Tin (24),Groceries,4,16500,0,Card
+NM-10720,2026-03-19,Abuja,Abuja - Garki,Femi Suleiman,Wholesale,P012,"LG 43"" Smart TV",TV & Audio,21,349000,10,Transfer
+NM-10721,2026-03-19,Lagos,Lagos - Ikeja,Chioma Onyeka,Retail,P005,Oraimo Power Bank 20000mAh,Accessories,6,21000,0,Card
+NM-10722,2026-03-19,Lagos,Lagos - Ikeja,Tolu Eze,Online,P011,Wireless Mouse,Accessories,6,9500,10,Transfer
+NM-10723,2026-03-19,Abuja,Abuja - Wuse,Bola Musa,Online,P009,Lenovo IdeaPad 3,Computers,1,560000,10,Transfer
+NM-10724,2026-03-19,Lagos,Lagos - Lekki,Ifeanyi Adebayo,Retail,P012,"LG 43"" Smart TV",TV & Audio,3,349000,10,Transfer
+NM-10725,2026-03-19,Lagos,Lagos - Surulere,Adaeze Garba,Online,P006,Oraimo FreePods 4,Accessories,11,25500,10,Transfer
+NM-10726,2026-03-20,Lagos,Lagos - Ikeja,Ngozi Olawale,Retail,P003,Samsung Galaxy A15,Phones,3,205000,5,Cash
+NM-10727,2026-03-20,Port Harcourt,Port Harcourt - GRA,Segun Chukwu,Online,P012,"LG 43"" Smart TV",TV & Audio,3,349000,0,POS
+NM-10728,2026-03-20,Lagos,Lagos - Surulere,Dayo Suleiman,Online,P033,Women's Ankara Dress,Fashion,2,31000,0,Card
+NM-10729,2026-03-20,Lagos,Lagos - Ikeja,Tolu Eze,Online,P005,Oraimo Power Bank 20000mAh,Accessories,10,21000,0,Transfer
+NM-10730,2026-03-20,Lagos,Lagos - Ikeja,Tolu Eze,Online,P024,Rice 50kg (Local),Groceries,4,78000,5,Transfer
+NM-10731,2026-03-20,Ibadan,Ibadan - Bodija,Tunde Adebayo,Retail,P029,Semovita 10kg,Groceries,7,11800,5,Card
+NM-10732,2026-03-20,Ibadan,Ibadan - Bodija,Tolu Bello,Online,P029,Semovita 10kg,Groceries,7,11800,0,Transfer
+NM-10733,2026-03-20,Kano,Kano - Sabon Gari,Maryam Chukwu,Retail,P004,iPhone 13 (Refurbished),Phones,3,640000,0,Transfer
+NM-10734,2026-03-20,Enugu,Enugu - Independence Layout,Zainab Obi,Retail,P005,Oraimo Power Bank 20000mAh,Accessories,7,21000,0,POS
+NM-10735,2026-03-20,Abuja,Abuja - Wuse,Chidi Uzor,Wholesale,P017,Binatone Blender,Appliances,40,29500,10,Transfer
+NM-10736,2026-03-20,Abuja,Abuja - Garki,Femi Suleiman,Online,P007,Phone Charger (Fast),Accessories,2,7500,5,Transfer
+NM-10737,2026-03-20,Abuja,Abuja - Wuse,Tunde Eze,Retail,P024,Rice 50kg (Local),Groceries,11,78000,0,Transfer
+NM-10738,2026-03-21,Enugu,Enugu - Independence Layout,Zainab Obi,Retail,P032,Men's Senator Wear,Fashion,7,35000,0,Transfer
+NM-10739,2026-03-21,Kano,Kano - Sabon Gari,Hauwa Danjuma,Retail,P001,Tecno Spark 20,Phones,3,145000,0,Transfer
+NM-10740,2026-03-21,Port Harcourt,Port Harcourt - GRA,Nneka Olawale,Online,P027,Milo 1kg Refill,Groceries,1,9200,5,Transfer
+NM-10741,2026-03-21,Lagos,Lagos - Lekki,Uche Uzor,Retail,P033,Women's Ankara Dress,Fashion,10,31000,5,Transfer
+NM-10742,2026-03-21,Lagos,Lagos - Ikeja,Chioma Onyeka,Wholesale,P006,Oraimo FreePods 4,Accessories,16,25500,15,Transfer
+NM-10743,2026-03-21,Lagos,Lagos - Ikeja,Ngozi Olawale,Retail,P024,Rice 50kg (Local),Groceries,2,78000,5,Card
+NM-10744,2026-03-21,Lagos,Lagos - Surulere,Dayo Suleiman,Retail,P040,HP Ink Cartridge 305,Office,2,14500,0,Cash
+NM-10745,2026-03-21,Ibadan,Ibadan - Bodija,Bisi Olawale,Retail,P015,Sound Bar 2.1,TV & Audio,7,95000,5,Cash
+NM-10746,2026-03-21,Abuja,Abuja - Garki,Zainab Eze,Wholesale,P033,Women's Ankara Dress,Fashion,8,31000,10,Transfer
+NM-10747,2026-03-22,Lagos,Lagos - Lekki,Ifeanyi Adebayo,Retail,P019,"Standing Fan 18""",Appliances,11,38500,0,Transfer
+NM-10748,2026-03-22,Lagos,Lagos - Ikeja,Ngozi Olawale,Online,P002,Infinix Hot 40,Phones,1,162000,0,POS
+NM-10749,2026-03-22,Enugu,Enugu - Independence Layout,Dayo Abubakar,Retail,P040,HP Ink Cartridge 305,Office,3,14500,10,Cash
+NM-10750,2026-03-22,Lagos,Lagos - Lekki,Uche Musa,Online,P029,Semovita 10kg,Groceries,2,11800,5,Transfer
+NM-10751,2026-03-22,Enugu,Enugu - Independence Layout,Zainab Obi,Retail,P011,Wireless Mouse,Accessories,11,9500,5,POS
+NM-10752,2026-03-22,Lagos,Lagos - Lekki,Ifeanyi Adebayo,Online,P019,"Standing Fan 18""",Appliances,8,38500,5,Transfer
+NM-10753,2026-03-22,Lagos,Lagos - Lekki,Uche Musa,Retail,P014,JBL Flip 6 Speaker,TV & Audio,3,129000,5,Cash
+NM-10754,2026-03-23,Lagos,Lagos - Surulere,Dayo Suleiman,Online,P027,Milo 1kg Refill,Groceries,7,9200,0,Transfer
+NM-10755,2026-03-23,Port Harcourt,Port Harcourt - GRA,Ibrahim Danjuma,Online,P014,JBL Flip 6 Speaker,TV & Audio,2,129000,5,Transfer
+NM-10756,2026-03-23,Abuja,Abuja - Garki,Bola Okafor,Retail,P025,Vegetable Oil 5L,Groceries,4,17500,5,POS
+NM-10757,2026-03-23,Kano,Kano - Sabon Gari,Hauwa Danjuma,Online,P014,JBL Flip 6 Speaker,TV & Audio,2,129000,5,Transfer
+NM-10758,2026-03-23,Lagos,Lagos - Ikeja,Ngozi Olawale,Retail,P033,Women's Ankara Dress,Fashion,10,31000,0,Transfer
+NM-10759,2026-03-23,Lagos,Lagos - Lekki,Uche Musa,Online,P029,Semovita 10kg,Groceries,8,11800,0,Transfer
+NM-10760,2026-03-23,Port Harcourt,Port Harcourt - GRA,Segun Chukwu,Wholesale,P035,School Bag,Fashion,77,12500,10,POS
+NM-10761,2026-03-23,Lagos,Lagos - Surulere,Dayo Suleiman,Wholesale,P020,Microwave Oven 20L,Appliances,20,86000,15,Transfer
+NM-10762,2026-03-23,Abuja,Abuja - Wuse,Chidi Uzor,Wholesale,P011,Wireless Mouse,Accessories,72,9500,10,POS
+NM-10763,2026-03-24,Enugu,Enugu - Independence Layout,Emeka Garba,Online,P028,Peak Milk Tin (24),Groceries,2,16500,0,Transfer
+NM-10764,2026-03-24,Enugu,Enugu - Independence Layout,Dayo Abubakar,Wholesale,P030,Sugar 1kg (x10),Groceries,88,15000,10,POS
+NM-10765,2026-03-24,Ibadan,Ibadan - Bodija,Bisi Olawale,Online,P012,"LG 43"" Smart TV",TV & Audio,3,349000,0,Transfer
+NM-10766,2026-03-24,Abuja,Abuja - Garki,Zainab Eze,Retail,P024,Rice 50kg (Local),Groceries,3,78000,0,Transfer
+NM-10767,2026-03-24,Lagos,Lagos - Lekki,Ifeanyi Adebayo,Wholesale,P028,Peak Milk Tin (24),Groceries,66,16500,15,Transfer
+NM-10768,2026-03-24,Lagos,Lagos - Ikeja,Ngozi Olawale,Retail,P034,Sneakers (Unisex),Fashion,9,26000,0,Transfer
+NM-10769,2026-03-24,Abuja,Abuja - Wuse,Chidi Uzor,Retail,P038,Mattress 6x6,Furniture,1,178000,0,Cash
+NM-10770,2026-03-24,Port Harcourt,Port Harcourt - GRA,Segun Chukwu,Retail,P024,Rice 50kg (Local),Groceries,7,78000,15,POS
+NM-10771,2026-03-24,Lagos,Lagos - Surulere,Kelechi Garba,Retail,P030,Sugar 1kg (x10),Groceries,9,15000,0,POS
+NM-10772,2026-03-25,Ibadan,Ibadan - Bodija,Tunde Adebayo,Online,P007,Phone Charger (Fast),Accessories,9,7500,5,Transfer
+NM-10773,2026-03-25,Lagos,Lagos - Lekki,Ifeanyi Adebayo,Retail,P005,Oraimo Power Bank 20000mAh,Accessories,4,21000,0,Transfer
+NM-10774,2026-03-25,Kano,Kano - Sabon Gari,Hauwa Danjuma,Online,P038,Mattress 6x6,Furniture,2,178000,10,POS
+NM-10775,2026-03-25,Abuja,Abuja - Wuse,Tunde Eze,Retail,P005,Oraimo Power Bank 20000mAh,Accessories,5,21000,5,POS
+NM-10776,2026-03-25,Enugu,Enugu - Independence Layout,Emeka Garba,Retail,P008,HP 250 G9 Laptop,Computers,3,585000,0,Cash
+NM-10777,2026-03-25,Ibadan,Ibadan - Bodija,Tolu Bello,Online,P024,Rice 50kg (Local),Groceries,6,78000,0,Transfer
+NM-10778,2026-03-25,Lagos,Lagos - Surulere,Kelechi Garba,Wholesale,P034,Sneakers (Unisex),Fashion,49,26000,10,Card
+NM-10779,2026-03-25,Port Harcourt,Port Harcourt - GRA,Segun Chukwu,Retail,P005,Oraimo Power Bank 20000mAh,Accessories,8,21000,0,Card
+NM-10780,2026-03-25,Lagos,Lagos - Lekki,Uche Musa,Retail,P005,Oraimo Power Bank 20000mAh,Accessories,4,21000,0,POS
+NM-10781,2026-03-25,Lagos,Lagos - Ikeja,Tolu Eze,Online,P035,School Bag,Fashion,5,12500,0,Transfer
+NM-10782,2026-03-25,Abuja,Abuja - Wuse,Tunde Eze,Retail,P028,Peak Milk Tin (24),Groceries,8,16500,15,Cash
+NM-10783,2026-03-26,Lagos,Lagos - Surulere,Kelechi Garba,Retail,P007,Phone Charger (Fast),Accessories,8,7500,15,Transfer
+NM-10784,2026-03-26,Abuja,Abuja - Wuse,Tunde Eze,Wholesale,P031,Ankara Fabric (6 yards),Fashion,21,18500,10,Transfer
+NM-10785,2026-03-26,Ibadan,Ibadan - Bodija,Bisi Olawale,Online,P036,Office Chair,Furniture,10,79000,0,Transfer
+NM-10786,2026-03-26,Lagos,Lagos - Ikeja,Tolu Eze,Retail,P028,Peak Milk Tin (24),Groceries,8,16500,10,Cash
+NM-10787,2026-03-26,Abuja,Abuja - Garki,Zainab Eze,Retail,P014,JBL Flip 6 Speaker,TV & Audio,3,129000,0,POS
+NM-10788,2026-03-26,Lagos,Lagos - Surulere,Adaeze Garba,Retail,P007,Phone Charger (Fast),Accessories,8,7500,5,Transfer
+NM-10789,2026-03-26,Abuja,Abuja - Garki,Bola Okafor,Online,P015,Sound Bar 2.1,TV & Audio,2,95000,0,Transfer
+NM-10790,2026-03-26,Lagos,Lagos - Lekki,Uche Uzor,Online,P006,Oraimo FreePods 4,Accessories,12,25500,0,Transfer
+NM-10791,2026-03-26,Abuja,Abuja - Garki,Femi Suleiman,Wholesale,P027,Milo 1kg Refill,Groceries,84,9200,10,Transfer
+NM-10792,2026-03-26,Port Harcourt,Port Harcourt - GRA,Segun Chukwu,Retail,P002,Infinix Hot 40,Phones,2,162000,0,Cash
+NM-10793,2026-03-26,Lagos,Lagos - Ikeja,Chioma Onyeka,Retail,P038,Mattress 6x6,Furniture,3,178000,10,POS
+NM-10794,2026-03-26,Port Harcourt,Port Harcourt - GRA,Segun Chukwu,Retail,P014,JBL Flip 6 Speaker,TV & Audio,1,129000,0,POS
+NM-10795,2026-03-26,Port Harcourt,Port Harcourt - GRA,Segun Chukwu,Retail,P026,Indomie Carton (40),Groceries,12,13500,0,Transfer
+NM-10796,2026-03-27,Abuja,Abuja - Garki,Zainab Eze,Online,P027,Milo 1kg Refill,Groceries,8,9200,5,Cash
+NM-10797,2026-03-27,Abuja,Abuja - Garki,Femi Suleiman,Wholesale,P001,Tecno Spark 20,Phones,6,145000,15,Card
+NM-10798,2026-03-27,Abuja,Abuja - Wuse,Chidi Uzor,Retail,P009,Lenovo IdeaPad 3,Computers,1,560000,5,Card
+NM-10799,2026-03-27,Port Harcourt,Port Harcourt - GRA,Nneka Olawale,Retail,P024,Rice 50kg (Local),Groceries,4,78000,5,Transfer
+NM-10800,2026-03-27,Abuja,Abuja - Wuse,Bola Musa,Retail,P027,Milo 1kg Refill,Groceries,9,9200,0,POS
+NM-10801,2026-03-27,Lagos,Lagos - Lekki,Uche Uzor,Retail,P012,"LG 43"" Smart TV",TV & Audio,2,349000,0,Transfer
+NM-10802,2026-03-27,Kano,Kano - Sabon Gari,Maryam Chukwu,Wholesale,P015,Sound Bar 2.1,TV & Audio,8,95000,10,POS
+NM-10803,2026-03-27,Lagos,Lagos - Surulere,Kelechi Garba,Retail,P019,"Standing Fan 18""",Appliances,10,38500,0,Transfer
+NM-10804,2026-03-27,Lagos,Lagos - Ikeja,Tolu Eze,Retail,P001,Tecno Spark 20,Phones,3,145000,0,Transfer
+NM-10805,2026-03-27,Lagos,Lagos - Ikeja,Chioma Onyeka,Online,P012,"LG 43"" Smart TV",TV & Audio,2,349000,0,Cash
+NM-10806,2026-03-28,Abuja,Abuja - Wuse,Tunde Eze,Retail,P011,Wireless Mouse,Accessories,8,9500,0,Cash
+NM-10807,2026-03-28,Abuja,Abuja - Wuse,Tunde Eze,Online,P002,Infinix Hot 40,Phones,1,162000,0,Transfer
+NM-10808,2026-03-28,Lagos,Lagos - Ikeja,Chioma Onyeka,Online,P001,Tecno Spark 20,Phones,1,145000,0,Transfer
+NM-10809,2026-03-28,Abuja,Abuja - Garki,Femi Suleiman,Online,P006,Oraimo FreePods 4,Accessories,1,25500,10,Transfer
+NM-10810,2026-03-28,Ibadan,Ibadan - Bodija,Tolu Bello,Online,P007,Phone Charger (Fast),Accessories,6,7500,15,Transfer
+NM-10811,2026-03-28,Enugu,Enugu - Independence Layout,Zainab Obi,Online,P006,Oraimo FreePods 4,Accessories,10,25500,5,Transfer
+NM-10812,2026-03-28,Lagos,Lagos - Ikeja,Ngozi Olawale,Retail,P039,Printer Paper A4 (Box),Office,9,24500,0,Transfer
+NM-10813,2026-03-28,Lagos,Lagos - Ikeja,Chioma Onyeka,Retail,P026,Indomie Carton (40),Groceries,5,13500,0,Card
+NM-10814,2026-03-28,Kano,Kano - Sabon Gari,Bisi Onyeka,Retail,P029,Semovita 10kg,Groceries,10,11800,0,Cash
+NM-10815,2026-03-28,Lagos,Lagos - Lekki,Uche Uzor,Retail,P024,Rice 50kg (Local),Groceries,7,78000,0,Transfer
+NM-10816,2026-03-29,Port Harcourt,Port Harcourt - GRA,Segun Chukwu,Retail,P026,Indomie Carton (40),Groceries,8,13500,10,Card
+NM-10817,2026-03-29,Lagos,Lagos - Ikeja,Ngozi Olawale,Retail,P028,Peak Milk Tin (24),Groceries,12,16500,0,POS
+NM-10818,2026-03-29,Lagos,Lagos - Lekki,Ifeanyi Adebayo,Wholesale,P031,Ankara Fabric (6 yards),Fashion,50,18500,15,POS
+NM-10819,2026-03-29,Lagos,Lagos - Ikeja,Ngozi Olawale,Online,P040,HP Ink Cartridge 305,Office,3,14500,0,Transfer
+NM-10820,2026-03-29,Lagos,Lagos - Ikeja,Chioma Onyeka,Online,P019,"Standing Fan 18""",Appliances,10,38500,5,Cash
+NM-10821,2026-03-29,Abuja,Abuja - Wuse,Chidi Uzor,Retail,P007,Phone Charger (Fast),Accessories,8,7500,0,Transfer
+NM-10822,2026-03-29,Port Harcourt,Port Harcourt - GRA,Nneka Olawale,Retail,P034,Sneakers (Unisex),Fashion,10,26000,0,Cash
+NM-10823,2026-03-30,Lagos,Lagos - Lekki,Uche Musa,Retail,P038,Mattress 6x6,Furniture,2,178000,0,Transfer
+NM-10824,2026-03-30,Lagos,Lagos - Lekki,Uche Musa,Retail,P031,Ankara Fabric (6 yards),Fashion,11,18500,0,Transfer
+NM-10825,2026-03-30,Abuja,Abuja - Garki,Zainab Eze,Online,P007,Phone Charger (Fast),Accessories,2,7500,0,Transfer
+NM-10826,2026-03-30,Lagos,Lagos - Surulere,Kelechi Garba,Online,P031,Ankara Fabric (6 yards),Fashion,2,18500,0,Transfer
+NM-10827,2026-03-30,Lagos,Lagos - Surulere,Dayo Suleiman,Online,P029,Semovita 10kg,Groceries,9,11800,10,Transfer
+NM-10828,2026-03-30,Enugu,Enugu - Independence Layout,Zainab Obi,Online,P030,Sugar 1kg (x10),Groceries,1,15000,0,Transfer
+NM-10829,2026-03-30,Lagos,Lagos - Ikeja,Chioma Onyeka,Online,P032,Men's Senator Wear,Fashion,10,35000,0,Cash
+NM-10830,2026-03-30,Port Harcourt,Port Harcourt - GRA,Segun Chukwu,Online,P030,Sugar 1kg (x10),Groceries,5,15000,0,Transfer
+NM-10831,2026-03-30,Abuja,Abuja - Garki,Bola Okafor,Retail,P020,Microwave Oven 20L,Appliances,12,86000,5,POS
+NM-10832,2026-03-30,Ibadan,Ibadan - Bodija,Tunde Adebayo,Wholesale,P024,Rice 50kg (Local),Groceries,70,78000,10,POS
+NM-10833,2026-03-30,Port Harcourt,Port Harcourt - GRA,Nneka Olawale,Online,P006,Oraimo FreePods 4,Accessories,12,25500,5,Card
+NM-10834,2026-03-30,Lagos,Lagos - Ikeja,Ngozi Olawale,Wholesale,P032,Men's Senator Wear,Fashion,20,35000,10,Transfer
+NM-10835,2026-03-30,Lagos,Lagos - Surulere,Adaeze Garba,Online,P017,Binatone Blender,Appliances,12,29500,0,Transfer
+NM-10836,2026-03-30,Enugu,Enugu - Independence Layout,Emeka Garba,Retail,P002,Infinix Hot 40,Phones,3,162000,10,POS
+NM-10837,2026-03-30,Lagos,Lagos - Ikeja,Tolu Eze,Online,P011,Wireless Mouse,Accessories,12,9500,0,Transfer
+NM-10838,2026-03-30,Ibadan,Ibadan - Bodija,Bisi Olawale,Online,P011,Wireless Mouse,Accessories,7,9500,10,Transfer
+NM-10839,2026-03-31,Ibadan,Ibadan - Bodija,Tunde Adebayo,Retail,P020,Microwave Oven 20L,Appliances,9,86000,0,Cash
+NM-10840,2026-03-31,Lagos,Lagos - Ikeja,Ngozi Olawale,Retail,P029,Semovita 10kg,Groceries,3,11800,10,Cash
+NM-10841,2026-03-31,Abuja,Abuja - Wuse,Chidi Uzor,Wholesale,P035,School Bag,Fashion,40,12500,10,Cash
+NM-10842,2026-03-31,Abuja,Abuja - Wuse,Bola Musa,Retail,P025,Vegetable Oil 5L,Groceries,5,17500,0,POS
+NM-10843,2026-03-31,Lagos,Lagos - Surulere,Adaeze Garba,Online,P024,Rice 50kg (Local),Groceries,2,78000,10,Transfer
