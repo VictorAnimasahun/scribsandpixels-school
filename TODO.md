@@ -13,11 +13,13 @@
 - [x] French Week 1 · Excel Week 1 question banks
 - [ ] French Weeks 2–52
 - [ ] Excel Weeks 2–24
-- [ ] Fullstack + ML Weeks 1–2 (and later weeks as they're written)
+- [x] Fullstack + ML Weeks 1–2 (every code snippet checked by running it: `node scripts/check-quiz-code.mjs`)
+- [ ] Fullstack + ML later weeks as they're written
 
 ## Sandboxes (a slice at a time)
 - [x] Engines: French phrase builder, Excel spreadsheet, Python, web playground
-- [x] French W1, W2, W7 + main lab · Excel W2, W6 + playground · Fullstack W1–2 tasks + Python/web playgrounds
+- [x] French W1, W2, W7 + main lab · Excel W2, W6 + playground · Fullstack: a sandbox for every day of W1–2 (16 sandboxes, 46 auto-checked tasks) + Python/web playgrounds
+- [x] Phone-ready code editor (key bar, auto-indent, smart-quote fix), tested on iPhone/Safari and Android/Chrome emulation
 - [ ] More French lesson sets (add each to `fr-main` include)
 - [ ] More Excel task sheets (every formula week)
 - [ ] Web-sandbox auto-checks (tasks are instructions only for now)

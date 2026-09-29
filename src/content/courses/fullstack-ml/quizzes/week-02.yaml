@@ -1,0 +1,902 @@
+# Fullstack + ML · Week 2 quizzes. Format and rules: src/content/QUIZZES.md
+week: 2
+days:
+
+  # ─────────────────────────── DAY 1 ───────────────────────────
+  - day: 1
+    gate:
+      title: "Checkpoint: Week 1 review"
+      covers: "Week 1: print, variables, input, maths, if/else, loops"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w02-d1-g01, difficulty: easy, type: mcq, prompt: "What does input() return?", choices: ["A string", "An integer", "A float", "A list"], answer: 0 }
+        - { id: fs-w02-d1-g02, difficulty: easy, type: mcq, prompt: "Which symbol compares two values for equality?", choices: ["==", "=", "!=", ":="], answer: 0 }
+        - { id: fs-w02-d1-g03, difficulty: easy, type: mcq, prompt: "range(4) gives…", choices: ["0 1 2 3", "1 2 3 4", "0 1 2 3 4", "4"], answer: 0 }
+        - { id: fs-w02-d1-g04, difficulty: easy, type: mcq, prompt: "Which is a float?", choices: ["2.5", "25", "\"2.5\"", "True"], answer: 0 }
+        - { id: fs-w02-d1-g05, difficulty: easy, type: truefalse, prompt: "The lines inside an if or a loop must be indented.", answer: true }
+        - { id: fs-w02-d1-g06, difficulty: easy, type: mcq, prompt: "10 % 3 =", choices: ["1", "3", "3.33", "0"], answer: 0 }
+        - id: fs-w02-d1-g07
+          difficulty: medium
+          type: mcq
+          prompt: "What does this print?"
+          code: |
+            x = 8
+            if x > 10:
+                print("big")
+            elif x > 5:
+                print("medium")
+            else:
+                print("small")
+          choices: ["medium", "big", "small", "big then medium"]
+          answer: 0
+        - id: fs-w02-d1-g08
+          difficulty: medium
+          type: text
+          prompt: "What does this print? (just the number)"
+          code: |
+            total = 0
+            for i in range(1, 4):
+                total = total + i
+            print(total)
+          accept: ["6"]
+        - { id: fs-w02-d1-g09, difficulty: medium, type: mcq, prompt: "The user types 7 for n = input(). What is n + \"1\"?", choices: ["\"71\"", "8", "\"8\"", "an error"], answer: 0 }
+        - { id: fs-w02-d1-g10, difficulty: medium, type: text, prompt: "Write the line that turns the text in age into a whole number, stored back in age.", accept: ["age = int(age)", "age=int(age)"] }
+        - { id: fs-w02-d1-g11, difficulty: medium, type: match, prompt: "Match the error to its cause.", pairs: [["TypeError", "adding text and a number"], ["NameError", "a variable that doesn't exist"], ["SyntaxError", "a missing colon or quote"], ["ValueError", "int(\"abc\")"]] }
+        - id: fs-w02-d1-g12
+          difficulty: medium
+          type: mcq
+          prompt: "How many times does this print?"
+          code: |
+            count = 0
+            while count < 3:
+                print("Hi")
+                count = count + 1
+          choices: ["3", "2", "4", "forever"]
+          answer: 0
+        - { id: fs-w02-d1-g13, difficulty: medium, type: mcq, prompt: "Which makes \"ABUJA\" and \"abuja\" compare as equal?", choices: ["answer.lower() == \"abuja\"", "answer == \"ABUJA\" or \"abuja\"", "int(answer) == \"abuja\"", "answer.equal(\"abuja\")"], answer: 0 }
+        - { id: fs-w02-d1-g14, difficulty: medium, type: truefalse, prompt: "print(\"Total:\", 5 * 3) prints Total: 15", answer: true }
+        - { id: fs-w02-d1-g15, difficulty: medium, type: mcq, prompt: "Which loop is right for a countdown that stops at 1?", choices: ["while count > 0:", "while count >= -1:", "for count in range(0):", "if count > 0:"], answer: 0 }
+        - id: fs-w02-d1-g16
+          difficulty: hard
+          type: text
+          prompt: "What does this print? (just the number)"
+          code: |
+            score = 0
+            for answer in ["abuja", "x", "lagos"]:
+                if answer == "abuja" or answer == "lagos":
+                    score = score + 1
+            print(score)
+          accept: ["2", "two"]
+        - id: fs-w02-d1-g17
+          difficulty: hard
+          type: mcq
+          prompt: "What does this print?"
+          code: |
+            n = 5
+            n = n * 2
+            n = n - 3
+            print(n % 4)
+          choices: ["3", "7", "1", "0"]
+          answer: 0
+        - { id: fs-w02-d1-g18, difficulty: hard, type: multi, prompt: "Which lines raise an error? (Select all.)", choices: ["print(\"Age: \" + 30)", "int(\"30\")", "int(\"thirty\")", "print(\"a\" * 3)", "if x > 3 print(x)"], answers: [0, 2, 4] }
+    quizzes:
+      - kind: rapid-fire
+        title: "List basics"
+        secondsPerQuestion: 10
+        questions:
+          - { id: fs-w02-d1-rf01, difficulty: easy, type: mcq, prompt: "Lists use which brackets?", choices: ["[ ]", "( )", "{ }", "< >"], answer: 0 }
+          - { id: fs-w02-d1-rf02, difficulty: easy, type: mcq, prompt: "The first item of a list is at index…", choices: ["0", "1", "-1", "first"], answer: 0 }
+          - { id: fs-w02-d1-rf03, difficulty: easy, type: mcq, prompt: "The last item is at index…", choices: ["-1", "0", "last", "len"], answer: 0 }
+          - { id: fs-w02-d1-rf04, difficulty: easy, type: mcq, prompt: "Add an item to the end", choices: [".append()", ".add()", ".push()", ".insert_end()"], answer: 0 }
+          - { id: fs-w02-d1-rf05, difficulty: easy, type: mcq, prompt: "Remove an item by value", choices: [".remove()", ".delete()", ".pop_value()", ".cut()"], answer: 0 }
+          - { id: fs-w02-d1-rf06, difficulty: easy, type: mcq, prompt: "How many items?", choices: ["len(list)", "list.count()", "size(list)", "list.length"], answer: 0 }
+          - { id: fs-w02-d1-rf07, difficulty: easy, type: mcq, prompt: "cities = [\"Lagos\", \"Abuja\", \"Kano\"]; cities[1] is…", choices: ["\"Abuja\"", "\"Lagos\"", "\"Kano\"", "an error"], answer: 0 }
+          - { id: fs-w02-d1-rf08, difficulty: easy, type: truefalse, prompt: "A list can hold text and numbers together.", answer: true }
+          - { id: fs-w02-d1-rf09, difficulty: easy, type: mcq, prompt: "Number the items while looping", choices: ["enumerate()", "number()", "index()", "range()"], answer: 0 }
+          - { id: fs-w02-d1-rf10, difficulty: easy, type: truefalse, prompt: "cities[1] = \"Ibadan\" changes the second item.", answer: true }
+      - kind: brain-teaser
+        title: "Index detective"
+        questions:
+          - id: fs-w02-d1-bt01
+            difficulty: medium
+            type: mcq
+            prompt: "What happens?"
+            code: |
+              cities = ["Lagos", "Abuja", "Kano"]
+              print(cities[3])
+            choices: ["IndexError: there's no index 3", "Kano", "Lagos", "None"]
+            answer: 0
+          - id: fs-w02-d1-bt02
+            difficulty: medium
+            type: mcq
+            prompt: "What does this print?"
+            code: |
+              foods = ["rice", "beans"]
+              foods.append("yam")
+              foods.remove("rice")
+              print(foods)
+            choices: ["['beans', 'yam']", "['rice', 'beans', 'yam']", "['yam', 'beans']", "['beans']"]
+            answer: 0
+          - id: fs-w02-d1-bt03
+            difficulty: medium
+            type: text
+            prompt: "What does this print? (just the number)"
+            code: |
+              nums = [4, 8, 15]
+              nums.append(16)
+              print(len(nums))
+            accept: ["4", "four"]
+          - id: fs-w02-d1-bt04
+            difficulty: hard
+            type: mcq
+            prompt: "What happens?"
+            code: |
+              cities = ["Lagos", "Abuja"]
+              cities.remove("London")
+            choices: ["ValueError: London isn't in the list", "Nothing happens", "It removes the last item", "It prints None"]
+            answer: 0
+          - id: fs-w02-d1-bt05
+            difficulty: hard
+            type: text
+            prompt: "What's the last line printed?"
+            code: |
+              for number, city in enumerate(["Lagos", "Abuja", "Kano"], start=1):
+                  print(f"{number}. {city}")
+            accept: ["3. Kano"]
+
+  # ─────────────────────────── DAY 2 ───────────────────────────
+  - day: 2
+    gate:
+      title: "Checkpoint: lists"
+      covers: "Week 2 · Day 1: creating lists, indexes, append, remove, len, looping"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w02-d2-g01, difficulty: easy, type: mcq, prompt: "Which creates a list?", choices: ["fruits = [\"mango\", \"pawpaw\"]", "fruits = (\"mango\")", "fruits = \"mango, pawpaw\"", "fruits = list mango"], answer: 0 }
+        - { id: fs-w02-d2-g02, difficulty: easy, type: mcq, prompt: "Index 0 means…", choices: ["the first item", "the last item", "no item", "the second item"], answer: 0 }
+        - { id: fs-w02-d2-g03, difficulty: easy, type: mcq, prompt: "Index -1 means…", choices: ["the last item", "the first item", "an error", "an empty item"], answer: 0 }
+        - { id: fs-w02-d2-g04, difficulty: easy, type: mcq, prompt: "len([\"a\", \"b\", \"c\"]) =", choices: ["3", "2", "4", "\"abc\""], answer: 0 }
+        - { id: fs-w02-d2-g05, difficulty: easy, type: truefalse, prompt: "append() adds an item at the end of a list.", answer: true }
+        - { id: fs-w02-d2-g06, difficulty: easy, type: truefalse, prompt: "Lists keep their items in order.", answer: true }
+        - id: fs-w02-d2-g07
+          difficulty: medium
+          type: mcq
+          prompt: "What does this print?"
+          code: |
+            cities = ["Lagos", "Abuja", "Kano", "Port Harcourt"]
+            print(cities[-1])
+          choices: ["Port Harcourt", "Lagos", "Kano", "an error"]
+          answer: 0
+        - id: fs-w02-d2-g08
+          difficulty: medium
+          type: mcq
+          prompt: "What does this print?"
+          code: |
+            cities = ["Lagos", "Abuja", "Kano"]
+            cities[1] = "Ibadan"
+            print(cities)
+          choices: ["['Lagos', 'Ibadan', 'Kano']", "['Ibadan', 'Abuja', 'Kano']", "['Lagos', 'Abuja', 'Ibadan']", "an error"]
+          answer: 0
+        - id: fs-w02-d2-g09
+          difficulty: medium
+          type: text
+          prompt: "How many lines does this print? (a number)"
+          code: |
+            for city in ["Lagos", "Abuja", "Kano"]:
+                print("Nigerian city:", city)
+          accept: ["3", "three"]
+        - { id: fs-w02-d2-g10, difficulty: medium, type: text, prompt: "Write the line that adds \"Enugu\" to the end of the list cities.", accept: ["cities.append(\"Enugu\")", "cities.append('Enugu')"] }
+        - { id: fs-w02-d2-g11, difficulty: medium, type: match, prompt: "Match the code to what it does.", pairs: [["foods.append(x)", "add x at the end"], ["foods.remove(x)", "remove the first x"], ["len(foods)", "count the items"], ["foods[0]", "get the first item"]] }
+        - { id: fs-w02-d2-g12, difficulty: medium, type: mcq, prompt: "Which error do you get for cities[10] on a 4-item list?", choices: ["IndexError", "TypeError", "NameError", "ValueError"], answer: 0 }
+        - { id: fs-w02-d2-g13, difficulty: medium, type: mcq, prompt: "enumerate(foods, start=1) gives pairs of…", choices: ["(number, item)", "(item, number)", "(item, item)", "(0, 1)"], answer: 0 }
+        - id: fs-w02-d2-g14
+          difficulty: medium
+          type: mcq
+          prompt: "What does this print?"
+          code: |
+            nums = [1, 2, 3]
+            nums.append(nums[0])
+            print(nums)
+          choices: ["[1, 2, 3, 1]", "[1, 1, 2, 3]", "[2, 3, 1]", "an error"]
+          answer: 0
+        - { id: fs-w02-d2-g15, difficulty: medium, type: truefalse, prompt: "remove() deletes every copy of the value from the list.", answer: false, explain: "Only the first match." }
+        - id: fs-w02-d2-g16
+          difficulty: hard
+          type: mcq
+          prompt: "What does this print?"
+          code: |
+            items = ["a", "b", "c", "d"]
+            print(items[-2])
+          choices: ["c", "b", "d", "an error"]
+          answer: 0
+        - id: fs-w02-d2-g17
+          difficulty: hard
+          type: text
+          prompt: "What does this print? (just the number)"
+          code: |
+            scores = []
+            for s in [40, 60, 80]:
+                if s >= 50:
+                    scores.append(s)
+            print(len(scores))
+          accept: ["2", "two"]
+        - { id: fs-w02-d2-g18, difficulty: hard, type: multi, prompt: "For foods = [\"rice\", \"yam\"], which lines work? (Select all.)", choices: ["foods.append(\"egusi\")", "foods[2]", "foods[-1]", "foods.remove(\"yam\")", "foods.remove(\"beans\")"], answers: [0, 2, 3] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Slices & list tricks"
+        secondsPerQuestion: 10
+        questions:
+          - { id: fs-w02-d2-rf01, difficulty: easy, type: mcq, prompt: "[10, 20, 30, 40][1:3] =", choices: ["[20, 30]", "[10, 20, 30]", "[20, 30, 40]", "[10, 20]"], answer: 0 }
+          - { id: fs-w02-d2-rf02, difficulty: easy, type: mcq, prompt: "[10, 20, 30, 40][-2:] =", choices: ["[30, 40]", "[40]", "[20, 30, 40]", "[10, 20]"], answer: 0 }
+          - { id: fs-w02-d2-rf03, difficulty: easy, type: mcq, prompt: "max([45, 12, 78]) =", choices: ["78", "45", "12", "135"], answer: 0 }
+          - { id: fs-w02-d2-rf04, difficulty: easy, type: mcq, prompt: "min([45, 12, 78]) =", choices: ["12", "45", "78", "0"], answer: 0 }
+          - { id: fs-w02-d2-rf05, difficulty: easy, type: mcq, prompt: "sum([10, 20, 30]) =", choices: ["60", "30", "3", "102030"], answer: 0 }
+          - { id: fs-w02-d2-rf06, difficulty: easy, type: mcq, prompt: "78 in [45, 12, 78] is…", choices: ["True", "False", "78", "an error"], answer: 0 }
+          - { id: fs-w02-d2-rf07, difficulty: easy, type: mcq, prompt: "Sort a list in place", choices: ["nums.sort()", "sort(nums)", "nums.order()", "nums.sorted()"], answer: 0 }
+          - { id: fs-w02-d2-rf08, difficulty: easy, type: mcq, prompt: "Average of scores", choices: ["sum(scores) / len(scores)", "max(scores) / 2", "len(scores) / sum(scores)", "scores.average()"], answer: 0 }
+          - { id: fs-w02-d2-rf09, difficulty: easy, type: truefalse, prompt: "[\"Kano\", \"Abuja\"].sort() puts Abuja first.", answer: true }
+          - { id: fs-w02-d2-rf10, difficulty: easy, type: mcq, prompt: "[1, 2, 3][0:2] =", choices: ["[1, 2]", "[1, 2, 3]", "[2, 3]", "[0, 1, 2]"], answer: 0 }
+      - kind: brain-teaser
+        title: "Grade the class"
+        questions:
+          - id: fs-w02-d2-bt01
+            difficulty: medium
+            type: text
+            prompt: "What does this print? (just the number)"
+            code: |
+              scores = [50, 70, 90]
+              print(sum(scores) / len(scores))
+            accept: ["70.0"]
+            explain: "/ always gives a float in Python."
+          - id: fs-w02-d2-bt02
+            difficulty: medium
+            type: mcq
+            prompt: "What does this print?"
+            code: |
+              nums = [45, 12, 78, 3]
+              nums.sort()
+              print(nums[0], nums[-1])
+            choices: ["3 78", "45 3", "12 78", "78 3"]
+            answer: 0
+          - id: fs-w02-d2-bt03
+            difficulty: medium
+            type: mcq
+            prompt: "What does this print?"
+            code: |
+              scores = [45, 72, 38, 91, 55]
+              print(sorted(scores, reverse=True)[:3])
+            choices: ["[91, 72, 55]", "[38, 45, 55]", "[45, 72, 38]", "[91, 72, 55, 45]"]
+            answer: 0
+          - id: fs-w02-d2-bt04
+            difficulty: hard
+            type: mcq
+            prompt: "What does this print?"
+            code: |
+              scores = [45, 72, 38, 91, 55]
+              average = sum(scores) / len(scores)
+              print("Pass" if average >= 50 else "Fail")
+            choices: ["Pass", "Fail", "60.2", "an error"]
+            answer: 0
+            explain: "The average is 60.2."
+          - id: fs-w02-d2-bt05
+            difficulty: hard
+            type: mcq
+            prompt: "What's the difference between these two?"
+            code: |
+              a = nums.sort()
+              b = sorted(nums)
+            choices: ["sort() changes nums and returns None; sorted() returns a new sorted list", "They are identical", "sorted() changes nums", "sort() returns a copy"]
+            answer: 0
+
+  # ─────────────────────────── DAY 3 ───────────────────────────
+  - day: 3
+    gate:
+      title: "Checkpoint: list operations"
+      covers: "Week 2 · Day 2: slicing, sort, in, min/max, sum and averages"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w02-d3-g01, difficulty: easy, type: mcq, prompt: "cities[0:2] gives…", choices: ["the first two items", "items 0, 1 and 2", "the last two items", "one item"], answer: 0 }
+        - { id: fs-w02-d3-g02, difficulty: easy, type: mcq, prompt: "\"Lagos\" in cities returns…", choices: ["True or False", "the index", "the item", "a new list"], answer: 0 }
+        - { id: fs-w02-d3-g03, difficulty: easy, type: mcq, prompt: "Which gives the highest number in a list?", choices: ["max()", "top()", "high()", "sum()"], answer: 0 }
+        - { id: fs-w02-d3-g04, difficulty: easy, type: mcq, prompt: "Which puts a list in order?", choices: [".sort()", ".order()", ".arrange()", ".line()"], answer: 0 }
+        - { id: fs-w02-d3-g05, difficulty: easy, type: truefalse, prompt: "sum([1, 2, 3]) is 6.", answer: true }
+        - { id: fs-w02-d3-g06, difficulty: easy, type: mcq, prompt: "[5, 6, 7, 8][-2:] =", choices: ["[7, 8]", "[8]", "[6, 7, 8]", "[5, 6]"], answer: 0 }
+        - id: fs-w02-d3-g07
+          difficulty: medium
+          type: mcq
+          prompt: "What does this print?"
+          code: |
+            numbers = [45, 12, 78, 3, 56, 23, 89, 1]
+            numbers.sort()
+            print(numbers[0:3])
+          choices: ["[1, 3, 12]", "[45, 12, 78]", "[89, 78, 56]", "[1, 3, 12, 23]"]
+          answer: 0
+        - id: fs-w02-d3-g08
+          difficulty: medium
+          type: text
+          prompt: "What does this print? (just the number)"
+          code: |
+            scores = [60, 80, 100]
+            print(max(scores) - min(scores))
+          accept: ["40"]
+        - { id: fs-w02-d3-g09, difficulty: medium, type: mcq, prompt: "The slice [1:3] includes index 3.", choices: ["No: the end index is excluded", "Yes", "Only for numbers", "Only for text"], answer: 0 }
+        - { id: fs-w02-d3-g10, difficulty: medium, type: text, prompt: "Write the expression for the average of the list scores.", accept: ["sum(scores) / len(scores)", "sum(scores)/len(scores)"] }
+        - { id: fs-w02-d3-g11, difficulty: medium, type: match, prompt: "Match the function to its result for [3, 9, 6].", pairs: [["max", "9"], ["min", "3"], ["sum", "18"], ["len", "3"]] }
+        - id: fs-w02-d3-g12
+          difficulty: medium
+          type: mcq
+          prompt: "What does this print?"
+          code: |
+            if 78 in [45, 12, 78]:
+                print("78 is in the list")
+            else:
+                print("78 is not in the list")
+          choices: ["78 is in the list", "78 is not in the list", "True", "an error"]
+          answer: 0
+        - { id: fs-w02-d3-g13, difficulty: medium, type: truefalse, prompt: "sorted(nums) leaves nums unchanged.", answer: true }
+        - { id: fs-w02-d3-g14, difficulty: medium, type: mcq, prompt: "Which gives the list from highest to lowest?", choices: ["sorted(nums, reverse=True)", "sorted(nums)", "nums.sort(-1)", "reversed(nums.sort())"], answer: 0 }
+        - { id: fs-w02-d3-g15, difficulty: medium, type: mcq, prompt: "cities[:2] is the same as…", choices: ["cities[0:2]", "cities[2:]", "cities[1:2]", "cities[-2:]"], answer: 0 }
+        - id: fs-w02-d3-g16
+          difficulty: hard
+          type: text
+          prompt: "What does this print? (just the list)"
+          code: |
+            letters = ["a", "b", "c", "d", "e"]
+            print(letters[1:4])
+          accept: ["['b', 'c', 'd']"]
+        - id: fs-w02-d3-g17
+          difficulty: hard
+          type: mcq
+          prompt: "What does this print?"
+          code: |
+            scores = [40, 55, 70]
+            passing = 0
+            for s in scores:
+                if s >= 50:
+                    passing = passing + 1
+            print(passing, "of", len(scores))
+          choices: ["2 of 3", "1 of 3", "3 of 3", "55 of 70"]
+          answer: 0
+        - { id: fs-w02-d3-g18, difficulty: hard, type: multi, prompt: "For nums = [4, 1, 3], which are True? (Select all.)", choices: ["sorted(nums) == [1, 3, 4]", "nums[-1] == 3", "3 in nums", "len(nums) == 4", "max(nums) == nums[0]"], answers: [0, 1, 2, 4] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Functions speed round"
+        secondsPerQuestion: 10
+        questions:
+          - { id: fs-w02-d3-rf01, difficulty: easy, type: mcq, prompt: "Which keyword defines a function?", choices: ["def", "function", "fun", "define"], answer: 0 }
+          - { id: fs-w02-d3-rf02, difficulty: easy, type: mcq, prompt: "Which sends a value back from a function?", choices: ["return", "print", "send", "give"], answer: 0 }
+          - { id: fs-w02-d3-rf03, difficulty: easy, type: mcq, prompt: "In def greet(name):, name is a…", choices: ["parameter", "return value", "loop", "module"], answer: 0 }
+          - { id: fs-w02-d3-rf04, difficulty: easy, type: mcq, prompt: "In greet(\"Ada\"), \"Ada\" is an…", choices: ["argument", "parameter", "error", "import"], answer: 0 }
+          - { id: fs-w02-d3-rf05, difficulty: easy, type: mcq, prompt: "A def line ends with…", choices: [":", ";", ")", "."], answer: 0 }
+          - { id: fs-w02-d3-rf06, difficulty: easy, type: truefalse, prompt: "Defining a function runs its code immediately.", answer: false }
+          - { id: fs-w02-d3-rf07, difficulty: easy, type: truefalse, prompt: "A function can be called many times.", answer: true }
+          - { id: fs-w02-d3-rf08, difficulty: easy, type: mcq, prompt: "A function with no return gives back…", choices: ["None", "0", "an error", "an empty string"], answer: 0 }
+          - { id: fs-w02-d3-rf09, difficulty: easy, type: mcq, prompt: "Call a function named greet", choices: ["greet()", "call greet", "def greet", "greet:"], answer: 0 }
+          - { id: fs-w02-d3-rf10, difficulty: easy, type: mcq, prompt: "Why write functions?", choices: ["Write code once, reuse it everywhere", "They make code slower", "Python requires them", "To avoid variables"], answer: 0 }
+      - kind: brain-teaser
+        title: "Return or print?"
+        questions:
+          - id: fs-w02-d3-bt01
+            difficulty: medium
+            type: text
+            prompt: "What does this print? (just the number)"
+            code: |
+              def add(a, b):
+                  return a + b
+
+              print(add(10, 5))
+            accept: ["15"]
+          - id: fs-w02-d3-bt02
+            difficulty: medium
+            type: mcq
+            prompt: "What does this print?"
+            code: |
+              def add(a, b):
+                  print(a + b)
+
+              result = add(2, 3)
+              print(result)
+            choices: ["5 then None", "5 then 5", "None", "5"]
+            answer: 0
+            explain: "add prints 5 but returns nothing, so result is None."
+          - id: fs-w02-d3-bt03
+            difficulty: medium
+            type: mcq
+            prompt: "What happens?"
+            code: |
+              def greet(name):
+                  print("Welcome,", name)
+
+              greet()
+            choices: ["TypeError: greet() is missing the name argument", "It prints Welcome,", "It prints Welcome, name", "Nothing"]
+            answer: 0
+          - id: fs-w02-d3-bt04
+            difficulty: hard
+            type: mcq
+            prompt: "What does this print?"
+            code: |
+              def is_adult(age):
+                  return age >= 18
+
+              print(is_adult(17), is_adult(18))
+            choices: ["False True", "True True", "False False", "17 18"]
+            answer: 0
+          - id: fs-w02-d3-bt05
+            difficulty: hard
+            type: text
+            prompt: "What does this print? (just the number)"
+            code: |
+              def convert_to_naira(usd):
+                  return usd * 1550
+
+              total = convert_to_naira(2) + convert_to_naira(3)
+              print(total)
+            accept: ["7750"]
+
+  # ─────────────────────────── DAY 4 ───────────────────────────
+  - day: 4
+    gate:
+      title: "Checkpoint: functions"
+      covers: "Week 2 · Day 3: def, parameters, arguments, return, calling functions"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w02-d4-g01, difficulty: easy, type: mcq, prompt: "What does return do?", choices: ["Sends a value back to where the function was called", "Prints the value", "Ends the program", "Repeats the function"], answer: 0 }
+        - { id: fs-w02-d4-g02, difficulty: easy, type: mcq, prompt: "Which line defines a function called greet with no parameters?", choices: ["def greet():", "greet():", "function greet()", "def greet"], answer: 0 }
+        - { id: fs-w02-d4-g03, difficulty: easy, type: truefalse, prompt: "You must define a function before calling it.", answer: true }
+        - { id: fs-w02-d4-g04, difficulty: easy, type: mcq, prompt: "A parameter is…", choices: ["a variable in the function's definition", "the value you pass when calling", "the returned value", "a comment"], answer: 0 }
+        - { id: fs-w02-d4-g05, difficulty: easy, type: mcq, prompt: "An argument is…", choices: ["the value you pass when calling", "the function's name", "the def keyword", "the return line"], answer: 0 }
+        - { id: fs-w02-d4-g06, difficulty: easy, type: truefalse, prompt: "The body of a function must be indented.", answer: true }
+        - id: fs-w02-d4-g07
+          difficulty: medium
+          type: text
+          prompt: "What does this print? (just the number)"
+          code: |
+            def multiply(a, b):
+                return a * b
+
+            print(multiply(4, 5))
+          accept: ["20"]
+        - id: fs-w02-d4-g08
+          difficulty: medium
+          type: mcq
+          prompt: "What does this print?"
+          code: |
+            def shout(word):
+                return word.upper() + "!"
+
+            print(shout("lagos"))
+          choices: ["LAGOS!", "lagos!", "LAGOS", "an error"]
+          answer: 0
+        - { id: fs-w02-d4-g09, difficulty: medium, type: text, prompt: "Write the first line of a function called convert_to_naira that takes usd_amount.", accept: ["def convert_to_naira(usd_amount):"] }
+        - id: fs-w02-d4-g10
+          difficulty: medium
+          type: mcq
+          prompt: "What does this print?"
+          code: |
+            def f():
+                return 1
+                print("after")
+
+            print(f())
+          choices: ["1", "after then 1", "1 then after", "None"]
+          answer: 0
+          explain: "return ends the function; the line after it never runs."
+        - { id: fs-w02-d4-g11, difficulty: medium, type: match, prompt: "Match the term.", pairs: [["def", "starts a function"], ["return", "gives back a value"], ["parameter", "name in the definition"], ["argument", "value in the call"]] }
+        - id: fs-w02-d4-g12
+          difficulty: medium
+          type: text
+          prompt: "What does this print? (just the output)"
+          code: |
+            def greet_user(name):
+                return "Welcome, " + name
+
+            message = greet_user("Tunde")
+            print(message)
+          accept: ["Welcome, Tunde"]
+        - { id: fs-w02-d4-g13, difficulty: medium, type: truefalse, prompt: "A function can take more than one parameter.", answer: true }
+        - { id: fs-w02-d4-g14, difficulty: medium, type: mcq, prompt: "Why return instead of print inside convert_to_naira?", choices: ["So the result can be stored and used in more calculations", "print is slower", "return prints in colour", "No difference"], answer: 0 }
+        - id: fs-w02-d4-g15
+          difficulty: medium
+          type: mcq
+          prompt: "What does this print?"
+          code: |
+            def square(n):
+                return n * n
+
+            print(square(square(2)))
+          choices: ["16", "4", "8", "an error"]
+          answer: 0
+        - id: fs-w02-d4-g16
+          difficulty: hard
+          type: mcq
+          prompt: "What does this print?"
+          code: |
+            def double(x):
+                x = x * 2
+
+            n = 5
+            double(n)
+            print(n)
+          choices: ["5", "10", "None", "an error"]
+          answer: 0
+          explain: "double changes its own x and returns nothing; n stays 5."
+        - id: fs-w02-d4-g17
+          difficulty: hard
+          type: text
+          prompt: "What does this print? (just the output)"
+          code: |
+            def grade(score):
+                if score >= 70:
+                    return "A"
+                return "B"
+
+            print(grade(85), grade(50))
+          accept: ["A B"]
+        - { id: fs-w02-d4-g18, difficulty: hard, type: multi, prompt: "Which calls work for def add(a, b):? (Select all.)", choices: ["add(1, 2)", "add(1)", "add(\"x\", \"y\")", "add(a=1, b=2)", "add(1, 2, 3)"], answers: [0, 2, 3] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Default parameters & list helpers"
+        secondsPerQuestion: 10
+        questions:
+          - { id: fs-w02-d4-rf01, difficulty: easy, type: mcq, prompt: "def greet(name, language=\"English\"): language is…", choices: ["a default parameter", "required", "a return value", "a list"], answer: 0 }
+          - { id: fs-w02-d4-rf02, difficulty: easy, type: truefalse, prompt: "greet(\"Emeka\") works when language has a default.", answer: true }
+          - { id: fs-w02-d4-rf03, difficulty: easy, type: mcq, prompt: "Override the default:", choices: ["greet(\"Tunde\", \"Yoruba\")", "greet(\"Yoruba\")", "greet(language)", "greet()"], answer: 0 }
+          - { id: fs-w02-d4-rf04, difficulty: easy, type: mcq, prompt: "Start an empty list", choices: ["passing = []", "passing = ()", "passing = \"\"", "passing = 0"], answer: 0 }
+          - { id: fs-w02-d4-rf05, difficulty: easy, type: mcq, prompt: "get_average([]) should avoid…", choices: ["dividing by zero", "printing", "returning", "loops"], answer: 0 }
+          - { id: fs-w02-d4-rf06, difficulty: easy, type: truefalse, prompt: "A function can return a list.", answer: true }
+          - { id: fs-w02-d4-rf07, difficulty: easy, type: truefalse, prompt: "Default parameters must come after the ones without defaults.", answer: true }
+          - { id: fs-w02-d4-rf08, difficulty: easy, type: mcq, prompt: "Check an empty list", choices: ["len(scores) == 0", "scores == 0", "scores.empty", "scores is 0"], answer: 0 }
+          - { id: fs-w02-d4-rf09, difficulty: easy, type: mcq, prompt: "\"Emeka\" in [\"Emeka\", \"Ada\"] =", choices: ["True", "False", "0", "\"Emeka\""], answer: 0 }
+          - { id: fs-w02-d4-rf10, difficulty: easy, type: mcq, prompt: "Reading docs like Real Python is…", choices: ["a core skill engineers use daily", "cheating", "only for experts", "a waste of time"], answer: 0 }
+      - kind: brain-teaser
+        title: "Functions meet lists"
+        questions:
+          - id: fs-w02-d4-bt01
+            difficulty: medium
+            type: mcq
+            prompt: "What does this print?"
+            code: |
+              def get_passing_scores(scores, pass_mark=50):
+                  passing = []
+                  for score in scores:
+                      if score >= pass_mark:
+                          passing.append(score)
+                  return passing
+
+              print(get_passing_scores([45, 72, 38, 91]))
+            choices: ["[72, 91]", "[45, 72, 91]", "[45, 38]", "2"]
+            answer: 0
+          - id: fs-w02-d4-bt02
+            difficulty: medium
+            type: mcq
+            prompt: "Same function. What does this print?"
+            code: |
+              print(get_passing_scores([45, 72, 38, 91], pass_mark=40))
+            choices: ["[45, 72, 91]", "[72, 91]", "[38]", "an error"]
+            answer: 0
+          - id: fs-w02-d4-bt03
+            difficulty: medium
+            type: mcq
+            prompt: "What does this print?"
+            code: |
+              def greet(name, language="English"):
+                  if language == "Yoruba":
+                      print("Ẹ káàbọ̀,", name)
+                  else:
+                      print("Welcome,", name)
+
+              greet("Tunde", "Yoruba")
+            choices: ["Ẹ káàbọ̀, Tunde", "Welcome, Tunde", "Welcome, Yoruba", "an error"]
+            answer: 0
+          - id: fs-w02-d4-bt04
+            difficulty: hard
+            type: mcq
+            prompt: "Why does this crash on an empty list, and what's the fix?"
+            code: |
+              def get_average(scores):
+                  return sum(scores) / len(scores)
+
+              get_average([])
+            choices: ["ZeroDivisionError; check if len(scores) == 0 first and return 0", "TypeError; convert to int", "NameError; define scores", "It doesn't crash"]
+            answer: 0
+          - id: fs-w02-d4-bt05
+            difficulty: hard
+            type: text
+            prompt: "What does this print? (just the number)"
+            code: |
+              def largest(numbers):
+                  best = numbers[0]
+                  for n in numbers:
+                      if n > best:
+                          best = n
+                  return best
+
+              print(largest([-5, -2, -9]))
+            accept: ["-2"]
+
+  # ─────────────────────────── DAY 5 ───────────────────────────
+  - day: 5
+    gate:
+      title: "Checkpoint: functions with lists"
+      covers: "Week 2 · Day 4: functions on lists, default parameters, empty-list safety"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w02-d5-g01, difficulty: easy, type: mcq, prompt: "A default parameter is used when…", choices: ["the caller doesn't pass that argument", "the function crashes", "the list is empty", "you call it twice"], answer: 0 }
+        - { id: fs-w02-d5-g02, difficulty: easy, type: truefalse, prompt: "A function can take a list as an argument.", answer: true }
+        - { id: fs-w02-d5-g03, difficulty: easy, type: mcq, prompt: "Which safely handles an empty list in an average function?", choices: ["if len(scores) == 0: return 0", "try again later", "return sum(scores)", "print(\"empty\")"], answer: 0 }
+        - { id: fs-w02-d5-g04, difficulty: easy, type: mcq, prompt: "def f(x, y=2): … f(5) uses y =", choices: ["2", "5", "0", "None"], answer: 0 }
+        - { id: fs-w02-d5-g05, difficulty: easy, type: truefalse, prompt: "A function can build a new list with append() and return it.", answer: true }
+        - { id: fs-w02-d5-g06, difficulty: easy, type: mcq, prompt: "Dividing by len([]) gives…", choices: ["ZeroDivisionError", "0", "None", "an empty list"], answer: 0 }
+        - id: fs-w02-d5-g07
+          difficulty: medium
+          type: text
+          prompt: "What does this print? (just the list)"
+          code: |
+            def evens(nums):
+                result = []
+                for n in nums:
+                    if n % 2 == 0:
+                        result.append(n)
+                return result
+
+            print(evens([1, 2, 3, 4, 6]))
+          accept: ["[2, 4, 6]"]
+        - id: fs-w02-d5-g08
+          difficulty: medium
+          type: mcq
+          prompt: "What does this print?"
+          code: |
+            def power(base, exp=2):
+                return base ** exp
+
+            print(power(3), power(2, 3))
+          choices: ["9 8", "6 6", "9 6", "8 9"]
+          answer: 0
+        - { id: fs-w02-d5-g09, difficulty: medium, type: mcq, prompt: "Which finds the largest number without max()?", choices: ["Start with numbers[0], loop, keep any bigger one", "Start with 0 and add them", "Sort, then take numbers[0]", "Use len(numbers)"], answer: 0 }
+        - { id: fs-w02-d5-g10, difficulty: medium, type: mcq, prompt: "Why start largest() with numbers[0] instead of 0?", choices: ["A list of negative numbers would wrongly return 0", "It's faster", "0 isn't allowed", "No reason"], answer: 0 }
+        - { id: fs-w02-d5-g11, difficulty: medium, type: text, prompt: "Write the first line of get_passing_scores taking scores, with pass_mark defaulting to 50.", accept: ["def get_passing_scores(scores, pass_mark=50):", "def get_passing_scores(scores, pass_mark = 50):"] }
+        - id: fs-w02-d5-g12
+          difficulty: medium
+          type: text
+          prompt: "What does this print? (just the number)"
+          code: |
+            def count_long(words, min_length=5):
+                total = 0
+                for w in words:
+                    if len(w) > min_length:
+                        total = total + 1
+                return total
+
+            print(count_long(["Lagos", "Kaduna", "Port Harcourt", "Jos"]))
+          accept: ["2", "two"]
+        - { id: fs-w02-d5-g13, difficulty: medium, type: truefalse, prompt: "def f(a=1, b): is valid Python.", answer: false, explain: "Parameters with defaults must come after those without." }
+        - id: fs-w02-d5-g14
+          difficulty: medium
+          type: mcq
+          prompt: "What does this print?"
+          code: |
+            def describe(items):
+                print(len(items), items[0], items[-1])
+
+            describe(["Emeka", "Ada", "Tolu"])
+          choices: ["3 Emeka Tolu", "3 Tolu Emeka", "2 Emeka Tolu", "an error"]
+          answer: 0
+        - { id: fs-w02-d5-g15, difficulty: medium, type: mcq, prompt: "Most real programs are…", choices: ["functions that operate on lists (and other data)", "one long list of print()", "only if statements", "only loops"], answer: 0 }
+        - id: fs-w02-d5-g16
+          difficulty: hard
+          type: text
+          prompt: "What does this print? (just the number)"
+          code: |
+            def get_average(scores):
+                if len(scores) == 0:
+                    return 0
+                return sum(scores) / len(scores)
+
+            print(get_average([]) + get_average([4, 6]))
+          accept: ["5.0"]
+        - id: fs-w02-d5-g17
+          difficulty: hard
+          type: mcq
+          prompt: "What does this print?"
+          code: |
+            def add_item(item, basket=None):
+                if basket is None:
+                    basket = []
+                basket.append(item)
+                return basket
+
+            print(add_item("rice"), add_item("yam"))
+          choices: ["['rice'] ['yam']", "['rice'] ['rice', 'yam']", "['rice', 'yam']", "an error"]
+          answer: 0
+        - { id: fs-w02-d5-g18, difficulty: hard, type: multi, prompt: "Which are good function habits? (Select all.)", choices: ["Return values instead of printing when others need the result", "Handle empty inputs", "Give clear names like get_average", "Use one giant function for everything", "Use default parameters for common values"], answers: [0, 1, 2, 4] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Files speed round"
+        secondsPerQuestion: 10
+        questions:
+          - { id: fs-w02-d5-rf01, difficulty: easy, type: mcq, prompt: "Mode to read a file", choices: ["\"r\"", "\"w\"", "\"a\"", "\"x\""], answer: 0 }
+          - { id: fs-w02-d5-rf02, difficulty: easy, type: mcq, prompt: "Mode that WIPES the file first", choices: ["\"w\"", "\"a\"", "\"r\"", "\"k\""], answer: 0 }
+          - { id: fs-w02-d5-rf03, difficulty: easy, type: mcq, prompt: "Mode that adds to the end", choices: ["\"a\"", "\"w\"", "\"r\"", "\"e\""], answer: 0 }
+          - { id: fs-w02-d5-rf04, difficulty: easy, type: mcq, prompt: "with open(...) as file: automatically…", choices: ["closes the file", "deletes the file", "prints the file", "copies the file"], answer: 0 }
+          - { id: fs-w02-d5-rf05, difficulty: easy, type: mcq, prompt: "Read the whole file as one string", choices: ["file.read()", "file.readlines()", "file.write()", "file.get()"], answer: 0 }
+          - { id: fs-w02-d5-rf06, difficulty: easy, type: mcq, prompt: "Read the file as a list of lines", choices: ["file.readlines()", "file.read()", "file.lines", "file.split()"], answer: 0 }
+          - { id: fs-w02-d5-rf07, difficulty: easy, type: mcq, prompt: "Remove the newline from a line", choices: ["line.strip()", "line.cut()", "line.remove()", "line.clean()"], answer: 0 }
+          - { id: fs-w02-d5-rf08, difficulty: easy, type: mcq, prompt: "Newline character", choices: ["\\n", "\\t", "/n", "nl"], answer: 0 }
+          - { id: fs-w02-d5-rf09, difficulty: easy, type: truefalse, prompt: "Reading a file that doesn't exist raises FileNotFoundError.", answer: true }
+          - { id: fs-w02-d5-rf10, difficulty: easy, type: mcq, prompt: "Today's date", choices: ["date.today()", "today()", "date.now()", "time.today()"], answer: 0 }
+      - kind: brain-teaser
+        title: "What's in the file?"
+        questions:
+          - id: fs-w02-d5-bt01
+            difficulty: medium
+            type: text
+            prompt: "Run twice in a row. How many lines are in names.txt after the second run? (a number)"
+            code: |
+              with open("names.txt", "a") as file:
+                  file.write("Emeka\n")
+                  file.write("Tunde\n")
+            accept: ["4", "four"]
+            explain: "\"a\" appends, so each run adds 2 more lines."
+          - id: fs-w02-d5-bt02
+            difficulty: medium
+            type: text
+            prompt: "Now with \"w\": after running twice, how many lines? (a number)"
+            code: |
+              with open("names.txt", "w") as file:
+                  file.write("Emeka\n")
+                  file.write("Tunde\n")
+            accept: ["2", "two"]
+          - id: fs-w02-d5-bt03
+            difficulty: medium
+            type: mcq
+            prompt: "Why are there blank lines between the names when printed?"
+            code: |
+              with open("names.txt") as file:
+                  for line in file.readlines():
+                      print(line)
+            choices: ["Each line still ends with \\n, and print adds another. Use line.strip()", "readlines adds blanks", "The file is corrupt", "print always double-spaces"]
+            answer: 0
+          - id: fs-w02-d5-bt04
+            difficulty: hard
+            type: mcq
+            prompt: "Which line appends a journal entry with the date?"
+            code: |
+              from datetime import date
+              entry = "Learned files today"
+            choices: ["open(\"journal.txt\", \"a\").write(str(date.today()) + \": \" + entry + \"\\n\")", "open(\"journal.txt\", \"w\").write(entry)", "open(\"journal.txt\").read(entry)", "print(entry, file=\"journal.txt\")"]
+            answer: 0
+          - id: fs-w02-d5-bt05
+            difficulty: hard
+            type: mcq
+            prompt: "What's the safest way to read a file that might not exist yet?"
+            choices: ["try: open it … except FileNotFoundError: handle it", "Open it with \"w\" first", "Always create it by hand", "Use input() instead"]
+            answer: 0
+
+  # ─────────────────────────── DAY 6 ───────────────────────────
+  - day: 6
+    gate:
+      title: "Checkpoint: files"
+      covers: "Week 2 · Day 5: open modes r/w/a, with, read, readlines, write, strip"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w02-d6-g01, difficulty: easy, type: mcq, prompt: "Which mode reads an existing file?", choices: ["\"r\"", "\"w\"", "\"a\"", "\"n\""], answer: 0 }
+        - { id: fs-w02-d6-g02, difficulty: easy, type: mcq, prompt: "Which mode creates the file or WIPES it?", choices: ["\"w\"", "\"a\"", "\"r\"", "\"c\""], answer: 0 }
+        - { id: fs-w02-d6-g03, difficulty: easy, type: mcq, prompt: "Which mode adds to the end without wiping?", choices: ["\"a\"", "\"w\"", "\"r\"", "\"+\""], answer: 0 }
+        - { id: fs-w02-d6-g04, difficulty: easy, type: truefalse, prompt: "Using with open(...) closes the file for you.", answer: true }
+        - { id: fs-w02-d6-g05, difficulty: easy, type: mcq, prompt: "Programs without files…", choices: ["forget everything when they stop", "remember forever", "can't print", "can't use lists"], answer: 0 }
+        - { id: fs-w02-d6-g06, difficulty: easy, type: mcq, prompt: "write() needs you to add line breaks with…", choices: ["\\n", "print", "a comma", "nothing, it's automatic"], answer: 0 }
+        - id: fs-w02-d6-g07
+          difficulty: medium
+          type: mcq
+          prompt: "What does this print (assuming the file is empty to start)?"
+          code: |
+            with open("log.txt", "w") as f:
+                f.write("one\n")
+            with open("log.txt", "a") as f:
+                f.write("two\n")
+            print(open("log.txt").read().splitlines())
+          choices: ["['one', 'two']", "['two']", "['one']", "['one', 'two', 'two']"]
+          answer: 0
+        - id: fs-w02-d6-g08
+          difficulty: medium
+          type: mcq
+          prompt: "What does this print?"
+          code: |
+            with open("data.txt", "w") as f:
+                f.write("a\nb\nc\n")
+            with open("data.txt") as f:
+                print(len(f.readlines()))
+          choices: ["3", "1", "6", "4"]
+          answer: 0
+        - { id: fs-w02-d6-g09, difficulty: medium, type: text, prompt: "Write the line that opens contacts.txt for appending as file (with a with statement).", accept: ["with open(\"contacts.txt\", \"a\") as file:", "with open('contacts.txt', 'a') as file:"] }
+        - { id: fs-w02-d6-g10, difficulty: medium, type: mcq, prompt: "\"Emeka,0803\\n\".strip() =", choices: ["\"Emeka,0803\"", "\"Emeka 0803\"", "[\"Emeka\", \"0803\"]", "\"Emeka,0803\\n\""], answer: 0 }
+        - { id: fs-w02-d6-g11, difficulty: medium, type: mcq, prompt: "\"Emeka,0803\".split(\",\") =", choices: ["[\"Emeka\", \"0803\"]", "\"Emeka 0803\"", "[\"Emeka,0803\"]", "(\"Emeka\", \"0803\")"], answer: 0 }
+        - { id: fs-w02-d6-g12, difficulty: medium, type: match, prompt: "Match the method.", pairs: [["read()", "whole file as one string"], ["readlines()", "list of lines"], ["write()", "add text"], ["strip()", "remove spaces and newlines at the ends"]] }
+        - { id: fs-w02-d6-g13, difficulty: medium, type: truefalse, prompt: "Opening a missing file with \"a\" creates it.", answer: true }
+        - { id: fs-w02-d6-g14, difficulty: medium, type: mcq, prompt: "Where does open(\"names.txt\", \"a\") put the file?", choices: ["In the folder where the program runs", "Always on the Desktop", "In the cloud", "Nowhere until you save"], answer: 0 }
+        - { id: fs-w02-d6-g15, difficulty: medium, type: mcq, prompt: "str(date.today()) looks like…", choices: ["2026-09-30", "30/09/2026", "Sep 30", "today"], answer: 0 }
+        - id: fs-w02-d6-g16
+          difficulty: hard
+          type: text
+          prompt: "What does this print? (just the output)"
+          code: |
+            with open("c.txt", "w") as f:
+                f.write("Ada,0803\nTolu,0805\n")
+            for line in open("c.txt"):
+                name, phone = line.strip().split(",")
+                if name == "Tolu":
+                    print(phone)
+          accept: ["0805"]
+        - id: fs-w02-d6-g17
+          difficulty: hard
+          type: mcq
+          prompt: "What's the bug in this \"save\" function?"
+          code: |
+            def save_name(name):
+                with open("names.txt", "w") as file:
+                    file.write(name + "\n")
+          choices: ["\"w\" wipes the file, so only the last name survives; use \"a\"", "Missing return", "write needs print", "No bug"]
+          answer: 0
+        - { id: fs-w02-d6-g18, difficulty: hard, type: multi, prompt: "Which lines correctly read a file line by line? (Select all.)", choices: ["for line in open(\"f.txt\"):", "for line in open(\"f.txt\").readlines():", "for line in open(\"f.txt\", \"w\"):", "for line in open(\"f.txt\").read().splitlines():"], answers: [0, 1, 3] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Week 2 lightning round"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fs-w02-d6-rf01, difficulty: easy, type: mcq, prompt: "First item", choices: ["items[0]", "items[1]", "items[-1]", "items.first"], answer: 0 }
+          - { id: fs-w02-d6-rf02, difficulty: easy, type: mcq, prompt: "Add to a list", choices: [".append()", ".add()", ".push()", ".plus()"], answer: 0 }
+          - { id: fs-w02-d6-rf03, difficulty: easy, type: mcq, prompt: "Define a function", choices: ["def", "func", "fn", "define"], answer: 0 }
+          - { id: fs-w02-d6-rf04, difficulty: easy, type: mcq, prompt: "Give back a value", choices: ["return", "print", "yield back", "send"], answer: 0 }
+          - { id: fs-w02-d6-rf05, difficulty: easy, type: mcq, prompt: "Append to a file", choices: ["\"a\"", "\"w\"", "\"r\"", "\"add\""], answer: 0 }
+          - { id: fs-w02-d6-rf06, difficulty: easy, type: mcq, prompt: "Split \"a,b\" at the comma", choices: ["\"a,b\".split(\",\")", "\"a,b\".cut(\",\")", "split(\"a,b\")", "\"a,b\" / \",\""], answer: 0 }
+          - { id: fs-w02-d6-rf07, difficulty: easy, type: mcq, prompt: "Loop forever until break", choices: ["while True:", "for ever:", "loop:", "while 1 == 2:"], answer: 0 }
+          - { id: fs-w02-d6-rf08, difficulty: easy, type: mcq, prompt: "Leave the loop", choices: ["break", "exit", "stop", "return loop"], answer: 0 }
+          - { id: fs-w02-d6-rf09, difficulty: easy, type: truefalse, prompt: "len([]) is 0.", answer: true }
+          - { id: fs-w02-d6-rf10, difficulty: easy, type: truefalse, prompt: "\"w\" mode keeps the old contents.", answer: false }
+          - { id: fs-w02-d6-rf11, difficulty: easy, type: mcq, prompt: "Items 2 and 3 of a list", choices: ["items[1:3]", "items[2:3]", "items[2:4]", "items[1:2]"], answer: 0 }
+          - { id: fs-w02-d6-rf12, difficulty: easy, type: mcq, prompt: "sum([1, 2, 3]) / 3 =", choices: ["2.0", "2", "6", "3"], answer: 0 }
+      - kind: brain-teaser
+        title: "Contact book challenge"
+        questions:
+          - id: fs-w02-d6-bt01
+            difficulty: hard
+            type: mcq
+            prompt: "What does choosing \"4\" do in the contact book's main loop?"
+            code: |
+              while True:
+                  show_menu()
+                  choice = input("Choose an option (1-4): ")
+                  if choice == "4":
+                      print("Goodbye!")
+                      break
+            choices: ["Prints Goodbye! and leaves the loop", "Shows the menu again", "Deletes the contacts", "Crashes"]
+            answer: 0
+          - id: fs-w02-d6-bt02
+            difficulty: hard
+            type: text
+            prompt: "The user types 5. What does the program print next? (the message)"
+            code: |
+              choice = input("Choose an option (1-4): ")
+              if choice == "1":
+                  print("add")
+              elif choice == "4":
+                  print("Goodbye!")
+              else:
+                  print("Invalid choice. Try again.")
+            accept: ["Invalid choice. Try again."]
+          - id: fs-w02-d6-bt03
+            difficulty: hard
+            type: order
+            prompt: "Order the steps of search_contact."
+            items: ["Open contacts.txt", "Loop through each line", "Strip and split the line at the comma", "Compare the name with search_name", "Print the phone, or Not found at the end"]
+          - id: fs-w02-d6-bt04
+            difficulty: hard
+            type: mcq
+            prompt: "Why compare with .lower() in search_contact?"
+            choices: ["So \"ada\" finds \"Ada\"", "It's faster", "Files are lowercase", "split() needs it"]
+            answer: 0
+          - id: fs-w02-d6-bt05
+            difficulty: hard
+            type: multi
+            prompt: "Which Week 1–2 skills does the contact book use? (Select all.)"
+            choices: ["Loops", "Functions", "Files", "if/elif/else", "Lists (from split)", "Machine learning"]
+            answers: [0, 1, 2, 3, 4]

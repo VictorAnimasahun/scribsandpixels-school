@@ -13,6 +13,8 @@ type Base = {
   id: string
   difficulty: Difficulty
   prompt: string
+  /** A code snippet shown under the prompt in a monospace block. */
+  code?: string
   /** Shown after answering. */
   explain?: string
 }

@@ -105,6 +105,7 @@ export function QuizPlayer({ title, questions, secondsPerQuestion, passNote, onD
         {secondsPerQuestion ? <span className={`timer ${timeLeft <= 3 ? 'low' : ''}`}>⏱ {marked ? '—' : `${timeLeft}s`}</span> : null}
       </div>
       <p className="prompt">{question.prompt}</p>
+      {question.code && <pre className="q-code">{question.code}</pre>}
       {question.type === 'multi' && <p className="muted">Select all that apply.</p>}
 
       <Input question={question} view={view} draft={draft} setDraft={setDraft} submit={submit} locked={!!marked} />

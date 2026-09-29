@@ -160,3 +160,4 @@ details.reveal[open] { background: #fff; }
   /* iOS zooms into inputs under 16px; keep them at 16px on phones */
   textarea.code, textarea.stdin, .formula-bar input, .text-answer input, .cell-input { font-size: 16px; }
 }
+.q-code { margin: 0; background: #14201b; color: #e7f0e9; padding: 12px 14px; border-radius: 10px; font: 15px/1.5 ui-monospace, Menlo, monospace; white-space: pre-wrap; overflow-x: auto; }

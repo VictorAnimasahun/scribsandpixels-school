@@ -1,0 +1,784 @@
+# Fullstack + ML · Week 1 quizzes. Format and rules: src/content/QUIZZES.md
+week: 1
+days:
+
+  # ─────────────────────────── DAY 1 ───────────────────────────
+  - day: 1
+    gate:
+      title: "Checkpoint: how this school works"
+      covers: "Course overview: daily structure, rules, phases"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w01-d1-g01, difficulty: easy, type: mcq, prompt: "How long is this Fullstack + ML program?", choices: ["6 months", "12 months", "2 years", "3 months"], answer: 1 }
+        - { id: fs-w01-d1-g02, difficulty: easy, type: mcq, prompt: "Roughly how long is each study day, Monday to Saturday?", choices: ["About 1 hour", "About 2.5–3 hours", "About 5 hours", "About 8 hours"], answer: 1 }
+        - { id: fs-w01-d1-g03, difficulty: easy, type: truefalse, prompt: "Sunday is rest plus a 1-hour weekly review.", answer: true }
+        - { id: fs-w01-d1-g04, difficulty: easy, type: mcq, prompt: "Which programming language do you start with?", choices: ["Python", "Java", "C#", "Swift"], answer: 0 }
+        - { id: fs-w01-d1-g05, difficulty: easy, type: mcq, prompt: "What is the last block of every study day?", choices: ["Review", "Log", "Practice", "Lesson"], answer: 1 }
+        - { id: fs-w01-d1-g06, difficulty: easy, type: truefalse, prompt: "Copy-pasting the code examples is fine, it saves time.", answer: false, explain: "Rule: type, don't copy. Your hands need to learn too." }
+        - { id: fs-w01-d1-g07, difficulty: medium, type: order, prompt: "Put the daily blocks in order.", items: ["Review", "Lesson", "Practice", "Mini-task", "Log"] }
+        - { id: fs-w01-d1-g08, difficulty: medium, type: mcq, prompt: "How long is the daily Review block?", choices: ["10 min", "30 min", "45 min", "60 min"], answer: 1 }
+        - { id: fs-w01-d1-g09, difficulty: medium, type: match, prompt: "Match the phase to its focus.", pairs: [["Phase 1", "Foundations"], ["Phase 3", "Backend"], ["Phase 5", "Machine learning"], ["Phase 6", "Job-ready"]] }
+        - { id: fs-w01-d1-g10, difficulty: medium, type: mcq, prompt: "The rule \"Watch twice\" means…", choices: ["Watch twice in a row at 2× speed", "First for the overview, second pausing and doing it yourself", "Watch with a friend", "Watch it again the next week"], answer: 1 }
+        - { id: fs-w01-d1-g11, difficulty: medium, type: mcq, prompt: "Why is \"confusion is good\"?", choices: ["It means your brain is working", "It means you can skip ahead", "It means the lesson is wrong", "It isn't; avoid it"], answer: 0 }
+        - { id: fs-w01-d1-g12, difficulty: medium, type: mcq, prompt: "What is the Phase 1 milestone?", choices: ["A job board app", "A personal webpage + a Python script that prints Lagos weather", "A house price model", "The capstone"], answer: 1 }
+        - { id: fs-w01-d1-g13, difficulty: medium, type: truefalse, prompt: "You should wait until you feel ready before applying for work.", answer: false, explain: "Rule: apply early. You'll never feel ready." }
+        - { id: fs-w01-d1-g14, difficulty: medium, type: mcq, prompt: "Your daily log answers which three things?", choices: ["What I learned, what confused me, what to review tomorrow", "Mood, food, sleep", "Hours, pages, videos", "Bugs, tests, commits"], answer: 0 }
+        - { id: fs-w01-d1-g15, difficulty: medium, type: mcq, prompt: "Which book is \"THE\" machine-learning book in Phase 5?", choices: ["Hands-On Machine Learning (Géron)", "Automate the Boring Stuff", "Two Scoops of Django", "Eloquent JavaScript"], answer: 0 }
+        - { id: fs-w01-d1-g16, difficulty: hard, type: multi, prompt: "Which are rules of this school? (Select all.)", choices: ["Never skip review", "Watch twice", "Type, don't copy", "Skip parts that confuse you", "Apply early"], answers: [0, 1, 2, 4] }
+        - { id: fs-w01-d1-g17, difficulty: hard, type: mcq, prompt: "In which phase is your first fullstack app deployed live on the internet?", choices: ["Phase 2", "Phase 3", "Phase 4", "Phase 6"], answer: 2 }
+        - { id: fs-w01-d1-g18, difficulty: hard, type: mcq, prompt: "\"Never skip review\" because…", choices: ["Forgetting is normal; not reviewing is the real failure", "Reviews are graded", "It's the easiest block", "The lesson depends on it technically"], answer: 0 }
+    quizzes:
+      - kind: rapid-fire
+        title: "print() speed round"
+        secondsPerQuestion: 10
+        questions:
+          - { id: fs-w01-d1-rf01, difficulty: easy, type: mcq, prompt: "Which function shows text on the screen?", choices: ["print", "input", "show", "echo"], answer: 0 }
+          - { id: fs-w01-d1-rf02, difficulty: easy, type: mcq, prompt: "print(\"Hi\") shows…", choices: ["Hi", "\"Hi\"", "print Hi", "an error"], answer: 0 }
+          - { id: fs-w01-d1-rf03, difficulty: easy, type: mcq, prompt: "Text in Python goes inside…", choices: ["quotes", "#", "square brackets only", "nothing"], answer: 0 }
+          - { id: fs-w01-d1-rf04, difficulty: easy, type: truefalse, prompt: "python --version shows which Python you have installed.", answer: true }
+          - { id: fs-w01-d1-rf05, difficulty: easy, type: mcq, prompt: "Installing on Windows, which box must you tick?", choices: ["Add to PATH", "Install games", "Dark mode", "Skip tutorial"], answer: 0 }
+          - { id: fs-w01-d1-rf06, difficulty: easy, type: truefalse, prompt: "Print(\"hi\") with a capital P works.", answer: false, explain: "Python is case-sensitive: it's print." }
+          - { id: fs-w01-d1-rf07, difficulty: easy, type: mcq, prompt: "A program is…", choices: ["instructions a computer follows", "a monitor", "a website", "a type of file only"], answer: 0 }
+          - { id: fs-w01-d1-rf08, difficulty: easy, type: mcq, prompt: "Deep down, computers work with…", choices: ["0s and 1s", "letters", "colours", "sounds"], answer: 0 }
+          - { id: fs-w01-d1-rf09, difficulty: easy, type: mcq, prompt: "print(2 + 3) shows…", choices: ["5", "2 + 3", "23", "an error"], answer: 0 }
+          - { id: fs-w01-d1-rf10, difficulty: easy, type: text, prompt: "Type the line that prints Hello", accept: ["print(\"Hello\")", "print('Hello')"] }
+      - kind: brain-teaser
+        title: "Read the code"
+        questions:
+          - id: fs-w01-d1-bt01
+            difficulty: medium
+            type: mcq
+            prompt: "What does this print?"
+            code: |
+              print("2 + 3")
+            choices: ["2 + 3", "5", "an error", "23"]
+            answer: 0
+            explain: "Inside quotes it's text, so Python prints it exactly."
+          - id: fs-w01-d1-bt02
+            difficulty: medium
+            type: mcq
+            prompt: "Why does this crash?"
+            code: |
+              print("Hello)
+            choices: ["The closing quote is missing", "print needs a capital P", "Hello is too long", "It doesn't crash"]
+            answer: 0
+          - { id: fs-w01-d1-bt03, difficulty: medium, type: order, prompt: "Order the steps to run your very first program.", items: ["Install Python", "Open the terminal", "Type python and press Enter", "Type print(\"Hello, world!\")", "Press Enter"] }
+          - { id: fs-w01-d1-bt04, difficulty: hard, type: text, prompt: "Write one line that prints: I am learning to code", accept: ["print(\"I am learning to code\")", "print('I am learning to code')"] }
+          - { id: fs-w01-d1-bt05, difficulty: hard, type: multi, prompt: "Which lines are valid Python? (Select all.)", choices: ["print(\"hi\")", "Print(\"hi\")", "print(hi\")", "print('hi')", "print(\"hi\", \"there\")"], answers: [0, 3, 4] }
+
+  # ─────────────────────────── DAY 2 ───────────────────────────
+  - day: 2
+    gate:
+      title: "Checkpoint: your first program"
+      covers: "Week 1 · Day 1: what a program is, installing Python, print()"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w01-d2-g01, difficulty: easy, type: mcq, prompt: "Which command checks that Python is installed?", choices: ["python --version", "python install", "check python", "print version"], answer: 0 }
+        - { id: fs-w01-d2-g02, difficulty: easy, type: mcq, prompt: "What does print() do?", choices: ["Shows output on the screen", "Sends a file to the printer", "Saves the program", "Reads the keyboard"], answer: 0 }
+        - { id: fs-w01-d2-g03, difficulty: easy, type: truefalse, prompt: "print(\"Hello, world!\") is a complete Python program.", answer: true }
+        - { id: fs-w01-d2-g04, difficulty: easy, type: mcq, prompt: "To start typing Python straight into the terminal, you type…", choices: ["python", "start", "run code", "print"], answer: 0 }
+        - { id: fs-w01-d2-g05, difficulty: easy, type: truefalse, prompt: "Python cares about capital letters: print and Print are different.", answer: true }
+        - { id: fs-w01-d2-g06, difficulty: easy, type: mcq, prompt: "Computers understand instructions ultimately as…", choices: ["binary (0s and 1s)", "English", "pictures", "music"], answer: 0 }
+        - id: fs-w01-d2-g07
+          difficulty: medium
+          type: mcq
+          prompt: "What does this show?"
+          code: |
+            print("I am learning to code")
+          choices: ["I am learning to code", "\"I am learning to code\"", "print I am learning to code", "an error"]
+          answer: 0
+        - id: fs-w01-d2-g08
+          difficulty: medium
+          type: mcq
+          prompt: "What's wrong with this line?"
+          code: |
+            print(Hello)
+          choices: ["Hello needs quotes to be text", "print needs a capital", "Nothing", "Brackets should be square"]
+          answer: 0
+        - { id: fs-w01-d2-g09, difficulty: medium, type: text, prompt: "Write the line that prints: One day I will be a software engineer", accept: ["print(\"One day I will be a software engineer\")", "print('One day I will be a software engineer')"] }
+        - id: fs-w01-d2-g10
+          difficulty: medium
+          type: text
+          prompt: "How many lines does this print? (a number)"
+          code: |
+            print("My name is Emeka")
+            print("I am learning to code")
+            print("One day I will be a software engineer")
+          accept: ["3", "three"]
+        - { id: fs-w01-d2-g11, difficulty: medium, type: mcq, prompt: "In CS50 Week 0, a \"program\" is best described as…", choices: ["a set of step-by-step instructions", "a computer part", "the internet", "a password"], answer: 0 }
+        - { id: fs-w01-d2-g12, difficulty: medium, type: mcq, prompt: "You type print(\"Hi\" and press Enter. What happens?", choices: ["A syntax error: the bracket isn't closed", "It prints Hi", "It prints nothing, silently", "The computer restarts"], answer: 0 }
+        - id: fs-w01-d2-g13
+          difficulty: medium
+          type: mcq
+          prompt: "What does this show?"
+          code: |
+            print(10 - 4)
+          choices: ["6", "10 - 4", "104", "an error"]
+          answer: 0
+        - { id: fs-w01-d2-g14, difficulty: medium, type: truefalse, prompt: "Single and double quotes both work for text: print('Hi') and print(\"Hi\").", answer: true }
+        - { id: fs-w01-d2-g15, difficulty: medium, type: order, prompt: "Order the Day 1 lesson steps.", items: ["Download Python from python.org", "Install it (tick Add to PATH)", "Open the terminal", "Check python --version", "Run print(\"Hello, world!\")"] }
+        - id: fs-w01-d2-g16
+          difficulty: hard
+          type: mcq
+          prompt: "What does this show?"
+          code: |
+            print("5" + "5")
+          choices: ["55", "10", "5 + 5", "an error"]
+          answer: 0
+          explain: "Both are text, so + joins them."
+        - id: fs-w01-d2-g17
+          difficulty: hard
+          type: mcq
+          prompt: "What does this show?"
+          code: |
+            print("Lagos", "Abuja")
+          choices: ["Lagos Abuja", "LagosAbuja", "Lagos, Abuja", "an error"]
+          answer: 0
+          explain: "Commas in print() put a space between the items."
+        - { id: fs-w01-d2-g18, difficulty: hard, type: multi, prompt: "Which of these print a number calculated by Python? (Select all.)", choices: ["print(7 * 6)", "print(\"7 * 6\")", "print(100 / 4)", "print(\"42\")"], answers: [0, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Variables & types"
+        secondsPerQuestion: 10
+        questions:
+          - { id: fs-w01-d2-rf01, difficulty: easy, type: mcq, prompt: "\"Emeka\" is a…", choices: ["string (text)", "integer", "float", "boolean"], answer: 0 }
+          - { id: fs-w01-d2-rf02, difficulty: easy, type: mcq, prompt: "35 is an…", choices: ["integer", "string", "float", "list"], answer: 0 }
+          - { id: fs-w01-d2-rf03, difficulty: easy, type: mcq, prompt: "1.75 is a…", choices: ["float", "integer", "string", "boolean"], answer: 0 }
+          - { id: fs-w01-d2-rf04, difficulty: easy, type: mcq, prompt: "\"35\" (with quotes) is a…", choices: ["string", "integer", "float", "number"], answer: 0 }
+          - { id: fs-w01-d2-rf05, difficulty: easy, type: mcq, prompt: "Which line creates a variable?", choices: ["age = 35", "age == 35", "35 = age", "print(age)"], answer: 0 }
+          - { id: fs-w01-d2-rf06, difficulty: easy, type: truefalse, prompt: "A variable name can contain spaces, like my age = 35.", answer: false }
+          - { id: fs-w01-d2-rf07, difficulty: easy, type: truefalse, prompt: "You can change a variable's value later.", answer: true }
+          - { id: fs-w01-d2-rf08, difficulty: easy, type: mcq, prompt: "Which file extension is a Python script?", choices: [".py", ".txt", ".doc", ".python"], answer: 0 }
+          - { id: fs-w01-d2-rf09, difficulty: easy, type: mcq, prompt: "Run about_me.py from the terminal with…", choices: ["python about_me.py", "run about_me", "open about_me.py", "print about_me.py"], answer: 0 }
+          - { id: fs-w01-d2-rf10, difficulty: easy, type: mcq, prompt: "cd Desktop means…", choices: ["go into the Desktop folder", "copy Desktop", "delete Desktop", "create Desktop"], answer: 0 }
+      - kind: brain-teaser
+        title: "Predict and fix"
+        questions:
+          - id: fs-w01-d2-bt01
+            difficulty: medium
+            type: mcq
+            prompt: "What does this print?"
+            code: |
+              name = "Ada"
+              name = "Tunde"
+              print(name)
+            choices: ["Tunde", "Ada", "Ada Tunde", "an error"]
+            answer: 0
+            explain: "The second assignment replaces the first."
+          - id: fs-w01-d2-bt02
+            difficulty: medium
+            type: mcq
+            prompt: "What happens?"
+            code: |
+              age = 35
+              name = "Emeka"
+              print(age + name)
+            choices: ["TypeError: you can't add a number and text", "35Emeka", "Emeka35", "35 Emeka"]
+            answer: 0
+          - id: fs-w01-d2-bt03
+            difficulty: medium
+            type: text
+            prompt: "Fix the last line so it prints: I am 35 (use str)"
+            code: |
+              age = 35
+              print("I am " + age)
+            accept: ["print(\"I am \" + str(age))", "print('I am ' + str(age))"]
+          - id: fs-w01-d2-bt04
+            difficulty: hard
+            type: mcq
+            prompt: "What does this print?"
+            code: |
+              city = "Lagos"
+              print("city")
+            choices: ["city", "Lagos", "\"Lagos\"", "an error"]
+            answer: 0
+            explain: "In quotes, city is just text; without quotes it's the variable."
+          - id: fs-w01-d2-bt05
+            difficulty: hard
+            type: mcq
+            prompt: "What does this print?"
+            code: |
+              a = 10
+              b = a
+              a = 20
+              print(b)
+            choices: ["10", "20", "30", "an error"]
+            answer: 0
+            explain: "b got a copy of the value 10; changing a later doesn't change b."
+
+  # ─────────────────────────── DAY 3 ───────────────────────────
+  - day: 3
+    gate:
+      title: "Checkpoint: variables and types"
+      covers: "Week 1 · Day 2: variables, strings, integers, floats, TypeError"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w01-d3-g01, difficulty: easy, type: mcq, prompt: "A variable is…", choices: ["a name that stores a value", "a type of loop", "an error message", "a Python file"], answer: 0 }
+        - { id: fs-w01-d3-g02, difficulty: easy, type: mcq, prompt: "Which is a string?", choices: ["\"Lagos\"", "42", "3.5", "True"], answer: 0 }
+        - { id: fs-w01-d3-g03, difficulty: easy, type: mcq, prompt: "Which is an integer?", choices: ["42", "4.2", "\"42\"", "forty-two"], answer: 0 }
+        - { id: fs-w01-d3-g04, difficulty: easy, type: mcq, prompt: "Which is a float?", choices: ["1.75", "175", "\"1.75\"", "one point seven"], answer: 0 }
+        - { id: fs-w01-d3-g05, difficulty: easy, type: truefalse, prompt: "The = sign in age = 35 means \"store 35 in age\".", answer: true }
+        - { id: fs-w01-d3-g06, difficulty: easy, type: mcq, prompt: "Which variable name is valid?", choices: ["dream_job", "dream job", "2job", "dream-job"], answer: 0 }
+        - id: fs-w01-d3-g07
+          difficulty: medium
+          type: mcq
+          prompt: "What does this print?"
+          code: |
+            name = "Emeka"
+            age = 35
+            print("My name is", name, "and I am", age, "years old")
+          choices: ["My name is Emeka and I am 35 years old", "My name is name and I am age years old", "an error", "My name isEmekaand I am35years old"]
+          answer: 0
+        - id: fs-w01-d3-g08
+          difficulty: medium
+          type: mcq
+          prompt: "Which error does this cause?"
+          code: |
+            print(35 + "Emeka")
+          choices: ["TypeError", "NameError", "SyntaxError", "No error"]
+          answer: 0
+        - id: fs-w01-d3-g09
+          difficulty: medium
+          type: mcq
+          prompt: "Which error does this cause?"
+          code: |
+            print(nmae)
+          choices: ["NameError (the variable doesn't exist)", "TypeError", "SyntaxError", "No error"]
+          answer: 0
+        - { id: fs-w01-d3-g10, difficulty: medium, type: text, prompt: "Write the line that stores the text Abuja in a variable called city.", accept: ["city = \"Abuja\"", "city = 'Abuja'", "city=\"Abuja\"", "city='Abuja'"] }
+        - { id: fs-w01-d3-g11, difficulty: medium, type: match, prompt: "Match each value to its type.", pairs: [["\"hello\"", "string"], ["7", "integer"], ["7.0", "float"], ["\"7\"", "string (looks like a number!)"]] }
+        - id: fs-w01-d3-g12
+          difficulty: medium
+          type: mcq
+          prompt: "What does this print?"
+          code: |
+            x = 5
+            x = x + 1
+            print(x)
+          choices: ["6", "5", "x + 1", "51"]
+          answer: 0
+        - { id: fs-w01-d3-g13, difficulty: medium, type: truefalse, prompt: "\"35\" + \"1\" gives \"351\".", answer: true }
+        - { id: fs-w01-d3-g14, difficulty: medium, type: mcq, prompt: "How do you turn the number 35 into text?", choices: ["str(35)", "text(35)", "int(\"35\")", "\"35\" + 0"], answer: 0 }
+        - { id: fs-w01-d3-g15, difficulty: medium, type: truefalse, prompt: "Reading an error message carefully is a key programming skill.", answer: true }
+        - id: fs-w01-d3-g16
+          difficulty: hard
+          type: mcq
+          prompt: "What does this print?"
+          code: |
+            height = 1.75
+            print(height * 2)
+          choices: ["3.5", "1.751.75", "3", "an error"]
+          answer: 0
+        - id: fs-w01-d3-g17
+          difficulty: hard
+          type: mcq
+          prompt: "What does this print?"
+          code: |
+            word = "ha"
+            print(word * 3)
+          choices: ["hahaha", "ha3", "an error", "ha ha ha"]
+          answer: 0
+        - { id: fs-w01-d3-g18, difficulty: hard, type: multi, prompt: "Which lines run without an error? (Select all.)", choices: ["print(\"Age: \" + str(35))", "print(\"Age: \" + 35)", "print(\"Age:\", 35)", "print(35 + 1)"], answers: [0, 2, 3] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Input & operators"
+        secondsPerQuestion: 10
+        questions:
+          - { id: fs-w01-d3-rf01, difficulty: easy, type: mcq, prompt: "input() always gives you a…", choices: ["string", "integer", "float", "number"], answer: 0 }
+          - { id: fs-w01-d3-rf02, difficulty: easy, type: mcq, prompt: "17 // 5 =", choices: ["3", "3.4", "2", "85"], answer: 0 }
+          - { id: fs-w01-d3-rf03, difficulty: easy, type: mcq, prompt: "17 % 5 =", choices: ["2", "3", "3.4", "0"], answer: 0 }
+          - { id: fs-w01-d3-rf04, difficulty: easy, type: mcq, prompt: "17 / 5 =", choices: ["3.4", "3", "2", "3.5"], answer: 0 }
+          - { id: fs-w01-d3-rf05, difficulty: easy, type: mcq, prompt: "int(\"7\") + 1 =", choices: ["8", "71", "\"8\"", "an error"], answer: 0 }
+          - { id: fs-w01-d3-rf06, difficulty: easy, type: mcq, prompt: "\"7\" + \"1\" =", choices: ["\"71\"", "8", "\"8\"", "an error"], answer: 0 }
+          - { id: fs-w01-d3-rf07, difficulty: easy, type: mcq, prompt: "Turn \"2.5\" into a number you can calculate with:", choices: ["float(\"2.5\")", "int(\"2.5\")", "str(\"2.5\")", "number(\"2.5\")"], answer: 0 }
+          - { id: fs-w01-d3-rf08, difficulty: easy, type: mcq, prompt: "2 ** 3 =", choices: ["8", "6", "9", "5"], answer: 0 }
+          - { id: fs-w01-d3-rf09, difficulty: easy, type: truefalse, prompt: "10 % 2 == 0 means 10 is even.", answer: true }
+          - { id: fs-w01-d3-rf10, difficulty: easy, type: mcq, prompt: "100 USD at ₦1550 is…", choices: ["155000", "15500", "1550", "1650"], answer: 0 }
+      - kind: brain-teaser
+        title: "Think like the interpreter"
+        questions:
+          - id: fs-w01-d3-bt01
+            difficulty: medium
+            type: mcq
+            prompt: "The user types 34. What happens?"
+            code: |
+              age = input("How old are you? ")
+              print(age + 1)
+            choices: ["TypeError: age is text", "35", "341", "34"]
+            answer: 0
+          - id: fs-w01-d3-bt02
+            difficulty: medium
+            type: text
+            prompt: "The user types 34. What is printed? (just the number)"
+            code: |
+              age = int(input("How old are you? "))
+              print(age + 1)
+            accept: ["35"]
+          - id: fs-w01-d3-bt03
+            difficulty: medium
+            type: mcq
+            prompt: "The user types 2.5. What happens?"
+            code: |
+              usd = int(input("USD: "))
+            choices: ["ValueError: \"2.5\" isn't a whole number", "usd becomes 2", "usd becomes 3", "usd becomes 2.5"]
+            answer: 0
+            explain: "Use float() for decimals."
+          - { id: fs-w01-d3-bt04, difficulty: hard, type: text, prompt: "₦10,000 shared between 3 people in whole naira: how much does each get with 10000 // 3?", accept: ["3333"] }
+          - id: fs-w01-d3-bt05
+            difficulty: hard
+            type: mcq
+            prompt: "What does this print?"
+            code: |
+              minutes = 135
+              print(minutes // 60, "h", minutes % 60, "min")
+            choices: ["2 h 15 min", "2.25 h 0 min", "2 h 25 min", "135 h 0 min"]
+            answer: 0
+
+  # ─────────────────────────── DAY 4 ───────────────────────────
+  - day: 4
+    gate:
+      title: "Checkpoint: input and maths"
+      covers: "Week 1 · Day 3: input(), int(), float(), str(), + - * / // %"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w01-d4-g01, difficulty: easy, type: mcq, prompt: "What does input() return?", choices: ["A string", "An integer", "A float", "Whatever the user typed, as a number"], answer: 0 }
+        - { id: fs-w01-d4-g02, difficulty: easy, type: mcq, prompt: "Which turns \"12\" into the number 12?", choices: ["int(\"12\")", "str(12)", "text(\"12\")", "\"12\" * 1"], answer: 0 }
+        - { id: fs-w01-d4-g03, difficulty: easy, type: mcq, prompt: "Which operator divides and keeps only the whole part?", choices: ["//", "/", "%", "**"], answer: 0 }
+        - { id: fs-w01-d4-g04, difficulty: easy, type: mcq, prompt: "Which operator gives the remainder?", choices: ["%", "//", "/", "*"], answer: 0 }
+        - { id: fs-w01-d4-g05, difficulty: easy, type: mcq, prompt: "9 / 2 =", choices: ["4.5", "4", "1", "5"], answer: 0 }
+        - { id: fs-w01-d4-g06, difficulty: easy, type: truefalse, prompt: "input(\"Name? \") shows the text Name? before waiting for the user.", answer: true }
+        - { id: fs-w01-d4-g07, difficulty: medium, type: mcq, prompt: "9 // 2 =", choices: ["4", "4.5", "1", "5"], answer: 0 }
+        - { id: fs-w01-d4-g08, difficulty: medium, type: mcq, prompt: "9 % 2 =", choices: ["1", "4", "4.5", "0"], answer: 0 }
+        - id: fs-w01-d4-g09
+          difficulty: medium
+          type: mcq
+          prompt: "The user types 20. What does it print?"
+          code: |
+            usd = float(input("USD: "))
+            print(usd * 1550)
+          choices: ["31000.0", "31000", "201550", "an error"]
+          answer: 0
+          explain: "float × int gives a float, so it prints 31000.0."
+        - { id: fs-w01-d4-g10, difficulty: medium, type: text, prompt: "Write the line that asks \"What is your name? \" and stores the answer in name.", accept: ["name = input(\"What is your name? \")", "name = input('What is your name? ')", "name=input(\"What is your name? \")"] }
+        - { id: fs-w01-d4-g11, difficulty: medium, type: match, prompt: "Match each expression to its value.", pairs: [["7 + 3", "10"], ["7 // 3", "2"], ["7 % 3", "1"], ["7 * 3", "21"]] }
+        - id: fs-w01-d4-g12
+          difficulty: medium
+          type: mcq
+          prompt: "The user types Ada. What does it print?"
+          code: |
+            name = input("Name: ")
+            print("Hello,", name)
+          choices: ["Hello, Ada", "Hello,Ada", "Hello, name", "an error"]
+          answer: 0
+        - { id: fs-w01-d4-g13, difficulty: medium, type: truefalse, prompt: "int(\"3.7\") gives 3.", answer: false, explain: "It raises a ValueError. int(3.7) works (gives 3), but not the text \"3.7\"." }
+        - { id: fs-w01-d4-g14, difficulty: medium, type: mcq, prompt: "Why convert input with int() before adding 1?", choices: ["input() gives text, and text + number is an error", "Python requires int() on every line", "To make it faster", "To print it in colour"], answer: 0 }
+        - { id: fs-w01-d4-g15, difficulty: medium, type: mcq, prompt: "round(3.14159, 2) =", choices: ["3.14", "3.1", "3", "3.142"], answer: 0 }
+        - id: fs-w01-d4-g16
+          difficulty: hard
+          type: mcq
+          prompt: "The user types 5 then 3. What does it print?"
+          code: |
+            a = input("a: ")
+            b = input("b: ")
+            print(a + b)
+          choices: ["53", "8", "5 3", "an error"]
+          answer: 0
+          explain: "Both are strings, so + joins them."
+        - id: fs-w01-d4-g17
+          difficulty: hard
+          type: text
+          prompt: "What does this print? (just the output)"
+          code: |
+            total = 100
+            total = total - 30
+            total = total * 2
+            print(total)
+          accept: ["140"]
+        - { id: fs-w01-d4-g18, difficulty: hard, type: mcq, prompt: "Which expression checks whether n is even?", choices: ["n % 2 == 0", "n // 2 == 0", "n / 2 == 0", "n * 2 == 0"], answer: 0 }
+    quizzes:
+      - kind: rapid-fire
+        title: "True or False? Comparisons"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fs-w01-d4-rf01, difficulty: easy, type: truefalse, prompt: "5 > 3", answer: true }
+          - { id: fs-w01-d4-rf02, difficulty: easy, type: truefalse, prompt: "5 == 5.0", answer: true }
+          - { id: fs-w01-d4-rf03, difficulty: easy, type: truefalse, prompt: "\"abuja\" == \"Abuja\"", answer: false }
+          - { id: fs-w01-d4-rf04, difficulty: easy, type: truefalse, prompt: "18 >= 18", answer: true }
+          - { id: fs-w01-d4-rf05, difficulty: easy, type: truefalse, prompt: "3 != 3", answer: false }
+          - { id: fs-w01-d4-rf06, difficulty: easy, type: truefalse, prompt: "True and False", answer: false }
+          - { id: fs-w01-d4-rf07, difficulty: easy, type: truefalse, prompt: "True or False", answer: true }
+          - { id: fs-w01-d4-rf08, difficulty: easy, type: truefalse, prompt: "not True", answer: false }
+          - { id: fs-w01-d4-rf09, difficulty: easy, type: mcq, prompt: "Which one COMPARES two values?", choices: ["==", "=", "=>", "=<"], answer: 0 }
+          - { id: fs-w01-d4-rf10, difficulty: easy, type: mcq, prompt: "An if line must end with…", choices: [":", ";", ".", ")"], answer: 0 }
+      - kind: brain-teaser
+        title: "Follow the branches"
+        questions:
+          - id: fs-w01-d4-bt01
+            difficulty: medium
+            type: mcq
+            prompt: "What does this print?"
+            code: |
+              age = 16
+              if age >= 18:
+                  print("You can vote in Nigeria!")
+              elif age >= 16:
+                  print("Almost! Two more years.")
+              else:
+                  print("You are still a child.")
+            choices: ["Almost! Two more years.", "You can vote in Nigeria!", "You are still a child.", "Nothing"]
+            answer: 0
+          - id: fs-w01-d4-bt02
+            difficulty: medium
+            type: mcq
+            prompt: "What does this print?"
+            code: |
+              score = 75
+              if score >= 50:
+                  print("Pass")
+              if score >= 70:
+                  print("Distinction")
+            choices: ["Pass then Distinction", "Only Pass", "Only Distinction", "Nothing"]
+            answer: 0
+            explain: "Two separate ifs are both checked. With elif, only the first match would run."
+          - id: fs-w01-d4-bt03
+            difficulty: medium
+            type: mcq
+            prompt: "Why does this crash?"
+            code: |
+              if age > 18
+                  print("Adult")
+            choices: ["Missing colon after the condition", "age must be in quotes", "print needs a capital", "18 must be text"]
+            answer: 0
+          - id: fs-w01-d4-bt04
+            difficulty: hard
+            type: mcq
+            prompt: "The user types RED. What does it print?"
+            code: |
+              colour = input("Colour: ")
+              if colour == "red":
+                  print("Stop!")
+              else:
+                  print("That's not a traffic light colour!")
+            choices: ["That's not a traffic light colour!", "Stop!", "Both", "an error"]
+            answer: 0
+            explain: "\"RED\" isn't equal to \"red\". Fix it with colour.lower()."
+          - id: fs-w01-d4-bt05
+            difficulty: hard
+            type: mcq
+            prompt: "What does this print?"
+            code: |
+              x = 7
+              if x > 5 and x < 10:
+                  print("A")
+              elif x > 5:
+                  print("B")
+              else:
+                  print("C")
+            choices: ["A", "B", "A then B", "C"]
+            answer: 0
+            explain: "The first true branch wins; elif is skipped."
+
+  # ─────────────────────────── DAY 5 ───────────────────────────
+  - day: 5
+    gate:
+      title: "Checkpoint: decisions"
+      covers: "Week 1 · Day 4: if / elif / else, comparisons, and / or / not"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w01-d5-g01, difficulty: easy, type: mcq, prompt: "Which keyword checks a second condition after if?", choices: ["elif", "elseif", "else if", "then"], answer: 0 }
+        - { id: fs-w01-d5-g02, difficulty: easy, type: mcq, prompt: "What runs when no condition above is true?", choices: ["else", "elif", "stop", "finally"], answer: 0 }
+        - { id: fs-w01-d5-g03, difficulty: easy, type: mcq, prompt: "== means…", choices: ["is equal to (comparison)", "store a value", "not equal", "greater or equal"], answer: 0 }
+        - { id: fs-w01-d5-g04, difficulty: easy, type: mcq, prompt: "!= means…", choices: ["not equal to", "equal to", "very equal", "less than"], answer: 0 }
+        - { id: fs-w01-d5-g05, difficulty: easy, type: truefalse, prompt: "The code inside an if must be indented.", answer: true }
+        - { id: fs-w01-d5-g06, difficulty: easy, type: truefalse, prompt: "and is True only when both sides are True.", answer: true }
+        - id: fs-w01-d5-g07
+          difficulty: medium
+          type: mcq
+          prompt: "What does this print?"
+          code: |
+            age = 10
+            if age >= 18:
+                print("Adult")
+            elif age >= 13:
+                print("Teen")
+            else:
+                print("Child")
+          choices: ["Child", "Teen", "Adult", "Nothing"]
+          answer: 0
+        - id: fs-w01-d5-g08
+          difficulty: medium
+          type: mcq
+          prompt: "What does this print?"
+          code: |
+            temp = 30
+            if temp > 25:
+                print("Hot")
+            print("Done")
+          choices: ["Hot then Done", "Only Hot", "Only Done", "Nothing"]
+          answer: 0
+          explain: "Done isn't indented, so it always runs."
+        - { id: fs-w01-d5-g09, difficulty: medium, type: truefalse, prompt: "\"Lagos\" == \"lagos\" is True.", answer: false }
+        - { id: fs-w01-d5-g10, difficulty: medium, type: mcq, prompt: "Which makes a comparison ignore capital letters?", choices: ["colour.lower() == \"red\"", "colour == \"RED\" or \"red\"", "colour.ignore() == \"red\"", "colour = \"red\""], answer: 0 }
+        - { id: fs-w01-d5-g11, difficulty: medium, type: mcq, prompt: "True or False and False is…", choices: ["True", "False", "an error", "None"], answer: 0, explain: "and is evaluated before or: True or (False and False) = True." }
+        - { id: fs-w01-d5-g12, difficulty: medium, type: match, prompt: "Match the operator to its meaning.", pairs: [[">=", "greater than or equal"], ["<", "less than"], ["!=", "not equal"], ["==", "equal"]] }
+        - { id: fs-w01-d5-g13, difficulty: medium, type: text, prompt: "Write the if line that checks whether age is 18 or more.", accept: ["if age >= 18:", "if age>=18:", "if 18 <= age:"] }
+        - id: fs-w01-d5-g14
+          difficulty: medium
+          type: mcq
+          prompt: "What does this print?"
+          code: |
+            x = 3
+            if x > 5:
+                print("big")
+          choices: ["Nothing", "big", "small", "an error"]
+          answer: 0
+        - { id: fs-w01-d5-g15, difficulty: medium, type: mcq, prompt: "How many elif branches can one if have?", choices: ["As many as you need", "Only one", "Exactly two", "None"], answer: 0 }
+        - id: fs-w01-d5-g16
+          difficulty: hard
+          type: mcq
+          prompt: "Which age values print \"Almost!\"?"
+          code: |
+            if age >= 18:
+                print("Vote!")
+            elif age >= 16:
+                print("Almost!")
+          choices: ["16 and 17", "16, 17 and 18", "only 16", "anything under 18"]
+          answer: 0
+        - id: fs-w01-d5-g17
+          difficulty: hard
+          type: mcq
+          prompt: "What's the bug?"
+          code: |
+            score = 85
+            if score >= 50:
+                print("C")
+            elif score >= 70:
+                print("B")
+            elif score >= 80:
+                print("A")
+          choices: ["The order is wrong: 85 stops at the first branch and prints C", "Missing else", "elif can't follow elif", "No bug"]
+          answer: 0
+          explain: "Test the highest threshold first."
+        - { id: fs-w01-d5-g18, difficulty: hard, type: multi, prompt: "Which conditions are True when x = 12? (Select all.)", choices: ["x > 10 and x < 20", "x < 10 or x > 11", "not x == 12", "x % 2 == 0"], answers: [0, 1, 3] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Loop speed round"
+        secondsPerQuestion: 10
+        questions:
+          - { id: fs-w01-d5-rf01, difficulty: easy, type: mcq, prompt: "range(5) gives…", choices: ["0 1 2 3 4", "1 2 3 4 5", "0 1 2 3 4 5", "5"], answer: 0 }
+          - { id: fs-w01-d5-rf02, difficulty: easy, type: mcq, prompt: "range(1, 4) gives…", choices: ["1 2 3", "1 2 3 4", "0 1 2 3", "4"], answer: 0 }
+          - { id: fs-w01-d5-rf03, difficulty: easy, type: mcq, prompt: "range(0, 10, 2) gives…", choices: ["0 2 4 6 8", "0 2 4 6 8 10", "2 4 6 8 10", "0 1 2"], answer: 0 }
+          - { id: fs-w01-d5-rf04, difficulty: easy, type: mcq, prompt: "Which loop runs while a condition stays true?", choices: ["while", "for", "if", "range"], answer: 0 }
+          - { id: fs-w01-d5-rf05, difficulty: easy, type: mcq, prompt: "A loop that never stops is called…", choices: ["an infinite loop", "a for loop", "a range", "a crash loop"], answer: 0 }
+          - { id: fs-w01-d5-rf06, difficulty: easy, type: mcq, prompt: "count = count + 1 can be written as…", choices: ["count += 1", "count ++", "count =+ 1", "count + 1"], answer: 0 }
+          - { id: fs-w01-d5-rf07, difficulty: easy, type: truefalse, prompt: "The body of a loop must be indented.", answer: true }
+          - { id: fs-w01-d5-rf08, difficulty: easy, type: mcq, prompt: "How many times does for i in range(3) run?", choices: ["3", "2", "4", "0"], answer: 0 }
+          - { id: fs-w01-d5-rf09, difficulty: easy, type: mcq, prompt: "Which keyword exits a loop early?", choices: ["break", "stop", "exit", "end"], answer: 0 }
+          - { id: fs-w01-d5-rf10, difficulty: easy, type: mcq, prompt: "5 x 10 in the 5 times table is…", choices: ["50", "15", "510", "55"], answer: 0 }
+      - kind: brain-teaser
+        title: "Trace the loop"
+        questions:
+          - id: fs-w01-d5-bt01
+            difficulty: medium
+            type: text
+            prompt: "What's the LAST line printed?"
+            code: |
+              for i in range(3):
+                  print("Hello!", i)
+            accept: ["Hello! 2"]
+          - id: fs-w01-d5-bt02
+            difficulty: medium
+            type: text
+            prompt: "What does this print? (just the number)"
+            code: |
+              total = 0
+              for n in range(1, 5):
+                  total = total + n
+              print(total)
+            accept: ["10"]
+          - id: fs-w01-d5-bt03
+            difficulty: medium
+            type: mcq
+            prompt: "Why does this never stop?"
+            code: |
+              count = 0
+              while count < 5:
+                  print(count)
+            choices: ["count is never increased", "while needs range", "print stops loops", "It does stop"]
+            answer: 0
+          - id: fs-w01-d5-bt04
+            difficulty: hard
+            type: text
+            prompt: "How many lines does this print? (a number)"
+            code: |
+              n = 10
+              while n > 0:
+                  print(n)
+                  n = n - 3
+            accept: ["4", "four"]
+            explain: "10, 7, 4, 1, then n becomes -2 and the loop stops."
+          - id: fs-w01-d5-bt05
+            difficulty: hard
+            type: mcq
+            prompt: "What does this print?"
+            code: |
+              for i in range(1, 11):
+                  if i % 5 == 0:
+                      print(i)
+            choices: ["5 then 10", "5", "10", "1 to 10"]
+            answer: 0
+
+  # ─────────────────────────── DAY 6 ───────────────────────────
+  - day: 6
+    gate:
+      title: "Checkpoint: loops"
+      covers: "Week 1 · Day 5: for, while, range(), counters"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w01-d6-g01, difficulty: easy, type: mcq, prompt: "Which loop is best for \"repeat exactly 10 times\"?", choices: ["for i in range(10)", "while True", "if i < 10", "repeat(10)"], answer: 0 }
+        - { id: fs-w01-d6-g02, difficulty: easy, type: mcq, prompt: "range(3) starts at…", choices: ["0", "1", "3", "-1"], answer: 0 }
+        - { id: fs-w01-d6-g03, difficulty: easy, type: truefalse, prompt: "range(1, 11) includes 11.", answer: false }
+        - { id: fs-w01-d6-g04, difficulty: easy, type: mcq, prompt: "In a while loop, what must change inside the loop?", choices: ["Something in the condition, or it never ends", "Nothing", "The print text", "The loop name"], answer: 0 }
+        - { id: fs-w01-d6-g05, difficulty: easy, type: mcq, prompt: "How many numbers does range(1, 11) give?", choices: ["10", "11", "9", "1"], answer: 0 }
+        - { id: fs-w01-d6-g06, difficulty: easy, type: truefalse, prompt: "A for loop can go through the numbers in range().", answer: true }
+        - id: fs-w01-d6-g07
+          difficulty: medium
+          type: text
+          prompt: "What's the last line printed?"
+          code: |
+            number = 4
+            for i in range(1, 11):
+                print(number, "x", i, "=", number * i)
+          accept: ["4 x 10 = 40"]
+        - id: fs-w01-d6-g08
+          difficulty: medium
+          type: mcq
+          prompt: "What does this print?"
+          code: |
+            count = 3
+            while count > 0:
+                print(count)
+                count = count - 1
+            print("Blast off!")
+          choices: ["3, 2, 1, Blast off!", "3, 2, 1, 0, Blast off!", "Blast off! only", "It never stops"]
+          answer: 0
+        - { id: fs-w01-d6-g09, difficulty: medium, type: mcq, prompt: "range(10, 0, -1) counts…", choices: ["down from 10 to 1", "up from 0 to 10", "down from 10 to 0", "nothing"], answer: 0 }
+        - id: fs-w01-d6-g10
+          difficulty: medium
+          type: text
+          prompt: "What does this print? (just the number)"
+          code: |
+            total = 0
+            for i in range(5):
+                total = total + 2
+            print(total)
+          accept: ["10"]
+        - { id: fs-w01-d6-g11, difficulty: medium, type: mcq, prompt: "Which prints only even results of the 3 times table?", choices: ["if (3 * i) % 2 == 0: print(3 * i)", "if 3 * i // 2: print(3 * i)", "print(3 * i * 2)", "if i == 2: print(3 * i)"], answer: 0 }
+        - id: fs-w01-d6-g12
+          difficulty: medium
+          type: text
+          prompt: "How many times is Hi printed? (a number)"
+          code: |
+            for i in range(2, 8, 2):
+                print("Hi")
+          accept: ["3", "three"]
+          explain: "2, 4, 6."
+        - { id: fs-w01-d6-g13, difficulty: medium, type: order, prompt: "Order the lines of a countdown from 5.", items: ["count = 5", "while count > 0:", "    print(count)", "    count = count - 1", "print(\"Blast off!\")"] }
+        - { id: fs-w01-d6-g14, difficulty: medium, type: truefalse, prompt: "break stops the loop immediately.", answer: true }
+        - { id: fs-w01-d6-g15, difficulty: medium, type: mcq, prompt: "What is the biggest number in range(5)?", choices: ["4", "5", "0", "6"], answer: 0 }
+        - id: fs-w01-d6-g16
+          difficulty: hard
+          type: text
+          prompt: "What does this print? (just the number)"
+          code: |
+            n = 1
+            while n < 100:
+                n = n * 2
+            print(n)
+          accept: ["128"]
+        - id: fs-w01-d6-g17
+          difficulty: hard
+          type: mcq
+          prompt: "What does this print?"
+          code: |
+            for i in range(3):
+                for j in range(2):
+                    print(i, j)
+          choices: ["6 lines: 0 0, 0 1, 1 0, 1 1, 2 0, 2 1", "3 lines", "2 lines", "5 lines"]
+          answer: 0
+        - id: fs-w01-d6-g18
+          difficulty: hard
+          type: text
+          prompt: "What does this print? (just the number)"
+          code: |
+            count = 0
+            for letter in "Lagos":
+                count = count + 1
+            print(count)
+          accept: ["5", "five"]
+          explain: "A for loop can go through the letters of a string."
+    quizzes:
+      - kind: rapid-fire
+        title: "Week 1 lightning round"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fs-w01-d6-rf01, difficulty: easy, type: mcq, prompt: "Shows output", choices: ["print()", "input()", "int()", "str()"], answer: 0 }
+          - { id: fs-w01-d6-rf02, difficulty: easy, type: mcq, prompt: "Reads what the user types", choices: ["input()", "print()", "read()", "type()"], answer: 0 }
+          - { id: fs-w01-d6-rf03, difficulty: easy, type: mcq, prompt: "\"12\" → 12", choices: ["int()", "str()", "float()", "len()"], answer: 0 }
+          - { id: fs-w01-d6-rf04, difficulty: easy, type: mcq, prompt: "12 → \"12\"", choices: ["str()", "int()", "text()", "print()"], answer: 0 }
+          - { id: fs-w01-d6-rf05, difficulty: easy, type: mcq, prompt: "Remainder operator", choices: ["%", "//", "/", "**"], answer: 0 }
+          - { id: fs-w01-d6-rf06, difficulty: easy, type: mcq, prompt: "Compare for equality", choices: ["==", "=", "!=", "=>"], answer: 0 }
+          - { id: fs-w01-d6-rf07, difficulty: easy, type: mcq, prompt: "Otherwise…", choices: ["else", "elif", "then", "or"], answer: 0 }
+          - { id: fs-w01-d6-rf08, difficulty: easy, type: mcq, prompt: "Repeat 5 times", choices: ["for i in range(5):", "while 5:", "repeat 5:", "loop(5)"], answer: 0 }
+          - { id: fs-w01-d6-rf09, difficulty: easy, type: mcq, prompt: "\"abuja\".lower() == \"abuja\"", choices: ["True", "False", "an error", "\"abuja\""], answer: 0 }
+          - { id: fs-w01-d6-rf10, difficulty: easy, type: mcq, prompt: "score = score + 1 is…", choices: ["a counter going up by 1", "a comparison", "an error", "a loop"], answer: 0 }
+          - { id: fs-w01-d6-rf11, difficulty: easy, type: truefalse, prompt: "Python files end in .py", answer: true }
+          - { id: fs-w01-d6-rf12, difficulty: easy, type: truefalse, prompt: "input() returns a number when the user types digits.", answer: false }
+      - kind: brain-teaser
+        title: "Week 1 challenge: the quiz game"
+        questions:
+          - id: fs-w01-d6-bt01
+            difficulty: hard
+            type: mcq
+            prompt: "The user types Abuja (capital A). What prints?"
+            code: |
+              answer = input("Capital of Nigeria? ").lower()
+              if answer == "abuja":
+                  print("Correct!")
+              else:
+                  print("Wrong!")
+            choices: ["Correct!", "Wrong!", "an error", "Nothing"]
+            answer: 0
+            explain: ".lower() turns Abuja into abuja first."
+          - id: fs-w01-d6-bt02
+            difficulty: hard
+            type: text
+            prompt: "The player gets questions 1 and 3 right. What is score at the end? (a number)"
+            code: |
+              score = 0
+              # question 1: right
+              score = score + 1
+              # question 2: wrong (nothing added)
+              # question 3: right
+              score = score + 1
+            accept: ["2", "two"]
+          - id: fs-w01-d6-bt03
+            difficulty: hard
+            type: order
+            prompt: "Order the quiz game's structure."
+            items: ["Ask for the player's name", "Set score = 0", "Ask each question and compare the answer", "Add 1 to score for each correct answer", "Print the final score out of 3"]
+          - id: fs-w01-d6-bt04
+            difficulty: hard
+            type: mcq
+            prompt: "Why use a list and a loop for the questions (preview of Week 2)?"
+            choices: ["To avoid repeating the same if/else code 3 times", "Lists are faster to type", "Python needs lists for input()", "Loops make the quiz harder"]
+            answer: 0
+          - id: fs-w01-d6-bt05
+            difficulty: hard
+            type: text
+            prompt: "What does this print?"
+            code: |
+              name = "Ada"
+              score = 2
+              print("Quiz over!", name, "you scored", score, "out of 3")
+            accept: ["Quiz over! Ada you scored 2 out of 3"]

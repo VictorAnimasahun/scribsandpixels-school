@@ -37,7 +37,7 @@ Engine: `src/domain/quizGate.ts` (`drawAttempt`, `markAnswer`, `gradeAttempt`, `
 | `order` | `items` **in the correct order** (the app shuffles) | sentence building, steps |
 | `match` | `pairs` of `[left, right]` **matched correctly** (the app shuffles) | vocab, definitions |
 
-Every question has `id` (unique, e.g. `fr-w01-d2-g07`), `difficulty` (`easy` / `medium` / `hard`), `prompt`, and optional `explain` (shown after answering).
+Every question has `id` (unique, e.g. `fr-w01-d2-g07`), `difficulty` (`easy` / `medium` / `hard`), `prompt`, optional `code` (a snippet shown in a monospace block) and optional `explain` (shown after answering).
 
 ## File shape
 
