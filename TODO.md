@@ -11,9 +11,9 @@
 ## Quizzes (a slice at a time, no mass generation)
 - [x] Quiz engine: random weekly checkpoints (1–2/week), 70% pass, 60-min cooldown, new questions on retry
 - [x] French Week 1 · Excel Week 1 question banks
-- [x] French Weeks 2–5 · Excel Weeks 2–5
-- [ ] French Weeks 6–52
-- [ ] Excel Weeks 6–24
+- [x] French Weeks 2–6 · Excel Weeks 2–6
+- [ ] French Weeks 7–52
+- [ ] Excel Weeks 7–24
 - [x] Fullstack + ML Weeks 1–6 (Phase 1 complete) (every Python snippet checked by running it: `node scripts/check-quiz-code.mjs`)
 - [ ] Fullstack + ML later weeks as they're written
 
@@ -28,7 +28,7 @@
 
 ## Content
 - [x] Fullstack + ML Week 3 (HTML & CSS) · Week 4 (Flexbox, responsive, Git + GitHub) · Week 5 (dictionaries, exceptions, modules, JSON) · Week 6 (Open-Meteo weather script, accessibility, portfolio, first gigs)
-- [ ] Fullstack + ML: Phase 2 (Weeks 7–14): no week-level outline yet; plan the phase's weeks first
+- [ ] Fullstack + ML: Phase 2 (Weeks 7–14): draft outline in `courses/fullstack-ml/phase-2-plan.md`, **awaiting Victor's approval** before Week 7 is written
 - [ ] French: Year 2 (B2 / NCLC 7) weeks, if wanted
 - [ ] Add `course.ts` frameworks for French and Excel (only `overview.md` today)
 

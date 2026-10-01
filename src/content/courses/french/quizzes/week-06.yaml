@@ -1,0 +1,299 @@
+# French · Week 6 quizzes. Format and rules: src/content/QUIZZES.md
+week: 6
+days:
+
+  # ─────────────────────────── DAY 1 ───────────────────────────
+  - day: 1
+    gate:
+      title: "Checkpoint: Week 5 review"
+      covers: "Week 5: -er verbs, spelling-change verbs, ne … pas, likes and hobbies, talking about work"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w06-d1-g01, difficulty: easy, type: text, prompt: "nous ___ (parler)", accept: ["parlons"] }
+        - { id: fr-w06-d1-g02, difficulty: easy, type: text, prompt: "ils ___ (travailler)", accept: ["travaillent"] }
+        - { id: fr-w06-d1-g03, difficulty: easy, type: mcq, prompt: "I don't have a car.", choices: ["Je n'ai pas de voiture.", "Je n'ai pas une voiture.", "Je ne pas ai voiture.", "J'ai pas voiture ne."], answer: 0 }
+        - { id: fr-w06-d1-g04, difficulty: easy, type: mcq, prompt: "jouer ___ piano", choices: ["du", "au", "de la", "à"], answer: 0 }
+        - { id: fr-w06-d1-g05, difficulty: easy, type: truefalse, prompt: "The -ent of « elles chantent » is silent.", answer: true }
+        - { id: fr-w06-d1-g06, difficulty: easy, type: mcq, prompt: "because", choices: ["parce que", "pour", "par", "car que"], answer: 0 }
+        - { id: fr-w06-d1-g07, difficulty: medium, type: text, prompt: "nous ___ (manger)", accept: ["mangeons"] }
+        - { id: fr-w06-d1-g08, difficulty: medium, type: text, prompt: "Negative: Il a des enfants.", accept: ["Il n'a pas d'enfants.", "Il n'a pas d'enfants"] }
+        - { id: fr-w06-d1-g09, difficulty: medium, type: text, prompt: "Negative: J'aime le café.", accept: ["Je n'aime pas le café.", "Je n'aime pas le café"] }
+        - { id: fr-w06-d1-g10, difficulty: medium, type: match, prompt: "Match.", pairs: [["jouer au football", "play football"], ["jouer de la guitare", "play guitar"], ["travailler chez MTN", "work at MTN"], ["travailler en télétravail", "work remotely"]] }
+        - { id: fr-w06-d1-g11, difficulty: medium, type: text, prompt: "je ___ (préférer)", accept: ["préfère"] }
+        - { id: fr-w06-d1-g12, difficulty: medium, type: truefalse, prompt: "« C'est un livre » → « Ce n'est pas de livre ».", answer: false, explain: "être keeps its article: Ce n'est pas un livre." }
+        - { id: fr-w06-d1-g13, difficulty: medium, type: text, prompt: "Translate: I like reading.", accept: ["J'aime lire.", "J'aime lire"] }
+        - { id: fr-w06-d1-g14, difficulty: medium, type: text, prompt: "Translate: I work in a bank.", accept: ["Je travaille dans une banque.", "Je travaille dans une banque"] }
+        - { id: fr-w06-d1-g15, difficulty: medium, type: mcq, prompt: "Ils jouent ___ cartes.", choices: ["aux", "des", "au", "de"], answer: 0 }
+        - { id: fr-w06-d1-g16, difficulty: hard, type: text, prompt: "Translate: We don't eat meat because we prefer fish. (viande, poisson)", accept: ["Nous ne mangeons pas de viande parce que nous préférons le poisson.", "Nous ne mangeons pas de viande parce que nous préférons le poisson"] }
+        - { id: fr-w06-d1-g17, difficulty: hard, type: mcq, prompt: "Find the sentence with NO mistake.", choices: ["Elle joue du piano et au tennis.", "Nous commencons à 8 heures.", "Je n'ai pas des amis.", "Je travaille chez une banque."], answer: 0 }
+        - { id: fr-w06-d1-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["Vous étudiez le français.", "Je n'aime pas du tout la pluie.", "Ils préfèrent rester.", "Nous mangons du riz."], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Days and months"
+        secondsPerQuestion: 7
+        questions:
+          - { id: fr-w06-d1-rf01, difficulty: easy, type: mcq, prompt: "Monday", choices: ["lundi", "mardi", "mercredi", "dimanche"], answer: 0 }
+          - { id: fr-w06-d1-rf02, difficulty: easy, type: mcq, prompt: "Thursday", choices: ["jeudi", "mardi", "vendredi", "mercredi"], answer: 0 }
+          - { id: fr-w06-d1-rf03, difficulty: easy, type: mcq, prompt: "Sunday", choices: ["dimanche", "samedi", "lundi", "vendredi"], answer: 0 }
+          - { id: fr-w06-d1-rf04, difficulty: easy, type: mcq, prompt: "Wednesday", choices: ["mercredi", "mardi", "jeudi", "samedi"], answer: 0 }
+          - { id: fr-w06-d1-rf05, difficulty: easy, type: mcq, prompt: "August", choices: ["août", "avril", "juillet", "octobre"], answer: 0 }
+          - { id: fr-w06-d1-rf06, difficulty: easy, type: mcq, prompt: "February", choices: ["février", "janvier", "mars", "novembre"], answer: 0 }
+          - { id: fr-w06-d1-rf07, difficulty: easy, type: mcq, prompt: "June", choices: ["juin", "juillet", "janvier", "mai"], answer: 0 }
+          - { id: fr-w06-d1-rf08, difficulty: easy, type: mcq, prompt: "The 1st of May", choices: ["le premier mai", "le un mai", "la première mai", "le une mai"], answer: 0 }
+          - { id: fr-w06-d1-rf09, difficulty: easy, type: truefalse, prompt: "Days and months take a capital letter in French.", answer: false }
+          - { id: fr-w06-d1-rf10, difficulty: easy, type: mcq, prompt: "on Mondays (every Monday)", choices: ["le lundi", "lundi", "au lundi", "en lundi"], answer: 0 }
+          - { id: fr-w06-d1-rf11, difficulty: easy, type: mcq, prompt: "in January", choices: ["en janvier", "au janvier", "à janvier", "le janvier"], answer: 0 }
+      - kind: brain-teaser
+        title: "Dates"
+        questions:
+          - { id: fr-w06-d1-bt01, difficulty: medium, type: text, prompt: "14/02 in words", accept: ["le quatorze février"] }
+          - { id: fr-w06-d1-bt02, difficulty: medium, type: text, prompt: "01/10 in words", accept: ["le premier octobre"] }
+          - { id: fr-w06-d1-bt03, difficulty: medium, type: text, prompt: "25/12 in words", accept: ["le vingt-cinq décembre", "le vingt cinq décembre"] }
+          - { id: fr-w06-d1-bt04, difficulty: hard, type: text, prompt: "Translate: My birthday is 3 March.", accept: ["Mon anniversaire, c'est le 3 mars.", "Mon anniversaire, c'est le trois mars.", "Mon anniversaire est le 3 mars.", "Mon anniversaire est le trois mars."] }
+          - { id: fr-w06-d1-bt05, difficulty: hard, type: mcq, prompt: "« Lundi, je vais à Abuja » vs « Le lundi, je vais à Abuja »:", choices: ["this Monday vs every Monday", "every Monday vs this Monday", "same meaning", "Monday morning vs Monday evening"], answer: 0 }
+
+  # ─────────────────────────── DAY 2 ───────────────────────────
+  - day: 2
+    gate:
+      title: "Checkpoint: days, months and dates"
+      covers: "Week 6 · Day 1: days, months, le + date, le premier, lundi vs le lundi, en + month/year"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w06-d2-g01, difficulty: easy, type: mcq, prompt: "Friday", choices: ["vendredi", "samedi", "jeudi", "mardi"], answer: 0 }
+        - { id: fr-w06-d2-g02, difficulty: easy, type: mcq, prompt: "December", choices: ["décembre", "novembre", "septembre", "dimanche"], answer: 0 }
+        - { id: fr-w06-d2-g03, difficulty: easy, type: mcq, prompt: "What's the date today?", choices: ["Quelle est la date aujourd'hui ?", "Quelle heure est-il ?", "Quel jour est-il demain ?", "C'est quand ?"], answer: 0 }
+        - { id: fr-w06-d2-g04, difficulty: easy, type: truefalse, prompt: "The 1st of the month is « le premier ».", answer: true }
+        - { id: fr-w06-d2-g05, difficulty: easy, type: mcq, prompt: "in 2026", choices: ["en 2026", "au 2026", "à 2026", "le 2026"], answer: 0 }
+        - { id: fr-w06-d2-g06, difficulty: easy, type: mcq, prompt: "Saturday", choices: ["samedi", "dimanche", "vendredi", "lundi"], answer: 0 }
+        - { id: fr-w06-d2-g07, difficulty: medium, type: order, prompt: "Order the days.", items: ["lundi", "mardi", "mercredi", "jeudi", "vendredi"] }
+        - { id: fr-w06-d2-g08, difficulty: medium, type: order, prompt: "Order the months.", items: ["mars", "avril", "mai", "juin", "juillet"] }
+        - { id: fr-w06-d2-g09, difficulty: medium, type: text, prompt: "Translate: On Sundays, I go to church. (je vais à l'église)", accept: ["Le dimanche, je vais à l'église.", "Le dimanche je vais à l'église.", "Le dimanche, je vais à l'église"] }
+        - { id: fr-w06-d2-g10, difficulty: medium, type: text, prompt: "01/05 in words", accept: ["le premier mai"] }
+        - { id: fr-w06-d2-g11, difficulty: medium, type: text, prompt: "11/11 in words", accept: ["le onze novembre"] }
+        - { id: fr-w06-d2-g12, difficulty: medium, type: truefalse, prompt: "« le deux octobre » is the 2nd of October.", answer: true }
+        - { id: fr-w06-d2-g13, difficulty: medium, type: mcq, prompt: "It's 29 September (today).", choices: ["On est le 29 septembre.", "C'est 29 septembre.", "Il est le 29 septembre.", "On est 29 de septembre."], answer: 0 }
+        - { id: fr-w06-d2-g14, difficulty: medium, type: match, prompt: "Match.", pairs: [["janvier", "January"], ["juillet", "July"], ["octobre", "October"], ["mars", "March"]] }
+        - { id: fr-w06-d2-g15, difficulty: medium, type: text, prompt: "2026 in words", accept: ["deux mille vingt-six", "deux mille vingt six"] }
+        - { id: fr-w06-d2-g16, difficulty: hard, type: text, prompt: "Translate: Christmas is 25 December.", accept: ["Noël, c'est le vingt-cinq décembre.", "Noël, c'est le 25 décembre.", "Noël est le vingt-cinq décembre.", "Noël est le 25 décembre."] }
+        - { id: fr-w06-d2-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « Mon anniversaire, c'est le un Juin. »", choices: ["le premier juin (no capital)", "Only le un → le premier", "Only Juin → juin", "No error"], answer: 0 }
+        - { id: fr-w06-d2-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["le premier janvier", "en août", "le samedi, je fais les courses", "le deuxième mars"], answers: [0, 1, 2], explain: "Only the 1st uses an ordinal: le deux mars." }
+    quizzes:
+      - kind: rapid-fire
+        title: "Quelle heure est-il ?"
+        secondsPerQuestion: 10
+        questions:
+          - { id: fr-w06-d2-rf01, difficulty: easy, type: mcq, prompt: "3:15", choices: ["trois heures et quart", "trois heures et demie", "trois heures moins le quart", "quinze heures"], answer: 0 }
+          - { id: fr-w06-d2-rf02, difficulty: easy, type: mcq, prompt: "3:30", choices: ["trois heures et demie", "trois heures et quart", "trois heures trente-cinq", "demi trois"], answer: 0 }
+          - { id: fr-w06-d2-rf03, difficulty: easy, type: mcq, prompt: "3:45", choices: ["quatre heures moins le quart", "trois heures et quart", "trois heures moins le quart", "quatre heures et quart"], answer: 0 }
+          - { id: fr-w06-d2-rf04, difficulty: easy, type: mcq, prompt: "12:00 noon", choices: ["midi", "minuit", "douze", "midi et demi"], answer: 0 }
+          - { id: fr-w06-d2-rf05, difficulty: easy, type: mcq, prompt: "12:00 midnight", choices: ["minuit", "midi", "zéro", "nuit"], answer: 0 }
+          - { id: fr-w06-d2-rf06, difficulty: easy, type: mcq, prompt: "6:50", choices: ["sept heures moins dix", "six heures moins dix", "sept heures et dix", "six heures dix"], answer: 0 }
+          - { id: fr-w06-d2-rf07, difficulty: easy, type: text, prompt: "18h20 in figures, 12-hour (e.g. 6:20 pm)", accept: ["6:20 pm", "6:20pm", "6.20 pm"] }
+          - { id: fr-w06-d2-rf08, difficulty: easy, type: mcq, prompt: "What time is it?", choices: ["Quelle heure est-il ?", "À quelle heure ?", "Quel temps fait-il ?", "Quelle date ?"], answer: 0 }
+          - { id: fr-w06-d2-rf09, difficulty: easy, type: mcq, prompt: "At what time…?", choices: ["À quelle heure… ?", "Quelle heure est-il ?", "Quand heure ?", "Combien d'heures ?"], answer: 0 }
+          - { id: fr-w06-d2-rf10, difficulty: easy, type: truefalse, prompt: "In « neuf heures », the f sounds like v.", answer: true }
+      - kind: brain-teaser
+        title: "Both clocks"
+        questions:
+          - { id: fr-w06-d2-bt01, difficulty: medium, type: mcq, prompt: "7:30 am (official)", choices: ["sept heures trente", "dix-neuf heures trente", "sept heures et demie du soir", "huit heures moins trente"], answer: 0 }
+          - { id: fr-w06-d2-bt02, difficulty: medium, type: mcq, prompt: "2:45 pm (official)", choices: ["quatorze heures quarante-cinq", "deux heures quarante-cinq", "quinze heures moins le quart du matin", "douze heures quarante-cinq"], answer: 0 }
+          - { id: fr-w06-d2-bt03, difficulty: medium, type: mcq, prompt: "9:15 pm (everyday)", choices: ["neuf heures et quart du soir", "vingt et une heures quinze du matin", "neuf heures moins le quart", "dix heures et quart"], answer: 0 }
+          - { id: fr-w06-d2-bt04, difficulty: hard, type: mcq, prompt: "11:50 am (everyday)", choices: ["midi moins dix", "onze heures moins dix", "minuit moins dix", "douze heures dix"], answer: 0 }
+          - { id: fr-w06-d2-bt05, difficulty: hard, type: text, prompt: "Translate: I start at eight in the morning.", accept: ["Je commence à huit heures du matin.", "Je commence à 8 heures du matin.", "Je commence à huit heures du matin"] }
+
+  # ─────────────────────────── DAY 3 ───────────────────────────
+  - day: 3
+    gate:
+      title: "Checkpoint: telling the time"
+      covers: "Week 6 · Day 2: et quart, et demie, moins le quart, midi/minuit, 24-hour clock, à quelle heure, liaison"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w06-d3-g01, difficulty: easy, type: mcq, prompt: "et quart =", choices: ["quarter past", "half past", "quarter to", "o'clock"], answer: 0 }
+        - { id: fr-w06-d3-g02, difficulty: easy, type: mcq, prompt: "et demie =", choices: ["half past", "quarter past", "quarter to", "noon"], answer: 0 }
+        - { id: fr-w06-d3-g03, difficulty: easy, type: mcq, prompt: "moins le quart =", choices: ["quarter to", "quarter past", "half past", "minus 15 hours"], answer: 0 }
+        - { id: fr-w06-d3-g04, difficulty: easy, type: truefalse, prompt: "Trains and TV schedules use the 24-hour clock.", answer: true }
+        - { id: fr-w06-d3-g05, difficulty: easy, type: mcq, prompt: "1:00", choices: ["une heure", "un heure", "une heures", "unième heure"], answer: 0 }
+        - { id: fr-w06-d3-g06, difficulty: easy, type: mcq, prompt: "du soir =", choices: ["in the evening", "in the morning", "at noon", "in the afternoon"], answer: 0 }
+        - { id: fr-w06-d3-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["8:15", "huit heures et quart"], ["8:30", "huit heures et demie"], ["7:45", "huit heures moins le quart"], ["7:50", "huit heures moins dix"]] }
+        - { id: fr-w06-d3-g08, difficulty: medium, type: text, prompt: "Write 17h30 in 12-hour figures (e.g. 5:30 pm)", accept: ["5:30 pm", "5:30pm", "5.30 pm"] }
+        - { id: fr-w06-d3-g09, difficulty: medium, type: mcq, prompt: "20h00 (official)", choices: ["vingt heures", "huit heures du matin", "deux heures", "vingt et une heures"], answer: 0 }
+        - { id: fr-w06-d3-g10, difficulty: medium, type: truefalse, prompt: "« deux heures » has a liaison: deuh-zeur.", answer: true }
+        - { id: fr-w06-d3-g11, difficulty: medium, type: mcq, prompt: "À quelle heure est-ce que tu manges ? — …", choices: ["À midi.", "Il est midi.", "Midi heure.", "Oui, midi."], answer: 0 }
+        - { id: fr-w06-d3-g12, difficulty: medium, type: mcq, prompt: "12:30 pm (everyday)", choices: ["midi et demi", "douze et demie", "minuit et demi", "midi moins trente"], answer: 0 }
+        - { id: fr-w06-d3-g13, difficulty: medium, type: mcq, prompt: "4:40", choices: ["cinq heures moins vingt", "quatre heures moins vingt", "quatre heures et quarante", "cinq heures et vingt"], answer: 0 }
+        - { id: fr-w06-d3-g14, difficulty: medium, type: text, prompt: "Translate: It's ten o'clock.", accept: ["Il est dix heures.", "Il est dix heures", "Il est 10 heures."] }
+        - { id: fr-w06-d3-g15, difficulty: medium, type: mcq, prompt: "de l'après-midi =", choices: ["in the afternoon", "in the evening", "at night", "in the morning"], answer: 0 }
+        - { id: fr-w06-d3-g16, difficulty: hard, type: mcq, prompt: "The train leaves at 21h45. In everyday speech:", choices: ["dix heures moins le quart du soir", "neuf heures et quart du soir", "vingt et une heures moins le quart", "neuf heures moins le quart"], answer: 0 }
+        - { id: fr-w06-d3-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « Il est trois heure et demi. »", choices: ["trois heures et demie", "Only heure → heures", "Only demi → demie", "No error"], answer: 0 }
+        - { id: fr-w06-d3-g18, difficulty: hard, type: multi, prompt: "Which mean 7:45 pm? (Select all.)", choices: ["huit heures moins le quart du soir", "dix-neuf heures quarante-cinq", "19h45", "sept heures et quart du soir"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Faire"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fr-w06-d3-rf01, difficulty: easy, type: text, prompt: "je ___ (faire)", accept: ["fais"] }
+          - { id: fr-w06-d3-rf02, difficulty: easy, type: text, prompt: "tu ___ (faire)", accept: ["fais"] }
+          - { id: fr-w06-d3-rf03, difficulty: easy, type: text, prompt: "il ___ (faire)", accept: ["fait"] }
+          - { id: fr-w06-d3-rf04, difficulty: easy, type: text, prompt: "nous ___ (faire)", accept: ["faisons"] }
+          - { id: fr-w06-d3-rf05, difficulty: easy, type: text, prompt: "vous ___ (faire)", accept: ["faites"] }
+          - { id: fr-w06-d3-rf06, difficulty: easy, type: text, prompt: "ils ___ (faire)", accept: ["font"] }
+          - { id: fr-w06-d3-rf07, difficulty: easy, type: mcq, prompt: "faire les courses", choices: ["to do the grocery shopping", "to run", "to take courses", "to race"], answer: 0 }
+          - { id: fr-w06-d3-rf08, difficulty: easy, type: mcq, prompt: "faire le ménage", choices: ["to clean the house", "to cook", "to do laundry", "to shop"], answer: 0 }
+          - { id: fr-w06-d3-rf09, difficulty: easy, type: mcq, prompt: "faire la vaisselle", choices: ["to do the dishes", "to sail", "to do laundry", "to queue"], answer: 0 }
+          - { id: fr-w06-d3-rf10, difficulty: easy, type: mcq, prompt: "Il fait chaud.", choices: ["It's hot.", "He is hot.", "He makes heat.", "It's cold."], answer: 0 }
+      - kind: brain-teaser
+        title: "Faire in action"
+        questions:
+          - { id: fr-w06-d3-bt01, difficulty: medium, type: text, prompt: "Nous ___ les courses le samedi.", accept: ["faisons"] }
+          - { id: fr-w06-d3-bt02, difficulty: medium, type: text, prompt: "Ils ___ la queue à la banque.", accept: ["font"] }
+          - { id: fr-w06-d3-bt03, difficulty: medium, type: text, prompt: "Qu'est-ce que tu ___ ce soir ?", accept: ["fais"] }
+          - { id: fr-w06-d3-bt04, difficulty: hard, type: mcq, prompt: "Spot the error: « Vous faisez du sport ? »", choices: ["faisez → faites", "sport → le sport", "du → de la", "No error"], answer: 0 }
+          - { id: fr-w06-d3-bt05, difficulty: hard, type: text, prompt: "Translate: It's very hot in Lagos.", accept: ["Il fait très chaud à Lagos.", "Il fait très chaud à Lagos"] }
+
+  # ─────────────────────────── DAY 4 ───────────────────────────
+  - day: 4
+    gate:
+      title: "Checkpoint: faire"
+      covers: "Week 6 · Day 3: faire in all persons, household and sport expressions, weather with il fait"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w06-d4-g01, difficulty: easy, type: text, prompt: "vous ___ (faire)", accept: ["faites"] }
+        - { id: fr-w06-d4-g02, difficulty: easy, type: text, prompt: "ils ___ (faire)", accept: ["font"] }
+        - { id: fr-w06-d4-g03, difficulty: easy, type: mcq, prompt: "faire la cuisine", choices: ["to cook", "to clean the kitchen", "to buy a kitchen", "to eat"], answer: 0 }
+        - { id: fr-w06-d4-g04, difficulty: easy, type: truefalse, prompt: "« nous faisons » is pronounced \"fuh-zon\".", answer: true }
+        - { id: fr-w06-d4-g05, difficulty: easy, type: mcq, prompt: "faire une pause", choices: ["to take a break", "to pause music", "to stop forever", "to pose"], answer: 0 }
+        - { id: fr-w06-d4-g06, difficulty: easy, type: mcq, prompt: "Il fait beau.", choices: ["The weather's nice.", "He's handsome.", "It's cold.", "He does well."], answer: 0 }
+        - { id: fr-w06-d4-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["faire la lessive", "do the laundry"], ["faire la queue", "stand in line"], ["faire du vélo", "go cycling"], ["faire de la natation", "go swimming"]] }
+        - { id: fr-w06-d4-g08, difficulty: medium, type: text, prompt: "Vous ___ du sport ?", accept: ["faites"] }
+        - { id: fr-w06-d4-g09, difficulty: medium, type: text, prompt: "Il ___ très chaud à Lagos.", accept: ["fait"] }
+        - { id: fr-w06-d4-g10, difficulty: medium, type: text, prompt: "Translate: I do the dishes.", accept: ["Je fais la vaisselle.", "Je fais la vaisselle"] }
+        - { id: fr-w06-d4-g11, difficulty: medium, type: mcq, prompt: "Which two forms of faire surprise learners?", choices: ["faites and font", "fais and fait", "faisons and fais", "fait and font"], answer: 0 }
+        - { id: fr-w06-d4-g12, difficulty: medium, type: truefalse, prompt: "« faire du sport » uses du because sport is masculine.", answer: true }
+        - { id: fr-w06-d4-g13, difficulty: medium, type: text, prompt: "Translate: We do the shopping on Saturdays.", accept: ["Nous faisons les courses le samedi.", "Nous faisons les courses le samedi", "On fait les courses le samedi."] }
+        - { id: fr-w06-d4-g14, difficulty: medium, type: mcq, prompt: "It's cold.", choices: ["Il fait froid.", "Il est froid.", "C'est froid temps.", "J'ai froid temps."], answer: 0 }
+        - { id: fr-w06-d4-g15, difficulty: medium, type: text, prompt: "Qu'est-ce que vous ___ ce week-end ?", accept: ["faites"] }
+        - { id: fr-w06-d4-g16, difficulty: hard, type: text, prompt: "Translate: They (men) clean the house and I cook.", accept: ["Ils font le ménage et je fais la cuisine.", "Ils font le ménage et je fais la cuisine", "Ils font le ménage et moi, je fais la cuisine."] }
+        - { id: fr-w06-d4-g17, difficulty: hard, type: mcq, prompt: "« J'ai chaud » vs « Il fait chaud »:", choices: ["I feel hot vs the weather is hot", "same meaning", "the weather is hot vs I feel hot", "I'm cooking vs it's sunny"], answer: 0 }
+        - { id: fr-w06-d4-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["Nous faisons une pause.", "Elles font du vélo.", "Tu fais la lessive ?", "Vous faisez la queue."], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Reflexive routine"
+        secondsPerQuestion: 9
+        questions:
+          - { id: fr-w06-d4-rf01, difficulty: easy, type: mcq, prompt: "je ___ lève", choices: ["me", "te", "se", "nous"], answer: 0 }
+          - { id: fr-w06-d4-rf02, difficulty: easy, type: mcq, prompt: "tu ___ lèves", choices: ["te", "me", "se", "vous"], answer: 0 }
+          - { id: fr-w06-d4-rf03, difficulty: easy, type: mcq, prompt: "il ___ lève", choices: ["se", "me", "te", "le"], answer: 0 }
+          - { id: fr-w06-d4-rf04, difficulty: easy, type: mcq, prompt: "nous ___ levons", choices: ["nous", "se", "vous", "me"], answer: 0 }
+          - { id: fr-w06-d4-rf05, difficulty: easy, type: mcq, prompt: "vous ___ levez", choices: ["vous", "se", "nous", "te"], answer: 0 }
+          - { id: fr-w06-d4-rf06, difficulty: easy, type: mcq, prompt: "ils ___ lèvent", choices: ["se", "les", "leur", "nous"], answer: 0 }
+          - { id: fr-w06-d4-rf07, difficulty: easy, type: mcq, prompt: "se réveiller", choices: ["to wake up", "to get up", "to go to bed", "to rest"], answer: 0 }
+          - { id: fr-w06-d4-rf08, difficulty: easy, type: mcq, prompt: "se coucher", choices: ["to go to bed", "to cough", "to sit", "to wake up"], answer: 0 }
+          - { id: fr-w06-d4-rf09, difficulty: easy, type: mcq, prompt: "s'habiller", choices: ["to get dressed", "to live", "to wash", "to hurry"], answer: 0 }
+          - { id: fr-w06-d4-rf10, difficulty: easy, type: mcq, prompt: "se dépêcher", choices: ["to hurry", "to rest", "to fish", "to shower"], answer: 0 }
+          - { id: fr-w06-d4-rf11, difficulty: easy, type: mcq, prompt: "je + habille", choices: ["je m'habille", "je me habille", "j'me habille", "je s'habille"], answer: 0 }
+      - kind: brain-teaser
+        title: "My morning"
+        questions:
+          - { id: fr-w06-d4-bt01, difficulty: medium, type: text, prompt: "Je (se réveiller) ___ à 5 h.", accept: ["me réveille"] }
+          - { id: fr-w06-d4-bt02, difficulty: medium, type: text, prompt: "Tu (se coucher) ___ tard.", accept: ["te couches"] }
+          - { id: fr-w06-d4-bt03, difficulty: medium, type: text, prompt: "Elle (s'habiller) ___.", accept: ["s'habille"] }
+          - { id: fr-w06-d4-bt04, difficulty: hard, type: text, prompt: "Negative: Ils se reposent le dimanche.", accept: ["Ils ne se reposent pas le dimanche.", "Ils ne se reposent pas le dimanche"] }
+          - { id: fr-w06-d4-bt05, difficulty: hard, type: text, prompt: "Translate: I don't get up early. (tôt)", accept: ["Je ne me lève pas tôt.", "Je ne me lève pas tôt"] }
+
+  # ─────────────────────────── DAY 5 ───────────────────────────
+  - day: 5
+    gate:
+      title: "Checkpoint: reflexive verbs"
+      covers: "Week 6 · Day 4: me/te/se/nous/vous/se, m'/t'/s' before vowels, daily-routine verbs, negation around the pronoun"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w06-d5-g01, difficulty: easy, type: mcq, prompt: "I get up.", choices: ["Je me lève.", "Je lève.", "Je se lève.", "Me je lève."], answer: 0 }
+        - { id: fr-w06-d5-g02, difficulty: easy, type: mcq, prompt: "She goes to bed.", choices: ["Elle se couche.", "Elle couche.", "Elle me couche.", "Elle s'couche."], answer: 0 }
+        - { id: fr-w06-d5-g03, difficulty: easy, type: truefalse, prompt: "« Je m'appelle » is a reflexive verb.", answer: true }
+        - { id: fr-w06-d5-g04, difficulty: easy, type: mcq, prompt: "se reposer", choices: ["to rest", "to repose a question", "to return", "to repeat"], answer: 0 }
+        - { id: fr-w06-d5-g05, difficulty: easy, type: mcq, prompt: "se doucher", choices: ["to shower", "to touch", "to doubt", "to sleep"], answer: 0 }
+        - { id: fr-w06-d5-g06, difficulty: easy, type: mcq, prompt: "nous ___ dépêchons", choices: ["nous", "se", "vous", "me"], answer: 0 }
+        - { id: fr-w06-d5-g07, difficulty: medium, type: text, prompt: "Nous (se dépêcher) ___.", accept: ["nous dépêchons"] }
+        - { id: fr-w06-d5-g08, difficulty: medium, type: text, prompt: "Vous (se lever) ___ à quelle heure ?", accept: ["vous levez"] }
+        - { id: fr-w06-d5-g09, difficulty: medium, type: match, prompt: "Match.", pairs: [["se brosser les dents", "brush your teeth"], ["se laver", "wash"], ["se réveiller", "wake up"], ["se coucher", "go to bed"]] }
+        - { id: fr-w06-d5-g10, difficulty: medium, type: text, prompt: "Ils (se coucher) ___ à minuit.", accept: ["se couchent"] }
+        - { id: fr-w06-d5-g11, difficulty: medium, type: truefalse, prompt: "In the negative, ne goes before the pronoun: je ne me lève pas.", answer: true }
+        - { id: fr-w06-d5-g12, difficulty: medium, type: mcq, prompt: "tu + habilles", choices: ["tu t'habilles", "tu te habilles", "tu s'habilles", "tu m'habilles"], answer: 0 }
+        - { id: fr-w06-d5-g13, difficulty: medium, type: text, prompt: "Translate: We go to bed at eleven.", accept: ["Nous nous couchons à onze heures.", "Nous nous couchons à 11 heures.", "On se couche à onze heures."] }
+        - { id: fr-w06-d5-g14, difficulty: medium, type: mcq, prompt: "je ___ lève (spelling)", choices: ["me lève", "me leve", "me lêve", "me lévé"], answer: 0 }
+        - { id: fr-w06-d5-g15, difficulty: medium, type: order, prompt: "Build: I don't hurry.", items: ["Je", "ne", "me", "dépêche", "pas"] }
+        - { id: fr-w06-d5-g16, difficulty: hard, type: text, prompt: "Translate: She wakes up at five, then she showers.", accept: ["Elle se réveille à cinq heures, puis elle se douche.", "Elle se réveille à cinq heures, ensuite elle se douche.", "Elle se réveille à 5 heures, puis elle se douche."] }
+        - { id: fr-w06-d5-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « Je ne lève me pas et tu te habilles. »", choices: ["Je ne me lève pas … tu t'habilles", "Only me placement", "Only te → t'", "No error"], answer: 0 }
+        - { id: fr-w06-d5-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["Vous vous reposez.", "Ils se lèvent tôt.", "Je m'habille vite.", "Nous se couchons."], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Sequence and frequency"
+        secondsPerQuestion: 7
+        questions:
+          - { id: fr-w06-d5-rf01, difficulty: easy, type: mcq, prompt: "first", choices: ["d'abord", "enfin", "après", "puis"], answer: 0 }
+          - { id: fr-w06-d5-rf02, difficulty: easy, type: mcq, prompt: "finally", choices: ["enfin", "ensuite", "d'abord", "souvent"], answer: 0 }
+          - { id: fr-w06-d5-rf03, difficulty: easy, type: mcq, prompt: "then", choices: ["ensuite / puis", "enfin", "jamais", "toujours"], answer: 0 }
+          - { id: fr-w06-d5-rf04, difficulty: easy, type: mcq, prompt: "always", choices: ["toujours", "souvent", "parfois", "jamais"], answer: 0 }
+          - { id: fr-w06-d5-rf05, difficulty: easy, type: mcq, prompt: "often", choices: ["souvent", "toujours", "rarement", "parfois"], answer: 0 }
+          - { id: fr-w06-d5-rf06, difficulty: easy, type: mcq, prompt: "sometimes", choices: ["parfois", "souvent", "jamais", "toujours"], answer: 0 }
+          - { id: fr-w06-d5-rf07, difficulty: easy, type: mcq, prompt: "never", choices: ["ne … jamais", "ne … pas", "rarement", "parfois"], answer: 0 }
+          - { id: fr-w06-d5-rf08, difficulty: easy, type: mcq, prompt: "every day", choices: ["tous les jours", "toujours", "le jour", "chaque fois"], answer: 0 }
+          - { id: fr-w06-d5-rf09, difficulty: easy, type: mcq, prompt: "the evening", choices: ["le soir", "le matin", "la nuit", "l'après-midi"], answer: 0 }
+          - { id: fr-w06-d5-rf10, difficulty: easy, type: mcq, prompt: "I never cook on Mondays.", choices: ["Je ne cuisine jamais le lundi.", "Je cuisine jamais ne le lundi.", "Je ne jamais cuisine le lundi.", "Je cuisine ne jamais lundi."], answer: 0 }
+      - kind: brain-teaser
+        title: "La journée de Kemi"
+        questions:
+          - { id: fr-w06-d5-bt01, difficulty: medium, type: mcq, prompt: "Why does Kemi wake up at five?", choices: ["parce qu'il y a beaucoup de circulation", "parce qu'elle va à l'église", "parce qu'elle fait du sport", "parce qu'elle commence à cinq heures"], answer: 0 }
+          - { id: fr-w06-d5-bt02, difficulty: medium, type: mcq, prompt: "Where does Kemi work?", choices: ["dans une banque à Victoria Island", "chez MTN à Ikeja", "à domicile", "dans une école"], answer: 0 }
+          - { id: fr-w06-d5-bt03, difficulty: medium, type: mcq, prompt: "What does she do on Saturdays?", choices: ["Elle fait les courses et le ménage.", "Elle va à l'église.", "Elle travaille.", "Elle se repose."], answer: 0 }
+          - { id: fr-w06-d5-bt04, difficulty: hard, type: order, prompt: "Order Kemi's morning.", items: ["Elle se réveille à cinq heures.", "D'abord, elle se douche.", "Ensuite, elle prend le petit-déjeuner.", "Elle part à six heures.", "Elle commence à huit heures."] }
+          - { id: fr-w06-d5-bt05, difficulty: hard, type: text, prompt: "Translate: I often do sport, but I never watch TV.", accept: ["Je fais souvent du sport, mais je ne regarde jamais la télé.", "Je fais souvent du sport mais je ne regarde jamais la télé.", "Je fais souvent du sport, mais je ne regarde jamais la télévision."] }
+
+  # ─────────────────────────── DAY 6 ───────────────────────────
+  - day: 6
+    gate:
+      title: "Checkpoint: my routine"
+      covers: "Week 6 · Day 5: d'abord/ensuite/puis/après/enfin, parts of the day, frequency words, ne … jamais"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w06-d6-g01, difficulty: easy, type: mcq, prompt: "d'abord =", choices: ["first", "after", "finally", "then"], answer: 0 }
+        - { id: fr-w06-d6-g02, difficulty: easy, type: mcq, prompt: "enfin =", choices: ["finally", "first", "often", "never"], answer: 0 }
+        - { id: fr-w06-d6-g03, difficulty: easy, type: mcq, prompt: "rarement =", choices: ["rarely", "really", "regularly", "rapidly"], answer: 0 }
+        - { id: fr-w06-d6-g04, difficulty: easy, type: truefalse, prompt: "« ne … jamais » works like « ne … pas ».", answer: true }
+        - { id: fr-w06-d6-g05, difficulty: easy, type: mcq, prompt: "le matin =", choices: ["the morning", "the evening", "the night", "the afternoon"], answer: 0 }
+        - { id: fr-w06-d6-g06, difficulty: easy, type: mcq, prompt: "quelquefois =", choices: ["sometimes", "never", "always", "rarely"], answer: 0 }
+        - { id: fr-w06-d6-g07, difficulty: medium, type: order, prompt: "Order the sequence words.", items: ["d'abord", "ensuite", "après", "enfin"] }
+        - { id: fr-w06-d6-g08, difficulty: medium, type: order, prompt: "Most to least often.", items: ["toujours", "souvent", "parfois", "rarement", "ne … jamais"] }
+        - { id: fr-w06-d6-g09, difficulty: medium, type: text, prompt: "Negative with jamais: Je fais le ménage le lundi.", accept: ["Je ne fais jamais le ménage le lundi.", "Je ne fais jamais le ménage le lundi"] }
+        - { id: fr-w06-d6-g10, difficulty: medium, type: match, prompt: "Match.", pairs: [["le matin", "morning"], ["l'après-midi", "afternoon"], ["le soir", "evening"], ["la nuit", "night"]] }
+        - { id: fr-w06-d6-g11, difficulty: medium, type: text, prompt: "Translate: First, I shower; then I get dressed.", accept: ["D'abord, je me douche ; ensuite, je m'habille.", "D'abord, je me douche, ensuite je m'habille.", "D'abord je me douche, puis je m'habille.", "D'abord, je me douche, puis je m'habille."] }
+        - { id: fr-w06-d6-g12, difficulty: medium, type: truefalse, prompt: "« tous les jours » and « toujours » mean exactly the same.", answer: false, explain: "every day vs always." }
+        - { id: fr-w06-d6-g13, difficulty: medium, type: mcq, prompt: "Where does souvent go?", choices: ["Je fais souvent du sport.", "Souvent je du sport fais.", "Je souvent fais du sport.", "Je fais du sport souvent de."], answer: 0, explain: "Most frequency words go right after the verb." }
+        - { id: fr-w06-d6-g14, difficulty: medium, type: text, prompt: "Translate: In the evening, I watch a series.", accept: ["Le soir, je regarde une série.", "Le soir je regarde une série.", "Le soir, je regarde une série"] }
+        - { id: fr-w06-d6-g15, difficulty: medium, type: mcq, prompt: "She never gets up late.", choices: ["Elle ne se lève jamais tard.", "Elle se ne lève jamais tard.", "Elle ne jamais se lève tard.", "Elle se lève ne jamais tard."], answer: 0 }
+        - { id: fr-w06-d6-g16, difficulty: hard, type: text, prompt: "Translate: On Sundays, she goes to church and she rests.", accept: ["Le dimanche, elle va à l'église et elle se repose.", "Le dimanche elle va à l'église et elle se repose.", "Le dimanche, elle va à l'église et se repose."] }
+        - { id: fr-w06-d6-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « Je jamais ne cuisine le lundi. »", choices: ["Je ne cuisine jamais le lundi.", "Je ne jamais cuisine le lundi.", "Only lundi → le lundi", "No error"], answer: 0 }
+        - { id: fr-w06-d6-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["Je me couche toujours à onze heures.", "Ensuite, je fais la cuisine.", "Il ne fait jamais le ménage.", "Je ne me jamais lève tôt."], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Week 6 lightning round"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fr-w06-d6-rf01, difficulty: easy, type: mcq, prompt: "Tuesday", choices: ["mardi", "mercredi", "jeudi", "lundi"], answer: 0 }
+          - { id: fr-w06-d6-rf02, difficulty: easy, type: mcq, prompt: "September", choices: ["septembre", "décembre", "novembre", "sept"], answer: 0 }
+          - { id: fr-w06-d6-rf03, difficulty: easy, type: mcq, prompt: "half past two", choices: ["deux heures et demie", "deux heures et quart", "trois heures moins le quart", "deux heures moins trente"], answer: 0 }
+          - { id: fr-w06-d6-rf04, difficulty: easy, type: text, prompt: "nous ___ (faire)", accept: ["faisons"] }
+          - { id: fr-w06-d6-rf05, difficulty: easy, type: text, prompt: "vous ___ (faire)", accept: ["faites"] }
+          - { id: fr-w06-d6-rf06, difficulty: easy, type: mcq, prompt: "je ___ réveille", choices: ["me", "se", "te", "m'"], answer: 0 }
+          - { id: fr-w06-d6-rf07, difficulty: easy, type: mcq, prompt: "never", choices: ["ne … jamais", "ne … pas", "toujours", "parfois"], answer: 0 }
+          - { id: fr-w06-d6-rf08, difficulty: easy, type: mcq, prompt: "first", choices: ["d'abord", "enfin", "après", "ensuite"], answer: 0 }
+          - { id: fr-w06-d6-rf09, difficulty: easy, type: mcq, prompt: "midnight", choices: ["minuit", "midi", "nuit", "zéro"], answer: 0 }
+          - { id: fr-w06-d6-rf10, difficulty: easy, type: mcq, prompt: "It's nice weather.", choices: ["Il fait beau.", "Il est beau.", "C'est beau temps.", "Il a beau."], answer: 0 }
+      - kind: brain-teaser
+        title: "Ma semaine"
+        questions:
+          - { id: fr-w06-d6-bt01, difficulty: medium, type: text, prompt: "Translate: I get up at six o'clock.", accept: ["Je me lève à six heures.", "Je me lève à 6 heures.", "Je me lève à six heures"] }
+          - { id: fr-w06-d6-bt02, difficulty: medium, type: text, prompt: "Translate: On Saturdays, I do the shopping.", accept: ["Le samedi, je fais les courses.", "Le samedi je fais les courses.", "Le samedi, je fais les courses"] }
+          - { id: fr-w06-d6-bt03, difficulty: medium, type: text, prompt: "Translate: Then I take a break.", accept: ["Ensuite, je fais une pause.", "Puis je fais une pause.", "Ensuite je fais une pause.", "Après, je fais une pause."] }
+          - { id: fr-w06-d6-bt04, difficulty: hard, type: text, prompt: "Translate: I go to bed at half past ten.", accept: ["Je me couche à dix heures et demie.", "Je me couche à dix heures et demie", "Je me couche à 22 heures 30.", "Je me couche à vingt-deux heures trente."] }
+          - { id: fr-w06-d6-bt05, difficulty: hard, type: mcq, prompt: "Find the sentence with NO mistake.", choices: ["Le dimanche, je me repose et je ne travaille jamais.", "Je me lève à sept heure et demi.", "Vous faisez la cuisine le soir.", "Elle se ne couche pas tard."], answer: 0 }

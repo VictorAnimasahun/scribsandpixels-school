@@ -1,0 +1,297 @@
+# Excel · Week 6 quizzes. Format and rules: src/content/QUIZZES.md
+week: 6
+days:
+
+  # ─────────────────────────── DAY 1 ───────────────────────────
+  - day: 1
+    gate:
+      title: "Checkpoint: Week 5 review"
+      covers: "Week 5: IF, IFS, AND/OR/NOT, commission tiers, SWITCH"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w06-d1-g01, difficulty: easy, type: mcq, prompt: "Not equal", choices: ["<>", "!=", "=/=", "≠"], answer: 0 }
+        - { id: xl-w06-d1-g02, difficulty: easy, type: mcq, prompt: "Catch-all at the end of IFS", choices: ["TRUE,\"…\"", "ELSE,\"…\"", "0,\"…\"", "OTHER,\"…\""], answer: 0 }
+        - { id: xl-w06-d1-g03, difficulty: easy, type: text, prompt: "=IF(5>=5,\"Yes\",\"No\")", accept: ["Yes"] }
+        - { id: xl-w06-d1-g04, difficulty: easy, type: truefalse, prompt: "SWITCH is best for one cell against a list of exact values.", answer: true }
+        - { id: xl-w06-d1-g05, difficulty: easy, type: mcq, prompt: "ALL conditions true", choices: ["AND", "OR", "NOT", "IF"], answer: 0 }
+        - { id: xl-w06-d1-g06, difficulty: easy, type: text, prompt: "Nigerian scale: 72 → grade?", accept: ["A"] }
+        - { id: xl-w06-d1-g07, difficulty: medium, type: text, prompt: "Large orders (≥ ₦1m) in 2025?", accept: ["140"] }
+        - { id: xl-w06-d1-g08, difficulty: medium, type: text, prompt: "Wholesale AND ≥ ₦1m orders?", accept: ["107"] }
+        - { id: xl-w06-d1-g09, difficulty: medium, type: match, prompt: "Match the city to its zone.", pairs: [["Lagos", "South-West"], ["Kano", "North-West"], ["Enugu", "South-East"], ["Port Harcourt", "South-South"]] }
+        - { id: xl-w06-d1-g10, difficulty: medium, type: text, prompt: "Total commission at 5/3/2% (rounded, digits only)?", accept: ["26596692"] }
+        - { id: xl-w06-d1-g11, difficulty: medium, type: mcq, prompt: "=IFS(O2>=100000,\"Medium\",O2>=1000000,\"Large\",TRUE,\"Small\") on ₦3m gives…", choices: ["Medium", "Large", "Small", "#N/A"], answer: 0 }
+        - { id: xl-w06-d1-g12, difficulty: medium, type: text, prompt: "Electronic payments in 2025?", accept: ["1893", "1,893"] }
+        - { id: xl-w06-d1-g13, difficulty: medium, type: truefalse, prompt: "Rates belong in input cells, referenced with $.", answer: true }
+        - { id: xl-w06-d1-g14, difficulty: medium, type: text, prompt: "=SWITCH(\"Abuja\",\"Lagos\",\"SW\",\"Abuja\",\"NC\",\"?\")", accept: ["NC"] }
+        - { id: xl-w06-d1-g15, difficulty: medium, type: text, prompt: "Medium orders in 2025?", accept: ["1391", "1,391"] }
+        - { id: xl-w06-d1-g16, difficulty: hard, type: text, prompt: "Lagos or Abuja orders paid by Cash?", accept: ["301"] }
+        - { id: xl-w06-d1-g17, difficulty: hard, type: mcq, prompt: "A ₦2,000,000 order gets 3% instead of 5%. Likely bug?", choices: ["> used instead of >=", "Missing $", "IFS misspelt", "The rate is text"], answer: 0 }
+        - { id: xl-w06-d1-g18, difficulty: hard, type: multi, prompt: "Which return #N/A? (Select all.)", choices: ["=IFS(1>2,\"a\")", "=SWITCH(\"x\",\"a\",1)", "=IF(1>2,\"a\",\"b\")", "=SWITCH(\"x\",\"a\",1,0)"], answers: [0, 1] }
+    quizzes:
+      - kind: rapid-fire
+        title: "COUNTIF criteria"
+        secondsPerQuestion: 9
+        questions:
+          - { id: xl-w06-d1-rf01, difficulty: easy, type: mcq, prompt: "Count one condition", choices: ["COUNTIF", "COUNTIFS only", "SUMIF", "COUNTA"], answer: 0 }
+          - { id: xl-w06-d1-rf02, difficulty: easy, type: mcq, prompt: "Count several conditions (AND)", choices: ["COUNTIFS", "COUNTIF", "COUNT", "SUMIFS"], answer: 0 }
+          - { id: xl-w06-d1-rf03, difficulty: easy, type: mcq, prompt: "Criteria: at least 1,000,000", choices: ["\">=1000000\"", ">=1000000", "\"=>1000000\"", "\"1000000+\""], answer: 0 }
+          - { id: xl-w06-d1-rf04, difficulty: easy, type: mcq, prompt: "Criteria: not Cash", choices: ["\"<>Cash\"", "\"!=Cash\"", "\"not Cash\"", "<>\"Cash\""], answer: 0 }
+          - { id: xl-w06-d1-rf05, difficulty: easy, type: mcq, prompt: "Criteria: contains Lagos", choices: ["\"*Lagos*\"", "\"?Lagos?\"", "\"Lagos\"", "\"%Lagos%\""], answer: 0 }
+          - { id: xl-w06-d1-rf06, difficulty: easy, type: mcq, prompt: "Criteria: ≥ the value in X2", choices: ["\">=\"&X2", "\">=X2\"", ">=X2", "\">=\"+X2"], answer: 0 }
+          - { id: xl-w06-d1-rf07, difficulty: easy, type: text, prompt: "Lagos orders in 2025?", accept: ["951"] }
+          - { id: xl-w06-d1-rf08, difficulty: easy, type: text, prompt: "Abuja orders?", accept: ["514"] }
+          - { id: xl-w06-d1-rf09, difficulty: easy, type: text, prompt: "Ibadan orders?", accept: ["206"] }
+          - { id: xl-w06-d1-rf10, difficulty: easy, type: mcq, prompt: "Count empty cells", choices: ["COUNTBLANK", "COUNTA", "COUNT", "ISBLANK"], answer: 0 }
+      - kind: brain-teaser
+        title: "Count it"
+        questions:
+          - { id: xl-w06-d1-bt01, difficulty: medium, type: text, prompt: "Orders with no discount?", accept: ["1217", "1,217"] }
+          - { id: xl-w06-d1-bt02, difficulty: medium, type: text, prompt: "Kano Phones orders?", accept: ["17"] }
+          - { id: xl-w06-d1-bt03, difficulty: medium, type: text, prompt: "=COUNTIF(Data!D2:D2401,\"Lagos*\") counts Lagos stores' orders. Result?", accept: ["951"] }
+          - { id: xl-w06-d1-bt04, difficulty: hard, type: mcq, prompt: "Y2 = COUNTIFS(Data!C2:C2401, X2) filled down gives wrong counts from Y3. Fix?", choices: ["Lock the data range: Data!$C$2:$C$2401", "Lock X2", "Use COUNT", "Use SUMIFS"], answer: 0 }
+          - { id: xl-w06-d1-bt05, difficulty: hard, type: text, prompt: "Port Harcourt + Kano + Enugu + Ibadan orders combined?", accept: ["935"] }
+
+  # ─────────────────────────── DAY 2 ───────────────────────────
+  - day: 2
+    gate:
+      title: "Checkpoint: COUNTIF and COUNTIFS"
+      covers: "Week 6 · Day 1: COUNTIF, COUNTIFS (AND), criteria forms, cell-reference criteria, COUNTBLANK"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w06-d2-g01, difficulty: easy, type: mcq, prompt: "=COUNTIF(C2:C2401,\"Lagos\") counts…", choices: ["Lagos rows", "every row", "Lagos net sales", "blank cells"], answer: 0 }
+        - { id: xl-w06-d2-g02, difficulty: easy, type: mcq, prompt: "COUNTIFS combines conditions with…", choices: ["AND", "OR", "XOR", "NOT"], answer: 0 }
+        - { id: xl-w06-d2-g03, difficulty: easy, type: truefalse, prompt: "Number comparisons in criteria go inside quotes: \">=1000000\".", answer: true }
+        - { id: xl-w06-d2-g04, difficulty: easy, type: text, prompt: "Lagos orders?", accept: ["951"] }
+        - { id: xl-w06-d2-g05, difficulty: easy, type: mcq, prompt: "Wildcard for \"any text\"", choices: ["*", "?", "#", "%"], answer: 0 }
+        - { id: xl-w06-d2-g06, difficulty: easy, type: mcq, prompt: "Criteria pointing at a cell X2", choices: ["X2", "\"X2\"", "'X2'", "[X2]"], answer: 0 }
+        - { id: xl-w06-d2-g07, difficulty: medium, type: mcq, prompt: "Kano Phones orders:", choices: ["=COUNTIFS(C2:C2401,\"Kano\",I2:I2401,\"Phones\")", "=COUNTIF(C2:C2401,\"Kano\",\"Phones\")", "=COUNTIFS(\"Kano\",\"Phones\")", "=COUNT(C2:C2401,\"Kano\")"], answer: 0 }
+        - { id: xl-w06-d2-g08, difficulty: medium, type: match, prompt: "Match the region to its 2025 orders.", pairs: [["Lagos", "951"], ["Abuja", "514"], ["Port Harcourt", "282"], ["Kano", "228"]] }
+        - { id: xl-w06-d2-g09, difficulty: medium, type: text, prompt: "Orders ≥ ₦1m?", accept: ["140"] }
+        - { id: xl-w06-d2-g10, difficulty: medium, type: text, prompt: "Enugu orders?", accept: ["219"] }
+        - { id: xl-w06-d2-g11, difficulty: medium, type: mcq, prompt: "Count orders ≥ the amount in X5:", choices: ["=COUNTIF(O2:O2401,\">=\"&X5)", "=COUNTIF(O2:O2401,\">=X5\")", "=COUNTIF(O2:O2401,>=X5)", "=COUNTIF(\">=\"X5)"], answer: 0 }
+        - { id: xl-w06-d2-g12, difficulty: medium, type: truefalse, prompt: "COUNTIFS with two conditions on the same column (Region = Lagos and Region = Abuja) counts both regions.", answer: false, explain: "AND: no row is both. Add two COUNTIFs." }
+        - { id: xl-w06-d2-g13, difficulty: medium, type: text, prompt: "Orders with no discount?", accept: ["1217", "1,217"] }
+        - { id: xl-w06-d2-g14, difficulty: medium, type: mcq, prompt: "Lagos OR Abuja orders:", choices: ["=COUNTIF(C:C,\"Lagos\")+COUNTIF(C:C,\"Abuja\")", "=COUNTIFS(C:C,\"Lagos\",C:C,\"Abuja\")", "=COUNTIF(C:C,\"Lagos,Abuja\")", "=COUNTIF(C:C,\"Lagos\" OR \"Abuja\")"], answer: 0 }
+        - { id: xl-w06-d2-g15, difficulty: medium, type: text, prompt: "Lagos + Abuja orders?", accept: ["1465", "1,465"] }
+        - { id: xl-w06-d2-g16, difficulty: hard, type: mcq, prompt: "=COUNTIF(D2:D2401,\"Lagos\") returns 0, but =COUNTIF(D2:D2401,\"Lagos*\") returns 951. Why?", choices: ["Column D holds store names like \"Lagos - Ikeja\", never exactly \"Lagos\"", "COUNTIF needs a wildcard always", "D is empty", "Lagos is misspelt"], answer: 0 }
+        - { id: xl-w06-d2-g17, difficulty: hard, type: text, prompt: "Orders NOT from Lagos? (2,400 total)", accept: ["1449", "1,449"] }
+        - { id: xl-w06-d2-g18, difficulty: hard, type: multi, prompt: "Which criteria are valid? (Select all.)", choices: ["\"<>Cash\"", "\"*Phone*\"", "\">=\"&X2", ">=1000"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "SUMIFS sprint"
+        secondsPerQuestion: 9
+        questions:
+          - { id: xl-w06-d2-rf01, difficulty: easy, type: mcq, prompt: "In SUMIFS, the first argument is…", choices: ["the sum range", "the criteria range", "the criteria", "the total"], answer: 0 }
+          - { id: xl-w06-d2-rf02, difficulty: easy, type: mcq, prompt: "Old SUMIF order", choices: ["range, criteria, sum_range", "sum_range, range, criteria", "criteria, range", "same as SUMIFS"], answer: 0 }
+          - { id: xl-w06-d2-rf03, difficulty: easy, type: mcq, prompt: "Prefer…", choices: ["SUMIFS always", "SUMIF always", "SUM with filters", "manual adding"], answer: 0 }
+          - { id: xl-w06-d2-rf04, difficulty: easy, type: text, prompt: "Lagos net sales? (digits only)", accept: ["321703800"] }
+          - { id: xl-w06-d2-rf05, difficulty: easy, type: mcq, prompt: "Top category by net sales", choices: ["Groceries", "Phones", "Computers", "Office"], answer: 0 }
+          - { id: xl-w06-d2-rf06, difficulty: easy, type: mcq, prompt: "Top customer type", choices: ["Wholesale", "Retail", "Online", "Staff"], answer: 0 }
+          - { id: xl-w06-d2-rf07, difficulty: easy, type: mcq, prompt: "Top payment method by value", choices: ["Transfer", "Cash", "POS", "Card"], answer: 0 }
+          - { id: xl-w06-d2-rf08, difficulty: easy, type: truefalse, prompt: "SUMIFS adds only rows where ALL criteria match.", answer: true }
+          - { id: xl-w06-d2-rf09, difficulty: easy, type: text, prompt: "Lagos Phones orders?", accept: ["96"] }
+          - { id: xl-w06-d2-rf10, difficulty: easy, type: mcq, prompt: "Units per category: sum range is…", choices: ["Units (J)", "NetSales (O)", "Category (I)", "OrderID (A)"], answer: 0 }
+      - kind: brain-teaser
+        title: "Sum it"
+        questions:
+          - { id: xl-w06-d2-bt01, difficulty: medium, type: text, prompt: "Lagos Phones net sales? (digits only)", accept: ["44661850"] }
+          - { id: xl-w06-d2-bt02, difficulty: medium, type: text, prompt: "Wholesale net sales? (digits only)", accept: ["409543290"] }
+          - { id: xl-w06-d2-bt03, difficulty: medium, type: text, prompt: "Groceries units sold?", accept: ["8102", "8,102"] }
+          - { id: xl-w06-d2-bt04, difficulty: hard, type: mcq, prompt: "Which is wrong?", choices: ["=SUMIFS(C2:C2401,O2:O2401,\"Lagos\")", "=SUMIFS(O2:O2401,C2:C2401,\"Lagos\")", "=SUMIF(C2:C2401,\"Lagos\",O2:O2401)", "=SUMIFS(O2:O2401,C2:C2401,X2)"], answer: 0, explain: "The sum range (O) comes first in SUMIFS." }
+          - { id: xl-w06-d2-bt05, difficulty: hard, type: text, prompt: "Online net sales? (digits only)", accept: ["115949945"] }
+
+  # ─────────────────────────── DAY 3 ───────────────────────────
+  - day: 3
+    gate:
+      title: "Checkpoint: SUMIF and SUMIFS"
+      covers: "Week 6 · Day 2: SUMIFS argument order, several criteria, summary tables by region/category/customer/payment"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w06-d3-g01, difficulty: easy, type: mcq, prompt: "Net sales for the region in X2:", choices: ["=SUMIFS(Data!$O$2:$O$2401,Data!$C$2:$C$2401,X2)", "=SUMIFS(X2,Data!O:O)", "=SUM(Data!O:O,X2)", "=SUMIFS(Data!C:C,Data!O:O,X2)"], answer: 0 }
+        - { id: xl-w06-d3-g02, difficulty: easy, type: truefalse, prompt: "SUMIFS puts the sum range first.", answer: true }
+        - { id: xl-w06-d3-g03, difficulty: easy, type: mcq, prompt: "Top category", choices: ["Groceries", "Phones", "Computers", "Electronics"], answer: 0 }
+        - { id: xl-w06-d3-g04, difficulty: easy, type: mcq, prompt: "Smallest customer type by value", choices: ["Online", "Retail", "Wholesale", "Staff"], answer: 0 }
+        - { id: xl-w06-d3-g05, difficulty: easy, type: text, prompt: "Lagos net sales? (digits only)", accept: ["321703800"] }
+        - { id: xl-w06-d3-g06, difficulty: easy, type: mcq, prompt: "Two criteria in SUMIFS need…", choices: ["two criteria_range + criteria pairs", "two sum ranges", "a nested IF", "two SUMIFS always"], answer: 0 }
+        - { id: xl-w06-d3-g07, difficulty: medium, type: text, prompt: "Groceries net sales? (digits only)", accept: ["157534275"] }
+        - { id: xl-w06-d3-g08, difficulty: medium, type: text, prompt: "Transfer net sales? (digits only)", accept: ["352411740"] }
+        - { id: xl-w06-d3-g09, difficulty: medium, type: match, prompt: "Match the customer type to its net sales.", pairs: [["Wholesale", "₦409,543,290"], ["Retail", "₦308,553,465"], ["Online", "₦115,949,945"]] }
+        - { id: xl-w06-d3-g10, difficulty: medium, type: mcq, prompt: "Second-biggest category", choices: ["Phones (₦139,978,700)", "Computers", "Office", "Groceries"], answer: 0 }
+        - { id: xl-w06-d3-g11, difficulty: medium, type: text, prompt: "Lagos Phones net sales? (digits only)", accept: ["44661850"] }
+        - { id: xl-w06-d3-g12, difficulty: medium, type: truefalse, prompt: "The region net sales add up to ₦834,046,700.", answer: true }
+        - { id: xl-w06-d3-g13, difficulty: medium, type: mcq, prompt: "Lowest category by net sales", choices: ["Office (₦25,692,075)", "Groceries", "Phones", "Computers"], answer: 0 }
+        - { id: xl-w06-d3-g14, difficulty: medium, type: text, prompt: "Cash net sales? (digits only)", accept: ["209506255"] }
+        - { id: xl-w06-d3-g15, difficulty: medium, type: mcq, prompt: "% of total for Lagos with the total in Z8:", choices: ["=Z2/$Z$8", "=Z2/Z8", "=$Z$2/Z8", "=SUMIFS(Z2)"], answer: 0 }
+        - { id: xl-w06-d3-g16, difficulty: hard, type: text, prompt: "Computers units sold in 2025?", accept: ["199"] }
+        - { id: xl-w06-d3-g17, difficulty: hard, type: mcq, prompt: "=SUMIFS(O2:O2401,C2:C2401,\"Lagos\",I2:I2401,\"Phones\",M2:M2401,\"Cash\") counts…", choices: ["Lagos Phones orders paid in cash, summed", "Lagos or Phones or Cash", "only Cash", "an error: too many criteria"], answer: 0 }
+        - { id: xl-w06-d3-g18, difficulty: hard, type: multi, prompt: "Which give Lagos net sales? (Select all.)", choices: ["=SUMIFS(O2:O2401,C2:C2401,\"Lagos\")", "=SUMIF(C2:C2401,\"Lagos\",O2:O2401)", "=SUMIFS(O2:O2401,D2:D2401,\"Lagos*\")", "=SUMIFS(C2:C2401,O2:O2401,\"Lagos\")"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Date criteria"
+        secondsPerQuestion: 10
+        questions:
+          - { id: xl-w06-d3-rf01, difficulty: easy, type: mcq, prompt: "On or after 1 Oct 2025", choices: ["\">=\"&DATE(2025,10,1)", "\">=DATE(2025,10,1)\"", ">=DATE(2025,10,1)", "\">=1/10\""], answer: 0 }
+          - { id: xl-w06-d3-rf02, difficulty: easy, type: mcq, prompt: "Before 1 April 2025", choices: ["\"<\"&DATE(2025,4,1)", "\"<=\"&DATE(2025,4,1)", "\"<DATE(2025,4,1)\"", "<DATE(2025,4,1)"], answer: 0 }
+          - { id: xl-w06-d3-rf03, difficulty: easy, type: mcq, prompt: "DATE's argument order", choices: ["year, month, day", "day, month, year", "month, day, year", "any"], answer: 0 }
+          - { id: xl-w06-d3-rf04, difficulty: easy, type: mcq, prompt: "Add one month to a date", choices: ["EDATE(date,1)", "date+1", "MONTH(date)+1", "NEXTMONTH(date)"], answer: 0 }
+          - { id: xl-w06-d3-rf05, difficulty: easy, type: text, prompt: "Q4 2025 orders?", accept: ["761"] }
+          - { id: xl-w06-d3-rf06, difficulty: easy, type: mcq, prompt: "Best month of 2025", choices: ["December", "October", "January", "June"], answer: 0 }
+          - { id: xl-w06-d3-rf07, difficulty: easy, type: mcq, prompt: "Worst month of 2025", choices: ["January", "February", "December", "July"], answer: 0 }
+          - { id: xl-w06-d3-rf08, difficulty: easy, type: truefalse, prompt: "One month = \">=\"&first day AND \"<\"&first day of next month.", answer: true }
+          - { id: xl-w06-d3-rf09, difficulty: easy, type: mcq, prompt: "Q4 is…", choices: ["Oct–Dec", "Jan–Mar", "Jul–Sep", "Sep–Dec"], answer: 0 }
+          - { id: xl-w06-d3-rf10, difficulty: easy, type: mcq, prompt: "The & in \">=\"&X2 does…", choices: ["joins the operator to the value", "adds", "means AND", "comments"], answer: 0 }
+      - kind: brain-teaser
+        title: "Months and quarters"
+        questions:
+          - { id: xl-w06-d3-bt01, difficulty: medium, type: text, prompt: "Q4 2025 net sales? (digits only)", accept: ["275880675"] }
+          - { id: xl-w06-d3-bt02, difficulty: medium, type: text, prompt: "December 2025 net sales? (digits only)", accept: ["109612345"] }
+          - { id: xl-w06-d3-bt03, difficulty: medium, type: text, prompt: "January 2025 net sales? (digits only)", accept: ["43211125"] }
+          - { id: xl-w06-d3-bt04, difficulty: hard, type: text, prompt: "December 2025 net sales in Lagos only? (digits only)", accept: ["50303800"] }
+          - { id: xl-w06-d3-bt05, difficulty: hard, type: mcq, prompt: "Why use \"<\"&DATE(2025,4,1) instead of \"<=\"&DATE(2025,3,31) for March?", choices: ["It works for any month length and any time of day stored with the date", "It's shorter only", "<= isn't allowed", "No difference ever"], answer: 0 }
+
+  # ─────────────────────────── DAY 4 ───────────────────────────
+  - day: 4
+    gate:
+      title: "Checkpoint: date criteria"
+      covers: "Week 6 · Day 3: \">=\"&DATE, quarters, months with EDATE, monthly tables"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w06-d4-g01, difficulty: easy, type: mcq, prompt: "=DATE(2025,12,31) is…", choices: ["31 December 2025", "12 March 2025", "2025 days", "an error"], answer: 0 }
+        - { id: xl-w06-d4-g02, difficulty: easy, type: mcq, prompt: "Q1 is…", choices: ["Jan–Mar", "Apr–Jun", "Oct–Dec", "Jan–Apr"], answer: 0 }
+        - { id: xl-w06-d4-g03, difficulty: easy, type: truefalse, prompt: "In criteria, the operator goes in quotes and is joined with &.", answer: true }
+        - { id: xl-w06-d4-g04, difficulty: easy, type: mcq, prompt: "EDATE(DATE(2025,1,1),1) =", choices: ["1 Feb 2025", "2 Jan 2025", "1 Jan 2026", "31 Jan 2025"], answer: 0 }
+        - { id: xl-w06-d4-g05, difficulty: easy, type: text, prompt: "Q4 2025 orders?", accept: ["761"] }
+        - { id: xl-w06-d4-g06, difficulty: easy, type: mcq, prompt: "Best month", choices: ["December", "October", "January", "March"], answer: 0 }
+        - { id: xl-w06-d4-g07, difficulty: medium, type: mcq, prompt: "Q4 net sales:", choices: ["=SUMIFS(O:O,B:B,\">=\"&DATE(2025,10,1),B:B,\"<=\"&DATE(2025,12,31))", "=SUMIFS(O:O,B:B,\"Q4\")", "=SUMIF(B:B,\">=10\",O:O)", "=SUMIFS(B:B,O:O,DATE(2025,10,1))"], answer: 0 }
+        - { id: xl-w06-d4-g08, difficulty: medium, type: text, prompt: "Q4 net sales? (digits only)", accept: ["275880675"] }
+        - { id: xl-w06-d4-g09, difficulty: medium, type: match, prompt: "Match the month to its net sales.", pairs: [["January", "₦43,211,125"], ["October", "₦89,357,615"], ["December", "₦109,612,345"]] }
+        - { id: xl-w06-d4-g10, difficulty: medium, type: mcq, prompt: "Monthly table: first day of the month in X2. Criteria pair:", choices: ["\">=\"&X2 and \"<\"&EDATE(X2,1)", "\"=\"&X2", "\">=\"&X2 and \"<=\"&X2+30", "MONTH(X2)"], answer: 0 }
+        - { id: xl-w06-d4-g11, difficulty: medium, type: truefalse, prompt: "Criteria \">=X20\" (all in quotes) compares with the cell X20's value.", answer: false, explain: "It compares with the text X20. Use \">=\"&X20." }
+        - { id: xl-w06-d4-g12, difficulty: medium, type: text, prompt: "December net sales? (digits only)", accept: ["109612345"] }
+        - { id: xl-w06-d4-g13, difficulty: medium, type: mcq, prompt: "Second-best month", choices: ["October", "November", "September", "July"], answer: 0 }
+        - { id: xl-w06-d4-g14, difficulty: medium, type: text, prompt: "% change Jan → Dec, 1 decimal (e.g. +12.3%)", accept: ["+153.7%", "153.7%"] }
+        - { id: xl-w06-d4-g15, difficulty: medium, type: mcq, prompt: "Count Q4 orders:", choices: ["=COUNTIFS(B:B,\">=\"&DATE(2025,10,1),B:B,\"<=\"&DATE(2025,12,31))", "=COUNTIF(B:B,\"Q4\")", "=COUNT(B:B)/4", "=SUMIFS(B:B,\"Q4\")"], answer: 0 }
+        - { id: xl-w06-d4-g16, difficulty: hard, type: text, prompt: "December Lagos net sales? (digits only)", accept: ["50303800"] }
+        - { id: xl-w06-d4-g17, difficulty: hard, type: text, prompt: "Q4 share of 2025 net sales, 1 decimal (₦275,880,675 of ₦834,046,700)", accept: ["33.1%", "33.1"] }
+        - { id: xl-w06-d4-g18, difficulty: hard, type: multi, prompt: "Which return March 2025 net sales? (Select all.)", choices: ["=SUMIFS(O:O,B:B,\">=\"&DATE(2025,3,1),B:B,\"<\"&DATE(2025,4,1))", "=SUMIFS(O:O,B:B,\">=\"&DATE(2025,3,1),B:B,\"<=\"&DATE(2025,3,31))", "=SUMIFS(O:O,B:B,\">=\"&X2,B:B,\"<\"&EDATE(X2,1)) with X2 = 1 Mar 2025", "=SUMIFS(O:O,B:B,\"March\")"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "…IFS family"
+        secondsPerQuestion: 9
+        questions:
+          - { id: xl-w06-d4-rf01, difficulty: easy, type: mcq, prompt: "Average with conditions", choices: ["AVERAGEIFS", "AVERAGE", "AVGIF", "MEANIFS"], answer: 0 }
+          - { id: xl-w06-d4-rf02, difficulty: easy, type: mcq, prompt: "Largest with conditions", choices: ["MAXIFS", "MAX", "LARGE", "TOPIFS"], answer: 0 }
+          - { id: xl-w06-d4-rf03, difficulty: easy, type: mcq, prompt: "Smallest with conditions", choices: ["MINIFS", "MIN", "SMALLIFS", "LOWIFS"], answer: 0 }
+          - { id: xl-w06-d4-rf04, difficulty: easy, type: mcq, prompt: "AVERAGEIFS's first argument", choices: ["the range to average", "the criteria range", "the criteria", "the count"], answer: 0 }
+          - { id: xl-w06-d4-rf05, difficulty: easy, type: mcq, prompt: "Highest average order value by region", choices: ["Ibadan", "Lagos", "Abuja", "Port Harcourt"], answer: 0 }
+          - { id: xl-w06-d4-rf06, difficulty: easy, type: mcq, prompt: "Lowest average order value", choices: ["Port Harcourt", "Ibadan", "Kano", "Enugu"], answer: 0 }
+          - { id: xl-w06-d4-rf07, difficulty: easy, type: mcq, prompt: "Smallest \"largest order\" by region", choices: ["Port Harcourt (₦4,792,500)", "Lagos", "Kano", "Abuja"], answer: 0 }
+          - { id: xl-w06-d4-rf08, difficulty: easy, type: truefalse, prompt: "Lagos and Enugu share the biggest single order: ₦13,239,600.", answer: true }
+          - { id: xl-w06-d4-rf09, difficulty: easy, type: text, prompt: "Number of salespeople", accept: ["27"] }
+          - { id: xl-w06-d4-rf10, difficulty: easy, type: mcq, prompt: "Top salesperson", choices: ["Tolu Eze", "Chidi Uzor", "Nneka Abubakar", "Ada Okafor"], answer: 0 }
+      - kind: brain-teaser
+        title: "Averages and records"
+        questions:
+          - { id: xl-w06-d4-bt01, difficulty: medium, type: text, prompt: "Ibadan's average order value (rounded, digits only)?", accept: ["396966"] }
+          - { id: xl-w06-d4-bt02, difficulty: medium, type: text, prompt: "Port Harcourt's average order value (rounded, digits only)?", accept: ["318051"] }
+          - { id: xl-w06-d4-bt03, difficulty: medium, type: text, prompt: "Tolu Eze's net sales? (digits only)", accept: ["54011110"] }
+          - { id: xl-w06-d4-bt04, difficulty: hard, type: text, prompt: "Kano's largest order? (digits only)", accept: ["12096000"] }
+          - { id: xl-w06-d4-bt05, difficulty: hard, type: mcq, prompt: "Get the unique salesperson list before SUMIFS:", choices: ["Copy the column, Data → Remove Duplicates", "Sort Z→A", "Filter by colour", "Flash Fill"], answer: 0 }
+
+  # ─────────────────────────── DAY 5 ───────────────────────────
+  - day: 5
+    gate:
+      title: "Checkpoint: AVERAGEIFS, MAXIFS, MINIFS"
+      covers: "Week 6 · Day 4: averages and extremes with conditions, regional and salesperson rankings"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w06-d5-g01, difficulty: easy, type: mcq, prompt: "Biggest Kano order:", choices: ["=MAXIFS(O:O,C:C,\"Kano\")", "=MAX(C:C,\"Kano\")", "=MAXIFS(C:C,O:O,\"Kano\")", "=LARGE(O:O,\"Kano\")"], answer: 0 }
+        - { id: xl-w06-d5-g02, difficulty: easy, type: mcq, prompt: "Cheapest phone price:", choices: ["=MINIFS(K:K,I:I,\"Phones\")", "=MIN(I:I,\"Phones\")", "=MINIFS(I:I,K:K,\"Phones\")", "=SMALL(K:K,1)"], answer: 0 }
+        - { id: xl-w06-d5-g03, difficulty: easy, type: truefalse, prompt: "AVERAGEIFS, MAXIFS and MINIFS all take the result range first.", answer: true }
+        - { id: xl-w06-d5-g04, difficulty: easy, type: mcq, prompt: "Region with the highest average order", choices: ["Ibadan", "Lagos", "Kano", "Abuja"], answer: 0 }
+        - { id: xl-w06-d5-g05, difficulty: easy, type: text, prompt: "How many salespeople?", accept: ["27"] }
+        - { id: xl-w06-d5-g06, difficulty: easy, type: mcq, prompt: "Top salesperson", choices: ["Tolu Eze", "Chidi Uzor", "Emeka Obi", "Bisi Ade"], answer: 0 }
+        - { id: xl-w06-d5-g07, difficulty: medium, type: text, prompt: "Port Harcourt's largest order? (digits only)", accept: ["4792500"] }
+        - { id: xl-w06-d5-g08, difficulty: medium, type: text, prompt: "Ibadan's average order (rounded, digits only)?", accept: ["396966"] }
+        - { id: xl-w06-d5-g09, difficulty: medium, type: match, prompt: "Match the region to its largest order.", pairs: [["Lagos", "₦13,239,600"], ["Kano", "₦12,096,000"], ["Ibadan", "₦12,266,100"], ["Abuja", "₦9,996,000"]] }
+        - { id: xl-w06-d5-g10, difficulty: medium, type: mcq, prompt: "Lagos has the most sales but not the highest AVERAGE order. Why?", choices: ["Many small orders pull its average down", "AVERAGEIFS is wrong", "Lagos has few orders", "Averages ignore Lagos"], answer: 0 }
+        - { id: xl-w06-d5-g11, difficulty: medium, type: text, prompt: "Kano's average order (rounded, digits only)?", accept: ["390792"] }
+        - { id: xl-w06-d5-g12, difficulty: medium, type: truefalse, prompt: "MAXIFS can take several criteria pairs.", answer: true }
+        - { id: xl-w06-d5-g13, difficulty: medium, type: text, prompt: "Tolu Eze's net sales? (digits only)", accept: ["54011110"] }
+        - { id: xl-w06-d5-g14, difficulty: medium, type: mcq, prompt: "=AVERAGEIFS(O:O,C:C,\"Jos\") when there's no Jos data:", choices: ["#DIV/0!", "0", "#N/A", "blank"], answer: 0 }
+        - { id: xl-w06-d5-g15, difficulty: medium, type: mcq, prompt: "Biggest Lagos Phones order:", choices: ["=MAXIFS(O:O,C:C,\"Lagos\",I:I,\"Phones\")", "=MAX(O:O)", "=MAXIFS(\"Lagos\",\"Phones\")", "=MAXIFS(C:C,I:I,\"Phones\")"], answer: 0 }
+        - { id: xl-w06-d5-g16, difficulty: hard, type: text, prompt: "Abuja's average order (rounded, digits only)?", accept: ["339124"] }
+        - { id: xl-w06-d5-g17, difficulty: hard, type: mcq, prompt: "Which pair share the company's biggest order value?", choices: ["Lagos and Enugu", "Lagos and Kano", "Ibadan and Kano", "Abuja and Lagos"], answer: 0 }
+        - { id: xl-w06-d5-g18, difficulty: hard, type: multi, prompt: "Which return Ibadan's average order? (Select all.)", choices: ["=AVERAGEIFS(O:O,C:C,\"Ibadan\")", "=SUMIFS(O:O,C:C,\"Ibadan\")/COUNTIFS(C:C,\"Ibadan\")", "=AVERAGEIF(C:C,\"Ibadan\",O:O)", "=AVERAGE(O:O)"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "HR numbers"
+        secondsPerQuestion: 9
+        questions:
+          - { id: xl-w06-d5-rf01, difficulty: easy, type: text, prompt: "Sales headcount", accept: ["52"] }
+          - { id: xl-w06-d5-rf02, difficulty: easy, type: text, prompt: "Operations headcount", accept: ["18"] }
+          - { id: xl-w06-d5-rf03, difficulty: easy, type: text, prompt: "HR headcount", accept: ["10"] }
+          - { id: xl-w06-d5-rf04, difficulty: easy, type: text, prompt: "Total staff", accept: ["120"] }
+          - { id: xl-w06-d5-rf05, difficulty: easy, type: mcq, prompt: "Headcount per department", choices: ["COUNTIFS", "SUMIFS", "MAXIFS", "AVERAGEIFS"], answer: 0 }
+          - { id: xl-w06-d5-rf06, difficulty: easy, type: mcq, prompt: "Payroll per department", choices: ["SUMIFS", "COUNTIFS", "MINIFS", "COUNTA"], answer: 0 }
+          - { id: xl-w06-d5-rf07, difficulty: easy, type: mcq, prompt: "Women in Sales", choices: ["COUNTIFS(Dept,\"Sales\",Gender,\"F\")", "COUNTIF(Gender,\"F\")", "SUMIFS(Gender,\"F\")", "COUNT(Sales)"], answer: 0 }
+          - { id: xl-w06-d5-rf08, difficulty: easy, type: text, prompt: "Total monthly payroll? (digits only)", accept: ["45004000"] }
+          - { id: xl-w06-d5-rf09, difficulty: easy, type: text, prompt: "Sales monthly payroll? (digits only)", accept: ["15750000"] }
+          - { id: xl-w06-d5-rf10, difficulty: easy, type: text, prompt: "Annual payroll (× 12)? (digits only)", accept: ["540048000"] }
+      - kind: brain-teaser
+        title: "Department summary"
+        questions:
+          - { id: xl-w06-d5-bt01, difficulty: medium, type: text, prompt: "Sales share of the monthly payroll, 1 decimal (₦15,750,000 of ₦45,004,000)", accept: ["35.0%", "35%", "35.0"] }
+          - { id: xl-w06-d5-bt02, difficulty: medium, type: text, prompt: "Women on staff?", accept: ["64"] }
+          - { id: xl-w06-d5-bt03, difficulty: medium, type: text, prompt: "Average monthly salary across all staff (rounded, digits only)?", accept: ["375033"] }
+          - { id: xl-w06-d5-bt04, difficulty: hard, type: mcq, prompt: "The department table's headcounts add to 119, not 120. Most likely?", choices: ["One employee's Department is misspelt or has a trailing space", "COUNTIFS skips the first row", "Excel rounding", "120 is wrong"], answer: 0 }
+          - { id: xl-w06-d5-bt05, difficulty: hard, type: text, prompt: "Average Sales salary (₦15,750,000 ÷ 52), rounded, digits only?", accept: ["302885"] }
+
+  # ─────────────────────────── DAY 6 ───────────────────────────
+  - day: 6
+    gate:
+      title: "Checkpoint: HR analysis"
+      covers: "Week 6 · Day 5: department headcount, payroll, averages, highest salary, gender counts"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w06-d6-g01, difficulty: easy, type: text, prompt: "Sales headcount", accept: ["52"] }
+        - { id: xl-w06-d6-g02, difficulty: easy, type: mcq, prompt: "Highest salary in IT:", choices: ["=MAXIFS(Salary,Dept,\"IT\")", "=MAX(IT)", "=SUMIFS(Salary,Dept,\"IT\")", "=COUNTIFS(Dept,\"IT\")"], answer: 0 }
+        - { id: xl-w06-d6-g03, difficulty: easy, type: truefalse, prompt: "Total monthly payroll is ₦45,004,000.", answer: true }
+        - { id: xl-w06-d6-g04, difficulty: easy, type: text, prompt: "Finance headcount", accept: ["16"] }
+        - { id: xl-w06-d6-g05, difficulty: easy, type: text, prompt: "Marketing headcount", accept: ["11"] }
+        - { id: xl-w06-d6-g06, difficulty: easy, type: text, prompt: "IT headcount", accept: ["13"] }
+        - { id: xl-w06-d6-g07, difficulty: medium, type: match, prompt: "Match the column to its function.", pairs: [["Headcount", "COUNTIFS"], ["Monthly payroll", "SUMIFS"], ["Average salary", "AVERAGEIFS"], ["Highest salary", "MAXIFS"]] }
+        - { id: xl-w06-d6-g08, difficulty: medium, type: text, prompt: "Annual payroll? (digits only)", accept: ["540048000"] }
+        - { id: xl-w06-d6-g09, difficulty: medium, type: text, prompt: "Women on staff?", accept: ["64"] }
+        - { id: xl-w06-d6-g10, difficulty: medium, type: text, prompt: "Men on staff? (120 total)", accept: ["56"] }
+        - { id: xl-w06-d6-g11, difficulty: medium, type: mcq, prompt: "Regional report: store with the highest net sales", choices: ["Lagos - Ikeja", "Lagos - Lekki", "Abuja - Wuse", "Kano - Sabon Gari"], answer: 0 }
+        - { id: xl-w06-d6-g12, difficulty: medium, type: mcq, prompt: "Store with the lowest net sales", choices: ["Abuja - Garki", "Ibadan", "Enugu", "Lagos - Surulere"], answer: 0 }
+        - { id: xl-w06-d6-g13, difficulty: medium, type: truefalse, prompt: "A selector cell (B1) lets one report show any region.", answer: true }
+        - { id: xl-w06-d6-g14, difficulty: medium, type: text, prompt: "Number of stores", accept: ["9"] }
+        - { id: xl-w06-d6-g15, difficulty: medium, type: mcq, prompt: "Region's share of company sales with the region in B1:", choices: ["=SUMIFS(O:O,C:C,B1)/SUM(O:O)", "=SUM(O:O)/B1", "=COUNTIFS(C:C,B1)/2400", "=B1/SUM(O:O)"], answer: 0 }
+        - { id: xl-w06-d6-g16, difficulty: hard, type: text, prompt: "Lagos - Ikeja net sales? (digits only)", accept: ["131822325"] }
+        - { id: xl-w06-d6-g17, difficulty: hard, type: text, prompt: "Abuja - Garki net sales? (digits only)", accept: ["58221055"] }
+        - { id: xl-w06-d6-g18, difficulty: hard, type: multi, prompt: "Which belong in the Regional Report? (Select all.)", choices: ["Orders and net sales for the selected region", "Q1–Q4 net sales via date criteria", "A store table for all 9 stores", "Typed-in numbers"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Week 6 lightning round"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w06-d6-rf01, difficulty: easy, type: mcq, prompt: "Sum with conditions", choices: ["SUMIFS", "SUM", "SUBTOTAL", "COUNTIFS"], answer: 0 }
+          - { id: xl-w06-d6-rf02, difficulty: easy, type: mcq, prompt: "First argument of SUMIFS", choices: ["sum range", "criteria", "criteria range", "total"], answer: 0 }
+          - { id: xl-w06-d6-rf03, difficulty: easy, type: mcq, prompt: "Contains \"Lagos\"", choices: ["\"*Lagos*\"", "\"Lagos\"", "\"?Lagos\"", "Lagos*"], answer: 0 }
+          - { id: xl-w06-d6-rf04, difficulty: easy, type: mcq, prompt: "≥ value in X2", choices: ["\">=\"&X2", "\">=X2\"", ">=X2", "X2>="], answer: 0 }
+          - { id: xl-w06-d6-rf05, difficulty: easy, type: text, prompt: "Lagos orders", accept: ["951"] }
+          - { id: xl-w06-d6-rf06, difficulty: easy, type: text, prompt: "Q4 orders", accept: ["761"] }
+          - { id: xl-w06-d6-rf07, difficulty: easy, type: mcq, prompt: "Top category", choices: ["Groceries", "Phones", "Office", "Computers"], answer: 0 }
+          - { id: xl-w06-d6-rf08, difficulty: easy, type: mcq, prompt: "Largest with a condition", choices: ["MAXIFS", "MAX", "LARGE", "TOP"], answer: 0 }
+          - { id: xl-w06-d6-rf09, difficulty: easy, type: text, prompt: "Sales headcount", accept: ["52"] }
+          - { id: xl-w06-d6-rf10, difficulty: easy, type: mcq, prompt: "Top store", choices: ["Lagos - Ikeja", "Abuja - Garki", "Lagos - Lekki", "Kano"], answer: 0 }
+      - kind: brain-teaser
+        title: "Regional report"
+        questions:
+          - { id: xl-w06-d6-bt01, difficulty: medium, type: text, prompt: "Lagos's share of 2025 net sales, 1 decimal", accept: ["38.6%", "38.6"] }
+          - { id: xl-w06-d6-bt02, difficulty: medium, type: text, prompt: "Lagos - Ikeja minus Abuja - Garki net sales? (digits only)", accept: ["73601270"] }
+          - { id: xl-w06-d6-bt03, difficulty: medium, type: mcq, prompt: "B1 holds a region. Orders for it:", choices: ["=COUNTIFS(Data!$C$2:$C$2401,$B$1)", "=COUNT(B1)", "=COUNTIF(B1,Data!C:C)", "=SUMIFS(B1)"], answer: 0 }
+          - { id: xl-w06-d6-bt04, difficulty: hard, type: mcq, prompt: "You type \"lagos \" (lowercase, trailing space) in B1 and everything shows 0. Why?", choices: ["The trailing space breaks the match (case is fine)", "Lowercase never matches", "COUNTIFS is broken", "B1 must be bold"], answer: 0 }
+          - { id: xl-w06-d6-bt05, difficulty: hard, type: mcq, prompt: "The lasting fix for typos in B1 (coming later in the course):", choices: ["A drop-down list (Data Validation)", "Bigger font", "Freeze panes", "Merge cells"], answer: 0 }
