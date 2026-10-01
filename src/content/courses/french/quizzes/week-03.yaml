@@ -1,0 +1,304 @@
+# French · Week 3 quizzes. Format and rules: src/content/QUIZZES.md
+week: 3
+days:
+
+  # ─────────────────────────── DAY 1 ───────────────────────────
+  - day: 1
+    gate:
+      title: "Checkpoint: Week 2 review"
+      covers: "Week 2: être, nationalities, en/au/aux/à, languages, numbers 11–20, questions, jobs"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w03-d1-g01, difficulty: easy, type: text, prompt: "nous ___ (être)", accept: ["sommes"] }
+        - { id: fr-w03-d1-g02, difficulty: easy, type: text, prompt: "ils ___ (être)", accept: ["sont"] }
+        - { id: fr-w03-d1-g03, difficulty: easy, type: mcq, prompt: "___ Canada", choices: ["au", "en", "à", "aux"], answer: 0 }
+        - { id: fr-w03-d1-g04, difficulty: easy, type: text, prompt: "16 in words", accept: ["seize"] }
+        - { id: fr-w03-d1-g05, difficulty: easy, type: mcq, prompt: "I'm a student (man).", choices: ["Je suis étudiant.", "Je suis un étudiant.", "Je suis étudiante.", "J'étudiant."], answer: 0 }
+        - { id: fr-w03-d1-g06, difficulty: easy, type: truefalse, prompt: "on in everyday French usually means \"we\".", answer: true }
+        - { id: fr-w03-d1-g07, difficulty: medium, type: text, prompt: "Amina est (nigérian) ___.", accept: ["nigériane"] }
+        - { id: fr-w03-d1-g08, difficulty: medium, type: text, prompt: "Elles sont (canadien) ___.", accept: ["canadiennes"] }
+        - { id: fr-w03-d1-g09, difficulty: medium, type: mcq, prompt: "Elle habite ___ Dakar, ___ Sénégal.", choices: ["à … au", "au … en", "en … à", "à … en"], answer: 0 }
+        - { id: fr-w03-d1-g10, difficulty: medium, type: text, prompt: "Turn into an est-ce que question: Il est ingénieur.", accept: ["Est-ce qu'il est ingénieur ?", "Est-ce qu'il est ingénieur?", "Est-ce qu'il est ingénieur"] }
+        - { id: fr-w03-d1-g11, difficulty: medium, type: match, prompt: "Match.", pairs: [["dix-sept", "17"], ["quatorze", "14"], ["dix-neuf", "19"], ["douze", "12"]] }
+        - { id: fr-w03-d1-g12, difficulty: medium, type: mcq, prompt: "Tu n'es pas nigérian ? — (You are.)", choices: ["Si !", "Oui !", "Non !", "Ça !"], answer: 0 }
+        - { id: fr-w03-d1-g13, difficulty: medium, type: text, prompt: "Translate: I speak English and a little French.", accept: ["Je parle anglais et un peu français.", "Je parle anglais et un peu français", "Je parle anglais et un peu de français."] }
+        - { id: fr-w03-d1-g14, difficulty: medium, type: truefalse, prompt: "« Nous sommes aux États-Unis » is correct.", answer: true }
+        - { id: fr-w03-d1-g15, difficulty: medium, type: text, prompt: "infirmier → (feminine)", accept: ["infirmière"] }
+        - { id: fr-w03-d1-g16, difficulty: hard, type: text, prompt: "Translate: I'm from Kano but I live in France.", accept: ["Je suis de Kano, mais j'habite en France.", "Je suis de Kano mais j'habite en France.", "Je suis de Kano, mais j'habite en France", "Je suis de Kano mais j'habite en France"] }
+        - { id: fr-w03-d1-g17, difficulty: hard, type: mcq, prompt: "Find the sentence with NO mistake.", choices: ["Ils sont ghanéens et habitent au Ghana.", "Elle est un médecin en Lagos.", "Nous est français.", "Je suis Nigériane."], answer: 0 }
+        - { id: fr-w03-d1-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["Est-ce qu'elle est comptable ?", "Vous êtes développeuse ?", "Je voudrais habiter au Canada.", "Il est une infirmier."], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Masculine or feminine?"
+        secondsPerQuestion: 7
+        questions:
+          - { id: fr-w03-d1-rf01, difficulty: easy, type: mcq, prompt: "information", choices: ["la", "le"], answer: 0 }
+          - { id: fr-w03-d1-rf02, difficulty: easy, type: mcq, prompt: "fromage", choices: ["le", "la"], answer: 0 }
+          - { id: fr-w03-d1-rf03, difficulty: easy, type: mcq, prompt: "voiture", choices: ["la", "le"], answer: 0 }
+          - { id: fr-w03-d1-rf04, difficulty: easy, type: mcq, prompt: "moment", choices: ["le", "la"], answer: 0 }
+          - { id: fr-w03-d1-rf05, difficulty: easy, type: mcq, prompt: "liberté", choices: ["la", "le"], answer: 0 }
+          - { id: fr-w03-d1-rf06, difficulty: easy, type: mcq, prompt: "gâteau", choices: ["le", "la"], answer: 0 }
+          - { id: fr-w03-d1-rf07, difficulty: easy, type: mcq, prompt: "baguette", choices: ["la", "le"], answer: 0 }
+          - { id: fr-w03-d1-rf08, difficulty: easy, type: mcq, prompt: "tourisme", choices: ["le", "la"], answer: 0 }
+          - { id: fr-w03-d1-rf09, difficulty: easy, type: mcq, prompt: "boulangerie", choices: ["la", "le"], answer: 0 }
+          - { id: fr-w03-d1-rf10, difficulty: easy, type: mcq, prompt: "voyage", choices: ["le", "la"], answer: 0 }
+          - { id: fr-w03-d1-rf11, difficulty: easy, type: mcq, prompt: "science", choices: ["la", "le"], answer: 0 }
+          - { id: fr-w03-d1-rf12, difficulty: easy, type: mcq, prompt: "plage", choices: ["la", "le"], answer: 0, explain: "An exception to -age = masculine." }
+      - kind: brain-teaser
+        title: "Spot the exception"
+        questions:
+          - { id: fr-w03-d1-bt01, difficulty: medium, type: mcq, prompt: "Which -age word is FEMININE?", choices: ["la page", "le fromage", "le voyage", "le garage"], answer: 0 }
+          - { id: fr-w03-d1-bt02, difficulty: medium, type: mcq, prompt: "Which -eau word is FEMININE?", choices: ["l'eau", "le bureau", "le gâteau", "le château"], answer: 0 }
+          - { id: fr-w03-d1-bt03, difficulty: medium, type: multi, prompt: "Which endings are usually feminine? (Select all.)", choices: ["-tion", "-té", "-ment", "-ure", "-isme"], answers: [0, 1, 3] }
+          - { id: fr-w03-d1-bt04, difficulty: hard, type: mcq, prompt: "How should you learn a new noun like « chaise »?", choices: ["une chaise (with its article)", "chaise", "chair = chaise", "chaises"], answer: 0 }
+          - { id: fr-w03-d1-bt05, difficulty: hard, type: mcq, prompt: "Log phrase for \"Tomorrow I review: articles\"", choices: ["Demain, je révise : les articles.", "Aujourd'hui : les articles.", "Difficile : les articles.", "Hier, je révise les articles."], answer: 0 }
+
+  # ─────────────────────────── DAY 2 ───────────────────────────
+  - day: 2
+    gate:
+      title: "Checkpoint: noun gender"
+      covers: "Week 3 · Day 1: masculine and feminine nouns, gender endings and exceptions"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w03-d2-g01, difficulty: easy, type: mcq, prompt: "télévision", choices: ["la", "le"], answer: 0 }
+        - { id: fr-w03-d2-g02, difficulty: easy, type: mcq, prompt: "bâtiment", choices: ["le", "la"], answer: 0 }
+        - { id: fr-w03-d2-g03, difficulty: easy, type: mcq, prompt: "culture", choices: ["la", "le"], answer: 0 }
+        - { id: fr-w03-d2-g04, difficulty: easy, type: mcq, prompt: "château", choices: ["le", "la"], answer: 0 }
+        - { id: fr-w03-d2-g05, difficulty: easy, type: truefalse, prompt: "Every French noun is masculine or feminine.", answer: true }
+        - { id: fr-w03-d2-g06, difficulty: easy, type: mcq, prompt: "identité", choices: ["la", "le"], answer: 0 }
+        - { id: fr-w03-d2-g07, difficulty: medium, type: match, prompt: "Match the ending to its usual gender.", pairs: [["-tion", "feminine"], ["-ment", "masculine"], ["-ette", "feminine"], ["-isme", "masculine"]] }
+        - { id: fr-w03-d2-g08, difficulty: medium, type: mcq, prompt: "racisme", choices: ["le", "la"], answer: 0 }
+        - { id: fr-w03-d2-g09, difficulty: medium, type: mcq, prompt: "image", choices: ["l' (feminine)", "l' (masculine)"], answer: 0, explain: "An -age exception: une image." }
+        - { id: fr-w03-d2-g10, difficulty: medium, type: truefalse, prompt: "Gender endings are right about 100% of the time.", answer: false, explain: "About 80%. Always learn the article." }
+        - { id: fr-w03-d2-g11, difficulty: medium, type: mcq, prompt: "chance", choices: ["la", "le"], answer: 0 }
+        - { id: fr-w03-d2-g12, difficulty: medium, type: mcq, prompt: "Most nouns ending in a consonant (lit, sac) are…", choices: ["masculine", "feminine", "plural", "neither"], answer: 0 }
+        - { id: fr-w03-d2-g13, difficulty: medium, type: mcq, prompt: "vie", choices: ["la", "le"], answer: 0 }
+        - { id: fr-w03-d2-g14, difficulty: medium, type: multi, prompt: "Which are masculine? (Select all.)", choices: ["gouvernement", "bureau", "nation", "voyage"], answers: [0, 1, 3] }
+        - { id: fr-w03-d2-g15, difficulty: medium, type: mcq, prompt: "Which log phrase means \"Hard: …\"?", choices: ["Difficile : …", "Aujourd'hui : …", "Demain, je révise : …", "Facile : …"], answer: 0 }
+        - { id: fr-w03-d2-g16, difficulty: hard, type: multi, prompt: "Which are EXCEPTIONS to their ending's rule? (Select all.)", choices: ["la plage", "l'eau", "la page", "le fromage"], answers: [0, 1, 2] }
+        - { id: fr-w03-d2-g17, difficulty: hard, type: mcq, prompt: "Which pair shows that gender has no logic?", choices: ["une table / un bureau", "le moment / la nation", "la voiture / le voyage", "la vie / le lit"], answer: 0 }
+        - { id: fr-w03-d2-g18, difficulty: hard, type: mcq, prompt: "université", choices: ["l' (feminine)", "l' (masculine)"], answer: 0 }
+    quizzes:
+      - kind: rapid-fire
+        title: "un, une or des?"
+        secondsPerQuestion: 7
+        questions:
+          - { id: fr-w03-d2-rf01, difficulty: easy, type: mcq, prompt: "___ ordinateur", choices: ["un", "une", "des"], answer: 0 }
+          - { id: fr-w03-d2-rf02, difficulty: easy, type: mcq, prompt: "___ chaise", choices: ["une", "un", "des"], answer: 0 }
+          - { id: fr-w03-d2-rf03, difficulty: easy, type: mcq, prompt: "___ clés", choices: ["des", "une", "un"], answer: 0 }
+          - { id: fr-w03-d2-rf04, difficulty: easy, type: mcq, prompt: "___ stylo", choices: ["un", "une", "des"], answer: 0 }
+          - { id: fr-w03-d2-rf05, difficulty: easy, type: mcq, prompt: "___ fenêtre", choices: ["une", "un", "des"], answer: 0 }
+          - { id: fr-w03-d2-rf06, difficulty: easy, type: mcq, prompt: "___ lunettes", choices: ["des", "une", "un"], answer: 0 }
+          - { id: fr-w03-d2-rf07, difficulty: easy, type: mcq, prompt: "___ sac", choices: ["un", "une", "des"], answer: 0 }
+          - { id: fr-w03-d2-rf08, difficulty: easy, type: mcq, prompt: "___ porte", choices: ["une", "un", "des"], answer: 0 }
+          - { id: fr-w03-d2-rf09, difficulty: easy, type: mcq, prompt: "___ cahier", choices: ["un", "une", "des"], answer: 0 }
+          - { id: fr-w03-d2-rf10, difficulty: easy, type: mcq, prompt: "___ lampe", choices: ["une", "un", "des"], answer: 0 }
+          - { id: fr-w03-d2-rf11, difficulty: easy, type: mcq, prompt: "___ livres", choices: ["des", "un", "une"], answer: 0 }
+          - { id: fr-w03-d2-rf12, difficulty: easy, type: mcq, prompt: "___ téléphone", choices: ["un", "une", "des"], answer: 0 }
+      - kind: brain-teaser
+        title: "Some books"
+        questions:
+          - { id: fr-w03-d2-bt01, difficulty: medium, type: text, prompt: "Translate: books (some books)", accept: ["des livres"] }
+          - { id: fr-w03-d2-bt02, difficulty: medium, type: text, prompt: "Translate: a bottle of water", accept: ["une bouteille d'eau"] }
+          - { id: fr-w03-d2-bt03, difficulty: medium, type: mcq, prompt: "Why does French say « des livres » where English says just \"books\"?", choices: ["French nouns almost always need an article", "des means \"the\"", "It's optional", "It's only for plurals of feminine nouns"], answer: 0 }
+          - { id: fr-w03-d2-bt04, difficulty: hard, type: mcq, prompt: "lunettes (glasses) is…", choices: ["always plural: des lunettes", "singular: une lunette for glasses", "masculine: des lunettes", "never used with an article"], answer: 0 }
+          - { id: fr-w03-d2-bt05, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["un bureau", "une clé", "des chaises", "une lit"], answers: [0, 1, 2] }
+
+  # ─────────────────────────── DAY 3 ───────────────────────────
+  - day: 3
+    gate:
+      title: "Checkpoint: un, une, des"
+      covers: "Week 3 · Day 2: indefinite articles and everyday objects"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w03-d3-g01, difficulty: easy, type: mcq, prompt: "___ table", choices: ["une", "un", "des"], answer: 0 }
+        - { id: fr-w03-d3-g02, difficulty: easy, type: mcq, prompt: "___ livre", choices: ["un", "une", "des"], answer: 0 }
+        - { id: fr-w03-d3-g03, difficulty: easy, type: mcq, prompt: "___ stylos", choices: ["des", "un", "une"], answer: 0 }
+        - { id: fr-w03-d3-g04, difficulty: easy, type: truefalse, prompt: "des is used for both masculine and feminine plurals.", answer: true }
+        - { id: fr-w03-d3-g05, difficulty: easy, type: mcq, prompt: "lit =", choices: ["bed", "book", "light", "desk"], answer: 0 }
+        - { id: fr-w03-d3-g06, difficulty: easy, type: mcq, prompt: "clé =", choices: ["key", "door", "class", "chair"], answer: 0 }
+        - { id: fr-w03-d3-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["un ordinateur", "a computer"], ["une fenêtre", "a window"], ["un cahier", "a notebook"], ["une chaise", "a chair"]] }
+        - { id: fr-w03-d3-g08, difficulty: medium, type: text, prompt: "Translate: a phone", accept: ["un téléphone"] }
+        - { id: fr-w03-d3-g09, difficulty: medium, type: text, prompt: "Translate: some keys", accept: ["des clés"] }
+        - { id: fr-w03-d3-g10, difficulty: medium, type: text, prompt: "Translate: a door", accept: ["une porte"] }
+        - { id: fr-w03-d3-g11, difficulty: medium, type: mcq, prompt: "bureau means…", choices: ["desk / office", "bureau of change", "bed", "bag"], answer: 0 }
+        - { id: fr-w03-d3-g12, difficulty: medium, type: truefalse, prompt: "« J'ai livres » is correct French for \"I have books\".", answer: false, explain: "French needs the article: J'ai des livres." }
+        - { id: fr-w03-d3-g13, difficulty: medium, type: mcq, prompt: "Which is wrong?", choices: ["une sac", "un sac", "des sacs", "un stylo"], answer: 0 }
+        - { id: fr-w03-d3-g14, difficulty: medium, type: text, prompt: "Translate: a lamp", accept: ["une lampe"] }
+        - { id: fr-w03-d3-g15, difficulty: medium, type: mcq, prompt: "glasses (spectacles) =", choices: ["des lunettes", "une lunette", "un verre", "des glasses"], answer: 0 }
+        - { id: fr-w03-d3-g16, difficulty: hard, type: text, prompt: "Translate: a computer, a phone and some pens", accept: ["un ordinateur, un téléphone et des stylos"] }
+        - { id: fr-w03-d3-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « un chaise, une bureau et des clés »", choices: ["une chaise, un bureau", "des clé", "un clés", "No error"], answer: 0 }
+        - { id: fr-w03-d3-g18, difficulty: hard, type: multi, prompt: "Which are feminine? (Select all.)", choices: ["fenêtre", "clé", "bouteille", "ordinateur"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "le, la, l' or les?"
+        secondsPerQuestion: 7
+        questions:
+          - { id: fr-w03-d3-rf01, difficulty: easy, type: mcq, prompt: "___ livre", choices: ["le", "la", "l'", "les"], answer: 0 }
+          - { id: fr-w03-d3-rf02, difficulty: easy, type: mcq, prompt: "___ table", choices: ["la", "le", "l'", "les"], answer: 0 }
+          - { id: fr-w03-d3-rf03, difficulty: easy, type: mcq, prompt: "___ ordinateur", choices: ["l'", "le", "la", "les"], answer: 0 }
+          - { id: fr-w03-d3-rf04, difficulty: easy, type: mcq, prompt: "___ école", choices: ["l'", "la", "le", "les"], answer: 0 }
+          - { id: fr-w03-d3-rf05, difficulty: easy, type: mcq, prompt: "___ clés", choices: ["les", "la", "l'", "le"], answer: 0 }
+          - { id: fr-w03-d3-rf06, difficulty: easy, type: mcq, prompt: "___ bureau", choices: ["le", "la", "l'", "les"], answer: 0 }
+          - { id: fr-w03-d3-rf07, difficulty: easy, type: text, prompt: "le bureau → plural", accept: ["les bureaux"] }
+          - { id: fr-w03-d3-rf08, difficulty: easy, type: text, prompt: "le journal → plural", accept: ["les journaux"] }
+          - { id: fr-w03-d3-rf09, difficulty: easy, type: text, prompt: "le bus → plural", accept: ["les bus"] }
+          - { id: fr-w03-d3-rf10, difficulty: easy, type: text, prompt: "la clé → plural", accept: ["les clés"] }
+          - { id: fr-w03-d3-rf11, difficulty: easy, type: truefalse, prompt: "The plural -s of livres is pronounced.", answer: false }
+      - kind: brain-teaser
+        title: "The, in general"
+        questions:
+          - { id: fr-w03-d3-bt01, difficulty: medium, type: text, prompt: "Translate: I like coffee. (café, masculine)", accept: ["J'aime le café.", "J'aime le café"] }
+          - { id: fr-w03-d3-bt02, difficulty: medium, type: text, prompt: "Translate: Life is beautiful.", accept: ["La vie est belle.", "La vie est belle"] }
+          - { id: fr-w03-d3-bt03, difficulty: medium, type: text, prompt: "l'ordinateur → plural", accept: ["les ordinateurs"], explain: "With a liaison: les_ordinateurs." }
+          - { id: fr-w03-d3-bt04, difficulty: hard, type: multi, prompt: "Which plurals are right? (Select all.)", choices: ["les gâteaux", "les hôpitaux", "les prix", "les journals"], answers: [0, 1, 2] }
+          - { id: fr-w03-d3-bt05, difficulty: hard, type: mcq, prompt: "How do you hear that « les livres » is plural?", choices: ["From les (the -s on livres is silent)", "From the -s on livres", "You can't", "From the stress"], answer: 0 }
+
+  # ─────────────────────────── DAY 4 ───────────────────────────
+  - day: 4
+    gate:
+      title: "Checkpoint: le, la, l', les and plurals"
+      covers: "Week 3 · Day 3: definite articles, l' before a vowel, general statements, plural rules"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w03-d4-g01, difficulty: easy, type: mcq, prompt: "___ chaise", choices: ["la", "le", "l'", "les"], answer: 0 }
+        - { id: fr-w03-d4-g02, difficulty: easy, type: mcq, prompt: "___ ami", choices: ["l'", "le", "la", "les"], answer: 0 }
+        - { id: fr-w03-d4-g03, difficulty: easy, type: mcq, prompt: "___ stylos", choices: ["les", "le", "la", "l'"], answer: 0 }
+        - { id: fr-w03-d4-g04, difficulty: easy, type: truefalse, prompt: "le and la become l' before a vowel.", answer: true }
+        - { id: fr-w03-d4-g05, difficulty: easy, type: text, prompt: "le stylo → plural", accept: ["les stylos"] }
+        - { id: fr-w03-d4-g06, difficulty: easy, type: mcq, prompt: "un livre vs le livre =", choices: ["a book vs the book", "the book vs a book", "books vs the books", "same meaning"], answer: 0 }
+        - { id: fr-w03-d4-g07, difficulty: medium, type: text, prompt: "le château → plural", accept: ["les châteaux"] }
+        - { id: fr-w03-d4-g08, difficulty: medium, type: text, prompt: "l'hôpital → plural", accept: ["les hôpitaux"] }
+        - { id: fr-w03-d4-g09, difficulty: medium, type: text, prompt: "le prix → plural", accept: ["les prix"] }
+        - { id: fr-w03-d4-g10, difficulty: medium, type: match, prompt: "Match the ending to its plural.", pairs: [["-eau", "-eaux"], ["-al", "-aux"], ["-s, -x, -z", "no change"], ["most nouns", "+s"]] }
+        - { id: fr-w03-d4-g11, difficulty: medium, type: text, prompt: "Translate: I like tea. (thé, masculine)", accept: ["J'aime le thé.", "J'aime le thé"] }
+        - { id: fr-w03-d4-g12, difficulty: medium, type: mcq, prompt: "« J'aime riz » is wrong because…", choices: ["general likes need le/la/les: j'aime le riz", "riz is plural", "aimer needs à", "it should be un riz"], answer: 0 }
+        - { id: fr-w03-d4-g13, difficulty: medium, type: truefalse, prompt: "« les amis » has a liaison: les_amis.", answer: true }
+        - { id: fr-w03-d4-g14, difficulty: medium, type: text, prompt: "Translate: The book is on the table.", accept: ["Le livre est sur la table.", "Le livre est sur la table"] }
+        - { id: fr-w03-d4-g15, difficulty: medium, type: mcq, prompt: "___ eau", choices: ["l'", "le", "la", "les"], answer: 0 }
+        - { id: fr-w03-d4-g16, difficulty: hard, type: text, prompt: "Make plural: le gâteau et le journal", accept: ["les gâteaux et les journaux"] }
+        - { id: fr-w03-d4-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « Les bureaus sont à l'école. »", choices: ["bureaus → bureaux", "Les → Le", "à l'école → à la école", "No error"], answer: 0 }
+        - { id: fr-w03-d4-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["l'université", "la ordinateur", "les bus", "le école"], answers: [0, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Where is it?"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fr-w03-d4-rf01, difficulty: easy, type: mcq, prompt: "on", choices: ["sur", "sous", "dans", "devant"], answer: 0 }
+          - { id: fr-w03-d4-rf02, difficulty: easy, type: mcq, prompt: "under", choices: ["sous", "sur", "derrière", "dans"], answer: 0 }
+          - { id: fr-w03-d4-rf03, difficulty: easy, type: mcq, prompt: "in", choices: ["dans", "sur", "à côté de", "devant"], answer: 0 }
+          - { id: fr-w03-d4-rf04, difficulty: easy, type: mcq, prompt: "in front of", choices: ["devant", "derrière", "sous", "dans"], answer: 0 }
+          - { id: fr-w03-d4-rf05, difficulty: easy, type: mcq, prompt: "behind", choices: ["derrière", "devant", "sur", "sous"], answer: 0 }
+          - { id: fr-w03-d4-rf06, difficulty: easy, type: mcq, prompt: "next to", choices: ["à côté de", "devant", "dans", "sous"], answer: 0 }
+          - { id: fr-w03-d4-rf07, difficulty: easy, type: mcq, prompt: "there is / there are", choices: ["il y a", "c'est", "il est", "voilà"], answer: 0 }
+          - { id: fr-w03-d4-rf08, difficulty: easy, type: mcq, prompt: "What is it?", choices: ["Qu'est-ce que c'est ?", "Où est-ce ?", "C'est quoi là ?", "Qui est-ce ?"], answer: 0 }
+          - { id: fr-w03-d4-rf09, difficulty: easy, type: mcq, prompt: "à côté de + le lit =", choices: ["à côté du lit", "à côté de le lit", "à côté de lit", "à côté le lit"], answer: 0 }
+          - { id: fr-w03-d4-rf10, difficulty: easy, type: mcq, prompt: "They're keys.", choices: ["Ce sont des clés.", "C'est des clés.", "Il y a clés.", "Ils sont des clés."], answer: 0 }
+          - { id: fr-w03-d4-rf11, difficulty: easy, type: truefalse, prompt: "« il y a » never changes, singular or plural.", answer: true }
+      - kind: brain-teaser
+        title: "Describe the room"
+        questions:
+          - { id: fr-w03-d4-bt01, difficulty: medium, type: text, prompt: "Translate: There is a bag under the chair.", accept: ["Il y a un sac sous la chaise.", "Il y a un sac sous la chaise"] }
+          - { id: fr-w03-d4-bt02, difficulty: medium, type: text, prompt: "Translate: The glasses are in the bag.", accept: ["Les lunettes sont dans le sac.", "Les lunettes sont dans le sac"] }
+          - { id: fr-w03-d4-bt03, difficulty: medium, type: text, prompt: "Translate: There are books on the desk.", accept: ["Il y a des livres sur le bureau.", "Il y a des livres sur le bureau"] }
+          - { id: fr-w03-d4-bt04, difficulty: hard, type: text, prompt: "Translate: The lamp is next to the bed.", accept: ["La lampe est à côté du lit.", "La lampe est à côté du lit"] }
+          - { id: fr-w03-d4-bt05, difficulty: hard, type: order, prompt: "Build the sentence.", items: ["L'ordinateur", "est", "derrière", "la", "fenêtre"] }
+
+  # ─────────────────────────── DAY 5 ───────────────────────────
+  - day: 5
+    gate:
+      title: "Checkpoint: il y a, c'est and prepositions"
+      covers: "Week 3 · Day 4: il y a, qu'est-ce que c'est, c'est / ce sont, où est, sur/sous/dans/devant/derrière/à côté de, du"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w03-d5-g01, difficulty: easy, type: mcq, prompt: "sous =", choices: ["under", "on", "in", "next to"], answer: 0 }
+        - { id: fr-w03-d5-g02, difficulty: easy, type: mcq, prompt: "derrière =", choices: ["behind", "in front of", "under", "inside"], answer: 0 }
+        - { id: fr-w03-d5-g03, difficulty: easy, type: mcq, prompt: "Il y a des livres. =", choices: ["There are books.", "They are books.", "He has books.", "Where are the books?"], answer: 0 }
+        - { id: fr-w03-d5-g04, difficulty: easy, type: mcq, prompt: "Où est le téléphone ? =", choices: ["Where is the phone?", "What is the phone?", "Is it the phone?", "There's the phone."], answer: 0 }
+        - { id: fr-w03-d5-g05, difficulty: easy, type: truefalse, prompt: "« C'est un stylo » means \"It's a pen\".", answer: true }
+        - { id: fr-w03-d5-g06, difficulty: easy, type: mcq, prompt: "next to the bed", choices: ["à côté du lit", "à côté de le lit", "à côté le lit", "à côté lit"], answer: 0 }
+        - { id: fr-w03-d5-g07, difficulty: medium, type: mcq, prompt: "Qu'est-ce que c'est ? — (two keys)", choices: ["Ce sont des clés.", "C'est des clé.", "Il est des clés.", "Ce sont une clé."], answer: 0 }
+        - { id: fr-w03-d5-g08, difficulty: medium, type: text, prompt: "Translate: There is a computer on the desk.", accept: ["Il y a un ordinateur sur le bureau.", "Il y a un ordinateur sur le bureau"] }
+        - { id: fr-w03-d5-g09, difficulty: medium, type: text, prompt: "Translate: What is it? It's a key.", accept: ["Qu'est-ce que c'est ? C'est une clé.", "Qu'est-ce que c'est? C'est une clé.", "Qu'est-ce que c'est ? C'est une clé"] }
+        - { id: fr-w03-d5-g10, difficulty: medium, type: match, prompt: "Match.", pairs: [["sur", "on"], ["dans", "in"], ["devant", "in front of"], ["à côté de", "next to"]] }
+        - { id: fr-w03-d5-g11, difficulty: medium, type: mcq, prompt: "There are two chairs.", choices: ["Il y a deux chaises.", "Il y ont deux chaises.", "Ils sont deux chaises.", "Ce sont deux chaise."], answer: 0 }
+        - { id: fr-w03-d5-g12, difficulty: medium, type: truefalse, prompt: "« Il y sont des livres » is correct for \"there are books\".", answer: false }
+        - { id: fr-w03-d5-g13, difficulty: medium, type: text, prompt: "Translate: The phone is in the bag.", accept: ["Le téléphone est dans le sac.", "Le téléphone est dans le sac"] }
+        - { id: fr-w03-d5-g14, difficulty: medium, type: mcq, prompt: "Il n'y a pas de télévision. =", choices: ["There isn't a TV.", "There is a TV.", "The TV is not here yet.", "It's not a TV."], answer: 0 }
+        - { id: fr-w03-d5-g15, difficulty: medium, type: order, prompt: "Build the sentence.", items: ["Il y a", "une lampe", "à côté", "du", "lit"] }
+        - { id: fr-w03-d5-g16, difficulty: hard, type: text, prompt: "Translate: The keys are behind the door.", accept: ["Les clés sont derrière la porte.", "Les clés sont derrière la porte"] }
+        - { id: fr-w03-d5-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « Le stylo est à côté de le cahier. »", choices: ["de le → du: à côté du cahier", "Le stylo → La stylo", "est → sont", "No error"], answer: 0 }
+        - { id: fr-w03-d5-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["C'est une table.", "Ce sont des lunettes.", "Il y a des clés sous le lit.", "C'est des chaises."], answers: [0, 1, 2], explain: "In careful French, plural things take ce sont." }
+    quizzes:
+      - kind: rapid-fire
+        title: "Numbers 21–69"
+        secondsPerQuestion: 9
+        questions:
+          - { id: fr-w03-d5-rf01, difficulty: easy, type: text, prompt: "21", accept: ["vingt et un", "vingt-et-un"] }
+          - { id: fr-w03-d5-rf02, difficulty: easy, type: text, prompt: "30", accept: ["trente"] }
+          - { id: fr-w03-d5-rf03, difficulty: easy, type: text, prompt: "40", accept: ["quarante"] }
+          - { id: fr-w03-d5-rf04, difficulty: easy, type: text, prompt: "50", accept: ["cinquante"] }
+          - { id: fr-w03-d5-rf05, difficulty: easy, type: text, prompt: "60", accept: ["soixante"] }
+          - { id: fr-w03-d5-rf06, difficulty: easy, type: text, prompt: "22", accept: ["vingt-deux", "vingt deux"] }
+          - { id: fr-w03-d5-rf07, difficulty: easy, type: text, prompt: "35", accept: ["trente-cinq", "trente cinq"] }
+          - { id: fr-w03-d5-rf08, difficulty: easy, type: text, prompt: "48", accept: ["quarante-huit", "quarante huit"] }
+          - { id: fr-w03-d5-rf09, difficulty: easy, type: text, prompt: "51", accept: ["cinquante et un", "cinquante-et-un"] }
+          - { id: fr-w03-d5-rf10, difficulty: easy, type: text, prompt: "69", accept: ["soixante-neuf", "soixante neuf"] }
+          - { id: fr-w03-d5-rf11, difficulty: easy, type: text, prompt: "33", accept: ["trente-trois", "trente trois"] }
+      - kind: brain-teaser
+        title: "Number puzzles"
+        questions:
+          - { id: fr-w03-d5-bt01, difficulty: medium, type: text, prompt: "quarante-trois in figures", accept: ["43"] }
+          - { id: fr-w03-d5-bt02, difficulty: medium, type: text, prompt: "soixante et un in figures", accept: ["61"] }
+          - { id: fr-w03-d5-bt03, difficulty: medium, type: text, prompt: "trente + vingt-cinq = ? (in words)", accept: ["cinquante-cinq", "cinquante cinq"] }
+          - { id: fr-w03-d5-bt04, difficulty: hard, type: mcq, prompt: "Which numbers use « et un »?", choices: ["21, 31, 41, 51, 61", "21 only", "every number ending in 1, including 11", "none"], answer: 0 }
+          - { id: fr-w03-d5-bt05, difficulty: hard, type: mcq, prompt: "In vingt-deux, the t of vingt is…", choices: ["pronounced", "silent", "pronounced as d", "dropped in writing"], answer: 0 }
+
+  # ─────────────────────────── DAY 6 ───────────────────────────
+  - day: 6
+    gate:
+      title: "Checkpoint: numbers 21–69"
+      covers: "Week 3 · Day 5: vingt to soixante-neuf, et un, hyphens"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w03-d6-g01, difficulty: easy, type: text, prompt: "24 in words", accept: ["vingt-quatre", "vingt quatre"] }
+        - { id: fr-w03-d6-g02, difficulty: easy, type: text, prompt: "31 in words", accept: ["trente et un", "trente-et-un"] }
+        - { id: fr-w03-d6-g03, difficulty: easy, type: text, prompt: "45 in words", accept: ["quarante-cinq", "quarante cinq"] }
+        - { id: fr-w03-d6-g04, difficulty: easy, type: text, prompt: "cinquante-neuf in figures", accept: ["59"] }
+        - { id: fr-w03-d6-g05, difficulty: easy, type: text, prompt: "trente-sept in figures", accept: ["37"] }
+        - { id: fr-w03-d6-g06, difficulty: easy, type: truefalse, prompt: "61 is « soixante et un ».", answer: true }
+        - { id: fr-w03-d6-g07, difficulty: medium, type: text, prompt: "38 in words", accept: ["trente-huit", "trente huit"] }
+        - { id: fr-w03-d6-g08, difficulty: medium, type: text, prompt: "57 in words", accept: ["cinquante-sept", "cinquante sept"] }
+        - { id: fr-w03-d6-g09, difficulty: medium, type: text, prompt: "66 in words", accept: ["soixante-six", "soixante six"] }
+        - { id: fr-w03-d6-g10, difficulty: medium, type: match, prompt: "Match.", pairs: [["quarante", "40"], ["cinquante", "50"], ["soixante", "60"], ["trente", "30"]] }
+        - { id: fr-w03-d6-g11, difficulty: medium, type: order, prompt: "Smallest to largest.", items: ["vingt-neuf", "trente et un", "quarante-deux", "cinquante", "soixante-huit"] }
+        - { id: fr-w03-d6-g12, difficulty: medium, type: text, prompt: "68 in words", accept: ["soixante-huit", "soixante huit"] }
+        - { id: fr-w03-d6-g13, difficulty: medium, type: mcq, prompt: "Which is spelled correctly?", choices: ["quarante et un", "quarante-un", "quatrante et un", "quarante et une-un"], answer: 0 }
+        - { id: fr-w03-d6-g14, difficulty: medium, type: text, prompt: "vingt-six in figures", accept: ["26"] }
+        - { id: fr-w03-d6-g15, difficulty: medium, type: truefalse, prompt: "22 is written « vingt et deux ».", answer: false, explain: "et only with un: vingt-deux." }
+        - { id: fr-w03-d6-g16, difficulty: hard, type: text, prompt: "soixante − dix-sept = ? (in words)", accept: ["quarante-trois", "quarante trois"] }
+        - { id: fr-w03-d6-g17, difficulty: hard, type: text, prompt: "Translate: There are thirty-two chairs.", accept: ["Il y a trente-deux chaises.", "Il y a trente-deux chaises"] }
+        - { id: fr-w03-d6-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["cinquante et un", "trente-quatre", "vingt-et-deux", "soixante-neuf"], answers: [0, 1, 3] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Week 3 lightning round"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fr-w03-d6-rf01, difficulty: easy, type: mcq, prompt: "___ voiture", choices: ["la", "le", "l'", "les"], answer: 0 }
+          - { id: fr-w03-d6-rf02, difficulty: easy, type: mcq, prompt: "___ ordinateur", choices: ["un", "une", "des"], answer: 0 }
+          - { id: fr-w03-d6-rf03, difficulty: easy, type: text, prompt: "le bureau → plural", accept: ["les bureaux"] }
+          - { id: fr-w03-d6-rf04, difficulty: easy, type: mcq, prompt: "under", choices: ["sous", "sur", "dans", "devant"], answer: 0 }
+          - { id: fr-w03-d6-rf05, difficulty: easy, type: mcq, prompt: "there is", choices: ["il y a", "c'est", "il est", "voici"], answer: 0 }
+          - { id: fr-w03-d6-rf06, difficulty: easy, type: text, prompt: "41", accept: ["quarante et un", "quarante-et-un"] }
+          - { id: fr-w03-d6-rf07, difficulty: easy, type: text, prompt: "29", accept: ["vingt-neuf", "vingt neuf"] }
+          - { id: fr-w03-d6-rf08, difficulty: easy, type: mcq, prompt: "___ école", choices: ["l'", "la", "le", "les"], answer: 0 }
+          - { id: fr-w03-d6-rf09, difficulty: easy, type: mcq, prompt: "moment", choices: ["le", "la"], answer: 0 }
+          - { id: fr-w03-d6-rf10, difficulty: easy, type: mcq, prompt: "It's a book.", choices: ["C'est un livre.", "Il y a un livre.", "Il est un livre.", "Ce sont un livre."], answer: 0 }
+      - kind: brain-teaser
+        title: "Dans ma chambre"
+        questions:
+          - { id: fr-w03-d6-bt01, difficulty: medium, type: text, prompt: "Translate: In my room, there is a bed and two chairs.", accept: ["Dans ma chambre, il y a un lit et deux chaises.", "Dans ma chambre il y a un lit et deux chaises.", "Dans ma chambre, il y a un lit et deux chaises"] }
+          - { id: fr-w03-d6-bt02, difficulty: medium, type: text, prompt: "Translate: The computer is on the table.", accept: ["L'ordinateur est sur la table.", "L'ordinateur est sur la table"] }
+          - { id: fr-w03-d6-bt03, difficulty: medium, type: text, prompt: "Translate: There are books under the bed.", accept: ["Il y a des livres sous le lit.", "Il y a des livres sous le lit"] }
+          - { id: fr-w03-d6-bt04, difficulty: hard, type: text, prompt: "Translate: There are two keys on the table.", accept: ["Il y a deux clés sur la table.", "Il y a deux clés sur la table"] }
+          - { id: fr-w03-d6-bt05, difficulty: hard, type: mcq, prompt: "Find the sentence with NO mistake.", choices: ["La lampe est à côté du lit.", "Il y a une ordinateur sur le table.", "Les bureaus sont dans l'école.", "C'est des lunettes sous la lit."], answer: 0 }

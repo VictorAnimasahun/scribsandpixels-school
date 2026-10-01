@@ -1,0 +1,40 @@
+# Week 4 · Day 2 mini-task
+id: web-w04-d2-display
+kind: web
+title: "Fix the product card"
+description: "display and position: a corner badge, a hidden promo, pill tags and a sticky top bar. Only the CSS needs changing."
+html: |
+  <header class="topbar">NaijaMart · Free delivery in Lagos</header>
+  <div class="card">
+    <span class="badge">SALE</span>
+    <h2>Tecno Spark 20</h2>
+    <p class="price">₦145,000</p>
+    <p class="promo">Old promo: ends December 2024!</p>
+    <span class="tag">Phones</span>
+    <span class="tag">Android</span>
+  </div>
+  <p style="height: 600px">Scroll down: does the top bar stay?</p>
+css: |
+  body { font-family: system-ui, sans-serif; margin: 0; }
+  .topbar { background: #164f3b; color: white; padding: 0.5rem 1rem; }
+  .card { border: 1px solid #ddd; border-radius: 8px; padding: 1rem; margin: 1rem; }
+  .badge { background: #c62828; color: white; padding: 2px 8px; border-radius: 4px; }
+  .tag { background: #eee; padding: 4px 10px; border-radius: 99px; }
+  /* Your rules below */
+js: ""
+tasks:
+  - prompt: "Make .card the anchor for positioned children (position: relative)."
+    check: "getComputedStyle(document.querySelector('.card')).position === 'relative'"
+  - prompt: "Pin the .badge in the card's top-right corner with position: absolute, top and right."
+    check: "(() => { const s = getComputedStyle(document.querySelector('.badge')); const b = document.querySelector('.badge').getBoundingClientRect(); const c = document.querySelector('.card').getBoundingClientRect(); return s.position === 'absolute' && c.right - b.right <= 24 && b.top - c.top <= 24 })()"
+    hint: ".badge { position: absolute; top: 8px; right: 8px; }"
+  - prompt: "Hide the out-of-date .promo completely."
+    check: "getComputedStyle(document.querySelector('.promo')).display === 'none'"
+  - prompt: "Make the .tag pills inline-block, so they take a fixed height of 28px."
+    check: "[...document.querySelectorAll('.tag')].every(t => getComputedStyle(t).display === 'inline-block' && getComputedStyle(t).height === '28px')"
+    hint: "Inline elements ignore height. .tag { display: inline-block; height: 28px; }"
+  - prompt: "Keep the card from getting too wide: max-width 320px."
+    check: "getComputedStyle(document.querySelector('.card')).maxWidth === '320px'"
+  - prompt: "Make the .topbar stick to the top of the screen when you scroll."
+    check: "(() => { const s = getComputedStyle(document.querySelector('.topbar')); return s.position === 'sticky' && s.top === '0px' })()"
+    hint: ".topbar { position: sticky; top: 0; }"

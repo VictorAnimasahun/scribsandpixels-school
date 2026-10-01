@@ -1,0 +1,37 @@
+# Week 4 · Day 4 mini-task
+id: web-w04-d4-cards
+kind: web
+title: "Product grid that wraps"
+description: "Cards that fill the row on wide screens and stack on phones, plus your first media query. Only the CSS needs changing."
+html: |
+  <h1>Phones and gadgets</h1>
+  <div class="cards">
+    <article class="card"><h2>Tecno Spark 20</h2><p>₦145,000</p></article>
+    <article class="card"><h2>Infinix Hot 40</h2><p>₦179,000</p></article>
+    <article class="card"><h2>Samsung Galaxy A15</h2><p>₦215,000</p></article>
+    <article class="card"><h2>Oraimo FreePods 4</h2><p>₦25,500</p></article>
+    <article class="card"><h2>JBL Flip 6</h2><p>₦129,000</p></article>
+    <article class="card"><h2>Power Bank 20,000mAh</h2><p>₦21,000</p></article>
+  </div>
+css: |
+  * { box-sizing: border-box; }
+  body { font-family: system-ui, sans-serif; margin: 0; padding: 1rem; }
+  h1 { font-size: 2.5rem; }
+  .card { border: 1px solid #ddd; border-radius: 8px; padding: 1rem; }
+  /* Your rules below */
+js: ""
+tasks:
+  - prompt: "Make .cards a flex container whose items wrap onto new lines."
+    check: "(() => { const s = getComputedStyle(document.querySelector('.cards')); return s.display === 'flex' && s.flexWrap === 'wrap' })()"
+    hint: ".cards { display: flex; flex-wrap: wrap; }"
+  - prompt: "Space the cards with a gap of at least 12px."
+    check: "parseFloat(getComputedStyle(document.querySelector('.cards')).columnGap) >= 12 && parseFloat(getComputedStyle(document.querySelector('.cards')).rowGap) >= 12"
+  - prompt: "Let each card grow to fill the row, starting from about 200px (flex: 1 1 200px)."
+    check: "[...document.querySelectorAll('.card')].every(c => { const s = getComputedStyle(c); return parseFloat(s.flexGrow) >= 1 && parseFloat(s.flexBasis) >= 150 })"
+    hint: ".card { flex: 1 1 200px; }"
+  - prompt: "Add a media query for screens up to 600px wide."
+    check: "[...document.styleSheets].flatMap(s => [...s.cssRules]).some(r => r.media && /max-width/.test(r.conditionText || r.media.mediaText) && r.cssRules.length > 0)"
+    hint: "@media (max-width: 600px) { … }"
+  - prompt: "Inside it, make the h1 smaller (a font-size for h1)."
+    check: "[...document.styleSheets].flatMap(s => [...s.cssRules]).filter(r => r.media && /max-width/.test(r.conditionText || r.media.mediaText)).some(m => [...m.cssRules].some(r => r.selectorText && document.querySelector('h1').matches(r.selectorText) && r.style.fontSize))"
+    hint: "@media (max-width: 600px) { h1 { font-size: 1.75rem; } }"

@@ -1,0 +1,4 @@
+{
+  "html": "<header><strong>Victor</strong><nav><a href=\"index.html\">Home</a> <a href=\"about.html\">About</a></nav></header>\n<main><section class=\"cards\"><div class=\"card\">Python</div><div class=\"card\">HTML</div><div class=\"card\">CSS</div></section></main>\n<footer>&copy; 2026</footer>",
+  "css": "* { box-sizing: border-box; }\nbody { font-family: system-ui, sans-serif; font-size: 1rem; }\nheader { display: flex; justify-content: space-between; align-items: center; }\nnav a:hover { color: #164f3b; }\n.cards { display: flex; flex-wrap: wrap; gap: 1rem; }\n.card { flex: 1 1 200px; padding: 1rem; border: 1px solid #ddd; }\n@media (max-width: 600px) { header { flex-direction: column; } }"
+}

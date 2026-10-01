@@ -106,7 +106,9 @@ describe('course registry', () => {
   it('loads the fullstack-ml course with written weeks and 52 outlines', () => {
     const course = courses[0]
     expect(course.slug).toBe('fullstack-ml')
-    expect(course.weeks.map((w) => w.number)).toEqual([1, 2, 3])
+    const written = course.weeks.map((w) => w.number)
+    expect(written.length).toBeGreaterThanOrEqual(4)
+    expect(written).toEqual(Array.from({ length: written.length }, (_, i) => i + 1)) // no gaps
     expect(course.outlines.map((o) => o.number)).toEqual(Array.from({ length: 52 }, (_, i) => i + 1))
     expect(course.outlines[34]).toMatchObject({ number: 35, phase: 5, title: 'The ML landscape' })
   })

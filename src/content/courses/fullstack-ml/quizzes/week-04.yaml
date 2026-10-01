@@ -1,0 +1,322 @@
+# Fullstack + ML · Week 4 quizzes. Format and rules: src/content/QUIZZES.md
+week: 4
+days:
+
+  # ─────────────────────────── DAY 1 ───────────────────────────
+  - day: 1
+    gate:
+      title: "Checkpoint: Week 3 review"
+      covers: "Week 3: how the web works, HTML structure, links and images, tables and forms, CSS basics"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w04-d1-g01, difficulty: easy, type: mcq, prompt: "Which language gives a page its structure?", choices: ["HTML", "CSS", "JavaScript", "Python"], answer: 0 }
+        - { id: fs-w04-d1-g02, difficulty: easy, type: mcq, prompt: "A link's destination goes in…", choices: ["href", "src", "alt", "link"], answer: 0 }
+        - { id: fs-w04-d1-g03, difficulty: easy, type: mcq, prompt: "Select every element with class=\"card\"", choices: [".card", "#card", "card", "<card>"], answer: 0 }
+        - { id: fs-w04-d1-g04, difficulty: easy, type: truefalse, prompt: "Every <img> should have alt text.", answer: true }
+        - { id: fs-w04-d1-g05, difficulty: easy, type: mcq, prompt: "A data cell in a table", choices: ["<td>", "<tr>", "<th>", "<cell>"], answer: 0 }
+        - { id: fs-w04-d1-g06, difficulty: easy, type: mcq, prompt: "Space inside the border", choices: ["padding", "margin", "gap", "outline"], answer: 0 }
+        - { id: fs-w04-d1-g07, difficulty: medium, type: order, prompt: "Order the box model from the inside out.", items: ["content", "padding", "border", "margin"] }
+        - { id: fs-w04-d1-g08, difficulty: medium, type: mcq, prompt: "Why doesn't tapping the label focus the input?", code: "<label for=\"phone\">Phone</label>\n<input id=\"tel\" type=\"tel\">", choices: ["for=\"phone\" doesn't match id=\"tel\"", "type must be text", "Labels go after inputs", "tel isn't a real type"], answer: 0 }
+        - { id: fs-w04-d1-g09, difficulty: medium, type: match, prompt: "Match the tag to its job.", pairs: [["<nav>", "menu of links"], ["<main>", "main content"], ["<footer>", "bottom of the page"], ["<header>", "top: logo and title"]] }
+        - { id: fs-w04-d1-g10, difficulty: medium, type: mcq, prompt: "How do you link style.css?", choices: ["<link rel=\"stylesheet\" href=\"style.css\"> in <head>", "<style src=\"style.css\">", "<css href=\"style.css\">", "<script src=\"style.css\">"], answer: 0 }
+        - { id: fs-w04-d1-g11, difficulty: medium, type: truefalse, prompt: "An id should be used on only one element per page.", answer: true }
+        - { id: fs-w04-d1-g12, difficulty: medium, type: mcq, prompt: "Which makes a link open in a new tab?", choices: ["target=\"_blank\"", "new=\"tab\"", "href=\"_blank\"", "open=\"new\""], answer: 0 }
+        - { id: fs-w04-d1-g13, difficulty: medium, type: mcq, prompt: "Centre an 800px-wide page:", choices: [".page { max-width: 800px; margin: 0 auto; }", ".page { text-align: center; }", ".page { padding: auto; }", ".page { align: center; }"], answer: 0 }
+        - { id: fs-w04-d1-g14, difficulty: medium, type: mcq, prompt: "Pressing Send on your HTML-only form saves nothing. Why?", choices: ["Saving needs a backend", "The button needs CSS", "Forms need tables", "required blocks it"], answer: 0 }
+        - { id: fs-w04-d1-g15, difficulty: medium, type: text, prompt: "What does this print?", code: "items = [\"Rice\", \"Yam\"]\nprint(\"\".join(f\"<li>{i}</li>\" for i in items))", accept: ["<li>Rice</li><li>Yam</li>"] }
+        - { id: fs-w04-d1-g16, difficulty: hard, type: text, prompt: "width 250px, padding 15px, border 1px, default box sizing. On-screen width in px? (number only)", accept: ["282", "282px"] }
+        - { id: fs-w04-d1-g17, difficulty: hard, type: mcq, prompt: "Nothing turns red. Why?", code: "/* CSS */\n.sale { color: red; }\n\n<!-- HTML -->\n<p id=\"sale\">50% off</p>", choices: [".sale selects class=\"sale\", but the p has id=\"sale\"", "red isn't valid", "p can't be coloured", "It needs !important"], answer: 0 }
+        - { id: fs-w04-d1-g18, difficulty: hard, type: multi, prompt: "Which are inside <head>? (Select all.)", choices: ["<title>", "<link rel=\"stylesheet\">", "<meta charset=\"utf-8\">", "<nav>"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Selectors and units"
+        secondsPerQuestion: 9
+        questions:
+          - { id: fs-w04-d1-rf01, difficulty: easy, type: mcq, prompt: "Links inside the nav only", choices: ["nav a", "nav, a", "a nav", "nav.a"], answer: 0 }
+          - { id: fs-w04-d1-rf02, difficulty: easy, type: mcq, prompt: "h1 and h2 together", choices: ["h1, h2", "h1 h2", "h1+h2", "h1.h2"], answer: 0 }
+          - { id: fs-w04-d1-rf03, difficulty: easy, type: mcq, prompt: "A link while the mouse is over it", choices: ["a:hover", "a:over", "a.hover", "a::mouse"], answer: 0 }
+          - { id: fs-w04-d1-rf04, difficulty: easy, type: mcq, prompt: "Every element", choices: ["*", "all", "body", "%"], answer: 0 }
+          - { id: fs-w04-d1-rf05, difficulty: easy, type: text, prompt: "2rem with a 16px root = ? px (number only)", accept: ["32"] }
+          - { id: fs-w04-d1-rf06, difficulty: easy, type: mcq, prompt: "Percent of the screen height", choices: ["vh", "vw", "%", "rem"], answer: 0 }
+          - { id: fs-w04-d1-rf07, difficulty: easy, type: mcq, prompt: "Width includes padding and border", choices: ["box-sizing: border-box", "box-sizing: content-box", "width: auto", "display: block"], answer: 0 }
+          - { id: fs-w04-d1-rf08, difficulty: easy, type: mcq, prompt: "The first <li> in its list", choices: ["li:first-child", "li:first", "li.first", "li#1"], answer: 0 }
+          - { id: fs-w04-d1-rf09, difficulty: easy, type: truefalse, prompt: "In font-family: \"Inter\", sans-serif, sans-serif is the fallback.", answer: true }
+          - { id: fs-w04-d1-rf10, difficulty: easy, type: mcq, prompt: "Animate a change smoothly", choices: ["transition", "animate", "smooth", "hover"], answer: 0 }
+          - { id: fs-w04-d1-rf11, difficulty: easy, type: text, prompt: "1.5rem with a 16px root = ? px (number only)", accept: ["24"] }
+      - kind: brain-teaser
+        title: "Which rule wins?"
+        questions:
+          - { id: fs-w04-d1-bt01, difficulty: medium, type: mcq, prompt: "Which links turn green?", code: "/* CSS */\nnav a { color: green; }\n\n<!-- HTML -->\n<nav><a href=\"#\">Shop</a></nav>\n<p><a href=\"#\">Read more</a></p>", choices: ["Only Shop", "Both", "Only Read more", "Neither"], answer: 0 }
+          - { id: fs-w04-d1-bt02, difficulty: medium, type: mcq, prompt: "What does `h1, p { color: navy; }` select?", choices: ["every h1 and every p", "p inside h1", "h1 followed by p", "nothing: commas aren't allowed"], answer: 0 }
+          - { id: fs-w04-d1-bt03, difficulty: medium, type: text, prompt: "With `* { box-sizing: border-box; }`: width 200px, padding 20px, border 2px. On-screen width? (number only)", accept: ["200", "200px"] }
+          - { id: fs-w04-d1-bt04, difficulty: hard, type: mcq, prompt: "Why does `p a:hover` NOT affect a link in the nav?", choices: ["It only matches links inside a p", "Hover only works on buttons", "The nav blocks hover", "It needs !important"], answer: 0 }
+          - { id: fs-w04-d1-bt05, difficulty: hard, type: mcq, prompt: "The root font size changes from 16px to 20px. What happens to a 2rem heading?", choices: ["It grows to 40px", "It stays 32px", "It shrinks", "It becomes 2px"], answer: 0, explain: "rem follows the root font size; px wouldn't." }
+
+  # ─────────────────────────── DAY 2 ───────────────────────────
+  - day: 2
+    gate:
+      title: "Checkpoint: selectors, units and hover"
+      covers: "Week 4 · Day 1: descendant and group selectors, :hover, :first-child, px/rem/%/vh, border-box, fonts, transitions"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w04-d2-g01, difficulty: easy, type: mcq, prompt: "`nav a` selects…", choices: ["links inside a nav", "the nav and all links", "a nav inside a link", "only the first link"], answer: 0 }
+        - { id: fs-w04-d2-g02, difficulty: easy, type: mcq, prompt: "Style a button while hovered", choices: [".button:hover", ".button.hover", ".button::hover", "hover.button"], answer: 0 }
+        - { id: fs-w04-d2-g03, difficulty: easy, type: text, prompt: "3rem at a 16px root = ? px (number only)", accept: ["48"] }
+        - { id: fs-w04-d2-g04, difficulty: easy, type: truefalse, prompt: "`*` selects every element.", answer: true }
+        - { id: fs-w04-d2-g05, difficulty: easy, type: mcq, prompt: "Which unit is fixed and doesn't follow the root font size?", choices: ["px", "rem", "%", "vh"], answer: 0 }
+        - { id: fs-w04-d2-g06, difficulty: easy, type: mcq, prompt: "100vh means…", choices: ["the full screen height", "100 pixels", "100% of the parent's width", "100 rem"], answer: 0 }
+        - { id: fs-w04-d2-g07, difficulty: medium, type: mcq, prompt: "What does `* { box-sizing: border-box; }` do?", choices: ["Makes width include padding and border", "Adds a border to everything", "Removes all margins", "Centres everything"], answer: 0 }
+        - { id: fs-w04-d2-g08, difficulty: medium, type: match, prompt: "Match the selector.", pairs: [["nav a", "links inside nav"], ["h1, h2", "both headings"], ["li:first-child", "the first list item"], ["a:hover", "a link under the mouse"]] }
+        - { id: fs-w04-d2-g09, difficulty: medium, type: text, prompt: "border-box: width 300px, padding 10px. On-screen width? (number only)", accept: ["300", "300px"] }
+        - { id: fs-w04-d2-g10, difficulty: medium, type: mcq, prompt: "Where does a Google Fonts <link> go?", choices: ["In <head>", "At the end of the CSS", "In <footer>", "In every <p>"], answer: 0 }
+        - { id: fs-w04-d2-g11, difficulty: medium, type: mcq, prompt: "Why use rem for font sizes?", choices: ["They scale with the user's root font size setting", "They're always bigger", "Browsers require it", "They load faster"], answer: 0 }
+        - { id: fs-w04-d2-g12, difficulty: medium, type: truefalse, prompt: "`transition: background 0.2s` makes a background change animate over 0.2 seconds.", answer: true }
+        - { id: fs-w04-d2-g13, difficulty: medium, type: mcq, prompt: "`width: 50%` means half of…", choices: ["the parent's width", "the screen height", "the font size", "the page's content"], answer: 0 }
+        - { id: fs-w04-d2-g14, difficulty: medium, type: mcq, prompt: "Which colours only the FIRST step?", choices: [".steps li:first-child { color: red; }", ".steps li { color: red; }", ".steps:first li { color: red; }", "li.first { color: red; }"], answer: 0 }
+        - { id: fs-w04-d2-g15, difficulty: medium, type: order, prompt: "Build a hover rule.", items: [".button:hover", "{", "background: #0f3a2b;", "}"] }
+        - { id: fs-w04-d2-g16, difficulty: hard, type: mcq, prompt: "What colour is the Deals link?", code: "a { color: blue; }\nnav a { color: green; }\n\n<nav><a href=\"#\">Deals</a></nav>", choices: ["green: the more specific selector wins", "blue: it comes first", "blue and green mixed", "black"], answer: 0 }
+        - { id: fs-w04-d2-g17, difficulty: hard, type: text, prompt: "No border-box: width 100%, padding 20px on each side, in a 400px parent. On-screen width? (number only)", accept: ["440", "440px"], explain: "That's why it overflows. border-box keeps it at 400." }
+        - { id: fs-w04-d2-g18, difficulty: hard, type: multi, prompt: "Which selectors match the Shop link? (Select all.)", code: "<header><nav><a class=\"menu\" href=\"#\">Shop</a></nav></header>", choices: ["nav a", "header a", ".menu", "nav > .menu", "main a"], answers: [0, 1, 2, 3] }
+    quizzes:
+      - kind: rapid-fire
+        title: "display and position"
+        secondsPerQuestion: 9
+        questions:
+          - { id: fs-w04-d2-rf01, difficulty: easy, type: mcq, prompt: "Starts on a new line, full width", choices: ["block", "inline", "inline-block", "none"], answer: 0 }
+          - { id: fs-w04-d2-rf02, difficulty: easy, type: mcq, prompt: "Sits in the text line, ignores width", choices: ["inline", "block", "flex", "none"], answer: 0 }
+          - { id: fs-w04-d2-rf03, difficulty: easy, type: mcq, prompt: "In the line AND takes width/height", choices: ["inline-block", "inline", "block", "static"], answer: 0 }
+          - { id: fs-w04-d2-rf04, difficulty: easy, type: mcq, prompt: "Removed from the page", choices: ["display: none", "display: hidden", "position: none", "visible: no"], answer: 0 }
+          - { id: fs-w04-d2-rf05, difficulty: easy, type: mcq, prompt: "<a> and <span> are…", choices: ["inline", "block", "flex", "absolute"], answer: 0 }
+          - { id: fs-w04-d2-rf06, difficulty: easy, type: mcq, prompt: "<div>, <p>, <section> are…", choices: ["block", "inline", "inline-block", "none"], answer: 0 }
+          - { id: fs-w04-d2-rf07, difficulty: easy, type: mcq, prompt: "Stays put when you scroll (chat button)", choices: ["fixed", "relative", "static", "absolute"], answer: 0 }
+          - { id: fs-w04-d2-rf08, difficulty: easy, type: mcq, prompt: "Normal until you scroll past, then sticks", choices: ["sticky", "fixed", "relative", "static"], answer: 0 }
+          - { id: fs-w04-d2-rf09, difficulty: easy, type: mcq, prompt: "The default position", choices: ["static", "relative", "absolute", "auto"], answer: 0 }
+          - { id: fs-w04-d2-rf10, difficulty: easy, type: truefalse, prompt: "An absolute element measures from its nearest positioned ancestor.", answer: true }
+      - kind: brain-teaser
+        title: "Where does it go?"
+        questions:
+          - { id: fs-w04-d2-bt01, difficulty: medium, type: mcq, prompt: "The SALE badge flies to the top-right of the whole PAGE, not the card. Fix?", code: ".badge { position: absolute; top: 8px; right: 8px; }", choices: ["Add position: relative to .card", "Change to position: fixed", "Add display: block", "Remove top and right"], answer: 0 }
+          - { id: fs-w04-d2-bt02, difficulty: medium, type: mcq, prompt: "Why doesn't width change the size of this?", code: "span.tag { width: 120px; }", choices: ["span is inline: inline ignores width. Use inline-block.", "120px is too small", "Width only works in %", "span needs a class"], answer: 0 }
+          - { id: fs-w04-d2-bt03, difficulty: medium, type: mcq, prompt: "Two <p> elements with display: inline. They appear…", choices: ["on the same line", "on separate lines", "hidden", "overlapping"], answer: 0 }
+          - { id: fs-w04-d2-bt04, difficulty: hard, type: mcq, prompt: "A header has position: sticky but never sticks. Most likely missing?", choices: ["top: 0", "display: block", "z-index: 0", "width: 100%"], answer: 0 }
+          - { id: fs-w04-d2-bt05, difficulty: hard, type: match, prompt: "Match the job to the position.", pairs: [["Badge in a card's corner", "absolute"], ["WhatsApp button always on screen", "fixed"], ["Header that sticks on scroll", "sticky"], ["Anchor for an absolute child", "relative"]] }
+
+  # ─────────────────────────── DAY 3 ───────────────────────────
+  - day: 3
+    gate:
+      title: "Checkpoint: display and position"
+      covers: "Week 4 · Day 2: block, inline, inline-block, none; static, relative, absolute, fixed, sticky"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w04-d3-g01, difficulty: easy, type: mcq, prompt: "Hide an element completely", choices: ["display: none", "display: hidden", "position: none", "opacity: hidden"], answer: 0 }
+        - { id: fs-w04-d3-g02, difficulty: easy, type: mcq, prompt: "Default display of <span>", choices: ["inline", "block", "inline-block", "flex"], answer: 0 }
+        - { id: fs-w04-d3-g03, difficulty: easy, type: mcq, prompt: "Default display of <section>", choices: ["block", "inline", "none", "flex"], answer: 0 }
+        - { id: fs-w04-d3-g04, difficulty: easy, type: truefalse, prompt: "position: fixed elements stay on screen when you scroll.", answer: true }
+        - { id: fs-w04-d3-g05, difficulty: easy, type: mcq, prompt: "Which display lets a span take a width?", choices: ["inline-block", "inline", "none", "static"], answer: 0 }
+        - { id: fs-w04-d3-g06, difficulty: easy, type: mcq, prompt: "Default position of every element", choices: ["static", "relative", "absolute", "fixed"], answer: 0 }
+        - { id: fs-w04-d3-g07, difficulty: medium, type: mcq, prompt: "An absolute badge measures its top/right from…", choices: ["the nearest ancestor with a position other than static", "always the page", "its previous sibling", "the screen"], answer: 0 }
+        - { id: fs-w04-d3-g08, difficulty: medium, type: match, prompt: "Match.", pairs: [["block", "new line, full width"], ["inline", "in the text line, no width"], ["inline-block", "in the line, takes width"], ["none", "not shown at all"]] }
+        - { id: fs-w04-d3-g09, difficulty: medium, type: mcq, prompt: "A sticky header needs…", choices: ["position: sticky; top: 0;", "position: fixed only", "display: sticky", "position: absolute; top: 0;"], answer: 0 }
+        - { id: fs-w04-d3-g10, difficulty: medium, type: truefalse, prompt: "Inline elements ignore top and bottom margins.", answer: true }
+        - { id: fs-w04-d3-g11, difficulty: medium, type: mcq, prompt: "Corner badge: what goes on the CARD?", choices: ["position: relative", "position: absolute", "display: none", "position: fixed"], answer: 0 }
+        - { id: fs-w04-d3-g12, difficulty: medium, type: mcq, prompt: "position: relative; top: 10px; does what?", choices: ["Moves it 10px down from where it would be", "Pins it 10px from the page top", "Hides it", "Nothing"], answer: 0 }
+        - { id: fs-w04-d3-g13, difficulty: medium, type: mcq, prompt: "Which tag is inline by default?", choices: ["<strong>", "<p>", "<h2>", "<li>"], answer: 0 }
+        - { id: fs-w04-d3-g14, difficulty: medium, type: text, prompt: "Write the declaration that makes an element sit in the line but accept a height.", accept: ["display: inline-block;", "display: inline-block", "display:inline-block;", "display:inline-block"] }
+        - { id: fs-w04-d3-g15, difficulty: medium, type: truefalse, prompt: "display: none keeps the element's space on the page, just invisible.", answer: false, explain: "It's removed from the layout. (visibility: hidden keeps the space.)" }
+        - { id: fs-w04-d3-g16, difficulty: hard, type: mcq, prompt: "Where is the badge?", code: ".page { position: relative; }\n.card { }\n.badge { position: absolute; top: 0; right: 0; }\n\n<div class=\"page\"><div class=\"card\"><span class=\"badge\">NEW</span></div></div>", choices: ["Top-right of .page", "Top-right of .card", "Top-right of the screen", "Where it was"], answer: 0, explain: ".card isn't positioned, so the badge measures from .page." }
+        - { id: fs-w04-d3-g17, difficulty: hard, type: multi, prompt: "Which take a width when set? (Select all.)", choices: ["<div>", "<span style=\"display:inline-block\">", "<span>", "<p>"], answers: [0, 1, 3] }
+        - { id: fs-w04-d3-g18, difficulty: hard, type: mcq, prompt: "A fixed chat button covers the footer text on phones. A good fix?", choices: ["Add padding-bottom to the footer/body so content can scroll clear of it", "Use display: inline", "Make the footer fixed too", "Remove the viewport"], answer: 0 }
+    quizzes:
+      - kind: rapid-fire
+        title: "Flexbox sprint"
+        secondsPerQuestion: 9
+        questions:
+          - { id: fs-w04-d3-rf01, difficulty: easy, type: mcq, prompt: "Turn on flexbox", choices: ["display: flex", "flex: on", "position: flex", "layout: flex"], answer: 0 }
+          - { id: fs-w04-d3-rf02, difficulty: easy, type: mcq, prompt: "Flex goes on the…", choices: ["container (parent)", "each child", "body only", "html"], answer: 0 }
+          - { id: fs-w04-d3-rf03, difficulty: easy, type: mcq, prompt: "Space along the main direction", choices: ["justify-content", "align-items", "gap", "flex-wrap"], answer: 0 }
+          - { id: fs-w04-d3-rf04, difficulty: easy, type: mcq, prompt: "Alignment across the main direction", choices: ["align-items", "justify-content", "text-align", "flex-direction"], answer: 0 }
+          - { id: fs-w04-d3-rf05, difficulty: easy, type: mcq, prompt: "Logo left, links right", choices: ["space-between", "center", "flex-start", "stretch"], answer: 0 }
+          - { id: fs-w04-d3-rf06, difficulty: easy, type: mcq, prompt: "Stack items top to bottom", choices: ["flex-direction: column", "flex-direction: row", "display: block", "align-items: column"], answer: 0 }
+          - { id: fs-w04-d3-rf07, difficulty: easy, type: mcq, prompt: "Space between items", choices: ["gap", "padding", "margin-between", "space"], answer: 0 }
+          - { id: fs-w04-d3-rf08, difficulty: easy, type: mcq, prompt: "Default flex-direction", choices: ["row", "column", "wrap", "none"], answer: 0 }
+          - { id: fs-w04-d3-rf09, difficulty: easy, type: mcq, prompt: "Default align-items", choices: ["stretch", "center", "flex-start", "baseline"], answer: 0 }
+          - { id: fs-w04-d3-rf10, difficulty: easy, type: truefalse, prompt: "Only direct children of a flex container become flex items.", answer: true }
+          - { id: fs-w04-d3-rf11, difficulty: easy, type: mcq, prompt: "Centre both ways", choices: ["justify-content: center; align-items: center;", "text-align: center;", "margin: center;", "align: middle;"], answer: 0 }
+      - kind: brain-teaser
+        title: "Build the header"
+        questions:
+          - { id: fs-w04-d3-bt01, difficulty: medium, type: order, prompt: "Order the navbar rule.", items: ["header {", "display: flex;", "justify-content: space-between;", "align-items: center;", "}"] }
+          - { id: fs-w04-d3-bt02, difficulty: medium, type: mcq, prompt: "The nav links still sit under each other. Why?", code: "header { display: flex; }\n\n<header><a class=\"logo\">NaijaMart</a><nav><p><a>Shop</a></p><p><a>Deals</a></p></nav></header>", choices: ["Flex is on header, not nav: the <p>s inside nav are still blocks", "Links can't be flexed", "header needs a gap", "a must be inline-block"], answer: 0 }
+          - { id: fs-w04-d3-bt03, difficulty: medium, type: mcq, prompt: "flex-direction: column. Now which property centres items horizontally?", choices: ["align-items: center", "justify-content: center", "text-align: center", "float: center"], answer: 0, explain: "In a column, the main direction is vertical, so the cross direction is horizontal." }
+          - { id: fs-w04-d3-bt04, difficulty: hard, type: mcq, prompt: "Three items, justify-content: space-between. Where do they go?", choices: ["First at the start, last at the end, middle in the middle", "All centred", "All at the start", "Equal space around every item including the edges"], answer: 0 }
+          - { id: fs-w04-d3-bt05, difficulty: hard, type: multi, prompt: "Which centre a single child both ways in a 300px-tall box? (Select all.)", choices: ["display: flex; justify-content: center; align-items: center;", "display: flex; flex-direction: column; justify-content: center; align-items: center;", "text-align: center;", "display: block; align-items: center;"], answers: [0, 1] }
+
+  # ─────────────────────────── DAY 4 ───────────────────────────
+  - day: 4
+    gate:
+      title: "Checkpoint: Flexbox I"
+      covers: "Week 4 · Day 3: display: flex, flex-direction, justify-content, align-items, gap, the navbar pattern"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w04-d4-g01, difficulty: easy, type: mcq, prompt: "Which property makes a flex container?", choices: ["display: flex", "position: flex", "float: flex", "flex: 1"], answer: 0 }
+        - { id: fs-w04-d4-g02, difficulty: easy, type: mcq, prompt: "Space between flex items", choices: ["gap", "padding", "border", "spacing"], answer: 0 }
+        - { id: fs-w04-d4-g03, difficulty: easy, type: mcq, prompt: "Vertically centre items in a row", choices: ["align-items: center", "justify-content: center", "vertical-align: center", "text-align: center"], answer: 0 }
+        - { id: fs-w04-d4-g04, difficulty: easy, type: truefalse, prompt: "flex-direction: row lines items up side by side.", answer: true }
+        - { id: fs-w04-d4-g05, difficulty: easy, type: mcq, prompt: "Push the first item left and the last right", choices: ["justify-content: space-between", "align-items: stretch", "flex-direction: column", "gap: 0"], answer: 0 }
+        - { id: fs-w04-d4-g06, difficulty: easy, type: mcq, prompt: "Which are flex items?", choices: ["The container's direct children", "Every element on the page", "Only links", "The container itself"], answer: 0 }
+        - { id: fs-w04-d4-g07, difficulty: medium, type: match, prompt: "Match the value.", pairs: [["flex-start", "packed at the start"], ["center", "packed in the middle"], ["space-between", "spread, no space at the edges"], ["space-around", "space around every item"]] }
+        - { id: fs-w04-d4-g08, difficulty: medium, type: mcq, prompt: "In a column, justify-content works…", choices: ["vertically", "horizontally", "not at all", "diagonally"], answer: 0 }
+        - { id: fs-w04-d4-g09, difficulty: medium, type: text, prompt: "Write the declaration that stacks flex items top to bottom.", accept: ["flex-direction: column;", "flex-direction: column", "flex-direction:column;", "flex-direction:column"] }
+        - { id: fs-w04-d4-g10, difficulty: medium, type: mcq, prompt: "Logo left, links right, centred vertically:", choices: ["header { display: flex; justify-content: space-between; align-items: center; }", "header { text-align: right; }", "header { display: block; align-items: center; }", "header { float: left; }"], answer: 0 }
+        - { id: fs-w04-d4-g11, difficulty: medium, type: truefalse, prompt: "gap adds space at the outer edges of the container too.", answer: false, explain: "gap is only between items." }
+        - { id: fs-w04-d4-g12, difficulty: medium, type: mcq, prompt: "Items in a flex row are different heights. By default they…", choices: ["stretch to the same height", "keep their own heights, top-aligned", "overlap", "wrap"], answer: 0 }
+        - { id: fs-w04-d4-g13, difficulty: medium, type: mcq, prompt: "Which game teaches flexbox in 24 levels?", choices: ["Flexbox Froggy", "CSS Diner", "Grid Garden", "Code Combat"], answer: 0 }
+        - { id: fs-w04-d4-g14, difficulty: medium, type: order, prompt: "Order: centre a child in a box both ways.", items: [".box {", "display: flex;", "justify-content: center;", "align-items: center;", "}"] }
+        - { id: fs-w04-d4-g15, difficulty: medium, type: mcq, prompt: "nav { display: flex; gap: 1rem; } affects…", choices: ["the links directly inside nav", "every link on the page", "the nav's parent", "only the first link"], answer: 0 }
+        - { id: fs-w04-d4-g16, difficulty: hard, type: mcq, prompt: "Where does the button end up?", code: ".hero { display: flex; flex-direction: column; align-items: flex-end; }\n\n<section class=\"hero\"><h1>Deals</h1><a class=\"button\">Shop</a></section>", choices: ["On its own line, at the right edge", "Next to the h1", "Centred", "At the bottom-left"], answer: 0 }
+        - { id: fs-w04-d4-g17, difficulty: hard, type: mcq, prompt: "justify-content: center does nothing in this header. Why?", code: "header { justify-content: center; }", choices: ["header isn't a flex container (no display: flex)", "center isn't a value", "It needs gap", "Headers can't be centred"], answer: 0 }
+        - { id: fs-w04-d4-g18, difficulty: hard, type: multi, prompt: "Which go on the CONTAINER? (Select all.)", choices: ["justify-content", "align-items", "gap", "flex-direction"], answers: [0, 1, 2, 3] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Wrap and respond"
+        secondsPerQuestion: 9
+        questions:
+          - { id: fs-w04-d4-rf01, difficulty: easy, type: mcq, prompt: "Let items move to a new line", choices: ["flex-wrap: wrap", "flex-direction: wrap", "white-space: wrap", "wrap: yes"], answer: 0 }
+          - { id: fs-w04-d4-rf02, difficulty: easy, type: mcq, prompt: "flex: 1 1 220px — the 220px is the…", choices: ["starting size (basis)", "maximum size", "gap", "height"], answer: 0 }
+          - { id: fs-w04-d4-rf03, difficulty: easy, type: mcq, prompt: "flex: 1 1 220px — the first 1 means…", choices: ["grow", "shrink", "order", "wrap"], answer: 0 }
+          - { id: fs-w04-d4-rf04, difficulty: easy, type: mcq, prompt: "CSS only for small screens", choices: ["@media (max-width: 600px)", "@screen small", "@phone", "@media phone"], answer: 0 }
+          - { id: fs-w04-d4-rf05, difficulty: easy, type: mcq, prompt: "Stops phones pretending to be desktops", choices: ["the viewport meta tag", "a media query", "flex-wrap", "rem units"], answer: 0 }
+          - { id: fs-w04-d4-rf06, difficulty: easy, type: mcq, prompt: "Test phone sizes in Chrome", choices: ["DevTools device toolbar", "View Source", "Print preview", "Zoom out"], answer: 0 }
+          - { id: fs-w04-d4-rf07, difficulty: easy, type: truefalse, prompt: "Without flex-wrap, flex items squeeze onto one line.", answer: true }
+          - { id: fs-w04-d4-rf08, difficulty: easy, type: mcq, prompt: "Where does the viewport tag go?", choices: ["<head>", "<footer>", "style.css", "<body> end"], answer: 0 }
+          - { id: fs-w04-d4-rf09, difficulty: easy, type: mcq, prompt: "max-width: 600px matches screens…", choices: ["600px wide or narrower", "wider than 600px", "exactly 600px", "600px tall"], answer: 0 }
+          - { id: fs-w04-d4-rf10, difficulty: easy, type: mcq, prompt: "On a phone, flex: 1 1 220px cards usually show…", choices: ["one per row", "four per row", "none", "overlapping"], answer: 0 }
+      - kind: brain-teaser
+        title: "Phone-proof it"
+        questions:
+          - { id: fs-w04-d4-bt01, difficulty: medium, type: mcq, prompt: "Six cards squeeze into one tiny row on a phone. Missing?", code: ".cards { display: flex; gap: 1rem; }\n.card { flex: 1 1 220px; }", choices: ["flex-wrap: wrap on .cards", "gap on .card", "display: block on .card", "A bigger font"], answer: 0 }
+          - { id: fs-w04-d4-bt02, difficulty: medium, type: text, prompt: "Screen 500px wide. Does `@media (max-width: 600px)` apply? (yes/no)", accept: ["yes"] }
+          - { id: fs-w04-d4-bt03, difficulty: medium, type: text, prompt: "Screen 800px wide. Does `@media (max-width: 600px)` apply? (yes/no)", accept: ["no"] }
+          - { id: fs-w04-d4-bt04, difficulty: hard, type: mcq, prompt: "Your page looks tiny on a real phone, though the media query is right. Most likely?", choices: ["The viewport meta tag is missing", "Phones ignore CSS", "flex-wrap is missing", "rem is wrong"], answer: 0 }
+          - { id: fs-w04-d4-bt05, difficulty: hard, type: text, prompt: "A 760px-wide .cards row with gap 20px. Cards are flex: 1 1 220px. How many fit on the first row? (number only)", accept: ["3", "three"], explain: "3 × 220 + 2 × 20 = 700 ≤ 760; a 4th would need 940." }
+
+  # ─────────────────────────── DAY 5 ───────────────────────────
+  - day: 5
+    gate:
+      title: "Checkpoint: wrap, grow and media queries"
+      covers: "Week 4 · Day 4: flex-wrap, the flex shorthand, media queries, the viewport tag, device toolbar"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w04-d5-g01, difficulty: easy, type: mcq, prompt: "Which lets flex items move onto a new line?", choices: ["flex-wrap: wrap", "flex: wrap", "display: wrap", "overflow: wrap"], answer: 0 }
+        - { id: fs-w04-d5-g02, difficulty: easy, type: mcq, prompt: "A media query starts with…", choices: ["@media", "@query", "#media", "media:"], answer: 0 }
+        - { id: fs-w04-d5-g03, difficulty: easy, type: truefalse, prompt: "The viewport meta tag goes in <head>.", answer: true }
+        - { id: fs-w04-d5-g04, difficulty: easy, type: mcq, prompt: "flex: 1 1 220px — what does the middle 1 mean?", choices: ["shrink if needed", "grow", "gap", "row"], answer: 0 }
+        - { id: fs-w04-d5-g05, difficulty: easy, type: mcq, prompt: "Where do you test phone sizes on your laptop?", choices: ["DevTools → device toolbar", "View Source", "Settings", "Task Manager"], answer: 0 }
+        - { id: fs-w04-d5-g06, difficulty: easy, type: mcq, prompt: "max-width: 600px applies when the screen is…", choices: ["600px or narrower", "wider than 600px", "600px tall", "always"], answer: 0 }
+        - { id: fs-w04-d5-g07, difficulty: medium, type: mcq, prompt: "Which stacks the navbar on phones?", choices: ["@media (max-width: 600px) { header { flex-direction: column; } }", "@media (min-width: 600px) { header { flex-direction: column; } }", "header { flex-wrap: column; }", "@phone { header { display: none; } }"], answer: 0 }
+        - { id: fs-w04-d5-g08, difficulty: medium, type: match, prompt: "Match.", pairs: [["flex-wrap: wrap", "move to a new line"], ["flex-grow: 1", "fill the spare space"], ["flex-basis: 220px", "starting size"], ["@media", "CSS for some screens only"]] }
+        - { id: fs-w04-d5-g09, difficulty: medium, type: text, prompt: "Write the viewport tag's content value.", accept: ["width=device-width, initial-scale=1", "width=device-width, initial-scale=1.0", "width=device-width,initial-scale=1"] }
+        - { id: fs-w04-d5-g10, difficulty: medium, type: truefalse, prompt: "A matching media query at the END of the file overrides earlier rules for the same selector.", answer: true, explain: "Same specificity: the later rule wins. That's why media queries usually go at the end." }
+        - { id: fs-w04-d5-g11, difficulty: medium, type: mcq, prompt: "Why put media queries at the END of the stylesheet?", choices: ["Later rules win when specificity is equal", "Browsers read only the end", "They must be last to be valid", "It's faster"], answer: 0 }
+        - { id: fs-w04-d5-g12, difficulty: medium, type: mcq, prompt: "Cards with flex: 1 1 220px in a 1000px row (no gap). How many per row?", choices: ["4", "3", "5", "1"], answer: 0, explain: "4 × 220 = 880 fits, 5 × 220 = 1100 doesn't; the 4 then grow to fill." }
+        - { id: fs-w04-d5-g13, difficulty: medium, type: mcq, prompt: "Without the viewport tag, a phone…", choices: ["renders the page at desktop width and shrinks it", "refuses to load it", "ignores CSS", "uses the media query anyway"], answer: 0 }
+        - { id: fs-w04-d5-g14, difficulty: medium, type: order, prompt: "Order a phone media query.", items: ["@media (max-width: 600px) {", "h1 {", "font-size: 1.75rem;", "}", "}"] }
+        - { id: fs-w04-d5-g15, difficulty: medium, type: truefalse, prompt: "flex-grow: 1 lets an item take up spare space in the row.", answer: true }
+        - { id: fs-w04-d5-g16, difficulty: hard, type: text, prompt: "Row 700px wide, gap 20px, cards flex: 1 1 200px. How many on the first row? (number only)", accept: ["3", "three"], explain: "3×200 + 2×20 = 640 fits; 4 would need 860." }
+        - { id: fs-w04-d5-g17, difficulty: hard, type: mcq, prompt: "The phone rule never applies. Why?", code: "@media (max-width: 600px) {\n  h1 { font-size: 1.5rem; }\n}\nh1 { font-size: 3rem; }", choices: ["The later h1 rule overrides it: move the media query to the end", "max-width is wrong", "rem isn't allowed in media queries", "h1 needs a class"], answer: 0 }
+        - { id: fs-w04-d5-g18, difficulty: hard, type: multi, prompt: "Which help a page work on phones? (Select all.)", choices: ["The viewport meta tag", "flex-wrap on card rows", "Media queries", "Fixed widths like width: 1200px"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Git commands"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fs-w04-d5-rf01, difficulty: easy, type: mcq, prompt: "Start tracking a folder", choices: ["git init", "git start", "git new", "git begin"], answer: 0 }
+          - { id: fs-w04-d5-rf02, difficulty: easy, type: mcq, prompt: "What changed?", choices: ["git status", "git changes", "git diff-all", "git what"], answer: 0 }
+          - { id: fs-w04-d5-rf03, difficulty: easy, type: mcq, prompt: "Stage every change", choices: ["git add .", "git stage all", "git commit .", "git save"], answer: 0 }
+          - { id: fs-w04-d5-rf04, difficulty: easy, type: mcq, prompt: "Save a snapshot", choices: ["git commit -m \"…\"", "git save -m \"…\"", "git push -m \"…\"", "git snap"], answer: 0 }
+          - { id: fs-w04-d5-rf05, difficulty: easy, type: mcq, prompt: "Send commits to GitHub", choices: ["git push", "git pull", "git send", "git upload"], answer: 0 }
+          - { id: fs-w04-d5-rf06, difficulty: easy, type: mcq, prompt: "List commits, one line each", choices: ["git log --oneline", "git list", "git history -1", "git show all"], answer: 0 }
+          - { id: fs-w04-d5-rf07, difficulty: easy, type: mcq, prompt: "Files Git should never save are listed in…", choices: [".gitignore", ".gitkeep", "README.md", ".github"], answer: 0 }
+          - { id: fs-w04-d5-rf08, difficulty: easy, type: truefalse, prompt: "Git and GitHub are the same thing.", answer: false, explain: "Git is the tool on your computer; GitHub is a website that hosts Git projects." }
+          - { id: fs-w04-d5-rf09, difficulty: easy, type: mcq, prompt: "Log in to GitHub from the terminal", choices: ["gh auth login", "git login", "github --password", "git auth"], answer: 0 }
+          - { id: fs-w04-d5-rf10, difficulty: easy, type: mcq, prompt: "Best commit message", choices: ["Add contact form", "stuff", "changes", "asdf"], answer: 0 }
+      - kind: brain-teaser
+        title: "Git detective"
+        questions:
+          - { id: fs-w04-d5-bt01, difficulty: medium, type: order, prompt: "Order the everyday loop.", items: ["Edit your files", "git add .", "git commit -m \"Describe the change\"", "git push"] }
+          - { id: fs-w04-d5-bt02, difficulty: medium, type: mcq, prompt: "You edited style.css and ran git commit -m \"Style navbar\". Git says \"nothing added to commit\". Why?", choices: ["You didn't git add the change first", "The message is too short", "You need to push first", "style.css is ignored by default"], answer: 0 }
+          - { id: fs-w04-d5-bt03, difficulty: medium, type: match, prompt: "Match the place to its command.", pairs: [["Working folder → staging area", "git add"], ["Staging area → repository", "git commit"], ["Your repository → GitHub", "git push"]] }
+          - id: fs-w04-d5-bt04
+            difficulty: hard
+            type: text
+            prompt: "What does this print?"
+            code: |
+              log = "a1 Ada: Add page\nb2 Tunde: Fix footer\nc3 Ada: Add form"
+              authors = [line.split(" ", 1)[1].split(":")[0] for line in log.splitlines()]
+              print(authors.count("Ada"))
+            accept: ["2", "two"]
+          - id: fs-w04-d5-bt05
+            difficulty: hard
+            type: text
+            prompt: "What does this print?"
+            code: |
+              line = "e7a0b13 Victor: Style navbar with flexbox"
+              print(line.split(": ", 1)[1])
+            accept: ["Style navbar with flexbox"]
+
+  # ─────────────────────────── DAY 6 ───────────────────────────
+  - day: 6
+    gate:
+      title: "Checkpoint: Git and GitHub"
+      covers: "Week 4 · Day 5: git init/status/add/commit/log/push, staging, commit messages, remotes, .gitignore, gh auth"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w04-d6-g01, difficulty: easy, type: mcq, prompt: "Git saves snapshots called…", choices: ["commits", "pushes", "branches", "repos"], answer: 0 }
+        - { id: fs-w04-d6-g02, difficulty: easy, type: mcq, prompt: "Which command shows what changed?", choices: ["git status", "git log", "git init", "git push"], answer: 0 }
+        - { id: fs-w04-d6-g03, difficulty: easy, type: mcq, prompt: "GitHub is…", choices: ["a website that stores Git projects online", "another name for Git", "a code editor", "a programming language"], answer: 0 }
+        - { id: fs-w04-d6-g04, difficulty: easy, type: truefalse, prompt: "git init is run once per project.", answer: true }
+        - { id: fs-w04-d6-g05, difficulty: easy, type: mcq, prompt: "Stage all changes", choices: ["git add .", "git commit .", "git push .", "git stage"], answer: 0 }
+        - { id: fs-w04-d6-g06, difficulty: easy, type: mcq, prompt: "Which commit message is best?", choices: ["Add hover effect to nav links", "update", "fix", "final final v2"], answer: 0 }
+        - { id: fs-w04-d6-g07, difficulty: medium, type: order, prompt: "Order: first push of a new project.", items: ["git init", "git add .", "git commit -m \"First version\"", "git remote add origin https://github.com/you/about-me.git", "git push -u origin main"] }
+        - { id: fs-w04-d6-g08, difficulty: medium, type: match, prompt: "Match the command.", pairs: [["git status", "what changed?"], ["git log --oneline", "list commits"], ["git add .", "stage changes"], ["git push", "upload to GitHub"]] }
+        - { id: fs-w04-d6-g09, difficulty: medium, type: mcq, prompt: "Why does GitHub reject your password in the terminal?", choices: ["It needs a token or `gh auth login` instead", "Your password is wrong", "GitHub is down", "You must use Windows"], answer: 0 }
+        - { id: fs-w04-d6-g10, difficulty: medium, type: truefalse, prompt: "git commit uploads your work to GitHub.", answer: false, explain: "commit saves locally; push uploads." }
+        - { id: fs-w04-d6-g11, difficulty: medium, type: mcq, prompt: "What should go in .gitignore?", choices: [".DS_Store and secret .env files", "index.html", "style.css", "README.md"], answer: 0 }
+        - { id: fs-w04-d6-g12, difficulty: medium, type: text, prompt: "Write the command that commits staged changes with the message Add footer.", accept: ["git commit -m \"Add footer\"", "git commit -m 'Add footer'"] }
+        - { id: fs-w04-d6-g13, difficulty: medium, type: mcq, prompt: "The staging area holds…", choices: ["changes chosen for the next commit", "files on GitHub", "deleted files", "every old version"], answer: 0 }
+        - { id: fs-w04-d6-g14, difficulty: medium, type: mcq, prompt: "Publish a repo as a website on GitHub Pages:", choices: ["Settings → Pages → deploy from branch main", "Settings → Publish → Website", "Insert → Web page", "git publish"], answer: 0 }
+        - { id: fs-w04-d6-g15, difficulty: medium, type: mcq, prompt: "After the first push, what's the routine?", choices: ["git add . → git commit -m \"…\" → git push", "git init every time", "git remote add every time", "Delete and re-upload"], answer: 0 }
+        - { id: fs-w04-d6-g16, difficulty: hard, type: mcq, prompt: "You committed a file with your password. Pushing it…", choices: ["publishes it in the history even if you delete it later; never commit secrets", "is safe if the repo is new", "hides it automatically", "only shares the file name"], answer: 0 }
+        - { id: fs-w04-d6-g17, difficulty: hard, type: mcq, prompt: "Your GitHub Pages site shows a 404 page. Most likely?", choices: ["There's no index.html at the root of the branch", "CSS is missing", "The repo is too small", "Pages only works for paid accounts"], answer: 0 }
+        - { id: fs-w04-d6-g18, difficulty: hard, type: multi, prompt: "Which are good commit habits? (Select all.)", choices: ["One commit per real change", "Present-tense messages that say what changed", "Commit .env files", "Commit and push regularly"], answers: [0, 1, 3] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Week 4 lightning round"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fs-w04-d6-rf01, difficulty: easy, type: mcq, prompt: "Links inside nav", choices: ["nav a", "nav, a", "a > nav", "nav.a"], answer: 0 }
+          - { id: fs-w04-d6-rf02, difficulty: easy, type: mcq, prompt: "Width includes padding", choices: ["border-box", "content-box", "padding-box", "flex-box"], answer: 0 }
+          - { id: fs-w04-d6-rf03, difficulty: easy, type: mcq, prompt: "Hide completely", choices: ["display: none", "display: hidden", "hidden: true", "opacity: none"], answer: 0 }
+          - { id: fs-w04-d6-rf04, difficulty: easy, type: mcq, prompt: "Anchor for an absolute child", choices: ["position: relative", "position: static", "display: flex", "z-index: 1"], answer: 0 }
+          - { id: fs-w04-d6-rf05, difficulty: easy, type: mcq, prompt: "Logo left, links right", choices: ["justify-content: space-between", "align-items: center", "flex-wrap: wrap", "gap: 1rem"], answer: 0 }
+          - { id: fs-w04-d6-rf06, difficulty: easy, type: mcq, prompt: "Cards onto new lines", choices: ["flex-wrap: wrap", "flex-direction: wrap", "display: wrap", "gap: wrap"], answer: 0 }
+          - { id: fs-w04-d6-rf07, difficulty: easy, type: mcq, prompt: "CSS for small screens", choices: ["@media (max-width: 600px)", "@small", "@phone", "@media big"], answer: 0 }
+          - { id: fs-w04-d6-rf08, difficulty: easy, type: mcq, prompt: "Save a snapshot", choices: ["git commit", "git push", "git add", "git init"], answer: 0 }
+          - { id: fs-w04-d6-rf09, difficulty: easy, type: mcq, prompt: "Upload to GitHub", choices: ["git push", "git commit", "git log", "git status"], answer: 0 }
+          - { id: fs-w04-d6-rf10, difficulty: easy, type: text, prompt: "2.5rem at a 16px root = ? px (number only)", accept: ["40"] }
+      - kind: brain-teaser
+        title: "Ship it"
+        questions:
+          - { id: fs-w04-d6-bt01, difficulty: medium, type: mcq, prompt: "Your site works on your laptop but looks tiny on your phone after publishing. First check?", choices: ["The viewport meta tag in <head>", "The commit messages", "The repo name", "Your GitHub password"], answer: 0 }
+          - { id: fs-w04-d6-bt02, difficulty: medium, type: mcq, prompt: "Your Pages site still shows the old version after you edited style.css. Most likely?", choices: ["You didn't commit and push the change", "Pages never updates", "CSS is cached forever", "You need a new repo"], answer: 0 }
+          - { id: fs-w04-d6-bt03, difficulty: medium, type: text, prompt: "Username victor-codes, repo about-me. What's the GitHub Pages URL? (https://…/)", accept: ["https://victor-codes.github.io/about-me/", "https://victor-codes.github.io/about-me", "victor-codes.github.io/about-me/", "victor-codes.github.io/about-me"] }
+          - id: fs-w04-d6-bt04
+            difficulty: hard
+            type: text
+            prompt: "What does this print? (the whole output)"
+            code: |
+              messages = ["Add page", "fix", "Style navbar", "stuff"]
+              good = [m for m in messages if len(m.split()) >= 2]
+              print(len(good))
+            accept: ["2", "two"]
+          - { id: fs-w04-d6-bt05, difficulty: hard, type: multi, prompt: "Your project checklist: which are required this week? (Select all.)", choices: ["A flex navbar", "Wrapping cards", "A media query", "The site live on GitHub Pages"], answers: [0, 1, 2, 3] }

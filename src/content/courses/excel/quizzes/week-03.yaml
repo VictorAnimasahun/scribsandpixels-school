@@ -1,0 +1,297 @@
+# Excel · Week 3 quizzes. Format and rules: src/content/QUIZZES.md
+week: 3
+days:
+
+  # ─────────────────────────── DAY 1 ───────────────────────────
+  - day: 1
+    gate:
+      title: "Checkpoint: Week 2 review"
+      covers: "Week 2: formatting, operators, SUM/AVERAGE/MIN/MAX/COUNT, errors, readability"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w03-d1-g01, difficulty: easy, type: text, prompt: "=10+2*5", accept: ["20"] }
+        - { id: xl-w03-d1-g02, difficulty: easy, type: mcq, prompt: "Format Cells dialog", choices: ["Ctrl+1", "Ctrl+F", "F4", "Alt+="], answer: 0 }
+        - { id: xl-w03-d1-g03, difficulty: easy, type: mcq, prompt: "Counts text cells too", choices: ["COUNTA", "COUNT", "SUM", "MAX"], answer: 0 }
+        - { id: xl-w03-d1-g04, difficulty: easy, type: mcq, prompt: "=SUMM(A1:A5) shows…", choices: ["#NAME?", "#VALUE!", "#REF!", "#DIV/0!"], answer: 0 }
+        - { id: xl-w03-d1-g05, difficulty: easy, type: truefalse, prompt: "Formatting never changes the stored value.", answer: true }
+        - { id: xl-w03-d1-g06, difficulty: easy, type: mcq, prompt: "AutoSum (Windows)", choices: ["Alt+=", "Ctrl+=", "F2", "Ctrl+S"], answer: 0 }
+        - { id: xl-w03-d1-g07, difficulty: medium, type: mcq, prompt: "Net sales with DiscountPct as a whole number in L2:", choices: ["=J2*K2*(1-L2/100)", "=J2*K2*(1-L2)", "=J2*K2-L2", "=J2*K2*L2/100"], answer: 0 }
+        - { id: xl-w03-d1-g08, difficulty: medium, type: text, prompt: "=(2+3)*4-6/2", accept: ["17"] }
+        - { id: xl-w03-d1-g09, difficulty: medium, type: match, prompt: "Match the error to its cause.", pairs: [["#DIV/0!", "divide by an empty cell"], ["#VALUE!", "number + text"], ["#REF!", "deleted reference"], ["#####", "column too narrow"]] }
+        - { id: xl-w03-d1-g10, difficulty: medium, type: text, prompt: "NaijaMart 2025 net sales (digits only)", accept: ["834046700"] }
+        - { id: xl-w03-d1-g11, difficulty: medium, type: text, prompt: "A1:A4 = 10, \"x\", 30, (empty). =AVERAGE(A1:A4)?", accept: ["20"] }
+        - { id: xl-w03-d1-g12, difficulty: medium, type: mcq, prompt: "A cell shows 12.5%. The formula bar shows…", choices: ["0.125", "12.5", "125", "12.5%"], answer: 0 }
+        - { id: xl-w03-d1-g13, difficulty: medium, type: truefalse, prompt: "=SUM(A1:A3) gives #VALUE! if A2 contains text.", answer: false, explain: "SUM skips text in a range." }
+        - { id: xl-w03-d1-g14, difficulty: medium, type: mcq, prompt: "Show all formulas in the sheet", choices: ["Ctrl+`", "Ctrl+1", "F4", "Ctrl+Shift+F"], answer: 0 }
+        - { id: xl-w03-d1-g15, difficulty: medium, type: text, prompt: "=ROUND(9.2208,1)", accept: ["9.2"] }
+        - { id: xl-w03-d1-g16, difficulty: hard, type: text, prompt: "Total discount given in 2025: gross ₦907,677,800 − net ₦834,046,700 (digits only)", accept: ["73631100"] }
+        - { id: xl-w03-d1-g17, difficulty: hard, type: mcq, prompt: "Order IDs (NM-00001…) are in A2:A2401. Which counts the orders?", choices: ["=COUNTA(A2:A2401)", "=COUNT(A2:A2401)", "=SUM(A2:A2401)", "=MAX(A2:A2401)"], answer: 0 }
+        - { id: xl-w03-d1-g18, difficulty: hard, type: multi, prompt: "Which give #VALUE!? (Select all.)", choices: ["=5+\"five\"", "=\"a\"*2", "=SUM(A1:A3) with text in A2", "=10/2"], answers: [0, 1], explain: "SUM skips text inside a range." }
+    quizzes:
+      - kind: rapid-fire
+        title: "Where does it move?"
+        secondsPerQuestion: 9
+        questions:
+          - { id: xl-w03-d1-rf01, difficulty: easy, type: text, prompt: "=A1*2 in B1, copied to B2 becomes…", accept: ["=A2*2"] }
+          - { id: xl-w03-d1-rf02, difficulty: easy, type: text, prompt: "=J2*K2 in N2, copied to N3 becomes…", accept: ["=J3*K3"] }
+          - { id: xl-w03-d1-rf03, difficulty: easy, type: text, prompt: "=J2*K2 in N2, copied to O2 becomes…", accept: ["=K2*L2"] }
+          - { id: xl-w03-d1-rf04, difficulty: easy, type: text, prompt: "=A1+B1 in C1, copied to C10 becomes…", accept: ["=A10+B10"] }
+          - { id: xl-w03-d1-rf05, difficulty: easy, type: mcq, prompt: "By default, references are…", choices: ["relative", "absolute", "mixed", "fixed"], answer: 0 }
+          - { id: xl-w03-d1-rf06, difficulty: easy, type: mcq, prompt: "Show which cells a formula uses (coloured boxes)", choices: ["F2", "F4", "F9", "Ctrl+1"], answer: 0 }
+          - { id: xl-w03-d1-rf07, difficulty: easy, type: truefalse, prompt: "Relative references move by the same rows and columns as the copy.", answer: true }
+          - { id: xl-w03-d1-rf08, difficulty: easy, type: text, prompt: "=A5*2 when A5 = 5 →", accept: ["10"] }
+          - { id: xl-w03-d1-rf09, difficulty: easy, type: text, prompt: "=A1*2 in B1, copied to B5 becomes…", accept: ["=A5*2"] }
+          - { id: xl-w03-d1-rf10, difficulty: easy, type: text, prompt: "=C1 in D1, copied to E1 becomes…", accept: ["=D1"] }
+      - kind: brain-teaser
+        title: "Copy and predict"
+        questions:
+          - { id: xl-w03-d1-bt01, difficulty: medium, type: text, prompt: "=A1*2 in B1 is copied and pasted into D3. What formula appears?", accept: ["=C3*2"], explain: "Moved 2 columns right and 2 rows down." }
+          - { id: xl-w03-d1-bt02, difficulty: medium, type: text, prompt: "=J2*K2 in N2. What's in N500 after fill-down?", accept: ["=J500*K500"] }
+          - { id: xl-w03-d1-bt03, difficulty: medium, type: text, prompt: "=B3-A3 in C3, copied to E7 becomes…", accept: ["=D7-C7"] }
+          - { id: xl-w03-d1-bt04, difficulty: hard, type: mcq, prompt: "=A2+B2 in C2 is copied to C1 (one row UP). It becomes…", choices: ["=A1+B1", "=A3+B3", "=A2+B2", "#REF!"], answer: 0 }
+          - { id: xl-w03-d1-bt05, difficulty: hard, type: mcq, prompt: "=A1+1 in B1 is copied to A2 (one column LEFT, one row down). It becomes…", choices: ["#REF!: there's no column left of A", "=A2+1", "=B2+1", "=A1+1"], answer: 0 }
+
+  # ─────────────────────────── DAY 2 ───────────────────────────
+  - day: 2
+    gate:
+      title: "Checkpoint: relative references"
+      covers: "Week 3 · Day 1: how references move when copied, F2"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w03-d2-g01, difficulty: easy, type: text, prompt: "=A1*3 in B1, copied to B2 becomes…", accept: ["=A2*3"] }
+        - { id: xl-w03-d2-g02, difficulty: easy, type: text, prompt: "=A1+B1 in C1, copied to C2 becomes…", accept: ["=A2+B2"] }
+        - { id: xl-w03-d2-g03, difficulty: easy, type: mcq, prompt: "Which key shows coloured boxes around a formula's cells?", choices: ["F2", "F4", "F11", "Esc"], answer: 0 }
+        - { id: xl-w03-d2-g04, difficulty: easy, type: truefalse, prompt: "One GrossSales formula filled down worked for 2,400 rows because references are relative.", answer: true }
+        - { id: xl-w03-d2-g05, difficulty: easy, type: mcq, prompt: "A relative reference looks like…", choices: ["A1", "$A$1", "$A1", "A$1"], answer: 0 }
+        - { id: xl-w03-d2-g06, difficulty: easy, type: text, prompt: "=D4 in E4, copied to E5 becomes…", accept: ["=D5"] }
+        - { id: xl-w03-d2-g07, difficulty: medium, type: text, prompt: "=J2*K2 in N2, copied to P2 becomes…", accept: ["=L2*M2"] }
+        - { id: xl-w03-d2-g08, difficulty: medium, type: text, prompt: "=A1*2 in B1, pasted into C4 becomes…", accept: ["=B4*2"] }
+        - { id: xl-w03-d2-g09, difficulty: medium, type: mcq, prompt: "Copying a formula one row down changes…", choices: ["every row number by +1", "every column letter by +1", "nothing", "only the first reference"], answer: 0 }
+        - { id: xl-w03-d2-g10, difficulty: medium, type: mcq, prompt: "Copying a formula one column right changes…", choices: ["every column letter by one", "every row number by one", "nothing", "only numbers in the formula"], answer: 0 }
+        - { id: xl-w03-d2-g11, difficulty: medium, type: text, prompt: "A1:A5 = 1–5. B1 = =A1*2, filled down. Value in B5?", accept: ["10"] }
+        - { id: xl-w03-d2-g12, difficulty: medium, type: truefalse, prompt: "Typed numbers inside a formula (like the 2 in =A1*2) change when copied.", answer: false }
+        - { id: xl-w03-d2-g13, difficulty: medium, type: text, prompt: "=SUM(A1:A3) in A4, copied to B4 becomes…", accept: ["=SUM(B1:B3)"] }
+        - { id: xl-w03-d2-g14, difficulty: medium, type: text, prompt: "=SUM(A1:A3) in A4, copied to A5 becomes…", accept: ["=SUM(A2:A4)"] }
+        - { id: xl-w03-d2-g15, difficulty: medium, type: mcq, prompt: "Why does a relative reference move?", choices: ["Excel stores it as \"so many rows/columns away from this cell\"", "Excel guesses", "It's a bug", "Because of formatting"], answer: 0 }
+        - { id: xl-w03-d2-g16, difficulty: hard, type: text, prompt: "=B2*C2-D1 in E2, copied to G5 becomes…", accept: ["=D5*E5-F4"] }
+        - { id: xl-w03-d2-g17, difficulty: hard, type: mcq, prompt: "=A3 in B3 is copied to B1. It becomes…", choices: ["=A1", "=A5", "=A3", "#REF!"], answer: 0 }
+        - { id: xl-w03-d2-g18, difficulty: hard, type: mcq, prompt: "=A2 in B2 is copied to A1. It becomes…", choices: ["#REF!", "=A1", "=Z1", "=A2"], answer: 0, explain: "One column left of A doesn't exist." }
+    quizzes:
+      - kind: rapid-fire
+        title: "Lock it"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w03-d2-rf01, difficulty: easy, type: mcq, prompt: "Column AND row locked", choices: ["$A$1", "A1", "$A1", "A$1"], answer: 0 }
+          - { id: xl-w03-d2-rf02, difficulty: easy, type: mcq, prompt: "Only the column locked", choices: ["$A1", "A$1", "$A$1", "A1"], answer: 0 }
+          - { id: xl-w03-d2-rf03, difficulty: easy, type: mcq, prompt: "Only the row locked", choices: ["A$1", "$A1", "$A$1", "A1"], answer: 0 }
+          - { id: xl-w03-d2-rf04, difficulty: easy, type: mcq, prompt: "Cycle through reference types", choices: ["F4", "F2", "F9", "Ctrl+$"], answer: 0 }
+          - { id: xl-w03-d2-rf05, difficulty: easy, type: mcq, prompt: "Nigerian VAT rate", choices: ["7.5%", "5%", "10%", "15%"], answer: 0 }
+          - { id: xl-w03-d2-rf06, difficulty: easy, type: text, prompt: "=O2*$R$1 in Q2, filled to Q3 becomes…", accept: ["=O3*$R$1"] }
+          - { id: xl-w03-d2-rf07, difficulty: easy, type: mcq, prompt: "$A$1 is called…", choices: ["absolute", "relative", "mixed", "fixed-row"], answer: 0 }
+          - { id: xl-w03-d2-rf08, difficulty: easy, type: mcq, prompt: "F4 order starting from A1", choices: ["$A$1 → A$1 → $A1 → A1", "A$1 → $A1 → $A$1", "$A1 → A$1 → $A$1", "A1 → A1"], answer: 0 }
+          - { id: xl-w03-d2-rf09, difficulty: easy, type: truefalse, prompt: "Put the VAT rate in one cell and point every formula at it.", answer: true }
+          - { id: xl-w03-d2-rf10, difficulty: easy, type: text, prompt: "₦10,000 × 7.5% VAT = ? (digits only)", accept: ["750"] }
+      - kind: brain-teaser
+        title: "Why are they zero?"
+        questions:
+          - { id: xl-w03-d2-bt01, difficulty: medium, type: mcq, prompt: "=O2*R1 in Q2, filled down. Most of column Q is 0. Why?", choices: ["R1 moved to R2, R3…, which are empty", "VAT is 0", "O is empty", "Excel can't multiply percentages"], answer: 0 }
+          - { id: xl-w03-d2-bt02, difficulty: medium, type: text, prompt: "Fix the formula so the rate stays in R1: =O2*R1 →", accept: ["=O2*$R$1"] }
+          - { id: xl-w03-d2-bt03, difficulty: medium, type: text, prompt: "Total VAT on ₦834,046,700 at 7.5%? (digits only, with .5 if any)", accept: ["62553502.5", "62553502.50"] }
+          - { id: xl-w03-d2-bt04, difficulty: hard, type: mcq, prompt: "The rate in R1 changes from 7.5% to 10%. What happens to 2,400 VAT formulas using $R$1?", choices: ["They all update at once", "Nothing until you retype them", "Only Q2 updates", "They show #REF!"], answer: 0 }
+          - { id: xl-w03-d2-bt05, difficulty: hard, type: text, prompt: "=A2*$D$1 in B2 is copied to C5. It becomes…", accept: ["=B5*$D$1"] }
+
+  # ─────────────────────────── DAY 3 ───────────────────────────
+  - day: 3
+    gate:
+      title: "Checkpoint: absolute references"
+      covers: "Week 3 · Day 2: $ references, F4, a single rate cell, VAT"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w03-d3-g01, difficulty: easy, type: mcq, prompt: "Lock both column and row", choices: ["$A$1", "A$1", "$A1", "A1"], answer: 0 }
+        - { id: xl-w03-d3-g02, difficulty: easy, type: mcq, prompt: "Which key adds the $ signs for you?", choices: ["F4", "F2", "Ctrl+$", "Shift+4"], answer: 0 }
+        - { id: xl-w03-d3-g03, difficulty: easy, type: text, prompt: "=B2*$F$1 in C2, filled to C3 becomes…", accept: ["=B3*$F$1"] }
+        - { id: xl-w03-d3-g04, difficulty: easy, type: truefalse, prompt: "An absolute reference never moves when copied.", answer: true }
+        - { id: xl-w03-d3-g05, difficulty: easy, type: mcq, prompt: "Nigeria's VAT rate", choices: ["7.5%", "7%", "10%", "5%"], answer: 0 }
+        - { id: xl-w03-d3-g06, difficulty: easy, type: mcq, prompt: "VAT on O2 with the rate in R1:", choices: ["=O2*$R$1", "=O2*R1", "=O2+R1", "=$O$2*R1"], answer: 0 }
+        - { id: xl-w03-d3-g07, difficulty: medium, type: match, prompt: "Match the reference to what's locked.", pairs: [["A1", "nothing"], ["$A$1", "column and row"], ["$A1", "column only"], ["A$1", "row only"]] }
+        - { id: xl-w03-d3-g08, difficulty: medium, type: text, prompt: "=O2*$R$1 in Q2, copied to Q500 becomes…", accept: ["=O500*$R$1"] }
+        - { id: xl-w03-d3-g09, difficulty: medium, type: mcq, prompt: "Why keep the VAT rate in one cell?", choices: ["Change it once and every formula updates", "Excel requires it", "It's faster to type", "Percentages can't go in formulas"], answer: 0 }
+        - { id: xl-w03-d3-g10, difficulty: medium, type: text, prompt: "₦145,000 × 7.5% VAT = ? (digits only)", accept: ["10875"] }
+        - { id: xl-w03-d3-g11, difficulty: medium, type: mcq, prompt: "You type =O2*R1 and press F4 once with the cursor on R1. You get…", choices: ["=O2*$R$1", "=O2*R$1", "=O2*$R1", "=$O$2*R1"], answer: 0 }
+        - { id: xl-w03-d3-g12, difficulty: medium, type: truefalse, prompt: "=O2*R1 filled down gives the same VAT in every row.", answer: false, explain: "R1 becomes R2, R3… (empty), so most results are 0." }
+        - { id: xl-w03-d3-g13, difficulty: medium, type: text, prompt: "Total VAT at 7.5% on NaijaMart's ₦834,046,700 net sales? (digits only)", accept: ["62553502.5", "62553502.50"] }
+        - { id: xl-w03-d3-g14, difficulty: medium, type: mcq, prompt: "=A2*$B$1 copied one column right becomes…", choices: ["=B2*$B$1", "=B2*$C$1", "=A2*$B$1", "=B2*C1"], answer: 0 }
+        - { id: xl-w03-d3-g15, difficulty: medium, type: text, prompt: "Price incl. VAT on ₦10,000 at 7.5%? (digits only)", accept: ["10750"] }
+        - { id: xl-w03-d3-g16, difficulty: hard, type: text, prompt: "=C3*$H$2+D3 in E3, copied to G7 becomes…", accept: ["=E7*$H$2+F7"] }
+        - { id: xl-w03-d3-g17, difficulty: hard, type: mcq, prompt: "Price incl. VAT in P2 (price in K2, rate in $R$1):", choices: ["=K2*(1+$R$1)", "=K2*$R$1", "=K2+$R$1", "=K2*(1-$R$1)"], answer: 0 }
+        - { id: xl-w03-d3-g18, difficulty: hard, type: multi, prompt: "Which formulas keep pointing at R1 when filled down AND across? (Select all.)", choices: ["=O2*$R$1", "=O2*R$1", "=O2*$R1", "=O2*R1"], answers: [0], explain: "R$1 moves across columns; $R1 moves down rows." }
+    quizzes:
+      - kind: rapid-fire
+        title: "Percent sprint"
+        secondsPerQuestion: 9
+        questions:
+          - { id: xl-w03-d3-rf01, difficulty: easy, type: mcq, prompt: "What % is part of total?", choices: ["=part/total", "=total/part", "=part*total", "=part-total"], answer: 0 }
+          - { id: xl-w03-d3-rf02, difficulty: easy, type: mcq, prompt: "Increase by 15%", choices: ["=value*(1+15%)", "=value+15%", "=value*15%", "=value/15%"], answer: 0 }
+          - { id: xl-w03-d3-rf03, difficulty: easy, type: mcq, prompt: "Decrease by 15%", choices: ["=value*(1-15%)", "=value-15%", "=value*15%", "=value/(1-15%)"], answer: 0 }
+          - { id: xl-w03-d3-rf04, difficulty: easy, type: mcq, prompt: "% change from old to new", choices: ["=(new-old)/old", "=(old-new)/new", "=new/old", "=new-old"], answer: 0 }
+          - { id: xl-w03-d3-rf05, difficulty: easy, type: text, prompt: "50 of 200 as a %", accept: ["25%", "0.25"] }
+          - { id: xl-w03-d3-rf06, difficulty: easy, type: text, prompt: "1,000 increased by 10% = ?", accept: ["1100", "1,100"] }
+          - { id: xl-w03-d3-rf07, difficulty: easy, type: text, prompt: "1,000 decreased by 20% = ?", accept: ["800"] }
+          - { id: xl-w03-d3-rf08, difficulty: easy, type: text, prompt: "Old 100, new 150. % change?", accept: ["50%", "0.5", "+50%"] }
+          - { id: xl-w03-d3-rf09, difficulty: easy, type: mcq, prompt: "% of total with the total in B8", choices: ["=B2/$B$8", "=B2/B8", "=$B$2/B8", "=B8/B2"], answer: 0 }
+          - { id: xl-w03-d3-rf10, difficulty: easy, type: truefalse, prompt: "=B2/B8 filled down breaks because B8 moves.", answer: true }
+      - kind: brain-teaser
+        title: "Regional shares"
+        questions:
+          - { id: xl-w03-d3-bt01, difficulty: medium, type: mcq, prompt: "Lagos ₦321,703,800 of ₦834,046,700 total. Share (1 decimal)?", choices: ["38.6%", "32.2%", "61.4%", "3.9%"], answer: 0 }
+          - { id: xl-w03-d3-bt02, difficulty: medium, type: text, prompt: "Old 80, new 60. % change? (e.g. -10%)", accept: ["-25%", "-0.25"] }
+          - { id: xl-w03-d3-bt03, difficulty: medium, type: text, prompt: "January ₦43,211,125, December ₦109,612,345. % change, 1 decimal? (e.g. +12.3%)", accept: ["+153.7%", "153.7%", "1.537"] }
+          - { id: xl-w03-d3-bt04, difficulty: hard, type: mcq, prompt: "% of total shows 100% in C2, then #DIV/0! below. The formula was =B2/B8. Why?", choices: ["B8 moved to B9, B10… (empty): lock it with $B$8", "B8 is text", "Percent format is wrong", "C2 is circular"], answer: 0 }
+          - { id: xl-w03-d3-bt05, difficulty: hard, type: text, prompt: "A ₦20,000 item rises 10%, then falls 10%. New price? (digits only)", accept: ["19800"], explain: "20,000 × 1.1 × 0.9 = 19,800: not back to 20,000." }
+
+  # ─────────────────────────── DAY 4 ───────────────────────────
+  - day: 4
+    gate:
+      title: "Checkpoint: percentages"
+      covers: "Week 3 · Day 3: part of total, increase/decrease by %, % change, % of total with a locked total"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w03-d4-g01, difficulty: easy, type: mcq, prompt: "% change formula", choices: ["=(new-old)/old", "=(new-old)/new", "=new/old-old", "=old/new"], answer: 0 }
+        - { id: xl-w03-d4-g02, difficulty: easy, type: text, prompt: "30 of 120 as a %", accept: ["25%", "0.25"] }
+        - { id: xl-w03-d4-g03, difficulty: easy, type: text, prompt: "₦5,000 increased by 20%? (digits only)", accept: ["6000"] }
+        - { id: xl-w03-d4-g04, difficulty: easy, type: truefalse, prompt: "% of total needs an absolute reference to the total.", answer: true }
+        - { id: xl-w03-d4-g05, difficulty: easy, type: mcq, prompt: "Decrease A2 by 5%", choices: ["=A2*(1-5%)", "=A2-5%", "=A2*5%", "=A2*(1+5%)"], answer: 0 }
+        - { id: xl-w03-d4-g06, difficulty: easy, type: text, prompt: "₦8,000 decreased by 25%? (digits only)", accept: ["6000"] }
+        - { id: xl-w03-d4-g07, difficulty: medium, type: text, prompt: "Old ₦40,000, new ₦50,000. % change?", accept: ["25%", "+25%", "0.25"] }
+        - { id: xl-w03-d4-g08, difficulty: medium, type: text, prompt: "Old ₦50,000, new ₦40,000. % change?", accept: ["-20%", "-0.2"] }
+        - { id: xl-w03-d4-g09, difficulty: medium, type: mcq, prompt: "Enugu ₦77,467,230 of ₦834,046,700. Share (1 decimal)?", choices: ["9.3%", "7.7%", "10.8%", "93%"], answer: 0 }
+        - { id: xl-w03-d4-g10, difficulty: medium, type: match, prompt: "Match the question to the formula.", pairs: [["Part of total", "=B2/$B$8"], ["Up 15%", "=A2*(1+15%)"], ["Down 15%", "=A2*(1-15%)"], ["Change", "=(C2-B2)/B2"]] }
+        - { id: xl-w03-d4-g11, difficulty: medium, type: mcq, prompt: "=B2/$B$8 in C2, filled to C7. C7 contains…", choices: ["=B7/$B$8", "=B7/$B$13", "=B2/$B$8", "=B7/B13"], answer: 0 }
+        - { id: xl-w03-d4-g12, difficulty: medium, type: truefalse, prompt: "The % of total column should add up to 100%.", answer: true }
+        - { id: xl-w03-d4-g13, difficulty: medium, type: text, prompt: "Price ₦200,000; staff discount 20%. Staff price? (digits only)", accept: ["160000"] }
+        - { id: xl-w03-d4-g14, difficulty: medium, type: mcq, prompt: "January to December net sales went from ₦43.2m to ₦109.6m. The % change is about…", choices: ["+154%", "+66%", "+254%", "+39%"], answer: 0 }
+        - { id: xl-w03-d4-g15, difficulty: medium, type: mcq, prompt: "Margin % = Margin / UnitPrice. Tecno Spark 20: margin ₦27,000, price ₦145,000. Margin %?", choices: ["18.6%", "27%", "5.4%", "81.4%"], answer: 0 }
+        - { id: xl-w03-d4-g16, difficulty: hard, type: text, prompt: "Tecno Spark 20 at ₦145,000 incl. 7.5% VAT? (digits only)", accept: ["155875"] }
+        - { id: xl-w03-d4-g17, difficulty: hard, type: text, prompt: "Sales grew from ₦2,000,000 to ₦2,500,000 then to ₦3,000,000. % change for the second step, 1 decimal?", accept: ["20%", "20.0%", "+20%", "0.2"] }
+        - { id: xl-w03-d4-g18, difficulty: hard, type: mcq, prompt: "A price fell 50%. What % rise brings it back?", choices: ["100%", "50%", "150%", "200%"], answer: 0 }
+    quizzes:
+      - kind: rapid-fire
+        title: "Mixed references"
+        secondsPerQuestion: 9
+        questions:
+          - { id: xl-w03-d4-rf01, difficulty: easy, type: mcq, prompt: "Multiplication-table formula in B2", choices: ["=$A2*B$1", "=A2*B1", "=$A$2*$B$1", "=A$2*$B1"], answer: 0 }
+          - { id: xl-w03-d4-rf02, difficulty: easy, type: mcq, prompt: "Always read column A (side labels)", choices: ["$A2", "A$2", "A2", "$A$2"], answer: 0 }
+          - { id: xl-w03-d4-rf03, difficulty: easy, type: mcq, prompt: "Always read row 1 (top labels)", choices: ["B$1", "$B1", "B1", "$B$1"], answer: 0 }
+          - { id: xl-w03-d4-rf04, difficulty: easy, type: text, prompt: "=$A2*B$1 copied to C3 becomes…", accept: ["=$A3*C$1"] }
+          - { id: xl-w03-d4-rf05, difficulty: easy, type: text, prompt: "=$A2*B$1 copied to D2 becomes…", accept: ["=$A2*D$1"] }
+          - { id: xl-w03-d4-rf06, difficulty: easy, type: text, prompt: "=$A2*B$1 copied to B5 becomes…", accept: ["=$A5*B$1"] }
+          - { id: xl-w03-d4-rf07, difficulty: easy, type: text, prompt: "145,000 at 15% off = ?", accept: ["123250", "123,250"] }
+          - { id: xl-w03-d4-rf08, difficulty: easy, type: text, prompt: "649,000 at 20% off = ?", accept: ["519200", "519,200"] }
+          - { id: xl-w03-d4-rf09, difficulty: easy, type: truefalse, prompt: "A 12 × 12 multiplication table needs only one formula.", answer: true }
+          - { id: xl-w03-d4-rf10, difficulty: easy, type: mcq, prompt: "Price grid: prices in A2:A6, discounts in B1:F1. B2 =", choices: ["=$A2*(1-B$1)", "=A2*(1-B1)", "=$A$2*(1-$B$1)", "=A$2*(1-$B1)"], answer: 0 }
+      - kind: brain-teaser
+        title: "Which $ goes where?"
+        questions:
+          - { id: xl-w03-d4-bt01, difficulty: medium, type: mcq, prompt: "=A2*B1 filled across and down gives nonsense. Why?", choices: ["Both references move; the side and top labels need locking", "Multiplication tables need SUM", "The numbers are text", "It needs F9"], answer: 0 }
+          - { id: xl-w03-d4-bt02, difficulty: medium, type: text, prompt: "In the multiplication table, what does C4 show? (A4 = 3, C1 = 2)", accept: ["6"] }
+          - { id: xl-w03-d4-bt03, difficulty: medium, type: text, prompt: "=$A2*(1-B$1) copied to E5 becomes…", accept: ["=$A5*(1-E$1)"] }
+          - { id: xl-w03-d4-bt04, difficulty: hard, type: mcq, prompt: "Someone wrote =A$2*$B1 in B2 of the multiplication table. Filled out, what goes wrong?", choices: ["It reads row 2 and column B instead of the labels: the $ are on the wrong parts", "Nothing", "#REF!", "Only the first row is wrong"], answer: 0 }
+          - { id: xl-w03-d4-bt05, difficulty: hard, type: text, prompt: "349,000 at 5% off = ? (digits only)", accept: ["331550"] }
+
+  # ─────────────────────────── DAY 5 ───────────────────────────
+  - day: 5
+    gate:
+      title: "Checkpoint: mixed references"
+      covers: "Week 3 · Day 4: $A2 and B$1, the multiplication table, the price grid"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w03-d5-g01, difficulty: easy, type: mcq, prompt: "$A2 locks…", choices: ["the column", "the row", "both", "neither"], answer: 0 }
+        - { id: xl-w03-d5-g02, difficulty: easy, type: mcq, prompt: "B$1 locks…", choices: ["the row", "the column", "both", "neither"], answer: 0 }
+        - { id: xl-w03-d5-g03, difficulty: easy, type: mcq, prompt: "The multiplication-table formula in B2", choices: ["=$A2*B$1", "=$A$2*$B$1", "=A2*B1", "=A$2*$B1"], answer: 0 }
+        - { id: xl-w03-d5-g04, difficulty: easy, type: truefalse, prompt: "Mixed references are made for grids with inputs across the top and down the side.", answer: true }
+        - { id: xl-w03-d5-g05, difficulty: easy, type: text, prompt: "=$A2*B$1 copied to C2 becomes…", accept: ["=$A2*C$1"] }
+        - { id: xl-w03-d5-g06, difficulty: easy, type: text, prompt: "=$A2*B$1 copied to B3 becomes…", accept: ["=$A3*B$1"] }
+        - { id: xl-w03-d5-g07, difficulty: medium, type: text, prompt: "=$A2*B$1 copied to M13 becomes…", accept: ["=$A13*M$1"] }
+        - { id: xl-w03-d5-g08, difficulty: medium, type: text, prompt: "Multiplication table: A8 = 7, F1 = 5. What's in F8?", accept: ["35"] }
+        - { id: xl-w03-d5-g09, difficulty: medium, type: mcq, prompt: "Why $A2 and not A$2 for the side labels?", choices: ["The side labels stay in column A as you fill right; the row must change as you fill down", "A$2 is invalid", "They're the same", "Excel prefers $ first"], answer: 0 }
+        - { id: xl-w03-d5-g10, difficulty: medium, type: text, prompt: "Price grid: 145,000 at 10% off? (digits only)", accept: ["130500"] }
+        - { id: xl-w03-d5-g11, difficulty: medium, type: text, prompt: "Price grid: 25,500 at 20% off? (digits only)", accept: ["20400"] }
+        - { id: xl-w03-d5-g12, difficulty: medium, type: match, prompt: "Match: after F4 is pressed n times on A1.", pairs: [["once", "$A$1"], ["twice", "A$1"], ["three times", "$A1"], ["four times", "A1"]] }
+        - { id: xl-w03-d5-g13, difficulty: medium, type: truefalse, prompt: "=$A$2*$B$1 filled across a grid gives the same value in every cell.", answer: true }
+        - { id: xl-w03-d5-g14, difficulty: medium, type: mcq, prompt: "Prices down A2:A6, discounts across B1:F1. Which formula fills the grid?", choices: ["=$A2*(1-B$1)", "=A$2*(1-$B1)", "=$A$2*(1-B1)", "=A2*(1-B1)"], answer: 0 }
+        - { id: xl-w03-d5-g15, difficulty: medium, type: text, prompt: "=$A2*(1-B$1) copied to D4 becomes…", accept: ["=$A4*(1-D$1)"] }
+        - { id: xl-w03-d5-g16, difficulty: hard, type: text, prompt: "Price grid: 7,500 at 15% off? (digits only)", accept: ["6375"] }
+        - { id: xl-w03-d5-g17, difficulty: hard, type: mcq, prompt: "A grid has rates down column A and amounts across row 1. B2 should be…", choices: ["=B$1*$A2", "=$B1*A$2", "=B1*A2", "=$B$1*$A$2"], answer: 0 }
+        - { id: xl-w03-d5-g18, difficulty: hard, type: mcq, prompt: "=$A2*B$1 in B2 is copied to B1. It becomes…", choices: ["=$A1*B$1", "=$A2*B$1", "#REF!", "=$A1*B$0"], answer: 0 }
+    quizzes:
+      - kind: rapid-fire
+        title: "Fill and Flash Fill"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w03-d5-rf01, difficulty: easy, type: mcq, prompt: "Flash Fill", choices: ["Ctrl+E", "Ctrl+F", "Ctrl+D", "Ctrl+R"], answer: 0 }
+          - { id: xl-w03-d5-rf02, difficulty: easy, type: mcq, prompt: "Dates every 7 days", choices: ["Home → Fill → Series, step 7", "Flash Fill", "Paste Special", "F4"], answer: 0 }
+          - { id: xl-w03-d5-rf03, difficulty: easy, type: truefalse, prompt: "Flash Fill results update when the source changes.", answer: false }
+          - { id: xl-w03-d5-rf04, difficulty: easy, type: mcq, prompt: "From \"Lagos - Ikeja\" to \"Ikeja\"", choices: ["Flash Fill", "Fill Series", "F4", "AutoSum"], answer: 0 }
+          - { id: xl-w03-d5-rf05, difficulty: easy, type: mcq, prompt: "Fill without copying formatting", choices: ["Auto Fill Options → Fill Without Formatting", "Ctrl+D", "Paste Values", "F2"], answer: 0 }
+          - { id: xl-w03-d5-rf06, difficulty: easy, type: mcq, prompt: "Flash Fill learns from…", choices: ["an example you type", "a formula", "a macro", "the ribbon"], answer: 0 }
+          - { id: xl-w03-d5-rf07, difficulty: easy, type: text, prompt: "Tolu + Eze → email pattern (Flash Fill)", accept: ["tolu.eze@naijamart.ng"] }
+          - { id: xl-w03-d5-rf08, difficulty: easy, type: truefalse, prompt: "Flash Fill writes values, not formulas.", answer: true }
+          - { id: xl-w03-d5-rf09, difficulty: easy, type: mcq, prompt: "Which updates automatically if the source changes?", choices: ["a formula", "Flash Fill", "typed text", "Paste Values"], answer: 0 }
+          - { id: xl-w03-d5-rf10, difficulty: easy, type: mcq, prompt: "Text functions that replace Flash Fill come in…", choices: ["Week 7", "Week 2", "Week 20", "never"], answer: 0 }
+      - kind: brain-teaser
+        title: "Pattern spotting"
+        questions:
+          - { id: xl-w03-d5-bt01, difficulty: medium, type: mcq, prompt: "You Flash-Filled surnames, then fixed a typo in a full name. The surname…", choices: ["stays wrong: Flash Fill doesn't update", "updates automatically", "turns into #REF!", "disappears"], answer: 0 }
+          - { id: xl-w03-d5-bt02, difficulty: medium, type: text, prompt: "Store \"Abuja - Wuse\" → Flash Fill area?", accept: ["Wuse"] }
+          - { id: xl-w03-d5-bt03, difficulty: medium, type: mcq, prompt: "Every Monday of 2026: first date Mon 5 Jan, then…", choices: ["Fill → Series, Columns, step 7", "Flash Fill", "Ctrl+;", "AutoSum"], answer: 0 }
+          - { id: xl-w03-d5-bt04, difficulty: hard, type: mcq, prompt: "Why do the lessons ask you to Flash Fill on Data_backup, not Data?", choices: ["Later lessons rely on the Data sheet's column layout", "Flash Fill can't run on Data", "Data is protected", "It's faster"], answer: 0 }
+          - { id: xl-w03-d5-bt05, difficulty: hard, type: text, prompt: "Ngozi Eze → email? (same pattern as tolu.eze@naijamart.ng)", accept: ["ngozi.eze@naijamart.ng"] }
+
+  # ─────────────────────────── DAY 6 ───────────────────────────
+  - day: 6
+    gate:
+      title: "Checkpoint: fill tricks and Flash Fill"
+      covers: "Week 3 · Day 5: Fill → Series, Auto Fill Options, Flash Fill (Ctrl+E) and its limits"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w03-d6-g01, difficulty: easy, type: mcq, prompt: "Flash Fill shortcut", choices: ["Ctrl+E", "Ctrl+F", "Ctrl+Shift+F", "F4"], answer: 0 }
+        - { id: xl-w03-d6-g02, difficulty: easy, type: mcq, prompt: "Where is Fill → Series?", choices: ["Home tab", "Insert tab", "View tab", "Review tab"], answer: 0 }
+        - { id: xl-w03-d6-g03, difficulty: easy, type: truefalse, prompt: "Flash Fill is a formula.", answer: false }
+        - { id: xl-w03-d6-g04, difficulty: easy, type: mcq, prompt: "To start Flash Fill you first…", choices: ["type one example", "write a formula", "select the whole sheet", "record a macro"], answer: 0 }
+        - { id: xl-w03-d6-g05, difficulty: easy, type: mcq, prompt: "\"Tolu Eze\" → \"Eze\" is done with…", choices: ["Flash Fill", "Fill Series", "F4", "Paste Special → Transpose"], answer: 0 }
+        - { id: xl-w03-d6-g06, difficulty: easy, type: mcq, prompt: "Dates every 7 days need a step value of…", choices: ["7", "1", "52", "30"], answer: 0 }
+        - { id: xl-w03-d6-g07, difficulty: medium, type: mcq, prompt: "Flash Fill vs a formula:", choices: ["Flash Fill pastes static values; formulas recalculate", "Same thing", "Formulas can't extract text", "Flash Fill updates, formulas don't"], answer: 0 }
+        - { id: xl-w03-d6-g08, difficulty: medium, type: text, prompt: "\"Port Harcourt - GRA\" → Flash Fill area?", accept: ["GRA"] }
+        - { id: xl-w03-d6-g09, difficulty: medium, type: truefalse, prompt: "After dragging the fill handle you can choose Fill Without Formatting.", answer: true }
+        - { id: xl-w03-d6-g10, difficulty: medium, type: mcq, prompt: "Flash Fill gets one row wrong. Best fix?", choices: ["Type a second correct example, then press Ctrl+E again", "Give up", "Use F4", "Delete the column"], answer: 0 }
+        - { id: xl-w03-d6-g11, difficulty: medium, type: text, prompt: "Ada Okafor → email (pattern firstname.lastname@naijamart.ng, lowercase)", accept: ["ada.okafor@naijamart.ng"] }
+        - { id: xl-w03-d6-g12, difficulty: medium, type: match, prompt: "Match the job to the tool.", pairs: [["Every Monday of 2026", "Fill → Series"], ["Surnames from full names", "Flash Fill"], ["Copy a formula down", "fill handle"], ["Lock a reference", "F4"]] }
+        - { id: xl-w03-d6-g13, difficulty: medium, type: mcq, prompt: "When should you use a formula instead of Flash Fill?", choices: ["When the source data will change", "Never", "Only for numbers", "When the sheet is small"], answer: 0 }
+        - { id: xl-w03-d6-g14, difficulty: medium, type: truefalse, prompt: "Fill → Series can stop at a value you set.", answer: true }
+        - { id: xl-w03-d6-g15, difficulty: medium, type: mcq, prompt: "Flash Fill on the Data sheet changed its columns, and later formulas broke. Lesson?", choices: ["Keep source layouts fixed; work on a copy", "Flash Fill is broken", "Never insert columns anywhere", "Use bigger fonts"], answer: 0 }
+        - { id: xl-w03-d6-g16, difficulty: hard, type: mcq, prompt: "UnitPrice is in F, UnitCost in G. Margin % for every product:", choices: ["=(F2-G2)/F2 filled down (no $ needed: each row's own cells)", "=(F2-G2)/$F$2 filled down", "Flash Fill the percentages", "Type each margin"], answer: 0 }
+        - { id: xl-w03-d6-g17, difficulty: hard, type: text, prompt: "Tecno Spark 20 at ₦145,000 with a 10% wholesale discount? (digits only)", accept: ["130500"] }
+        - { id: xl-w03-d6-g18, difficulty: hard, type: multi, prompt: "Which update automatically when an Inputs cell changes? (Select all.)", choices: ["=K2*(1+$C$1)", "=K2*(1-$C$2)", "A Flash-Filled column", "A typed number"], answers: [0, 1] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Week 3 lightning round"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w03-d6-rf01, difficulty: easy, type: mcq, prompt: "Absolute", choices: ["$A$1", "A1", "$A1", "A$1"], answer: 0 }
+          - { id: xl-w03-d6-rf02, difficulty: easy, type: mcq, prompt: "Cycle $ signs", choices: ["F4", "F2", "Ctrl+E", "Alt+="], answer: 0 }
+          - { id: xl-w03-d6-rf03, difficulty: easy, type: mcq, prompt: "Flash Fill", choices: ["Ctrl+E", "Ctrl+F", "F4", "Ctrl+D"], answer: 0 }
+          - { id: xl-w03-d6-rf04, difficulty: easy, type: text, prompt: "=A1*2 in B1 → B2?", accept: ["=A2*2"] }
+          - { id: xl-w03-d6-rf05, difficulty: easy, type: text, prompt: "=O2*$R$1 in Q2 → Q9?", accept: ["=O9*$R$1"] }
+          - { id: xl-w03-d6-rf06, difficulty: easy, type: mcq, prompt: "% of total", choices: ["=B2/$B$8", "=B2/B8", "=B8/B2", "=$B2/B8"], answer: 0 }
+          - { id: xl-w03-d6-rf07, difficulty: easy, type: mcq, prompt: "% change", choices: ["=(new-old)/old", "=new/old", "=(old-new)/new", "=new-old"], answer: 0 }
+          - { id: xl-w03-d6-rf08, difficulty: easy, type: mcq, prompt: "Grid formula", choices: ["=$A2*B$1", "=A2*B1", "=$A$2*$B$1", "=A$2*$B1"], answer: 0 }
+          - { id: xl-w03-d6-rf09, difficulty: easy, type: text, prompt: "₦20,000 + 7.5% VAT? (digits only)", accept: ["21500"] }
+          - { id: xl-w03-d6-rf10, difficulty: easy, type: truefalse, prompt: "Nigerian VAT is 7.5%.", answer: true }
+      - kind: brain-teaser
+        title: "Price list check"
+        questions:
+          - { id: xl-w03-d6-bt01, difficulty: medium, type: text, prompt: "Tecno Spark 20: price ₦145,000, cost ₦118,000. Margin? (digits only)", accept: ["27000"] }
+          - { id: xl-w03-d6-bt02, difficulty: medium, type: text, prompt: "Tecno Spark 20 staff price at 20% off ₦145,000? (digits only)", accept: ["116000"] }
+          - { id: xl-w03-d6-bt03, difficulty: medium, type: mcq, prompt: "VAT rate is in $C$1. Price incl. VAT for K2:", choices: ["=K2*(1+$C$1)", "=K2*$C$1", "=K2+C1", "=K2*(1+C1)"], answer: 0 }
+          - { id: xl-w03-d6-bt04, difficulty: hard, type: mcq, prompt: "Which product had the highest margin % in the price list project?", choices: ["Phone Charger (Fast), 44%", "Tecno Spark 20, 18.6%", "JBL Flip 6", "Dell Inspiron 15"], answer: 0 }
+          - { id: xl-w03-d6-bt05, difficulty: hard, type: text, prompt: "A ₦10,000 item: 10% wholesale discount, then 7.5% VAT on the discounted price. Final price? (digits only)", accept: ["9675"] }

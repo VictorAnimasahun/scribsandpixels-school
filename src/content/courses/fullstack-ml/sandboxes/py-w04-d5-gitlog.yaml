@@ -1,0 +1,37 @@
+# Week 4 · Day 5 mini-task (Python bridge)
+id: py-w04-d5-gitlog
+kind: python
+title: "Read a git log"
+description: "Real developer tools read git output. Split lines, pull out authors, count commits."
+starter: |
+  log = """a1f3c2e Victor: Add about page
+  9b2d771 Ada: Fix typo in footer
+  4c88e01 Victor: Add contact form
+  e7a0b13 Victor: Style navbar with flexbox
+  2f9c6d0 Tunde: Add media query for phones"""
+
+  # 1. Split log into lines and print how many commits there are, like: 5 commits
+
+  # 2. Write commits_by(author, text) that RETURNS how many commits that author made.
+  #    Careful: "Victoria" is not "Victor".
+
+  # 3. Print only each commit's message (the part after ": "), one per line.
+tasks:
+  - prompt: "Print the number of commits, like: 5 commits (count the lines, don't type 5)."
+    expectOutput: ["5 commits"]
+    tests: |
+      assert "splitlines" in __code__ or "split(" in __code__, "Split the log into lines"
+      assert "print(\"5 commits\")" not in __code__ and "print('5 commits')" not in __code__, "Count the lines, don't type 5"
+  - prompt: "commits_by(author, text) returns that author's commit count (an exact name match)."
+    tests: |
+      assert commits_by("Victor", log) == 3, f"Victor: got {commits_by('Victor', log)}, expected 3"
+      assert commits_by("Ada", log) == 1, "Ada made 1 commit"
+      assert commits_by("Kemi", log) == 0, "Kemi made none"
+      other = "b1 Victoria: Add logo\nc2 Victor: Fix logo"
+      assert commits_by("Victor", other) == 1, "Victoria isn't Victor: compare the whole name"
+    hint: "For each line: name = line.split(\" \", 1)[1].split(\":\")[0]"
+  - prompt: "Print each message on its own line: Add about page … Add media query for phones (no hashes, no names)."
+    expectOutput: ["Add about page", "Fix typo in footer", "Add media query for phones"]
+    tests: |
+      assert "a1f3c2e" not in __output__ and "Victor:" not in __output__, "Print only the message part"
+    hint: "line.split(\": \", 1)[1]"

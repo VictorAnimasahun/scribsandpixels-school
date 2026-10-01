@@ -1,0 +1,25 @@
+# Week 4 · Day 6 project (layout practice)
+id: web-w04-d6-project
+kind: web
+title: "Responsive About-me page"
+description: "Everything from the week in one page: flex navbar, wrapping cards, hover, rem sizes and a media query."
+html: |
+  <!-- header with your name + nav, a .cards section with 3+ .card items, a footer -->
+css: |
+  /* Your styles */
+js: ""
+tasks:
+  - prompt: "The border-box reset."
+    check: "[...document.querySelectorAll('body *')].every(el => getComputedStyle(el).boxSizing === 'border-box') && document.querySelectorAll('body *').length > 3"
+  - prompt: "A flex <header>: your name on the left, a <nav> with 2+ links on the right, vertically centred."
+    check: "(() => { const h = document.querySelector('header'); if (!h) return false; const s = getComputedStyle(h); return s.display === 'flex' && s.justifyContent === 'space-between' && s.alignItems === 'center' && document.querySelectorAll('header nav a[href]').length >= 2 })()"
+  - prompt: "A .cards container that wraps, with at least 3 .card items that grow."
+    check: "(() => { const c = document.querySelector('.cards'); if (!c) return false; const s = getComputedStyle(c); const cards = c.querySelectorAll('.card'); return s.display === 'flex' && s.flexWrap === 'wrap' && cards.length >= 3 && [...cards].every(k => parseFloat(getComputedStyle(k).flexGrow) >= 1) })()"
+  - prompt: "A hover effect on something (links or buttons)."
+    check: "[...document.styleSheets].flatMap(s => [...s.cssRules]).some(r => /:hover/.test(r.selectorText || '') && r.style.length > 0)"
+  - prompt: "Font sizes in rem (at least one rule)."
+    check: "[...document.styleSheets].flatMap(s => [...s.cssRules]).flatMap(r => r.media ? [...r.cssRules] : [r]).some(r => r.style && /rem$/.test(r.style.fontSize))"
+  - prompt: "A media query for phones (max-width) that changes something."
+    check: "[...document.styleSheets].flatMap(s => [...s.cssRules]).some(r => r.media && /max-width/.test(r.conditionText || r.media.mediaText) && [...r.cssRules].some(x => x.style && x.style.length > 0))"
+  - prompt: "A <footer>."
+    check: "!!document.querySelector('footer')"

@@ -41,11 +41,14 @@ export default function WebSandbox({ sandbox }: Props) {
     setLogs([])
     setResults(null)
     const checker = `<script>
-      window.addEventListener('load', () => setTimeout(() => {
+      // Layout checks measure positions, so wait for fonts and two frames after load.
+      const run = () => {
         const checks = ${JSON.stringify(tasks.map((t) => t.check)).replace(/</g, '\\u003c')};
         const results = checks.map((src) => { try { return !!(0, eval)('(' + src + ')'); } catch (e) { return false; } });
         parent.postMessage({ snpChecks: results }, '*');
-      }, 60));
+      };
+      window.addEventListener('load', () => (document.fonts ? document.fonts.ready : Promise.resolve())
+        .then(() => requestAnimationFrame(() => requestAnimationFrame(() => setTimeout(run, 30)))));
     </script>`
     setDoc(page(checker))
   }

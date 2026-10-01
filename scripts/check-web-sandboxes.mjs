@@ -28,7 +28,8 @@ let failures = 0
 const run = async (files, checks) => {
   const doc = `<!doctype html><html><head><meta charset="utf-8"><style>${files.css ?? ''}</style></head><body>${files.html ?? ''}<script>${files.js ?? ''}</script></body></html>`
   await page.setContent(doc, { waitUntil: 'load' })
-  await page.waitForTimeout(60)
+  // Same settling as the in-app checker: fonts, then two frames.
+  await page.evaluate(() => document.fonts.ready.then(() => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)))))
   return page.evaluate((checks) => checks.map((src) => {
     try { return !!(0, eval)('(' + src + ')') } catch { return false }
   }), checks)

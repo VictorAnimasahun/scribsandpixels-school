@@ -1,0 +1,43 @@
+# Week 4 · Day 3 mini-task
+id: web-w04-d3-navbar
+kind: web
+title: "Flexbox navbar"
+description: "Logo left, links right, everything vertically centred, then a centred hero. Only the CSS needs changing."
+html: |
+  <header>
+    <a class="logo" href="#">NaijaMart</a>
+    <nav>
+      <a href="#">Shop</a>
+      <a href="#">Deals</a>
+      <a href="#">Stores</a>
+    </nav>
+  </header>
+  <section class="hero">
+    <h1>Big deals, every day</h1>
+    <a class="button" href="#">Shop now</a>
+  </section>
+css: |
+  body { font-family: system-ui, sans-serif; margin: 0; }
+  header { padding: 1rem; background: #164f3b; }
+  header a { color: white; text-decoration: none; }
+  .logo { font-size: 1.5rem; font-weight: bold; }
+  .hero { padding: 2rem; background: #f4f1e8; min-height: 220px; }
+  .button { background: #164f3b; color: white; padding: 0.6rem 1rem; border-radius: 6px; text-decoration: none; }
+  /* Your rules below */
+js: ""
+tasks:
+  - prompt: "Make the header a flex container."
+    check: "getComputedStyle(document.querySelector('header')).display === 'flex'"
+  - prompt: "Push the logo to the left and the nav to the right."
+    check: "getComputedStyle(document.querySelector('header')).justifyContent === 'space-between' && document.querySelector('.logo').getBoundingClientRect().right < document.querySelector('nav').getBoundingClientRect().left"
+    hint: "justify-content: space-between;"
+  - prompt: "Centre the logo and links vertically in the header."
+    check: "getComputedStyle(document.querySelector('header')).alignItems === 'center'"
+  - prompt: "Line the nav links up in a row with flex, with a gap of at least 12px."
+    check: "(() => { const s = getComputedStyle(document.querySelector('nav')); return s.display === 'flex' && parseFloat(s.columnGap) >= 12 })()"
+    hint: "nav { display: flex; gap: 1rem; }"
+  - prompt: "Stack the hero's heading and button in a column, centred horizontally."
+    check: "(() => { const s = getComputedStyle(document.querySelector('.hero')); return s.display === 'flex' && s.flexDirection === 'column' && s.alignItems === 'center' })()"
+  - prompt: "And centre them vertically in the hero too."
+    check: "(() => { const hero = document.querySelector('.hero').getBoundingClientRect(); const h1 = document.querySelector('.hero h1').getBoundingClientRect(); return getComputedStyle(document.querySelector('.hero')).justifyContent === 'center' && h1.top - hero.top > 40 })()"
+    hint: "In a column, justify-content works vertically: justify-content: center;"

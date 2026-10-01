@@ -1,0 +1,41 @@
+# Week 4 · Day 1 mini-task
+id: web-w04-d1-selectors
+kind: web
+title: "Selectors, units and hover"
+description: "Style only what you mean to: descendant selectors, rem sizes, a hover state and the border-box reset. Only the CSS needs changing."
+html: |
+  <header>
+    <nav><a href="#">Shop</a> <a href="#">Deals</a> <a href="#">Contact</a></nav>
+  </header>
+  <main>
+    <h1>Weekend deals</h1>
+    <p>Up to 20% off phones and accessories.</p>
+    <a class="button" href="#">Shop now</a>
+    <ul class="steps">
+      <li>Pick a product</li>
+      <li>Pay by transfer or POS</li>
+      <li>Pick up in store</li>
+    </ul>
+  </main>
+css: |
+  body { font-family: system-ui, sans-serif; margin: 0; padding: 1rem; }
+  /* Your rules below */
+js: ""
+tasks:
+  - prompt: "Add the border-box reset so every element includes padding in its width."
+    check: "[...document.querySelectorAll('body *')].every(el => getComputedStyle(el).boxSizing === 'border-box')"
+    hint: "* { box-sizing: border-box; }"
+  - prompt: "Colour ONLY the links inside the nav (use a descendant selector), not the button."
+    check: "(() => { const rules = [...document.styleSheets].flatMap(s => [...s.cssRules]); const navA = getComputedStyle(document.querySelector('nav a')).color; return rules.some(r => /(^|,)\\s*([\\w.#-]+\\s+)?nav\\s*(>\\s*)?a\\s*(,|$)/.test(r.selectorText || '')) && navA !== 'rgb(0, 0, 238)' && navA !== getComputedStyle(document.querySelector('.steps li')).color })()"
+    hint: "nav a { color: #164f3b; }"
+  - prompt: "Size the h1 in rem (e.g. 2.5rem)."
+    check: "[...document.styleSheets].flatMap(s => [...s.cssRules]).some(r => r.selectorText && document.querySelector('h1').matches(r.selectorText) && /rem$/.test(r.style.fontSize))"
+  - prompt: "Turn .button into a real button: a background colour and at least 8px of padding."
+    check: "(() => { const s = getComputedStyle(document.querySelector('.button')); return s.backgroundColor !== 'rgba(0, 0, 0, 0)' && parseFloat(s.paddingLeft) >= 8 && parseFloat(s.paddingTop) >= 4 })()"
+    hint: ".button { background: #164f3b; color: white; padding: 0.75rem 1.25rem; border-radius: 6px; }"
+  - prompt: "Give .button a different look on hover."
+    check: "[...document.styleSheets].flatMap(s => [...s.cssRules]).some(r => /\\.button:hover/.test(r.selectorText || '') && (r.style.backgroundColor || r.style.background || r.style.color))"
+    hint: ".button:hover { background: #0f3a2b; }"
+  - prompt: "Make only the FIRST step bold, with :first-child."
+    check: "(() => { const li = document.querySelectorAll('.steps li'); return parseInt(getComputedStyle(li[0]).fontWeight) >= 600 && parseInt(getComputedStyle(li[1]).fontWeight) < 600 && [...document.styleSheets].flatMap(s => [...s.cssRules]).some(r => /:first-child/.test(r.selectorText || '')) })()"
+    hint: ".steps li:first-child { font-weight: bold; }"

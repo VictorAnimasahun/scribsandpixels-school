@@ -1846,6 +1846,358 @@
           }
         ],
         "quizNote": "If you can answer all ten without notes, you're ready for Week 4. **Answers:** check the lesson for each day; for 8: content → padding → border → margin."
+      },
+      {
+        "number": 4,
+        "title": "Making it Look Good",
+        "theme": "Layout with Flexbox, pages that work on phones, and saving your work with Git.",
+        "bigQuestion": "How do professional sites line things up, and how do developers never lose their work?",
+        "resources": [
+          {
+            "kind": "video",
+            "title": "Kevin Powell",
+            "url": "https://www.youtube.com/@KevinPowell",
+            "note": "Day 3: search \"flexbox\" and watch his beginner flexbox video, then again while typing along."
+          },
+          {
+            "kind": "reading",
+            "title": "Flexbox Froggy",
+            "url": "https://flexboxfroggy.com/",
+            "note": "Days 3–4. A game: all 24 levels."
+          },
+          {
+            "kind": "reading",
+            "title": "MDN — Flexbox",
+            "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Flexbox",
+            "note": "Your reference for every flex property."
+          },
+          {
+            "kind": "reading",
+            "title": "CSS-Tricks — A Complete Guide to Flexbox",
+            "url": "https://css-tricks.com/snippets/css/a-guide-to-flexbox/",
+            "note": "The famous cheat sheet. Bookmark it."
+          },
+          {
+            "kind": "reading",
+            "title": "MDN — Media queries",
+            "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Media_queries",
+            "note": "Day 4."
+          },
+          {
+            "kind": "video",
+            "title": "freeCodeCamp — Git and GitHub for Beginners",
+            "url": "https://www.youtube.com/watch?v=RGOj5yH7evk",
+            "note": "Day 5. The first hour is enough."
+          },
+          {
+            "kind": "interactive",
+            "title": "GitHub Pages",
+            "url": "https://pages.github.com/",
+            "note": "Day 6: put your site on the internet for free."
+          },
+          {
+            "kind": "interactive",
+            "title": "freeCodeCamp — Responsive Web Design",
+            "url": "https://www.freecodecamp.org/learn/2022/responsive-web-design/",
+            "note": "Cafe Menu, then Colored Markers."
+          }
+        ],
+        "days": [
+          {
+            "number": 1,
+            "weekday": "Monday",
+            "topic": "Better CSS: selectors, units and hover",
+            "hours": 2.5,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "lesson",
+                "kind": "lesson",
+                "title": "Lesson",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "practice",
+                "kind": "practice",
+                "title": "Practice",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "mini-task",
+                "kind": "mini-task",
+                "title": "Mini-Task",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          },
+          {
+            "number": 2,
+            "weekday": "Tuesday",
+            "topic": "display and position",
+            "hours": 2.5,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "lesson",
+                "kind": "lesson",
+                "title": "Lesson",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "practice",
+                "kind": "practice",
+                "title": "Practice",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "mini-task",
+                "kind": "mini-task",
+                "title": "Mini-Task",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          },
+          {
+            "number": 3,
+            "weekday": "Wednesday",
+            "topic": "Flexbox I: lining things up",
+            "hours": 2.5,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "lesson",
+                "kind": "lesson",
+                "title": "Lesson",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "practice",
+                "kind": "practice",
+                "title": "Practice",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "mini-task",
+                "kind": "mini-task",
+                "title": "Mini-Task",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          },
+          {
+            "number": 4,
+            "weekday": "Thursday",
+            "topic": "Flexbox II and phones: wrap, grow and media queries",
+            "hours": 2.5,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "lesson",
+                "kind": "lesson",
+                "title": "Lesson",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "practice",
+                "kind": "practice",
+                "title": "Practice",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "mini-task",
+                "kind": "mini-task",
+                "title": "Mini-Task",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          },
+          {
+            "number": 5,
+            "weekday": "Friday",
+            "topic": "Git and GitHub",
+            "hours": 2.5,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "lesson",
+                "kind": "lesson",
+                "title": "Lesson",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "practice",
+                "kind": "practice",
+                "title": "Practice",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "mini-task",
+                "kind": "mini-task",
+                "title": "Mini-Task",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          },
+          {
+            "number": 6,
+            "weekday": "Saturday",
+            "topic": "Project day: your site, styled and live",
+            "hours": 3,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "project",
+                "kind": "project",
+                "title": "Weekly Project",
+                "minutes": 120,
+                "body": ""
+              },
+              {
+                "key": "freecodecamp",
+                "kind": "freecodecamp",
+                "title": "FreeCodeCamp",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          }
+        ],
+        "quiz": [
+          {
+            "id": "w4q1",
+            "prompt": "What does `* { box-sizing: border-box; }` change?"
+          },
+          {
+            "id": "w4q2",
+            "prompt": "What's the difference between `px` and `rem`?"
+          },
+          {
+            "id": "w4q3",
+            "prompt": "What's the difference between `block`, `inline` and `inline-block`?"
+          },
+          {
+            "id": "w4q4",
+            "prompt": "When does `position: absolute` measure from a parent?"
+          },
+          {
+            "id": "w4q5",
+            "prompt": "Write a navbar with the logo on the left and links on the right using Flexbox."
+          },
+          {
+            "id": "w4q6",
+            "prompt": "What does `flex: 1 1 220px` mean?"
+          },
+          {
+            "id": "w4q7",
+            "prompt": "What does a media query do? Write one for screens under 600px."
+          },
+          {
+            "id": "w4q8",
+            "prompt": "What do `git add`, `git commit` and `git push` each do?"
+          },
+          {
+            "id": "w4q9",
+            "prompt": "What makes a good commit message?"
+          },
+          {
+            "id": "w4q10",
+            "prompt": "How do you publish a repo with GitHub Pages?"
+          }
+        ],
+        "quizNote": "If you can answer all ten without notes, you're ready for Week 5. **Answers:** check each day's lesson; for 4: when that parent has a `position` other than `static` (usually `relative`)."
       }
     ]
   }
