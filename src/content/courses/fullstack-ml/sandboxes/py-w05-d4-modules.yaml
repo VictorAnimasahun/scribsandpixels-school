@@ -1,0 +1,44 @@
+# Week 5 · Day 4 mini-task
+id: py-w05-d4-modules
+kind: python
+title: "random, math, datetime"
+description: "Three standard-library modules, three small functions."
+starter: |
+  # Import what you need at the top.
+
+
+  def roll_dice():
+      # return a random whole number from 1 to 6
+      pass
+
+
+  def buses_needed(people, seats=18):
+      # 40 people in 18-seat buses need 3 buses (round UP)
+      pass
+
+
+  def days_between(start, end):
+      # how many days from start to end (both are datetime.date objects)
+      pass
+tasks:
+  - prompt: "roll_dice() returns a random number from 1 to 6, using the random module."
+    tests: |
+      rolls = [roll_dice() for _ in range(300)]
+      assert all(isinstance(r, int) for r in rolls), "Return whole numbers"
+      assert set(rolls) == {1, 2, 3, 4, 5, 6}, f"Got {sorted(set(rolls))}; every number 1–6 should come up"
+      assert "random" in __code__, "Use the random module"
+    hint: "import random → return random.randint(1, 6)"
+  - prompt: "buses_needed(people, seats=18) rounds UP with math.ceil."
+    tests: |
+      assert buses_needed(40) == 3, f"40 people: got {buses_needed(40)}, expected 3"
+      assert buses_needed(36) == 2, "36 people fill exactly 2 buses"
+      assert buses_needed(1) == 1, "Even 1 person needs a bus"
+      assert buses_needed(30, seats=14) == 3, "30 people, 14 seats → 3"
+      assert "ceil" in __code__, "Use math.ceil"
+  - prompt: "days_between(start, end) returns the number of days between two dates."
+    tests: |
+      from datetime import date
+      assert days_between(date(2026, 10, 1), date(2026, 12, 25)) == 85, f"got {days_between(date(2026, 10, 1), date(2026, 12, 25))}"
+      assert days_between(date(2026, 1, 1), date(2026, 1, 1)) == 0, "Same day → 0"
+      assert days_between(date(2025, 12, 31), date(2026, 1, 1)) == 1, "Across the new year → 1"
+    hint: "(end - start).days"

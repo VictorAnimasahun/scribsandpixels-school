@@ -1,0 +1,302 @@
+# French · Week 4 quizzes. Format and rules: src/content/QUIZZES.md
+week: 4
+days:
+
+  # ─────────────────────────── DAY 1 ───────────────────────────
+  - day: 1
+    gate:
+      title: "Checkpoint: Week 3 review"
+      covers: "Week 3: noun gender, un/une/des, le/la/l'/les and plurals, il y a and prepositions, numbers 21–69"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w04-d1-g01, difficulty: easy, type: mcq, prompt: "___ voiture", choices: ["la", "le", "l'", "les"], answer: 0 }
+        - { id: fr-w04-d1-g02, difficulty: easy, type: mcq, prompt: "___ ordinateur", choices: ["un", "une", "des"], answer: 0 }
+        - { id: fr-w04-d1-g03, difficulty: easy, type: mcq, prompt: "sous =", choices: ["under", "on", "in", "behind"], answer: 0 }
+        - { id: fr-w04-d1-g04, difficulty: easy, type: text, prompt: "45 in words", accept: ["quarante-cinq", "quarante cinq"] }
+        - { id: fr-w04-d1-g05, difficulty: easy, type: truefalse, prompt: "« il y a » means \"there is / there are\".", answer: true }
+        - { id: fr-w04-d1-g06, difficulty: easy, type: text, prompt: "le bureau → plural", accept: ["les bureaux"] }
+        - { id: fr-w04-d1-g07, difficulty: medium, type: text, prompt: "Translate: There is a bag under the table.", accept: ["Il y a un sac sous la table.", "Il y a un sac sous la table"] }
+        - { id: fr-w04-d1-g08, difficulty: medium, type: mcq, prompt: "à côté de + le lit =", choices: ["à côté du lit", "à côté de le lit", "à côté le lit", "à côté au lit"], answer: 0 }
+        - { id: fr-w04-d1-g09, difficulty: medium, type: text, prompt: "Translate: I like coffee.", accept: ["J'aime le café.", "J'aime le café"] }
+        - { id: fr-w04-d1-g10, difficulty: medium, type: match, prompt: "Match the ending to its usual gender.", pairs: [["-tion", "feminine"], ["-ment", "masculine"], ["-té", "feminine"], ["-age", "masculine"]] }
+        - { id: fr-w04-d1-g11, difficulty: medium, type: text, prompt: "61 in words", accept: ["soixante et un", "soixante-et-un"] }
+        - { id: fr-w04-d1-g12, difficulty: medium, type: mcq, prompt: "They're keys.", choices: ["Ce sont des clés.", "C'est des clé.", "Il y a clés.", "Ils sont des clés."], answer: 0 }
+        - { id: fr-w04-d1-g13, difficulty: medium, type: text, prompt: "le journal → plural", accept: ["les journaux"] }
+        - { id: fr-w04-d1-g14, difficulty: medium, type: truefalse, prompt: "« la plage » is an exception: -age words are usually masculine.", answer: true }
+        - { id: fr-w04-d1-g15, difficulty: medium, type: text, prompt: "Translate: The glasses are in the bag.", accept: ["Les lunettes sont dans le sac.", "Les lunettes sont dans le sac"] }
+        - { id: fr-w04-d1-g16, difficulty: hard, type: text, prompt: "Translate: There are thirty-one books on the desk.", accept: ["Il y a trente et un livres sur le bureau.", "Il y a trente et un livres sur le bureau", "Il y a trente-et-un livres sur le bureau."] }
+        - { id: fr-w04-d1-g17, difficulty: hard, type: mcq, prompt: "Find the sentence with NO mistake.", choices: ["L'ordinateur est à côté du lit.", "Il y a une bureau sous la table.", "Les châteaus sont grands.", "Le école est derrière le marché."], answer: 0 }
+        - { id: fr-w04-d1-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["les hôpitaux", "l'université", "des lunettes", "un clé"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Avoir sprint"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fr-w04-d1-rf01, difficulty: easy, type: text, prompt: "j'___ (avoir)", accept: ["ai"] }
+          - { id: fr-w04-d1-rf02, difficulty: easy, type: text, prompt: "tu ___ (avoir)", accept: ["as"] }
+          - { id: fr-w04-d1-rf03, difficulty: easy, type: text, prompt: "elle ___ (avoir)", accept: ["a"] }
+          - { id: fr-w04-d1-rf04, difficulty: easy, type: text, prompt: "nous ___ (avoir)", accept: ["avons"] }
+          - { id: fr-w04-d1-rf05, difficulty: easy, type: text, prompt: "vous ___ (avoir)", accept: ["avez"] }
+          - { id: fr-w04-d1-rf06, difficulty: easy, type: text, prompt: "ils ___ (avoir)", accept: ["ont"] }
+          - { id: fr-w04-d1-rf07, difficulty: easy, type: mcq, prompt: "I'm hungry.", choices: ["J'ai faim.", "Je suis faim.", "J'ai soif.", "Je faim."], answer: 0 }
+          - { id: fr-w04-d1-rf08, difficulty: easy, type: mcq, prompt: "I'm 30.", choices: ["J'ai trente ans.", "Je suis trente.", "Je suis trente ans.", "J'ai trente."], answer: 0 }
+          - { id: fr-w04-d1-rf09, difficulty: easy, type: mcq, prompt: "J'ai soif =", choices: ["I'm thirsty", "I'm hungry", "I'm cold", "I'm scared"], answer: 0 }
+          - { id: fr-w04-d1-rf10, difficulty: easy, type: mcq, prompt: "J'ai froid =", choices: ["I'm cold", "I'm hot", "I'm right", "I'm afraid"], answer: 0 }
+          - { id: fr-w04-d1-rf11, difficulty: easy, type: mcq, prompt: "they HAVE (with the z sound)", choices: ["ils ont", "ils sont", "ils a", "ils avons"], answer: 0 }
+      - kind: brain-teaser
+        title: "Avoir or être?"
+        questions:
+          - { id: fr-w04-d1-bt01, difficulty: medium, type: text, prompt: "Translate: She is 25.", accept: ["Elle a vingt-cinq ans.", "Elle a vingt-cinq ans", "Elle a 25 ans."] }
+          - { id: fr-w04-d1-bt02, difficulty: medium, type: mcq, prompt: "Ils ___ faim et ils ___ fatigués.", choices: ["ont … sont", "sont … ont", "ont … ont", "sont … sont"], answer: 0 }
+          - { id: fr-w04-d1-bt03, difficulty: medium, type: text, prompt: "Translate: I need a coffee.", accept: ["J'ai besoin d'un café.", "J'ai besoin d'un café"] }
+          - { id: fr-w04-d1-bt04, difficulty: hard, type: text, prompt: "Translate: You (vous) are right.", accept: ["Vous avez raison.", "Vous avez raison"] }
+          - { id: fr-w04-d1-bt05, difficulty: hard, type: mcq, prompt: "Spot the error: « Je suis 32 ans et j'ai fatigué. »", choices: ["J'ai 32 ans et je suis fatigué.", "Only ans is wrong", "Only fatigué is wrong", "No error"], answer: 0 }
+
+  # ─────────────────────────── DAY 2 ───────────────────────────
+  - day: 2
+    gate:
+      title: "Checkpoint: avoir and its expressions"
+      covers: "Week 4 · Day 1: avoir in all persons, ils ont / ils sont, age, faim/soif/chaud/froid/peur/raison/tort/besoin de"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w04-d2-g01, difficulty: easy, type: text, prompt: "Nous ___ deux enfants. (avoir)", accept: ["avons"] }
+        - { id: fr-w04-d2-g02, difficulty: easy, type: text, prompt: "Tu ___ quel âge ? (avoir)", accept: ["as"] }
+        - { id: fr-w04-d2-g03, difficulty: easy, type: text, prompt: "Ils ___ faim. (avoir)", accept: ["ont"] }
+        - { id: fr-w04-d2-g04, difficulty: easy, type: text, prompt: "Vous ___ raison. (avoir)", accept: ["avez"] }
+        - { id: fr-w04-d2-g05, difficulty: easy, type: mcq, prompt: "J'ai peur =", choices: ["I'm scared", "I'm tired", "I'm right", "I'm cold"], answer: 0 }
+        - { id: fr-w04-d2-g06, difficulty: easy, type: truefalse, prompt: "French gives age with avoir: j'ai 30 ans.", answer: true }
+        - { id: fr-w04-d2-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["avoir chaud", "to be hot"], ["avoir tort", "to be wrong"], ["avoir besoin de", "to need"], ["avoir soif", "to be thirsty"]] }
+        - { id: fr-w04-d2-g08, difficulty: medium, type: mcq, prompt: "\"eel-zon\" is…", choices: ["ils ont (they have)", "ils sont (they are)", "il a", "elles sont"], answer: 0 }
+        - { id: fr-w04-d2-g09, difficulty: medium, type: text, prompt: "Translate: We are cold.", accept: ["Nous avons froid.", "Nous avons froid", "On a froid."] }
+        - { id: fr-w04-d2-g10, difficulty: medium, type: text, prompt: "Translate: How old are you? (vous)", accept: ["Quel âge avez-vous ?", "Quel âge avez-vous?", "Vous avez quel âge ?", "Quel âge avez-vous"] }
+        - { id: fr-w04-d2-g11, difficulty: medium, type: mcq, prompt: "Elle ___ 25 ans.", choices: ["a", "est", "as", "ont"], answer: 0 }
+        - { id: fr-w04-d2-g12, difficulty: medium, type: truefalse, prompt: "« Je suis faim » is correct French.", answer: false }
+        - { id: fr-w04-d2-g13, difficulty: medium, type: text, prompt: "Translate: They (women) are thirsty.", accept: ["Elles ont soif.", "Elles ont soif"] }
+        - { id: fr-w04-d2-g14, difficulty: medium, type: order, prompt: "Order avoir: singular then plural.", items: ["j'ai", "tu as", "il a", "nous avons", "vous avez", "ils ont"] }
+        - { id: fr-w04-d2-g15, difficulty: medium, type: mcq, prompt: "Ils ___ ingénieurs.", choices: ["sont", "ont", "a", "avons"], answer: 0 }
+        - { id: fr-w04-d2-g16, difficulty: hard, type: text, prompt: "Translate: I'm hot and I need water.", accept: ["J'ai chaud et j'ai besoin d'eau.", "J'ai chaud et j'ai besoin d'eau"] }
+        - { id: fr-w04-d2-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « Mes parents sont 60 ans et ils ont contents. »", choices: ["ont 60 ans … sont contents", "Only sont → ont", "Only ont → sont", "No error"], answer: 0 }
+        - { id: fr-w04-d2-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["Tu as raison.", "J'ai besoin d'un stylo.", "Nous avons peur.", "Il est 40 ans."], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "La famille"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fr-w04-d2-rf01, difficulty: easy, type: mcq, prompt: "mother", choices: ["la mère", "le père", "la sœur", "la tante"], answer: 0 }
+          - { id: fr-w04-d2-rf02, difficulty: easy, type: mcq, prompt: "brother", choices: ["le frère", "le fils", "le père", "le cousin"], answer: 0 }
+          - { id: fr-w04-d2-rf03, difficulty: easy, type: mcq, prompt: "daughter", choices: ["la fille", "la femme", "la sœur", "la nièce"], answer: 0 }
+          - { id: fr-w04-d2-rf04, difficulty: easy, type: mcq, prompt: "husband", choices: ["le mari", "le frère", "l'oncle", "le fils"], answer: 0 }
+          - { id: fr-w04-d2-rf05, difficulty: easy, type: mcq, prompt: "uncle", choices: ["l'oncle", "le neveu", "le cousin", "le grand-père"], answer: 0 }
+          - { id: fr-w04-d2-rf06, difficulty: easy, type: mcq, prompt: "aunt", choices: ["la tante", "la cousine", "la nièce", "la mère"], answer: 0 }
+          - { id: fr-w04-d2-rf07, difficulty: easy, type: mcq, prompt: "nephew", choices: ["le neveu", "le cousin", "le fils", "l'oncle"], answer: 0 }
+          - { id: fr-w04-d2-rf08, difficulty: easy, type: mcq, prompt: "grandmother", choices: ["la grand-mère", "la tante", "la mère", "la grande"], answer: 0 }
+          - { id: fr-w04-d2-rf09, difficulty: easy, type: mcq, prompt: "les parents can mean…", choices: ["parents or relatives", "only father", "children", "cousins only"], answer: 0 }
+          - { id: fr-w04-d2-rf10, difficulty: easy, type: mcq, prompt: "single (not married)", choices: ["célibataire", "marié", "fiancé", "divorcé"], answer: 0 }
+          - { id: fr-w04-d2-rf11, difficulty: easy, type: truefalse, prompt: "« femme » means both \"woman\" and \"wife\".", answer: true }
+      - kind: brain-teaser
+        title: "Family logic"
+        questions:
+          - { id: fr-w04-d2-bt01, difficulty: medium, type: text, prompt: "La mère de ma mère, c'est ma ___.", accept: ["grand-mère"] }
+          - { id: fr-w04-d2-bt02, difficulty: medium, type: text, prompt: "Le frère de mon père, c'est mon ___.", accept: ["oncle"] }
+          - { id: fr-w04-d2-bt03, difficulty: medium, type: text, prompt: "La fille de ma tante, c'est ma ___.", accept: ["cousine"] }
+          - { id: fr-w04-d2-bt04, difficulty: hard, type: text, prompt: "Le fils de ma sœur, c'est mon ___.", accept: ["neveu"] }
+          - { id: fr-w04-d2-bt05, difficulty: hard, type: text, prompt: "Translate: I don't have children.", accept: ["Je n'ai pas d'enfants.", "Je n'ai pas d'enfants", "Je n'ai pas d'enfant."] }
+
+  # ─────────────────────────── DAY 3 ───────────────────────────
+  - day: 3
+    gate:
+      title: "Checkpoint: family vocabulary"
+      covers: "Week 4 · Day 2: family members, marital status, j'ai … / je n'ai pas de …"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w04-d3-g01, difficulty: easy, type: mcq, prompt: "le père =", choices: ["father", "brother", "uncle", "son"], answer: 0 }
+        - { id: fr-w04-d3-g02, difficulty: easy, type: mcq, prompt: "la sœur =", choices: ["sister", "daughter", "aunt", "wife"], answer: 0 }
+        - { id: fr-w04-d3-g03, difficulty: easy, type: mcq, prompt: "le fils =", choices: ["son", "brother", "nephew", "father"], answer: 0 }
+        - { id: fr-w04-d3-g04, difficulty: easy, type: truefalse, prompt: "« la fille » can mean daughter or girl.", answer: true }
+        - { id: fr-w04-d3-g05, difficulty: easy, type: mcq, prompt: "cousin (female)", choices: ["la cousine", "le cousin", "la cousin", "la cousinne"], answer: 0 }
+        - { id: fr-w04-d3-g06, difficulty: easy, type: mcq, prompt: "grandparents", choices: ["les grands-parents", "les parents", "les grand-pères", "les vieux"], answer: 0 }
+        - { id: fr-w04-d3-g07, difficulty: medium, type: match, prompt: "Match masculine → feminine.", pairs: [["le neveu", "la nièce"], ["l'oncle", "la tante"], ["le mari", "la femme"], ["le fils", "la fille"]] }
+        - { id: fr-w04-d3-g08, difficulty: medium, type: text, prompt: "Le père de mon père, c'est mon ___.", accept: ["grand-père"] }
+        - { id: fr-w04-d3-g09, difficulty: medium, type: text, prompt: "La sœur de ma mère, c'est ma ___.", accept: ["tante"] }
+        - { id: fr-w04-d3-g10, difficulty: medium, type: text, prompt: "Translate: I have two brothers and a sister.", accept: ["J'ai deux frères et une sœur.", "J'ai deux frères et une sœur"] }
+        - { id: fr-w04-d3-g11, difficulty: medium, type: mcq, prompt: "A woman says she is married:", choices: ["Je suis mariée.", "Je suis marié.", "J'ai mariée.", "Je suis un mariée."], answer: 0 }
+        - { id: fr-w04-d3-g12, difficulty: medium, type: mcq, prompt: "After pas, des becomes…", choices: ["de / d'", "les", "du", "un"], answer: 0 }
+        - { id: fr-w04-d3-g13, difficulty: medium, type: truefalse, prompt: "« l'enfant » can be a boy or a girl.", answer: true }
+        - { id: fr-w04-d3-g14, difficulty: medium, type: text, prompt: "Le fils de mon oncle, c'est mon ___.", accept: ["cousin"] }
+        - { id: fr-w04-d3-g15, difficulty: medium, type: mcq, prompt: "Je suis célibataire =", choices: ["I'm single", "I'm married", "I'm engaged", "I'm a student"], answer: 0 }
+        - { id: fr-w04-d3-g16, difficulty: hard, type: text, prompt: "La fille de mon frère, c'est ma ___.", accept: ["nièce"] }
+        - { id: fr-w04-d3-g17, difficulty: hard, type: text, prompt: "Translate: I don't have sisters.", accept: ["Je n'ai pas de sœurs.", "Je n'ai pas de sœurs", "Je n'ai pas de sœur."] }
+        - { id: fr-w04-d3-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["J'ai trois enfants.", "Je n'ai pas d'enfants.", "Je suis fiancé.", "Je n'ai pas des frères."], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "mon, ma or mes?"
+        secondsPerQuestion: 7
+        questions:
+          - { id: fr-w04-d3-rf01, difficulty: easy, type: mcq, prompt: "(my) ___ père", choices: ["mon", "ma", "mes"], answer: 0 }
+          - { id: fr-w04-d3-rf02, difficulty: easy, type: mcq, prompt: "(my) ___ mère", choices: ["ma", "mon", "mes"], answer: 0 }
+          - { id: fr-w04-d3-rf03, difficulty: easy, type: mcq, prompt: "(my) ___ parents", choices: ["mes", "mon", "ma"], answer: 0 }
+          - { id: fr-w04-d3-rf04, difficulty: easy, type: mcq, prompt: "(my) ___ amie", choices: ["mon", "ma", "mes"], answer: 0 }
+          - { id: fr-w04-d3-rf05, difficulty: easy, type: mcq, prompt: "(your, tu) ___ sœur", choices: ["ta", "ton", "tes"], answer: 0 }
+          - { id: fr-w04-d3-rf06, difficulty: easy, type: mcq, prompt: "(his) ___ voiture", choices: ["sa", "son", "ses"], answer: 0 }
+          - { id: fr-w04-d3-rf07, difficulty: easy, type: mcq, prompt: "(her) ___ père", choices: ["son", "sa", "ses"], answer: 0 }
+          - { id: fr-w04-d3-rf08, difficulty: easy, type: mcq, prompt: "(our) ___ enfants", choices: ["nos", "notre", "nous"], answer: 0 }
+          - { id: fr-w04-d3-rf09, difficulty: easy, type: mcq, prompt: "(your, vous) ___ parents", choices: ["vos", "votre", "vous"], answer: 0 }
+          - { id: fr-w04-d3-rf10, difficulty: easy, type: mcq, prompt: "(their) ___ maison", choices: ["leur", "leurs", "sa"], answer: 0 }
+          - { id: fr-w04-d3-rf11, difficulty: easy, type: mcq, prompt: "(their) ___ enfants", choices: ["leurs", "leur", "ses"], answer: 0 }
+      - kind: brain-teaser
+        title: "His or hers?"
+        questions:
+          - { id: fr-w04-d3-bt01, difficulty: medium, type: text, prompt: "Translate: her father", accept: ["son père"] }
+          - { id: fr-w04-d3-bt02, difficulty: medium, type: text, prompt: "Translate: his mother", accept: ["sa mère"] }
+          - { id: fr-w04-d3-bt03, difficulty: medium, type: mcq, prompt: "Why « mon école » and not « ma école »?", choices: ["Before a feminine word starting with a vowel, use mon to avoid two vowels colliding", "école is masculine", "It's a spelling mistake", "ma is only for people"], answer: 0 }
+          - { id: fr-w04-d3-bt04, difficulty: hard, type: mcq, prompt: "« Sa sœur » means…", choices: ["his sister OR her sister", "only her sister", "only his sister", "their sister"], answer: 0 }
+          - { id: fr-w04-d3-bt05, difficulty: hard, type: text, prompt: "Translate: Our children and their parents (their = the neighbours')", accept: ["nos enfants et leurs parents", "Nos enfants et leurs parents"] }
+
+  # ─────────────────────────── DAY 4 ───────────────────────────
+  - day: 4
+    gate:
+      title: "Checkpoint: possessive adjectives"
+      covers: "Week 4 · Day 3: mon/ma/mes, ton/ta/tes, son/sa/ses, notre/nos, votre/vos, leur/leurs"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w04-d4-g01, difficulty: easy, type: mcq, prompt: "(my) ___ sœur", choices: ["ma", "mon", "mes"], answer: 0 }
+        - { id: fr-w04-d4-g02, difficulty: easy, type: mcq, prompt: "(my) ___ frères", choices: ["mes", "mon", "ma"], answer: 0 }
+        - { id: fr-w04-d4-g03, difficulty: easy, type: mcq, prompt: "(our) ___ fils", choices: ["notre", "nos", "nous"], answer: 0 }
+        - { id: fr-w04-d4-g04, difficulty: easy, type: truefalse, prompt: "The possessive agrees with the thing owned, not the owner.", answer: true }
+        - { id: fr-w04-d4-g05, difficulty: easy, type: mcq, prompt: "(your, vous) ___ mari", choices: ["votre", "vos", "ton"], answer: 0 }
+        - { id: fr-w04-d4-g06, difficulty: easy, type: mcq, prompt: "(your, tu) ___ frères", choices: ["tes", "ton", "ta"], answer: 0 }
+        - { id: fr-w04-d4-g07, difficulty: medium, type: mcq, prompt: "(my) ___ amie Bisi", choices: ["mon", "ma", "mes"], answer: 0 }
+        - { id: fr-w04-d4-g08, difficulty: medium, type: mcq, prompt: "Tunde talks about HIS sister:", choices: ["sa sœur", "son sœur", "ses sœur", "leur sœur"], answer: 0 }
+        - { id: fr-w04-d4-g09, difficulty: medium, type: mcq, prompt: "Ada talks about HER brother:", choices: ["son frère", "sa frère", "ses frère", "sa frèr"], answer: 0 }
+        - { id: fr-w04-d4-g10, difficulty: medium, type: match, prompt: "Match.", pairs: [["notre", "our (one thing)"], ["nos", "our (several)"], ["leur", "their (one thing)"], ["leurs", "their (several)"]] }
+        - { id: fr-w04-d4-g11, difficulty: medium, type: text, prompt: "Translate: their house", accept: ["leur maison"] }
+        - { id: fr-w04-d4-g12, difficulty: medium, type: text, prompt: "Translate: your (vous) parents", accept: ["vos parents"] }
+        - { id: fr-w04-d4-g13, difficulty: medium, type: truefalse, prompt: "« ta histoire » is correct.", answer: false, explain: "Before a vowel or silent h: ton histoire." }
+        - { id: fr-w04-d4-g14, difficulty: medium, type: text, prompt: "Translate: his cousins (mixed group)", accept: ["ses cousins"] }
+        - { id: fr-w04-d4-g15, difficulty: medium, type: mcq, prompt: "(his) ___ école", choices: ["son", "sa", "ses"], answer: 0 }
+        - { id: fr-w04-d4-g16, difficulty: hard, type: text, prompt: "Translate: My friend (female) and her husband live in Abuja.", accept: ["Mon amie et son mari habitent à Abuja.", "Mon amie et son mari habitent à Abuja"] }
+        - { id: fr-w04-d4-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « Ma ami et mes sœur sont ici. »", choices: ["Mon ami(e) … mes sœurs", "Only ma → mon", "Only sœur → sœurs", "No error"], answer: 0 }
+        - { id: fr-w04-d4-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["notre fille", "leurs enfants", "votre femme", "sa oncle"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Numbers 70–100"
+        secondsPerQuestion: 10
+        questions:
+          - { id: fr-w04-d4-rf01, difficulty: easy, type: text, prompt: "70", accept: ["soixante-dix", "soixante dix"] }
+          - { id: fr-w04-d4-rf02, difficulty: easy, type: text, prompt: "71", accept: ["soixante et onze", "soixante-et-onze"] }
+          - { id: fr-w04-d4-rf03, difficulty: easy, type: text, prompt: "75", accept: ["soixante-quinze", "soixante quinze"] }
+          - { id: fr-w04-d4-rf04, difficulty: easy, type: text, prompt: "80", accept: ["quatre-vingts", "quatre vingts"] }
+          - { id: fr-w04-d4-rf05, difficulty: easy, type: text, prompt: "81", accept: ["quatre-vingt-un", "quatre vingt un"] }
+          - { id: fr-w04-d4-rf06, difficulty: easy, type: text, prompt: "90", accept: ["quatre-vingt-dix", "quatre vingt dix"] }
+          - { id: fr-w04-d4-rf07, difficulty: easy, type: text, prompt: "99", accept: ["quatre-vingt-dix-neuf", "quatre vingt dix neuf"] }
+          - { id: fr-w04-d4-rf08, difficulty: easy, type: text, prompt: "100", accept: ["cent"] }
+          - { id: fr-w04-d4-rf09, difficulty: easy, type: text, prompt: "soixante-treize in figures", accept: ["73"] }
+          - { id: fr-w04-d4-rf10, difficulty: easy, type: text, prompt: "quatre-vingt-deux in figures", accept: ["82"] }
+          - { id: fr-w04-d4-rf11, difficulty: easy, type: text, prompt: "quatre-vingt-seize in figures", accept: ["96"] }
+      - kind: brain-teaser
+        title: "Counting in twenties"
+        questions:
+          - { id: fr-w04-d4-bt01, difficulty: medium, type: mcq, prompt: "quatre-vingts literally means…", choices: ["four twenties", "four tens", "eighty-four", "forty twice"], answer: 0 }
+          - { id: fr-w04-d4-bt02, difficulty: medium, type: mcq, prompt: "Why « quatre-vingts » but « quatre-vingt-un »?", choices: ["vingts loses its s when another number follows", "It's a typo", "80 is plural, 81 isn't", "un needs no hyphen"], answer: 0 }
+          - { id: fr-w04-d4-bt03, difficulty: medium, type: text, prompt: "soixante + dix-sept = ? (in words)", accept: ["soixante-dix-sept", "soixante dix sept"] }
+          - { id: fr-w04-d4-bt04, difficulty: hard, type: match, prompt: "Match: Belgian/Swiss → France.", pairs: [["septante", "soixante-dix"], ["nonante", "quatre-vingt-dix"], ["huitante", "quatre-vingts"]] }
+          - { id: fr-w04-d4-bt05, difficulty: hard, type: text, prompt: "Translate: My grandfather is 84.", accept: ["Mon grand-père a quatre-vingt-quatre ans.", "Mon grand-père a quatre-vingt-quatre ans"] }
+
+  # ─────────────────────────── DAY 5 ───────────────────────────
+  - day: 5
+    gate:
+      title: "Checkpoint: numbers 70–100 and ages"
+      covers: "Week 4 · Day 4: soixante-dix to cent, Belgian/Swiss forms, quel âge"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w04-d5-g01, difficulty: easy, type: text, prompt: "70 in words", accept: ["soixante-dix", "soixante dix"] }
+        - { id: fr-w04-d5-g02, difficulty: easy, type: text, prompt: "80 in words", accept: ["quatre-vingts", "quatre vingts"] }
+        - { id: fr-w04-d5-g03, difficulty: easy, type: text, prompt: "100 in words", accept: ["cent"] }
+        - { id: fr-w04-d5-g04, difficulty: easy, type: mcq, prompt: "Quel âge avez-vous ? =", choices: ["How old are you?", "What's your name?", "Where are you from?", "Are you married?"], answer: 0 }
+        - { id: fr-w04-d5-g05, difficulty: easy, type: truefalse, prompt: "Canada uses the same numbers as France (soixante-dix, quatre-vingt-dix).", answer: true }
+        - { id: fr-w04-d5-g06, difficulty: easy, type: text, prompt: "quatre-vingt-dix in figures", accept: ["90"] }
+        - { id: fr-w04-d5-g07, difficulty: medium, type: text, prompt: "84 in words", accept: ["quatre-vingt-quatre", "quatre vingt quatre"] }
+        - { id: fr-w04-d5-g08, difficulty: medium, type: text, prompt: "91 in words", accept: ["quatre-vingt-onze", "quatre vingt onze"] }
+        - { id: fr-w04-d5-g09, difficulty: medium, type: text, prompt: "97 in words", accept: ["quatre-vingt-dix-sept", "quatre vingt dix sept"] }
+        - { id: fr-w04-d5-g10, difficulty: medium, type: match, prompt: "Match.", pairs: [["soixante-douze", "72"], ["quatre-vingt-trois", "83"], ["quatre-vingt-quinze", "95"], ["soixante-dix-huit", "78"]] }
+        - { id: fr-w04-d5-g11, difficulty: medium, type: mcq, prompt: "Which is correct for 71?", choices: ["soixante et onze", "soixante-onze", "septante et un", "soixante-dix-un"], answer: 0 }
+        - { id: fr-w04-d5-g12, difficulty: medium, type: text, prompt: "Translate: I'm 34. (in words)", accept: ["J'ai trente-quatre ans.", "J'ai trente-quatre ans"] }
+        - { id: fr-w04-d5-g13, difficulty: medium, type: truefalse, prompt: "81 is « quatre-vingt-et-un ».", answer: false, explain: "No et: quatre-vingt-un." }
+        - { id: fr-w04-d5-g14, difficulty: medium, type: order, prompt: "Smallest to largest.", items: ["soixante-neuf", "soixante-dix", "soixante-dix-neuf", "quatre-vingts", "quatre-vingt-dix"] }
+        - { id: fr-w04-d5-g15, difficulty: medium, type: text, prompt: "soixante-quatorze in figures", accept: ["74"] }
+        - { id: fr-w04-d5-g16, difficulty: hard, type: text, prompt: "cent − vingt-cinq = ? (in words)", accept: ["soixante-quinze", "soixante quinze"] }
+        - { id: fr-w04-d5-g17, difficulty: hard, type: text, prompt: "quatre-vingt-dix-neuf − dix-neuf = ? (in words)", accept: ["quatre-vingts", "quatre vingts"] }
+        - { id: fr-w04-d5-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["quatre-vingts", "quatre-vingt-deux", "soixante-dix-sept", "quatre-vingts-cinq"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Make it agree"
+        secondsPerQuestion: 9
+        questions:
+          - { id: fr-w04-d5-rf01, difficulty: easy, type: text, prompt: "grand → (feminine)", accept: ["grande"] }
+          - { id: fr-w04-d5-rf02, difficulty: easy, type: text, prompt: "petit → (feminine)", accept: ["petite"] }
+          - { id: fr-w04-d5-rf03, difficulty: easy, type: text, prompt: "sérieux → (feminine)", accept: ["sérieuse"] }
+          - { id: fr-w04-d5-rf04, difficulty: easy, type: text, prompt: "sportif → (feminine)", accept: ["sportive"] }
+          - { id: fr-w04-d5-rf05, difficulty: easy, type: text, prompt: "gentil → (feminine)", accept: ["gentille"] }
+          - { id: fr-w04-d5-rf06, difficulty: easy, type: text, prompt: "vieux → (feminine)", accept: ["vieille"] }
+          - { id: fr-w04-d5-rf07, difficulty: easy, type: text, prompt: "drôle → (feminine)", accept: ["drôle"] }
+          - { id: fr-w04-d5-rf08, difficulty: easy, type: text, prompt: "jeune → (feminine)", accept: ["jeune"] }
+          - { id: fr-w04-d5-rf09, difficulty: easy, type: text, prompt: "intelligent → (feminine)", accept: ["intelligente"] }
+          - { id: fr-w04-d5-rf10, difficulty: easy, type: mcq, prompt: "Il est comment ? asks…", choices: ["what he's like", "how he is (health)", "his name", "his age"], answer: 0 }
+          - { id: fr-w04-d5-rf11, difficulty: easy, type: text, prompt: "timide → (feminine)", accept: ["timide"] }
+      - kind: brain-teaser
+        title: "Describe them"
+        questions:
+          - { id: fr-w04-d5-bt01, difficulty: medium, type: text, prompt: "Ma sœur est (sérieux) ___.", accept: ["sérieuse"] }
+          - { id: fr-w04-d5-bt02, difficulty: medium, type: text, prompt: "Mes frères sont (grand) ___.", accept: ["grands"] }
+          - { id: fr-w04-d5-bt03, difficulty: medium, type: text, prompt: "Ma grand-mère est (vieux) ___ mais (sportif) ___. (two words, comma)", accept: ["vieille, sportive", "vieille,sportive", "vieille sportive"] }
+          - { id: fr-w04-d5-bt04, difficulty: hard, type: text, prompt: "Translate: an intelligent woman", accept: ["une femme intelligente"] }
+          - { id: fr-w04-d5-bt05, difficulty: hard, type: mcq, prompt: "Which word order is right?", choices: ["un petit garçon", "un garçon petit", "une maison grande", "une intelligente femme"], answer: 0, explain: "A few short common adjectives go before the noun." }
+
+  # ─────────────────────────── DAY 6 ───────────────────────────
+  - day: 6
+    gate:
+      title: "Checkpoint: describing people"
+      covers: "Week 4 · Day 5: adjective agreement (+e, -eux → -euse, -if → -ive, -il → -ille), plurals, word order"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w04-d6-g01, difficulty: easy, type: text, prompt: "grand → (feminine)", accept: ["grande"] }
+        - { id: fr-w04-d6-g02, difficulty: easy, type: text, prompt: "gentil → (feminine)", accept: ["gentille"] }
+        - { id: fr-w04-d6-g03, difficulty: easy, type: mcq, prompt: "Most adjectives go…", choices: ["after the noun", "before the noun", "at the end of the sentence", "anywhere"], answer: 0 }
+        - { id: fr-w04-d6-g04, difficulty: easy, type: truefalse, prompt: "Adjectives already ending in -e don't change for feminine.", answer: true }
+        - { id: fr-w04-d6-g05, difficulty: easy, type: mcq, prompt: "Elle est ___.", choices: ["intelligente", "intelligent", "intelligents", "intelligentes"], answer: 0 }
+        - { id: fr-w04-d6-g06, difficulty: easy, type: mcq, prompt: "sympa =", choices: ["nice (informal)", "sympathetic", "sporty", "serious"], answer: 0 }
+        - { id: fr-w04-d6-g07, difficulty: medium, type: match, prompt: "Match the pattern.", pairs: [["sérieux", "sérieuse"], ["sportif", "sportive"], ["gentil", "gentille"], ["petit", "petite"]] }
+        - { id: fr-w04-d6-g08, difficulty: medium, type: text, prompt: "Ta cousine est (gentil) ___.", accept: ["gentille"] }
+        - { id: fr-w04-d6-g09, difficulty: medium, type: text, prompt: "Mes sœurs sont (petit) ___.", accept: ["petites"] }
+        - { id: fr-w04-d6-g10, difficulty: medium, type: text, prompt: "Translate: My father is tall and serious.", accept: ["Mon père est grand et sérieux.", "Mon père est grand et sérieux"] }
+        - { id: fr-w04-d6-g11, difficulty: medium, type: mcq, prompt: "vieux → feminine", choices: ["vieille", "vieuse", "vieuxe", "vielle"], answer: 0 }
+        - { id: fr-w04-d6-g12, difficulty: medium, type: truefalse, prompt: "« une grande maison »: grand goes before the noun.", answer: true }
+        - { id: fr-w04-d6-g13, difficulty: medium, type: text, prompt: "Translate: My mother is kind and very funny.", accept: ["Ma mère est gentille et très drôle.", "Ma mère est gentille et très drôle"] }
+        - { id: fr-w04-d6-g14, difficulty: medium, type: text, prompt: "Mes parents sont (sportif) ___.", accept: ["sportifs"] }
+        - { id: fr-w04-d6-g15, difficulty: medium, type: mcq, prompt: "Ils sont ___. (shy)", choices: ["timides", "timide", "timids", "timidées"], answer: 0 }
+        - { id: fr-w04-d6-g16, difficulty: hard, type: text, prompt: "Translate: My sisters are young and intelligent.", accept: ["Mes sœurs sont jeunes et intelligentes.", "Mes sœurs sont jeunes et intelligentes"] }
+        - { id: fr-w04-d6-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « Ma tante est vieux et sérieuse. »", choices: ["vieux → vieille", "sérieuse → sérieux", "Ma → Mon", "No error"], answer: 0 }
+        - { id: fr-w04-d6-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["une fille sportive", "un garçon timide", "une femme sérieuse", "une sœur gentil"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Week 4 lightning round"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fr-w04-d6-rf01, difficulty: easy, type: text, prompt: "nous ___ (avoir)", accept: ["avons"] }
+          - { id: fr-w04-d6-rf02, difficulty: easy, type: mcq, prompt: "I'm thirsty.", choices: ["J'ai soif.", "Je suis soif.", "J'ai faim.", "Je soif."], answer: 0 }
+          - { id: fr-w04-d6-rf03, difficulty: easy, type: mcq, prompt: "aunt", choices: ["la tante", "la nièce", "la cousine", "la sœur"], answer: 0 }
+          - { id: fr-w04-d6-rf04, difficulty: easy, type: mcq, prompt: "(my) ___ amie", choices: ["mon", "ma", "mes"], answer: 0 }
+          - { id: fr-w04-d6-rf05, difficulty: easy, type: mcq, prompt: "(their) ___ enfants", choices: ["leurs", "leur", "ses"], answer: 0 }
+          - { id: fr-w04-d6-rf06, difficulty: easy, type: text, prompt: "80", accept: ["quatre-vingts", "quatre vingts"] }
+          - { id: fr-w04-d6-rf07, difficulty: easy, type: text, prompt: "72", accept: ["soixante-douze", "soixante douze"] }
+          - { id: fr-w04-d6-rf08, difficulty: easy, type: text, prompt: "sportif → (feminine)", accept: ["sportive"] }
+          - { id: fr-w04-d6-rf09, difficulty: easy, type: mcq, prompt: "her brother", choices: ["son frère", "sa frère", "ses frère", "leur frère"], answer: 0 }
+          - { id: fr-w04-d6-rf10, difficulty: easy, type: mcq, prompt: "they have", choices: ["ils ont", "ils sont", "ils a", "ils avez"], answer: 0 }
+      - kind: brain-teaser
+        title: "Voici ma famille"
+        questions:
+          - { id: fr-w04-d6-bt01, difficulty: medium, type: text, prompt: "Translate: My father is called Emeka. He is 62.", accept: ["Mon père s'appelle Emeka. Il a soixante-deux ans.", "Mon père s'appelle Emeka. Il a soixante-deux ans"] }
+          - { id: fr-w04-d6-bt02, difficulty: medium, type: text, prompt: "Translate: My sister is a student. She is 21.", accept: ["Ma sœur est étudiante. Elle a vingt et un ans.", "Ma sœur est étudiante. Elle a vingt et un ans", "Ma sœur est étudiante. Elle a vingt-et-un ans."] }
+          - { id: fr-w04-d6-bt03, difficulty: medium, type: order, prompt: "Order the family introduction.", items: ["Voici ma famille.", "Mon père s'appelle Emeka.", "Il est grand et sérieux.", "Ma mère s'appelle Ada.", "Elle est gentille et très drôle."] }
+          - { id: fr-w04-d6-bt04, difficulty: hard, type: text, prompt: "Translate: My brother Obi is an engineer; he lives in Abuja.", accept: ["Mon frère Obi est ingénieur, il habite à Abuja.", "Mon frère Obi est ingénieur ; il habite à Abuja.", "Mon frère Obi est ingénieur. Il habite à Abuja."] }
+          - { id: fr-w04-d6-bt05, difficulty: hard, type: mcq, prompt: "Find the sentence with NO mistake.", choices: ["Ma mère a soixante-dix ans et elle est sportive.", "Mon mère est vieux.", "Ses parents sont quatre-vingts ans.", "J'ai deux sœur gentille."], answer: 0 }

@@ -1,0 +1,37 @@
+# Week 5 · Day 2 mini-task
+id: py-w05-d2-orders
+kind: python
+title: "Orders by city"
+description: "A list of order dictionaries: total them, group them by city with the counting pattern, find the top city."
+starter: |
+  orders = [
+      {"city": "Lagos", "item": "rice", "amount": 15000},
+      {"city": "Abuja", "item": "beans", "amount": 8000},
+      {"city": "Lagos", "item": "garri", "amount": 4000},
+      {"city": "Kano", "item": "rice", "amount": 12000},
+      {"city": "Abuja", "item": "rice", "amount": 9000},
+  ]
+
+  # 1. Store the sum of every amount in total (use a loop).
+
+  # 2. Write city_totals(orders) that RETURNS a dict like {"Lagos": 19000, ...}
+
+  # 3. Print the city with the biggest total, like:  Top city: Lagos
+tasks:
+  - prompt: "total = the sum of all amounts, using a loop over orders."
+    tests: |
+      assert total == 48000, f"total is {total}, expected 48000"
+      assert "for " in __code__, "Loop over the orders"
+      assert "48000" not in __code__, "Calculate it, don't type it"
+  - prompt: "city_totals(orders) returns the total per city (it must work on any list of orders)."
+    tests: |
+      assert city_totals(orders) == {"Lagos": 19000, "Abuja": 17000, "Kano": 12000}, f"got {city_totals(orders)}"
+      other = [{"city": "Enugu", "amount": 500}, {"city": "Enugu", "amount": 250}, {"city": "Ibadan", "amount": 100}]
+      assert city_totals(other) == {"Enugu": 750, "Ibadan": 100}, "It must work on other data too"
+      assert city_totals([]) == {}, "No orders → {}"
+    hint: "totals[city] = totals.get(city, 0) + order[\"amount\"]"
+  - prompt: "Print the top city:  Top city: Lagos"
+    expectOutput: ["Top city: Lagos"]
+    tests: |
+      assert "print(\"Top city: Lagos\")" not in __code__ and "print('Top city: Lagos')" not in __code__, "Find it from the totals"
+    hint: "best = max(totals, key=totals.get)"

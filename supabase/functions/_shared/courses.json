@@ -2198,6 +2198,346 @@
           }
         ],
         "quizNote": "If you can answer all ten without notes, you're ready for Week 5. **Answers:** check each day's lesson; for 4: when that parent has a `position` other than `static` (usually `relative`)."
+      },
+      {
+        "number": 5,
+        "title": "Python Gets Smarter",
+        "theme": "Store data by name, survive bad input, use other people's code, and save your data properly.",
+        "bigQuestion": "How do real programs keep going when users do unexpected things?",
+        "resources": [
+          {
+            "kind": "video",
+            "title": "CS50P — Harvard's free Python course",
+            "url": "https://cs50.harvard.edu/python/",
+            "note": "Lecture 2 (dictionaries part) on Monday, Lecture 3 (Exceptions) on Wednesday, Lecture 4 (Libraries) on Thursday."
+          },
+          {
+            "kind": "reading",
+            "title": "Automate the Boring Stuff with Python",
+            "url": "https://automatetheboringstuff.com/",
+            "note": "Read the Dictionaries chapter this week. Free online."
+          },
+          {
+            "kind": "reading",
+            "title": "Python tutorial — Dictionaries",
+            "url": "https://docs.python.org/3/tutorial/datastructures.html#dictionaries",
+            "note": "The official reference. Short."
+          },
+          {
+            "kind": "reading",
+            "title": "Python tutorial — Errors and Exceptions",
+            "url": "https://docs.python.org/3/tutorial/errors.html",
+            "note": "Wednesday."
+          },
+          {
+            "kind": "reading",
+            "title": "Python tutorial — Modules",
+            "url": "https://docs.python.org/3/tutorial/modules.html",
+            "note": "Thursday."
+          },
+          {
+            "kind": "reading",
+            "title": "Python docs — json",
+            "url": "https://docs.python.org/3/library/json.html",
+            "note": "Friday. Just the first examples."
+          }
+        ],
+        "days": [
+          {
+            "number": 1,
+            "weekday": "Monday",
+            "topic": "Dictionaries",
+            "hours": 2.5,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "lesson",
+                "kind": "lesson",
+                "title": "Lesson",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "practice",
+                "kind": "practice",
+                "title": "Practice",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "mini-task",
+                "kind": "mini-task",
+                "title": "Mini-Task",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          },
+          {
+            "number": 2,
+            "weekday": "Tuesday",
+            "topic": "Lists of dictionaries, and counting with dictionaries",
+            "hours": 2.5,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "lesson",
+                "kind": "lesson",
+                "title": "Lesson",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "practice",
+                "kind": "practice",
+                "title": "Practice",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "mini-task",
+                "kind": "mini-task",
+                "title": "Mini-Task",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          },
+          {
+            "number": 3,
+            "weekday": "Wednesday",
+            "topic": "Errors and exceptions",
+            "hours": 2.5,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "lesson",
+                "kind": "lesson",
+                "title": "Lesson",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "practice",
+                "kind": "practice",
+                "title": "Practice",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "mini-task",
+                "kind": "mini-task",
+                "title": "Mini-Task",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          },
+          {
+            "number": 4,
+            "weekday": "Thursday",
+            "topic": "Modules: using code other people wrote",
+            "hours": 2.5,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "lesson",
+                "kind": "lesson",
+                "title": "Lesson",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "practice",
+                "kind": "practice",
+                "title": "Practice",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "mini-task",
+                "kind": "mini-task",
+                "title": "Mini-Task",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          },
+          {
+            "number": 5,
+            "weekday": "Friday",
+            "topic": "Saving data with JSON",
+            "hours": 2.5,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "lesson",
+                "kind": "lesson",
+                "title": "Lesson",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "practice",
+                "kind": "practice",
+                "title": "Practice",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "mini-task",
+                "kind": "mini-task",
+                "title": "Mini-Task",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          },
+          {
+            "number": 6,
+            "weekday": "Saturday",
+            "topic": "Project day: expense tracker",
+            "hours": 3,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "project",
+                "kind": "project",
+                "title": "Weekly Project",
+                "minutes": 120,
+                "body": ""
+              },
+              {
+                "key": "freecodecamp",
+                "kind": "freecodecamp",
+                "title": "FreeCodeCamp",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          }
+        ],
+        "quiz": [
+          {
+            "id": "w5q1",
+            "prompt": "What's the difference between a list and a dictionary?"
+          },
+          {
+            "id": "w5q2",
+            "prompt": "What's the difference between `d[\"key\"]` and `d.get(\"key\", 0)`?"
+          },
+          {
+            "id": "w5q3",
+            "prompt": "Write a loop that prints every key and value of a dictionary."
+          },
+          {
+            "id": "w5q4",
+            "prompt": "Write the pattern that totals amounts per city from a list of order dictionaries."
+          },
+          {
+            "id": "w5q5",
+            "prompt": "What does `try` / `except ValueError` do? Why not a bare `except:`?"
+          },
+          {
+            "id": "w5q6",
+            "prompt": "Name 4 exceptions and what causes each."
+          },
+          {
+            "id": "w5q7",
+            "prompt": "What's the difference between `import math` and `from math import ceil`?"
+          },
+          {
+            "id": "w5q8",
+            "prompt": "How do you use functions from your own `helpers.py`?"
+          },
+          {
+            "id": "w5q9",
+            "prompt": "Write the code that saves a list of dictionaries to a JSON file and loads it back."
+          },
+          {
+            "id": "w5q10",
+            "prompt": "How do you load a JSON file safely when it might not exist yet?"
+          }
+        ],
+        "quizNote": "If you can answer all ten without notes, you're ready for Week 6. **Answers:** check each day's lesson."
       }
     ]
   }

@@ -1,0 +1,39 @@
+# Week 5 · Day 5 mini-task
+id: py-w05-d5-json
+kind: python
+title: "Contacts in JSON"
+description: "Save a list of dictionaries to a JSON file and load it back, without crashing on the first run."
+starter: |
+  import json
+
+  contacts = [
+      {"name": "Ada", "phone": "0803 111 2222"},
+      {"name": "Tunde", "phone": "0805 333 4444"},
+  ]
+
+
+  def save_contacts(contacts, filename):
+      # write the list to the file as JSON
+      pass
+
+
+  def load_contacts(filename):
+      # read the list back; return [] if the file doesn't exist yet
+      pass
+tasks:
+  - prompt: "save_contacts writes the list to a JSON file with json.dump."
+    tests: |
+      save_contacts(contacts, "test_contacts.json")
+      with open("test_contacts.json") as f:
+          assert json.load(f) == contacts, "The file should contain the same list"
+      assert "json.dump" in __code__, "Use json.dump"
+  - prompt: "load_contacts reads it back."
+    tests: |
+      save_contacts(contacts, "test_contacts.json")
+      assert load_contacts("test_contacts.json") == contacts, "Load should give back the same list"
+      save_contacts([], "empty.json")
+      assert load_contacts("empty.json") == [], "An empty list saved → empty list loaded"
+  - prompt: "load_contacts returns [] when the file doesn't exist (catch FileNotFoundError)."
+    tests: |
+      assert load_contacts("does_not_exist.json") == [], "Missing file → []"
+      assert "FileNotFoundError" in __code__, "Catch FileNotFoundError"

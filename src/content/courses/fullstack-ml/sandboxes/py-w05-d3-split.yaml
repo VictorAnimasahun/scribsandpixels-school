@@ -1,0 +1,23 @@
+# Week 5 · Day 3 mini-task
+id: py-w05-d3-split
+kind: python
+title: "Split the bill"
+description: "This bill splitter crashes on bad input. Make it survive letters and zero people."
+starter: |
+  amount = int(input("Amount: "))
+  people = int(input("People: "))
+  print(f"Each person pays ₦{amount // people:,}")
+tasks:
+  - prompt: "10000 between 4 people → Each person pays ₦2,500"
+    stdin: ["10000", "4"]
+    expectOutput: ["Each person pays ₦2,500"]
+  - prompt: "Letters instead of a number → print  Please enter numbers only.  (no crash). Use try/except ValueError."
+    stdin: ["ten thousand", "4"]
+    expectOutput: ["Please enter numbers only."]
+    tests: |
+      assert "except ValueError" in __code__, "Catch ValueError specifically"
+      assert "except:" not in __code__, "Don't use a bare except:"
+  - prompt: "0 people → print  Can't split between 0 people.  (no crash)"
+    stdin: ["10000", "0"]
+    expectOutput: ["Can't split between 0 people."]
+    hint: "except ZeroDivisionError: …  (or check people == 0 first)"

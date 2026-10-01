@@ -1,0 +1,297 @@
+# Excel · Week 4 quizzes. Format and rules: src/content/QUIZZES.md
+week: 4
+days:
+
+  # ─────────────────────────── DAY 1 ───────────────────────────
+  - day: 1
+    gate:
+      title: "Checkpoint: Week 3 review"
+      covers: "Week 3: relative, absolute and mixed references, F4, percentages, Fill Series, Flash Fill"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w04-d1-g01, difficulty: easy, type: mcq, prompt: "Lock column and row", choices: ["$A$1", "A1", "$A1", "A$1"], answer: 0 }
+        - { id: xl-w04-d1-g02, difficulty: easy, type: mcq, prompt: "Cycle reference types", choices: ["F4", "F2", "F9", "Ctrl+E"], answer: 0 }
+        - { id: xl-w04-d1-g03, difficulty: easy, type: mcq, prompt: "Flash Fill", choices: ["Ctrl+E", "Ctrl+F", "Ctrl+D", "Ctrl+R"], answer: 0 }
+        - { id: xl-w04-d1-g04, difficulty: easy, type: text, prompt: "=A1*2 in B1, copied to B2 becomes…", accept: ["=A2*2"] }
+        - { id: xl-w04-d1-g05, difficulty: easy, type: truefalse, prompt: "Flash Fill results update when the source changes.", answer: false }
+        - { id: xl-w04-d1-g06, difficulty: easy, type: mcq, prompt: "% change", choices: ["=(new-old)/old", "=new/old", "=(old-new)/new", "=new-old"], answer: 0 }
+        - { id: xl-w04-d1-g07, difficulty: medium, type: text, prompt: "=O2*$R$1 in Q2, copied to Q40 becomes…", accept: ["=O40*$R$1"] }
+        - { id: xl-w04-d1-g08, difficulty: medium, type: text, prompt: "=$A2*B$1 copied to D5 becomes…", accept: ["=$A5*D$1"] }
+        - { id: xl-w04-d1-g09, difficulty: medium, type: match, prompt: "Match the reference to what's locked.", pairs: [["A1", "nothing"], ["$A$1", "both"], ["$A1", "column"], ["A$1", "row"]] }
+        - { id: xl-w04-d1-g10, difficulty: medium, type: text, prompt: "₦145,000 incl. 7.5% VAT? (digits only)", accept: ["155875"] }
+        - { id: xl-w04-d1-g11, difficulty: medium, type: mcq, prompt: "% of total with the total in B8", choices: ["=B2/$B$8", "=B2/B8", "=$B2/B8", "=B8/B2"], answer: 0 }
+        - { id: xl-w04-d1-g12, difficulty: medium, type: text, prompt: "649,000 at 20% off? (digits only)", accept: ["519200"] }
+        - { id: xl-w04-d1-g13, difficulty: medium, type: truefalse, prompt: "=O2*R1 filled down keeps pointing at R1.", answer: false }
+        - { id: xl-w04-d1-g14, difficulty: medium, type: mcq, prompt: "Lagos share of 2025 net sales (1 decimal)", choices: ["38.6%", "32.2%", "9.3%", "61.4%"], answer: 0 }
+        - { id: xl-w04-d1-g15, difficulty: medium, type: mcq, prompt: "Dates every Monday", choices: ["Fill → Series, step 7", "Flash Fill", "F4", "Paste Special"], answer: 0 }
+        - { id: xl-w04-d1-g16, difficulty: hard, type: text, prompt: "=C3*$H$2+D3 in E3, copied to F5 becomes…", accept: ["=D5*$H$2+E5"] }
+        - { id: xl-w04-d1-g17, difficulty: hard, type: text, prompt: "₦10,000: 10% off, then 7.5% VAT. Final price? (digits only)", accept: ["9675"] }
+        - { id: xl-w04-d1-g18, difficulty: hard, type: multi, prompt: "Which update when the rate in $C$1 changes? (Select all.)", choices: ["=K2*(1+$C$1)", "=K2*$C$1", "A Flash-Filled column", "A typed number"], answers: [0, 1] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Sorting reflexes"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w04-d1-rf01, difficulty: easy, type: mcq, prompt: "Smallest first (text: A first)", choices: ["A→Z", "Z→A", "Custom", "Filter"], answer: 0 }
+          - { id: xl-w04-d1-rf02, difficulty: easy, type: mcq, prompt: "Largest first", choices: ["Z→A", "A→Z", "Custom", "Freeze"], answer: 0 }
+          - { id: xl-w04-d1-rf03, difficulty: easy, type: mcq, prompt: "Sort by two columns", choices: ["Data → Sort → Add Level", "A→Z twice", "Filter", "Ctrl+Shift+L"], answer: 0 }
+          - { id: xl-w04-d1-rf04, difficulty: easy, type: truefalse, prompt: "Sorting a single column on its own is safe.", answer: false }
+          - { id: xl-w04-d1-rf05, difficulty: easy, type: mcq, prompt: "Excel warns you. You choose…", choices: ["Expand the selection", "Continue with the current selection", "Cancel always", "Delete"], answer: 0 }
+          - { id: xl-w04-d1-rf06, difficulty: easy, type: mcq, prompt: "Restore the original order", choices: ["Sort by OrderID A→Z", "Ctrl+Z only", "Filter", "Freeze panes"], answer: 0 }
+          - { id: xl-w04-d1-rf07, difficulty: easy, type: mcq, prompt: "Sort Low, Medium, High in that order", choices: ["Custom List", "A→Z", "Z→A", "Number filter"], answer: 0 }
+          - { id: xl-w04-d1-rf08, difficulty: easy, type: mcq, prompt: "Biggest 2025 single order (net)", choices: ["₦13,239,600", "₦6,490,000", "₦347,519", "₦25,824,000"], answer: 0 }
+          - { id: xl-w04-d1-rf09, difficulty: easy, type: mcq, prompt: "Product of that order", choices: ["Dell Inspiron 15", "iPhone 15", "JBL Flip 6", "Tecno Spark 20"], answer: 0 }
+          - { id: xl-w04-d1-rf10, difficulty: easy, type: truefalse, prompt: "Quick sort keeps each row together when you click one cell in the table.", answer: true }
+      - kind: brain-teaser
+        title: "Sort it out"
+        questions:
+          - { id: xl-w04-d1-bt01, difficulty: medium, type: mcq, prompt: "You selected column K alone and sorted it. What went wrong?", choices: ["Prices no longer match their products: rows were split", "Nothing", "Excel deleted the column", "Only the format changed"], answer: 0 }
+          - { id: xl-w04-d1-bt02, difficulty: medium, type: order, prompt: "Order a two-level sort.", items: ["Click any cell in the table", "Data → Sort", "Sort by Region, A→Z", "Add Level: NetSales, largest to smallest", "OK"] }
+          - { id: xl-w04-d1-bt03, difficulty: medium, type: mcq, prompt: "Sorted by Region A→Z, which region comes first?", choices: ["Abuja", "Lagos", "Enugu", "Kano"], answer: 0 }
+          - { id: xl-w04-d1-bt04, difficulty: hard, type: mcq, prompt: "Two orders tie at ₦13,239,600. Which region's comes first when sorted Region A→Z, then NetSales Z→A?", choices: ["Enugu (NM-00460)", "Lagos (NM-01787)", "They're merged", "Random"], answer: 0 }
+          - { id: xl-w04-d1-bt05, difficulty: hard, type: mcq, prompt: "Highest margin % in the price list (from Week 3's project)", choices: ["Phone Charger (Fast), 44%", "Tecno Spark 20, 18.6%", "Dell Inspiron 15", "Indomie Carton"], answer: 0 }
+
+  # ─────────────────────────── DAY 2 ───────────────────────────
+  - day: 2
+    gate:
+      title: "Checkpoint: sorting"
+      covers: "Week 4 · Day 1: quick sort, never sort one column alone, multi-level sort, custom lists, restoring order"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w04-d2-g01, difficulty: easy, type: mcq, prompt: "Where is multi-level sort?", choices: ["Data → Sort", "Home → Format", "View → Sort", "Insert → Sort"], answer: 0 }
+        - { id: xl-w04-d2-g02, difficulty: easy, type: mcq, prompt: "Z→A on numbers gives…", choices: ["largest first", "smallest first", "alphabetical", "random"], answer: 0 }
+        - { id: xl-w04-d2-g03, difficulty: easy, type: truefalse, prompt: "An ID column lets you get back to the original order.", answer: true }
+        - { id: xl-w04-d2-g04, difficulty: easy, type: mcq, prompt: "To sort the whole table quickly you…", choices: ["click one cell in the column, then A→Z", "select only that column", "select row 1", "press F4"], answer: 0 }
+        - { id: xl-w04-d2-g05, difficulty: easy, type: mcq, prompt: "Custom order like Low/Medium/High", choices: ["Order → Custom List", "Z→A", "A→Z", "Filter"], answer: 0 }
+        - { id: xl-w04-d2-g06, difficulty: easy, type: mcq, prompt: "The second level of a sort is used…", choices: ["to break ties in the first level", "always first", "only for text", "never"], answer: 0 }
+        - { id: xl-w04-d2-g07, difficulty: medium, type: mcq, prompt: "Excel shows a \"Sort Warning\". Best choice?", choices: ["Expand the selection", "Continue with the current selection", "Ignore and close Excel", "Undo everything"], answer: 0 }
+        - { id: xl-w04-d2-g08, difficulty: medium, type: text, prompt: "Biggest 2025 net order? (digits only)", accept: ["13239600"] }
+        - { id: xl-w04-d2-g09, difficulty: medium, type: mcq, prompt: "Region A→Z, then NetSales Z→A. Within Lagos, the first row is…", choices: ["Lagos's biggest order", "Lagos's smallest order", "the first Lagos order by date", "random"], answer: 0 }
+        - { id: xl-w04-d2-g10, difficulty: medium, type: match, prompt: "Match.", pairs: [["A→Z", "ascending"], ["Z→A", "descending"], ["Add Level", "second sort key"], ["Custom List", "your own order"]] }
+        - { id: xl-w04-d2-g11, difficulty: medium, type: truefalse, prompt: "Sorting by text A→Z puts \"Abuja\" before \"Lagos\".", answer: true }
+        - { id: xl-w04-d2-g12, difficulty: medium, type: mcq, prompt: "Which region had the company's biggest order (first by OrderID)?", choices: ["Enugu", "Lagos", "Abuja", "Kano"], answer: 0 }
+        - { id: xl-w04-d2-g13, difficulty: medium, type: mcq, prompt: "Months as text (Jan, Feb…) sorted A→Z come out…", choices: ["alphabetical: Apr, Aug, Dec…", "Jan to Dec", "Dec to Jan", "unchanged"], answer: 0, explain: "Use the built-in month Custom List instead." }
+        - { id: xl-w04-d2-g14, difficulty: medium, type: mcq, prompt: "Undo a sort you made 10 steps ago?", choices: ["Re-sort by the ID column", "Ctrl+Z ten times only", "Delete the sheet", "Impossible"], answer: 0 }
+        - { id: xl-w04-d2-g15, difficulty: medium, type: truefalse, prompt: "Merged cells inside a table can stop sorting.", answer: true }
+        - { id: xl-w04-d2-g16, difficulty: hard, type: mcq, prompt: "Which is the top order after sorting NetSales Z→A (the first of the tie, in original order)?", choices: ["NM-00460", "NM-01787", "NM-00001", "NM-02400"], answer: 0, explain: "Excel's sort is stable: tied rows keep their original order." }
+        - { id: xl-w04-d2-g17, difficulty: hard, type: mcq, prompt: "You sorted, then realise UnitPrice was a separate selection and no longer matches its products. Fix?", choices: ["Undo immediately (Ctrl+Z), or restore from Data_backup", "Sort the column again A→Z", "Format as currency", "Freeze panes"], answer: 0 }
+        - { id: xl-w04-d2-g18, difficulty: hard, type: multi, prompt: "Which are good sorting habits? (Select all.)", choices: ["Keep an ID column", "Sort the whole table, not one column", "Keep a backup sheet", "Sort with merged cells in the data"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Filter sprint"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w04-d2-rf01, difficulty: easy, type: mcq, prompt: "Filters on/off", choices: ["Ctrl+Shift+L", "Ctrl+L", "Ctrl+F", "Alt+F"], answer: 0 }
+          - { id: xl-w04-d2-rf02, difficulty: easy, type: mcq, prompt: "Sum only the visible rows", choices: ["=SUBTOTAL(9,range)", "=SUM(range)", "=VISIBLE(range)", "=SUMIF(range)"], answer: 0 }
+          - { id: xl-w04-d2-rf03, difficulty: easy, type: mcq, prompt: "In SUBTOTAL, 9 means…", choices: ["SUM", "COUNT", "AVERAGE", "MAX"], answer: 0 }
+          - { id: xl-w04-d2-rf04, difficulty: easy, type: mcq, prompt: "Filtering two columns at once is…", choices: ["AND", "OR", "XOR", "NOT"], answer: 0 }
+          - { id: xl-w04-d2-rf05, difficulty: easy, type: mcq, prompt: "Product names containing \"iPhone\"", choices: ["Text Filter → Contains", "Number Filter", "Sort A→Z", "Freeze"], answer: 0 }
+          - { id: xl-w04-d2-rf06, difficulty: easy, type: mcq, prompt: "Net sales ≥ ₦1,000,000", choices: ["Number Filter → Greater Than Or Equal To", "Text Filter", "Date Filter", "Custom List"], answer: 0 }
+          - { id: xl-w04-d2-rf07, difficulty: easy, type: truefalse, prompt: "A normal SUM includes rows hidden by a filter.", answer: true }
+          - { id: xl-w04-d2-rf08, difficulty: easy, type: mcq, prompt: "The status bar shows…", choices: ["x of 2400 records found", "the filter formula", "SUBTOTAL", "the sort order"], answer: 0 }
+          - { id: xl-w04-d2-rf09, difficulty: easy, type: mcq, prompt: "Remove every filter", choices: ["Data → Clear", "Delete row 1", "Ctrl+Z", "F4"], answer: 0 }
+          - { id: xl-w04-d2-rf10, difficulty: easy, type: mcq, prompt: "Orders in December", choices: ["Date Filter", "Text Filter", "Custom List", "Flash Fill"], answer: 0 }
+      - kind: brain-teaser
+        title: "Filter the data"
+        questions:
+          - { id: xl-w04-d2-bt01, difficulty: medium, type: text, prompt: "How many orders came from the Lagos - Lekki store?", accept: ["331"] }
+          - { id: xl-w04-d2-bt02, difficulty: medium, type: text, prompt: "How many orders were in December 2025?", accept: ["330"] }
+          - { id: xl-w04-d2-bt03, difficulty: medium, type: text, prompt: "How many orders had net sales ≥ ₦1,000,000?", accept: ["140"] }
+          - { id: xl-w04-d2-bt04, difficulty: hard, type: mcq, prompt: "Kano + Phones: how many orders and what net total?", choices: ["17 orders, ₦19,551,300", "11 orders, ₦25,824,000", "17 orders, ₦25,824,000", "140 orders, ₦19,551,300"], answer: 0 }
+          - { id: xl-w04-d2-bt05, difficulty: hard, type: mcq, prompt: "Filtered to iPhones, =SUM(O2:O2401) shows the whole year's total. Why?", choices: ["SUM includes hidden rows; use SUBTOTAL(9,…)", "The filter failed", "iPhones aren't in column O", "SUM needs a $"], answer: 0 }
+
+  # ─────────────────────────── DAY 3 ───────────────────────────
+  - day: 3
+    gate:
+      title: "Checkpoint: filtering"
+      covers: "Week 4 · Day 2: Ctrl+Shift+L, text/number/date filters, AND across columns, SUBTOTAL"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w04-d3-g01, difficulty: easy, type: mcq, prompt: "Turn filters on", choices: ["Ctrl+Shift+L", "Ctrl+Shift+F", "Ctrl+T", "F4"], answer: 0 }
+        - { id: xl-w04-d3-g02, difficulty: easy, type: mcq, prompt: "Which respects filters?", choices: ["SUBTOTAL", "SUM", "COUNT", "MAX"], answer: 0 }
+        - { id: xl-w04-d3-g03, difficulty: easy, type: truefalse, prompt: "Filtering hides rows; it doesn't delete them.", answer: true }
+        - { id: xl-w04-d3-g04, difficulty: easy, type: mcq, prompt: "=SUBTOTAL(9,O2:O2401) is the visible…", choices: ["sum", "count", "average", "maximum"], answer: 0 }
+        - { id: xl-w04-d3-g05, difficulty: easy, type: mcq, prompt: "Filter for names containing a word", choices: ["Text Filters → Contains", "Number Filters", "Sort", "Find"], answer: 0 }
+        - { id: xl-w04-d3-g06, difficulty: easy, type: mcq, prompt: "Where do filter arrows appear?", choices: ["In the header row", "In column A", "In the status bar", "On the ribbon only"], answer: 0 }
+        - { id: xl-w04-d3-g07, difficulty: medium, type: text, prompt: "How many iPhone orders were there in 2025?", accept: ["11"] }
+        - { id: xl-w04-d3-g08, difficulty: medium, type: text, prompt: "How many Online orders were paid by Transfer?", accept: ["445"] }
+        - { id: xl-w04-d3-g09, difficulty: medium, type: mcq, prompt: "Filter Region = Kano AND Category = Phones gives…", choices: ["rows that are both Kano and Phones", "every Kano row plus every Phones row", "nothing", "an error"], answer: 0 }
+        - { id: xl-w04-d3-g10, difficulty: medium, type: match, prompt: "Match the filter type.", pairs: [["contains \"Milo\"", "Text Filter"], ["≥ 1,000,000", "Number Filter"], ["this month", "Date Filter"], ["Top 10", "Number Filter"]] }
+        - { id: xl-w04-d3-g11, difficulty: medium, type: text, prompt: "Net total of iPhone orders? (digits only)", accept: ["25824000"] }
+        - { id: xl-w04-d3-g12, difficulty: medium, type: truefalse, prompt: "SUBTOTAL(9,…) gives the same as SUM when no filter is on.", answer: true }
+        - { id: xl-w04-d3-g13, difficulty: medium, type: mcq, prompt: "Count the visible rows of OrderID (text):", choices: ["=SUBTOTAL(3,A2:A2401)", "=SUBTOTAL(9,A2:A2401)", "=COUNT(A2:A2401)", "=SUM(A2:A2401)"], answer: 0, explain: "3 = COUNTA." }
+        - { id: xl-w04-d3-g14, difficulty: medium, type: mcq, prompt: "The status bar says \"330 of 2400 records found\". The filter is probably…", choices: ["December", "Lagos - Lekki", "iPhones", "≥ ₦1,000,000"], answer: 0 }
+        - { id: xl-w04-d3-g15, difficulty: medium, type: mcq, prompt: "Clear all filters at once", choices: ["Data → Clear", "Untick each value", "Delete the arrows", "Ctrl+Z"], answer: 0 }
+        - { id: xl-w04-d3-g16, difficulty: hard, type: text, prompt: "Kano Phones orders: net total? (digits only)", accept: ["19551300"] }
+        - { id: xl-w04-d3-g17, difficulty: hard, type: mcq, prompt: "A SUBTOTAL sits in row 2402 under the data. You add 100 rows at the bottom. Problem?", choices: ["The range stops at row 2401, so the new rows aren't counted", "SUBTOTAL breaks", "Filters turn off", "No problem"], answer: 0 }
+        - { id: xl-w04-d3-g18, difficulty: hard, type: multi, prompt: "Which questions can you answer with filters + SUBTOTAL? (Select all.)", choices: ["Net sales of Lagos Phones orders", "How many December orders", "Orders ≥ ₦1m", "Next year's sales"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Find and freeze"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w04-d3-rf01, difficulty: easy, type: mcq, prompt: "Find", choices: ["Ctrl+F", "Ctrl+H", "F5", "Ctrl+G"], answer: 0 }
+          - { id: xl-w04-d3-rf02, difficulty: easy, type: mcq, prompt: "Replace", choices: ["Ctrl+H", "Ctrl+R", "Ctrl+F", "Ctrl+E"], answer: 0 }
+          - { id: xl-w04-d3-rf03, difficulty: easy, type: mcq, prompt: "Go To (then Special)", choices: ["F5", "F4", "F2", "F9"], answer: 0 }
+          - { id: xl-w04-d3-rf04, difficulty: easy, type: mcq, prompt: "Wildcard: any text", choices: ["*", "?", "#", "%"], answer: 0 }
+          - { id: xl-w04-d3-rf05, difficulty: easy, type: mcq, prompt: "Wildcard: exactly one character", choices: ["?", "*", "_", "."], answer: 0 }
+          - { id: xl-w04-d3-rf06, difficulty: easy, type: mcq, prompt: "Keep row 1 visible when scrolling", choices: ["Freeze Top Row", "Filter", "Group", "Hide"], answer: 0 }
+          - { id: xl-w04-d3-rf07, difficulty: easy, type: mcq, prompt: "Freeze row 1 AND column A: select…", choices: ["B2", "A1", "A2", "B1"], answer: 0 }
+          - { id: xl-w04-d3-rf08, difficulty: easy, type: mcq, prompt: "Select every blank cell at once", choices: ["Go To Special → Blanks", "Ctrl+A", "Find → blank", "Filter"], answer: 0 }
+          - { id: xl-w04-d3-rf09, difficulty: easy, type: truefalse, prompt: "Grouping columns lets you collapse and expand them.", answer: true }
+          - { id: xl-w04-d3-rf10, difficulty: easy, type: mcq, prompt: "Freeze Panes lives on the…", choices: ["View tab", "Data tab", "Home tab", "Insert tab"], answer: 0 }
+      - kind: brain-teaser
+        title: "Find it fast"
+        questions:
+          - { id: xl-w04-d3-bt01, difficulty: medium, type: text, prompt: "How many cells contain \"Milo\" in sales_2025 (Find All)?", accept: ["128"] }
+          - { id: xl-w04-d3-bt02, difficulty: medium, type: mcq, prompt: "Find \"Lagos*\" matches…", choices: ["any cell starting with Lagos", "only \"Lagos*\"", "only \"Lagos\"", "nothing"], answer: 0 }
+          - { id: xl-w04-d3-bt03, difficulty: medium, type: mcq, prompt: "Replace \"Ikeja\" changed \"Ikeja\" inside other words too. Which option prevents that?", choices: ["Match entire cell contents", "Match case", "Within: Workbook", "Look in: Values"], answer: 0 }
+          - { id: xl-w04-d3-bt04, difficulty: hard, type: mcq, prompt: "Audit a sheet: which columns hold formulas?", choices: ["Go To Special → Formulas", "Ctrl+F for =", "Filter", "Freeze panes"], answer: 0 }
+          - { id: xl-w04-d3-bt05, difficulty: hard, type: mcq, prompt: "Hide vs Group for columns F–I?", choices: ["Group: one click to expand/collapse, and it's visible that something's tucked away", "Hide is always better", "Same thing", "Group deletes columns"], answer: 0 }
+
+  # ─────────────────────────── DAY 4 ───────────────────────────
+  - day: 4
+    gate:
+      title: "Checkpoint: freeze, find and Go To Special"
+      covers: "Week 4 · Day 3: freeze panes, find & replace with options and wildcards, Go To Special, hide/group"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w04-d4-g01, difficulty: easy, type: mcq, prompt: "Replace shortcut", choices: ["Ctrl+H", "Ctrl+F", "Ctrl+R", "Ctrl+P"], answer: 0 }
+        - { id: xl-w04-d4-g02, difficulty: easy, type: mcq, prompt: "Freeze row 1 only", choices: ["View → Freeze Panes → Freeze Top Row", "Data → Freeze", "Home → Lock", "Ctrl+1"], answer: 0 }
+        - { id: xl-w04-d4-g03, difficulty: easy, type: truefalse, prompt: "* in Find means \"any text\".", answer: true }
+        - { id: xl-w04-d4-g04, difficulty: easy, type: mcq, prompt: "Go To dialog", choices: ["F5", "F2", "F4", "F11"], answer: 0 }
+        - { id: xl-w04-d4-g05, difficulty: easy, type: mcq, prompt: "Find across every sheet", choices: ["Within: Workbook", "Within: Sheet", "Match case", "Look in: Notes"], answer: 0 }
+        - { id: xl-w04-d4-g06, difficulty: easy, type: mcq, prompt: "Collapse columns with a +/− button", choices: ["Data → Group", "Hide", "Freeze", "Filter"], answer: 0 }
+        - { id: xl-w04-d4-g07, difficulty: medium, type: mcq, prompt: "To freeze row 1 and column A together, select ___ then Freeze Panes.", choices: ["B2", "A1", "A2", "B1"], answer: 0 }
+        - { id: xl-w04-d4-g08, difficulty: medium, type: match, prompt: "Match.", pairs: [["*", "any text"], ["?", "one character"], ["Ctrl+F", "find"], ["Ctrl+H", "replace"]] }
+        - { id: xl-w04-d4-g09, difficulty: medium, type: mcq, prompt: "With Match entire cell contents ticked, Find \"Spark ??\" matches…", choices: ["\"Spark 20\" and \"Spark 10\"", "\"Spark 2000\"", "only \"Spark ??\"", "\"Spark\""], answer: 0 }
+        - { id: xl-w04-d4-g10, difficulty: medium, type: mcq, prompt: "Select every error cell in a sheet", choices: ["Go To Special → Formulas → Errors", "Ctrl+A", "Filter errors", "F4"], answer: 0 }
+        - { id: xl-w04-d4-g11, difficulty: medium, type: truefalse, prompt: "Find All shows how many cells match.", answer: true }
+        - { id: xl-w04-d4-g12, difficulty: medium, type: text, prompt: "Cells containing \"Milo\" in sales_2025?", accept: ["128"] }
+        - { id: xl-w04-d4-g13, difficulty: medium, type: mcq, prompt: "Replacing \"Lagos - Surulere\" by mistake affected 300 cells. Fix?", choices: ["Ctrl+Z right away", "Replace back by hand, cell by cell", "Delete the column", "Freeze panes"], answer: 0 }
+        - { id: xl-w04-d4-g14, difficulty: medium, type: mcq, prompt: "Headers scroll out of view on 2,400 rows. Fix?", choices: ["Freeze Top Row", "Bold the headers", "Filter", "Sort"], answer: 0 }
+        - { id: xl-w04-d4-g15, difficulty: medium, type: mcq, prompt: "Go To Special → Constants selects…", choices: ["typed values, not formulas", "only formulas", "only blanks", "only errors"], answer: 0 }
+        - { id: xl-w04-d4-g16, difficulty: hard, type: mcq, prompt: "Replace \"Lagos\" with \"Lagos State\" without touching \"Lagos - Lekki\" etc.:", choices: ["Tick Match entire cell contents", "Tick Match case", "Use *Lagos*", "Within: Workbook"], answer: 0 }
+        - { id: xl-w04-d4-g17, difficulty: hard, type: mcq, prompt: "Fill every blank in a column with 0 in one go:", choices: ["Select column → Go To Special → Blanks → type 0 → Ctrl+Enter", "Find blanks and type 0 in each", "Sort then type 0", "Filter then delete"], answer: 0 }
+        - { id: xl-w04-d4-g18, difficulty: hard, type: multi, prompt: "Which are good for auditing a sheet? (Select all.)", choices: ["Go To Special → Formulas", "Ctrl+` (show formulas)", "F2 on a cell", "Merge & Center"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Sheets and 3D"
+        secondsPerQuestion: 9
+        questions:
+          - { id: xl-w04-d4-rf01, difficulty: easy, type: mcq, prompt: "O2 on the Data sheet", choices: ["=Data!O2", "=Data.O2", "=O2@Data", "=[Data]O2"], answer: 0 }
+          - { id: xl-w04-d4-rf02, difficulty: easy, type: mcq, prompt: "Sheet name with a space", choices: ["='Jan Sales'!B5", "=Jan Sales!B5", "=\"Jan Sales\"!B5", "=[Jan Sales]B5"], answer: 0 }
+          - { id: xl-w04-d4-rf03, difficulty: easy, type: mcq, prompt: "B5 on every sheet from Jan to Mar", choices: ["=SUM(Jan:Mar!B5)", "=SUM(Jan!B5:Mar!B5)", "=Jan+Feb+Mar", "=SUM(B5)"], answer: 0 }
+          - { id: xl-w04-d4-rf04, difficulty: easy, type: mcq, prompt: "Select several sheet tabs", choices: ["Ctrl+click", "Alt+click", "Double-click", "Right-drag"], answer: 0 }
+          - { id: xl-w04-d4-rf05, difficulty: easy, type: truefalse, prompt: "Grouped sheets all receive what you type.", answer: true }
+          - { id: xl-w04-d4-rf06, difficulty: easy, type: mcq, prompt: "After editing grouped sheets you must…", choices: ["ungroup them", "save as CSV", "freeze them", "sort them"], answer: 0 }
+          - { id: xl-w04-d4-rf07, difficulty: easy, type: mcq, prompt: "Another workbook's cell", choices: ["=[Budget.xlsx]Sheet1!B2", "=Budget.Sheet1.B2", "=Sheet1!Budget!B2", "=B2@Budget"], answer: 0 }
+          - { id: xl-w04-d4-rf08, difficulty: easy, type: truefalse, prompt: "3D references need identical layouts on each sheet.", answer: true }
+          - { id: xl-w04-d4-rf09, difficulty: easy, type: mcq, prompt: "Links to other workbooks are…", choices: ["fragile if the file moves", "always safe", "faster than sheet links", "not allowed"], answer: 0 }
+          - { id: xl-w04-d4-rf10, difficulty: easy, type: mcq, prompt: "=SUM(Jan:Dec!C5) adds…", choices: ["C5 from every sheet Jan to Dec", "C5 on Jan and Dec only", "C5 to C12", "nothing"], answer: 0 }
+      - kind: brain-teaser
+        title: "Quarterly workbook"
+        questions:
+          - { id: xl-w04-d4-bt01, difficulty: medium, type: mcq, prompt: "You insert sheet Feb2 between Jan and Mar. Does =SUM(Jan:Mar!B2) include it?", choices: ["Yes: every sheet between the first and last", "No", "Only if you rename it", "Only after F9"], answer: 0 }
+          - { id: xl-w04-d4-bt02, difficulty: medium, type: text, prompt: "Jan!B2 = 100, Feb!B2 = 250, Mar!B2 = 150. =SUM(Jan:Mar!B2)?", accept: ["500"] }
+          - { id: xl-w04-d4-bt03, difficulty: medium, type: mcq, prompt: "You forgot to ungroup and typed a note in Jan!E1. What happened?", choices: ["The note went into E1 of every grouped sheet", "Only Jan got it", "Excel blocked it", "It deleted E1 everywhere"], answer: 0 }
+          - { id: xl-w04-d4-bt04, difficulty: hard, type: mcq, prompt: "You move sheet Mar to the far right after Q1. =SUM(Jan:Mar!B2) in Q1 now…", choices: ["also includes Q1 itself: a circular reference", "is unchanged", "excludes Feb", "shows #REF!"], answer: 0, explain: "The range runs Jan → Mar in tab order, which now contains Q1." }
+          - { id: xl-w04-d4-bt05, difficulty: hard, type: text, prompt: "Write the reference to cell C7 on a sheet named Q1 Totals.", accept: ["='Q1 Totals'!C7", "'Q1 Totals'!C7"] }
+
+  # ─────────────────────────── DAY 5 ───────────────────────────
+  - day: 5
+    gate:
+      title: "Checkpoint: working across sheets"
+      covers: "Week 4 · Day 4: sheet references, quoted names, other workbooks, 3D SUM, grouping sheets"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w04-d5-g01, difficulty: easy, type: mcq, prompt: "Cell B5 on sheet Summary", choices: ["=Summary!B5", "=Summary.B5", "=B5!Summary", "=[Summary]B5"], answer: 0 }
+        - { id: xl-w04-d5-g02, difficulty: easy, type: mcq, prompt: "A 3D reference adds the same cell across…", choices: ["a run of sheets", "a run of rows", "one sheet only", "other workbooks only"], answer: 0 }
+        - { id: xl-w04-d5-g03, difficulty: easy, type: truefalse, prompt: "Sheet names with spaces need single quotes in a reference.", answer: true }
+        - { id: xl-w04-d5-g04, difficulty: easy, type: mcq, prompt: "Group sheets", choices: ["Ctrl+click their tabs", "Data → Group", "Alt+G", "Freeze"], answer: 0 }
+        - { id: xl-w04-d5-g05, difficulty: easy, type: mcq, prompt: "=SUM(Jan:Mar!B5) needs…", choices: ["the same layout on Jan, Feb and Mar", "identical sheet colours", "a Q1 sheet first", "macros"], answer: 0 }
+        - { id: xl-w04-d5-g06, difficulty: easy, type: mcq, prompt: "Avoid links to other workbooks because…", choices: ["they break if the file moves", "they're slow to type", "Excel forbids them", "they're always wrong"], answer: 0 }
+        - { id: xl-w04-d5-g07, difficulty: medium, type: text, prompt: "Write: B5 summed across every sheet from Jan to Dec.", accept: ["=SUM(Jan:Dec!B5)"] }
+        - { id: xl-w04-d5-g08, difficulty: medium, type: text, prompt: "Write a reference to B5 on the sheet Jan Sales.", accept: ["='Jan Sales'!B5", "'Jan Sales'!B5"] }
+        - { id: xl-w04-d5-g09, difficulty: medium, type: match, prompt: "Match.", pairs: [["=Data!O2", "another sheet"], ["='Jan Sales'!B5", "sheet name with a space"], ["=SUM(Jan:Mar!B2)", "3D reference"], ["=[Budget.xlsx]Sheet1!B2", "another workbook"]] }
+        - { id: xl-w04-d5-g10, difficulty: medium, type: mcq, prompt: "The fastest way to give 12 monthly sheets an identical layout:", choices: ["Build one, then Move or Copy it (or group sheets while typing)", "Type each by hand", "Flash Fill", "Copy the whole workbook 12 times"], answer: 0 }
+        - { id: xl-w04-d5-g11, difficulty: medium, type: truefalse, prompt: "Grouped sheets show [Group] in the title bar.", answer: true }
+        - { id: xl-w04-d5-g12, difficulty: medium, type: text, prompt: "Jan!C5 = 40, Feb!C5 = 60, Mar!C5 = 0. =SUM(Jan:Mar!C5)?", accept: ["100"] }
+        - { id: xl-w04-d5-g13, difficulty: medium, type: mcq, prompt: "=SUM(Jan:Mar!B2) where Feb's B2 holds text \"n/a\". Result?", choices: ["Sum of Jan and Mar (text is skipped)", "#VALUE!", "0", "#REF!"], answer: 0 }
+        - { id: xl-w04-d5-g14, difficulty: medium, type: mcq, prompt: "You delete the Mar sheet. =SUM(Jan:Mar!B2) becomes…", choices: ["=SUM(Jan:Feb!B2)", "#REF!", "unchanged", "0"], answer: 0, explain: "Deleting an end sheet moves the range to the next sheet in." }
+        - { id: xl-w04-d5-g15, difficulty: medium, type: mcq, prompt: "A formula on Summary: =Data!O2*Inputs!$B$1. Copied down one row, it becomes…", choices: ["=Data!O3*Inputs!$B$1", "=Data!O2*Inputs!$B$2", "=Data!O3*Inputs!$B$2", "#REF!"], answer: 0 }
+        - { id: xl-w04-d5-g16, difficulty: hard, type: mcq, prompt: "Why put a Q1 summary sheet OUTSIDE the Jan:Mar run?", choices: ["Otherwise the 3D SUM includes Q1 itself (circular reference)", "Excel requires Q1 to be first", "Colours", "Printing"], answer: 0 }
+        - { id: xl-w04-d5-g17, difficulty: hard, type: mcq, prompt: "Household budget: Year!B3 should total B3 on Jan…Dec. Formula?", choices: ["=SUM(Jan:Dec!B3)", "=Jan!B3+Dec!B3", "=SUM(B3:B14)", "=SUM(Jan!B3:Dec!B3)"], answer: 0 }
+        - { id: xl-w04-d5-g18, difficulty: hard, type: multi, prompt: "Which are true about grouped sheets? (Select all.)", choices: ["Typing goes into every grouped sheet", "Formatting goes into every grouped sheet", "You should ungroup after editing", "They become one sheet"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Print ready"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w04-d5-rf01, difficulty: easy, type: mcq, prompt: "Wide table orientation", choices: ["Landscape", "Portrait", "Square", "Auto"], answer: 0 }
+          - { id: xl-w04-d5-rf02, difficulty: easy, type: mcq, prompt: "Headers on every printed page", choices: ["Print Titles → Rows to repeat at top", "Freeze panes", "Header/Footer", "Print Area"], answer: 0 }
+          - { id: xl-w04-d5-rf03, difficulty: easy, type: mcq, prompt: "Print only a range", choices: ["Set Print Area", "Hide the rest", "Filter", "Group"], answer: 0 }
+          - { id: xl-w04-d5-rf04, difficulty: easy, type: mcq, prompt: "Fit everything across one page", choices: ["Fit All Columns on One Page", "Landscape only", "Smaller font by hand", "Print Area"], answer: 0 }
+          - { id: xl-w04-d5-rf05, difficulty: easy, type: mcq, prompt: "See and drag page breaks", choices: ["Page Break Preview", "Normal view", "Freeze panes", "Zoom"], answer: 0 }
+          - { id: xl-w04-d5-rf06, difficulty: easy, type: mcq, prompt: "Usual way to send a report", choices: ["Export to PDF", "Email the .csv", "Screenshot", "Print and scan"], answer: 0 }
+          - { id: xl-w04-d5-rf07, difficulty: easy, type: mcq, prompt: "Page X of Y goes in…", choices: ["the header or footer", "cell A1", "the file name", "a comment"], answer: 0 }
+          - { id: xl-w04-d5-rf08, difficulty: easy, type: truefalse, prompt: "Freeze panes also repeats headers when printing.", answer: false, explain: "Printing needs Print Titles." }
+          - { id: xl-w04-d5-rf09, difficulty: easy, type: mcq, prompt: "Rows to repeat at top for row 1", choices: ["$1:$1", "A1", "1:1!", "$A$1"], answer: 0 }
+          - { id: xl-w04-d5-rf10, difficulty: easy, type: mcq, prompt: "Print settings live mostly on…", choices: ["the Page Layout tab and File → Print", "the Data tab", "the Formulas tab", "the Review tab"], answer: 0 }
+      - kind: brain-teaser
+        title: "Fix the printout"
+        questions:
+          - { id: xl-w04-d5-bt01, difficulty: medium, type: mcq, prompt: "The printed Data sheet's page 2 has no headers. Fix?", choices: ["Page Layout → Print Titles → Rows to repeat at top: $1:$1", "Freeze Top Row", "Bold row 1", "Print Area"], answer: 0 }
+          - { id: xl-w04-d5-bt02, difficulty: medium, type: mcq, prompt: "The last two columns print on separate pages. Fix?", choices: ["Landscape + Fit All Columns on One Page", "Delete the columns", "Portrait", "Print Area = A1"], answer: 0 }
+          - { id: xl-w04-d5-bt03, difficulty: medium, type: mcq, prompt: "Only the Summary table should print, not the notes beside it.", choices: ["Select the table → Set Print Area", "Hide the notes forever", "Delete the notes", "Freeze panes"], answer: 0 }
+          - { id: xl-w04-d5-bt04, difficulty: hard, type: order, prompt: "Order: a one-page landscape PDF report.", items: ["Set Print Area", "Orientation: Landscape", "Scaling: Fit Sheet on One Page", "Add header and page-number footer", "File → Save As → PDF"] }
+          - { id: xl-w04-d5-bt05, difficulty: hard, type: mcq, prompt: "Why export a report to PDF instead of sending the .xlsx?", choices: ["Layout is fixed and it can't be edited by accident", "PDFs recalculate", "It's required by Excel", "PDFs keep formulas"], answer: 0 }
+
+  # ─────────────────────────── DAY 6 ───────────────────────────
+  - day: 6
+    gate:
+      title: "Checkpoint: page layout and printing"
+      covers: "Week 4 · Day 5: orientation, scaling, print area, print titles, header/footer, page break preview, PDF"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w04-d6-g01, difficulty: easy, type: mcq, prompt: "Print a wide table on one page", choices: ["Landscape + fit to one page", "Portrait + zoom out", "Hide columns", "Bigger paper only"], answer: 0 }
+        - { id: xl-w04-d6-g02, difficulty: easy, type: mcq, prompt: "Repeat row 1 on every page", choices: ["Print Titles", "Freeze Panes", "Print Area", "Group"], answer: 0 }
+        - { id: xl-w04-d6-g03, difficulty: easy, type: truefalse, prompt: "File → Save As → PDF exports a sheet as a PDF.", answer: true }
+        - { id: xl-w04-d6-g04, difficulty: easy, type: mcq, prompt: "Choose which range prints", choices: ["Set Print Area", "Filter", "Sort", "Freeze"], answer: 0 }
+        - { id: xl-w04-d6-g05, difficulty: easy, type: mcq, prompt: "Where can you drag the blue page-break lines?", choices: ["Page Break Preview", "Normal view", "Formula bar", "Status bar"], answer: 0 }
+        - { id: xl-w04-d6-g06, difficulty: easy, type: mcq, prompt: "\"NaijaMart — Confidential\" on every page goes in the…", choices: ["header", "Print Area", "cell A1 only", "file name"], answer: 0 }
+        - { id: xl-w04-d6-g07, difficulty: medium, type: match, prompt: "Match the job to the setting.", pairs: [["Headers on every page", "Print Titles"], ["Only this range", "Print Area"], ["Wide table", "Landscape"], ["Page 1 of 3", "Footer"]] }
+        - { id: xl-w04-d6-g08, difficulty: medium, type: mcq, prompt: "Freeze panes vs Print Titles:", choices: ["Freeze is for the screen; Print Titles is for paper", "Same thing", "Freeze is for paper", "Print Titles freezes the screen"], answer: 0 }
+        - { id: xl-w04-d6-g09, difficulty: medium, type: truefalse, prompt: "Fitting 2,400 rows onto one page is a good idea.", answer: false, explain: "Fit columns to one page wide; let rows flow onto more pages." }
+        - { id: xl-w04-d6-g10, difficulty: medium, type: mcq, prompt: "Print Preview shows a column cut off on the right. First try:", choices: ["Fit All Columns on One Page", "Delete the column", "Set Print Area to A1", "Portrait"], answer: 0 }
+        - { id: xl-w04-d6-g11, difficulty: medium, type: mcq, prompt: "Household budget milestone: 12 monthly sheets should be…", choices: ["identical in layout, so 3D references work", "all different", "on one sheet", "in 12 workbooks"], answer: 0 }
+        - { id: xl-w04-d6-g12, difficulty: medium, type: mcq, prompt: "Difference column in the budget = ", choices: ["budgeted − actual", "actual − income", "budgeted + actual", "actual × %"], answer: 0 }
+        - { id: xl-w04-d6-g13, difficulty: medium, type: truefalse, prompt: "Changing salary on the Inputs sheet should update every month if you used $ references.", answer: true }
+        - { id: xl-w04-d6-g14, difficulty: medium, type: mcq, prompt: "% of income for rent (B5) with income in Inputs!$B$2:", choices: ["=B5/Inputs!$B$2", "=B5/Inputs!B2", "=Inputs!$B$2/B5", "=B5*Inputs!$B$2"], answer: 0 }
+        - { id: xl-w04-d6-g15, difficulty: medium, type: mcq, prompt: "Which tab sets orientation and Print Titles?", choices: ["Page Layout", "Data", "Formulas", "View"], answer: 0 }
+        - { id: xl-w04-d6-g16, difficulty: hard, type: text, prompt: "Income ₦450,000; rent ₦135,000. Rent as % of income?", accept: ["30%", "0.3", "30"] }
+        - { id: xl-w04-d6-g17, difficulty: hard, type: text, prompt: "Food budget ₦80,000, actual ₦92,500. Difference (budgeted − actual)? (digits, with sign)", accept: ["-12500"] }
+        - { id: xl-w04-d6-g18, difficulty: hard, type: multi, prompt: "Which belong in the Phase 1 budget milestone? (Select all.)", choices: ["An Inputs sheet", "12 identical monthly sheets", "A Year sheet with 3D references", "Merged cells across every table"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Week 4 lightning round"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w04-d6-rf01, difficulty: easy, type: mcq, prompt: "Filters on/off", choices: ["Ctrl+Shift+L", "Ctrl+L", "Ctrl+F", "F4"], answer: 0 }
+          - { id: xl-w04-d6-rf02, difficulty: easy, type: mcq, prompt: "Visible-only sum", choices: ["SUBTOTAL(9,…)", "SUM", "SUMIF", "COUNT"], answer: 0 }
+          - { id: xl-w04-d6-rf03, difficulty: easy, type: mcq, prompt: "Replace", choices: ["Ctrl+H", "Ctrl+F", "Ctrl+R", "Ctrl+E"], answer: 0 }
+          - { id: xl-w04-d6-rf04, difficulty: easy, type: mcq, prompt: "Freeze row 1 + column A: select", choices: ["B2", "A1", "A2", "B1"], answer: 0 }
+          - { id: xl-w04-d6-rf05, difficulty: easy, type: mcq, prompt: "3D SUM", choices: ["=SUM(Jan:Dec!B5)", "=SUM(B5:B16)", "=Jan!B5+Dec!B5", "=SUM3D(B5)"], answer: 0 }
+          - { id: xl-w04-d6-rf06, difficulty: easy, type: mcq, prompt: "Headers on every printed page", choices: ["Print Titles", "Freeze", "Bold", "Filter"], answer: 0 }
+          - { id: xl-w04-d6-rf07, difficulty: easy, type: text, prompt: "December 2025 orders", accept: ["330"] }
+          - { id: xl-w04-d6-rf08, difficulty: easy, type: mcq, prompt: "Never sort…", choices: ["one column alone", "by two levels", "by ID", "with filters off"], answer: 0 }
+          - { id: xl-w04-d6-rf09, difficulty: easy, type: truefalse, prompt: "Ungroup sheets after editing them together.", answer: true }
+          - { id: xl-w04-d6-rf10, difficulty: easy, type: mcq, prompt: "Send reports as…", choices: ["PDF", "CSV", "TXT", "XLSM"], answer: 0 }
+      - kind: brain-teaser
+        title: "Phase 1 challenge"
+        questions:
+          - { id: xl-w04-d6-bt01, difficulty: medium, type: mcq, prompt: "Find the total net sales of Online orders paid by Transfer, quickly:", choices: ["Filter CustomerType = Online and PaymentMethod = Transfer, then SUBTOTAL(9, NetSales)", "SUM the whole column", "Sort and add by eye", "Freeze panes"], answer: 0 }
+          - { id: xl-w04-d6-bt02, difficulty: medium, type: text, prompt: "How many Online + Transfer orders?", accept: ["445"] }
+          - { id: xl-w04-d6-bt03, difficulty: medium, type: mcq, prompt: "Year!C4 should total C4 across 12 month sheets placed Jan…Dec. And Year must sit…", choices: ["outside the Jan:Dec run", "between Jun and Jul", "first inside the run", "anywhere"], answer: 0 }
+          - { id: xl-w04-d6-bt04, difficulty: hard, type: text, prompt: "Budget ₦300,000 for the month; actual spending ₦318,000. Difference (budgeted − actual)? (digits, with sign)", accept: ["-18000"] }
+          - { id: xl-w04-d6-bt05, difficulty: hard, type: multi, prompt: "Which skills did Phase 1 cover? (Select all.)", choices: ["Formulas and $ references", "Sorting and filtering", "3D references and printing", "PivotTables"], answers: [0, 1, 2], explain: "PivotTables come later in the course." }

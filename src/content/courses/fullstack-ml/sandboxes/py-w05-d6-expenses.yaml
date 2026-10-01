@@ -1,0 +1,44 @@
+# Week 5 · Day 6 project core
+id: py-w05-d6-expenses
+kind: python
+title: "Expense tracker"
+description: "Dictionaries, error handling and functions together: the core of this week's project."
+starter: |
+  def format_naira(amount):
+      # 1200 → "₦1,200"
+      pass
+
+
+  def total(expenses):
+      # sum of every expense's "amount"
+      pass
+
+
+  def by_category(expenses):
+      # {"Food": 3200, "Transport": 500}
+      pass
+
+
+  # Main program:
+  # loop: ask "Item (or done): ". Stop on "done".
+  #       ask "Amount: " until it's a whole number (print "Amount must be a number" if not)
+  #       ask "Category: "
+  #       store {"item": …, "amount": …, "category": …} in a list
+  # then print  Total: ₦3,700  and one line per category like  Food: ₦3,200
+tasks:
+  - prompt: "format_naira, total and by_category work on any list of expenses."
+    stdin: ["done"]
+    tests: |
+      assert format_naira(1200) == "₦1,200", f"format_naira(1200) gave {format_naira(1200)!r}"
+      assert format_naira(1500000) == "₦1,500,000"
+      sample = [{"item": "Bread", "amount": 1200, "category": "Food"}, {"item": "Bus", "amount": 500, "category": "Transport"}, {"item": "Suya", "amount": 2000, "category": "Food"}]
+      assert total(sample) == 3700, f"total gave {total(sample)}"
+      assert total([]) == 0, "No expenses → 0"
+      assert by_category(sample) == {"Food": 3200, "Transport": 500}, f"by_category gave {by_category(sample)}"
+  - prompt: "Bread 1200 Food, Bus 500 Transport, Suya 2000 Food, done → prints the total and each category."
+    stdin: ["Bread", "1200", "Food", "Bus", "500", "Transport", "Suya", "2000", "Food", "done"]
+    expectOutput: ["Total: ₦3,700", "Food: ₦3,200", "Transport: ₦500"]
+  - prompt: "A bad amount asks again: Bread, abc, 1200, Food, done → \"Amount must be a number\", then Total: ₦1,200"
+    stdin: ["Bread", "abc", "1200", "Food", "done"]
+    expectOutput: ["Amount must be a number", "Total: ₦1,200", "Food: ₦1,200"]
+    hint: "while True: try: amount = int(input(\"Amount: \")); break  except ValueError: print(…)"

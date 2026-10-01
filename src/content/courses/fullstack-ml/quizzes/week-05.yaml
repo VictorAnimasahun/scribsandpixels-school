@@ -1,0 +1,890 @@
+# Fullstack + ML · Week 5 quizzes. Format and rules: src/content/QUIZZES.md
+week: 5
+days:
+
+  # ─────────────────────────── DAY 1 ───────────────────────────
+  - day: 1
+    gate:
+      title: "Checkpoint: Week 4 review"
+      covers: "Week 4: selectors and units, display and position, Flexbox, media queries, Git and GitHub"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w05-d1-g01, difficulty: easy, type: mcq, prompt: "Turn on flexbox", choices: ["display: flex", "position: flex", "flex: on", "float: flex"], answer: 0 }
+        - { id: fs-w05-d1-g02, difficulty: easy, type: mcq, prompt: "Save a snapshot in Git", choices: ["git commit", "git push", "git add", "git status"], answer: 0 }
+        - { id: fs-w05-d1-g03, difficulty: easy, type: mcq, prompt: "Links inside the nav only", choices: ["nav a", "nav, a", "a nav", "nav.a"], answer: 0 }
+        - { id: fs-w05-d1-g04, difficulty: easy, type: truefalse, prompt: "git push uploads your commits to GitHub.", answer: true }
+        - { id: fs-w05-d1-g05, difficulty: easy, type: mcq, prompt: "Let flex items move onto new lines", choices: ["flex-wrap: wrap", "flex-direction: wrap", "display: wrap", "gap: wrap"], answer: 0 }
+        - { id: fs-w05-d1-g06, difficulty: easy, type: mcq, prompt: "Hide an element completely", choices: ["display: none", "position: hidden", "display: hidden", "opacity: none"], answer: 0 }
+        - { id: fs-w05-d1-g07, difficulty: medium, type: mcq, prompt: "Logo left, links right, vertically centred:", choices: ["display: flex; justify-content: space-between; align-items: center;", "text-align: right;", "display: block; align-items: center;", "float: left;"], answer: 0 }
+        - { id: fs-w05-d1-g08, difficulty: medium, type: order, prompt: "Order the everyday Git loop.", items: ["Edit files", "git add .", "git commit -m \"…\"", "git push"] }
+        - { id: fs-w05-d1-g09, difficulty: medium, type: mcq, prompt: "The badge flies to the corner of the page, not the card. Fix?", choices: ["position: relative on the card", "position: fixed on the badge", "display: flex on the badge", "z-index: 10"], answer: 0 }
+        - { id: fs-w05-d1-g10, difficulty: medium, type: text, prompt: "2rem at a 16px root = ? px (number only)", accept: ["32"] }
+        - { id: fs-w05-d1-g11, difficulty: medium, type: match, prompt: "Match.", pairs: [["git status", "what changed?"], ["git add .", "stage changes"], ["git log --oneline", "list commits"], [".gitignore", "files never to save"]] }
+        - { id: fs-w05-d1-g12, difficulty: medium, type: mcq, prompt: "A page looks tiny on a real phone despite media queries. Missing?", choices: ["The viewport meta tag", "flex-wrap", "rem units", "a .gitignore"], answer: 0 }
+        - { id: fs-w05-d1-g13, difficulty: medium, type: truefalse, prompt: "With border-box, width includes padding and border.", answer: true }
+        - { id: fs-w05-d1-g14, difficulty: medium, type: mcq, prompt: "In a column (flex-direction: column), which centres items horizontally?", choices: ["align-items: center", "justify-content: center", "text-align: center", "float: center"], answer: 0 }
+        - { id: fs-w05-d1-g15, difficulty: medium, type: mcq, prompt: "Your GitHub Pages site shows old content. Most likely?", choices: ["The change wasn't committed and pushed", "Pages is broken", "CSS can't update", "The repo is private"], answer: 0 }
+        - { id: fs-w05-d1-g16, difficulty: hard, type: text, prompt: "Row 900px wide, gap 20px, cards flex: 1 1 250px. How many on the first row? (number only)", accept: ["3", "three"], explain: "3×250 + 2×20 = 790 fits; 4 would need 1060." }
+        - { id: fs-w05-d1-g17, difficulty: hard, type: text, prompt: "What does this print?", code: "line = \"9b2d771 Ada: Fix typo in footer\"\nprint(line.split(\" \", 1)[1].split(\":\")[0])", accept: ["Ada"] }
+        - { id: fs-w05-d1-g18, difficulty: hard, type: multi, prompt: "Which help a page work on phones? (Select all.)", choices: ["The viewport meta tag", "flex-wrap: wrap on card rows", "@media (max-width: 600px)", "width: 1200px on the body"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Dictionary basics"
+        secondsPerQuestion: 10
+        questions:
+          - { id: fs-w05-d1-rf01, difficulty: easy, type: mcq, prompt: "Dictionaries use…", choices: ["{ }", "[ ]", "( )", "< >"], answer: 0 }
+          - { id: fs-w05-d1-rf02, difficulty: easy, type: mcq, prompt: "A dictionary finds values by…", choices: ["key", "position", "size", "order only"], answer: 0 }
+          - { id: fs-w05-d1-rf03, difficulty: easy, type: mcq, prompt: "Get rice's price", choices: ["prices[\"rice\"]", "prices[0]", "prices.rice()", "prices(rice)"], answer: 0 }
+          - { id: fs-w05-d1-rf04, difficulty: easy, type: mcq, prompt: "Add yam at 2500", choices: ["prices[\"yam\"] = 2500", "prices.append(\"yam\", 2500)", "prices.add(yam=2500)", "prices + {\"yam\": 2500}"], answer: 0 }
+          - { id: fs-w05-d1-rf05, difficulty: easy, type: mcq, prompt: "Remove beans", choices: ["del prices[\"beans\"]", "prices.remove(\"beans\")", "prices[\"beans\"] = None", "prices - \"beans\""], answer: 0 }
+          - { id: fs-w05-d1-rf06, difficulty: easy, type: mcq, prompt: "Missing key with [ ] raises…", choices: ["KeyError", "IndexError", "ValueError", "nothing"], answer: 0 }
+          - { id: fs-w05-d1-rf07, difficulty: easy, type: mcq, prompt: "Missing key with .get(key) returns…", choices: ["None", "0", "an error", "\"\""], answer: 0 }
+          - { id: fs-w05-d1-rf08, difficulty: easy, type: mcq, prompt: "Loop over keys and values", choices: [".items()", ".keys()", ".values()", ".pairs()"], answer: 0 }
+          - { id: fs-w05-d1-rf09, difficulty: easy, type: truefalse, prompt: "\"rice\" in prices checks for the key.", answer: true }
+          - { id: fs-w05-d1-rf10, difficulty: easy, type: text, prompt: "f\"{1700:,}\" gives…", accept: ["1,700"] }
+          - { id: fs-w05-d1-rf11, difficulty: easy, type: truefalse, prompt: "Dictionary keys must be unique.", answer: true }
+      - kind: brain-teaser
+        title: "Read the dictionary"
+        questions:
+          - id: fs-w05-d1-bt01
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              prices = {"rice": 1500, "beans": 1200}
+              prices["rice"] = 1700
+              prices["yam"] = 2500
+              print(len(prices), prices["rice"])
+            accept: ["3 1700"]
+          - id: fs-w05-d1-bt02
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              stock = {"Lagos": 40, "Abuja": 25}
+              print(stock.get("Kano", 0) + stock.get("Lagos", 0))
+            accept: ["40"]
+          - id: fs-w05-d1-bt03
+            difficulty: medium
+            type: mcq
+            prompt: "What happens?"
+            code: |
+              prices = {"rice": 1500}
+              print(prices["egusi"])
+            choices: ["KeyError: 'egusi'", "None", "0", "egusi"]
+            answer: 0
+          - id: fs-w05-d1-bt04
+            difficulty: hard
+            type: text
+            prompt: "What does this print?"
+            code: |
+              ages = {"Ada": 24, "Tolu": 31, "Emeka": 28}
+              oldest = ""
+              for name, age in ages.items():
+                  if oldest == "" or age > ages[oldest]:
+                      oldest = name
+              print(oldest)
+            accept: ["Tolu"]
+          - id: fs-w05-d1-bt05
+            difficulty: hard
+            type: text
+            prompt: "What does this print?"
+            code: |
+              d = {"a": 1, "b": 2}
+              d["a"] = d["a"] + d["b"]
+              d["c"] = d["a"] * 2
+              print(sum(d.values()))
+            accept: ["11"]
+
+  # ─────────────────────────── DAY 2 ───────────────────────────
+  - day: 2
+    gate:
+      title: "Checkpoint: dictionaries"
+      covers: "Week 5 · Day 1: create, read, add, change, delete, get, in, keys/values/items, looping"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w05-d2-g01, difficulty: easy, type: mcq, prompt: "Which is a dictionary?", choices: ["{\"rice\": 1500}", "[\"rice\", 1500]", "(\"rice\", 1500)", "\"rice: 1500\""], answer: 0 }
+        - { id: fs-w05-d2-g02, difficulty: easy, type: mcq, prompt: "Change rice to 1700", choices: ["prices[\"rice\"] = 1700", "prices.rice = 1700", "prices(\"rice\") = 1700", "prices[0] = 1700"], answer: 0 }
+        - { id: fs-w05-d2-g03, difficulty: easy, type: truefalse, prompt: "d.get(\"x\", 0) returns 0 when \"x\" is missing.", answer: true }
+        - { id: fs-w05-d2-g04, difficulty: easy, type: mcq, prompt: "Number of keys", choices: ["len(d)", "d.count()", "d.size", "count(d)"], answer: 0 }
+        - { id: fs-w05-d2-g05, difficulty: easy, type: mcq, prompt: "Check if \"yam\" is a key", choices: ["\"yam\" in d", "d.has(\"yam\")", "d[\"yam\"] == True", "yam in d.values()"], answer: 0 }
+        - { id: fs-w05-d2-g06, difficulty: easy, type: mcq, prompt: "All the values", choices: ["d.values()", "d.keys()", "d.items()", "d.all()"], answer: 0 }
+        - id: fs-w05-d2-g07
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            prices = {"rice": 1500, "beans": 1200}
+            prices["rice"] = 2000
+            print(prices["rice"] + prices["beans"])
+          accept: ["3200"]
+        - id: fs-w05-d2-g08
+          difficulty: medium
+          type: mcq
+          prompt: "What does this print?"
+          code: |
+            d = {"a": 1}
+            d["a"] = 5
+            d["a"] = 9
+            print(d)
+          choices: ["{'a': 9}", "{'a': 1, 'a': 5, 'a': 9}", "{'a': [1, 5, 9]}", "an error"]
+          answer: 0
+        - { id: fs-w05-d2-g09, difficulty: medium, type: match, prompt: "Match.", pairs: [["d[k]", "value, or KeyError"], ["d.get(k)", "value, or None"], ["k in d", "True / False"], ["del d[k]", "remove the key"]] }
+        - id: fs-w05-d2-g10
+          difficulty: medium
+          type: text
+          prompt: "What's the last line printed?"
+          code: |
+            prices = {"rice": 1500, "garri": 800}
+            for item, price in prices.items():
+                print(f"{item}: ₦{price:,}")
+          accept: ["garri: ₦800"]
+        - { id: fs-w05-d2-g11, difficulty: medium, type: truefalse, prompt: "A dictionary value can be a list.", answer: true }
+        - id: fs-w05-d2-g12
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            stock = {"rice": 10}
+            print(stock.get("beans"))
+          accept: ["None"]
+        - { id: fs-w05-d2-g13, difficulty: medium, type: mcq, prompt: "Why use a dictionary instead of two lists (names and prices)?", choices: ["Look things up by name directly, no matching positions", "Dictionaries are always faster to type", "Lists can't hold numbers", "No reason"], answer: 0 }
+        - id: fs-w05-d2-g14
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            d = {"x": 3, "y": 4}
+            print("x" in d, 3 in d)
+          accept: ["True False"]
+        - id: fs-w05-d2-g15
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            d = {"rice": 1500, "beans": 1200, "yam": 2500}
+            del d["beans"]
+            print(list(d.keys()))
+          accept: ["['rice', 'yam']"]
+        - id: fs-w05-d2-g16
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            prices = {"rice": 1500, "beans": 1200, "garri": 800}
+            cheap = []
+            for item, price in prices.items():
+                if price < 1300:
+                    cheap.append(item)
+            print(cheap)
+          accept: ["['beans', 'garri']"]
+        - id: fs-w05-d2-g17
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            word = "banana"
+            counts = {}
+            for letter in word:
+                counts[letter] = counts.get(letter, 0) + 1
+            print(counts["a"], counts["n"])
+          accept: ["3 2"]
+        - id: fs-w05-d2-g18
+          difficulty: hard
+          type: mcq
+          prompt: "What's the bug?"
+          code: |
+            prices = {"rice": 1500}
+            item = input("Item: ")
+            print(prices[item])
+          choices: ["An item that isn't a key crashes with KeyError: check with in or use .get()", "input can't be a key", "print can't show dict values", "No bug"]
+          answer: 0
+    quizzes:
+      - kind: rapid-fire
+        title: "Data shapes"
+        secondsPerQuestion: 10
+        questions:
+          - { id: fs-w05-d2-rf01, difficulty: easy, type: mcq, prompt: "orders[0][\"city\"] gets…", choices: ["the first order's city", "every city", "the city list", "an error"], answer: 0 }
+          - { id: fs-w05-d2-rf02, difficulty: easy, type: mcq, prompt: "A list of dictionaries is like…", choices: ["rows of a spreadsheet", "one cell", "a single number", "a function"], answer: 0 }
+          - { id: fs-w05-d2-rf03, difficulty: easy, type: mcq, prompt: "Start a new city at 0 while counting", choices: ["totals.get(city, 0)", "totals[city]", "totals.start(city)", "totals[0]"], answer: 0 }
+          - { id: fs-w05-d2-rf04, difficulty: easy, type: mcq, prompt: "Key with the biggest value", choices: ["max(totals, key=totals.get)", "max(totals)", "totals.max()", "max(totals.keys())"], answer: 0 }
+          - { id: fs-w05-d2-rf05, difficulty: easy, type: mcq, prompt: "students[\"Ada\"][\"city\"] is…", choices: ["nested access", "an error", "a list slice", "a function call"], answer: 0 }
+          - { id: fs-w05-d2-rf06, difficulty: easy, type: truefalse, prompt: "An API response usually becomes a list of dictionaries in Python.", answer: true }
+          - { id: fs-w05-d2-rf07, difficulty: easy, type: mcq, prompt: "Empty dictionary", choices: ["{}", "[]", "()", "dict[]"], answer: 0 }
+          - { id: fs-w05-d2-rf08, difficulty: easy, type: mcq, prompt: "Loop over a list of orders", choices: ["for order in orders:", "for order in orders.items():", "for orders in order:", "while orders:"], answer: 0 }
+          - { id: fs-w05-d2-rf09, difficulty: easy, type: truefalse, prompt: "max(totals) (without key=) returns the alphabetically last key.", answer: true }
+          - { id: fs-w05-d2-rf10, difficulty: easy, type: mcq, prompt: "Add to a running total", choices: ["total += amount", "total =+ amount", "total + amount", "total.add(amount)"], answer: 0 }
+      - kind: brain-teaser
+        title: "Group and count"
+        questions:
+          - id: fs-w05-d2-bt01
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              orders = [{"city": "Lagos", "amount": 500}, {"city": "Kano", "amount": 300}, {"city": "Lagos", "amount": 200}]
+              totals = {}
+              for o in orders:
+                  totals[o["city"]] = totals.get(o["city"], 0) + o["amount"]
+              print(totals)
+            accept: ["{'Lagos': 700, 'Kano': 300}"]
+          - id: fs-w05-d2-bt02
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              totals = {"Lagos": 700, "Kano": 300, "Abuja": 900}
+              print(max(totals, key=totals.get))
+            accept: ["Abuja"]
+          - id: fs-w05-d2-bt03
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              students = {"Ada": {"age": 24, "city": "Lagos"}, "Tolu": {"age": 31, "city": "Ibadan"}}
+              print(students["Tolu"]["city"])
+            accept: ["Ibadan"]
+          - id: fs-w05-d2-bt04
+            difficulty: hard
+            type: mcq
+            prompt: "What happens?"
+            code: |
+              totals = {}
+              for city in ["Lagos", "Kano", "Lagos"]:
+                  totals[city] = totals[city] + 1
+            choices: ["KeyError: 'Lagos' (the key doesn't exist the first time)", "{'Lagos': 2, 'Kano': 1}", "{'Lagos': 1, 'Kano': 1}", "TypeError"]
+            answer: 0
+          - id: fs-w05-d2-bt05
+            difficulty: hard
+            type: text
+            prompt: "What does this print?"
+            code: |
+              sales = [{"item": "rice", "qty": 2}, {"item": "beans", "qty": 5}, {"item": "rice", "qty": 4}]
+              qty = {}
+              for s in sales:
+                  qty[s["item"]] = qty.get(s["item"], 0) + s["qty"]
+              print(qty["rice"] * 1500)
+            accept: ["9000"]
+
+  # ─────────────────────────── DAY 3 ───────────────────────────
+  - day: 3
+    gate:
+      title: "Checkpoint: lists of dictionaries"
+      covers: "Week 5 · Day 2: list of dicts, counting/totalling pattern, max with key, nested dicts"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w05-d3-g01, difficulty: easy, type: mcq, prompt: "orders[1][\"amount\"] gives…", choices: ["the second order's amount", "the first order's amount", "every amount", "an error"], answer: 0 }
+        - { id: fs-w05-d3-g02, difficulty: easy, type: mcq, prompt: "The counting pattern uses…", choices: ["totals.get(key, 0) + amount", "totals[key] + amount", "totals.count(key)", "len(totals)"], answer: 0 }
+        - { id: fs-w05-d3-g03, difficulty: easy, type: truefalse, prompt: "A dictionary can hold another dictionary as a value.", answer: true }
+        - { id: fs-w05-d3-g04, difficulty: easy, type: mcq, prompt: "Start an empty totals dictionary", choices: ["totals = {}", "totals = []", "totals = 0", "totals = dict"], answer: 0 }
+        - { id: fs-w05-d3-g05, difficulty: easy, type: mcq, prompt: "max(totals, key=totals.get) returns…", choices: ["the key with the largest value", "the largest value", "the last key", "the number of keys"], answer: 0 }
+        - { id: fs-w05-d3-g06, difficulty: easy, type: mcq, prompt: "data[\"Ada\"][\"age\"] reads…", choices: ["Ada's age", "every age", "Ada's whole record", "the key age"], answer: 0 }
+        - id: fs-w05-d3-g07
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            orders = [{"amount": 1500}, {"amount": 2500}, {"amount": 1000}]
+            total = 0
+            for o in orders:
+                total += o["amount"]
+            print(total)
+          accept: ["5000"]
+        - id: fs-w05-d3-g08
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            counts = {}
+            for pay in ["POS", "Cash", "POS", "Transfer", "POS"]:
+                counts[pay] = counts.get(pay, 0) + 1
+            print(counts["POS"])
+          accept: ["3"]
+        - id: fs-w05-d3-g09
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            people = [{"name": "Ada", "age": 24}, {"name": "Emeka", "age": 30}]
+            print(people[1]["name"])
+          accept: ["Emeka"]
+        - id: fs-w05-d3-g10
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            totals = {"Food": 3200, "Transport": 500, "Data": 1500}
+            print(max(totals, key=totals.get))
+          accept: ["Food"]
+        - { id: fs-w05-d3-g11, difficulty: medium, type: truefalse, prompt: "totals[city] += amount works even the first time a city appears.", answer: false, explain: "KeyError: use totals.get(city, 0) + amount." }
+        - id: fs-w05-d3-g12
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            orders = [{"city": "Lagos"}, {"city": "Kano"}, {"city": "Lagos"}]
+            cities = []
+            for o in orders:
+                if o["city"] not in cities:
+                    cities.append(o["city"])
+            print(len(cities))
+          accept: ["2"]
+        - { id: fs-w05-d3-g13, difficulty: medium, type: order, prompt: "Order the counting pattern.", items: ["totals = {}", "for order in orders:", "city = order[\"city\"]", "totals[city] = totals.get(city, 0) + order[\"amount\"]"] }
+        - id: fs-w05-d3-g14
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            shop = {"items": ["rice", "beans"], "city": "Abuja"}
+            shop["items"].append("yam")
+            print(len(shop["items"]))
+          accept: ["3"]
+        - { id: fs-w05-d3-g15, difficulty: medium, type: mcq, prompt: "Best structure for 2,400 sales, each with a city, item and amount?", choices: ["A list of dictionaries", "One long string", "Three unrelated variables", "A dictionary with one key"], answer: 0 }
+        - id: fs-w05-d3-g16
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            orders = [{"city": "Lagos", "amount": 100}, {"city": "Abuja", "amount": 400}, {"city": "Lagos", "amount": 350}]
+            totals = {}
+            for o in orders:
+                totals[o["city"]] = totals.get(o["city"], 0) + o["amount"]
+            best = max(totals, key=totals.get)
+            print(best, totals[best])
+          accept: ["Lagos 450"]
+        - id: fs-w05-d3-g17
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            data = {"Ada": {"scores": [70, 80]}, "Tolu": {"scores": [90]}}
+            data["Tolu"]["scores"].append(60)
+            print(sum(data["Tolu"]["scores"]) / len(data["Tolu"]["scores"]))
+          accept: ["75.0"]
+        - id: fs-w05-d3-g18
+          difficulty: hard
+          type: mcq
+          prompt: "What does this print?"
+          code: |
+            totals = {"b": 5, "a": 9, "c": 1}
+            print(max(totals), max(totals, key=totals.get))
+          choices: ["c a", "a a", "c c", "9 a"]
+          answer: 0
+    quizzes:
+      - kind: rapid-fire
+        title: "Name that exception"
+        secondsPerQuestion: 9
+        questions:
+          - { id: fs-w05-d3-rf01, difficulty: easy, type: mcq, prompt: "int(\"ten\")", choices: ["ValueError", "TypeError", "KeyError", "NameError"], answer: 0 }
+          - { id: fs-w05-d3-rf02, difficulty: easy, type: mcq, prompt: "10 / 0", choices: ["ZeroDivisionError", "ValueError", "MathError", "IndexError"], answer: 0 }
+          - { id: fs-w05-d3-rf03, difficulty: easy, type: mcq, prompt: "prices[\"egusi\"] (missing)", choices: ["KeyError", "IndexError", "ValueError", "NameError"], answer: 0 }
+          - { id: fs-w05-d3-rf04, difficulty: easy, type: mcq, prompt: "[1, 2][5]", choices: ["IndexError", "KeyError", "ValueError", "TypeError"], answer: 0 }
+          - { id: fs-w05-d3-rf05, difficulty: easy, type: mcq, prompt: "open(\"missing.txt\")", choices: ["FileNotFoundError", "KeyError", "IOError only", "ValueError"], answer: 0 }
+          - { id: fs-w05-d3-rf06, difficulty: easy, type: mcq, prompt: "\"Age: \" + 30", choices: ["TypeError", "ValueError", "NameError", "SyntaxError"], answer: 0 }
+          - { id: fs-w05-d3-rf07, difficulty: easy, type: mcq, prompt: "Catch an error", choices: ["try / except", "if / else", "catch / throw", "for / break"], answer: 0 }
+          - { id: fs-w05-d3-rf08, difficulty: easy, type: mcq, prompt: "Runs only if nothing went wrong", choices: ["else", "finally", "except", "pass"], answer: 0 }
+          - { id: fs-w05-d3-rf09, difficulty: easy, type: mcq, prompt: "Runs no matter what", choices: ["finally", "else", "except", "always"], answer: 0 }
+          - { id: fs-w05-d3-rf10, difficulty: easy, type: mcq, prompt: "Raise your own error", choices: ["raise ValueError(\"…\")", "throw ValueError", "error(\"…\")", "except ValueError"], answer: 0 }
+          - { id: fs-w05-d3-rf11, difficulty: easy, type: truefalse, prompt: "A bare except: is good practice.", answer: false }
+      - kind: brain-teaser
+        title: "What gets printed?"
+        questions:
+          - id: fs-w05-d3-bt01
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              try:
+                  n = int("12a")
+                  print("number")
+              except ValueError:
+                  print("not a number")
+            accept: ["not a number"]
+          - id: fs-w05-d3-bt02
+            difficulty: medium
+            type: text
+            prompt: "What does this print? (lines joined with a space)"
+            code: |
+              try:
+                  x = 10 / 2
+              except ZeroDivisionError:
+                  print("zero")
+              else:
+                  print("ok")
+              finally:
+                  print("done")
+            accept: ["ok done"]
+          - id: fs-w05-d3-bt03
+            difficulty: medium
+            type: text
+            prompt: "What does this print? (lines joined with a space)"
+            code: |
+              for value in ["5", "x", "7"]:
+                  try:
+                      print(int(value) * 2)
+                  except ValueError:
+                      print("skip")
+            accept: ["10 skip 14"]
+          - id: fs-w05-d3-bt04
+            difficulty: hard
+            type: mcq
+            prompt: "What happens?"
+            code: |
+              try:
+                  prices = {"rice": 1500}
+                  print(prices["yam"])
+              except ValueError:
+                  print("bad value")
+            choices: ["It crashes with KeyError: ValueError doesn't catch it", "bad value", "None", "1500"]
+            answer: 0
+          - id: fs-w05-d3-bt05
+            difficulty: hard
+            type: text
+            prompt: "What does this print?"
+            code: |
+              def safe_div(a, b):
+                  try:
+                      return a / b
+                  except ZeroDivisionError:
+                      return 0
+
+              print(safe_div(9, 3) + safe_div(5, 0))
+            accept: ["3.0"]
+
+  # ─────────────────────────── DAY 4 ───────────────────────────
+  - day: 4
+    gate:
+      title: "Checkpoint: errors and exceptions"
+      covers: "Week 5 · Day 3: exception types, try/except, retry loops, else/finally, raise"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w05-d4-g01, difficulty: easy, type: mcq, prompt: "int(\"abc\") raises…", choices: ["ValueError", "TypeError", "KeyError", "ZeroDivisionError"], answer: 0 }
+        - { id: fs-w05-d4-g02, difficulty: easy, type: mcq, prompt: "Which catches only bad number conversions?", choices: ["except ValueError:", "except:", "except Exception:", "catch ValueError:"], answer: 0 }
+        - { id: fs-w05-d4-g03, difficulty: easy, type: truefalse, prompt: "Without try/except, an exception stops the program.", answer: true }
+        - { id: fs-w05-d4-g04, difficulty: easy, type: mcq, prompt: "Opening a file that doesn't exist raises…", choices: ["FileNotFoundError", "KeyError", "ValueError", "NameError"], answer: 0 }
+        - { id: fs-w05-d4-g05, difficulty: easy, type: mcq, prompt: "Leave a while True loop", choices: ["break", "stop", "exit loop", "return loop"], answer: 0 }
+        - { id: fs-w05-d4-g06, difficulty: easy, type: mcq, prompt: "Dividing by zero raises…", choices: ["ZeroDivisionError", "ValueError", "MathError", "DivideError"], answer: 0 }
+        - id: fs-w05-d4-g07
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            try:
+                print(int("40") + 2)
+            except ValueError:
+                print("error")
+          accept: ["42"]
+        - { id: fs-w05-d4-g08, difficulty: medium, type: match, prompt: "Match the exception to its cause.", pairs: [["ValueError", "int(\"ten\")"], ["KeyError", "missing dictionary key"], ["IndexError", "position past the end"], ["TypeError", "text + number"]] }
+        - { id: fs-w05-d4-g09, difficulty: medium, type: mcq, prompt: "Why avoid a bare except:?", choices: ["It hides every bug, even typos", "It's slower", "It's a SyntaxError", "It only catches ValueError"], answer: 0 }
+        - { id: fs-w05-d4-g10, difficulty: medium, type: order, prompt: "Order a retry loop.", items: ["while True:", "try:", "amount = int(input(\"Amount: \"))", "break", "except ValueError:", "print(\"Please enter a number.\")"] }
+        - id: fs-w05-d4-g11
+          difficulty: medium
+          type: text
+          prompt: "What does this print? (lines joined with a space)"
+          code: |
+            try:
+                x = 1 / 0
+            except ZeroDivisionError:
+                print("caught")
+            finally:
+                print("finally")
+          accept: ["caught finally"]
+        - { id: fs-w05-d4-g12, difficulty: medium, type: truefalse, prompt: "You can have several except blocks for different exceptions.", answer: true }
+        - id: fs-w05-d4-g13
+          difficulty: medium
+          type: mcq
+          prompt: "What happens?"
+          code: |
+            def set_age(age):
+                if age < 0:
+                    raise ValueError("Age can't be negative")
+                return age
+
+            set_age(-3)
+          choices: ["ValueError: Age can't be negative", "It returns -3", "It returns 0", "Nothing"]
+          answer: 0
+        - { id: fs-w05-d4-g14, difficulty: medium, type: mcq, prompt: "The else block runs when…", choices: ["the try block raised nothing", "an exception was caught", "always", "never"], answer: 0 }
+        - id: fs-w05-d4-g15
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            foods = ["rice", "beans"]
+            try:
+                print(foods[5])
+            except IndexError:
+                print("no such item")
+          accept: ["no such item"]
+        - id: fs-w05-d4-g16
+          difficulty: hard
+          type: text
+          prompt: "What does this print? (lines joined with a space)"
+          code: |
+            total = 0
+            for v in ["10", "abc", "5", "", "20"]:
+                try:
+                    total += int(v)
+                except ValueError:
+                    print("bad")
+            print(total)
+          accept: ["bad bad 35"]
+        - id: fs-w05-d4-g17
+          difficulty: hard
+          type: mcq
+          prompt: "What happens?"
+          code: |
+            try:
+                print("Age: " + 30)
+            except ValueError:
+                print("bad")
+          choices: ["TypeError crash: ValueError doesn't catch a TypeError", "bad", "Age: 30", "None"]
+          answer: 0
+        - { id: fs-w05-d4-g18, difficulty: hard, type: multi, prompt: "Which are good error-handling habits? (Select all.)", choices: ["Catch specific exceptions", "Show the user a clear message", "Keep the try block small", "Wrap the whole program in a bare except:"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Modules sprint"
+        secondsPerQuestion: 9
+        questions:
+          - { id: fs-w05-d4-rf01, difficulty: easy, type: mcq, prompt: "Random number 1–6", choices: ["random.randint(1, 6)", "random(6)", "math.random(1, 6)", "randint[1:6]"], answer: 0 }
+          - { id: fs-w05-d4-rf02, difficulty: easy, type: mcq, prompt: "Pick a random item from a list", choices: ["random.choice(names)", "random.pick(names)", "names.random()", "choice.random(names)"], answer: 0 }
+          - { id: fs-w05-d4-rf03, difficulty: easy, type: mcq, prompt: "Round UP", choices: ["math.ceil", "math.floor", "round", "math.up"], answer: 0 }
+          - { id: fs-w05-d4-rf04, difficulty: easy, type: mcq, prompt: "Today's date", choices: ["date.today()", "date.now", "today()", "datetime.day()"], answer: 0 }
+          - { id: fs-w05-d4-rf05, difficulty: easy, type: mcq, prompt: "Use ceil without the math. prefix", choices: ["from math import ceil", "import ceil", "import math.ceil", "from ceil import math"], answer: 0 }
+          - { id: fs-w05-d4-rf06, difficulty: easy, type: mcq, prompt: "Install a third-party package", choices: ["pip install requests (in the terminal)", "import install requests", "python get requests", "download(requests)"], answer: 0 }
+          - { id: fs-w05-d4-rf07, difficulty: easy, type: text, prompt: "math.ceil(40 / 18) = ?", accept: ["3"] }
+          - { id: fs-w05-d4-rf08, difficulty: easy, type: truefalse, prompt: "Python's standard library comes with Python; no install needed.", answer: true }
+          - { id: fs-w05-d4-rf09, difficulty: easy, type: mcq, prompt: "Your own helpers.py is used with…", choices: ["import helpers", "import helpers.py", "include helpers", "use helpers"], answer: 0 }
+          - { id: fs-w05-d4-rf10, difficulty: easy, type: text, prompt: "math.floor(7.9) = ?", accept: ["7"] }
+      - kind: brain-teaser
+        title: "Import detective"
+        questions:
+          - id: fs-w05-d4-bt01
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              from datetime import date
+              print((date(2026, 12, 25) - date(2026, 12, 1)).days)
+            accept: ["24"]
+          - id: fs-w05-d4-bt02
+            difficulty: medium
+            type: mcq
+            prompt: "What happens?"
+            code: |
+              import math
+              print(ceil(2.1))
+            choices: ["NameError: ceil isn't defined (use math.ceil)", "3", "2", "2.1"]
+            answer: 0
+          - id: fs-w05-d4-bt03
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              from math import ceil
+              people = 50
+              print(ceil(people / 14))
+            accept: ["4"]
+          - id: fs-w05-d4-bt04
+            difficulty: hard
+            type: text
+            prompt: "What does this print?"
+            code: |
+              import random
+              random.seed(1)
+              rolls = [random.randint(1, 6) for _ in range(1000)]
+              print(min(rolls), max(rolls))
+            accept: ["1 6"]
+          - { id: fs-w05-d4-bt05, difficulty: hard, type: mcq, prompt: "helpers.py and app.py are in the same folder. app.py has `import helpers`. How do you call format_naira from helpers?", choices: ["helpers.format_naira(1500)", "format_naira(1500)", "helpers(format_naira, 1500)", "import format_naira(1500)"], answer: 0 }
+
+  # ─────────────────────────── DAY 5 ───────────────────────────
+  - day: 5
+    gate:
+      title: "Checkpoint: modules"
+      covers: "Week 5 · Day 4: import, from … import, random, math, datetime, your own modules, pip"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w05-d5-g01, difficulty: easy, type: mcq, prompt: "A module is…", choices: ["a Python file of ready-made code", "a type of loop", "a Git command", "a CSS file"], answer: 0 }
+        - { id: fs-w05-d5-g02, difficulty: easy, type: mcq, prompt: "After `import math`, round up with…", choices: ["math.ceil(x)", "ceil(x)", "math(ceil, x)", "x.ceil()"], answer: 0 }
+        - { id: fs-w05-d5-g03, difficulty: easy, type: mcq, prompt: "Which module rolls dice?", choices: ["random", "math", "datetime", "json"], answer: 0 }
+        - { id: fs-w05-d5-g04, difficulty: easy, type: truefalse, prompt: "pip install is typed in the terminal, not inside Python code.", answer: true }
+        - { id: fs-w05-d5-g05, difficulty: easy, type: mcq, prompt: "Which module handles dates?", choices: ["datetime", "random", "math", "time.date"], answer: 0 }
+        - { id: fs-w05-d5-g06, difficulty: easy, type: mcq, prompt: "Where do third-party packages come from?", choices: ["PyPI", "GitHub Pages", "the standard library", "Excel"], answer: 0 }
+        - id: fs-w05-d5-g07
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            import math
+            print(math.ceil(36 / 18), math.ceil(37 / 18))
+          accept: ["2 3"]
+        - id: fs-w05-d5-g08
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            from datetime import date
+            print((date(2026, 1, 31) - date(2026, 1, 1)).days)
+          accept: ["30"]
+        - { id: fs-w05-d5-g09, difficulty: medium, type: match, prompt: "Match.", pairs: [["random.choice", "pick one item"], ["math.ceil", "round up"], ["date.today", "today's date"], ["random.randint", "random whole number in a range"]] }
+        - { id: fs-w05-d5-g10, difficulty: medium, type: mcq, prompt: "`from math import ceil` lets you write…", choices: ["ceil(2.5)", "math.ceil(2.5) only", "import.ceil(2.5)", "ceil.math(2.5)"], answer: 0 }
+        - { id: fs-w05-d5-g11, difficulty: medium, type: truefalse, prompt: "random.randint(1, 6) can return 6.", answer: true, explain: "randint includes both ends." }
+        - { id: fs-w05-d5-g12, difficulty: medium, type: mcq, prompt: "Which package will you use for the weather API next week?", choices: ["requests", "random", "math", "turtle"], answer: 0 }
+        - id: fs-w05-d5-g13
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            import math
+            print(math.floor(9.99) + math.ceil(0.01))
+          accept: ["10"]
+        - { id: fs-w05-d5-g14, difficulty: medium, type: mcq, prompt: "Why put helper functions in their own module?", choices: ["Reuse them in many scripts without copy-pasting", "Python requires it", "It makes them run faster", "To hide them from Git"], answer: 0 }
+        - { id: fs-w05-d5-g15, difficulty: medium, type: mcq, prompt: "`import helpers` fails with ModuleNotFoundError. Most likely?", choices: ["helpers.py isn't in the same folder (or is misnamed)", "helpers is a reserved word", "Modules need pip", "The function is too long"], answer: 0 }
+        - id: fs-w05-d5-g16
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            from datetime import date
+            d = date(2026, 3, 1)
+            print(d.year + d.month + d.day)
+          accept: ["2030"]
+        - id: fs-w05-d5-g17
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            import random
+            names = ["Ada", "Tolu", "Emeka"]
+            pick = random.choice(names)
+            print(pick in names)
+          accept: ["True"]
+        - { id: fs-w05-d5-g18, difficulty: hard, type: multi, prompt: "Which are part of Python's standard library? (Select all.)", choices: ["math", "random", "json", "requests"], answers: [0, 1, 2], explain: "requests is a third-party package from PyPI." }
+    quizzes:
+      - kind: rapid-fire
+        title: "JSON sprint"
+        secondsPerQuestion: 9
+        questions:
+          - { id: fs-w05-d5-rf01, difficulty: easy, type: mcq, prompt: "Python data → JSON file", choices: ["json.dump(data, file)", "json.load(file)", "json.dumps(file)", "json.save(data)"], answer: 0 }
+          - { id: fs-w05-d5-rf02, difficulty: easy, type: mcq, prompt: "JSON file → Python data", choices: ["json.load(file)", "json.dump(file)", "json.read(file)", "open(file).json"], answer: 0 }
+          - { id: fs-w05-d5-rf03, difficulty: easy, type: mcq, prompt: "Python data → JSON text (a string)", choices: ["json.dumps(data)", "json.dump(data)", "str.json(data)", "json.text(data)"], answer: 0 }
+          - { id: fs-w05-d5-rf04, difficulty: easy, type: mcq, prompt: "JSON's version of None", choices: ["null", "None", "nil", "undefined"], answer: 0 }
+          - { id: fs-w05-d5-rf05, difficulty: easy, type: mcq, prompt: "JSON's version of True", choices: ["true", "True", "TRUE", "1"], answer: 0 }
+          - { id: fs-w05-d5-rf06, difficulty: easy, type: mcq, prompt: "JSON strings use…", choices: ["double quotes", "single quotes", "either", "backticks"], answer: 0 }
+          - { id: fs-w05-d5-rf07, difficulty: easy, type: mcq, prompt: "Pretty-print JSON with indentation", choices: ["indent=2", "pretty=True", "spaces=2", "format=True"], answer: 0 }
+          - { id: fs-w05-d5-rf08, difficulty: easy, type: truefalse, prompt: "Most web APIs send data as JSON.", answer: true }
+          - { id: fs-w05-d5-rf09, difficulty: easy, type: mcq, prompt: "First run, no file yet: catch…", choices: ["FileNotFoundError", "KeyError", "JSONError", "ValueError"], answer: 0 }
+          - { id: fs-w05-d5-rf10, difficulty: easy, type: mcq, prompt: "JSON files usually end in…", choices: [".json", ".py", ".txt", ".js"], answer: 0 }
+      - kind: brain-teaser
+        title: "Round trip"
+        questions:
+          - id: fs-w05-d5-bt01
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              import json
+              text = json.dumps({"name": "Ada", "active": True})
+              print(text)
+            accept: ["{\"name\": \"Ada\", \"active\": true}"]
+          - id: fs-w05-d5-bt02
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              import json
+              data = json.loads('[{"city": "Lagos", "temp": 31}]')
+              print(data[0]["temp"] + 1)
+            accept: ["32"]
+          - id: fs-w05-d5-bt03
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              import json
+              contacts = [{"name": "Ada"}, {"name": "Tunde"}]
+              with open("c.json", "w") as f:
+                  json.dump(contacts, f)
+              with open("c.json") as f:
+                  print(len(json.load(f)))
+            accept: ["2"]
+          - id: fs-w05-d5-bt04
+            difficulty: hard
+            type: text
+            prompt: "What does this print?"
+            code: |
+              import json
+              data = json.loads('{"ok": false, "result": null}')
+              print(data["ok"], data["result"])
+            accept: ["False None"]
+          - id: fs-w05-d5-bt05
+            difficulty: hard
+            type: text
+            prompt: "What does this print?"
+            code: |
+              import json
+
+              def load(filename):
+                  try:
+                      with open(filename) as f:
+                          return json.load(f)
+                  except FileNotFoundError:
+                      return []
+
+              items = load("nothing_here.json")
+              items.append("first")
+              print(items)
+            accept: ["['first']"]
+
+  # ─────────────────────────── DAY 6 ───────────────────────────
+  - day: 6
+    gate:
+      title: "Checkpoint: JSON"
+      covers: "Week 5 · Day 5: json.dump/load, dumps/loads, true/false/null, loading safely"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w05-d6-g01, difficulty: easy, type: mcq, prompt: "Save a list of dictionaries to a file", choices: ["json.dump(data, file)", "file.write(data)", "json.load(data)", "print(data, file)"], answer: 0 }
+        - { id: fs-w05-d6-g02, difficulty: easy, type: mcq, prompt: "Read it back", choices: ["json.load(file)", "file.read_json()", "json.dump(file)", "json.open(file)"], answer: 0 }
+        - { id: fs-w05-d6-g03, difficulty: easy, type: truefalse, prompt: "JSON can store lists and dictionaries.", answer: true }
+        - { id: fs-w05-d6-g04, difficulty: easy, type: mcq, prompt: "Python None in JSON is…", choices: ["null", "None", "none", "empty"], answer: 0 }
+        - { id: fs-w05-d6-g05, difficulty: easy, type: mcq, prompt: "Which mode writes a JSON file?", choices: ["\"w\"", "\"r\"", "\"j\"", "\"json\""], answer: 0 }
+        - { id: fs-w05-d6-g06, difficulty: easy, type: mcq, prompt: "Which needs import json first?", choices: ["json.dump", "open", "print", "len"], answer: 0 }
+        - { id: fs-w05-d6-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["json.dump", "data → file"], ["json.load", "file → data"], ["json.dumps", "data → string"], ["json.loads", "string → data"]] }
+        - id: fs-w05-d6-g08
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            import json
+            print(json.loads("[1, 2, 3]")[-1])
+          accept: ["3"]
+        - id: fs-w05-d6-g09
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            import json
+            print(json.dumps([True, None]))
+          accept: ["[true, null]"]
+        - { id: fs-w05-d6-g10, difficulty: medium, type: mcq, prompt: "Why use JSON instead of a plain text file for contacts?", choices: ["It keeps the structure (lists, dicts) without manual splitting", "It's smaller always", "Text files can't be read", "JSON is encrypted"], answer: 0 }
+        - { id: fs-w05-d6-g11, difficulty: medium, type: truefalse, prompt: "'{\"name\": \"Ada\"}' is valid JSON but \"{'name': 'Ada'}\" isn't.", answer: true, explain: "JSON needs double quotes." }
+        - { id: fs-w05-d6-g12, difficulty: medium, type: order, prompt: "Order: load safely.", items: ["try:", "with open(\"data.json\") as f:", "data = json.load(f)", "except FileNotFoundError:", "data = []"] }
+        - id: fs-w05-d6-g13
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            import json
+            data = json.loads('{"city": "Abuja", "temps": [29, 31, 30]}')
+            print(max(data["temps"]))
+          accept: ["31"]
+        - { id: fs-w05-d6-g14, difficulty: medium, type: mcq, prompt: "Your program crashes the very first time it runs, on json.load. Why?", choices: ["The file doesn't exist yet: catch FileNotFoundError", "JSON is broken", "json needs pip", "The list is empty"], answer: 0 }
+        - { id: fs-w05-d6-g15, difficulty: medium, type: mcq, prompt: "What does indent=2 change?", choices: ["Only how the file looks (readable)", "The data saved", "The file name", "Nothing at all"], answer: 0 }
+        - id: fs-w05-d6-g16
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            import json
+            expenses = [{"amount": 1200}, {"amount": 500}]
+            with open("e.json", "w") as f:
+                json.dump(expenses, f)
+            with open("e.json") as f:
+                loaded = json.load(f)
+            loaded.append({"amount": 300})
+            print(sum(e["amount"] for e in loaded))
+          accept: ["2000"]
+        - id: fs-w05-d6-g17
+          difficulty: hard
+          type: mcq
+          prompt: "What happens?"
+          code: |
+            import json
+            json.loads("{'city': 'Lagos'}")
+          choices: ["JSONDecodeError: JSON needs double quotes", "{'city': 'Lagos'}", "None", "KeyError"]
+          answer: 0
+        - id: fs-w05-d6-g18
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            import json
+            data = {"a": 1}
+            text = json.dumps(data)
+            again = json.loads(text)
+            print(again == data, type(text).__name__)
+          accept: ["True str"]
+    quizzes:
+      - kind: rapid-fire
+        title: "Week 5 lightning round"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fs-w05-d6-rf01, difficulty: easy, type: mcq, prompt: "Dictionary brackets", choices: ["{ }", "[ ]", "( )", "< >"], answer: 0 }
+          - { id: fs-w05-d6-rf02, difficulty: easy, type: mcq, prompt: "Safe lookup", choices: ["d.get(k, 0)", "d[k]", "d.find(k)", "d(k)"], answer: 0 }
+          - { id: fs-w05-d6-rf03, difficulty: easy, type: mcq, prompt: "Loop keys and values", choices: [".items()", ".values()", ".keys()", ".all()"], answer: 0 }
+          - { id: fs-w05-d6-rf04, difficulty: easy, type: mcq, prompt: "int(\"x\") raises", choices: ["ValueError", "KeyError", "TypeError", "IndexError"], answer: 0 }
+          - { id: fs-w05-d6-rf05, difficulty: easy, type: mcq, prompt: "Catch it", choices: ["try / except", "if / else", "catch", "assert"], answer: 0 }
+          - { id: fs-w05-d6-rf06, difficulty: easy, type: mcq, prompt: "Round up", choices: ["math.ceil", "round", "math.floor", "int"], answer: 0 }
+          - { id: fs-w05-d6-rf07, difficulty: easy, type: mcq, prompt: "Random item", choices: ["random.choice", "random.item", "choice.random", "random.pick"], answer: 0 }
+          - { id: fs-w05-d6-rf08, difficulty: easy, type: mcq, prompt: "Save to a JSON file", choices: ["json.dump", "json.load", "json.loads", "json.save"], answer: 0 }
+          - { id: fs-w05-d6-rf09, difficulty: easy, type: mcq, prompt: "JSON null in Python", choices: ["None", "null", "0", "False"], answer: 0 }
+          - { id: fs-w05-d6-rf10, difficulty: easy, type: truefalse, prompt: "totals.get(city, 0) starts a new city at 0.", answer: true }
+      - kind: brain-teaser
+        title: "Expense tracker logic"
+        questions:
+          - id: fs-w05-d6-bt01
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              expenses = [{"amount": 1200, "category": "Food"}, {"amount": 500, "category": "Transport"}, {"amount": 2000, "category": "Food"}]
+              by_cat = {}
+              for e in expenses:
+                  by_cat[e["category"]] = by_cat.get(e["category"], 0) + e["amount"]
+              print(by_cat["Food"])
+            accept: ["3200"]
+          - id: fs-w05-d6-bt02
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              def format_naira(amount):
+                  return f"₦{amount:,}"
+
+              print(format_naira(1500000))
+            accept: ["₦1,500,000"]
+          - id: fs-w05-d6-bt03
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              expenses = [{"item": "Bread", "amount": 1200}, {"item": "Suya", "amount": 2000}, {"item": "Bus", "amount": 500}]
+              biggest = max(expenses, key=lambda e: e["amount"])
+              print(biggest["item"])
+            accept: ["Suya"]
+          - id: fs-w05-d6-bt04
+            difficulty: hard
+            type: text
+            prompt: "The user types abc then 1500. What does this print? (lines joined with a space)"
+            code: |
+              while True:
+                  try:
+                      amount = int(input())
+                      break
+                  except ValueError:
+                      print("Amount must be a number")
+              print(amount * 2)
+            accept: ["Amount must be a number 3000"]
+          - id: fs-w05-d6-bt05
+            difficulty: hard
+            type: text
+            prompt: "What does this print?"
+            code: |
+              import json
+              try:
+                  with open("expenses_missing.json") as f:
+                      expenses = json.load(f)
+              except FileNotFoundError:
+                  expenses = []
+              expenses.append({"amount": 700})
+              print(len(expenses), expenses[0]["amount"])
+            accept: ["1 700"]

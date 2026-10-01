@@ -8,7 +8,7 @@ Brainstorming and UI/UX design happen on claude.ai; final decisions and designs 
 
 ## Courses
 1. **12-Month Fullstack + ML** (`fullstack-ml`, first course, in progress). Framework in `src/content/courses/fullstack-ml/course.ts`; written weeks in `weeks/week-NN.md`.
-   - 6 phases, 52 weeks. Only Weeks 1–4 are written; Weeks 5+ have outlines and get written as the learner progresses (format: `src/content/README.md`).
+   - 6 phases, 52 weeks. Only Weeks 1–5 are written; Weeks 6+ have outlines and get written as the learner progresses (format: `src/content/README.md`).
    - The first learner (Victor) started June 2026, passed the Week 1 quiz (100%) and is on Week 2.
    - Audience: Nigeria + Canada job markets. Examples use Nigerian context (Naira, Lagos, Abuja).
    - Phase 2–6 `topics` in course.ts were inferred from each phase's resources; the original plan only lists resources and milestones for those phases.
@@ -17,9 +17,9 @@ Brainstorming and UI/UX design happen on claude.ai; final decisions and designs 
 
 French and Excel have `overview.md` (human-readable framework) but no `course.ts` yet, so they aren't registered in `src/content/index.ts`. Their week files are still validated by `npm test`.
 
-**Daily quizzes (all courses):** every study day has **rapid-fire** (timed) + **brain teaser**; a **gate** appears only **1–2 times a week on random days** (pops up before the lesson, tests the previous day, blocks the dashboard until 70% is passed, 60-min cooldown on failure, retries draw different questions of the same topics and difficulty from a bank). Every day still has a gate bank, since any day can be picked. Rules and format: `src/content/QUIZZES.md`; engine: `src/domain/quizGate.ts`; banks: `courses/<slug>/quizzes/week-NN.yaml`, validated by `npm test`. Done: French Weeks 1–3, Excel Weeks 1–3, Fullstack Weeks 1–4 (~200 questions each; programming snippets verified with `node scripts/check-quiz-code.mjs`); all other weeks still need banks, written a slice at a time (the user doesn't want mass generation).
+**Daily quizzes (all courses):** every study day has **rapid-fire** (timed) + **brain teaser**; a **gate** appears only **1–2 times a week on random days** (pops up before the lesson, tests the previous day, blocks the dashboard until 70% is passed, 60-min cooldown on failure, retries draw different questions of the same topics and difficulty from a bank). Every day still has a gate bank, since any day can be picked. Rules and format: `src/content/QUIZZES.md`; engine: `src/domain/quizGate.ts`; banks: `courses/<slug>/quizzes/week-NN.yaml`, validated by `npm test`. Done: French Weeks 1–4, Excel Weeks 1–4, Fullstack Weeks 1–5 (~200 questions each; programming snippets verified with `node scripts/check-quiz-code.mjs`); all other weeks still need banks, written a slice at a time (the user doesn't want mass generation).
 
-**Sandboxes (all courses):** subject-native playgrounds, as a course's main resource (`main: true`, listed on the course page) and/or embedded in lessons with a `::sandbox <id>` line. Kinds: `phrases` (French builder with agreement checks, speech), `sheet` (spreadsheet engine in `src/domain/sheet.ts`), `python` (Pyodide in a worker), `web` (HTML/CSS/JS preview). Rules and format: `src/content/SANDBOXES.md`. Done so far: French W1, W2, W3, W7 + main lab; Excel W2, W3, W6 + playground; Fullstack: every day of W1–4 + Python and web playgrounds. Reference solutions live in `scripts/python-solutions/` and `scripts/web-solutions/` (never shipped to the browser); `npm run check:python` and `npm run check:web` (headless Chrome via playwright-core; both in CI) prove each passes and each starter fails. Excel tasks can require `$` references with `mustUse`. Lessons hide answers: `:::hint` blocks and `**Check**` paragraphs render folded.
+**Sandboxes (all courses):** subject-native playgrounds, as a course's main resource (`main: true`, listed on the course page) and/or embedded in lessons with a `::sandbox <id>` line. Kinds: `phrases` (French builder with agreement checks, speech), `sheet` (spreadsheet engine in `src/domain/sheet.ts`), `python` (Pyodide in a worker), `web` (HTML/CSS/JS preview). Rules and format: `src/content/SANDBOXES.md`. Done so far: French W1, W2, W3, W7 + main lab; Excel W2, W3, W6 + playground; Fullstack: every day of W1–5 + Python and web playgrounds. Reference solutions live in `scripts/python-solutions/` and `scripts/web-solutions/` (never shipped to the browser); `npm run check:python` and `npm run check:web` (headless Chrome via playwright-core; both in CI) prove each passes and each starter fails. Excel tasks can require `$` references with `mustUse`. Lessons hide answers: `:::hint` blocks and `**Check**` paragraphs render folded.
 
 More courses will follow; nothing may assume a single course. To add one: a new folder under `src/content/courses/`, register it in `src/content/index.ts` and `scripts/sync-functions.ts`.
 
@@ -52,7 +52,7 @@ More courses will follow; nothing may assume a single course. To add one: a new 
 - **Done:** content model + Weeks 1–2 + all 52 outlines; domain rules with tests; Supabase schema; API layer; email function.
 - **UI not wired yet:** `src/App.tsx` is still the static dashboard mockup using `src/data/curriculum.ts` (placeholder JS/React modules that don't match the real course; delete it when the UI is rebuilt). The user is designing the UI/UX on claude.ai and will bring it back.
 - **Not yet run against a real Supabase project:** no project is linked. The migration was verified in PGlite; `api.ts` and the edge function are type-checked only.
-- Fullstack Weeks 5+ need writing.
+- Fullstack Weeks 6+ need writing.
 
 ## Setup still needed (user)
 1. Create a Supabase project → run the migration (`supabase link` + `supabase db push`, or paste into the SQL editor) → put the URL + publishable key in `.env.local`.

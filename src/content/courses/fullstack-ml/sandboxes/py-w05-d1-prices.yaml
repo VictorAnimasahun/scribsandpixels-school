@@ -1,0 +1,35 @@
+# Week 5 · Day 1 mini-task
+id: py-w05-d1-prices
+kind: python
+title: "Market prices"
+description: "A dictionary of Lagos market prices: add, change, loop, and look things up safely."
+starter: |
+  prices = {"rice": 1500, "beans": 1200, "garri": 800}
+
+  # 1. Add "yam" at 2500, and change rice to 1700.
+
+  # 2. Print every item and price like:  rice: ₦1,700
+
+  # 3. Ask for an item. Print "Price of garri is ₦800",
+  #    or "Not sold here" if it isn't in the dictionary.
+  item = input("Item: ")
+tasks:
+  - prompt: "Add yam at 2500 and change rice to 1700 (by key, don't rewrite the whole dictionary)."
+    stdin: ["garri"]
+    tests: |
+      assert prices.get("yam") == 2500, "prices['yam'] should be 2500"
+      assert prices["rice"] == 1700, "rice should now be 1700"
+      assert "\"rice\": 1700" not in __code__ and "'rice': 1700" not in __code__, "Change it with prices[\"rice\"] = 1700"
+  - prompt: "Loop with .items() and print each line like  rice: ₦1,700"
+    stdin: ["garri"]
+    expectOutput: ["rice: ₦1,700", "beans: ₦1,200", "yam: ₦2,500"]
+    tests: |
+      assert ".items()" in __code__, "Loop over prices.items()"
+    hint: "for item, price in prices.items(): print(f\"{item}: ₦{price:,}\")"
+  - prompt: "The user types garri → print  Price of garri is ₦800"
+    stdin: ["garri"]
+    expectOutput: ["Price of garri is ₦800"]
+  - prompt: "The user types egusi → print  Not sold here  (no crash)"
+    stdin: ["egusi"]
+    expectOutput: ["Not sold here"]
+    hint: "if item in prices: … else: print(\"Not sold here\")"
