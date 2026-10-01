@@ -1,0 +1,36 @@
+# Week 3 · Day 4 mini-task
+id: web-w03-d4-forms
+kind: web
+title: "Price table and contact form"
+description: "Tables for data, forms with proper labels."
+html: |
+  <h2>Our prices</h2>
+  <table>
+    <tr><th>Product</th><th>Price (₦)</th></tr>
+    <tr><td>Tecno Spark 20</td><td>145,000</td></tr>
+  </table>
+
+  <h2>Contact us</h2>
+  <form>
+    Name <input type="text">
+  </form>
+css: |
+  body { font-family: system-ui, sans-serif; padding: 12px; }
+  table { border-collapse: collapse; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  form { display: grid; gap: 6px; max-width: 320px; }
+js: ""
+tasks:
+  - prompt: "Give the table at least 5 product rows (rows with <td> cells)."
+    check: "[...document.querySelectorAll('table tr')].filter(r => r.querySelector('td')).length >= 5"
+  - prompt: "The form has at least 4 fields, and every field has a <label> linked by for/id."
+    check: "(() => { const f = [...document.querySelectorAll('form input:not([type=submit]):not([type=hidden]), form select, form textarea')]; return f.length >= 4 && f.every(el => el.labels && el.labels.length > 0) })()"
+    hint: "<label for=\"name\">Name</label> <input id=\"name\" type=\"text\">"
+  - prompt: "An email field with type=\"email\" that is required."
+    check: "!!document.querySelector('form input[type=email][required]')"
+  - prompt: "A phone field with type=\"tel\" (phones show the number pad)."
+    check: "!!document.querySelector('form input[type=tel]')"
+  - prompt: "A <select> with at least 3 cities to choose from."
+    check: "!!document.querySelector('form select') && document.querySelectorAll('form select option').length >= 3"
+  - prompt: "A message <textarea> and a submit button."
+    check: "!!document.querySelector('form textarea') && !!document.querySelector('form button[type=submit], form input[type=submit]')"

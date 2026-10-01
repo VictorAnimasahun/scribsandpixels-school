@@ -34,6 +34,8 @@ export type SheetTask = {
   tolerance?: number
   /** The cell must contain a formula, not a typed number. */
   formula?: boolean
+  /** Text the formula must contain (case and spaces ignored), e.g. ["$R$1"] to require an absolute reference. */
+  mustUse?: string[]
   hint?: string
   /** Model answer formula; defaults to `hint` when that is a formula. Tests prove it gives `expect`. */
   solution?: string
@@ -54,6 +56,14 @@ export type PythonTask = {
   hint?: string
 }
 
+// ── Web: HTML / CSS / JS ───────────────────────────────────────────────────
+export type WebTask = {
+  prompt: string
+  /** A JavaScript expression evaluated inside the preview page; truthy = done. */
+  check: string
+  hint?: string
+}
+
 type Base = { id: string; title: string; description?: string; main?: boolean }
 
 export type Sandbox =
@@ -69,7 +79,7 @@ export type Sandbox =
       tasks?: SheetTask[]
     })
   | (Base & { kind: 'python'; starter?: string; tasks?: PythonTask[] })
-  | (Base & { kind: 'web'; html?: string; css?: string; js?: string; tasks?: { prompt: string }[] })
+  | (Base & { kind: 'web'; html?: string; css?: string; js?: string; tasks?: WebTask[] })
 
 export class SandboxError extends Error {
   constructor(source: string, message: string) {
@@ -144,6 +154,14 @@ export function validateSandbox(sandbox: Sandbox, source: string): Sandbox {
       for (const task of sandbox.tasks ?? []) if (!task.expectOutput?.length && !task.tests) fail(`task "${task.prompt}": needs expectOutput or tests`)
       break
     case 'web':
+      for (const task of sandbox.tasks ?? []) {
+        if (!task.check) fail(`task "${task.prompt}": needs a check expression`)
+        try {
+          new Function(`return (${task.check})`)
+        } catch (e) {
+          fail(`task "${task.prompt}": check isn't valid JavaScript (${(e as Error).message})`)
+        }
+      }
       break
     default:
       fail(`unknown kind ${(sandbox as { kind: string }).kind}`)

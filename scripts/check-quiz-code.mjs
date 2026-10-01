@@ -18,7 +18,8 @@ for (const course of readdirSync(join(root, 'src/content/courses'))) {
     const week = parse(readFileSync(join(dir, file), 'utf8'))
     for (const day of week.days) {
       const questions = [...(day.gate?.bank ?? []), ...day.quizzes.flatMap((q) => q.questions)]
-      for (const q of questions.filter((q) => q.code)) {
+      // HTML and CSS snippets aren't Python; skip them.
+      for (const q of questions.filter((q) => q.code && !/^\s*(<|\/\*|[\w.#-]+\s*\{)/.test(q.code))) {
         const typed = [...q.prompt.matchAll(/types ([^ .?]+)(?: then ([^ .?]+))?/g)].flatMap((m) => [m[1], m[2]]).filter(Boolean)
         const r = spawnSync('python3', ['-c', q.code], { input: typed.join('\n') + '\n', encoding: 'utf8', timeout: 3000, cwd: mkdtempSync(join(sandboxDir, 'q-')) })
         const out = (r.stdout.trim() || r.stderr.trim().split('\n').pop() || '(no output)').replace(/\n/g, ' ⏎ ')

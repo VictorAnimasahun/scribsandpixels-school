@@ -51,6 +51,8 @@ tasks:
 - Datasets: `sales_2025`, `products`, `employees` (NaijaMart). Row 1 = headers, data from row 2.
 - Every task needs a model answer: a formula `hint`, a `solution`, or a `solutionFill` (whole columns). **Tests run it and must get `expect`**, so answer keys can't drift from the data.
 - `formula: true` rejects typed numbers.
+- `mustUse: ["$J$1"]` requires text in the formula (case and spaces ignored), e.g. to prove an absolute or mixed reference was used, not just the right number.
+- A hint with extra words after the formula isn't a valid model answer: add `solution`.
 
 ## `python`
 ```yaml
@@ -65,7 +67,16 @@ tasks:
       assert convert_to_naira(10) == 15500, "should return 15500"
 ```
 - A task needs `expectOutput` (lines that must appear) and/or `tests` (Python asserts run after the learner's code). Tests can read `__output__` (everything the program printed) and `__code__` (the learner's source), e.g. to require a loop instead of `max()`.
-- Before committing, run each task against a reference solution (see git history for the Week 1–2 check).
+- Every task sandbox needs a reference solution in `scripts/python-solutions/<id>.py` (never shipped). `npm run check:python` (also in CI) proves the solution passes every task and the starter fails at least one.
 
 ## `web`
-`html`, `css`, `js` starters, optional `tasks` (instructions only, not auto-checked yet).
+`html`, `css`, `js` starters, optional `tasks` with a `check`: a JavaScript expression run inside the preview page (truthy = done). The learner presses **✓ Check tasks**; hints show only after a failed check.
+```yaml
+tasks:
+  - prompt: "Round the corners of the cards."
+    check: "parseFloat(getComputedStyle(document.querySelector('.card')).borderTopLeftRadius) > 0"
+    hint: ".card { border-radius: 8px; }"
+```
+- The page is built as `<style>css</style>` + `<body>html<script>js</script></body>`, so learners write body content (a `<title>` in it still counts).
+- Check real structure and computed styles, not raw text, so any correct solution passes.
+- Reference solution in `scripts/web-solutions/<id>.json` (`{ html?, css?, js? }`, missing parts = the starter's). `npm run check:web` (also in CI) runs every check in headless Chrome: the solution must pass all, the starter must fail at least one. Needs Chrome locally, or set `CHROME_PATH`.

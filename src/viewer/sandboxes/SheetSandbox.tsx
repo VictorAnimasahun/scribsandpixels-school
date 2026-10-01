@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState, type KeyboardEvent } from 'react'
 import type { Sandbox } from '../../content/sandboxes.ts'
 import { colToLetters, display, parseRef, Sheet, toRef } from '../../domain/sheet.ts'
-import { applySolution, buildSheetCells, taskPassed } from '../../domain/sheetSandbox.ts'
+import { applySolution, buildSheetCells, missingParts, taskPassed } from '../../domain/sheetSandbox.ts'
 import { loadSaved, save } from './storage.ts'
 
 type Props = { sandbox: Extract<Sandbox, { kind: 'sheet' }> }
@@ -174,6 +174,7 @@ export default function SheetSandbox({ sandbox }: Props) {
               <li key={i} className={ok ? 'pass' : ''}>
                 <span>{ok ? '✅' : '⬜'} {task.prompt}</span>
                 {!ok && raw && !raw.startsWith('=') && task.formula && <small className="fail-detail">Use a formula (start with =), not a typed number.</small>}
+                {!ok && raw.startsWith('=') && missingParts(task, raw).length > 0 && <small className="fail-detail">Your formula must use {missingParts(task, raw).join(' and ')}.</small>}
                 {!ok && !raw && <small className="muted">Hint and answer unlock after you try.</small>}
                 <span className="task-actions">
                   <button className="link" onClick={() => setSelected(task.cell)}>Go to {task.cell}</button>

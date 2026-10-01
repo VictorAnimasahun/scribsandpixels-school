@@ -1,0 +1,31 @@
+# Week 3 · Day 3 mini-task
+id: web-w03-d3-homepage
+kind: web
+title: "Homepage skeleton"
+description: "Links, images and semantic tags: the bones of your personal site."
+html: |
+  <h1>Your Name</h1>
+  <p>Learning to code, one evening at a time.</p>
+  <!-- Wrap things in header, nav, main and footer -->
+css: |
+  body { font-family: system-ui, sans-serif; padding: 12px; }
+  nav a { margin-right: 12px; }
+  img { max-width: 100%; }
+js: ""
+tasks:
+  - prompt: "Use all four semantic tags: <header>, <nav>, <main> and <footer>."
+    check: "['header', 'nav', 'main', 'footer'].every(t => document.querySelector(t))"
+  - prompt: "Put at least two links in the nav (e.g. index.html and about.html)."
+    check: "[...document.querySelectorAll('nav a')].filter(a => a.getAttribute('href')).length >= 2"
+    hint: "<a href=\"about.html\">About</a>"
+  - prompt: "Add a link to an outside website (starting with https://) that opens in a new tab."
+    check: "[...document.querySelectorAll('a[target=\"_blank\"]')].some(a => /^https?:\\/\\//.test(a.getAttribute('href') || ''))"
+    hint: "target=\"_blank\" opens a new tab."
+  - prompt: "Add an image with a src and a useful alt text (at least a few words)."
+    check: "[...document.querySelectorAll('img')].some(i => i.getAttribute('src') && (i.getAttribute('alt') || '').trim().split(/\\s+/).length >= 2)"
+    hint: "Any image URL works, e.g. https://picsum.photos/400/200. The alt describes it."
+  - prompt: "Inside <main>, at least two <section>s, each with an <h2>."
+    check: "[...document.querySelectorAll('main section')].filter(s => s.querySelector('h2')).length >= 2"
+  - prompt: "End the footer with a copyright sign: ©"
+    check: "(document.querySelector('footer')?.textContent || '').includes('©')"
+    hint: "Type © or write &copy;"

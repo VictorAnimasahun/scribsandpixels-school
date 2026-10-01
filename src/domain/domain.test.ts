@@ -6,6 +6,10 @@ import { addDays, localDate, streak, weekDots, weekday } from './streak.ts'
 const course = courses[0]
 const days = (...keys: [number, number][]) => new Set(keys.map(([w, d]) => dayKey(w, d)))
 const fullWeek = (w: number) => [1, 2, 3, 4, 5, 6].map((d) => [w, d] as [number, number])
+// The first week with no written content yet; tests must keep passing as weeks are added.
+const written = course.weeks.map((w) => w.number)
+const next = written.length + 1
+const upTo = (n: number) => Array.from({ length: n }, (_, i) => i + 1)
 
 describe('currentPosition', () => {
   it('starts at Week 1 Day 1', () => {
@@ -23,8 +27,9 @@ describe('currentPosition', () => {
   })
 
   it('waits for content when the next week is not written yet', () => {
-    const progress = { completedDays: days(...fullWeek(1), ...fullWeek(2)), passedWeeks: new Set([1, 2]) }
-    expect(currentPosition(course, progress)).toEqual({ kind: 'awaiting-content', week: 3 })
+    expect(written).toEqual(upTo(written.length))
+    const progress = { completedDays: days(...written.flatMap(fullWeek)), passedWeeks: new Set(written) }
+    expect(currentPosition(course, progress)).toEqual({ kind: 'awaiting-content', week: next })
   })
 })
 
@@ -34,7 +39,7 @@ describe('weekStatus', () => {
     expect(weekStatus(course, progress, 1)).toBe('done')
     expect(weekStatus(course, progress, 2)).toBe('current')
     expect(weekStatus(course, progress, 3)).toBe('locked')
-    expect(weekStatus(course, { ...progress, passedWeeks: new Set([1, 2]) }, 3)).toBe('awaiting-content')
+    expect(weekStatus(course, { ...progress, passedWeeks: new Set(written) }, next)).toBe('awaiting-content')
   })
 
   it('computes whole-course completion', () => {

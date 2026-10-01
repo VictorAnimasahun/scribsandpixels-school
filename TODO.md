@@ -11,21 +11,24 @@
 ## Quizzes (a slice at a time, no mass generation)
 - [x] Quiz engine: random weekly checkpoints (1–2/week), 70% pass, 60-min cooldown, new questions on retry
 - [x] French Week 1 · Excel Week 1 question banks
-- [ ] French Weeks 2–52
-- [ ] Excel Weeks 2–24
-- [x] Fullstack + ML Weeks 1–2 (every code snippet checked by running it: `node scripts/check-quiz-code.mjs`)
+- [x] French Week 2 · Excel Week 2
+- [ ] French Weeks 3–52
+- [ ] Excel Weeks 3–24
+- [x] Fullstack + ML Weeks 1–3 (every Python snippet checked by running it: `node scripts/check-quiz-code.mjs`)
 - [ ] Fullstack + ML later weeks as they're written
 
 ## Sandboxes (a slice at a time)
 - [x] Engines: French phrase builder, Excel spreadsheet, Python, web playground
-- [x] French W1, W2, W7 + main lab · Excel W2, W6 + playground · Fullstack: a sandbox for every day of W1–2 (16 sandboxes, 46 auto-checked tasks) + Python/web playgrounds
+- [x] French W1, W2, W3, W7 + main lab · Excel W2, W3, W6 + playground · Fullstack: a sandbox for every day of W1–3 (23 sandboxes, 82 auto-checked tasks) + Python/web playgrounds
 - [x] Phone-ready code editor (key bar, auto-indent, smart-quote fix), tested on iPhone/Safari and Android/Chrome emulation
 - [ ] More French lesson sets (add each to `fr-main` include)
 - [ ] More Excel task sheets (every formula week)
-- [ ] Web-sandbox auto-checks (tasks are instructions only for now)
+- [x] Web-sandbox auto-checks (in-page checks; `npm run check:web` proves them in headless Chrome)
+- [x] Excel `mustUse`: tasks can require `$` references, not just the right number
 
 ## Content
-- [ ] Fullstack + ML: write Weeks 3+ (only Weeks 1–2 exist)
+- [x] Fullstack + ML Week 3 (HTML & CSS)
+- [ ] Fullstack + ML: Weeks 4+
 - [ ] French: Year 2 (B2 / NCLC 7) weeks, if wanted
 - [ ] Add `course.ts` frameworks for French and Excel (only `overview.md` today)
 

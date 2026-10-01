@@ -1,0 +1,422 @@
+# Fullstack + ML · Week 3 quizzes. Format and rules: src/content/QUIZZES.md
+week: 3
+days:
+
+  # ─────────────────────────── DAY 1 ───────────────────────────
+  - day: 1
+    gate:
+      title: "Checkpoint: Week 2 review"
+      covers: "Week 2: lists, functions, return values, files"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w03-d1-g01, difficulty: easy, type: mcq, prompt: "Which creates a list?", choices: ["[\"rice\", \"beans\"]", "(\"rice\" \"beans\")", "{rice, beans}", "list: rice, beans"], answer: 0 }
+        - { id: fs-w03-d1-g02, difficulty: easy, type: mcq, prompt: "foods[-1] gives…", choices: ["the last item", "the first item", "an error", "the item before the first"], answer: 0 }
+        - { id: fs-w03-d1-g03, difficulty: easy, type: mcq, prompt: "Which keyword starts a function definition?", choices: ["def", "function", "fn", "func"], answer: 0 }
+        - { id: fs-w03-d1-g04, difficulty: easy, type: mcq, prompt: "Which file mode adds to the end without wiping the file?", choices: ["\"a\"", "\"w\"", "\"r\"", "\"x\""], answer: 0 }
+        - { id: fs-w03-d1-g05, difficulty: easy, type: truefalse, prompt: "A function without a return statement gives back None.", answer: true }
+        - { id: fs-w03-d1-g06, difficulty: easy, type: mcq, prompt: "len([3, 6, 9, 12]) =", choices: ["4", "3", "12", "30"], answer: 0 }
+        - id: fs-w03-d1-g07
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            def area(width, height):
+                return width * height
+
+            print(area(4, 5) + 1)
+          accept: ["21"]
+        - id: fs-w03-d1-g08
+          difficulty: medium
+          type: mcq
+          prompt: "What does this print?"
+          code: |
+            prices = [1500, 800, 2300]
+            prices.sort()
+            print(prices[0])
+          choices: ["800", "1500", "2300", "[800, 1500, 2300]"]
+          answer: 0
+        - id: fs-w03-d1-g09
+          difficulty: medium
+          type: mcq
+          prompt: "What does this print?"
+          code: |
+            def greet(name="friend"):
+                return "Hello, " + name
+
+            print(greet())
+          choices: ["Hello, friend", "Hello, name", "Hello, ", "An error: name is missing"]
+          answer: 0
+        - id: fs-w03-d1-g10
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            nums = [10, 20, 30, 40, 50]
+            print(nums[1:3])
+          accept: ["[20, 30]"]
+        - { id: fs-w03-d1-g11, difficulty: medium, type: match, prompt: "Match the code to its result.", pairs: [["sum([2, 3, 5])", "10"], ["max([2, 3, 5])", "5"], ["min([2, 3, 5])", "2"], ["len([2, 3, 5])", "3"]] }
+        - { id: fs-w03-d1-g12, difficulty: medium, type: mcq, prompt: "What's the difference between print() and return in a function?", choices: ["print shows text; return hands a value back to the caller", "They do the same thing", "return shows text; print hands a value back", "return only works with numbers"], answer: 0 }
+        - id: fs-w03-d1-g13
+          difficulty: medium
+          type: mcq
+          prompt: "What does this print?"
+          code: |
+            names = ["Ada", "Tolu"]
+            for i, name in enumerate(names):
+                print(i, name)
+          choices: ["0 Ada ⏎ 1 Tolu", "1 Ada ⏎ 2 Tolu", "Ada 0 ⏎ Tolu 1", "0 ⏎ 1"]
+          answer: 0
+        - { id: fs-w03-d1-g14, difficulty: medium, type: truefalse, prompt: "\"Lagos\" in [\"Lagos\", \"Abuja\"] is True.", answer: true }
+        - { id: fs-w03-d1-g15, difficulty: medium, type: mcq, prompt: "Why use `with open(...) as f:` instead of plain open()?", choices: ["It closes the file for you, even after an error", "It's faster", "It's the only way to write", "It makes the file hidden"], answer: 0 }
+        - id: fs-w03-d1-g16
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            def total(items):
+                result = 0
+                for item in items:
+                    if item > 100:
+                        result += item
+                return result
+
+            print(total([50, 150, 200, 99]))
+          accept: ["350"]
+        - id: fs-w03-d1-g17
+          difficulty: hard
+          type: mcq
+          prompt: "What does this print?"
+          code: |
+            def add_item(item, basket=[]):
+                basket.append(item)
+                return len(basket)
+
+            basket = ["rice"]
+            print(add_item("yam", basket))
+          choices: ["2", "1", "0", "an error"]
+          answer: 0
+        - id: fs-w03-d1-g18
+          difficulty: hard
+          type: mcq
+          prompt: "This should print how many lines notes.txt has, but it crashes (\"not readable\") and the file is now empty. Why?"
+          code: |
+            with open("notes.txt", "w") as f:
+                lines = f.readlines()
+            print(len(lines))
+          choices: ["\"w\" opens for writing (and wipes the file); reading needs \"r\"", "readlines() needs a number", "len doesn't work on lists", "The with block must be indented more"]
+          answer: 0
+    quizzes:
+      - kind: rapid-fire
+        title: "How the web works"
+        secondsPerQuestion: 10
+        questions:
+          - { id: fs-w03-d1-rf01, difficulty: easy, type: mcq, prompt: "Chrome and Safari are…", choices: ["browsers (clients)", "servers", "databases", "programming languages"], answer: 0 }
+          - { id: fs-w03-d1-rf02, difficulty: easy, type: mcq, prompt: "Turns a name like jumia.com.ng into an IP address", choices: ["DNS", "HTML", "CSS", "Python"], answer: 0 }
+          - { id: fs-w03-d1-rf03, difficulty: easy, type: mcq, prompt: "The browser asks the server for a page with an…", choices: ["HTTP request", "HTTP response", "HTML tag", "email"], answer: 0 }
+          - { id: fs-w03-d1-rf04, difficulty: easy, type: mcq, prompt: "Structure and content of a page", choices: ["HTML", "CSS", "JavaScript", "DNS"], answer: 0 }
+          - { id: fs-w03-d1-rf05, difficulty: easy, type: mcq, prompt: "Colours, fonts, layout", choices: ["CSS", "HTML", "JavaScript", "HTTP"], answer: 0 }
+          - { id: fs-w03-d1-rf06, difficulty: easy, type: mcq, prompt: "Behaviour: buttons that react, menus that open", choices: ["JavaScript", "HTML", "CSS", "DNS"], answer: 0 }
+          - { id: fs-w03-d1-rf07, difficulty: easy, type: truefalse, prompt: "A web page arrives in your browser as text files.", answer: true }
+          - { id: fs-w03-d1-rf08, difficulty: easy, type: mcq, prompt: "HTML files end in…", choices: [".html", ".py", ".txt", ".web"], answer: 0 }
+          - { id: fs-w03-d1-rf09, difficulty: easy, type: mcq, prompt: "Right-click → Inspect opens…", choices: ["DevTools", "View Source only", "a new tab", "the server"], answer: 0 }
+          - { id: fs-w03-d1-rf10, difficulty: easy, type: mcq, prompt: "The text in the browser tab comes from…", choices: ["<title>", "<h1>", "<head>", "<tab>"], answer: 0 }
+          - { id: fs-w03-d1-rf11, difficulty: easy, type: truefalse, prompt: "HTML, CSS and JavaScript run in the visitor's browser.", answer: true }
+      - kind: brain-teaser
+        title: "Follow the page"
+        questions:
+          - { id: fs-w03-d1-bt01, difficulty: medium, type: order, prompt: "Put the journey of a web page in order.", items: ["You type the address", "DNS finds the server's IP address", "The browser sends an HTTP request", "The server sends back HTML, CSS and JS", "The browser draws the page"] }
+          - { id: fs-w03-d1-bt02, difficulty: medium, type: order, prompt: "Order the lines of the HTML skeleton.", items: ["<!DOCTYPE html>", "<html>", "<head>", "<title>My page</title>", "</head>", "<body>", "</body>", "</html>"] }
+          - { id: fs-w03-d1-bt03, difficulty: medium, type: match, prompt: "House analogy: match each language to its part.", pairs: [["HTML", "walls and rooms"], ["CSS", "paint and furniture"], ["JavaScript", "electricity and switches"]] }
+          - { id: fs-w03-d1-bt04, difficulty: hard, type: mcq, prompt: "You edit index.html and save, but the browser still shows the old text. What's the first thing to try?", choices: ["Refresh the page", "Reinstall the browser", "Rename the file to .py", "Restart the server"], answer: 0 }
+          - { id: fs-w03-d1-bt05, difficulty: hard, type: mcq, prompt: "Where does each run? Your Python script vs the HTML of a website you visit.", choices: ["Python: your computer or a server · HTML: the visitor's browser", "Both on the server", "Both in the browser", "Python: the browser · HTML: the server"], answer: 0 }
+
+  # ─────────────────────────── DAY 2 ───────────────────────────
+  - day: 2
+    gate:
+      title: "Checkpoint: how the web works"
+      covers: "Week 3 · Day 1: client and server, DNS, HTTP, HTML/CSS/JS roles, the HTML skeleton"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w03-d2-g01, difficulty: easy, type: mcq, prompt: "Your browser is the…", choices: ["client", "server", "database", "DNS"], answer: 0 }
+        - { id: fs-w03-d2-g02, difficulty: easy, type: mcq, prompt: "Which language gives a page its structure?", choices: ["HTML", "CSS", "JavaScript", "Python"], answer: 0 }
+        - { id: fs-w03-d2-g03, difficulty: easy, type: mcq, prompt: "Which language styles a page?", choices: ["CSS", "HTML", "JavaScript", "SQL"], answer: 0 }
+        - { id: fs-w03-d2-g04, difficulty: easy, type: truefalse, prompt: "DNS turns a domain name into an IP address.", answer: true }
+        - { id: fs-w03-d2-g05, difficulty: easy, type: mcq, prompt: "The first line of an HTML file is…", choices: ["<!DOCTYPE html>", "<html>", "<head>", "<start>"], answer: 0 }
+        - { id: fs-w03-d2-g06, difficulty: easy, type: mcq, prompt: "Visible page content goes inside…", choices: ["<body>", "<head>", "<title>", "<!DOCTYPE>"], answer: 0 }
+        - { id: fs-w03-d2-g07, difficulty: medium, type: mcq, prompt: "What does the server send back?", choices: ["An HTTP response with files such as HTML, CSS and JS", "A picture of the page", "Python code to run", "The DNS address"], answer: 0 }
+        - { id: fs-w03-d2-g08, difficulty: medium, type: mcq, prompt: "Where does <title> go?", choices: ["Inside <head>", "Inside <body>", "Before <!DOCTYPE html>", "After </html>"], answer: 0 }
+        - { id: fs-w03-d2-g09, difficulty: medium, type: truefalse, prompt: "View Page Source shows the HTML text the server sent.", answer: true }
+        - { id: fs-w03-d2-g10, difficulty: medium, type: match, prompt: "Match the term to its meaning.", pairs: [["Client", "asks for the page"], ["Server", "sends the page"], ["DNS", "phone book for addresses"], ["HTTP", "the language of requests and responses"]] }
+        - { id: fs-w03-d2-g11, difficulty: medium, type: mcq, prompt: "A button that shows a message when clicked needs…", choices: ["JavaScript", "only HTML", "only CSS", "DNS"], answer: 0 }
+        - { id: fs-w03-d2-g12, difficulty: medium, type: mcq, prompt: "Which tool lets you edit a live page's HTML in the browser (temporarily)?", choices: ["DevTools (Inspect)", "View Page Source", "The address bar", "Bookmarks"], answer: 0 }
+        - { id: fs-w03-d2-g13, difficulty: medium, type: mcq, prompt: "Which part of the skeleton holds information *about* the page (like the title)?", choices: ["<head>", "<body>", "<footer>", "<main>"], answer: 0 }
+        - { id: fs-w03-d2-g14, difficulty: medium, type: truefalse, prompt: "You need a server running to open your own index.html in a browser.", answer: false, explain: "Double-clicking the file opens it straight from your disk." }
+        - { id: fs-w03-d2-g15, difficulty: medium, type: order, prompt: "Order the first lines of a page.", items: ["<!DOCTYPE html>", "<html>", "<head>", "<title>Shop</title>"] }
+        - { id: fs-w03-d2-g16, difficulty: hard, type: mcq, prompt: "What's wrong with this page?", code: "<!DOCTYPE html>\n<html>\n  <body>\n    <title>Shop</title>\n  </body>\n  <head>\n    <h1>Welcome</h1>\n  </head>\n</html>", choices: ["The title and heading are swapped: <title> belongs in <head>, <h1> in <body>", "Nothing", "<!DOCTYPE html> must be last", "<h1> can't hold text"], answer: 0 }
+        - { id: fs-w03-d2-g17, difficulty: hard, type: multi, prompt: "Which are true about a website you visit? (Select all.)", choices: ["Its HTML arrives as text", "Its CSS runs in your browser", "You can read its HTML with View Source", "Its Python code is visible in View Source"], answers: [0, 1, 2], explain: "Server code (Python etc.) stays on the server." }
+        - { id: fs-w03-d2-g18, difficulty: hard, type: mcq, prompt: "jumia.com.ng loads, but a mistyped jumia.con.ng shows \"site can't be reached\". Which step failed?", choices: ["DNS: there's no address for that name", "CSS", "The HTML", "JavaScript"], answer: 0 }
+    quizzes:
+      - kind: rapid-fire
+        title: "Tag sprint"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fs-w03-d2-rf01, difficulty: easy, type: mcq, prompt: "A paragraph", choices: ["<p>", "<para>", "<text>", "<pg>"], answer: 0 }
+          - { id: fs-w03-d2-rf02, difficulty: easy, type: mcq, prompt: "The main heading", choices: ["<h1>", "<h6>", "<head>", "<header>"], answer: 0 }
+          - { id: fs-w03-d2-rf03, difficulty: easy, type: mcq, prompt: "A bulleted list", choices: ["<ul>", "<ol>", "<li>", "<bl>"], answer: 0 }
+          - { id: fs-w03-d2-rf04, difficulty: easy, type: mcq, prompt: "A numbered list", choices: ["<ol>", "<ul>", "<nl>", "<list>"], answer: 0 }
+          - { id: fs-w03-d2-rf05, difficulty: easy, type: mcq, prompt: "One list item", choices: ["<li>", "<item>", "<ul>", "<i>"], answer: 0 }
+          - { id: fs-w03-d2-rf06, difficulty: easy, type: mcq, prompt: "Important text (bold)", choices: ["<strong>", "<em>", "<big>", "<b-old>"], answer: 0 }
+          - { id: fs-w03-d2-rf07, difficulty: easy, type: mcq, prompt: "Emphasis (italic)", choices: ["<em>", "<strong>", "<it>", "<i-text>"], answer: 0 }
+          - { id: fs-w03-d2-rf08, difficulty: easy, type: mcq, prompt: "An HTML comment", choices: ["<!-- note -->", "# note", "// note", "/* note */"], answer: 0 }
+          - { id: fs-w03-d2-rf09, difficulty: easy, type: truefalse, prompt: "<br> needs a closing tag.", answer: false }
+          - { id: fs-w03-d2-rf10, difficulty: easy, type: mcq, prompt: "Closing tag for <p>", choices: ["</p>", "<p/>", "<\\p>", "<end p>"], answer: 0 }
+          - { id: fs-w03-d2-rf11, difficulty: easy, type: truefalse, prompt: "A page should have one <h1>.", answer: true }
+      - kind: brain-teaser
+        title: "Nest it right"
+        questions:
+          - { id: fs-w03-d2-bt01, difficulty: medium, type: mcq, prompt: "Which is correctly nested?", choices: ["<p><strong>Hi</strong></p>", "<p><strong>Hi</p></strong>", "<strong><p>Hi</strong></p>", "<p>Hi<strong></p></strong>"], answer: 0 }
+          - { id: fs-w03-d2-bt02, difficulty: medium, type: order, prompt: "Build a 2-item numbered list.", items: ["<ol>", "<li>Wash the rice</li>", "<li>Cook the stew</li>", "</ol>"] }
+          - { id: fs-w03-d2-bt03, difficulty: medium, type: text, prompt: "How many list items does this show?", code: "<ul>\n  <li>Rice</li>\n  <li>Beans</li>\n  <!-- <li>Yam</li> -->\n  <li>Plantain</li>\n</ul>", accept: ["3", "three"], explain: "The commented-out item is hidden." }
+          - { id: fs-w03-d2-bt04, difficulty: hard, type: mcq, prompt: "A recipe page has steps that must happen in order. Which list?", choices: ["<ol>, because the order matters", "<ul>, lists are all the same", "Six <p> tags", "Six <h1> tags"], answer: 0 }
+          - { id: fs-w03-d2-bt05, difficulty: hard, type: multi, prompt: "Which are mistakes? (Select all.)", choices: ["Three <h1> tags on one page", "<li> directly inside <p>", "A missing </li> the browser silently fixes", "Indenting nested tags"], answers: [0, 1, 2], explain: "Browsers forgive mistakes, which hides them. Indenting is good practice." }
+
+  # ─────────────────────────── DAY 3 ───────────────────────────
+  - day: 3
+    gate:
+      title: "Checkpoint: HTML structure and text"
+      covers: "Week 3 · Day 2: tags, elements, headings, paragraphs, lists, strong/em, comments, nesting"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w03-d3-g01, difficulty: easy, type: mcq, prompt: "Which tag makes a paragraph?", choices: ["<p>", "<para>", "<h1>", "<br>"], answer: 0 }
+        - { id: fs-w03-d3-g02, difficulty: easy, type: mcq, prompt: "The most important heading is…", choices: ["<h1>", "<h6>", "<head>", "<title>"], answer: 0 }
+        - { id: fs-w03-d3-g03, difficulty: easy, type: mcq, prompt: "List items go inside…", choices: ["<ul> or <ol>", "<p>", "<h2>", "<br>"], answer: 0 }
+        - { id: fs-w03-d3-g04, difficulty: easy, type: truefalse, prompt: "<ol> shows numbers; <ul> shows bullets.", answer: true }
+        - { id: fs-w03-d3-g05, difficulty: easy, type: mcq, prompt: "How do you write an HTML comment?", choices: ["<!-- text -->", "# text", "// text", "<comment>text</comment>"], answer: 0 }
+        - { id: fs-w03-d3-g06, difficulty: easy, type: mcq, prompt: "Opening tag + content + closing tag together are called an…", choices: ["element", "attribute", "selector", "function"], answer: 0 }
+        - { id: fs-w03-d3-g07, difficulty: medium, type: mcq, prompt: "Which line is correctly nested?", choices: ["<p>Price: <strong>₦5,000</strong></p>", "<p>Price: <strong>₦5,000</p></strong>", "<strong><p>Price: ₦5,000</strong></p>", "<p>Price: <strong>₦5,000</p>"], answer: 0 }
+        - { id: fs-w03-d3-g08, difficulty: medium, type: match, prompt: "Match the tag to its meaning.", pairs: [["<strong>", "important"], ["<em>", "emphasis"], ["<hr>", "horizontal line"], ["<br>", "line break"]] }
+        - { id: fs-w03-d3-g09, difficulty: medium, type: text, prompt: "Write the tag that starts a bulleted list.", accept: ["<ul>"] }
+        - { id: fs-w03-d3-g10, difficulty: medium, type: truefalse, prompt: "The browser shows text inside <!-- -->.", answer: false }
+        - { id: fs-w03-d3-g11, difficulty: medium, type: mcq, prompt: "How many <h1> tags should a page have?", choices: ["One", "As many as you like", "None", "One per paragraph"], answer: 0 }
+        - { id: fs-w03-d3-g12, difficulty: medium, type: mcq, prompt: "Why indent nested tags?", choices: ["So humans can read the structure", "The browser requires it", "It makes the page faster", "It changes the layout"], answer: 0 }
+        - { id: fs-w03-d3-g13, difficulty: medium, type: multi, prompt: "Which tags need no closing tag? (Select all.)", choices: ["<br>", "<hr>", "<p>", "<li>"], answers: [0, 1] }
+        - { id: fs-w03-d3-g14, difficulty: medium, type: order, prompt: "Build: a heading, then a 2-item bulleted list.", items: ["<h2>Ingredients</h2>", "<ul>", "<li>Rice</li>", "<li>Tomatoes</li>", "</ul>"] }
+        - { id: fs-w03-d3-g15, difficulty: medium, type: mcq, prompt: "Where can you check your HTML for errors?", choices: ["validator.w3.org", "python.org", "Google Translate", "The DNS"], answer: 0 }
+        - { id: fs-w03-d3-g16, difficulty: hard, type: mcq, prompt: "What's the bug?", code: "<ol>\n  <li>Blend the tomatoes\n  <li>Fry the base</li>\n</ol>", choices: ["The first <li> is never closed", "<ol> can't hold <li>", "Steps need <ul>", "No bug"], answer: 0, explain: "The browser may hide this, but the validator will flag it." }
+        - { id: fs-w03-d3-g17, difficulty: hard, type: text, prompt: "How many items show as bullets?", code: "<ul>\n  <li>Lagos</li>\n  <li>Abuja</li>\n</ul>\n<ol>\n  <li>Kano</li>\n</ol>", accept: ["2", "two"] }
+        - { id: fs-w03-d3-g18, difficulty: hard, type: mcq, prompt: "You want \"₦2,500\" to stand out as important inside a paragraph. Best choice?", choices: ["<p>Only <strong>₦2,500</strong> today</p>", "<h1>₦2,500</h1> inside the paragraph", "<p>Only <br>₦2,500<br> today</p>", "<!-- ₦2,500 -->"], answer: 0 }
+    quizzes:
+      - kind: rapid-fire
+        title: "Links, images, structure"
+        secondsPerQuestion: 9
+        questions:
+          - { id: fs-w03-d3-rf01, difficulty: easy, type: mcq, prompt: "A link", choices: ["<a>", "<link>", "<href>", "<url>"], answer: 0 }
+          - { id: fs-w03-d3-rf02, difficulty: easy, type: mcq, prompt: "Where a link goes", choices: ["href", "src", "alt", "go"], answer: 0 }
+          - { id: fs-w03-d3-rf03, difficulty: easy, type: mcq, prompt: "An image", choices: ["<img>", "<image>", "<pic>", "<src>"], answer: 0 }
+          - { id: fs-w03-d3-rf04, difficulty: easy, type: mcq, prompt: "The image file", choices: ["src", "href", "alt", "file"], answer: 0 }
+          - { id: fs-w03-d3-rf05, difficulty: easy, type: mcq, prompt: "Text read by screen readers for an image", choices: ["alt", "title", "src", "caption"], answer: 0 }
+          - { id: fs-w03-d3-rf06, difficulty: easy, type: mcq, prompt: "Open a link in a new tab", choices: ["target=\"_blank\"", "new=\"tab\"", "href=\"_new\"", "open=\"tab\""], answer: 0 }
+          - { id: fs-w03-d3-rf07, difficulty: easy, type: mcq, prompt: "The menu of links", choices: ["<nav>", "<menu-bar>", "<links>", "<footer>"], answer: 0 }
+          - { id: fs-w03-d3-rf08, difficulty: easy, type: mcq, prompt: "The page's main content", choices: ["<main>", "<body>", "<content>", "<center>"], answer: 0 }
+          - { id: fs-w03-d3-rf09, difficulty: easy, type: mcq, prompt: "Copyright and contact at the bottom", choices: ["<footer>", "<bottom>", "<end>", "<header>"], answer: 0 }
+          - { id: fs-w03-d3-rf10, difficulty: easy, type: truefalse, prompt: "<img> has no closing tag.", answer: true }
+          - { id: fs-w03-d3-rf11, difficulty: easy, type: truefalse, prompt: "href=\"about.html\" is a relative link.", answer: true }
+      - kind: brain-teaser
+        title: "Fix the links"
+        questions:
+          - { id: fs-w03-d3-bt01, difficulty: medium, type: mcq, prompt: "Why doesn't this link work?", code: "<a src=\"about.html\">About me</a>", choices: ["Links use href, not src", "The text is too short", "Missing target", "Links need an alt"], answer: 0 }
+          - { id: fs-w03-d3-bt02, difficulty: medium, type: mcq, prompt: "Which alt text is best for a photo of you at Lekki beach?", choices: ["Victor smiling at Lekki beach", "image", "photo.jpg", "(leave it empty)"], answer: 0 }
+          - { id: fs-w03-d3-bt03, difficulty: medium, type: order, prompt: "Order the parts of a typical page.", items: ["<header>", "<nav>", "<main>", "<footer>"] }
+          - { id: fs-w03-d3-bt04, difficulty: hard, type: text, prompt: "Write a link to https://cs50.harvard.edu with the text CS50 that opens in a new tab.", accept: ["<a href=\"https://cs50.harvard.edu\" target=\"_blank\">CS50</a>", "<a target=\"_blank\" href=\"https://cs50.harvard.edu\">CS50</a>", "<a href='https://cs50.harvard.edu' target='_blank'>CS50</a>"] }
+          - { id: fs-w03-d3-bt05, difficulty: hard, type: mcq, prompt: "index.html and about.html sit in the same folder. On index.html, which link opens the About page?", choices: ["<a href=\"about.html\">About</a>", "<a href=\"C:/about\">About</a>", "<a href=\"https://about.html\">About</a>", "<a>about.html</a>"], answer: 0 }
+
+  # ─────────────────────────── DAY 4 ───────────────────────────
+  - day: 4
+    gate:
+      title: "Checkpoint: links, images, page structure"
+      covers: "Week 3 · Day 3: attributes, <a> and href, target, <img> with src and alt, semantic tags"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w03-d4-g01, difficulty: easy, type: mcq, prompt: "Which attribute holds a link's destination?", choices: ["href", "src", "alt", "dest"], answer: 0 }
+        - { id: fs-w03-d4-g02, difficulty: easy, type: mcq, prompt: "Which attribute names an image's file?", choices: ["src", "href", "alt", "img"], answer: 0 }
+        - { id: fs-w03-d4-g03, difficulty: easy, type: truefalse, prompt: "Every <img> should have alt text.", answer: true }
+        - { id: fs-w03-d4-g04, difficulty: easy, type: mcq, prompt: "Which tag holds the site's menu?", choices: ["<nav>", "<main>", "<footer>", "<section>"], answer: 0 }
+        - { id: fs-w03-d4-g05, difficulty: easy, type: mcq, prompt: "Attributes go…", choices: ["inside the opening tag", "inside the closing tag", "between the tags", "in a separate file"], answer: 0 }
+        - { id: fs-w03-d4-g06, difficulty: easy, type: mcq, prompt: "Which tag holds the logo and site title at the top?", choices: ["<header>", "<head>", "<h1>", "<top>"], answer: 0 }
+        - { id: fs-w03-d4-g07, difficulty: medium, type: mcq, prompt: "What does target=\"_blank\" do?", choices: ["Opens the link in a new tab", "Makes the link blank", "Hides the link", "Downloads the page"], answer: 0 }
+        - { id: fs-w03-d4-g08, difficulty: medium, type: multi, prompt: "Why does alt text matter? (Select all.)", choices: ["Screen readers read it to blind users", "It shows if the image fails to load", "Search engines use it", "It makes the image load faster"], answers: [0, 1, 2] }
+        - { id: fs-w03-d4-g09, difficulty: medium, type: match, prompt: "Match the semantic tag to its job.", pairs: [["<header>", "top of the page: logo, title"], ["<nav>", "menu of links"], ["<main>", "the main content"], ["<footer>", "bottom: copyright, contact"]] }
+        - { id: fs-w03-d4-g10, difficulty: medium, type: mcq, prompt: "Which is a relative link?", choices: ["<a href=\"about.html\">", "<a href=\"https://example.com\">", "<a href=\"https://about.html\">", "<a href=\"www.about\">"], answer: 0 }
+        - { id: fs-w03-d4-g11, difficulty: medium, type: truefalse, prompt: "<section> groups related content, usually with its own heading.", answer: true }
+        - { id: fs-w03-d4-g12, difficulty: medium, type: mcq, prompt: "Which is correct?", choices: ["<img src=\"me.jpg\" alt=\"Me in Abuja\">", "<img href=\"me.jpg\">", "<img>me.jpg</img>", "<image src=\"me.jpg\">"], answer: 0 }
+        - { id: fs-w03-d4-g13, difficulty: medium, type: text, prompt: "Write the attribute (name and value) that opens a link in a new tab.", accept: ["target=\"_blank\"", "target='_blank'", "target=_blank"] }
+        - { id: fs-w03-d4-g14, difficulty: medium, type: mcq, prompt: "Why use semantic tags instead of plain <div>s?", choices: ["They tell browsers, screen readers and Google what each part is", "They look nicer by default", "Divs are banned", "They load faster"], answer: 0 }
+        - { id: fs-w03-d4-g15, difficulty: medium, type: mcq, prompt: "The image shows a broken icon and \"Team photo\". What happened?", choices: ["The src file wasn't found, so the alt text showed", "The alt was wrong", "Images need a closing tag", "The page has no <main>"], answer: 0 }
+        - { id: fs-w03-d4-g16, difficulty: hard, type: mcq, prompt: "What's wrong?", code: "<a href=\"https://www.freecodecamp.org\" target=\"_blank\">\n<footer>© 2026 Victor</footer>", choices: ["The <a> is never closed, so everything after it becomes part of the link", "The footer needs an id", "© isn't allowed", "Nothing"], answer: 0 }
+        - { id: fs-w03-d4-g17, difficulty: hard, type: order, prompt: "Build a nav with two links.", items: ["<nav>", "<a href=\"index.html\">Home</a>", "<a href=\"about.html\">About</a>", "</nav>"] }
+        - { id: fs-w03-d4-g18, difficulty: hard, type: multi, prompt: "Which tags belong inside <body>? (Select all.)", choices: ["<header>", "<main>", "<footer>", "<title>"], answers: [0, 1, 2], explain: "<title> lives in <head>." }
+    quizzes:
+      - kind: rapid-fire
+        title: "Tables and forms"
+        secondsPerQuestion: 9
+        questions:
+          - { id: fs-w03-d4-rf01, difficulty: easy, type: mcq, prompt: "A table row", choices: ["<tr>", "<td>", "<th>", "<row>"], answer: 0 }
+          - { id: fs-w03-d4-rf02, difficulty: easy, type: mcq, prompt: "A data cell", choices: ["<td>", "<tr>", "<th>", "<cell>"], answer: 0 }
+          - { id: fs-w03-d4-rf03, difficulty: easy, type: mcq, prompt: "A header cell", choices: ["<th>", "<td>", "<thead-cell>", "<h1>"], answer: 0 }
+          - { id: fs-w03-d4-rf04, difficulty: easy, type: mcq, prompt: "A one-line text box", choices: ["<input type=\"text\">", "<textarea>", "<text>", "<box>"], answer: 0 }
+          - { id: fs-w03-d4-rf05, difficulty: easy, type: mcq, prompt: "A multi-line message box", choices: ["<textarea>", "<input type=\"text\">", "<message>", "<p>"], answer: 0 }
+          - { id: fs-w03-d4-rf06, difficulty: easy, type: mcq, prompt: "A drop-down list", choices: ["<select>", "<dropdown>", "<list>", "<ol>"], answer: 0 }
+          - { id: fs-w03-d4-rf07, difficulty: easy, type: mcq, prompt: "Each choice in a drop-down", choices: ["<option>", "<li>", "<choice>", "<item>"], answer: 0 }
+          - { id: fs-w03-d4-rf08, difficulty: easy, type: mcq, prompt: "Names a form field", choices: ["<label>", "<name>", "<caption>", "<title>"], answer: 0 }
+          - { id: fs-w03-d4-rf09, difficulty: easy, type: mcq, prompt: "Field can't be left empty", choices: ["required", "needed", "must", "strict"], answer: 0 }
+          - { id: fs-w03-d4-rf10, difficulty: easy, type: mcq, prompt: "Shows the phone number pad", choices: ["type=\"tel\"", "type=\"phone\"", "type=\"number-pad\"", "type=\"call\""], answer: 0 }
+          - { id: fs-w03-d4-rf11, difficulty: easy, type: truefalse, prompt: "Tables are for data, not for page layout.", answer: true }
+      - kind: brain-teaser
+        title: "Build the form"
+        questions:
+          - { id: fs-w03-d4-bt01, difficulty: medium, type: mcq, prompt: "Why doesn't tapping \"Email\" focus the input?", code: "<label for=\"email\">Email</label>\n<input id=\"mail\" type=\"email\">", choices: ["for=\"email\" doesn't match id=\"mail\"", "Labels never focus inputs", "type must be text", "The label must come after the input"], answer: 0 }
+          - { id: fs-w03-d4-bt02, difficulty: medium, type: text, prompt: "How many data cells (<td>) does this table have?", code: "<table>\n  <tr><th>Product</th><th>Price</th></tr>\n  <tr><td>Indomie</td><td>₦250</td></tr>\n  <tr><td>Milo</td><td>₦3,200</td></tr>\n  <tr><td>Peak milk</td><td>₦1,100</td></tr>\n</table>", accept: ["6", "six"] }
+          - { id: fs-w03-d4-bt03, difficulty: medium, type: order, prompt: "Build a mini form: labelled email field, then the button.", items: ["<form>", "<label for=\"email\">Email</label>", "<input id=\"email\" type=\"email\" required>", "<button type=\"submit\">Send</button>", "</form>"] }
+          - { id: fs-w03-d4-bt04, difficulty: hard, type: match, prompt: "Match the data to the best input type.", pairs: [["Your email", "type=\"email\""], ["Date of birth", "type=\"date\""], ["Quantity", "type=\"number\""], ["Password", "type=\"password\""]] }
+          - { id: fs-w03-d4-bt05, difficulty: hard, type: mcq, prompt: "The form looks right, but pressing Send saves nothing anywhere. Why?", choices: ["Saving needs a backend (server code); HTML only collects the data", "The button needs CSS", "The form needs more inputs", "required blocks saving"], answer: 0 }
+
+  # ─────────────────────────── DAY 5 ───────────────────────────
+  - day: 5
+    gate:
+      title: "Checkpoint: tables and forms"
+      covers: "Week 3 · Day 4: table, tr, th, td, form, label for/id, input types, select, textarea, required"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w03-d5-g01, difficulty: easy, type: mcq, prompt: "Which tag starts a new table row?", choices: ["<tr>", "<td>", "<th>", "<table-row>"], answer: 0 }
+        - { id: fs-w03-d5-g02, difficulty: easy, type: mcq, prompt: "Which cell is bold and centred by default (a heading)?", choices: ["<th>", "<td>", "<tr>", "<caption>"], answer: 0 }
+        - { id: fs-w03-d5-g03, difficulty: easy, type: mcq, prompt: "Which tag wraps all the fields of a form?", choices: ["<form>", "<fieldset-all>", "<input>", "<label>"], answer: 0 }
+        - { id: fs-w03-d5-g04, difficulty: easy, type: truefalse, prompt: "Every input should have a label.", answer: true }
+        - { id: fs-w03-d5-g05, difficulty: easy, type: mcq, prompt: "Which makes a submit button?", choices: ["<button type=\"submit\">Send</button>", "<submit>Send</submit>", "<input type=\"send\">", "<a>Send</a>"], answer: 0 }
+        - { id: fs-w03-d5-g06, difficulty: easy, type: mcq, prompt: "Which tag gives a longer message box?", choices: ["<textarea>", "<input>", "<select>", "<p>"], answer: 0 }
+        - { id: fs-w03-d5-g07, difficulty: medium, type: mcq, prompt: "A label is linked to its input when…", choices: ["the label's for matches the input's id", "they're on the same line", "the label is bold", "the input has a name"], answer: 0 }
+        - { id: fs-w03-d5-g08, difficulty: medium, type: match, prompt: "Match the tag to its job.", pairs: [["<table>", "the whole table"], ["<tr>", "a row"], ["<th>", "a header cell"], ["<td>", "a data cell"]] }
+        - { id: fs-w03-d5-g09, difficulty: medium, type: mcq, prompt: "What does required do?", choices: ["Stops the form submitting while the field is empty", "Makes the field bold", "Saves the field to a database", "Fills the field for the user"], answer: 0 }
+        - { id: fs-w03-d5-g10, difficulty: medium, type: text, prompt: "Write the input type that shows an email keyboard and checks for an @.", accept: ["email", "type=\"email\"", "type='email'"] }
+        - { id: fs-w03-d5-g11, difficulty: medium, type: truefalse, prompt: "Using a table to place the logo, menu and content side by side is good practice.", answer: false, explain: "Tables are for data. Layout is CSS's job." }
+        - { id: fs-w03-d5-g12, difficulty: medium, type: mcq, prompt: "Which input lets someone pick a date from a calendar?", choices: ["type=\"date\"", "type=\"calendar\"", "type=\"day\"", "type=\"text\""], answer: 0 }
+        - { id: fs-w03-d5-g13, difficulty: medium, type: order, prompt: "Build a city drop-down.", items: ["<select id=\"city\">", "<option>Lagos</option>", "<option>Abuja</option>", "</select>"] }
+        - { id: fs-w03-d5-g14, difficulty: medium, type: mcq, prompt: "Why does labelling help on phones especially?", choices: ["Tapping the label focuses the small input", "Phones can't show inputs without labels", "It makes text larger", "It saves data"], answer: 0 }
+        - { id: fs-w03-d5-g15, difficulty: medium, type: multi, prompt: "Which are real input types? (Select all.)", choices: ["password", "checkbox", "tel", "naira"], answers: [0, 1, 2] }
+        - { id: fs-w03-d5-g16, difficulty: hard, type: text, prompt: "How many rows (<tr>) does this table have?", code: "<table>\n  <tr><th>City</th><th>Branch</th></tr>\n  <tr><td>Lagos</td><td>Ikeja</td></tr>\n  <tr><td>Lagos</td><td>Lekki</td></tr>\n  <tr><td>Abuja</td><td>Wuse</td></tr>\n</table>", accept: ["4", "four"] }
+        - { id: fs-w03-d5-g17, difficulty: hard, type: mcq, prompt: "What's wrong with this form?", code: "<form>\n  <label>Name</label>\n  <input id=\"name\" type=\"text\">\n</form>", choices: ["The label has no for=\"name\", so it isn't linked to the input", "Inputs need a closing tag", "type must be name", "Forms can't hold labels"], answer: 0 }
+        - { id: fs-w03-d5-g18, difficulty: hard, type: mcq, prompt: "A table row has 3 cells but the header row has 2. What happens?", choices: ["The extra cell sticks out, in a column with no header", "The browser deletes it", "The page won't load", "The header stretches automatically and labels it"], answer: 0 }
+    quizzes:
+      - kind: rapid-fire
+        title: "CSS speed round"
+        secondsPerQuestion: 9
+        questions:
+          - { id: fs-w03-d5-rf01, difficulty: easy, type: mcq, prompt: "Select a class called card", choices: [".card", "#card", "card", "*card"], answer: 0 }
+          - { id: fs-w03-d5-rf02, difficulty: easy, type: mcq, prompt: "Select the id logo", choices: ["#logo", ".logo", "logo", "@logo"], answer: 0 }
+          - { id: fs-w03-d5-rf03, difficulty: easy, type: mcq, prompt: "Select every paragraph", choices: ["p", ".p", "#p", "<p>"], answer: 0 }
+          - { id: fs-w03-d5-rf04, difficulty: easy, type: mcq, prompt: "Text colour", choices: ["color", "text-color", "font-color", "colour"], answer: 0 }
+          - { id: fs-w03-d5-rf05, difficulty: easy, type: mcq, prompt: "Background colour", choices: ["background-color", "bg", "back-color", "fill"], answer: 0 }
+          - { id: fs-w03-d5-rf06, difficulty: easy, type: mcq, prompt: "Space inside the border", choices: ["padding", "margin", "gap", "spacing"], answer: 0 }
+          - { id: fs-w03-d5-rf07, difficulty: easy, type: mcq, prompt: "Space outside the border", choices: ["margin", "padding", "outline", "border"], answer: 0 }
+          - { id: fs-w03-d5-rf08, difficulty: easy, type: mcq, prompt: "Rounded corners", choices: ["border-radius", "corner", "round", "border-curve"], answer: 0 }
+          - { id: fs-w03-d5-rf09, difficulty: easy, type: mcq, prompt: "Bold text", choices: ["font-weight: bold", "font-style: bold", "text: bold", "bold: true"], answer: 0 }
+          - { id: fs-w03-d5-rf10, difficulty: easy, type: mcq, prompt: "Centre text", choices: ["text-align: center", "align: middle", "center: text", "text-center: yes"], answer: 0 }
+          - { id: fs-w03-d5-rf11, difficulty: easy, type: truefalse, prompt: "A CSS rule ends each declaration with a semicolon.", answer: true }
+          - { id: fs-w03-d5-rf12, difficulty: easy, type: mcq, prompt: "Link style.css", choices: ["<link rel=\"stylesheet\" href=\"style.css\">", "<style src=\"style.css\">", "<css>style.css</css>", "<a href=\"style.css\">"], answer: 0 }
+      - kind: brain-teaser
+        title: "Box model puzzles"
+        questions:
+          - { id: fs-w03-d5-bt01, difficulty: medium, type: order, prompt: "Order the box model from the inside out.", items: ["content", "padding", "border", "margin"] }
+          - { id: fs-w03-d5-bt02, difficulty: medium, type: mcq, prompt: "Which elements turn green?", code: "/* CSS */\n.price { color: green; }\n\n<!-- HTML -->\n<p class=\"price\">₦5,000</p>\n<p>Free delivery</p>\n<span class=\"price\">₦800</span>", choices: ["₦5,000 and ₦800", "Only ₦5,000", "All three", "None: classes need #"], answer: 0 }
+          - { id: fs-w03-d5-bt03, difficulty: medium, type: mcq, prompt: "The heading turns red, but its size doesn't change. Why?", code: "h1 { color: red }\nh1 { font-size 40px; }", choices: ["font-size 40px has no colon, so that declaration is ignored", "The first rule cancels the second", "color must be colour", "h1 needs a dot"], answer: 0, explain: "The last semicolon in a rule is optional, so color: red works." }
+          - { id: fs-w03-d5-bt04, difficulty: hard, type: text, prompt: "A box has width 200px, padding 10px and a 1px border (default box sizing). How wide is it on screen, in px? (just the number)", accept: ["222", "222px"], explain: "200 + 10 + 10 + 1 + 1 = 222. Add box-sizing: border-box to make width include padding and border." }
+          - { id: fs-w03-d5-bt05, difficulty: hard, type: mcq, prompt: "Centre a 800px-wide page on wide screens.", choices: [".page { max-width: 800px; margin: 0 auto; }", ".page { text-align: center; }", ".page { padding: auto; }", ".page { center: true; }"], answer: 0 }
+
+  # ─────────────────────────── DAY 6 ───────────────────────────
+  - day: 6
+    gate:
+      title: "Checkpoint: CSS basics"
+      covers: "Week 3 · Day 5: rules, selectors (element, class, id), linking CSS, colours, fonts, the box model, centring"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w03-d6-g01, difficulty: easy, type: mcq, prompt: "In `h1 { color: green; }`, h1 is the…", choices: ["selector", "property", "value", "attribute"], answer: 0 }
+        - { id: fs-w03-d6-g02, difficulty: easy, type: mcq, prompt: "In `h1 { color: green; }`, color is the…", choices: ["property", "selector", "value", "class"], answer: 0 }
+        - { id: fs-w03-d6-g03, difficulty: easy, type: mcq, prompt: "A class selector starts with…", choices: [".", "#", "@", "*"], answer: 0 }
+        - { id: fs-w03-d6-g04, difficulty: easy, type: mcq, prompt: "An id selector starts with…", choices: ["#", ".", "@", "&"], answer: 0 }
+        - { id: fs-w03-d6-g05, difficulty: easy, type: truefalse, prompt: "An external style.css file is better than style=\"…\" on every element.", answer: true }
+        - { id: fs-w03-d6-g06, difficulty: easy, type: mcq, prompt: "Where does the <link> to a stylesheet go?", choices: ["In <head>", "At the end of <body>", "In <footer>", "In style.css"], answer: 0 }
+        - { id: fs-w03-d6-g07, difficulty: medium, type: match, prompt: "Match the selector to what it picks.", pairs: [["p", "every paragraph"], [".card", "every element with class=\"card\""], ["#logo", "the one element with id=\"logo\""], ["nav a", "links inside the nav"]] }
+        - { id: fs-w03-d6-g08, difficulty: medium, type: mcq, prompt: "Which is valid CSS?", choices: [".card { padding: 16px; }", ".card ( padding = 16px )", "card { padding: 16px }", ".card: padding 16px;"], answer: 0 }
+        - { id: fs-w03-d6-g09, difficulty: medium, type: order, prompt: "Order the box model from the outside in.", items: ["margin", "border", "padding", "content"] }
+        - { id: fs-w03-d6-g10, difficulty: medium, type: text, prompt: "Write the property that rounds corners.", accept: ["border-radius"] }
+        - { id: fs-w03-d6-g11, difficulty: medium, type: mcq, prompt: "Which HTML uses a class?", choices: ["<div class=\"card\">", "<div .card>", "<div #card>", "<div style=\"card\">"], answer: 0 }
+        - { id: fs-w03-d6-g12, difficulty: medium, type: truefalse, prompt: "The same class can be used on many elements; an id should be used once per page.", answer: true }
+        - { id: fs-w03-d6-g13, difficulty: medium, type: mcq, prompt: "`border: 1px solid #ddd;` sets…", choices: ["width, style and colour of the border at once", "only the colour", "padding and margin", "the border radius"], answer: 0 }
+        - { id: fs-w03-d6-g14, difficulty: medium, type: mcq, prompt: "`margin: 12px 0;` means…", choices: ["12px top and bottom, 0 left and right", "12px left and right, 0 top and bottom", "12px all round", "12px top only"], answer: 0 }
+        - { id: fs-w03-d6-g15, difficulty: medium, type: mcq, prompt: "#164f3b is a…", choices: ["hex colour code", "font name", "pixel size", "class name"], answer: 0 }
+        - { id: fs-w03-d6-g16, difficulty: hard, type: mcq, prompt: "Why does nothing turn blue?", code: "/* CSS */\n#price { color: blue; }\n\n<!-- HTML -->\n<span class=\"price\">₦9,000</span>", choices: ["#price selects id=\"price\", but the span has class=\"price\"; use .price", "Spans can't be coloured", "blue isn't a colour", "The CSS needs !important"], answer: 0 }
+        - { id: fs-w03-d6-g17, difficulty: hard, type: text, prompt: "A box: width 300px, padding 20px, border 2px (default box sizing). Total on-screen width in px? (just the number)", accept: ["344", "344px"], explain: "300 + 20×2 + 2×2 = 344." }
+        - { id: fs-w03-d6-g18, difficulty: hard, type: multi, prompt: "Your style.css isn't applying at all. Possible causes? (Select all.)", choices: ["The href in <link> has a typo", "rel=\"stylesheet\" is missing", "style.css is in a different folder from the path you wrote", "The page has more than one <section>"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Week 3 lightning round"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fs-w03-d6-rf01, difficulty: easy, type: mcq, prompt: "Structure", choices: ["HTML", "CSS", "JS", "DNS"], answer: 0 }
+          - { id: fs-w03-d6-rf02, difficulty: easy, type: mcq, prompt: "Style", choices: ["CSS", "HTML", "JS", "HTTP"], answer: 0 }
+          - { id: fs-w03-d6-rf03, difficulty: easy, type: mcq, prompt: "Link tag", choices: ["<a>", "<link>", "<l>", "<href>"], answer: 0 }
+          - { id: fs-w03-d6-rf04, difficulty: easy, type: mcq, prompt: "Image text for screen readers", choices: ["alt", "src", "title", "href"], answer: 0 }
+          - { id: fs-w03-d6-rf05, difficulty: easy, type: mcq, prompt: "Numbered list", choices: ["<ol>", "<ul>", "<li>", "<nl>"], answer: 0 }
+          - { id: fs-w03-d6-rf06, difficulty: easy, type: mcq, prompt: "Data cell", choices: ["<td>", "<tr>", "<th>", "<dc>"], answer: 0 }
+          - { id: fs-w03-d6-rf07, difficulty: easy, type: mcq, prompt: "Links label to input", choices: ["for and id", "name and value", "href and src", "class and id"], answer: 0 }
+          - { id: fs-w03-d6-rf08, difficulty: easy, type: mcq, prompt: "Class selector for \"hero\"", choices: [".hero", "#hero", "hero", "<hero>"], answer: 0 }
+          - { id: fs-w03-d6-rf09, difficulty: easy, type: mcq, prompt: "Inside space", choices: ["padding", "margin", "border", "gap"], answer: 0 }
+          - { id: fs-w03-d6-rf10, difficulty: easy, type: mcq, prompt: "Bottom of the page", choices: ["<footer>", "<header>", "<nav>", "<end>"], answer: 0 }
+          - { id: fs-w03-d6-rf11, difficulty: easy, type: truefalse, prompt: "validator.w3.org checks HTML for errors.", answer: true }
+      - kind: brain-teaser
+        title: "Python meets HTML"
+        questions:
+          - id: fs-w03-d6-bt01
+            difficulty: medium
+            type: text
+            prompt: "What's the last line this prints?"
+            code: |
+              cities = ["Lagos", "Abuja", "Kano"]
+              print("<ul>")
+              for city in cities:
+                  print(f"<li>{city}</li>")
+              print("</ul>")
+            accept: ["</ul>"]
+          - id: fs-w03-d6-bt02
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              def tag(name, text):
+                  return f"<{name}>{text}</{name}>"
+
+              print(tag("h1", "NaijaMart"))
+            accept: ["<h1>NaijaMart</h1>"]
+          - id: fs-w03-d6-bt03
+            difficulty: hard
+            type: text
+            prompt: "What does this print? (just the number)"
+            code: |
+              items = ["Rice", "Beans", "Yam"]
+              html = "<ul>"
+              for item in items:
+                  html += f"<li>{item}</li>"
+              html += "</ul>"
+              print(html.count("<li>"))
+            accept: ["3", "three"]
+          - id: fs-w03-d6-bt04
+            difficulty: hard
+            type: mcq
+            prompt: "What does this print?"
+            code: |
+              def row(name, price):
+                  return f"<tr><td>{name}</td><td>₦{price:,}</td></tr>"
+
+              print(row("Milo", 3200))
+            choices: ["<tr><td>Milo</td><td>₦3,200</td></tr>", "<tr><td>Milo</td><td>₦3200</td></tr>", "<tr><td>name</td><td>₦price</td></tr>", "<td>Milo</td><td>₦3,200</td>"]
+            answer: 0
+          - { id: fs-w03-d6-bt05, difficulty: hard, type: multi, prompt: "Your About page project: which belong in it? (Select all.)", choices: ["An <img> with alt text", "A form with labelled fields", "style.css linked in <head>", "Python code inside the HTML"], answers: [0, 1, 2] }

@@ -1,0 +1,304 @@
+# French · Week 2 quizzes. Format and rules: src/content/QUIZZES.md
+week: 2
+days:
+
+  # ─────────────────────────── DAY 1 ───────────────────────────
+  - day: 1
+    gate:
+      title: "Checkpoint: Week 1 review"
+      covers: "Week 1: greetings, tu/vous, alphabet and accents, je m'appelle, numbers 0–10, sounds, small talk"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w02-d1-g01, difficulty: easy, type: mcq, prompt: "You walk into a shop at 10 am. You say…", choices: ["Bonjour, Madame.", "Bonsoir.", "Salut !", "Au revoir."], answer: 0 }
+        - { id: fr-w02-d1-g02, difficulty: easy, type: mcq, prompt: "Which \"you\" for your new manager?", choices: ["vous", "tu", "toi", "on"], answer: 0 }
+        - { id: fr-w02-d1-g03, difficulty: easy, type: mcq, prompt: "Merci beaucoup ! — …", choices: ["De rien.", "Pardon.", "Salut.", "Enchanté."], answer: 0 }
+        - { id: fr-w02-d1-g04, difficulty: easy, type: text, prompt: "Write 7 in French.", accept: ["sept"] }
+        - { id: fr-w02-d1-g05, difficulty: easy, type: truefalse, prompt: "Salut is fine with friends but not with strangers.", answer: true }
+        - { id: fr-w02-d1-g06, difficulty: easy, type: mcq, prompt: "My name is Tunde.", choices: ["Je m'appelle Tunde.", "Je suis appelle Tunde.", "Mon appelle Tunde.", "J'appelle Tunde."], answer: 0 }
+        - { id: fr-w02-d1-g07, difficulty: medium, type: match, prompt: "Match the accent to its name.", pairs: [["é", "accent aigu"], ["è", "accent grave"], ["ê", "accent circonflexe"], ["ç", "cédille"]] }
+        - { id: fr-w02-d1-g08, difficulty: medium, type: mcq, prompt: "Comment allez-vous ? — the best reply:", choices: ["Je vais bien, merci. Et vous ?", "Ça va. Et toi ?", "Je m'appelle bien.", "De rien."], answer: 0 }
+        - { id: fr-w02-d1-g09, difficulty: medium, type: mcq, prompt: "You leave the office at 7 pm. You say to the guard…", choices: ["Bonne soirée !", "Bonjour !", "Bonne journée !", "Enchanté !"], answer: 0 }
+        - { id: fr-w02-d1-g10, difficulty: medium, type: text, prompt: "Write the digits of \"zéro, huit, trois, neuf\".", accept: ["0839", "0 8 3 9"] }
+        - { id: fr-w02-d1-g11, difficulty: medium, type: truefalse, prompt: "The final letters of \"Paris\" and \"petit\" are silent.", answer: true }
+        - { id: fr-w02-d1-g12, difficulty: medium, type: mcq, prompt: "Which pair shows the u / ou difference?", choices: ["tu / tout", "bon / bonne", "il / elle", "vous / nous"], answer: 0 }
+        - { id: fr-w02-d1-g13, difficulty: medium, type: mcq, prompt: "Someone holds the door for you. You say…", choices: ["Merci !", "De rien !", "Salut !", "Bonsoir !"], answer: 0 }
+        - { id: fr-w02-d1-g14, difficulty: medium, type: order, prompt: "Order the formal exchange.", items: ["Bonjour, Madame. Comment allez-vous ?", "Très bien, merci. Et vous ?", "Je vais bien, merci.", "Au revoir, Madame. Bonne journée !"] }
+        - { id: fr-w02-d1-g15, difficulty: medium, type: mcq, prompt: "\"Please\" to a friend:", choices: ["S'il te plaît", "S'il vous plaît", "Merci", "De rien"], answer: 0 }
+        - { id: fr-w02-d1-g16, difficulty: hard, type: mcq, prompt: "What's wrong? A student says to an older stranger: « Salut ! Ça va ? Tu es Madame Leroy ? »", choices: ["Too familiar: use Bonjour, vous and Comment allez-vous", "Nothing", "Madame should be Monsieur", "Ça va must be Ça vais"], answer: 0 }
+        - { id: fr-w02-d1-g17, difficulty: hard, type: text, prompt: "Spell \"ça\" letter by letter in French, as you would on the phone (name the letters and the accent).", accept: ["c cédille a", "c cedille a", "c cédille, a", "c-cédille-a"], explain: "The cédille makes c sound like s." }
+        - { id: fr-w02-d1-g18, difficulty: hard, type: multi, prompt: "Which are polite in a French shop? (Select all.)", choices: ["Bonjour, Monsieur.", "S'il vous plaît.", "Merci, au revoir !", "Salut, toi !"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Être sprint"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fr-w02-d1-rf01, difficulty: easy, type: text, prompt: "je ___ (être)", accept: ["suis"] }
+          - { id: fr-w02-d1-rf02, difficulty: easy, type: text, prompt: "tu ___ (être)", accept: ["es"] }
+          - { id: fr-w02-d1-rf03, difficulty: easy, type: text, prompt: "il ___ (être)", accept: ["est"] }
+          - { id: fr-w02-d1-rf04, difficulty: easy, type: text, prompt: "nous ___ (être)", accept: ["sommes"] }
+          - { id: fr-w02-d1-rf05, difficulty: easy, type: text, prompt: "vous ___ (être)", accept: ["êtes"] }
+          - { id: fr-w02-d1-rf06, difficulty: easy, type: text, prompt: "elles ___ (être)", accept: ["sont"] }
+          - { id: fr-w02-d1-rf07, difficulty: easy, type: text, prompt: "on ___ (être)", accept: ["est"] }
+          - { id: fr-w02-d1-rf08, difficulty: easy, type: mcq, prompt: "on, in everyday French, means…", choices: ["we", "one person only", "they (women)", "you"], answer: 0 }
+          - { id: fr-w02-d1-rf09, difficulty: easy, type: mcq, prompt: "A group of 3 women and 1 man =", choices: ["ils", "elles", "on", "vous"], answer: 0 }
+          - { id: fr-w02-d1-rf10, difficulty: easy, type: mcq, prompt: "A group of only women =", choices: ["elles", "ils", "nous", "on"], answer: 0 }
+          - { id: fr-w02-d1-rf11, difficulty: easy, type: truefalse, prompt: "\"vous êtes\" has a liaison: voo-zet.", answer: true }
+      - kind: brain-teaser
+        title: "Who is it?"
+        questions:
+          - { id: fr-w02-d1-bt01, difficulty: medium, type: text, prompt: "Complete: Amina et moi, nous ___ à Abuja.", accept: ["sommes"] }
+          - { id: fr-w02-d1-bt02, difficulty: medium, type: mcq, prompt: "Which is correct?", choices: ["On est à Lagos.", "On sommes à Lagos.", "On êtes à Lagos.", "On sont à Lagos."], answer: 0, explain: "on always takes the il form, even when it means \"we\"." }
+          - { id: fr-w02-d1-bt03, difficulty: medium, type: match, prompt: "Match the subject to the verb.", pairs: [["Tu", "es prêt ?"], ["Vous", "êtes Monsieur Okafor ?"], ["Ils", "sont étudiants."], ["Nous", "sommes ici."]] }
+          - { id: fr-w02-d1-bt04, difficulty: hard, type: text, prompt: "Translate: They (women) are here.", accept: ["Elles sont ici.", "Elles sont ici", "Elles sont là.", "Elles sont là"] }
+          - { id: fr-w02-d1-bt05, difficulty: hard, type: mcq, prompt: "Why is there no liaison in \"ils sont\"?", choices: ["sont starts with a consonant", "ils is singular", "liaison only happens with être", "s is always silent"], answer: 0 }
+
+  # ─────────────────────────── DAY 2 ───────────────────────────
+  - day: 2
+    gate:
+      title: "Checkpoint: être and subject pronouns"
+      covers: "Week 2 · Day 1: être in all persons, ils/elles, on = we, liaison"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w02-d2-g01, difficulty: easy, type: text, prompt: "Nous ___ à Abuja. (être)", accept: ["sommes"] }
+        - { id: fr-w02-d2-g02, difficulty: easy, type: text, prompt: "Ils ___ étudiants. (être)", accept: ["sont"] }
+        - { id: fr-w02-d2-g03, difficulty: easy, type: text, prompt: "Vous ___ Monsieur Okafor ? (être)", accept: ["êtes"] }
+        - { id: fr-w02-d2-g04, difficulty: easy, type: text, prompt: "Tu ___ prêt ? (être)", accept: ["es"] }
+        - { id: fr-w02-d2-g05, difficulty: easy, type: mcq, prompt: "I am =", choices: ["je suis", "je es", "j'est", "je sommes"], answer: 0 }
+        - { id: fr-w02-d2-g06, difficulty: easy, type: truefalse, prompt: "elles is used only for a group of women.", answer: true }
+        - { id: fr-w02-d2-g07, difficulty: medium, type: text, prompt: "On ___ fatigués. (être)", accept: ["est"], explain: "on takes the il form." }
+        - { id: fr-w02-d2-g08, difficulty: medium, type: mcq, prompt: "Chidi and Ngozi (a man and a woman) → ___ sont à Enugu.", choices: ["Ils", "Elles", "On", "Nous"], answer: 0 }
+        - { id: fr-w02-d2-g09, difficulty: medium, type: order, prompt: "Order être: singular, then plural.", items: ["je suis", "tu es", "il est", "nous sommes", "vous êtes", "ils sont"] }
+        - { id: fr-w02-d2-g10, difficulty: medium, type: match, prompt: "Match.", pairs: [["je", "suis"], ["tu", "es"], ["nous", "sommes"], ["vous", "êtes"]] }
+        - { id: fr-w02-d2-g11, difficulty: medium, type: mcq, prompt: "Which two forms sound the same?", choices: ["tu es / il est", "je suis / nous sommes", "vous êtes / ils sont", "il est / ils sont"], answer: 0 }
+        - { id: fr-w02-d2-g12, difficulty: medium, type: text, prompt: "Translate: We are in Lagos. (use on)", accept: ["On est à Lagos.", "On est à Lagos"] }
+        - { id: fr-w02-d2-g13, difficulty: medium, type: mcq, prompt: "vous can mean…", choices: ["you (formal) or you (plural)", "only we", "only they", "only you (a friend)"], answer: 0 }
+        - { id: fr-w02-d2-g14, difficulty: medium, type: truefalse, prompt: "\"Elles sont ici\" could describe Ada, Bisi and their brother.", answer: false, explain: "One man in the group makes it ils." }
+        - { id: fr-w02-d2-g15, difficulty: medium, type: text, prompt: "Translate: You (a friend) are ready?", accept: ["Tu es prêt ?", "Tu es prêt?", "Tu es prête ?", "Tu es prête?", "Tu es prêt", "Tu es prête"] }
+        - { id: fr-w02-d2-g16, difficulty: hard, type: mcq, prompt: "Spot the error: « Nous est étudiants et vous sont ici. »", choices: ["nous sommes … vous êtes", "étudiants needs a capital", "ici should be là", "No error"], answer: 0 }
+        - { id: fr-w02-d2-g17, difficulty: hard, type: text, prompt: "Translate: They (Funke and Kemi) are in Abuja.", accept: ["Elles sont à Abuja.", "Elles sont à Abuja"] }
+        - { id: fr-w02-d2-g18, difficulty: hard, type: multi, prompt: "Which sentences are correct? (Select all.)", choices: ["On est prêts.", "Vous êtes ici ?", "Ils est étudiants.", "Je suis à Lagos."], answers: [0, 1, 3] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Nationalities: masculine → feminine"
+        secondsPerQuestion: 10
+        questions:
+          - { id: fr-w02-d2-rf01, difficulty: easy, type: text, prompt: "nigérian → (feminine)", accept: ["nigériane"] }
+          - { id: fr-w02-d2-rf02, difficulty: easy, type: text, prompt: "français → (feminine)", accept: ["française"] }
+          - { id: fr-w02-d2-rf03, difficulty: easy, type: text, prompt: "canadien → (feminine)", accept: ["canadienne"] }
+          - { id: fr-w02-d2-rf04, difficulty: easy, type: text, prompt: "belge → (feminine)", accept: ["belge"] }
+          - { id: fr-w02-d2-rf05, difficulty: easy, type: text, prompt: "ghanéen → (feminine)", accept: ["ghanéenne"] }
+          - { id: fr-w02-d2-rf06, difficulty: easy, type: text, prompt: "anglais → (feminine)", accept: ["anglaise"] }
+          - { id: fr-w02-d2-rf07, difficulty: easy, type: text, prompt: "ivoirien → (feminine)", accept: ["ivoirienne"] }
+          - { id: fr-w02-d2-rf08, difficulty: easy, type: text, prompt: "sénégalais → (feminine)", accept: ["sénégalaise"] }
+          - { id: fr-w02-d2-rf09, difficulty: easy, type: text, prompt: "suisse → (feminine)", accept: ["suisse"] }
+          - { id: fr-w02-d2-rf10, difficulty: easy, type: truefalse, prompt: "Nationality adjectives take a capital letter: Je suis Nigérian.", answer: false }
+          - { id: fr-w02-d2-rf11, difficulty: easy, type: mcq, prompt: "Plural adjectives usually add…", choices: ["a silent -s", "-x", "-es always", "nothing"], answer: 0 }
+      - kind: brain-teaser
+        title: "Make it agree"
+        questions:
+          - { id: fr-w02-d2-bt01, difficulty: medium, type: text, prompt: "Marie et Claire sont (français) ___.", accept: ["françaises"] }
+          - { id: fr-w02-d2-bt02, difficulty: medium, type: text, prompt: "Nous sommes (canadien) ___. (a group of women)", accept: ["canadiennes"] }
+          - { id: fr-w02-d2-bt03, difficulty: medium, type: mcq, prompt: "Which one ends with a \"z\" sound?", choices: ["française", "français", "nigérian", "canadien"], answer: 0 }
+          - { id: fr-w02-d2-bt04, difficulty: hard, type: text, prompt: "Translate: Amina and Kofi are Ghanaian.", accept: ["Amina et Kofi sont ghanéens.", "Amina et Kofi sont ghanéens"], explain: "A mixed group takes the masculine plural." }
+          - { id: fr-w02-d2-bt05, difficulty: hard, type: mcq, prompt: "Spot the error: « Elle est camerounais et ils sont belges. »", choices: ["camerounais → camerounaise", "belges → belge", "est → sont", "No error"], answer: 0 }
+
+  # ─────────────────────────── DAY 3 ───────────────────────────
+  - day: 3
+    gate:
+      title: "Checkpoint: nationalities and agreement"
+      covers: "Week 2 · Day 2: masculine/feminine/plural nationalities, -ien → -ienne, -e stays, no capitals"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w02-d3-g01, difficulty: easy, type: mcq, prompt: "Amina est…", choices: ["nigériane", "nigérian", "nigérians", "Nigériane"], answer: 0 }
+        - { id: fr-w02-d3-g02, difficulty: easy, type: mcq, prompt: "Kofi est…", choices: ["ghanéen", "ghanéenne", "ghanéens", "Ghanéen"], answer: 0 }
+        - { id: fr-w02-d3-g03, difficulty: easy, type: text, prompt: "américain → (feminine)", accept: ["américaine"] }
+        - { id: fr-w02-d3-g04, difficulty: easy, type: truefalse, prompt: "belge is the same in masculine and feminine.", answer: true }
+        - { id: fr-w02-d3-g05, difficulty: easy, type: mcq, prompt: "Feminine of canadien:", choices: ["canadienne", "canadiene", "canadiense", "canadienes"], answer: 0 }
+        - { id: fr-w02-d3-g06, difficulty: easy, type: mcq, prompt: "Most feminine adjectives…", choices: ["add -e", "add -s", "drop the last letter", "add -x"], answer: 0 }
+        - { id: fr-w02-d3-g07, difficulty: medium, type: text, prompt: "Elles sont (ivoirien) ___.", accept: ["ivoiriennes"] }
+        - { id: fr-w02-d3-g08, difficulty: medium, type: text, prompt: "Ils sont (sénégalais) ___.", accept: ["sénégalais"], explain: "Already ends in -s: the plural doesn't change." }
+        - { id: fr-w02-d3-g09, difficulty: medium, type: match, prompt: "Match masculine → feminine.", pairs: [["camerounais", "camerounaise"], ["ivoirien", "ivoirienne"], ["ghanéen", "ghanéenne"], ["suisse", "suisse"]] }
+        - { id: fr-w02-d3-g10, difficulty: medium, type: mcq, prompt: "In which pair does the ending sound change?", choices: ["anglais / anglaise", "belge / belge", "suisse / suisse", "nigérians / nigérian"], answer: 0 }
+        - { id: fr-w02-d3-g11, difficulty: medium, type: text, prompt: "Translate: She is Canadian.", accept: ["Elle est canadienne.", "Elle est canadienne"] }
+        - { id: fr-w02-d3-g12, difficulty: medium, type: mcq, prompt: "Bisi (a woman) says: « Je suis… »", choices: ["nigériane", "nigérian", "nigérianne", "Nigériane"], answer: 0 }
+        - { id: fr-w02-d3-g13, difficulty: medium, type: truefalse, prompt: "The plural -s of nigérians is pronounced.", answer: false }
+        - { id: fr-w02-d3-g14, difficulty: medium, type: text, prompt: "Translate: We (women) are French. (use nous)", accept: ["Nous sommes françaises.", "Nous sommes françaises"] }
+        - { id: fr-w02-d3-g15, difficulty: medium, type: mcq, prompt: "Ada and Emeka →", choices: ["Ils sont nigérians.", "Elles sont nigérianes.", "Ils sont nigérianes.", "Ils est nigérians."], answer: 0 }
+        - { id: fr-w02-d3-g16, difficulty: hard, type: mcq, prompt: "Spot the error: « Marie est Française et Paul est belge. »", choices: ["Française → française (no capital)", "belge → belgee", "est → sont", "No error"], answer: 0 }
+        - { id: fr-w02-d3-g17, difficulty: hard, type: text, prompt: "Translate: They (Awa and Fatou) are Senegalese.", accept: ["Elles sont sénégalaises.", "Elles sont sénégalaises"] }
+        - { id: fr-w02-d3-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["Elle est suisse.", "Ils sont canadiens.", "Elle est ghanéene.", "Nous sommes anglaises."], answers: [0, 1, 3], explain: "ghanéen → ghanéenne (double n)." }
+    quizzes:
+      - kind: rapid-fire
+        title: "en, au, aux or à?"
+        secondsPerQuestion: 7
+        questions:
+          - { id: fr-w02-d3-rf01, difficulty: easy, type: mcq, prompt: "___ Nigeria", choices: ["au", "en", "aux", "à"], answer: 0 }
+          - { id: fr-w02-d3-rf02, difficulty: easy, type: mcq, prompt: "___ France", choices: ["en", "au", "aux", "à"], answer: 0 }
+          - { id: fr-w02-d3-rf03, difficulty: easy, type: mcq, prompt: "___ Lagos", choices: ["à", "au", "en", "aux"], answer: 0 }
+          - { id: fr-w02-d3-rf04, difficulty: easy, type: mcq, prompt: "___ États-Unis", choices: ["aux", "au", "en", "à"], answer: 0 }
+          - { id: fr-w02-d3-rf05, difficulty: easy, type: mcq, prompt: "___ Canada", choices: ["au", "en", "à", "aux"], answer: 0 }
+          - { id: fr-w02-d3-rf06, difficulty: easy, type: mcq, prompt: "___ Belgique", choices: ["en", "au", "à", "aux"], answer: 0 }
+          - { id: fr-w02-d3-rf07, difficulty: easy, type: mcq, prompt: "___ Montréal", choices: ["à", "au", "en", "aux"], answer: 0 }
+          - { id: fr-w02-d3-rf08, difficulty: easy, type: mcq, prompt: "___ Sénégal", choices: ["au", "en", "à", "aux"], answer: 0 }
+          - { id: fr-w02-d3-rf09, difficulty: easy, type: mcq, prompt: "___ Côte d'Ivoire", choices: ["en", "au", "à", "aux"], answer: 0 }
+          - { id: fr-w02-d3-rf10, difficulty: easy, type: mcq, prompt: "___ Ghana", choices: ["au", "en", "à", "aux"], answer: 0 }
+          - { id: fr-w02-d3-rf11, difficulty: easy, type: mcq, prompt: "___ Toronto", choices: ["à", "au", "en", "aux"], answer: 0 }
+          - { id: fr-w02-d3-rf12, difficulty: easy, type: mcq, prompt: "___ Angleterre", choices: ["en", "au", "à", "aux"], answer: 0 }
+      - kind: brain-teaser
+        title: "Where in the world?"
+        questions:
+          - { id: fr-w02-d3-bt01, difficulty: medium, type: text, prompt: "Elle habite ___ Dakar, ___ Sénégal. (two words, separated by a comma)", accept: ["à, au", "à,au", "à au"] }
+          - { id: fr-w02-d3-bt02, difficulty: medium, type: text, prompt: "Translate: I am in Lagos, in Nigeria.", accept: ["Je suis à Lagos, au Nigeria.", "Je suis à Lagos, au Nigeria", "Je suis à Lagos au Nigeria."] }
+          - { id: fr-w02-d3-bt03, difficulty: medium, type: mcq, prompt: "I'm from Ibadan =", choices: ["Je suis d'Ibadan.", "Je suis à Ibadan.", "Je suis au Ibadan.", "Je suis en Ibadan."], answer: 0, explain: "de + city = from; de becomes d' before a vowel." }
+          - { id: fr-w02-d3-bt04, difficulty: hard, type: mcq, prompt: "Why is it en France but au Canada?", choices: ["France is feminine (ends in -e); Canada is masculine", "France is in Europe", "Canada is plural", "It's random; no rule"], answer: 0 }
+          - { id: fr-w02-d3-bt05, difficulty: hard, type: text, prompt: "Translate: We work in the United States. (nous travaillons)", accept: ["Nous travaillons aux États-Unis.", "Nous travaillons aux États-Unis"] }
+
+  # ─────────────────────────── DAY 4 ───────────────────────────
+  - day: 4
+    gate:
+      title: "Checkpoint: countries and cities"
+      covers: "Week 2 · Day 3: en (feminine), au (masculine), aux (plural), à (city), de + city"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w02-d4-g01, difficulty: easy, type: mcq, prompt: "Je travaille ___ Canada.", choices: ["au", "en", "à", "aux"], answer: 0 }
+        - { id: fr-w02-d4-g02, difficulty: easy, type: mcq, prompt: "Ils sont ___ France.", choices: ["en", "au", "à", "aux"], answer: 0 }
+        - { id: fr-w02-d4-g03, difficulty: easy, type: mcq, prompt: "Tu es ___ Montréal ?", choices: ["à", "au", "en", "aux"], answer: 0 }
+        - { id: fr-w02-d4-g04, difficulty: easy, type: mcq, prompt: "Nous sommes ___ États-Unis.", choices: ["aux", "au", "en", "à"], answer: 0 }
+        - { id: fr-w02-d4-g05, difficulty: easy, type: truefalse, prompt: "Cities always take à.", answer: true }
+        - { id: fr-w02-d4-g06, difficulty: easy, type: mcq, prompt: "Most countries ending in -e are…", choices: ["feminine", "masculine", "plural", "cities"], answer: 0 }
+        - { id: fr-w02-d4-g07, difficulty: medium, type: match, prompt: "Match the place to its word.", pairs: [["Belgique", "en"], ["Bénin", "au"], ["États-Unis", "aux"], ["Abuja", "à"]] }
+        - { id: fr-w02-d4-g08, difficulty: medium, type: text, prompt: "Translate: She lives in Toronto. (habite)", accept: ["Elle habite à Toronto.", "Elle habite à Toronto"] }
+        - { id: fr-w02-d4-g09, difficulty: medium, type: text, prompt: "Translate: I live in Canada. (j'habite)", accept: ["J'habite au Canada.", "J'habite au Canada"] }
+        - { id: fr-w02-d4-g10, difficulty: medium, type: mcq, prompt: "« Je suis de Lagos » means…", choices: ["I'm from Lagos", "I'm in Lagos", "I'm going to Lagos", "I love Lagos"], answer: 0 }
+        - { id: fr-w02-d4-g11, difficulty: medium, type: mcq, prompt: "Ils habitent ___ Cameroun.", choices: ["au", "en", "à", "aux"], answer: 0 }
+        - { id: fr-w02-d4-g12, difficulty: medium, type: mcq, prompt: "Elle est ___ Côte d'Ivoire.", choices: ["en", "au", "à la", "aux"], answer: 0 }
+        - { id: fr-w02-d4-g13, difficulty: medium, type: truefalse, prompt: "« Je suis en Lagos » is correct.", answer: false, explain: "Cities take à: à Lagos." }
+        - { id: fr-w02-d4-g14, difficulty: medium, type: text, prompt: "Je voudrais habiter ___ Canada, ___ Montréal. (two words, comma)", accept: ["au, à", "au,à", "au à"] }
+        - { id: fr-w02-d4-g15, difficulty: medium, type: mcq, prompt: "« Je voudrais » means…", choices: ["I would like", "I want to go", "I live", "I am from"], answer: 0 }
+        - { id: fr-w02-d4-g16, difficulty: hard, type: text, prompt: "Translate: I am from Enugu but I live in Lagos, in Nigeria.", accept: ["Je suis d'Enugu, mais j'habite à Lagos, au Nigeria.", "Je suis d'Enugu mais j'habite à Lagos, au Nigeria.", "Je suis d'Enugu, mais j'habite à Lagos au Nigeria.", "Je suis d'Enugu mais j'habite à Lagos au Nigeria."] }
+        - { id: fr-w02-d4-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « Il habite au Paris, en France. »", choices: ["au Paris → à Paris", "en France → au France", "habite → habitez", "No error"], answer: 0 }
+        - { id: fr-w02-d4-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["aux États-Unis", "au Sénégal", "en Angleterre", "au Belgique"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Numbers 11–20 and languages"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fr-w02-d4-rf01, difficulty: easy, type: text, prompt: "11", accept: ["onze"] }
+          - { id: fr-w02-d4-rf02, difficulty: easy, type: text, prompt: "12", accept: ["douze"] }
+          - { id: fr-w02-d4-rf03, difficulty: easy, type: text, prompt: "13", accept: ["treize"] }
+          - { id: fr-w02-d4-rf04, difficulty: easy, type: text, prompt: "14", accept: ["quatorze"] }
+          - { id: fr-w02-d4-rf05, difficulty: easy, type: text, prompt: "15", accept: ["quinze"] }
+          - { id: fr-w02-d4-rf06, difficulty: easy, type: text, prompt: "16", accept: ["seize"] }
+          - { id: fr-w02-d4-rf07, difficulty: easy, type: text, prompt: "17", accept: ["dix-sept", "dix sept"] }
+          - { id: fr-w02-d4-rf08, difficulty: easy, type: text, prompt: "18", accept: ["dix-huit", "dix huit"] }
+          - { id: fr-w02-d4-rf09, difficulty: easy, type: text, prompt: "19", accept: ["dix-neuf", "dix neuf"] }
+          - { id: fr-w02-d4-rf10, difficulty: easy, type: text, prompt: "20", accept: ["vingt"] }
+          - { id: fr-w02-d4-rf11, difficulty: easy, type: mcq, prompt: "I speak English.", choices: ["Je parle anglais.", "Je suis anglais.", "Je parle Anglais.", "Je parle l'anglaise."], answer: 0 }
+      - kind: brain-teaser
+        title: "Count and speak"
+        questions:
+          - { id: fr-w02-d4-bt01, difficulty: medium, type: text, prompt: "douze + cinq = ? (in words)", accept: ["dix-sept", "dix sept"] }
+          - { id: fr-w02-d4-bt02, difficulty: medium, type: text, prompt: "vingt − six = ? (in words)", accept: ["quatorze"] }
+          - { id: fr-w02-d4-bt03, difficulty: medium, type: order, prompt: "Count up.", items: ["quatorze", "quinze", "seize", "dix-sept", "dix-huit"] }
+          - { id: fr-w02-d4-bt04, difficulty: hard, type: text, prompt: "Translate: I speak English, Yoruba and a little French.", accept: ["Je parle anglais, yoruba et un peu français.", "Je parle anglais, yoruba et un peu français", "Je parle anglais, yoruba et un peu de français."] }
+          - { id: fr-w02-d4-bt05, difficulty: hard, type: mcq, prompt: "Which letters are silent in vingt?", choices: ["g and t", "only t", "v and g", "none"], answer: 0 }
+
+  # ─────────────────────────── DAY 5 ───────────────────────────
+  - day: 5
+    gate:
+      title: "Checkpoint: languages and numbers 11–20"
+      covers: "Week 2 · Day 4: je parle + language, un peu, numbers 11–20"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w02-d5-g01, difficulty: easy, type: text, prompt: "15 in words", accept: ["quinze"] }
+        - { id: fr-w02-d5-g02, difficulty: easy, type: text, prompt: "12 in words", accept: ["douze"] }
+        - { id: fr-w02-d5-g03, difficulty: easy, type: text, prompt: "20 in words", accept: ["vingt"] }
+        - { id: fr-w02-d5-g04, difficulty: easy, type: mcq, prompt: "Je parle un peu français =", choices: ["I speak a little French", "I speak French well", "I don't speak French", "I'm a little French"], answer: 0 }
+        - { id: fr-w02-d5-g05, difficulty: easy, type: mcq, prompt: "Vous parlez anglais ? =", choices: ["Do you speak English?", "Are you English?", "You speak English!", "Where is England?"], answer: 0 }
+        - { id: fr-w02-d5-g06, difficulty: easy, type: truefalse, prompt: "Language names are the masculine nationality word: le français, l'anglais.", answer: true }
+        - { id: fr-w02-d5-g07, difficulty: medium, type: text, prompt: "17 in words", accept: ["dix-sept", "dix sept"] }
+        - { id: fr-w02-d5-g08, difficulty: medium, type: text, prompt: "19 in words", accept: ["dix-neuf", "dix neuf"] }
+        - { id: fr-w02-d5-g09, difficulty: medium, type: match, prompt: "Match.", pairs: [["onze", "11"], ["treize", "13"], ["seize", "16"], ["quatorze", "14"]] }
+        - { id: fr-w02-d5-g10, difficulty: medium, type: text, prompt: "Translate: I speak Igbo and English.", accept: ["Je parle igbo et anglais.", "Je parle igbo et anglais", "Je parle l'igbo et l'anglais."] }
+        - { id: fr-w02-d5-g11, difficulty: medium, type: mcq, prompt: "Which numbers are \"ten-seven, ten-eight, ten-nine\"?", choices: ["17, 18, 19", "11, 12, 13", "14, 15, 16", "70, 80, 90"], answer: 0 }
+        - { id: fr-w02-d5-g12, difficulty: medium, type: mcq, prompt: "Hausa in French:", choices: ["le haoussa", "le hausais", "l'haussaise", "le Hausa"], answer: 0 }
+        - { id: fr-w02-d5-g13, difficulty: medium, type: text, prompt: "dix + huit = ? (in words)", accept: ["dix-huit", "dix huit"] }
+        - { id: fr-w02-d5-g14, difficulty: medium, type: truefalse, prompt: "« Je parle Français » is correctly written.", answer: false, explain: "No capital: je parle français." }
+        - { id: fr-w02-d5-g15, difficulty: medium, type: order, prompt: "Count backwards.", items: ["vingt", "dix-neuf", "dix-huit", "dix-sept", "seize"] }
+        - { id: fr-w02-d5-g16, difficulty: hard, type: text, prompt: "seize − quatre = ? (in words)", accept: ["douze"] }
+        - { id: fr-w02-d5-g17, difficulty: hard, type: text, prompt: "Translate: Do you speak Pidgin? (vous)", accept: ["Vous parlez pidgin ?", "Vous parlez pidgin?", "Vous parlez pidgin", "Est-ce que vous parlez pidgin ?", "Vous parlez le pidgin ?"] }
+        - { id: fr-w02-d5-g18, difficulty: hard, type: multi, prompt: "Which are spelled correctly? (Select all.)", choices: ["quatorze", "quinze", "seise", "treize"], answers: [0, 1, 3] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Questions and jobs"
+        secondsPerQuestion: 9
+        questions:
+          - { id: fr-w02-d5-rf01, difficulty: easy, type: mcq, prompt: "I'm an engineer.", choices: ["Je suis ingénieur.", "Je suis un ingénieur.", "Je suis l'ingénieur.", "J'ingénieur."], answer: 0 }
+          - { id: fr-w02-d5-rf02, difficulty: easy, type: text, prompt: "étudiant → (feminine)", accept: ["étudiante"] }
+          - { id: fr-w02-d5-rf03, difficulty: easy, type: text, prompt: "infirmier → (feminine)", accept: ["infirmière"] }
+          - { id: fr-w02-d5-rf04, difficulty: easy, type: text, prompt: "développeur → (feminine)", accept: ["développeuse"] }
+          - { id: fr-w02-d5-rf05, difficulty: easy, type: text, prompt: "comptable → (feminine)", accept: ["comptable"] }
+          - { id: fr-w02-d5-rf06, difficulty: easy, type: mcq, prompt: "Question starter that's always correct", choices: ["Est-ce que", "Qu'est", "Où", "Si"], answer: 0 }
+          - { id: fr-w02-d5-rf07, difficulty: easy, type: mcq, prompt: "Yes, to a negative question", choices: ["Si", "Oui", "Non", "Ça"], answer: 0 }
+          - { id: fr-w02-d5-rf08, difficulty: easy, type: mcq, prompt: "médecin =", choices: ["doctor", "nurse", "accountant", "trader"], answer: 0 }
+          - { id: fr-w02-d5-rf09, difficulty: easy, type: mcq, prompt: "commerçant =", choices: ["trader / shopkeeper", "teacher", "engineer", "student"], answer: 0 }
+          - { id: fr-w02-d5-rf10, difficulty: easy, type: truefalse, prompt: "« Tu es nigérian ? » with rising intonation is a real question.", answer: true }
+          - { id: fr-w02-d5-rf11, difficulty: easy, type: mcq, prompt: "est-ce que + elle =", choices: ["est-ce qu'elle", "est-ce que elle", "est-ce qu elle", "est-ce elle"], answer: 0 }
+      - kind: brain-teaser
+        title: "Ask it two ways"
+        questions:
+          - { id: fr-w02-d5-bt01, difficulty: medium, type: text, prompt: "Turn into an est-ce que question: Vous êtes médecin.", accept: ["Est-ce que vous êtes médecin ?", "Est-ce que vous êtes médecin?", "Est-ce que vous êtes médecin"] }
+          - { id: fr-w02-d5-bt02, difficulty: medium, type: text, prompt: "Turn into an est-ce que question: Elle est canadienne.", accept: ["Est-ce qu'elle est canadienne ?", "Est-ce qu'elle est canadienne?", "Est-ce qu'elle est canadienne"] }
+          - { id: fr-w02-d5-bt03, difficulty: medium, type: mcq, prompt: "Tu n'es pas français ? — (You ARE French.)", choices: ["Si !", "Oui !", "Non !", "Ça va !"], answer: 0 }
+          - { id: fr-w02-d5-bt04, difficulty: hard, type: text, prompt: "Translate: Are you a nurse? (vous, to a woman, with est-ce que)", accept: ["Est-ce que vous êtes infirmière ?", "Est-ce que vous êtes infirmière?", "Est-ce que vous êtes infirmière"] }
+          - { id: fr-w02-d5-bt05, difficulty: hard, type: mcq, prompt: "Qu'est-ce que vous faites dans la vie ? — best answer:", choices: ["Je suis comptable.", "Je suis un comptable.", "Je fais bien.", "Je suis à Lagos."], answer: 0 }
+
+  # ─────────────────────────── DAY 6 ───────────────────────────
+  - day: 6
+    gate:
+      title: "Checkpoint: questions and jobs"
+      covers: "Week 2 · Day 5: intonation and est-ce que questions, si, jobs with no article, masculine/feminine jobs"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w02-d6-g01, difficulty: easy, type: mcq, prompt: "She's a student.", choices: ["Elle est étudiante.", "Elle est une étudiante.", "Elle est étudiant.", "Elle étudiante."], answer: 0 }
+        - { id: fr-w02-d6-g02, difficulty: easy, type: mcq, prompt: "Which makes any statement a question?", choices: ["Est-ce que + statement", "Si + statement", "Oui + statement", "Que + statement"], answer: 0 }
+        - { id: fr-w02-d6-g03, difficulty: easy, type: text, prompt: "infirmier → (feminine)", accept: ["infirmière"] }
+        - { id: fr-w02-d6-g04, difficulty: easy, type: truefalse, prompt: "We don't use un/une between être and a job.", answer: true }
+        - { id: fr-w02-d6-g05, difficulty: easy, type: mcq, prompt: "médecin (feminine) =", choices: ["médecin", "médecine", "médecinne", "médecienne"], answer: 0 }
+        - { id: fr-w02-d6-g06, difficulty: easy, type: mcq, prompt: "Oui / Non / Si: answer \"yes\" to « Vous êtes ingénieur ? »", choices: ["Oui", "Si", "Non", "Ça"], answer: 0 }
+        - { id: fr-w02-d6-g07, difficulty: medium, type: text, prompt: "Turn into an est-ce que question: Tu parles français.", accept: ["Est-ce que tu parles français ?", "Est-ce que tu parles français?", "Est-ce que tu parles français"] }
+        - { id: fr-w02-d6-g08, difficulty: medium, type: match, prompt: "Match masculine → feminine.", pairs: [["développeur", "développeuse"], ["professeur", "professeure"], ["commerçant", "commerçante"], ["ingénieur", "ingénieure"]] }
+        - { id: fr-w02-d6-g09, difficulty: medium, type: mcq, prompt: "Est-ce que + il =", choices: ["Est-ce qu'il", "Est-ce que il", "Est-ce qu il", "Est-il que"], answer: 0 }
+        - { id: fr-w02-d6-g10, difficulty: medium, type: text, prompt: "Translate: I am a developer. (a man speaking)", accept: ["Je suis développeur.", "Je suis développeur"] }
+        - { id: fr-w02-d6-g11, difficulty: medium, type: mcq, prompt: "Which question is the most casual (spoken)?", choices: ["Tu es médecin ?", "Est-ce que vous êtes médecin ?", "Êtes-vous médecin ?", "Est-ce que tu es médecin ?"], answer: 0 }
+        - { id: fr-w02-d6-g12, difficulty: medium, type: truefalse, prompt: "« Je suis un comptable » is the natural way to state your job.", answer: false }
+        - { id: fr-w02-d6-g13, difficulty: medium, type: mcq, prompt: "Vous n'êtes pas ingénieur ? — (You are one.)", choices: ["Si, je suis ingénieur.", "Oui, je suis ingénieur.", "Non, je suis ingénieur.", "Si, je suis un ingénieur."], answer: 0 }
+        - { id: fr-w02-d6-g14, difficulty: medium, type: text, prompt: "Translate: What do you do for a living? (vous)", accept: ["Qu'est-ce que vous faites dans la vie ?", "Qu'est-ce que vous faites dans la vie?", "Qu'est-ce que vous faites dans la vie"] }
+        - { id: fr-w02-d6-g15, difficulty: medium, type: order, prompt: "Build the question.", items: ["Est-ce que", "vous", "êtes", "professeur", "?"] }
+        - { id: fr-w02-d6-g16, difficulty: hard, type: text, prompt: "Translate: Is she an accountant? (with est-ce que)", accept: ["Est-ce qu'elle est comptable ?", "Est-ce qu'elle est comptable?", "Est-ce qu'elle est comptable"] }
+        - { id: fr-w02-d6-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « Est-ce que elle est une infirmière ? »", choices: ["que elle → qu'elle, and no une", "only que elle → qu'elle", "only remove une", "No error"], answer: 0 }
+        - { id: fr-w02-d6-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["Ngozi est comptable.", "Tunde est développeur.", "Bisi est un médecin.", "Elles sont étudiantes."], answers: [0, 1, 3] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Week 2 lightning round"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fr-w02-d6-rf01, difficulty: easy, type: text, prompt: "nous ___ (être)", accept: ["sommes"] }
+          - { id: fr-w02-d6-rf02, difficulty: easy, type: text, prompt: "vous ___ (être)", accept: ["êtes"] }
+          - { id: fr-w02-d6-rf03, difficulty: easy, type: text, prompt: "nigérian → (feminine)", accept: ["nigériane"] }
+          - { id: fr-w02-d6-rf04, difficulty: easy, type: mcq, prompt: "___ Canada", choices: ["au", "en", "à", "aux"], answer: 0 }
+          - { id: fr-w02-d6-rf05, difficulty: easy, type: mcq, prompt: "___ France", choices: ["en", "au", "à", "aux"], answer: 0 }
+          - { id: fr-w02-d6-rf06, difficulty: easy, type: mcq, prompt: "___ Abuja", choices: ["à", "au", "en", "aux"], answer: 0 }
+          - { id: fr-w02-d6-rf07, difficulty: easy, type: text, prompt: "18", accept: ["dix-huit", "dix huit"] }
+          - { id: fr-w02-d6-rf08, difficulty: easy, type: text, prompt: "14", accept: ["quatorze"] }
+          - { id: fr-w02-d6-rf09, difficulty: easy, type: mcq, prompt: "I'm a nurse (woman).", choices: ["Je suis infirmière.", "Je suis une infirmière.", "Je suis infirmier.", "Je infirmière."], answer: 0 }
+          - { id: fr-w02-d6-rf10, difficulty: easy, type: mcq, prompt: "on =", choices: ["we", "they", "you", "he only"], answer: 0 }
+          - { id: fr-w02-d6-rf11, difficulty: easy, type: truefalse, prompt: "canadien → canadienne doubles the n.", answer: true }
+      - kind: brain-teaser
+        title: "Fiche d'identité"
+        questions:
+          - { id: fr-w02-d6-bt01, difficulty: medium, type: match, prompt: "Match the form field to the answer.", pairs: [["Nationalité", "nigériane"], ["Ville", "Lagos"], ["Langues parlées", "anglais, igbo"], ["Profession", "comptable"]] }
+          - { id: fr-w02-d6-bt02, difficulty: medium, type: order, prompt: "Order Ngozi's introduction.", items: ["Bonjour ! Je m'appelle Ngozi Eze.", "Je suis nigériane.", "Je suis d'Enugu, mais j'habite à Lagos.", "Je parle anglais, igbo et un peu français.", "Je suis comptable."] }
+          - { id: fr-w02-d6-bt03, difficulty: hard, type: text, prompt: "Translate: I am Nigerian (a woman) and I live in Abuja.", accept: ["Je suis nigériane et j'habite à Abuja.", "Je suis nigériane et j'habite à Abuja"] }
+          - { id: fr-w02-d6-bt04, difficulty: hard, type: text, prompt: "Translate: I would like to live in Canada.", accept: ["Je voudrais habiter au Canada.", "Je voudrais habiter au Canada"] }
+          - { id: fr-w02-d6-bt05, difficulty: hard, type: mcq, prompt: "Find the sentence with NO mistake.", choices: ["Elles sont canadiennes et habitent à Toronto.", "Il est Ghanéen et habite au Accra.", "Je suis une développeuse en Lagos.", "Nous est français aux France."], answer: 0 }

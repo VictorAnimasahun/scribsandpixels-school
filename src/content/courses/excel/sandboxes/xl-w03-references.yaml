@@ -1,0 +1,48 @@
+# Week 3 · References & fill: $ locks, % of total, % change, and the mixed-reference grid.
+id: xl-w03-references
+kind: sheet
+title: "Lock it with $"
+description: "VAT from one rate cell, each order's share of the total, a % change, and a discount grid from ONE formula. Tasks check your answer and that your formula uses the right $ references."
+dataset:
+  file: sales_2025
+  rows: 10
+  columns: [Region, Product, Units, UnitPrice, DiscountPct]
+cells:
+  F1: NetSales
+  G1: VAT
+  H1: "% of total"
+  E12: Total
+  I1: VAT rate
+  J1: "7.5%"
+  I4: Jan net sales
+  J4: 43211125
+  I5: Dec net sales
+  J5: 109612345
+  I6: "% change"
+  L2: "Price ↓ / Discount →"
+  M2: "0%"
+  N2: "5%"
+  O2: "10%"
+  P2: "15%"
+  Q2: "20%"
+  L3: 7500
+  L4: 25500
+  L5: 145000
+  L6: 349000
+  L7: 649000
+cols: 17
+rows: 13
+formulaFill:
+  # NetSales is given (you built it in Week 2)
+  F: "=C{r}*D{r}*(1-E{r}/100)"
+tasks:
+  - { prompt: "G2: VAT on order 1, using the rate in J1 locked with $.", cell: G2, expect: 1087.5, formula: true, mustUse: ["$J$1"], hint: "=F2*$J$1" }
+  - { prompt: "Fill G down to row 11. G11 should still point at $J$1.", cell: G11, expect: 4961.25, formula: true, mustUse: ["$J$1"], hint: "Copy G2 down. Without the $, G11 would read J10 (empty) and give 0.", solutionFill: { G: "=F{r}*$J$1" } }
+  - { prompt: "F12: total net sales.", cell: F12, expect: 1327275, formula: true, hint: "=SUM(F2:F11)" }
+  - { prompt: "G12: total VAT.", cell: G12, expect: 99545.625, formula: true, hint: "=SUM(G2:G11)" }
+  - { prompt: "H2: order 1's share of total net sales, with the total locked.", cell: H2, expect: 0.010925, tolerance: 0.0001, formula: true, mustUse: ["$F$12"], hint: "=F2/$F$12" }
+  - { prompt: "Fill H down. H11 (Ibadan's printer paper) is about 5.0% of the total.", cell: H11, expect: 0.049839, tolerance: 0.0001, formula: true, mustUse: ["$F$12"], hint: "Copy H2 down to H11.", solutionFill: { H: "=F{r}/$F$12" } }
+  - { prompt: "J6: % change from January to December.", cell: J6, expect: 1.53667, tolerance: 0.0001, formula: true, solution: "=(J5-J4)/J4", hint: "=(J5-J4)/J4, which is +153.7%" }
+  - { prompt: "M3: ONE formula for the discounted price, with mixed references, so it can fill the whole grid.", cell: M3, expect: 7500, formula: true, mustUse: ["$L3", "M$2"], solution: "=$L3*(1-M$2)", hint: "=$L3*(1-M$2): column L locked (prices), row 2 locked (discounts)." }
+  - { prompt: "Fill M3 right and down to Q7. P5 = ₦145,000 at 15%.", cell: P5, expect: 123250, formula: true, mustUse: ["$L5", "P$2"], solution: "=$L5*(1-P$2)", hint: "Copy M3 across to Q3, then copy M3:Q3 down to row 7." }
+  - { prompt: "Q7 = ₦649,000 at 20%.", cell: Q7, expect: 519200, formula: true, mustUse: ["$L7", "Q$2"], solution: "=$L7*(1-Q$2)", hint: "If this is wrong, check which $ you put where in M3." }

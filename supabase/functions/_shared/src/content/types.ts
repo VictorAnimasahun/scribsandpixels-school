@@ -1,8 +1,9 @@
-export type ResourceKind = 'video' | 'reading' | 'interactive' | 'book' | 'practice'
+export type ResourceKind = 'video' | 'audio' | 'reading' | 'interactive' | 'book' | 'practice' | 'dataset'
 
 export type Resource = {
   title: string
-  url: string
+  /** Absent for offline resources such as printed books. */
+  url?: string
   kind: ResourceKind
   note?: string
 }

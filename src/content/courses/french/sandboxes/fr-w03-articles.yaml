@@ -1,0 +1,135 @@
+# Week 3 · Le monde autour de moi: un/une/des, le/la/l'/les, il y a, c'est, prepositions.
+id: fr-w03-articles
+kind: phrases
+title: "Où est la clé ?"
+description: "Put things on, under and next to each other. Pick the article: the builder checks gender and number, and turns le + vowel into l' and de + le into du for you."
+voice: fr-FR
+patterns:
+  - id: there-is
+    label: "Il y a… (there is / there are)"
+    slots:
+      - { id: start, fixed: "Il y a" }
+      - id: art
+        label: "a / some"
+        options:
+          - { text: "un", en: "a (masc.)", needs: { thing: [m, sg] }, why: "« un » is for a masculine singular noun." }
+          - { text: "une", en: "a (fem.)", needs: { thing: [f, sg] }, why: "« une » is for a feminine singular noun." }
+          - { text: "des", en: "some", needs: { thing: [pl] }, why: "« des » is for plural nouns, masculine or feminine." }
+      - id: thing
+        label: "Thing"
+        options:
+          - { text: "livre", en: "book", tags: [m, sg] }
+          - { text: "stylo", en: "pen", tags: [m, sg] }
+          - { text: "ordinateur", en: "computer", tags: [m, sg] }
+          - { text: "téléphone", en: "phone", tags: [m, sg] }
+          - { text: "sac", en: "bag", tags: [m, sg] }
+          - { text: "chaise", en: "chair", tags: [f, sg] }
+          - { text: "clé", en: "key", tags: [f, sg] }
+          - { text: "lampe", en: "lamp", tags: [f, sg] }
+          - { text: "bouteille d'eau", en: "bottle of water", tags: [f, sg] }
+          - { text: "livres", en: "books", tags: [m, pl] }
+          - { text: "stylos", en: "pens", tags: [m, pl] }
+          - { text: "clés", en: "keys", tags: [f, pl] }
+          - { text: "lunettes", en: "glasses (always plural)", tags: [f, pl] }
+      - &prep
+        id: prep
+        label: "Where"
+        options:
+          - { text: "sur", en: "on" }
+          - { text: "sous", en: "under" }
+          - { text: "dans", en: "in", needs: { place: [container] }, why: "« dans » (in) needs something you can put things inside." }
+          - { text: "devant", en: "in front of" }
+          - { text: "derrière", en: "behind" }
+          - { text: "à côté de", en: "next to" }
+      - &the
+        id: the
+        label: "the"
+        options:
+          - { text: "le", en: "the (masc.)", needs: { place: [m, sg] }, why: "« le » is for a masculine singular noun (it becomes l' before a vowel)." }
+          - { text: "la", en: "the (fem.)", needs: { place: [f, sg] }, why: "« la » is for a feminine singular noun (it becomes l' before a vowel)." }
+          - { text: "les", en: "the (plural)", needs: { place: [pl] }, why: "« les » is for plural nouns." }
+      - &place
+        id: place
+        label: "Place"
+        options:
+          - { text: "table", en: "table", tags: [f, sg] }
+          - { text: "chaise", en: "chair", tags: [f, sg] }
+          - { text: "fenêtre", en: "window", tags: [f, sg] }
+          - { text: "école", en: "school", tags: [f, sg, container] }
+          - { text: "lit", en: "bed", tags: [m, sg] }
+          - { text: "bureau", en: "desk / office", tags: [m, sg, container] }
+          - { text: "sac", en: "bag", tags: [m, sg, container] }
+          - { text: "ordinateur", en: "computer", tags: [m, sg] }
+          - { text: "tables", en: "tables", tags: [f, pl] }
+          - { text: "bureaux", en: "offices", tags: [m, pl, container] }
+      - { id: end, fixed: "." }
+
+  - id: where-is
+    label: "Le / la / les… est / sont… (where things are)"
+    slots:
+      - id: art
+        label: "the"
+        options:
+          - { text: "le", en: "the (masc.)", needs: { thing: [m, sg] }, why: "« le » is for a masculine singular noun (l' before a vowel)." }
+          - { text: "la", en: "the (fem.)", needs: { thing: [f, sg] }, why: "« la » is for a feminine singular noun." }
+          - { text: "les", en: "the (plural)", needs: { thing: [pl] }, why: "« les » is for plural nouns." }
+      - id: thing
+        label: "Thing"
+        options:
+          - { text: "téléphone", en: "phone", tags: [m, sg] }
+          - { text: "ordinateur", en: "computer", tags: [m, sg] }
+          - { text: "stylo", en: "pen", tags: [m, sg] }
+          - { text: "clé", en: "key", tags: [f, sg] }
+          - { text: "lampe", en: "lamp", tags: [f, sg] }
+          - { text: "lunettes", en: "glasses", tags: [f, pl] }
+          - { text: "clés", en: "keys", tags: [f, pl] }
+          - { text: "livres", en: "books", tags: [m, pl] }
+      - id: be
+        label: "is / are"
+        options:
+          - { text: "est", en: "is", needs: { thing: [sg] }, why: "« est » goes with one thing." }
+          - { text: "sont", en: "are", needs: { thing: [pl] }, why: "« sont » goes with plural things." }
+      - *prep
+      - *the
+      - *place
+      - { id: end, fixed: "." }
+
+  - id: what-is-it
+    label: "Qu'est-ce que c'est ? (what is it?)"
+    slots:
+      - id: it
+        label: "It's / they're"
+        options:
+          - { text: "C'est", en: "It's", needs: { thing: [sg] }, why: "« C'est » is for one thing." }
+          - { text: "Ce sont", en: "They're", needs: { thing: [pl] }, why: "« Ce sont » is for plural things." }
+      - id: art
+        label: "a / some"
+        options:
+          - { text: "un", needs: { thing: [m, sg] }, why: "« un » is for a masculine singular noun." }
+          - { text: "une", needs: { thing: [f, sg] }, why: "« une » is for a feminine singular noun." }
+          - { text: "des", needs: { thing: [pl] }, why: "« des » is for plural nouns." }
+      - id: thing
+        label: "Thing"
+        options:
+          - { text: "cahier", en: "notebook", tags: [m, sg] }
+          - { text: "ordinateur", en: "computer", tags: [m, sg] }
+          - { text: "lit", en: "bed", tags: [m, sg] }
+          - { text: "porte", en: "door", tags: [f, sg] }
+          - { text: "clé", en: "key", tags: [f, sg] }
+          - { text: "fenêtre", en: "window", tags: [f, sg] }
+          - { text: "clés", en: "keys", tags: [f, pl] }
+          - { text: "lunettes", en: "glasses", tags: [f, pl] }
+          - { text: "stylos", en: "pens", tags: [m, pl] }
+      - { id: end, fixed: "." }
+
+challenges:
+  - { prompt: "There is a bag under the chair.", pattern: there-is, answer: { art: "un", thing: "sac", prep: "sous", the: "la", place: "chaise" } }
+  - { prompt: "There are books on the desk.", pattern: there-is, answer: { art: "des", thing: "livres", prep: "sur", the: "le", place: "bureau" } }
+  - { prompt: "There is a bottle of water behind the computer.", pattern: there-is, answer: { art: "une", thing: "bouteille d'eau", prep: "derrière", the: "le", place: "ordinateur" } }
+  - { prompt: "There are keys next to the bed.", pattern: there-is, answer: { art: "des", thing: "clés", prep: "à côté de", the: "le", place: "lit" } }
+  - { prompt: "The glasses are in the bag.", pattern: where-is, answer: { art: "les", thing: "lunettes", be: "sont", prep: "dans", the: "le", place: "sac" } }
+  - { prompt: "The computer is next to the bed.", pattern: where-is, answer: { art: "le", thing: "ordinateur", be: "est", prep: "à côté de", the: "le", place: "lit" } }
+  - { prompt: "The phone is on the table.", pattern: where-is, answer: { art: "le", thing: "téléphone", be: "est", prep: "sur", the: "la", place: "table" } }
+  - { prompt: "The key is in front of the window.", pattern: where-is, answer: { art: "la", thing: "clé", be: "est", prep: "devant", the: "la", place: "fenêtre" } }
+  - { prompt: "What is it? It's a computer.", pattern: what-is-it, answer: { it: "C'est", art: "un", thing: "ordinateur" } }
+  - { prompt: "They're keys.", pattern: what-is-it, answer: { it: "Ce sont", art: "des", thing: "clés" } }

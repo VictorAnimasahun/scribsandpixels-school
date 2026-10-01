@@ -74,6 +74,10 @@ Add *un, une* or *des*:
 
 **Check:** 1. un 2. une 3. des 4. un 5. une 6. des 7. un
 
+**Sandbox:** build *Il y a…* sentences. Pick un / une / des and the builder tells you if the gender or number is wrong.
+
+::sandbox fr-w03-articles
+
 ### Speak & Listen (10 min)
 - Language Transfer tracks 23–24.
 - Walk around your room and name 10 things out loud: *une porte, un lit…*
@@ -110,6 +114,10 @@ Make these plural:
 1. le stylo  2. la clé  3. l'ordinateur  4. le bureau  5. le journal  6. le bus
 
 **Check:** 1. les stylos 2. les clés 3. les ordinateurs (liaison: *les_ordinateurs*) 4. les bureaux 5. les journaux 6. les bus
+
+**Sandbox:** switch to the *Le / la / les* tab. Choose *le* before *ordinateur* and watch it become *l'*.
+
+::sandbox fr-w03-articles
 
 ### Speak & Listen (10 min)
 - Language Transfer tracks 25–26.
@@ -149,6 +157,10 @@ Translate:
 4. There are books on the desk.
 
 **Check:** 1. *Il y a un sac sous la chaise.* 2. *Qu'est-ce que c'est ? C'est une clé.* 3. *Les lunettes sont dans le sac.* 4. *Il y a des livres sur le bureau.*
+
+**Sandbox:** do the challenges, then say each sentence aloud with 🎤. Try *à côté de* + *le lit* and see *du* appear.
+
+::sandbox fr-w03-articles
 
 ### Speak & Listen (10 min)
 - Language Transfer tracks 27–28.

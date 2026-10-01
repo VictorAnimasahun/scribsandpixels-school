@@ -52,8 +52,15 @@ export function buildSheetCells(sandbox: SheetSandbox, csv?: string): Record<str
 
 export const taskSolution = (task: SheetTask) => task.solution ?? (task.hint?.startsWith('=') ? task.hint : undefined)
 
+/** The `mustUse` pieces a formula is missing (case and spaces ignored). */
+export function missingParts(task: SheetTask, raw: string): string[] {
+  const squash = (t: string) => t.replace(/\s+/g, '').toUpperCase()
+  return (task.mustUse ?? []).filter((part) => !squash(raw).includes(squash(part)))
+}
+
 export function taskPassed(task: SheetTask, value: unknown, raw: string): boolean {
   if (task.formula && !raw.startsWith('=')) return false
+  if (missingParts(task, raw).length) return false
   if (typeof task.expect === 'number') return typeof value === 'number' && Math.abs(value - task.expect) <= (task.tolerance ?? 0.01)
   return String(value ?? '').trim().toLowerCase() === String(task.expect).trim().toLowerCase()
 }

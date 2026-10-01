@@ -1,0 +1,31 @@
+# Week 3 · Day 6 Python bridge
+id: py-w03-d6-html-generator
+kind: python
+title: "Python writes HTML"
+description: "Programs can build web pages: turn a Python list into HTML."
+starter: |
+  topics = ["Variables", "Loops", "Lists", "Functions", "HTML"]
+
+  # 1. Print a <ul> with one <li> per topic, each on its own line.
+
+  # 2. Write make_list(items) that RETURNS the same HTML as one string.
+
+  # 3. Write make_page(title, items) that returns a full page using make_list.
+tasks:
+  - prompt: "Loop over topics and print <ul>, then one <li>…</li> line per topic, then </ul>."
+    expectOutput: ["<ul>", "<li>Variables</li>", "<li>HTML</li>", "</ul>"]
+    hint: "for topic in topics: print(f\"<li>{topic}</li>\")"
+  - prompt: "make_list(items) returns the list as a string (don't print inside it)."
+    tests: |
+      html = make_list(["Rice", "Beans"])
+      assert isinstance(html, str), "make_list must return a string"
+      assert html.replace("\n", "").replace(" ", "") == "<ul><li>Rice</li><li>Beans</li></ul>", f"got {html!r}"
+      assert make_list([]).replace("\n", "").replace(" ", "") == "<ul></ul>", "an empty list gives <ul></ul>"
+  - prompt: "make_page(title, items) returns a page with <title>, an <h1> of the title and the list."
+    tests: |
+      page = make_page("My topics", ["A", "B"])
+      assert isinstance(page, str), "make_page must return a string"
+      assert "<title>My topics</title>" in page, "put the title in <title>"
+      assert "<h1>My topics</h1>" in page, "put the title in an <h1>"
+      assert "<li>A</li>" in page and "<li>B</li>" in page, "include the list"
+      assert "make_list(" in __code__.split("def make_page")[1], "make_page should call make_list"

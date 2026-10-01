@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "test": "vitest run",
     "sync:functions": "node scripts/sync-functions.ts",
-    "check:python": "node scripts/check-python-sandboxes.mjs"
+    "check:python": "node scripts/check-python-sandboxes.mjs",
+    "check:web": "node scripts/check-web-sandboxes.mjs"
   },
   "dependencies": {
     "@formulajs/formulajs": "^4.6.1",
@@ -27,6 +28,7 @@
     "@types/react-dom": "^19.2.4",
     "@vitejs/plugin-react": "^6.1.0",
     "oxlint": "^1.79.0",
+    "playwright-core": "^1.63.0",
     "typescript": "~6.0.2",
     "vite": "^8.2.2",
     "vitest": "^4.1.11"

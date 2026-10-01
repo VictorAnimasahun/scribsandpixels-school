@@ -25,10 +25,29 @@ export default function WebSandbox({ sandbox }: Props) {
   const [tab, setTab] = useState<Tab>('html')
   const [doc, setDoc] = useState('')
   const [logs, setLogs] = useState<{ level: string; text: string }[]>([])
+  const [results, setResults] = useState<boolean[] | null>(null)
+  const tasks = sandbox.tasks ?? []
+
+  const page = (extra = '') =>
+    `<!doctype html><html><head><meta charset="utf-8"><style>${files.css}</style>${bridge}</head><body>${files.html}<script>${files.js}</script>${extra}</body></html>`
 
   const render = () => {
     setLogs([])
-    setDoc(`<!doctype html><html><head><meta charset="utf-8"><style>${files.css}</style>${bridge}</head><body>${files.html}<script>${files.js}</script></body></html>`)
+    setDoc(page())
+  }
+
+  /** Re-render with a checker script that evaluates each task inside the page and reports back. */
+  const check = () => {
+    setLogs([])
+    setResults(null)
+    const checker = `<script>
+      window.addEventListener('load', () => setTimeout(() => {
+        const checks = ${JSON.stringify(tasks.map((t) => t.check)).replace(/</g, '\\u003c')};
+        const results = checks.map((src) => { try { return !!(0, eval)('(' + src + ')'); } catch (e) { return false; } });
+        parent.postMessage({ snpChecks: results }, '*');
+      }, 60));
+    </script>`
+    setDoc(page(checker))
   }
 
   useEffect(() => save(key, JSON.stringify(files)), [key, files])
@@ -37,6 +56,7 @@ export default function WebSandbox({ sandbox }: Props) {
   useEffect(() => {
     const onMessage = (e: MessageEvent) => {
       if (e.data?.snpConsole) setLogs((l) => [...l, { level: e.data.level, text: e.data.text }])
+      if (Array.isArray(e.data?.snpChecks)) setResults(e.data.snpChecks as boolean[])
     }
     window.addEventListener('message', onMessage)
     return () => window.removeEventListener('message', onMessage)
@@ -49,12 +69,25 @@ export default function WebSandbox({ sandbox }: Props) {
           <button key={t} className={tab === t ? 'on' : ''} onClick={() => setTab(t)}>{t.toUpperCase()}</button>
         ))}
         <button className="primary" onClick={render}>▶ Run</button>
+        {tasks.length > 0 && <button onClick={check}>✓ Check tasks</button>}
         <button onClick={() => { if (confirm('Reset all three files?')) setFiles({ html: sandbox.html ?? '', css: sandbox.css ?? '', js: sandbox.js ?? '' }) }}>Reset</button>
       </div>
       <CodeEditor key={tab} value={files[tab]} onChange={(v) => setFiles((f) => ({ ...f, [tab]: v }))} onRun={render} language={tab} rows={10} />
       <iframe className="preview" title="Preview" sandbox="allow-scripts allow-modals" srcDoc={doc} />
       <pre className="console small">{logs.length ? logs.map((l) => `${l.level === 'log' ? '›' : l.level === 'warn' ? '⚠' : '✖'} ${l.text}`).join('\n') : 'console.log output appears here.'}</pre>
-      {sandbox.tasks?.length ? <ol className="tasks">{sandbox.tasks.map((t, i) => <li key={i}>⬜ {t.prompt}</li>)}</ol> : null}
+      {tasks.length > 0 && (
+        <>
+          {results && <p className="muted small">{results.filter(Boolean).length} / {tasks.length} tasks done</p>}
+          <ol className="tasks">
+            {tasks.map((t, i) => (
+              <li key={i} className={results ? (results[i] ? 'pass' : 'fail') : ''}>
+                <span>{results ? (results[i] ? '✅' : '❌') : '⬜'} {t.prompt}</span>
+                {t.hint && results && !results[i] && <details><summary>💡 Hint</summary>{t.hint}</details>}
+              </li>
+            ))}
+          </ol>
+        </>
+      )}
     </div>
   )
 }

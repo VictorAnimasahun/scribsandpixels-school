@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import type { PhrasePattern } from '../content/sandboxes.ts'
-import { checkPhrase, joinFrench, remix, similarity } from './phrases.ts'
+import { checkPhrase, joinFrench, remix, similarity, tokensFor } from './phrases.ts'
 import { seededRandom } from './quizGate.ts'
 
 describe('joinFrench', () => {
@@ -59,5 +59,30 @@ describe('similarity', () => {
     expect(similarity('je voudrais du riz', 'Je voudrais du riz.')).toBe(1)
     expect(similarity('je voudrai du ri', 'Je voudrais du riz')).toBe(0.5)
     expect(similarity('ca va', 'Ça va ?')).toBe(1)
+  })
+})
+
+describe('fr-w03-articles challenges', () => {
+  it('produce correct French, with elision and de + le → du', async () => {
+    const { findSandbox } = await import('../content/sandboxes.ts')
+    const sandbox = findSandbox('fr-w03-articles')
+    if (sandbox?.kind !== 'phrases') throw new Error('fr-w03-articles missing')
+    const sentences = (sandbox.challenges ?? []).map((c) => {
+      const pattern = sandbox.patterns.find((p) => p.id === c.pattern)!
+      const chosen = Object.fromEntries(pattern.slots.flatMap((s) => ('fixed' in s ? [] : [[s.id, s.options.find((o) => o.text === c.answer[s.id])]])))
+      return joinFrench(tokensFor(pattern, chosen))
+    })
+    expect(sentences).toEqual([
+      'Il y a un sac sous la chaise.',
+      'Il y a des livres sur le bureau.',
+      "Il y a une bouteille d'eau derrière l'ordinateur.",
+      'Il y a des clés à côté du lit.',
+      'Les lunettes sont dans le sac.',
+      "L'ordinateur est à côté du lit.",
+      'Le téléphone est sur la table.',
+      'La clé est devant la fenêtre.',
+      "C'est un ordinateur.",
+      'Ce sont des clés.',
+    ])
   })
 })

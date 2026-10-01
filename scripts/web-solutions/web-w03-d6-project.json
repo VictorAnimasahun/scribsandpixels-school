@@ -1,0 +1,4 @@
+{
+  "html": "<div class=\"wrap\"><header><h1>Victor</h1><nav><a href=\"index.html\">Home</a> <a href=\"about.html\">About</a></nav></header><main><section class=\"card\"><img src=\"https://picsum.photos/300\" alt=\"Victor smiling\"><p>Hi!</p></section><section class=\"card\"><h2>What I'm learning</h2><ul><li>Python</li><li>HTML</li><li>CSS</li></ul></section></main><footer>&copy; 2026</footer></div>",
+  "css": ".wrap { max-width: 800px; margin: 0 auto; }\n.card { padding: 16px; border: 1px solid #ddd; border-radius: 8px; }"
+}

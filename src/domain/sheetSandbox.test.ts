@@ -30,3 +30,14 @@ describe('every Excel sandbox task is solvable and its expected answer is right'
     })
   }
 })
+
+describe('mustUse', () => {
+  const task = { prompt: 'VAT', cell: 'G2', expect: 1087.5, formula: true, mustUse: ['$J$1'] }
+  it('rejects a right value from a formula without the required $ reference', () => {
+    expect(taskPassed(task, 1087.5, '=F2*J1')).toBe(false)
+    expect(taskPassed(task, 1087.5, '=F2*0.075')).toBe(false)
+  })
+  it('accepts it with the reference, ignoring case and spaces', () => {
+    expect(taskPassed(task, 1087.5, '=f2 * $j$1')).toBe(true)
+  })
+})

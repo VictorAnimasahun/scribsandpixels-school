@@ -1,0 +1,20 @@
+# Week 3 · Day 1 mini-task
+id: web-w03-d1-first-page
+kind: web
+title: "Your first web page"
+description: "Write real HTML and watch the browser draw it."
+html: |
+  <!-- The sandbox already wraps your code in <html> and <body>. -->
+  <!-- Fill in the heading, then add the rest. -->
+  <h1></h1>
+css: ""
+js: ""
+tasks:
+  - prompt: "Give the page a <title> (any text). It shows in the browser tab, not on the page."
+    check: "(document.querySelector('title')?.textContent.trim().length ?? 0) > 0"
+    hint: "<title>My first page</title>"
+  - prompt: "Put your name in the <h1>."
+    check: "(document.querySelector('h1')?.textContent.trim().length ?? 0) > 1"
+  - prompt: "Add two paragraphs (<p>) under the heading: who you are, and why you're learning to code."
+    check: "[...document.querySelectorAll('p')].filter(p => p.textContent.trim().length > 3).length >= 2"
+    hint: "Each paragraph is its own <p>…</p> pair."

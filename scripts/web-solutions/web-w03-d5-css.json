@@ -1,0 +1,3 @@
+{
+  "css": "body { font-family: system-ui, sans-serif; }\nh1 { color: #164f3b; }\n.card { padding: 16px; border: 1px solid #ddd; border-radius: 8px; margin: 12px 0; }\n.price { font-weight: bold; }\n.page { max-width: 800px; margin: 0 auto; }"
+}

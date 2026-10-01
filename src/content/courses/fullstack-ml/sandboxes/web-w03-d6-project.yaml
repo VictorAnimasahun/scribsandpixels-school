@@ -1,0 +1,25 @@
+# Week 3 · Day 6 project (home page)
+id: web-w03-d6-project
+kind: web
+title: "About-me home page"
+description: "Your Phase 1 personal site, page one: structure and style together."
+html: |
+  <!-- Build your home page: header + nav, main with cards, footer -->
+css: |
+  /* Your styles */
+js: ""
+tasks:
+  - prompt: "A <header> containing an <h1> with your name, and a <nav> with at least two links."
+    check: "!!document.querySelector('header h1') && document.querySelectorAll('nav a[href]').length >= 2"
+  - prompt: "A <main> with at least two <section class=\"card\">."
+    check: "document.querySelectorAll('main section.card').length >= 2"
+  - prompt: "A \"What I'm learning\" list with at least 3 items."
+    check: "document.querySelectorAll('main ul > li, main ol > li').length >= 3"
+  - prompt: "A photo (any image URL) with descriptive alt text."
+    check: "[...document.querySelectorAll('img')].some(i => i.getAttribute('src') && (i.getAttribute('alt') || '').trim().split(/\\s+/).length >= 2)"
+  - prompt: "A <footer>."
+    check: "!!document.querySelector('footer')"
+  - prompt: "Style the cards: padding, a border and rounded corners."
+    check: "(() => { const c = document.querySelector('.card'); if (!c) return false; const s = getComputedStyle(c); return parseFloat(s.paddingTop) > 0 && s.borderTopStyle !== 'none' && parseFloat(s.borderTopLeftRadius) > 0 })()"
+  - prompt: "Keep lines readable: give the body or a wrapper a max-width."
+    check: "[document.body, ...document.body.querySelectorAll('*')].some(el => getComputedStyle(el).maxWidth !== 'none' && el.tagName !== 'IMG')"

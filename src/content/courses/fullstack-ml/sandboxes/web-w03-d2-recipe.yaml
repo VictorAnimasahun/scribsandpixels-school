@@ -1,0 +1,24 @@
+# Week 3 · Day 2 mini-task
+id: web-w03-d2-recipe
+kind: web
+title: "Recipe page"
+description: "Headings, paragraphs, lists and emphasis: structure a Nigerian recipe."
+html: |
+  <h1>Egusi Soup</h1>
+  <p>Write a sentence about the dish here.</p>
+css: |
+  body { font-family: system-ui, sans-serif; padding: 12px; }
+js: ""
+tasks:
+  - prompt: "Keep exactly one <h1>, and add at least two <h2> sections: Ingredients and Steps."
+    check: "document.querySelectorAll('h1').length === 1 && document.querySelectorAll('h2').length >= 2"
+  - prompt: "Under Ingredients, a bulleted list (<ul>) with at least 4 items."
+    check: "[...document.querySelectorAll('ul')].some(u => u.querySelectorAll(':scope > li').length >= 4)"
+    hint: "<ul> holds the list; each item is an <li>."
+  - prompt: "Under Steps, a numbered list (<ol>) with at least 3 steps."
+    check: "[...document.querySelectorAll('ol')].some(o => o.querySelectorAll(':scope > li').length >= 3)"
+  - prompt: "In a paragraph, make one word important (<strong>) and one emphasised (<em>)."
+    check: "!!document.querySelector('p strong') && !!document.querySelector('p em')"
+  - prompt: "Leave a comment for yourself somewhere (the browser hides it)."
+    check: "document.createTreeWalker(document.body, NodeFilter.SHOW_COMMENT).nextNode() !== null"
+    hint: "<!-- like this -->"

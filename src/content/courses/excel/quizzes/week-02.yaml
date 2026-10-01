@@ -1,0 +1,298 @@
+# Excel · Week 2 quizzes. Format and rules: src/content/QUIZZES.md
+week: 2
+days:
+
+  # ─────────────────────────── DAY 1 ───────────────────────────
+  - day: 1
+    gate:
+      title: "Checkpoint: Week 1 review"
+      covers: "Week 1: the Excel window, entering data, navigation shortcuts, sheets and file types, copy and Paste Special"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w02-d1-g01, difficulty: easy, type: mcq, prompt: "A1:C10 is a…", choices: ["range", "workbook", "sheet", "formula"], answer: 0 }
+        - { id: xl-w02-d1-g02, difficulty: easy, type: mcq, prompt: "Which key edits a cell without erasing it?", choices: ["F2", "F4", "Delete", "Esc"], answer: 0 }
+        - { id: xl-w02-d1-g03, difficulty: easy, type: mcq, prompt: "Go to A1", choices: ["Ctrl+Home", "Ctrl+End", "Ctrl+A", "Home"], answer: 0 }
+        - { id: xl-w02-d1-g04, difficulty: easy, type: truefalse, prompt: "Saving as .csv keeps your formulas and formatting.", answer: false, explain: "CSV keeps only the values of one sheet." }
+        - { id: xl-w02-d1-g05, difficulty: easy, type: mcq, prompt: "Where can you see the real content of a cell?", choices: ["The formula bar", "The status bar", "The Name Box", "The ribbon"], answer: 0 }
+        - { id: xl-w02-d1-g06, difficulty: easy, type: mcq, prompt: "Today's date shortcut", choices: ["Ctrl+;", "Ctrl+D", "Ctrl+T", "Ctrl+Shift+D"], answer: 0 }
+        - { id: xl-w02-d1-g07, difficulty: medium, type: mcq, prompt: "You type 08031234567 and Excel shows 8031234567. Fix?", choices: ["Type '08031234567 (apostrophe first)", "Format as currency", "Press F4", "Widen the column"], answer: 0 }
+        - { id: xl-w02-d1-g08, difficulty: medium, type: match, prompt: "Match the shortcut.", pairs: [["Ctrl+D", "fill down"], ["Ctrl+R", "fill right"], ["Ctrl+Shift+↓", "select to the bottom of the data"], ["Shift+F11", "new sheet"]] }
+        - { id: xl-w02-d1-g09, difficulty: medium, type: text, prompt: "How many cells are in A1:C4?", accept: ["12"] }
+        - { id: xl-w02-d1-g10, difficulty: medium, type: mcq, prompt: "Paste Special option that turns a row of headers into a column", choices: ["Transpose", "Values", "Formats", "Column widths"], answer: 0 }
+        - { id: xl-w02-d1-g11, difficulty: medium, type: mcq, prompt: "Paste Special option that pastes the result, not the formula", choices: ["Values", "Formats", "Transpose", "All"], answer: 0 }
+        - { id: xl-w02-d1-g12, difficulty: medium, type: mcq, prompt: "Text aligns ___ by default; numbers align ___.", choices: ["left; right", "right; left", "centre; left", "left; left"], answer: 0 }
+        - { id: xl-w02-d1-g13, difficulty: medium, type: truefalse, prompt: "A date in Excel is really a number.", answer: true }
+        - { id: xl-w02-d1-g14, difficulty: medium, type: mcq, prompt: "First thing to do after opening a CSV you'll work on:", choices: ["Save As .xlsx", "Delete row 1", "Format it as a table", "Turn off AutoSave"], answer: 0 }
+        - { id: xl-w02-d1-g15, difficulty: medium, type: mcq, prompt: "Select 10, 25, 7, 40, 18. The status bar Average shows…", choices: ["20", "100", "5", "18"], answer: 0 }
+        - { id: xl-w02-d1-g16, difficulty: hard, type: text, prompt: "In sales_2025, which row holds the last order (NM-02400)?", accept: ["2401"] }
+        - { id: xl-w02-d1-g17, difficulty: hard, type: mcq, prompt: "How do you fill a formula down 2,400 rows fastest?", choices: ["Double-click the fill handle", "Drag the fill handle to row 2401", "Copy-paste 2,400 times", "Ctrl+Home"], answer: 0 }
+        - { id: xl-w02-d1-g18, difficulty: hard, type: multi, prompt: "Which keep formulas? (Select all.)", choices: [".xlsx", ".xlsm", ".csv"], answers: [0, 1] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Formatting speed round"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w02-d1-rf01, difficulty: easy, type: mcq, prompt: "Format Cells dialog", choices: ["Ctrl+1", "Ctrl+F", "Ctrl+Shift+1", "F4"], answer: 0 }
+          - { id: xl-w02-d1-rf02, difficulty: easy, type: mcq, prompt: "Percentage format", choices: ["Ctrl+Shift+%", "Ctrl+%", "Ctrl+Shift+$", "Ctrl+P"], answer: 0 }
+          - { id: xl-w02-d1-rf03, difficulty: easy, type: mcq, prompt: "Date format", choices: ["Ctrl+Shift+#", "Ctrl+;", "Ctrl+D", "Ctrl+Shift+@"], answer: 0 }
+          - { id: xl-w02-d1-rf04, difficulty: easy, type: mcq, prompt: "Bold", choices: ["Ctrl+B", "Ctrl+Shift+B", "Ctrl+D", "F2"], answer: 0 }
+          - { id: xl-w02-d1-rf05, difficulty: easy, type: mcq, prompt: "0.15 as a %", choices: ["15%", "0.15%", "1.5%", "150%"], answer: 0 }
+          - { id: xl-w02-d1-rf06, difficulty: easy, type: truefalse, prompt: "Formatting changes the value stored in the cell.", answer: false }
+          - { id: xl-w02-d1-rf07, difficulty: easy, type: mcq, prompt: "145000 in comma style", choices: ["145,000", "145.000", "₦145000", "1.45E+05"], answer: 0 }
+          - { id: xl-w02-d1-rf08, difficulty: easy, type: mcq, prompt: "Text that wraps onto several lines in one cell", choices: ["Wrap Text", "Merge & Center", "Autofit", "Transpose"], answer: 0 }
+          - { id: xl-w02-d1-rf09, difficulty: easy, type: truefalse, prompt: "Merged cells can cause problems with sorting.", answer: true }
+          - { id: xl-w02-d1-rf10, difficulty: easy, type: mcq, prompt: "0.075 as a %", choices: ["7.5%", "75%", "0.75%", "7%"], answer: 0 }
+      - kind: brain-teaser
+        title: "Looks vs value"
+        questions:
+          - { id: xl-w02-d1-bt01, difficulty: medium, type: mcq, prompt: "A cell shows 7.5%. What does the formula bar show?", choices: ["0.075", "7.5", "7.5%", "75"], answer: 0 }
+          - { id: xl-w02-d1-bt02, difficulty: medium, type: mcq, prompt: "DiscountPct holds 5, 10, 15 (whole numbers). You format it as %. It shows…", choices: ["500%, 1000%, 1500%", "5%, 10%, 15%", "0.05%, 0.1%, 0.15%", "an error"], answer: 0, explain: "% format multiplies the display by 100. Keep them as numbers and divide by 100 in formulas." }
+          - { id: xl-w02-d1-bt03, difficulty: medium, type: mcq, prompt: "A cell shows ₦145,000.00. You change its format to General. It shows…", choices: ["145000", "₦145000", "145,000.00", "0"], answer: 0 }
+          - { id: xl-w02-d1-bt04, difficulty: hard, type: mcq, prompt: "Two cells both show ₦15. A formula says they're not equal. Most likely?", choices: ["They hold different values (e.g. 14.6 and 15.2) rounded by the format", "Excel has a bug", "One is bold", "Currency can't be compared"], answer: 0 }
+          - { id: xl-w02-d1-bt05, difficulty: hard, type: multi, prompt: "Which change only how a cell looks? (Select all.)", choices: ["Currency format", "Decrease decimals", "Bold", "Typing a new number"], answers: [0, 1, 2] }
+
+  # ─────────────────────────── DAY 2 ───────────────────────────
+  - day: 2
+    gate:
+      title: "Checkpoint: number formatting"
+      covers: "Week 2 · Day 1: currency, %, dates, decimals, Ctrl+1, format vs value"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w02-d2-g01, difficulty: easy, type: mcq, prompt: "Shortcut for the Format Cells dialog", choices: ["Ctrl+1", "Ctrl+F1", "Alt+1", "Ctrl+Shift+F"], answer: 0 }
+        - { id: xl-w02-d2-g02, difficulty: easy, type: truefalse, prompt: "Formatting changes how a value looks, never the value itself.", answer: true }
+        - { id: xl-w02-d2-g03, difficulty: easy, type: mcq, prompt: "0.2 formatted as % shows…", choices: ["20%", "2%", "0.2%", "200%"], answer: 0 }
+        - { id: xl-w02-d2-g04, difficulty: easy, type: mcq, prompt: "Where do you choose the ₦ symbol?", choices: ["Format Cells → Currency → Symbol", "Insert → Symbol only", "Data → Currency", "You can't"], answer: 0 }
+        - { id: xl-w02-d2-g05, difficulty: easy, type: mcq, prompt: "Ctrl+Shift+% applies…", choices: ["Percentage format", "Currency format", "Date format", "Bold"], answer: 0 }
+        - { id: xl-w02-d2-g06, difficulty: easy, type: mcq, prompt: "Ctrl+Shift+# applies…", choices: ["Date format", "Number format", "Percentage", "Hashtags"], answer: 0 }
+        - { id: xl-w02-d2-g07, difficulty: medium, type: mcq, prompt: "A cell shows 7.5%. The formula bar shows…", choices: ["0.075", "7.5", "75", "7.5%"], answer: 0 }
+        - { id: xl-w02-d2-g08, difficulty: medium, type: mcq, prompt: "Why not format DiscountPct (5, 10, 15) as %?", choices: ["It would show 500%, 1000%, 1500%", "Excel won't allow it", "It deletes the values", "It shows 0.05%"], answer: 0 }
+        - { id: xl-w02-d2-g09, difficulty: medium, type: match, prompt: "Match the value to how it looks.", pairs: [["0.15 as %", "15%"], ["145000 as ₦ no decimals", "₦145,000"], ["1234.5 with 0 decimals", "1,235"], ["0.075 as %, 1 decimal", "7.5%"]] }
+        - { id: xl-w02-d2-g10, difficulty: medium, type: truefalse, prompt: "Decreasing decimals rounds the stored value.", answer: false, explain: "Only the display is rounded." }
+        - { id: xl-w02-d2-g11, difficulty: medium, type: mcq, prompt: "Merge & Center should be used…", choices: ["sparingly; it causes problems with sorting and formulas", "on every header", "for every table", "instead of borders"], answer: 0 }
+        - { id: xl-w02-d2-g12, difficulty: medium, type: mcq, prompt: "Long date format shows 01/01/2025 as…", choices: ["Wednesday, 1 January 2025", "1-Jan", "45658", "01.01.25"], answer: 0 }
+        - { id: xl-w02-d2-g13, difficulty: medium, type: mcq, prompt: "A header row with long text needs to fit the column width. Use…", choices: ["Wrap Text", "Merge & Center", "Currency format", "Transpose"], answer: 0 }
+        - { id: xl-w02-d2-g14, difficulty: medium, type: truefalse, prompt: "₦145,000.00 and ₦145,000 can be the same stored value.", answer: true }
+        - { id: xl-w02-d2-g15, difficulty: medium, type: mcq, prompt: "A date shows as 45658 after you change the format to General. Why?", choices: ["Dates are stored as numbers", "The date was deleted", "It's an error", "The cell is text"], answer: 0 }
+        - { id: xl-w02-d2-g16, difficulty: hard, type: text, prompt: "A cell contains 0.1234. It's formatted as % with 1 decimal. What does it show?", accept: ["12.3%"] }
+        - { id: xl-w02-d2-g17, difficulty: hard, type: mcq, prompt: "Two cells show 2.4 and 2.4 (1 decimal). Their SUM shows 4.9. How?", choices: ["They really hold e.g. 2.44 and 2.45; SUM uses the real values", "SUM is broken", "Format adds 0.1", "One is text"], answer: 0 }
+        - { id: xl-w02-d2-g18, difficulty: hard, type: multi, prompt: "Which are in the Format Cells dialog (Ctrl+1)? (Select all.)", choices: ["Number formats", "Alignment and Wrap Text", "Borders", "Formulas"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Operators sprint"
+        secondsPerQuestion: 9
+        questions:
+          - { id: xl-w02-d2-rf01, difficulty: easy, type: mcq, prompt: "Every formula starts with…", choices: ["=", "+", "@", "#"], answer: 0 }
+          - { id: xl-w02-d2-rf02, difficulty: easy, type: text, prompt: "=10+2*5", accept: ["20"] }
+          - { id: xl-w02-d2-rf03, difficulty: easy, type: text, prompt: "=(10+2)*5", accept: ["60"] }
+          - { id: xl-w02-d2-rf04, difficulty: easy, type: text, prompt: "=2^3", accept: ["8"] }
+          - { id: xl-w02-d2-rf05, difficulty: easy, type: text, prompt: "=20/4-1", accept: ["4"] }
+          - { id: xl-w02-d2-rf06, difficulty: easy, type: mcq, prompt: "Joins text", choices: ["&", "+", "*", "^"], answer: 0 }
+          - { id: xl-w02-d2-rf07, difficulty: easy, type: mcq, prompt: "Multiply", choices: ["*", "x", "×", "^"], answer: 0 }
+          - { id: xl-w02-d2-rf08, difficulty: easy, type: text, prompt: "=3+3^2", accept: ["12"] }
+          - { id: xl-w02-d2-rf09, difficulty: easy, type: truefalse, prompt: "=J2*K2 updates when J2 changes; =3*14500 doesn't.", answer: true }
+          - { id: xl-w02-d2-rf10, difficulty: easy, type: text, prompt: "=100*(1-5/100)", accept: ["95"] }
+      - kind: brain-teaser
+        title: "NetSales logic"
+        questions:
+          - { id: xl-w02-d2-bt01, difficulty: medium, type: text, prompt: "Units 4, UnitPrice 7,500, DiscountPct 10. Net sales? (digits only)", accept: ["27000"] }
+          - { id: xl-w02-d2-bt02, difficulty: medium, type: mcq, prompt: "Which gives net sales when DiscountPct is a whole number (5 = 5%)?", choices: ["=N2*(1-L2/100)", "=N2*(1-L2)", "=N2-L2", "=N2*L2/100"], answer: 0 }
+          - { id: xl-w02-d2-bt03, difficulty: medium, type: text, prompt: "A1 = Tolu, B1 = Eze. What does =A1&\" \"&B1 show?", accept: ["Tolu Eze"] }
+          - { id: xl-w02-d2-bt04, difficulty: hard, type: mcq, prompt: "Why is =N2*1-L2/100 wrong for net sales?", choices: ["× and ÷ happen first: it computes N2 − L2/100, not N2 × (1 − L2/100)", "It's right", "It needs ^", "Excel doesn't allow 1-"], answer: 0 }
+          - { id: xl-w02-d2-bt05, difficulty: hard, type: text, prompt: "NaijaMart 2025: gross ₦907,677,800, net ₦834,046,700. Total discount given? (digits only)", accept: ["73631100"] }
+
+  # ─────────────────────────── DAY 3 ───────────────────────────
+  - day: 3
+    gate:
+      title: "Checkpoint: your first formulas"
+      covers: "Week 2 · Day 2: = formulas, operators, order of operations, cell references, fill down"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w02-d3-g01, difficulty: easy, type: text, prompt: "=10+2*5 gives…", accept: ["20"] }
+        - { id: xl-w02-d3-g02, difficulty: easy, type: mcq, prompt: "Which is a formula?", choices: ["=J2*K2", "J2*K2", "J2 x K2", "(J2*K2)"], answer: 0 }
+        - { id: xl-w02-d3-g03, difficulty: easy, type: mcq, prompt: "Power operator", choices: ["^", "**", "pow", "*"], answer: 0 }
+        - { id: xl-w02-d3-g04, difficulty: easy, type: truefalse, prompt: "Cell references are better than typed numbers in formulas.", answer: true }
+        - { id: xl-w02-d3-g05, difficulty: easy, type: mcq, prompt: "Fill a formula down to row 2401 fastest:", choices: ["Double-click the fill handle", "Type it 2,400 times", "Ctrl+Home", "F2"], answer: 0 }
+        - { id: xl-w02-d3-g06, difficulty: easy, type: text, prompt: "=(4+6)/2", accept: ["5"] }
+        - { id: xl-w02-d3-g07, difficulty: medium, type: order, prompt: "Order of operations, first to last.", items: ["Brackets", "Powers", "× and ÷", "+ and −"] }
+        - { id: xl-w02-d3-g08, difficulty: medium, type: text, prompt: "=2+3*4^2", accept: ["50"] }
+        - { id: xl-w02-d3-g09, difficulty: medium, type: mcq, prompt: "GrossSales in N2 for Units in J2 and UnitPrice in K2:", choices: ["=J2*K2", "=J2+K2", "=SUM(J2,K2)", "=J2&K2"], answer: 0 }
+        - { id: xl-w02-d3-g10, difficulty: medium, type: text, prompt: "Order 1: 1 unit at ₦14,500, no discount. Its NetSales? (digits only)", accept: ["14500"] }
+        - { id: xl-w02-d3-g11, difficulty: medium, type: mcq, prompt: "=N2*(1-L2/100) with N2 = 50,000 and L2 = 10 gives…", choices: ["45,000", "49,990", "5,000", "-450,000"], answer: 0 }
+        - { id: xl-w02-d3-g12, difficulty: medium, type: match, prompt: "Match the operator.", pairs: [["+", "add"], ["/", "divide"], ["^", "power"], ["&", "join text"]] }
+        - { id: xl-w02-d3-g13, difficulty: medium, type: truefalse, prompt: "=10-4-3 gives 9.", answer: false, explain: "Left to right: 10−4 = 6, 6−3 = 3." }
+        - { id: xl-w02-d3-g14, difficulty: medium, type: text, prompt: "What's the 2025 net sales total, in digits?", accept: ["834046700"] }
+        - { id: xl-w02-d3-g15, difficulty: medium, type: mcq, prompt: "DiscountAmount for a row =", choices: ["=N2-O2 (gross − net)", "=O2-N2", "=L2", "=N2*L2"], answer: 0 }
+        - { id: xl-w02-d3-g16, difficulty: hard, type: text, prompt: "Units 5, UnitPrice 7,500, DiscountPct 5. NetSales? (digits only)", accept: ["35625"] }
+        - { id: xl-w02-d3-g17, difficulty: hard, type: mcq, prompt: "A colleague wrote =3*14500 in N2. What's the problem?", choices: ["It won't update if Units or UnitPrice change, and can't be filled down", "It gives the wrong number", "Excel can't multiply typed numbers", "Nothing"], answer: 0 }
+        - { id: xl-w02-d3-g18, difficulty: hard, type: text, prompt: "=(2+3)^2-5*2", accept: ["15"] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Five functions"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w02-d3-rf01, difficulty: easy, type: mcq, prompt: "Total", choices: ["SUM", "COUNT", "TOTALS", "ADD"], answer: 0 }
+          - { id: xl-w02-d3-rf02, difficulty: easy, type: mcq, prompt: "Mean", choices: ["AVERAGE", "MEAN", "MID", "AVG"], answer: 0 }
+          - { id: xl-w02-d3-rf03, difficulty: easy, type: mcq, prompt: "Largest", choices: ["MAX", "TOP", "BIG", "HIGH"], answer: 0 }
+          - { id: xl-w02-d3-rf04, difficulty: easy, type: mcq, prompt: "Counts numbers only", choices: ["COUNT", "COUNTA", "SUM", "LEN"], answer: 0 }
+          - { id: xl-w02-d3-rf05, difficulty: easy, type: mcq, prompt: "Counts any non-empty cell", choices: ["COUNTA", "COUNT", "COUNTBLANK", "NUM"], answer: 0 }
+          - { id: xl-w02-d3-rf06, difficulty: easy, type: mcq, prompt: "AutoSum shortcut (Windows)", choices: ["Alt+=", "Ctrl+=", "Ctrl+S", "F4"], answer: 0 }
+          - { id: xl-w02-d3-rf07, difficulty: easy, type: text, prompt: "=SUM(2,4,6)", accept: ["12"] }
+          - { id: xl-w02-d3-rf08, difficulty: easy, type: text, prompt: "=AVERAGE(2,4,6)", accept: ["4"] }
+          - { id: xl-w02-d3-rf09, difficulty: easy, type: text, prompt: "=MAX(3,9,1)", accept: ["9"] }
+          - { id: xl-w02-d3-rf10, difficulty: easy, type: text, prompt: "=ROUND(9.24,1)", accept: ["9.2"] }
+          - { id: xl-w02-d3-rf11, difficulty: easy, type: mcq, prompt: "Data!A2 means…", choices: ["cell A2 on the Data sheet", "data in A2", "a named range", "an error"], answer: 0 }
+      - kind: brain-teaser
+        title: "Key figures"
+        questions:
+          - { id: xl-w02-d3-bt01, difficulty: medium, type: text, prompt: "A1:A5 hold 10, \"Lagos\", 20, (empty), 30. =COUNT(A1:A5)?", accept: ["3"] }
+          - { id: xl-w02-d3-bt02, difficulty: medium, type: text, prompt: "Same cells. =COUNTA(A1:A5)?", accept: ["4"] }
+          - { id: xl-w02-d3-bt03, difficulty: medium, type: mcq, prompt: "Total orders in sales_2025 (Order IDs in A2:A2401):", choices: ["=COUNTA(Data!A2:A2401) → 2,400", "=SUM(Data!A2:A2401)", "=COUNT(Data!A2:A2401) → 2,400", "=MAX(Data!A2:A2401)"], answer: 0, explain: "Order IDs are text (NM-00001), so COUNT would give 0." }
+          - { id: xl-w02-d3-bt04, difficulty: hard, type: text, prompt: "NaijaMart: net sales ₦834,046,700 over 2,400 orders. Average per order, rounded to the naira? (digits only)", accept: ["347519"] }
+          - { id: xl-w02-d3-bt05, difficulty: hard, type: text, prompt: "22,129 units over 2,400 orders. Average units per order, 1 decimal?", accept: ["9.2"] }
+
+  # ─────────────────────────── DAY 4 ───────────────────────────
+  - day: 4
+    gate:
+      title: "Checkpoint: SUM, AVERAGE, MIN, MAX, COUNT"
+      covers: "Week 2 · Day 3: the five functions, COUNTA, ROUND, AutoSum, other-sheet references"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w02-d4-g01, difficulty: easy, type: text, prompt: "=SUM(5,10,15)", accept: ["30"] }
+        - { id: xl-w02-d4-g02, difficulty: easy, type: text, prompt: "=MIN(8,3,12)", accept: ["3"] }
+        - { id: xl-w02-d4-g03, difficulty: easy, type: mcq, prompt: "Which counts text cells too?", choices: ["COUNTA", "COUNT", "SUM", "MAX"], answer: 0 }
+        - { id: xl-w02-d4-g04, difficulty: easy, type: mcq, prompt: "AutoSum (Windows)", choices: ["Alt+=", "Ctrl+Shift+S", "F9", "Ctrl+T"], answer: 0 }
+        - { id: xl-w02-d4-g05, difficulty: easy, type: truefalse, prompt: "=SUM(O:O) adds the whole column O.", answer: true }
+        - { id: xl-w02-d4-g06, difficulty: easy, type: text, prompt: "=AVERAGE(10,20,30,40)", accept: ["25"] }
+        - { id: xl-w02-d4-g07, difficulty: medium, type: match, prompt: "Match the NaijaMart key figure.", pairs: [["Total orders", "2,400"], ["Total units", "22,129"], ["Gross sales", "₦907,677,800"], ["Largest single order (net)", "₦13,239,600"]] }
+        - { id: xl-w02-d4-g08, difficulty: medium, type: text, prompt: "=ROUND(347518.625,0)", accept: ["347519"] }
+        - { id: xl-w02-d4-g09, difficulty: medium, type: mcq, prompt: "How do you refer to O2:O2401 on the Data sheet from the Summary sheet?", choices: ["Data!O2:O2401", "Data.O2:O2401", "[Data]O2:O2401", "O2:O2401@Data"], answer: 0 }
+        - { id: xl-w02-d4-g10, difficulty: medium, type: text, prompt: "B1:B4 hold 4, \"n/a\", 6, 10. =AVERAGE(B1:B4)?", accept: ["6.67", "6.666666667", "6.7"], explain: "AVERAGE skips text: (4+6+10)/3." }
+        - { id: xl-w02-d4-g11, difficulty: medium, type: mcq, prompt: "Highest UnitPrice in column K:", choices: ["=MAX(K2:K2401)", "=TOP(K2:K2401)", "=SUM(K2:K2401)", "=COUNT(K2:K2401)"], answer: 0 }
+        - { id: xl-w02-d4-g12, difficulty: medium, type: text, prompt: "=ROUND(9.25,0)", accept: ["9"] }
+        - { id: xl-w02-d4-g13, difficulty: medium, type: truefalse, prompt: "COUNT on a column of order IDs like NM-00001 returns 0.", answer: true }
+        - { id: xl-w02-d4-g14, difficulty: medium, type: mcq, prompt: "=ROUND(AVERAGE(O2:O2401),0) does what first?", choices: ["AVERAGE, then ROUND the result", "ROUND each cell, then AVERAGE", "Only ROUND", "Errors"], answer: 0 }
+        - { id: xl-w02-d4-g15, difficulty: medium, type: text, prompt: "=MAX(4,9)-MIN(4,9)", accept: ["5"] }
+        - { id: xl-w02-d4-g16, difficulty: hard, type: text, prompt: "A1:A6 = 5, 15, (empty), \"x\", 25, 0. =COUNT(A1:A6)+COUNTA(A1:A6)?", accept: ["9"], explain: "COUNT = 4 (5, 15, 25, 0), COUNTA = 5." }
+        - { id: xl-w02-d4-g17, difficulty: hard, type: mcq, prompt: "Average units per order to 1 decimal:", choices: ["=ROUND(AVERAGE(J2:J2401),1)", "=AVERAGE(ROUND(J2:J2401))", "=ROUND(SUM(J2:J2401),1)", "=AVERAGE(J2:J2401,1)"], answer: 0 }
+        - { id: xl-w02-d4-g18, difficulty: hard, type: text, prompt: "=SUM(A1:A3)/COUNT(A1:A3) with 6, 9, 12 gives the same as which single function? (name only)", accept: ["AVERAGE", "average"] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Name that error"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w02-d4-rf01, difficulty: easy, type: mcq, prompt: "Dividing by zero or an empty cell", choices: ["#DIV/0!", "#VALUE!", "#REF!", "#NAME?"], answer: 0 }
+          - { id: xl-w02-d4-rf02, difficulty: easy, type: mcq, prompt: "Typo in a function name: =SUMM(A1:A5)", choices: ["#NAME?", "#VALUE!", "#REF!", "#N/A"], answer: 0 }
+          - { id: xl-w02-d4-rf03, difficulty: easy, type: mcq, prompt: "Deleted a row the formula used", choices: ["#REF!", "#DIV/0!", "#NAME?", "#####"], answer: 0 }
+          - { id: xl-w02-d4-rf04, difficulty: easy, type: mcq, prompt: "Adding a number and text", choices: ["#VALUE!", "#REF!", "#N/A", "#NAME?"], answer: 0 }
+          - { id: xl-w02-d4-rf05, difficulty: easy, type: mcq, prompt: "Column too narrow", choices: ["#####", "#REF!", "#VALUE!", "#N/A"], answer: 0 }
+          - { id: xl-w02-d4-rf06, difficulty: easy, type: mcq, prompt: "Value not found (lookups)", choices: ["#N/A", "#NAME?", "#REF!", "#DIV/0!"], answer: 0 }
+          - { id: xl-w02-d4-rf07, difficulty: easy, type: mcq, prompt: "Show all formulas in the sheet", choices: ["Ctrl+`", "Ctrl+F", "F4", "Ctrl+1"], answer: 0 }
+          - { id: xl-w02-d4-rf08, difficulty: easy, type: mcq, prompt: "Colours the cells a formula uses", choices: ["F2", "F4", "F9", "F11"], answer: 0 }
+          - { id: xl-w02-d4-rf09, difficulty: easy, type: truefalse, prompt: "##### is not really an error.", answer: true }
+          - { id: xl-w02-d4-rf10, difficulty: easy, type: mcq, prompt: "Steps through a formula", choices: ["Evaluate Formula", "Trace Error", "Paste Special", "Flash Fill"], answer: 0 }
+      - kind: brain-teaser
+        title: "Debug the sheet"
+        questions:
+          - { id: xl-w02-d4-bt01, difficulty: medium, type: mcq, prompt: "=A1/B1 shows #DIV/0!. B1 looks empty. Fix?", choices: ["Put the divisor in B1 (it's empty or 0)", "Widen the column", "Rename the function", "Delete A1"], answer: 0 }
+          - { id: xl-w02-d4-bt02, difficulty: medium, type: mcq, prompt: "=AVERGE(B2:B10) shows…", choices: ["#NAME?", "#VALUE!", "#REF!", "the average"], answer: 0 }
+          - { id: xl-w02-d4-bt03, difficulty: medium, type: mcq, prompt: "C2 = =A2+B2, and B2 contains \"five\". Result?", choices: ["#VALUE!", "#NAME?", "0", "A2"], answer: 0 }
+          - { id: xl-w02-d4-bt04, difficulty: hard, type: mcq, prompt: "=SUM(A1:A5)+B3 worked. Then you deleted column B. Now it shows…", choices: ["#REF!", "#NAME?", "the SUM only", "#DIV/0!"], answer: 0 }
+          - { id: xl-w02-d4-bt05, difficulty: hard, type: match, prompt: "Match the fix.", pairs: [["#####", "widen the column"], ["#NAME?", "fix the spelling"], ["#DIV/0!", "fill the divisor cell"], ["#VALUE!", "replace text with a number"]] }
+
+  # ─────────────────────────── DAY 5 ───────────────────────────
+  - day: 5
+    gate:
+      title: "Checkpoint: formula errors"
+      covers: "Week 2 · Day 4: #####, #DIV/0!, #VALUE!, #NAME?, #REF!, #N/A, and debugging tools"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w02-d5-g01, difficulty: easy, type: mcq, prompt: "#DIV/0! means…", choices: ["dividing by zero or an empty cell", "a typo in the name", "a deleted reference", "the column is too narrow"], answer: 0 }
+        - { id: xl-w02-d5-g02, difficulty: easy, type: mcq, prompt: "#NAME? usually means…", choices: ["Excel doesn't recognise a name (typo)", "a value not found", "text in a sum", "division by zero"], answer: 0 }
+        - { id: xl-w02-d5-g03, difficulty: easy, type: mcq, prompt: "#REF! means…", choices: ["a reference no longer exists", "wrong type", "too narrow", "missing bracket"], answer: 0 }
+        - { id: xl-w02-d5-g04, difficulty: easy, type: truefalse, prompt: "##### is fixed by widening the column.", answer: true }
+        - { id: xl-w02-d5-g05, difficulty: easy, type: mcq, prompt: "Ctrl+` (backtick) …", choices: ["shows all formulas", "copies a formula", "deletes errors", "opens Format Cells"], answer: 0 }
+        - { id: xl-w02-d5-g06, difficulty: easy, type: mcq, prompt: "Which tool steps through a formula part by part?", choices: ["Evaluate Formula", "AutoSum", "Flash Fill", "Format Painter"], answer: 0 }
+        - { id: xl-w02-d5-g07, difficulty: medium, type: mcq, prompt: "=A1+B1 where B1 is \"N/A\" (typed text):", choices: ["#VALUE!", "#N/A", "#NAME?", "A1"], answer: 0 }
+        - { id: xl-w02-d5-g08, difficulty: medium, type: mcq, prompt: "=SUMM(A1:A5):", choices: ["#NAME?", "#VALUE!", "#REF!", "the sum"], answer: 0 }
+        - { id: xl-w02-d5-g09, difficulty: medium, type: match, prompt: "Match the error to its cause.", pairs: [["#DIV/0!", "=A1/B1 with B1 empty"], ["#VALUE!", "a number + text"], ["#NAME?", "misspelt function"], ["#REF!", "deleted row or column"]] }
+        - { id: xl-w02-d5-g10, difficulty: medium, type: mcq, prompt: "Which error do lookups (Week 9) give when the value isn't found?", choices: ["#N/A", "#NAME?", "#VALUE!", "#REF!"], answer: 0 }
+        - { id: xl-w02-d5-g11, difficulty: medium, type: truefalse, prompt: "F2 on a formula cell colours the cells it uses.", answer: true }
+        - { id: xl-w02-d5-g12, difficulty: medium, type: mcq, prompt: "A date column shows ##### after you apply the long date format. Why?", choices: ["The longer date doesn't fit the column", "Dates can't be long", "The value was deleted", "#REF!"], answer: 0 }
+        - { id: xl-w02-d5-g13, difficulty: medium, type: text, prompt: "Type the error you get from =10/0", accept: ["#DIV/0!"] }
+        - { id: xl-w02-d5-g14, difficulty: medium, type: mcq, prompt: "Best first step when a formula gives a strange answer:", choices: ["Click it and read the formula bar (or press F2)", "Delete it", "Format it as currency", "Restart Excel"], answer: 0 }
+        - { id: xl-w02-d5-g15, difficulty: medium, type: truefalse, prompt: "=SUM(A1:A3) where A2 is text gives #VALUE!.", answer: false, explain: "SUM skips text in a range. It's + that fails on text." }
+        - { id: xl-w02-d5-g16, difficulty: hard, type: mcq, prompt: "=AVERAGE(B2:B5) shows #DIV/0!. Why?", choices: ["B2:B5 has no numbers (empty or all text)", "B5 is zero", "AVERAGE is misspelt", "The column is narrow"], answer: 0 }
+        - { id: xl-w02-d5-g17, difficulty: hard, type: mcq, prompt: "=SUM(A1:A3)+A2 where A2 = \"x\":", choices: ["#VALUE!: + can't add text", "the sum of A1 and A3", "#NAME?", "0"], answer: 0 }
+        - { id: xl-w02-d5-g18, difficulty: hard, type: multi, prompt: "Which give #VALUE!? (Select all.)", choices: ["=\"5\"*\"abc\"", "=10+\"ten\"", "=SUM(1,2)", "=A1/0"], answers: [0, 1] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Readable tables"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w02-d5-rf01, difficulty: easy, type: mcq, prompt: "Numbers align…", choices: ["right", "left", "centre", "justified"], answer: 0 }
+          - { id: xl-w02-d5-rf02, difficulty: easy, type: mcq, prompt: "Text aligns…", choices: ["left", "right", "centre", "top"], answer: 0 }
+          - { id: xl-w02-d5-rf03, difficulty: easy, type: mcq, prompt: "Accent colours, maximum", choices: ["1–2", "5", "10", "As many as you like"], answer: 0 }
+          - { id: xl-w02-d5-rf04, difficulty: easy, type: mcq, prompt: "Copy formatting with…", choices: ["Format Painter", "Paste Values", "Flash Fill", "AutoSum"], answer: 0 }
+          - { id: xl-w02-d5-rf05, difficulty: easy, type: mcq, prompt: "Paint many times", choices: ["Double-click Format Painter", "Hold Shift", "Ctrl+P", "Right-click"], answer: 0 }
+          - { id: xl-w02-d5-rf06, difficulty: easy, type: mcq, prompt: "Autofit a column", choices: ["Double-click the border between column letters", "Ctrl+A", "F4", "Drag the row"], answer: 0 }
+          - { id: xl-w02-d5-rf07, difficulty: easy, type: truefalse, prompt: "Rainbow tables are professional.", answer: false }
+          - { id: xl-w02-d5-rf08, difficulty: easy, type: mcq, prompt: "Ready-made styles live in…", choices: ["Home → Cell Styles", "Data → Styles", "Insert → Styles", "View → Styles"], answer: 0 }
+          - { id: xl-w02-d5-rf09, difficulty: easy, type: truefalse, prompt: "Numbers in a column should use the same number of decimals.", answer: true }
+          - { id: xl-w02-d5-rf10, difficulty: easy, type: mcq, prompt: "Borders should be…", choices: ["light and thin, or none", "thick and black", "red", "on every side twice"], answer: 0 }
+      - kind: brain-teaser
+        title: "Design review"
+        questions:
+          - { id: xl-w02-d5-bt01, difficulty: medium, type: mcq, prompt: "Your manager can't find net sales on your summary in 5 seconds. Best fix?", choices: ["Bold label, clear ₦ format, more white space around it", "Add more colours", "Make all text red", "Merge every cell"], answer: 0 }
+          - { id: xl-w02-d5-bt02, difficulty: medium, type: mcq, prompt: "A ₦ column shows 1,200 · 35,625.5 · 7500. What's wrong?", choices: ["Mixed decimals and separators: use one ₦ format", "Nothing", "Numbers must be centred", "It needs borders"], answer: 0 }
+          - { id: xl-w02-d5-bt03, difficulty: medium, type: multi, prompt: "Which help a table read well? (Select all.)", choices: ["Bold, filled headers", "Right-aligned numbers", "1–2 accent colours", "Merged cells in the data"], answers: [0, 1, 2] }
+          - { id: xl-w02-d5-bt04, difficulty: hard, type: mcq, prompt: "Why are merged cells bad inside a data table?", choices: ["They break sorting, filtering and formulas", "They're slow to print", "They hide numbers", "They change values"], answer: 0 }
+          - { id: xl-w02-d5-bt05, difficulty: hard, type: order, prompt: "Order a quick professional clean-up.", items: ["Bold and fill the headers", "Apply ₦ and % formats", "Autofit the columns", "Add light borders"] }
+
+  # ─────────────────────────── DAY 6 ───────────────────────────
+  - day: 6
+    gate:
+      title: "Checkpoint: formatting for readability"
+      covers: "Week 2 · Day 5: alignment, consistent decimals, borders, colours, Cell Styles, Format Painter, autofit"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w02-d6-g01, difficulty: easy, type: mcq, prompt: "Which tool copies formatting from one cell to others?", choices: ["Format Painter", "Paste Values", "AutoSum", "Flash Fill"], answer: 0 }
+        - { id: xl-w02-d6-g02, difficulty: easy, type: mcq, prompt: "Numbers should be…", choices: ["right-aligned", "left-aligned", "centred", "italic"], answer: 0 }
+        - { id: xl-w02-d6-g03, difficulty: easy, type: truefalse, prompt: "Use 1–2 accent colours at most.", answer: true }
+        - { id: xl-w02-d6-g04, difficulty: easy, type: mcq, prompt: "Double-clicking the border between column letters…", choices: ["autofits the column", "deletes the column", "merges columns", "hides the column"], answer: 0 }
+        - { id: xl-w02-d6-g05, difficulty: easy, type: mcq, prompt: "Where are Cell Styles?", choices: ["Home tab", "Data tab", "Formulas tab", "View tab"], answer: 0 }
+        - { id: xl-w02-d6-g06, difficulty: easy, type: mcq, prompt: "Text should be…", choices: ["left-aligned", "right-aligned", "rotated", "centred always"], answer: 0 }
+        - { id: xl-w02-d6-g07, difficulty: medium, type: mcq, prompt: "How do you use Format Painter on many separate ranges?", choices: ["Double-click it, paint each, then press Esc", "Single-click each time only", "Hold Alt", "You can't"], answer: 0 }
+        - { id: xl-w02-d6-g08, difficulty: medium, type: multi, prompt: "Which are good header formatting? (Select all.)", choices: ["Bold", "A fill colour", "Centred text", "Different font per header"], answers: [0, 1, 2] }
+        - { id: xl-w02-d6-g09, difficulty: medium, type: truefalse, prompt: "Thick black borders around every cell look most professional.", answer: false }
+        - { id: xl-w02-d6-g10, difficulty: medium, type: mcq, prompt: "White space in a table…", choices: ["helps the eye; use it instead of heavy borders", "wastes paper; avoid it", "breaks formulas", "hides data"], answer: 0 }
+        - { id: xl-w02-d6-g11, difficulty: medium, type: mcq, prompt: "A ₦ column has 0, 1 and 2 decimals mixed. Fix?", choices: ["Same format and decimals for the whole column", "Centre it", "Bold it", "Make it text"], answer: 0 }
+        - { id: xl-w02-d6-g12, difficulty: medium, type: match, prompt: "Match the job to the tool.", pairs: [["Copy a look", "Format Painter"], ["Ready-made looks", "Cell Styles"], ["Fit the column", "double-click the border"], ["Number format dialog", "Ctrl+1"]] }
+        - { id: xl-w02-d6-g13, difficulty: medium, type: mcq, prompt: "Headers will stay visible when scrolling once you…", choices: ["freeze them (Week 4)", "bold them", "merge them", "colour them"], answer: 0 }
+        - { id: xl-w02-d6-g14, difficulty: medium, type: truefalse, prompt: "Formatting a summary well can change its numbers.", answer: false }
+        - { id: xl-w02-d6-g15, difficulty: medium, type: mcq, prompt: "Best way to make the key number stand out?", choices: ["Larger, bold, with space around it", "Flashing red", "Put it in a comment", "Hide the others"], answer: 0 }
+        - { id: xl-w02-d6-g16, difficulty: hard, type: mcq, prompt: "Your negative budget-remaining must show in red. Where?", choices: ["Ctrl+1 → Number → negative numbers in red", "Font colour red for the whole column", "Insert → Red", "Data → Validation"], answer: 0 }
+        - { id: xl-w02-d6-g17, difficulty: hard, type: multi, prompt: "Which are mistakes on a professional summary? (Select all.)", choices: ["Five different fill colours", "Mixed decimals in one column", "Centred numbers in a long column", "Bold headers"], answers: [0, 1, 2] }
+        - { id: xl-w02-d6-g18, difficulty: hard, type: order, prompt: "Order the summary sheet from top to bottom.", items: ["Title in A1", "Header row (bold, filled)", "Key figures with ₦ formats", "Light border around the table"] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Week 2 lightning round"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w02-d6-rf01, difficulty: easy, type: mcq, prompt: "Format Cells", choices: ["Ctrl+1", "Ctrl+F", "F4", "Alt+="], answer: 0 }
+          - { id: xl-w02-d6-rf02, difficulty: easy, type: mcq, prompt: "AutoSum", choices: ["Alt+=", "Ctrl+1", "Ctrl+;", "F2"], answer: 0 }
+          - { id: xl-w02-d6-rf03, difficulty: easy, type: text, prompt: "=2+3*4", accept: ["14"] }
+          - { id: xl-w02-d6-rf04, difficulty: easy, type: mcq, prompt: "Counts text too", choices: ["COUNTA", "COUNT", "SUM", "MIN"], answer: 0 }
+          - { id: xl-w02-d6-rf05, difficulty: easy, type: mcq, prompt: "Misspelt function", choices: ["#NAME?", "#REF!", "#VALUE!", "#DIV/0!"], answer: 0 }
+          - { id: xl-w02-d6-rf06, difficulty: easy, type: text, prompt: "=MAX(2,8)+MIN(2,8)", accept: ["10"] }
+          - { id: xl-w02-d6-rf07, difficulty: easy, type: mcq, prompt: "0.25 as %", choices: ["25%", "2.5%", "0.25%", "250%"], answer: 0 }
+          - { id: xl-w02-d6-rf08, difficulty: easy, type: mcq, prompt: "Show formulas", choices: ["Ctrl+`", "Ctrl+F", "Ctrl+1", "F9"], answer: 0 }
+          - { id: xl-w02-d6-rf09, difficulty: easy, type: truefalse, prompt: "Every formula starts with =.", answer: true }
+          - { id: xl-w02-d6-rf10, difficulty: easy, type: mcq, prompt: "Copy formatting", choices: ["Format Painter", "Paste Values", "Transpose", "Ctrl+D"], answer: 0 }
+      - kind: brain-teaser
+        title: "Expense tracker"
+        questions:
+          - { id: xl-w02-d6-bt01, difficulty: medium, type: mcq, prompt: "Expenses are in D2:D26. Number of expenses:", choices: ["=COUNT(D2:D26)", "=SUM(D2:D26)", "=MAX(D2:D26)", "=COUNT(D2:D26)/14"], answer: 0 }
+          - { id: xl-w02-d6-bt02, difficulty: medium, type: mcq, prompt: "Total spent over 14 days is in G2. Average per day:", choices: ["=G2/14", "=AVERAGE(G2)", "=G2*14", "=COUNT(G2)/14"], answer: 0 }
+          - { id: xl-w02-d6-bt03, difficulty: medium, type: text, prompt: "Budget ₦150,000; you spent ₦163,500. Budget remaining? (digits, with the minus sign)", accept: ["-13500"] }
+          - { id: xl-w02-d6-bt04, difficulty: hard, type: mcq, prompt: "Biggest minus smallest expense:", choices: ["=MAX(D2:D26)-MIN(D2:D26)", "=MAX(D2:D26-MIN)", "=SUM(MAX,MIN)", "=D26-D2"], answer: 0 }
+          - { id: xl-w02-d6-bt05, difficulty: hard, type: text, prompt: "Expenses: 2,500 · 1,200 · 8,000 · 300. =ROUND(AVERAGE(...),0)? (digits only)", accept: ["3000"] }

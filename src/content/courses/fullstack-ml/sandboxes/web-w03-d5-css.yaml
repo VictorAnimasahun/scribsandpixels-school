@@ -1,0 +1,40 @@
+# Week 3 · Day 5 mini-task
+id: web-w03-d5-css
+kind: web
+title: "Style the shop page"
+description: "Selectors, colours, fonts and the box model. Only the CSS needs changing."
+html: |
+  <div class="page">
+    <h1>NaijaMart Ikeja</h1>
+    <p class="tagline">Fresh deals every day.</p>
+    <section class="card">
+      <h2>Tecno Spark 20</h2>
+      <p>Price: <span class="price">₦145,000</span></p>
+    </section>
+    <section class="card">
+      <h2>Oraimo Power Bank</h2>
+      <p>Price: <span class="price">₦21,000</span></p>
+    </section>
+  </div>
+css: |
+  /* Write your rules here. Leave the HTML alone. */
+  body {
+
+  }
+js: ""
+tasks:
+  - prompt: "Give the body a font (e.g. system-ui, sans-serif)."
+    check: "(() => { const f = getComputedStyle(document.body).fontFamily; return !/times/i.test(f) && f !== 'serif' })()"
+  - prompt: "Colour the h1 (any colour but black)."
+    check: "getComputedStyle(document.querySelector('h1')).color !== 'rgb(0, 0, 0)'"
+    hint: "h1 { color: #164f3b; }"
+  - prompt: "Give every .card at least 12px of padding and a visible border."
+    check: "[...document.querySelectorAll('.card')].every(c => { const s = getComputedStyle(c); return parseFloat(s.paddingTop) >= 12 && parseFloat(s.paddingLeft) >= 12 && parseFloat(s.borderTopWidth) >= 1 && s.borderTopStyle !== 'none' })"
+    hint: ".card { padding: 16px; border: 1px solid #ddd; }"
+  - prompt: "Round the corners of the cards."
+    check: "parseFloat(getComputedStyle(document.querySelector('.card')).borderTopLeftRadius) > 0"
+  - prompt: "Make the prices bold, using the .price class."
+    check: "[...document.querySelectorAll('.price')].every(p => parseInt(getComputedStyle(p).fontWeight) >= 600)"
+  - prompt: "Centre the .page: max-width 800px, with auto left and right margins."
+    check: "getComputedStyle(document.querySelector('.page')).maxWidth === '800px' && [...document.styleSheets].some(ss => [...ss.cssRules].some(r => r.style && r.style.marginLeft === 'auto' && r.style.marginRight === 'auto' && document.querySelector('.page').matches(r.selectorText)))"
+    hint: ".page { max-width: 800px; margin: 0 auto; }"

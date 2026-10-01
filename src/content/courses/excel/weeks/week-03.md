@@ -68,6 +68,10 @@ On the Data sheet:
 
 **Check:** total VAT at 7.5% = **₦62,553,502.50**
 
+**Sandbox:** do it on 10 orders. The task only ticks green if your formula really uses `$J$1`.
+
+::sandbox xl-w03-references
+
 ### Mini-Task (10 min)
 Try writing Q2 **without** the $ (`=O2*R1`) and fill down. Look at Q3's formula. Why are most results 0? (**R2, R3… are empty: the reference moved**) Then fix it.
 
@@ -107,6 +111,10 @@ On the Summary sheet, make a table of net sales by region (type the figures in f
 
 **Check:** total ₦834,046,700 · Lagos **38.6%** · Enugu 9.3%
 
+**Sandbox:** the same sheet has a % of total column and a % change cell to build.
+
+::sandbox xl-w03-references
+
 ### Mini-Task (10 min)
 January net sales were ₦43,211,125 and December ₦109,612,345. What's the % change? (**+153.7%**)
 
@@ -132,6 +140,10 @@ Mixed references lock **only** the row or **only** the column. They're essential
 2. **Price grid:** products down the side (5 NaijaMart prices, e.g. 7,500 · 25,500 · 145,000 · 349,000 · 649,000), discount rates across the top (0%, 5%, 10%, 15%, 20%). One formula gives every discounted price: `=$A2*(1-B$1)`.
 
 **Check (grid):** 145,000 at 15% = **₦123,250** · 649,000 at 20% = **₦519,200**
+
+**Sandbox:** build the discount grid from ONE formula in M3, then fill it right and down.
+
+::sandbox xl-w03-references
 
 ### Mini-Task (10 min)
 Explain to someone (or in your log) why it's `$A2` and `B$1`, not the other way round.

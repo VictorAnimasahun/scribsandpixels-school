@@ -1506,6 +1506,346 @@
             "prompt": "What was the hardest part of the contact book project, and how did you solve it?"
           }
         ]
+      },
+      {
+        "number": 3,
+        "title": "The Web is Just Text",
+        "theme": "How websites really work, and your first pages in HTML and CSS.",
+        "bigQuestion": "What actually happens between typing a web address and seeing a page?",
+        "resources": [
+          {
+            "kind": "video",
+            "title": "Traversy Media — HTML Crash Course",
+            "url": "https://www.youtube.com/watch?v=UB1O30fR-EE",
+            "note": "Watch in chunks across Days 2–4. Pause and type along."
+          },
+          {
+            "kind": "reading",
+            "title": "MDN — HTML basics",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/HTML",
+            "note": "The official reference. Look up every tag you meet."
+          },
+          {
+            "kind": "reading",
+            "title": "MDN — CSS",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/CSS",
+            "note": "Your CSS reference for Day 5."
+          },
+          {
+            "kind": "interactive",
+            "title": "freeCodeCamp — Responsive Web Design",
+            "url": "https://www.freecodecamp.org/learn/2022/responsive-web-design/",
+            "note": "Finish the Cat Photo App this week, then start the Cafe Menu (CSS)."
+          },
+          {
+            "kind": "video",
+            "title": "Kevin Powell — CSS",
+            "url": "https://www.youtube.com/@KevinPowell",
+            "note": "Search \"CSS for absolute beginners\" on Day 5."
+          },
+          {
+            "kind": "interactive",
+            "title": "W3Schools — HTML",
+            "url": "https://www.w3schools.com/html/",
+            "note": "Quick \"Try it yourself\" examples when you're stuck."
+          }
+        ],
+        "days": [
+          {
+            "number": 1,
+            "weekday": "Monday",
+            "topic": "How the web works",
+            "hours": 2.5,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "lesson",
+                "kind": "lesson",
+                "title": "Lesson",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "practice",
+                "kind": "practice",
+                "title": "Practice",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "mini-task",
+                "kind": "mini-task",
+                "title": "Mini-Task",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          },
+          {
+            "number": 2,
+            "weekday": "Tuesday",
+            "topic": "HTML structure and text",
+            "hours": 2.5,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "lesson",
+                "kind": "lesson",
+                "title": "Lesson",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "practice",
+                "kind": "practice",
+                "title": "Practice",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "mini-task",
+                "kind": "mini-task",
+                "title": "Mini-Task",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          },
+          {
+            "number": 3,
+            "weekday": "Wednesday",
+            "topic": "Links, images and page structure",
+            "hours": 2.5,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "lesson",
+                "kind": "lesson",
+                "title": "Lesson",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "practice",
+                "kind": "practice",
+                "title": "Practice",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "mini-task",
+                "kind": "mini-task",
+                "title": "Mini-Task",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          },
+          {
+            "number": 4,
+            "weekday": "Thursday",
+            "topic": "Tables and forms",
+            "hours": 2.5,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "lesson",
+                "kind": "lesson",
+                "title": "Lesson",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "practice",
+                "kind": "practice",
+                "title": "Practice",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "mini-task",
+                "kind": "mini-task",
+                "title": "Mini-Task",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          },
+          {
+            "number": 5,
+            "weekday": "Friday",
+            "topic": "CSS basics",
+            "hours": 2.5,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "lesson",
+                "kind": "lesson",
+                "title": "Lesson",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "practice",
+                "kind": "practice",
+                "title": "Practice",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "mini-task",
+                "kind": "mini-task",
+                "title": "Mini-Task",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          },
+          {
+            "number": 6,
+            "weekday": "Saturday",
+            "topic": "Project day: your \"About me\" website, v1",
+            "hours": 3,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "project",
+                "kind": "project",
+                "title": "Weekly Project",
+                "minutes": 120,
+                "body": ""
+              },
+              {
+                "key": "freecodecamp",
+                "kind": "freecodecamp",
+                "title": "FreeCodeCamp",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          }
+        ],
+        "quiz": [
+          {
+            "id": "w3q1",
+            "prompt": "What happens, step by step, between typing a web address and seeing the page?"
+          },
+          {
+            "id": "w3q2",
+            "prompt": "What are the jobs of HTML, CSS and JavaScript?"
+          },
+          {
+            "id": "w3q3",
+            "prompt": "Write the HTML skeleton from memory."
+          },
+          {
+            "id": "w3q4",
+            "prompt": "What's the difference between `<ul>` and `<ol>`? Between `<th>` and `<td>`?"
+          },
+          {
+            "id": "w3q5",
+            "prompt": "Why must every `<img>` have an `alt`, and every `<input>` a `<label>`?"
+          },
+          {
+            "id": "w3q6",
+            "prompt": "What do `header`, `nav`, `main` and `footer` tell the browser?"
+          },
+          {
+            "id": "w3q7",
+            "prompt": "What's the difference between a class and an id selector?"
+          },
+          {
+            "id": "w3q8",
+            "prompt": "Name the four layers of the box model, from inside out."
+          },
+          {
+            "id": "w3q9",
+            "prompt": "How do you link a CSS file to an HTML page?"
+          },
+          {
+            "id": "w3q10",
+            "prompt": "What's one thing you'd improve on your personal website next week?"
+          }
+        ],
+        "quizNote": "If you can answer all ten without notes, you're ready for Week 4. **Answers:** check the lesson for each day; for 8: content → padding → border → margin."
       }
     ]
   }
