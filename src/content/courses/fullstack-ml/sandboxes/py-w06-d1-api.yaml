@@ -1,0 +1,41 @@
+# Week 6 · Day 1 mini-task
+id: py-w06-d1-api
+kind: python
+title: "Read an API response"
+description: "A real Open-Meteo response for Lagos, saved as a dictionary. Dig out the values you need."
+starter: |
+  # What requests.get(...).json() gave us for Lagos:
+  data = {
+      "timezone": "Africa/Lagos",
+      "current_units": {"temperature_2m": "°C", "relative_humidity_2m": "%", "wind_speed_10m": "km/h"},
+      "current": {
+          "time": "2026-10-01T22:30",
+          "temperature_2m": 25.7,
+          "relative_humidity_2m": 85,
+          "weather_code": 2,
+          "wind_speed_10m": 10.6,
+      },
+  }
+
+  # 1. Store the temperature in temp and the humidity in humidity.
+
+  # 2. Print the temperature WITH its unit from current_units, like:  Temperature: 25.7°C
+
+  # 3. Write read_current(data) that returns
+  #    {"temp": …, "humidity": …, "code": …, "wind": …} from ANY response like this one.
+tasks:
+  - prompt: "temp and humidity come from data[\"current\"] (don't type the numbers)."
+    tests: |
+      assert temp == 25.7, f"temp is {temp!r}"
+      assert humidity == 85, f"humidity is {humidity!r}"
+      assert "temp = 25.7" not in __code__ and "humidity = 85" not in __code__, "Read them from data, don't type them"
+  - prompt: "Print  Temperature: 25.7°C  using the unit from data[\"current_units\"]."
+    expectOutput: ["Temperature: 25.7°C"]
+    tests: |
+      assert "current_units" in __code__, "Take the unit from data[\"current_units\"]"
+  - prompt: "read_current(data) works on any response."
+    tests: |
+      assert read_current(data) == {"temp": 25.7, "humidity": 85, "code": 2, "wind": 10.6}, f"got {read_current(data)}"
+      other = {"current": {"time": "x", "temperature_2m": 31.2, "relative_humidity_2m": 60, "weather_code": 95, "wind_speed_10m": 4.0}}
+      assert read_current(other) == {"temp": 31.2, "humidity": 60, "code": 95, "wind": 4.0}, "It must work on other responses too"
+    hint: "current = data[\"current\"]; return {\"temp\": current[\"temperature_2m\"], …}"

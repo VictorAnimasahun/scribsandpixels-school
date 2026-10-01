@@ -1,0 +1,57 @@
+# Week 6 · Day 2 mini-task
+id: py-w06-d2-describe
+kind: python
+title: "Weather in words"
+description: "Turn WMO weather codes into words, give advice, and build the report line."
+starter: |
+  CODES = {
+      0: "Clear sky", 1: "Mainly clear", 2: "Partly cloudy", 3: "Overcast",
+      45: "Fog", 48: "Fog",
+      51: "Drizzle", 53: "Drizzle", 55: "Drizzle",
+      61: "Rain", 63: "Rain", 65: "Heavy rain",
+      80: "Rain showers", 81: "Rain showers", 82: "Violent rain showers",
+      95: "Thunderstorm", 96: "Thunderstorm with hail", 99: "Thunderstorm with hail",
+  }
+
+
+  def describe(code):
+      # the words for a code, or "Unknown"
+      pass
+
+
+  def advice(temp, code):
+      # rain or storm (codes 51–82 or 95–99) → "Take an umbrella"
+      # otherwise 32°C or hotter → "Stay hydrated"
+      # otherwise → "Enjoy your day"
+      pass
+
+
+  def report(city, current):
+      # "Weather in Lagos: Partly cloudy, 25.7°C, humidity 85%, wind 10.6 km/h"
+      pass
+tasks:
+  - prompt: "describe(code) uses CODES and never crashes on an unknown code."
+    tests: |
+      assert describe(0) == "Clear sky", f"describe(0) gave {describe(0)!r}"
+      assert describe(95) == "Thunderstorm"
+      assert describe(63) == "Rain"
+      assert describe(7) == "Unknown", "Unknown codes → \"Unknown\""
+    hint: "return CODES.get(code, \"Unknown\")"
+  - prompt: "advice(temp, code): umbrella for rain and storms first, then the heat check."
+    tests: |
+      assert advice(26, 61) == "Take an umbrella", "Rain → umbrella"
+      assert advice(34, 95) == "Take an umbrella", "Storm beats heat"
+      assert advice(30, 82) == "Take an umbrella", "82 is still a shower"
+      assert advice(33, 1) == "Stay hydrated", "33°C and dry → stay hydrated"
+      assert advice(32, 0) == "Stay hydrated", "32 counts as hot"
+      assert advice(27, 3) == "Enjoy your day"
+      assert advice(27, 45) == "Enjoy your day", "Fog isn't rain"
+    hint: "if 51 <= code <= 82 or 95 <= code <= 99: …"
+  - prompt: "report(city, current) returns the exact report line."
+    tests: |
+      current = {"temperature_2m": 25.7, "relative_humidity_2m": 85, "weather_code": 2, "wind_speed_10m": 10.6}
+      expected = "Weather in Lagos: Partly cloudy, 25.7°C, humidity 85%, wind 10.6 km/h"
+      assert report("Lagos", current) == expected, f"got {report('Lagos', current)!r}"
+      hot = {"temperature_2m": 34.0, "relative_humidity_2m": 40, "weather_code": 0, "wind_speed_10m": 12.5}
+      assert report("Kano", hot) == "Weather in Kano: Clear sky, 34.0°C, humidity 40%, wind 12.5 km/h"
+      assert "describe(" in __code__.split("def report")[1], "Use describe() inside report()"

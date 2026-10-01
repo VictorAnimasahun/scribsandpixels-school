@@ -1,0 +1,69 @@
+# Week 6 · Day 3 mini-task
+id: py-w06-d3-robust
+kind: python
+title: "A script that doesn't crash"
+description: "Unknown cities, server errors and a proper main(): the robust skeleton of your weather script."
+starter: |
+  CITIES = {
+      "lagos": (6.52, 3.38),
+      "abuja": (9.06, 7.49),
+      "port harcourt": (4.82, 7.03),
+      "kano": (12.00, 8.52),
+      "ibadan": (7.38, 3.95),
+      "enugu": (6.46, 7.55),
+  }
+  CURRENT = "temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m"
+
+
+  def build_params(city):
+      # " Abuja " → {"latitude": 9.06, "longitude": 7.49, "current": CURRENT, "timezone": "Africa/Lagos"}
+      # unknown city → raise ValueError("Sorry, I don't know Jos")
+      pass
+
+
+  def check_response(status, body):
+      # 200 → return body["current"]
+      # anything else → raise RuntimeError with body's "reason" (or "Unknown error")
+      pass
+
+
+  def main():
+      # ask "City: ", then print  Fetching weather for Port Harcourt...  (nicely capitalised)
+      # or print the ValueError message for an unknown city
+      pass
+
+
+  if __name__ == "__main__":
+      main()
+tasks:
+  - prompt: "build_params(city) ignores case and spaces, unpacks the coordinates, and raises ValueError for unknown cities."
+    stdin: ["lagos"]
+    tests: |
+      assert build_params(" Abuja ") == {"latitude": 9.06, "longitude": 7.49, "current": CURRENT, "timezone": "Africa/Lagos"}, f"got {build_params(' Abuja ')}"
+      assert build_params("PORT HARCOURT")["latitude"] == 4.82
+      try:
+          build_params("Jos")
+          raise AssertionError("build_params('Jos') should raise ValueError")
+      except ValueError as error:
+          assert str(error) == "Sorry, I don't know Jos", f"message was {str(error)!r}"
+  - prompt: "check_response(status, body) returns the current data on 200 and raises RuntimeError with the reason otherwise."
+    stdin: ["lagos"]
+    tests: |
+      good = {"current": {"temperature_2m": 25.7}}
+      assert check_response(200, good) == {"temperature_2m": 25.7}
+      for status, body, reason in [(400, {"error": True, "reason": "Latitude must be in range of -90 to 90°. Given: 600.0."}, "Latitude must be in range of -90 to 90°. Given: 600.0."), (500, {}, "Unknown error")]:
+          try:
+              check_response(status, body)
+              raise AssertionError(f"status {status} should raise RuntimeError")
+          except RuntimeError as error:
+              assert str(error) == reason, f"message was {str(error)!r}"
+    hint: "raise RuntimeError(body.get(\"reason\", \"Unknown error\"))"
+  - prompt: "The user types port harcourt → Fetching weather for Port Harcourt..."
+    stdin: ["port harcourt"]
+    expectOutput: ["Fetching weather for Port Harcourt..."]
+    hint: "city.strip().title()"
+  - prompt: "The user types Jos → Sorry, I don't know Jos  (catch the ValueError in main)."
+    stdin: ["Jos"]
+    expectOutput: ["Sorry, I don't know Jos"]
+    tests: |
+      assert "except ValueError" in __code__, "Catch the ValueError in main()"

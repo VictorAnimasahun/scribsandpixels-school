@@ -1,0 +1,29 @@
+# Week 6 · Day 5 mini-task
+id: web-w06-d5-hire
+kind: web
+title: "Hire me"
+description: "Make contacting you one tap on a phone: email, call, WhatsApp, and a big friendly button."
+html: |
+  <section id="hire">
+    <h2>Hire me</h2>
+    <p>I build simple, fast websites for small businesses in Lagos.</p>
+    <!-- 1. A list of 3+ services (ul.services)  2. Email, call and WhatsApp links  3. A .cta button link -->
+  </section>
+css: |
+  * { box-sizing: border-box; }
+  body { font-family: system-ui, sans-serif; margin: 0; padding: 1rem; }
+js: ""
+tasks:
+  - prompt: "A <ul class=\"services\"> with at least 3 things you can do."
+    check: "document.querySelectorAll('ul.services > li').length >= 3"
+  - prompt: "An email link (mailto:)."
+    check: "[...document.querySelectorAll('a[href^=\"mailto:\"]')].some(a => /^mailto:[^@\\s]+@[^@\\s]+\\.[^@\\s]+$/.test(a.getAttribute('href')))"
+  - prompt: "A call link with the full Nigerian number: tel:+234…"
+    check: "[...document.querySelectorAll('a[href^=\"tel:\"]')].some(a => /^tel:\\+234\\d{10}$/.test(a.getAttribute('href')))"
+    hint: "0803 123 4567 → tel:+2348031234567"
+  - prompt: "A WhatsApp link: https://wa.me/ + 234 + the number without its first 0 (digits only)."
+    check: "[...document.querySelectorAll('a[href^=\"https://wa.me/\"]')].some(a => /^https:\\/\\/wa\\.me\\/234\\d{10}$/.test(a.getAttribute('href')))"
+    hint: "https://wa.me/2348031234567"
+  - prompt: "A link with class \"cta\" styled as a button at least 44px tall (easy to tap)."
+    check: "(() => { const c = document.querySelector('a.cta'); if (!c) return false; const s = getComputedStyle(c); return c.getBoundingClientRect().height >= 44 && s.backgroundColor !== 'rgba(0, 0, 0, 0)' })()"
+    hint: ".cta { display: inline-block; padding: 0.9rem 1.5rem; background: #164f3b; color: white; border-radius: 8px; }"

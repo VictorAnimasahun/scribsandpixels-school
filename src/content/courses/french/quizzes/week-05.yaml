@@ -1,0 +1,299 @@
+# French · Week 5 quizzes. Format and rules: src/content/QUIZZES.md
+week: 5
+days:
+
+  # ─────────────────────────── DAY 1 ───────────────────────────
+  - day: 1
+    gate:
+      title: "Checkpoint: Week 4 review"
+      covers: "Week 4: avoir and its expressions, family, possessives, numbers 70–100, describing people"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w05-d1-g01, difficulty: easy, type: text, prompt: "nous ___ (avoir)", accept: ["avons"] }
+        - { id: fr-w05-d1-g02, difficulty: easy, type: mcq, prompt: "I'm hungry.", choices: ["J'ai faim.", "Je suis faim.", "J'ai soif.", "Je faim."], answer: 0 }
+        - { id: fr-w05-d1-g03, difficulty: easy, type: mcq, prompt: "(my) ___ amie", choices: ["mon", "ma", "mes"], answer: 0 }
+        - { id: fr-w05-d1-g04, difficulty: easy, type: text, prompt: "80 in words", accept: ["quatre-vingts", "quatre vingts"] }
+        - { id: fr-w05-d1-g05, difficulty: easy, type: truefalse, prompt: "« sa mère » can mean his mother or her mother.", answer: true }
+        - { id: fr-w05-d1-g06, difficulty: easy, type: mcq, prompt: "uncle", choices: ["l'oncle", "le neveu", "le cousin", "le père"], answer: 0 }
+        - { id: fr-w05-d1-g07, difficulty: medium, type: text, prompt: "La sœur de mon père, c'est ma ___.", accept: ["tante"] }
+        - { id: fr-w05-d1-g08, difficulty: medium, type: text, prompt: "sérieux → (feminine)", accept: ["sérieuse"] }
+        - { id: fr-w05-d1-g09, difficulty: medium, type: text, prompt: "Translate: She is 25.", accept: ["Elle a vingt-cinq ans.", "Elle a vingt-cinq ans"] }
+        - { id: fr-w05-d1-g10, difficulty: medium, type: match, prompt: "Match.", pairs: [["notre", "our (one)"], ["leurs", "their (several)"], ["vos", "your, vous (several)"], ["ses", "his/her (several)"]] }
+        - { id: fr-w05-d1-g11, difficulty: medium, type: text, prompt: "97 in words", accept: ["quatre-vingt-dix-sept", "quatre vingt dix sept"] }
+        - { id: fr-w05-d1-g12, difficulty: medium, type: mcq, prompt: "they have (with the z liaison)", choices: ["ils ont", "ils sont", "ils a", "ils avons"], answer: 0 }
+        - { id: fr-w05-d1-g13, difficulty: medium, type: text, prompt: "Translate: I don't have children.", accept: ["Je n'ai pas d'enfants.", "Je n'ai pas d'enfants", "Je n'ai pas d'enfant."] }
+        - { id: fr-w05-d1-g14, difficulty: medium, type: truefalse, prompt: "« quatre-vingt-un » has no et and no s.", answer: true }
+        - { id: fr-w05-d1-g15, difficulty: medium, type: text, prompt: "Mes sœurs sont (gentil) ___.", accept: ["gentilles"] }
+        - { id: fr-w05-d1-g16, difficulty: hard, type: text, prompt: "Translate: My grandmother is old but sporty.", accept: ["Ma grand-mère est vieille mais sportive.", "Ma grand-mère est vieille mais sportive"] }
+        - { id: fr-w05-d1-g17, difficulty: hard, type: mcq, prompt: "Find the sentence with NO mistake.", choices: ["Mon amie a soixante-dix ans.", "Ma ami est vieux.", "Ils sont faim.", "Sa père est grand."], answer: 0 }
+        - { id: fr-w05-d1-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["J'ai raison.", "Nous avons froid.", "Leur fille est intelligente.", "Je suis 30 ans."], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "-ER endings"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fr-w05-d1-rf01, difficulty: easy, type: text, prompt: "je ___ (parler)", accept: ["parle"] }
+          - { id: fr-w05-d1-rf02, difficulty: easy, type: text, prompt: "tu ___ (parler)", accept: ["parles"] }
+          - { id: fr-w05-d1-rf03, difficulty: easy, type: text, prompt: "il ___ (parler)", accept: ["parle"] }
+          - { id: fr-w05-d1-rf04, difficulty: easy, type: text, prompt: "nous ___ (parler)", accept: ["parlons"] }
+          - { id: fr-w05-d1-rf05, difficulty: easy, type: text, prompt: "vous ___ (parler)", accept: ["parlez"] }
+          - { id: fr-w05-d1-rf06, difficulty: easy, type: text, prompt: "ils ___ (parler)", accept: ["parlent"] }
+          - { id: fr-w05-d1-rf07, difficulty: easy, type: text, prompt: "j'___ (aimer)", accept: ["aime"] }
+          - { id: fr-w05-d1-rf08, difficulty: easy, type: text, prompt: "nous ___ (habiter)", accept: ["habitons"] }
+          - { id: fr-w05-d1-rf09, difficulty: easy, type: text, prompt: "elles ___ (écouter)", accept: ["écoutent"] }
+          - { id: fr-w05-d1-rf10, difficulty: easy, type: truefalse, prompt: "The -ent of « ils parlent » is pronounced.", answer: false }
+          - { id: fr-w05-d1-rf11, difficulty: easy, type: text, prompt: "vous ___ (travailler)", accept: ["travaillez"] }
+      - kind: brain-teaser
+        title: "Sound vs spelling"
+        questions:
+          - { id: fr-w05-d1-bt01, difficulty: medium, type: multi, prompt: "Which forms of parler sound exactly the same? (Select all.)", choices: ["je parle", "tu parles", "ils parlent", "nous parlons"], answers: [0, 1, 2] }
+          - { id: fr-w05-d1-bt02, difficulty: medium, type: text, prompt: "Tu (travailler) ___ où ?", accept: ["travailles"] }
+          - { id: fr-w05-d1-bt03, difficulty: medium, type: text, prompt: "Elle (regarder) ___ la télé.", accept: ["regarde"] }
+          - { id: fr-w05-d1-bt04, difficulty: hard, type: text, prompt: "Translate: We live in Ibadan and they work in Lagos.", accept: ["Nous habitons à Ibadan et ils travaillent à Lagos.", "Nous habitons à Ibadan et ils travaillent à Lagos", "On habite à Ibadan et ils travaillent à Lagos."] }
+          - { id: fr-w05-d1-bt05, difficulty: hard, type: mcq, prompt: "Why « j'écoute » but « je regarde »?", choices: ["je becomes j' before a vowel or silent h", "écouter is irregular", "regarder is reflexive", "random"], answer: 0 }
+
+  # ─────────────────────────── DAY 2 ───────────────────────────
+  - day: 2
+    gate:
+      title: "Checkpoint: -ER verbs in the present"
+      covers: "Week 5 · Day 1: -er endings, silent -ent, je → j'"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w05-d2-g01, difficulty: easy, type: text, prompt: "Nous (habiter) ___ à Ibadan.", accept: ["habitons"] }
+        - { id: fr-w05-d2-g02, difficulty: easy, type: text, prompt: "Ils (écouter) ___ la radio.", accept: ["écoutent"] }
+        - { id: fr-w05-d2-g03, difficulty: easy, type: text, prompt: "J' (aimer) ___ le football.", accept: ["aime"] }
+        - { id: fr-w05-d2-g04, difficulty: easy, type: text, prompt: "Vous (parler) ___ yoruba ?", accept: ["parlez"] }
+        - { id: fr-w05-d2-g05, difficulty: easy, type: mcq, prompt: "The stem of parler is…", choices: ["parl-", "parle-", "par-", "parler-"], answer: 0 }
+        - { id: fr-w05-d2-g06, difficulty: easy, type: truefalse, prompt: "About 90% of French verbs end in -er.", answer: true }
+        - { id: fr-w05-d2-g07, difficulty: medium, type: match, prompt: "Match the ending.", pairs: [["je", "-e"], ["tu", "-es"], ["nous", "-ons"], ["vous", "-ez"]] }
+        - { id: fr-w05-d2-g08, difficulty: medium, type: text, prompt: "ils (regarder) ___", accept: ["regardent"] }
+        - { id: fr-w05-d2-g09, difficulty: medium, type: text, prompt: "tu (habiter) ___", accept: ["habites"] }
+        - { id: fr-w05-d2-g10, difficulty: medium, type: mcq, prompt: "Which two forms sound different from the rest?", choices: ["nous and vous", "je and tu", "il and ils", "tu and ils"], answer: 0 }
+        - { id: fr-w05-d2-g11, difficulty: medium, type: text, prompt: "Translate: You (tu) work a lot.", accept: ["Tu travailles beaucoup.", "Tu travailles beaucoup"] }
+        - { id: fr-w05-d2-g12, difficulty: medium, type: truefalse, prompt: "« J'habite » uses j' because habiter starts with a silent h.", answer: true }
+        - { id: fr-w05-d2-g13, difficulty: medium, type: mcq, prompt: "On ___ (parler) français.", choices: ["parle", "parlons", "parlent", "parles"], answer: 0, explain: "on takes the il form." }
+        - { id: fr-w05-d2-g14, difficulty: medium, type: text, prompt: "Translate: They (women) listen to the radio.", accept: ["Elles écoutent la radio.", "Elles écoutent la radio"] }
+        - { id: fr-w05-d2-g15, difficulty: medium, type: order, prompt: "Order: je, tu, il, nous, vous, ils (aimer)", items: ["j'aime", "tu aimes", "il aime", "nous aimons", "vous aimez", "ils aiment"] }
+        - { id: fr-w05-d2-g16, difficulty: hard, type: text, prompt: "Translate: Do you (vous) speak Igbo? (with est-ce que)", accept: ["Est-ce que vous parlez igbo ?", "Est-ce que vous parlez igbo?", "Est-ce que vous parlez igbo"] }
+        - { id: fr-w05-d2-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « Nous parlez anglais et ils parle français. »", choices: ["parlons … parlent", "Only parlez → parlons", "Only parle → parlent", "No error"], answer: 0 }
+        - { id: fr-w05-d2-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["J'écoute un podcast.", "Vous regardez la télé.", "Ils habitent à Abuja.", "Je aime le riz."], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Verb meanings"
+        secondsPerQuestion: 7
+        questions:
+          - { id: fr-w05-d2-rf01, difficulty: easy, type: mcq, prompt: "regarder", choices: ["to watch", "to listen", "to look for", "to stay"], answer: 0 }
+          - { id: fr-w05-d2-rf02, difficulty: easy, type: mcq, prompt: "écouter", choices: ["to listen", "to watch", "to write", "to eat"], answer: 0 }
+          - { id: fr-w05-d2-rf03, difficulty: easy, type: mcq, prompt: "chercher", choices: ["to look for", "to find", "to sing", "to arrive"], answer: 0 }
+          - { id: fr-w05-d2-rf04, difficulty: easy, type: mcq, prompt: "rester", choices: ["to stay", "to rest", "to return", "to arrive"], answer: 0 }
+          - { id: fr-w05-d2-rf05, difficulty: easy, type: mcq, prompt: "cuisiner", choices: ["to cook", "to clean", "to eat", "to buy"], answer: 0 }
+          - { id: fr-w05-d2-rf06, difficulty: easy, type: mcq, prompt: "donner", choices: ["to give", "to sleep", "to take", "to dance"], answer: 0 }
+          - { id: fr-w05-d2-rf07, difficulty: easy, type: mcq, prompt: "détester", choices: ["to hate", "to test", "to detect", "to like"], answer: 0 }
+          - { id: fr-w05-d2-rf08, difficulty: easy, type: mcq, prompt: "jouer", choices: ["to play", "to enjoy", "to join", "to work"], answer: 0 }
+          - { id: fr-w05-d2-rf09, difficulty: easy, type: text, prompt: "nous ___ (manger)", accept: ["mangeons"] }
+          - { id: fr-w05-d2-rf10, difficulty: easy, type: text, prompt: "nous ___ (commencer)", accept: ["commençons"] }
+          - { id: fr-w05-d2-rf11, difficulty: easy, type: text, prompt: "je ___ (préférer)", accept: ["préfère"] }
+      - kind: brain-teaser
+        title: "Spelling changes"
+        questions:
+          - { id: fr-w05-d2-bt01, difficulty: medium, type: mcq, prompt: "Why « nous mangeons » with an e?", choices: ["To keep the soft g sound before o", "It's plural", "e is always added for nous", "A typo that became a rule"], answer: 0 }
+          - { id: fr-w05-d2-bt02, difficulty: medium, type: mcq, prompt: "Why « nous commençons » with ç?", choices: ["To keep the soft c (s sound) before o", "ç is the nous marker", "It's a different verb", "To show it's past"], answer: 0 }
+          - { id: fr-w05-d2-bt03, difficulty: medium, type: text, prompt: "ils ___ (préférer)", accept: ["préfèrent"] }
+          - { id: fr-w05-d2-bt04, difficulty: hard, type: text, prompt: "vous ___ (préférer)", accept: ["préférez"], explain: "nous and vous keep é: préférons, préférez." }
+          - { id: fr-w05-d2-bt05, difficulty: hard, type: text, prompt: "Translate: We start at 8 and we eat at noon. (à midi)", accept: ["Nous commençons à 8 heures et nous mangeons à midi.", "Nous commençons à huit heures et nous mangeons à midi.", "Nous commençons à 8 heures et nous mangeons à midi"] }
+
+  # ─────────────────────────── DAY 3 ───────────────────────────
+  - day: 3
+    gate:
+      title: "Checkpoint: 20 essential -ER verbs"
+      covers: "Week 5 · Day 2: everyday -er verbs, manger/commencer/préférer spelling changes"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w05-d3-g01, difficulty: easy, type: mcq, prompt: "to look for", choices: ["chercher", "regarder", "trouver", "donner"], answer: 0 }
+        - { id: fr-w05-d3-g02, difficulty: easy, type: mcq, prompt: "to visit (a place)", choices: ["visiter", "rester", "arriver", "habiter"], answer: 0 }
+        - { id: fr-w05-d3-g03, difficulty: easy, type: mcq, prompt: "to sing", choices: ["chanter", "danser", "jouer", "cuisiner"], answer: 0 }
+        - { id: fr-w05-d3-g04, difficulty: easy, type: text, prompt: "nous ___ (manger)", accept: ["mangeons"] }
+        - { id: fr-w05-d3-g05, difficulty: easy, type: truefalse, prompt: "« Le bus arrive » means \"the bus is arriving\".", answer: true }
+        - { id: fr-w05-d3-g06, difficulty: easy, type: mcq, prompt: "étudier", choices: ["to study", "to stay", "to state", "to stand"], answer: 0 }
+        - { id: fr-w05-d3-g07, difficulty: medium, type: text, prompt: "Translate: I'm looking for a job.", accept: ["Je cherche un travail.", "Je cherche un travail", "Je cherche un emploi."] }
+        - { id: fr-w05-d3-g08, difficulty: medium, type: text, prompt: "Translate: She sings at church.", accept: ["Elle chante à l'église.", "Elle chante à l'église"] }
+        - { id: fr-w05-d3-g09, difficulty: medium, type: match, prompt: "Match.", pairs: [["adorer", "to love/adore"], ["rester", "to stay"], ["donner", "to give"], ["arriver", "to arrive"]] }
+        - { id: fr-w05-d3-g10, difficulty: medium, type: text, prompt: "nous ___ (commencer)", accept: ["commençons"] }
+        - { id: fr-w05-d3-g11, difficulty: medium, type: text, prompt: "tu ___ (préférer)", accept: ["préfères"] }
+        - { id: fr-w05-d3-g12, difficulty: medium, type: truefalse, prompt: "« nous préférons » keeps the é.", answer: true }
+        - { id: fr-w05-d3-g13, difficulty: medium, type: text, prompt: "Translate: We are staying at home.", accept: ["Nous restons à la maison.", "Nous restons à la maison", "On reste à la maison."] }
+        - { id: fr-w05-d3-g14, difficulty: medium, type: text, prompt: "Translate: You (vous) are studying French.", accept: ["Vous étudiez le français.", "Vous étudiez le français"] }
+        - { id: fr-w05-d3-g15, difficulty: medium, type: mcq, prompt: "Ils ___ au football.", choices: ["jouent", "jouons", "joue", "jouez"], answer: 0 }
+        - { id: fr-w05-d3-g16, difficulty: hard, type: text, prompt: "Translate: I cook on Sundays and my brother dances.", accept: ["Je cuisine le dimanche et mon frère danse.", "Je cuisine le dimanche et mon frère danse"] }
+        - { id: fr-w05-d3-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « Nous mangons et nous commencons. »", choices: ["mangeons … commençons", "Only mangons", "Only commencons", "No error"], answer: 0 }
+        - { id: fr-w05-d3-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["Je préfère le thé.", "Elles préfèrent danser.", "Nous préférons rester.", "Vous préfèrez lire."], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Make it negative"
+        secondsPerQuestion: 10
+        questions:
+          - { id: fr-w05-d3-rf01, difficulty: easy, type: mcq, prompt: "I don't speak Chinese.", choices: ["Je ne parle pas chinois.", "Je parle ne pas chinois.", "Je pas parle chinois.", "Ne je parle pas chinois."], answer: 0 }
+          - { id: fr-w05-d3-rf02, difficulty: easy, type: mcq, prompt: "ne before a vowel", choices: ["n'", "ne", "no", "non"], answer: 0 }
+          - { id: fr-w05-d3-rf03, difficulty: easy, type: mcq, prompt: "J'ai une voiture → negative", choices: ["Je n'ai pas de voiture.", "Je n'ai pas une voiture.", "Je n'ai pas la voiture.", "Je ne pas ai voiture."], answer: 0 }
+          - { id: fr-w05-d3-rf04, difficulty: easy, type: mcq, prompt: "J'aime le café → negative", choices: ["Je n'aime pas le café.", "Je n'aime pas de café.", "Je ne aime pas café.", "Je n'aime le café pas."], answer: 0 }
+          - { id: fr-w05-d3-rf05, difficulty: easy, type: mcq, prompt: "C'est un livre → negative", choices: ["Ce n'est pas un livre.", "Ce n'est pas de livre.", "Ce ne est pas un livre.", "C'est pas de livre."], answer: 0 }
+          - { id: fr-w05-d3-rf06, difficulty: easy, type: mcq, prompt: "Il a des enfants → negative", choices: ["Il n'a pas d'enfants.", "Il n'a pas des enfants.", "Il ne a pas enfants.", "Il n'a pas les enfants."], answer: 0 }
+          - { id: fr-w05-d3-rf07, difficulty: easy, type: truefalse, prompt: "Spoken French often drops ne: « J'aime pas ça. »", answer: true }
+          - { id: fr-w05-d3-rf08, difficulty: easy, type: mcq, prompt: "ne … pas goes…", choices: ["around the verb", "before the subject", "at the end", "after the object"], answer: 0 }
+          - { id: fr-w05-d3-rf09, difficulty: easy, type: mcq, prompt: "Nous travaillons → negative", choices: ["Nous ne travaillons pas.", "Nous travaillons pas ne.", "Ne nous travaillons pas.", "Nous pas travaillons."], answer: 0 }
+          - { id: fr-w05-d3-rf10, difficulty: easy, type: mcq, prompt: "In writing, keep…", choices: ["both ne and pas", "only pas", "only ne", "neither"], answer: 0 }
+      - kind: brain-teaser
+        title: "Negative articles"
+        questions:
+          - { id: fr-w05-d3-bt01, difficulty: medium, type: text, prompt: "Negative: Elle a un frère.", accept: ["Elle n'a pas de frère.", "Elle n'a pas de frère"] }
+          - { id: fr-w05-d3-bt02, difficulty: medium, type: text, prompt: "Negative: Nous aimons le fromage.", accept: ["Nous n'aimons pas le fromage.", "Nous n'aimons pas le fromage"] }
+          - { id: fr-w05-d3-bt03, difficulty: medium, type: text, prompt: "Negative: Ils regardent des films.", accept: ["Ils ne regardent pas de films.", "Ils ne regardent pas de films"] }
+          - { id: fr-w05-d3-bt04, difficulty: hard, type: text, prompt: "Negative: C'est une banque.", accept: ["Ce n'est pas une banque.", "Ce n'est pas une banque"], explain: "être keeps its article." }
+          - { id: fr-w05-d3-bt05, difficulty: hard, type: text, prompt: "Negative: J'ai des amis à Paris.", accept: ["Je n'ai pas d'amis à Paris.", "Je n'ai pas d'amis à Paris"] }
+
+  # ─────────────────────────── DAY 4 ───────────────────────────
+  - day: 4
+    gate:
+      title: "Checkpoint: negation"
+      covers: "Week 5 · Day 3: ne … pas, n' before vowels, un/une/des → de, le/la/les unchanged, être keeps its article, spoken pas"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w05-d4-g01, difficulty: easy, type: mcq, prompt: "Je travaille le samedi → negative", choices: ["Je ne travaille pas le samedi.", "Je travaille ne pas le samedi.", "Je ne pas travaille le samedi.", "Je travaille pas ne le samedi."], answer: 0 }
+        - { id: fr-w05-d4-g02, difficulty: easy, type: mcq, prompt: "After pas, une becomes…", choices: ["de", "la", "une (unchanged)", "des"], answer: 0 }
+        - { id: fr-w05-d4-g03, difficulty: easy, type: mcq, prompt: "After pas, le…", choices: ["stays le", "becomes de", "disappears", "becomes du"], answer: 0 }
+        - { id: fr-w05-d4-g04, difficulty: easy, type: truefalse, prompt: "« Je n'aime pas » uses n' because aime starts with a vowel.", answer: true }
+        - { id: fr-w05-d4-g05, difficulty: easy, type: mcq, prompt: "C'est pas grave =", choices: ["It's not serious / no problem", "It's a grave", "It's very serious", "It's past"], answer: 0 }
+        - { id: fr-w05-d4-g06, difficulty: easy, type: mcq, prompt: "Negative of « J'habite à Kano »", choices: ["Je n'habite pas à Kano.", "Je ne habite pas à Kano.", "J'habite pas ne à Kano.", "Je n'habite à Kano pas."], answer: 0 }
+        - { id: fr-w05-d4-g07, difficulty: medium, type: text, prompt: "Negative: Tu as une voiture ?", accept: ["Tu n'as pas de voiture ?", "Tu n'as pas de voiture?", "Tu n'as pas de voiture"] }
+        - { id: fr-w05-d4-g08, difficulty: medium, type: text, prompt: "Negative: J'aime la pluie.", accept: ["Je n'aime pas la pluie.", "Je n'aime pas la pluie"] }
+        - { id: fr-w05-d4-g09, difficulty: medium, type: text, prompt: "Negative: Ce sont des clés.", accept: ["Ce ne sont pas des clés.", "Ce ne sont pas des clés"], explain: "être keeps its article." }
+        - { id: fr-w05-d4-g10, difficulty: medium, type: match, prompt: "Match the article after pas.", pairs: [["un", "de"], ["des", "de"], ["la", "la"], ["les", "les"]] }
+        - { id: fr-w05-d4-g11, difficulty: medium, type: text, prompt: "Negative: Il a des enfants.", accept: ["Il n'a pas d'enfants.", "Il n'a pas d'enfants"] }
+        - { id: fr-w05-d4-g12, difficulty: medium, type: truefalse, prompt: "« Je n'ai pas une voiture » is the standard negative of « J'ai une voiture ».", answer: false }
+        - { id: fr-w05-d4-g13, difficulty: medium, type: mcq, prompt: "Spoken « J'aime pas ça » in writing is…", choices: ["Je n'aime pas ça.", "J'aime ne pas ça.", "Je ne aime ça.", "J'aime pas ça. (always)"], answer: 0 }
+        - { id: fr-w05-d4-g14, difficulty: medium, type: text, prompt: "Negative: Nous regardons la télé.", accept: ["Nous ne regardons pas la télé.", "Nous ne regardons pas la télé"] }
+        - { id: fr-w05-d4-g15, difficulty: medium, type: order, prompt: "Build: I don't have a car.", items: ["Je", "n'ai", "pas", "de", "voiture"] }
+        - { id: fr-w05-d4-g16, difficulty: hard, type: text, prompt: "Translate: She doesn't eat meat and she doesn't like fish. (viande, poisson)", accept: ["Elle ne mange pas de viande et elle n'aime pas le poisson.", "Elle ne mange pas de viande et elle n'aime pas le poisson"] }
+        - { id: fr-w05-d4-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « Je n'ai pas des frères et je ne aime pas le riz. »", choices: ["pas de frères … je n'aime", "Only des → de", "Only ne → n'", "No error"], answer: 0 }
+        - { id: fr-w05-d4-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["Ce n'est pas un problème.", "Je n'ai pas d'argent.", "Il ne parle pas anglais.", "Nous n'avons pas des enfants."], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Likes and hobbies"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fr-w05-d4-rf01, difficulty: easy, type: mcq, prompt: "Strongest like", choices: ["J'adore", "J'aime bien", "J'aime beaucoup", "Je n'aime pas"], answer: 0 }
+          - { id: fr-w05-d4-rf02, difficulty: easy, type: mcq, prompt: "Strongest dislike", choices: ["Je déteste", "Je n'aime pas beaucoup", "J'aime bien", "Je n'aime pas"], answer: 0 }
+          - { id: fr-w05-d4-rf03, difficulty: easy, type: mcq, prompt: "Il joue ___ piano.", choices: ["du", "au", "de la", "à la"], answer: 0 }
+          - { id: fr-w05-d4-rf04, difficulty: easy, type: mcq, prompt: "Nous jouons ___ basketball.", choices: ["au", "du", "de la", "à"], answer: 0 }
+          - { id: fr-w05-d4-rf05, difficulty: easy, type: mcq, prompt: "Elle joue ___ guitare.", choices: ["de la", "à la", "du", "au"], answer: 0 }
+          - { id: fr-w05-d4-rf06, difficulty: easy, type: mcq, prompt: "Ils jouent ___ cartes.", choices: ["aux", "des", "au", "de"], answer: 0 }
+          - { id: fr-w05-d4-rf07, difficulty: easy, type: mcq, prompt: "lire", choices: ["to read", "to laugh", "to lie", "to link"], answer: 0 }
+          - { id: fr-w05-d4-rf08, difficulty: easy, type: mcq, prompt: "nager", choices: ["to swim", "to nag", "to eat", "to dance"], answer: 0 }
+          - { id: fr-w05-d4-rf09, difficulty: easy, type: mcq, prompt: "What do you like doing?", choices: ["Qu'est-ce que tu aimes faire ?", "Qu'est-ce que c'est ?", "Tu aimes quoi ça ?", "Où tu aimes ?"], answer: 0 }
+          - { id: fr-w05-d4-rf10, difficulty: easy, type: mcq, prompt: "I like reading.", choices: ["J'aime lire.", "J'aime le lire.", "J'aime de lire.", "J'aime lis."], answer: 0 }
+      - kind: brain-teaser
+        title: "Jouer à ou de ?"
+        questions:
+          - { id: fr-w05-d4-bt01, difficulty: medium, type: mcq, prompt: "jouer à vs jouer de:", choices: ["à + sport/game, de + instrument", "à + instrument, de + sport", "always à", "always de"], answer: 0 }
+          - { id: fr-w05-d4-bt02, difficulty: medium, type: text, prompt: "J'aime ___ musique afrobeat.", accept: ["la"] }
+          - { id: fr-w05-d4-bt03, difficulty: medium, type: text, prompt: "Translate: I don't like the rain at all.", accept: ["Je n'aime pas du tout la pluie.", "Je n'aime pas du tout la pluie", "Je n'aime pas la pluie du tout."] }
+          - { id: fr-w05-d4-bt04, difficulty: hard, type: text, prompt: "Translate: My brother plays the drum and football. (tambour)", accept: ["Mon frère joue du tambour et au football.", "Mon frère joue du tambour et au football", "Mon frère joue au football et du tambour."] }
+          - { id: fr-w05-d4-bt05, difficulty: hard, type: order, prompt: "From most to least liked.", items: ["J'adore", "J'aime beaucoup", "J'aime bien", "Je n'aime pas beaucoup", "Je n'aime pas du tout", "Je déteste"] }
+
+  # ─────────────────────────── DAY 5 ───────────────────────────
+  - day: 5
+    gate:
+      title: "Checkpoint: likes, dislikes and hobbies"
+      covers: "Week 5 · Day 4: aimer + le/la/les or infinitive, the liking scale, jouer à / jouer de, hobbies"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w05-d5-g01, difficulty: easy, type: mcq, prompt: "aimer + noun takes…", choices: ["le/la/les", "un/une", "de", "no article"], answer: 0 }
+        - { id: fr-w05-d5-g02, difficulty: easy, type: mcq, prompt: "I love cooking.", choices: ["J'adore cuisiner.", "J'adore le cuisiner.", "J'adore de cuisiner.", "J'adore cuisine."], answer: 0 }
+        - { id: fr-w05-d5-g03, difficulty: easy, type: mcq, prompt: "jouer ___ + instrument", choices: ["de", "à", "en", "avec"], answer: 0 }
+        - { id: fr-w05-d5-g04, difficulty: easy, type: truefalse, prompt: "« jouer au football » uses à + le = au.", answer: true }
+        - { id: fr-w05-d5-g05, difficulty: easy, type: mcq, prompt: "voyager", choices: ["to travel", "to see", "to vote", "to fly"], answer: 0 }
+        - { id: fr-w05-d5-g06, difficulty: easy, type: mcq, prompt: "sortir avec des amis", choices: ["to go out with friends", "to sort friends", "to leave friends", "to call friends"], answer: 0 }
+        - { id: fr-w05-d5-g07, difficulty: medium, type: text, prompt: "Il joue ___ piano.", accept: ["du"] }
+        - { id: fr-w05-d5-g08, difficulty: medium, type: text, prompt: "Nous jouons ___ basketball.", accept: ["au"] }
+        - { id: fr-w05-d5-g09, difficulty: medium, type: text, prompt: "Elle joue ___ guitare.", accept: ["de la"] }
+        - { id: fr-w05-d5-g10, difficulty: medium, type: match, prompt: "Match.", pairs: [["jouer aux cartes", "play cards"], ["jouer du tambour", "play the drum"], ["jouer à la PlayStation", "play PlayStation"], ["jouer de la guitare", "play guitar"]] }
+        - { id: fr-w05-d5-g11, difficulty: medium, type: text, prompt: "Vous aimez ___ ? (to travel)", accept: ["voyager"] }
+        - { id: fr-w05-d5-g12, difficulty: medium, type: truefalse, prompt: "« J'aime football » (no article) is correct.", answer: false }
+        - { id: fr-w05-d5-g13, difficulty: medium, type: text, prompt: "Translate: I hate the rain.", accept: ["Je déteste la pluie.", "Je déteste la pluie"] }
+        - { id: fr-w05-d5-g14, difficulty: medium, type: mcq, prompt: "Which is weaker than « J'aime beaucoup »?", choices: ["J'aime bien", "J'adore", "Je kiffe", "J'aime énormément"], answer: 0 }
+        - { id: fr-w05-d5-g15, difficulty: medium, type: text, prompt: "Translate: What do you (tu) like doing?", accept: ["Qu'est-ce que tu aimes faire ?", "Qu'est-ce que tu aimes faire?", "Qu'est-ce que tu aimes faire"] }
+        - { id: fr-w05-d5-g16, difficulty: hard, type: text, prompt: "Translate: I like swimming but I don't like football much.", accept: ["J'aime nager mais je n'aime pas beaucoup le football.", "J'aime nager, mais je n'aime pas beaucoup le football.", "J'aime nager mais je n'aime pas beaucoup le football"] }
+        - { id: fr-w05-d5-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « Elle joue au piano et de la football. »", choices: ["du piano … au football", "Only au piano", "Only de la football", "No error"], answer: 0 }
+        - { id: fr-w05-d5-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["J'adore lire.", "Il joue aux cartes.", "Tu aimes la musique ?", "Je joue de football."], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Work talk"
+        secondsPerQuestion: 9
+        questions:
+          - { id: fr-w05-d5-rf01, difficulty: easy, type: mcq, prompt: "I work in a bank.", choices: ["Je travaille dans une banque.", "Je travaille à une banque.", "Je travaille chez banque.", "Je travaille en banque une."], answer: 0 }
+          - { id: fr-w05-d5-rf02, difficulty: easy, type: mcq, prompt: "I work at Flutterwave.", choices: ["Je travaille chez Flutterwave.", "Je travaille dans Flutterwave.", "Je travaille à le Flutterwave.", "Je travaille en Flutterwave."], answer: 0 }
+          - { id: fr-w05-d5-rf03, difficulty: easy, type: mcq, prompt: "I work remotely.", choices: ["Je travaille en télétravail.", "Je travaille à télé.", "Je télétravaille dans.", "Je travaille loin."], answer: 0 }
+          - { id: fr-w05-d5-rf04, difficulty: easy, type: mcq, prompt: "I'm unemployed.", choices: ["Je suis au chômage.", "Je suis chômage.", "J'ai chômage.", "Je chôme le travail."], answer: 0 }
+          - { id: fr-w05-d5-rf05, difficulty: easy, type: mcq, prompt: "because", choices: ["parce que", "pour que", "par", "car que"], answer: 0 }
+          - { id: fr-w05-d5-rf06, difficulty: easy, type: mcq, prompt: "my boss (woman)", choices: ["ma patronne", "mon patron", "ma patron", "mon patronne"], answer: 0 }
+          - { id: fr-w05-d5-rf07, difficulty: easy, type: mcq, prompt: "I start at 8.", choices: ["Je commence à 8 heures.", "Je commence en 8 heures.", "Je commence 8 heures.", "Je commence pour 8."], answer: 0 }
+          - { id: fr-w05-d5-rf08, difficulty: easy, type: mcq, prompt: "chez + …", choices: ["a company or person's place", "a city", "a country", "a time"], answer: 0 }
+          - { id: fr-w05-d5-rf09, difficulty: easy, type: mcq, prompt: "my colleague (woman)", choices: ["ma collègue", "mon collègue", "ma collèque", "mon collègue femme"], answer: 0 }
+          - { id: fr-w05-d5-rf10, difficulty: easy, type: mcq, prompt: "I'm looking for a job.", choices: ["Je cherche un emploi.", "Je regarde un emploi.", "Je trouve un emploi.", "Je cherche emploi."], answer: 0 }
+      - kind: brain-teaser
+        title: "Why I like my job"
+        questions:
+          - { id: fr-w05-d5-bt01, difficulty: medium, type: text, prompt: "Translate: I work for a Nigerian company.", accept: ["Je travaille pour une entreprise nigériane.", "Je travaille pour une entreprise nigériane"] }
+          - { id: fr-w05-d5-bt02, difficulty: medium, type: text, prompt: "Translate: I work in tech.", accept: ["Je travaille dans la tech.", "Je travaille dans la tech"] }
+          - { id: fr-w05-d5-bt03, difficulty: medium, type: text, prompt: "Translate: I like my job because my colleagues are nice.", accept: ["J'aime mon travail parce que mes collègues sont sympas.", "J'aime mon travail parce que mes collègues sont sympas", "J'aime mon travail parce que mes collègues sont gentils."] }
+          - { id: fr-w05-d5-bt04, difficulty: hard, type: text, prompt: "Translate: I don't work on Saturdays because I study French.", accept: ["Je ne travaille pas le samedi parce que j'étudie le français.", "Je ne travaille pas le samedi parce que j'étudie le français"] }
+          - { id: fr-w05-d5-bt05, difficulty: hard, type: mcq, prompt: "Qu'est-ce que vous faites dans la vie ? — best answer:", choices: ["Je suis comptable, je travaille chez Dangote.", "Je fais la vie.", "Je suis un comptable dans Dangote.", "Je travaille à vie."], answer: 0 }
+
+  # ─────────────────────────── DAY 6 ───────────────────────────
+  - day: 6
+    gate:
+      title: "Checkpoint: talking about work"
+      covers: "Week 5 · Day 5: dans / pour / chez, télétravail, chômage, commencer à, parce que, colleague and boss"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w05-d6-g01, difficulty: easy, type: mcq, prompt: "chez + company name", choices: ["Je travaille chez Andela.", "Je travaille dans Andela.", "Je travaille à Andela.", "Je travaille en Andela."], answer: 0 }
+        - { id: fr-w05-d6-g02, difficulty: easy, type: mcq, prompt: "parce que =", choices: ["because", "for", "so that", "but"], answer: 0 }
+        - { id: fr-w05-d6-g03, difficulty: easy, type: mcq, prompt: "à domicile =", choices: ["from home", "at the office", "abroad", "on Sunday"], answer: 0 }
+        - { id: fr-w05-d6-g04, difficulty: easy, type: truefalse, prompt: "« Je cherche un emploi » means \"I'm looking for a job\".", answer: true }
+        - { id: fr-w05-d6-g05, difficulty: easy, type: mcq, prompt: "mon patron =", choices: ["my boss", "my father", "my client", "my colleague"], answer: 0 }
+        - { id: fr-w05-d6-g06, difficulty: easy, type: mcq, prompt: "What do you do (for a living)?", choices: ["Qu'est-ce que vous faites dans la vie ?", "Comment allez-vous ?", "Où habitez-vous ?", "Quel âge avez-vous ?"], answer: 0 }
+        - { id: fr-w05-d6-g07, difficulty: medium, type: text, prompt: "Translate: I work from home.", accept: ["Je travaille à domicile.", "Je travaille à domicile", "Je travaille en télétravail."] }
+        - { id: fr-w05-d6-g08, difficulty: medium, type: match, prompt: "Match.", pairs: [["dans une banque", "in a bank"], ["pour une entreprise", "for a company"], ["chez Flutterwave", "at Flutterwave"], ["en télétravail", "remotely"]] }
+        - { id: fr-w05-d6-g09, difficulty: medium, type: text, prompt: "Translate: I start at 9.", accept: ["Je commence à 9 heures.", "Je commence à neuf heures.", "Je commence à 9 heures", "Je commence à 9h."] }
+        - { id: fr-w05-d6-g10, difficulty: medium, type: mcq, prompt: "A woman: \"my colleague is nice\" (colleague = a man)", choices: ["Mon collègue est sympa.", "Ma collègue est sympa.", "Mon collègue est sympas.", "Ma collègue est sympa (always)."], answer: 0, explain: "The possessive agrees with the colleague, not the speaker." }
+        - { id: fr-w05-d6-g11, difficulty: medium, type: truefalse, prompt: "« Je suis au chômage » means \"I'm unemployed\".", answer: true }
+        - { id: fr-w05-d6-g12, difficulty: medium, type: text, prompt: "Translate: I like my job because it's interesting.", accept: ["J'aime mon travail parce que c'est intéressant.", "J'aime mon travail parce que c'est intéressant", "J'aime mon travail parce qu'il est intéressant."] }
+        - { id: fr-w05-d6-g13, difficulty: medium, type: mcq, prompt: "parce que + il =", choices: ["parce qu'il", "parce que il", "parce qu il", "parcequ'il"], answer: 0 }
+        - { id: fr-w05-d6-g14, difficulty: medium, type: text, prompt: "Translate: My boss (a woman) is serious.", accept: ["Ma patronne est sérieuse.", "Ma patronne est sérieuse"] }
+        - { id: fr-w05-d6-g15, difficulty: medium, type: order, prompt: "Build the answer.", items: ["Je", "travaille", "dans", "une", "banque"] }
+        - { id: fr-w05-d6-g16, difficulty: hard, type: text, prompt: "Translate: I don't like my job because I start at 6.", accept: ["Je n'aime pas mon travail parce que je commence à 6 heures.", "Je n'aime pas mon travail parce que je commence à six heures.", "Je n'aime pas mon travail parce que je commence à 6 heures"] }
+        - { id: fr-w05-d6-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « Je travaille chez une banque et dans MTN. »", choices: ["dans une banque … chez MTN", "Only chez → dans", "Only dans → chez", "No error"], answer: 0 }
+        - { id: fr-w05-d6-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["Je travaille pour une ONG.", "Elle travaille chez Paystack.", "Nous commençons à 8 heures.", "Je travaille chez Lagos."], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Week 5 lightning round"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fr-w05-d6-rf01, difficulty: easy, type: text, prompt: "ils ___ (parler)", accept: ["parlent"] }
+          - { id: fr-w05-d6-rf02, difficulty: easy, type: text, prompt: "nous ___ (manger)", accept: ["mangeons"] }
+          - { id: fr-w05-d6-rf03, difficulty: easy, type: text, prompt: "je ___ (préférer)", accept: ["préfère"] }
+          - { id: fr-w05-d6-rf04, difficulty: easy, type: mcq, prompt: "I don't have a car.", choices: ["Je n'ai pas de voiture.", "Je n'ai pas une voiture.", "Je ne pas ai voiture.", "J'ai pas voiture ne."], answer: 0 }
+          - { id: fr-w05-d6-rf05, difficulty: easy, type: mcq, prompt: "jouer ___ piano", choices: ["du", "au", "de la", "à"], answer: 0 }
+          - { id: fr-w05-d6-rf06, difficulty: easy, type: mcq, prompt: "jouer ___ football", choices: ["au", "du", "de", "à le"], answer: 0 }
+          - { id: fr-w05-d6-rf07, difficulty: easy, type: mcq, prompt: "because", choices: ["parce que", "pour", "car que", "par"], answer: 0 }
+          - { id: fr-w05-d6-rf08, difficulty: easy, type: mcq, prompt: "chez + …", choices: ["company name", "country", "city", "time"], answer: 0 }
+          - { id: fr-w05-d6-rf09, difficulty: easy, type: mcq, prompt: "I like reading.", choices: ["J'aime lire.", "J'aime le lire.", "J'aime de lire.", "J'aime lis."], answer: 0 }
+          - { id: fr-w05-d6-rf10, difficulty: easy, type: text, prompt: "vous ___ (étudier)", accept: ["étudiez"] }
+      - kind: brain-teaser
+        title: "Self-interview"
+        questions:
+          - { id: fr-w05-d6-bt01, difficulty: medium, type: text, prompt: "Translate: Where do you (tu) live? (with est-ce que)", accept: ["Où est-ce que tu habites ?", "Où est-ce que tu habites?", "Où est-ce que tu habites"] }
+          - { id: fr-w05-d6-bt02, difficulty: medium, type: text, prompt: "Translate: Do you (tu) play an instrument?", accept: ["Tu joues d'un instrument ?", "Est-ce que tu joues d'un instrument ?", "Tu joues d'un instrument?", "Tu joues d'un instrument"] }
+          - { id: fr-w05-d6-bt03, difficulty: medium, type: text, prompt: "Translate: What do you (tu) like doing at the weekend?", accept: ["Qu'est-ce que tu aimes faire le week-end ?", "Qu'est-ce que tu aimes faire le week-end?", "Qu'est-ce que tu aimes faire le week-end"] }
+          - { id: fr-w05-d6-bt04, difficulty: hard, type: text, prompt: "Translate: I work in a bank, but I don't like my job.", accept: ["Je travaille dans une banque, mais je n'aime pas mon travail.", "Je travaille dans une banque mais je n'aime pas mon travail.", "Je travaille dans une banque, mais je n'aime pas mon travail"] }
+          - { id: fr-w05-d6-bt05, difficulty: hard, type: mcq, prompt: "Find the sentence with NO mistake.", choices: ["Nous ne mangeons pas de viande parce que nous préférons le poisson.", "Nous ne mangons pas de viande.", "Je n'aime pas des films.", "Elle joue au guitare."], answer: 0 }

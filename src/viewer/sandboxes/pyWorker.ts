@@ -76,6 +76,8 @@ self.onmessage = async (event: MessageEvent<RunRequest>) => {
   })
 
   const globals = py.globals.get('dict')()
+  // Run as a script, so `if __name__ == "__main__":` works (a bare dict would see builtins' __name__).
+  globals.set('__name__', '__main__')
   try {
     await py.runPythonAsync(code, { globals })
     if (tests) {

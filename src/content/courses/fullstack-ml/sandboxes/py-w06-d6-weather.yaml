@@ -1,0 +1,65 @@
+# Week 6 · Day 6: Phase 1 milestone (offline version)
+id: py-w06-d6-weather
+kind: python
+title: "Lagos weather script"
+description: "The whole milestone script. fake_get returns saved API responses, so you can test it here; on your computer you pass real_get instead."
+starter: |
+  CITIES = {"lagos": (6.52, 3.38), "abuja": (9.06, 7.49), "kano": (12.00, 8.52)}
+  CURRENT = "temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m"
+  CODES = {0: "Clear sky", 1: "Mainly clear", 2: "Partly cloudy", 3: "Overcast", 61: "Rain", 63: "Rain", 95: "Thunderstorm"}
+
+  # Saved responses, keyed by latitude, standing in for the internet.
+  SAVED = {
+      6.52: (200, {"current": {"temperature_2m": 25.7, "relative_humidity_2m": 85, "weather_code": 2, "wind_speed_10m": 10.6}}),
+      9.06: (200, {"current": {"temperature_2m": 23.1, "relative_humidity_2m": 92, "weather_code": 63, "wind_speed_10m": 6.2}}),
+      12.0: (500, {"error": True, "reason": "Server overloaded"}),
+  }
+
+
+  def fake_get(params):
+      return SAVED[params["latitude"]]
+
+
+  # Paste or rewrite your functions from Days 2–3: describe, report, build_params, check_response.
+
+
+  def weather_report(city, get=fake_get):
+      # build_params → get(params) → check_response → report
+      # unknown city → return "Sorry, I don't know Jos"
+      # server error → return "Couldn't get the weather: Server overloaded"
+      pass
+
+
+  def main():
+      city = input("City: ")
+      print(weather_report(city))
+
+
+  if __name__ == "__main__":
+      main()
+tasks:
+  - prompt: "weather_report(\"Lagos\") returns the full report line."
+    stdin: ["Lagos"]
+    tests: |
+      got = weather_report("Lagos")
+      assert got == "Weather in Lagos: Partly cloudy, 25.7°C, humidity 85%, wind 10.6 km/h", f"got {got!r}"
+      got = weather_report("  abuja ")
+      assert got == "Weather in Abuja: Rain, 23.1°C, humidity 92%, wind 6.2 km/h", f"got {got!r}"
+  - prompt: "Unknown city and server errors return friendly messages instead of crashing."
+    stdin: ["Lagos"]
+    tests: |
+      assert weather_report("Jos") == "Sorry, I don't know Jos", f"got {weather_report('Jos')!r}"
+      assert weather_report("Kano") == "Couldn't get the weather: Server overloaded", f"got {weather_report('Kano')!r}"
+  - prompt: "weather_report really uses the get it's given (so real_get will work on your computer)."
+    stdin: ["Lagos"]
+    tests: |
+      calls = []
+      def spy_get(params):
+          calls.append(params)
+          return 200, {"current": {"temperature_2m": 30.0, "relative_humidity_2m": 50, "weather_code": 0, "wind_speed_10m": 5.0}}
+      got = weather_report("lagos", get=spy_get)
+      assert calls and calls[0]["latitude"] == 6.52 and calls[0]["timezone"] == "Africa/Lagos", "Call get(build_params(city))"
+      assert got == "Weather in Lagos: Clear sky, 30.0°C, humidity 50%, wind 5.0 km/h", f"got {got!r}"
+  - prompt: "Running the script and typing Lagos prints the Lagos report."
+    stdin: ["Lagos"]
+    expectOutput: ["Weather in Lagos: Partly cloudy, 25.7°C, humidity 85%, wind 10.6 km/h"]

@@ -11,15 +11,15 @@
 ## Quizzes (a slice at a time, no mass generation)
 - [x] Quiz engine: random weekly checkpoints (1–2/week), 70% pass, 60-min cooldown, new questions on retry
 - [x] French Week 1 · Excel Week 1 question banks
-- [x] French Weeks 2–4 · Excel Weeks 2–4
-- [ ] French Weeks 5–52
-- [ ] Excel Weeks 5–24
-- [x] Fullstack + ML Weeks 1–5 (every Python snippet checked by running it: `node scripts/check-quiz-code.mjs`)
+- [x] French Weeks 2–5 · Excel Weeks 2–5
+- [ ] French Weeks 6–52
+- [ ] Excel Weeks 6–24
+- [x] Fullstack + ML Weeks 1–6 (Phase 1 complete) (every Python snippet checked by running it: `node scripts/check-quiz-code.mjs`)
 - [ ] Fullstack + ML later weeks as they're written
 
 ## Sandboxes (a slice at a time)
 - [x] Engines: French phrase builder, Excel spreadsheet, Python, web playground
-- [x] French W1, W2, W3, W7 + main lab · Excel W2, W3, W6 + playground · Fullstack: a sandbox for every day of W1–5 (35 sandboxes, 134 auto-checked tasks) + Python/web playgrounds
+- [x] French W1, W2, W3, W7 + main lab · Excel W2, W3, W6 + playground · Fullstack: a sandbox for every day of W1–6 (41 sandboxes, 159 auto-checked tasks) + Python/web playgrounds
 - [x] Phone-ready code editor (key bar, auto-indent, smart-quote fix), tested on iPhone/Safari and Android/Chrome emulation
 - [ ] More French lesson sets (add each to `fr-main` include)
 - [ ] More Excel task sheets (every formula week)
@@ -27,8 +27,8 @@
 - [x] Excel `mustUse`: tasks can require `$` references, not just the right number
 
 ## Content
-- [x] Fullstack + ML Week 3 (HTML & CSS) · Week 4 (Flexbox, responsive, Git + GitHub) · Week 5 (dictionaries, exceptions, modules, JSON)
-- [ ] Fullstack + ML: Weeks 6+ (Week 6 = Phase 1 graduation: webpage + Lagos weather script)
+- [x] Fullstack + ML Week 3 (HTML & CSS) · Week 4 (Flexbox, responsive, Git + GitHub) · Week 5 (dictionaries, exceptions, modules, JSON) · Week 6 (Open-Meteo weather script, accessibility, portfolio, first gigs)
+- [ ] Fullstack + ML: Phase 2 (Weeks 7–14): no week-level outline yet; plan the phase's weeks first
 - [ ] French: Year 2 (B2 / NCLC 7) weeks, if wanted
 - [ ] Add `course.ts` frameworks for French and Excel (only `overview.md` today)
 

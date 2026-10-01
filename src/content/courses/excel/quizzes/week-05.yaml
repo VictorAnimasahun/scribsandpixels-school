@@ -1,0 +1,297 @@
+# Excel · Week 5 quizzes. Format and rules: src/content/QUIZZES.md
+week: 5
+days:
+
+  # ─────────────────────────── DAY 1 ───────────────────────────
+  - day: 1
+    gate:
+      title: "Checkpoint: Week 4 review"
+      covers: "Week 4: sorting, filtering with SUBTOTAL, find/freeze/Go To Special, 3D references, printing"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w05-d1-g01, difficulty: easy, type: mcq, prompt: "Filters on/off", choices: ["Ctrl+Shift+L", "Ctrl+L", "Ctrl+F", "F4"], answer: 0 }
+        - { id: xl-w05-d1-g02, difficulty: easy, type: mcq, prompt: "Visible-only sum", choices: ["=SUBTOTAL(9,range)", "=SUM(range)", "=SUMIF(range)", "=VISIBLE(range)"], answer: 0 }
+        - { id: xl-w05-d1-g03, difficulty: easy, type: mcq, prompt: "Freeze row 1 and column A: select…", choices: ["B2", "A1", "A2", "B1"], answer: 0 }
+        - { id: xl-w05-d1-g04, difficulty: easy, type: truefalse, prompt: "Sorting one column on its own can scramble your data.", answer: true }
+        - { id: xl-w05-d1-g05, difficulty: easy, type: mcq, prompt: "Headers on every printed page", choices: ["Print Titles", "Freeze panes", "Print Area", "Group"], answer: 0 }
+        - { id: xl-w05-d1-g06, difficulty: easy, type: mcq, prompt: "Replace", choices: ["Ctrl+H", "Ctrl+F", "Ctrl+R", "Ctrl+E"], answer: 0 }
+        - { id: xl-w05-d1-g07, difficulty: medium, type: text, prompt: "Write: B5 across every sheet from Jan to Dec, summed.", accept: ["=SUM(Jan:Dec!B5)"] }
+        - { id: xl-w05-d1-g08, difficulty: medium, type: text, prompt: "December 2025 orders?", accept: ["330"] }
+        - { id: xl-w05-d1-g09, difficulty: medium, type: match, prompt: "Match.", pairs: [["Ctrl+Shift+L", "filters"], ["F5", "Go To"], ["Ctrl+H", "replace"], ["Shift+F11", "new sheet"]] }
+        - { id: xl-w05-d1-g10, difficulty: medium, type: mcq, prompt: "SUBTOTAL(3,…) is…", choices: ["COUNTA", "SUM", "AVERAGE", "MAX"], answer: 0 }
+        - { id: xl-w05-d1-g11, difficulty: medium, type: text, prompt: "iPhone orders in 2025?", accept: ["11"] }
+        - { id: xl-w05-d1-g12, difficulty: medium, type: mcq, prompt: "Reference B5 on the sheet Jan Sales", choices: ["='Jan Sales'!B5", "=Jan Sales!B5", "=\"Jan Sales\"!B5", "=[Jan Sales]B5"], answer: 0 }
+        - { id: xl-w05-d1-g13, difficulty: medium, type: truefalse, prompt: "Freeze panes also repeats headers on printed pages.", answer: false }
+        - { id: xl-w05-d1-g14, difficulty: medium, type: text, prompt: "Orders with net sales ≥ ₦1,000,000?", accept: ["140"] }
+        - { id: xl-w05-d1-g15, difficulty: medium, type: mcq, prompt: "Fill every blank cell in a column with 0 at once:", choices: ["Go To Special → Blanks, type 0, Ctrl+Enter", "Sort then type", "Filter then delete", "Flash Fill"], answer: 0 }
+        - { id: xl-w05-d1-g16, difficulty: hard, type: text, prompt: "Kano Phones orders: net total? (digits only)", accept: ["19551300"] }
+        - { id: xl-w05-d1-g17, difficulty: hard, type: mcq, prompt: "You move the Mar sheet after Q1. =SUM(Jan:Mar!B2) in Q1 now…", choices: ["includes Q1 itself: a circular reference", "is unchanged", "skips Feb", "shows #REF!"], answer: 0 }
+        - { id: xl-w05-d1-g18, difficulty: hard, type: multi, prompt: "Which respect filters? (Select all.)", choices: ["SUBTOTAL(9,…)", "SUBTOTAL(3,…)", "SUM", "COUNTA"], answers: [0, 1] }
+    quizzes:
+      - kind: rapid-fire
+        title: "IF basics"
+        secondsPerQuestion: 9
+        questions:
+          - { id: xl-w05-d1-rf01, difficulty: easy, type: mcq, prompt: "IF has how many arguments?", choices: ["3", "2", "1", "4"], answer: 0 }
+          - { id: xl-w05-d1-rf02, difficulty: easy, type: mcq, prompt: "Not equal", choices: ["<>", "!=", "=/=", "≠"], answer: 0 }
+          - { id: xl-w05-d1-rf03, difficulty: easy, type: text, prompt: "=IF(5>3,\"Yes\",\"No\")", accept: ["Yes"] }
+          - { id: xl-w05-d1-rf04, difficulty: easy, type: text, prompt: "=IF(2>=3,\"Yes\",\"No\")", accept: ["No"] }
+          - { id: xl-w05-d1-rf05, difficulty: easy, type: mcq, prompt: "Text in a formula goes in…", choices: ["\"double quotes\"", "'single quotes'", "(brackets)", "nothing"], answer: 0 }
+          - { id: xl-w05-d1-rf06, difficulty: easy, type: text, prompt: "A2 = 50. =IF(A2>=50,\"Pass\",\"Fail\")", accept: ["Pass"] }
+          - { id: xl-w05-d1-rf07, difficulty: easy, type: text, prompt: "A2 = 49. =IF(A2>=50,\"Pass\",\"Fail\")", accept: ["Fail"] }
+          - { id: xl-w05-d1-rf08, difficulty: easy, type: mcq, prompt: "Test for an empty cell", choices: ["A2=\"\"", "A2=0", "A2=EMPTY", "A2=NULL"], answer: 0 }
+          - { id: xl-w05-d1-rf09, difficulty: easy, type: truefalse, prompt: "IF can return a calculation, not just text.", answer: true }
+          - { id: xl-w05-d1-rf10, difficulty: easy, type: text, prompt: "O2 = 200000. =IF(O2>=1000000,\"Large\",\"Standard\")", accept: ["Standard"] }
+      - kind: brain-teaser
+        title: "IF on the data"
+        questions:
+          - { id: xl-w05-d1-bt01, difficulty: medium, type: text, prompt: "How many 2025 orders get BigOrder = \"Yes\" (net ≥ ₦1,000,000)?", accept: ["140"] }
+          - { id: xl-w05-d1-bt02, difficulty: medium, type: text, prompt: "How many Wholesale orders?", accept: ["354"] }
+          - { id: xl-w05-d1-bt03, difficulty: medium, type: text, prompt: "F2 = \"Wholesale\", O2 = 200000. =IF(F2=\"Wholesale\",O2*5%,0)", accept: ["10000"] }
+          - { id: xl-w05-d1-bt04, difficulty: hard, type: mcq, prompt: "Why does =IF(A2>=50,Pass,Fail) show #NAME??", choices: ["Pass and Fail need quotes", "50 needs quotes", "IF needs 4 arguments", ">= is invalid"], answer: 0 }
+          - { id: xl-w05-d1-bt05, difficulty: hard, type: text, prompt: "A2 = 0. =IF(A2=\"\",\"Missing\",A2*2)", accept: ["0"], explain: "0 isn't empty." }
+
+  # ─────────────────────────── DAY 2 ───────────────────────────
+  - day: 2
+    gate:
+      title: "Checkpoint: IF"
+      covers: "Week 5 · Day 1: IF, comparison operators, quotes for text, empty tests"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w05-d2-g01, difficulty: easy, type: mcq, prompt: "IF's arguments, in order", choices: ["test, value if true, value if false", "value if true, test, value if false", "test, value if false, value if true", "value, test"], answer: 0 }
+        - { id: xl-w05-d2-g02, difficulty: easy, type: mcq, prompt: "Greater than or equal", choices: [">=", "=>", "≥", "> ="], answer: 0 }
+        - { id: xl-w05-d2-g03, difficulty: easy, type: text, prompt: "=IF(10<>10,\"A\",\"B\")", accept: ["B"] }
+        - { id: xl-w05-d2-g04, difficulty: easy, type: truefalse, prompt: "Numbers in IF tests don't need quotes.", answer: true }
+        - { id: xl-w05-d2-g05, difficulty: easy, type: text, prompt: "A2 = 75. =IF(A2>=50,\"Pass\",\"Fail\")", accept: ["Pass"] }
+        - { id: xl-w05-d2-g06, difficulty: easy, type: mcq, prompt: "1 if Wholesale, else 0:", choices: ["=IF(F2=\"Wholesale\",1,0)", "=IF(F2=Wholesale,1,0)", "=IF(\"Wholesale\",1,0)", "=IF(F2,1,0)"], answer: 0 }
+        - { id: xl-w05-d2-g07, difficulty: medium, type: text, prompt: "O2 = 1000000. =IF(O2>=1000000,\"Yes\",\"No\")", accept: ["Yes"] }
+        - { id: xl-w05-d2-g08, difficulty: medium, type: text, prompt: "O2 = 999999. =IF(O2>1000000,\"Yes\",\"No\")", accept: ["No"] }
+        - { id: xl-w05-d2-g09, difficulty: medium, type: match, prompt: "Match the operator.", pairs: [["=", "equal"], ["<>", "not equal"], ["<=", "less or equal"], [">", "greater"]] }
+        - { id: xl-w05-d2-g10, difficulty: medium, type: text, prompt: "Wholesale orders count in 2025?", accept: ["354"] }
+        - { id: xl-w05-d2-g11, difficulty: medium, type: mcq, prompt: "Show \"Missing\" when A2 is empty, else A2:", choices: ["=IF(A2=\"\",\"Missing\",A2)", "=IF(A2=0,\"Missing\",A2)", "=IF(A2,\"Missing\")", "=IF(\"\",A2)"], answer: 0 }
+        - { id: xl-w05-d2-g12, difficulty: medium, type: truefalse, prompt: "=IF(F2=\"wholesale\",…) matches \"Wholesale\" (comparison ignores case).", answer: true }
+        - { id: xl-w05-d2-g13, difficulty: medium, type: text, prompt: "A2 = 30, B2 = 20. =IF(A2>B2,A2-B2,B2-A2)", accept: ["10"] }
+        - { id: xl-w05-d2-g14, difficulty: medium, type: mcq, prompt: "Count the \"Yes\" in S2:S2401 (preview):", choices: ["=COUNTIF(S2:S2401,\"Yes\")", "=SUM(S2:S2401)", "=COUNT(S2:S2401)", "=IF(S2:S2401,\"Yes\")"], answer: 0 }
+        - { id: xl-w05-d2-g15, difficulty: medium, type: text, prompt: "A2 = 40. =IF(A2>=50,\"Pass\",IF(A2>=40,\"Resit\",\"Fail\"))", accept: ["Resit"] }
+        - { id: xl-w05-d2-g16, difficulty: hard, type: text, prompt: "O2 = 2500000, F2 = \"Retail\". =IF(F2=\"Wholesale\",O2*5%,O2*2%)", accept: ["50000"] }
+        - { id: xl-w05-d2-g17, difficulty: hard, type: mcq, prompt: "Why might =IF(A2=\"Yes\",1,0) give 0 when A2 looks like Yes?", choices: ["A2 has a trailing space: \"Yes \"", "IF can't compare text", "Yes needs single quotes", "1 and 0 need quotes"], answer: 0 }
+        - { id: xl-w05-d2-g18, difficulty: hard, type: multi, prompt: "Which are valid IF formulas? (Select all.)", choices: ["=IF(A2>0,\"Profit\",\"Loss\")", "=IF(A2>0,A2*0.1,0)", "=IF(A2=\"\",\"\",A2)", "=IF A2>0 then \"Profit\""], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "IFS and bands"
+        secondsPerQuestion: 10
+        questions:
+          - { id: xl-w05-d2-rf01, difficulty: easy, type: text, prompt: "A2 = 72. =IFS(A2>=70,\"A\",A2>=60,\"B\",TRUE,\"F\")", accept: ["A"] }
+          - { id: xl-w05-d2-rf02, difficulty: easy, type: text, prompt: "A2 = 65. =IFS(A2>=70,\"A\",A2>=60,\"B\",TRUE,\"F\")", accept: ["B"] }
+          - { id: xl-w05-d2-rf03, difficulty: easy, type: text, prompt: "A2 = 10. =IFS(A2>=70,\"A\",A2>=60,\"B\",TRUE,\"F\")", accept: ["F"] }
+          - { id: xl-w05-d2-rf04, difficulty: easy, type: mcq, prompt: "TRUE as the last IFS test means…", choices: ["everything else", "only TRUE values", "an error", "the first value"], answer: 0 }
+          - { id: xl-w05-d2-rf05, difficulty: easy, type: mcq, prompt: "Test thresholds…", choices: ["biggest first", "smallest first", "any order", "alphabetically"], answer: 0 }
+          - { id: xl-w05-d2-rf06, difficulty: easy, type: mcq, prompt: "IFS needs Excel…", choices: ["2019 or newer (or 365)", "2003", "any version", "for Mac only"], answer: 0 }
+          - { id: xl-w05-d2-rf07, difficulty: easy, type: text, prompt: "O2 = 150000. Size by ≥1m Large, ≥100k Medium, else Small", accept: ["Medium"] }
+          - { id: xl-w05-d2-rf08, difficulty: easy, type: text, prompt: "O2 = 99999. Size?", accept: ["Small"] }
+          - { id: xl-w05-d2-rf09, difficulty: easy, type: text, prompt: "Nigerian scale: 45 → grade?", accept: ["D"] }
+          - { id: xl-w05-d2-rf10, difficulty: easy, type: text, prompt: "Nigerian scale: 39 → grade?", accept: ["F"] }
+      - kind: brain-teaser
+        title: "Order matters"
+        questions:
+          - { id: xl-w05-d2-bt01, difficulty: medium, type: text, prompt: "Large orders in 2025 (≥ ₦1,000,000)?", accept: ["140"] }
+          - { id: xl-w05-d2-bt02, difficulty: medium, type: text, prompt: "Medium orders in 2025 (≥ ₦100,000 and below ₦1m)?", accept: ["1391", "1,391"] }
+          - { id: xl-w05-d2-bt03, difficulty: medium, type: text, prompt: "Small orders in 2025?", accept: ["869"] }
+          - { id: xl-w05-d2-bt04, difficulty: hard, type: mcq, prompt: "=IFS(O2>=100000,\"Medium\",O2>=1000000,\"Large\",TRUE,\"Small\") with O2 = 5,000,000 gives…", choices: ["Medium: the first TRUE test wins", "Large", "Small", "#N/A"], answer: 0 }
+          - { id: xl-w05-d2-bt05, difficulty: hard, type: text, prompt: "=IFS(A2>=70,\"A\",A2>=60,\"B\") with A2 = 30 gives…", accept: ["#N/A"], explain: "No test was TRUE and there's no TRUE fallback." }
+
+  # ─────────────────────────── DAY 3 ───────────────────────────
+  - day: 3
+    gate:
+      title: "Checkpoint: nested IF and IFS"
+      covers: "Week 5 · Day 2: nested IF, IFS, threshold order, TRUE as default, grading scale"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w05-d3-g01, difficulty: easy, type: mcq, prompt: "More than two outcomes: use…", choices: ["IFS or nested IF", "one IF", "SUM", "VLOOKUP only"], answer: 0 }
+        - { id: xl-w05-d3-g02, difficulty: easy, type: truefalse, prompt: "In IFS, the first TRUE condition wins.", answer: true }
+        - { id: xl-w05-d3-g03, difficulty: easy, type: text, prompt: "Nigerian scale: 70 → grade?", accept: ["A"] }
+        - { id: xl-w05-d3-g04, difficulty: easy, type: text, prompt: "Nigerian scale: 69 → grade?", accept: ["B"] }
+        - { id: xl-w05-d3-g05, difficulty: easy, type: mcq, prompt: "The catch-all at the end of IFS", choices: ["TRUE,\"…\"", "ELSE,\"…\"", "DEFAULT,\"…\"", "0,\"…\""], answer: 0 }
+        - { id: xl-w05-d3-g06, difficulty: easy, type: text, prompt: "Nigerian scale: 50 → grade?", accept: ["C"] }
+        - { id: xl-w05-d3-g07, difficulty: medium, type: text, prompt: "O2 = 1000000. =IF(O2>=1000000,\"Large\",IF(O2>=100000,\"Medium\",\"Small\"))", accept: ["Large"] }
+        - { id: xl-w05-d3-g08, difficulty: medium, type: text, prompt: "O2 = 100000. Same formula?", accept: ["Medium"] }
+        - { id: xl-w05-d3-g09, difficulty: medium, type: match, prompt: "Match score → grade (Nigerian scale).", pairs: [["72", "A"], ["61", "B"], ["44", "E"], ["30", "F"]] }
+        - { id: xl-w05-d3-g10, difficulty: medium, type: mcq, prompt: "Why test ≥ 1,000,000 before ≥ 100,000?", choices: ["A ₦2m order is also ≥ 100k: it would wrongly be Medium", "Bigger numbers are faster", "Excel requires descending order", "No reason"], answer: 0 }
+        - { id: xl-w05-d3-g11, difficulty: medium, type: text, prompt: "Medium orders in 2025?", accept: ["1391", "1,391"] }
+        - { id: xl-w05-d3-g12, difficulty: medium, type: truefalse, prompt: "Without a TRUE fallback, IFS returns #N/A when nothing matches.", answer: true }
+        - { id: xl-w05-d3-g13, difficulty: medium, type: text, prompt: "Nigerian scale: 40 → grade?", accept: ["E"] }
+        - { id: xl-w05-d3-g14, difficulty: medium, type: mcq, prompt: "Which is the IFS version of IF(A>=70,\"A\",IF(A>=60,\"B\",\"C\"))?", choices: ["=IFS(A2>=70,\"A\",A2>=60,\"B\",TRUE,\"C\")", "=IFS(A2>=60,\"B\",A2>=70,\"A\",TRUE,\"C\")", "=IFS(A2,\"A\",\"B\",\"C\")", "=IFS(TRUE,\"C\",A2>=70,\"A\")"], answer: 0 }
+        - { id: xl-w05-d3-g15, difficulty: medium, type: text, prompt: "Boundary test: 44 → grade?", accept: ["E"] }
+        - { id: xl-w05-d3-g16, difficulty: hard, type: text, prompt: "Small orders in 2025 (below ₦100,000)?", accept: ["869"] }
+        - { id: xl-w05-d3-g17, difficulty: hard, type: mcq, prompt: "=IFS(A2>=40,\"E\",A2>=45,\"D\",A2>=50,\"C\",TRUE,\"F\") with A2 = 68 gives…", choices: ["E", "C", "B", "F"], answer: 0 }
+        - { id: xl-w05-d3-g18, difficulty: hard, type: multi, prompt: "Which scores give a D on the Nigerian scale? (Select all.)", choices: ["45", "49", "50", "44"], answers: [0, 1] }
+    quizzes:
+      - kind: rapid-fire
+        title: "AND, OR, NOT"
+        secondsPerQuestion: 9
+        questions:
+          - { id: xl-w05-d3-rf01, difficulty: easy, type: text, prompt: "=AND(TRUE,TRUE)", accept: ["TRUE"] }
+          - { id: xl-w05-d3-rf02, difficulty: easy, type: text, prompt: "=AND(TRUE,FALSE)", accept: ["FALSE"] }
+          - { id: xl-w05-d3-rf03, difficulty: easy, type: text, prompt: "=OR(TRUE,FALSE)", accept: ["TRUE"] }
+          - { id: xl-w05-d3-rf04, difficulty: easy, type: text, prompt: "=OR(FALSE,FALSE)", accept: ["FALSE"] }
+          - { id: xl-w05-d3-rf05, difficulty: easy, type: text, prompt: "=NOT(TRUE)", accept: ["FALSE"] }
+          - { id: xl-w05-d3-rf06, difficulty: easy, type: mcq, prompt: "ALL conditions true", choices: ["AND", "OR", "NOT", "IF"], answer: 0 }
+          - { id: xl-w05-d3-rf07, difficulty: easy, type: mcq, prompt: "At least one true", choices: ["OR", "AND", "NOT", "XOR"], answer: 0 }
+          - { id: xl-w05-d3-rf08, difficulty: easy, type: text, prompt: "C2 = \"Kano\". =OR(C2=\"Lagos\",C2=\"Abuja\")", accept: ["FALSE"] }
+          - { id: xl-w05-d3-rf09, difficulty: easy, type: text, prompt: "=AND(5>3,2>1)", accept: ["TRUE"] }
+          - { id: xl-w05-d3-rf10, difficulty: easy, type: mcq, prompt: "Hired before 2020: G2 <", choices: ["DATE(2020,1,1)", "\"2020\"", "2020", "YEAR(2020)"], answer: 0 }
+      - kind: brain-teaser
+        title: "Flags"
+        questions:
+          - { id: xl-w05-d3-bt01, difficulty: medium, type: text, prompt: "Staff earning more than ₦400,000 a month?", accept: ["46"] }
+          - { id: xl-w05-d3-bt02, difficulty: medium, type: text, prompt: "Sales staff hired before 1 Jan 2020?", accept: ["26"] }
+          - { id: xl-w05-d3-bt03, difficulty: medium, type: text, prompt: "Orders that are Wholesale AND ≥ ₦1,000,000?", accept: ["107"] }
+          - { id: xl-w05-d3-bt04, difficulty: hard, type: text, prompt: "Orders from Lagos or Abuja paid by Cash?", accept: ["301"] }
+          - { id: xl-w05-d3-bt05, difficulty: hard, type: mcq, prompt: "Which formula flags Lagos-or-Abuja cash orders?", choices: ["=IF(AND(OR(C2=\"Lagos\",C2=\"Abuja\"),M2=\"Cash\"),\"Check\",\"\")", "=IF(OR(AND(C2=\"Lagos\",C2=\"Abuja\"),M2=\"Cash\"),\"Check\",\"\")", "=IF(C2=\"Lagos\" OR \"Abuja\",\"Check\")", "=AND(C2=\"Lagos\",C2=\"Abuja\",M2=\"Cash\")"], answer: 0 }
+
+  # ─────────────────────────── DAY 4 ───────────────────────────
+  - day: 4
+    gate:
+      title: "Checkpoint: AND, OR, NOT"
+      covers: "Week 5 · Day 3: AND, OR, NOT, combining them with IF, DATE in tests"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w05-d4-g01, difficulty: easy, type: mcq, prompt: "AND is TRUE when…", choices: ["all conditions are true", "any condition is true", "none are true", "exactly one is true"], answer: 0 }
+        - { id: xl-w05-d4-g02, difficulty: easy, type: mcq, prompt: "OR is TRUE when…", choices: ["at least one condition is true", "all are true", "none are true", "the first is true"], answer: 0 }
+        - { id: xl-w05-d4-g03, difficulty: easy, type: text, prompt: "=NOT(1>2)", accept: ["TRUE"] }
+        - { id: xl-w05-d4-g04, difficulty: easy, type: truefalse, prompt: "=OR(C2=\"Lagos\",C2=\"Abuja\") is TRUE for Abuja.", answer: true }
+        - { id: xl-w05-d4-g05, difficulty: easy, type: text, prompt: "=AND(3>1,1>3)", accept: ["FALSE"] }
+        - { id: xl-w05-d4-g06, difficulty: easy, type: mcq, prompt: "Not paid by cash", choices: ["=NOT(M2=\"Cash\")", "=M2=\"Cash\"", "=AND(M2,\"Cash\")", "=OR(M2)"], answer: 0 }
+        - { id: xl-w05-d4-g07, difficulty: medium, type: text, prompt: "F2 = \"Wholesale\", O2 = 1500000. =IF(AND(F2=\"Wholesale\",O2>=1000000),\"Key account\",\"\")", accept: ["Key account"] }
+        - { id: xl-w05-d4-g08, difficulty: medium, type: text, prompt: "Wholesale AND ≥ ₦1,000,000 orders?", accept: ["107"] }
+        - { id: xl-w05-d4-g09, difficulty: medium, type: match, prompt: "Match.", pairs: [["AND(T,T)", "TRUE"], ["AND(T,F)", "FALSE"], ["OR(F,T)", "TRUE"], ["NOT(F)", "TRUE"]] }
+        - { id: xl-w05-d4-g10, difficulty: medium, type: text, prompt: "Staff earning over ₦400,000?", accept: ["46"] }
+        - { id: xl-w05-d4-g11, difficulty: medium, type: mcq, prompt: "Hired before 1 Jan 2020 (HireDate in G2):", choices: ["G2<DATE(2020,1,1)", "G2<\"1/1/2020\" only", "YEAR(G2)>2020", "G2<2020"], answer: 0 }
+        - { id: xl-w05-d4-g12, difficulty: medium, type: truefalse, prompt: "=AND(C2=\"Lagos\",C2=\"Abuja\") can be TRUE.", answer: false, explain: "One cell can't equal both." }
+        - { id: xl-w05-d4-g13, difficulty: medium, type: text, prompt: "Sales staff hired before 2020?", accept: ["26"] }
+        - { id: xl-w05-d4-g14, difficulty: medium, type: text, prompt: "C2 = \"Abuja\", M2 = \"POS\". =IF(AND(OR(C2=\"Lagos\",C2=\"Abuja\"),M2=\"Cash\"),\"Check\",\"OK\")", accept: ["OK"] }
+        - { id: xl-w05-d4-g15, difficulty: medium, type: mcq, prompt: "Pass if every one of 3 scores (B2:D2) is ≥ 40:", choices: ["=IF(AND(B2>=40,C2>=40,D2>=40),\"Pass\",\"Fail\")", "=IF(OR(B2>=40,C2>=40,D2>=40),\"Pass\",\"Fail\")", "=IF(B2:D2>=40,\"Pass\")", "=AND(B2,C2,D2)>=40"], answer: 0 }
+        - { id: xl-w05-d4-g16, difficulty: hard, type: text, prompt: "Lagos or Abuja orders paid by Cash in 2025?", accept: ["301"] }
+        - { id: xl-w05-d4-g17, difficulty: hard, type: mcq, prompt: "\"Needs support\" if ANY of B2:D2 is below 40:", choices: ["=IF(OR(B2<40,C2<40,D2<40),\"Needs support\",\"\")", "=IF(AND(B2<40,C2<40,D2<40),\"Needs support\",\"\")", "=IF(NOT(B2<40),\"Needs support\")", "=OR(B2:D2)<40"], answer: 0 }
+        - { id: xl-w05-d4-g18, difficulty: hard, type: multi, prompt: "Which equal NOT(AND(A,B))? (Select all.)", choices: ["OR(NOT(A),NOT(B))", "TRUE when at least one of A, B is FALSE", "AND(NOT(A),NOT(B))", "OR(A,B)"], answers: [0, 1] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Commission tiers"
+        secondsPerQuestion: 10
+        questions:
+          - { id: xl-w05-d4-rf01, difficulty: easy, type: text, prompt: "₦3,000,000 order at 5%?", accept: ["150000", "150,000"] }
+          - { id: xl-w05-d4-rf02, difficulty: easy, type: text, prompt: "₦600,000 order at 3%?", accept: ["18000", "18,000"] }
+          - { id: xl-w05-d4-rf03, difficulty: easy, type: text, prompt: "₦100,000 order at 2%?", accept: ["2000", "2,000"] }
+          - { id: xl-w05-d4-rf04, difficulty: easy, type: mcq, prompt: "Rates belong in…", choices: ["input cells with $ references", "inside every formula", "a comment", "the file name"], answer: 0 }
+          - { id: xl-w05-d4-rf05, difficulty: easy, type: mcq, prompt: "Tier for ₦2,000,000 exactly (≥2m 5%, ≥500k 3%, else 2%)", choices: ["5%", "3%", "2%", "0%"], answer: 0 }
+          - { id: xl-w05-d4-rf06, difficulty: easy, type: mcq, prompt: "Tier for ₦499,999", choices: ["2%", "3%", "5%", "0%"], answer: 0 }
+          - { id: xl-w05-d4-rf07, difficulty: easy, type: truefalse, prompt: "Changing a rate cell should update every commission.", answer: true }
+          - { id: xl-w05-d4-rf08, difficulty: easy, type: mcq, prompt: "Online orders get no commission:", choices: ["=IF(F2=\"Online\",0, …)", "=IF(F2=Online,0)", "delete Online rows", "=0"], answer: 0 }
+          - { id: xl-w05-d4-rf09, difficulty: easy, type: text, prompt: "₦500,000 order: tier rate?", accept: ["3%", "0.03"] }
+          - { id: xl-w05-d4-rf10, difficulty: easy, type: mcq, prompt: "Lock the threshold V1 when filling down", choices: ["$V$1", "V1", "V$1 only", "$V1 only"], answer: 0 }
+      - kind: brain-teaser
+        title: "Commission totals"
+        questions:
+          - { id: xl-w05-d4-bt01, difficulty: medium, type: text, prompt: "Total 2025 commission at 5/3/2% (rounded to the naira, digits only)?", accept: ["26596692"] }
+          - { id: xl-w05-d4-bt02, difficulty: medium, type: mcq, prompt: "Commission formula with tiers in V1:W3:", choices: ["=O2*IFS(O2>=$V$1,$W$1,O2>=$V$2,$W$2,TRUE,$W$3)", "=O2*IFS(O2>=V1,W1,O2>=V2,W2,TRUE,W3)", "=IFS(O2,$W$1,$W$2,$W$3)", "=O2*$W$1"], answer: 0 }
+          - { id: xl-w05-d4-bt03, difficulty: medium, type: text, prompt: "Top rate changed to 6%: new total commission (rounded, digits only)?", accept: ["28914025"] }
+          - { id: xl-w05-d4-bt04, difficulty: hard, type: text, prompt: "Back to 5/3/2%, but Online orders get 0. New total (rounded, digits only)?", accept: ["23859799"] }
+          - { id: xl-w05-d4-bt05, difficulty: hard, type: mcq, prompt: "Why does =O2*IFS(O2>=V1,W1,…) filled down give wrong commissions from row 3?", choices: ["V1/W1 move to V2/W2…: lock them with $", "IFS can't multiply", "O2 should be locked", "Commission must be text"], answer: 0 }
+
+  # ─────────────────────────── DAY 5 ───────────────────────────
+  - day: 5
+    gate:
+      title: "Checkpoint: commission calculator"
+      covers: "Week 5 · Day 4: tiered rates in input cells, IFS with $ references, exclusions with IF"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w05-d5-g01, difficulty: easy, type: mcq, prompt: "Where do commission rates go?", choices: ["in a small input table", "typed inside each formula", "in a cell comment", "in a separate workbook"], answer: 0 }
+        - { id: xl-w05-d5-g02, difficulty: easy, type: text, prompt: "₦2,500,000 at 5%?", accept: ["125000", "125,000"] }
+        - { id: xl-w05-d5-g03, difficulty: easy, type: mcq, prompt: "Tier for ₦750,000 (≥2m 5%, ≥500k 3%, else 2%)", choices: ["3%", "5%", "2%", "0%"], answer: 0 }
+        - { id: xl-w05-d5-g04, difficulty: easy, type: truefalse, prompt: "Tiers must be tested from the highest threshold down.", answer: true }
+        - { id: xl-w05-d5-g05, difficulty: easy, type: mcq, prompt: "Online orders excluded: wrap the formula in…", choices: ["IF(F2=\"Online\",0, …)", "SUM", "NOT", "ROUND"], answer: 0 }
+        - { id: xl-w05-d5-g06, difficulty: easy, type: text, prompt: "₦80,000 at 2%?", accept: ["1600", "1,600"] }
+        - { id: xl-w05-d5-g07, difficulty: medium, type: text, prompt: "₦2,000,000 order: commission? (digits)", accept: ["100000", "100,000"] }
+        - { id: xl-w05-d5-g08, difficulty: medium, type: text, prompt: "₦1,999,999 order: commission? (digits, 2 decimals if any)", accept: ["59999.97", "59,999.97"] }
+        - { id: xl-w05-d5-g09, difficulty: medium, type: match, prompt: "Match the order to its rate.", pairs: [["₦3,000,000", "5%"], ["₦500,000", "3%"], ["₦499,000", "2%"], ["₦2,000,000", "5%"]] }
+        - { id: xl-w05-d5-g10, difficulty: medium, type: text, prompt: "Total 2025 commission at 5/3/2% (rounded, digits only)?", accept: ["26596692"] }
+        - { id: xl-w05-d5-g11, difficulty: medium, type: mcq, prompt: "Raising the top rate to 6% raises the total because…", choices: ["every ≥ ₦2m order pays 1% more", "every order pays 1% more", "the thresholds move", "nothing changes"], answer: 0 }
+        - { id: xl-w05-d5-g12, difficulty: medium, type: truefalse, prompt: "Typing 5% directly into 2,400 formulas is good practice.", answer: false }
+        - { id: xl-w05-d5-g13, difficulty: medium, type: text, prompt: "F2 = \"Online\", O2 = 3000000. =IF(F2=\"Online\",0,O2*5%)", accept: ["0"] }
+        - { id: xl-w05-d5-g14, difficulty: medium, type: mcq, prompt: "A bonus of ₦50,000 for orders ≥ ₦5,000,000:", choices: ["=IF(O2>=5000000,50000,0) (better: reference input cells)", "=O2*50000", "=IF(O2>5000000,\"50000\")", "=50000"], answer: 0 }
+        - { id: xl-w05-d5-g15, difficulty: medium, type: text, prompt: "Commission at 6/3/2% (rounded, digits only)?", accept: ["28914025"] }
+        - { id: xl-w05-d5-g16, difficulty: hard, type: text, prompt: "5/3/2% with Online excluded (rounded, digits only)?", accept: ["23859799"] }
+        - { id: xl-w05-d5-g17, difficulty: hard, type: mcq, prompt: "A ₦2,000,000 order gets 3% instead of 5%. Most likely bug?", choices: ["The test uses > instead of >=", "$ signs missing", "The rate is text", "IFS is misspelt"], answer: 0 }
+        - { id: xl-w05-d5-g18, difficulty: hard, type: multi, prompt: "Which make a commission model trustworthy? (Select all.)", choices: ["Rates and thresholds in labelled input cells", "$ references to them", "Testing boundary values like ₦2,000,000", "Hard-coded rates in each formula"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "SWITCH"
+        secondsPerQuestion: 9
+        questions:
+          - { id: xl-w05-d5-rf01, difficulty: easy, type: text, prompt: "=SWITCH(\"Kano\",\"Lagos\",\"South-West\",\"Kano\",\"North-West\",\"Unknown\")", accept: ["North-West"] }
+          - { id: xl-w05-d5-rf02, difficulty: easy, type: text, prompt: "=SWITCH(\"Jos\",\"Lagos\",\"South-West\",\"Kano\",\"North-West\",\"Unknown\")", accept: ["Unknown"] }
+          - { id: xl-w05-d5-rf03, difficulty: easy, type: mcq, prompt: "SWITCH is best when…", choices: ["one cell is compared with a list of exact values", "you test ranges like ≥ 100", "you add numbers", "you sort"], answer: 0 }
+          - { id: xl-w05-d5-rf04, difficulty: easy, type: mcq, prompt: "Line break inside a long formula", choices: ["Alt+Enter", "Enter", "Shift+Tab", "Ctrl+L"], answer: 0 }
+          - { id: xl-w05-d5-rf05, difficulty: easy, type: mcq, prompt: "Enugu's zone", choices: ["South-East", "South-West", "North-Central", "South-South"], answer: 0 }
+          - { id: xl-w05-d5-rf06, difficulty: easy, type: mcq, prompt: "Port Harcourt's zone", choices: ["South-South", "South-East", "South-West", "North-West"], answer: 0 }
+          - { id: xl-w05-d5-rf07, difficulty: easy, type: mcq, prompt: "Abuja's zone", choices: ["North-Central", "North-West", "South-West", "North-East"], answer: 0 }
+          - { id: xl-w05-d5-rf08, difficulty: easy, type: mcq, prompt: "Ibadan's zone", choices: ["South-West", "South-East", "North-Central", "South-South"], answer: 0 }
+          - { id: xl-w05-d5-rf09, difficulty: easy, type: truefalse, prompt: "SWITCH's last lone value is the default.", answer: true }
+          - { id: xl-w05-d5-rf10, difficulty: easy, type: mcq, prompt: "Long formula? Consider…", choices: ["a lookup table (Week 9)", "more nesting", "merging cells", "a macro"], answer: 0 }
+      - kind: brain-teaser
+        title: "Cleaner logic"
+        questions:
+          - { id: xl-w05-d5-bt01, difficulty: medium, type: text, prompt: "Electronic payments (anything but Cash) in 2025?", accept: ["1893", "1,893"] }
+          - { id: xl-w05-d5-bt02, difficulty: medium, type: mcq, prompt: "PaymentType: Cash → \"Cash\", else \"Electronic\":", choices: ["=IF(M2=\"Cash\",\"Cash\",\"Electronic\")", "=SWITCH(M2,\"Cash\")", "=IF(M2,\"Cash\",\"Electronic\")", "=OR(M2=\"Cash\",\"Electronic\")"], answer: 0 }
+          - { id: xl-w05-d5-bt03, difficulty: medium, type: text, prompt: "Cash orders in 2025? (2,400 − electronic)", accept: ["507"] }
+          - { id: xl-w05-d5-bt04, difficulty: hard, type: mcq, prompt: "Why is SWITCH a poor fit for OrderSize (≥1m, ≥100k)?", choices: ["SWITCH matches exact values, not ranges", "SWITCH can't return text", "SWITCH is slower", "It is a good fit"], answer: 0 }
+          - { id: xl-w05-d5-bt05, difficulty: hard, type: mcq, prompt: "Rewrite =IF(C2=\"Lagos\",\"SW\",IF(C2=\"Ibadan\",\"SW\",IF(C2=\"Kano\",\"NW\",\"Other\")))", choices: ["=SWITCH(C2,\"Lagos\",\"SW\",\"Ibadan\",\"SW\",\"Kano\",\"NW\",\"Other\")", "=IFS(C2,\"Lagos\",\"SW\")", "=SWITCH(\"Lagos\",C2,\"SW\")", "=OR(C2=\"Lagos\",\"SW\")"], answer: 0 }
+
+  # ─────────────────────────── DAY 6 ───────────────────────────
+  - day: 6
+    gate:
+      title: "Checkpoint: SWITCH and cleaner logic"
+      covers: "Week 5 · Day 5: SWITCH with a default, geopolitical zones, PaymentType, Alt+Enter, readability"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w05-d6-g01, difficulty: easy, type: mcq, prompt: "SWITCH compares one value with…", choices: ["a list of exact matches", "ranges", "another sheet", "a chart"], answer: 0 }
+        - { id: xl-w05-d6-g02, difficulty: easy, type: mcq, prompt: "Lagos's zone", choices: ["South-West", "South-South", "South-East", "North-Central"], answer: 0 }
+        - { id: xl-w05-d6-g03, difficulty: easy, type: truefalse, prompt: "SWITCH needs a default value or it returns #N/A on no match.", answer: true }
+        - { id: xl-w05-d6-g04, difficulty: easy, type: mcq, prompt: "Kano's zone", choices: ["North-West", "North-East", "North-Central", "South-West"], answer: 0 }
+        - { id: xl-w05-d6-g05, difficulty: easy, type: mcq, prompt: "Readable long formulas: press…", choices: ["Alt+Enter for line breaks", "F4", "Ctrl+Z", "Delete"], answer: 0 }
+        - { id: xl-w05-d6-g06, difficulty: easy, type: text, prompt: "=SWITCH(2,1,\"One\",2,\"Two\",\"Many\")", accept: ["Two"] }
+        - { id: xl-w05-d6-g07, difficulty: medium, type: text, prompt: "=SWITCH(\"Enugu\",\"Lagos\",\"SW\",\"Enugu\",\"SE\",\"?\")", accept: ["SE"] }
+        - { id: xl-w05-d6-g08, difficulty: medium, type: text, prompt: "Electronic payments in 2025?", accept: ["1893", "1,893"] }
+        - { id: xl-w05-d6-g09, difficulty: medium, type: match, prompt: "Match the city to its zone.", pairs: [["Ibadan", "South-West"], ["Port Harcourt", "South-South"], ["Enugu", "South-East"], ["Abuja", "North-Central"]] }
+        - { id: xl-w05-d6-g10, difficulty: medium, type: mcq, prompt: "Which job suits SWITCH best?", choices: ["Region → zone", "Net sales → size band", "Score → grade", "Date → quarter by range"], answer: 0 }
+        - { id: xl-w05-d6-g11, difficulty: medium, type: truefalse, prompt: "Every threshold in a model should live in an input cell.", answer: true }
+        - { id: xl-w05-d6-g12, difficulty: medium, type: text, prompt: "=SWITCH(\"Jos\",\"Lagos\",\"SW\",\"Kano\",\"NW\")", accept: ["#N/A"] }
+        - { id: xl-w05-d6-g13, difficulty: medium, type: mcq, prompt: "Cash vs Electronic with only two outcomes: simplest is…", choices: ["IF", "IFS", "nested SWITCH", "VLOOKUP"], answer: 0 }
+        - { id: xl-w05-d6-g14, difficulty: medium, type: text, prompt: "Cash orders in 2025?", accept: ["507"] }
+        - { id: xl-w05-d6-g15, difficulty: medium, type: mcq, prompt: "A formula is longer than a line and lists 30 cities. Better design?", choices: ["A lookup table (Week 9)", "More nested IFs", "A bigger column", "Merge cells"], answer: 0 }
+        - { id: xl-w05-d6-g16, difficulty: hard, type: mcq, prompt: "Student flags: average ≥ 50 → \"Pass\"; any score < 40 → \"Needs support\". Which test should run first?", choices: ["The \"Needs support\" check, or a student with 90, 85, 20 shows Pass and is missed", "Pass first, always", "Order doesn't matter", "Neither: use SWITCH"], answer: 0 }
+        - { id: xl-w05-d6-g17, difficulty: hard, type: text, prompt: "Scores 90, 85, 20. =IF(OR(B2<40,C2<40,D2<40),\"Needs support\",IF(AVERAGE(B2:D2)>=50,\"Pass\",\"Fail\"))", accept: ["Needs support"] }
+        - { id: xl-w05-d6-g18, difficulty: hard, type: multi, prompt: "Which are good uses of each function? (Select all.)", choices: ["IFS for size bands", "SWITCH for region → zone", "AND for two conditions that must both hold", "SWITCH for net sales ≥ 1m"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Week 5 lightning round"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w05-d6-rf01, difficulty: easy, type: mcq, prompt: "Not equal", choices: ["<>", "!=", "=/", "≠"], answer: 0 }
+          - { id: xl-w05-d6-rf02, difficulty: easy, type: mcq, prompt: "Catch-all in IFS", choices: ["TRUE", "ELSE", "OTHER", "0"], answer: 0 }
+          - { id: xl-w05-d6-rf03, difficulty: easy, type: mcq, prompt: "All conditions", choices: ["AND", "OR", "NOT", "SWITCH"], answer: 0 }
+          - { id: xl-w05-d6-rf04, difficulty: easy, type: mcq, prompt: "Any condition", choices: ["OR", "AND", "NOT", "IF"], answer: 0 }
+          - { id: xl-w05-d6-rf05, difficulty: easy, type: mcq, prompt: "One cell vs a list of exact values", choices: ["SWITCH", "IFS", "AND", "SUM"], answer: 0 }
+          - { id: xl-w05-d6-rf06, difficulty: easy, type: text, prompt: "Large orders in 2025", accept: ["140"] }
+          - { id: xl-w05-d6-rf07, difficulty: easy, type: text, prompt: "Wholesale orders in 2025", accept: ["354"] }
+          - { id: xl-w05-d6-rf08, difficulty: easy, type: text, prompt: "Nigerian scale: 60 → grade?", accept: ["B"] }
+          - { id: xl-w05-d6-rf09, difficulty: easy, type: truefalse, prompt: "Text in IF needs double quotes.", answer: true }
+          - { id: xl-w05-d6-rf10, difficulty: easy, type: mcq, prompt: "Lock a rate cell", choices: ["$W$1", "W1", "W:1", "#W1"], answer: 0 }
+      - kind: brain-teaser
+        title: "Grading & commission"
+        questions:
+          - { id: xl-w05-d6-bt01, difficulty: medium, type: text, prompt: "Scores 70, 60, 50. Average → Nigerian grade?", accept: ["B"] }
+          - { id: xl-w05-d6-bt02, difficulty: medium, type: text, prompt: "Scores 45, 40, 47. Average (whole number)?", accept: ["44"] }
+          - { id: xl-w05-d6-bt03, difficulty: medium, type: text, prompt: "₦6,000,000 order: 5% commission + ₦50,000 bonus = ? (digits)", accept: ["350000", "350,000"] }
+          - { id: xl-w05-d6-bt04, difficulty: hard, type: text, prompt: "Online ₦6,000,000 order (no commission for Online, bonus still applies): total payout? (digits)", accept: ["50000", "50,000"] }
+          - { id: xl-w05-d6-bt05, difficulty: hard, type: mcq, prompt: "You change the bonus threshold on Inputs from ₦5m to ₦4m and the bonus count doesn't move. Most likely?", choices: ["The formulas hard-code 5000000 instead of referencing the input cell", "Excel needs restarting", "Bonuses can't change", "The sheet is grouped"], answer: 0 }

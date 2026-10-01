@@ -1,0 +1,4 @@
+{
+  "html": "<section id=\"hire\"><h2>Hire me</h2><ul class=\"services\"><li>One-page business websites</li><li>Mobile fixes for old sites</li><li>Small Python scripts</li></ul><p><a href=\"mailto:victor@example.com\">Email me</a> · <a href=\"tel:+2348031234567\">Call me</a> · <a href=\"https://wa.me/2348031234567\">WhatsApp</a></p><a class=\"cta\" href=\"https://wa.me/2348031234567\">Chat on WhatsApp</a></section>",
+  "css": "* { box-sizing: border-box; }\nbody { font-family: system-ui, sans-serif; margin: 0; padding: 1rem; }\n.cta { display: inline-block; padding: 0.9rem 1.5rem; background: #164f3b; color: white; border-radius: 8px; }"
+}

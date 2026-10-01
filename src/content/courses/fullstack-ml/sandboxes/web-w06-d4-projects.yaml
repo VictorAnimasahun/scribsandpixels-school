@@ -1,0 +1,29 @@
+# Week 6 · Day 4 mini-task
+id: web-w06-d4-projects
+kind: web
+title: "Projects section"
+description: "Show your work, accessibly: project cards, descriptive GitHub links, safe new tabs and visible keyboard focus."
+html: |
+  <h1>Victor Animasahun</h1>
+  <p>Learning fullstack development and machine learning, one evening at a time.</p>
+  <!-- Add a <section id="projects"> with an <h2> and a card per project -->
+css: |
+  * { box-sizing: border-box; }
+  body { font-family: system-ui, sans-serif; margin: 0; padding: 1rem; line-height: 1.5; }
+  .project { border: 1px solid #ddd; border-radius: 8px; padding: 1rem; }
+js: ""
+tasks:
+  - prompt: "A <section id=\"projects\"> with an <h2>."
+    check: "!!document.querySelector('section#projects h2')"
+  - prompt: "At least 3 <article class=\"project\"> cards, each with an <h3> and a <p>."
+    check: "(() => { const p = [...document.querySelectorAll('#projects article.project')]; return p.length >= 3 && p.every(a => a.querySelector('h3') && a.querySelector('p')) })()"
+  - prompt: "Each card links to its GitHub repo, with link text that says where it goes (not \"click here\")."
+    check: "[...document.querySelectorAll('#projects article.project')].every(a => [...a.querySelectorAll('a[href]')].some(l => /^https:\\/\\/github\\.com\\/[^/]+\\/[^/]+/.test(l.getAttribute('href')) && l.textContent.trim().split(/\\s+/).length >= 3 && !/click here|^here$|^link$/i.test(l.textContent.trim())))"
+    hint: "<a href=\"https://github.com/you/lagos-weather\">View the weather script on GitHub</a>"
+  - prompt: "Every link with target=\"_blank\" also has rel=\"noopener\" (and there's at least one)."
+    check: "(() => { const blank = [...document.querySelectorAll('a[target=\"_blank\"]')]; return blank.length > 0 && blank.every(a => /noopener/.test(a.getAttribute('rel') || '')) })()"
+  - prompt: "Lay the cards out in a row that wraps (flex + wrap, or grid)."
+    check: "(() => { const c = document.querySelector('#projects article.project')?.parentElement; if (!c) return false; const s = getComputedStyle(c); return (s.display === 'flex' && s.flexWrap === 'wrap') || s.display === 'grid' })()"
+  - prompt: "Give links a visible keyboard focus style (:focus-visible or :focus)."
+    check: "[...document.styleSheets].flatMap(s => [...s.cssRules]).some(r => /:focus(-visible)?/.test(r.selectorText || '') && /\\ba\\b|button/.test(r.selectorText) && (r.style.outline || r.style.outlineStyle || r.style.boxShadow || r.style.outlineColor))"
+    hint: "a:focus-visible { outline: 3px solid #f2b705; outline-offset: 2px; }"

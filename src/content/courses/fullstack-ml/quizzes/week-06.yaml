@@ -1,0 +1,639 @@
+# Fullstack + ML · Week 6 quizzes. Format and rules: src/content/QUIZZES.md
+week: 6
+days:
+
+  # ─────────────────────────── DAY 1 ───────────────────────────
+  - day: 1
+    gate:
+      title: "Checkpoint: Week 5 review"
+      covers: "Week 5: dictionaries, the counting pattern, exceptions, modules, JSON"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w06-d1-g01, difficulty: easy, type: mcq, prompt: "Safe dictionary lookup", choices: ["d.get(key, 0)", "d[key]", "d.find(key)", "d(key)"], answer: 0 }
+        - { id: fs-w06-d1-g02, difficulty: easy, type: mcq, prompt: "int(\"ten\") raises…", choices: ["ValueError", "TypeError", "KeyError", "NameError"], answer: 0 }
+        - { id: fs-w06-d1-g03, difficulty: easy, type: mcq, prompt: "Save a list of dicts to a file", choices: ["json.dump(data, file)", "json.load(file)", "file.write(data)", "json.dumps(file)"], answer: 0 }
+        - { id: fs-w06-d1-g04, difficulty: easy, type: truefalse, prompt: "A bare except: is good practice.", answer: false }
+        - { id: fs-w06-d1-g05, difficulty: easy, type: mcq, prompt: "Round up", choices: ["math.ceil", "math.floor", "round", "int"], answer: 0 }
+        - { id: fs-w06-d1-g06, difficulty: easy, type: mcq, prompt: "Loop over keys and values", choices: [".items()", ".keys()", ".values()", ".pairs()"], answer: 0 }
+        - id: fs-w06-d1-g07
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            counts = {}
+            for city in ["Lagos", "Kano", "Lagos", "Abuja", "Lagos"]:
+                counts[city] = counts.get(city, 0) + 1
+            print(counts["Lagos"], len(counts))
+          accept: ["3 3"]
+        - id: fs-w06-d1-g08
+          difficulty: medium
+          type: text
+          prompt: "What does this print? (lines joined with a space)"
+          code: |
+            for v in ["4", "x", "6"]:
+                try:
+                    print(int(v) + 1)
+                except ValueError:
+                    print("skip")
+          accept: ["5 skip 7"]
+        - id: fs-w06-d1-g09
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            import json
+            data = json.loads('{"city": "Abuja", "temps": [29, 31]}')
+            print(data["temps"][1] - data["temps"][0])
+          accept: ["2"]
+        - { id: fs-w06-d1-g10, difficulty: medium, type: match, prompt: "Match.", pairs: [["KeyError", "missing dict key"], ["FileNotFoundError", "open() a missing file"], ["ZeroDivisionError", "divide by 0"], ["IndexError", "list position too big"]] }
+        - { id: fs-w06-d1-g11, difficulty: medium, type: mcq, prompt: "`from math import ceil` lets you write…", choices: ["ceil(2.5)", "math.ceil(2.5) only", "import.ceil(2.5)", "ceil.math(2.5)"], answer: 0 }
+        - id: fs-w06-d1-g12
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            totals = {"Food": 3200, "Transport": 500}
+            print(max(totals, key=totals.get))
+          accept: ["Food"]
+        - { id: fs-w06-d1-g13, difficulty: medium, type: truefalse, prompt: "JSON's null becomes None in Python.", answer: true }
+        - id: fs-w06-d1-g14
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            from datetime import date
+            print((date(2026, 11, 1) - date(2026, 10, 1)).days)
+          accept: ["31"]
+        - { id: fs-w06-d1-g15, difficulty: medium, type: mcq, prompt: "Load a JSON file that may not exist yet:", choices: ["try json.load … except FileNotFoundError: data = []", "json.load with no try", "open(…, \"w\") first", "json.loads(filename)"], answer: 0 }
+        - id: fs-w06-d1-g16
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            orders = [{"city": "Lagos", "amount": 100}, {"city": "Kano", "amount": 300}, {"city": "Lagos", "amount": 250}]
+            totals = {}
+            for o in orders:
+                totals[o["city"]] = totals.get(o["city"], 0) + o["amount"]
+            best = max(totals, key=totals.get)
+            print(best, totals[best])
+          accept: ["Lagos 350"]
+        - id: fs-w06-d1-g17
+          difficulty: hard
+          type: mcq
+          prompt: "What happens?"
+          code: |
+            try:
+                print({"a": 1}["b"])
+            except ValueError:
+                print("caught")
+          choices: ["KeyError crash: ValueError doesn't catch it", "caught", "None", "1"]
+          answer: 0
+        - { id: fs-w06-d1-g18, difficulty: hard, type: multi, prompt: "Which are in Python's standard library? (Select all.)", choices: ["json", "datetime", "random", "requests"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "API basics"
+        secondsPerQuestion: 9
+        questions:
+          - { id: fs-w06-d1-rf01, difficulty: easy, type: mcq, prompt: "An API answers programs with…", choices: ["JSON (usually)", "a web page", "a PDF", "an image"], answer: 0 }
+          - { id: fs-w06-d1-rf02, difficulty: easy, type: mcq, prompt: "Fetch a URL in Python", choices: ["requests.get(url)", "open(url)", "json.get(url)", "fetch(url)"], answer: 0 }
+          - { id: fs-w06-d1-rf03, difficulty: easy, type: mcq, prompt: "Status for OK", choices: ["200", "404", "500", "400"], answer: 0 }
+          - { id: fs-w06-d1-rf04, difficulty: easy, type: mcq, prompt: "Status for \"not found\"", choices: ["404", "200", "500", "301"], answer: 0 }
+          - { id: fs-w06-d1-rf05, difficulty: easy, type: mcq, prompt: "Server's fault", choices: ["500", "400", "200", "404"], answer: 0 }
+          - { id: fs-w06-d1-rf06, difficulty: easy, type: mcq, prompt: "Response body → Python dict", choices: ["response.json()", "response.dict()", "json.dump(response)", "response.text()"], answer: 0 }
+          - { id: fs-w06-d1-rf07, difficulty: easy, type: mcq, prompt: "Give up after 10 seconds", choices: ["timeout=10", "wait=10", "limit=10", "stop=10"], answer: 0 }
+          - { id: fs-w06-d1-rf08, difficulty: easy, type: mcq, prompt: "Builds the ?a=1&b=2 part for you", choices: ["params=", "query=", "data=", "url+="], answer: 0 }
+          - { id: fs-w06-d1-rf09, difficulty: easy, type: truefalse, prompt: "Open-Meteo needs an API key.", answer: false }
+          - { id: fs-w06-d1-rf10, difficulty: easy, type: mcq, prompt: "Lagos's coordinates (roughly)", choices: ["6.52, 3.38", "9.06, 7.49", "12.00, 8.52", "51.5, -0.12"], answer: 0 }
+      - kind: brain-teaser
+        title: "Dig into the response"
+        questions:
+          - id: fs-w06-d1-bt01
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              data = {"current": {"temperature_2m": 25.7, "weather_code": 2}}
+              print(data["current"]["temperature_2m"])
+            accept: ["25.7"]
+          - id: fs-w06-d1-bt02
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              data = {"current_units": {"temperature_2m": "°C"}, "current": {"temperature_2m": 31.4}}
+              print(f"{data['current']['temperature_2m']}{data['current_units']['temperature_2m']}")
+            accept: ["31.4°C"]
+          - { id: fs-w06-d1-bt03, difficulty: medium, type: mcq, prompt: "In ?latitude=6.52&longitude=3.38, the parts after ? are…", choices: ["query parameters", "the domain", "the status code", "headers"], answer: 0 }
+          - { id: fs-w06-d1-bt04, difficulty: hard, type: mcq, prompt: "You set latitude=600. Open-Meteo answers…", choices: ["400 with {\"error\": true, \"reason\": \"Latitude must be in range of -90 to 90°…\"}", "200 with no data", "500", "404"], answer: 0 }
+          - id: fs-w06-d1-bt05
+            difficulty: hard
+            type: text
+            prompt: "What does this print?"
+            code: |
+              responses = [{"current": {"temperature_2m": 25.7}}, {"current": {"temperature_2m": 31.3}}]
+              print(round(sum(r["current"]["temperature_2m"] for r in responses) / len(responses), 1))
+            accept: ["28.5"]
+
+  # ─────────────────────────── DAY 2 ───────────────────────────
+  - day: 2
+    gate:
+      title: "Checkpoint: APIs and requests"
+      covers: "Week 6 · Day 1: what an API is, query parameters, requests.get with params and timeout, status codes, .json()"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w06-d2-g01, difficulty: easy, type: mcq, prompt: "API stands for…", choices: ["Application Programming Interface", "Automatic Page Index", "Applied Python Internet", "App Protocol Item"], answer: 0 }
+        - { id: fs-w06-d2-g02, difficulty: easy, type: mcq, prompt: "Install requests", choices: ["pip install requests (terminal)", "import requests --install", "python get requests", "It's built in"], answer: 0 }
+        - { id: fs-w06-d2-g03, difficulty: easy, type: mcq, prompt: "200 means…", choices: ["OK", "not found", "server error", "bad request"], answer: 0 }
+        - { id: fs-w06-d2-g04, difficulty: easy, type: truefalse, prompt: "response.json() turns the JSON text into Python data.", answer: true }
+        - { id: fs-w06-d2-g05, difficulty: easy, type: mcq, prompt: "Which part of a URL holds latitude=6.52?", choices: ["the query string after ?", "the domain", "the path before /v1", "the status"], answer: 0 }
+        - { id: fs-w06-d2-g06, difficulty: easy, type: mcq, prompt: "Why add timeout=10?", choices: ["So the program doesn't hang forever", "To make it faster", "To retry 10 times", "It's required"], answer: 0 }
+        - { id: fs-w06-d2-g07, difficulty: medium, type: match, prompt: "Match the status code.", pairs: [["200", "OK"], ["400", "bad request (your mistake)"], ["404", "not found"], ["500", "server error (their mistake)"]] }
+        - { id: fs-w06-d2-g08, difficulty: medium, type: mcq, prompt: "requests.get(URL, params={\"latitude\": 6.52, \"longitude\": 3.38}) requests…", choices: ["URL?latitude=6.52&longitude=3.38", "URL/6.52/3.38", "URL with a JSON body", "only URL"], answer: 0 }
+        - id: fs-w06-d2-g09
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            data = {"current": {"time": "2026-10-01T22:30", "relative_humidity_2m": 85}}
+            print(data["current"]["time"][:10])
+          accept: ["2026-10-01"]
+        - { id: fs-w06-d2-g10, difficulty: medium, type: truefalse, prompt: "response.json() is the same as json.loads(response.text).", answer: true }
+        - { id: fs-w06-d2-g11, difficulty: medium, type: mcq, prompt: "Abuja instead of Lagos: what changes in the request?", choices: ["latitude and longitude", "the URL domain", "timeout", "the status code"], answer: 0 }
+        - id: fs-w06-d2-g12
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            data = {"current": {"wind_speed_10m": 10.6}, "current_units": {"wind_speed_10m": "km/h"}}
+            print(data["current"]["wind_speed_10m"], data["current_units"]["wind_speed_10m"])
+          accept: ["10.6 km/h"]
+        - { id: fs-w06-d2-g13, difficulty: medium, type: mcq, prompt: "Why can't the browser sandbox call the API?", choices: ["It has no internet access; we use saved responses instead", "The API is broken", "Python can't call APIs", "It needs a key"], answer: 0 }
+        - { id: fs-w06-d2-g14, difficulty: medium, type: order, prompt: "Order the steps to get the temperature.", items: ["import requests", "response = requests.get(URL, params=params, timeout=10)", "data = response.json()", "temp = data[\"current\"][\"temperature_2m\"]"] }
+        - { id: fs-w06-d2-g15, difficulty: medium, type: mcq, prompt: "What does \"current=temperature_2m,weather_code\" ask for?", choices: ["just those current values", "everything", "only the time", "a forecast for 2 metres"], answer: 0 }
+        - id: fs-w06-d2-g16
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            def read_current(data):
+                c = data["current"]
+                return {"temp": c["temperature_2m"], "code": c["weather_code"]}
+
+            print(read_current({"current": {"temperature_2m": 29.0, "weather_code": 61, "x": 1}}))
+          accept: ["{'temp': 29.0, 'code': 61}"]
+        - { id: fs-w06-d2-g17, difficulty: hard, type: mcq, prompt: "Your script gets status 400. Whose fault, and what do you check?", choices: ["Yours: check the parameters you sent", "The server's: wait and retry", "The network: check Wi-Fi", "Nobody's: 400 means OK"], answer: 0 }
+        - { id: fs-w06-d2-g18, difficulty: hard, type: multi, prompt: "Which are query parameters in this URL? (Select all.) …/v1/forecast?latitude=6.52&longitude=3.38&timezone=Africa/Lagos", choices: ["latitude", "longitude", "timezone", "forecast"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Codes and words"
+        secondsPerQuestion: 9
+        questions:
+          - { id: fs-w06-d2-rf01, difficulty: easy, type: mcq, prompt: "Weather code 0", choices: ["Clear sky", "Rain", "Fog", "Overcast"], answer: 0 }
+          - { id: fs-w06-d2-rf02, difficulty: easy, type: mcq, prompt: "Weather code 3", choices: ["Overcast", "Clear sky", "Thunderstorm", "Drizzle"], answer: 0 }
+          - { id: fs-w06-d2-rf03, difficulty: easy, type: mcq, prompt: "Weather code 95", choices: ["Thunderstorm", "Fog", "Clear sky", "Drizzle"], answer: 0 }
+          - { id: fs-w06-d2-rf04, difficulty: easy, type: mcq, prompt: "Weather code 45", choices: ["Fog", "Rain", "Overcast", "Snow"], answer: 0 }
+          - { id: fs-w06-d2-rf05, difficulty: easy, type: mcq, prompt: "Weather code 61", choices: ["Rain", "Clear sky", "Fog", "Thunderstorm"], answer: 0 }
+          - { id: fs-w06-d2-rf06, difficulty: easy, type: mcq, prompt: "WMO stands for…", choices: ["World Meteorological Organization", "Weather Map Online", "Wind Measurement Office", "World Map Organisation"], answer: 0 }
+          - { id: fs-w06-d2-rf07, difficulty: easy, type: mcq, prompt: "Unknown code without crashing", choices: ["CODES.get(code, \"Unknown\")", "CODES[code]", "CODES.find(code)", "CODES(code)"], answer: 0 }
+          - { id: fs-w06-d2-rf08, difficulty: easy, type: truefalse, prompt: "51 <= code <= 82 is True for code 63.", answer: true }
+          - { id: fs-w06-d2-rf09, difficulty: easy, type: truefalse, prompt: "51 <= code <= 82 is True for code 95.", answer: false }
+          - { id: fs-w06-d2-rf10, difficulty: easy, type: mcq, prompt: "Weather code 2", choices: ["Partly cloudy", "Clear sky", "Rain", "Fog"], answer: 0 }
+      - kind: brain-teaser
+        title: "Build the report"
+        questions:
+          - id: fs-w06-d2-bt01
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              CODES = {0: "Clear sky", 2: "Partly cloudy"}
+              print(CODES.get(2, "Unknown"), "/", CODES.get(7, "Unknown"))
+            accept: ["Partly cloudy / Unknown"]
+          - id: fs-w06-d2-bt02
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              def advice(temp, code):
+                  if 51 <= code <= 82 or 95 <= code <= 99:
+                      return "Take an umbrella"
+                  if temp >= 32:
+                      return "Stay hydrated"
+                  return "Enjoy your day"
+
+              print(advice(35, 96))
+            accept: ["Take an umbrella"]
+          - id: fs-w06-d2-bt03
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              city = "Abuja"
+              c = {"temperature_2m": 23.1, "relative_humidity_2m": 92}
+              print(f"{city}: {c['temperature_2m']}°C, humidity {c['relative_humidity_2m']}%")
+            accept: ["Abuja: 23.1°C, humidity 92%"]
+          - id: fs-w06-d2-bt04
+            difficulty: hard
+            type: text
+            prompt: "What does this print?"
+            code: |
+              text = ("Weather in Lagos: "
+                      "Partly cloudy")
+              print(len(text.split()))
+            accept: ["5"]
+          - id: fs-w06-d2-bt05
+            difficulty: hard
+            type: text
+            prompt: "What does this print?"
+            code: |
+              codes = [0, 61, 3, 95, 81, 45]
+              rainy = [c for c in codes if 51 <= c <= 82 or 95 <= c <= 99]
+              print(len(rainy))
+            accept: ["3"]
+
+  # ─────────────────────────── DAY 3 ───────────────────────────
+  - day: 3
+    gate:
+      title: "Checkpoint: weather codes and reports"
+      covers: "Week 6 · Day 2: WMO codes, describe with .get, advice with ranges, multi-line f-string reports"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w06-d3-g01, difficulty: easy, type: mcq, prompt: "Code 0 means…", choices: ["Clear sky", "Rain", "Overcast", "Fog"], answer: 0 }
+        - { id: fs-w06-d3-g02, difficulty: easy, type: mcq, prompt: "Which avoids a KeyError for a new code?", choices: ["CODES.get(code, \"Unknown\")", "CODES[code]", "CODES[\"code\"]", "CODES.code"], answer: 0 }
+        - { id: fs-w06-d3-g03, difficulty: easy, type: truefalse, prompt: "95 means thunderstorm.", answer: true }
+        - { id: fs-w06-d3-g04, difficulty: easy, type: mcq, prompt: "Code 65", choices: ["Heavy rain", "Fog", "Clear sky", "Mainly clear"], answer: 0 }
+        - { id: fs-w06-d3-g05, difficulty: easy, type: mcq, prompt: "Code 1", choices: ["Mainly clear", "Overcast", "Drizzle", "Rain"], answer: 0 }
+        - { id: fs-w06-d3-g06, difficulty: easy, type: mcq, prompt: "Codes 51, 53, 55", choices: ["Drizzle", "Thunderstorm", "Fog", "Clear"], answer: 0 }
+        - id: fs-w06-d3-g07
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            code = 81
+            print(51 <= code <= 82)
+          accept: ["True"]
+        - id: fs-w06-d3-g08
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            def advice(temp, code):
+                if 51 <= code <= 82 or 95 <= code <= 99:
+                    return "Take an umbrella"
+                if temp >= 32:
+                    return "Stay hydrated"
+                return "Enjoy your day"
+
+            print(advice(33, 1), "|", advice(27, 45))
+          accept: ["Stay hydrated | Enjoy your day"]
+        - { id: fs-w06-d3-g09, difficulty: medium, type: match, prompt: "Match the code to its meaning.", pairs: [["0", "Clear sky"], ["3", "Overcast"], ["45", "Fog"], ["82", "Violent rain showers"]] }
+        - { id: fs-w06-d3-g10, difficulty: medium, type: mcq, prompt: "Why check rain BEFORE heat in advice()?", choices: ["A hot thunderstorm still needs an umbrella", "Heat is rarer", "Python checks in reverse", "No reason"], answer: 0 }
+        - id: fs-w06-d3-g11
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            s = ("a"
+                 "b"
+                 "c")
+            print(s)
+          accept: ["abc"]
+        - { id: fs-w06-d3-g12, difficulty: medium, type: truefalse, prompt: "Inside an f-string with double quotes, use single quotes for dictionary keys: f\"{c['temperature_2m']}\".", answer: true }
+        - id: fs-w06-d3-g13
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            CODES = {61: "Rain", 63: "Rain", 65: "Heavy rain"}
+            print(sum(1 for word in CODES.values() if word == "Rain"))
+          accept: ["2"]
+        - { id: fs-w06-d3-g14, difficulty: medium, type: mcq, prompt: "Best type for CODES?", choices: ["A dictionary: code → words", "A list of words in order", "One long string", "18 if/elif statements"], answer: 0 }
+        - id: fs-w06-d3-g15
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            temp = 34.0
+            print(f"{temp}°C")
+          accept: ["34.0°C"]
+        - id: fs-w06-d3-g16
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            CODES = {0: "Clear sky", 2: "Partly cloudy"}
+            def report(city, c):
+                return (f"Weather in {city}: {CODES.get(c['weather_code'], 'Unknown')}, "
+                        f"{c['temperature_2m']}°C")
+            print(report("Kano", {"weather_code": 0, "temperature_2m": 36.5}))
+          accept: ["Weather in Kano: Clear sky, 36.5°C"]
+        - id: fs-w06-d3-g17
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            def rainy(code):
+                return 51 <= code <= 82 or 95 <= code <= 99
+            print([c for c in [50, 51, 82, 83, 94, 99] if rainy(c)])
+          accept: ["[51, 82, 99]"]
+        - { id: fs-w06-d3-g18, difficulty: hard, type: multi, prompt: "Which codes should trigger \"Take an umbrella\"? (Select all.)", choices: ["53", "80", "96", "48"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Robust scripts"
+        secondsPerQuestion: 9
+        questions:
+          - { id: fs-w06-d3-rf01, difficulty: easy, type: mcq, prompt: "Raise your own error", choices: ["raise ValueError(\"…\")", "throw ValueError", "error(\"…\")", "except ValueError"], answer: 0 }
+          - { id: fs-w06-d3-rf02, difficulty: easy, type: mcq, prompt: "Catch every requests network problem", choices: ["requests.exceptions.RequestException", "ValueError", "KeyError", "NetworkError"], answer: 0 }
+          - { id: fs-w06-d3-rf03, difficulty: easy, type: mcq, prompt: "Run main() only when the file is run directly", choices: ["if __name__ == \"__main__\":", "if main:", "if __file__:", "while True:"], answer: 0 }
+          - { id: fs-w06-d3-rf04, difficulty: easy, type: mcq, prompt: "Lists packages to install", choices: ["requirements.txt", "README.md", ".gitignore", "main.py"], answer: 0 }
+          - { id: fs-w06-d3-rf05, difficulty: easy, type: mcq, prompt: "Explains what the project does and how to run it", choices: ["README.md", "requirements.txt", ".gitignore", "setup.json"], answer: 0 }
+          - { id: fs-w06-d3-rf06, difficulty: easy, type: mcq, prompt: "Install from requirements.txt", choices: ["pip install -r requirements.txt", "pip requirements", "python -r requirements.txt", "import requirements"], answer: 0 }
+          - { id: fs-w06-d3-rf07, difficulty: easy, type: mcq, prompt: "\" Abuja \".strip().lower()", choices: ["\"abuja\"", "\"Abuja\"", "\" abuja \"", "\"ABUJA\""], answer: 0 }
+          - { id: fs-w06-d3-rf08, difficulty: easy, type: mcq, prompt: "\"port harcourt\".title()", choices: ["\"Port Harcourt\"", "\"Port harcourt\"", "\"PORT HARCOURT\"", "\"port Harcourt\""], answer: 0 }
+          - { id: fs-w06-d3-rf09, difficulty: easy, type: truefalse, prompt: "latitude, longitude = (6.52, 3.38) unpacks a pair.", answer: true }
+          - { id: fs-w06-d3-rf10, difficulty: easy, type: mcq, prompt: "Read an exception's message", choices: ["except ValueError as error: print(error)", "except error:", "print(ValueError)", "error.read()"], answer: 0 }
+      - kind: brain-teaser
+        title: "Trouble handling"
+        questions:
+          - id: fs-w06-d3-bt01
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              CITIES = {"lagos": (6.52, 3.38)}
+              def build(city):
+                  key = city.strip().lower()
+                  if key not in CITIES:
+                      raise ValueError(f"Sorry, I don't know {city.strip()}")
+                  return CITIES[key]
+              try:
+                  print(build("Jos "))
+              except ValueError as e:
+                  print(e)
+            accept: ["Sorry, I don't know Jos"]
+          - id: fs-w06-d3-bt02
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              latitude, longitude = (9.06, 7.49)
+              print(longitude)
+            accept: ["7.49"]
+          - id: fs-w06-d3-bt03
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              def check(status, body):
+                  if status != 200:
+                      raise RuntimeError(body.get("reason", "Unknown error"))
+                  return body["current"]
+              try:
+                  check(500, {})
+              except RuntimeError as e:
+                  print(e)
+            accept: ["Unknown error"]
+          - { id: fs-w06-d3-bt04, difficulty: hard, type: match, prompt: "Match the trouble to the fix.", pairs: [["Unknown city", "raise ValueError, catch in main"], ["Status 400/500", "raise RuntimeError with the reason"], ["No internet", "catch requests.exceptions.RequestException"], ["Slow server", "timeout=10"]] }
+          - { id: fs-w06-d3-bt05, difficulty: hard, type: mcq, prompt: "Another file does `import weather`. With `if __name__ == \"__main__\": main()` in weather.py, what happens?", choices: ["The functions load, but main() doesn't run", "main() runs and asks for a city", "ImportError", "Nothing loads"], answer: 0 }
+
+  # ─────────────────────────── DAY 4 ───────────────────────────
+  - day: 4
+    gate:
+      title: "Checkpoint: robust scripts"
+      covers: "Week 6 · Day 3: raising ValueError, unpacking, status checks, RequestException, main() and __name__, README and requirements.txt"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w06-d4-g01, difficulty: easy, type: mcq, prompt: "requirements.txt for the weather script contains…", choices: ["requests", "python", "json", "main.py"], answer: 0 }
+        - { id: fs-w06-d4-g02, difficulty: easy, type: mcq, prompt: "Where do you describe how to run the project?", choices: ["README.md", "requirements.txt", "CITIES", ".gitignore"], answer: 0 }
+        - { id: fs-w06-d4-g03, difficulty: easy, type: truefalse, prompt: "raise ValueError(\"…\") stops the function and sends the error to the caller.", answer: true }
+        - { id: fs-w06-d4-g04, difficulty: easy, type: mcq, prompt: "No internet when calling requests.get raises…", choices: ["a requests.exceptions.RequestException (e.g. ConnectionError)", "ValueError", "KeyError", "nothing"], answer: 0 }
+        - { id: fs-w06-d4-g05, difficulty: easy, type: mcq, prompt: "Which line starts the program the professional way?", choices: ["if __name__ == \"__main__\": main()", "main", "start()", "run main"], answer: 0 }
+        - { id: fs-w06-d4-g06, difficulty: easy, type: mcq, prompt: "\"  KANO \".strip().lower() =", choices: ["\"kano\"", "\"KANO\"", "\"  kano \"", "\"Kano\""], answer: 0 }
+        - id: fs-w06-d4-g07
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            CITIES = {"abuja": (9.06, 7.49)}
+            lat, lon = CITIES["abuja"]
+            print(lat + lon)
+          accept: ["16.55"]
+        - id: fs-w06-d4-g08
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            def check(status, body):
+                if status != 200:
+                    raise RuntimeError(body.get("reason", "Unknown error"))
+                return body["current"]
+            print(check(200, {"current": {"temperature_2m": 25.7}})["temperature_2m"])
+          accept: ["25.7"]
+        - { id: fs-w06-d4-g09, difficulty: medium, type: match, prompt: "Match.", pairs: [["README.md", "what it does, how to run it"], ["requirements.txt", "packages to install"], ["main()", "the program's starting point"], ["CITIES", "city → coordinates"]] }
+        - { id: fs-w06-d4-g10, difficulty: medium, type: mcq, prompt: "Why raise ValueError in build_params instead of printing there?", choices: ["The caller (main) decides how to show it; the function stays reusable", "print doesn't work in functions", "ValueError is faster", "It's required by requests"], answer: 0 }
+        - id: fs-w06-d4-g11
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            try:
+                raise RuntimeError("Server overloaded")
+            except RuntimeError as error:
+                print(f"Couldn't get the weather: {error}")
+          accept: ["Couldn't get the weather: Server overloaded"]
+        - { id: fs-w06-d4-g12, difficulty: medium, type: truefalse, prompt: "A ValueError raised inside build_params can be caught by a try/except in main().", answer: true }
+        - { id: fs-w06-d4-g13, difficulty: medium, type: mcq, prompt: "A good README example output section shows…", choices: ["what the user sees when they run it", "your passwords", "every line of code", "nothing"], answer: 0 }
+        - id: fs-w06-d4-g14
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            print("  port harcourt ".strip().title())
+          accept: ["Port Harcourt"]
+        - { id: fs-w06-d4-g15, difficulty: medium, type: mcq, prompt: "Testing \"no internet\" on your laptop:", choices: ["Turn on airplane mode and run the script", "Delete requests", "Use a wrong city", "Set timeout=0"], answer: 0 }
+        - id: fs-w06-d4-g16
+          difficulty: hard
+          type: text
+          prompt: "What does this print? (lines joined with a space)"
+          code: |
+            def build(city):
+                if city.lower() not in {"lagos", "abuja"}:
+                    raise ValueError(f"Sorry, I don't know {city}")
+                return city.title()
+
+            for c in ["lagos", "Jos", "ABUJA"]:
+                try:
+                    print(build(c))
+                except ValueError as e:
+                    print(e)
+          accept: ["Lagos Sorry, I don't know Jos Abuja"]
+        - id: fs-w06-d4-g17
+          difficulty: hard
+          type: mcq
+          prompt: "What happens?"
+          code: |
+            CITIES = {"lagos": (6.52, 3.38, "Lagos State")}
+            lat, lon = CITIES["lagos"]
+          choices: ["ValueError: too many values to unpack", "lat=6.52, lon=3.38", "KeyError", "lat=(6.52, 3.38)"]
+          answer: 0
+        - { id: fs-w06-d4-g18, difficulty: hard, type: multi, prompt: "Which belong in your weather repo? (Select all.)", choices: ["weather.py", "README.md", "requirements.txt", "your bank details"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Accessible pages"
+        secondsPerQuestion: 9
+        questions:
+          - { id: fs-w06-d4-rf01, difficulty: easy, type: mcq, prompt: "Text read to blind users for an image", choices: ["alt", "title", "src", "caption"], answer: 0 }
+          - { id: fs-w06-d4-rf02, difficulty: easy, type: mcq, prompt: "Best link text", choices: ["View the weather script on GitHub", "click here", "here", "link"], answer: 0 }
+          - { id: fs-w06-d4-rf03, difficulty: easy, type: mcq, prompt: "Style for keyboard focus", choices: [":focus-visible", ":hover", ":active", ":visited"], answer: 0 }
+          - { id: fs-w06-d4-rf04, difficulty: easy, type: mcq, prompt: "Pair with target=\"_blank\"", choices: ["rel=\"noopener\"", "rel=\"stylesheet\"", "alt=\"\"", "href=\"#\""], answer: 0 }
+          - { id: fs-w06-d4-rf05, difficulty: easy, type: mcq, prompt: "Scores your site in DevTools", choices: ["Lighthouse", "Console", "Network", "Sources"], answer: 0 }
+          - { id: fs-w06-d4-rf06, difficulty: easy, type: mcq, prompt: "Heading order", choices: ["h1 → h2 → h3", "h3 → h1 → h2", "any order", "h1 only"], answer: 0 }
+          - { id: fs-w06-d4-rf07, difficulty: easy, type: truefalse, prompt: "Removing outlines without a replacement hurts keyboard users.", answer: true }
+          - { id: fs-w06-d4-rf08, difficulty: easy, type: mcq, prompt: "Target Accessibility score", choices: ["90+", "50", "10", "It doesn't matter"], answer: 0 }
+          - { id: fs-w06-d4-rf09, difficulty: easy, type: mcq, prompt: "Low contrast example", choices: ["light grey text on white", "black on white", "white on dark green", "dark blue on cream"], answer: 0 }
+          - { id: fs-w06-d4-rf10, difficulty: easy, type: mcq, prompt: "Lighthouse categories include…", choices: ["Performance, Accessibility, Best Practices, SEO", "Python, HTML, Git", "Speed only", "Colours only"], answer: 0 }
+      - kind: brain-teaser
+        title: "Audit the page"
+        questions:
+          - { id: fs-w06-d4-bt01, difficulty: medium, type: mcq, prompt: "What's wrong?", code: "<a href=\"https://github.com/victor/lagos-weather\">click here</a>", choices: ["The link text doesn't say where it goes", "GitHub links aren't allowed", "It needs an alt", "Nothing"], answer: 0 }
+          - { id: fs-w06-d4-bt02, difficulty: medium, type: mcq, prompt: "What's missing?", code: "<a href=\"https://github.com/victor\" target=\"_blank\">My GitHub profile</a>", choices: ["rel=\"noopener\"", "alt", "a class", "an id"], answer: 0 }
+          - { id: fs-w06-d4-bt03, difficulty: medium, type: mcq, prompt: "Why is this a problem for keyboard users?", code: "a:focus { outline: none; }", choices: ["They can't see which link is selected", "It breaks the link", "It hides the text", "No problem"], answer: 0 }
+          - { id: fs-w06-d4-bt04, difficulty: hard, type: mcq, prompt: "The page jumps from <h1> to <h4> for a smaller look. Better fix?", choices: ["Use <h2> and make it smaller with CSS", "Keep <h4>", "Use <b>", "Use an image"], answer: 0 }
+          - { id: fs-w06-d4-bt05, difficulty: hard, type: multi, prompt: "Which improve a Lighthouse Accessibility score? (Select all.)", choices: ["alt on every meaningful image", "Labels on form inputs", "Enough colour contrast", "More animations"], answers: [0, 1, 2] }
+
+  # ─────────────────────────── DAY 5 ───────────────────────────
+  - day: 5
+    gate:
+      title: "Checkpoint: projects and accessibility"
+      covers: "Week 6 · Day 4: project cards, descriptive links, rel=noopener, :focus-visible, contrast, heading order, Lighthouse"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w06-d5-g01, difficulty: easy, type: mcq, prompt: "A project card should include…", choices: ["what it does, what you used, and a link", "only a photo", "your phone number", "nothing but a title"], answer: 0 }
+        - { id: fs-w06-d5-g02, difficulty: easy, type: mcq, prompt: "rel=\"noopener\" goes with…", choices: ["target=\"_blank\"", "alt", "src", "class"], answer: 0 }
+        - { id: fs-w06-d5-g03, difficulty: easy, type: truefalse, prompt: "\"Click here\" is good link text.", answer: false }
+        - { id: fs-w06-d5-g04, difficulty: easy, type: mcq, prompt: "Where is Lighthouse?", choices: ["Chrome DevTools", "GitHub", "VS Code terminal", "Python"], answer: 0 }
+        - { id: fs-w06-d5-g05, difficulty: easy, type: mcq, prompt: "Accessibility means…", choices: ["everyone can use your site, including people with disabilities", "the site loads fast", "only adults can visit", "it has a password"], answer: 0 }
+        - { id: fs-w06-d5-g06, difficulty: easy, type: mcq, prompt: "Visible keyboard focus uses…", choices: [":focus-visible", ":hover", ":checked", ":first-child"], answer: 0 }
+        - { id: fs-w06-d5-g07, difficulty: medium, type: mcq, prompt: "What does rel=\"noopener\" protect against?", choices: ["The new tab controlling your page through window.opener", "Viruses", "Slow loading", "Broken images"], answer: 0 }
+        - { id: fs-w06-d5-g08, difficulty: medium, type: match, prompt: "Match the problem to the fix.", pairs: [["Image without alt", "add descriptive alt"], ["\"click here\" link", "say where it goes"], ["No focus outline", "style :focus-visible"], ["h1 then h4", "use h2"]] }
+        - { id: fs-w06-d5-g09, difficulty: medium, type: mcq, prompt: "Which focus style is best?", choices: ["a:focus-visible { outline: 3px solid #f2b705; outline-offset: 2px; }", "a:focus { outline: none; }", "a { outline: 0 !important; }", "* { outline: none; }"], answer: 0 }
+        - { id: fs-w06-d5-g10, difficulty: medium, type: truefalse, prompt: "Headings should be chosen by meaning (order), not by size; CSS controls size.", answer: true }
+        - { id: fs-w06-d5-g11, difficulty: medium, type: mcq, prompt: "Cards in a wrapping row:", choices: [".grid { display: flex; flex-wrap: wrap; gap: 1rem; }", ".grid { display: block; }", ".grid { float: left; }", ".grid { position: absolute; }"], answer: 0 }
+        - { id: fs-w06-d5-g12, difficulty: medium, type: mcq, prompt: "Lighthouse flags \"Background and foreground colors do not have a sufficient contrast ratio.\" Fix?", choices: ["Darken the text or lighten the background", "Add more images", "Remove alt text", "Use smaller fonts"], answer: 0 }
+        - { id: fs-w06-d5-g13, difficulty: medium, type: truefalse, prompt: "Links to your GitHub repos make your projects verifiable to employers.", answer: true }
+        - { id: fs-w06-d5-g14, difficulty: medium, type: mcq, prompt: "A decorative divider image (no meaning) should have…", choices: ["alt=\"\" (empty, so screen readers skip it)", "no alt attribute", "alt=\"image\"", "alt=\"divider.png\""], answer: 0 }
+        - { id: fs-w06-d5-g15, difficulty: medium, type: order, prompt: "Order the heading levels on the page.", items: ["<h1>Victor Animasahun</h1>", "<h2>Projects</h2>", "<h3>Lagos weather script</h3>"] }
+        - { id: fs-w06-d5-g16, difficulty: hard, type: mcq, prompt: "Which link is best?", choices: ["<a href=\"https://github.com/victor/expenses\" target=\"_blank\" rel=\"noopener\">View the expense tracker on GitHub</a>", "<a href=\"https://github.com/victor/expenses\" target=\"_blank\">here</a>", "<a href=\"#\">GitHub</a>", "<a>https://github.com/victor/expenses</a>"], answer: 0 }
+        - { id: fs-w06-d5-g17, difficulty: hard, type: mcq, prompt: "Keyboard test: you press Tab on your site and nothing seems to happen. Most likely?", choices: ["Focus outlines were removed", "Tab is broken", "No links exist", "Lighthouse is off"], answer: 0 }
+        - { id: fs-w06-d5-g18, difficulty: hard, type: multi, prompt: "Which are accessibility checks? (Select all.)", choices: ["Meaningful alt text", "Visible focus", "Enough contrast", "A dark theme"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Get hired"
+        secondsPerQuestion: 9
+        questions:
+          - { id: fs-w06-d5-rf01, difficulty: easy, type: mcq, prompt: "Email link", choices: ["mailto:", "email:", "tel:", "send:"], answer: 0 }
+          - { id: fs-w06-d5-rf02, difficulty: easy, type: mcq, prompt: "Call link", choices: ["tel:", "call:", "phone:", "mailto:"], answer: 0 }
+          - { id: fs-w06-d5-rf03, difficulty: easy, type: mcq, prompt: "WhatsApp link", choices: ["https://wa.me/234…", "whatsapp://234…", "wa:234…", "https://whatsapp.com/0803…"], answer: 0 }
+          - { id: fs-w06-d5-rf04, difficulty: easy, type: text, prompt: "0803 123 4567 as a tel: link", accept: ["tel:+2348031234567"] }
+          - { id: fs-w06-d5-rf05, difficulty: easy, type: text, prompt: "0803 123 4567 as a WhatsApp link", accept: ["https://wa.me/2348031234567"] }
+          - { id: fs-w06-d5-rf06, difficulty: easy, type: mcq, prompt: "A GitHub profile README lives in a repo named…", choices: ["exactly your username", "profile", "README", "about-me"], answer: 0 }
+          - { id: fs-w06-d5-rf07, difficulty: easy, type: mcq, prompt: "Minimum comfortable tap height", choices: ["44px", "10px", "20px", "100px"], answer: 0 }
+          - { id: fs-w06-d5-rf08, difficulty: easy, type: truefalse, prompt: "Your first gig is mostly about proof and a testimonial.", answer: true }
+          - { id: fs-w06-d5-rf09, difficulty: easy, type: mcq, prompt: "Best first place to look for gigs", choices: ["People you already know", "Big tech companies", "Nowhere yet", "Only Upwork"], answer: 0 }
+          - { id: fs-w06-d5-rf10, difficulty: easy, type: mcq, prompt: "Pin on your GitHub profile", choices: ["your 2–3 best repositories", "every repo", "forks only", "nothing"], answer: 0 }
+      - kind: brain-teaser
+        title: "Pitch it"
+        questions:
+          - { id: fs-w06-d5-bt01, difficulty: medium, type: mcq, prompt: "Which LinkedIn headline is strongest?", choices: ["Learning fullstack & ML · Python, HTML/CSS, Git · Building tools for Nigerian small businesses", "Student", "Aspiring developer looking for opportunities", "Hard worker"], answer: 0 }
+          - { id: fs-w06-d5-bt02, difficulty: medium, type: mcq, prompt: "What's wrong with https://wa.me/08031234567?", choices: ["It needs the international number: 234 without the first 0", "WhatsApp links need http", "It needs +", "Nothing"], answer: 0 }
+          - { id: fs-w06-d5-bt03, difficulty: medium, type: multi, prompt: "Which gigs can you honestly offer after Phase 1? (Select all.)", choices: ["A one-page business website", "Restyling a simple site for phones", "A small Python file-renaming script", "A full banking app"], answers: [0, 1, 2] }
+          - { id: fs-w06-d5-bt04, difficulty: hard, type: order, prompt: "Order your first-gig plan.", items: ["Offer to people you know", "Price small and deliver fast", "Ask for a testimonial", "Add the project to your site and GitHub"] }
+          - { id: fs-w06-d5-bt05, difficulty: hard, type: mcq, prompt: "Best 3-sentence gig offer opening?", choices: ["\"I build simple, fast websites for small Lagos businesses. Here's one I made: [link].\"", "\"I need money, please give me work.\"", "\"I am the best developer in Nigeria.\"", "\"Contact me.\""], answer: 0 }
+
+  # ─────────────────────────── DAY 6 ───────────────────────────
+  - day: 6
+    gate:
+      title: "Checkpoint: getting seen"
+      covers: "Week 6 · Day 5: GitHub profile README, LinkedIn, honest first gigs, mailto/tel/wa.me links"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w06-d6-g01, difficulty: easy, type: mcq, prompt: "mailto: links open…", choices: ["the email app", "WhatsApp", "the phone dialler", "a new website"], answer: 0 }
+        - { id: fs-w06-d6-g02, difficulty: easy, type: mcq, prompt: "tel: links open…", choices: ["the phone dialler", "the email app", "Maps", "the browser"], answer: 0 }
+        - { id: fs-w06-d6-g03, difficulty: easy, type: truefalse, prompt: "Most Nigerian clients will view your site on a phone.", answer: true }
+        - { id: fs-w06-d6-g04, difficulty: easy, type: mcq, prompt: "Your GitHub profile README shows on…", choices: ["your GitHub profile page", "your website only", "LinkedIn", "nowhere"], answer: 0 }
+        - { id: fs-w06-d6-g05, difficulty: easy, type: mcq, prompt: "Where should you look for your FIRST gig?", choices: ["Friends' and family businesses, church, work", "Only international platforms", "Big banks", "Nowhere yet"], answer: 0 }
+        - { id: fs-w06-d6-g06, difficulty: easy, type: mcq, prompt: "Which number format does wa.me need?", choices: ["234 + number without the first 0", "0803…", "+234 with spaces", "Any format"], answer: 0 }
+        - { id: fs-w06-d6-g07, difficulty: medium, type: text, prompt: "WhatsApp link for 0905 555 1212", accept: ["https://wa.me/2349055551212"] }
+        - { id: fs-w06-d6-g08, difficulty: medium, type: text, prompt: "tel: link for 0812 000 3344", accept: ["tel:+2348120003344"] }
+        - { id: fs-w06-d6-g09, difficulty: medium, type: match, prompt: "Match the link to what it does.", pairs: [["mailto:", "write an email"], ["tel:", "call"], ["https://wa.me/", "WhatsApp chat"], ["https://github.com/you", "see your code"]] }
+        - { id: fs-w06-d6-g10, difficulty: medium, type: mcq, prompt: "A GitHub profile README should include…", choices: ["who you are, what you're learning, best projects, contact", "your full CV and salary", "nothing, just emojis", "every repo you've ever made"], answer: 0 }
+        - { id: fs-w06-d6-g11, difficulty: medium, type: truefalse, prompt: "Pricing your first gig small to get a testimonial is a reasonable strategy.", answer: true }
+        - { id: fs-w06-d6-g12, difficulty: medium, type: mcq, prompt: "A button link only 24px tall on phones is a problem because…", choices: ["it's hard to tap; aim for 44px+", "it loads slowly", "it breaks the link", "nothing"], answer: 0 }
+        - { id: fs-w06-d6-g13, difficulty: medium, type: mcq, prompt: "Which offer is honest after 6 weeks?", choices: ["A one-page site for a caterer", "A mobile banking app", "An AI chatbot startup", "A government portal"], answer: 0 }
+        - { id: fs-w06-d6-g14, difficulty: medium, type: mcq, prompt: "Valid mailto link?", choices: ["mailto:victor@example.com", "mailto://victor@example", "email:victor@example.com", "victor@example.com"], answer: 0 }
+        - { id: fs-w06-d6-g15, difficulty: medium, type: order, prompt: "Order: a client finds you.", items: ["Sees your offer in a WhatsApp group", "Opens your site link", "Looks at your projects", "Taps \"Chat on WhatsApp\""] }
+        - { id: fs-w06-d6-g16, difficulty: hard, type: mcq, prompt: "Which is wrong?", choices: ["tel:08031234567 on a site for international clients", "tel:+2348031234567", "https://wa.me/2348031234567", "mailto:hi@example.com"], answer: 0, explain: "International clients need +234." }
+        - { id: fs-w06-d6-g17, difficulty: hard, type: mcq, prompt: "After delivering your first gig, the most valuable next step is…", choices: ["Ask for a testimonial and add the project to your portfolio", "Delete the code", "Raise your price 10×", "Stop learning"], answer: 0 }
+        - { id: fs-w06-d6-g18, difficulty: hard, type: multi, prompt: "Which make a stronger GitHub? (Select all.)", choices: ["READMEs with example output", "Pinned best projects", "Regular commits with good messages", "Empty repos"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Phase 1 lightning round"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fs-w06-d6-rf01, difficulty: easy, type: mcq, prompt: "Print text", choices: ["print()", "echo()", "say()", "write()"], answer: 0 }
+          - { id: fs-w06-d6-rf02, difficulty: easy, type: mcq, prompt: "Add to a list", choices: [".append()", ".add()", ".push()", ".insert_end()"], answer: 0 }
+          - { id: fs-w06-d6-rf03, difficulty: easy, type: mcq, prompt: "Define a function", choices: ["def", "func", "function", "fn"], answer: 0 }
+          - { id: fs-w06-d6-rf04, difficulty: easy, type: mcq, prompt: "Link tag", choices: ["<a>", "<link>", "<href>", "<url>"], answer: 0 }
+          - { id: fs-w06-d6-rf05, difficulty: easy, type: mcq, prompt: "Logo left, links right", choices: ["justify-content: space-between", "align-items: center", "flex-wrap: wrap", "gap: 1rem"], answer: 0 }
+          - { id: fs-w06-d6-rf06, difficulty: easy, type: mcq, prompt: "Save a snapshot", choices: ["git commit", "git push", "git add", "git init"], answer: 0 }
+          - { id: fs-w06-d6-rf07, difficulty: easy, type: mcq, prompt: "Safe dict lookup", choices: ["d.get(k)", "d[k]", "d.find(k)", "d(k)"], answer: 0 }
+          - { id: fs-w06-d6-rf08, difficulty: easy, type: mcq, prompt: "Catch bad numbers", choices: ["except ValueError", "except KeyError", "except:", "if error"], answer: 0 }
+          - { id: fs-w06-d6-rf09, difficulty: easy, type: mcq, prompt: "Fetch an API", choices: ["requests.get", "json.get", "open", "fetch.get"], answer: 0 }
+          - { id: fs-w06-d6-rf10, difficulty: easy, type: mcq, prompt: "OK status", choices: ["200", "404", "500", "301"], answer: 0 }
+      - kind: brain-teaser
+        title: "Graduation challenge"
+        questions:
+          - id: fs-w06-d6-bt01
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              def weather_report(city, get):
+                  status, body = get(city)
+                  if status != 200:
+                      return f"Couldn't get the weather: {body.get('reason', 'Unknown error')}"
+                  return f"{city}: {body['current']['temperature_2m']}°C"
+
+              def fake_get(city):
+                  return 200, {"current": {"temperature_2m": 26.4}}
+
+              print(weather_report("Lagos", fake_get))
+            accept: ["Lagos: 26.4°C"]
+          - id: fs-w06-d6-bt02
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              def shout(text):
+                  return text.upper()
+
+              def apply(fn, value):
+                  return fn(value)
+
+              print(apply(shout, "naija"))
+            accept: ["NAIJA"]
+          - id: fs-w06-d6-bt03
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              def weather_report(city, get):
+                  status, body = get(city)
+                  if status != 200:
+                      return f"Couldn't get the weather: {body.get('reason', 'Unknown error')}"
+                  return "ok"
+
+              print(weather_report("Kano", lambda city: (500, {"reason": "Server overloaded"})))
+            accept: ["Couldn't get the weather: Server overloaded"]
+          - { id: fs-w06-d6-bt04, difficulty: hard, type: mcq, prompt: "Why pass get=fake_get / get=real_get into weather_report?", choices: ["Test the logic offline with saved data, run it for real with requests, same code", "Python requires it", "It's faster", "To hide the API"], answer: 0 }
+          - { id: fs-w06-d6-bt05, difficulty: hard, type: multi, prompt: "Which are part of the Phase 1 graduation check? (Select all.)", choices: ["weather.py prints a real Lagos report", "Unknown city and no internet never crash", "Site live with links to your repos", "A deployed Django app"], answers: [0, 1, 2], explain: "Django is Phase 3." }
