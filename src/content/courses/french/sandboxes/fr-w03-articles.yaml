@@ -43,7 +43,7 @@ patterns:
           - { text: "à côté de", en: "next to" }
       - &the
         id: the
-        label: "the"
+        label: "the (place)"
         options:
           - { text: "le", en: "the (masc.)", needs: { place: [m, sg] }, why: "« le » is for a masculine singular noun (it becomes l' before a vowel)." }
           - { text: "la", en: "the (fem.)", needs: { place: [f, sg] }, why: "« la » is for a feminine singular noun (it becomes l' before a vowel)." }
@@ -68,7 +68,7 @@ patterns:
     label: "Le / la / les… est / sont… (where things are)"
     slots:
       - id: art
-        label: "the"
+        label: "The (thing)"
         options:
           - { text: "le", en: "the (masc.)", needs: { thing: [m, sg] }, why: "« le » is for a masculine singular noun (l' before a vowel)." }
           - { text: "la", en: "the (fem.)", needs: { thing: [f, sg] }, why: "« la » is for a feminine singular noun." }

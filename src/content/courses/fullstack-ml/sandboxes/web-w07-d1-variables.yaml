@@ -1,0 +1,31 @@
+# Week 7 · Day 1 mini-task
+id: web-w07-d1-variables
+kind: web
+title: "Variables and types"
+description: "Your first JavaScript: const, let, types and template literals. Open the JS tab; the output shows under the preview."
+html: |
+  <p>This exercise lives in the <strong>JS</strong> tab. Your console.log output appears below.</p>
+css: |
+  body { font-family: system-ui, sans-serif; padding: 1rem; }
+js: |
+  // 1. A constant shopName = "NaijaMart" and a variable price = 1500
+
+
+  // 2. Rice went up by 200: change price (don't retype it as 1700)
+
+
+  // 3. Log, with a template literal:  NaijaMart sells rice at ₦1700
+
+
+  // 4. A constant isOpen = true, then log  typeof isOpen
+tasks:
+  - prompt: "const shopName = \"NaijaMart\" and a price that starts at 1500."
+    check: "typeof shopName !== 'undefined' && shopName === 'NaijaMart' && typeof price === 'number'"
+  - prompt: "Raise price by 200 with let (it should end at 1700)."
+    check: "typeof price !== 'undefined' && price === 1700"
+    hint: "let price = 1500 … then price = price + 200 (or price += 200)"
+  - prompt: "Log  NaijaMart sells rice at ₦1700  using a template literal with both variables."
+    check: "window.__logs.includes('NaijaMart sells rice at ₦1700')"
+    hint: "console.log(`${shopName} sells rice at ₦${price}`)"
+  - prompt: "const isOpen = true, then log its type (it should print boolean)."
+    check: "typeof isOpen !== 'undefined' && isOpen === true && window.__logs.includes('boolean')"

@@ -11,7 +11,8 @@
     "test": "vitest run",
     "sync:functions": "node scripts/sync-functions.ts",
     "check:python": "node scripts/check-python-sandboxes.mjs",
-    "check:web": "node scripts/check-web-sandboxes.mjs"
+    "check:web": "node scripts/check-web-sandboxes.mjs",
+    "e2e": "node scripts/e2e-sandboxes.mjs"
   },
   "dependencies": {
     "@formulajs/formulajs": "^4.6.1",

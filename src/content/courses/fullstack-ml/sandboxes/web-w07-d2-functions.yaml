@@ -1,0 +1,31 @@
+# Week 7 · Day 2 mini-task
+id: web-w07-d2-functions
+kind: web
+title: "Functions in JavaScript"
+description: "Declarations, arrow functions, default parameters and ₦ formatting. Work in the JS tab."
+html: |
+  <p>Write your functions in the <strong>JS</strong> tab, then press ✓ Check tasks.</p>
+css: |
+  body { font-family: system-ui, sans-serif; padding: 1rem; }
+js: |
+  // 1. function toNaira(usd): 1 USD = 1550 naira
+
+
+  // 2. An ARROW function vat(amount): 7.5% of the amount
+
+
+  // 3. greet(name) with a default of "friend": returns "Hello, Ada!" / "Hello, friend!"
+
+
+  // 4. formatNaira(n): 1500000 → "₦1,500,000"  (use toLocaleString("en-NG"))
+tasks:
+  - prompt: "function toNaira(usd) returns the naira amount at 1550."
+    check: "typeof toNaira === 'function' && toNaira(10) === 15500 && toNaira(0) === 0 && toNaira(2.5) === 3875"
+  - prompt: "vat is an arrow function returning 7.5% of the amount."
+    check: "typeof vat === 'function' && vat.prototype === undefined && vat(1000) === 75 && vat(0) === 0"
+    hint: "const vat = (amount) => amount * 0.075"
+  - prompt: "greet uses a default parameter."
+    check: "typeof greet === 'function' && greet() === 'Hello, friend!' && greet('Ada') === 'Hello, Ada!'"
+    hint: "(name = \"friend\") => `Hello, ${name}!`"
+  - prompt: "formatNaira adds ₦ and thousand separators."
+    check: "typeof formatNaira === 'function' && formatNaira(1500000) === '₦1,500,000' && formatNaira(800) === '₦800'"

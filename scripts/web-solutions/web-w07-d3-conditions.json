@@ -1,0 +1,3 @@
+{
+  "js": "function grade(score) {\n  if (score >= 70) return \"A\"\n  else if (score >= 60) return \"B\"\n  else if (score >= 50) return \"C\"\n  else if (score >= 45) return \"D\"\n  else if (score >= 40) return \"E\"\n  return \"F\"\n}\nconst canVote = (age) => age >= 18\nfunction ticketPrice(age, isStudent) {\n  if (age < 12) return 500\n  if (isStudent) return 1000\n  return 2000\n}\nconst sameValue = (a, b) => a === b\nfunction trafficLight(color) {\n  switch (color) {\n    case \"red\": return \"Stop\"\n    case \"yellow\": return \"Get ready\"\n    case \"green\": return \"Go\"\n    default: return \"Broken light\"\n  }\n}\n"
+}

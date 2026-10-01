@@ -1,0 +1,3 @@
+{
+  "js": "for (let i = 5; i >= 1; i--) {\n  console.log(i)\n}\nconsole.log(\"Go!\")\nfunction sumTo(n) {\n  let total = 0\n  for (let i = 1; i <= n; i++) total += i\n  return total\n}\nfunction timesTable(n) {\n  let text = \"\"\n  for (let i = 1; i <= 10; i++) {\n    text += (i > 1 ? \", \" : \"\") + n * i\n  }\n  return text\n}\nfunction countVowels(word) {\n  let count = 0\n  for (const letter of word.toLowerCase()) {\n    if (\"aeiou\".includes(letter)) count++\n  }\n  return count\n}\nfunction yearsToDouble(amount, rate) {\n  let balance = amount\n  let years = 0\n  while (balance < amount * 2) {\n    balance = balance * (1 + rate)\n    years++\n  }\n  return years\n}\n"
+}

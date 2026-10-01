@@ -1,0 +1,35 @@
+# Week 7 · Day 3 mini-task
+id: web-w07-d3-conditions
+kind: web
+title: "Decisions"
+description: "if / else if, strict equality, && and ||, and switch: each function is tested with many inputs."
+html: |
+  <p>Work in the <strong>JS</strong> tab.</p>
+css: |
+  body { font-family: system-ui, sans-serif; padding: 1rem; }
+js: |
+  // 1. grade(score): A ≥ 70, B ≥ 60, C ≥ 50, D ≥ 45, E ≥ 40, otherwise F
+
+
+  // 2. canVote(age): true from 18
+
+
+  // 3. ticketPrice(age, isStudent): under 12 → 500; students → 1000; everyone else → 2000
+
+
+  // 4. sameValue(a, b): true only if a and b are the same value AND type ("5" vs 5 → false)
+
+
+  // 5. trafficLight(color) with switch: "red" → "Stop", "yellow" → "Get ready", "green" → "Go", anything else → "Broken light"
+tasks:
+  - prompt: "grade(score) on the Nigerian scale (check the boundaries!)."
+    check: "typeof grade === 'function' && [[70,'A'],[69,'B'],[60,'B'],[59,'C'],[50,'C'],[49,'D'],[45,'D'],[44,'E'],[40,'E'],[39,'F'],[0,'F'],[100,'A']].every(([s, g]) => grade(s) === g)"
+  - prompt: "canVote(age) returns true or false."
+    check: "typeof canVote === 'function' && canVote(18) === true && canVote(17) === false && canVote(40) === true"
+  - prompt: "ticketPrice(age, isStudent) uses the age rule first, then student status."
+    check: "typeof ticketPrice === 'function' && ticketPrice(8, false) === 500 && ticketPrice(8, true) === 500 && ticketPrice(20, true) === 1000 && ticketPrice(20, false) === 2000 && ticketPrice(12, false) === 2000"
+  - prompt: "sameValue(a, b) uses strict equality."
+    check: "typeof sameValue === 'function' && sameValue(5, 5) === true && sameValue('5', 5) === false && sameValue(0, '') === false && sameValue('Ada', 'Ada') === true"
+    hint: "return a === b"
+  - prompt: "trafficLight(color) with switch and a default."
+    check: "typeof trafficLight === 'function' && trafficLight('red') === 'Stop' && trafficLight('yellow') === 'Get ready' && trafficLight('green') === 'Go' && trafficLight('blue') === 'Broken light' && /switch\\s*\\(/.test(trafficLight.toString())"

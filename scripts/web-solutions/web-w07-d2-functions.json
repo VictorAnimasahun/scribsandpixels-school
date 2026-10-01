@@ -1,0 +1,3 @@
+{
+  "js": "function toNaira(usd) {\n  return usd * 1550\n}\nconst vat = (amount) => amount * 0.075\nconst greet = (name = \"friend\") => `Hello, ${name}!`\nconst formatNaira = (n) => \"₦\" + n.toLocaleString(\"en-NG\")\n"
+}

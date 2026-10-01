@@ -2878,6 +2878,340 @@
           }
         ],
         "quizNote": "If you can answer all ten without notes, you've passed Phase 1. 🎓 **Answers:** check each day's lesson; for 9: `https://wa.me/2348031234567`."
+      },
+      {
+        "number": 7,
+        "title": "JavaScript: Python's Cousin",
+        "theme": "The language of the browser. You already know how to program; this week you learn to say it in JavaScript.",
+        "bigQuestion": "If I can write it in Python, how do I write it in JavaScript, and what's different?",
+        "resources": [
+          {
+            "kind": "reading",
+            "title": "javascript.info — The Modern JavaScript Tutorial",
+            "url": "https://javascript.info/",
+            "note": "Part 1, \"JavaScript Fundamentals\". The clearest free reference. Read the matching section each day."
+          },
+          {
+            "kind": "reading",
+            "title": "Eloquent JavaScript (free online)",
+            "url": "https://eloquentjavascript.net/",
+            "note": "Chapters 1–3 this week. Do the exercises at the end of chapter 2."
+          },
+          {
+            "kind": "reading",
+            "title": "MDN — JavaScript first steps",
+            "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting",
+            "note": "When you want a second explanation."
+          },
+          {
+            "kind": "interactive",
+            "title": "The Odin Project — Foundations",
+            "url": "https://www.theodinproject.com/paths/foundations/courses/foundations",
+            "note": "The JavaScript Basics section, from Week 7 to Week 9."
+          },
+          {
+            "kind": "interactive",
+            "title": "freeCodeCamp — JavaScript",
+            "url": "https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/",
+            "note": "Saturday: Basic JavaScript, first 40 lessons."
+          }
+        ],
+        "days": [
+          {
+            "number": 1,
+            "weekday": "Monday",
+            "topic": "Hello, JavaScript: the console, variables and types",
+            "hours": 2.5,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "lesson",
+                "kind": "lesson",
+                "title": "Lesson",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "practice",
+                "kind": "practice",
+                "title": "Practice",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "mini-task",
+                "kind": "mini-task",
+                "title": "Mini-Task",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          },
+          {
+            "number": 2,
+            "weekday": "Tuesday",
+            "topic": "Functions",
+            "hours": 2.5,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "lesson",
+                "kind": "lesson",
+                "title": "Lesson",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "practice",
+                "kind": "practice",
+                "title": "Practice",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "mini-task",
+                "kind": "mini-task",
+                "title": "Mini-Task",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          },
+          {
+            "number": 3,
+            "weekday": "Wednesday",
+            "topic": "Decisions: if, comparisons and logic",
+            "hours": 2.5,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "lesson",
+                "kind": "lesson",
+                "title": "Lesson",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "practice",
+                "kind": "practice",
+                "title": "Practice",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "mini-task",
+                "kind": "mini-task",
+                "title": "Mini-Task",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          },
+          {
+            "number": 4,
+            "weekday": "Thursday",
+            "topic": "Loops",
+            "hours": 2.5,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "lesson",
+                "kind": "lesson",
+                "title": "Lesson",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "practice",
+                "kind": "practice",
+                "title": "Practice",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "mini-task",
+                "kind": "mini-task",
+                "title": "Mini-Task",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          },
+          {
+            "number": 5,
+            "weekday": "Friday",
+            "topic": "Strings, numbers and debugging",
+            "hours": 2.5,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "lesson",
+                "kind": "lesson",
+                "title": "Lesson",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "practice",
+                "kind": "practice",
+                "title": "Practice",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "mini-task",
+                "kind": "mini-task",
+                "title": "Mini-Task",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          },
+          {
+            "number": 6,
+            "weekday": "Saturday",
+            "topic": "Project day: the quiz game, in JavaScript",
+            "hours": 3,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "project",
+                "kind": "project",
+                "title": "Weekly Project",
+                "minutes": 120,
+                "body": ""
+              },
+              {
+                "key": "freecodecamp",
+                "kind": "freecodecamp",
+                "title": "FreeCodeCamp",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          }
+        ],
+        "quiz": [
+          {
+            "id": "w7q1",
+            "prompt": "What's the difference between `const`, `let` and `var`?"
+          },
+          {
+            "id": "w7q2",
+            "prompt": "Name the JavaScript types and how `typeof` reports them."
+          },
+          {
+            "id": "w7q3",
+            "prompt": "Write a template literal that says \"Ada is 24\"."
+          },
+          {
+            "id": "w7q4",
+            "prompt": "Write the same function as a declaration and as an arrow function."
+          },
+          {
+            "id": "w7q5",
+            "prompt": "Why use `===` instead of `==`? Give an example where they differ."
+          },
+          {
+            "id": "w7q6",
+            "prompt": "What are `&&`, `||` and `!` in Python?"
+          },
+          {
+            "id": "w7q7",
+            "prompt": "List the 6 falsy values."
+          },
+          {
+            "id": "w7q8",
+            "prompt": "Write a `for` loop from 1 to 10 and a `for…of` over a word."
+          },
+          {
+            "id": "w7q9",
+            "prompt": "Why is `\"10\" + 5` equal to `\"105\"`, and how do you fix it?"
+          },
+          {
+            "id": "w7q10",
+            "prompt": "What do `ReferenceError` and `TypeError` usually mean?"
+          }
+        ],
+        "quizNote": "If you can answer all ten without notes, you're ready for Week 8. **Answers:** check each day's lesson; for 7: `false`, `0`, `\"\"`, `null`, `undefined`, `NaN`."
       }
     ]
   }

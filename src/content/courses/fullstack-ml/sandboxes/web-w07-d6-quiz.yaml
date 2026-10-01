@@ -1,0 +1,33 @@
+# Week 7 · Day 6 project (logic)
+id: web-w07-d6-quiz
+kind: web
+title: "Quiz game logic"
+description: "The functions behind your JavaScript quiz game. On your computer you'll connect them to prompt() and alert()."
+html: |
+  <p>Write the quiz logic in the <strong>JS</strong> tab.</p>
+css: |
+  body { font-family: system-ui, sans-serif; padding: 1rem; }
+js: |
+  // 1. checkAnswer(given, correct): ignore spaces at the ends and capital letters
+
+
+  // 2. scoreMessage(score, total):
+  //    "You scored 4/5. Excellent!"  (80% or more)
+  //    "You scored 3/5. Good effort" (50% or more)
+  //    "You scored 1/5. Keep practising"
+
+
+  // 3. playQuiz(a1, a2, a3) returns the score for:
+  //    Q1 capital of Nigeria → Abuja   Q2 5 + 7 → 12   Q3 largest city → Lagos
+
+
+  // 4. Play once with the answers "Abuja", "13", " lagos " and log the score message.
+tasks:
+  - prompt: "checkAnswer ignores case and surrounding spaces."
+    check: "typeof checkAnswer === 'function' && checkAnswer(' Abuja ', 'abuja') === true && checkAnswer('ABUJA', 'Abuja') === true && checkAnswer('Lagos', 'Abuja') === false"
+  - prompt: "scoreMessage picks the right message at each boundary."
+    check: "typeof scoreMessage === 'function' && scoreMessage(4, 5) === 'You scored 4/5. Excellent!' && scoreMessage(3, 5) === 'You scored 3/5. Good effort' && scoreMessage(1, 2) === 'You scored 1/2. Good effort' && scoreMessage(1, 5) === 'You scored 1/5. Keep practising' && scoreMessage(5, 5) === 'You scored 5/5. Excellent!'"
+  - prompt: "playQuiz(a1, a2, a3) counts the right answers (using checkAnswer)."
+    check: "typeof playQuiz === 'function' && playQuiz('abuja', '12', 'lagos') === 3 && playQuiz('Lagos', '12', 'Kano') === 1 && playQuiz('', '', '') === 0 && /checkAnswer\\(/.test(playQuiz.toString())"
+  - prompt: "Log the message for the answers \"Abuja\", \"13\", \" lagos \"."
+    check: "window.__logs.includes('You scored 2/3. Good effort')"

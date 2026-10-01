@@ -1,0 +1,3 @@
+{
+  "js": "function totalPrice(price, qty) {\n  return price * qty\n}\nfunction applyDiscount(price, percent) {\n  return price - price * percent / 100\n}\nfunction isWeekend(day) {\n  if (day === \"Saturday\" || day === \"Sunday\") {\n    return true\n  }\n  return false\n}\nfunction addStock(current, incoming) {\n  return current + Number(incoming)\n}\nconst cleanPhone = (phone) => phone.trim().replaceAll(\" \", \"\")\n"
+}

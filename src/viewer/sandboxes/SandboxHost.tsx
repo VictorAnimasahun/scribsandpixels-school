@@ -22,7 +22,8 @@ export function SandboxHost({ id, compact = false }: { id: string; compact?: boo
         {sandbox.description && <p className="muted small">{sandbox.description}</p>}
       </header>
       <Suspense fallback={<p className="muted">Loading sandbox…</p>}>
-        <Engine sandbox={sandbox} />
+        {/* keyed by id: moving from one sandbox to another must not keep the previous one's code, cells or output */}
+        <Engine key={sandbox.id} sandbox={sandbox} />
       </Suspense>
     </section>
   )

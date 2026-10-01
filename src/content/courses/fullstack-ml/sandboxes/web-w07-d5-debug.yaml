@@ -1,0 +1,45 @@
+# Week 7 · Day 5 mini-task
+id: web-w07-d5-debug
+kind: web
+title: "Bug hunt"
+description: "Four functions, four bugs. Read the console, fix each one, then write cleanPhone."
+html: |
+  <p>Fix the code in the <strong>JS</strong> tab. Errors show up below the preview.</p>
+css: |
+  body { font-family: system-ui, sans-serif; padding: 1rem; }
+js: |
+  function totalPrice(price, qty) {
+    return price * quantity
+  }
+
+  function applyDiscount(price, percent) {
+    // percent is a whole number: 10 means 10%
+    return price - price * percent
+  }
+
+  function isWeekend(day) {
+    if (day = "Saturday" || day === "Sunday") {
+      return true
+    }
+    return false
+  }
+
+  function addStock(current, incoming) {
+    // incoming comes from a form, so it's text like "5"
+    return current + incoming
+  }
+
+  // New: cleanPhone(" 0803 123 4567 ") → "08031234567"
+tasks:
+  - prompt: "totalPrice(1500, 3) gives 4500."
+    check: "totalPrice(1500, 3) === 4500 && totalPrice(0, 9) === 0"
+  - prompt: "applyDiscount(2000, 10) gives 1800."
+    check: "applyDiscount(2000, 10) === 1800 && applyDiscount(500, 0) === 500"
+  - prompt: "isWeekend is true only for Saturday and Sunday."
+    check: "isWeekend('Saturday') === true && isWeekend('Sunday') === true && isWeekend('Monday') === false && isWeekend('Friday') === false"
+    hint: "= assigns; === compares."
+  - prompt: "addStock(10, \"5\") gives 15, not \"105\"."
+    check: "addStock(10, '5') === 15 && addStock(0, '0') === 0"
+  - prompt: "cleanPhone removes spaces at the ends and in the middle."
+    check: "typeof cleanPhone === 'function' && cleanPhone(' 0803 123 4567 ') === '08031234567' && cleanPhone('09055551212') === '09055551212'"
+    hint: "phone.trim().replaceAll(\" \", \"\")"

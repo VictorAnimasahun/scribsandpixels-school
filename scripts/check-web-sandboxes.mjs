@@ -22,17 +22,23 @@ if (!chrome) {
 }
 
 const browser = await chromium.launch({ executablePath: chrome })
-const page = await browser.newPage()
 let failures = 0
+// Same console.log capture as the app's bridge (WebSandbox.tsx), so checks can read window.__logs.
+const logCapture = `<script>window.__logs = []; (() => { const o = console.log; console.log = (...a) => { window.__logs.push(a.map((x) => typeof x === 'object' ? JSON.stringify(x) : String(x)).join(' ')); o.apply(console, a) } })()</script>`
 
 const run = async (files, checks) => {
-  const doc = `<!doctype html><html><head><meta charset="utf-8"><style>${files.css ?? ''}</style></head><body>${files.html ?? ''}<script>${files.js ?? ''}</script></body></html>`
+  const doc = `<!doctype html><html><head><meta charset="utf-8"><style>${files.css ?? ''}</style>${logCapture}</head><body>${files.html ?? ''}<script>${files.js ?? ''}</script></body></html>`
+  // A fresh tab per run: document replacement keeps JS globals, so reusing a tab would leak
+  // the solution's functions into the starter's run.
+  const page = await browser.newPage()
   await page.setContent(doc, { waitUntil: 'load' })
   // Same settling as the in-app checker: fonts, then two frames.
   await page.evaluate(() => document.fonts.ready.then(() => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)))))
-  return page.evaluate((checks) => checks.map((src) => {
+  const results = await page.evaluate((checks) => checks.map((src) => {
     try { return !!(0, eval)('(' + src + ')') } catch { return false }
   }), checks)
+  await page.close()
+  return results
 }
 
 for (const course of readdirSync(join(root, 'src/content/courses'))) {
