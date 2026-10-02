@@ -1,0 +1,298 @@
+# French · Week 10 quizzes. Format and rules: src/content/QUIZZES.md
+week: 10
+days:
+
+  # ─────────────────────────── DAY 1 ───────────────────────────
+  - day: 1
+    gate:
+      title: "Checkpoint: Week 9 review"
+      covers: "Week 9: venir (de), venir de + infinitive, prepositions of place, imperative and directions, transport"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w10-d1-g01, difficulty: easy, type: text, prompt: "ils ___ (venir)", accept: ["viennent"] }
+        - { id: fr-w10-d1-g02, difficulty: easy, type: mcq, prompt: "Je viens ___ marché.", choices: ["du", "de le", "au", "des"], answer: 0 }
+        - { id: fr-w10-d1-g03, difficulty: easy, type: mcq, prompt: "I've just eaten.", choices: ["Je viens de manger.", "Je vais manger.", "Je mange.", "Je viens manger."], answer: 0 }
+        - { id: fr-w10-d1-g04, difficulty: easy, type: mcq, prompt: "en face de =", choices: ["opposite", "next to", "far from", "behind"], answer: 0 }
+        - { id: fr-w10-d1-g05, difficulty: easy, type: mcq, prompt: "___ pied", choices: ["à", "en", "au", "par"], answer: 0 }
+        - { id: fr-w10-d1-g06, difficulty: easy, type: mcq, prompt: "Go straight on (vous)", choices: ["Allez tout droit.", "Va à droite.", "Tournez tout.", "Allez à gauche."], answer: 0 }
+        - { id: fr-w10-d1-g07, difficulty: medium, type: text, prompt: "Translate: She comes from the hospital.", accept: ["Elle vient de l'hôpital.", "Elle vient de l'hôpital"] }
+        - { id: fr-w10-d1-g08, difficulty: medium, type: text, prompt: "Imperative (tu) of tourner", accept: ["tourne"] }
+        - { id: fr-w10-d1-g09, difficulty: medium, type: match, prompt: "Match.", pairs: [["en bus", "by bus"], ["à vélo", "by bike"], ["en avion", "by plane"], ["à moto", "by motorbike"]] }
+        - { id: fr-w10-d1-g10, difficulty: medium, type: text, prompt: "Translate: The bank is near the market.", accept: ["La banque est près du marché.", "La banque est près du marché"] }
+        - { id: fr-w10-d1-g11, difficulty: medium, type: truefalse, prompt: "« Je viens de France » and « Je viens du Nigeria » are both correct.", answer: true }
+        - { id: fr-w10-d1-g12, difficulty: medium, type: text, prompt: "Translate: They (men) have just arrived.", accept: ["Ils viennent d'arriver.", "Ils viennent d'arriver"] }
+        - { id: fr-w10-d1-g13, difficulty: medium, type: mcq, prompt: "a return ticket", choices: ["un aller-retour", "un aller simple", "un billet simple", "un retour"], answer: 0 }
+        - { id: fr-w10-d1-g14, difficulty: medium, type: text, prompt: "Translate (vous): Take the first street on the right.", accept: ["Prenez la première rue à droite.", "Prenez la première rue à droite"] }
+        - { id: fr-w10-d1-g15, difficulty: medium, type: mcq, prompt: "Be patient! (tu)", choices: ["Sois patient !", "Es patient !", "Soyez patient !", "Être patient !"], answer: 0 }
+        - { id: fr-w10-d1-g16, difficulty: hard, type: text, prompt: "Translate: I go to work by bus and I come home on foot.", accept: ["Je vais au travail en bus et je rentre à pied.", "Je vais au travail en bus et je rentre à pied"] }
+        - { id: fr-w10-d1-g17, difficulty: hard, type: mcq, prompt: "Find the sentence with NO mistake.", choices: ["Le café est à côté de la gare, au coin de la rue.", "Tournes à gauche !", "Il vient d'arrivé.", "Je vais au bureau à bus."], answer: 0 }
+        - { id: fr-w10-d1-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["Nous venons des États-Unis.", "Va tout droit !", "La poste est loin de la gare.", "Elle vient de le bureau."], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Rooms and housing"
+        secondsPerQuestion: 7
+        questions:
+          - { id: fr-w10-d1-rf01, difficulty: easy, type: mcq, prompt: "la chambre", choices: ["bedroom", "chamber", "kitchen", "room (any)"], answer: 0 }
+          - { id: fr-w10-d1-rf02, difficulty: easy, type: mcq, prompt: "la cuisine", choices: ["kitchen", "cousin", "bathroom", "living room"], answer: 0 }
+          - { id: fr-w10-d1-rf03, difficulty: easy, type: mcq, prompt: "la salle de bains", choices: ["bathroom", "dining room", "bedroom", "toilet"], answer: 0 }
+          - { id: fr-w10-d1-rf04, difficulty: easy, type: mcq, prompt: "le salon", choices: ["living room", "saloon", "office", "garden"], answer: 0 }
+          - { id: fr-w10-d1-rf05, difficulty: easy, type: mcq, prompt: "l'immeuble", choices: ["building", "furniture", "flat", "lift"], answer: 0 }
+          - { id: fr-w10-d1-rf06, difficulty: easy, type: mcq, prompt: "l'ascenseur", choices: ["lift", "stairs", "floor", "balcony"], answer: 0 }
+          - { id: fr-w10-d1-rf07, difficulty: easy, type: mcq, prompt: "l'escalier", choices: ["stairs", "lift", "storey", "garage"], answer: 0 }
+          - { id: fr-w10-d1-rf08, difficulty: easy, type: mcq, prompt: "le rez-de-chaussée", choices: ["ground floor", "first floor", "basement", "roof"], answer: 0 }
+          - { id: fr-w10-d1-rf09, difficulty: easy, type: mcq, prompt: "flat", choices: ["l'appartement", "la maison", "la pièce", "l'étage"], answer: 0 }
+          - { id: fr-w10-d1-rf10, difficulty: easy, type: mcq, prompt: "dining room", choices: ["la salle à manger", "la salle de bains", "le séjour", "la cuisine"], answer: 0 }
+          - { id: fr-w10-d1-rf11, difficulty: easy, type: mcq, prompt: "la pièce", choices: ["room (any)", "piece of cake", "bedroom", "floor"], answer: 0 }
+      - kind: brain-teaser
+        title: "Floors and rooms"
+        questions:
+          - { id: fr-w10-d1-bt01, difficulty: medium, type: mcq, prompt: "« au premier étage » is…", choices: ["one floor above the ground floor", "the ground floor", "the top floor", "the basement"], answer: 0 }
+          - { id: fr-w10-d1-bt02, difficulty: medium, type: mcq, prompt: "« C'est un trois-pièces » =", choices: ["three main rooms (kitchen and bathroom not counted)", "three bedrooms exactly", "three floors", "three rooms including the bathroom"], answer: 0 }
+          - { id: fr-w10-d1-bt03, difficulty: medium, type: text, prompt: "Translate: I live in a flat on the third floor.", accept: ["J'habite dans un appartement au troisième étage.", "J'habite dans un appartement au troisième étage"] }
+          - { id: fr-w10-d1-bt04, difficulty: hard, type: text, prompt: "Translate: There are two bedrooms and a kitchen.", accept: ["Il y a deux chambres et une cuisine.", "Il y a deux chambres et une cuisine"] }
+          - { id: fr-w10-d1-bt05, difficulty: hard, type: mcq, prompt: "A US \"second floor\" in French is…", choices: ["le premier étage", "le deuxième étage", "le rez-de-chaussée", "le troisième étage"], answer: 0 }
+
+  # ─────────────────────────── DAY 2 ───────────────────────────
+  - day: 2
+    gate:
+      title: "Checkpoint: rooms and housing"
+      covers: "Week 10 · Day 1: types of housing, rooms, floors, au premier étage, trois-pièces"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w10-d2-g01, difficulty: easy, type: mcq, prompt: "bedroom", choices: ["la chambre", "la pièce", "le salon", "la cuisine"], answer: 0 }
+        - { id: fr-w10-d2-g02, difficulty: easy, type: mcq, prompt: "garden", choices: ["le jardin", "le garage", "le balcon", "le bureau"], answer: 0 }
+        - { id: fr-w10-d2-g03, difficulty: easy, type: truefalse, prompt: "« la chambre » means any room.", answer: false }
+        - { id: fr-w10-d2-g04, difficulty: easy, type: mcq, prompt: "le bureau (at home)", choices: ["study/office", "desk only", "bathroom", "bureau de change"], answer: 0 }
+        - { id: fr-w10-d2-g05, difficulty: easy, type: mcq, prompt: "l'étage", choices: ["floor/storey", "stage", "lift", "stairs"], answer: 0 }
+        - { id: fr-w10-d2-g06, difficulty: easy, type: mcq, prompt: "toilet", choices: ["les toilettes", "la salle de bains", "la toilette", "le WC-room"], answer: 0 }
+        - { id: fr-w10-d2-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["la maison", "house"], ["l'immeuble", "building"], ["le studio", "studio"], ["l'appartement", "flat"]] }
+        - { id: fr-w10-d2-g08, difficulty: medium, type: text, prompt: "Translate: the kitchen", accept: ["la cuisine"] }
+        - { id: fr-w10-d2-g09, difficulty: medium, type: text, prompt: "Translate: on the second floor", accept: ["au deuxième étage", "au second étage"] }
+        - { id: fr-w10-d2-g10, difficulty: medium, type: mcq, prompt: "Gender of appartement, immeuble, étage, escalier", choices: ["all masculine", "all feminine", "mixed", "no gender"], answer: 0 }
+        - { id: fr-w10-d2-g11, difficulty: medium, type: truefalse, prompt: "« le rez-de-chaussée » is the ground floor.", answer: true }
+        - { id: fr-w10-d2-g12, difficulty: medium, type: text, prompt: "Translate: I live in a house.", accept: ["J'habite dans une maison.", "J'habite dans une maison"] }
+        - { id: fr-w10-d2-g13, difficulty: medium, type: mcq, prompt: "the living room (2 words)", choices: ["le salon / le séjour", "la salle / le living", "la chambre / le salon", "le séjour / la pièce"], answer: 0 }
+        - { id: fr-w10-d2-g14, difficulty: medium, type: text, prompt: "Translate: There is a balcony.", accept: ["Il y a un balcon.", "Il y a un balcon"] }
+        - { id: fr-w10-d2-g15, difficulty: medium, type: mcq, prompt: "A three-room flat (kitchen not counted)", choices: ["un trois-pièces", "trois chambres", "un troisième", "trois étages"], answer: 0 }
+        - { id: fr-w10-d2-g16, difficulty: hard, type: text, prompt: "Translate: My flat is on the ground floor of a building.", accept: ["Mon appartement est au rez-de-chaussée d'un immeuble.", "Mon appartement est au rez-de-chaussée d'un immeuble"] }
+        - { id: fr-w10-d2-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « J'habite dans une appartement au premier étage. »", choices: ["une → un (appartement is masculine)", "dans → à", "premier → première", "No error"], answer: 0 }
+        - { id: fr-w10-d2-g18, difficulty: hard, type: multi, prompt: "Which are rooms? (Select all.)", choices: ["la cuisine", "la salle à manger", "la chambre", "l'ascenseur"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Furniture and colours"
+        secondsPerQuestion: 7
+        questions:
+          - { id: fr-w10-d2-rf01, difficulty: easy, type: mcq, prompt: "le canapé", choices: ["sofa", "armchair", "bed", "canopy"], answer: 0 }
+          - { id: fr-w10-d2-rf02, difficulty: easy, type: mcq, prompt: "l'armoire", choices: ["wardrobe", "armchair", "shelf", "mirror"], answer: 0 }
+          - { id: fr-w10-d2-rf03, difficulty: easy, type: mcq, prompt: "le ventilateur", choices: ["fan", "air con", "fridge", "window"], answer: 0 }
+          - { id: fr-w10-d2-rf04, difficulty: easy, type: mcq, prompt: "le groupe électrogène", choices: ["generator", "TV", "cooker", "electric meter"], answer: 0 }
+          - { id: fr-w10-d2-rf05, difficulty: easy, type: mcq, prompt: "la cuisinière", choices: ["cooker", "kitchen", "fridge", "oven tray"], answer: 0 }
+          - { id: fr-w10-d2-rf06, difficulty: easy, type: mcq, prompt: "les rideaux", choices: ["curtains", "rugs", "riders", "shelves"], answer: 0 }
+          - { id: fr-w10-d2-rf07, difficulty: easy, type: mcq, prompt: "blanc → feminine", choices: ["blanche", "blance", "blanque", "blanc"], answer: 0 }
+          - { id: fr-w10-d2-rf08, difficulty: easy, type: mcq, prompt: "violet → feminine", choices: ["violette", "violete", "violetes", "violet"], answer: 0 }
+          - { id: fr-w10-d2-rf09, difficulty: easy, type: mcq, prompt: "des chaussures (marron)", choices: ["marron", "marrons", "marronnes", "marronne"], answer: 0 }
+          - { id: fr-w10-d2-rf10, difficulty: easy, type: mcq, prompt: "une maison (rouge)", choices: ["rouge", "rougee", "rouges", "rougette"], answer: 0 }
+      - kind: brain-teaser
+        title: "Agree the colours"
+        questions:
+          - { id: fr-w10-d2-bt01, difficulty: medium, type: text, prompt: "des murs (blanc)", accept: ["blancs"] }
+          - { id: fr-w10-d2-bt02, difficulty: medium, type: text, prompt: "une voiture (blanc)", accept: ["blanche"] }
+          - { id: fr-w10-d2-bt03, difficulty: medium, type: text, prompt: "des coussins (orange)", accept: ["orange"] }
+          - { id: fr-w10-d2-bt04, difficulty: hard, type: text, prompt: "Translate: a white wardrobe and black curtains", accept: ["une armoire blanche et des rideaux noirs"] }
+          - { id: fr-w10-d2-bt05, difficulty: hard, type: mcq, prompt: "Which colours never change, even in the plural?", choices: ["orange, marron", "rouge, jaune", "rose, rouge", "bleu, gris"], answer: 0 }
+
+  # ─────────────────────────── DAY 3 ───────────────────────────
+  - day: 3
+    gate:
+      title: "Checkpoint: furniture and colours"
+      covers: "Week 10 · Day 2: furniture vocabulary, colour agreement, invariable orange and marron"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w10-d3-g01, difficulty: easy, type: mcq, prompt: "bed", choices: ["le lit", "le lait", "la lit", "le canapé"], answer: 0 }
+        - { id: fr-w10-d3-g02, difficulty: easy, type: mcq, prompt: "fridge", choices: ["le frigo", "le four", "la cuisinière", "le micro-ondes"], answer: 0 }
+        - { id: fr-w10-d3-g03, difficulty: easy, type: truefalse, prompt: "« rouge » is the same in masculine and feminine.", answer: true }
+        - { id: fr-w10-d3-g04, difficulty: easy, type: mcq, prompt: "une chaise (noir)", choices: ["noire", "noir", "noirs", "noiré"], answer: 0 }
+        - { id: fr-w10-d3-g05, difficulty: easy, type: mcq, prompt: "la clim =", choices: ["air con", "climate", "heater", "fan"], answer: 0 }
+        - { id: fr-w10-d3-g06, difficulty: easy, type: mcq, prompt: "une porte (vert)", choices: ["verte", "vert", "verts", "verté"], answer: 0 }
+        - { id: fr-w10-d3-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["le fauteuil", "armchair"], ["l'étagère", "shelf"], ["le tapis", "rug"], ["le miroir", "mirror"]] }
+        - { id: fr-w10-d3-g08, difficulty: medium, type: text, prompt: "une table (gris)", accept: ["grise"] }
+        - { id: fr-w10-d3-g09, difficulty: medium, type: text, prompt: "des rideaux (bleu)", accept: ["bleus"] }
+        - { id: fr-w10-d3-g10, difficulty: medium, type: mcq, prompt: "des sacs (marron)", choices: ["marron", "marrons", "marronnes", "brun"], answer: 0 }
+        - { id: fr-w10-d3-g11, difficulty: medium, type: truefalse, prompt: "« des fleurs oranges » follows the rule in the lesson.", answer: false }
+        - { id: fr-w10-d3-g12, difficulty: medium, type: text, prompt: "Translate: a blue sofa", accept: ["un canapé bleu"] }
+        - { id: fr-w10-d3-g13, difficulty: medium, type: mcq, prompt: "the washing machine", choices: ["la machine à laver", "la machine de laver", "le lave-machine", "la laverie"], answer: 0 }
+        - { id: fr-w10-d3-g14, difficulty: medium, type: text, prompt: "une robe (violet)", accept: ["violette"] }
+        - { id: fr-w10-d3-g15, difficulty: medium, type: mcq, prompt: "Gender of armoire and étagère", choices: ["both feminine", "both masculine", "armoire m, étagère f", "armoire f, étagère m"], answer: 0 }
+        - { id: fr-w10-d3-g16, difficulty: hard, type: text, prompt: "Translate: In the living room there is a green armchair and a white rug.", accept: ["Dans le salon, il y a un fauteuil vert et un tapis blanc.", "Dans le salon il y a un fauteuil vert et un tapis blanc.", "Dans le salon, il y a un fauteuil vert et un tapis blanc"] }
+        - { id: fr-w10-d3-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « une armoire blanc et des chaises noires »", choices: ["blanc → blanche", "noires → noirs", "une → un", "No error"], answer: 0 }
+        - { id: fr-w10-d3-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["des murs jaunes", "une voiture blanche", "des coussins marron", "une table verts"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Before or after?"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fr-w10-d3-rf01, difficulty: easy, type: mcq, prompt: "a big kitchen", choices: ["une grande cuisine", "une cuisine grande", "un grand cuisine", "une cuisine grand"], answer: 0 }
+          - { id: fr-w10-d3-rf02, difficulty: easy, type: mcq, prompt: "a modern house", choices: ["une maison moderne", "une moderne maison", "un maison moderne", "une maison modern"], answer: 0 }
+          - { id: fr-w10-d3-rf03, difficulty: easy, type: mcq, prompt: "a pretty bedroom", choices: ["une jolie chambre", "une chambre jolie", "un joli chambre", "une chambre joli"], answer: 0 }
+          - { id: fr-w10-d3-rf04, difficulty: easy, type: mcq, prompt: "a good neighbourhood", choices: ["un bon quartier", "un quartier bon", "une bonne quartier", "un quartier bonne"], answer: 0 }
+          - { id: fr-w10-d3-rf05, difficulty: easy, type: mcq, prompt: "a quiet neighbourhood", choices: ["un quartier calme", "un calme quartier", "une quartier calme", "un quartier calmé"], answer: 0 }
+          - { id: fr-w10-d3-rf06, difficulty: easy, type: mcq, prompt: "beau + appartement", choices: ["un bel appartement", "un beau appartement", "une belle appartement", "un appartement beau"], answer: 0 }
+          - { id: fr-w10-d3-rf07, difficulty: easy, type: mcq, prompt: "nouveau + hôtel", choices: ["un nouvel hôtel", "un nouveau hôtel", "une nouvelle hôtel", "un hôtel nouveau"], answer: 0 }
+          - { id: fr-w10-d3-rf08, difficulty: easy, type: mcq, prompt: "vieux + immeuble", choices: ["un vieil immeuble", "un vieux immeuble", "une vieille immeuble", "un immeuble vieil"], answer: 0 }
+          - { id: fr-w10-d3-rf09, difficulty: easy, type: mcq, prompt: "BANGS: the A", choices: ["Age", "Appearance", "Amount", "Attitude"], answer: 0 }
+          - { id: fr-w10-d3-rf10, difficulty: easy, type: mcq, prompt: "big houses (written)", choices: ["de grandes maisons", "des grandes maisons", "des maisons grandes", "de maisons grandes"], answer: 0 }
+      - kind: brain-teaser
+        title: "BANGS"
+        questions:
+          - { id: fr-w10-d3-bt01, difficulty: medium, type: text, prompt: "une chambre (petit)", accept: ["une petite chambre"] }
+          - { id: fr-w10-d3-bt02, difficulty: medium, type: text, prompt: "un appartement (beau)", accept: ["un bel appartement"] }
+          - { id: fr-w10-d3-bt03, difficulty: medium, type: text, prompt: "des maisons (grand), written French", accept: ["de grandes maisons"] }
+          - { id: fr-w10-d3-bt04, difficulty: hard, type: text, prompt: "Correct all three: un beau appartement, un vieux hôtel, des grandes maisons (comma-separated)", accept: ["un bel appartement, un vieil hôtel, de grandes maisons"] }
+          - { id: fr-w10-d3-bt05, difficulty: hard, type: mcq, prompt: "Why « une grande maison » but « une maison blanche »?", choices: ["Size (BANGS) goes before; colours go after", "Random", "grande is feminine", "blanche is longer"], answer: 0 }
+
+  # ─────────────────────────── DAY 4 ───────────────────────────
+  - day: 4
+    gate:
+      title: "Checkpoint: adjective position (BANGS)"
+      covers: "Week 10 · Day 3: adjectives after the noun, BANGS before, bel/nouvel/vieil, des → de before a plural adjective"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w10-d4-g01, difficulty: easy, type: mcq, prompt: "Most French adjectives go…", choices: ["after the noun", "before the noun", "at the end of the sentence", "anywhere"], answer: 0 }
+        - { id: fr-w10-d4-g02, difficulty: easy, type: mcq, prompt: "BANGS: the S", choices: ["Size", "Shape", "Shade", "Style"], answer: 0 }
+        - { id: fr-w10-d4-g03, difficulty: easy, type: truefalse, prompt: "« petit » goes before the noun.", answer: true }
+        - { id: fr-w10-d4-g04, difficulty: easy, type: mcq, prompt: "a modern kitchen", choices: ["une cuisine moderne", "une moderne cuisine", "un cuisine moderne", "une cuisine modernes"], answer: 0 }
+        - { id: fr-w10-d4-g05, difficulty: easy, type: mcq, prompt: "the first floor", choices: ["le premier étage", "l'étage premier", "la première étage", "le étage premier"], answer: 0 }
+        - { id: fr-w10-d4-g06, difficulty: easy, type: mcq, prompt: "beau (feminine)", choices: ["belle", "beaue", "bel", "belles"], answer: 0 }
+        - { id: fr-w10-d4-g07, difficulty: medium, type: match, prompt: "Match the masc. + vowel form.", pairs: [["beau", "bel"], ["nouveau", "nouvel"], ["vieux", "vieil"], ["beau (fem.)", "belle"]] }
+        - { id: fr-w10-d4-g08, difficulty: medium, type: text, prompt: "un hôtel (nouveau)", accept: ["un nouvel hôtel"] }
+        - { id: fr-w10-d4-g09, difficulty: medium, type: text, prompt: "une maison (vieux)", accept: ["une vieille maison"] }
+        - { id: fr-w10-d4-g10, difficulty: medium, type: mcq, prompt: "large windows (written)", choices: ["de grandes fenêtres", "des grandes fenêtres", "des fenêtres grandes", "grandes des fenêtres"], answer: 0 }
+        - { id: fr-w10-d4-g11, difficulty: medium, type: truefalse, prompt: "« des fenêtres modernes » keeps des, because modernes comes after the noun.", answer: true }
+        - { id: fr-w10-d4-g12, difficulty: medium, type: text, prompt: "un quartier (calme)", accept: ["un quartier calme"] }
+        - { id: fr-w10-d4-g13, difficulty: medium, type: mcq, prompt: "an old friend (m)", choices: ["un vieil ami", "un vieux ami", "un ami vieil", "une vieille ami"], answer: 0 }
+        - { id: fr-w10-d4-g14, difficulty: medium, type: text, prompt: "Translate: a bright living room (lumineux)", accept: ["un salon lumineux"] }
+        - { id: fr-w10-d4-g15, difficulty: medium, type: mcq, prompt: "Which pair are both BANGS?", choices: ["joli, mauvais", "moderne, joli", "calme, grand", "blanc, bon"], answer: 0 }
+        - { id: fr-w10-d4-g16, difficulty: hard, type: text, prompt: "un appartement (nouveau)", accept: ["un nouvel appartement"] }
+        - { id: fr-w10-d4-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « J'habite dans un beau appartement avec une cuisine grande. »", choices: ["bel appartement … grande cuisine", "Only beau", "Only cuisine grande", "No error"], answer: 0 }
+        - { id: fr-w10-d4-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["une petite maison blanche", "un bel immeuble moderne", "de jolies chambres", "un vieux hôtel"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Renting"
+        secondsPerQuestion: 7
+        questions:
+          - { id: fr-w10-d4-rf01, difficulty: easy, type: mcq, prompt: "louer", choices: ["to rent", "to praise", "to lose", "to lower"], answer: 0 }
+          - { id: fr-w10-d4-rf02, difficulty: easy, type: mcq, prompt: "le loyer", choices: ["the rent", "the lawyer", "the landlord", "the key"], answer: 0 }
+          - { id: fr-w10-d4-rf03, difficulty: easy, type: mcq, prompt: "le/la propriétaire", choices: ["landlord / owner", "tenant", "agent", "neighbour"], answer: 0 }
+          - { id: fr-w10-d4-rf04, difficulty: easy, type: mcq, prompt: "le/la locataire", choices: ["tenant", "landlord", "local", "location"], answer: 0 }
+          - { id: fr-w10-d4-rf05, difficulty: easy, type: mcq, prompt: "meublé", choices: ["furnished", "mobile", "empty", "equipped"], answer: 0 }
+          - { id: fr-w10-d4-rf06, difficulty: easy, type: mcq, prompt: "le chauffage", choices: ["heating", "driver", "air con", "hot water"], answer: 0 }
+          - { id: fr-w10-d4-rf07, difficulty: easy, type: mcq, prompt: "libre (in an ad)", choices: ["available", "free of charge", "book", "furnished"], answer: 0 }
+          - { id: fr-w10-d4-rf08, difficulty: easy, type: mcq, prompt: "proche du métro", choices: ["close to the metro", "far from the metro", "above the metro", "metro included"], answer: 0 }
+          - { id: fr-w10-d4-rf09, difficulty: easy, type: mcq, prompt: "lumineux", choices: ["bright", "luxurious", "noisy", "large"], answer: 0 }
+          - { id: fr-w10-d4-rf10, difficulty: easy, type: mcq, prompt: "Québec \"4 ½\"", choices: ["4 rooms + a bathroom", "4.5 bedrooms", "4th floor and a half", "4 rooms, half furnished"], answer: 0 }
+      - kind: brain-teaser
+        title: "Read the ad"
+        questions:
+          - { id: fr-w10-d4-bt01, difficulty: medium, type: mcq, prompt: "Ad: « Beau 4 ½ au 2ᵉ étage, 2 chambres… » How many bedrooms?", choices: ["two", "four", "four and a half", "one"], answer: 0 }
+          - { id: fr-w10-d4-bt02, difficulty: medium, type: mcq, prompt: "Ad: « Libre le 1ᵉʳ juillet. » =", choices: ["Available on 1 July", "Free in July", "Closed in July", "One month free"], answer: 0 }
+          - { id: fr-w10-d4-bt03, difficulty: medium, type: mcq, prompt: "Ad: « Chauffage inclus » =", choices: ["Heating included", "Heating not included", "Chauffeur included", "Heated pool"], answer: 0 }
+          - { id: fr-w10-d4-bt04, difficulty: hard, type: mcq, prompt: "Ad: « Non-fumeur, pas d'animaux. Loyer : 1 650 $/mois. »", choices: ["No smokers, no pets; rent $1,650 a month", "Smokers welcome; $1,650 a year", "No pets; $16.50 a month", "No smoking outside; $1,650 deposit"], answer: 0 }
+          - { id: fr-w10-d4-bt05, difficulty: hard, type: text, prompt: "Translate: furnished flat to rent", accept: ["appartement meublé à louer", "Appartement meublé à louer", "À louer : appartement meublé", "à louer appartement meublé"] }
+
+  # ─────────────────────────── DAY 5 ───────────────────────────
+  - day: 5
+    gate:
+      title: "Checkpoint: reading a rental ad"
+      covers: "Week 10 · Day 4: louer, le loyer, propriétaire/locataire, meublé, équipé, charges, chauffage, Québec 4 ½"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w10-d5-g01, difficulty: easy, type: mcq, prompt: "the rent", choices: ["le loyer", "la location", "le louer", "la rente"], answer: 0 }
+        - { id: fr-w10-d5-g02, difficulty: easy, type: mcq, prompt: "À louer =", choices: ["For rent", "For sale", "To praise", "Sold"], answer: 0 }
+        - { id: fr-w10-d5-g03, difficulty: easy, type: truefalse, prompt: "The locataire is the tenant.", answer: true }
+        - { id: fr-w10-d5-g04, difficulty: easy, type: mcq, prompt: "équipé", choices: ["equipped", "furnished", "equal", "included"], answer: 0 }
+        - { id: fr-w10-d5-g05, difficulty: easy, type: mcq, prompt: "les charges", choices: ["service charges", "the charger", "the deposit", "the keys"], answer: 0 }
+        - { id: fr-w10-d5-g06, difficulty: easy, type: mcq, prompt: "une annonce", choices: ["an ad", "an announcement only on TV", "a year", "a contract"], answer: 0 }
+        - { id: fr-w10-d5-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["meublé", "furnished"], ["libre", "available"], ["proche de", "close to"], ["lumineux", "bright"]] }
+        - { id: fr-w10-d5-g08, difficulty: medium, type: text, prompt: "Translate: the landlord (m)", accept: ["le propriétaire"] }
+        - { id: fr-w10-d5-g09, difficulty: medium, type: text, prompt: "Translate: The heating is included.", accept: ["Le chauffage est inclus.", "Le chauffage est compris.", "Le chauffage est inclus"] }
+        - { id: fr-w10-d5-g10, difficulty: medium, type: mcq, prompt: "Montréal ad: on which floor is the 4 ½?", choices: ["au deuxième étage", "au rez-de-chaussée", "au quatrième étage", "au premier étage"], answer: 0 }
+        - { id: fr-w10-d5-g11, difficulty: medium, type: truefalse, prompt: "In the Montréal ad, pets are allowed.", answer: false }
+        - { id: fr-w10-d5-g12, difficulty: medium, type: text, prompt: "Translate: two bedrooms and a big equipped kitchen", accept: ["deux chambres et une grande cuisine équipée"] }
+        - { id: fr-w10-d5-g13, difficulty: medium, type: mcq, prompt: "Combien de chambres ?", choices: ["How many bedrooms?", "How much is the room?", "Which room?", "When is the room free?"], answer: 0 }
+        - { id: fr-w10-d5-g14, difficulty: medium, type: text, prompt: "Translate: Available on 1 July.", accept: ["Libre le 1er juillet.", "Libre le premier juillet.", "Libre le 1er juillet", "Libre le premier juillet"] }
+        - { id: fr-w10-d5-g15, difficulty: medium, type: mcq, prompt: "Le loyer est de 1 650 $ par mois =", choices: ["The rent is $1,650 a month", "The rent is $16.50 a month", "The deposit is $1,650", "$1,650 a year"], answer: 0 }
+        - { id: fr-w10-d5-g16, difficulty: hard, type: text, prompt: "Translate: Bright flat, close to the metro, heating included.", accept: ["Appartement lumineux, proche du métro, chauffage inclus.", "Appartement lumineux, proche du métro, chauffage compris.", "Appartement lumineux, proche du métro, chauffage inclus"] }
+        - { id: fr-w10-d5-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « Beau appartement proche de le métro, loyer inclus le chauffage. »", choices: ["de le → du; and « chauffage inclus »", "Only Beau", "Only loyer", "No error"], answer: 0 }
+        - { id: fr-w10-d5-g18, difficulty: hard, type: multi, prompt: "Which would a tenant pay? (Select all.)", choices: ["le loyer", "les charges", "le chauffage (if not included)", "le propriétaire"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Il y a / il n'y a pas de"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fr-w10-d5-rf01, difficulty: easy, type: mcq, prompt: "There isn't a garden.", choices: ["Il n'y a pas de jardin.", "Il n'y a pas un jardin.", "Il y a pas jardin.", "Il n'a pas de jardin."], answer: 0 }
+          - { id: fr-w10-d5-rf02, difficulty: easy, type: mcq, prompt: "There's a big living room.", choices: ["Il y a un grand salon.", "Il y a un salon grand.", "Il est un grand salon.", "Il a un grand salon."], answer: 0 }
+          - { id: fr-w10-d5-rf03, difficulty: easy, type: mcq, prompt: "mais", choices: ["but", "more", "house", "so"], answer: 0 }
+          - { id: fr-w10-d5-rf04, difficulty: easy, type: mcq, prompt: "alors", choices: ["so", "also", "always", "already"], answer: 0 }
+          - { id: fr-w10-d5-rf05, difficulty: easy, type: mcq, prompt: "aussi", choices: ["also", "so", "but", "always"], answer: 0 }
+          - { id: fr-w10-d5-rf06, difficulty: easy, type: mcq, prompt: "parce que", choices: ["because", "for that", "so that", "although"], answer: 0 }
+          - { id: fr-w10-d5-rf07, difficulty: easy, type: mcq, prompt: "le bruit", choices: ["noise", "brute", "bread", "light"], answer: 0 }
+          - { id: fr-w10-d5-rf08, difficulty: easy, type: mcq, prompt: "animé (neighbourhood)", choices: ["lively", "animated cartoon", "quiet", "dangerous"], answer: 0 }
+          - { id: fr-w10-d5-rf09, difficulty: easy, type: mcq, prompt: "There are no windows.", choices: ["Il n'y a pas de fenêtres.", "Il n'y a pas des fenêtres.", "Il y a pas les fenêtres.", "Il n'y a des fenêtres."], answer: 0 }
+          - { id: fr-w10-d5-rf10, difficulty: easy, type: mcq, prompt: "too much noise", choices: ["trop de bruit", "très bruit", "trop du bruit", "beaucoup bruit"], answer: 0 }
+      - kind: brain-teaser
+        title: "Describe a home"
+        questions:
+          - { id: fr-w10-d5-bt01, difficulty: medium, type: text, prompt: "Translate: There is a big living room, but there isn't a garden.", accept: ["Il y a un grand salon, mais il n'y a pas de jardin.", "Il y a un grand salon mais il n'y a pas de jardin.", "Il y a un grand salon, mais il n'y a pas de jardin"] }
+          - { id: fr-w10-d5-bt02, difficulty: medium, type: text, prompt: "Translate: I like my flat because it is quiet and bright.", accept: ["J'aime mon appartement parce qu'il est calme et lumineux.", "J'aime mon appartement parce qu'il est calme et lumineux"] }
+          - { id: fr-w10-d5-bt03, difficulty: medium, type: mcq, prompt: "Model text: « Il n'y a pas de balcon, mais il y a beaucoup de fenêtres, alors l'appartement est lumineux. » Why is it bright?", choices: ["Lots of windows", "A balcony", "It's on the top floor", "White walls"], answer: 0 }
+          - { id: fr-w10-d5-bt04, difficulty: hard, type: text, prompt: "Translate: The problem is the noise.", accept: ["Le problème, c'est le bruit.", "Le problème c'est le bruit.", "Le problème, c'est le bruit"] }
+          - { id: fr-w10-d5-bt05, difficulty: hard, type: mcq, prompt: "Spot the error: « Dans ma chambre, il y a un lit grand et il n'y a pas une armoire. »", choices: ["un grand lit … pas d'armoire", "Only lit grand", "Only pas une", "No error"], answer: 0 }
+
+  # ─────────────────────────── DAY 6 ───────────────────────────
+  - day: 6
+    gate:
+      title: "Checkpoint: describing a whole home"
+      covers: "Week 10 · Day 5: il y a / il n'y a pas de, connectors (et, mais, aussi, parce que, alors), opinions"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w10-d6-g01, difficulty: easy, type: mcq, prompt: "There isn't a balcony.", choices: ["Il n'y a pas de balcon.", "Il n'y a pas un balcon.", "Il n'a pas de balcon.", "Il y a pas balcon."], answer: 0 }
+        - { id: fr-w10-d6-g02, difficulty: easy, type: mcq, prompt: "but", choices: ["mais", "alors", "aussi", "et"], answer: 0 }
+        - { id: fr-w10-d6-g03, difficulty: easy, type: truefalse, prompt: "After « il n'y a pas », un/une/des become de.", answer: true }
+        - { id: fr-w10-d6-g04, difficulty: easy, type: mcq, prompt: "so (result)", choices: ["alors", "aussi", "mais", "parce que"], answer: 0 }
+        - { id: fr-w10-d6-g05, difficulty: easy, type: mcq, prompt: "In my bedroom, there is…", choices: ["Dans ma chambre, il y a…", "Dans mon chambre, il y a…", "En ma chambre, il est…", "Dans ma chambre, il a…"], answer: 0 }
+        - { id: fr-w10-d6-g06, difficulty: easy, type: mcq, prompt: "because", choices: ["parce que", "pourquoi", "pour", "alors"], answer: 0 }
+        - { id: fr-w10-d6-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["et", "and"], ["mais", "but"], ["aussi", "also"], ["alors", "so"]] }
+        - { id: fr-w10-d6-g08, difficulty: medium, type: text, prompt: "Translate: There is no lift.", accept: ["Il n'y a pas d'ascenseur.", "Il n'y a pas d'ascenseur"] }
+        - { id: fr-w10-d6-g09, difficulty: medium, type: text, prompt: "Translate: Next to the kitchen, there is a bathroom.", accept: ["À côté de la cuisine, il y a une salle de bains.", "À côté de la cuisine il y a une salle de bains.", "À côté de la cuisine, il y a une salle de bains"] }
+        - { id: fr-w10-d6-g10, difficulty: medium, type: mcq, prompt: "Model text: where is the flat?", choices: ["On the second floor of an old building in Yaba", "On the ground floor in Ikeja", "A house in Abuja", "A studio in Lekki"], answer: 0 }
+        - { id: fr-w10-d6-g11, difficulty: medium, type: truefalse, prompt: "« parce qu'il » is the elided form of « parce que il ».", answer: true }
+        - { id: fr-w10-d6-g12, difficulty: medium, type: text, prompt: "Translate: My neighbourhood is lively.", accept: ["Mon quartier est animé.", "Mon quartier est animé"] }
+        - { id: fr-w10-d6-g13, difficulty: medium, type: mcq, prompt: "a lot of windows", choices: ["beaucoup de fenêtres", "beaucoup des fenêtres", "beaucoup fenêtres", "trop des fenêtres"], answer: 0 }
+        - { id: fr-w10-d6-g14, difficulty: medium, type: text, prompt: "Translate: There is a blue sofa and a fan.", accept: ["Il y a un canapé bleu et un ventilateur.", "Il y a un canapé bleu et un ventilateur"] }
+        - { id: fr-w10-d6-g15, difficulty: medium, type: order, prompt: "Order the description.", items: ["J'habite dans un appartement.", "C'est un trois-pièces.", "Il y a un salon et deux chambres.", "J'aime mon appartement parce qu'il est calme."] }
+        - { id: fr-w10-d6-g16, difficulty: hard, type: text, prompt: "Translate: I live in an old building, but my flat is modern.", accept: ["J'habite dans un vieil immeuble, mais mon appartement est moderne.", "J'habite dans un vieil immeuble mais mon appartement est moderne.", "J'habite dans un vieil immeuble, mais mon appartement est moderne"] }
+        - { id: fr-w10-d6-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « Il y a une petite cuisine, mais il n'y a pas des balcons. »", choices: ["pas des → pas de", "petite cuisine → cuisine petite", "mais → alors", "No error"], answer: 0 }
+        - { id: fr-w10-d6-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["Il n'y a pas de garage.", "Il y a de grandes fenêtres.", "J'aime mon quartier parce qu'il est calme.", "Il n'y a pas un jardin."], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Week 10 lightning round"
+        secondsPerQuestion: 7
+        questions:
+          - { id: fr-w10-d6-rf01, difficulty: easy, type: mcq, prompt: "bedroom", choices: ["la chambre", "la pièce", "le salon", "la salle"], answer: 0 }
+          - { id: fr-w10-d6-rf02, difficulty: easy, type: mcq, prompt: "au premier étage", choices: ["one floor up", "ground floor", "top floor", "basement"], answer: 0 }
+          - { id: fr-w10-d6-rf03, difficulty: easy, type: mcq, prompt: "une armoire (blanc)", choices: ["blanche", "blanc", "blancs", "blanches"], answer: 0 }
+          - { id: fr-w10-d6-rf04, difficulty: easy, type: mcq, prompt: "des rideaux (marron)", choices: ["marron", "marrons", "marronnes", "marronne"], answer: 0 }
+          - { id: fr-w10-d6-rf05, difficulty: easy, type: mcq, prompt: "a big kitchen", choices: ["une grande cuisine", "une cuisine grande", "un grand cuisine", "une grand cuisine"], answer: 0 }
+          - { id: fr-w10-d6-rf06, difficulty: easy, type: mcq, prompt: "beau + appartement", choices: ["un bel appartement", "un beau appartement", "une belle appartement", "un appartement bel"], answer: 0 }
+          - { id: fr-w10-d6-rf07, difficulty: easy, type: mcq, prompt: "le loyer", choices: ["the rent", "the landlord", "the tenant", "the lawyer"], answer: 0 }
+          - { id: fr-w10-d6-rf08, difficulty: easy, type: mcq, prompt: "meublé", choices: ["furnished", "equipped", "empty", "furniture"], answer: 0 }
+          - { id: fr-w10-d6-rf09, difficulty: easy, type: mcq, prompt: "There isn't a garden.", choices: ["Il n'y a pas de jardin.", "Il n'y a pas un jardin.", "Il n'y a jardin.", "Il y a pas de jardin."], answer: 0 }
+          - { id: fr-w10-d6-rf10, difficulty: easy, type: mcq, prompt: "BANGS: the G", choices: ["Goodness", "Gender", "Grammar", "Group"], answer: 0 }
+      - kind: brain-teaser
+        title: "My dream home"
+        questions:
+          - { id: fr-w10-d6-bt01, difficulty: medium, type: text, prompt: "Translate: My ideal house is in Montréal.", accept: ["Ma maison idéale est à Montréal.", "Ma maison idéale est à Montréal"] }
+          - { id: fr-w10-d6-bt02, difficulty: medium, type: text, prompt: "Translate: It's a big modern house.", accept: ["C'est une grande maison moderne.", "C'est une grande maison moderne"] }
+          - { id: fr-w10-d6-bt03, difficulty: medium, type: text, prompt: "Translate: There are beautiful green curtains. (written: de)", accept: ["Il y a de beaux rideaux verts.", "Il y a de beaux rideaux verts"] }
+          - { id: fr-w10-d6-bt04, difficulty: hard, type: text, prompt: "Translate: a beautiful building", accept: ["un bel immeuble"] }
+          - { id: fr-w10-d6-bt05, difficulty: hard, type: mcq, prompt: "Find the sentence with NO mistake.", choices: ["J'habite dans un nouvel appartement avec une petite cuisine blanche.", "J'habite dans un nouveau appartement.", "Il y a des grandes fenêtres.", "Une armoire blanc est dans la chambre."], answer: 0 }

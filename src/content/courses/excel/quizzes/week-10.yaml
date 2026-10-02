@@ -1,0 +1,298 @@
+# Excel · Week 10 quizzes. Format and rules: src/content/QUIZZES.md
+# Figures verified against datasets/ (sales_2025.csv, products.csv).
+week: 10
+days:
+
+  # ─────────────────────────── DAY 1 ───────────────────────────
+  - day: 1
+    gate:
+      title: "Checkpoint: Week 9 review"
+      covers: "Week 9: VLOOKUP, XLOOKUP, INDEX/MATCH, IFNA, named ranges, the invoice"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w10-d1-g01, difficulty: easy, type: mcq, prompt: "VLOOKUP exact match ends with…", choices: ["FALSE", "TRUE", "1", "-1"], answer: 0 }
+        - { id: xl-w10-d1-g02, difficulty: easy, type: mcq, prompt: "Looks left, exact by default", choices: ["XLOOKUP", "VLOOKUP", "HLOOKUP", "MATCH"], answer: 0 }
+        - { id: xl-w10-d1-g03, difficulty: easy, type: truefalse, prompt: "MATCH returns a position, not a value.", answer: true }
+        - { id: xl-w10-d1-g04, difficulty: easy, type: mcq, prompt: "Hide only not-found errors", choices: ["IFNA", "IFERROR", "ISERROR", "NA"], answer: 0 }
+        - { id: xl-w10-d1-g05, difficulty: easy, type: mcq, prompt: "Nigeria's VAT on the invoice", choices: ["7.5%", "5%", "10%", "12.5%"], answer: 0 }
+        - { id: xl-w10-d1-g06, difficulty: easy, type: mcq, prompt: "Name Manager shortcut", choices: ["Ctrl+F3", "Ctrl+T", "Ctrl+E", "F4"], answer: 0 }
+        - { id: xl-w10-d1-g07, difficulty: medium, type: text, prompt: "NaijaMart 2025 total profit (₦, no symbol)?", accept: ["129531600", "129,531,600"] }
+        - { id: xl-w10-d1-g08, difficulty: medium, type: text, prompt: "=VLOOKUP(\"P040\",Products!$A$2:$G$41,5,FALSE)", accept: ["9800", "9,800", "₦9,800"] }
+        - { id: xl-w10-d1-g09, difficulty: medium, type: match, prompt: "Match.", pairs: [["VLOOKUP", "first column only, looks right"], ["XLOOKUP", "any direction, not-found argument"], ["MATCH", "position of a value"], ["INDEX", "value at a position"]] }
+        - { id: xl-w10-d1-g10, difficulty: medium, type: text, prompt: "Test invoice (P001×2, P005×3, P026×10) total due with VAT?", accept: ["524600", "524,600", "₦524,600"] }
+        - { id: xl-w10-d1-g11, difficulty: medium, type: truefalse, prompt: "\" P001\" with a leading space still matches P001.", answer: false }
+        - { id: xl-w10-d1-g12, difficulty: medium, type: text, prompt: "HR: E042's JobTitle?", accept: ["Senior Sales Associate"] }
+        - { id: xl-w10-d1-g13, difficulty: medium, type: mcq, prompt: "Tiers 0→2%, 500000→3%, 2000000→5%: =XLOOKUP(1200000,tiers,rates,,-1)", choices: ["3%", "2%", "5%", "#N/A"], answer: 0 }
+        - { id: xl-w10-d1-g14, difficulty: medium, type: text, prompt: "Loss-making orders in 2025?", accept: ["21"] }
+        - { id: xl-w10-d1-g15, difficulty: medium, type: mcq, prompt: "Keep empty invoice lines clean", choices: ["=IF(B12=\"\",\"\",XLOOKUP(…))", "=IFNA(XLOOKUP(…),0)", "=XLOOKUP(…,\"\")", "Delete formulas"], answer: 0 }
+        - { id: xl-w10-d1-g16, difficulty: hard, type: mcq, prompt: "All 21 loss orders are Rice 50kg (Local), cost ₦68,000, price ₦78,000. Discount on each?", choices: ["15%", "10%", "5%", "0%"], answer: 0 }
+        - { id: xl-w10-d1-g17, difficulty: hard, type: text, prompt: "=INDEX(Products!B2:B41,MATCH(\"P005\",Products!A2:A41,0))", accept: ["Oraimo Power Bank 20000mAh"] }
+        - { id: xl-w10-d1-g18, difficulty: hard, type: multi, prompt: "Which return P001's UnitCost? (Select all.)", choices: ["=XLOOKUP(\"P001\",Products!A2:A41,Products!E2:E41)", "=INDEX(Products!E2:E41,1)", "=VLOOKUP(\"P001\",Products!A2:G41,5,FALSE)", "=VLOOKUP(\"P001\",Products!A2:G41,5,TRUE) on unsorted IDs"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Excel Tables"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w10-d1-rf01, difficulty: easy, type: mcq, prompt: "Create a table", choices: ["Ctrl+T", "Ctrl+E", "Ctrl+L only", "Alt+="], answer: 0 }
+          - { id: xl-w10-d1-rf02, difficulty: easy, type: mcq, prompt: "Good table name", choices: ["tblSales", "Sales Table", "Table 1 Sales", "2025 sales"], answer: 0 }
+          - { id: xl-w10-d1-rf03, difficulty: easy, type: mcq, prompt: "=[@Units]*[@UnitPrice] is a…", choices: ["structured reference", "named range", "array formula", "macro"], answer: 0 }
+          - { id: xl-w10-d1-rf04, difficulty: easy, type: mcq, prompt: "Sum the NetSales column of tblSales", choices: ["=SUM(tblSales[NetSales])", "=SUM([@NetSales])", "=SUM(tblSales!NetSales)", "=SUM(NetSales:tblSales)"], answer: 0 }
+          - { id: xl-w10-d1-rf05, difficulty: easy, type: truefalse, prompt: "A formula typed once in a table column fills the whole column.", answer: true }
+          - { id: xl-w10-d1-rf06, difficulty: easy, type: mcq, prompt: "@ in [@Units] means…", choices: ["this row", "all rows", "absolute", "the header"], answer: 0 }
+          - { id: xl-w10-d1-rf07, difficulty: easy, type: mcq, prompt: "Turn on totals", choices: ["Table Design → Total Row", "Home → AutoSum only", "Data → Totals", "View → Totals"], answer: 0 }
+          - { id: xl-w10-d1-rf08, difficulty: easy, type: mcq, prompt: "New rows typed under a table…", choices: ["join it automatically", "stay outside", "break formulas", "need Ctrl+T again"], answer: 0 }
+          - { id: xl-w10-d1-rf09, difficulty: easy, type: text, prompt: "Count of OrderID in tblSales' Total Row?", accept: ["2400", "2,400"] }
+          - { id: xl-w10-d1-rf10, difficulty: easy, type: mcq, prompt: "Charts and PivotTables built on a table…", choices: ["grow with it", "stay fixed", "break", "copy it"], answer: 0 }
+      - kind: brain-teaser
+        title: "Structured references"
+        questions:
+          - { id: xl-w10-d1-bt01, difficulty: medium, type: text, prompt: "Total Row: Sum of NetSales (₦, no symbol)?", accept: ["834046700", "834,046,700"] }
+          - { id: xl-w10-d1-bt02, difficulty: medium, type: mcq, prompt: "NetSales as a calculated column", choices: ["=[@GrossSales]*(1-[@DiscountPct]/100)", "=GrossSales*(1-DiscountPct)", "=[GrossSales]-[DiscountPct]", "=SUM([@GrossSales])"], answer: 0 }
+          - { id: xl-w10-d1-bt03, difficulty: medium, type: mcq, prompt: "Region total with structured refs (region in X2)", choices: ["=SUMIFS(tblSales[NetSales],tblSales[Region],X2)", "=SUMIFS([@NetSales],[@Region],X2)", "=SUMIF(tblSales,X2)", "=SUMIFS(tblSales,Region,X2)"], answer: 0 }
+          - { id: xl-w10-d1-bt04, difficulty: hard, type: mcq, prompt: "Why is =SUM(tblSales[NetSales]) better than =SUM(O2:O2401)?", choices: ["It grows when rows are added and reads like English", "It's faster to type", "It works without a table", "It ignores discounts"], answer: 0 }
+          - { id: xl-w10-d1-bt05, difficulty: hard, type: mcq, prompt: "You add a fake order under tblSales. The Total Row count shows…", choices: ["2,401", "2,400", "an error", "0"], answer: 0 }
+
+  # ─────────────────────────── DAY 2 ───────────────────────────
+  - day: 2
+    gate:
+      title: "Checkpoint: Excel Tables"
+      covers: "Week 10 · Day 1: Ctrl+T, table names, calculated columns, structured references, Total Row"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w10-d2-g01, difficulty: easy, type: mcq, prompt: "Shortcut to make a table", choices: ["Ctrl+T", "Ctrl+1", "Ctrl+E", "F5"], answer: 0 }
+        - { id: xl-w10-d2-g02, difficulty: easy, type: truefalse, prompt: "Table names can't contain spaces.", answer: true }
+        - { id: xl-w10-d2-g03, difficulty: easy, type: mcq, prompt: "Rename a table in…", choices: ["Table Design → Table Name", "Home → Rename", "Right-click the sheet tab", "Data → Name"], answer: 0 }
+        - { id: xl-w10-d2-g04, difficulty: easy, type: mcq, prompt: "[@UnitPrice] refers to…", choices: ["UnitPrice in the same row", "the whole column", "the header", "the total"], answer: 0 }
+        - { id: xl-w10-d2-g05, difficulty: easy, type: mcq, prompt: "tblSales[Region] refers to…", choices: ["the whole Region column (data rows)", "one cell", "the header only", "the Region sheet"], answer: 0 }
+        - { id: xl-w10-d2-g06, difficulty: easy, type: mcq, prompt: "Banded rows and filter buttons come…", choices: ["with every table", "only with PivotTables", "with Data Validation", "with Freeze Panes"], answer: 0 }
+        - { id: xl-w10-d2-g07, difficulty: medium, type: multi, prompt: "Table advantages (Select all.)", choices: ["Auto-expanding", "Calculated columns", "Structured references", "Passwords"], answers: [0, 1, 2] }
+        - { id: xl-w10-d2-g08, difficulty: medium, type: text, prompt: "Total Row: NetSales sum (₦, no symbol)?", accept: ["834046700", "834,046,700"] }
+        - { id: xl-w10-d2-g09, difficulty: medium, type: mcq, prompt: "GrossSales as a calculated column", choices: ["=[@Units]*[@UnitPrice]", "=Units*UnitPrice", "=J2*K2 only", "=SUM(tblSales[Units])"], answer: 0 }
+        - { id: xl-w10-d2-g10, difficulty: medium, type: truefalse, prompt: "The Total Row uses SUBTOTAL, so it respects filters.", answer: true }
+        - { id: xl-w10-d2-g11, difficulty: medium, type: mcq, prompt: "Average UnitPrice of tblSales", choices: ["=AVERAGE(tblSales[UnitPrice])", "=AVERAGE([@UnitPrice])", "=AVERAGE(tblSales)", "=AVERAGE(UnitPrice)"], answer: 0 }
+        - { id: xl-w10-d2-g12, difficulty: medium, type: text, prompt: "Rows in tblSales?", accept: ["2400", "2,400"] }
+        - { id: xl-w10-d2-g13, difficulty: medium, type: mcq, prompt: "Count Lagos orders", choices: ["=COUNTIFS(tblSales[Region],\"Lagos\")", "=COUNT(tblSales,\"Lagos\")", "=COUNTIFS([@Region],\"Lagos\")", "=SUMIFS(tblSales[Region],\"Lagos\")"], answer: 0 }
+        - { id: xl-w10-d2-g14, difficulty: medium, type: mcq, prompt: "Naming convention", choices: ["tblSales, tblProducts, tblStaff", "Table1, Table2", "sales table", "SALES-2025!"], answer: 0 }
+        - { id: xl-w10-d2-g15, difficulty: medium, type: truefalse, prompt: "A chart on a table's columns updates when you add rows.", answer: true }
+        - { id: xl-w10-d2-g16, difficulty: hard, type: mcq, prompt: "=SUMIFS(tblSales[NetSales],tblSales[Region],X2) copied down to X3:X7…", choices: ["keeps the same table columns (structured refs don't shift)", "shifts the columns down", "breaks", "needs $"], answer: 0 }
+        - { id: xl-w10-d2-g17, difficulty: hard, type: mcq, prompt: "Profit column in tblSales (UnitCost already looked up)", choices: ["=[@NetSales]-[@Units]*[@UnitCost]", "=tblSales[NetSales]-tblSales[UnitCost]", "=[@NetSales]-[@UnitCost]", "=SUM([@NetSales])-[@UnitCost]"], answer: 0 }
+        - { id: xl-w10-d2-g18, difficulty: hard, type: multi, prompt: "Which are valid structured references? (Select all.)", choices: ["tblSales[NetSales]", "[@Units]", "tblSales[#Totals]", "tblSales.NetSales"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Data validation"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w10-d2-rf01, difficulty: easy, type: mcq, prompt: "Where is Data Validation?", choices: ["Data tab", "Home tab", "Review tab", "Insert tab"], answer: 0 }
+          - { id: xl-w10-d2-rf02, difficulty: easy, type: mcq, prompt: "A drop-down uses Allow:", choices: ["List", "Custom", "Text length", "Any value"], answer: 0 }
+          - { id: xl-w10-d2-rf03, difficulty: easy, type: mcq, prompt: "Units between 1 and 500", choices: ["Whole number", "Decimal", "List", "Text length"], answer: 0 }
+          - { id: xl-w10-d2-rf04, difficulty: easy, type: mcq, prompt: "Phone with exactly 11 characters", choices: ["Text length", "Whole number", "List", "Date"], answer: 0 }
+          - { id: xl-w10-d2-rf05, difficulty: easy, type: mcq, prompt: "Hint when the cell is selected", choices: ["Input Message", "Error Alert", "Comment", "Note"], answer: 0 }
+          - { id: xl-w10-d2-rf06, difficulty: easy, type: mcq, prompt: "Alert that blocks bad entries", choices: ["Stop", "Warning", "Information", "Note"], answer: 0 }
+          - { id: xl-w10-d2-rf07, difficulty: easy, type: mcq, prompt: "No duplicate IDs (custom)", choices: ["=COUNTIF($A:$A,A2)=1", "=COUNT(A2)=1", "=A2<>A1", "=UNIQUE(A:A)"], answer: 0 }
+          - { id: xl-w10-d2-rf08, difficulty: easy, type: mcq, prompt: "Find existing bad entries", choices: ["Circle Invalid Data", "Remove Duplicates", "Find & Replace", "Spell check"], answer: 0 }
+          - { id: xl-w10-d2-rf09, difficulty: easy, type: mcq, prompt: "List source typed directly", choices: ["Cash,Transfer,POS,Card", "Cash Transfer POS Card", "{Cash;Transfer}", "\"Cash\"+\"Card\""], answer: 0 }
+          - { id: xl-w10-d2-rf10, difficulty: easy, type: truefalse, prompt: "Validation stops pasted values too.", answer: false }
+      - kind: brain-teaser
+        title: "Build the order form"
+        questions:
+          - { id: xl-w10-d2-bt01, difficulty: medium, type: mcq, prompt: "A drop-down that grows when products are added", choices: ["Name =tblProducts[ProductID], then List source =ProductIDList", "Type all 40 IDs", "List source A2:A41", "Custom =COUNTA(A:A)"], answer: 0 }
+          - { id: xl-w10-d2-bt02, difficulty: medium, type: text, prompt: "How many regions does the Region drop-down need?", accept: ["6", "six"] }
+          - { id: xl-w10-d2-bt03, difficulty: medium, type: mcq, prompt: "Order dates in 2026 only", choices: ["Date between 01/01/2026 and 31/12/2026", "Whole number 2026", "Text length 4", "List 2026"], answer: 0 }
+          - { id: xl-w10-d2-bt04, difficulty: hard, type: mcq, prompt: "Warning vs Stop alert", choices: ["Warning lets the user continue; Stop doesn't", "Same thing", "Stop allows; Warning blocks", "Warning deletes the entry"], answer: 0 }
+          - { id: xl-w10-d2-bt05, difficulty: hard, type: mcq, prompt: "Someone pastes \"abc\" into a validated Units cell. Then…", choices: ["Paste overrides validation; Circle Invalid Data finds it", "Excel blocks it", "It becomes 0", "Excel deletes it"], answer: 0 }
+
+  # ─────────────────────────── DAY 3 ───────────────────────────
+  - day: 3
+    gate:
+      title: "Checkpoint: data validation"
+      covers: "Week 10 · Day 2: list, number, date, text length and custom rules; input message; alerts; dynamic lists"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w10-d3-g01, difficulty: easy, type: mcq, prompt: "Data Validation is on the…", choices: ["Data tab", "Review tab", "Formulas tab", "View tab"], answer: 0 }
+        - { id: xl-w10-d3-g02, difficulty: easy, type: mcq, prompt: "Payment method drop-down", choices: ["List: Cash,Transfer,POS,Card", "Whole number", "Text length 4", "Date"], answer: 0 }
+        - { id: xl-w10-d3-g03, difficulty: easy, type: truefalse, prompt: "An Information alert still lets the entry through.", answer: true }
+        - { id: xl-w10-d3-g04, difficulty: easy, type: mcq, prompt: "Shown when a bad value is typed", choices: ["Error Alert", "Input Message", "Tooltip", "Status bar"], answer: 0 }
+        - { id: xl-w10-d3-g05, difficulty: easy, type: mcq, prompt: "Discount drop-down values", choices: ["0,5,10,15", "0,15,30", "1–100", "5,10,20"], answer: 0 }
+        - { id: xl-w10-d3-g06, difficulty: easy, type: mcq, prompt: "Nigerian mobile number length", choices: ["11", "10", "13", "8"], answer: 0 }
+        - { id: xl-w10-d3-g07, difficulty: medium, type: match, prompt: "Match Allow to the rule.", pairs: [["List", "drop-down of regions"], ["Whole number", "Units 1–500"], ["Text length", "11-character phone"], ["Custom", "no duplicate IDs"]] }
+        - { id: xl-w10-d3-g08, difficulty: medium, type: text, prompt: "Custom rule: unique IDs in column A, starting at A2: =COUNTIF($A:$A,A2)=___", accept: ["1"] }
+        - { id: xl-w10-d3-g09, difficulty: medium, type: mcq, prompt: "Dynamic product list: step 1", choices: ["Create a name =tblProducts[ProductID]", "Sort the products", "Copy IDs to a new sheet", "Protect the sheet"], answer: 0 }
+        - { id: xl-w10-d3-g10, difficulty: medium, type: truefalse, prompt: "Typing =tblProducts[ProductID] directly in the List source box always works in older Excel.", answer: false }
+        - { id: xl-w10-d3-g11, difficulty: medium, type: mcq, prompt: "Distinct payment methods in the 2025 data", choices: ["4", "3", "5", "6"], answer: 0 }
+        - { id: xl-w10-d3-g12, difficulty: medium, type: mcq, prompt: "Highest Units on any 2025 order", choices: ["96 (inside the 1–500 rule)", "500", "1,000", "250"], answer: 0 }
+        - { id: xl-w10-d3-g13, difficulty: medium, type: mcq, prompt: "Circle Invalid Data finds…", choices: ["existing entries that break the rule", "blank cells", "formulas", "duplicates only"], answer: 0 }
+        - { id: xl-w10-d3-g14, difficulty: medium, type: mcq, prompt: "Make the Week 6 region selector a drop-down", choices: ["Data Validation → List of the regions", "Insert → Combo box only", "Conditional formatting", "Freeze panes"], answer: 0 }
+        - { id: xl-w10-d3-g15, difficulty: medium, type: multi, prompt: "Alert styles (Select all.)", choices: ["Stop", "Warning", "Information", "Delete"], answers: [0, 1, 2] }
+        - { id: xl-w10-d3-g16, difficulty: hard, type: mcq, prompt: "Custom rule: phone must start with 0 and be 11 characters", choices: ["=AND(LEFT(A2,1)=\"0\",LEN(A2)=11)", "=LEN(A2)=11", "=A2=0", "=LEFT(A2)=11"], answer: 0 }
+        - { id: xl-w10-d3-g17, difficulty: hard, type: mcq, prompt: "The product drop-down misses a new P041. Most likely…", choices: ["The source is a fixed range, not the table column", "Validation is off", "P041 is text", "The sheet is protected"], answer: 0 }
+        - { id: xl-w10-d3-g18, difficulty: hard, type: multi, prompt: "Good validation practice (Select all.)", choices: ["Input messages explaining the rule", "Lists from table columns", "Stop alerts for hard rules", "Validating formula cells"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Dependent drop-downs"
+        secondsPerQuestion: 9
+        questions:
+          - { id: xl-w10-d3-rf01, difficulty: easy, type: mcq, prompt: "A dependent drop-down shows…", choices: ["only items matching an earlier choice", "every item", "random items", "the last item"], answer: 0 }
+          - { id: xl-w10-d3-rf02, difficulty: easy, type: mcq, prompt: "Modern way to list a category's products", choices: ["FILTER", "VLOOKUP", "SUMIFS", "INDIRECT only"], answer: 0 }
+          - { id: xl-w10-d3-rf03, difficulty: easy, type: mcq, prompt: "$H$2# means…", choices: ["the whole spill range from H2", "H2 only", "a hashtag", "an error"], answer: 0 }
+          - { id: xl-w10-d3-rf04, difficulty: easy, type: mcq, prompt: "Classic way", choices: ["Named ranges + INDIRECT", "FILTER + #", "XLOOKUP", "Macros"], answer: 0 }
+          - { id: xl-w10-d3-rf05, difficulty: easy, type: text, prompt: "How many Phones products?", accept: ["4", "four"] }
+          - { id: xl-w10-d3-rf06, difficulty: easy, type: text, prompt: "How many product categories?", accept: ["10", "ten"] }
+          - { id: xl-w10-d3-rf07, difficulty: easy, type: mcq, prompt: "Unique category list for the first drop-down", choices: ["=UNIQUE(tblProducts[Category])", "=COUNT(tblProducts[Category])", "=SORT(tblProducts)", "=FILTER(tblProducts)"], answer: 0 }
+          - { id: xl-w10-d3-rf08, difficulty: easy, type: mcq, prompt: "UnitPrice after choosing a product", choices: ["XLOOKUP", "FILTER", "UNIQUE", "COUNTIF"], answer: 0 }
+          - { id: xl-w10-d3-rf09, difficulty: easy, type: text, prompt: "How many Groceries products?", accept: ["7", "seven"] }
+          - { id: xl-w10-d3-rf10, difficulty: easy, type: truefalse, prompt: "FILTER and spill ranges need Microsoft 365 (or Excel 2021+).", answer: true }
+      - kind: brain-teaser
+        title: "Wire it up"
+        questions:
+          - { id: xl-w10-d3-bt01, difficulty: medium, type: mcq, prompt: "Category in B2: helper list in H2", choices: ["=FILTER(tblProducts[Product],tblProducts[Category]=B2)", "=VLOOKUP(B2,tblProducts,2,FALSE)", "=UNIQUE(B2)", "=INDIRECT(tblProducts)"], answer: 0 }
+          - { id: xl-w10-d3-bt02, difficulty: medium, type: text, prompt: "Validation List source for that spill (H2)", accept: ["=$H$2#", "=H2#", "=$H$2 #"] }
+          - { id: xl-w10-d3-bt03, difficulty: medium, type: mcq, prompt: "Choosing \"Computers\" should show how many products?", choices: ["3", "4", "5", "2"], answer: 0 }
+          - { id: xl-w10-d3-bt04, difficulty: hard, type: mcq, prompt: "Classic: named ranges Phones, Computers…; Product validation source =INDIRECT(B2). Why does \"TV & Audio\" fail?", choices: ["Names can't contain spaces or &", "INDIRECT is broken", "B2 is empty", "Too many products"], answer: 0 }
+          - { id: xl-w10-d3-bt05, difficulty: hard, type: mcq, prompt: "User changes the Category after picking a product. The product cell…", choices: ["keeps the old product (validation doesn't clear it)", "clears itself", "turns red automatically", "shows #N/A"], answer: 0 }
+
+  # ─────────────────────────── DAY 4 ───────────────────────────
+  - day: 4
+    gate:
+      title: "Checkpoint: dependent drop-downs"
+      covers: "Week 10 · Day 3: FILTER helper list, spill references (#), INDIRECT, price lookup on the form"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w10-d4-g01, difficulty: easy, type: mcq, prompt: "The # in =$H$2# refers to…", choices: ["the whole spill range", "a number format", "a comment", "a hidden cell"], answer: 0 }
+        - { id: xl-w10-d4-g02, difficulty: easy, type: mcq, prompt: "FILTER returns…", choices: ["the rows that match a condition", "a count", "one value", "a chart"], answer: 0 }
+        - { id: xl-w10-d4-g03, difficulty: easy, type: truefalse, prompt: "A dependent list changes when the first choice changes.", answer: true }
+        - { id: xl-w10-d4-g04, difficulty: easy, type: mcq, prompt: "INDIRECT(\"Phones\") returns…", choices: ["the range named Phones", "the text Phones", "#REF! always", "a count"], answer: 0 }
+        - { id: xl-w10-d4-g05, difficulty: easy, type: text, prompt: "Phones in tblProducts?", accept: ["4"] }
+        - { id: xl-w10-d4-g06, difficulty: easy, type: mcq, prompt: "Unique categories", choices: ["=UNIQUE(tblProducts[Category])", "=FILTER(tblProducts[Category])", "=COUNTA(tblProducts)", "=SORT(Category)"], answer: 0 }
+        - { id: xl-w10-d4-g07, difficulty: medium, type: order, prompt: "Order the build.", items: ["Category drop-down from a unique list", "FILTER helper list of that category's products", "Product drop-down with source =$H$2#", "UnitPrice with XLOOKUP"] }
+        - { id: xl-w10-d4-g08, difficulty: medium, type: text, prompt: "Categories in tblProducts?", accept: ["10"] }
+        - { id: xl-w10-d4-g09, difficulty: medium, type: mcq, prompt: "=FILTER(tblProducts[Product],tblProducts[Category]=\"Office\") spills…", choices: ["2 products", "3 products", "1 product", "#CALC!"], answer: 0 }
+        - { id: xl-w10-d4-g10, difficulty: medium, type: truefalse, prompt: "If anything blocks the spill area, FILTER shows #SPILL!.", answer: true }
+        - { id: xl-w10-d4-g11, difficulty: medium, type: mcq, prompt: "FILTER with no matches and no 3rd argument", choices: ["#CALC!", "#N/A", "0", "blank"], answer: 0 }
+        - { id: xl-w10-d4-g12, difficulty: medium, type: text, prompt: "Groceries products?", accept: ["7"] }
+        - { id: xl-w10-d4-g13, difficulty: medium, type: mcq, prompt: "Price for the product in C2", choices: ["=XLOOKUP(C2,tblProducts[Product],tblProducts[UnitPrice])", "=FILTER(C2)", "=INDIRECT(C2)", "=VLOOKUP(C2,tblProducts,6,TRUE)"], answer: 0 }
+        - { id: xl-w10-d4-g14, difficulty: medium, type: mcq, prompt: "The classic INDIRECT method needs…", choices: ["one named range per category", "FILTER", "a PivotTable", "macros"], answer: 0 }
+        - { id: xl-w10-d4-g15, difficulty: medium, type: mcq, prompt: "Sorted product list for the drop-down", choices: ["=SORT(FILTER(…))", "=FILTER(SORT)", "=UNIQUE(SORT)", "Sort the table by hand only"], answer: 0 }
+        - { id: xl-w10-d4-g16, difficulty: hard, type: mcq, prompt: "FILTER with a friendly empty result", choices: ["=FILTER(tblProducts[Product],tblProducts[Category]=B2,\"Pick a category\")", "=IFNA(FILTER(…))", "=FILTER(…,0)", "=IFERROR(B2)"], answer: 0 }
+        - { id: xl-w10-d4-g17, difficulty: hard, type: mcq, prompt: "Two conditions in FILTER (Category = B2 AND UnitPrice < 50,000)", choices: ["=FILTER(tblProducts[Product],(tblProducts[Category]=B2)*(tblProducts[UnitPrice]<50000))", "=FILTER(…,AND(…))", "=FILTER(…,B2,50000)", "=FILTER(…,OR(…))"], answer: 0 }
+        - { id: xl-w10-d4-g18, difficulty: hard, type: multi, prompt: "Which spill? (Select all.)", choices: ["FILTER", "UNIQUE", "SORT", "VLOOKUP with one value"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Cleaning tools"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w10-d4-rf01, difficulty: easy, type: mcq, prompt: "Flash Fill shortcut", choices: ["Ctrl+E", "Ctrl+F", "Ctrl+T", "Ctrl+D"], answer: 0 }
+          - { id: xl-w10-d4-rf02, difficulty: easy, type: mcq, prompt: "Split a column at a comma", choices: ["Text to Columns", "Remove Duplicates", "Flash Fill only", "Merge cells"], answer: 0 }
+          - { id: xl-w10-d4-rf03, difficulty: easy, type: mcq, prompt: "Select every blank cell", choices: ["F5 → Special → Blanks", "Ctrl+A", "Find \"\"", "Ctrl+B"], answer: 0 }
+          - { id: xl-w10-d4-rf04, difficulty: easy, type: mcq, prompt: "Fill all selected cells at once", choices: ["Ctrl+Enter", "Enter", "Tab", "Ctrl+D only"], answer: 0 }
+          - { id: xl-w10-d4-rf05, difficulty: easy, type: mcq, prompt: "Distinct count (365)", choices: ["=COUNTA(UNIQUE(range))", "=COUNT(range)", "=UNIQUE(COUNT)", "=COUNTIF(range)"], answer: 0 }
+          - { id: xl-w10-d4-rf06, difficulty: easy, type: text, prompt: "Distinct products sold in 2025?", accept: ["40"] }
+          - { id: xl-w10-d4-rf07, difficulty: easy, type: text, prompt: "Distinct salespeople?", accept: ["27"] }
+          - { id: xl-w10-d4-rf08, difficulty: easy, type: truefalse, prompt: "Merged cells inside data are fine.", answer: false }
+          - { id: xl-w10-d4-rf09, difficulty: easy, type: mcq, prompt: "Green triangle on a number means…", choices: ["number stored as text", "a comment", "a formula error", "a duplicate"], answer: 0 }
+          - { id: xl-w10-d4-rf10, difficulty: easy, type: mcq, prompt: "Tidy data: one row per…", choices: ["record", "day", "column", "sheet"], answer: 0 }
+      - kind: brain-teaser
+        title: "Tidy it"
+        questions:
+          - { id: xl-w10-d4-bt01, difficulty: medium, type: multi, prompt: "Tidy-data rules (Select all.)", choices: ["One column per field", "One value per cell", "Headers in one row", "Blank rows between groups"], answers: [0, 1, 2] }
+          - { id: xl-w10-d4-bt02, difficulty: medium, type: mcq, prompt: "Text to Columns can also…", choices: ["convert text dates (DMY) into real dates", "remove duplicates", "make tables", "protect sheets"], answer: 0 }
+          - { id: xl-w10-d4-bt03, difficulty: medium, type: mcq, prompt: "Region listed once with blanks below. Select blanks, then type…", choices: ["= and the cell above, then Ctrl+Enter", "the region name in each", "Ctrl+D", "=BLANK()"], answer: 0 }
+          - { id: xl-w10-d4-bt04, difficulty: hard, type: mcq, prompt: "Remove Duplicates on messy_customers by CustomerID only, when one ID has two different emails…", choices: ["keeps the first row and drops the other; check before deleting", "keeps both", "merges the emails", "errors"], answer: 0 }
+          - { id: xl-w10-d4-bt05, difficulty: hard, type: mcq, prompt: "After filling blanks with =↑, why paste as values?", choices: ["So sorting doesn't break the formulas", "To save space only", "Formulas can't be sorted", "No reason"], answer: 0 }
+
+  # ─────────────────────────── DAY 5 ───────────────────────────
+  - day: 5
+    gate:
+      title: "Checkpoint: structural cleaning"
+      covers: "Week 10 · Day 4: Remove Duplicates, Text to Columns, Flash Fill, Go To Special blanks, convert to number, unique counts, tidy data"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w10-d5-g01, difficulty: easy, type: mcq, prompt: "Remove Duplicates is on the…", choices: ["Data tab", "Home tab", "Review tab", "View tab"], answer: 0 }
+        - { id: xl-w10-d5-g02, difficulty: easy, type: mcq, prompt: "Pattern-based extraction", choices: ["Flash Fill (Ctrl+E)", "Text to Columns", "Remove Duplicates", "Go To Special"], answer: 0 }
+        - { id: xl-w10-d5-g03, difficulty: easy, type: truefalse, prompt: "Tidy data has headers in one row only.", answer: true }
+        - { id: xl-w10-d5-g04, difficulty: easy, type: mcq, prompt: "Go To shortcut", choices: ["F5", "F4", "F2", "F9"], answer: 0 }
+        - { id: xl-w10-d5-g05, difficulty: easy, type: text, prompt: "=COUNTA(UNIQUE(tblSales[Product]))", accept: ["40"] }
+        - { id: xl-w10-d5-g06, difficulty: easy, type: mcq, prompt: "\"Surname, First\" → two columns", choices: ["Text to Columns, delimiter comma", "Remove Duplicates", "Merge & Center", "Wrap Text"], answer: 0 }
+        - { id: xl-w10-d5-g07, difficulty: medium, type: match, prompt: "Match the tool.", pairs: [["Remove Duplicates", "delete repeated rows"], ["Text to Columns", "split by a delimiter"], ["Flash Fill", "copy a pattern"], ["Go To Special", "select blanks"]] }
+        - { id: xl-w10-d5-g08, difficulty: medium, type: text, prompt: "=COUNTA(UNIQUE(tblSales[Salesperson]))", accept: ["27"] }
+        - { id: xl-w10-d5-g09, difficulty: medium, type: mcq, prompt: "Text dates like 10/12/2023 (DMY) → real dates", choices: ["Text to Columns → Date: DMY", "Format Cells → Date", "Flash Fill", "VALUE() always"], answer: 0 }
+        - { id: xl-w10-d5-g10, difficulty: medium, type: truefalse, prompt: "Remove Duplicates lets you choose which columns define a duplicate.", answer: true }
+        - { id: xl-w10-d5-g11, difficulty: medium, type: mcq, prompt: "Fill blanks: after typing =A2 in the first selected blank, press…", choices: ["Ctrl+Enter", "Enter", "Ctrl+Shift+Enter", "Tab"], answer: 0 }
+        - { id: xl-w10-d5-g12, difficulty: medium, type: text, prompt: "Distinct stores in 2025 sales?", accept: ["9"] }
+        - { id: xl-w10-d5-g13, difficulty: medium, type: mcq, prompt: "Which breaks tidy-data rules?", choices: ["\"Lagos, Abuja\" in one cell", "One row per order", "Headers in row 1", "One column per field"], answer: 0 }
+        - { id: xl-w10-d5-g14, difficulty: medium, type: mcq, prompt: "Numbers stored as text: quick fix", choices: ["Green triangle → Convert to Number", "Bold them", "Merge them", "Sort them"], answer: 0 }
+        - { id: xl-w10-d5-g15, difficulty: medium, type: multi, prompt: "Text to Columns can… (Select all.)", choices: ["split by a delimiter", "split by fixed width", "convert text dates", "remove duplicates"], answers: [0, 1, 2] }
+        - { id: xl-w10-d5-g16, difficulty: hard, type: mcq, prompt: "Text to Columns on column B overwrites…", choices: ["the columns to its right if they aren't empty", "nothing", "column A", "the whole sheet"], answer: 0 }
+        - { id: xl-w10-d5-g17, difficulty: hard, type: mcq, prompt: "Distinct regions with a formula", choices: ["=COUNTA(UNIQUE(tblSales[Region])) → 6", "=COUNT(tblSales[Region]) → 6", "=UNIQUE(6)", "=COUNTA(tblSales[Region]) → 6"], answer: 0 }
+        - { id: xl-w10-d5-g18, difficulty: hard, type: multi, prompt: "Before Remove Duplicates (Select all.)", choices: ["Work on a copy", "TRIM and PROPER the key columns", "Decide which columns define a duplicate", "Merge the header cells"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Protection"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w10-d5-rf01, difficulty: easy, type: mcq, prompt: "By default every cell is…", choices: ["Locked", "Unlocked", "Hidden", "Protected"], answer: 0 }
+          - { id: xl-w10-d5-rf02, difficulty: easy, type: mcq, prompt: "Locking works only when…", choices: ["the sheet is protected", "the file is saved", "cells are yellow", "the workbook is shared"], answer: 0 }
+          - { id: xl-w10-d5-rf03, difficulty: easy, type: mcq, prompt: "Unlock input cells", choices: ["Ctrl+1 → Protection → untick Locked", "Review → Unlock", "Right-click → Unlock", "Data → Unlock"], answer: 0 }
+          - { id: xl-w10-d5-rf04, difficulty: easy, type: mcq, prompt: "Protect Sheet is on the…", choices: ["Review tab", "Data tab", "Home tab", "File → Info only"], answer: 0 }
+          - { id: xl-w10-d5-rf05, difficulty: easy, type: mcq, prompt: "Stop adding/renaming sheets", choices: ["Protect Workbook", "Protect Sheet", "Hide sheet", "Mark as Final"], answer: 0 }
+          - { id: xl-w10-d5-rf06, difficulty: easy, type: mcq, prompt: "Input-cell colour convention", choices: ["light yellow", "red", "black", "dark blue"], answer: 0 }
+          - { id: xl-w10-d5-rf07, difficulty: easy, type: truefalse, prompt: "Excel sheet passwords are real security.", answer: false }
+          - { id: xl-w10-d5-rf08, difficulty: easy, type: mcq, prompt: "Hide formulas from the formula bar", choices: ["Protection → Hidden, then protect", "Font colour white", "Hide the column", "Ctrl+H"], answer: 0 }
+          - { id: xl-w10-d5-rf09, difficulty: easy, type: mcq, prompt: "Allow users to…", choices: ["Select unlocked cells", "Delete columns", "Edit formulas", "Remove protection"], answer: 0 }
+          - { id: xl-w10-d5-rf10, difficulty: easy, type: mcq, prompt: "Protection prevents…", choices: ["accidents", "hackers", "viruses", "copying the file"], answer: 0 }
+      - kind: brain-teaser
+        title: "Lock it down"
+        questions:
+          - { id: xl-w10-d5-bt01, difficulty: medium, type: order, prompt: "Order the steps.", items: ["Select the input cells", "Ctrl+1 → Protection → untick Locked", "Review → Protect Sheet", "Try to overwrite a formula to test"] }
+          - { id: xl-w10-d5-bt02, difficulty: medium, type: mcq, prompt: "You protect the sheet without unlocking any cells. Then…", choices: ["nobody can type anywhere", "everyone can type everywhere", "only formulas are editable", "only headers are locked"], answer: 0 }
+          - { id: xl-w10-d5-bt03, difficulty: medium, type: mcq, prompt: "Why does \"Locked\" do nothing on its own?", choices: ["It's a property that sheet protection enforces", "It's a bug", "It only works in tables", "It needs a macro"], answer: 0 }
+          - { id: xl-w10-d5-bt04, difficulty: hard, type: mcq, prompt: "Confidential salaries should be protected by…", choices: ["not sharing them, or real file encryption/access control", "a sheet password", "hiding the column", "white font"], answer: 0 }
+          - { id: xl-w10-d5-bt05, difficulty: hard, type: mcq, prompt: "Users must add rows to a protected tblOrders. Allow…", choices: ["Insert rows (in Protect Sheet options), with input columns unlocked", "Nothing; it's impossible", "Delete columns", "Edit objects only"], answer: 0 }
+
+  # ─────────────────────────── DAY 6 ───────────────────────────
+  - day: 6
+    gate:
+      title: "Checkpoint: protecting sheets"
+      covers: "Week 10 · Day 5: Locked/Hidden, Protect Sheet and Workbook, yellow inputs, passwords aren't security"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w10-d6-g01, difficulty: easy, type: mcq, prompt: "Protect Sheet lives on…", choices: ["Review", "Data", "Formulas", "Insert"], answer: 0 }
+        - { id: xl-w10-d6-g02, difficulty: easy, type: truefalse, prompt: "Cells are Locked by default.", answer: true }
+        - { id: xl-w10-d6-g03, difficulty: easy, type: mcq, prompt: "Inputs are usually coloured…", choices: ["light yellow", "red", "grey", "green text"], answer: 0 }
+        - { id: xl-w10-d6-g04, difficulty: easy, type: mcq, prompt: "Format Cells shortcut", choices: ["Ctrl+1", "Ctrl+F", "Ctrl+T", "Ctrl+P"], answer: 0 }
+        - { id: xl-w10-d6-g05, difficulty: easy, type: mcq, prompt: "Protect Workbook stops…", choices: ["adding, deleting or renaming sheets", "typing in cells", "printing", "saving"], answer: 0 }
+        - { id: xl-w10-d6-g06, difficulty: easy, type: mcq, prompt: "Sheet passwords stop…", choices: ["accidents", "attacks", "copying", "viewing"], answer: 0 }
+        - { id: xl-w10-d6-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["Locked", "can't edit once protected"], ["Hidden", "formula not shown once protected"], ["Protect Sheet", "enforces Locked/Hidden"], ["Protect Workbook", "protects the sheet structure"]] }
+        - { id: xl-w10-d6-g08, difficulty: medium, type: mcq, prompt: "To let users type only in inputs, first…", choices: ["unlock the input cells", "lock the inputs", "hide the formulas", "delete formulas"], answer: 0 }
+        - { id: xl-w10-d6-g09, difficulty: medium, type: truefalse, prompt: "Hidden formulas still calculate.", answer: true }
+        - { id: xl-w10-d6-g10, difficulty: medium, type: mcq, prompt: "OrderID auto formula in the project", choices: ["=\"NM-\"&TEXT(ROW()-1,\"00000\")", "=ROW()", "=\"NM\"+ROW()", "=TEXT(\"NM-\",ROW())"], answer: 0 }
+        - { id: xl-w10-d6-g11, difficulty: medium, type: text, prompt: "=\"NM-\"&TEXT(ROW()-1,\"00000\") in row 43", accept: ["NM-00042"] }
+        - { id: xl-w10-d6-g12, difficulty: medium, type: mcq, prompt: "Formula columns should be…", choices: ["locked", "yellow", "unlocked", "merged"], answer: 0 }
+        - { id: xl-w10-d6-g13, difficulty: medium, type: mcq, prompt: "Discount drop-down for the project", choices: ["0/5/10/15", "0–100", "1/2/3", "5/10/20/25"], answer: 0 }
+        - { id: xl-w10-d6-g14, difficulty: medium, type: mcq, prompt: "Why enter deliberately wrong test orders?", choices: ["To prove the validation stops them", "To fill the table", "To test protection passwords", "No reason"], answer: 0 }
+        - { id: xl-w10-d6-g15, difficulty: medium, type: multi, prompt: "In the order-entry project (Select all.)", choices: ["tblProducts and tblStores on a Lists sheet", "Category → Product dependent drop-down", "NetSales as a calculated column", "Typing prices by hand"], answers: [0, 1, 2] }
+        - { id: xl-w10-d6-g16, difficulty: hard, type: mcq, prompt: "You protect the sheet, then can't use the filter buttons. Fix:", choices: ["Unprotect, then protect again with \"Use AutoFilter\" allowed", "Delete the table", "Unlock every cell", "Hide the headers"], answer: 0 }
+        - { id: xl-w10-d6-g17, difficulty: hard, type: mcq, prompt: "A user sorts tblOrders and the OrderIDs change. Why?", choices: ["ROW()-1 depends on position; IDs should be stored as values", "Sorting is broken", "TEXT is volatile", "Protection"], answer: 0 }
+        - { id: xl-w10-d6-g18, difficulty: hard, type: multi, prompt: "A sheet other people can't break (Select all.)", choices: ["Validation on inputs", "Locked formulas + protection", "Tables with calculated columns", "Merged headers inside data"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Week 10 lightning round"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w10-d6-rf01, difficulty: easy, type: mcq, prompt: "Make a table", choices: ["Ctrl+T", "Ctrl+E", "Ctrl+1", "F5"], answer: 0 }
+          - { id: xl-w10-d6-rf02, difficulty: easy, type: mcq, prompt: "This row's Units", choices: ["[@Units]", "tblSales[Units]", "Units!", "$Units$"], answer: 0 }
+          - { id: xl-w10-d6-rf03, difficulty: easy, type: mcq, prompt: "Drop-down", choices: ["Data Validation → List", "Insert → List", "Home → Drop", "Filter"], answer: 0 }
+          - { id: xl-w10-d6-rf04, difficulty: easy, type: mcq, prompt: "Whole spill from H2", choices: ["$H$2#", "$H$2:", "H2*", "H2!"], answer: 0 }
+          - { id: xl-w10-d6-rf05, difficulty: easy, type: mcq, prompt: "Flash Fill", choices: ["Ctrl+E", "Ctrl+F", "Ctrl+L", "Ctrl+R"], answer: 0 }
+          - { id: xl-w10-d6-rf06, difficulty: easy, type: mcq, prompt: "Fill selected blanks at once", choices: ["Ctrl+Enter", "Enter", "Alt+Enter", "Tab"], answer: 0 }
+          - { id: xl-w10-d6-rf07, difficulty: easy, type: text, prompt: "Distinct salespeople", accept: ["27"] }
+          - { id: xl-w10-d6-rf08, difficulty: easy, type: text, prompt: "tblSales NetSales total (no symbol)", accept: ["834046700", "834,046,700"] }
+          - { id: xl-w10-d6-rf09, difficulty: easy, type: mcq, prompt: "Locked works only after…", choices: ["Protect Sheet", "Save", "Ctrl+T", "Validation"], answer: 0 }
+          - { id: xl-w10-d6-rf10, difficulty: easy, type: truefalse, prompt: "Sheet passwords are real security.", answer: false }
+      - kind: brain-teaser
+        title: "Unbreakable sheet"
+        questions:
+          - { id: xl-w10-d6-bt01, difficulty: medium, type: mcq, prompt: "Dashboard: today's NetSales from tblOrders", choices: ["=SUMIFS(tblOrders[NetSales],tblOrders[OrderDate],TODAY())", "=SUM(tblOrders)", "=SUMIF(TODAY())", "=TODAY(tblOrders[NetSales])"], answer: 0 }
+          - { id: xl-w10-d6-bt02, difficulty: medium, type: mcq, prompt: "Count today's orders", choices: ["=COUNTIFS(tblOrders[OrderDate],TODAY())", "=COUNT(TODAY())", "=COUNTA(tblOrders)", "=ROWS(TODAY())"], answer: 0 }
+          - { id: xl-w10-d6-bt03, difficulty: medium, type: mcq, prompt: "Units typed as 600 with a 1–500 Stop rule", choices: ["Rejected with an error message", "Accepted", "Changed to 500", "Deleted later"], answer: 0 }
+          - { id: xl-w10-d6-bt04, difficulty: hard, type: mcq, prompt: "Stable OrderIDs that don't change on sort", choices: ["Type or paste them as values when the order is entered", "=ROW()", "=ROWS()", "=RAND()"], answer: 0 }
+          - { id: xl-w10-d6-bt05, difficulty: hard, type: mcq, prompt: "Best structure for the order-entry workbook", choices: ["Lists sheet (reference tables) · Orders table (inputs + calculated) · Dashboard", "Everything on one sheet with merged headers", "One sheet per order", "A PDF form"], answer: 0 }
