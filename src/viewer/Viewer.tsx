@@ -1,7 +1,7 @@
 import { marked } from 'marked'
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react'
 import App from '../App.tsx'
-import { catalog, findCourse, type CatalogCourse } from '../content/catalog.ts'
+import { catalog, findCourse, loadQuizWeek, quizVersion, quizWeek, quizWeekFailed, quizWeekSettled, subscribeQuizzes, type CatalogCourse } from '../content/catalog.ts'
 import { DEFAULT_QUIZ_RULES, type Question } from '../content/quizzes.ts'
 import { drawAttempt, gateDaysForWeek, gateStatus, seededRandom } from '../domain/quizGate.ts'
 import { ErrorBoundary } from './ErrorBoundary.tsx'
@@ -36,7 +36,17 @@ function Markdown({ text }: { text: string }) {
 // ─── Gate lock ────────────────────────────────────────────────────────────
 
 const gateQuiz = (slug: string, week: number, day: number) =>
-  findCourse(slug)?.quizzes.get(week)?.days.find((d) => d.day === day)?.gate
+  quizWeek(slug, week)?.days.find((d) => d.day === day)?.gate
+
+/** Re-render when a week's quiz bank finishes downloading. */
+const useQuizzesLoaded = () => useSyncExternalStore(subscribeQuizzes, quizVersion)
+
+/** The week's quiz bank, downloading it the first time it's needed. */
+function useQuizWeek(slug: string, week: number) {
+  useQuizzesLoaded()
+  useEffect(() => { void loadQuizWeek(slug, week) }, [slug, week])
+  return { quiz: quizWeek(slug, week), settled: quizWeekSettled(slug, week), failed: quizWeekFailed(slug, week) }
+}
 
 /** The first gate that has popped up and hasn't been passed. It locks the whole app.
  *  A gate whose quiz no longer exists (renamed content, an edited save) is ignored, never a dead lock. */
@@ -44,7 +54,9 @@ function pendingGate(state: State) {
   for (const [key, gate] of Object.entries(state.gates)) {
     if (!gate.attempts.some((a) => a.passed)) {
       const [slug, week, day] = key.split(':')
-      if (!gateQuiz(slug, Number(week), Number(day))) continue
+      // While the bank is still downloading the gate stays locked (GateLock shows "Loading…");
+      // once it's here, a gate with no matching quiz is dropped.
+      if (quizWeekSettled(slug, Number(week)) && !gateQuiz(slug, Number(week), Number(day))) continue
       return { key, slug, week: Number(week), day: Number(day), gate }
     }
   }
@@ -63,13 +75,20 @@ function useNow(everyMs: number) {
 function GateLock({ pending, onPassed }: { pending: NonNullable<ReturnType<typeof pendingGate>>; onPassed: (score: number) => void }) {
   const now = useNow(1000)
   const course = findCourse(pending.slug)
+  const { failed } = useQuizWeek(pending.slug, pending.week)
   const quiz = gateQuiz(pending.slug, pending.week, pending.day)
   const status = gateStatus(pending.gate.attempts.map((a) => ({ finishedAt: new Date(a.finishedAt), passed: a.passed })), new Date(now))
   // The attempt in progress: its questions are drawn once, when it starts.
   const [attempt, setAttempt] = useState<{ no: number; questions: Question[]; failed?: boolean } | null>(null)
   const startedRef = useRef(false)
 
-  if (!quiz) return null
+  if (!quiz) return (
+    <div className="lock"><div className="lock-card">
+      {failed
+        ? <><p><b>The checkpoint couldn't load.</b></p><p className="muted small">Check your connection, then reload. It stays locked until it's passed.</p><button className="primary" onClick={() => window.location.reload()}>Reload</button></>
+        : <p className="muted">Loading checkpoint…</p>}
+    </div></div>
+  )
 
   const start = () => {
     if (startedRef.current) return // a double tap must not record two attempts
@@ -170,7 +189,7 @@ function Home() {
         {catalog.map((c) => (
           <a key={c.slug} className="card" href={href.course(c.slug)}>
             <strong>{c.title}</strong>
-            <span>{c.weeks.length} weeks written · quizzes for {c.quizzes.size} week{c.quizzes.size === 1 ? '' : 's'}</span>
+            <span>{c.weeks.length} weeks written · quizzes for {c.quizWeeks.size} week{c.quizWeeks.size === 1 ? '' : 's'}</span>
           </a>
         ))}
       </div>
@@ -209,7 +228,7 @@ function CoursePage({ course }: { course: CatalogCourse }) {
           <a key={w.number} className="list-item" href={href.week(course.slug, w.number)}>
             <span className="num">{w.number}</span>
             <span><strong>{w.title}</strong><small>{w.theme}</small></span>
-            {course.quizzes.has(w.number) ? <span className="tag">quizzes</span> : <span className="tag off">no quizzes yet</span>}
+            {course.quizWeeks.has(w.number) ? <span className="tag">quizzes</span> : <span className="tag off">no quizzes yet</span>}
           </a>
         ))}
       </div>
@@ -221,7 +240,7 @@ function WeekPage({ course, week }: { course: CatalogCourse; week: number }) {
   const state = useStore()
   const w = course.weeks.find((x) => x.number === week)
   if (!w) return <NotFound what={`Week ${week}`} course={course} />
-  const quizWeek = course.quizzes.get(week)
+  const hasQuizzes = course.quizWeeks.has(week)
   return (
     <>
       <p className="crumbs"><a href={href.home()}>Courses</a> / <a href={href.course(course.slug)}>{course.title}</a></p>
@@ -245,7 +264,7 @@ function WeekPage({ course, week }: { course: CatalogCourse; week: number }) {
           )
         })}
       </div>
-      {!quizWeek && <p className="muted">Quizzes for this week haven't been written yet.</p>}
+      {!hasQuizzes && <p className="muted">Quizzes for this week haven't been written yet.</p>}
       <h3>Week quiz</h3>
       <ol>{w.quiz.map((q) => <li key={q.id}><Markdown text={q.prompt} /></li>)}</ol>
       {w.quizNote && <Markdown text={w.quizNote} />}
@@ -257,7 +276,8 @@ function DayPage({ course, week, day }: { course: CatalogCourse; week: number; d
   const state = useStore()
   const w = course.weeks.find((x) => x.number === week)
   const d = w?.days.find((x) => x.number === day)
-  const quizDay = course.quizzes.get(week)?.days.find((x) => x.day === day)
+  const { quiz: quizBank, settled: quizzesSettled, failed: quizzesFailed } = useQuizWeek(course.slug, week)
+  const quizDay = quizBank?.days.find((x) => x.day === day)
   const key = dayKey(course.slug, week, day)
   const [active, setActive] = useState<number | null>(null)
 
@@ -301,7 +321,9 @@ function DayPage({ course, week, day }: { course: CatalogCourse; week: number; d
       })}
 
       <h2>Today's quizzes</h2>
-      {!quizDay && <p className="muted">Quizzes for this week haven't been written yet.</p>}
+      {!quizDay && (quizzesFailed
+        ? <p className="muted">Today's quizzes couldn't load. <button className="link" onClick={() => window.location.reload()}>Reload</button></p>
+        : <p className="muted">{quizzesSettled ? "Quizzes for this week haven't been written yet." : 'Loading quizzes…'}</p>)}
       {quizDay?.quizzes.map((quiz, i) => {
         const scoreKey = `${key}:quiz${i}`
         const best = state.bestScores[scoreKey]
@@ -370,6 +392,7 @@ function TesterTools() {
 export function Viewer() {
   const route = useRoute()
   const state = useStore()
+  useQuizzesLoaded() // a bank arriving can release a stale gate
   const pending = pendingGate(state)
   const [passedScore, setPassedScore] = useState<number | null>(null)
   useEffect(() => { window.scrollTo(0, 0) }, [route])
