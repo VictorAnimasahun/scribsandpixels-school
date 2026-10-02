@@ -1,0 +1,298 @@
+# French · Week 16 quizzes. Format and rules: src/content/QUIZZES.md
+week: 16
+days:
+
+  # ─────────────────────────── DAY 1 ───────────────────────────
+  - day: 1
+    gate:
+      title: "Checkpoint: Week 15 review"
+      covers: "Week 15: big numbers and money, lire/écrire/dire, work words, the phone, formal emails, job ads"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w16-d1-g01, difficulty: easy, type: mcq, prompt: "200", choices: ["deux cents", "deux cent", "deux-cents", "deux centes"], answer: 0 }
+        - { id: fr-w16-d1-g02, difficulty: easy, type: mcq, prompt: "1 000", choices: ["mille", "milles", "un mille", "mil"], answer: 0 }
+        - { id: fr-w16-d1-g03, difficulty: easy, type: truefalse, prompt: "« vous dites » is irregular, like « faites ».", answer: true }
+        - { id: fr-w16-d1-g04, difficulty: easy, type: mcq, prompt: "Hold the line.", choices: ["Ne quittez pas.", "Raccrochez.", "Rappelez.", "Allô."], answer: 0 }
+        - { id: fr-w16-d1-g05, difficulty: easy, type: mcq, prompt: "Formal sign-off", choices: ["Cordialement,", "Bises,", "À plus,", "Bisous,"], answer: 0 }
+        - { id: fr-w16-d1-g06, difficulty: easy, type: mcq, prompt: "un CDI", choices: ["permanent contract", "fixed-term contract", "internship", "CD"], answer: 0 }
+        - { id: fr-w16-d1-g07, difficulty: medium, type: text, prompt: "In words: 280", accept: ["deux cent quatre-vingts"] }
+        - { id: fr-w16-d1-g08, difficulty: medium, type: text, prompt: "nous ___ (écrire)", accept: ["écrivons"] }
+        - { id: fr-w16-d1-g09, difficulty: medium, type: match, prompt: "Match.", pairs: [["C'est de la part de qui ?", "Who's calling?"], ["Ne quittez pas.", "Hold the line."], ["Vous trouverez ci-joint…", "Please find attached…"], ["la lettre de motivation", "cover letter"]] }
+        - { id: fr-w16-d1-g10, difficulty: medium, type: text, prompt: "In words: 2026", accept: ["deux mille vingt-six"] }
+        - { id: fr-w16-d1-g11, difficulty: medium, type: truefalse, prompt: "French writes €1,500.50 as 1 500,50 €.", answer: true }
+        - { id: fr-w16-d1-g12, difficulty: medium, type: text, prompt: "Translate: Can you call me back? (vous, inverted)", accept: ["Pouvez-vous me rappeler ?", "Pouvez-vous me rappeler?"] }
+        - { id: fr-w16-d1-g13, difficulty: medium, type: mcq, prompt: "Greeting to an unknown recipient", choices: ["Madame, Monsieur,", "Salut,", "Coucou,", "Cher ami,"], answer: 0 }
+        - { id: fr-w16-d1-g14, difficulty: medium, type: text, prompt: "ils ___ (dire)", accept: ["disent"] }
+        - { id: fr-w16-d1-g15, difficulty: medium, type: mcq, prompt: "temps partiel", choices: ["part time", "full time", "overtime", "free time"], answer: 0 }
+        - { id: fr-w16-d1-g16, difficulty: hard, type: text, prompt: "Translate: I am writing to you about the assistant job. (au sujet du poste d'assistant)", accept: ["Je vous écris au sujet du poste d'assistant.", "Je vous écris au sujet du poste d'assistant"] }
+        - { id: fr-w16-d1-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « Il gagne trois milles euros et vous disez merci. »", choices: ["mille … dites", "Only milles", "Only disez", "No error"], answer: 0 }
+        - { id: fr-w16-d1-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["deux cent mille", "quatre cents", "Elle lit le rapport.", "trois cents dix"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "The body"
+        secondsPerQuestion: 6
+        questions:
+          - { id: fr-w16-d1-rf01, difficulty: easy, type: mcq, prompt: "la tête", choices: ["head", "throat", "chest", "tooth"], answer: 0 }
+          - { id: fr-w16-d1-rf02, difficulty: easy, type: mcq, prompt: "la gorge", choices: ["throat", "gorge", "neck", "mouth"], answer: 0 }
+          - { id: fr-w16-d1-rf03, difficulty: easy, type: mcq, prompt: "le dos", choices: ["back", "two", "belly", "finger"], answer: 0 }
+          - { id: fr-w16-d1-rf04, difficulty: easy, type: mcq, prompt: "le ventre", choices: ["stomach/belly", "wind", "vein", "chest"], answer: 0 }
+          - { id: fr-w16-d1-rf05, difficulty: easy, type: mcq, prompt: "la jambe", choices: ["leg", "ham", "foot", "arm"], answer: 0 }
+          - { id: fr-w16-d1-rf06, difficulty: easy, type: mcq, prompt: "le genou", choices: ["knee", "elbow", "ankle", "chin"], answer: 0 }
+          - { id: fr-w16-d1-rf07, difficulty: easy, type: mcq, prompt: "l'épaule", choices: ["shoulder", "elbow", "hip", "spine"], answer: 0 }
+          - { id: fr-w16-d1-rf08, difficulty: easy, type: mcq, prompt: "le cœur", choices: ["heart", "chorus", "core muscle", "lung"], answer: 0 }
+          - { id: fr-w16-d1-rf09, difficulty: easy, type: mcq, prompt: "un œil → plural", choices: ["des yeux", "des œils", "des œuils", "des yeuxs"], answer: 0 }
+          - { id: fr-w16-d1-rf10, difficulty: easy, type: mcq, prompt: "le doigt", choices: ["finger", "toe only", "nail", "dog"], answer: 0 }
+          - { id: fr-w16-d1-rf11, difficulty: easy, type: mcq, prompt: "la poitrine", choices: ["chest", "stomach", "throat", "poitrine bread"], answer: 0 }
+      - kind: brain-teaser
+        title: "Le, la, les for the body"
+        questions:
+          - { id: fr-w16-d1-bt01, difficulty: medium, type: text, prompt: "Translate: I brush my teeth.", accept: ["Je me brosse les dents.", "Je me brosse les dents"] }
+          - { id: fr-w16-d1-bt02, difficulty: medium, type: text, prompt: "Translate: He washes his hands.", accept: ["Il se lave les mains.", "Il se lave les mains"] }
+          - { id: fr-w16-d1-bt03, difficulty: medium, type: mcq, prompt: "Close your eyes! (vous)", choices: ["Fermez les yeux !", "Fermez vos yeux !", "Fermez les œils !", "Fermer les yeux !"], answer: 0 }
+          - { id: fr-w16-d1-bt04, difficulty: hard, type: mcq, prompt: "Why « Je me brosse les dents » and not « mes dents »?", choices: ["The reflexive already shows whose; French uses le/la/les", "Random", "mes is rude", "dents is masculine"], answer: 0 }
+          - { id: fr-w16-d1-bt05, difficulty: hard, type: mcq, prompt: "Spot the error: « Levez votre bras et touchez votre tête ! »", choices: ["French prefers le bras / la tête", "Levez → Lever", "touchez → touche", "No error at all, it's more natural"], answer: 0 }
+
+  # ─────────────────────────── DAY 2 ───────────────────────────
+  - day: 2
+    gate:
+      title: "Checkpoint: the body"
+      covers: "Week 16 · Day 1: body parts, œil/yeux, le/la/les with your own body"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w16-d2-g01, difficulty: easy, type: mcq, prompt: "nose", choices: ["le nez", "la bouche", "l'oreille", "le cou"], answer: 0 }
+        - { id: fr-w16-d2-g02, difficulty: easy, type: mcq, prompt: "hand", choices: ["la main", "le bras", "le pied", "le doigt"], answer: 0 }
+        - { id: fr-w16-d2-g03, difficulty: easy, type: truefalse, prompt: "The plural of « œil » is « yeux ».", answer: true }
+        - { id: fr-w16-d2-g04, difficulty: easy, type: mcq, prompt: "ear", choices: ["l'oreille", "l'œil", "l'épaule", "le cou"], answer: 0 }
+        - { id: fr-w16-d2-g05, difficulty: easy, type: mcq, prompt: "foot", choices: ["le pied", "la jambe", "le genou", "la main"], answer: 0 }
+        - { id: fr-w16-d2-g06, difficulty: easy, type: mcq, prompt: "teeth", choices: ["les dents", "les doigts", "les yeux", "la bouche"], answer: 0 }
+        - { id: fr-w16-d2-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["le cou", "neck"], ["l'estomac", "stomach (organ)"], ["le bras", "arm"], ["la bouche", "mouth"]] }
+        - { id: fr-w16-d2-g08, difficulty: medium, type: text, prompt: "Translate: the eyes", accept: ["les yeux"] }
+        - { id: fr-w16-d2-g09, difficulty: medium, type: text, prompt: "Translate: She brushes her hair. (se brosser les cheveux)", accept: ["Elle se brosse les cheveux.", "Elle se brosse les cheveux"] }
+        - { id: fr-w16-d2-g10, difficulty: medium, type: mcq, prompt: "Raise your arm! (vous)", choices: ["Levez le bras !", "Levez votre bras !", "Lève le bras !", "Lever le bras !"], answer: 0 }
+        - { id: fr-w16-d2-g11, difficulty: medium, type: truefalse, prompt: "« l'épaule » is feminine.", answer: true }
+        - { id: fr-w16-d2-g12, difficulty: medium, type: text, prompt: "Translate: the knee", accept: ["le genou"] }
+        - { id: fr-w16-d2-g13, difficulty: medium, type: mcq, prompt: "Simon says", choices: ["Jacques a dit", "Simon dit", "Pierre a dit", "Jacques dit-il"], answer: 0 }
+        - { id: fr-w16-d2-g14, difficulty: medium, type: text, prompt: "Translate: the shoulders", accept: ["les épaules"] }
+        - { id: fr-w16-d2-g15, difficulty: medium, type: order, prompt: "Order top to bottom.", items: ["la tête", "le cou", "la poitrine", "le ventre", "le genou", "le pied"] }
+        - { id: fr-w16-d2-g16, difficulty: hard, type: text, prompt: "Translate: I wash my face and I brush my teeth. (le visage)", accept: ["Je me lave le visage et je me brosse les dents.", "Je me lave le visage et je me brosse les dents"] }
+        - { id: fr-w16-d2-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « Il a deux œils bleus. »", choices: ["œils → yeux", "bleus → bleu", "deux → des", "No error"], answer: 0 }
+        - { id: fr-w16-d2-g18, difficulty: hard, type: multi, prompt: "Which are masculine? (Select all.)", choices: ["le dos", "le ventre", "le pied", "la gorge"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Avoir mal à"
+        secondsPerQuestion: 7
+        questions:
+          - { id: fr-w16-d2-rf01, difficulty: easy, type: mcq, prompt: "I have a headache.", choices: ["J'ai mal à la tête.", "J'ai mal au tête.", "Je suis mal à la tête.", "J'ai la tête mal."], answer: 0 }
+          - { id: fr-w16-d2-rf02, difficulty: easy, type: mcq, prompt: "J'ai mal ___ dos.", choices: ["au", "à la", "aux", "à l'"], answer: 0 }
+          - { id: fr-w16-d2-rf03, difficulty: easy, type: mcq, prompt: "J'ai mal ___ dents.", choices: ["aux", "au", "à la", "des"], answer: 0 }
+          - { id: fr-w16-d2-rf04, difficulty: easy, type: mcq, prompt: "J'ai mal ___ oreille.", choices: ["à l'", "au", "à la", "aux"], answer: 0 }
+          - { id: fr-w16-d2-rf05, difficulty: easy, type: mcq, prompt: "I have a fever.", choices: ["J'ai de la fièvre.", "Je suis fièvre.", "J'ai fièvre la.", "Je fais de la fièvre."], answer: 0 }
+          - { id: fr-w16-d2-rf06, difficulty: easy, type: mcq, prompt: "Je tousse.", choices: ["I'm coughing.", "I'm sneezing.", "I'm touching.", "I'm tired."], answer: 0 }
+          - { id: fr-w16-d2-rf07, difficulty: easy, type: mcq, prompt: "le paludisme", choices: ["malaria", "flu", "cold", "typhoid"], answer: 0 }
+          - { id: fr-w16-d2-rf08, difficulty: easy, type: mcq, prompt: "J'ai des vertiges.", choices: ["I feel dizzy.", "I have vertigo of heights only.", "I have green spots.", "I'm thirsty."], answer: 0 }
+          - { id: fr-w16-d2-rf09, difficulty: easy, type: mcq, prompt: "Where does it hurt? (vous)", choices: ["Où avez-vous mal ?", "Où êtes-vous mal ?", "Vous avez mal où-t-il ?", "Où mal ?"], answer: 0 }
+          - { id: fr-w16-d2-rf10, difficulty: easy, type: mcq, prompt: "un rhume", choices: ["a cold", "rum", "the flu", "a rash"], answer: 0 }
+      - kind: brain-teaser
+        title: "Where does it hurt?"
+        questions:
+          - { id: fr-w16-d2-bt01, difficulty: medium, type: text, prompt: "J'ai mal ___ gorge.", accept: ["à la"] }
+          - { id: fr-w16-d2-bt02, difficulty: medium, type: text, prompt: "Nous avons mal ___ jambes.", accept: ["aux"] }
+          - { id: fr-w16-d2-bt03, difficulty: medium, type: text, prompt: "Tu as mal ___ estomac ?", accept: ["à l'"] }
+          - { id: fr-w16-d2-bt04, difficulty: hard, type: text, prompt: "Translate: I have a runny nose and I'm coughing.", accept: ["J'ai le nez qui coule et je tousse.", "J'ai le nez qui coule et je tousse"] }
+          - { id: fr-w16-d2-bt05, difficulty: hard, type: text, prompt: "Translate: I'm allergic to penicillin.", accept: ["Je suis allergique à la pénicilline.", "Je suis allergique à la pénicilline"] }
+
+  # ─────────────────────────── DAY 3 ───────────────────────────
+  - day: 3
+    gate:
+      title: "Checkpoint: avoir mal à + symptoms"
+      covers: "Week 16 · Day 2: avoir mal à + au/à la/à l'/aux, fever, cough, cold/flu, malaria, nausea, allergies"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w16-d3-g01, difficulty: easy, type: mcq, prompt: "Il a mal ___ genou.", choices: ["au", "à la", "aux", "à l'"], answer: 0 }
+        - { id: fr-w16-d3-g02, difficulty: easy, type: mcq, prompt: "Elle a mal ___ yeux.", choices: ["aux", "au", "à la", "à l'"], answer: 0 }
+        - { id: fr-w16-d3-g03, difficulty: easy, type: truefalse, prompt: "« J'ai mal au ventre » = I have a stomach ache.", answer: true }
+        - { id: fr-w16-d3-g04, difficulty: easy, type: mcq, prompt: "I'm ill.", choices: ["Je suis malade.", "J'ai malade.", "Je suis mal.", "J'ai maladie."], answer: 0 }
+        - { id: fr-w16-d3-g05, difficulty: easy, type: mcq, prompt: "la grippe", choices: ["the flu", "a grip", "a cold", "a cramp"], answer: 0 }
+        - { id: fr-w16-d3-g06, difficulty: easy, type: mcq, prompt: "Ça fait mal !", choices: ["It hurts!", "It's bad!", "It's done!", "Do it badly!"], answer: 0 }
+        - { id: fr-w16-d3-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["à + le", "au"], ["à + la", "à la"], ["à + l'", "à l'"], ["à + les", "aux"]] }
+        - { id: fr-w16-d3-g08, difficulty: medium, type: text, prompt: "Translate: I have a sore throat.", accept: ["J'ai mal à la gorge.", "J'ai mal à la gorge"] }
+        - { id: fr-w16-d3-g09, difficulty: medium, type: text, prompt: "Translate: My feet hurt.", accept: ["J'ai mal aux pieds.", "J'ai mal aux pieds"] }
+        - { id: fr-w16-d3-g10, difficulty: medium, type: mcq, prompt: "I feel sick (nausea).", choices: ["J'ai des nausées.", "Je suis nausée.", "J'ai nausée.", "Je fais nausées."], answer: 0 }
+        - { id: fr-w16-d3-g11, difficulty: medium, type: truefalse, prompt: "« J'ai mal à le dos » is correct.", answer: false }
+        - { id: fr-w16-d3-g12, difficulty: medium, type: text, prompt: "Translate: I have malaria. (le palu or le paludisme)", accept: ["J'ai le paludisme.", "J'ai le palu.", "J'ai le paludisme", "J'ai le palu"] }
+        - { id: fr-w16-d3-g13, difficulty: medium, type: mcq, prompt: "I've cut myself. (fixed phrase)", choices: ["Je me suis coupé(e).", "Je me coupe hier.", "J'ai coupé moi.", "Je suis coupe."], answer: 0 }
+        - { id: fr-w16-d3-g14, difficulty: medium, type: text, prompt: "Translate: I'm very tired.", accept: ["Je suis très fatigué.", "Je suis très fatiguée.", "Je suis très fatigué(e)."] }
+        - { id: fr-w16-d3-g15, difficulty: medium, type: mcq, prompt: "J'ai envie de vomir.", choices: ["I feel like throwing up.", "I want to vote.", "I envy vomit.", "I'm hungry."], answer: 0 }
+        - { id: fr-w16-d3-g16, difficulty: hard, type: text, prompt: "Translate: I have a headache, a fever and I feel dizzy.", accept: ["J'ai mal à la tête, de la fièvre et des vertiges.", "J'ai mal à la tête, j'ai de la fièvre et j'ai des vertiges.", "J'ai mal à la tête, de la fièvre et j'ai des vertiges."] }
+        - { id: fr-w16-d3-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « J'ai mal à les dents et au tête. »", choices: ["aux dents … à la tête", "Only les dents", "Only au tête", "No error"], answer: 0 }
+        - { id: fr-w16-d3-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["J'ai mal à l'épaule.", "Il a mal aux oreilles.", "Nous avons mal au cœur.", "Tu as mal à la dos."], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Advice"
+        secondsPerQuestion: 7
+        questions:
+          - { id: fr-w16-d3-rf01, difficulty: easy, type: mcq, prompt: "You must drink lots of water. (general)", choices: ["Il faut boire beaucoup d'eau.", "Il faut boit beaucoup d'eau.", "Il faut de boire beaucoup.", "Faut eau."], answer: 0 }
+          - { id: fr-w16-d3-rf02, difficulty: easy, type: mcq, prompt: "You mustn't smoke.", choices: ["Il ne faut pas fumer.", "Il faut ne fumer pas.", "Il ne faut fumer pas.", "Pas il faut fumer."], answer: 0 }
+          - { id: fr-w16-d3-rf03, difficulty: easy, type: mcq, prompt: "Rest! (tu)", choices: ["Repose-toi !", "Te repose !", "Repose-te !", "Reposes-toi !"], answer: 0 }
+          - { id: fr-w16-d3-rf04, difficulty: easy, type: mcq, prompt: "Rest! (vous)", choices: ["Reposez-vous !", "Vous reposez !", "Reposez-toi !", "Repose-vous !"], answer: 0 }
+          - { id: fr-w16-d3-rf05, difficulty: easy, type: mcq, prompt: "Don't go to bed late! (tu)", choices: ["Ne te couche pas tard !", "Ne couche-toi pas tard !", "Couche-toi pas tard !", "Ne toi couche pas !"], answer: 0 }
+          - { id: fr-w16-d3-rf06, difficulty: easy, type: mcq, prompt: "Hurry up! (tu)", choices: ["Dépêche-toi !", "Te dépêche !", "Dépêches-toi !", "Dépêche-te !"], answer: 0 }
+          - { id: fr-w16-d3-rf07, difficulty: easy, type: mcq, prompt: "Stay in bed! (tu)", choices: ["Reste au lit !", "Restes au lit !", "Rester au lit !", "Reste à lit !"], answer: 0 }
+          - { id: fr-w16-d3-rf08, difficulty: easy, type: mcq, prompt: "You (vous) must take this medicine.", choices: ["Vous devez prendre ce médicament.", "Vous devez prenez ce médicament.", "Vous dois prendre…", "Il faut vous prend…"], answer: 0 }
+          - { id: fr-w16-d3-rf09, difficulty: easy, type: mcq, prompt: "manger léger", choices: ["eat light", "eat lightly coloured food", "eat fast", "eat late"], answer: 0 }
+          - { id: fr-w16-d3-rf10, difficulty: easy, type: truefalse, prompt: "In the reflexive imperative, te becomes toi after the verb.", answer: true }
+      - kind: brain-teaser
+        title: "Doctor's orders"
+        questions:
+          - { id: fr-w16-d3-bt01, difficulty: medium, type: text, prompt: "Advice with il faut for « J'ai de la fièvre » : (drink lots of water)", accept: ["Il faut boire beaucoup d'eau.", "Il faut boire beaucoup d'eau"] }
+          - { id: fr-w16-d3-bt02, difficulty: medium, type: text, prompt: "Imperative (tu): Go to the doctor!", accept: ["Va chez le médecin !", "Va chez le médecin!"] }
+          - { id: fr-w16-d3-bt03, difficulty: medium, type: text, prompt: "Translate: You (tu) must rest.", accept: ["Tu dois te reposer.", "Tu dois te reposer"] }
+          - { id: fr-w16-d3-bt04, difficulty: hard, type: text, prompt: "Negative imperative (vous): Don't get up!", accept: ["Ne vous levez pas !", "Ne vous levez pas!"] }
+          - { id: fr-w16-d3-bt05, difficulty: hard, type: mcq, prompt: "Spot the error: « Repose-te et bois de l'eau ! »", choices: ["Repose-toi", "bois → boit", "de l'eau → du eau", "No error"], answer: 0 }
+
+  # ─────────────────────────── DAY 4 ───────────────────────────
+  - day: 4
+    gate:
+      title: "Checkpoint: giving advice"
+      covers: "Week 16 · Day 3: il faut / il ne faut pas, devoir + infinitive, imperatives including reflexives (repose-toi)"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w16-d4-g01, difficulty: easy, type: mcq, prompt: "Il faut + …", choices: ["infinitive", "past participle", "conjugated verb", "noun only"], answer: 0 }
+        - { id: fr-w16-d4-g02, difficulty: easy, type: mcq, prompt: "Get up! (tu)", choices: ["Lève-toi !", "Te lève !", "Lèves-toi !", "Lève-te !"], answer: 0 }
+        - { id: fr-w16-d4-g03, difficulty: easy, type: truefalse, prompt: "« Il ne faut pas fumer » means you mustn't smoke.", answer: true }
+        - { id: fr-w16-d4-g04, difficulty: easy, type: mcq, prompt: "Drink water! (vous)", choices: ["Buvez de l'eau !", "Boivez de l'eau !", "Buvez du eau !", "Boire de l'eau !"], answer: 0 }
+        - { id: fr-w16-d4-g05, difficulty: easy, type: mcq, prompt: "se reposer", choices: ["to rest", "to repose a question", "to sleep only", "to reply"], answer: 0 }
+        - { id: fr-w16-d4-g06, difficulty: easy, type: mcq, prompt: "stop smoking", choices: ["arrêter de fumer", "arrêter fumer", "stopper à fumer", "finir fumer"], answer: 0 }
+        - { id: fr-w16-d4-g07, difficulty: medium, type: match, prompt: "Match the structure.", pairs: [["Il faut se reposer.", "general advice"], ["Tu dois te reposer.", "personal advice"], ["Repose-toi !", "imperative"], ["Il ne faut pas fumer.", "prohibition"]] }
+        - { id: fr-w16-d4-g08, difficulty: medium, type: text, prompt: "Imperative (vous) of se coucher", accept: ["Couchez-vous !", "Couchez-vous", "couchez-vous"] }
+        - { id: fr-w16-d4-g09, difficulty: medium, type: text, prompt: "Translate: You must sleep eight hours. (il faut)", accept: ["Il faut dormir huit heures.", "Il faut dormir huit heures"] }
+        - { id: fr-w16-d4-g10, difficulty: medium, type: mcq, prompt: "Negative of « Repose-toi ! »", choices: ["Ne te repose pas !", "Ne repose-toi pas !", "Repose-toi pas !", "Ne toi repose pas !"], answer: 0 }
+        - { id: fr-w16-d4-g11, difficulty: medium, type: truefalse, prompt: "« Repose-te ! » is correct.", answer: false }
+        - { id: fr-w16-d4-g12, difficulty: medium, type: text, prompt: "Translate: You (vous) must take medicine.", accept: ["Vous devez prendre des médicaments.", "Vous devez prendre des médicaments", "Vous devez prendre un médicament."] }
+        - { id: fr-w16-d4-g13, difficulty: medium, type: mcq, prompt: "Advice for « Je suis très fatigué »", choices: ["Il faut dormir huit heures.", "Il faut faire la fête.", "Bois du café toute la nuit !", "Il faut travailler plus."], answer: 0 }
+        - { id: fr-w16-d4-g14, difficulty: medium, type: text, prompt: "Imperative (tu): Eat light!", accept: ["Mange léger !", "Mange léger!"] }
+        - { id: fr-w16-d4-g15, difficulty: medium, type: mcq, prompt: "Don't worry! (vous, s'inquiéter)", choices: ["Ne vous inquiétez pas !", "Ne inquiétez-vous pas !", "Vous inquiétez pas !", "N'inquiétez vous !"], answer: 0 }
+        - { id: fr-w16-d4-g16, difficulty: hard, type: text, prompt: "Translate: You mustn't eat too much, and you (tu) must exercise.", accept: ["Il ne faut pas trop manger, et tu dois faire du sport.", "Il ne faut pas manger trop, et tu dois faire du sport.", "Il ne faut pas trop manger et tu dois faire du sport."] }
+        - { id: fr-w16-d4-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « Il faut que boire de l'eau et tu doit dormir. »", choices: ["Il faut boire … tu dois", "Only que", "Only doit", "No error"], answer: 0 }
+        - { id: fr-w16-d4-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["Reposez-vous !", "Ne te lève pas !", "Il faut manger léger.", "Couche-te tôt !"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "At the doctor's"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fr-w16-d4-rf01, difficulty: easy, type: mcq, prompt: "Qu'est-ce qui ne va pas ?", choices: ["What's wrong?", "What isn't going?", "Who's not coming?", "Where are you going?"], answer: 0 }
+          - { id: fr-w16-d4-rf02, difficulty: easy, type: mcq, prompt: "Depuis quand ?", choices: ["Since when?", "Until when?", "When?", "How long ago?"], answer: 0 }
+          - { id: fr-w16-d4-rf03, difficulty: easy, type: mcq, prompt: "une ordonnance", choices: ["a prescription", "an order", "an ordinance", "an appointment"], answer: 0 }
+          - { id: fr-w16-d4-rf04, difficulty: easy, type: mcq, prompt: "un comprimé", choices: ["a tablet", "a compliment", "a syrup", "an injection"], answer: 0 }
+          - { id: fr-w16-d4-rf05, difficulty: easy, type: mcq, prompt: "une piqûre", choices: ["an injection", "a pill", "a picture", "a bite only"], answer: 0 }
+          - { id: fr-w16-d4-rf06, difficulty: easy, type: mcq, prompt: "trois fois par jour", choices: ["three times a day", "three days", "every three days", "for three hours"], answer: 0 }
+          - { id: fr-w16-d4-rf07, difficulty: easy, type: mcq, prompt: "after meals", choices: ["après les repas", "avant les repas", "pendant les repas", "sans repas"], answer: 0 }
+          - { id: fr-w16-d4-rf08, difficulty: easy, type: mcq, prompt: "make an appointment", choices: ["prendre rendez-vous", "faire rendez-vous", "avoir rendez", "donner rendez"], answer: 0 }
+          - { id: fr-w16-d4-rf09, difficulty: easy, type: mcq, prompt: "The diagnosis in the dialogue", choices: ["une angine (throat infection)", "le paludisme", "la grippe", "rien"], answer: 0 }
+          - { id: fr-w16-d4-rf10, difficulty: easy, type: mcq, prompt: "The consultation cost", choices: ["25 euros", "52 euros", "15 euros", "free"], answer: 0 }
+      - kind: brain-teaser
+        title: "Since three days"
+        questions:
+          - { id: fr-w16-d4-bt01, difficulty: medium, type: mcq, prompt: "« J'ai mal depuis hier » =", choices: ["I've been in pain since yesterday (still now)", "I was in pain yesterday", "I'll be in pain tomorrow", "I had pain once"], answer: 0 }
+          - { id: fr-w16-d4-bt02, difficulty: medium, type: text, prompt: "Translate: I've had a cough for three days. (je tousse depuis…)", accept: ["Je tousse depuis trois jours.", "Je tousse depuis trois jours"] }
+          - { id: fr-w16-d4-bt03, difficulty: medium, type: mcq, prompt: "Dosage in the dialogue", choices: ["3 times a day after meals, for 5 days", "once a day for 3 days", "twice a day before meals", "as needed"], answer: 0 }
+          - { id: fr-w16-d4-bt04, difficulty: hard, type: text, prompt: "Translate: How much do I owe you? (formal)", accept: ["Je vous dois combien ?", "Combien je vous dois ?", "Je vous dois combien?", "Combien est-ce que je vous dois ?"] }
+          - { id: fr-w16-d4-bt05, difficulty: hard, type: mcq, prompt: "Health card in Québec", choices: ["la RAMQ card", "la carte Vitale", "la carte bleue", "le NHS card"], answer: 0 }
+
+  # ─────────────────────────── DAY 5 ───────────────────────────
+  - day: 5
+    gate:
+      title: "Checkpoint: at the doctor's"
+      covers: "Week 16 · Day 4: consultation dialogue, depuis + present, prescriptions, tablets/syrup/injections, dosage"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w16-d5-g01, difficulty: easy, type: mcq, prompt: "Sit down. (vous)", choices: ["Asseyez-vous.", "Assoyez-vous.", "Asseoir-vous.", "Assieds-vous."], answer: 0 }
+        - { id: fr-w16-d5-g02, difficulty: easy, type: mcq, prompt: "It's not serious.", choices: ["Ce n'est pas grave.", "Ce n'est pas sérieux grave.", "C'est pas lourd.", "Il n'est pas grave."], answer: 0 }
+        - { id: fr-w16-d5-g03, difficulty: easy, type: truefalse, prompt: "depuis + present tense describes something still happening.", answer: true }
+        - { id: fr-w16-d5-g04, difficulty: easy, type: mcq, prompt: "a syrup", choices: ["un sirop", "un comprimé", "une piqûre", "une ordonnance"], answer: 0 }
+        - { id: fr-w16-d5-g05, difficulty: easy, type: mcq, prompt: "before meals", choices: ["avant les repas", "après les repas", "pendant les repas", "entre repas"], answer: 0 }
+        - { id: fr-w16-d5-g06, difficulty: easy, type: mcq, prompt: "France's health card", choices: ["la carte Vitale", "la RAMQ", "la carte grise", "le passeport santé"], answer: 0 }
+        - { id: fr-w16-d5-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["une ordonnance", "prescription"], ["un comprimé", "tablet"], ["une piqûre", "injection"], ["prendre rendez-vous", "make an appointment"]] }
+        - { id: fr-w16-d5-g08, difficulty: medium, type: text, prompt: "Translate: I've had a headache since yesterday.", accept: ["J'ai mal à la tête depuis hier.", "J'ai mal à la tête depuis hier"] }
+        - { id: fr-w16-d5-g09, difficulty: medium, type: text, prompt: "Translate: Take these tablets twice a day. (vous)", accept: ["Prenez ces comprimés deux fois par jour.", "Prenez ces comprimés deux fois par jour"] }
+        - { id: fr-w16-d5-g10, difficulty: medium, type: mcq, prompt: "I'm going to write you a prescription.", choices: ["Je vais vous faire une ordonnance.", "Je vais vous ordonner.", "Je fais vous ordonnance.", "Je vais une ordonnance."], answer: 0 }
+        - { id: fr-w16-d5-g11, difficulty: medium, type: truefalse, prompt: "« depuis trois jours » = for three days (and still going).", answer: true }
+        - { id: fr-w16-d5-g12, difficulty: medium, type: text, prompt: "Translate: I'd like to make an appointment.", accept: ["Je voudrais prendre rendez-vous.", "Je voudrais prendre rendez-vous", "Je voudrais prendre un rendez-vous."] }
+        - { id: fr-w16-d5-g13, difficulty: medium, type: mcq, prompt: "Are you allergic to any medicines?", choices: ["Vous êtes allergique à des médicaments ?", "Vous avez allergie médicaments ?", "Êtes-vous allergique de médicaments ?", "Vous allergique ?"], answer: 0 }
+        - { id: fr-w16-d5-g14, difficulty: medium, type: text, prompt: "Translate: for five days", accept: ["pendant cinq jours"] }
+        - { id: fr-w16-d5-g15, difficulty: medium, type: order, prompt: "Order the consultation.", items: ["Bonjour docteur.", "Asseyez-vous. Qu'est-ce qui ne va pas ?", "J'ai mal à la gorge et je tousse.", "Depuis quand ?", "Depuis trois jours.", "Je vais vous faire une ordonnance."] }
+        - { id: fr-w16-d5-g16, difficulty: hard, type: text, prompt: "Translate: I've had a fever and a headache for two days, and I'm very tired.", accept: ["J'ai de la fièvre et mal à la tête depuis deux jours, et je suis très fatigué.", "J'ai de la fièvre et mal à la tête depuis deux jours, et je suis très fatiguée.", "J'ai de la fièvre et j'ai mal à la tête depuis deux jours, et je suis très fatigué."] }
+        - { id: fr-w16-d5-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « J'ai mal à la gorge pour trois jours. » (still hurting)", choices: ["pour → depuis", "à la → au", "J'ai → Je suis", "No error"], answer: 0 }
+        - { id: fr-w16-d5-g18, difficulty: hard, type: multi, prompt: "Doctor's questions (Select all.)", choices: ["Qu'est-ce qui ne va pas ?", "Depuis quand ?", "Où avez-vous mal ?", "Vous payez par carte bleue ou en naira ?"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Pharmacy and emergencies"
+        secondsPerQuestion: 7
+        questions:
+          - { id: fr-w16-d5-rf01, difficulty: easy, type: mcq, prompt: "Help!", choices: ["Au secours !", "Aidez !", "Secourir !", "Au revoir !"], answer: 0 }
+          - { id: fr-w16-d5-rf02, difficulty: easy, type: mcq, prompt: "Call an ambulance!", choices: ["Appelez une ambulance !", "Appelle à ambulance !", "Téléphonez ambulance !", "Une ambulance appelle !"], answer: 0 }
+          - { id: fr-w16-d5-rf03, difficulty: easy, type: mcq, prompt: "les urgences", choices: ["A&E / emergency room", "urgent emails", "emergencies only abroad", "the pharmacy"], answer: 0 }
+          - { id: fr-w16-d5-rf04, difficulty: easy, type: mcq, prompt: "Emergency number in Canada", choices: ["911", "15", "112", "999"], answer: 0 }
+          - { id: fr-w16-d5-rf05, difficulty: easy, type: mcq, prompt: "France's SAMU number", choices: ["15", "911", "17", "999"], answer: 0 }
+          - { id: fr-w16-d5-rf06, difficulty: easy, type: mcq, prompt: "something for a cough", choices: ["quelque chose contre la toux", "quelque chose pour toux", "une chose à la toux", "rien contre toux"], answer: 0 }
+          - { id: fr-w16-d5-rf07, difficulty: easy, type: mcq, prompt: "sans ordonnance", choices: ["over the counter", "without order", "illegal", "prescription only"], answer: 0 }
+          - { id: fr-w16-d5-rf08, difficulty: easy, type: mcq, prompt: "des pansements", choices: ["plasters", "bandits", "pans", "tablets"], answer: 0 }
+          - { id: fr-w16-d5-rf09, difficulty: easy, type: mcq, prompt: "There's been an accident.", choices: ["Il y a eu un accident.", "Il y a un accident hier.", "C'est un accident été.", "Il a eu accident."], answer: 0 }
+          - { id: fr-w16-d5-rf10, difficulty: easy, type: truefalse, prompt: "In France, pharmacists are a good first stop for minor problems.", answer: true }
+      - kind: brain-teaser
+        title: "In an emergency"
+        questions:
+          - { id: fr-w16-d5-bt01, difficulty: medium, type: text, prompt: "Translate: Do you have something for a headache? (vous)", accept: ["Vous avez quelque chose contre le mal de tête ?", "Avez-vous quelque chose contre le mal de tête ?", "Vous avez quelque chose contre le mal de tête?"] }
+          - { id: fr-w16-d5-bt02, difficulty: medium, type: text, prompt: "Translate: It's urgent!", accept: ["C'est urgent !", "C'est urgent!", "C'est urgent"] }
+          - { id: fr-w16-d5-bt03, difficulty: medium, type: text, prompt: "Translate: Hello, I have a prescription.", accept: ["Bonjour, j'ai une ordonnance.", "Bonjour, j'ai une ordonnance", "Bonjour j'ai une ordonnance."] }
+          - { id: fr-w16-d5-bt04, difficulty: hard, type: text, prompt: "Translate: Help! There's been an accident. Call an ambulance!", accept: ["Au secours ! Il y a eu un accident. Appelez une ambulance !", "Au secours! Il y a eu un accident. Appelez une ambulance!", "À l'aide ! Il y a eu un accident. Appelez une ambulance !"] }
+          - { id: fr-w16-d5-bt05, difficulty: hard, type: mcq, prompt: "EU-wide emergency number", choices: ["112", "911", "15", "18"], answer: 0 }
+
+  # ─────────────────────────── DAY 6 ───────────────────────────
+  - day: 6
+    gate:
+      title: "Checkpoint: pharmacy and emergencies"
+      covers: "Week 16 · Day 5: pharmacy requests, over-the-counter, paracétamol/ibuprofène/pansements, emergency phrases and numbers"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w16-d6-g01, difficulty: easy, type: mcq, prompt: "Help!", choices: ["À l'aide !", "Aidez-moi pas !", "Au revoir !", "Allô !"], answer: 0 }
+        - { id: fr-w16-d6-g02, difficulty: easy, type: mcq, prompt: "Is it over the counter?", choices: ["C'est sans ordonnance ?", "C'est avec ordonnance ?", "C'est gratuit ?", "C'est urgent ?"], answer: 0 }
+        - { id: fr-w16-d6-g03, difficulty: easy, type: truefalse, prompt: "« les urgences » is the emergency department.", answer: true }
+        - { id: fr-w16-d6-g04, difficulty: easy, type: mcq, prompt: "sun cream", choices: ["de la crème solaire", "du soleil crème", "de la crème soleil", "du sun"], answer: 0 }
+        - { id: fr-w16-d6-g05, difficulty: easy, type: mcq, prompt: "How many times a day?", choices: ["Combien de fois par jour ?", "Combien de jours ?", "Quelle fois ?", "Combien par fois ?"], answer: 0 }
+        - { id: fr-w16-d6-g06, difficulty: easy, type: mcq, prompt: "Call a doctor!", choices: ["Appelez un médecin !", "Appelez à médecin !", "Docteur appelez !", "Appeler médecin !"], answer: 0 }
+        - { id: fr-w16-d6-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["Au secours !", "Help!"], ["C'est urgent !", "It's urgent!"], ["les urgences", "A&E"], ["des pansements", "plasters"]] }
+        - { id: fr-w16-d6-g08, difficulty: medium, type: text, prompt: "Translate: Do you have something for a cough? (vous)", accept: ["Vous avez quelque chose contre la toux ?", "Avez-vous quelque chose contre la toux ?", "Vous avez quelque chose contre la toux?"] }
+        - { id: fr-w16-d6-g09, difficulty: medium, type: text, prompt: "Translate: I would like some paracetamol.", accept: ["Je voudrais du paracétamol.", "Je voudrais du paracétamol"] }
+        - { id: fr-w16-d6-g10, difficulty: medium, type: mcq, prompt: "Emergency number for Canada", choices: ["911", "15", "112", "17"], answer: 0 }
+        - { id: fr-w16-d6-g11, difficulty: medium, type: truefalse, prompt: "« Il y a eu un accident » uses the past of il y a.", answer: true }
+        - { id: fr-w16-d6-g12, difficulty: medium, type: text, prompt: "Translate: Where is the emergency department?", accept: ["Où sont les urgences ?", "Où sont les urgences?", "Où se trouvent les urgences ?"] }
+        - { id: fr-w16-d6-g13, difficulty: medium, type: mcq, prompt: "Health guide line", choices: ["Pour être en bonne santé, il faut dormir huit heures.", "Pour bonne santé, faut dort.", "Il faut être santé.", "En santé il faut fumer."], answer: 0 }
+        - { id: fr-w16-d6-g14, difficulty: medium, type: text, prompt: "Translate: In the rainy season, you must sleep under a mosquito net. (une moustiquaire)", accept: ["Pendant la saison des pluies, il faut dormir sous une moustiquaire.", "En saison des pluies, il faut dormir sous une moustiquaire.", "Pendant la saison des pluies il faut dormir sous une moustiquaire."] }
+        - { id: fr-w16-d6-g15, difficulty: medium, type: order, prompt: "Order the emergency call.", items: ["Allô, les urgences ?", "Il y a eu un accident.", "C'est devant la gare.", "Un homme a mal à la jambe.", "C'est urgent, venez vite !"] }
+        - { id: fr-w16-d6-g16, difficulty: hard, type: text, prompt: "Translate: To be healthy, you must eat light and you mustn't smoke.", accept: ["Pour être en bonne santé, il faut manger léger et il ne faut pas fumer.", "Pour être en bonne santé il faut manger léger et il ne faut pas fumer."] }
+        - { id: fr-w16-d6-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « Vous avez quelque chose pour la tousse ? »", choices: ["la toux (and contre is more natural)", "Vous → Tu", "quelque chose → quelque", "No error"], answer: 0 }
+        - { id: fr-w16-d6-g18, difficulty: hard, type: multi, prompt: "Emergency phrases (Select all.)", choices: ["Au secours !", "Appelez une ambulance !", "C'est urgent !", "Bonne journée !"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Week 16 lightning round"
+        secondsPerQuestion: 7
+        questions:
+          - { id: fr-w16-d6-rf01, difficulty: easy, type: mcq, prompt: "plural of œil", choices: ["yeux", "œils", "oeuils", "yeuxs"], answer: 0 }
+          - { id: fr-w16-d6-rf02, difficulty: easy, type: mcq, prompt: "J'ai mal ___ tête.", choices: ["à la", "au", "aux", "à l'"], answer: 0 }
+          - { id: fr-w16-d6-rf03, difficulty: easy, type: mcq, prompt: "J'ai mal ___ dos.", choices: ["au", "à la", "aux", "à l'"], answer: 0 }
+          - { id: fr-w16-d6-rf04, difficulty: easy, type: mcq, prompt: "J'ai mal ___ oreilles.", choices: ["aux", "au", "à la", "à l'"], answer: 0 }
+          - { id: fr-w16-d6-rf05, difficulty: easy, type: mcq, prompt: "Rest! (tu)", choices: ["Repose-toi !", "Repose-te !", "Te repose !", "Reposes-toi !"], answer: 0 }
+          - { id: fr-w16-d6-rf06, difficulty: easy, type: mcq, prompt: "prescription", choices: ["une ordonnance", "une recette", "une prescription only", "un comprimé"], answer: 0 }
+          - { id: fr-w16-d6-rf07, difficulty: easy, type: mcq, prompt: "Help!", choices: ["Au secours !", "Au revoir !", "Allô !", "Merci !"], answer: 0 }
+          - { id: fr-w16-d6-rf08, difficulty: easy, type: mcq, prompt: "I've been coughing for 3 days.", choices: ["Je tousse depuis trois jours.", "Je tousse pour trois jours.", "Je toussais trois jours.", "J'ai toussé depuis."], answer: 0 }
+          - { id: fr-w16-d6-rf09, difficulty: easy, type: mcq, prompt: "You mustn't smoke.", choices: ["Il ne faut pas fumer.", "Il faut pas ne fumer.", "Ne il faut fumer.", "Il ne faut fumer pas."], answer: 0 }
+          - { id: fr-w16-d6-rf10, difficulty: easy, type: mcq, prompt: "malaria", choices: ["le paludisme", "la grippe", "le rhume", "l'angine"], answer: 0 }
+      - kind: brain-teaser
+        title: "A healthy-living guide"
+        questions:
+          - { id: fr-w16-d6-bt01, difficulty: medium, type: text, prompt: "Translate: In winter in Canada, you must dress warmly. (s'habiller chaudement)", accept: ["En hiver au Canada, il faut s'habiller chaudement.", "En hiver au Canada il faut s'habiller chaudement."] }
+          - { id: fr-w16-d6-bt02, difficulty: medium, type: text, prompt: "Translate: Drink lots of water! (vous)", accept: ["Buvez beaucoup d'eau !", "Buvez beaucoup d'eau!"] }
+          - { id: fr-w16-d6-bt03, difficulty: medium, type: mcq, prompt: "Malaria symptoms to tell a doctor", choices: ["J'ai de la fièvre, mal à la tête et je suis très fatigué.", "J'ai mal aux dents.", "Je me suis coupé.", "J'ai le nez qui coule seulement."], answer: 0 }
+          - { id: fr-w16-d6-bt04, difficulty: hard, type: text, prompt: "Translate: Don't go to bed late and get up early! (tu)", accept: ["Ne te couche pas tard et lève-toi tôt !", "Ne te couche pas tard et lève-toi tôt!"] }
+          - { id: fr-w16-d6-bt05, difficulty: hard, type: mcq, prompt: "Find the sentence with NO mistake.", choices: ["J'ai mal aux pieds depuis hier, alors je me repose.", "J'ai mal à les pieds.", "Repose-te !", "Il a deux œils."], answer: 0 }
