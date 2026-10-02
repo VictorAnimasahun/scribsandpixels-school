@@ -1,0 +1,298 @@
+# Excel · Week 14 quizzes. Format and rules: src/content/QUIZZES.md
+# Finance and Solver figures recomputed independently (Python) and match the lesson's Check lines.
+week: 14
+days:
+
+  # ─────────────────────────── DAY 1 ───────────────────────────
+  - day: 1
+    gate:
+      title: "Checkpoint: Week 13 review"
+      covers: "Week 13: slicers, timelines, calculated fields, target vs actual, Data Model, GETPIVOTDATA, pivot best practices"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w14-d1-g01, difficulty: easy, type: mcq, prompt: "One slicer, many pivots", choices: ["Report Connections", "Group", "Refresh", "Sort"], answer: 0 }
+        - { id: xl-w14-d1-g02, difficulty: easy, type: mcq, prompt: "Refresh All", choices: ["Ctrl+Alt+F5", "Alt+F5", "F5", "F9"], answer: 0 }
+        - { id: xl-w14-d1-g03, difficulty: easy, type: truefalse, prompt: "Calculated fields work on sums, not row by row.", answer: true }
+        - { id: xl-w14-d1-g04, difficulty: easy, type: mcq, prompt: "Filter by date range", choices: ["Timeline", "Slicer", "Group", "Icon set"], answer: 0 }
+        - { id: xl-w14-d1-g05, difficulty: easy, type: mcq, prompt: "One row per region", choices: ["dimension table", "fact table", "pivot cache", "timeline"], answer: 0 }
+        - { id: xl-w14-d1-g06, difficulty: easy, type: mcq, prompt: "Region that beat its annual target", choices: ["Port Harcourt", "Lagos", "Kano", "Abuja"], answer: 0 }
+        - { id: xl-w14-d1-g07, difficulty: medium, type: text, prompt: "Region-months on target (of 72)?", accept: ["33"] }
+        - { id: xl-w14-d1-g08, difficulty: medium, type: text, prompt: "Company variance vs target (1 decimal %)?", accept: ["-1.3%", "-1.3", "−1.3%"] }
+        - { id: xl-w14-d1-g09, difficulty: medium, type: match, prompt: "Match.", pairs: [["GETPIVOTDATA", "stable reference into a pivot"], ["Report Connections", "slicer → many pivots"], ["Data Model", "pivot over related tables"], ["calculated field", "formula on sums"]] }
+        - { id: xl-w14-d1-g10, difficulty: medium, type: text, prompt: "Category with the best margin %?", accept: ["Fashion"] }
+        - { id: xl-w14-d1-g11, difficulty: medium, type: truefalse, prompt: "=Units*UnitPrice is a safe calculated field.", answer: false }
+        - { id: xl-w14-d1-g12, difficulty: medium, type: text, prompt: "Kano annual variance (1 decimal %)?", accept: ["-5.6%", "-5.6", "−5.6%"] }
+        - { id: xl-w14-d1-g13, difficulty: medium, type: mcq, prompt: "Worst region-month miss", choices: ["Lagos, December", "Kano, January", "Lagos, October", "Enugu, May"], answer: 0 }
+        - { id: xl-w14-d1-g14, difficulty: medium, type: text, prompt: "Total 2025 target (₦, no symbol)?", accept: ["844900000", "844,900,000"] }
+        - { id: xl-w14-d1-g15, difficulty: medium, type: multi, prompt: "Pivot hygiene (Select all.)", choices: ["build on tables", "Refresh All before presenting", "leave space around pivots", "put tables right under pivots"], answers: [0, 1, 2] }
+        - { id: xl-w14-d1-g16, difficulty: hard, type: mcq, prompt: "Why a tblRegions dimension table?", choices: ["tblSales and tblTargets both repeat regions; they relate through one row per region", "Excel needs 3 tables", "for colours", "it's optional decoration"], answer: 0 }
+        - { id: xl-w14-d1-g17, difficulty: hard, type: text, prompt: "Groceries margin (1 decimal %)?", accept: ["7.3%", "7.3"] }
+        - { id: xl-w14-d1-g18, difficulty: hard, type: multi, prompt: "Safe calculated fields (Select all.)", choices: ["=Profit/NetSales", "=NetSales*0.03", "=NetSales-Cost", "=Units*UnitPrice"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Goal Seek"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w14-d1-rf01, difficulty: easy, type: mcq, prompt: "Goal Seek lives in…", choices: ["Data → What-If Analysis", "Formulas → Goal", "Home → Find", "Review → Goal"], answer: 0 }
+          - { id: xl-w14-d1-rf02, difficulty: easy, type: mcq, prompt: "Goal Seek works…", choices: ["backwards from a target", "forwards only", "on charts", "on pivots"], answer: 0 }
+          - { id: xl-w14-d1-rf03, difficulty: easy, type: mcq, prompt: "Its three fields", choices: ["Set cell, To value, By changing cell", "Objective, Variables, Constraints", "Rows, Columns, Values", "Input, Output, Range"], answer: 0 }
+          - { id: xl-w14-d1-rf04, difficulty: easy, type: mcq, prompt: "The Set cell must contain…", choices: ["a formula depending on the changing cell", "a number", "text", "nothing"], answer: 0 }
+          - { id: xl-w14-d1-rf05, difficulty: easy, type: text, prompt: "Extra phones Kano needed (rounded up)?", accept: ["37"] }
+          - { id: xl-w14-d1-rf06, difficulty: easy, type: text, prompt: "Price for a 25% margin on a ₦118,000 cost (nearest naira)?", accept: ["157333", "157,333", "₦157,333"] }
+          - { id: xl-w14-d1-rf07, difficulty: easy, type: truefalse, prompt: "Goal Seek can change several cells at once.", answer: false }
+          - { id: xl-w14-d1-rf08, difficulty: easy, type: mcq, prompt: "Margin formula", choices: ["(price − cost) / price", "(price − cost) / cost", "cost / price", "price − cost"], answer: 0 }
+          - { id: xl-w14-d1-rf09, difficulty: easy, type: mcq, prompt: "Why round 36.55 phones up?", choices: ["you can't sell part of a phone, and 36 falls short", "rounding down is illegal", "Excel requires it", "no reason"], answer: 0 }
+          - { id: xl-w14-d1-rf10, difficulty: easy, type: mcq, prompt: "Kano's 2025 gap to target", choices: ["₦5,299,440", "₦10,853,300", "₦1,390,515", "₦94,400,000"], answer: 0 }
+      - kind: brain-teaser
+        title: "Work backwards"
+        questions:
+          - { id: xl-w14-d1-bt01, difficulty: medium, type: mcq, prompt: "B2 = 89100560 + B1*145000. Goal Seek: set B2 to 94400000 by changing B1 gives…", choices: ["36.55", "37", "36", "5,299,440"], answer: 0 }
+          - { id: xl-w14-d1-bt02, difficulty: medium, type: mcq, prompt: "Price formula for 25% margin, cost in B1", choices: ["=B1/(1-25%)", "=B1*1.25", "=B1+25%", "=B1/25%"], answer: 0 }
+          - { id: xl-w14-d1-bt03, difficulty: medium, type: mcq, prompt: "Why isn't the answer ₦147,500 (cost × 1.25)?", choices: ["That's a 25% markup on cost; margin is on price", "Excel rounds", "VAT", "It is ₦147,500"], answer: 0 }
+          - { id: xl-w14-d1-bt04, difficulty: hard, type: text, prompt: "Loan amount for a ₦150,000 monthly payment at 24%/36 months (nearest naira)?", accept: ["3823326", "3,823,326", "₦3,823,326"] }
+          - { id: xl-w14-d1-bt05, difficulty: hard, type: mcq, prompt: "Goal Seek says it can't find a solution. Most likely…", choices: ["the Set cell doesn't depend on the changing cell (or the target is impossible)", "the sheet is too big", "Solver is off", "the file isn't saved"], answer: 0 }
+
+  # ─────────────────────────── DAY 2 ───────────────────────────
+  - day: 2
+    gate:
+      title: "Checkpoint: Goal Seek"
+      covers: "Week 14 · Day 1: Goal Seek fields and requirements, Kano gap, margin pricing, loan amount"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w14-d2-g01, difficulty: easy, type: mcq, prompt: "Goal Seek changes…", choices: ["one input cell", "many cells", "a chart", "a pivot"], answer: 0 }
+        - { id: xl-w14-d2-g02, difficulty: easy, type: mcq, prompt: "\"Set cell\" is…", choices: ["the formula you want to hit a value", "the input", "the answer cell you type into", "any blank"], answer: 0 }
+        - { id: xl-w14-d2-g03, difficulty: easy, type: truefalse, prompt: "Goal Seek needs a formula linking the two cells.", answer: true }
+        - { id: xl-w14-d2-g04, difficulty: easy, type: text, prompt: "Extra phones for Kano (whole phones)?", accept: ["37"] }
+        - { id: xl-w14-d2-g05, difficulty: easy, type: mcq, prompt: "A 25% margin price on ₦118,000", choices: ["₦157,333", "₦147,500", "₦143,000", "₦118,025"], answer: 0 }
+        - { id: xl-w14-d2-g06, difficulty: easy, type: mcq, prompt: "Changing cell may contain…", choices: ["a value (not a formula)", "a formula", "a chart", "text only"], answer: 0 }
+        - { id: xl-w14-d2-g07, difficulty: medium, type: text, prompt: "Exact Goal Seek result for Kano (2 decimals)?", accept: ["36.55"] }
+        - { id: xl-w14-d2-g08, difficulty: medium, type: text, prompt: "Loan amount for ₦150,000/month at 24% over 36 months (nearest naira)?", accept: ["3823326", "3,823,326", "₦3,823,326"] }
+        - { id: xl-w14-d2-g09, difficulty: medium, type: match, prompt: "Match the Goal Seek field.", pairs: [["Set cell", "B2 (the formula)"], ["To value", "94400000"], ["By changing cell", "B1 (extra units)"], ["Result", "36.55"]] }
+        - { id: xl-w14-d2-g10, difficulty: medium, type: truefalse, prompt: "Goal Seek overwrites the changing cell with the answer.", answer: true }
+        - { id: xl-w14-d2-g11, difficulty: medium, type: mcq, prompt: "Price for a 40% margin on cost ₦60,000", choices: ["₦100,000", "₦84,000", "₦96,000", "₦150,000"], answer: 0 }
+        - { id: xl-w14-d2-g12, difficulty: medium, type: text, prompt: "Kano 2025 actual (₦, no symbol)?", accept: ["89100560", "89,100,560"] }
+        - { id: xl-w14-d2-g13, difficulty: medium, type: mcq, prompt: "Spend per day to stay in budget: Goal Seek sets…", choices: ["month total to the budget, by changing daily spend", "daily spend to the budget", "the date", "the budget"], answer: 0 }
+        - { id: xl-w14-d2-g14, difficulty: medium, type: mcq, prompt: "Formula alternative to Goal Seek for the Kano phones", choices: ["=ROUNDUP((94400000-89100560)/145000,0)", "=ROUND(94400000/145000,0)", "=89100560/145000", "=SUM(145000)"], answer: 0 }
+        - { id: xl-w14-d2-g15, difficulty: medium, type: mcq, prompt: "Goal Seek result 36.55 shown as 37 by formatting: is B1 now 37?", choices: ["No: it's 36.547…, only displayed as 37", "Yes", "It's 36", "It's text"], answer: 0 }
+        - { id: xl-w14-d2-g16, difficulty: hard, type: mcq, prompt: "Goal Seek for the margin price: Set cell?", choices: ["the margin formula =(B2-B1)/B2, to 0.25, by changing B2 (price)", "the cost, to 25%", "the price, to 0.25", "the margin, by changing the cost"], answer: 0 }
+        - { id: xl-w14-d2-g17, difficulty: hard, type: text, prompt: "Kano gap to target (₦, no symbol)?", accept: ["5299440", "5,299,440"] }
+        - { id: xl-w14-d2-g18, difficulty: hard, type: multi, prompt: "Good Goal Seek uses (Select all.)", choices: ["break-even sales", "price for a margin", "loan you can afford", "maximising profit with 4 products and a budget"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Financial functions"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w14-d2-rf01, difficulty: easy, type: mcq, prompt: "Loan repayment per period", choices: ["PMT", "FV", "NPV", "IRR"], answer: 0 }
+          - { id: xl-w14-d2-rf02, difficulty: easy, type: mcq, prompt: "Future value of regular savings", choices: ["FV", "PV", "PMT", "RATE"], answer: 0 }
+          - { id: xl-w14-d2-rf03, difficulty: easy, type: mcq, prompt: "How many periods to repay", choices: ["NPER", "RATE", "PV", "IRR"], answer: 0 }
+          - { id: xl-w14-d2-rf04, difficulty: easy, type: mcq, prompt: "Monthly payments need…", choices: ["monthly rate (÷12) and months", "annual rate and years", "any mix", "daily rate"], answer: 0 }
+          - { id: xl-w14-d2-rf05, difficulty: easy, type: mcq, prompt: "Money you pay out is…", choices: ["negative", "positive", "zero", "text"], answer: 0 }
+          - { id: xl-w14-d2-rf06, difficulty: easy, type: text, prompt: "PMT on ₦5M at 24%/yr over 36 months (₦, 2 decimals)?", accept: ["196164.26", "196,164.26"] }
+          - { id: xl-w14-d2-rf07, difficulty: easy, type: text, prompt: "PMT on ₦2M at 18%/yr over 24 months (₦, 2 decimals)?", accept: ["99848.20", "99,848.20", "99848.2"] }
+          - { id: xl-w14-d2-rf08, difficulty: easy, type: mcq, prompt: "=PMT(24%/12,36,-5000000) — 24%/12 is…", choices: ["the monthly rate (2%)", "the annual rate", "the term", "the payment"], answer: 0 }
+          - { id: xl-w14-d2-rf09, difficulty: easy, type: mcq, prompt: "The interest rate implied by a loan", choices: ["RATE", "NPER", "PV", "FV"], answer: 0 }
+          - { id: xl-w14-d2-rf10, difficulty: easy, type: truefalse, prompt: "=PMT(24%,36,-5000000) (annual rate with months) is correct.", answer: false }
+      - kind: brain-teaser
+        title: "Loans and savings"
+        questions:
+          - { id: xl-w14-d2-bt01, difficulty: medium, type: text, prompt: "Total interest on the ₦5M loan (36 × payment − principal, nearest naira)?", accept: ["2061913", "2,061,913"] }
+          - { id: xl-w14-d2-bt02, difficulty: medium, type: text, prompt: "Saving ₦50,000/month at 12%/yr for 5 years: FV (₦, 2 decimals)?", accept: ["4083483.49", "4,083,483.49"] }
+          - { id: xl-w14-d2-bt03, difficulty: medium, type: mcq, prompt: "Months to repay ₦1M at 20%/yr paying ₦50,000/month", choices: ["about 24.5", "20", "30", "12"], answer: 0 }
+          - { id: xl-w14-d2-bt04, difficulty: hard, type: mcq, prompt: "=FV(12%/12,60,-50000) — why -50000?", choices: ["you pay the savings out, so negative; FV comes back positive", "a typo", "a withdrawal", "interest is negative"], answer: 0 }
+          - { id: xl-w14-d2-bt05, difficulty: hard, type: mcq, prompt: "Total saved in by you over the 5 years vs FV ₦4.08M", choices: ["₦3,000,000 paid in; ₦1.08M is interest", "₦4,083,483", "₦600,000", "₦5,000,000"], answer: 0 }
+
+  # ─────────────────────────── DAY 3 ───────────────────────────
+  - day: 3
+    gate:
+      title: "Checkpoint: financial functions"
+      covers: "Week 14 · Day 2: PMT, FV, PV, NPER, RATE, NPV, IRR; rate/period consistency; sign convention"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w14-d3-g01, difficulty: easy, type: mcq, prompt: "PMT for ₦2,000,000 at 18%/yr over 24 months", choices: ["=PMT(18%/12,24,-2000000)", "=PMT(18%,24,-2000000)", "=PMT(18%/12,2,-2000000)", "=PMT(2000000,24,18%)"], answer: 0 }
+        - { id: xl-w14-d3-g02, difficulty: easy, type: mcq, prompt: "Why is the loan amount negative in PMT?", choices: ["sign convention: money out is negative", "it's a debt error", "Excel bug", "to get a negative payment"], answer: 0 }
+        - { id: xl-w14-d3-g03, difficulty: easy, type: truefalse, prompt: "Monthly loans need a monthly rate and the number of months.", answer: true }
+        - { id: xl-w14-d3-g04, difficulty: easy, type: mcq, prompt: "PV answers…", choices: ["what future payments are worth today", "future value", "the payment", "the rate"], answer: 0 }
+        - { id: xl-w14-d3-g05, difficulty: easy, type: mcq, prompt: "IRR answers…", choices: ["the investment's rate of return", "the payment", "periods", "present value"], answer: 0 }
+        - { id: xl-w14-d3-g06, difficulty: easy, type: mcq, prompt: "Monthly rate for 18% a year", choices: ["1.5%", "18%", "0.18%", "6%"], answer: 0 }
+        - { id: xl-w14-d3-g07, difficulty: medium, type: text, prompt: "Monthly payment: ₦5M at 24% over 3 years (₦, 2 decimals)?", accept: ["196164.26", "196,164.26"] }
+        - { id: xl-w14-d3-g08, difficulty: medium, type: text, prompt: "Monthly payment: ₦2M at 18% over 2 years (₦, 2 decimals)?", accept: ["99848.20", "99,848.20", "99848.2"] }
+        - { id: xl-w14-d3-g09, difficulty: medium, type: match, prompt: "Match.", pairs: [["PMT", "payment per period"], ["FV", "future value"], ["NPER", "number of periods"], ["RATE", "implied interest rate"]] }
+        - { id: xl-w14-d3-g10, difficulty: medium, type: truefalse, prompt: "PMT gives a negative result when pv is positive.", answer: true }
+        - { id: xl-w14-d3-g11, difficulty: medium, type: text, prompt: "FV of ₦50,000/month for 5 years at 12% (₦, 2 decimals)?", accept: ["4083483.49", "4,083,483.49"] }
+        - { id: xl-w14-d3-g12, difficulty: medium, type: mcq, prompt: "=NPER(20%/12,-50000,1000000) ≈", choices: ["24.5", "20", "12", "50"], answer: 0 }
+        - { id: xl-w14-d3-g13, difficulty: medium, type: text, prompt: "Total interest on the ₦5M loan (nearest naira)?", accept: ["2061913", "2,061,913"] }
+        - { id: xl-w14-d3-g14, difficulty: medium, type: mcq, prompt: "Loan calculator outputs", choices: ["monthly payment, total paid, total interest", "only the rate", "a chart", "a pivot"], answer: 0 }
+        - { id: xl-w14-d3-g15, difficulty: medium, type: mcq, prompt: "Total paid on the ₦2M loan (24 × ₦99,848.20)", choices: ["₦2,396,356.80", "₦2,000,000", "₦2,360,000", "₦99,848.20"], answer: 0 }
+        - { id: xl-w14-d3-g16, difficulty: hard, type: mcq, prompt: "Same ₦5M loan over 60 months instead of 36: monthly payment…", choices: ["falls, but total interest rises", "rises", "stays the same", "falls and interest falls"], answer: 0 }
+        - { id: xl-w14-d3-g17, difficulty: hard, type: mcq, prompt: "=PMT(24%,36,-5000000) uses the annual rate per month. The result is…", choices: ["far too high (24% a month)", "correct", "too low", "an error"], answer: 0 }
+        - { id: xl-w14-d3-g18, difficulty: hard, type: multi, prompt: "Correct consistency (Select all.)", choices: ["=PMT(18%/12,24,-2000000)", "=FV(12%/12,60,-50000)", "=NPER(20%/12,-50000,1000000)", "=PMT(18%,24,-2000000)"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Data tables and scenarios"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w14-d3-rf01, difficulty: easy, type: mcq, prompt: "Recalculate one formula for many inputs", choices: ["Data Table", "Goal Seek", "Solver", "Pivot"], answer: 0 }
+          - { id: xl-w14-d3-rf02, difficulty: easy, type: mcq, prompt: "Two-variable table: the formula goes…", choices: ["in the top-left corner cell", "bottom-right", "anywhere", "in a new sheet"], answer: 0 }
+          - { id: xl-w14-d3-rf03, difficulty: easy, type: mcq, prompt: "Named sets of inputs (Best/Base/Worst)", choices: ["Scenario Manager", "Data Table", "Solver", "Slicer"], answer: 0 }
+          - { id: xl-w14-d3-rf04, difficulty: easy, type: mcq, prompt: "Rates down the side → which input?", choices: ["Column input = rate cell", "Row input = rate cell", "both", "neither"], answer: 0 }
+          - { id: xl-w14-d3-rf05, difficulty: easy, type: mcq, prompt: "Terms across the top → which input?", choices: ["Row input = term cell", "Column input = term cell", "both", "neither"], answer: 0 }
+          - { id: xl-w14-d3-rf06, difficulty: easy, type: text, prompt: "Base 2026 net sales (₦, no symbol)?", accept: ["917451370", "917,451,370"] }
+          - { id: xl-w14-d3-rf07, difficulty: easy, type: mcq, prompt: "Base 2026 profit ≈", choices: ["₦142.2M", "₦129.5M", "₦170.1M", "₦103.0M"], answer: 0 }
+          - { id: xl-w14-d3-rf08, difficulty: easy, type: mcq, prompt: "Scenario Manager output", choices: ["Scenario Summary report", "a pivot", "a chart only", "a macro"], answer: 0 }
+          - { id: xl-w14-d3-rf09, difficulty: easy, type: truefalse, prompt: "Data Tables are found under What-If Analysis.", answer: true }
+          - { id: xl-w14-d3-rf10, difficulty: easy, type: mcq, prompt: "Base scenario inputs", choices: ["growth 10%, margin 15.5%", "growth 20%, margin 17%", "growth −5%, margin 13%", "growth 0%, margin 0%"], answer: 0 }
+      - kind: brain-teaser
+        title: "Plan 2026"
+        questions:
+          - { id: xl-w14-d3-bt01, difficulty: medium, type: mcq, prompt: "Best case (growth 20%, margin 17%) profit ≈", choices: ["₦170.1M", "₦142.2M", "₦200.2M", "₦103.0M"], answer: 0 }
+          - { id: xl-w14-d3-bt02, difficulty: medium, type: mcq, prompt: "Worst case (−5%, 13%) profit ≈", choices: ["₦103.0M", "₦129.5M", "₦92.0M", "₦142.2M"], answer: 0 }
+          - { id: xl-w14-d3-bt03, difficulty: medium, type: mcq, prompt: "Formula for 2026 net sales (2025 net in B1, growth in B2)", choices: ["=B1*(1+B2)", "=B1+B2", "=B1*B2", "=B1/(1+B2)"], answer: 0 }
+          - { id: xl-w14-d3-bt04, difficulty: hard, type: mcq, prompt: "Payment table for 7 rates × 5 terms has how many result cells?", choices: ["35", "12", "7", "5"], answer: 0 }
+          - { id: xl-w14-d3-bt05, difficulty: hard, type: mcq, prompt: "Data Table results are…", choices: ["a TABLE() array you can't edit cell by cell", "plain values", "pivots", "charts"], answer: 0 }
+
+  # ─────────────────────────── DAY 4 ───────────────────────────
+  - day: 4
+    gate:
+      title: "Checkpoint: data tables and scenarios"
+      covers: "Week 14 · Day 3: one- and two-variable data tables, row/column inputs, Scenario Manager, 2026 plan"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w14-d4-g01, difficulty: easy, type: mcq, prompt: "Top-left cell of a two-variable data table", choices: ["the formula", "a rate", "a term", "blank"], answer: 0 }
+        - { id: xl-w14-d4-g02, difficulty: easy, type: mcq, prompt: "Best/Base/Worst cases", choices: ["Scenario Manager", "Data Table", "Goal Seek", "Slicer"], answer: 0 }
+        - { id: xl-w14-d4-g03, difficulty: easy, type: truefalse, prompt: "A data table recalculates when its inputs change.", answer: true }
+        - { id: xl-w14-d4-g04, difficulty: easy, type: mcq, prompt: "Rates 15%–30% step 2.5% gives how many rates?", choices: ["7", "6", "15", "16"], answer: 0 }
+        - { id: xl-w14-d4-g05, difficulty: easy, type: mcq, prompt: "Terms in the practice table", choices: ["12, 24, 36, 48, 60", "1–5", "6, 12, 18", "36 only"], answer: 0 }
+        - { id: xl-w14-d4-g06, difficulty: easy, type: mcq, prompt: "2026 profit =", choices: ["net 2026 × margin", "net 2026 − margin", "growth × margin", "net 2025 × growth"], answer: 0 }
+        - { id: xl-w14-d4-g07, difficulty: medium, type: text, prompt: "Base 2026 net sales (₦, no symbol)?", accept: ["917451370", "917,451,370"] }
+        - { id: xl-w14-d4-g08, difficulty: medium, type: text, prompt: "Best case 2026 net sales (₦, no symbol)?", accept: ["1000856040", "1,000,856,040"] }
+        - { id: xl-w14-d4-g09, difficulty: medium, type: match, prompt: "Match the scenario.", pairs: [["Best", "growth 20%, margin 17%"], ["Base", "growth 10%, margin 15.5%"], ["Worst", "growth −5%, margin 13%"], ["2025 actual", "margin 15.5%"]] }
+        - { id: xl-w14-d4-g10, difficulty: medium, type: truefalse, prompt: "In a one-variable column table, only the Column input cell is filled.", answer: true }
+        - { id: xl-w14-d4-g11, difficulty: medium, type: text, prompt: "Worst case 2026 net sales (₦, no symbol)?", accept: ["792344365", "792,344,365"] }
+        - { id: xl-w14-d4-g12, difficulty: medium, type: mcq, prompt: "Swapping row and column inputs by mistake gives…", choices: ["wrong numbers (rates used as terms)", "an error", "the same table", "blank"], answer: 0 }
+        - { id: xl-w14-d4-g13, difficulty: medium, type: mcq, prompt: "Base profit (nearest ₦M)", choices: ["₦142M", "₦130M", "₦170M", "₦103M"], answer: 0 }
+        - { id: xl-w14-d4-g14, difficulty: medium, type: mcq, prompt: "One-variable table: profit for growth −10%…+30%. The growth values go…", choices: ["down a column, Column input = growth cell", "in the formula", "across with Row input = margin", "in Scenario Manager"], answer: 0 }
+        - { id: xl-w14-d4-g15, difficulty: medium, type: mcq, prompt: "Scenario Summary shows…", choices: ["each scenario's inputs and results side by side", "a pivot", "only the current inputs", "a chart"], answer: 0 }
+        - { id: xl-w14-d4-g16, difficulty: hard, type: text, prompt: "Best case 2026 profit (nearest ₦, no symbol)?", accept: ["170145527", "170,145,527"] }
+        - { id: xl-w14-d4-g17, difficulty: hard, type: mcq, prompt: "Huge data tables slow the workbook. Option:", choices: ["Calculation → Automatic except for data tables", "delete formulas", "use pivots", "protect the sheet"], answer: 0 }
+        - { id: xl-w14-d4-g18, difficulty: hard, type: multi, prompt: "What-If tools (Select all.)", choices: ["Goal Seek", "Scenario Manager", "Data Table", "Remove Duplicates"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Solver"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w14-d4-rf01, difficulty: easy, type: mcq, prompt: "Enable Solver from…", choices: ["File → Options → Add-ins", "Data → New", "Home → Solver", "Insert → Add-in"], answer: 0 }
+          - { id: xl-w14-d4-rf02, difficulty: easy, type: mcq, prompt: "Solver's three parts", choices: ["Objective, Variable cells, Constraints", "Set, To, By changing", "Rows, Columns, Values", "Input, Rate, Term"], answer: 0 }
+          - { id: xl-w14-d4-rf03, difficulty: easy, type: mcq, prompt: "Method for linear problems", choices: ["Simplex LP", "GRG Nonlinear", "Evolutionary", "Random"], answer: 0 }
+          - { id: xl-w14-d4-rf04, difficulty: easy, type: mcq, prompt: "Whole phones only", choices: ["an int constraint", "rounding after", "a data table", "Goal Seek"], answer: 0 }
+          - { id: xl-w14-d4-rf05, difficulty: easy, type: text, prompt: "Optimal phones in the kiosk?", accept: ["69"] }
+          - { id: xl-w14-d4-rf06, difficulty: easy, type: text, prompt: "Optimal power banks?", accept: ["61"] }
+          - { id: xl-w14-d4-rf07, difficulty: easy, type: text, prompt: "Maximum profit (₦, no symbol)?", accept: ["2464500", "2,464,500"] }
+          - { id: xl-w14-d4-rf08, difficulty: easy, type: truefalse, prompt: "Solver can handle several variable cells and constraints.", answer: true }
+          - { id: xl-w14-d4-rf09, difficulty: easy, type: mcq, prompt: "Rice and fans at the optimum", choices: ["10 each (the minimum)", "0 each", "20 each", "50 each"], answer: 0 }
+          - { id: xl-w14-d4-rf10, difficulty: easy, type: mcq, prompt: "Space used at the optimum", choices: ["200/200", "150/200", "190/200", "100/200"], answer: 0 }
+      - kind: brain-teaser
+        title: "Stock the kiosk"
+        questions:
+          - { id: xl-w14-d4-bt01, difficulty: medium, type: text, prompt: "Total cost at the optimum (₦, no symbol)?", accept: ["9986500", "9,986,500"] }
+          - { id: xl-w14-d4-bt02, difficulty: medium, type: mcq, prompt: "Why only the minimum rice and fans?", choices: ["They earn little profit per slot of space (rice ₦2,500/slot, fan ₦3,500/slot)", "They're too cheap", "Solver ignores them", "Random"], answer: 0 }
+          - { id: xl-w14-d4-bt03, difficulty: medium, type: mcq, prompt: "Profit per slot: phone vs power bank", choices: ["₦27,000 vs ₦6,500 (phone wins on space, but costs more)", "equal", "power bank wins", "can't compare"], answer: 0 }
+          - { id: xl-w14-d4-bt04, difficulty: hard, type: mcq, prompt: "Budget raised to ₦12M. New optimum:", choices: ["88 phones, 42 power banks, 10 rice, 10 fans → ₦2,854,000", "same as before", "200 power banks", "all phones"], answer: 0 }
+          - { id: xl-w14-d4-bt05, difficulty: hard, type: mcq, prompt: "At ₦12M, which constraint binds?", choices: ["space (200 slots)", "budget", "the minimum of 10", "none"], answer: 0 }
+
+  # ─────────────────────────── DAY 5 ───────────────────────────
+  - day: 5
+    gate:
+      title: "Checkpoint: Solver"
+      covers: "Week 14 · Day 4: objective, variable cells, constraints, Simplex LP, integer constraints, the kiosk problem"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w14-d5-g01, difficulty: easy, type: mcq, prompt: "Goal Seek vs Solver", choices: ["one target, one cell vs optimise many cells with constraints", "same thing", "Solver is for charts", "Goal Seek optimises"], answer: 0 }
+        - { id: xl-w14-d5-g02, difficulty: easy, type: mcq, prompt: "Kiosk objective", choices: ["maximise total profit", "minimise space", "maximise cost", "minimise phones"], answer: 0 }
+        - { id: xl-w14-d5-g03, difficulty: easy, type: truefalse, prompt: "The budget is a constraint in the kiosk model.", answer: true }
+        - { id: xl-w14-d5-g04, difficulty: easy, type: mcq, prompt: "Variable cells hold…", choices: ["the quantities", "the profits per unit", "the budget", "the answer text"], answer: 0 }
+        - { id: xl-w14-d5-g05, difficulty: easy, type: text, prompt: "Shelf space limit (slots)?", accept: ["200"] }
+        - { id: xl-w14-d5-g06, difficulty: easy, type: mcq, prompt: "Minimum of each product", choices: ["10", "0", "5", "20"], answer: 0 }
+        - { id: xl-w14-d5-g07, difficulty: medium, type: text, prompt: "Optimal profit (₦, no symbol)?", accept: ["2464500", "2,464,500"] }
+        - { id: xl-w14-d5-g08, difficulty: medium, type: mcq, prompt: "Total space formula (quantities B2:B5, space per unit D2:D5)", choices: ["=SUMPRODUCT(B2:B5,D2:D5)", "=SUM(B2:B5)", "=B2*D2", "=SUM(D2:D5)"], answer: 0 }
+        - { id: xl-w14-d5-g09, difficulty: medium, type: match, prompt: "Match the kiosk product to its optimal quantity.", pairs: [["Tecno Spark 20", "69"], ["Oraimo Power Bank", "61"], ["Rice 50kg", "10"], ["Standing Fan", "10"]] }
+        - { id: xl-w14-d5-g10, difficulty: medium, type: truefalse, prompt: "Without an integer constraint, Solver may suggest 68.7 phones.", answer: true }
+        - { id: xl-w14-d5-g11, difficulty: medium, type: text, prompt: "Profit at a ₦12M budget (₦, no symbol)?", accept: ["2854000", "2,854,000"] }
+        - { id: xl-w14-d5-g12, difficulty: medium, type: mcq, prompt: "Constraint for the budget (cost in F6)", choices: ["F6 <= 10000000", "F6 = 10000000", "F6 >= 10000000", "F6 int"], answer: 0 }
+        - { id: xl-w14-d5-g13, difficulty: medium, type: text, prompt: "Phones at a ₦12M budget?", accept: ["88"] }
+        - { id: xl-w14-d5-g14, difficulty: medium, type: mcq, prompt: "Simplex LP fits the kiosk because…", choices: ["all formulas are linear (quantity × constant)", "it's the fastest for anything", "it handles IF", "it's required for integers"], answer: 0 }
+        - { id: xl-w14-d5-g15, difficulty: medium, type: mcq, prompt: "Profit formula (quantities B2:B5, profit/unit C2:C5)", choices: ["=SUMPRODUCT(B2:B5,C2:C5)", "=SUM(C2:C5)", "=B2+C2", "=MAX(C2:C5)"], answer: 0 }
+        - { id: xl-w14-d5-g16, difficulty: hard, type: mcq, prompt: "At ₦10M, both budget (₦9.99M used) and space (200) are nearly full. Which binds?", choices: ["both: budget stops more phones, space stops more power banks", "only space", "only budget", "neither"], answer: 0 }
+        - { id: xl-w14-d5-g17, difficulty: hard, type: mcq, prompt: "Solver says \"no feasible solution\". Likely…", choices: ["constraints contradict (e.g. minimums cost more than the budget)", "too many products", "Simplex is off", "the sheet is protected"], answer: 0 }
+        - { id: xl-w14-d5-g18, difficulty: hard, type: multi, prompt: "Kiosk constraints (Select all.)", choices: ["total cost ≤ ₦10M", "total space ≤ 200", "each quantity ≥ 10 and integer", "profit ≤ ₦1M"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "NPV and IRR"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w14-d5-rf01, difficulty: easy, type: mcq, prompt: "NPV treats the first cash flow as…", choices: ["year 1", "year 0", "the last year", "a rate"], answer: 0 }
+          - { id: xl-w14-d5-rf02, difficulty: easy, type: mcq, prompt: "So year 0 is…", choices: ["added separately", "ignored", "doubled", "put first inside NPV"], answer: 0 }
+          - { id: xl-w14-d5-rf03, difficulty: easy, type: mcq, prompt: "Decision rule", choices: ["NPV > 0 and IRR > cost of money", "NPV < 0", "IRR < cost of money", "always invest"], answer: 0 }
+          - { id: xl-w14-d5-rf04, difficulty: easy, type: text, prompt: "Solar NPV at 15% (₦, no symbol)?", accept: ["1283879", "1,283,879"] }
+          - { id: xl-w14-d5-rf05, difficulty: easy, type: text, prompt: "Solar IRR (1 decimal %)?", accept: ["25.9%", "25.9"] }
+          - { id: xl-w14-d5-rf06, difficulty: easy, type: mcq, prompt: "Invest in solar?", choices: ["Yes", "No", "Only if diesel rises", "Can't tell"], answer: 0 }
+          - { id: xl-w14-d5-rf07, difficulty: easy, type: mcq, prompt: "Year 0 cash flow", choices: ["−₦4,750,000", "+₦1,800,000", "₦0", "−₦1,800,000"], answer: 0 }
+          - { id: xl-w14-d5-rf08, difficulty: easy, type: mcq, prompt: "=IRR(C2:C7) includes…", choices: ["year 0 and years 1–5", "years 1–5 only", "year 0 only", "the rate"], answer: 0 }
+          - { id: xl-w14-d5-rf09, difficulty: easy, type: truefalse, prompt: "At ₦1,300,000 savings a year, NPV turns negative.", answer: true }
+          - { id: xl-w14-d5-rf10, difficulty: easy, type: mcq, prompt: "Break-even annual saving (NPV = 0)", choices: ["≈ ₦1,417,000", "₦1,800,000", "₦950,000", "₦4,750,000"], answer: 0 }
+      - kind: brain-teaser
+        title: "Buy the solar?"
+        questions:
+          - { id: xl-w14-d5-bt01, difficulty: medium, type: mcq, prompt: "NPV formula", choices: ["=NPV(15%,C3:C7)+C2", "=NPV(15%,C2:C7)", "=NPV(C2:C7)", "=IRR(15%,C3:C7)"], answer: 0 }
+          - { id: xl-w14-d5-bt02, difficulty: medium, type: mcq, prompt: "Why not =NPV(15%,C2:C7)?", choices: ["it discounts the year-0 cost as if it were a year away", "it's the same", "IRR needs it", "it errors"], answer: 0 }
+          - { id: xl-w14-d5-bt03, difficulty: medium, type: mcq, prompt: "NPV at ₦1,300,000/year ≈", choices: ["−₦392,000", "+₦392,000", "₦1,283,879", "₦0"], answer: 0 }
+          - { id: xl-w14-d5-bt04, difficulty: hard, type: text, prompt: "Break-even annual saving (nearest naira)?", accept: ["1416999", "1,416,999", "1417000", "1,417,000"] }
+          - { id: xl-w14-d5-bt05, difficulty: hard, type: mcq, prompt: "IRR 25.9% means…", choices: ["the project earns like money growing 25.9% a year; it beats the 15% cost", "25.9% profit total", "a 25.9% loss", "NPV is 25.9%"], answer: 0 }
+
+  # ─────────────────────────── DAY 6 ───────────────────────────
+  - day: 6
+    gate:
+      title: "Checkpoint: NPV and IRR"
+      covers: "Week 14 · Day 5: cash flows, NPV with year 0 added, IRR, decision rule, sensitivity, break-even with Goal Seek"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w14-d6-g01, difficulty: easy, type: mcq, prompt: "Solar investment cost", choices: ["₦4,750,000", "₦1,800,000", "₦9,000,000", "₦1,283,879"], answer: 0 }
+        - { id: xl-w14-d6-g02, difficulty: easy, type: mcq, prompt: "Cost of money used", choices: ["15%", "25.9%", "12%", "24%"], answer: 0 }
+        - { id: xl-w14-d6-g03, difficulty: easy, type: truefalse, prompt: "NPV > 0 means the investment beats the cost of money.", answer: true }
+        - { id: xl-w14-d6-g04, difficulty: easy, type: mcq, prompt: "Annual diesel savings", choices: ["₦1,800,000", "₦1,300,000", "₦4,750,000", "₦150,000"], answer: 0 }
+        - { id: xl-w14-d6-g05, difficulty: easy, type: mcq, prompt: "Years of savings", choices: ["5", "3", "10", "1"], answer: 0 }
+        - { id: xl-w14-d6-g06, difficulty: easy, type: mcq, prompt: "Report key figure: net sales", choices: ["₦834,046,700", "₦844,900,000", "₦129,531,600", "₦907,677,800"], answer: 0 }
+        - { id: xl-w14-d6-g07, difficulty: medium, type: text, prompt: "Solar NPV (₦, no symbol)?", accept: ["1283879", "1,283,879"] }
+        - { id: xl-w14-d6-g08, difficulty: medium, type: text, prompt: "Solar IRR (1 decimal %)?", accept: ["25.9%", "25.9"] }
+        - { id: xl-w14-d6-g09, difficulty: medium, type: match, prompt: "Match the report KPI.", pairs: [["net sales", "₦834,046,700"], ["profit", "₦129,531,600"], ["target", "₦844,900,000"], ["orders", "2,400"]] }
+        - { id: xl-w14-d6-g10, difficulty: medium, type: truefalse, prompt: "The Executive summary should print to one page.", answer: true }
+        - { id: xl-w14-d6-g11, difficulty: medium, type: text, prompt: "Margin for the report (1 decimal %)?", accept: ["15.5%", "15.5"] }
+        - { id: xl-w14-d6-g12, difficulty: medium, type: mcq, prompt: "Target achievement for the report", choices: ["−1.3% (98.7% of target)", "+1.3%", "100%", "−5.6%"], answer: 0 }
+        - { id: xl-w14-d6-g13, difficulty: medium, type: text, prompt: "Top region's share (1 decimal %)?", accept: ["38.6%", "38.6"] }
+        - { id: xl-w14-d6-g14, difficulty: medium, type: mcq, prompt: "Goal Seek for break-even saving: Set cell?", choices: ["the NPV cell, to 0, by changing the annual saving", "the saving, to 0", "IRR, to 15%, by changing NPV", "the cost, to 0"], answer: 0 }
+        - { id: xl-w14-d6-g15, difficulty: medium, type: mcq, prompt: "Best month for the report", choices: ["December", "March", "October", "January"], answer: 0 }
+        - { id: xl-w14-d6-g16, difficulty: hard, type: mcq, prompt: "Set IRR to 15% by changing the saving gives the same break-even as NPV = 0. Why?", choices: ["IRR is the rate where NPV = 0", "coincidence", "it doesn't", "IRR ignores year 0"], answer: 0 }
+        - { id: xl-w14-d6-g17, difficulty: hard, type: text, prompt: "Break-even annual saving (nearest ₦ thousand, e.g. 1417000)?", accept: ["1417000", "1,417,000", "1416999", "1,416,999"] }
+        - { id: xl-w14-d6-g18, difficulty: hard, type: multi, prompt: "Annual report sheets (Select all.)", choices: ["Executive summary", "Targets", "2026 Plan", "a sheet of pasted screenshots"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Week 14 lightning round"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w14-d6-rf01, difficulty: easy, type: mcq, prompt: "Hit one target by changing one cell", choices: ["Goal Seek", "Solver", "Data Table", "Scenario Manager"], answer: 0 }
+          - { id: xl-w14-d6-rf02, difficulty: easy, type: mcq, prompt: "Optimise with constraints", choices: ["Solver", "Goal Seek", "Data Table", "PMT"], answer: 0 }
+          - { id: xl-w14-d6-rf03, difficulty: easy, type: mcq, prompt: "Loan payment", choices: ["PMT", "FV", "NPV", "IRR"], answer: 0 }
+          - { id: xl-w14-d6-rf04, difficulty: easy, type: mcq, prompt: "Monthly rate from 24% a year", choices: ["2%", "24%", "0.24%", "12%"], answer: 0 }
+          - { id: xl-w14-d6-rf05, difficulty: easy, type: mcq, prompt: "Best/Base/Worst", choices: ["Scenario Manager", "Goal Seek", "Solver", "Pivot"], answer: 0 }
+          - { id: xl-w14-d6-rf06, difficulty: easy, type: text, prompt: "Kiosk max profit (no symbol)", accept: ["2464500", "2,464,500"] }
+          - { id: xl-w14-d6-rf07, difficulty: easy, type: text, prompt: "Solar IRR (1 decimal %)", accept: ["25.9%", "25.9"] }
+          - { id: xl-w14-d6-rf08, difficulty: easy, type: text, prompt: "Extra phones for Kano", accept: ["37"] }
+          - { id: xl-w14-d6-rf09, difficulty: easy, type: truefalse, prompt: "Money paid out is negative in Excel finance functions.", answer: true }
+          - { id: xl-w14-d6-rf10, difficulty: easy, type: mcq, prompt: "NPV's first value counts as…", choices: ["year 1", "year 0", "today", "the rate"], answer: 0 }
+      - kind: brain-teaser
+        title: "CEO-ready"
+        questions:
+          - { id: xl-w14-d6-bt01, difficulty: medium, type: mcq, prompt: "A plain-English finding for the summary", choices: ["Lagos brings in 38.6% of sales; Kano missed target by 5.6%", "Region field is text", "SUMIFS used in column O", "Pivot cache refreshed"], answer: 0 }
+          - { id: xl-w14-d6-bt02, difficulty: medium, type: mcq, prompt: "Recommendation from the solar analysis", choices: ["Buy: NPV ₦1.28M > 0, IRR 25.9% > 15%; risk if savings fall below ₦1.42M/yr", "Don't buy", "Wait 10 years", "Buy two"], answer: 0 }
+          - { id: xl-w14-d6-bt03, difficulty: medium, type: mcq, prompt: "Margin warning for the report", choices: ["Groceries is the top category but earns only 7.3% margin", "Fashion loses money", "All categories equal", "Phones lead margin"], answer: 0 }
+          - { id: xl-w14-d6-bt04, difficulty: hard, type: mcq, prompt: "Base 2026 plan headline", choices: ["Net sales ≈ ₦917.5M, profit ≈ ₦142.2M at 10% growth and 15.5% margin", "₦834M again", "₦1B profit", "₦103M sales"], answer: 0 }
+          - { id: xl-w14-d6-bt05, difficulty: hard, type: multi, prompt: "Phase 3 skills used in the annual report (Select all.)", choices: ["pivots with slicers", "target vs actual with conditional formatting", "scenarios and a data table", "VBA macros"], answers: [0, 1, 2] }
