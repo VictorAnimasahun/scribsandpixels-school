@@ -1,0 +1,298 @@
+# French · Week 13 quizzes. Format and rules: src/content/QUIZZES.md
+week: 13
+days:
+
+  # ─────────────────────────── DAY 1 ───────────────────────────
+  - day: 1
+    gate:
+      title: "Checkpoint: Week 12 review"
+      covers: "Week 12: futur proche, weather and seasons, invitations, plans and intentions, Dayo's email"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w13-d1-g01, difficulty: easy, type: mcq, prompt: "I'm going to work.", choices: ["Je vais travailler.", "Je viens de travailler.", "Je vais travaille.", "Je travaillerai va."], answer: 0 }
+        - { id: fr-w13-d1-g02, difficulty: easy, type: mcq, prompt: "It's raining.", choices: ["Il pleut.", "Il fait pluie.", "Il pleure.", "Il est pluie."], answer: 0 }
+        - { id: fr-w13-d1-g03, difficulty: easy, type: truefalse, prompt: "« Au printemps » but « en été ».", answer: true }
+        - { id: fr-w13-d1-g04, difficulty: easy, type: mcq, prompt: "Gladly!", choices: ["Volontiers !", "Dommage !", "Désolé !", "Pas du tout !"], answer: 0 }
+        - { id: fr-w13-d1-g05, difficulty: easy, type: mcq, prompt: "I'm busy.", choices: ["Je suis pris(e).", "Je suis libre.", "J'ai occupé.", "Je prends."], answer: 0 }
+        - { id: fr-w13-d1-g06, difficulty: easy, type: mcq, prompt: "next week", choices: ["la semaine prochaine", "la semaine dernière", "cette semaine", "chaque semaine"], answer: 0 }
+        - { id: fr-w13-d1-g07, difficulty: medium, type: text, prompt: "Translate: I'm not going to work tomorrow.", accept: ["Je ne vais pas travailler demain.", "Je ne vais pas travailler demain"] }
+        - { id: fr-w13-d1-g08, difficulty: medium, type: text, prompt: "Translate: Tomorrow, it's going to be hot.", accept: ["Demain, il va faire chaud.", "Demain il va faire chaud.", "Demain, il va faire chaud"] }
+        - { id: fr-w13-d1-g09, difficulty: medium, type: match, prompt: "Match.", pairs: [["J'ai l'intention de", "I intend to"], ["J'ai envie de", "I feel like"], ["Je compte", "I plan to"], ["Je voudrais", "I would like to"]] }
+        - { id: fr-w13-d1-g10, difficulty: medium, type: text, prompt: "Translate: I intend to learn French.", accept: ["J'ai l'intention d'apprendre le français.", "J'ai l'intention d'apprendre le français"] }
+        - { id: fr-w13-d1-g11, difficulty: medium, type: truefalse, prompt: "« Je compte de partir » is correct.", answer: false }
+        - { id: fr-w13-d1-g12, difficulty: medium, type: text, prompt: "Futur proche of se lever for nous", accept: ["Nous allons nous lever.", "nous allons nous lever", "Nous allons nous lever"] }
+        - { id: fr-w13-d1-g13, difficulty: medium, type: mcq, prompt: "Do you fancy going to the cinema?", choices: ["Ça te dit d'aller au cinéma ?", "Tu dis le cinéma ?", "Ça va le cinéma ?", "Tu veux de cinéma ?"], answer: 0 }
+        - { id: fr-w13-d1-g14, difficulty: medium, type: text, prompt: "Translate: It's going to snow.", accept: ["Il va neiger.", "Il va neiger"] }
+        - { id: fr-w13-d1-g15, difficulty: medium, type: mcq, prompt: "Dayo goes back to Lagos…", choices: ["by bus", "by car", "by plane", "on foot"], answer: 0 }
+        - { id: fr-w13-d1-g16, difficulty: hard, type: text, prompt: "Translate: If it rains, we're going to go to the museum.", accept: ["S'il pleut, on va aller au musée.", "S'il pleut on va aller au musée.", "S'il pleut, nous allons aller au musée."] }
+        - { id: fr-w13-d1-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « Désolé, je ne peut pas. En printemps, je vais voyager. »", choices: ["peux … Au printemps", "Only peut", "Only En printemps", "No error"], answer: 0 }
+        - { id: fr-w13-d1-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["Il fait beau.", "Je vais me reposer.", "J'ai envie de dormir.", "Il va pleut."], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Question words"
+        secondsPerQuestion: 7
+        questions:
+          - { id: fr-w13-d1-rf01, difficulty: easy, type: mcq, prompt: "qui", choices: ["who", "what", "which", "when"], answer: 0 }
+          - { id: fr-w13-d1-rf02, difficulty: easy, type: mcq, prompt: "quand", choices: ["when", "how much", "where", "which"], answer: 0 }
+          - { id: fr-w13-d1-rf03, difficulty: easy, type: mcq, prompt: "comment", choices: ["how", "comment", "why", "what"], answer: 0 }
+          - { id: fr-w13-d1-rf04, difficulty: easy, type: mcq, prompt: "pourquoi", choices: ["why", "for what", "because", "how"], answer: 0 }
+          - { id: fr-w13-d1-rf05, difficulty: easy, type: mcq, prompt: "combien", choices: ["how much / how many", "combine", "when", "how"], answer: 0 }
+          - { id: fr-w13-d1-rf06, difficulty: easy, type: mcq, prompt: "où", choices: ["where", "or", "who", "when"], answer: 0 }
+          - { id: fr-w13-d1-rf07, difficulty: easy, type: mcq, prompt: "Answer to pourquoi", choices: ["parce que", "pour quoi", "car seulement", "donc"], answer: 0 }
+          - { id: fr-w13-d1-rf08, difficulty: easy, type: mcq, prompt: "Informal: Where are you going?", choices: ["Tu vas où ?", "Où vas-tu ?", "Où est-ce que tu vas ?", "Vas-tu où ?"], answer: 0 }
+          - { id: fr-w13-d1-rf09, difficulty: easy, type: mcq, prompt: "Standard: Where are you going?", choices: ["Où est-ce que tu vas ?", "Tu vas où ?", "Où vas-tu ?", "Où tu est-ce vas ?"], answer: 0 }
+          - { id: fr-w13-d1-rf10, difficulty: easy, type: mcq, prompt: "Formal: Where are you going?", choices: ["Où vas-tu ?", "Tu vas où ?", "Où est-ce que tu vas ?", "Où tu vas ?"], answer: 0 }
+          - { id: fr-w13-d1-rf11, difficulty: easy, type: mcq, prompt: "Informal: What are you doing?", choices: ["Tu fais quoi ?", "Que fais-tu ?", "Qu'est-ce que tu fais ?", "Quoi fais-tu ?"], answer: 0 }
+      - kind: brain-teaser
+        title: "Three registers"
+        questions:
+          - { id: fr-w13-d1-bt01, difficulty: medium, type: text, prompt: "Standard (est-ce que): When do you arrive? (tu)", accept: ["Quand est-ce que tu arrives ?", "Quand est-ce que tu arrives?"] }
+          - { id: fr-w13-d1-bt02, difficulty: medium, type: text, prompt: "Informal: How much does it cost?", accept: ["Ça coûte combien ?", "Ça coûte combien?"] }
+          - { id: fr-w13-d1-bt03, difficulty: medium, type: text, prompt: "Formal: Why are you learning French? (vous)", accept: ["Pourquoi apprenez-vous le français ?", "Pourquoi apprenez-vous le français?"] }
+          - { id: fr-w13-d1-bt04, difficulty: hard, type: text, prompt: "All three for \"What are you doing?\" (separate with /)", accept: ["Tu fais quoi ? / Qu'est-ce que tu fais ? / Que fais-tu ?", "Tu fais quoi ?/Qu'est-ce que tu fais ?/Que fais-tu ?", "Tu fais quoi? / Qu'est-ce que tu fais? / Que fais-tu?"] }
+          - { id: fr-w13-d1-bt05, difficulty: hard, type: mcq, prompt: "Which register is always safe?", choices: ["est-ce que", "inversion", "intonation only", "quoi at the end"], answer: 0 }
+
+  # ─────────────────────────── DAY 2 ───────────────────────────
+  - day: 2
+    gate:
+      title: "Checkpoint: question words and registers"
+      covers: "Week 13 · Day 1: qui, que/quoi, où, quand, comment, pourquoi, combien, quel; informal, est-ce que, inversion"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w13-d2-g01, difficulty: easy, type: mcq, prompt: "how", choices: ["comment", "combien", "quand", "quel"], answer: 0 }
+        - { id: fr-w13-d2-g02, difficulty: easy, type: mcq, prompt: "how many", choices: ["combien", "comment", "quand", "pourquoi"], answer: 0 }
+        - { id: fr-w13-d2-g03, difficulty: easy, type: truefalse, prompt: "« Tu vas où ? » is informal spoken French.", answer: true }
+        - { id: fr-w13-d2-g04, difficulty: easy, type: mcq, prompt: "who", choices: ["qui", "que", "quoi", "quel"], answer: 0 }
+        - { id: fr-w13-d2-g05, difficulty: easy, type: mcq, prompt: "« quoi » goes…", choices: ["at the end (informal)", "at the start only", "after est-ce que", "nowhere"], answer: 0 }
+        - { id: fr-w13-d2-g06, difficulty: easy, type: mcq, prompt: "Standard form adds…", choices: ["est-ce que", "-t-", "quoi", "donc"], answer: 0 }
+        - { id: fr-w13-d2-g07, difficulty: medium, type: match, prompt: "Match the register.", pairs: [["Tu arrives quand ?", "informal"], ["Quand est-ce que tu arrives ?", "standard"], ["Quand arrives-tu ?", "formal"], ["Que fais-tu ?", "formal (what)"]] }
+        - { id: fr-w13-d2-g08, difficulty: medium, type: text, prompt: "Standard: What are you doing? (tu)", accept: ["Qu'est-ce que tu fais ?", "Qu'est-ce que tu fais?"] }
+        - { id: fr-w13-d2-g09, difficulty: medium, type: text, prompt: "Formal: When do you arrive? (tu)", accept: ["Quand arrives-tu ?", "Quand arrives-tu?"] }
+        - { id: fr-w13-d2-g10, difficulty: medium, type: mcq, prompt: "Standard: How much does it cost?", choices: ["Combien est-ce que ça coûte ?", "Ça coûte combien est-ce que ?", "Combien coûte ça-t-il ?", "Est-ce que combien ça coûte ?"], answer: 0 }
+        - { id: fr-w13-d2-g11, difficulty: medium, type: truefalse, prompt: "« Que fais-tu ? » and « Qu'est-ce que tu fais ? » mean the same.", answer: true }
+        - { id: fr-w13-d2-g12, difficulty: medium, type: text, prompt: "Informal: Where do you live? (tu)", accept: ["Tu habites où ?", "Tu habites où?"] }
+        - { id: fr-w13-d2-g13, difficulty: medium, type: mcq, prompt: "Formal: How much does it cost?", choices: ["Combien cela coûte-t-il ?", "Combien coûte-il ?", "Ça coûte-t-il combien ?", "Combien est-ce coûte ?"], answer: 0 }
+        - { id: fr-w13-d2-g14, difficulty: medium, type: text, prompt: "Standard: Why are you learning French? (vous)", accept: ["Pourquoi est-ce que vous apprenez le français ?", "Pourquoi est-ce que vous apprenez le français?"] }
+        - { id: fr-w13-d2-g15, difficulty: medium, type: order, prompt: "Build: Where are you going? (standard)", items: ["Où", "est-ce que", "tu", "vas", "?"] }
+        - { id: fr-w13-d2-g16, difficulty: hard, type: text, prompt: "Informal: Why are you learning French? (vous)", accept: ["Vous apprenez le français pourquoi ?", "Vous apprenez le français pourquoi?"] }
+        - { id: fr-w13-d2-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « Quoi tu fais ce soir ? »", choices: ["Quoi goes at the end: Tu fais quoi ce soir ?", "fais → faites", "ce soir → cette soir", "No error"], answer: 0 }
+        - { id: fr-w13-d2-g18, difficulty: hard, type: multi, prompt: "Which correctly ask \"When are you leaving?\" (Select all.)", choices: ["Tu pars quand ?", "Quand est-ce que tu pars ?", "Quand pars-tu ?", "Quand tu est-ce que pars ?"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Inversion and quel"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fr-w13-d2-rf01, difficulty: easy, type: mcq, prompt: "Do you speak English? (vous, inverted)", choices: ["Parlez-vous anglais ?", "Vous parlez-vous anglais ?", "Parlez vous anglais ?", "Vous-parlez anglais ?"], answer: 0 }
+          - { id: fr-w13-d2-rf02, difficulty: easy, type: mcq, prompt: "Where is he going? (inverted)", choices: ["Où va-t-il ?", "Où va-il ?", "Où il-va ?", "Où va il ?"], answer: 0 }
+          - { id: fr-w13-d2-rf03, difficulty: easy, type: mcq, prompt: "Does she speak French? (inverted)", choices: ["Parle-t-elle français ?", "Parle-elle français ?", "Elle-parle français ?", "Parlet-elle français ?"], answer: 0 }
+          - { id: fr-w13-d2-rf04, difficulty: easy, type: mcq, prompt: "___ heure est-il ?", choices: ["Quelle", "Quel", "Quels", "Quelles"], answer: 0 }
+          - { id: fr-w13-d2-rf05, difficulty: easy, type: mcq, prompt: "___ est ton numéro ?", choices: ["Quel", "Quelle", "Quels", "Qu'est-ce que"], answer: 0 }
+          - { id: fr-w13-d2-rf06, difficulty: easy, type: mcq, prompt: "___ sports aimes-tu ?", choices: ["Quels", "Quel", "Quelles", "Quelle"], answer: 0 }
+          - { id: fr-w13-d2-rf07, difficulty: easy, type: mcq, prompt: "___ langues parlez-vous ?", choices: ["Quelles", "Quels", "Quelle", "Quel"], answer: 0 }
+          - { id: fr-w13-d2-rf08, difficulty: easy, type: mcq, prompt: "May I…? (fixed formal phrase)", choices: ["Puis-je… ?", "Peux-je… ?", "Je peux-je… ?", "Pouvons-je… ?"], answer: 0 }
+          - { id: fr-w13-d2-rf09, difficulty: easy, type: truefalse, prompt: "-t- is added when the verb ends in a vowel before il/elle/on.", answer: true }
+          - { id: fr-w13-d2-rf10, difficulty: easy, type: mcq, prompt: "What is your address?", choices: ["Quelle est votre adresse ?", "Qu'est-ce que votre adresse ?", "Quel est votre adresse ?", "Quoi votre adresse ?"], answer: 0 }
+      - kind: brain-teaser
+        title: "Invert it"
+        questions:
+          - { id: fr-w13-d2-bt01, difficulty: medium, type: text, prompt: "Invert: Il parle français.", accept: ["Parle-t-il français ?", "Parle-t-il français?"] }
+          - { id: fr-w13-d2-bt02, difficulty: medium, type: text, prompt: "Invert: Elle a un frère.", accept: ["A-t-elle un frère ?", "A-t-elle un frère?"] }
+          - { id: fr-w13-d2-bt03, difficulty: medium, type: text, prompt: "Invert: Tes amis viennent ce soir.", accept: ["Tes amis viennent-ils ce soir ?", "Tes amis viennent-ils ce soir?"] }
+          - { id: fr-w13-d2-bt04, difficulty: hard, type: text, prompt: "Fill: ___ est ta couleur préférée ? / ___ films aimes-tu ? / ___ jour sommes-nous ? (comma-separated)", accept: ["Quelle, Quels, Quel", "quelle, quels, quel"] }
+          - { id: fr-w13-d2-bt05, difficulty: hard, type: mcq, prompt: "Why « Où va-t-il ? » and not « Où va-il ? »", choices: ["The -t- separates two vowel sounds", "-t- means past tense", "It's a typo", "il needs a consonant always"], answer: 0 }
+
+  # ─────────────────────────── DAY 3 ───────────────────────────
+  - day: 3
+    gate:
+      title: "Checkpoint: inversion and quel"
+      covers: "Week 13 · Day 2: verb-hyphen-pronoun, -t-, noun subjects + pronoun, quel/quelle/quels/quelles, quel + être"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w13-d3-g01, difficulty: easy, type: mcq, prompt: "Do you like coffee? (tu, inverted)", choices: ["Aimes-tu le café ?", "Tu aimes-tu le café ?", "Aime-tu le café ?", "Aimes tu le café ?"], answer: 0 }
+        - { id: fr-w13-d3-g02, difficulty: easy, type: mcq, prompt: "quel (fem. sing.)", choices: ["quelle", "quels", "quelles", "quel"], answer: 0 }
+        - { id: fr-w13-d3-g03, difficulty: easy, type: truefalse, prompt: "Inversion joins the verb and pronoun with a hyphen.", answer: true }
+        - { id: fr-w13-d3-g04, difficulty: easy, type: mcq, prompt: "___ âge as-tu ?", choices: ["Quel", "Quelle", "Quels", "Quelles"], answer: 0 }
+        - { id: fr-w13-d3-g05, difficulty: easy, type: mcq, prompt: "Is there telework? (formal)", choices: ["Y a-t-il du télétravail ?", "Il y a-t-il du télétravail ?", "Y a-il du télétravail ?", "A-t-il y du télétravail ?"], answer: 0 }
+        - { id: fr-w13-d3-g06, difficulty: easy, type: mcq, prompt: "Avoid inverting…", choices: ["je", "tu", "vous", "il"], answer: 0 }
+        - { id: fr-w13-d3-g07, difficulty: medium, type: match, prompt: "Match quel to the noun.", pairs: [["quel", "numéro"], ["quelle", "heure"], ["quels", "sports"], ["quelles", "langues"]] }
+        - { id: fr-w13-d3-g08, difficulty: medium, type: text, prompt: "Invert: Elle parle français.", accept: ["Parle-t-elle français ?", "Parle-t-elle français?"] }
+        - { id: fr-w13-d3-g09, difficulty: medium, type: text, prompt: "Invert: Vous habitez à Lagos.", accept: ["Habitez-vous à Lagos ?", "Habitez-vous à Lagos?"] }
+        - { id: fr-w13-d3-g10, difficulty: medium, type: mcq, prompt: "Is Marie here? (inverted with a noun subject)", choices: ["Marie est-elle là ?", "Est-Marie là ?", "Est-elle Marie là ?", "Marie est-t-elle là ?"], answer: 0 }
+        - { id: fr-w13-d3-g11, difficulty: medium, type: truefalse, prompt: "« Qu'est-ce que votre adresse ? » is correct.", answer: false }
+        - { id: fr-w13-d3-g12, difficulty: medium, type: text, prompt: "Invert: On a le temps.", accept: ["A-t-on le temps ?", "A-t-on le temps?"] }
+        - { id: fr-w13-d3-g13, difficulty: medium, type: mcq, prompt: "Do your parents live in Kano? (inverted)", choices: ["Tes parents habitent-ils à Kano ?", "Habitent-tes parents à Kano ?", "Tes parents habitent-t-ils à Kano ?", "Habitent-ils tes parents à Kano ?"], answer: 0 }
+        - { id: fr-w13-d3-g14, difficulty: medium, type: text, prompt: "___ films aimes-tu ?", accept: ["Quels", "quels"] }
+        - { id: fr-w13-d3-g15, difficulty: medium, type: mcq, prompt: "What are the working hours? (formal)", choices: ["Quels sont les horaires ?", "Quelles sont les horaires ?", "Qu'est-ce que les horaires ?", "Quel sont les horaires ?"], answer: 0 }
+        - { id: fr-w13-d3-g16, difficulty: hard, type: text, prompt: "Invert: Ton frère travaille à Abuja.", accept: ["Ton frère travaille-t-il à Abuja ?", "Ton frère travaille-t-il à Abuja?"] }
+        - { id: fr-w13-d3-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « Quelle sont vos langues ? Parle-il anglais ? »", choices: ["Quelles sont … Parle-t-il", "Only Quelle", "Only Parle-il", "No error"], answer: 0 }
+        - { id: fr-w13-d3-g18, difficulty: hard, type: multi, prompt: "Which are correct inversions? (Select all.)", choices: ["Parlez-vous français ?", "Où va-t-elle ?", "Ta sœur est-elle médecin ?", "Va-il au marché ?"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Pouvoir, devoir, vouloir"
+        secondsPerQuestion: 7
+        questions:
+          - { id: fr-w13-d3-rf01, difficulty: easy, type: text, prompt: "je ___ (pouvoir)", accept: ["peux"] }
+          - { id: fr-w13-d3-rf02, difficulty: easy, type: text, prompt: "il ___ (pouvoir)", accept: ["peut"] }
+          - { id: fr-w13-d3-rf03, difficulty: easy, type: text, prompt: "ils ___ (pouvoir)", accept: ["peuvent"] }
+          - { id: fr-w13-d3-rf04, difficulty: easy, type: text, prompt: "je ___ (devoir)", accept: ["dois"] }
+          - { id: fr-w13-d3-rf05, difficulty: easy, type: text, prompt: "nous ___ (devoir)", accept: ["devons"] }
+          - { id: fr-w13-d3-rf06, difficulty: easy, type: text, prompt: "ils ___ (devoir)", accept: ["doivent"] }
+          - { id: fr-w13-d3-rf07, difficulty: easy, type: text, prompt: "tu ___ (vouloir)", accept: ["veux"] }
+          - { id: fr-w13-d3-rf08, difficulty: easy, type: text, prompt: "vous ___ (vouloir)", accept: ["voulez"] }
+          - { id: fr-w13-d3-rf09, difficulty: easy, type: text, prompt: "ils ___ (vouloir)", accept: ["veulent"] }
+          - { id: fr-w13-d3-rf10, difficulty: easy, type: mcq, prompt: "Modals are followed by…", choices: ["an infinitive", "a past participle", "que", "de"], answer: 0 }
+      - kind: brain-teaser
+        title: "Learner lifesavers"
+        questions:
+          - { id: fr-w13-d3-bt01, difficulty: medium, type: text, prompt: "Translate: Can you repeat, please? (vous)", accept: ["Vous pouvez répéter, s'il vous plaît ?", "Vous pouvez répéter s'il vous plaît ?", "Pouvez-vous répéter, s'il vous plaît ?", "Vous pouvez répéter, s'il vous plaît?"] }
+          - { id: fr-w13-d3-bt02, difficulty: medium, type: text, prompt: "Translate: Can you speak more slowly? (vous)", accept: ["Vous pouvez parler plus lentement ?", "Pouvez-vous parler plus lentement ?", "Vous pouvez parler plus lentement, s'il vous plaît ?", "Vous pouvez parler plus lentement?"] }
+          - { id: fr-w13-d3-bt03, difficulty: medium, type: text, prompt: "Translate: What does that mean?", accept: ["Qu'est-ce que ça veut dire ?", "Qu'est-ce que ça veut dire?"] }
+          - { id: fr-w13-d3-bt04, difficulty: hard, type: mcq, prompt: "« Il doit être fatigué » =", choices: ["He must be tired (probably)", "He has to be tired", "He owes tiredness", "He wants to be tired"], answer: 0 }
+          - { id: fr-w13-d3-bt05, difficulty: hard, type: text, prompt: "Translate: How do you say \"bank\" in French?", accept: ["Comment on dit « bank » en français ?", "Comment on dit bank en français ?", "Comment dit-on « bank » en français ?", "Comment on dit \"bank\" en français ?"] }
+
+  # ─────────────────────────── DAY 4 ───────────────────────────
+  - day: 4
+    gate:
+      title: "Checkpoint: modal verbs"
+      covers: "Week 13 · Day 3: pouvoir, devoir, vouloir + infinitive; permission, requests, obligation, probability"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w13-d4-g01, difficulty: easy, type: mcq, prompt: "I can come.", choices: ["Je peux venir.", "Je dois venir.", "Je veux venir.", "Je peux viens."], answer: 0 }
+        - { id: fr-w13-d4-g02, difficulty: easy, type: mcq, prompt: "You must leave. (tu)", choices: ["Tu dois partir.", "Tu peux partir.", "Tu veux partir.", "Tu dois pars."], answer: 0 }
+        - { id: fr-w13-d4-g03, difficulty: easy, type: truefalse, prompt: "« Je veux » is stronger and less polite than « je voudrais ».", answer: true }
+        - { id: fr-w13-d4-g04, difficulty: easy, type: text, prompt: "Nous (devoir) ___ partir.", accept: ["devons"] }
+        - { id: fr-w13-d4-g05, difficulty: easy, type: text, prompt: "Ils (pouvoir) ___ venir ?", accept: ["peuvent"] }
+        - { id: fr-w13-d4-g06, difficulty: easy, type: text, prompt: "Vous (vouloir) ___ un café ?", accept: ["voulez"] }
+        - { id: fr-w13-d4-g07, difficulty: medium, type: match, prompt: "Match the use.", pairs: [["Est-ce que je peux entrer ?", "permission"], ["Tu peux m'aider ?", "request"], ["Je dois travailler.", "obligation"], ["Il doit être fatigué.", "probability"]] }
+        - { id: fr-w13-d4-g08, difficulty: medium, type: text, prompt: "Elle (devoir) ___ être à Paris.", accept: ["doit"] }
+        - { id: fr-w13-d4-g09, difficulty: medium, type: text, prompt: "Tu (pouvoir) ___ parler plus lentement ?", accept: ["peux"] }
+        - { id: fr-w13-d4-g10, difficulty: medium, type: mcq, prompt: "Do we have to pay in cash?", choices: ["On doit payer en espèces ?", "On peut payer en espèce ?", "On veut payer cash ?", "On doit paye en espèces ?"], answer: 0 }
+        - { id: fr-w13-d4-g11, difficulty: medium, type: truefalse, prompt: "« Ils peut » is correct.", answer: false }
+        - { id: fr-w13-d4-g12, difficulty: medium, type: text, prompt: "Translate: Can you help me? (tu)", accept: ["Tu peux m'aider ?", "Tu peux m'aider?", "Peux-tu m'aider ?"] }
+        - { id: fr-w13-d4-g13, difficulty: medium, type: mcq, prompt: "Can I use the toilet?", choices: ["Je peux utiliser les toilettes ?", "Je dois utiliser la toilette ?", "Je veux utilise les toilettes ?", "Je peux utilise les toilettes ?"], answer: 0 }
+        - { id: fr-w13-d4-g14, difficulty: medium, type: text, prompt: "Translate: I have to work tomorrow.", accept: ["Je dois travailler demain.", "Je dois travailler demain"] }
+        - { id: fr-w13-d4-g15, difficulty: medium, type: order, prompt: "Order pouvoir: je → ils.", items: ["peux", "peux", "peut", "pouvons", "pouvez", "peuvent"] }
+        - { id: fr-w13-d4-g16, difficulty: hard, type: text, prompt: "Translate: They (men) want to leave, but they have to work.", accept: ["Ils veulent partir, mais ils doivent travailler.", "Ils veulent partir mais ils doivent travailler.", "Ils veulent partir, mais ils doivent travailler"] }
+        - { id: fr-w13-d4-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « Nous pouvons venons et vous devez partir. »", choices: ["venons → venir", "devez → devons", "pouvons → peuvons", "No error"], answer: 0 }
+        - { id: fr-w13-d4-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["Vous devez signer ici.", "Elle veut dormir.", "Nous pouvons commencer.", "Ils doit partir."], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Savoir or connaître?"
+        secondsPerQuestion: 7
+        questions:
+          - { id: fr-w13-d4-rf01, difficulty: easy, type: mcq, prompt: "Je ___ nager.", choices: ["sais", "connais"], answer: 0 }
+          - { id: fr-w13-d4-rf02, difficulty: easy, type: mcq, prompt: "Je ___ Amina.", choices: ["connais", "sais"], answer: 0 }
+          - { id: fr-w13-d4-rf03, difficulty: easy, type: mcq, prompt: "Tu ___ Montréal ?", choices: ["connais", "sais"], answer: 0 }
+          - { id: fr-w13-d4-rf04, difficulty: easy, type: mcq, prompt: "Tu ___ où il habite ?", choices: ["sais", "connais"], answer: 0 }
+          - { id: fr-w13-d4-rf05, difficulty: easy, type: mcq, prompt: "Je ne ___ pas. (I don't know.)", choices: ["sais", "connais"], answer: 0 }
+          - { id: fr-w13-d4-rf06, difficulty: easy, type: mcq, prompt: "Vous ___ ce livre ?", choices: ["connaissez", "savez"], answer: 0 }
+          - { id: fr-w13-d4-rf07, difficulty: easy, type: text, prompt: "il ___ (savoir)", accept: ["sait"] }
+          - { id: fr-w13-d4-rf08, difficulty: easy, type: text, prompt: "il ___ (connaître)", accept: ["connaît", "connait"] }
+          - { id: fr-w13-d4-rf09, difficulty: easy, type: text, prompt: "nous ___ (connaître)", accept: ["connaissons"] }
+          - { id: fr-w13-d4-rf10, difficulty: easy, type: text, prompt: "ils ___ (savoir)", accept: ["savent"] }
+      - kind: brain-teaser
+        title: "Know it"
+        questions:
+          - { id: fr-w13-d4-bt01, difficulty: medium, type: text, prompt: "Nous ___ qu'il est malade.", accept: ["savons"] }
+          - { id: fr-w13-d4-bt02, difficulty: medium, type: text, prompt: "Elle ___ bien la musique de Burna Boy.", accept: ["connaît", "connait"] }
+          - { id: fr-w13-d4-bt03, difficulty: medium, type: text, prompt: "Ils ne ___ pas où est la gare.", accept: ["savent"] }
+          - { id: fr-w13-d4-bt04, difficulty: hard, type: text, prompt: "Savoir or connaître: ___ Lagos, ___ nager, ___ la vérité, ___ ma sœur (infinitives, comma-separated)", accept: ["connaître, savoir, savoir, connaître", "connaitre, savoir, savoir, connaitre"] }
+          - { id: fr-w13-d4-bt05, difficulty: hard, type: mcq, prompt: "« Chais pas » is…", choices: ["casual spoken « Je ne sais pas »", "a typo", "formal French", "Quebec only"], answer: 0 }
+
+  # ─────────────────────────── DAY 5 ───────────────────────────
+  - day: 5
+    gate:
+      title: "Checkpoint: savoir vs connaître"
+      covers: "Week 13 · Day 4: savoir (facts, how to, que/où/si) vs connaître (people, places, works); conjugations"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w13-d5-g01, difficulty: easy, type: mcq, prompt: "Know how to swim", choices: ["savoir nager", "connaître nager", "pouvoir nage", "savoir à nager"], answer: 0 }
+        - { id: fr-w13-d5-g02, difficulty: easy, type: mcq, prompt: "Know a person", choices: ["connaître", "savoir", "both", "neither"], answer: 0 }
+        - { id: fr-w13-d5-g03, difficulty: easy, type: truefalse, prompt: "savoir + infinitive = know how to.", answer: true }
+        - { id: fr-w13-d5-g04, difficulty: easy, type: text, prompt: "Tu ___ Paris ?", accept: ["connais"] }
+        - { id: fr-w13-d5-g05, difficulty: easy, type: text, prompt: "Je ___ conduire.", accept: ["sais"] }
+        - { id: fr-w13-d5-g06, difficulty: easy, type: text, prompt: "Vous ___ mon frère ?", accept: ["connaissez"] }
+        - { id: fr-w13-d5-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["savoir + infinitive", "Je sais nager."], ["savoir + où", "Tu sais où il habite ?"], ["connaître + person", "Je connais Amina."], ["connaître + place", "Tu connais Montréal ?"]] }
+        - { id: fr-w13-d5-g08, difficulty: medium, type: text, prompt: "Translate: I don't know.", accept: ["Je ne sais pas.", "Je ne sais pas"] }
+        - { id: fr-w13-d5-g09, difficulty: medium, type: text, prompt: "Translate: Do you (vous) know Abuja?", accept: ["Vous connaissez Abuja ?", "Connaissez-vous Abuja ?", "Est-ce que vous connaissez Abuja ?", "Vous connaissez Abuja?"] }
+        - { id: fr-w13-d5-g10, difficulty: medium, type: mcq, prompt: "Je ___ si elle vient.", choices: ["ne sais pas", "ne connais pas", "ne peux pas", "ne dois pas"], answer: 0 }
+        - { id: fr-w13-d5-g11, difficulty: medium, type: truefalse, prompt: "« Je connais nager » is correct.", answer: false }
+        - { id: fr-w13-d5-g12, difficulty: medium, type: text, prompt: "Translate: She knows how to cook.", accept: ["Elle sait cuisiner.", "Elle sait cuisiner", "Elle sait faire la cuisine."] }
+        - { id: fr-w13-d5-g13, difficulty: medium, type: mcq, prompt: "Do you know this film?", choices: ["Tu connais ce film ?", "Tu sais ce film ?", "Tu peux ce film ?", "Tu connaît ce film ?"], answer: 0 }
+        - { id: fr-w13-d5-g14, difficulty: medium, type: text, prompt: "Translate: We know that it's expensive.", accept: ["Nous savons que c'est cher.", "On sait que c'est cher.", "Nous savons que c'est cher"] }
+        - { id: fr-w13-d5-g15, difficulty: medium, type: order, prompt: "Order connaître: je → ils.", items: ["connais", "connais", "connaît", "connaissons", "connaissez", "connaissent"] }
+        - { id: fr-w13-d5-g16, difficulty: hard, type: text, prompt: "Translate: I know Tunde, but I don't know where he lives.", accept: ["Je connais Tunde, mais je ne sais pas où il habite.", "Je connais Tunde mais je ne sais pas où il habite.", "Je connais Tunde, mais je ne sais pas où il habite"] }
+        - { id: fr-w13-d5-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « Tu sais Montréal ? Je connais qu'il fait froid. »", choices: ["Tu connais Montréal … Je sais qu'il fait froid", "Only the first", "Only the second", "No error"], answer: 0 }
+        - { id: fr-w13-d5-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["Je sais la réponse.", "Il connaît bien Lagos.", "Vous savez parler anglais ?", "Nous savons ta mère."], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "At reception"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fr-w13-d5-rf01, difficulty: easy, type: mcq, prompt: "Breakfast time", choices: ["7 h to 10 h", "6 h to 9 h", "8 h to 11 h", "all day"], answer: 0 }
+          - { id: fr-w13-d5-rf02, difficulty: easy, type: mcq, prompt: "Breakfast is…", choices: ["on the ground floor", "on the first floor", "in the room", "outside"], answer: 0 }
+          - { id: fr-w13-d5-rf03, difficulty: easy, type: mcq, prompt: "The wifi code is…", choices: ["on the room key", "at reception only", "free, no code", "in the lift"], answer: 0 }
+          - { id: fr-w13-d5-rf04, difficulty: easy, type: mcq, prompt: "The pharmacy is…", choices: ["opposite the station, 5 minutes on foot", "next to the hotel", "far away", "at the airport"], answer: 0 }
+          - { id: fr-w13-d5-rf05, difficulty: easy, type: mcq, prompt: "A taxi to the airport costs…", choices: ["about 30 euros", "about 13 euros", "300 euros", "free"], answer: 0 }
+          - { id: fr-w13-d5-rf06, difficulty: easy, type: mcq, prompt: "Où se trouve… ?", choices: ["Where is… located?", "Who found… ?", "When is… ?", "How do I find myself?"], answer: 0 }
+          - { id: fr-w13-d5-rf07, difficulty: easy, type: mcq, prompt: "environ", choices: ["about", "environment", "around the corner", "exactly"], answer: 0 }
+          - { id: fr-w13-d5-rf08, difficulty: easy, type: mcq, prompt: "Je peux vous poser quelques questions ?", choices: ["May I ask you a few questions?", "Can you ask me questions?", "I put questions?", "Some questions, please."], answer: 0 }
+          - { id: fr-w13-d5-rf09, difficulty: easy, type: mcq, prompt: "Bien sûr.", choices: ["Of course.", "Well done.", "Very sure?", "Maybe."], answer: 0 }
+          - { id: fr-w13-d5-rf10, difficulty: easy, type: mcq, prompt: "la plus proche", choices: ["the nearest", "the most expensive", "the biggest", "the newest"], answer: 0 }
+      - kind: brain-teaser
+        title: "Ask the desk"
+        questions:
+          - { id: fr-w13-d5-bt01, difficulty: medium, type: text, prompt: "Translate: At what time is breakfast?", accept: ["À quelle heure est le petit-déjeuner ?", "À quelle heure est le petit déjeuner ?", "À quelle heure est le petit-déjeuner?"] }
+          - { id: fr-w13-d5-bt02, difficulty: medium, type: text, prompt: "Translate: Is there wifi in the rooms?", accept: ["Est-ce qu'il y a le wifi dans les chambres ?", "Y a-t-il le wifi dans les chambres ?", "Est-ce qu'il y a du wifi dans les chambres ?", "Y a-t-il du wifi dans les chambres ?"] }
+          - { id: fr-w13-d5-bt03, difficulty: medium, type: text, prompt: "Translate: Where is the nearest pharmacy located? (Où se trouve…)", accept: ["Où se trouve la pharmacie la plus proche ?", "Où se trouve la pharmacie la plus proche?"] }
+          - { id: fr-w13-d5-bt04, difficulty: hard, type: text, prompt: "Translate, as in the dialogue: How much does a taxi to the airport cost?", accept: ["Combien coûte un taxi pour l'aéroport ?", "Combien coûte un taxi pour l'aéroport?", "Combien coûte un taxi jusqu'à l'aéroport ?"] }
+          - { id: fr-w13-d5-bt05, difficulty: hard, type: mcq, prompt: "« Savez-vous où se trouve la pharmacie ? » uses…", choices: ["savoir + où, with inversion", "connaître + place", "pouvoir", "est-ce que"], answer: 0 }
+
+  # ─────────────────────────── DAY 6 ───────────────────────────
+  - day: 6
+    gate:
+      title: "Checkpoint: getting information"
+      covers: "Week 13 · Day 5: formal questions at a reception desk, où se trouve, environ, questions for a new city"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w13-d6-g01, difficulty: easy, type: mcq, prompt: "Where is the station located? (formal)", choices: ["Où se trouve la gare ?", "Où trouve la gare ?", "La gare se trouve où-t-elle ?", "Où est trouvé la gare ?"], answer: 0 }
+        - { id: fr-w13-d6-g02, difficulty: easy, type: mcq, prompt: "about thirty euros", choices: ["environ trente euros", "à peu trente euros", "autour trente euros", "envers trente euros"], answer: 0 }
+        - { id: fr-w13-d6-g03, difficulty: easy, type: truefalse, prompt: "At a hotel desk, formal questions (vous, inversion or est-ce que) are best.", answer: true }
+        - { id: fr-w13-d6-g04, difficulty: easy, type: mcq, prompt: "le petit-déjeuner", choices: ["breakfast", "lunch", "snack", "dinner"], answer: 0 }
+        - { id: fr-w13-d6-g05, difficulty: easy, type: mcq, prompt: "Thank you very much!", choices: ["Merci beaucoup !", "Merci très !", "Beaucoup merci !", "Très merci !"], answer: 0 }
+        - { id: fr-w13-d6-g06, difficulty: easy, type: mcq, prompt: "Where can I buy a SIM card?", choices: ["Où est-ce que je peux acheter une carte SIM ?", "Où je dois acheter carte SIM ?", "Où peux acheter une SIM ?", "Quand acheter une SIM ?"], answer: 0 }
+        - { id: fr-w13-d6-g07, difficulty: medium, type: match, prompt: "Match question and answer.", pairs: [["À quelle heure est le petit-déjeuner ?", "De 7 h à 10 h."], ["Il y a le wifi ?", "Oui, le code est sur votre clé."], ["Où se trouve la pharmacie ?", "En face de la gare."], ["Combien coûte un taxi ?", "Environ trente euros."]] }
+        - { id: fr-w13-d6-g08, difficulty: medium, type: text, prompt: "Translate: Is the neighbourhood safe? (est-ce que; sûr)", accept: ["Est-ce que le quartier est sûr ?", "Est-ce que le quartier est sûr?"] }
+        - { id: fr-w13-d6-g09, difficulty: medium, type: text, prompt: "Translate: Where can I change money? (est-ce que)", accept: ["Où est-ce que je peux changer de l'argent ?", "Où est-ce que je peux changer de l'argent?", "Où est-ce que je peux changer mon argent ?"] }
+        - { id: fr-w13-d6-g10, difficulty: medium, type: mcq, prompt: "Formal: What time does the museum open?", choices: ["À quelle heure le musée ouvre-t-il ?", "Le musée ouvre quelle heure ?", "Quelle heure ouvre-il le musée ?", "À quelle heure ouvre-il le musée ?"], answer: 0 }
+        - { id: fr-w13-d6-g11, difficulty: medium, type: truefalse, prompt: "« Pouvez-vous m'aider ? » is a polite request.", answer: true }
+        - { id: fr-w13-d6-g12, difficulty: medium, type: text, prompt: "Translate: Do you know a good restaurant? (vous)", accept: ["Vous connaissez un bon restaurant ?", "Connaissez-vous un bon restaurant ?", "Est-ce que vous connaissez un bon restaurant ?"] }
+        - { id: fr-w13-d6-g13, difficulty: medium, type: mcq, prompt: "Which uses connaître correctly?", choices: ["Connaissez-vous un bon médecin ?", "Connaissez-vous où est la gare ?", "Je connais nager.", "Tu connais que c'est loin ?"], answer: 0 }
+        - { id: fr-w13-d6-g14, difficulty: medium, type: text, prompt: "Translate: Which bus goes to the airport?", accept: ["Quel bus va à l'aéroport ?", "Quel bus va à l'aéroport?"] }
+        - { id: fr-w13-d6-g15, difficulty: medium, type: order, prompt: "Order the dialogue.", items: ["Bonjour Madame. Je peux vous poser quelques questions ?", "Bien sûr.", "À quelle heure est le petit-déjeuner ?", "De 7 h à 10 h, au rez-de-chaussée.", "Merci beaucoup !"] }
+        - { id: fr-w13-d6-g16, difficulty: hard, type: text, prompt: "Translate: Excuse me, can you tell me where the nearest bank is? (vous)", accept: ["Excusez-moi, pouvez-vous me dire où se trouve la banque la plus proche ?", "Excusez-moi, vous pouvez me dire où est la banque la plus proche ?", "Excusez-moi, pouvez-vous me dire où est la banque la plus proche ?", "Pardon, pouvez-vous me dire où se trouve la banque la plus proche ?"] }
+        - { id: fr-w13-d6-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « Savez-vous un bon hôtel ? Quel est le prix ? »", choices: ["Connaissez-vous un bon hôtel", "Quel → Quelle", "both", "No error"], answer: 0 }
+        - { id: fr-w13-d6-g18, difficulty: hard, type: multi, prompt: "Good questions for a receptionist (Select all.)", choices: ["Où se trouve la gare ?", "Y a-t-il un distributeur près d'ici ?", "Combien coûte un taxi pour l'aéroport ?", "Tu fais quoi ce soir, toi ?"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Week 13 lightning round"
+        secondsPerQuestion: 7
+        questions:
+          - { id: fr-w13-d6-rf01, difficulty: easy, type: mcq, prompt: "why", choices: ["pourquoi", "parce que", "quoi", "pour"], answer: 0 }
+          - { id: fr-w13-d6-rf02, difficulty: easy, type: mcq, prompt: "Standard question marker", choices: ["est-ce que", "-t-", "quoi", "donc"], answer: 0 }
+          - { id: fr-w13-d6-rf03, difficulty: easy, type: mcq, prompt: "Where is he going? (formal)", choices: ["Où va-t-il ?", "Où va-il ?", "Il va où-t-il ?", "Va-il où ?"], answer: 0 }
+          - { id: fr-w13-d6-rf04, difficulty: easy, type: mcq, prompt: "___ heure est-il ?", choices: ["Quelle", "Quel", "Quels", "Quelles"], answer: 0 }
+          - { id: fr-w13-d6-rf05, difficulty: easy, type: text, prompt: "ils ___ (pouvoir)", accept: ["peuvent"] }
+          - { id: fr-w13-d6-rf06, difficulty: easy, type: text, prompt: "ils ___ (devoir)", accept: ["doivent"] }
+          - { id: fr-w13-d6-rf07, difficulty: easy, type: mcq, prompt: "Je ___ nager.", choices: ["sais", "connais"], answer: 0 }
+          - { id: fr-w13-d6-rf08, difficulty: easy, type: mcq, prompt: "Je ___ Lagos.", choices: ["connais", "sais"], answer: 0 }
+          - { id: fr-w13-d6-rf09, difficulty: easy, type: mcq, prompt: "Can you repeat, please?", choices: ["Vous pouvez répéter, s'il vous plaît ?", "Vous devez répéter ?", "Vous voulez répète ?", "Répétez-vous ?"], answer: 0 }
+          - { id: fr-w13-d6-rf10, difficulty: easy, type: mcq, prompt: "environ", choices: ["about", "exactly", "around here", "environment"], answer: 0 }
+      - kind: brain-teaser
+        title: "20 questions"
+        questions:
+          - { id: fr-w13-d6-bt01, difficulty: medium, type: text, prompt: "Translate (informal): Where do you live? (tu)", accept: ["Tu habites où ?", "Tu habites où?"] }
+          - { id: fr-w13-d6-bt02, difficulty: medium, type: text, prompt: "Translate (est-ce que): What do you do at the weekend? (tu)", accept: ["Qu'est-ce que tu fais le week-end ?", "Qu'est-ce que tu fais le week-end?"] }
+          - { id: fr-w13-d6-bt03, difficulty: medium, type: text, prompt: "Translate: Which French food do you prefer? (tu, inverted)", accept: ["Quelle cuisine française préfères-tu ?", "Quel plat français préfères-tu ?", "Quelle nourriture française préfères-tu ?"] }
+          - { id: fr-w13-d6-bt04, difficulty: hard, type: text, prompt: "Translate (vous, inverted): What advice do you have for a learner? (Quels conseils…)", accept: ["Quels conseils avez-vous pour un apprenant ?", "Quels conseils avez-vous pour une apprenante ?", "Quels conseils avez-vous pour un apprenant?"] }
+          - { id: fr-w13-d6-bt05, difficulty: hard, type: mcq, prompt: "Find the question with NO mistake.", choices: ["Depuis quand habitez-vous à Paris ?", "Où va-il ?", "Quelle sont tes loisirs ?", "Tu sais mon frère ?"], answer: 0 }

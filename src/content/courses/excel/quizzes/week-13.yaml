@@ -1,0 +1,298 @@
+# Excel · Week 13 quizzes. Format and rules: src/content/QUIZZES.md
+# Figures verified against datasets/ (sales_2025.csv, products.csv, targets_2025.csv).
+week: 13
+days:
+
+  # ─────────────────────────── DAY 1 ───────────────────────────
+  - day: 1
+    gate:
+      title: "Checkpoint: Week 12 review"
+      covers: "Week 12: PivotTable areas, refresh, drill-down, cross-tabs, grouping, Show Values As, filters, PivotCharts"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w13-d1-g01, difficulty: easy, type: mcq, prompt: "The 4 pivot areas", choices: ["Rows, Columns, Values, Filters", "Top, Side, Middle, Bottom", "Data, Chart, Table, Sheet", "Sum, Count, Max, Min"], answer: 0 }
+        - { id: xl-w13-d1-g02, difficulty: easy, type: mcq, prompt: "Refresh one pivot", choices: ["Alt+F5", "F5", "Ctrl+R", "F9"], answer: 0 }
+        - { id: xl-w13-d1-g03, difficulty: easy, type: truefalse, prompt: "Double-clicking a pivot value shows the rows behind it.", answer: true }
+        - { id: xl-w13-d1-g04, difficulty: easy, type: mcq, prompt: "Month-on-month growth", choices: ["% Difference From (previous)", "% of Grand Total", "Running Total", "Rank"], answer: 0 }
+        - { id: xl-w13-d1-g05, difficulty: easy, type: mcq, prompt: "One pivot sheet per region", choices: ["Show Report Filter Pages", "Group", "Drill-down", "Copy sheet"], answer: 0 }
+        - { id: xl-w13-d1-g06, difficulty: easy, type: mcq, prompt: "Most-used payment method", choices: ["Transfer", "Cash", "POS", "Card"], answer: 0 }
+        - { id: xl-w13-d1-g07, difficulty: medium, type: text, prompt: "Average wholesale order (₦, no symbol)?", accept: ["1156902", "1,156,902"] }
+        - { id: xl-w13-d1-g08, difficulty: medium, type: text, prompt: "Month with the biggest jump vs the month before?", accept: ["March", "Mar", "2025-03"] }
+        - { id: xl-w13-d1-g09, difficulty: medium, type: match, prompt: "Match.", pairs: [["% of Grand Total", "share of everything"], ["Running Total In", "year-to-date"], ["Rank Largest to Smallest", "ranking"], ["% of Column Total", "mix within a column"]] }
+        - { id: xl-w13-d1-g10, difficulty: medium, type: text, prompt: "South (all but Kano and Abuja) net sales (₦, no symbol)?", accept: ["570636550", "570,636,550"] }
+        - { id: xl-w13-d1-g11, difficulty: medium, type: truefalse, prompt: "Pivots update by themselves when tblSales changes.", answer: false }
+        - { id: xl-w13-d1-g12, difficulty: medium, type: text, prompt: "Rank 1 salesperson?", accept: ["Tolu Eze"] }
+        - { id: xl-w13-d1-g13, difficulty: medium, type: mcq, prompt: "Phones' best quarter", choices: ["Q4 (₦44.7M)", "Q1", "Q2", "Q3"], answer: 0 }
+        - { id: xl-w13-d1-g14, difficulty: medium, type: text, prompt: "Weekend share of net sales (1 decimal %)?", accept: ["23.2%", "23.2"] }
+        - { id: xl-w13-d1-g15, difficulty: medium, type: mcq, prompt: "Stores above ₦100M", choices: ["Lagos - Ikeja, Abuja - Wuse, Lagos - Lekki", "every Lagos store", "Abuja - Wuse only", "none"], answer: 0 }
+        - { id: xl-w13-d1-g16, difficulty: hard, type: mcq, prompt: "Region most dependent on Groceries", choices: ["Port Harcourt (32.9%)", "Lagos", "Abuja", "Kano"], answer: 0 }
+        - { id: xl-w13-d1-g17, difficulty: hard, type: text, prompt: "December vs November growth (1 decimal %)?", accept: ["42.5%", "42.5", "+42.5%"] }
+        - { id: xl-w13-d1-g18, difficulty: hard, type: multi, prompt: "A pivot can group… (Select all.)", choices: ["dates", "numbers into bins", "chosen text items", "the source formulas"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Slicers and timelines"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w13-d1-rf01, difficulty: easy, type: mcq, prompt: "Big clickable filter buttons", choices: ["Slicer", "Timeline", "Sparkline", "Data bar"], answer: 0 }
+          - { id: xl-w13-d1-rf02, difficulty: easy, type: mcq, prompt: "Filter by dragging across months", choices: ["Timeline", "Slicer", "Group", "Sort"], answer: 0 }
+          - { id: xl-w13-d1-rf03, difficulty: easy, type: mcq, prompt: "Select several slicer items", choices: ["Ctrl+click", "Alt+click", "double-click", "F2"], answer: 0 }
+          - { id: xl-w13-d1-rf04, difficulty: easy, type: mcq, prompt: "One slicer, many pivots", choices: ["Report Connections", "Group", "Refresh", "Drill-down"], answer: 0 }
+          - { id: xl-w13-d1-rf05, difficulty: easy, type: mcq, prompt: "Insert a slicer from…", choices: ["PivotTable Analyze → Insert Slicer", "Data → Slicer only", "Home → Slicer", "Review → Slicer"], answer: 0 }
+          - { id: xl-w13-d1-rf06, difficulty: easy, type: truefalse, prompt: "A timeline needs a date field.", answer: true }
+          - { id: xl-w13-d1-rf07, difficulty: easy, type: mcq, prompt: "Style a slicer on the…", choices: ["Slicer tab", "Home tab", "Data tab", "View tab"], answer: 0 }
+          - { id: xl-w13-d1-rf08, difficulty: easy, type: text, prompt: "Rows in tblTargets?", accept: ["72"] }
+          - { id: xl-w13-d1-rf09, difficulty: easy, type: mcq, prompt: "tblTargets columns", choices: ["Region, Month, SalesTarget", "OrderID, Target", "Store, Year", "Product, Target"], answer: 0 }
+          - { id: xl-w13-d1-rf10, difficulty: easy, type: mcq, prompt: "Heart of an Excel dashboard", choices: ["slicers connected to several pivots", "one big pie", "macros", "merged cells"], answer: 0 }
+      - kind: brain-teaser
+        title: "The targets table"
+        questions:
+          - { id: xl-w13-d1-bt01, difficulty: medium, type: text, prompt: "Total annual target (₦, no symbol)?", accept: ["844900000", "844,900,000"] }
+          - { id: xl-w13-d1-bt02, difficulty: medium, type: mcq, prompt: "72 rows because…", choices: ["6 regions × 12 months", "72 stores", "72 products", "one per week"], answer: 0 }
+          - { id: xl-w13-d1-bt03, difficulty: medium, type: mcq, prompt: "You click \"Wholesale\" but only one of 3 pivots changes. Fix:", choices: ["Report Connections: tick all three", "Refresh", "Delete the slicer", "Group"], answer: 0 }
+          - { id: xl-w13-d1-bt04, difficulty: hard, type: mcq, prompt: "A slicer can only connect pivots that…", choices: ["share the same data source (cache)", "are on one sheet", "have the same layout", "use the same style"], answer: 0 }
+          - { id: xl-w13-d1-bt05, difficulty: hard, type: text, prompt: "Lagos annual target (₦, no symbol)?", accept: ["323500000", "323,500,000"] }
+
+  # ─────────────────────────── DAY 2 ───────────────────────────
+  - day: 2
+    gate:
+      title: "Checkpoint: slicers and timelines"
+      covers: "Week 13 · Day 1: slicers, timelines, Report Connections, tblTargets"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w13-d2-g01, difficulty: easy, type: mcq, prompt: "A slicer filters…", choices: ["the pivots connected to it", "every sheet", "only charts", "the source table"], answer: 0 }
+        - { id: xl-w13-d2-g02, difficulty: easy, type: mcq, prompt: "Timelines filter by…", choices: ["date periods", "text", "numbers only", "colour"], answer: 0 }
+        - { id: xl-w13-d2-g03, difficulty: easy, type: truefalse, prompt: "Report Connections lets one slicer control several pivots.", answer: true }
+        - { id: xl-w13-d2-g04, difficulty: easy, type: mcq, prompt: "Clear a slicer's filter", choices: ["the Clear Filter button (funnel with ×)", "Delete key", "Refresh", "Ctrl+Z"], answer: 0 }
+        - { id: xl-w13-d2-g05, difficulty: easy, type: mcq, prompt: "Timeline levels", choices: ["Years, Quarters, Months, Days", "Hours only", "Weeks only", "Regions"], answer: 0 }
+        - { id: xl-w13-d2-g06, difficulty: easy, type: mcq, prompt: "Import targets as…", choices: ["tblTargets", "Sheet2", "Targets 2025 table", "T1"], answer: 0 }
+        - { id: xl-w13-d2-g07, difficulty: medium, type: text, prompt: "Total target (₦, no symbol)?", accept: ["844900000", "844,900,000"] }
+        - { id: xl-w13-d2-g08, difficulty: medium, type: mcq, prompt: "Slicer showing 6 regions in 2 rows", choices: ["Slicer → Columns: 3", "Resize only", "Group regions", "Impossible"], answer: 0 }
+        - { id: xl-w13-d2-g09, difficulty: medium, type: match, prompt: "Match.", pairs: [["Slicer", "click to filter items"], ["Timeline", "drag to filter dates"], ["Report Connections", "link to more pivots"], ["Ctrl+click", "select several items"]] }
+        - { id: xl-w13-d2-g10, difficulty: medium, type: truefalse, prompt: "Slicers work on Excel Tables too, not only pivots.", answer: true }
+        - { id: xl-w13-d2-g11, difficulty: medium, type: text, prompt: "Kano annual target (₦, no symbol)?", accept: ["94400000", "94,400,000"] }
+        - { id: xl-w13-d2-g12, difficulty: medium, type: mcq, prompt: "Wholesale + Q4 selected: what do the 3 pivots show?", choices: ["only wholesale orders from Oct–Dec", "all orders", "Q4 only for one pivot", "an error"], answer: 0 }
+        - { id: xl-w13-d2-g13, difficulty: medium, type: text, prompt: "Abuja annual target (₦, no symbol)?", accept: ["176100000", "176,100,000"] }
+        - { id: xl-w13-d2-g14, difficulty: medium, type: mcq, prompt: "Remove an obvious slicer header", choices: ["Slicer Settings → untick Display header", "Delete the slicer", "Hide the row", "Refresh"], answer: 0 }
+        - { id: xl-w13-d2-g15, difficulty: medium, type: multi, prompt: "Dashboard filters (Select all.)", choices: ["CustomerType slicer", "PaymentMethod slicer", "OrderDate timeline", "A merged cell"], answers: [0, 1, 2] }
+        - { id: xl-w13-d2-g16, difficulty: hard, type: mcq, prompt: "Report Connections doesn't list your pivot. Likely…", choices: ["it uses a different source/cache", "it's sorted", "it's on another sheet", "the slicer is styled"], answer: 0 }
+        - { id: xl-w13-d2-g17, difficulty: hard, type: text, prompt: "Port Harcourt annual target (₦, no symbol)?", accept: ["88300000", "88,300,000"] }
+        - { id: xl-w13-d2-g18, difficulty: hard, type: multi, prompt: "True about slicers (Select all.)", choices: ["they show the current filter visibly", "they can drive several pivots", "they can be styled", "they edit tblSales"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Calculated fields"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w13-d2-rf01, difficulty: easy, type: mcq, prompt: "Add a calculated field from…", choices: ["PivotTable Analyze → Fields, Items & Sets", "Data → Calculate", "Home → Insert", "Formulas → Name"], answer: 0 }
+          - { id: xl-w13-d2-rf02, difficulty: easy, type: mcq, prompt: "Calculated fields work on…", choices: ["sums of fields", "each row", "text", "dates only"], answer: 0 }
+          - { id: xl-w13-d2-rf03, difficulty: easy, type: mcq, prompt: "Correct calculated field", choices: ["Margin % = Profit / NetSales", "GrossSales = Units * UnitPrice", "both", "neither"], answer: 0 }
+          - { id: xl-w13-d2-rf04, difficulty: easy, type: mcq, prompt: "Row-level maths belongs…", choices: ["in a table column", "in a calculated field", "in a slicer", "in a timeline"], answer: 0 }
+          - { id: xl-w13-d2-rf05, difficulty: easy, type: text, prompt: "Overall margin (1 decimal %)?", accept: ["15.5%", "15.5"] }
+          - { id: xl-w13-d2-rf06, difficulty: easy, type: text, prompt: "Category with the most profit?", accept: ["Fashion"] }
+          - { id: xl-w13-d2-rf07, difficulty: easy, type: text, prompt: "Category with the lowest margin %?", accept: ["Groceries"] }
+          - { id: xl-w13-d2-rf08, difficulty: easy, type: mcq, prompt: "Commission = NetSales * 0.03 as a calculated field is…", choices: ["fine (sum × constant)", "wrong", "impossible", "only for counts"], answer: 0 }
+          - { id: xl-w13-d2-rf09, difficulty: easy, type: mcq, prompt: "Calculated item combines…", choices: ["items inside one field", "two tables", "two workbooks", "slicers"], answer: 0 }
+          - { id: xl-w13-d2-rf10, difficulty: easy, type: truefalse, prompt: "Calculated items should be used sparingly.", answer: true }
+      - kind: brain-teaser
+        title: "Sum × sum"
+        questions:
+          - { id: xl-w13-d2-bt01, difficulty: medium, type: mcq, prompt: "Why is =Units*UnitPrice wrong as a calculated field?", choices: ["It multiplies the sum of Units by the sum of UnitPrice", "UnitPrice is text", "Pivots can't multiply", "It ignores discounts only"], answer: 0 }
+          - { id: xl-w13-d2-bt02, difficulty: medium, type: text, prompt: "Real GrossSales total (₦, no symbol)?", accept: ["907677800", "907,677,800"] }
+          - { id: xl-w13-d2-bt03, difficulty: medium, type: text, prompt: "Fashion profit (₦, no symbol)?", accept: ["23344525", "23,344,525"] }
+          - { id: xl-w13-d2-bt04, difficulty: hard, type: mcq, prompt: "Margin by category, best to worst ends", choices: ["Fashion 32.7% … Groceries 7.3%", "Groceries … Fashion", "Phones … Office", "all 15.5%"], answer: 0 }
+          - { id: xl-w13-d2-bt05, difficulty: hard, type: mcq, prompt: "Groceries is the top category by sales but has the lowest margin. So…", choices: ["big revenue, thin profit; watch discounts there", "it's the most profitable", "the pivot is wrong", "drop margins"], answer: 0 }
+
+  # ─────────────────────────── DAY 3 ───────────────────────────
+  - day: 3
+    gate:
+      title: "Checkpoint: calculated fields"
+      covers: "Week 13 · Day 2: calculated fields on sums, Margin %, why sum × sum fails, calculated items"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w13-d3-g01, difficulty: easy, type: mcq, prompt: "Margin % as a calculated field", choices: ["=Profit/NetSales", "=NetSales/Profit", "=Profit*NetSales", "=Units*UnitPrice"], answer: 0 }
+        - { id: xl-w13-d3-g02, difficulty: easy, type: mcq, prompt: "Cost column in tblSales", choices: ["=[@Units]*[@UnitCost]", "=Units*UnitCost as a calculated field", "=SUM(Units)", "=[@NetSales]-[@Units]"], answer: 0 }
+        - { id: xl-w13-d3-g03, difficulty: easy, type: truefalse, prompt: "A ratio of two sums (Profit/NetSales) is right as a calculated field.", answer: true }
+        - { id: xl-w13-d3-g04, difficulty: easy, type: mcq, prompt: "Format Margin % as…", choices: ["percentage", "currency", "date", "text"], answer: 0 }
+        - { id: xl-w13-d3-g05, difficulty: easy, type: text, prompt: "Overall margin (1 decimal %)?", accept: ["15.5%", "15.5"] }
+        - { id: xl-w13-d3-g06, difficulty: easy, type: mcq, prompt: "Most profit (₦)", choices: ["Fashion", "Groceries", "Phones", "Office"], answer: 0 }
+        - { id: xl-w13-d3-g07, difficulty: medium, type: text, prompt: "Fashion margin (1 decimal %)?", accept: ["32.7%", "32.7"] }
+        - { id: xl-w13-d3-g08, difficulty: medium, type: text, prompt: "Groceries margin (1 decimal %)?", accept: ["7.3%", "7.3"] }
+        - { id: xl-w13-d3-g09, difficulty: medium, type: match, prompt: "Match category to margin.", pairs: [["Fashion", "32.7%"], ["Accessories", "30.8%"], ["Phones", "12.2%"], ["Groceries", "7.3%"]] }
+        - { id: xl-w13-d3-g10, difficulty: medium, type: truefalse, prompt: "=Units*UnitPrice as a calculated field gives the real GrossSales.", answer: false }
+        - { id: xl-w13-d3-g11, difficulty: medium, type: text, prompt: "Second-most profitable category (₦)?", accept: ["Accessories"] }
+        - { id: xl-w13-d3-g12, difficulty: medium, type: mcq, prompt: "Calculated item \"Lagos total\" = Lagos - Ikeja + Lagos - Lekki + Lagos - Surulere lives in…", choices: ["the Store field", "the Values area", "a slicer", "tblSales"], answer: 0 }
+        - { id: xl-w13-d3-g13, difficulty: medium, type: text, prompt: "Phones profit (₦, no symbol)?", accept: ["17083700", "17,083,700"] }
+        - { id: xl-w13-d3-g14, difficulty: medium, type: mcq, prompt: "Calculated item risk", choices: ["grand totals can double-count", "it deletes data", "slower refresh only", "no risk"], answer: 0 }
+        - { id: xl-w13-d3-g15, difficulty: medium, type: text, prompt: "Computers margin (1 decimal %)?", accept: ["8.2%", "8.2"] }
+        - { id: xl-w13-d3-g16, difficulty: hard, type: mcq, prompt: "Average Margin % of the 10 categories vs overall 15.5%", choices: ["differs: overall is weighted by sales", "always equal", "always higher", "can't compute"], answer: 0 }
+        - { id: xl-w13-d3-g17, difficulty: hard, type: text, prompt: "Total profit (₦, no symbol)?", accept: ["129531600", "129,531,600"] }
+        - { id: xl-w13-d3-g18, difficulty: hard, type: multi, prompt: "Safe calculated fields (Select all.)", choices: ["=Profit/NetSales", "=NetSales*0.03", "=NetSales-Cost", "=Units*UnitPrice"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Target vs actual"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w13-d3-rf01, difficulty: easy, type: mcq, prompt: "Targets are per…", choices: ["region per month", "order", "product", "store per day"], answer: 0 }
+          - { id: xl-w13-d3-rf02, difficulty: easy, type: mcq, prompt: "Variance", choices: ["Actual − Target", "Target − Actual", "Actual / Target", "Actual + Target"], answer: 0 }
+          - { id: xl-w13-d3-rf03, difficulty: easy, type: mcq, prompt: "Variance %", choices: ["Variance / Target", "Variance / Actual", "Target / Actual", "Actual − 1"], answer: 0 }
+          - { id: xl-w13-d3-rf04, difficulty: easy, type: mcq, prompt: "Text \"2025-03\" → first day", choices: ["=DATEVALUE([@Month]&\"-01\")", "=DATE([@Month])", "=VALUE([@Month])", "=[@Month]+1"], answer: 0 }
+          - { id: xl-w13-d3-rf05, difficulty: easy, type: mcq, prompt: "Hit?", choices: ["=IF([@Actual]>=[@SalesTarget],\"✓\",\"✗\")", "=[@Actual]=[@SalesTarget]", "=MAX(Actual)", "=IF(Target)"], answer: 0 }
+          - { id: xl-w13-d3-rf06, difficulty: easy, type: text, prompt: "Region-months on target?", accept: ["33"] }
+          - { id: xl-w13-d3-rf07, difficulty: easy, type: text, prompt: "Company variance % (1 decimal)?", accept: ["-1.3%", "-1.3", "−1.3%"] }
+          - { id: xl-w13-d3-rf08, difficulty: easy, type: text, prompt: "Worst miss: region?", accept: ["Lagos"] }
+          - { id: xl-w13-d3-rf09, difficulty: easy, type: truefalse, prompt: "NaijaMart beat its 2025 company target.", answer: false }
+          - { id: xl-w13-d3-rf10, difficulty: easy, type: mcq, prompt: "Actual per region-month uses…", choices: ["SUMIFS on tblSales", "VLOOKUP", "COUNTIF", "a slicer"], answer: 0 }
+      - kind: brain-teaser
+        title: "Hits and misses"
+        questions:
+          - { id: xl-w13-d3-bt01, difficulty: medium, type: text, prompt: "Company variance (₦, no symbol, with sign)?", accept: ["-10853300", "-10,853,300"] }
+          - { id: xl-w13-d3-bt02, difficulty: medium, type: mcq, prompt: "Worst miss", choices: ["Lagos, December (−₦5,896,200)", "Kano, January", "Lagos, October", "Enugu, May"], answer: 0 }
+          - { id: xl-w13-d3-bt03, difficulty: medium, type: mcq, prompt: "Best beat", choices: ["Lagos, October (+₦5,437,245)", "Lagos, December", "Port Harcourt, March", "Abuja, June"], answer: 0 }
+          - { id: xl-w13-d3-bt04, difficulty: hard, type: mcq, prompt: "Actual for Lagos, March (Month \"2025-03\")", choices: ["=SUMIFS(tblSales[NetSales],tblSales[Region],[@Region],tblSales[OrderDate],\">=\"&DATEVALUE([@Month]&\"-01\"),tblSales[OrderDate],\"<\"&EDATE(DATEVALUE([@Month]&\"-01\"),1))", "=SUMIF(tblSales,[@Month])", "=VLOOKUP([@Region],tblSales,15)", "=COUNTIFS([@Region])"], answer: 0 }
+          - { id: xl-w13-d3-bt05, difficulty: hard, type: text, prompt: "Of the 72 region-months, how many missed?", accept: ["39"] }
+
+  # ─────────────────────────── DAY 4 ───────────────────────────
+  - day: 4
+    gate:
+      title: "Checkpoint: target vs actual"
+      covers: "Week 13 · Day 3: actuals per region-month with SUMIFS, variance, variance %, Hit ✓/✗"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w13-d4-g01, difficulty: easy, type: mcq, prompt: "Variance = ", choices: ["Actual − Target", "Target − Actual", "Actual × Target", "Target / Actual"], answer: 0 }
+        - { id: xl-w13-d4-g02, difficulty: easy, type: mcq, prompt: "Sales and targets compare at the level of…", choices: ["region-month", "order", "product", "salesperson"], answer: 0 }
+        - { id: xl-w13-d4-g03, difficulty: easy, type: truefalse, prompt: "33 of 72 region-months hit target.", answer: true }
+        - { id: xl-w13-d4-g04, difficulty: easy, type: text, prompt: "Company actual (₦, no symbol)?", accept: ["834046700", "834,046,700"] }
+        - { id: xl-w13-d4-g05, difficulty: easy, type: text, prompt: "Company target (₦, no symbol)?", accept: ["844900000", "844,900,000"] }
+        - { id: xl-w13-d4-g06, difficulty: easy, type: mcq, prompt: "Variance % for actual 90, target 100", choices: ["−10%", "+10%", "−11.1%", "90%"], answer: 0 }
+        - { id: xl-w13-d4-g07, difficulty: medium, type: text, prompt: "Company variance % (1 decimal)?", accept: ["-1.3%", "-1.3", "−1.3%"] }
+        - { id: xl-w13-d4-g08, difficulty: medium, type: text, prompt: "Worst miss amount (₦, with sign)?", accept: ["-5896200", "-5,896,200"] }
+        - { id: xl-w13-d4-g09, difficulty: medium, type: match, prompt: "Match.", pairs: [["Variance", "Actual − Target"], ["Variance %", "Variance / Target"], ["Hit?", "IF(Actual ≥ Target)"], ["Actual", "SUMIFS on tblSales"]] }
+        - { id: xl-w13-d4-g10, difficulty: medium, type: truefalse, prompt: "The Month column \"2025-03\" is text, so it needs converting before date comparisons.", answer: true }
+        - { id: xl-w13-d4-g11, difficulty: medium, type: text, prompt: "Best beat amount (₦, with sign)?", accept: ["5437245", "5,437,245", "+5437245", "+5,437,245"] }
+        - { id: xl-w13-d4-g12, difficulty: medium, type: mcq, prompt: "Colour the Variance % column", choices: ["red-white-green colour scale", "data bars only", "icon sets on text", "bold"], answer: 0 }
+        - { id: xl-w13-d4-g13, difficulty: medium, type: text, prompt: "How many months did Lagos hit target?", accept: ["6"] }
+        - { id: xl-w13-d4-g14, difficulty: medium, type: mcq, prompt: "Company months on target (all regions summed)", choices: ["7 of 12 (Feb–Jun, Sep, Oct)", "12", "0", "3"], answer: 0 }
+        - { id: xl-w13-d4-g15, difficulty: medium, type: mcq, prompt: "First day of next month from D2", choices: ["=EDATE(D2,1)", "=D2+30", "=EOMONTH(D2,1)", "=MONTH(D2)+1"], answer: 0 }
+        - { id: xl-w13-d4-g16, difficulty: hard, type: mcq, prompt: "Lagos misses in December by ₦5.9M after beating October by ₦5.4M. Best insight?", choices: ["Lagos is volatile; December target may be too high", "Lagos is failing", "targets are fine", "ignore Lagos"], answer: 0 }
+        - { id: xl-w13-d4-g17, difficulty: hard, type: text, prompt: "Region-months that missed?", accept: ["39"] }
+        - { id: xl-w13-d4-g18, difficulty: hard, type: multi, prompt: "Columns in the formula-based target table (Select all.)", choices: ["Actual", "Variance", "Hit?", "OrderID"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Data Model"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w13-d4-rf01, difficulty: easy, type: mcq, prompt: "A table with one row per region", choices: ["dimension table", "fact table", "pivot cache", "slicer"], answer: 0 }
+          - { id: xl-w13-d4-rf02, difficulty: easy, type: mcq, prompt: "Create relationships from…", choices: ["Data → Relationships", "Home → Link", "Insert → Join", "Review → Relate"], answer: 0 }
+          - { id: xl-w13-d4-rf03, difficulty: easy, type: mcq, prompt: "Pivot across tables: tick…", choices: ["Add this data to the Data Model", "Use a fixed range", "New sheet only", "Refresh"], answer: 0 }
+          - { id: xl-w13-d4-rf04, difficulty: easy, type: mcq, prompt: "Region in Rows should come from…", choices: ["tblRegions", "tblSales", "tblTargets", "any"], answer: 0 }
+          - { id: xl-w13-d4-rf05, difficulty: easy, type: mcq, prompt: "A stable reference into a pivot", choices: ["GETPIVOTDATA", "VLOOKUP", "INDIRECT", "OFFSET"], answer: 0 }
+          - { id: xl-w13-d4-rf06, difficulty: easy, type: text, prompt: "The only region that beat its annual target?", accept: ["Port Harcourt"] }
+          - { id: xl-w13-d4-rf07, difficulty: easy, type: text, prompt: "Region furthest behind?", accept: ["Kano"] }
+          - { id: xl-w13-d4-rf08, difficulty: easy, type: text, prompt: "Rows in tblRegions?", accept: ["6"] }
+          - { id: xl-w13-d4-rf09, difficulty: easy, type: truefalse, prompt: "Relationships avoid copying data between tables.", answer: true }
+          - { id: xl-w13-d4-rf10, difficulty: easy, type: mcq, prompt: "Deeper Data Model work comes in…", choices: ["Week 18 (Power Pivot)", "Week 1", "never", "Week 14"], answer: 0 }
+      - kind: brain-teaser
+        title: "Annual verdict"
+        questions:
+          - { id: xl-w13-d4-bt01, difficulty: medium, type: text, prompt: "Port Harcourt vs target (1 decimal %)?", accept: ["1.6%", "+1.6%", "1.6"] }
+          - { id: xl-w13-d4-bt02, difficulty: medium, type: text, prompt: "Kano vs target (1 decimal %)?", accept: ["-5.6%", "-5.6", "−5.6%"] }
+          - { id: xl-w13-d4-bt03, difficulty: medium, type: mcq, prompt: "Lagos vs annual target", choices: ["−0.6% (just short)", "+5%", "on target", "−5.6%"], answer: 0 }
+          - { id: xl-w13-d4-bt04, difficulty: hard, type: mcq, prompt: "Why not relate tblSales[Region] directly to tblTargets[Region]?", choices: ["Both have repeated regions (many-to-many); a dimension table gives one row per region", "Excel forbids two tables", "Regions are text", "It works fine"], answer: 0 }
+          - { id: xl-w13-d4-bt05, difficulty: hard, type: mcq, prompt: "GETPIVOTDATA vs =B5 pointing at a pivot cell", choices: ["GETPIVOTDATA survives layout changes; =B5 may point at the wrong item", "same", "=B5 is safer", "GETPIVOTDATA is slower only"], answer: 0 }
+
+  # ─────────────────────────── DAY 5 ───────────────────────────
+  - day: 5
+    gate:
+      title: "Checkpoint: Data Model and relationships"
+      covers: "Week 13 · Day 4: dimension tables, relationships, Data Model pivots, GETPIVOTDATA"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w13-d5-g01, difficulty: easy, type: mcq, prompt: "tblRegions is a…", choices: ["dimension table", "fact table", "pivot", "slicer"], answer: 0 }
+        - { id: xl-w13-d5-g02, difficulty: easy, type: mcq, prompt: "Relationships live in…", choices: ["Data → Relationships", "Home → Format", "View → Links", "Review → Track"], answer: 0 }
+        - { id: xl-w13-d5-g03, difficulty: easy, type: truefalse, prompt: "A Data Model pivot shows fields from All tables.", answer: true }
+        - { id: xl-w13-d5-g04, difficulty: easy, type: mcq, prompt: "GETPIVOTDATA appears when you…", choices: ["click a pivot cell while writing a formula", "press F4", "refresh", "insert a slicer"], answer: 0 }
+        - { id: xl-w13-d5-g05, difficulty: easy, type: mcq, prompt: "Region that beat its annual target", choices: ["Port Harcourt", "Lagos", "Kano", "Abuja"], answer: 0 }
+        - { id: xl-w13-d5-g06, difficulty: easy, type: mcq, prompt: "Fact tables here", choices: ["tblSales and tblTargets", "tblRegions only", "the pivot", "the slicer"], answer: 0 }
+        - { id: xl-w13-d5-g07, difficulty: medium, type: text, prompt: "Kano annual variance % (1 decimal)?", accept: ["-5.6%", "-5.6", "−5.6%"] }
+        - { id: xl-w13-d5-g08, difficulty: medium, type: text, prompt: "Ibadan annual variance % (1 decimal)?", accept: ["-2.4%", "-2.4", "−2.4%"] }
+        - { id: xl-w13-d5-g09, difficulty: medium, type: match, prompt: "Match region to annual variance.", pairs: [["Port Harcourt", "+1.6%"], ["Lagos", "−0.6%"], ["Abuja", "−1.0%"], ["Kano", "−5.6%"]] }
+        - { id: xl-w13-d5-g10, difficulty: medium, type: truefalse, prompt: "You can turn off automatic GETPIVOTDATA in PivotTable Options.", answer: true }
+        - { id: xl-w13-d5-g11, difficulty: medium, type: text, prompt: "Enugu annual variance % (1 decimal)?", accept: ["-1.7%", "-1.7", "−1.7%"] }
+        - { id: xl-w13-d5-g12, difficulty: medium, type: mcq, prompt: "Relationship direction", choices: ["tblSales[Region] → tblRegions[Region]", "tblRegions → tblSales[OrderID]", "tblTargets[Month] → tblRegions", "none needed"], answer: 0 }
+        - { id: xl-w13-d5-g13, difficulty: medium, type: text, prompt: "Port Harcourt actual (₦, no symbol)?", accept: ["89690485", "89,690,485"] }
+        - { id: xl-w13-d5-g14, difficulty: medium, type: mcq, prompt: "Region from tblSales (not tblRegions) in Rows with targets in Values gives…", choices: ["the same total target on every row", "correct targets", "an error", "blank"], answer: 0 }
+        - { id: xl-w13-d5-g15, difficulty: medium, type: mcq, prompt: "KPI cell with Lagos actual from a pivot", choices: ["=GETPIVOTDATA(\"Sum of NetSales\",Pivot!$A$3,\"Region\",\"Lagos\")", "=VLOOKUP(Lagos)", "=Pivot!B5 always", "=SUM(Lagos)"], answer: 0 }
+        - { id: xl-w13-d5-g16, difficulty: hard, type: text, prompt: "Kano shortfall vs annual target (₦, with sign)?", accept: ["-5299440", "-5,299,440"] }
+        - { id: xl-w13-d5-g17, difficulty: hard, type: mcq, prompt: "How many regions missed their annual target?", choices: ["5", "1", "6", "3"], answer: 0 }
+        - { id: xl-w13-d5-g18, difficulty: hard, type: multi, prompt: "Benefits of the Data Model (Select all.)", choices: ["no copying data between tables", "one pivot over several tables", "relationships via a shared key", "editing source data in the pivot"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Pivot best practices"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w13-d5-rf01, difficulty: easy, type: mcq, prompt: "Refresh every pivot", choices: ["Ctrl+Alt+F5 (Refresh All)", "Alt+F5", "F5", "Ctrl+S"], answer: 0 }
+          - { id: xl-w13-d5-rf02, difficulty: easy, type: mcq, prompt: "Build pivots on…", choices: ["tables or the Data Model", "fixed ranges", "pasted values", "charts"], answer: 0 }
+          - { id: xl-w13-d5-rf03, difficulty: easy, type: mcq, prompt: "Stop columns resizing on refresh", choices: ["untick Autofit column widths on update", "protect the sheet", "freeze panes", "merge cells"], answer: 0 }
+          - { id: xl-w13-d5-rf04, difficulty: easy, type: mcq, prompt: "\"Net sales\" name already exists. Trick:", choices: ["add a trailing space: \"Net sales \"", "impossible", "use numbers", "delete the field"], answer: 0 }
+          - { id: xl-w13-d5-rf05, difficulty: easy, type: truefalse, prompt: "It's fine to put a table directly under a pivot.", answer: false }
+          - { id: xl-w13-d5-rf06, difficulty: easy, type: mcq, prompt: "Refresh when the file opens", choices: ["PivotTable Options → Refresh data when opening the file", "File → Save", "Data → Sort", "Macros only"], answer: 0 }
+          - { id: xl-w13-d5-rf07, difficulty: easy, type: mcq, prompt: "Clean PivotChart look", choices: ["hide field buttons", "add 3D", "more legends", "gridlines on"], answer: 0 }
+          - { id: xl-w13-d5-rf08, difficulty: easy, type: mcq, prompt: "Keep your formatting after refresh", choices: ["Preserve cell formatting on update", "Autofit on", "Clear formats", "Refresh twice"], answer: 0 }
+          - { id: xl-w13-d5-rf09, difficulty: easy, type: mcq, prompt: "Why no data beside a pivot?", choices: ["the pivot grows and would overwrite it", "pivots hate neighbours", "slower", "it's fine"], answer: 0 }
+          - { id: xl-w13-d5-rf10, difficulty: easy, type: mcq, prompt: "Before presenting", choices: ["Refresh All", "delete slicers", "unprotect", "sort A→Z"], answer: 0 }
+      - kind: brain-teaser
+        title: "Clean pivots"
+        questions:
+          - { id: xl-w13-d5-bt01, difficulty: medium, type: mcq, prompt: "A new order added to tblSales doesn't show. Fix:", choices: ["Refresh All", "Rebuild the pivot", "Change the range", "Restart Excel"], answer: 0 }
+          - { id: xl-w13-d5-bt02, difficulty: medium, type: mcq, prompt: "A pivot on A1:Q2401 misses new rows after refresh because…", choices: ["it's a fixed range, not a table", "refresh is broken", "slicers block it", "dates"], answer: 0 }
+          - { id: xl-w13-d5-bt03, difficulty: medium, type: mcq, prompt: "Excel warns \"A PivotTable report cannot overlap…\". Fix:", choices: ["move whatever is next to the pivot", "delete the pivot", "unprotect", "ignore"], answer: 0 }
+          - { id: xl-w13-d5-bt04, difficulty: hard, type: mcq, prompt: "Ctrl+Alt+F5 vs Alt+F5", choices: ["all pivots and connections vs the selected pivot", "same", "Alt+F5 is all", "Ctrl+Alt+F5 saves"], answer: 0 }
+          - { id: xl-w13-d5-bt05, difficulty: hard, type: multi, prompt: "Good pivot hygiene (Select all.)", choices: ["clear header names", "well-named sheets", "built on tables", "pivots stacked with no gap"], answers: [0, 1, 2] }
+
+  # ─────────────────────────── DAY 6 ───────────────────────────
+  - day: 6
+    gate:
+      title: "Checkpoint: pivot best practices"
+      covers: "Week 13 · Day 5: tables as sources, Refresh All, options for formatting, clean labels, space around pivots"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w13-d6-g01, difficulty: easy, type: mcq, prompt: "Refresh All shortcut", choices: ["Ctrl+Alt+F5", "Alt+F5", "F9", "Ctrl+R"], answer: 0 }
+        - { id: xl-w13-d6-g02, difficulty: easy, type: mcq, prompt: "Best pivot source", choices: ["an Excel Table", "a fixed range", "a picture", "a PDF"], answer: 0 }
+        - { id: xl-w13-d6-g03, difficulty: easy, type: truefalse, prompt: "Leave space around pivots because they grow.", answer: true }
+        - { id: xl-w13-d6-g04, difficulty: easy, type: mcq, prompt: "Rename \"Sum of NetSales\" to…", choices: ["\"Net sales \" (trailing space if needed)", "NetSales exactly", "impossible", "Sum"], answer: 0 }
+        - { id: xl-w13-d6-g05, difficulty: easy, type: mcq, prompt: "Project: actual vs target by month chart", choices: ["combo: columns actual, line target", "pie", "scatter", "3D column"], answer: 0 }
+        - { id: xl-w13-d6-g06, difficulty: easy, type: mcq, prompt: "KPI: region-months on target", choices: ["33/72", "72/72", "12/72", "0/72"], answer: 0 }
+        - { id: xl-w13-d6-g07, difficulty: medium, type: text, prompt: "KPI: variance % (1 decimal)?", accept: ["-1.3%", "-1.3", "−1.3%"] }
+        - { id: xl-w13-d6-g08, difficulty: medium, type: text, prompt: "KPI: total target (₦, no symbol)?", accept: ["844900000", "844,900,000"] }
+        - { id: xl-w13-d6-g09, difficulty: medium, type: match, prompt: "Match the project part.", pairs: [["tblRegions", "dimension table"], ["slicers + timeline", "interactive filters"], ["Hit ✓/✗", "conditional formatting"], ["GETPIVOTDATA", "KPI cells"]] }
+        - { id: xl-w13-d6-g10, difficulty: medium, type: truefalse, prompt: "Autofit column widths on update should usually be off for dashboards.", answer: true }
+        - { id: xl-w13-d6-g11, difficulty: medium, type: text, prompt: "Abuja annual variance % (1 decimal)?", accept: ["-1.0%", "-1%", "-1.0", "−1.0%"] }
+        - { id: xl-w13-d6-g12, difficulty: medium, type: mcq, prompt: "Connect the Region slicer to the Data Model pivot via…", choices: ["Report Connections", "copy-paste", "VLOOKUP", "Group"], answer: 0 }
+        - { id: xl-w13-d6-g13, difficulty: medium, type: text, prompt: "Lagos annual variance % (1 decimal)?", accept: ["-0.6%", "-0.6", "−0.6%"] }
+        - { id: xl-w13-d6-g14, difficulty: medium, type: mcq, prompt: "Slicer for Region in a Data Model pivot should use…", choices: ["tblRegions[Region]", "tblSales[OrderID]", "tblTargets[SalesTarget]", "any column"], answer: 0 }
+        - { id: xl-w13-d6-g15, difficulty: medium, type: mcq, prompt: "Insight title for the combo chart", choices: ["We missed target by 1.3%; only Port Harcourt beat it", "Actual vs target", "Chart 1", "2025"], answer: 0 }
+        - { id: xl-w13-d6-g16, difficulty: hard, type: mcq, prompt: "The CEO filters to Kano with the slicer. Kano's annual variance shows…", choices: ["−5.6%", "+1.6%", "−1.3%", "0%"], answer: 0 }
+        - { id: xl-w13-d6-g17, difficulty: hard, type: text, prompt: "Region-months missed (out of 72)?", accept: ["39"] }
+        - { id: xl-w13-d6-g18, difficulty: hard, type: multi, prompt: "In Target_vs_Actual.xlsx (Select all.)", choices: ["relationships", "slicers and a timeline", "a KPI area", "hard-typed totals"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Week 13 lightning round"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w13-d6-rf01, difficulty: easy, type: mcq, prompt: "One slicer, many pivots", choices: ["Report Connections", "Group", "Refresh", "Sort"], answer: 0 }
+          - { id: xl-w13-d6-rf02, difficulty: easy, type: mcq, prompt: "Filter by date range", choices: ["Timeline", "Slicer", "Data bar", "Icon set"], answer: 0 }
+          - { id: xl-w13-d6-rf03, difficulty: easy, type: mcq, prompt: "Margin % field", choices: ["=Profit/NetSales", "=Units*UnitPrice", "=NetSales/Profit", "=Profit*NetSales"], answer: 0 }
+          - { id: xl-w13-d6-rf04, difficulty: easy, type: mcq, prompt: "One row per region", choices: ["dimension table", "fact table", "pivot", "timeline"], answer: 0 }
+          - { id: xl-w13-d6-rf05, difficulty: easy, type: mcq, prompt: "Refresh All", choices: ["Ctrl+Alt+F5", "Alt+F5", "F5", "F9"], answer: 0 }
+          - { id: xl-w13-d6-rf06, difficulty: easy, type: text, prompt: "Region-months on target", accept: ["33"] }
+          - { id: xl-w13-d6-rf07, difficulty: easy, type: text, prompt: "Region that beat its target", accept: ["Port Harcourt"] }
+          - { id: xl-w13-d6-rf08, difficulty: easy, type: text, prompt: "Best margin category", accept: ["Fashion"] }
+          - { id: xl-w13-d6-rf09, difficulty: easy, type: text, prompt: "Annual target (₦, no symbol)", accept: ["844900000", "844,900,000"] }
+          - { id: xl-w13-d6-rf10, difficulty: easy, type: truefalse, prompt: "GETPIVOTDATA survives pivot layout changes.", answer: true }
+      - kind: brain-teaser
+        title: "The manager explores"
+        questions:
+          - { id: xl-w13-d6-bt01, difficulty: medium, type: mcq, prompt: "Did the company hit target?", choices: ["No: ₦834.0M vs ₦844.9M (−1.3%)", "Yes", "Exactly", "Can't tell"], answer: 0 }
+          - { id: xl-w13-d6-bt02, difficulty: medium, type: mcq, prompt: "Which region should get attention first?", choices: ["Kano (−5.6%)", "Port Harcourt", "Lagos", "Abuja"], answer: 0 }
+          - { id: xl-w13-d6-bt03, difficulty: medium, type: mcq, prompt: "Months where the company as a whole hit target", choices: ["Feb–Jun, Sep, Oct", "Jan and Dec", "every month", "none"], answer: 0 }
+          - { id: xl-w13-d6-bt04, difficulty: hard, type: mcq, prompt: "December is the best sales month yet the company missed December's target. So…", choices: ["December's target was set even higher than the peak", "sales fell", "the data is wrong", "targets don't matter"], answer: 0 }
+          - { id: xl-w13-d6-bt05, difficulty: hard, type: mcq, prompt: "Best way to let the manager explore alone", choices: ["slicers + timeline connected to all pivots, on a protected dashboard", "email 72 screenshots", "a PDF", "raw data only"], answer: 0 }
