@@ -148,3 +148,29 @@ describe('fr-w04-family and fr-w06-routine challenges', () => {
     ])
   })
 })
+
+describe('fr-w09-ville challenges', () => {
+  it('contracts de + article, elides de before infinitives, and builds directions', async () => {
+    expect(await challengeSentences('fr-w09-ville')).toEqual([
+      'Je viens du marché.',
+      "Elle vient de l'hôpital.",
+      'Nous venons du Nigeria.',
+      'Ils reviennent des États-Unis.',
+      "Tu viens de l'école.",
+      "Tunde vient d'arriver.",
+      'Nous venons de manger.',
+      "Ils viennent d'acheter une voiture.",
+      'La banque est près du marché.',
+      "La pharmacie est en face de l'église.",
+      "L'hôtel est loin des magasins.",
+      'Le café est au bout de la rue.',
+      'Madame, tournez à gauche.',
+      'Tunde, va tout droit.',
+      'Monsieur, prenez la première rue à droite.',
+      'Ada, traverse le pont.',
+      'Je vais au travail en bus.',
+      "Elle va à l'école à pied.",
+      'Ils vont à Abuja en avion.',
+    ])
+  })
+})

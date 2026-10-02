@@ -41,6 +41,10 @@ Anki. Watch your 2-minute milestone video again and note one thing to improve.
 
 **Check:** 1. viens 2. reviennent 3. du 4. du 5. de l' 6. de
 
+**Sandbox:** the *Je viens du marché* tab: pick le, la or les and watch de + le become *du*.
+
+::sandbox fr-w09-ville
+
 ### Speak & Listen (10 min)
 - Language Transfer tracks 69–70.
 - Say where each family member comes from and where they live now.
@@ -71,6 +75,10 @@ Say what these people have just done:
 1. Tunde / arriver à Paris  2. nous / regarder un film  3. tu / te lever  4. elles / acheter une voiture
 
 **Check:** 1. *Tunde vient d'arriver à Paris.* 2. *Nous venons de regarder un film.* 3. *Tu viens de te lever.* 4. *Elles viennent d'acheter une voiture.*
+
+**Sandbox:** the *Je viens de manger* tab. Try *arrivé* to see why venir de needs the infinitive.
+
+::sandbox fr-w09-ville
 
 ### Speak & Listen (10 min)
 - Language Transfer tracks 71–72.
@@ -103,6 +111,10 @@ All the ones with *de* use the **du / de la / de l' / des** rule from Monday.
 
 ### Practice (15 min)
 Draw a simple street map with 8 places, then write 8 sentences locating them: *La pharmacie est en face de la banque…*
+
+**Sandbox:** the *La banque est près du marché* tab: place the bank, pharmacy and hotel around town.
+
+::sandbox fr-w09-ville
 
 ### Speak & Listen (10 min)
 - Language Transfer tracks 73–74.
@@ -139,6 +151,10 @@ Irregular: *être* → sois / soyons / soyez · *avoir* → aie / ayons / ayez.
 ### Practice (15 min)
 Give directions (*vous* form) from your home to the nearest pharmacy, in 5–6 steps.
 
+**Sandbox:** the *Tournez à gauche* tab: tu to Tunde and Ada, vous to Madame and Monsieur. Try *tournes* to see the rule.
+
+::sandbox fr-w09-ville
+
 ### Speak & Listen (10 min)
 - Coffee Break French lesson 21.
 - Read your directions aloud, then give them again to a different place without writing.
@@ -173,6 +189,10 @@ Anki. Conjugate the imperative of *aller, prendre, tourner*.
 
 ### Practice (15 min)
 Write 6 sentences on how you and your family get around, and a station dialogue buying a ticket to a city of your choice.
+
+**Sandbox:** the *Je vais au travail en bus* tab: en bus, à pied. Try *à bus* to see why it's wrong.
+
+::sandbox fr-w09-ville
 
 ### Speak & Listen (10 min)
 - Coffee Break French lessons 22–23.

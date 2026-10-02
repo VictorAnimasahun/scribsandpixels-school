@@ -1,0 +1,203 @@
+# Week 9 · En ville: venir (de) + du/de la/de l'/des, venir de + infinitive, places, imperative directions, transport en/à.
+id: fr-w09-ville
+kind: phrases
+title: "En ville"
+description: "Say where people come from, what they've just done and where things are, give directions, and get around. The builder turns de + le into du and de + vowel into d' for you."
+voice: fr-FR
+patterns:
+  - id: come-from
+    label: "Je viens du marché…"
+    slots:
+      - &who9
+        id: who
+        label: "Who"
+        options:
+          - { text: "Je", en: "I", tags: [p1s] }
+          - { text: "Tu", en: "You (friend)", tags: [p2s] }
+          - { text: "Elle", en: "She", tags: [p3s] }
+          - { text: "Tunde", en: "Tunde", tags: [p3s] }
+          - { text: "Nous", en: "We", tags: [p1p] }
+          - { text: "Vous", en: "You (formal)", tags: [p2p] }
+          - { text: "Ils", en: "They", tags: [p3p] }
+      - &venir
+        id: verb
+        label: "venir"
+        options:
+          - { text: "viens", en: "come", needs: { who: ["p1s|p2s"] }, why: "« viens » goes with je or tu." }
+          - { text: "vient", en: "comes", needs: { who: [p3s] }, why: "« vient » goes with il/elle." }
+          - { text: "venons", en: "come", needs: { who: [p1p] }, why: "« venons » goes with nous." }
+          - { text: "venez", en: "come", needs: { who: [p2p] }, why: "« venez » goes with vous." }
+          - { text: "viennent", en: "come", needs: { who: [p3p] }, why: "« viennent » goes with ils/elles (double n)." }
+          - { text: "reviens", en: "come back", needs: { who: ["p1s|p2s"] }, why: "« reviens » goes with je or tu." }
+          - { text: "revient", en: "comes back", needs: { who: [p3s] }, why: "« revient » goes with il/elle." }
+          - { text: "reviennent", en: "come back", needs: { who: [p3p] }, why: "« reviennent » goes with ils/elles." }
+      - { id: de, fixed: "de" }
+      - id: the
+        label: "the"
+        options:
+          - { text: "le", en: "the (masc.)", needs: { place: [m, sg] }, why: "« le » is for a masculine singular place: de + le = du (de l' before a vowel)." }
+          - { text: "la", en: "the (fem.)", needs: { place: [f, sg] }, why: "« la » is for a feminine singular place: de la (de l' before a vowel)." }
+          - { text: "les", en: "the (plural)", needs: { place: [pl] }, why: "« les » is for plural places: de + les = des." }
+      - id: place
+        label: "Place"
+        options:
+          - { text: "marché", en: "market", tags: [m, sg] }
+          - { text: "bureau", en: "office", tags: [m, sg] }
+          - { text: "hôpital", en: "hospital", tags: [m, sg] }
+          - { text: "Nigeria", en: "Nigeria", tags: [m, sg] }
+          - { text: "banque", en: "bank", tags: [f, sg] }
+          - { text: "école", en: "school", tags: [f, sg] }
+          - { text: "pharmacie", en: "pharmacy", tags: [f, sg] }
+          - { text: "États-Unis", en: "United States", tags: [m, pl] }
+          - { text: "toilettes", en: "toilets", tags: [f, pl] }
+      - { id: end, fixed: "." }
+
+  - id: just-did
+    label: "Je viens de manger (just did)"
+    slots:
+      - *who9
+      - *venir
+      - { id: de, fixed: "de" }
+      - id: action
+        label: "Just…"
+        options:
+          - { text: "arriver", en: "arrive" }
+          - { text: "manger", en: "eat" }
+          - { text: "partir", en: "leave" }
+          - { text: "finir le travail", en: "finish work" }
+          - { text: "acheter une voiture", en: "buy a car" }
+          - { text: "regarder un film", en: "watch a film" }
+          - { text: "arrivé", en: "(past participle)", needs: { who: [p1s, p3p] }, why: "After venir de, use the infinitive: « je viens d'arriver », never « arrivé »." }
+      - { id: end, fixed: "." }
+
+  - id: where-is
+    label: "La banque est près du marché"
+    slots:
+      - id: thing
+        label: "What"
+        options:
+          - { text: "La banque", en: "The bank" }
+          - { text: "La pharmacie", en: "The pharmacy" }
+          - { text: "La poste", en: "The post office" }
+          - { text: "Le café", en: "The café" }
+          - { text: "L'hôtel", en: "The hotel" }
+      - { id: est, fixed: "est" }
+      - id: prep
+        label: "Where"
+        options:
+          - { text: "près de", en: "near" }
+          - { text: "loin de", en: "far from" }
+          - { text: "en face de", en: "opposite" }
+          - { text: "à côté de", en: "next to" }
+          - { text: "à gauche de", en: "to the left of" }
+          - { text: "au bout de", en: "at the end of", needs: { spot: [street] }, why: "« au bout de » (at the end of) goes with a street." }
+      - id: the
+        label: "the"
+        options:
+          - { text: "le", en: "the (masc.)", needs: { spot: [m, sg] }, why: "« le » is for a masculine singular noun: de + le = du." }
+          - { text: "la", en: "the (fem.)", needs: { spot: [f, sg] }, why: "« la » is for a feminine singular noun." }
+          - { text: "les", en: "the (plural)", needs: { spot: [pl] }, why: "« les » is for plurals: de + les = des." }
+      - id: spot
+        label: "Landmark"
+        options:
+          - { text: "marché", en: "market", tags: [m, sg] }
+          - { text: "cinéma", en: "cinema", tags: [m, sg] }
+          - { text: "hôpital", en: "hospital", tags: [m, sg] }
+          - { text: "gare", en: "station", tags: [f, sg] }
+          - { text: "église", en: "church", tags: [f, sg] }
+          - { text: "rue", en: "street", tags: [f, sg, street] }
+          - { text: "magasins", en: "shops", tags: [m, pl] }
+      - { id: end, fixed: "." }
+
+  - id: directions
+    label: "Tournez à gauche (directions)"
+    slots:
+      - id: to
+        label: "Talking to"
+        options:
+          - { text: "Tunde,", en: "Tunde (friend: tu)", tags: [tu] }
+          - { text: "Ada,", en: "Ada (friend: tu)", tags: [tu] }
+          - { text: "Madame,", en: "Madam (polite: vous)", tags: [vous] }
+          - { text: "Monsieur,", en: "Sir (polite: vous)", tags: [vous] }
+      - id: verb
+        label: "Do"
+        options:
+          - { text: "tourne", en: "turn", tags: [turn], needs: { to: [tu] }, why: "« tourne » is the tu form. To Madame/Monsieur, say « tournez »." }
+          - { text: "tournez", en: "turn", tags: [turn], needs: { to: [vous] }, why: "« tournez » is the vous form. To a friend, say « tourne »." }
+          - { text: "va", en: "go", tags: [go], needs: { to: [tu] }, why: "« va » is the tu form. Politely: « allez »." }
+          - { text: "allez", en: "go", tags: [go], needs: { to: [vous] }, why: "« allez » is the vous form. To a friend: « va »." }
+          - { text: "prends", en: "take", tags: [take], needs: { to: [tu] }, why: "« prends » is the tu form (it keeps its -s: not an -er verb). Politely: « prenez »." }
+          - { text: "prenez", en: "take", tags: [take], needs: { to: [vous] }, why: "« prenez » is the vous form. To a friend: « prends »." }
+          - { text: "traverse", en: "cross", tags: [cross], needs: { to: [tu] }, why: "« traverse » is the tu form. Politely: « traversez »." }
+          - { text: "traversez", en: "cross", tags: [cross], needs: { to: [vous] }, why: "« traversez » is the vous form. To a friend: « traverse »." }
+          - { text: "continuez", en: "carry on", tags: [go], needs: { to: [vous] }, why: "« continuez » is the vous form. To a friend: « continue »." }
+          - { text: "tournes", en: "(wrong)", tags: [turn], needs: { to: [tu, vous] }, why: "-er verbs drop the -s in the tu imperative: « Tourne ! », never « Tournes »." }
+          - { text: "vas", en: "(wrong)", tags: [go], needs: { to: [tu, vous] }, why: "aller drops the -s in the tu imperative: « Va ! » (only « Vas-y » keeps it)." }
+      - id: how
+        label: "How"
+        options:
+          - { text: "à gauche", en: "left", needs: { verb: [turn] }, why: "« à gauche » goes with tourner here: « Tournez à gauche »." }
+          - { text: "à droite", en: "right", needs: { verb: [turn] }, why: "« à droite » goes with tourner here: « Tournez à droite »." }
+          - { text: "tout droit", en: "straight on", needs: { verb: [go] }, why: "« tout droit » goes with aller or continuer: « Allez tout droit »." }
+          - { text: "jusqu'au feu", en: "to the traffic light", needs: { verb: [go] }, why: "« jusqu'au feu » goes with aller or continuer." }
+          - { text: "la première rue à droite", en: "the first street on the right", needs: { verb: [take] }, why: "You « prenez » (take) a street." }
+          - { text: "la deuxième rue à gauche", en: "the second street on the left", needs: { verb: [take] }, why: "You « prenez » (take) a street." }
+          - { text: "le pont", en: "the bridge", needs: { verb: [cross] }, why: "You « traversez » (cross) a bridge." }
+          - { text: "la place", en: "the square", needs: { verb: [cross] }, why: "You « traversez » (cross) a square." }
+      - { id: end, fixed: "." }
+
+  - id: transport
+    label: "Je vais au travail en bus"
+    slots:
+      - *who9
+      - id: go
+        label: "aller"
+        options:
+          - { text: "vais", en: "go", needs: { who: [p1s] }, why: "« vais » goes with je." }
+          - { text: "vas", en: "go", needs: { who: [p2s] }, why: "« vas » goes with tu." }
+          - { text: "va", en: "goes", needs: { who: [p3s] }, why: "« va » goes with il/elle." }
+          - { text: "allons", en: "go", needs: { who: [p1p] }, why: "« allons » goes with nous." }
+          - { text: "allez", en: "go", needs: { who: [p2p] }, why: "« allez » goes with vous." }
+          - { text: "vont", en: "go", needs: { who: [p3p] }, why: "« vont » goes with ils/elles." }
+      - id: dest
+        label: "Where to"
+        options:
+          - { text: "au travail", en: "to work" }
+          - { text: "à l'école", en: "to school" }
+          - { text: "au marché", en: "to the market" }
+          - { text: "à Abuja", en: "to Abuja" }
+      - id: by
+        label: "How"
+        options:
+          - { text: "en bus", en: "by bus" }
+          - { text: "en voiture", en: "by car" }
+          - { text: "en taxi", en: "by taxi" }
+          - { text: "en train", en: "by train" }
+          - { text: "en avion", en: "by plane" }
+          - { text: "à pied", en: "on foot" }
+          - { text: "à vélo", en: "by bike" }
+          - { text: "à moto", en: "by motorbike (okada)" }
+          - { text: "à bus", en: "(wrong)", needs: { who: [p1s, p3p] }, why: "You sit inside a bus, so it's « en bus ». « à » is for things you sit on or walk: à pied, à vélo, à moto." }
+          - { text: "en pied", en: "(wrong)", needs: { who: [p1s, p3p] }, why: "On foot is always « à pied »." }
+      - { id: end, fixed: "." }
+
+challenges:
+  - { prompt: "I come from the market.", pattern: come-from, answer: { who: "Je", verb: "viens", the: "le", place: "marché" } }
+  - { prompt: "She comes from the hospital.", pattern: come-from, answer: { who: "Elle", verb: "vient", the: "le", place: "hôpital" } }
+  - { prompt: "We come from Nigeria.", pattern: come-from, answer: { who: "Nous", verb: "venons", the: "le", place: "Nigeria" } }
+  - { prompt: "They come back from the United States.", pattern: come-from, answer: { who: "Ils", verb: "reviennent", the: "les", place: "États-Unis" } }
+  - { prompt: "You (friend) come from school.", pattern: come-from, answer: { who: "Tu", verb: "viens", the: "la", place: "école" } }
+  - { prompt: "Tunde has just arrived.", pattern: just-did, answer: { who: "Tunde", verb: "vient", action: "arriver" } }
+  - { prompt: "We've just eaten.", pattern: just-did, answer: { who: "Nous", verb: "venons", action: "manger" } }
+  - { prompt: "They've just bought a car.", pattern: just-did, answer: { who: "Ils", verb: "viennent", action: "acheter une voiture" } }
+  - { prompt: "The bank is near the market.", pattern: where-is, answer: { thing: "La banque", prep: "près de", the: "le", spot: "marché" } }
+  - { prompt: "The pharmacy is opposite the church.", pattern: where-is, answer: { thing: "La pharmacie", prep: "en face de", the: "la", spot: "église" } }
+  - { prompt: "The hotel is far from the shops.", pattern: where-is, answer: { thing: "L'hôtel", prep: "loin de", the: "les", spot: "magasins" } }
+  - { prompt: "The café is at the end of the street.", pattern: where-is, answer: { thing: "Le café", prep: "au bout de", the: "la", spot: "rue" } }
+  - { prompt: "Madam, turn left.", pattern: directions, answer: { to: "Madame,", verb: "tournez", how: "à gauche" } }
+  - { prompt: "Tunde, go straight on.", pattern: directions, answer: { to: "Tunde,", verb: "va", how: "tout droit" } }
+  - { prompt: "Sir, take the first street on the right.", pattern: directions, answer: { to: "Monsieur,", verb: "prenez", how: "la première rue à droite" } }
+  - { prompt: "Ada, cross the bridge.", pattern: directions, answer: { to: "Ada,", verb: "traverse", how: "le pont" } }
+  - { prompt: "I go to work by bus.", pattern: transport, answer: { who: "Je", go: "vais", dest: "au travail", by: "en bus" } }
+  - { prompt: "She goes to school on foot.", pattern: transport, answer: { who: "Elle", go: "va", dest: "à l'école", by: "à pied" } }
+  - { prompt: "They go to Abuja by plane.", pattern: transport, answer: { who: "Ils", go: "vont", dest: "à Abuja", by: "en avion" } }
