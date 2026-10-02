@@ -112,6 +112,10 @@ Conjugate *faire* and translate:
 
 **Check:** 1. faisons 2. faites 3. font 4. fais 5. fait
 
+**Sandbox:** the *Faire* tab: chores and sport.
+
+::sandbox fr-w06-routine
+
 ### Speak & Listen (10 min)
 - Language Transfer tracks 51–52.
 - Coffee Break French lesson 15.
@@ -156,6 +160,10 @@ Many daily-routine verbs are **reflexive**: the action is done to yourself. They
 1. Je (se réveiller) ___ à 5 h.  2. Tu (se coucher) ___ tard.  3. Nous (se dépêcher) ___.  4. Elle (s'habiller) ___.  5. Negative: *Ils se reposent le dimanche.*
 
 **Check:** 1. me réveille 2. te couches 3. nous dépêchons 4. s'habille 5. *Ils ne se reposent pas le dimanche.*
+
+**Sandbox:** reflexive verbs need the right pronoun AND the right ending. Try *je + me + habille* and watch it become *je m'habille*.
+
+::sandbox fr-w06-routine
 
 ### Speak & Listen (10 min)
 - Language Transfer tracks 53–54.

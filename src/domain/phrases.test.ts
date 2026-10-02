@@ -109,3 +109,42 @@ describe('fr-w05-verbs challenges', () => {
     ])
   })
 })
+
+async function challengeSentences(id: string) {
+  const { findSandbox } = await import('../content/sandboxes.ts')
+  const sandbox = findSandbox(id)
+  if (sandbox?.kind !== 'phrases') throw new Error(`${id} missing`)
+  return (sandbox.challenges ?? []).map((c) => {
+    const pattern = sandbox.patterns.find((p) => p.id === c.pattern)!
+    const chosen = Object.fromEntries(pattern.slots.flatMap((s) => ('fixed' in s ? [] : [[s.id, s.options.find((o) => o.text === c.answer[s.id])]])))
+    return joinFrench(tokensFor(pattern, chosen))
+  })
+}
+
+describe('fr-w04-family and fr-w06-routine challenges', () => {
+  it('possessives and avoir produce correct French', async () => {
+    expect(await challengeSentences('fr-w04-family')).toEqual([
+      "C'est ma mère.",
+      'Ce sont ses parents.',
+      "C'est mon amie.",
+      "C'est son oncle.",
+      "C'est son frère.",
+      'Nous avons faim.',
+      "J'ai trente ans.",
+      'Ils ont froid.',
+      'Tu as deux frères.',
+    ])
+  })
+  it('reflexives elide me/se before a vowel, and faire agrees', async () => {
+    expect(await challengeSentences('fr-w06-routine')).toEqual([
+      'Je me lève à six heures.',
+      'Elle se couche tard.',
+      'Nous nous habillons tôt.',
+      'Ils se lèvent à sept heures et demie.',
+      "Je m'habille tôt.",
+      'Vous faites les courses.',
+      'Ils font du sport.',
+      'Je fais la cuisine.',
+    ])
+  })
+})

@@ -1,0 +1,80 @@
+# Week 4 · Ma famille: possessives that agree with the thing owned, and avoir expressions.
+id: fr-w04-family
+kind: phrases
+title: "Ma famille"
+description: "mon, ma or mes? The builder checks gender, number and the « mon amie » rule. Then say ages and feelings with avoir."
+voice: fr-FR
+patterns:
+  - id: possessive
+    label: "C'est mon / ma / mes…"
+    slots:
+      - id: it
+        label: "It's / they're"
+        options:
+          - { text: "C'est", en: "It's / this is", needs: { noun: [sg] }, why: "« C'est » is for one person." }
+          - { text: "Ce sont", en: "They're / these are", needs: { noun: [pl] }, why: "« Ce sont » is for several people." }
+      - id: poss
+        label: "Whose"
+        options:
+          - { text: "mon", en: "my", needs: { noun: [sg, "m|vowel"] }, why: "« mon » is for a masculine noun, or a feminine one starting with a vowel (mon amie)." }
+          - { text: "ma", en: "my", needs: { noun: [f, consonant] }, why: "« ma » is for a feminine noun starting with a consonant. Before a vowel, use « mon »." }
+          - { text: "mes", en: "my", needs: { noun: [pl] }, why: "« mes » is for plural nouns." }
+          - { text: "son", en: "his / her", needs: { noun: [sg, "m|vowel"] }, why: "« son » is for a masculine noun, or a feminine one starting with a vowel." }
+          - { text: "sa", en: "his / her", needs: { noun: [f, consonant] }, why: "« sa » is for a feminine noun starting with a consonant." }
+          - { text: "ses", en: "his / her", needs: { noun: [pl] }, why: "« ses » is for plural nouns." }
+      - id: noun
+        label: "Family"
+        options:
+          - { text: "père", en: "father", tags: [m, sg, consonant] }
+          - { text: "frère", en: "brother", tags: [m, sg, consonant] }
+          - { text: "oncle", en: "uncle", tags: [m, sg, vowel] }
+          - { text: "mère", en: "mother", tags: [f, sg, consonant] }
+          - { text: "sœur", en: "sister", tags: [f, sg, consonant] }
+          - { text: "tante", en: "aunt", tags: [f, sg, consonant] }
+          - { text: "amie", en: "friend (female)", tags: [f, sg, vowel] }
+          - { text: "parents", en: "parents", tags: [pl] }
+          - { text: "cousins", en: "cousins", tags: [pl] }
+      - { id: end, fixed: "." }
+
+  - id: avoir
+    label: "Avoir: age and feelings"
+    slots:
+      - id: who
+        label: "Who"
+        options:
+          - { text: "Je", en: "I", tags: [p1s] }
+          - { text: "Tu", en: "You (friend)", tags: [p2s] }
+          - { text: "Elle", en: "She", tags: [p3s] }
+          - { text: "Nous", en: "We", tags: [p1p] }
+          - { text: "Vous", en: "You (formal)", tags: [p2p] }
+          - { text: "Ils", en: "They", tags: [p3p] }
+      - id: have
+        label: "avoir"
+        options:
+          - { text: "ai", en: "have", needs: { who: [p1s] }, why: "« ai » goes with je (j'ai)." }
+          - { text: "as", en: "have", needs: { who: [p2s] }, why: "« as » goes with tu." }
+          - { text: "a", en: "has", needs: { who: [p3s] }, why: "« a » goes with il/elle." }
+          - { text: "avons", en: "have", needs: { who: [p1p] }, why: "« avons » goes with nous." }
+          - { text: "avez", en: "have", needs: { who: [p2p] }, why: "« avez » goes with vous." }
+          - { text: "ont", en: "have", needs: { who: [p3p] }, why: "« ont » goes with ils/elles (with a z sound: ils_ont)." }
+      - id: what
+        label: "What"
+        options:
+          - { text: "faim", en: "hungry" }
+          - { text: "soif", en: "thirsty" }
+          - { text: "froid", en: "cold" }
+          - { text: "raison", en: "right" }
+          - { text: "trente ans", en: "thirty years old" }
+          - { text: "deux frères", en: "two brothers" }
+      - { id: end, fixed: "." }
+
+challenges:
+  - { prompt: "It's my mother.", pattern: possessive, answer: { it: "C'est", poss: "ma", noun: "mère" } }
+  - { prompt: "They're her parents.", pattern: possessive, answer: { it: "Ce sont", poss: "ses", noun: "parents" } }
+  - { prompt: "It's my friend (female).", pattern: possessive, answer: { it: "C'est", poss: "mon", noun: "amie" } }
+  - { prompt: "It's his uncle.", pattern: possessive, answer: { it: "C'est", poss: "son", noun: "oncle" } }
+  - { prompt: "It's her brother.", pattern: possessive, answer: { it: "C'est", poss: "son", noun: "frère" } }
+  - { prompt: "We are hungry.", pattern: avoir, answer: { who: "Nous", have: "avons", what: "faim" } }
+  - { prompt: "I'm thirty.", pattern: avoir, answer: { who: "Je", have: "ai", what: "trente ans" } }
+  - { prompt: "They're cold.", pattern: avoir, answer: { who: "Ils", have: "ont", what: "froid" } }
+  - { prompt: "You (friend) have two brothers.", pattern: avoir, answer: { who: "Tu", have: "as", what: "deux frères" } }

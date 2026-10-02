@@ -1,0 +1,80 @@
+# Week 6 · Ma journée: reflexive verbs (pronoun + ending must both match) and faire.
+id: fr-w06-routine
+kind: phrases
+title: "Ma journée"
+description: "Reflexive verbs need two matches: the pronoun (me, te, se…) and the ending. Then talk about chores with faire."
+voice: fr-FR
+patterns:
+  - id: reflexive
+    label: "Je me lève…"
+    slots:
+      - &who
+        id: who
+        label: "Who"
+        options:
+          - { text: "Je", en: "I", tags: [p1s] }
+          - { text: "Tu", en: "You (friend)", tags: [p2s] }
+          - { text: "Elle", en: "She", tags: [p3s] }
+          - { text: "Nous", en: "We", tags: [p1p] }
+          - { text: "Vous", en: "You (formal)", tags: [p2p] }
+          - { text: "Ils", en: "They", tags: [p3p] }
+      - id: pron
+        label: "Pronoun"
+        options:
+          - { text: "me", en: "myself", needs: { who: [p1s] }, why: "« me » goes with je (m' before a vowel)." }
+          - { text: "te", en: "yourself", needs: { who: [p2s] }, why: "« te » goes with tu (t' before a vowel)." }
+          - { text: "se", en: "her/themselves", needs: { who: ["p3s|p3p"] }, why: "« se » goes with il/elle/ils/elles (s' before a vowel)." }
+          - { text: "nous", en: "ourselves", needs: { who: [p1p] }, why: "With nous, the pronoun is « nous » too: nous nous levons." }
+          - { text: "vous", en: "yourselves", needs: { who: [p2p] }, why: "With vous, the pronoun is « vous » too: vous vous levez." }
+      - id: verb
+        label: "Verb"
+        options:
+          - { text: "lève", en: "get(s) up", needs: { who: ["p1s|p3s"] }, why: "« lève » goes with je or il/elle." }
+          - { text: "lèves", en: "get up", needs: { who: [p2s] }, why: "« lèves » goes with tu." }
+          - { text: "levons", en: "get up", needs: { who: [p1p] }, why: "« levons » goes with nous (no accent)." }
+          - { text: "levez", en: "get up", needs: { who: [p2p] }, why: "« levez » goes with vous (no accent)." }
+          - { text: "lèvent", en: "get up", needs: { who: [p3p] }, why: "« lèvent » goes with ils/elles." }
+          - { text: "couche", en: "go(es) to bed", needs: { who: ["p1s|p3s"] }, why: "« couche » goes with je or il/elle." }
+          - { text: "couchons", en: "go to bed", needs: { who: [p1p] }, why: "« couchons » goes with nous." }
+          - { text: "couchent", en: "go to bed", needs: { who: [p3p] }, why: "« couchent » goes with ils/elles." }
+          - { text: "habille", en: "get(s) dressed", needs: { who: ["p1s|p3s"] }, why: "« habille » goes with je or il/elle." }
+          - { text: "habillons", en: "get dressed", needs: { who: [p1p] }, why: "« habillons » goes with nous." }
+      - id: when
+        label: "When"
+        options:
+          - { text: "à six heures", en: "at six" }
+          - { text: "à sept heures et demie", en: "at half past seven" }
+          - { text: "tôt", en: "early" }
+          - { text: "tard", en: "late" }
+      - { id: end, fixed: "." }
+
+  - id: chores
+    label: "Faire: chores and sport"
+    slots:
+      - *who
+      - id: do
+        label: "faire"
+        options:
+          - { text: "fais", en: "do", needs: { who: ["p1s|p2s"] }, why: "« fais » goes with je or tu." }
+          - { text: "fait", en: "does", needs: { who: [p3s] }, why: "« fait » goes with il/elle." }
+          - { text: "faisons", en: "do", needs: { who: [p1p] }, why: "« faisons » goes with nous." }
+          - { text: "faites", en: "do", needs: { who: [p2p] }, why: "« faites » goes with vous (never « faisez »)." }
+          - { text: "font", en: "do", needs: { who: [p3p] }, why: "« font » goes with ils/elles." }
+      - id: what
+        label: "What"
+        options:
+          - { text: "la cuisine", en: "the cooking" }
+          - { text: "les courses", en: "the shopping" }
+          - { text: "le ménage", en: "the housework" }
+          - { text: "du sport", en: "sport" }
+      - { id: end, fixed: "." }
+
+challenges:
+  - { prompt: "I get up at six.", pattern: reflexive, answer: { who: "Je", pron: "me", verb: "lève", when: "à six heures" } }
+  - { prompt: "She goes to bed late.", pattern: reflexive, answer: { who: "Elle", pron: "se", verb: "couche", when: "tard" } }
+  - { prompt: "We get dressed early.", pattern: reflexive, answer: { who: "Nous", pron: "nous", verb: "habillons", when: "tôt" } }
+  - { prompt: "They get up at half past seven.", pattern: reflexive, answer: { who: "Ils", pron: "se", verb: "lèvent", when: "à sept heures et demie" } }
+  - { prompt: "I get dressed early.", pattern: reflexive, answer: { who: "Je", pron: "me", verb: "habille", when: "tôt" } }
+  - { prompt: "You (formal) do the shopping.", pattern: chores, answer: { who: "Vous", do: "faites", what: "les courses" } }
+  - { prompt: "They do sport.", pattern: chores, answer: { who: "Ils", do: "font", what: "du sport" } }
+  - { prompt: "I cook.", pattern: chores, answer: { who: "Je", do: "fais", what: "la cuisine" } }

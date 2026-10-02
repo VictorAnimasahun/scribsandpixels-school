@@ -43,6 +43,10 @@ Fill in the form of *avoir*:
 
 **Check:** 1. avons 2. as 3. ont 4. ai 5. avez 6. a
 
+**Sandbox:** build *avoir* sentences in the *Avoir* tab. Wrong forms are flagged.
+
+::sandbox fr-w04-family
+
 ### Speak & Listen (10 min)
 - Language Transfer tracks 31–32.
 - Say *ils ont / ils sont* 10 times, alternating, and exaggerate the z and s sounds.
@@ -116,6 +120,10 @@ Choose the possessive:
 1. (my) ___ sœur  2. (my) ___ amie  3. (his) ___ voiture  4. (her) ___ père  5. (our) ___ enfants  6. (their) ___ maison  7. (your, vous) ___ parents
 
 **Check:** 1. ma 2. mon 3. sa 4. son 5. nos 6. leur 7. vos
+
+**Sandbox:** *mon, ma* or *mes*? The builder checks gender, number and the *mon amie* rule.
+
+::sandbox fr-w04-family
 
 ### Speak & Listen (10 min)
 - Language Transfer tracks 35–36.
