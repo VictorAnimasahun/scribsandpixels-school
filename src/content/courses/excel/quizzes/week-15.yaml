@@ -1,0 +1,298 @@
+# Excel · Week 15 quizzes. Format and rules: src/content/QUIZZES.md
+# Figures verified against datasets/ (sales_2025.csv, monthly-sales/).
+week: 15
+days:
+
+  # ─────────────────────────── DAY 1 ───────────────────────────
+  - day: 1
+    gate:
+      title: "Checkpoint: Week 14 review"
+      covers: "Week 14: Goal Seek, PMT/FV/NPER, data tables, Scenario Manager, Solver, NPV and IRR"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w15-d1-g01, difficulty: easy, type: mcq, prompt: "Hit one target by changing one cell", choices: ["Goal Seek", "Solver", "Data Table", "Pivot"], answer: 0 }
+        - { id: xl-w15-d1-g02, difficulty: easy, type: mcq, prompt: "Loan payment", choices: ["PMT", "FV", "NPV", "IRR"], answer: 0 }
+        - { id: xl-w15-d1-g03, difficulty: easy, type: truefalse, prompt: "Monthly payments need a monthly rate (annual ÷ 12).", answer: true }
+        - { id: xl-w15-d1-g04, difficulty: easy, type: mcq, prompt: "Optimise with constraints", choices: ["Solver", "Goal Seek", "Scenario Manager", "Flash Fill"], answer: 0 }
+        - { id: xl-w15-d1-g05, difficulty: easy, type: mcq, prompt: "NPV's first value counts as…", choices: ["year 1", "year 0", "today", "the rate"], answer: 0 }
+        - { id: xl-w15-d1-g06, difficulty: easy, type: mcq, prompt: "Best/Base/Worst cases", choices: ["Scenario Manager", "Goal Seek", "Solver", "Slicer"], answer: 0 }
+        - { id: xl-w15-d1-g07, difficulty: medium, type: text, prompt: "PMT on ₦5M at 24%/yr over 36 months (₦, 2 decimals)?", accept: ["196164.26", "196,164.26"] }
+        - { id: xl-w15-d1-g08, difficulty: medium, type: text, prompt: "Solar NPV (₦, no symbol)?", accept: ["1283879", "1,283,879"] }
+        - { id: xl-w15-d1-g09, difficulty: medium, type: match, prompt: "Match.", pairs: [["Goal Seek", "one target, one input"], ["Solver", "objective + constraints"], ["Data Table", "one formula, many inputs"], ["Scenario Manager", "named input sets"]] }
+        - { id: xl-w15-d1-g10, difficulty: medium, type: text, prompt: "Kiosk optimum profit (₦, no symbol)?", accept: ["2464500", "2,464,500"] }
+        - { id: xl-w15-d1-g11, difficulty: medium, type: truefalse, prompt: "In finance functions, money you pay out is positive.", answer: false }
+        - { id: xl-w15-d1-g12, difficulty: medium, type: text, prompt: "Solar IRR (1 decimal %)?", accept: ["25.9%", "25.9"] }
+        - { id: xl-w15-d1-g13, difficulty: medium, type: mcq, prompt: "Two-variable data table: top-left cell", choices: ["the formula", "a rate", "a term", "blank"], answer: 0 }
+        - { id: xl-w15-d1-g14, difficulty: medium, type: text, prompt: "Extra phones Kano needed (whole)?", accept: ["37"] }
+        - { id: xl-w15-d1-g15, difficulty: medium, type: mcq, prompt: "=NPV(15%,C3:C7)+C2 — why +C2?", choices: ["year 0 isn't discounted, so it's added outside", "to double-count", "IRR needs it", "C2 is the rate"], answer: 0 }
+        - { id: xl-w15-d1-g16, difficulty: hard, type: mcq, prompt: "Budget raised to ₦12M: which constraint binds?", choices: ["space (200 slots)", "budget", "minimums", "none"], answer: 0 }
+        - { id: xl-w15-d1-g17, difficulty: hard, type: text, prompt: "Base 2026 net sales (₦, no symbol)?", accept: ["917451370", "917,451,370"] }
+        - { id: xl-w15-d1-g18, difficulty: hard, type: multi, prompt: "Correct formulas (Select all.)", choices: ["=PMT(18%/12,24,-2000000)", "=FV(12%/12,60,-50000)", "=IRR(C2:C7)", "=PMT(18%,24,-2000000)"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Spill and UNIQUE"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w15-d1-rf01, difficulty: easy, type: mcq, prompt: "A dynamic array result fills neighbouring cells. This is called…", choices: ["spilling", "filling", "flashing", "pivoting"], answer: 0 }
+          - { id: xl-w15-d1-rf02, difficulty: easy, type: mcq, prompt: "=H2# means…", choices: ["the whole spill range starting at H2", "H2 only", "a number format", "an error"], answer: 0 }
+          - { id: xl-w15-d1-rf03, difficulty: easy, type: mcq, prompt: "#SPILL! means…", choices: ["cells in the spill area aren't empty", "a typo", "divide by zero", "missing data"], answer: 0 }
+          - { id: xl-w15-d1-rf04, difficulty: easy, type: text, prompt: "=COUNTA(UNIQUE(tblSales[Region]))", accept: ["6"] }
+          - { id: xl-w15-d1-rf05, difficulty: easy, type: text, prompt: "=COUNTA(UNIQUE(tblSales[Salesperson]))", accept: ["27"] }
+          - { id: xl-w15-d1-rf06, difficulty: easy, type: text, prompt: "First salesperson alphabetically?", accept: ["Adaeze Garba"] }
+          - { id: xl-w15-d1-rf07, difficulty: easy, type: text, prompt: "=COUNTA(UNIQUE(tblSales[Product]))", accept: ["40"] }
+          - { id: xl-w15-d1-rf08, difficulty: easy, type: mcq, prompt: "Values that appear exactly once", choices: ["=UNIQUE(range,,TRUE)", "=UNIQUE(range)", "=UNIQUE(range,TRUE)", "=SORT(range)"], answer: 0 }
+          - { id: xl-w15-d1-rf09, difficulty: easy, type: mcq, prompt: "Sorted unique list", choices: ["=SORT(UNIQUE(range))", "=UNIQUE(SORT)", "=SORTBY(range)", "=LIST(range)"], answer: 0 }
+          - { id: xl-w15-d1-rf10, difficulty: easy, type: truefalse, prompt: "=tblSales[Units]*tblSales[UnitPrice] spills 2,400 results.", answer: true }
+      - kind: brain-teaser
+        title: "One formula for all 27"
+        questions:
+          - { id: xl-w15-d1-bt01, difficulty: medium, type: mcq, prompt: "Net sales for every salesperson in H2#", choices: ["=SUMIFS(tblSales[NetSales],tblSales[Salesperson],H2#)", "=SUMIFS(tblSales[NetSales],tblSales[Salesperson],H2)", "=SUM(H2#)", "=VLOOKUP(H2#)"], answer: 0 }
+          - { id: xl-w15-d1-bt02, difficulty: medium, type: text, prompt: "Last salesperson alphabetically?", accept: ["Zainab Obi"] }
+          - { id: xl-w15-d1-bt03, difficulty: medium, type: mcq, prompt: "Region + Store unique pairs: how many rows?", choices: ["9", "6", "27", "54"], answer: 0 }
+          - { id: xl-w15-d1-bt04, difficulty: hard, type: mcq, prompt: "A note sits in H10, and =SORT(UNIQUE(tblSales[Salesperson])) is in H2. Result?", choices: ["#SPILL! (27 rows need H2:H28)", "the list stops at H9", "the note moves", "fine"], answer: 0 }
+          - { id: xl-w15-d1-bt05, difficulty: hard, type: mcq, prompt: "A new salesperson's first order is added to tblSales. The unique list…", choices: ["grows automatically", "needs re-typing", "breaks", "needs Refresh"], answer: 0 }
+
+  # ─────────────────────────── DAY 2 ───────────────────────────
+  - day: 2
+    gate:
+      title: "Checkpoint: spill and UNIQUE"
+      covers: "Week 15 · Day 1: dynamic arrays, spill, #, #SPILL!, UNIQUE (and exactly once), SORT(UNIQUE), SUMIFS over a spill"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w15-d2-g01, difficulty: easy, type: mcq, prompt: "Distinct values", choices: ["UNIQUE", "FILTER", "SORT", "COUNT"], answer: 0 }
+        - { id: xl-w15-d2-g02, difficulty: easy, type: mcq, prompt: "Refer to a whole spill", choices: ["#", "$", "@", "&"], answer: 0 }
+        - { id: xl-w15-d2-g03, difficulty: easy, type: truefalse, prompt: "#SPILL! is fixed by clearing the blocking cells.", answer: true }
+        - { id: xl-w15-d2-g04, difficulty: easy, type: text, prompt: "Distinct salespeople?", accept: ["27"] }
+        - { id: xl-w15-d2-g05, difficulty: easy, type: mcq, prompt: "Dynamic arrays need…", choices: ["Microsoft 365 / Excel 2021+ (or the web)", "Excel 2010", "macros", "Power Pivot"], answer: 0 }
+        - { id: xl-w15-d2-g06, difficulty: easy, type: mcq, prompt: "=COUNTA(H2#) counts…", choices: ["every item in the spill", "only H2", "blanks", "errors"], answer: 0 }
+        - { id: xl-w15-d2-g07, difficulty: medium, type: text, prompt: "=COUNTA(UNIQUE(tblSales[Product]))", accept: ["40"] }
+        - { id: xl-w15-d2-g08, difficulty: medium, type: text, prompt: "First name in =SORT(UNIQUE(tblSales[Salesperson]))?", accept: ["Adaeze Garba"] }
+        - { id: xl-w15-d2-g09, difficulty: medium, type: match, prompt: "Match.", pairs: [["=UNIQUE(r)", "distinct list"], ["=UNIQUE(r,,TRUE)", "appear exactly once"], ["=SORT(UNIQUE(r))", "sorted distinct list"], ["=COUNTA(UNIQUE(r))", "distinct count"]] }
+        - { id: xl-w15-d2-g10, difficulty: medium, type: truefalse, prompt: "You can type over one cell inside a spill range.", answer: false }
+        - { id: xl-w15-d2-g11, difficulty: medium, type: text, prompt: "Distinct regions?", accept: ["6"] }
+        - { id: xl-w15-d2-g12, difficulty: medium, type: mcq, prompt: "Total net sales per region in one formula (regions spill in H2)", choices: ["=SUMIFS(tblSales[NetSales],tblSales[Region],H2#)", "=SUM(H2#)", "=SUMIFS(H2#)", "=SUMIF(tblSales,H2)"], answer: 0 }
+        - { id: xl-w15-d2-g13, difficulty: medium, type: text, prompt: "Distinct stores?", accept: ["9"] }
+        - { id: xl-w15-d2-g14, difficulty: medium, type: mcq, prompt: "Typing over a spilled cell causes…", choices: ["#SPILL! in the formula cell", "it updates", "nothing", "#VALUE!"], answer: 0 }
+        - { id: xl-w15-d2-g15, difficulty: medium, type: mcq, prompt: "Old Ctrl+Shift+Enter arrays are now…", choices: ["unnecessary: array maths just spills", "required", "faster", "banned"], answer: 0 }
+        - { id: xl-w15-d2-g16, difficulty: hard, type: mcq, prompt: "=SORT(UNIQUE(tblSales[Salesperson]),,-1) starts with…", choices: ["Zainab Obi", "Adaeze Garba", "Tolu Eze", "#SPILL!"], answer: 0 }
+        - { id: xl-w15-d2-g17, difficulty: hard, type: text, prompt: "Rows spilled by =tblSales[Units]*tblSales[UnitPrice]?", accept: ["2400", "2,400"] }
+        - { id: xl-w15-d2-g18, difficulty: hard, type: multi, prompt: "Dynamic array functions (Select all.)", choices: ["UNIQUE", "FILTER", "SORTBY", "VLOOKUP"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "FILTER"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w15-d2-rf01, difficulty: easy, type: mcq, prompt: "FILTER's arguments", choices: ["array, include, [if_empty]", "range, criteria, sum_range", "value, table, col", "array, rows, cols"], answer: 0 }
+          - { id: xl-w15-d2-rf02, difficulty: easy, type: mcq, prompt: "AND in FILTER", choices: ["multiply conditions", "add conditions", "AND()", "OR()"], answer: 0 }
+          - { id: xl-w15-d2-rf03, difficulty: easy, type: mcq, prompt: "OR in FILTER", choices: ["add conditions", "multiply conditions", "OR()", "AND()"], answer: 0 }
+          - { id: xl-w15-d2-rf04, difficulty: easy, type: mcq, prompt: "No matches and no if_empty →", choices: ["#CALC!", "#N/A", "0", "blank"], answer: 0 }
+          - { id: xl-w15-d2-rf05, difficulty: easy, type: text, prompt: "Lagos orders ≥ ₦1,000,000?", accept: ["53"] }
+          - { id: xl-w15-d2-rf06, difficulty: easy, type: text, prompt: "Lagos orders in December?", accept: ["122"] }
+          - { id: xl-w15-d2-rf07, difficulty: easy, type: mcq, prompt: "Keep only some columns", choices: ["CHOOSECOLS", "TAKE", "DROP", "INDEX only"], answer: 0 }
+          - { id: xl-w15-d2-rf08, difficulty: easy, type: mcq, prompt: "Live product search", choices: ["ISNUMBER(SEARCH(B1,tblSales[Product]))", "tblSales[Product]=B1*", "FIND(B1)", "LIKE B1"], answer: 0 }
+          - { id: xl-w15-d2-rf09, difficulty: easy, type: truefalse, prompt: "FILTER can return all columns of a table.", answer: true }
+          - { id: xl-w15-d2-rf10, difficulty: easy, type: text, prompt: "Kano OR Abuja orders?", accept: ["742"] }
+      - kind: brain-teaser
+        title: "Filter it"
+        questions:
+          - { id: xl-w15-d2-bt01, difficulty: medium, type: mcq, prompt: "Lagos AND ≥ ₦1M", choices: ["=FILTER(tblSales,(tblSales[Region]=\"Lagos\")*(tblSales[NetSales]>=1000000))", "=FILTER(tblSales,AND(tblSales[Region]=\"Lagos\",tblSales[NetSales]>=1000000))", "=FILTER(tblSales,\"Lagos\",1000000)", "=FILTER(tblSales,(tblSales[Region]=\"Lagos\")+(tblSales[NetSales]>=1000000))"], answer: 0 }
+          - { id: xl-w15-d2-bt02, difficulty: medium, type: mcq, prompt: "Why not AND() inside FILTER?", choices: ["AND() returns one TRUE/FALSE for the whole range, not one per row", "it's slower", "it's the same", "FILTER bans it"], answer: 0 }
+          - { id: xl-w15-d2-bt03, difficulty: medium, type: mcq, prompt: "Lagos December: the date condition", choices: ["tblSales[OrderDate]>=DATE(2025,12,1)", "tblSales[OrderDate]=\"December\"", "MONTH()=\"Dec\"", "tblSales[OrderDate]>12"], answer: 0 }
+          - { id: xl-w15-d2-bt04, difficulty: hard, type: mcq, prompt: "CHOOSECOLS(FILTER(…),1,2,8,15) returns…", choices: ["OrderID, Date, Product, NetSales", "the first 15 columns", "columns 1–8", "#VALUE!"], answer: 0 }
+          - { id: xl-w15-d2-bt05, difficulty: hard, type: mcq, prompt: "Search box empty: =FILTER(tblSales,ISNUMBER(SEARCH(B1,tblSales[Product])),\"No match\") returns…", choices: ["every row (empty text matches everything)", "No match", "#CALC!", "nothing"], answer: 0 }
+
+  # ─────────────────────────── DAY 3 ───────────────────────────
+  - day: 3
+    gate:
+      title: "Checkpoint: FILTER"
+      covers: "Week 15 · Day 2: FILTER, AND by multiplying, OR by adding, if_empty, selector cells, live search, CHOOSECOLS"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w15-d3-g01, difficulty: easy, type: mcq, prompt: "Every Lagos order", choices: ["=FILTER(tblSales,tblSales[Region]=\"Lagos\")", "=FILTER(\"Lagos\")", "=SUMIFS(Lagos)", "=VLOOKUP(\"Lagos\",tblSales)"], answer: 0 }
+        - { id: xl-w15-d3-g02, difficulty: easy, type: mcq, prompt: "Friendly empty result", choices: ["3rd argument: \"No results\"", "IFNA only", "TRUE", "0 always"], answer: 0 }
+        - { id: xl-w15-d3-g03, difficulty: easy, type: truefalse, prompt: "In FILTER, (cond1)*(cond2) means both must be true.", answer: true }
+        - { id: xl-w15-d3-g04, difficulty: easy, type: text, prompt: "Lagos orders ≥ ₦1M?", accept: ["53"] }
+        - { id: xl-w15-d3-g05, difficulty: easy, type: mcq, prompt: "Region chosen in B1", choices: ["tblSales[Region]=$B$1", "tblSales[Region]=\"B1\"", "B1=Region", "$B$1#"], answer: 0 }
+        - { id: xl-w15-d3-g06, difficulty: easy, type: mcq, prompt: "Choose columns 1, 2, 8, 15", choices: ["CHOOSECOLS", "CHOOSEROWS", "TAKE", "SORT"], answer: 0 }
+        - { id: xl-w15-d3-g07, difficulty: medium, type: text, prompt: "Lagos orders from 1 December 2025?", accept: ["122"] }
+        - { id: xl-w15-d3-g08, difficulty: medium, type: text, prompt: "Orders from Kano or Abuja?", accept: ["742"] }
+        - { id: xl-w15-d3-g09, difficulty: medium, type: match, prompt: "Match.", pairs: [["*", "AND"], ["+", "OR"], ["if_empty", "no-match message"], ["CHOOSECOLS", "keep some columns"]] }
+        - { id: xl-w15-d3-g10, difficulty: medium, type: truefalse, prompt: "SEARCH in the live search is case-insensitive.", answer: true }
+        - { id: xl-w15-d3-g11, difficulty: medium, type: mcq, prompt: "Kano OR Abuja", choices: ["(tblSales[Region]=\"Kano\")+(tblSales[Region]=\"Abuja\")", "(…=\"Kano\")*(…=\"Abuja\")", "OR(…)", "tblSales[Region]=\"Kano,Abuja\""], answer: 0 }
+        - { id: xl-w15-d3-g12, difficulty: medium, type: mcq, prompt: "FILTER with no match and no if_empty", choices: ["#CALC!", "#N/A", "0", "blank"], answer: 0 }
+        - { id: xl-w15-d3-g13, difficulty: medium, type: mcq, prompt: "(Kano)*(Abuja) returns…", choices: ["nothing: a row can't be in both", "both regions", "an error", "Kano only"], answer: 0 }
+        - { id: xl-w15-d3-g14, difficulty: medium, type: text, prompt: "Count the Lagos ≥ ₦1M rows with a formula: =ROWS(FILTER(…)) gives?", accept: ["53"] }
+        - { id: xl-w15-d3-g15, difficulty: medium, type: mcq, prompt: "Live search typed \"dell\" finds…", choices: ["Dell Inspiron 15 orders", "nothing (case)", "all laptops", "#VALUE!"], answer: 0 }
+        - { id: xl-w15-d3-g16, difficulty: hard, type: mcq, prompt: "Sum of a filtered set with 0 if empty", choices: ["=SUM(FILTER(tblSales[NetSales],cond,0))", "=SUM(FILTER(tblSales[NetSales],cond))", "=FILTER(SUM)", "=SUMIFS(FILTER)"], answer: 0 }
+        - { id: xl-w15-d3-g17, difficulty: hard, type: mcq, prompt: "Why give if_empty 0 inside SUM?", choices: ["so SUM gets 0, not #CALC!", "speed", "style", "no reason"], answer: 0 }
+        - { id: xl-w15-d3-g18, difficulty: hard, type: multi, prompt: "Valid FILTER conditions (Select all.)", choices: ["(tblSales[Region]=$B$1)*(tblSales[NetSales]>=1000000)", "ISNUMBER(SEARCH($B$1,tblSales[Product]))", "(tblSales[Units]>10)+(tblSales[DiscountPct]=15)", "AND(tblSales[Region]=\"Lagos\",tblSales[Units]>5)"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "SORT, SORTBY, TAKE, DROP"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w15-d3-rf01, difficulty: easy, type: mcq, prompt: "Sort by a column not shown", choices: ["SORTBY", "SORT", "TAKE", "UNIQUE"], answer: 0 }
+          - { id: xl-w15-d3-rf02, difficulty: easy, type: mcq, prompt: "Descending order", choices: ["-1", "1", "0", "TRUE"], answer: 0 }
+          - { id: xl-w15-d3-rf03, difficulty: easy, type: mcq, prompt: "First 10 rows", choices: ["=TAKE(array,10)", "=DROP(array,10)", "=TAKE(array,-10)", "=LEFT(array,10)"], answer: 0 }
+          - { id: xl-w15-d3-rf04, difficulty: easy, type: mcq, prompt: "Last 5 rows", choices: ["=TAKE(array,-5)", "=TAKE(array,5)", "=DROP(array,5)", "=RIGHT(array,5)"], answer: 0 }
+          - { id: xl-w15-d3-rf05, difficulty: easy, type: mcq, prompt: "Remove the first row", choices: ["=DROP(array,1)", "=TAKE(array,1)", "=DROP(array,-1)", "=SORT(array,1)"], answer: 0 }
+          - { id: xl-w15-d3-rf06, difficulty: easy, type: text, prompt: "Top product by net sales?", accept: ["Rice 50kg (Local)"] }
+          - { id: xl-w15-d3-rf07, difficulty: easy, type: text, prompt: "Bottom product by net sales?", accept: ["School Bag"] }
+          - { id: xl-w15-d3-rf08, difficulty: easy, type: mcq, prompt: "Join arrays side by side", choices: ["HSTACK", "VSTACK", "CONCAT", "JOIN"], answer: 0 }
+          - { id: xl-w15-d3-rf09, difficulty: easy, type: text, prompt: "10th product by net sales?", accept: ["iPhone 13 (Refurbished)"] }
+          - { id: xl-w15-d3-rf10, difficulty: easy, type: truefalse, prompt: "SORT's second argument is the column number to sort by.", answer: true }
+      - kind: brain-teaser
+        title: "Top 10"
+        questions:
+          - { id: xl-w15-d3-bt01, difficulty: medium, type: mcq, prompt: "Top 10 orders by NetSales", choices: ["=TAKE(SORTBY(tblSales,tblSales[NetSales],-1),10)", "=SORT(tblSales,10)", "=TAKE(tblSales,10)", "=LARGE(tblSales,10)"], answer: 0 }
+          - { id: xl-w15-d3-bt02, difficulty: medium, type: text, prompt: "Biggest single order (OrderID)?", accept: ["NM-00460"] }
+          - { id: xl-w15-d3-bt03, difficulty: medium, type: text, prompt: "Its net sales (₦, no symbol)?", accept: ["13239600", "13,239,600"] }
+          - { id: xl-w15-d3-bt04, difficulty: hard, type: mcq, prompt: "Top-products formula: HSTACK(UNIQUE(products), SUMIFS(…, UNIQUE(products))) then SORT(…,2,-1). The 2 means…", choices: ["sort by the 2nd column (the sums)", "take 2 rows", "2 decimals", "descending"], answer: 0 }
+          - { id: xl-w15-d3-bt05, difficulty: hard, type: mcq, prompt: "Top N driven by B1", choices: ["=TAKE(SORTBY(tblSales,tblSales[NetSales],-1),$B$1)", "=TAKE(tblSales,B1#)", "=SORTBY(B1)", "=TOP(B1)"], answer: 0 }
+
+  # ─────────────────────────── DAY 4 ───────────────────────────
+  - day: 4
+    gate:
+      title: "Checkpoint: SORT, SORTBY, TAKE, DROP"
+      covers: "Week 15 · Day 3: sorting arrays, top/bottom N with TAKE, DROP, HSTACK for a top-products table"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w15-d4-g01, difficulty: easy, type: mcq, prompt: "=TAKE(array,10)", choices: ["first 10 rows", "last 10 rows", "removes 10 rows", "10 columns"], answer: 0 }
+        - { id: xl-w15-d4-g02, difficulty: easy, type: mcq, prompt: "=DROP(array,1)", choices: ["removes the first row", "keeps the first row", "removes the last row", "sorts"], answer: 0 }
+        - { id: xl-w15-d4-g03, difficulty: easy, type: truefalse, prompt: "SORTBY can sort by a column that isn't returned.", answer: true }
+        - { id: xl-w15-d4-g04, difficulty: easy, type: text, prompt: "Top product by net sales?", accept: ["Rice 50kg (Local)"] }
+        - { id: xl-w15-d4-g05, difficulty: easy, type: mcq, prompt: "Sort descending", choices: ["-1", "1", "0", "2"], answer: 0 }
+        - { id: xl-w15-d4-g06, difficulty: easy, type: mcq, prompt: "Side-by-side arrays", choices: ["HSTACK", "VSTACK", "TAKE", "DROP"], answer: 0 }
+        - { id: xl-w15-d4-g07, difficulty: medium, type: text, prompt: "Rice 50kg (Local) net sales (₦, no symbol)?", accept: ["68920800", "68,920,800"] }
+        - { id: xl-w15-d4-g08, difficulty: medium, type: text, prompt: "Second product by net sales?", accept: ["Dell Inspiron 15"] }
+        - { id: xl-w15-d4-g09, difficulty: medium, type: match, prompt: "Match the top products.", pairs: [["1st", "Rice 50kg (Local)"], ["2nd", "Dell Inspiron 15"], ["3rd", "Infinix Hot 40"], ["10th", "iPhone 13 (Refurbished)"]] }
+        - { id: xl-w15-d4-g10, difficulty: medium, type: truefalse, prompt: "=TAKE(array,-5) returns the last 5 rows.", answer: true }
+        - { id: xl-w15-d4-g11, difficulty: medium, type: text, prompt: "School Bag net sales (₦, no symbol)?", accept: ["6754375", "6,754,375"] }
+        - { id: xl-w15-d4-g12, difficulty: medium, type: mcq, prompt: "Bottom 3 products", choices: ["=TAKE(SORT(…,2,-1),-3) or SORT ascending + TAKE 3", "=TAKE(…,3) descending", "=DROP(…,3)", "=SORT(…,3)"], answer: 0 }
+        - { id: xl-w15-d4-g13, difficulty: medium, type: text, prompt: "Infinix Hot 40 net sales (₦, no symbol)?", accept: ["40435200", "40,435,200"] }
+        - { id: xl-w15-d4-g14, difficulty: medium, type: mcq, prompt: "Show only OrderID, Store, Product, NetSales of the top 10", choices: ["wrap with CHOOSECOLS", "TAKE twice", "DROP", "HSTACK"], answer: 0 }
+        - { id: xl-w15-d4-g15, difficulty: medium, type: mcq, prompt: "Bottom 3, cheapest first", choices: ["School Bag, Mattress 6x6, Surge Protector", "Surge Protector, Mattress, School Bag", "Rice, Dell, Infinix", "random"], answer: 0 }
+        - { id: xl-w15-d4-g16, difficulty: hard, type: mcq, prompt: "Two orders tie at ₦13,239,600 (NM-00460, NM-01787). SORTBY order?", choices: ["ties keep their original order (NM-00460 first)", "random", "alphabetical by product", "error"], answer: 0 }
+        - { id: xl-w15-d4-g17, difficulty: hard, type: text, prompt: "iPhone 13 (Refurbished) net sales (₦, no symbol)?", accept: ["25824000", "25,824,000"] }
+        - { id: xl-w15-d4-g18, difficulty: hard, type: multi, prompt: "Pieces of the top-products formula (Select all.)", choices: ["UNIQUE", "SUMIFS", "HSTACK", "VLOOKUP"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "SEQUENCE, VSTACK, GROUPBY"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w15-d4-rf01, difficulty: easy, type: mcq, prompt: "=SEQUENCE(12)", choices: ["1 to 12 down a column", "12 only", "a 12×12 grid", "random numbers"], answer: 0 }
+          - { id: xl-w15-d4-rf02, difficulty: easy, type: mcq, prompt: "=SEQUENCE(5,7)", choices: ["a 5-row × 7-column grid", "5 to 7", "7 rows", "35 in one cell"], answer: 0 }
+          - { id: xl-w15-d4-rf03, difficulty: easy, type: mcq, prompt: "=DATE(2025,SEQUENCE(12),1)", choices: ["first day of each month of 2025", "12 days", "31 December", "an error"], answer: 0 }
+          - { id: xl-w15-d4-rf04, difficulty: easy, type: mcq, prompt: "Stack arrays vertically", choices: ["VSTACK", "HSTACK", "TAKE", "SORT"], answer: 0 }
+          - { id: xl-w15-d4-rf05, difficulty: easy, type: mcq, prompt: "A pivot as a formula (one dimension)", choices: ["GROUPBY", "PIVOTBY", "SUMIFS only", "UNIQUE"], answer: 0 }
+          - { id: xl-w15-d4-rf06, difficulty: easy, type: mcq, prompt: "A cross-tab as a formula", choices: ["PIVOTBY", "GROUPBY", "VSTACK", "TAKE"], answer: 0 }
+          - { id: xl-w15-d4-rf07, difficulty: easy, type: text, prompt: "Orders in the stacked 2026 list?", accept: ["1682", "1,682"] }
+          - { id: xl-w15-d4-rf08, difficulty: easy, type: text, prompt: "First OrderID in the 2026 list?", accept: ["NM-10001"] }
+          - { id: xl-w15-d4-rf09, difficulty: easy, type: mcq, prompt: "Files in monthly-sales/", choices: ["6 (Jan–Jun 2026)", "12", "3", "1"], answer: 0 }
+          - { id: xl-w15-d4-rf10, difficulty: easy, type: truefalse, prompt: "When stacking sheets with headers, DROP removes the repeated header rows.", answer: true }
+      - kind: brain-teaser
+        title: "Build it with one formula"
+        questions:
+          - { id: xl-w15-d4-bt01, difficulty: medium, type: mcq, prompt: "Monthly net sales from a month-start spill in A2#", choices: ["=SUMIFS(tblSales[NetSales],tblSales[OrderDate],\">=\"&A2#,tblSales[OrderDate],\"<\"&EDATE(A2#,1))", "=SUM(A2#)", "=SUMIFS(tblSales[NetSales],A2#)", "=GROUPBY(A2#)"], answer: 0 }
+          - { id: xl-w15-d4-bt02, difficulty: medium, type: text, prompt: "Last OrderID in the 2026 list?", accept: ["NM-11682"] }
+          - { id: xl-w15-d4-bt03, difficulty: medium, type: mcq, prompt: "Net sales by region as a formula pivot", choices: ["=GROUPBY(tblSales[Region],tblSales[NetSales],SUM)", "=PIVOTBY(tblSales)", "=SUMIFS(tblSales)", "=UNIQUE(tblSales[NetSales])"], answer: 0 }
+          - { id: xl-w15-d4-bt04, difficulty: hard, type: mcq, prompt: "Calendar: =SEQUENCE(6,7,DATE(2026,3,1)-WEEKDAY(DATE(2026,3,1),2)+1) starts on…", choices: ["the Monday on or before 1 March 2026", "1 March", "Sunday 1 March", "31 March"], answer: 0 }
+          - { id: xl-w15-d4-bt05, difficulty: hard, type: mcq, prompt: "Stack Jan (with header) and Feb (with header) into one list", choices: ["=VSTACK(Jan!A1:M300, DROP(Feb!A1:M300,1))", "=HSTACK(Jan,Feb)", "=VSTACK(Jan,Feb) only", "=TAKE(Jan,Feb)"], answer: 0 }
+
+  # ─────────────────────────── DAY 5 ───────────────────────────
+  - day: 5
+    gate:
+      title: "Checkpoint: SEQUENCE, VSTACK, GROUPBY"
+      covers: "Week 15 · Day 4: SEQUENCE grids and month starts, VSTACK/HSTACK, DROP headers, GROUPBY and PIVOTBY"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w15-d5-g01, difficulty: easy, type: mcq, prompt: "Numbers 1–12", choices: ["=SEQUENCE(12)", "=ROW(12)", "=LIST(1,12)", "=RANGE(12)"], answer: 0 }
+        - { id: xl-w15-d5-g02, difficulty: easy, type: mcq, prompt: "Stack two tables vertically", choices: ["VSTACK", "HSTACK", "CONCAT", "UNION"], answer: 0 }
+        - { id: xl-w15-d5-g03, difficulty: easy, type: truefalse, prompt: "GROUPBY and PIVOTBY are newer Microsoft 365 functions.", answer: true }
+        - { id: xl-w15-d5-g04, difficulty: easy, type: text, prompt: "Orders stacked from Jan–Jun 2026?", accept: ["1682", "1,682"] }
+        - { id: xl-w15-d5-g05, difficulty: easy, type: mcq, prompt: "=SEQUENCE(3,4) cells", choices: ["12", "7", "3", "4"], answer: 0 }
+        - { id: xl-w15-d5-g06, difficulty: easy, type: mcq, prompt: "No GROUPBY in your Excel? Use…", choices: ["UNIQUE + SUMIFS", "VLOOKUP", "macros", "nothing"], answer: 0 }
+        - { id: xl-w15-d5-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["SEQUENCE", "numbers in a grid"], ["VSTACK", "stack vertically"], ["HSTACK", "side by side"], ["GROUPBY", "formula pivot"]] }
+        - { id: xl-w15-d5-g08, difficulty: medium, type: mcq, prompt: "=DATE(2025,SEQUENCE(12),1) gives", choices: ["01/01/2025 … 01/12/2025", "1–12", "the 12th of each month", "an error"], answer: 0 }
+        - { id: xl-w15-d5-g09, difficulty: medium, type: text, prompt: "First and last 2026 OrderIDs (comma-separated)", accept: ["NM-10001, NM-11682", "NM-10001,NM-11682"] }
+        - { id: xl-w15-d5-g10, difficulty: medium, type: truefalse, prompt: "VSTACK without DROP repeats each sheet's header row.", answer: true }
+        - { id: xl-w15-d5-g11, difficulty: medium, type: mcq, prompt: "Net sales by Category as a formula", choices: ["=GROUPBY(tblSales[Category],tblSales[NetSales],SUM)", "=PIVOTBY(tblSales[Category])", "=SUM(tblSales[Category])", "=UNIQUE(tblSales[NetSales])"], answer: 0 }
+        - { id: xl-w15-d5-g12, difficulty: medium, type: text, prompt: "Top category from that GROUPBY?", accept: ["Groceries"] }
+        - { id: xl-w15-d5-g13, difficulty: medium, type: mcq, prompt: "Region × CustomerType cross-tab formula", choices: ["=PIVOTBY(tblSales[Region],tblSales[CustomerType],tblSales[NetSales],SUM)", "=GROUPBY(tblSales[Region],tblSales[CustomerType])", "=VSTACK(Region,CustomerType)", "=HSTACK(SUM)"], answer: 0 }
+        - { id: xl-w15-d5-g14, difficulty: medium, type: mcq, prompt: "=SEQUENCE(12,1,0,5)", choices: ["0,5,10…55", "1–12", "5 to 60", "12 fives"], answer: 0 }
+        - { id: xl-w15-d5-g15, difficulty: medium, type: mcq, prompt: "Why a 6×7 grid for a calendar?", choices: ["6 weeks × 7 days covers any month", "random", "7 months", "6 days a week"], answer: 0 }
+        - { id: xl-w15-d5-g16, difficulty: hard, type: mcq, prompt: "VSTACK of six 300-row ranges (header + data, with blanks) includes empty rows. Fix:", choices: ["wrap in FILTER(…, col<>\"\") to drop blanks", "SORT", "TAKE 1682", "nothing"], answer: 0 }
+        - { id: xl-w15-d5-g17, difficulty: hard, type: mcq, prompt: "Calendar for March 2026 shown as day numbers needs the format…", choices: ["d", "dd/mm/yyyy", "General", "mmm"], answer: 0 }
+        - { id: xl-w15-d5-g18, difficulty: hard, type: multi, prompt: "Functions that spill (Select all.)", choices: ["SEQUENCE", "VSTACK", "GROUPBY", "SUM"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Live report"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w15-d5-rf01, difficulty: easy, type: mcq, prompt: "Region drop-down source", choices: ["=UNIQUE(tblSales[Region])", "typed list only", "a pivot", "a chart"], answer: 0 }
+          - { id: xl-w15-d5-rf02, difficulty: easy, type: mcq, prompt: "KPI net sales for B1 region and B2 category", choices: ["=SUM(FILTER(tblSales[NetSales],(tblSales[Region]=B1)*(tblSales[Category]=B2),0))", "=SUM(tblSales)", "=FILTER(B1,B2)", "=SUMIFS(B1)"], answer: 0 }
+          - { id: xl-w15-d5-rf03, difficulty: easy, type: mcq, prompt: "\"All regions\" option", choices: ["IF(B1=\"All\",1,tblSales[Region]=B1)", "B1=\"*\" always", "delete the filter", "a second sheet"], answer: 0 }
+          - { id: xl-w15-d5-rf04, difficulty: easy, type: mcq, prompt: "Point a chart at a spill", choices: ["a named range like =Report!$E$6#", "fixed range only", "impossible", "a pivot"], answer: 0 }
+          - { id: xl-w15-d5-rf05, difficulty: easy, type: truefalse, prompt: "Changing B1 updates every dynamic formula instantly.", answer: true }
+          - { id: xl-w15-d5-rf06, difficulty: easy, type: mcq, prompt: "Top N size selector", choices: ["a drop-down of 5, 10, 20", "typing in the formula", "a slicer only", "a macro"], answer: 0 }
+          - { id: xl-w15-d5-rf07, difficulty: easy, type: mcq, prompt: "Monthly trend for the selection", choices: ["SEQUENCE + SUMIFS with the selectors", "a pie", "VLOOKUP", "Goal Seek"], answer: 0 }
+          - { id: xl-w15-d5-rf08, difficulty: easy, type: mcq, prompt: "Orders count for the selection", choices: ["=ROWS(FILTER(…))", "=COUNT(B1)", "=SUM(FILTER())", "=LEN()"], answer: 0 }
+          - { id: xl-w15-d5-rf09, difficulty: easy, type: mcq, prompt: "Why 1 in IF(B1=\"All\",1,…)?", choices: ["1 = TRUE for every row, so no region filter", "1 row only", "first region", "a typo"], answer: 0 }
+          - { id: xl-w15-d5-rf10, difficulty: easy, type: mcq, prompt: "Live_Top10.xlsx uses…", choices: ["only dynamic arrays (no pivots)", "only pivots", "macros", "Power Query"], answer: 0 }
+      - kind: brain-teaser
+        title: "All or one"
+        questions:
+          - { id: xl-w15-d5-bt01, difficulty: medium, type: mcq, prompt: "B1 = \"All\", B2 = \"Phones\": KPI net sales =", choices: ["₦139,978,700 (all Phones)", "₦834,046,700", "₦0", "#CALC!"], answer: 0 }
+          - { id: xl-w15-d5-bt02, difficulty: medium, type: mcq, prompt: "B1 = \"Lagos\", B2 = \"All\" (with the same IF trick): KPI =", choices: ["₦321,703,800", "₦834,046,700", "₦139,978,700", "₦0"], answer: 0 }
+          - { id: xl-w15-d5-bt03, difficulty: medium, type: mcq, prompt: "Average order for the selection", choices: ["KPI net sales ÷ ROWS(FILTER(…))", "AVERAGE(B1)", "SUM ÷ 2400 always", "MEDIAN"], answer: 0 }
+          - { id: xl-w15-d5-bt04, difficulty: hard, type: mcq, prompt: "Combination with no orders: FILTER inside SUM without if_empty gives…", choices: ["#CALC!", "0", "blank", "#N/A"], answer: 0 }
+          - { id: xl-w15-d5-bt05, difficulty: hard, type: mcq, prompt: "Why add \"All\" to the drop-down list?", choices: ["UNIQUE won't include it; use VSTACK(\"All\",UNIQUE(…))", "it's automatic", "use a pivot", "impossible"], answer: 0 }
+
+  # ─────────────────────────── DAY 6 ───────────────────────────
+  - day: 6
+    gate:
+      title: "Checkpoint: live reports"
+      covers: "Week 15 · Day 5: selector cells, FILTER-based KPIs, \"All\" options, top-N tables, monthly trends, charts on spills"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w15-d6-g01, difficulty: easy, type: mcq, prompt: "Selectors usually live in…", choices: ["drop-down cells at the top", "the data table", "a pivot", "VBA"], answer: 0 }
+        - { id: xl-w15-d6-g02, difficulty: easy, type: mcq, prompt: "A chart on a spill uses…", choices: ["a named range ending in #", "a fixed range", "a pivot", "nothing"], answer: 0 }
+        - { id: xl-w15-d6-g03, difficulty: easy, type: truefalse, prompt: "A dynamic-array report needs no Refresh.", answer: true }
+        - { id: xl-w15-d6-g04, difficulty: easy, type: mcq, prompt: "Add \"All\" above a unique list", choices: ["=VSTACK(\"All\",UNIQUE(tblSales[Region]))", "=UNIQUE(\"All\")", "=HSTACK(\"All\")", "type it in the list"], answer: 0 }
+        - { id: xl-w15-d6-g05, difficulty: easy, type: text, prompt: "Lagos net sales (₦, no symbol)?", accept: ["321703800", "321,703,800"] }
+        - { id: xl-w15-d6-g06, difficulty: easy, type: mcq, prompt: "Top N salespeople", choices: ["TAKE(SORT(HSTACK(UNIQUE(people),SUMIFS(…)),2,-1),N)", "VLOOKUP", "a pivot only", "COUNT"], answer: 0 }
+        - { id: xl-w15-d6-g07, difficulty: medium, type: text, prompt: "Top salesperson by net sales?", accept: ["Tolu Eze"] }
+        - { id: xl-w15-d6-g08, difficulty: medium, type: text, prompt: "Phones net sales (₦, no symbol)?", accept: ["139978700", "139,978,700"] }
+        - { id: xl-w15-d6-g09, difficulty: medium, type: match, prompt: "Match the report part.", pairs: [["Region selector", "drop-down with All"], ["KPIs", "SUM/ROWS of FILTER"], ["Top N", "SORTBY + TAKE"], ["Monthly trend", "SEQUENCE + SUMIFS"]] }
+        - { id: xl-w15-d6-g10, difficulty: medium, type: truefalse, prompt: "A date-range selector adds two conditions on OrderDate.", answer: true }
+        - { id: xl-w15-d6-g11, difficulty: medium, type: mcq, prompt: "Date-range condition (start B4, end B5)", choices: ["(tblSales[OrderDate]>=B4)*(tblSales[OrderDate]<=B5)", "(tblSales[OrderDate]>=B4)+(tblSales[OrderDate]<=B5)", "BETWEEN(B4,B5)", "tblSales[OrderDate]=B4:B5"], answer: 0 }
+        - { id: xl-w15-d6-g12, difficulty: medium, type: text, prompt: "Biggest single order's OrderID?", accept: ["NM-00460"] }
+        - { id: xl-w15-d6-g13, difficulty: medium, type: mcq, prompt: "Profit KPI needs a Profit column in tblSales because…", choices: ["FILTER sums an existing column", "dynamic arrays can't multiply", "pivots need it", "no reason"], answer: 0 }
+        - { id: xl-w15-d6-g14, difficulty: medium, type: text, prompt: "Orders ≥ ₦1M in Lagos?", accept: ["53"] }
+        - { id: xl-w15-d6-g15, difficulty: medium, type: mcq, prompt: "Changing Top N from 10 to 5 changes…", choices: ["every TAKE using $B$3", "nothing", "the data", "the chart type"], answer: 0 }
+        - { id: xl-w15-d6-g16, difficulty: hard, type: mcq, prompt: "Region = All, CustomerType = Wholesale: average order", choices: ["₦1,156,902", "₦347,519", "₦211,628", "₦197,194"], answer: 0 }
+        - { id: xl-w15-d6-g17, difficulty: hard, type: mcq, prompt: "Region = Lagos, from 1 Dec 2025 to 31 Dec 2025: orders", choices: ["122", "53", "330", "742"], answer: 0 }
+        - { id: xl-w15-d6-g18, difficulty: hard, type: multi, prompt: "Dynamic arrays vs pivots (Select all.)", choices: ["update instantly without Refresh", "can feed other formulas easily", "need Microsoft 365/2021+", "work in Excel 2013"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Week 15 lightning round"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w15-d6-rf01, difficulty: easy, type: mcq, prompt: "Whole spill from H2", choices: ["H2#", "H2:", "$H$2", "H2*"], answer: 0 }
+          - { id: xl-w15-d6-rf02, difficulty: easy, type: mcq, prompt: "Blocked spill", choices: ["#SPILL!", "#CALC!", "#N/A", "#REF!"], answer: 0 }
+          - { id: xl-w15-d6-rf03, difficulty: easy, type: mcq, prompt: "AND in FILTER", choices: ["*", "+", "AND()", "&"], answer: 0 }
+          - { id: xl-w15-d6-rf04, difficulty: easy, type: mcq, prompt: "First N rows", choices: ["TAKE", "DROP", "SORT", "UNIQUE"], answer: 0 }
+          - { id: xl-w15-d6-rf05, difficulty: easy, type: mcq, prompt: "Stack vertically", choices: ["VSTACK", "HSTACK", "TAKE", "SEQUENCE"], answer: 0 }
+          - { id: xl-w15-d6-rf06, difficulty: easy, type: text, prompt: "Distinct salespeople", accept: ["27"] }
+          - { id: xl-w15-d6-rf07, difficulty: easy, type: text, prompt: "Lagos orders ≥ ₦1M", accept: ["53"] }
+          - { id: xl-w15-d6-rf08, difficulty: easy, type: text, prompt: "Stacked 2026 orders", accept: ["1682", "1,682"] }
+          - { id: xl-w15-d6-rf09, difficulty: easy, type: text, prompt: "Top product", accept: ["Rice 50kg (Local)"] }
+          - { id: xl-w15-d6-rf10, difficulty: easy, type: truefalse, prompt: "=DATE(2025,SEQUENCE(12),1) gives month starts.", answer: true }
+      - kind: brain-teaser
+        title: "One formula, one report"
+        questions:
+          - { id: xl-w15-d6-bt01, difficulty: medium, type: mcq, prompt: "Top 5 orders by NetSales", choices: ["=TAKE(SORTBY(tblSales,tblSales[NetSales],-1),5)", "=SORT(tblSales,5)", "=LARGE(tblSales,5)", "=TAKE(tblSales,5)"], answer: 0 }
+          - { id: xl-w15-d6-bt02, difficulty: medium, type: mcq, prompt: "The top two orders are both…", choices: ["Dell Inspiron 15, ₦13,239,600 each", "Rice orders", "Tecno phones", "LG TVs"], answer: 0 }
+          - { id: xl-w15-d6-bt03, difficulty: medium, type: mcq, prompt: "A monthly table for 2025 in one formula needs…", choices: ["SEQUENCE for months + SUMIFS on the spill", "12 SUMIFS typed", "a pivot", "VSTACK"], answer: 0 }
+          - { id: xl-w15-d6-bt04, difficulty: hard, type: mcq, prompt: "Live report formula fails in Excel 2016 with #NAME?. Why?", choices: ["FILTER/SORTBY/TAKE don't exist there", "bad data", "too many rows", "protection"], answer: 0 }
+          - { id: xl-w15-d6-bt05, difficulty: hard, type: multi, prompt: "Can one formula replace a report section? (Select all.)", choices: ["Top N table with TAKE(SORTBY())", "Monthly totals with SEQUENCE + SUMIFS", "Region totals with GROUPBY", "A printed PDF"], answers: [0, 1, 2] }
