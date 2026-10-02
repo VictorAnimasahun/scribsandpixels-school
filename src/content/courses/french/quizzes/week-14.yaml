@@ -1,0 +1,297 @@
+# French · Week 14 quizzes. Format and rules: src/content/QUIZZES.md
+week: 14
+days:
+
+  # ─────────────────────────── DAY 1 ───────────────────────────
+  - day: 1
+    gate:
+      title: "Checkpoint: Week 13 review"
+      covers: "Week 13: question words, three registers, inversion, quel, pouvoir/devoir/vouloir, savoir vs connaître, reception desk"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w14-d1-g01, difficulty: easy, type: mcq, prompt: "why", choices: ["pourquoi", "parce que", "quoi", "comment"], answer: 0 }
+        - { id: fr-w14-d1-g02, difficulty: easy, type: mcq, prompt: "Standard: Where are you going?", choices: ["Où est-ce que tu vas ?", "Tu vas où-t-il ?", "Où vas tu est-ce ?", "Est-ce où tu vas ?"], answer: 0 }
+        - { id: fr-w14-d1-g03, difficulty: easy, type: truefalse, prompt: "« Où va-t-il ? » adds -t- between two vowels.", answer: true }
+        - { id: fr-w14-d1-g04, difficulty: easy, type: mcq, prompt: "___ heure est-il ?", choices: ["Quelle", "Quel", "Quels", "Quelles"], answer: 0 }
+        - { id: fr-w14-d1-g05, difficulty: easy, type: mcq, prompt: "Je ___ nager.", choices: ["sais", "connais", "peux savoir", "connaît"], answer: 0 }
+        - { id: fr-w14-d1-g06, difficulty: easy, type: text, prompt: "ils ___ (pouvoir)", accept: ["peuvent"] }
+        - { id: fr-w14-d1-g07, difficulty: medium, type: text, prompt: "Invert: Elle a un frère.", accept: ["A-t-elle un frère ?", "A-t-elle un frère?"] }
+        - { id: fr-w14-d1-g08, difficulty: medium, type: text, prompt: "Translate: Can you repeat, please? (vous)", accept: ["Vous pouvez répéter, s'il vous plaît ?", "Pouvez-vous répéter, s'il vous plaît ?", "Vous pouvez répéter s'il vous plaît ?"] }
+        - { id: fr-w14-d1-g09, difficulty: medium, type: match, prompt: "Match.", pairs: [["savoir + infinitive", "know how to"], ["connaître + person", "know someone"], ["devoir", "must"], ["pouvoir", "can"]] }
+        - { id: fr-w14-d1-g10, difficulty: medium, type: text, prompt: "ils ___ (devoir)", accept: ["doivent"] }
+        - { id: fr-w14-d1-g11, difficulty: medium, type: truefalse, prompt: "« Qu'est-ce que votre adresse ? » is correct.", answer: false }
+        - { id: fr-w14-d1-g12, difficulty: medium, type: text, prompt: "Tu ___ Montréal ? (know)", accept: ["connais"] }
+        - { id: fr-w14-d1-g13, difficulty: medium, type: mcq, prompt: "Formal: What are you doing?", choices: ["Que fais-tu ?", "Tu fais quoi ?", "Qu'est-ce que tu fais ?", "Quoi fais-tu ?"], answer: 0 }
+        - { id: fr-w14-d1-g14, difficulty: medium, type: text, prompt: "Translate: Where is the nearest pharmacy located? (Où se trouve…)", accept: ["Où se trouve la pharmacie la plus proche ?", "Où se trouve la pharmacie la plus proche?"] }
+        - { id: fr-w14-d1-g15, difficulty: medium, type: mcq, prompt: "___ langues parlez-vous ?", choices: ["Quelles", "Quels", "Quelle", "Quel"], answer: 0 }
+        - { id: fr-w14-d1-g16, difficulty: hard, type: text, prompt: "Translate: I know Tunde, but I don't know where he lives.", accept: ["Je connais Tunde, mais je ne sais pas où il habite.", "Je connais Tunde mais je ne sais pas où il habite."] }
+        - { id: fr-w14-d1-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « Parle-il anglais ? Tu sais mon frère ? »", choices: ["Parle-t-il … Tu connais mon frère", "Only the first", "Only the second", "No error"], answer: 0 }
+        - { id: fr-w14-d1-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["Pouvez-vous m'aider ?", "Quel est ton numéro ?", "Nous devons partir.", "Ils peut venir."], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "-IR verbs (finir)"
+        secondsPerQuestion: 7
+        questions:
+          - { id: fr-w14-d1-rf01, difficulty: easy, type: text, prompt: "je ___ (finir)", accept: ["finis"] }
+          - { id: fr-w14-d1-rf02, difficulty: easy, type: text, prompt: "il ___ (finir)", accept: ["finit"] }
+          - { id: fr-w14-d1-rf03, difficulty: easy, type: text, prompt: "nous ___ (finir)", accept: ["finissons"] }
+          - { id: fr-w14-d1-rf04, difficulty: easy, type: text, prompt: "vous ___ (finir)", accept: ["finissez"] }
+          - { id: fr-w14-d1-rf05, difficulty: easy, type: text, prompt: "ils ___ (finir)", accept: ["finissent"] }
+          - { id: fr-w14-d1-rf06, difficulty: easy, type: mcq, prompt: "The signature of this family in the plural", choices: ["-iss-", "-ons only", "-ent", "-ir"], answer: 0 }
+          - { id: fr-w14-d1-rf07, difficulty: easy, type: mcq, prompt: "choisir", choices: ["to choose", "to cheer", "to chop", "to sit"], answer: 0 }
+          - { id: fr-w14-d1-rf08, difficulty: easy, type: mcq, prompt: "réussir", choices: ["to succeed / pass", "to repeat", "to rest", "to wake up"], answer: 0 }
+          - { id: fr-w14-d1-rf09, difficulty: easy, type: mcq, prompt: "remplir", choices: ["to fill in", "to remember", "to replace", "to empty"], answer: 0 }
+          - { id: fr-w14-d1-rf10, difficulty: easy, type: mcq, prompt: "réfléchir", choices: ["to think", "to reflect light only", "to refuse", "to relax"], answer: 0 }
+      - kind: brain-teaser
+        title: "Conjugate it"
+        questions:
+          - { id: fr-w14-d1-bt01, difficulty: medium, type: text, prompt: "Vous (choisir) ___ quoi ?", accept: ["choisissez"] }
+          - { id: fr-w14-d1-bt02, difficulty: medium, type: text, prompt: "Ils (réussir) ___ l'examen.", accept: ["réussissent"] }
+          - { id: fr-w14-d1-bt03, difficulty: medium, type: text, prompt: "Les enfants (grandir) ___ vite.", accept: ["grandissent"] }
+          - { id: fr-w14-d1-bt04, difficulty: hard, type: text, prompt: "Translate: We choose a restaurant and we finish at 6 pm.", accept: ["Nous choisissons un restaurant et nous finissons à 18 h.", "Nous choisissons un restaurant et nous finissons à dix-huit heures.", "Nous choisissons un restaurant et nous finissons à 18 heures."] }
+          - { id: fr-w14-d1-bt05, difficulty: hard, type: mcq, prompt: "Spot the error: « Je remplit le formulaire et tu réussis. »", choices: ["remplit → remplis", "réussis → réussit", "both", "No error"], answer: 0 }
+
+  # ─────────────────────────── DAY 2 ───────────────────────────
+  - day: 2
+    gate:
+      title: "Checkpoint: -IR verbs"
+      covers: "Week 14 · Day 1: finir pattern (-is, -is, -it, -issons, -issez, -issent), choisir, réussir, grandir, remplir, réfléchir"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w14-d2-g01, difficulty: easy, type: text, prompt: "tu ___ (finir)", accept: ["finis"] }
+        - { id: fr-w14-d2-g02, difficulty: easy, type: text, prompt: "nous ___ (choisir)", accept: ["choisissons"] }
+        - { id: fr-w14-d2-g03, difficulty: easy, type: truefalse, prompt: "The plural of finir-type verbs contains -iss-.", answer: true }
+        - { id: fr-w14-d2-g04, difficulty: easy, type: mcq, prompt: "grossir / maigrir", choices: ["gain / lose weight", "grow / shrink", "big / small", "eat / fast"], answer: 0 }
+        - { id: fr-w14-d2-g05, difficulty: easy, type: text, prompt: "Je (remplir) ___ le formulaire.", accept: ["remplis"] }
+        - { id: fr-w14-d2-g06, difficulty: easy, type: text, prompt: "Nous (finir) ___ à 18 h.", accept: ["finissons"] }
+        - { id: fr-w14-d2-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["choisir", "to choose"], ["grandir", "to grow up"], ["obéir", "to obey"], ["réussir", "to succeed"]] }
+        - { id: fr-w14-d2-g08, difficulty: medium, type: text, prompt: "elles ___ (réfléchir)", accept: ["réfléchissent"] }
+        - { id: fr-w14-d2-g09, difficulty: medium, type: text, prompt: "Translate: I finish work at 5 pm.", accept: ["Je finis le travail à 17 h.", "Je finis le travail à dix-sept heures.", "Je finis le travail à 17 heures."] }
+        - { id: fr-w14-d2-g10, difficulty: medium, type: mcq, prompt: "Tu ___ toujours tes examens !", choices: ["réussis", "réussit", "réussissez", "réussir"], answer: 0 }
+        - { id: fr-w14-d2-g11, difficulty: medium, type: truefalse, prompt: "« Ils finent » is correct.", answer: false }
+        - { id: fr-w14-d2-g12, difficulty: medium, type: text, prompt: "vous ___ (réussir)", accept: ["réussissez"] }
+        - { id: fr-w14-d2-g13, difficulty: medium, type: mcq, prompt: "Children obey their parents.", choices: ["Les enfants obéissent à leurs parents.", "Les enfants obéit leurs parents.", "Les enfants obéissons à leurs parents.", "Les enfants obéir leurs parents."], answer: 0 }
+        - { id: fr-w14-d2-g14, difficulty: medium, type: text, prompt: "il ___ (choisir)", accept: ["choisit"] }
+        - { id: fr-w14-d2-g15, difficulty: medium, type: order, prompt: "Order finir: je → ils.", items: ["finis", "finis", "finit", "finissons", "finissez", "finissent"] }
+        - { id: fr-w14-d2-g16, difficulty: hard, type: text, prompt: "Translate: My children grow up fast and they always succeed.", accept: ["Mes enfants grandissent vite et ils réussissent toujours.", "Mes enfants grandissent vite et ils réussissent toujours"] }
+        - { id: fr-w14-d2-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « Nous choisons une robe. »", choices: ["choisons → choisissons", "une → un", "Nous → On", "No error"], answer: 0 }
+        - { id: fr-w14-d2-g18, difficulty: hard, type: multi, prompt: "Which follow the finir pattern? (Select all.)", choices: ["choisir", "remplir", "réussir", "partir"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "partir-type and -RE"
+        secondsPerQuestion: 7
+        questions:
+          - { id: fr-w14-d2-rf01, difficulty: easy, type: text, prompt: "je ___ (partir)", accept: ["pars"] }
+          - { id: fr-w14-d2-rf02, difficulty: easy, type: text, prompt: "il ___ (sortir)", accept: ["sort"] }
+          - { id: fr-w14-d2-rf03, difficulty: easy, type: text, prompt: "il ___ (dormir)", accept: ["dort"] }
+          - { id: fr-w14-d2-rf04, difficulty: easy, type: text, prompt: "nous ___ (partir)", accept: ["partons"] }
+          - { id: fr-w14-d2-rf05, difficulty: easy, type: text, prompt: "ils ___ (dormir)", accept: ["dorment"] }
+          - { id: fr-w14-d2-rf06, difficulty: easy, type: text, prompt: "j'___ (attendre)", accept: ["attends"] }
+          - { id: fr-w14-d2-rf07, difficulty: easy, type: text, prompt: "il ___ (attendre)", accept: ["attend"] }
+          - { id: fr-w14-d2-rf08, difficulty: easy, type: text, prompt: "ils ___ (vendre)", accept: ["vendent"] }
+          - { id: fr-w14-d2-rf09, difficulty: easy, type: mcq, prompt: "I'm waiting for the bus.", choices: ["J'attends le bus.", "J'attends pour le bus.", "J'attends au bus.", "J'attend le bus."], answer: 0 }
+          - { id: fr-w14-d2-rf10, difficulty: easy, type: mcq, prompt: "perdre", choices: ["to lose", "to pardon", "to perform", "to permit"], answer: 0 }
+      - kind: brain-teaser
+        title: "Leave, sleep, wait"
+        questions:
+          - { id: fr-w14-d2-bt01, difficulty: medium, type: text, prompt: "Tu (attendre) ___ qui ?", accept: ["attends"] }
+          - { id: fr-w14-d2-bt02, difficulty: medium, type: text, prompt: "Je (perdre) ___ toujours mes clés !", accept: ["perds"] }
+          - { id: fr-w14-d2-bt03, difficulty: medium, type: text, prompt: "Vous (sortir) ___ ce soir ?", accept: ["sortez"] }
+          - { id: fr-w14-d2-bt04, difficulty: hard, type: mcq, prompt: "Why « il attend » with no ending?", choices: ["-RE verbs take no ending in the il form (the d stays)", "it's irregular", "a typo", "il drops letters always"], answer: 0 }
+          - { id: fr-w14-d2-bt05, difficulty: hard, type: text, prompt: "Translate: I answer the teacher. (répondre à)", accept: ["Je réponds au professeur.", "Je réponds au professeur", "Je réponds à la professeure."] }
+
+  # ─────────────────────────── DAY 3 ───────────────────────────
+  - day: 3
+    gate:
+      title: "Checkpoint: partir-type and -RE verbs"
+      covers: "Week 14 · Day 2: partir, sortir, dormir; attendre, vendre, répondre à, entendre, perdre, descendre"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w14-d3-g01, difficulty: easy, type: text, prompt: "Nous (partir) ___ demain.", accept: ["partons"] }
+        - { id: fr-w14-d3-g02, difficulty: easy, type: text, prompt: "Il (dormir) ___ huit heures.", accept: ["dort"] }
+        - { id: fr-w14-d3-g03, difficulty: easy, type: truefalse, prompt: "« attendre » takes no preposition: J'attends le bus.", answer: true }
+        - { id: fr-w14-d3-g04, difficulty: easy, type: text, prompt: "Ils (vendre) ___ des vêtements.", accept: ["vendent"] }
+        - { id: fr-w14-d3-g05, difficulty: easy, type: mcq, prompt: "descendre (from a bus)", choices: ["to get off", "to get on", "to describe", "to decide"], answer: 0 }
+        - { id: fr-w14-d3-g06, difficulty: easy, type: mcq, prompt: "tu ___ (sortir)", choices: ["sors", "sort", "sortes", "sortis"], answer: 0 }
+        - { id: fr-w14-d3-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["entendre", "to hear"], ["répondre à", "to answer"], ["vendre", "to sell"], ["rendre visite à", "to visit someone"]] }
+        - { id: fr-w14-d3-g08, difficulty: medium, type: text, prompt: "vous ___ (attendre)", accept: ["attendez"] }
+        - { id: fr-w14-d3-g09, difficulty: medium, type: text, prompt: "Translate: I'm going out tonight.", accept: ["Je sors ce soir.", "Je sors ce soir"] }
+        - { id: fr-w14-d3-g10, difficulty: medium, type: mcq, prompt: "partir-type verbs in the singular…", choices: ["drop the last consonant of the stem", "add -iss-", "keep the full stem", "add -e"], answer: 0 }
+        - { id: fr-w14-d3-g11, difficulty: medium, type: truefalse, prompt: "« J'attends pour le bus » is correct.", answer: false }
+        - { id: fr-w14-d3-g12, difficulty: medium, type: text, prompt: "il ___ (entendre)", accept: ["entend"] }
+        - { id: fr-w14-d3-g13, difficulty: medium, type: mcq, prompt: "We visit our grandmother.", choices: ["Nous rendons visite à notre grand-mère.", "Nous visitons notre grand-mère à.", "Nous rendons notre grand-mère.", "Nous rendons visite notre grand-mère."], answer: 0 }
+        - { id: fr-w14-d3-g14, difficulty: medium, type: text, prompt: "ils ___ (sentir)", accept: ["sentent"] }
+        - { id: fr-w14-d3-g15, difficulty: medium, type: order, prompt: "Order dormir: je → ils.", items: ["dors", "dors", "dort", "dormons", "dormez", "dorment"] }
+        - { id: fr-w14-d3-g16, difficulty: hard, type: text, prompt: "Translate: We get off the bus and we wait for Ada.", accept: ["Nous descendons du bus et nous attendons Ada.", "Nous descendons du bus et nous attendons Ada", "On descend du bus et on attend Ada."] }
+        - { id: fr-w14-d3-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « Il dorme bien et il attende sa sœur. »", choices: ["dort … attend", "Only dorme", "Only attende", "No error"], answer: 0 }
+        - { id: fr-w14-d3-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["Je pars à 8 h.", "Tu perds tes clés.", "Elle répond au message.", "Il sorte ce soir."], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Clothes"
+        secondsPerQuestion: 7
+        questions:
+          - { id: fr-w14-d3-rf01, difficulty: easy, type: mcq, prompt: "le pantalon", choices: ["trousers", "pants (underwear)", "shirt", "jacket"], answer: 0 }
+          - { id: fr-w14-d3-rf02, difficulty: easy, type: mcq, prompt: "la chemise", choices: ["shirt", "chemise", "dress", "skirt"], answer: 0 }
+          - { id: fr-w14-d3-rf03, difficulty: easy, type: mcq, prompt: "la jupe", choices: ["skirt", "jumper", "dress", "jacket"], answer: 0 }
+          - { id: fr-w14-d3-rf04, difficulty: easy, type: mcq, prompt: "le pull", choices: ["jumper", "pull", "coat", "belt"], answer: 0 }
+          - { id: fr-w14-d3-rf05, difficulty: easy, type: mcq, prompt: "le manteau", choices: ["coat", "hat", "scarf", "jacket"], answer: 0 }
+          - { id: fr-w14-d3-rf06, difficulty: easy, type: mcq, prompt: "les baskets", choices: ["trainers", "baskets", "sandals", "socks"], answer: 0 }
+          - { id: fr-w14-d3-rf07, difficulty: easy, type: mcq, prompt: "la cravate", choices: ["tie", "belt", "scarf", "suit"], answer: 0 }
+          - { id: fr-w14-d3-rf08, difficulty: easy, type: mcq, prompt: "les chaussettes", choices: ["socks", "shoes", "slippers", "tights"], answer: 0 }
+          - { id: fr-w14-d3-rf09, difficulty: easy, type: text, prompt: "je ___ (mettre)", accept: ["mets"] }
+          - { id: fr-w14-d3-rf10, difficulty: easy, type: text, prompt: "ils ___ (mettre)", accept: ["mettent"] }
+      - kind: brain-teaser
+        title: "Wear or put on?"
+        questions:
+          - { id: fr-w14-d3-bt01, difficulty: medium, type: mcq, prompt: "porter vs mettre", choices: ["porter = wear (state), mettre = put on (action)", "same", "porter = carry only", "mettre = wear"], answer: 0 }
+          - { id: fr-w14-d3-bt02, difficulty: medium, type: text, prompt: "Translate: She is wearing a red dress.", accept: ["Elle porte une robe rouge.", "Elle porte une robe rouge"] }
+          - { id: fr-w14-d3-bt03, difficulty: medium, type: text, prompt: "Translate: I put on my coat because it's cold.", accept: ["Je mets mon manteau parce qu'il fait froid.", "Je mets mon manteau parce qu'il fait froid"] }
+          - { id: fr-w14-d3-bt04, difficulty: hard, type: text, prompt: "Translate: He's wearing black trousers and a white shirt.", accept: ["Il porte un pantalon noir et une chemise blanche.", "Il porte un pantalon noir et une chemise blanche"] }
+          - { id: fr-w14-d3-bt05, difficulty: hard, type: mcq, prompt: "Canadian French « magasiner »", choices: ["to go shopping", "to store", "a magazine", "a shop assistant"], answer: 0 }
+
+  # ─────────────────────────── DAY 4 ───────────────────────────
+  - day: 4
+    gate:
+      title: "Checkpoint: clothes, mettre and porter"
+      covers: "Week 14 · Day 3: clothes vocabulary, mettre conjugation, porter vs mettre, Canadian words"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w14-d4-g01, difficulty: easy, type: mcq, prompt: "dress", choices: ["la robe", "la jupe", "le costume", "la veste"], answer: 0 }
+        - { id: fr-w14-d4-g02, difficulty: easy, type: mcq, prompt: "suit", choices: ["le costume", "la cravate", "le manteau", "le pull"], answer: 0 }
+        - { id: fr-w14-d4-g03, difficulty: easy, type: truefalse, prompt: "« le pantalon » is singular in French.", answer: true }
+        - { id: fr-w14-d4-g04, difficulty: easy, type: text, prompt: "nous ___ (mettre)", accept: ["mettons"] }
+        - { id: fr-w14-d4-g05, difficulty: easy, type: mcq, prompt: "headscarf", choices: ["le foulard", "le chapeau", "la ceinture", "le pagne"], answer: 0 }
+        - { id: fr-w14-d4-g06, difficulty: easy, type: mcq, prompt: "belt", choices: ["la ceinture", "la cravate", "la chaussette", "le foulard"], answer: 0 }
+        - { id: fr-w14-d4-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["le chemisier", "blouse"], ["la veste", "jacket"], ["les sandales", "sandals"], ["le chapeau", "hat"]] }
+        - { id: fr-w14-d4-g08, difficulty: medium, type: text, prompt: "il ___ (mettre)", accept: ["met"] }
+        - { id: fr-w14-d4-g09, difficulty: medium, type: text, prompt: "Translate: I'm wearing jeans and trainers.", accept: ["Je porte un jean et des baskets.", "Je porte un jean et des baskets"] }
+        - { id: fr-w14-d4-g10, difficulty: medium, type: mcq, prompt: "Quebec: un chandail", choices: ["a jumper", "a candle", "a chandelier", "socks"], answer: 0 }
+        - { id: fr-w14-d4-g11, difficulty: medium, type: truefalse, prompt: "« Je mets une cravate » describes putting a tie on.", answer: true }
+        - { id: fr-w14-d4-g12, difficulty: medium, type: text, prompt: "Translate: a white blouse", accept: ["un chemisier blanc"] }
+        - { id: fr-w14-d4-g13, difficulty: medium, type: mcq, prompt: "vous ___ (mettre)", choices: ["mettez", "metez", "mettes", "mettiez"], answer: 0 }
+        - { id: fr-w14-d4-g14, difficulty: medium, type: text, prompt: "Translate: black shoes", accept: ["des chaussures noires", "les chaussures noires"] }
+        - { id: fr-w14-d4-g15, difficulty: medium, type: mcq, prompt: "Quebec: des bas", choices: ["socks", "low prices", "trousers", "boots"], answer: 0 }
+        - { id: fr-w14-d4-g16, difficulty: hard, type: text, prompt: "Translate: For the wedding, I'm going to put on a blue boubou.", accept: ["Pour le mariage, je vais mettre un boubou bleu.", "Pour le mariage je vais mettre un boubou bleu.", "Pour le mariage, je vais mettre un boubou bleu"] }
+        - { id: fr-w14-d4-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « Elle porte des chaussures blanc et une jupe noir. »", choices: ["blanches … noire", "Only blanc", "Only noir", "No error"], answer: 0 }
+        - { id: fr-w14-d4-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["Il porte un costume gris.", "Je mets mes baskets.", "Elle porte une veste verte.", "Nous metons nos manteaux."], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Ce, cet, cette, ces"
+        secondsPerQuestion: 6
+        questions:
+          - { id: fr-w14-d4-rf01, difficulty: easy, type: mcq, prompt: "___ veste", choices: ["cette", "ce", "cet", "ces"], answer: 0 }
+          - { id: fr-w14-d4-rf02, difficulty: easy, type: mcq, prompt: "___ jean", choices: ["ce", "cet", "cette", "ces"], answer: 0 }
+          - { id: fr-w14-d4-rf03, difficulty: easy, type: mcq, prompt: "___ homme", choices: ["cet", "ce", "cette", "ces"], answer: 0 }
+          - { id: fr-w14-d4-rf04, difficulty: easy, type: mcq, prompt: "___ baskets", choices: ["ces", "cette", "ce", "cet"], answer: 0 }
+          - { id: fr-w14-d4-rf05, difficulty: easy, type: mcq, prompt: "___ manteau", choices: ["ce", "cet", "cette", "ces"], answer: 0 }
+          - { id: fr-w14-d4-rf06, difficulty: easy, type: mcq, prompt: "___ écharpe (f)", choices: ["cette", "cet", "ce", "ces"], answer: 0 }
+          - { id: fr-w14-d4-rf07, difficulty: easy, type: mcq, prompt: "___ hôtel", choices: ["cet", "ce", "cette", "ces"], answer: 0 }
+          - { id: fr-w14-d4-rf08, difficulty: easy, type: mcq, prompt: "___ ordinateur", choices: ["cet", "ce", "cette", "ces"], answer: 0 }
+          - { id: fr-w14-d4-rf09, difficulty: easy, type: mcq, prompt: "this one (fem.)", choices: ["celle-ci", "cette-ci", "celle-là only", "ce-ci"], answer: 0 }
+          - { id: fr-w14-d4-rf10, difficulty: easy, type: mcq, prompt: "-ci / -là", choices: ["here / there", "this / these", "now / then", "yes / no"], answer: 0 }
+      - kind: brain-teaser
+        title: "This one or that one?"
+        questions:
+          - { id: fr-w14-d4-bt01, difficulty: medium, type: text, prompt: "Translate: this dress", accept: ["cette robe"] }
+          - { id: fr-w14-d4-bt02, difficulty: medium, type: text, prompt: "Translate: this hotel", accept: ["cet hôtel"] }
+          - { id: fr-w14-d4-bt03, difficulty: medium, type: text, prompt: "Translate: these shoes", accept: ["ces chaussures"] }
+          - { id: fr-w14-d4-bt04, difficulty: hard, type: text, prompt: "Translate: I prefer this dress to that dress. (-ci / -là)", accept: ["Je préfère cette robe-ci à cette robe-là.", "Je préfère cette robe-ci à cette robe-là"] }
+          - { id: fr-w14-d4-bt05, difficulty: hard, type: text, prompt: "Fill: ___ hôtel, ___ robe, ___ chapeau, ___ gants (comma-separated)", accept: ["cet, cette, ce, ces"] }
+
+  # ─────────────────────────── DAY 5 ───────────────────────────
+  - day: 5
+    gate:
+      title: "Checkpoint: demonstratives"
+      covers: "Week 14 · Day 4: ce, cet, cette, ces; -ci and -là; celle-ci"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w14-d5-g01, difficulty: easy, type: mcq, prompt: "___ pantalon", choices: ["ce", "cet", "cette", "ces"], answer: 0 }
+        - { id: fr-w14-d5-g02, difficulty: easy, type: mcq, prompt: "___ chemise", choices: ["cette", "ce", "cet", "ces"], answer: 0 }
+        - { id: fr-w14-d5-g03, difficulty: easy, type: truefalse, prompt: "« cet » is for masculine nouns starting with a vowel or mute h.", answer: true }
+        - { id: fr-w14-d5-g04, difficulty: easy, type: mcq, prompt: "___ chaussettes", choices: ["ces", "cette", "ce", "cet"], answer: 0 }
+        - { id: fr-w14-d5-g05, difficulty: easy, type: mcq, prompt: "___ anorak", choices: ["cet", "ce", "cette", "ces"], answer: 0 }
+        - { id: fr-w14-d5-g06, difficulty: easy, type: mcq, prompt: "___ cravate", choices: ["cette", "ce", "cet", "ces"], answer: 0 }
+        - { id: fr-w14-d5-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["ce", "chapeau"], ["cet", "homme"], ["cette", "robe"], ["ces", "chaussures"]] }
+        - { id: fr-w14-d5-g08, difficulty: medium, type: text, prompt: "Translate: this man", accept: ["cet homme"] }
+        - { id: fr-w14-d5-g09, difficulty: medium, type: text, prompt: "Translate: these trousers (one pair)", accept: ["ce pantalon"] }
+        - { id: fr-w14-d5-g10, difficulty: medium, type: mcq, prompt: "Which shirt? — This one.", choices: ["Quelle chemise ? — Celle-ci.", "Quel chemise ? — Cette-ci.", "Quelle chemise ? — Ce-ci.", "Quelle chemise ? — Celui-ci."], answer: 0 }
+        - { id: fr-w14-d5-g11, difficulty: medium, type: truefalse, prompt: "« ce ordinateur » is correct.", answer: false }
+        - { id: fr-w14-d5-g12, difficulty: medium, type: text, prompt: "Translate: this jacket", accept: ["cette veste"] }
+        - { id: fr-w14-d5-g13, difficulty: medium, type: mcq, prompt: "that coat (there)", choices: ["ce manteau-là", "ce manteau-ci", "cet manteau-là", "cette manteau-là"], answer: 0 }
+        - { id: fr-w14-d5-g14, difficulty: medium, type: text, prompt: "Translate: these trainers", accept: ["ces baskets"] }
+        - { id: fr-w14-d5-g15, difficulty: medium, type: mcq, prompt: "___ arbre", choices: ["cet", "ce", "cette", "ces"], answer: 0 }
+        - { id: fr-w14-d5-g16, difficulty: hard, type: text, prompt: "Translate: I like this shirt, but I prefer that jacket.", accept: ["J'aime cette chemise, mais je préfère cette veste-là.", "J'aime cette chemise mais je préfère cette veste-là.", "J'aime cette chemise, mais je préfère cette veste."] }
+        - { id: fr-w14-d5-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « Ce hôtel et cette chapeau sont chers. »", choices: ["Cet hôtel … ce chapeau", "Only Ce hôtel", "Only cette chapeau", "No error"], answer: 0 }
+        - { id: fr-w14-d5-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["cet ami", "cette amie", "ces amis", "ce amie"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "In the shop"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fr-w14-d5-rf01, difficulty: easy, type: mcq, prompt: "la taille", choices: ["clothing size", "shoe size", "the waist only", "the price"], answer: 0 }
+          - { id: fr-w14-d5-rf02, difficulty: easy, type: mcq, prompt: "la pointure", choices: ["shoe size", "clothing size", "the point", "the colour"], answer: 0 }
+          - { id: fr-w14-d5-rf03, difficulty: easy, type: mcq, prompt: "essayer", choices: ["to try on", "to essay", "to buy", "to pay"], answer: 0 }
+          - { id: fr-w14-d5-rf04, difficulty: easy, type: mcq, prompt: "la cabine d'essayage", choices: ["fitting room", "cash desk", "lift", "shop window"], answer: 0 }
+          - { id: fr-w14-d5-rf05, difficulty: easy, type: mcq, prompt: "serré", choices: ["tight", "loose", "expensive", "short"], answer: 0 }
+          - { id: fr-w14-d5-rf06, difficulty: easy, type: mcq, prompt: "en solde", choices: ["on sale", "sold out", "in stock", "for sale only"], answer: 0 }
+          - { id: fr-w14-d5-rf07, difficulty: easy, type: mcq, prompt: "Je la prends.", choices: ["I'll take it.", "I'm taking her.", "I took it.", "Take it."], answer: 0 }
+          - { id: fr-w14-d5-rf08, difficulty: easy, type: mcq, prompt: "Ça me va ?", choices: ["Does it suit me?", "Am I going?", "Is it OK to go?", "Is it mine?"], answer: 0 }
+          - { id: fr-w14-d5-rf09, difficulty: easy, type: mcq, prompt: "pay by card", choices: ["payer par carte", "payer en carte", "payer avec cash", "payer à carte"], answer: 0 }
+          - { id: fr-w14-d5-rf10, difficulty: easy, type: mcq, prompt: "I'm a size M.", choices: ["Je fais du M.", "Je suis M.", "J'ai M.", "Je porte M taille."], answer: 0 }
+      - kind: brain-teaser
+        title: "Buy the shirt"
+        questions:
+          - { id: fr-w14-d5-bt01, difficulty: medium, type: text, prompt: "Translate: What size are you? (vous)", accept: ["Quelle taille faites-vous ?", "Quelle taille faites-vous?", "Vous faites quelle taille ?"] }
+          - { id: fr-w14-d5-bt02, difficulty: medium, type: text, prompt: "Translate: Can I try the blue one? (la bleue)", accept: ["Je peux essayer la bleue ?", "Je peux essayer la bleue?", "Est-ce que je peux essayer la bleue ?"] }
+          - { id: fr-w14-d5-bt03, difficulty: medium, type: text, prompt: "Translate: It's too tight. Do you have it in black?", accept: ["C'est trop serré. Vous l'avez en noir ?", "C'est trop serré. Vous l'avez en noir?"] }
+          - { id: fr-w14-d5-bt04, difficulty: hard, type: mcq, prompt: "Model dialogue: price and payment", choices: ["45 euros, by card", "54 euros, cash", "40 euros, by card", "45 euros, cash"], answer: 0 }
+          - { id: fr-w14-d5-bt05, difficulty: hard, type: text, prompt: "Translate: My shoe size is 43.", accept: ["Je fais du 43.", "Je fais du 43", "Ma pointure est 43.", "Je chausse du 43."] }
+
+  # ─────────────────────────── DAY 6 ───────────────────────────
+  - day: 6
+    gate:
+      title: "Checkpoint: in a clothes shop"
+      covers: "Week 14 · Day 5: taille/pointure, essayer, ça me va, trop grand/serré, vous l'avez en…, je la/le prends, paying"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w14-d6-g01, difficulty: easy, type: mcq, prompt: "Can I help you?", choices: ["Je peux vous aider ?", "Vous pouvez aider ?", "Je dois vous aider ?", "Je veux aider vous ?"], answer: 0 }
+        - { id: fr-w14-d6-g02, difficulty: easy, type: mcq, prompt: "I'm looking for a shirt.", choices: ["Je cherche une chemise.", "Je cherche pour une chemise.", "Je regarde à une chemise.", "Je trouve une chemise."], answer: 0 }
+        - { id: fr-w14-d6-g03, difficulty: easy, type: truefalse, prompt: "« la pointure » is for shoes.", answer: true }
+        - { id: fr-w14-d6-g04, difficulty: easy, type: mcq, prompt: "The fitting room is at the back.", choices: ["La cabine d'essayage est au fond.", "La cabine est en face.", "La caisse est au fond.", "La cabine est derrière moi."], answer: 0 }
+        - { id: fr-w14-d6-g05, difficulty: easy, type: mcq, prompt: "Perfect, it suits me.", choices: ["Parfait, elle me va bien.", "Parfait, je vais bien.", "Parfait, elle va.", "Parfait, ça va moi."], answer: 0 }
+        - { id: fr-w14-d6-g06, difficulty: easy, type: mcq, prompt: "How are you paying?", choices: ["Vous payez comment ?", "Vous payez combien ?", "Comment ça va ?", "Combien vous payez ?"], answer: 0 }
+        - { id: fr-w14-d6-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["trop grand", "too big"], ["trop petit", "too small"], ["serré", "tight"], ["en solde", "on sale"]] }
+        - { id: fr-w14-d6-g08, difficulty: medium, type: text, prompt: "Translate: Do you have it in L? (la chemise)", accept: ["Vous l'avez en L ?", "Vous l'avez en L?"] }
+        - { id: fr-w14-d6-g09, difficulty: medium, type: text, prompt: "Translate: I'll take it. (le pantalon)", accept: ["Je le prends.", "Je le prends"] }
+        - { id: fr-w14-d6-g10, difficulty: medium, type: mcq, prompt: "Je la prends — la refers to…", choices: ["a feminine item (la chemise)", "a masculine item", "the shop", "the price"], answer: 0 }
+        - { id: fr-w14-d6-g11, difficulty: medium, type: truefalse, prompt: "« Je fais du 40 » can give a clothing size.", answer: true }
+        - { id: fr-w14-d6-g12, difficulty: medium, type: text, prompt: "Translate: I'm paying in cash.", accept: ["Je paie en espèces.", "Je paye en espèces.", "Je paie en espèces", "Je vais payer en espèces."] }
+        - { id: fr-w14-d6-g13, difficulty: medium, type: mcq, prompt: "Ask if shoes are on sale", choices: ["Elles sont en solde ?", "Elles sont soldées pour ?", "C'est vendu ?", "Elles sont en vente libre ?"], answer: 0 }
+        - { id: fr-w14-d6-g14, difficulty: medium, type: text, prompt: "Translate: It costs how much? (informal)", accept: ["Ça coûte combien ?", "Ça coûte combien?", "Elle coûte combien ?", "Il coûte combien ?"] }
+        - { id: fr-w14-d6-g15, difficulty: medium, type: order, prompt: "Order the dialogue.", items: ["Bonjour, je peux vous aider ?", "Je cherche une chemise pour un mariage.", "Quelle taille faites-vous ?", "Je fais du M.", "Je peux l'essayer ?", "Bien sûr, la cabine est au fond."] }
+        - { id: fr-w14-d6-g16, difficulty: hard, type: text, prompt: "Translate: These shoes are a bit small. Do you have them in 44?", accept: ["Ces chaussures sont un peu petites. Vous les avez en 44 ?", "Ces chaussures sont un peu petites. Vous les avez en 44?"] }
+        - { id: fr-w14-d6-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « Je peux essayer cette chaussures ? Je les prend. »", choices: ["ces chaussures … je les prends", "Only cette", "Only prend", "No error"], answer: 0 }
+        - { id: fr-w14-d6-g18, difficulty: hard, type: multi, prompt: "Polite shop phrases (Select all.)", choices: ["Je peux essayer ce pull ?", "Vous l'avez en bleu ?", "Je le prends, merci.", "Donne-moi ça."], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Week 14 lightning round"
+        secondsPerQuestion: 7
+        questions:
+          - { id: fr-w14-d6-rf01, difficulty: easy, type: text, prompt: "nous ___ (finir)", accept: ["finissons"] }
+          - { id: fr-w14-d6-rf02, difficulty: easy, type: text, prompt: "je ___ (partir)", accept: ["pars"] }
+          - { id: fr-w14-d6-rf03, difficulty: easy, type: text, prompt: "il ___ (attendre)", accept: ["attend"] }
+          - { id: fr-w14-d6-rf04, difficulty: easy, type: text, prompt: "je ___ (mettre)", accept: ["mets"] }
+          - { id: fr-w14-d6-rf05, difficulty: easy, type: mcq, prompt: "___ hôtel", choices: ["cet", "ce", "cette", "ces"], answer: 0 }
+          - { id: fr-w14-d6-rf06, difficulty: easy, type: mcq, prompt: "___ robe", choices: ["cette", "ce", "cet", "ces"], answer: 0 }
+          - { id: fr-w14-d6-rf07, difficulty: easy, type: mcq, prompt: "shoe size", choices: ["la pointure", "la taille", "la mesure", "le numéro"], answer: 0 }
+          - { id: fr-w14-d6-rf08, difficulty: easy, type: mcq, prompt: "to try on", choices: ["essayer", "acheter", "porter", "mettre"], answer: 0 }
+          - { id: fr-w14-d6-rf09, difficulty: easy, type: mcq, prompt: "wear (state)", choices: ["porter", "mettre", "essayer", "prendre"], answer: 0 }
+          - { id: fr-w14-d6-rf10, difficulty: easy, type: mcq, prompt: "I'm waiting for the bus.", choices: ["J'attends le bus.", "J'attends pour le bus.", "J'attend au bus.", "Je attends le bus."], answer: 0 }
+      - kind: brain-teaser
+        title: "Dressed for the owambe"
+        questions:
+          - { id: fr-w14-d6-bt01, difficulty: medium, type: text, prompt: "Translate: For the interview, I'm going to put on a grey suit.", accept: ["Pour l'entretien, je vais mettre un costume gris.", "Pour l'entretien je vais mettre un costume gris.", "Pour l'entretien, je vais mettre un costume gris"] }
+          - { id: fr-w14-d6-bt02, difficulty: medium, type: text, prompt: "Translate: In Montréal in winter, I'm going to wear a coat and a hat.", accept: ["À Montréal en hiver, je vais porter un manteau et un chapeau.", "À Montréal en hiver je vais porter un manteau et un chapeau.", "En hiver à Montréal, je vais porter un manteau et un chapeau."] }
+          - { id: fr-w14-d6-bt03, difficulty: medium, type: mcq, prompt: "Which pattern is « vendre »?", choices: ["-RE (vends, vends, vend…)", "-IR with -iss-", "partir-type", "-ER"], answer: 0 }
+          - { id: fr-w14-d6-bt04, difficulty: hard, type: match, prompt: "Match verb to family.", pairs: [["choisir", "-IR (-iss-)"], ["dormir", "partir-type"], ["perdre", "-RE"], ["mettre", "irregular"]] }
+          - { id: fr-w14-d6-bt05, difficulty: hard, type: mcq, prompt: "Find the sentence with NO mistake.", choices: ["Ce week-end, je mets ma nouvelle robe et nous sortons.", "Nous choisons cet robe.", "Il dorme et il attende.", "Je porte un pantalons noir."], answer: 0 }
