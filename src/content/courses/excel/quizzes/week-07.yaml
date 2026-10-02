@@ -1,0 +1,297 @@
+# Excel · Week 7 quizzes. Format and rules: src/content/QUIZZES.md
+week: 7
+days:
+
+  # ─────────────────────────── DAY 1 ───────────────────────────
+  - day: 1
+    gate:
+      title: "Checkpoint: Week 6 review"
+      covers: "Week 6: COUNTIFS, SUMIFS, date criteria, AVERAGEIFS/MAXIFS/MINIFS, HR summary"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w07-d1-g01, difficulty: easy, type: mcq, prompt: "First argument of SUMIFS", choices: ["the sum range", "the criteria range", "the criteria", "the total"], answer: 0 }
+        - { id: xl-w07-d1-g02, difficulty: easy, type: mcq, prompt: "Criteria: contains Lagos", choices: ["\"*Lagos*\"", "\"Lagos\"", "\"?Lagos\"", "Lagos*"], answer: 0 }
+        - { id: xl-w07-d1-g03, difficulty: easy, type: text, prompt: "Lagos orders in 2025?", accept: ["951"] }
+        - { id: xl-w07-d1-g04, difficulty: easy, type: truefalse, prompt: "COUNTIFS combines conditions with AND.", answer: true }
+        - { id: xl-w07-d1-g05, difficulty: easy, type: mcq, prompt: "Largest with a condition", choices: ["MAXIFS", "MAX", "LARGE", "TOPIFS"], answer: 0 }
+        - { id: xl-w07-d1-g06, difficulty: easy, type: mcq, prompt: "Top category by net sales", choices: ["Groceries", "Phones", "Office", "Computers"], answer: 0 }
+        - { id: xl-w07-d1-g07, difficulty: medium, type: text, prompt: "Q4 2025 net sales? (digits only)", accept: ["275880675"] }
+        - { id: xl-w07-d1-g08, difficulty: medium, type: mcq, prompt: "≥ the value in X2", choices: ["\">=\"&X2", "\">=X2\"", ">=X2", "X2>="], answer: 0 }
+        - { id: xl-w07-d1-g09, difficulty: medium, type: match, prompt: "Match the job to the function.", pairs: [["Headcount", "COUNTIFS"], ["Payroll", "SUMIFS"], ["Average salary", "AVERAGEIFS"], ["Highest salary", "MAXIFS"]] }
+        - { id: xl-w07-d1-g10, difficulty: medium, type: text, prompt: "Top salesperson's net sales (Tolu Eze)? (digits only)", accept: ["54011110"] }
+        - { id: xl-w07-d1-g11, difficulty: medium, type: truefalse, prompt: "Criteria \">=X20\" in quotes compares with the cell X20.", answer: false }
+        - { id: xl-w07-d1-g12, difficulty: medium, type: text, prompt: "Total monthly payroll? (digits only)", accept: ["45004000"] }
+        - { id: xl-w07-d1-g13, difficulty: medium, type: mcq, prompt: "One month's criteria pair with the first day in X2", choices: ["\">=\"&X2 and \"<\"&EDATE(X2,1)", "\"=\"&X2", "MONTH(X2)", "\">=X2\""], answer: 0 }
+        - { id: xl-w07-d1-g14, difficulty: medium, type: text, prompt: "Region with the highest average order value", accept: ["Ibadan"] }
+        - { id: xl-w07-d1-g15, difficulty: medium, type: text, prompt: "Store with the highest net sales", accept: ["Lagos - Ikeja", "Lagos-Ikeja", "Ikeja"] }
+        - { id: xl-w07-d1-g16, difficulty: hard, type: text, prompt: "December Lagos net sales? (digits only)", accept: ["50303800"] }
+        - { id: xl-w07-d1-g17, difficulty: hard, type: mcq, prompt: "=AVERAGEIFS(O:O,C:C,\"Jos\") with no Jos rows gives…", choices: ["#DIV/0!", "0", "#N/A", "blank"], answer: 0 }
+        - { id: xl-w07-d1-g18, difficulty: hard, type: multi, prompt: "Which give Lagos net sales? (Select all.)", choices: ["=SUMIFS(O2:O2401,C2:C2401,\"Lagos\")", "=SUMIF(C2:C2401,\"Lagos\",O2:O2401)", "=SUMIFS(O2:O2401,D2:D2401,\"Lagos*\")", "=SUMIFS(C2:C2401,O2:O2401,\"Lagos\")"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Clean-up functions"
+        secondsPerQuestion: 9
+        questions:
+          - { id: xl-w07-d1-rf01, difficulty: easy, type: mcq, prompt: "Remove extra spaces", choices: ["TRIM", "CLEAN", "PROPER", "LEN"], answer: 0 }
+          - { id: xl-w07-d1-rf02, difficulty: easy, type: mcq, prompt: "Capitalise Each Word", choices: ["PROPER", "UPPER", "TRIM", "TITLE"], answer: 0 }
+          - { id: xl-w07-d1-rf03, difficulty: easy, type: mcq, prompt: "All lower case", choices: ["LOWER", "SMALL", "MIN", "PROPER"], answer: 0 }
+          - { id: xl-w07-d1-rf04, difficulty: easy, type: mcq, prompt: "Count characters", choices: ["LEN", "COUNT", "COUNTA", "SIZE"], answer: 0 }
+          - { id: xl-w07-d1-rf05, difficulty: easy, type: mcq, prompt: "Remove non-printing characters", choices: ["CLEAN", "TRIM", "SUBSTITUTE", "VALUE"], answer: 0 }
+          - { id: xl-w07-d1-rf06, difficulty: easy, type: text, prompt: "=PROPER(\"TOLU EZE\")", accept: ["Tolu Eze"] }
+          - { id: xl-w07-d1-rf07, difficulty: easy, type: text, prompt: "=LEN(\"Lagos\")", accept: ["5"] }
+          - { id: xl-w07-d1-rf08, difficulty: easy, type: text, prompt: "=UPPER(\"abuja\")", accept: ["ABUJA"] }
+          - { id: xl-w07-d1-rf09, difficulty: easy, type: truefalse, prompt: "Never overwrite raw data: build clean columns beside it.", answer: true }
+          - { id: xl-w07-d1-rf10, difficulty: easy, type: text, prompt: "=LEN(TRIM(\"  Tolu   Eze  \"))", accept: ["8"] }
+      - kind: brain-teaser
+        title: "Messy customers"
+        questions:
+          - { id: xl-w07-d1-bt01, difficulty: medium, type: text, prompt: "How many rows in messy_customers.csv?", accept: ["315"] }
+          - { id: xl-w07-d1-bt02, difficulty: medium, type: text, prompt: "How many different raw city spellings?", accept: ["24"] }
+          - { id: xl-w07-d1-bt03, difficulty: medium, type: text, prompt: "How many blank phones?", accept: ["58"] }
+          - { id: xl-w07-d1-bt04, difficulty: hard, type: text, prompt: "How many blank emails?", accept: ["76"] }
+          - { id: xl-w07-d1-bt05, difficulty: hard, type: mcq, prompt: "Best formula for a clean name in H2 from B2:", choices: ["=PROPER(TRIM(B2))", "=TRIM(B2)", "=PROPER(B2)", "=UPPER(TRIM(B2))"], answer: 0 }
+
+  # ─────────────────────────── DAY 2 ───────────────────────────
+  - day: 2
+    gate:
+      title: "Checkpoint: TRIM, PROPER, UPPER, LOWER"
+      covers: "Week 7 · Day 1: the messy data, TRIM, PROPER, UPPER, LOWER, LEN, CLEAN, never overwrite raw data"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w07-d2-g01, difficulty: easy, type: mcq, prompt: "TRIM removes…", choices: ["leading, trailing and repeated spaces", "all spaces", "capital letters", "numbers"], answer: 0 }
+        - { id: xl-w07-d2-g02, difficulty: easy, type: text, prompt: "=LOWER(\"Tolu.Eze@Gmail.com\")", accept: ["tolu.eze@gmail.com"] }
+        - { id: xl-w07-d2-g03, difficulty: easy, type: truefalse, prompt: "=PROPER(\"lagos state\") gives \"Lagos State\".", answer: true }
+        - { id: xl-w07-d2-g04, difficulty: easy, type: mcq, prompt: "Emails should be…", choices: ["LOWER", "UPPER", "PROPER", "unchanged"], answer: 0 }
+        - { id: xl-w07-d2-g05, difficulty: easy, type: text, prompt: "=LEN(\"08031234567\")", accept: ["11"] }
+        - { id: xl-w07-d2-g06, difficulty: easy, type: mcq, prompt: "Why build clean columns next to the raw data?", choices: ["So you can always check and redo the cleaning", "Excel requires it", "It's faster to type", "To hide errors"], answer: 0 }
+        - { id: xl-w07-d2-g07, difficulty: medium, type: text, prompt: "=PROPER(TRIM(\"  ada   OKAFOR \"))", accept: ["Ada Okafor"] }
+        - { id: xl-w07-d2-g08, difficulty: medium, type: match, prompt: "Match.", pairs: [["TRIM", "extra spaces"], ["PROPER", "Capital Each Word"], ["LEN", "character count"], ["CLEAN", "non-printing characters"]] }
+        - { id: xl-w07-d2-g09, difficulty: medium, type: text, prompt: "Blank phones in messy_customers?", accept: ["58"] }
+        - { id: xl-w07-d2-g10, difficulty: medium, type: mcq, prompt: "Count blank emails in D2:D316", choices: ["=COUNTBLANK(D2:D316)", "=COUNT(D2:D316)", "=COUNTA(D2:D316)", "=LEN(D2:D316)"], answer: 0 }
+        - { id: xl-w07-d2-g11, difficulty: medium, type: truefalse, prompt: "TRIM alone fixes \"LAGOS\" into \"Lagos\".", answer: false }
+        - { id: xl-w07-d2-g12, difficulty: medium, type: text, prompt: "=LEN(\"  Tolu  \")", accept: ["8"] }
+        - { id: xl-w07-d2-g13, difficulty: medium, type: mcq, prompt: "Count distinct spellings after cleaning a column:", choices: ["Copy → paste values elsewhere → Remove Duplicates", "Sort only", "COUNTA", "Freeze panes"], answer: 0 }
+        - { id: xl-w07-d2-g14, difficulty: medium, type: text, prompt: "Different raw city spellings?", accept: ["24"] }
+        - { id: xl-w07-d2-g15, difficulty: medium, type: mcq, prompt: "=PROPER(\"o'brien mcdonald\")", choices: ["O'Brien Mcdonald", "O'brien Mcdonald", "O'Brien McDonald", "o'brien mcdonald"], answer: 0, explain: "PROPER capitalises after any non-letter, including the apostrophe." }
+        - { id: xl-w07-d2-g16, difficulty: hard, type: text, prompt: "=LEN(TRIM(\" Port   Harcourt \"))", accept: ["13"] }
+        - { id: xl-w07-d2-g17, difficulty: hard, type: mcq, prompt: "=PROPER(TRIM(\"Lag0s\")) gives…", choices: ["Lag0S", "Lagos", "LAG0S", "Lag0s"], answer: 0, explain: "The 0 is a digit, so PROPER capitalises the next letter. That's why mapping is needed (Day 5)." }
+        - { id: xl-w07-d2-g18, difficulty: hard, type: multi, prompt: "Which problems are in messy_customers? (Select all.)", choices: ["Names in every case", "Phones in several formats", "Spend with ₦ and \"N/A\"", "No duplicates at all"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "LEFT, RIGHT, MID, FIND"
+        secondsPerQuestion: 9
+        questions:
+          - { id: xl-w07-d2-rf01, difficulty: easy, type: text, prompt: "=LEFT(\"NM-00042\",2)", accept: ["NM"] }
+          - { id: xl-w07-d2-rf02, difficulty: easy, type: text, prompt: "=RIGHT(\"NM-00042\",5)", accept: ["00042"] }
+          - { id: xl-w07-d2-rf03, difficulty: easy, type: text, prompt: "=MID(\"08031234567\",2,3)", accept: ["803"] }
+          - { id: xl-w07-d2-rf04, difficulty: easy, type: text, prompt: "=FIND(\"-\",\"Lagos - Ikeja\")", accept: ["7"] }
+          - { id: xl-w07-d2-rf05, difficulty: easy, type: mcq, prompt: "Case-sensitive search", choices: ["FIND", "SEARCH", "MATCH", "LOOKUP"], answer: 0 }
+          - { id: xl-w07-d2-rf06, difficulty: easy, type: mcq, prompt: "Allows wildcards", choices: ["SEARCH", "FIND", "MID", "LEFT"], answer: 0 }
+          - { id: xl-w07-d2-rf07, difficulty: easy, type: text, prompt: "=FIND(\" \",\"Tolu Eze\")", accept: ["5"] }
+          - { id: xl-w07-d2-rf08, difficulty: easy, type: text, prompt: "=LEFT(\"Tolu Eze\",FIND(\" \",\"Tolu Eze\")-1)", accept: ["Tolu"] }
+          - { id: xl-w07-d2-rf09, difficulty: easy, type: text, prompt: "=VALUE(RIGHT(\"NM-00042\",5))", accept: ["42"] }
+          - { id: xl-w07-d2-rf10, difficulty: easy, type: truefalse, prompt: "FIND returns #VALUE! when the text isn't found.", answer: true }
+      - kind: brain-teaser
+        title: "Split it"
+        questions:
+          - { id: xl-w07-d2-bt01, difficulty: medium, type: text, prompt: "=MID(\"Tolu Eze\",FIND(\" \",\"Tolu Eze\")+1,100)", accept: ["Eze"] }
+          - { id: xl-w07-d2-bt02, difficulty: medium, type: text, prompt: "=MID(\"Lagos - Ikeja\",FIND(\"-\",\"Lagos - Ikeja\")+2,50)", accept: ["Ikeja"] }
+          - { id: xl-w07-d2-bt03, difficulty: medium, type: text, prompt: "How many \"Surname, First\" names (with a comma)?", accept: ["55"] }
+          - { id: xl-w07-d2-bt04, difficulty: hard, type: mcq, prompt: "=ISNUMBER(FIND(\",\",B2)) returns TRUE when…", choices: ["B2 contains a comma", "B2 is a number", "B2 is empty", "always"], answer: 0 }
+          - { id: xl-w07-d2-bt05, difficulty: hard, type: text, prompt: "=SEARCH(\"ikeja\",\"Lagos - Ikeja\")", accept: ["9"] }
+
+  # ─────────────────────────── DAY 3 ───────────────────────────
+  - day: 3
+    gate:
+      title: "Checkpoint: LEFT, RIGHT, MID, FIND, SEARCH"
+      covers: "Week 7 · Day 2: extracting text by position, FIND vs SEARCH, splitting names, detecting commas"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w07-d3-g01, difficulty: easy, type: text, prompt: "=LEFT(\"Abuja\",3)", accept: ["Abu"] }
+        - { id: xl-w07-d3-g02, difficulty: easy, type: text, prompt: "=RIGHT(\"Abuja\",2)", accept: ["ja"] }
+        - { id: xl-w07-d3-g03, difficulty: easy, type: truefalse, prompt: "SEARCH ignores case; FIND doesn't.", answer: true }
+        - { id: xl-w07-d3-g04, difficulty: easy, type: text, prompt: "=MID(\"NaijaMart\",6,4)", accept: ["Mart"] }
+        - { id: xl-w07-d3-g05, difficulty: easy, type: mcq, prompt: "First name from \"Tolu Eze\" in H2", choices: ["=LEFT(H2,FIND(\" \",H2)-1)", "=LEFT(H2,FIND(\" \",H2))", "=RIGHT(H2,4)", "=MID(H2,1)"], answer: 0 }
+        - { id: xl-w07-d3-g06, difficulty: easy, type: text, prompt: "=FIND(\"a\",\"Banana\")", accept: ["2"] }
+        - { id: xl-w07-d3-g07, difficulty: medium, type: text, prompt: "=FIND(\"A\",\"Banana\")", accept: ["#VALUE!"], explain: "FIND is case-sensitive: there's no capital A." }
+        - { id: xl-w07-d3-g08, difficulty: medium, type: text, prompt: "=SEARCH(\"A\",\"Banana\")", accept: ["2"] }
+        - { id: xl-w07-d3-g09, difficulty: medium, type: match, prompt: "Match.", pairs: [["LEFT", "from the start"], ["RIGHT", "from the end"], ["MID", "from a position"], ["FIND", "position of text"]] }
+        - { id: xl-w07-d3-g10, difficulty: medium, type: text, prompt: "=MID(\"Ada Okafor\",FIND(\" \",\"Ada Okafor\")+1,100)", accept: ["Okafor"] }
+        - { id: xl-w07-d3-g11, difficulty: medium, type: truefalse, prompt: "=LEFT(H2,FIND(\" \",H2)) would include the space.", answer: true }
+        - { id: xl-w07-d3-g12, difficulty: medium, type: text, prompt: "Names with a comma (\"Surname, First\")?", accept: ["55"] }
+        - { id: xl-w07-d3-g13, difficulty: medium, type: mcq, prompt: "Store area with a formula from \"Abuja - Wuse\" in D2:", choices: ["=MID(D2,FIND(\"-\",D2)+2,50)", "=LEFT(D2,5)", "=RIGHT(D2,FIND(\"-\",D2))", "=MID(D2,1,FIND(\"-\",D2))"], answer: 0 }
+        - { id: xl-w07-d3-g14, difficulty: medium, type: text, prompt: "=VALUE(RIGHT(\"NM-02400\",5))", accept: ["2400"] }
+        - { id: xl-w07-d3-g15, difficulty: medium, type: mcq, prompt: "Why wrap FIND in ISNUMBER?", choices: ["FIND gives an error when not found; ISNUMBER turns that into FALSE", "To round it", "To make it case-insensitive", "To count characters"], answer: 0 }
+        - { id: xl-w07-d3-g16, difficulty: hard, type: text, prompt: "=MID(\"Port Harcourt - GRA\",FIND(\"-\",\"Port Harcourt - GRA\")+2,50)", accept: ["GRA"] }
+        - { id: xl-w07-d3-g17, difficulty: hard, type: text, prompt: "=LEFT(\"Ibrahim, Ngozi\",FIND(\",\",\"Ibrahim, Ngozi\")-1)", accept: ["Ibrahim"] }
+        - { id: xl-w07-d3-g18, difficulty: hard, type: multi, prompt: "Which return \"Eze\"? (Select all.)", choices: ["=RIGHT(\"Tolu Eze\",3)", "=MID(\"Tolu Eze\",6,3)", "=MID(\"Tolu Eze\",FIND(\" \",\"Tolu Eze\")+1,100)", "=LEFT(\"Tolu Eze\",3)"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Replace and join"
+        secondsPerQuestion: 9
+        questions:
+          - { id: xl-w07-d3-rf01, difficulty: easy, type: text, prompt: "=SUBSTITUTE(\"0803 123 4567\",\" \",\"\")", accept: ["08031234567"] }
+          - { id: xl-w07-d3-rf02, difficulty: easy, type: text, prompt: "=\"Tolu\"&\" \"&\"Eze\"", accept: ["Tolu Eze"] }
+          - { id: xl-w07-d3-rf03, difficulty: easy, type: mcq, prompt: "Replace by position", choices: ["REPLACE", "SUBSTITUTE", "TRIM", "MID"], answer: 0 }
+          - { id: xl-w07-d3-rf04, difficulty: easy, type: mcq, prompt: "Replace all occurrences of some text", choices: ["SUBSTITUTE", "REPLACE", "FIND", "CLEAN"], answer: 0 }
+          - { id: xl-w07-d3-rf05, difficulty: easy, type: mcq, prompt: "Join with a separator, skipping blanks", choices: ["TEXTJOIN", "CONCAT", "&", "SUM"], answer: 0 }
+          - { id: xl-w07-d3-rf06, difficulty: easy, type: text, prompt: "=REPLACE(\"+2348031234567\",1,4,\"0\")", accept: ["08031234567"] }
+          - { id: xl-w07-d3-rf07, difficulty: easy, type: text, prompt: "=LOWER(\"Tolu\"&\".\"&\"Eze\"&\"@naijamart.ng\")", accept: ["tolu.eze@naijamart.ng"] }
+          - { id: xl-w07-d3-rf08, difficulty: easy, type: text, prompt: "=SUBSTITUTE(\"0803-123-4567\",\"-\",\"\")", accept: ["08031234567"] }
+          - { id: xl-w07-d3-rf09, difficulty: easy, type: truefalse, prompt: "CONCAT and & both join text.", answer: true }
+          - { id: xl-w07-d3-rf10, difficulty: easy, type: text, prompt: "=LEN(SUBSTITUTE(\"0803 123 4567\",\" \",\"\"))", accept: ["11"] }
+      - kind: brain-teaser
+        title: "Fix phones and names"
+        questions:
+          - { id: xl-w07-d3-bt01, difficulty: medium, type: text, prompt: "K2 = \"2348031234567\". =IF(LEFT(K2,4)=\"+234\",\"0\"&MID(K2,5,20),IF(LEFT(K2,3)=\"234\",\"0\"&MID(K2,4,20),K2))", accept: ["08031234567"] }
+          - { id: xl-w07-d3-bt02, difficulty: medium, type: text, prompt: "=SUBSTITUTE(SUBSTITUTE(\"0803 123-4567\",\" \",\"\"),\"-\",\"\")", accept: ["08031234567"] }
+          - { id: xl-w07-d3-bt03, difficulty: medium, type: text, prompt: "=TEXTJOIN(\", \",TRUE,\"Lagos\",\"\",\"Abuja\")", accept: ["Lagos, Abuja"] }
+          - { id: xl-w07-d3-bt04, difficulty: hard, type: text, prompt: "B2 = \"Ibrahim, Ngozi\". Rebuilt name: TRIM(MID after the comma) & \" \" & LEFT before it. Result?", accept: ["Ngozi Ibrahim"] }
+          - { id: xl-w07-d3-bt05, difficulty: hard, type: mcq, prompt: "After cleaning, every non-blank phone should have…", choices: ["11 characters", "10 characters", "13 characters", "any length"], answer: 0 }
+
+  # ─────────────────────────── DAY 4 ───────────────────────────
+  - day: 4
+    gate:
+      title: "Checkpoint: SUBSTITUTE, REPLACE, joining"
+      covers: "Week 7 · Day 3: SUBSTITUTE, REPLACE, &, CONCAT, TEXTJOIN, fixing \"Surname, First\", phone cleaning"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w07-d4-g01, difficulty: easy, type: text, prompt: "=SUBSTITUTE(\"Lag0s\",\"0\",\"o\")", accept: ["Lagos"] }
+        - { id: xl-w07-d4-g02, difficulty: easy, type: mcq, prompt: "Join first and last name with a space", choices: ["=F2&\" \"&G2", "=F2+G2", "=F2,G2", "=SUM(F2,G2)"], answer: 0 }
+        - { id: xl-w07-d4-g03, difficulty: easy, type: truefalse, prompt: "SUBSTITUTE replaces every occurrence by default.", answer: true }
+        - { id: xl-w07-d4-g04, difficulty: easy, type: text, prompt: "=CONCAT(\"Naija\",\"Mart\")", accept: ["NaijaMart"] }
+        - { id: xl-w07-d4-g05, difficulty: easy, type: mcq, prompt: "+2348031234567 → 08031234567", choices: ["=REPLACE(A2,1,4,\"0\")", "=SUBSTITUTE(A2,\"+\",\"0\")", "=LEFT(A2,11)", "=RIGHT(A2,4)"], answer: 0 }
+        - { id: xl-w07-d4-g06, difficulty: easy, type: text, prompt: "=\"Mr \"&PROPER(\"eze\")", accept: ["Mr Eze"] }
+        - { id: xl-w07-d4-g07, difficulty: medium, type: text, prompt: "=SUBSTITUTE(SUBSTITUTE(\"+234 803-123-4567\",\" \",\"\"),\"-\",\"\")", accept: ["+2348031234567"] }
+        - { id: xl-w07-d4-g08, difficulty: medium, type: match, prompt: "Match.", pairs: [["SUBSTITUTE", "replace by matching text"], ["REPLACE", "replace by position"], ["TEXTJOIN", "join with a separator"], ["&", "join two values"]] }
+        - { id: xl-w07-d4-g09, difficulty: medium, type: text, prompt: "=TEXTJOIN(\"-\",TRUE,\"A\",\"\",\"B\",\"C\")", accept: ["A-B-C"] }
+        - { id: xl-w07-d4-g10, difficulty: medium, type: text, prompt: "=TEXTJOIN(\"-\",FALSE,\"A\",\"\",\"B\")", accept: ["A--B"] }
+        - { id: xl-w07-d4-g11, difficulty: medium, type: truefalse, prompt: "=SUBSTITUTE(\"a-b-c\",\"-\",\"\",1) removes only the first dash.", answer: true }
+        - { id: xl-w07-d4-g12, difficulty: medium, type: text, prompt: "=LOWER(\"Ada\"&\".\"&\"Okafor\"&\"@naijamart.ng\")", accept: ["ada.okafor@naijamart.ng"] }
+        - { id: xl-w07-d4-g13, difficulty: medium, type: mcq, prompt: "Phone \"08031234567\" after the +234 rule stays…", choices: ["08031234567", "8031234567", "+2348031234567", "#VALUE!"], answer: 0 }
+        - { id: xl-w07-d4-g14, difficulty: medium, type: text, prompt: "=REPLACE(\"NM-00042\",1,3,\"ORD-\")", accept: ["ORD-00042"] }
+        - { id: xl-w07-d4-g15, difficulty: medium, type: mcq, prompt: "Check that a cleaned phone in L2 has 11 characters:", choices: ["=LEN(L2)=11", "=COUNT(L2)=11", "=L2=11", "=VALUE(L2)"], answer: 0 }
+        - { id: xl-w07-d4-g16, difficulty: hard, type: text, prompt: "=SUBSTITUTE(SUBSTITUTE(\"₦788,000\",\"₦\",\"\"),\",\",\"\")", accept: ["788000"] }
+        - { id: xl-w07-d4-g17, difficulty: hard, type: text, prompt: "=PROPER(TRIM(MID(\"OKAFOR,  ada\",FIND(\",\",\"OKAFOR,  ada\")+1,100))&\" \"&TRIM(LEFT(\"OKAFOR,  ada\",FIND(\",\",\"OKAFOR,  ada\")-1)))", accept: ["Ada Okafor"], explain: "PROPER wraps the whole rebuilt name, so OKAFOR becomes Okafor too." }
+        - { id: xl-w07-d4-g18, difficulty: hard, type: multi, prompt: "Which turn \"0803 123 4567\" into \"08031234567\"? (Select all.)", choices: ["=SUBSTITUTE(A2,\" \",\"\")", "=TEXTJOIN(\"\",TRUE,TEXTSPLIT(A2,\" \"))", "=TRIM(A2)", "=CLEAN(A2)"], answers: [0, 1] }
+    quizzes:
+      - kind: rapid-fire
+        title: "TEXTBEFORE, TEXTAFTER, TEXTSPLIT"
+        secondsPerQuestion: 9
+        questions:
+          - { id: xl-w07-d4-rf01, difficulty: easy, type: text, prompt: "=TEXTBEFORE(\"Lagos - Ikeja\",\" - \")", accept: ["Lagos"] }
+          - { id: xl-w07-d4-rf02, difficulty: easy, type: text, prompt: "=TEXTAFTER(\"Lagos - Ikeja\",\" - \")", accept: ["Ikeja"] }
+          - { id: xl-w07-d4-rf03, difficulty: easy, type: text, prompt: "=TEXTAFTER(\"tolu@gmail.com\",\"@\")", accept: ["gmail.com"] }
+          - { id: xl-w07-d4-rf04, difficulty: easy, type: text, prompt: "=TEXTBEFORE(\"tolu@gmail.com\",\"@\")", accept: ["tolu"] }
+          - { id: xl-w07-d4-rf05, difficulty: easy, type: mcq, prompt: "Split \"Tolu Eze\" into two cells", choices: ["=TEXTSPLIT(A2,\" \")", "=SPLIT(A2)", "=MID(A2,\" \")", "=TEXTJOIN(A2)"], answer: 0 }
+          - { id: xl-w07-d4-rf06, difficulty: easy, type: mcq, prompt: "TEXTSPLIT's result…", choices: ["spills into neighbouring cells", "stays in one cell", "is a number", "is an error"], answer: 0 }
+          - { id: xl-w07-d4-rf07, difficulty: easy, type: mcq, prompt: "These need…", choices: ["Microsoft 365 / Excel for the web", "Excel 2010", "VBA", "Power Query"], answer: 0 }
+          - { id: xl-w07-d4-rf08, difficulty: easy, type: truefalse, prompt: "In older Excel, use LEFT/MID/FIND instead.", answer: true }
+          - { id: xl-w07-d4-rf09, difficulty: easy, type: text, prompt: "=TEXTBEFORE(\"Rice 50kg (Local)\",\" (\")", accept: ["Rice 50kg"] }
+          - { id: xl-w07-d4-rf10, difficulty: easy, type: text, prompt: "=TEXTBEFORE(TEXTAFTER(\"Rice 50kg (Local)\",\"(\"),\")\")", accept: ["Local"] }
+      - kind: brain-teaser
+        title: "Modern splits"
+        questions:
+          - { id: xl-w07-d4-bt01, difficulty: medium, type: text, prompt: "=TRIM(TEXTAFTER(\"Ibrahim, Ngozi\",\",\"))&\" \"&TEXTBEFORE(\"Ibrahim, Ngozi\",\",\")", accept: ["Ngozi Ibrahim"] }
+          - { id: xl-w07-d4-bt02, difficulty: medium, type: mcq, prompt: "Count gmail users with domains in J2:J316:", choices: ["=COUNTIF(J2:J316,\"gmail.com\")", "=SUMIF(J2:J316,\"gmail\")", "=COUNT(J2:J316)", "=LEN(J2:J316)"], answer: 0 }
+          - { id: xl-w07-d4-bt03, difficulty: medium, type: text, prompt: "=TEXTAFTER(\"Abuja - Wuse\",\" - \")", accept: ["Wuse"] }
+          - { id: xl-w07-d4-bt04, difficulty: hard, type: text, prompt: "=TEXTAFTER(\"a-b-c\",\"-\",2)", accept: ["c"], explain: "The 3rd argument picks which occurrence of the delimiter." }
+          - { id: xl-w07-d4-bt05, difficulty: hard, type: text, prompt: "=TEXTBEFORE(\"Lagos\",\"-\")", accept: ["#N/A"], explain: "No delimiter found." }
+
+  # ─────────────────────────── DAY 5 ───────────────────────────
+  - day: 5
+    gate:
+      title: "Checkpoint: TEXTBEFORE, TEXTAFTER, TEXTSPLIT"
+      covers: "Week 7 · Day 4: modern text functions, spilling, email domains, older-Excel fallbacks"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w07-d5-g01, difficulty: easy, type: text, prompt: "=TEXTAFTER(\"Kano - Sabon Gari\",\" - \")", accept: ["Sabon Gari"] }
+        - { id: xl-w07-d5-g02, difficulty: easy, type: text, prompt: "=TEXTBEFORE(\"Kano - Sabon Gari\",\" - \")", accept: ["Kano"] }
+        - { id: xl-w07-d5-g03, difficulty: easy, type: truefalse, prompt: "TEXTSPLIT can spill results into several cells.", answer: true }
+        - { id: xl-w07-d5-g04, difficulty: easy, type: mcq, prompt: "Email domain from I2", choices: ["=TEXTAFTER(I2,\"@\")", "=TEXTBEFORE(I2,\"@\")", "=LEFT(I2,5)", "=TRIM(I2)"], answer: 0 }
+        - { id: xl-w07-d5-g05, difficulty: easy, type: mcq, prompt: "Older-Excel equivalent of TEXTBEFORE(A2,\" \")", choices: ["=LEFT(A2,FIND(\" \",A2)-1)", "=RIGHT(A2,FIND(\" \",A2))", "=MID(A2,1)", "=TRIM(A2)"], answer: 0 }
+        - { id: xl-w07-d5-g06, difficulty: easy, type: text, prompt: "=TEXTBEFORE(\"ada.okafor@yahoo.com\",\".\")", accept: ["ada"] }
+        - { id: xl-w07-d5-g07, difficulty: medium, type: text, prompt: "=TEXTAFTER(\"ada.okafor@yahoo.com\",\".\",-1)", accept: ["com"], explain: "-1 counts from the end." }
+        - { id: xl-w07-d5-g08, difficulty: medium, type: match, prompt: "Match.", pairs: [["TEXTBEFORE", "text before a delimiter"], ["TEXTAFTER", "text after a delimiter"], ["TEXTSPLIT", "split into cells"], ["TEXTJOIN", "join with a delimiter"]] }
+        - { id: xl-w07-d5-g09, difficulty: medium, type: text, prompt: "Raw emails ending in @gmail.com in messy_customers?", accept: ["158"] }
+        - { id: xl-w07-d5-g10, difficulty: medium, type: mcq, prompt: "=TEXTSPLIT(\"Tolu Eze\",\" \") spills into…", choices: ["2 cells side by side", "2 rows", "1 cell", "an error"], answer: 0 }
+        - { id: xl-w07-d5-g11, difficulty: medium, type: truefalse, prompt: "TEXTAFTER returns #N/A when the delimiter isn't found.", answer: true }
+        - { id: xl-w07-d5-g12, difficulty: medium, type: text, prompt: "=TEXTBEFORE(\"Rice 50kg (Local)\",\" (\")", accept: ["Rice 50kg"] }
+        - { id: xl-w07-d5-g13, difficulty: medium, type: mcq, prompt: "Something blocks the spill area of TEXTSPLIT. You see…", choices: ["#SPILL!", "#N/A", "#REF!", "#VALUE!"], answer: 0 }
+        - { id: xl-w07-d5-g14, difficulty: medium, type: text, prompt: "=TRIM(TEXTAFTER(\"Eze, Tolu\",\",\"))", accept: ["Tolu"] }
+        - { id: xl-w07-d5-g15, difficulty: medium, type: mcq, prompt: "Shorter name fix with modern functions:", choices: ["=IF(ISNUMBER(SEARCH(\",\",B2)),TRIM(TEXTAFTER(B2,\",\"))&\" \"&TEXTBEFORE(B2,\",\"),TRIM(B2))", "=TEXTSPLIT(B2)", "=PROPER(B2)", "=SUBSTITUTE(B2,\",\",\"\")"], answer: 0 }
+        - { id: xl-w07-d5-g16, difficulty: hard, type: text, prompt: "=TEXTAFTER(\"NM-2025-00042\",\"-\",2)", accept: ["00042"] }
+        - { id: xl-w07-d5-g17, difficulty: hard, type: text, prompt: "=IFERROR(TEXTAFTER(\"Lagos\",\" - \"),\"(no area)\")", accept: ["(no area)"] }
+        - { id: xl-w07-d5-g18, difficulty: hard, type: multi, prompt: "Which return \"Ikeja\"? (Select all.)", choices: ["=TEXTAFTER(\"Lagos - Ikeja\",\" - \")", "=MID(\"Lagos - Ikeja\",FIND(\"-\",\"Lagos - Ikeja\")+2,50)", "=RIGHT(\"Lagos - Ikeja\",5)", "=TEXTBEFORE(\"Lagos - Ikeja\",\" - \")"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "TEXT and VALUE"
+        secondsPerQuestion: 9
+        questions:
+          - { id: xl-w07-d5-rf01, difficulty: easy, type: mcq, prompt: "Number → formatted text", choices: ["TEXT", "VALUE", "CLEAN", "TRIM"], answer: 0 }
+          - { id: xl-w07-d5-rf02, difficulty: easy, type: mcq, prompt: "Text → number", choices: ["VALUE", "TEXT", "NUMBER", "INT"], answer: 0 }
+          - { id: xl-w07-d5-rf03, difficulty: easy, type: text, prompt: "=TEXT(1500000,\"₦#,##0\")", accept: ["₦1,500,000"] }
+          - { id: xl-w07-d5-rf04, difficulty: easy, type: text, prompt: "=VALUE(\"861000.00\")", accept: ["861000"] }
+          - { id: xl-w07-d5-rf05, difficulty: easy, type: mcq, prompt: "Turn errors into blank", choices: ["IFERROR(…,\"\")", "ISERROR", "IFNA only", "CLEAN"], answer: 0 }
+          - { id: xl-w07-d5-rf06, difficulty: easy, type: text, prompt: "=TEXT(DATE(2025,3,15),\"mmmm yyyy\")", accept: ["March 2025"] }
+          - { id: xl-w07-d5-rf07, difficulty: easy, type: mcq, prompt: "=IFERROR(VALUE(\"N/A\"),\"\") gives…", choices: ["an empty cell", "0", "#VALUE!", "N/A"], answer: 0 }
+          - { id: xl-w07-d5-rf08, difficulty: easy, type: truefalse, prompt: "TEXT's result is text, so you can't SUM it directly.", answer: true }
+          - { id: xl-w07-d5-rf09, difficulty: easy, type: mcq, prompt: "Mapping messy cities: test \"lag\" with…", choices: ["ISNUMBER(SEARCH(\"lag\",E2))", "E2=\"lag\"", "FIND(\"LAG\",E2)", "LEFT(E2)=\"lag\""], answer: 0 }
+          - { id: xl-w07-d5-rf10, difficulty: easy, type: text, prompt: "=TEXT(0.386,\"0.0%\")", accept: ["38.6%"] }
+      - kind: brain-teaser
+        title: "Standardise it"
+        questions:
+          - { id: xl-w07-d5-bt01, difficulty: medium, type: text, prompt: "How many \"N/A\" spend values?", accept: ["77"] }
+          - { id: xl-w07-d5-bt02, difficulty: medium, type: text, prompt: "How many duplicate rows does Remove Duplicates (all columns) delete?", accept: ["15"] }
+          - { id: xl-w07-d5-bt03, difficulty: medium, type: text, prompt: "=IFERROR(VALUE(SUBSTITUTE(SUBSTITUTE(\"₦788,000\",\"₦\",\"\"),\",\",\"\")),\"\")", accept: ["788000"] }
+          - { id: xl-w07-d5-bt04, difficulty: hard, type: mcq, prompt: "Which raw city does the mapping send to Port Harcourt?", choices: ["PH", "Lag0s", "FCT Abuja", "Ibadan, Oyo"], answer: 0 }
+          - { id: xl-w07-d5-bt05, difficulty: hard, type: text, prompt: "=Name&\" — \"&City&\" — \"&TEXT(Spend,\"₦#,##0\") for Tolu Eze, Lagos, 223000", accept: ["Tolu Eze — Lagos — ₦223,000"] }
+
+  # ─────────────────────────── DAY 6 ───────────────────────────
+  - day: 6
+    gate:
+      title: "Checkpoint: standardising and TEXT/VALUE"
+      covers: "Week 7 · Day 5: city mapping with SEARCH, numbers stored as text, VALUE, TEXT formats, Remove Duplicates"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w07-d6-g01, difficulty: easy, type: mcq, prompt: "\"₦788,000\" as a number needs…", choices: ["SUBSTITUTE the ₦ and commas, then VALUE", "TEXT", "TRIM only", "PROPER"], answer: 0 }
+        - { id: xl-w07-d6-g02, difficulty: easy, type: mcq, prompt: "Remove duplicates safely", choices: ["Data → Remove Duplicates on a copy", "Delete rows by eye", "Sort Z→A", "Filter"], answer: 0 }
+        - { id: xl-w07-d6-g03, difficulty: easy, type: truefalse, prompt: "After cleaning there should be exactly 6 cities.", answer: true }
+        - { id: xl-w07-d6-g04, difficulty: easy, type: text, prompt: "Customers after removing duplicates?", accept: ["300"] }
+        - { id: xl-w07-d6-g05, difficulty: easy, type: mcq, prompt: "=TEXT(O2,\"₦#,##0\") shows 223000 as…", choices: ["₦223,000", "223000", "₦223.000", "₦223k"], answer: 0 }
+        - { id: xl-w07-d6-g06, difficulty: easy, type: mcq, prompt: "Raw city \"FCT Abuja\" maps to…", choices: ["Abuja", "Lagos", "Kano", "unknown"], answer: 0 }
+        - { id: xl-w07-d6-g07, difficulty: medium, type: match, prompt: "Match the city to its cleaned count.", pairs: [["Lagos", "56"], ["Kano", "42"], ["Enugu", "49"], ["Abuja", "51"]] }
+        - { id: xl-w07-d6-g08, difficulty: medium, type: text, prompt: "\"N/A\" spend values?", accept: ["77"] }
+        - { id: xl-w07-d6-g09, difficulty: medium, type: text, prompt: "Duplicates removed?", accept: ["15"] }
+        - { id: xl-w07-d6-g10, difficulty: medium, type: mcq, prompt: "Why Paste Special → Values on the Clean sheet?", choices: ["So the clean data no longer depends on the Raw formulas", "To make it colourful", "To add formulas", "Excel requires it"], answer: 0 }
+        - { id: xl-w07-d6-g11, difficulty: medium, type: truefalse, prompt: "\"Ibadan, Oyo\" needs \", Oyo\" removed to become Ibadan.", answer: true }
+        - { id: xl-w07-d6-g12, difficulty: medium, type: text, prompt: "Ibadan customers after cleaning?", accept: ["51"] }
+        - { id: xl-w07-d6-g13, difficulty: medium, type: mcq, prompt: "Report: customers per city", choices: ["COUNTIF", "SUMIF", "MAXIFS", "TEXT"], answer: 0 }
+        - { id: xl-w07-d6-g14, difficulty: medium, type: text, prompt: "Port Harcourt customers after cleaning?", accept: ["51"] }
+        - { id: xl-w07-d6-g15, difficulty: medium, type: order, prompt: "Order the deliverable's sheets.", items: ["Raw (untouched)", "Working (formula columns)", "Clean (values only, de-duplicated)", "Report (counts and totals)"] }
+        - { id: xl-w07-d6-g16, difficulty: hard, type: mcq, prompt: "Mapping tests SEARCH(\"lag\",E2) first. Which raw value would wrongly match if a city like \"Ilagbo\" existed?", choices: ["Ilagbo (it contains \"lag\")", "Kano", "PH", "None ever"], answer: 0, explain: "Pattern tests can over-match; a lookup table (Week 9) is safer." }
+        - { id: xl-w07-d6-g17, difficulty: hard, type: text, prompt: "Lagos share of the 300 clean customers, 1 decimal", accept: ["18.7%", "18.7"] }
+        - { id: xl-w07-d6-g18, difficulty: hard, type: multi, prompt: "Which belong in the Working sheet? (Select all.)", choices: ["Name (fixed order and case)", "Phone (11 digits)", "SpendClean (number)", "The raw values pasted over"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Week 7 lightning round"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w07-d6-rf01, difficulty: easy, type: mcq, prompt: "Extra spaces", choices: ["TRIM", "CLEAN", "LEN", "MID"], answer: 0 }
+          - { id: xl-w07-d6-rf02, difficulty: easy, type: mcq, prompt: "Capital Each Word", choices: ["PROPER", "UPPER", "TITLE", "CAPS"], answer: 0 }
+          - { id: xl-w07-d6-rf03, difficulty: easy, type: mcq, prompt: "Case-insensitive search", choices: ["SEARCH", "FIND", "MATCH", "LEN"], answer: 0 }
+          - { id: xl-w07-d6-rf04, difficulty: easy, type: mcq, prompt: "Replace all \"-\"", choices: ["SUBSTITUTE", "REPLACE", "TRIM", "CLEAN"], answer: 0 }
+          - { id: xl-w07-d6-rf05, difficulty: easy, type: mcq, prompt: "Text after a delimiter", choices: ["TEXTAFTER", "TEXTBEFORE", "RIGHT", "MID"], answer: 0 }
+          - { id: xl-w07-d6-rf06, difficulty: easy, type: mcq, prompt: "Text → number", choices: ["VALUE", "TEXT", "NUMBER", "INT"], answer: 0 }
+          - { id: xl-w07-d6-rf07, difficulty: easy, type: text, prompt: "Rows in the raw file", accept: ["315"] }
+          - { id: xl-w07-d6-rf08, difficulty: easy, type: text, prompt: "Clean customers", accept: ["300"] }
+          - { id: xl-w07-d6-rf09, difficulty: easy, type: text, prompt: "=LEFT(\"NM-00042\",2)", accept: ["NM"] }
+          - { id: xl-w07-d6-rf10, difficulty: easy, type: truefalse, prompt: "Keep the raw data untouched.", answer: true }
+      - kind: brain-teaser
+        title: "Client delivery"
+        questions:
+          - { id: xl-w07-d6-bt01, difficulty: medium, type: text, prompt: "Kano customers after cleaning?", accept: ["42"] }
+          - { id: xl-w07-d6-bt02, difficulty: medium, type: text, prompt: "Comma names (\"Surname, First\") in the raw file?", accept: ["55"] }
+          - { id: xl-w07-d6-bt03, difficulty: medium, type: mcq, prompt: "Blank phones → in the Report, count with…", choices: ["COUNTBLANK", "COUNT", "SUM", "LEN"], answer: 0 }
+          - { id: xl-w07-d6-bt04, difficulty: hard, type: text, prompt: "Lagos + Abuja + Port Harcourt clean customers?", accept: ["158"] }
+          - { id: xl-w07-d6-bt05, difficulty: hard, type: mcq, prompt: "Where can you sell this skill?", choices: ["\"Data cleaning\" gigs on Upwork and Fiverr", "Nowhere", "Only in banks", "Only with a degree"], answer: 0 }

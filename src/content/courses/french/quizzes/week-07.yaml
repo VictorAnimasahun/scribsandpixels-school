@@ -1,0 +1,298 @@
+# French · Week 7 quizzes. Format and rules: src/content/QUIZZES.md
+week: 7
+days:
+
+  # ─────────────────────────── DAY 1 ───────────────────────────
+  - day: 1
+    gate:
+      title: "Checkpoint: Week 6 review"
+      covers: "Week 6: days, months and dates, telling the time, faire, reflexive verbs, routine and frequency"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w07-d1-g01, difficulty: easy, type: mcq, prompt: "Wednesday", choices: ["mercredi", "mardi", "jeudi", "vendredi"], answer: 0 }
+        - { id: fr-w07-d1-g02, difficulty: easy, type: mcq, prompt: "half past three", choices: ["trois heures et demie", "trois heures et quart", "quatre heures moins le quart", "trois heures moins demie"], answer: 0 }
+        - { id: fr-w07-d1-g03, difficulty: easy, type: text, prompt: "nous ___ (faire)", accept: ["faisons"] }
+        - { id: fr-w07-d1-g04, difficulty: easy, type: mcq, prompt: "je ___ lève", choices: ["me", "se", "te", "nous"], answer: 0 }
+        - { id: fr-w07-d1-g05, difficulty: easy, type: truefalse, prompt: "Days and months don't take a capital letter in French.", answer: true }
+        - { id: fr-w07-d1-g06, difficulty: easy, type: mcq, prompt: "never", choices: ["ne … jamais", "ne … pas", "toujours", "souvent"], answer: 0 }
+        - { id: fr-w07-d1-g07, difficulty: medium, type: text, prompt: "01/05 in words", accept: ["le premier mai"] }
+        - { id: fr-w07-d1-g08, difficulty: medium, type: text, prompt: "vous ___ (faire)", accept: ["faites"] }
+        - { id: fr-w07-d1-g09, difficulty: medium, type: match, prompt: "Match.", pairs: [["d'abord", "first"], ["ensuite", "then"], ["enfin", "finally"], ["souvent", "often"]] }
+        - { id: fr-w07-d1-g10, difficulty: medium, type: text, prompt: "Elle (s'habiller) ___.", accept: ["s'habille"] }
+        - { id: fr-w07-d1-g11, difficulty: medium, type: mcq, prompt: "7:45 pm (official)", choices: ["dix-neuf heures quarante-cinq", "sept heures quarante-cinq", "huit heures moins le quart du matin", "vingt heures quarante-cinq"], answer: 0 }
+        - { id: fr-w07-d1-g12, difficulty: medium, type: truefalse, prompt: "« le lundi » means \"every Monday\".", answer: true }
+        - { id: fr-w07-d1-g13, difficulty: medium, type: text, prompt: "Negative: Ils se reposent le dimanche.", accept: ["Ils ne se reposent pas le dimanche.", "Ils ne se reposent pas le dimanche"] }
+        - { id: fr-w07-d1-g14, difficulty: medium, type: text, prompt: "Translate: It's hot in Lagos.", accept: ["Il fait chaud à Lagos.", "Il fait chaud à Lagos"] }
+        - { id: fr-w07-d1-g15, difficulty: medium, type: mcq, prompt: "ils ___ (faire)", choices: ["font", "faisent", "fait", "faisons"], answer: 0 }
+        - { id: fr-w07-d1-g16, difficulty: hard, type: text, prompt: "Translate: I never get up early.", accept: ["Je ne me lève jamais tôt.", "Je ne me lève jamais tôt"] }
+        - { id: fr-w07-d1-g17, difficulty: hard, type: mcq, prompt: "Find the sentence with NO mistake.", choices: ["Le samedi, je fais les courses.", "Vous faisez la cuisine.", "Je me lève à sept heure.", "Elle se ne couche pas."], answer: 0 }
+        - { id: fr-w07-d1-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["midi et demi", "minuit", "le vingt-cinq décembre", "le un janvier"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "À table : vocabulary"
+        secondsPerQuestion: 7
+        questions:
+          - { id: fr-w07-d1-rf01, difficulty: easy, type: mcq, prompt: "bread", choices: ["le pain", "le riz", "le poisson", "le lait"], answer: 0 }
+          - { id: fr-w07-d1-rf02, difficulty: easy, type: mcq, prompt: "chicken", choices: ["le poulet", "le poisson", "la viande", "le porc"], answer: 0 }
+          - { id: fr-w07-d1-rf03, difficulty: easy, type: mcq, prompt: "fish", choices: ["le poisson", "le poulet", "le fromage", "la poisson"], answer: 0 }
+          - { id: fr-w07-d1-rf04, difficulty: easy, type: mcq, prompt: "eggs", choices: ["les œufs", "les haricots", "les fruits", "les légumes"], answer: 0 }
+          - { id: fr-w07-d1-rf05, difficulty: easy, type: mcq, prompt: "beans", choices: ["les haricots", "les pâtes", "les œufs", "le riz"], answer: 0 }
+          - { id: fr-w07-d1-rf06, difficulty: easy, type: mcq, prompt: "yam", choices: ["l'igname", "l'oignon", "la banane", "le piment"], answer: 0 }
+          - { id: fr-w07-d1-rf07, difficulty: easy, type: mcq, prompt: "breakfast", choices: ["le petit-déjeuner", "le déjeuner", "le dîner", "le goûter"], answer: 0 }
+          - { id: fr-w07-d1-rf08, difficulty: easy, type: mcq, prompt: "lunch", choices: ["le déjeuner", "le petit-déjeuner", "le dîner", "la cuisine"], answer: 0 }
+          - { id: fr-w07-d1-rf09, difficulty: easy, type: mcq, prompt: "chilli", choices: ["le piment", "le poivre", "la tomate", "l'oignon"], answer: 0 }
+          - { id: fr-w07-d1-rf10, difficulty: easy, type: mcq, prompt: "water", choices: ["l'eau", "le lait", "le jus", "la bière"], answer: 0 }
+          - { id: fr-w07-d1-rf11, difficulty: easy, type: truefalse, prompt: "« l'eau » is feminine.", answer: true }
+      - kind: brain-teaser
+        title: "Le, la or les?"
+        questions:
+          - { id: fr-w07-d1-bt01, difficulty: medium, type: mcq, prompt: "___ viande", choices: ["la", "le", "l'", "les"], answer: 0 }
+          - { id: fr-w07-d1-bt02, difficulty: medium, type: mcq, prompt: "___ fromage", choices: ["le", "la", "l'", "les"], answer: 0 }
+          - { id: fr-w07-d1-bt03, difficulty: medium, type: mcq, prompt: "___ pâtes", choices: ["les", "le", "la", "l'"], answer: 0 }
+          - { id: fr-w07-d1-bt04, difficulty: hard, type: text, prompt: "Translate: I like chicken and fish. (general taste)", accept: ["J'aime le poulet et le poisson.", "J'aime le poulet et le poisson"] }
+          - { id: fr-w07-d1-bt05, difficulty: hard, type: match, prompt: "Match the meal.", pairs: [["le petit-déjeuner", "breakfast"], ["le déjeuner", "lunch"], ["le dîner", "dinner"], ["le goûter", "afternoon snack"]] }
+
+  # ─────────────────────────── DAY 2 ───────────────────────────
+  - day: 2
+    gate:
+      title: "Checkpoint: food and drink"
+      covers: "Week 7 · Day 1: meals, foods and drinks with their genders"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w07-d2-g01, difficulty: easy, type: mcq, prompt: "le riz =", choices: ["rice", "milk", "bread", "cheese"], answer: 0 }
+        - { id: fr-w07-d2-g02, difficulty: easy, type: mcq, prompt: "les légumes =", choices: ["vegetables", "beans", "fruit", "eggs"], answer: 0 }
+        - { id: fr-w07-d2-g03, difficulty: easy, type: mcq, prompt: "dinner", choices: ["le dîner", "le déjeuner", "le petit-déjeuner", "le goûter"], answer: 0 }
+        - { id: fr-w07-d2-g04, difficulty: easy, type: truefalse, prompt: "« le lait » means milk.", answer: true }
+        - { id: fr-w07-d2-g05, difficulty: easy, type: mcq, prompt: "une boisson =", choices: ["a drink", "a bottle", "a fish", "a meal"], answer: 0 }
+        - { id: fr-w07-d2-g06, difficulty: easy, type: mcq, prompt: "orange juice", choices: ["le jus d'orange", "l'orange jus", "le lait d'orange", "la boisson orange"], answer: 0 }
+        - { id: fr-w07-d2-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["la viande", "meat"], ["le fromage", "cheese"], ["l'oignon", "onion"], ["la banane plantain", "plantain"]] }
+        - { id: fr-w07-d2-g08, difficulty: medium, type: mcq, prompt: "Gender of « œufs » (singular œuf)", choices: ["masculine", "feminine"], answer: 0 }
+        - { id: fr-w07-d2-g09, difficulty: medium, type: mcq, prompt: "Gender of « igname »", choices: ["feminine", "masculine"], answer: 0 }
+        - { id: fr-w07-d2-g10, difficulty: medium, type: text, prompt: "Translate: the tomatoes", accept: ["les tomates"] }
+        - { id: fr-w07-d2-g11, difficulty: medium, type: truefalse, prompt: "« le goûter » is the afternoon snack.", answer: true }
+        - { id: fr-w07-d2-g12, difficulty: medium, type: text, prompt: "Translate: I like tea.", accept: ["J'aime le thé.", "J'aime le thé"] }
+        - { id: fr-w07-d2-g13, difficulty: medium, type: mcq, prompt: "Which is plantain in Côte d'Ivoire?", choices: ["l'alloco", "l'igname", "le piment", "le pain"], answer: 0 }
+        - { id: fr-w07-d2-g14, difficulty: medium, type: text, prompt: "Translate: I hate beer.", accept: ["Je déteste la bière.", "Je déteste la bière"] }
+        - { id: fr-w07-d2-g15, difficulty: medium, type: order, prompt: "Order the meals of the day.", items: ["le petit-déjeuner", "le déjeuner", "le goûter", "le dîner"] }
+        - { id: fr-w07-d2-g16, difficulty: hard, type: text, prompt: "Translate: I love yam but I don't like fish.", accept: ["J'adore l'igname mais je n'aime pas le poisson.", "J'adore l'igname, mais je n'aime pas le poisson.", "J'aime l'igname mais je n'aime pas le poisson."] }
+        - { id: fr-w07-d2-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « J'aime la riz et le viande. »", choices: ["le riz … la viande", "Only riz", "Only viande", "No error"], answer: 0 }
+        - { id: fr-w07-d2-g18, difficulty: hard, type: multi, prompt: "Which are masculine? (Select all.)", choices: ["pain", "poulet", "fromage", "viande"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "du, de la, de l', des"
+        secondsPerQuestion: 7
+        questions:
+          - { id: fr-w07-d2-rf01, difficulty: easy, type: mcq, prompt: "Je mange ___ riz.", choices: ["du", "de la", "de l'", "des"], answer: 0 }
+          - { id: fr-w07-d2-rf02, difficulty: easy, type: mcq, prompt: "Il boit ___ bière.", choices: ["de la", "du", "de l'", "des"], answer: 0 }
+          - { id: fr-w07-d2-rf03, difficulty: easy, type: mcq, prompt: "Nous buvons ___ eau.", choices: ["de l'", "du", "de la", "des"], answer: 0 }
+          - { id: fr-w07-d2-rf04, difficulty: easy, type: mcq, prompt: "Tu achètes ___ tomates.", choices: ["des", "du", "de la", "de l'"], answer: 0 }
+          - { id: fr-w07-d2-rf05, difficulty: easy, type: mcq, prompt: "Le matin, je bois ___ café.", choices: ["du", "le", "de la", "un de"], answer: 0 }
+          - { id: fr-w07-d2-rf06, difficulty: easy, type: mcq, prompt: "J'adore ___ poulet.", choices: ["le", "du", "de", "des"], answer: 0 }
+          - { id: fr-w07-d2-rf07, difficulty: easy, type: mcq, prompt: "Elle mange ___ salade.", choices: ["de la", "du", "le", "de l'"], answer: 0 }
+          - { id: fr-w07-d2-rf08, difficulty: easy, type: mcq, prompt: "Nous ne mangeons pas ___ porc.", choices: ["de", "du", "le", "des"], answer: 0 }
+          - { id: fr-w07-d2-rf09, difficulty: easy, type: mcq, prompt: "Tu veux ___ œufs ?", choices: ["des", "du", "de l'", "les"], answer: 0 }
+          - { id: fr-w07-d2-rf10, difficulty: easy, type: mcq, prompt: "Je mange ___ banane. (one)", choices: ["une", "de la", "des", "du"], answer: 0 }
+      - kind: brain-teaser
+        title: "Some, general or one?"
+        questions:
+          - { id: fr-w07-d2-bt01, difficulty: medium, type: text, prompt: "Translate: I eat rice. (some rice)", accept: ["Je mange du riz.", "Je mange du riz"] }
+          - { id: fr-w07-d2-bt02, difficulty: medium, type: text, prompt: "Translate: I don't drink coffee.", accept: ["Je ne bois pas de café.", "Je ne bois pas de café"] }
+          - { id: fr-w07-d2-bt03, difficulty: medium, type: text, prompt: "Translate: He doesn't drink alcohol. (l'alcool)", accept: ["Il ne boit pas d'alcool.", "Il ne boit pas d'alcool"] }
+          - { id: fr-w07-d2-bt04, difficulty: hard, type: mcq, prompt: "« J'aime le riz » vs « Je mange du riz »:", choices: ["rice in general vs some rice now", "same meaning", "some rice vs all rice", "the rice here vs rice in general"], answer: 0 }
+          - { id: fr-w07-d2-bt05, difficulty: hard, type: text, prompt: "Translate: At breakfast, I eat bread and I drink tea.", accept: ["Au petit-déjeuner, je mange du pain et je bois du thé.", "Au petit-déjeuner je mange du pain et je bois du thé.", "Au petit-déjeuner, je mange du pain et je bois du thé"] }
+
+  # ─────────────────────────── DAY 3 ───────────────────────────
+  - day: 3
+    gate:
+      title: "Checkpoint: partitive articles"
+      covers: "Week 7 · Day 2: du/de la/de l'/des, le/la/les for general taste, un/une for one, de after negatives"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w07-d3-g01, difficulty: easy, type: mcq, prompt: "Some rice", choices: ["du riz", "de la riz", "le riz", "des riz"], answer: 0 }
+        - { id: fr-w07-d3-g02, difficulty: easy, type: mcq, prompt: "Some water", choices: ["de l'eau", "du eau", "de la eau", "des eau"], answer: 0 }
+        - { id: fr-w07-d3-g03, difficulty: easy, type: mcq, prompt: "Some meat", choices: ["de la viande", "du viande", "des viande", "de l'viande"], answer: 0 }
+        - { id: fr-w07-d3-g04, difficulty: easy, type: truefalse, prompt: "After a negative, du/de la/des become de.", answer: true }
+        - { id: fr-w07-d3-g05, difficulty: easy, type: mcq, prompt: "Some beans", choices: ["des haricots", "du haricots", "de la haricots", "les haricot"], answer: 0 }
+        - { id: fr-w07-d3-g06, difficulty: easy, type: mcq, prompt: "General taste: I like cheese.", choices: ["J'aime le fromage.", "J'aime du fromage.", "J'aime de fromage.", "J'aime fromage."], answer: 0 }
+        - { id: fr-w07-d3-g07, difficulty: medium, type: text, prompt: "Ils boivent ___ eau.", accept: ["de l'"] }
+        - { id: fr-w07-d3-g08, difficulty: medium, type: text, prompt: "Nous ne mangeons pas ___ porc.", accept: ["de"] }
+        - { id: fr-w07-d3-g09, difficulty: medium, type: match, prompt: "Match the article to the meaning.", pairs: [["le riz", "rice in general"], ["du riz", "some rice"], ["un riz", "(odd: rice isn't counted)"], ["pas de riz", "no rice"]] }
+        - { id: fr-w07-d3-g10, difficulty: medium, type: text, prompt: "Translate: She drinks milk. (some)", accept: ["Elle boit du lait.", "Elle boit du lait"] }
+        - { id: fr-w07-d3-g11, difficulty: medium, type: truefalse, prompt: "« J'aime du chocolat » is the normal way to say \"I like chocolate\".", answer: false, explain: "Likes take le/la/les: j'aime le chocolat." }
+        - { id: fr-w07-d3-g12, difficulty: medium, type: text, prompt: "Translate: I don't eat eggs.", accept: ["Je ne mange pas d'œufs.", "Je ne mange pas d'œufs", "Je ne mange pas d'oeufs."] }
+        - { id: fr-w07-d3-g13, difficulty: medium, type: mcq, prompt: "Je mange ___ banane et ___ riz.", choices: ["une … du", "de la … du", "la … le", "des … de"], answer: 0 }
+        - { id: fr-w07-d3-g14, difficulty: medium, type: text, prompt: "Translate: We eat vegetables.", accept: ["Nous mangeons des légumes.", "Nous mangeons des légumes", "On mange des légumes."] }
+        - { id: fr-w07-d3-g15, difficulty: medium, type: mcq, prompt: "Ce n'est pas ___ eau, c'est ___ vin.", choices: ["de l' … du", "d' … du", "de … de", "l' … le"], answer: 0, explain: "With être, the article stays." }
+        - { id: fr-w07-d3-g16, difficulty: hard, type: text, prompt: "Translate: I like fish, but today I'm eating chicken.", accept: ["J'aime le poisson, mais aujourd'hui je mange du poulet.", "J'aime le poisson mais aujourd'hui je mange du poulet.", "J'aime le poisson, mais aujourd'hui, je mange du poulet."] }
+        - { id: fr-w07-d3-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « Je ne bois pas du café, je bois de la thé. »", choices: ["pas de café … du thé", "Only du → de", "Only de la → du", "No error"], answer: 0 }
+        - { id: fr-w07-d3-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["Il mange de la salade.", "Elle ne mange pas de viande.", "J'adore les fruits.", "Nous buvons du eau."], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Quantities and prices"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fr-w07-d3-rf01, difficulty: easy, type: mcq, prompt: "a lot of rice", choices: ["beaucoup de riz", "beaucoup du riz", "beaucoup riz", "beaucoup des riz"], answer: 0 }
+          - { id: fr-w07-d3-rf02, difficulty: easy, type: mcq, prompt: "a little sugar", choices: ["un peu de sucre", "un peu du sucre", "peu sucre", "un petit sucre"], answer: 0 }
+          - { id: fr-w07-d3-rf03, difficulty: easy, type: mcq, prompt: "a bottle of water", choices: ["une bouteille d'eau", "une bouteille de l'eau", "un bouteille d'eau", "une bouteille eau"], answer: 0 }
+          - { id: fr-w07-d3-rf04, difficulty: easy, type: mcq, prompt: "a dozen eggs", choices: ["une douzaine d'œufs", "une douzaine des œufs", "un douze œufs", "douze de œufs"], answer: 0 }
+          - { id: fr-w07-d3-rf05, difficulty: easy, type: mcq, prompt: "How much is it?", choices: ["C'est combien ?", "C'est quoi ?", "Combien c'est cher ?", "Il est combien ?"], answer: 0 }
+          - { id: fr-w07-d3-rf06, difficulty: easy, type: mcq, prompt: "It's expensive!", choices: ["C'est cher !", "C'est chaud !", "C'est chair !", "C'est cheap !"], answer: 0 }
+          - { id: fr-w07-d3-rf07, difficulty: easy, type: mcq, prompt: "a slice of bread", choices: ["une tranche de pain", "une tranche du pain", "un morceau pain", "une tranche pain"], answer: 0 }
+          - { id: fr-w07-d3-rf08, difficulty: easy, type: mcq, prompt: "too much salt", choices: ["trop de sel", "trop du sel", "très sel", "trop sel"], answer: 0 }
+          - { id: fr-w07-d3-rf09, difficulty: easy, type: mcq, prompt: "How much do I owe you?", choices: ["Je vous dois combien ?", "Combien vous devez ?", "C'est combien de moi ?", "Je dois quoi ?"], answer: 0 }
+          - { id: fr-w07-d3-rf10, difficulty: easy, type: truefalse, prompt: "After a quantity, use de alone (no article).", answer: true }
+      - kind: brain-teaser
+        title: "At the market"
+        questions:
+          - { id: fr-w07-d3-bt01, difficulty: medium, type: text, prompt: "Translate: a kilo of rice", accept: ["un kilo de riz"] }
+          - { id: fr-w07-d3-bt02, difficulty: medium, type: text, prompt: "Translate: a lot of friends", accept: ["beaucoup d'amis"] }
+          - { id: fr-w07-d3-bt03, difficulty: medium, type: text, prompt: "Translate: enough water", accept: ["assez d'eau"] }
+          - { id: fr-w07-d3-bt04, difficulty: hard, type: text, prompt: "Translate: How much is it? It's 20 euros.", accept: ["C'est combien ? Ça fait vingt euros.", "C'est combien ? Ça fait 20 euros.", "Ça coûte combien ? Ça fait vingt euros."] }
+          - { id: fr-w07-d3-bt05, difficulty: hard, type: mcq, prompt: "Bargaining: \"It's too expensive! Can you give me a price?\"", choices: ["C'est trop cher ! Vous faites un prix ?", "C'est très chaud ! Vous avez un prix ?", "C'est cher trop ! Faites prix ?", "Trop combien ! Un prix ?"], answer: 0 }
+
+  # ─────────────────────────── DAY 4 ───────────────────────────
+  - day: 4
+    gate:
+      title: "Checkpoint: quantities and prices"
+      covers: "Week 7 · Day 3: beaucoup de, un peu de, trop de, assez de, kilo/litre/bouteille/paquet/boîte/tranche/douzaine de, prices"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w07-d4-g01, difficulty: easy, type: mcq, prompt: "a litre of milk", choices: ["un litre de lait", "un litre du lait", "un litre lait", "une litre de lait"], answer: 0 }
+        - { id: fr-w07-d4-g02, difficulty: easy, type: mcq, prompt: "a packet of biscuits", choices: ["un paquet de biscuits", "un paquet des biscuits", "un paquet biscuits", "une paquet de biscuits"], answer: 0 }
+        - { id: fr-w07-d4-g03, difficulty: easy, type: truefalse, prompt: "« beaucoup des amis » is correct.", answer: false }
+        - { id: fr-w07-d4-g04, difficulty: easy, type: mcq, prompt: "C'est combien ? =", choices: ["How much is it?", "What is it?", "How many are there?", "Is it expensive?"], answer: 0 }
+        - { id: fr-w07-d4-g05, difficulty: easy, type: mcq, prompt: "a tin of sardines", choices: ["une boîte de sardines", "une boîte des sardines", "un tin de sardines", "une boîte sardines"], answer: 0 }
+        - { id: fr-w07-d4-g06, difficulty: easy, type: mcq, prompt: "Ce n'est pas cher =", choices: ["It's cheap", "It's expensive", "It's not here", "It's not hot"], answer: 0 }
+        - { id: fr-w07-d4-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["beaucoup de", "a lot of"], ["un peu de", "a little"], ["trop de", "too much"], ["assez de", "enough"]] }
+        - { id: fr-w07-d4-g08, difficulty: medium, type: text, prompt: "Translate: too much sugar", accept: ["trop de sucre"] }
+        - { id: fr-w07-d4-g09, difficulty: medium, type: text, prompt: "Translate: a bottle of water", accept: ["une bouteille d'eau"] }
+        - { id: fr-w07-d4-g10, difficulty: medium, type: mcq, prompt: "That's €12.50.", choices: ["Ça fait 12 euros 50.", "C'est 12,50 euro.", "Ça coûte douze cinquante euros.", "Il fait 12 euros 50."], answer: 0 }
+        - { id: fr-w07-d4-g11, difficulty: medium, type: truefalse, prompt: "« une douzaine d'œufs » uses d' because œufs starts with a vowel.", answer: true }
+        - { id: fr-w07-d4-g12, difficulty: medium, type: text, prompt: "Translate: It costs 5,000 naira.", accept: ["Ça coûte 5 000 nairas.", "Ça coûte cinq mille nairas.", "Ça coûte 5000 nairas.", "Ça coûte 5 000 naira."] }
+        - { id: fr-w07-d4-g13, difficulty: medium, type: mcq, prompt: "two kilos of tomatoes", choices: ["deux kilos de tomates", "deux kilo des tomates", "deux kilos de les tomates", "deux kilos tomates"], answer: 0 }
+        - { id: fr-w07-d4-g14, difficulty: medium, type: text, prompt: "Translate: a little salt", accept: ["un peu de sel"] }
+        - { id: fr-w07-d4-g15, difficulty: medium, type: order, prompt: "Build the request.", items: ["Je voudrais", "un kilo", "de", "riz,", "s'il vous plaît"] }
+        - { id: fr-w07-d4-g16, difficulty: hard, type: text, prompt: "Translate: I'd like a dozen eggs and a litre of milk, please.", accept: ["Je voudrais une douzaine d'œufs et un litre de lait, s'il vous plaît.", "Je voudrais une douzaine d'oeufs et un litre de lait, s'il vous plaît.", "Je voudrais une douzaine d'œufs et un litre de lait s'il vous plaît."] }
+        - { id: fr-w07-d4-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « Je voudrais un kilo du riz et beaucoup des tomates. »", choices: ["un kilo de riz … beaucoup de tomates", "Only du → de", "Only des → de", "No error"], answer: 0 }
+        - { id: fr-w07-d4-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["une tranche de pain", "assez d'argent", "un paquet de pâtes", "un peu du lait"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "vouloir, prendre, boire"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fr-w07-d4-rf01, difficulty: easy, type: text, prompt: "je ___ (vouloir)", accept: ["veux"] }
+          - { id: fr-w07-d4-rf02, difficulty: easy, type: text, prompt: "nous ___ (vouloir)", accept: ["voulons"] }
+          - { id: fr-w07-d4-rf03, difficulty: easy, type: text, prompt: "ils ___ (vouloir)", accept: ["veulent"] }
+          - { id: fr-w07-d4-rf04, difficulty: easy, type: text, prompt: "je ___ (prendre)", accept: ["prends"] }
+          - { id: fr-w07-d4-rf05, difficulty: easy, type: text, prompt: "nous ___ (prendre)", accept: ["prenons"] }
+          - { id: fr-w07-d4-rf06, difficulty: easy, type: text, prompt: "ils ___ (prendre)", accept: ["prennent"] }
+          - { id: fr-w07-d4-rf07, difficulty: easy, type: text, prompt: "je ___ (boire)", accept: ["bois"] }
+          - { id: fr-w07-d4-rf08, difficulty: easy, type: text, prompt: "vous ___ (boire)", accept: ["buvez"] }
+          - { id: fr-w07-d4-rf09, difficulty: easy, type: text, prompt: "ils ___ (boire)", accept: ["boivent"] }
+          - { id: fr-w07-d4-rf10, difficulty: easy, type: mcq, prompt: "Polite \"I would like\"", choices: ["je voudrais", "je veux", "je vouloir", "j'aime"], answer: 0 }
+      - kind: brain-teaser
+        title: "Take, want, drink"
+        questions:
+          - { id: fr-w07-d4-bt01, difficulty: medium, type: text, prompt: "Nous (prendre) ___ le train.", accept: ["prenons"] }
+          - { id: fr-w07-d4-bt02, difficulty: medium, type: text, prompt: "Je ne (comprendre) ___ pas.", accept: ["comprends"] }
+          - { id: fr-w07-d4-bt03, difficulty: medium, type: text, prompt: "Elles (apprendre) ___ l'anglais.", accept: ["apprennent"] }
+          - { id: fr-w07-d4-bt04, difficulty: hard, type: mcq, prompt: "Why say « je voudrais » to a waiter?", choices: ["« Je veux » can sound demanding", "« Je veux » is grammatically wrong", "Waiters only understand voudrais", "It's cheaper"], answer: 0 }
+          - { id: fr-w07-d4-bt05, difficulty: hard, type: text, prompt: "Translate: I take the bus and I drink a coffee.", accept: ["Je prends le bus et je bois un café.", "Je prends le bus et je bois un café"] }
+
+  # ─────────────────────────── DAY 5 ───────────────────────────
+  - day: 5
+    gate:
+      title: "Checkpoint: vouloir, prendre, boire"
+      covers: "Week 7 · Day 4: vouloir, je voudrais, prendre (and apprendre, comprendre), boire"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w07-d5-g01, difficulty: easy, type: text, prompt: "tu ___ (vouloir)", accept: ["veux"] }
+        - { id: fr-w07-d5-g02, difficulty: easy, type: text, prompt: "il ___ (prendre)", accept: ["prend"] }
+        - { id: fr-w07-d5-g03, difficulty: easy, type: text, prompt: "nous ___ (boire)", accept: ["buvons"] }
+        - { id: fr-w07-d5-g04, difficulty: easy, type: truefalse, prompt: "« Je prends le bus » uses prendre for transport.", answer: true }
+        - { id: fr-w07-d5-g05, difficulty: easy, type: mcq, prompt: "comprendre =", choices: ["to understand", "to learn", "to take", "to buy"], answer: 0 }
+        - { id: fr-w07-d5-g06, difficulty: easy, type: mcq, prompt: "apprendre =", choices: ["to learn", "to understand", "to teach only", "to take"], answer: 0 }
+        - { id: fr-w07-d5-g07, difficulty: medium, type: text, prompt: "Ils (vouloir) ___ du thé.", accept: ["veulent"] }
+        - { id: fr-w07-d5-g08, difficulty: medium, type: text, prompt: "Vous (boire) ___ quoi ?", accept: ["buvez"] }
+        - { id: fr-w07-d5-g09, difficulty: medium, type: match, prompt: "Match the subject to the verb.", pairs: [["ils", "prennent"], ["nous", "buvons"], ["vous", "voulez"], ["elle", "boit"]] }
+        - { id: fr-w07-d5-g10, difficulty: medium, type: text, prompt: "Translate: We are learning French.", accept: ["Nous apprenons le français.", "Nous apprenons le français", "On apprend le français."] }
+        - { id: fr-w07-d5-g11, difficulty: medium, type: truefalse, prompt: "« ils prenent » (one n) is correct.", answer: false, explain: "ils prennent: double n." }
+        - { id: fr-w07-d5-g12, difficulty: medium, type: text, prompt: "Translate: I'd like a coffee, please.", accept: ["Je voudrais un café, s'il vous plaît.", "Je voudrais un café s'il vous plaît.", "Je voudrais un café, s'il vous plaît"] }
+        - { id: fr-w07-d5-g13, difficulty: medium, type: mcq, prompt: "« Je prends un café » in a café means…", choices: ["I'll have a coffee", "I'm stealing a coffee", "I take coffee away", "I make coffee"], answer: 0 }
+        - { id: fr-w07-d5-g14, difficulty: medium, type: text, prompt: "Translate: Do you (tu) understand?", accept: ["Tu comprends ?", "Tu comprends?", "Est-ce que tu comprends ?", "Tu comprends"] }
+        - { id: fr-w07-d5-g15, difficulty: medium, type: mcq, prompt: "elles ___ (boire)", choices: ["boivent", "buvent", "boient", "boisent"], answer: 0 }
+        - { id: fr-w07-d5-g16, difficulty: hard, type: text, prompt: "Translate: They (men) don't want meat; they drink water.", accept: ["Ils ne veulent pas de viande ; ils boivent de l'eau.", "Ils ne veulent pas de viande, ils boivent de l'eau.", "Ils ne veulent pas de viande. Ils boivent de l'eau."] }
+        - { id: fr-w07-d5-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « Nous boivons du jus et ils prenent le taxi. »", choices: ["buvons … prennent", "Only boivons", "Only prenent", "No error"], answer: 0 }
+        - { id: fr-w07-d5-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["Vous voulez du thé ?", "Je comprends le français.", "Elles apprennent vite.", "Tu boivent de l'eau."], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Au restaurant"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fr-w07-d5-rf01, difficulty: easy, type: mcq, prompt: "the menu (full list)", choices: ["la carte", "le menu", "l'addition", "l'entrée"], answer: 0 }
+          - { id: fr-w07-d5-rf02, difficulty: easy, type: mcq, prompt: "a set menu at a fixed price", choices: ["le menu", "la carte", "le plat", "la liste"], answer: 0 }
+          - { id: fr-w07-d5-rf03, difficulty: easy, type: mcq, prompt: "the starter", choices: ["l'entrée", "le plat", "le dessert", "la carte"], answer: 0 }
+          - { id: fr-w07-d5-rf04, difficulty: easy, type: mcq, prompt: "the main course", choices: ["le plat principal", "l'entrée", "le menu", "la boisson"], answer: 0 }
+          - { id: fr-w07-d5-rf05, difficulty: easy, type: mcq, prompt: "the bill", choices: ["l'addition", "la note de musique", "la carte", "le prix"], answer: 0 }
+          - { id: fr-w07-d5-rf06, difficulty: easy, type: mcq, prompt: "free tap water", choices: ["une carafe d'eau", "une bouteille d'eau", "un verre de vin", "de l'eau gazeuse"], answer: 0 }
+          - { id: fr-w07-d5-rf07, difficulty: easy, type: mcq, prompt: "Vous êtes combien ?", choices: ["How many are you?", "How much are you?", "How old are you?", "Who are you?"], answer: 0 }
+          - { id: fr-w07-d5-rf08, difficulty: easy, type: mcq, prompt: "It was delicious!", choices: ["C'était délicieux !", "C'est délice !", "Il est délicieux !", "J'ai délicieux !"], answer: 0 }
+          - { id: fr-w07-d5-rf09, difficulty: easy, type: truefalse, prompt: "In French, « l'entrée » is the main course.", answer: false }
+          - { id: fr-w07-d5-rf10, difficulty: easy, type: mcq, prompt: "the waitress", choices: ["la serveuse", "la servante", "le serveur", "la serveur"], answer: 0 }
+      - kind: brain-teaser
+        title: "Order the meal"
+        questions:
+          - { id: fr-w07-d5-bt01, difficulty: medium, type: order, prompt: "Order the restaurant visit.", items: ["Une table pour deux, s'il vous plaît.", "Comme entrée, je voudrais la salade.", "Je vais prendre le poulet.", "Un café, s'il vous plaît.", "L'addition, s'il vous plaît !"] }
+          - { id: fr-w07-d5-bt02, difficulty: medium, type: text, prompt: "Translate: A table for two, please.", accept: ["Une table pour deux, s'il vous plaît.", "Une table pour deux s'il vous plaît.", "Une table pour deux, s'il vous plaît"] }
+          - { id: fr-w07-d5-bt03, difficulty: medium, type: text, prompt: "Translate: The bill, please!", accept: ["L'addition, s'il vous plaît !", "L'addition s'il vous plaît !", "L'addition, s'il vous plaît!", "L'addition, s'il vous plaît"] }
+          - { id: fr-w07-d5-bt04, difficulty: hard, type: text, prompt: "Translate: As a main course, I'll have the fish.", accept: ["Comme plat, je vais prendre le poisson.", "Comme plat principal, je vais prendre le poisson.", "Comme plat, je prends le poisson."] }
+          - { id: fr-w07-d5-bt05, difficulty: hard, type: mcq, prompt: "You want the cheap fixed-price option. You ask for…", choices: ["le menu", "la carte", "l'addition", "l'entrée"], answer: 0 }
+
+  # ─────────────────────────── DAY 6 ───────────────────────────
+  - day: 6
+    gate:
+      title: "Checkpoint: café and restaurant"
+      covers: "Week 7 · Day 5: ordering, la carte vs le menu, l'entrée, le plat, l'addition, carafe d'eau"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w07-d6-g01, difficulty: easy, type: mcq, prompt: "Vous avez choisi ? =", choices: ["Have you chosen?", "Are you hungry?", "Have you paid?", "Do you want a table?"], answer: 0 }
+        - { id: fr-w07-d6-g02, difficulty: easy, type: mcq, prompt: "Et comme boisson ? =", choices: ["And to drink?", "And for dessert?", "And the bill?", "And your name?"], answer: 0 }
+        - { id: fr-w07-d6-g03, difficulty: easy, type: truefalse, prompt: "« le dessert » is a dessert.", answer: true }
+        - { id: fr-w07-d6-g04, difficulty: easy, type: mcq, prompt: "l'addition =", choices: ["the bill", "the addition sum", "the table", "the tip"], answer: 0 }
+        - { id: fr-w07-d6-g05, difficulty: easy, type: mcq, prompt: "le serveur =", choices: ["the waiter", "the server computer", "the chef", "the owner"], answer: 0 }
+        - { id: fr-w07-d6-g06, difficulty: easy, type: mcq, prompt: "Non merci =", choices: ["No thank you", "No, more", "Thanks a lot", "Not now"], answer: 0 }
+        - { id: fr-w07-d6-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["la carte", "the full menu"], ["le menu", "set menu"], ["l'entrée", "starter"], ["le plat", "main course"]] }
+        - { id: fr-w07-d6-g08, difficulty: medium, type: text, prompt: "Translate: As a starter, I'd like the salad.", accept: ["Comme entrée, je voudrais la salade.", "Comme entrée je voudrais la salade.", "Comme entrée, je voudrais la salade"] }
+        - { id: fr-w07-d6-g09, difficulty: medium, type: text, prompt: "Translate: A jug of water and an orange juice.", accept: ["Une carafe d'eau et un jus d'orange.", "Une carafe d'eau et un jus d'orange"] }
+        - { id: fr-w07-d6-g10, difficulty: medium, type: mcq, prompt: "You're served something wrong but polite: \"Excuse me, I ordered the chicken.\"", choices: ["Excusez-moi, j'ai commandé le poulet.", "Pardon, je suis le poulet.", "Excusez, je veux poulet !", "Non, poulet !"], answer: 0 }
+        - { id: fr-w07-d6-g11, difficulty: medium, type: truefalse, prompt: "« Je vais prendre… » is a natural way to order.", answer: true }
+        - { id: fr-w07-d6-g12, difficulty: medium, type: text, prompt: "Translate: It was delicious!", accept: ["C'était délicieux !", "C'était délicieux!", "C'était délicieux"] }
+        - { id: fr-w07-d6-g13, difficulty: medium, type: mcq, prompt: "Vous voulez un dessert ? — No thanks, a coffee please.", choices: ["Non merci. Un café, s'il vous plaît.", "Non merci. Un café, s'il te plaît.", "Pas merci. Café.", "Non, café voudrais."], answer: 0 }
+        - { id: fr-w07-d6-g14, difficulty: medium, type: text, prompt: "Translate: We are four. (at the door)", accept: ["Nous sommes quatre.", "Nous sommes quatre", "On est quatre."] }
+        - { id: fr-w07-d6-g15, difficulty: medium, type: order, prompt: "Order the waiter's questions.", items: ["Vous êtes combien ?", "Vous avez choisi ?", "Et comme plat ?", "Et comme boisson ?", "Vous voulez un dessert ?"] }
+        - { id: fr-w07-d6-g16, difficulty: hard, type: text, prompt: "Translate: As a drink, I'd like a beer, and for my friend, some water.", accept: ["Comme boisson, je voudrais une bière, et pour mon ami, de l'eau.", "Comme boisson, je voudrais une bière et pour mon amie, de l'eau.", "Comme boisson je voudrais une bière, et pour mon ami de l'eau."] }
+        - { id: fr-w07-d6-g17, difficulty: hard, type: mcq, prompt: "A tourist orders « une entrée » expecting a main dish. What happens?", choices: ["They get a starter", "They get the main course", "They get the bill", "They get a table"], answer: 0 }
+        - { id: fr-w07-d6-g18, difficulty: hard, type: multi, prompt: "Which are polite restaurant phrases? (Select all.)", choices: ["Je voudrais le poulet, s'il vous plaît.", "L'addition, s'il vous plaît.", "Une carafe d'eau, s'il vous plaît.", "Donne-moi le poulet !"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Week 7 lightning round"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fr-w07-d6-rf01, difficulty: easy, type: mcq, prompt: "Je mange ___ riz.", choices: ["du", "de la", "le", "des"], answer: 0 }
+          - { id: fr-w07-d6-rf02, difficulty: easy, type: mcq, prompt: "J'aime ___ poisson.", choices: ["le", "du", "de", "des"], answer: 0 }
+          - { id: fr-w07-d6-rf03, difficulty: easy, type: mcq, prompt: "Je ne bois pas ___ café.", choices: ["de", "du", "le", "un"], answer: 0 }
+          - { id: fr-w07-d6-rf04, difficulty: easy, type: mcq, prompt: "beaucoup ___ amis", choices: ["d'", "des", "les", "du"], answer: 0 }
+          - { id: fr-w07-d6-rf05, difficulty: easy, type: text, prompt: "ils ___ (prendre)", accept: ["prennent"] }
+          - { id: fr-w07-d6-rf06, difficulty: easy, type: text, prompt: "nous ___ (boire)", accept: ["buvons"] }
+          - { id: fr-w07-d6-rf07, difficulty: easy, type: mcq, prompt: "the bill", choices: ["l'addition", "la carte", "le plat", "le prix"], answer: 0 }
+          - { id: fr-w07-d6-rf08, difficulty: easy, type: mcq, prompt: "the starter", choices: ["l'entrée", "le plat", "le dessert", "le menu"], answer: 0 }
+          - { id: fr-w07-d6-rf09, difficulty: easy, type: mcq, prompt: "polite \"I want\"", choices: ["je voudrais", "je veux", "j'exige", "donne"], answer: 0 }
+          - { id: fr-w07-d6-rf10, difficulty: easy, type: mcq, prompt: "How much is it?", choices: ["C'est combien ?", "C'est quoi ?", "Combien ans ?", "C'est où ?"], answer: 0 }
+      - kind: brain-teaser
+        title: "Jollof en français"
+        questions:
+          - { id: fr-w07-d6-bt01, difficulty: medium, type: text, prompt: "Translate: a kilo of rice, three tomatoes and two onions", accept: ["un kilo de riz, trois tomates et deux oignons"] }
+          - { id: fr-w07-d6-bt02, difficulty: medium, type: mcq, prompt: "Recipe step: \"Cut the onions.\"", choices: ["Couper les oignons.", "Coupe des oignons.", "Je coupe oignons.", "Couper de oignons."], answer: 0 }
+          - { id: fr-w07-d6-bt03, difficulty: medium, type: text, prompt: "Translate: a little salt and a lot of chilli", accept: ["un peu de sel et beaucoup de piment"] }
+          - { id: fr-w07-d6-bt04, difficulty: hard, type: text, prompt: "Translate: I'd like two kilos of tomatoes. How much is it?", accept: ["Je voudrais deux kilos de tomates. C'est combien ?", "Je voudrais deux kilos de tomates. Ça coûte combien ?", "Je voudrais deux kilos de tomates. C'est combien?"] }
+          - { id: fr-w07-d6-bt05, difficulty: hard, type: mcq, prompt: "Find the sentence with NO mistake.", choices: ["Je ne mange pas de viande, mais j'aime le poisson.", "Je voudrais un kilo du riz.", "Ils prenent du thé.", "Nous boivons de la eau."], answer: 0 }
