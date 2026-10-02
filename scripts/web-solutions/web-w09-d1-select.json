@@ -1,0 +1,3 @@
+{
+  "js": "document.querySelector(\"h1\").textContent = \"NaijaMart Weekend Deals\"\ndocument.querySelectorAll(\".price\").forEach((p) => p.classList.add(\"highlight\"))\ndocument.querySelector(\"#banner\").alt = \"NaijaMart weekend deals banner\"\ndocument.querySelector(\"#promo\").hidden = true\ndocument.querySelector(\"#year\").textContent = new Date().getFullYear()\nconsole.log(document.querySelectorAll(\".product\").length)\n"
+}

@@ -1,0 +1,31 @@
+# Week 9 · Day 2 mini-task
+id: web-w09-d2-events
+kind: web
+title: "Events"
+description: "Make the page respond: clicks, typing, a theme toggle and the Enter key. The checks click and type for you."
+html: |
+  <p><button id="like">👍 Like</button> <span id="count">0</span></p>
+  <p><input id="name" placeholder="Your name"></p>
+  <p id="greeting">Hello, stranger!</p>
+  <p><button id="theme">Dark mode</button></p>
+  <p><input id="search" placeholder="Type and press Enter"></p>
+  <p id="searched"></p>
+css: |
+  body { font-family: system-ui, sans-serif; padding: 1rem; }
+  body.dark { background: #111; color: #eee; }
+js: |
+  // 1. Each click on #like adds 1 to #count
+  // 2. Typing in #name shows "Hello, Ada!" in #greeting (and "Hello, stranger!" when the box is empty)
+  // 3. #theme toggles the class "dark" on <body>
+  // 4. Pressing Enter in #search shows "Searching for: rice" in #searched
+tasks:
+  - prompt: "Each click on Like adds 1 to the counter."
+    check: "(() => { const c = document.querySelector('#count'); const before = Number(c.textContent); const b = document.querySelector('#like'); b.click(); b.click(); return Number(c.textContent) === before + 2 })()"
+  - prompt: "Typing updates the greeting (empty box → Hello, stranger!)."
+    check: "(() => { const i = document.querySelector('#name'); const g = document.querySelector('#greeting'); i.value = 'Ada'; i.dispatchEvent(new Event('input', { bubbles: true })); const one = g.textContent === 'Hello, Ada!'; i.value = '  '; i.dispatchEvent(new Event('input', { bubbles: true })); return one && g.textContent === 'Hello, stranger!' })()"
+    hint: "Use the input event and e.target.value.trim() || \"stranger\""
+  - prompt: "The theme button toggles the dark class on body."
+    check: "(() => { const b = document.querySelector('#theme'); const start = document.body.classList.contains('dark'); b.click(); const flipped = document.body.classList.contains('dark') !== start; b.click(); return flipped && document.body.classList.contains('dark') === start })()"
+  - prompt: "Enter in the search box shows Searching for: …"
+    check: "(() => { const s = document.querySelector('#search'); s.value = 'rice'; s.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true })); return document.querySelector('#searched').textContent === 'Searching for: rice' })()"
+    hint: "keydown listener: if (e.key === \"Enter\") …"

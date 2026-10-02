@@ -1,0 +1,3 @@
+{
+  "js": "const cities = [\"Lagos\", \"Abuja\", \"Kano\"]\nconst list = document.querySelector(\"#list\")\nfunction renderList(items) {\n  list.innerHTML = \"\"\n  for (const item of items) {\n    const li = document.createElement(\"li\")\n    li.textContent = item\n    const remove = document.createElement(\"button\")\n    remove.textContent = \"✕\"\n    remove.addEventListener(\"click\", () => li.remove())\n    li.append(\" \", remove)\n    list.append(li)\n  }\n}\nrenderList(cities)\n"
+}

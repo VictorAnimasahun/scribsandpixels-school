@@ -1,0 +1,39 @@
+# Week 9 · Day 1 mini-task
+id: web-w09-d1-select
+kind: web
+title: "Select and change"
+description: "Change the page with JavaScript only: text, classes, attributes, hiding. Leave the HTML alone."
+html: |
+  <h1>Weekend deals</h1>
+  <div class="product"><h2>Tecno Spark 20</h2><p class="price">₦145,000</p></div>
+  <div class="product"><h2>Indomie Carton</h2><p class="price">₦13,500</p></div>
+  <div class="product"><h2>JBL Flip 6</h2><p class="price">₦129,000</p></div>
+  <img id="banner" src="https://picsum.photos/300/80" alt="">
+  <p id="promo">Old promo: ends December 2024!</p>
+  <footer>© <span id="year">2020</span> NaijaMart</footer>
+css: |
+  body { font-family: system-ui, sans-serif; padding: 1rem; }
+  .highlight { background: #fff3c4; padding: 0 0.25rem; }
+js: |
+  // Use only JavaScript (don't edit the HTML):
+  // 1. Change the h1 to "NaijaMart Weekend Deals"
+  // 2. Add the class "highlight" to every .price
+  // 3. Give the #banner image a useful alt text (a few words)
+  // 4. Hide the #promo paragraph
+  // 5. Put the current year in #year (new Date().getFullYear())
+  // 6. Log how many .product elements there are
+tasks:
+  - prompt: "Change the h1 to NaijaMart Weekend Deals."
+    check: "document.querySelector('h1').textContent === 'NaijaMart Weekend Deals'"
+  - prompt: "Every .price has the class highlight (use querySelectorAll and a loop)."
+    check: "[...document.querySelectorAll('.price')].every((p) => p.classList.contains('highlight'))"
+    hint: "document.querySelectorAll(\".price\").forEach((p) => p.classList.add(\"highlight\"))"
+  - prompt: "Give the banner a useful alt text."
+    check: "(document.querySelector('#banner').getAttribute('alt') || '').trim().split(' ').length >= 2"
+  - prompt: "Hide #promo."
+    check: "(() => { const p = document.querySelector('#promo'); return p.hidden || getComputedStyle(p).display === 'none' })()"
+  - prompt: "Show the current year in #year."
+    check: "document.querySelector('#year').textContent === String(new Date().getFullYear())"
+  - prompt: "Log the number of products (3)."
+    check: "window.__logs.includes('3')"
+    hint: "console.log(document.querySelectorAll(\".product\").length)"

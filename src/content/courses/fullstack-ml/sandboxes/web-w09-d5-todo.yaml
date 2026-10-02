@@ -1,0 +1,42 @@
+# Week 9 · Day 5 mini-task
+id: web-w09-d5-todo
+kind: web
+title: "To-do app"
+description: "State, render, events and saving: a small app built the way React apps are."
+html: |
+  <form id="new">
+    <input id="text" name="text" placeholder="New task">
+    <button>Add</button>
+  </form>
+  <ul id="list"></ul>
+  <p id="left"></p>
+  <button id="clear">Clear done</button>
+css: |
+  body { font-family: system-ui, sans-serif; padding: 1rem; }
+  li { cursor: pointer; padding: 0.25rem 0; }
+  .done { text-decoration: line-through; opacity: 0.6; }
+js: |
+  // Real localStorage is blocked inside this sandbox, so this uses memory instead.
+  // On your own site, it's the real localStorage.
+  const storage = (() => {
+    try { localStorage.setItem("__t", "1"); localStorage.removeItem("__t"); return localStorage }
+    catch { const m = {}; return { getItem: (k) => (k in m ? m[k] : null), setItem: (k, v) => { m[k] = String(v) } } }
+  })()
+
+  // 1. todos = the saved list under "todos" (or []), each { text, done }
+  // 2. render(): one <li> per todo (class "done" when done); #left shows "2 left"
+  // 3. Submitting the form adds a todo (ignore empty text) and clears the box
+  // 4. Clicking an <li> toggles its done
+  // 5. #clear removes the done todos
+  // After every change: save to storage under "todos", then render()
+tasks:
+  - prompt: "Adding two tasks shows them and 2 left."
+    check: "(() => { const f = document.querySelector('#new'); f.elements.text.value = 'Buy rice'; f.requestSubmit(); f.elements.text.value = 'Call Ada'; f.requestSubmit(); const lis = document.querySelectorAll('#list li'); return lis.length === 2 && lis[0].textContent.includes('Buy rice') && document.querySelector('#left').textContent === '2 left' && f.elements.text.value === '' })()"
+  - prompt: "Empty text adds nothing."
+    check: "(() => { const f = document.querySelector('#new'); const before = document.querySelectorAll('#list li').length; f.elements.text.value = '   '; f.requestSubmit(); return document.querySelectorAll('#list li').length === before && before > 0 })()"
+  - prompt: "Clicking a task toggles done (1 left)."
+    check: "(() => { const first = document.querySelector('#list li'); if (!first) return false; first.click(); const again = document.querySelector('#list li'); return again.classList.contains('done') && document.querySelector('#left').textContent === '1 left' })()"
+  - prompt: "The list is saved to storage under \"todos\"."
+    check: "(() => { try { const saved = JSON.parse(storage.getItem('todos')); return saved.length === 2 && saved[0].done === true && saved[1].text === 'Call Ada' } catch { return false } })()"
+  - prompt: "Clear done removes finished tasks."
+    check: "(() => { document.querySelector('#clear').click(); const lis = document.querySelectorAll('#list li'); let saved = []; try { saved = JSON.parse(storage.getItem('todos')) } catch {} return lis.length === 1 && lis[0].textContent.includes('Call Ada') && saved.length === 1 })()"

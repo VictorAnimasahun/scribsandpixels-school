@@ -104,7 +104,8 @@ export default function WebSandbox({ sandbox }: Props) {
         <button onClick={() => { if (confirm('Reset all three files?')) setFiles({ html: sandbox.html ?? '', css: sandbox.css ?? '', js: sandbox.js ?? '' }) }}>Reset</button>
       </div>
       <CodeEditor key={tab} value={files[tab]} onChange={(v) => setFiles((f) => ({ ...f, [tab]: v }))} onRun={render} language={tab} rows={10} />
-      <iframe key={run} ref={previewRef} className="preview" title="Preview" sandbox="allow-scripts allow-modals" srcDoc={doc} />
+      {/* allow-forms: without it Chrome blocks form submission, so submit handlers never run */}
+      <iframe key={run} ref={previewRef} className="preview" title="Preview" sandbox="allow-scripts allow-modals allow-forms" srcDoc={doc} />
       <pre className="console small">{logs.length ? logs.map((l) => `${l.level === 'log' ? '›' : l.level === 'warn' ? '⚠' : '✖'} ${l.text}`).join('\n') : 'console.log output appears here.'}</pre>
       {tasks.length > 0 && (
         <>

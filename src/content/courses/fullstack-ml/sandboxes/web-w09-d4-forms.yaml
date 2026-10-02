@@ -1,0 +1,39 @@
+# Week 9 · Day 4 mini-task
+id: web-w09-d4-forms
+kind: web
+title: "Validate a form"
+description: "Handle submit, stop the reload, validate, show messages and reset. The checks fill in and submit the form."
+html: |
+  <form id="contact">
+    <label for="name">Name</label>
+    <input id="name" name="name">
+    <label for="phone">Phone</label>
+    <input id="phone" name="phone">
+    <button type="submit">Send</button>
+  </form>
+  <p id="error" class="error"></p>
+  <p id="result"></p>
+css: |
+  body { font-family: system-ui, sans-serif; padding: 1rem; }
+  form { display: grid; gap: 0.4rem; max-width: 280px; }
+  .error { color: #c62828; }
+js: |
+  // On submit:
+  //  - stop the page reloading
+  //  - name (trimmed) empty → #error "Name is required"
+  //  - phone without spaces not exactly 11 digits → #error "Phone must be 11 digits"
+  //  - otherwise: #result "Thanks, Ada!", #error empty, and reset the form
+  //  (when there's an error, #result should be empty)
+tasks:
+  - prompt: "A valid form shows Thanks, Ada! and doesn't reload the page."
+    check: "(() => { let prevented = null; document.addEventListener('submit', (e) => { prevented = e.defaultPrevented }, { once: true }); const f = document.querySelector('#contact'); f.elements.name.value = 'Ada'; f.elements.phone.value = '0803 123 4567'; f.requestSubmit(); return prevented === true && document.querySelector('#result').textContent === 'Thanks, Ada!' })()"
+    hint: "form.addEventListener(\"submit\", (e) => { e.preventDefault() … })"
+  - prompt: "An empty name shows Name is required (and no thank-you)."
+    check: "(() => { const f = document.querySelector('#contact'); f.elements.name.value = '   '; f.elements.phone.value = '08031234567'; f.requestSubmit(); return document.querySelector('#error').textContent === 'Name is required' && document.querySelector('#result').textContent === '' })()"
+  - prompt: "A phone that isn't 11 digits shows Phone must be 11 digits."
+    check: "(() => { const f = document.querySelector('#contact'); f.elements.name.value = 'Tolu'; f.elements.phone.value = '0803 123 456'; f.requestSubmit(); const short = document.querySelector('#error').textContent === 'Phone must be 11 digits'; f.elements.phone.value = '0803123456a'; f.requestSubmit(); return short && document.querySelector('#error').textContent === 'Phone must be 11 digits' })()"
+    hint: "/^\\d{11}$/.test(phone)"
+  - prompt: "After a valid submit, the fields are cleared and the error is empty."
+    check: "(() => { const f = document.querySelector('#contact'); f.elements.name.value = 'Emeka'; f.elements.phone.value = '09055551212'; f.requestSubmit(); return f.elements.name.value === '' && f.elements.phone.value === '' && document.querySelector('#error').textContent === '' })()"
+  - prompt: "The name is trimmed: \"  Tolu  \" → Thanks, Tolu!"
+    check: "(() => { const f = document.querySelector('#contact'); f.elements.name.value = '  Tolu  '; f.elements.phone.value = '08031234567'; f.requestSubmit(); return document.querySelector('#result').textContent === 'Thanks, Tolu!' })()"

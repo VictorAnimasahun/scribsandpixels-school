@@ -1,0 +1,42 @@
+# Week 9 · Day 6 project core
+id: web-w09-d6-expenses-app
+kind: web
+title: "Expense tracker app"
+description: "Your tracker with a real page: form, validation, list with delete, ₦ total, saved."
+html: |
+  <form id="expense">
+    <input id="item" name="item" placeholder="Item">
+    <input id="amount" name="amount" placeholder="Amount (₦)" inputmode="numeric">
+    <select id="category" name="category">
+      <option>Food</option><option>Transport</option><option>Data</option><option>Bills</option>
+    </select>
+    <button>Add</button>
+  </form>
+  <p id="error" class="error"></p>
+  <ul id="list"></ul>
+  <p>Total: <strong id="total">₦0</strong></p>
+css: |
+  body { font-family: system-ui, sans-serif; padding: 1rem; }
+  form { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .error { color: #c62828; }
+js: |
+  const storage = (() => {
+    try { localStorage.setItem("__t", "1"); localStorage.removeItem("__t"); return localStorage }
+    catch { const m = {}; return { getItem: (k) => (k in m ? m[k] : null), setItem: (k, v) => { m[k] = String(v) } } }
+  })()
+
+  // State: expenses = saved list under "expenses" (or []), each { item, amount, category } with amount a NUMBER
+  // Submit: amount must be a number above 0, else show an error in #error mentioning "amount" and add nothing
+  // render(): one <li> per expense showing the item and "₦1,200", with a delete button; #total like "₦1,700"
+  // Save to storage under "expenses" after every change
+tasks:
+  - prompt: "Adding Bread 1200 Food and Bus 500 Transport lists both and totals ₦1,700."
+    check: "(() => { const f = document.querySelector('#expense'); f.elements.item.value = 'Bread'; f.elements.amount.value = '1200'; f.elements.category.value = 'Food'; f.requestSubmit(); f.elements.item.value = 'Bus'; f.elements.amount.value = '500'; f.elements.category.value = 'Transport'; f.requestSubmit(); return document.querySelectorAll('#list li').length === 2 && document.querySelector('#total').textContent === '₦1,700' })()"
+  - prompt: "Each row shows the item and the ₦ amount."
+    check: "(() => { const li = document.querySelector('#list li'); return !!li && li.textContent.includes('Bread') && li.textContent.includes('₦1,200') })()"
+  - prompt: "A bad amount (abc, -5, empty) shows an error mentioning amount and adds nothing."
+    check: "(() => { const f = document.querySelector('#expense'); const before = document.querySelectorAll('#list li').length; let ok = before > 0; for (const bad of ['abc', '-5', '']) { f.elements.item.value = 'Suya'; f.elements.amount.value = bad; f.requestSubmit(); ok = ok && document.querySelectorAll('#list li').length === before && /amount/i.test(document.querySelector('#error').textContent) } return ok })()"
+  - prompt: "The delete button removes a row and updates the total."
+    check: "(() => { const rows = [...document.querySelectorAll('#list li')]; const bus = rows.find((li) => li.textContent.includes('Bus')); if (!bus || !bus.querySelector('button')) return false; bus.querySelector('button').click(); return document.querySelectorAll('#list li').length === 1 && document.querySelector('#total').textContent === '₦1,200' })()"
+  - prompt: "Expenses are saved with amounts as numbers."
+    check: "(() => { try { const saved = JSON.parse(storage.getItem('expenses')); return saved.length === 1 && saved[0].amount === 1200 && saved[0].item === 'Bread' && saved[0].category === 'Food' } catch { return false } })()"

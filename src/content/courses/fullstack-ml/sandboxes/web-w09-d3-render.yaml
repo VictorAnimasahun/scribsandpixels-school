@@ -1,0 +1,30 @@
+# Week 9 · Day 3 mini-task
+id: web-w09-d3-render
+kind: web
+title: "Render a list"
+description: "createElement, append and remove: the render pattern behind React."
+html: |
+  <ul id="list"></ul>
+css: |
+  body { font-family: system-ui, sans-serif; padding: 1rem; }
+  li button { margin-left: 0.5rem; }
+js: |
+  const cities = ["Lagos", "Abuja", "Kano"]
+
+  // renderList(items):
+  //  - clears #list
+  //  - adds one <li> per item, with the item as its text (use textContent)
+  //  - each <li> gets a "✕" button that removes that <li>
+  // Then call renderList(cities) so the page starts with the 3 cities.
+tasks:
+  - prompt: "The page starts with the 3 cities listed."
+    check: "(() => { const lis = document.querySelectorAll('#list li'); return lis.length === 3 && lis[0].textContent.startsWith('Lagos') && lis[2].textContent.startsWith('Kano') })()"
+  - prompt: "renderList(items) renders one li per item."
+    check: "typeof renderList === 'function' && (() => { renderList(['Rice', 'Beans']); const lis = document.querySelectorAll('#list li'); return lis.length === 2 && lis[1].textContent.startsWith('Beans') })()"
+  - prompt: "renderList clears the old items first."
+    check: "typeof renderList === 'function' && (() => { renderList(['A', 'B', 'C']); renderList(['X']); return document.querySelectorAll('#list li').length === 1 })()"
+  - prompt: "Each item's ✕ button removes it."
+    check: "typeof renderList === 'function' && (() => { renderList(['A', 'B', 'C']); document.querySelector('#list li button').click(); const lis = document.querySelectorAll('#list li'); return lis.length === 2 && lis[0].textContent.startsWith('B') })()"
+    hint: "remove.addEventListener(\"click\", () => li.remove())"
+  - prompt: "Item text is safe: HTML in an item shows as text, not markup."
+    check: "typeof renderList === 'function' && (() => { renderList(['<b>bold</b>']); const li = document.querySelector('#list li'); return li && !li.querySelector('b') && li.textContent.includes('<b>bold</b>') })()"

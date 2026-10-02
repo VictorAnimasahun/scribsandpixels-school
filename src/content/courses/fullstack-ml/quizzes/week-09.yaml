@@ -1,0 +1,574 @@
+# Fullstack + ML · Week 9 quizzes. Format and rules: src/content/QUIZZES.md
+week: 9
+days:
+
+  # ─────────────────────────── DAY 1 ───────────────────────────
+  - day: 1
+    gate:
+      title: "Checkpoint: Week 8 review"
+      covers: "Week 8: arrays, objects, map/filter/find, reduce/sort, JSON and storage, destructuring"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w09-d1-g01, difficulty: easy, type: mcq, prompt: "Add to the end of an array", choices: ["push", "pop", "shift", "append"], answer: 0 }
+        - { id: fs-w09-d1-g02, difficulty: easy, type: mcq, prompt: "Keep only some items", choices: ["filter", "map", "find", "reduce"], answer: 0 }
+        - { id: fs-w09-d1-g03, difficulty: easy, type: mcq, prompt: "Data → JSON text", choices: ["JSON.stringify", "JSON.parse", "String", "toJSON"], answer: 0 }
+        - { id: fs-w09-d1-g04, difficulty: easy, type: truefalse, prompt: "localStorage.getItem returns null for a missing key.", answer: true }
+        - { id: fs-w09-d1-g05, difficulty: easy, type: mcq, prompt: "Copy an array before sorting", choices: ["[...arr]", "arr.copy()", "copy(arr)", "arr"], answer: 0 }
+        - { id: fs-w09-d1-g06, difficulty: easy, type: mcq, prompt: "Two variables from an object", choices: ["const { name, price } = p", "const name, price = p", "const [name, price] = p", "name, price := p"], answer: 0 }
+        - id: fs-w09-d1-g07
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const products = [{ n: "A", p: 300 }, { n: "B", p: 100 }, { n: "C", p: 200 }]
+            console.log(products.filter((x) => x.p >= 200).map((x) => x.n).join(""))
+          accept: ["AC"]
+        - id: fs-w09-d1-g08
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            console.log([1200, 500, 2000].reduce((s, x) => s + x, 0))
+          accept: ["3700"]
+        - { id: fs-w09-d1-g09, difficulty: medium, type: match, prompt: "Match.", pairs: [["map", "transform each item"], ["find", "first match"], ["reduce", "combine into one value"], ["some", "at least one passes"]] }
+        - id: fs-w09-d1-g10
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const counts = {}
+            for (const c of ["Lagos", "Kano", "Lagos"]) counts[c] = (counts[c] ?? 0) + 1
+            console.log(JSON.stringify(counts))
+          accept: ["{\"Lagos\":2,\"Kano\":1}"]
+        - { id: fs-w09-d1-g11, difficulty: medium, type: truefalse, prompt: "[10, 9, 100].sort() sorts numerically.", answer: false }
+        - id: fs-w09-d1-g12
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const list = JSON.parse(null ?? "[]")
+            console.log(list.length)
+          accept: ["0"]
+        - { id: fs-w09-d1-g13, difficulty: medium, type: mcq, prompt: "Change one property without changing the original object", choices: ["({ ...p, price: 0 })", "p.price = 0", "Object.freeze(p)", "delete p.price"], answer: 0 }
+        - id: fs-w09-d1-g14
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const xs = [5, 2, 9]
+            console.log([...xs].sort((a, b) => b - a)[0], xs[0])
+          accept: ["9 5"]
+        - { id: fs-w09-d1-g15, difficulty: medium, type: mcq, prompt: "Why pass storage into save/load?", choices: ["So tests can use a fake storage", "localStorage requires it", "It's faster", "To encrypt"], answer: 0 }
+        - id: fs-w09-d1-g16
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const sales = [{ c: "Food", v: 10 }, { c: "Data", v: 5 }, { c: "Food", v: 7 }]
+            const t = sales.reduce((acc, s) => { acc[s.c] = (acc[s.c] ?? 0) + s.v; return acc }, {})
+            console.log(Object.entries(t).map(([k, v]) => k + v).join(","))
+          accept: ["Food17,Data5"]
+        - id: fs-w09-d1-g17
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const add = (list, x) => [...list, x]
+            const a = [1]
+            const b = add(a, 2)
+            console.log(a.length, b.length, a === b)
+          accept: ["1 2 false"]
+        - { id: fs-w09-d1-g18, difficulty: hard, type: multi, prompt: "Which return a new array? (Select all.)", choices: ["map", "filter", "[...arr].sort()", "arr.sort()"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "DOM basics"
+        secondsPerQuestion: 9
+        questions:
+          - { id: fs-w09-d1-rf01, difficulty: easy, type: mcq, prompt: "DOM stands for…", choices: ["Document Object Model", "Data Object Map", "Display Order Mode", "Document Option Menu"], answer: 0 }
+          - { id: fs-w09-d1-rf02, difficulty: easy, type: mcq, prompt: "First element matching a CSS selector", choices: ["document.querySelector", "document.querySelectorAll", "document.find", "document.getAll"], answer: 0 }
+          - { id: fs-w09-d1-rf03, difficulty: easy, type: mcq, prompt: "All elements matching", choices: ["document.querySelectorAll", "document.querySelector", "document.all()", "document.select"], answer: 0 }
+          - { id: fs-w09-d1-rf04, difficulty: easy, type: mcq, prompt: "Set text safely", choices: ["el.textContent = …", "el.innerHTML = …", "el.text(…)", "el.value = …"], answer: 0 }
+          - { id: fs-w09-d1-rf05, difficulty: easy, type: mcq, prompt: "Add a class", choices: ["el.classList.add(\"x\")", "el.class = \"x\"", "el.addClass(\"x\")", "el.style.class = \"x\""], answer: 0 }
+          - { id: fs-w09-d1-rf06, difficulty: easy, type: mcq, prompt: "Toggle a class", choices: ["el.classList.toggle(\"dark\")", "el.toggle(\"dark\")", "el.classList.flip(\"dark\")", "el.dark = !el.dark"], answer: 0 }
+          - { id: fs-w09-d1-rf07, difficulty: easy, type: mcq, prompt: "Hide an element", choices: ["el.hidden = true", "el.hide()", "el.visible = false", "el.display = none"], answer: 0 }
+          - { id: fs-w09-d1-rf08, difficulty: easy, type: mcq, prompt: "Reads data-id=\"7\"", choices: ["el.dataset.id", "el.data.id", "el.id", "el.getData(\"id\")"], answer: 0 }
+          - { id: fs-w09-d1-rf09, difficulty: easy, type: truefalse, prompt: "innerHTML with text a user typed can run their code.", answer: true }
+          - { id: fs-w09-d1-rf10, difficulty: easy, type: mcq, prompt: "Current year", choices: ["new Date().getFullYear()", "Date.year()", "new Year()", "Date().year"], answer: 0 }
+      - kind: brain-teaser
+        title: "Select it"
+        questions:
+          - { id: fs-w09-d1-bt01, difficulty: medium, type: mcq, prompt: "Select the element with id=\"total\"", choices: ["document.querySelector(\"#total\")", "document.querySelector(\".total\")", "document.querySelector(\"total\")", "document.getElement(\"total\")"], answer: 0 }
+          - { id: fs-w09-d1-bt02, difficulty: medium, type: mcq, prompt: "Every price inside a product card", choices: ["document.querySelectorAll(\".product .price\")", "document.querySelector(\".product .price\")", "document.querySelectorAll(\".product, .price\")", "document.price"], answer: 0 }
+          - { id: fs-w09-d1-bt03, difficulty: medium, type: mcq, prompt: "Your script runs in <head> and querySelector returns null. Why?", choices: ["The HTML below hasn't been parsed yet: move the script to the end of <body> or add defer", "querySelector is broken", "The id is case-insensitive", "JS can't read the DOM"], answer: 0 }
+          - { id: fs-w09-d1-bt04, difficulty: hard, type: mcq, prompt: "Best way to make prices red when on sale?", choices: ["el.classList.add(\"sale\") with .sale { color: red } in CSS", "el.style.color = \"red\" everywhere", "el.innerHTML = \"<font color=red>…\"", "Rewrite the HTML"], answer: 0 }
+          - { id: fs-w09-d1-bt05, difficulty: hard, type: multi, prompt: "Which change what the page shows? (Select all.)", choices: ["el.textContent = \"Hi\"", "el.classList.add(\"x\")", "el.hidden = true", "console.log(el)"], answers: [0, 1, 2] }
+
+  # ─────────────────────────── DAY 2 ───────────────────────────
+  - day: 2
+    gate:
+      title: "Checkpoint: selecting and changing"
+      covers: "Week 9 · Day 1: the DOM, querySelector/All, textContent vs innerHTML, classList, attributes, dataset, hidden, script placement"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w09-d2-g01, difficulty: easy, type: mcq, prompt: "querySelector takes…", choices: ["a CSS selector", "a tag only", "an index", "a URL"], answer: 0 }
+        - { id: fs-w09-d2-g02, difficulty: easy, type: mcq, prompt: "Change an h1's text", choices: ["h1.textContent = \"New\"", "h1 = \"New\"", "h1.text(\"New\")", "h1.write(\"New\")"], answer: 0 }
+        - { id: fs-w09-d2-g03, difficulty: easy, type: truefalse, prompt: "querySelectorAll returns all matching elements.", answer: true }
+        - { id: fs-w09-d2-g04, difficulty: easy, type: mcq, prompt: "Load app.js after the HTML is ready", choices: ["<script src=\"app.js\" defer> in <head>", "<script src=\"app.js\" async> always", "<link href=\"app.js\">", "<js src=\"app.js\">"], answer: 0 }
+        - { id: fs-w09-d2-g05, difficulty: easy, type: mcq, prompt: "Remove a class", choices: ["el.classList.remove(\"x\")", "el.class.delete(\"x\")", "el.removeClass(\"x\")", "delete el.x"], answer: 0 }
+        - { id: fs-w09-d2-g06, difficulty: easy, type: mcq, prompt: "Set an image's alt", choices: ["img.alt = \"…\"", "img.text = \"…\"", "img.title() = \"…\"", "alt(img)"], answer: 0 }
+        - { id: fs-w09-d2-g07, difficulty: medium, type: mcq, prompt: "Highlight every .price", choices: ["document.querySelectorAll(\".price\").forEach((p) => p.classList.add(\"highlight\"))", "document.querySelector(\".price\").classList.add(\"highlight\")", ".price.highlight()", "document.price.add(\"highlight\")"], answer: 0 }
+        - { id: fs-w09-d2-g08, difficulty: medium, type: match, prompt: "Match.", pairs: [["textContent", "plain text"], ["innerHTML", "HTML markup"], ["classList", "classes"], ["dataset", "data-* attributes"]] }
+        - { id: fs-w09-d2-g09, difficulty: medium, type: mcq, prompt: "querySelector finds nothing. It returns…", choices: ["null", "undefined", "[]", "an error"], answer: 0 }
+        - { id: fs-w09-d2-g10, difficulty: medium, type: truefalse, prompt: "Prefer classes over el.style for changing looks.", answer: true }
+        - { id: fs-w09-d2-g11, difficulty: medium, type: mcq, prompt: "TypeError: Cannot set properties of null (setting 'textContent'). Likely?", choices: ["querySelector found nothing (wrong selector or script too early)", "textContent is read-only", "JS is disabled", "A CSS error"], answer: 0 }
+        - { id: fs-w09-d2-g12, difficulty: medium, type: mcq, prompt: "Count the .product elements", choices: ["document.querySelectorAll(\".product\").length", "document.querySelector(\".product\").length", "document.count(\".product\")", ".product.length"], answer: 0 }
+        - { id: fs-w09-d2-g13, difficulty: medium, type: mcq, prompt: "<button data-id=\"42\">: el.dataset.id is…", choices: ["\"42\" (a string)", "42 (a number)", "undefined", "data-id"], answer: 0 }
+        - { id: fs-w09-d2-g14, difficulty: medium, type: truefalse, prompt: "el.hidden = true hides the element.", answer: true }
+        - { id: fs-w09-d2-g15, difficulty: medium, type: mcq, prompt: "Which is safe for a name the user typed?", choices: ["el.textContent = name", "el.innerHTML = name", "el.outerHTML = name", "document.write(name)"], answer: 0 }
+        - { id: fs-w09-d2-g16, difficulty: hard, type: mcq, prompt: "A user types <img src=x onerror=alert(1)> as their name and you show it with innerHTML. What happens?", choices: ["Their code runs: an XSS attack", "It shows as plain text", "Nothing", "The page reloads"], answer: 0 }
+        - { id: fs-w09-d2-g17, difficulty: hard, type: mcq, prompt: "Which selects the second li in #list?", choices: ["document.querySelectorAll(\"#list li\")[1]", "document.querySelector(\"#list li\")[1]", "document.querySelector(\"#list li:first\")", "document.li[2]"], answer: 0 }
+        - { id: fs-w09-d2-g18, difficulty: hard, type: multi, prompt: "Which run the script after the HTML exists? (Select all.)", choices: ["<script src=\"app.js\"> at the end of <body>", "<script src=\"app.js\" defer> in <head>", "<script type=\"module\" src=\"app.js\"> in <head>", "<script src=\"app.js\"> at the top of <head>"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Events"
+        secondsPerQuestion: 9
+        questions:
+          - { id: fs-w09-d2-rf01, difficulty: easy, type: mcq, prompt: "Listen for a click", choices: ["el.addEventListener(\"click\", fn)", "el.onClick(fn)", "el.listen(\"click\")", "click(el, fn)"], answer: 0 }
+          - { id: fs-w09-d2-rf02, difficulty: easy, type: mcq, prompt: "Every change in a text box", choices: ["input", "change", "keyup only", "submit"], answer: 0 }
+          - { id: fs-w09-d2-rf03, difficulty: easy, type: mcq, prompt: "A key was pressed", choices: ["keydown", "press", "key", "type"], answer: 0 }
+          - { id: fs-w09-d2-rf04, difficulty: easy, type: mcq, prompt: "Was it Enter?", choices: ["e.key === \"Enter\"", "e.enter", "e.code === 13 only", "e.key == Enter"], answer: 0 }
+          - { id: fs-w09-d2-rf05, difficulty: easy, type: mcq, prompt: "The element the event happened on", choices: ["e.target", "e.element", "this.event", "e.source"], answer: 0 }
+          - { id: fs-w09-d2-rf06, difficulty: easy, type: mcq, prompt: "What the user typed", choices: ["e.target.value", "e.target.text", "e.value", "e.typed"], answer: 0 }
+          - { id: fs-w09-d2-rf07, difficulty: easy, type: mcq, prompt: "A select box changed", choices: ["change", "input only", "select", "pick"], answer: 0 }
+          - { id: fs-w09-d2-rf08, difficulty: easy, type: truefalse, prompt: "A click listener can update the page instantly without reloading.", answer: true }
+          - { id: fs-w09-d2-rf09, difficulty: easy, type: mcq, prompt: "Dark mode toggle", choices: ["document.body.classList.toggle(\"dark\")", "document.dark = true", "body.style = dark", "toggle(dark)"], answer: 0 }
+          - { id: fs-w09-d2-rf10, difficulty: easy, type: mcq, prompt: "A form was sent", choices: ["submit", "send", "click", "post"], answer: 0 }
+      - kind: brain-teaser
+        title: "Event logic"
+        questions:
+          - id: fs-w09-d2-bt01
+            difficulty: medium
+            type: text
+            prompt: "This handler runs 3 times. What does it print last?"
+            code: |
+              let likes = 0
+              const onClick = () => { likes++; return likes }
+              onClick(); onClick()
+              console.log(onClick())
+            accept: ["3"]
+          - id: fs-w09-d2-bt02
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const greet = (value) => `Hello, ${value.trim() || "stranger"}!`
+              console.log(greet("  "), greet("Ada"))
+            accept: ["Hello, stranger! Hello, Ada!"]
+          - { id: fs-w09-d2-bt03, difficulty: medium, type: mcq, prompt: "Why doesn't this work? `button.addEventListener(\"click\", update())`", choices: ["It calls update right away and passes its result; pass update (no brackets)", "click must be capitalised", "Buttons can't have listeners", "It needs a semicolon"], answer: 0 }
+          - { id: fs-w09-d2-bt04, difficulty: hard, type: mcq, prompt: "Your keydown listener on a search box fires for every key. How do you react only to Enter?", choices: ["if (e.key === \"Enter\") { … }", "Use the click event", "e.preventDefault()", "Add a second listener"], answer: 0 }
+          - id: fs-w09-d2-bt05
+            difficulty: hard
+            type: text
+            prompt: "Toggle starts false and is pressed 5 times. What does this print?"
+            code: |
+              let dark = false
+              for (let i = 0; i < 5; i++) dark = !dark
+              console.log(dark)
+            accept: ["true"]
+
+  # ─────────────────────────── DAY 3 ───────────────────────────
+  - day: 3
+    gate:
+      title: "Checkpoint: events"
+      covers: "Week 9 · Day 2: addEventListener, click/input/change/keydown, the event object, e.target.value, e.key"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w09-d3-g01, difficulty: easy, type: mcq, prompt: "Run code when a button is clicked", choices: ["button.addEventListener(\"click\", () => { … })", "button.click = () => { … } only", "on(button)", "button.run()"], answer: 0 }
+        - { id: fs-w09-d3-g02, difficulty: easy, type: mcq, prompt: "Preview text as it's typed", choices: ["the input event", "the submit event", "the load event", "the click event"], answer: 0 }
+        - { id: fs-w09-d3-g03, difficulty: easy, type: truefalse, prompt: "e.target is the element where the event happened.", answer: true }
+        - { id: fs-w09-d3-g04, difficulty: easy, type: mcq, prompt: "Read a text box value in a listener", choices: ["e.target.value", "e.value", "e.target.textContent", "e.text"], answer: 0 }
+        - { id: fs-w09-d3-g05, difficulty: easy, type: mcq, prompt: "Enter key", choices: ["e.key === \"Enter\"", "e.key === \"Return!\"", "e.enter === true", "e.code === \"Space\""], answer: 0 }
+        - { id: fs-w09-d3-g06, difficulty: easy, type: mcq, prompt: "Toggle a theme", choices: ["classList.toggle", "classList.flip", "style.toggle", "toggleClass"], answer: 0 }
+        - { id: fs-w09-d3-g07, difficulty: medium, type: mcq, prompt: "What's wrong? `btn.addEventListener(\"click\", like())`", choices: ["like() runs immediately; pass like", "click needs quotes removed", "like must be async", "nothing"], answer: 0 }
+        - { id: fs-w09-d3-g08, difficulty: medium, type: match, prompt: "Match the event.", pairs: [["click", "button tapped"], ["input", "every keystroke in a box"], ["change", "select changed"], ["keydown", "key pressed"]] }
+        - id: fs-w09-d3-g09
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            let count = 0
+            const handler = () => { count += 1 }
+            ;[1, 2, 3].forEach(handler)
+            console.log(count)
+          accept: ["3"]
+        - { id: fs-w09-d3-g10, difficulty: medium, type: truefalse, prompt: "The input event fires when a text box loses focus only.", answer: false, explain: "That's change; input fires on every change." }
+        - { id: fs-w09-d3-g11, difficulty: medium, type: mcq, prompt: "A counter shows \"01\" then \"011\" after clicks. Why?", choices: ["It joins strings: convert with Number() or keep the count in a number variable", "click fires twice", "textContent is broken", "Use innerHTML"], answer: 0 }
+        - id: fs-w09-d3-g12
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            let text = "0"
+            text = text + 1
+            text = text + 1
+            console.log(text, Number("0") + 1 + 1)
+          accept: ["011 2"]
+        - { id: fs-w09-d3-g13, difficulty: medium, type: mcq, prompt: "Greeting should say \"Hello, stranger!\" when the box is empty. Use…", choices: ["value.trim() || \"stranger\"", "value ?? \"stranger\"", "value || null", "value.empty()"], answer: 0, explain: "?? only catches null/undefined; an empty string needs ||." }
+        - { id: fs-w09-d3-g14, difficulty: medium, type: truefalse, prompt: "One element can have several listeners.", answer: true }
+        - { id: fs-w09-d3-g15, difficulty: medium, type: mcq, prompt: "Which event for a dropdown of cities?", choices: ["change", "click", "keydown", "submit"], answer: 0 }
+        - id: fs-w09-d3-g16
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const values = ["", "  ", "Ada", null]
+            console.log(values.map((v) => (v ?? "").trim() || "stranger").join(","))
+          accept: ["stranger,stranger,Ada,stranger"]
+        - { id: fs-w09-d3-g17, difficulty: hard, type: mcq, prompt: "A listener added inside a loop over 3 buttons uses `let i`. Each button logs…", choices: ["its own index", "3", "undefined", "0"], answer: 0, explain: "let creates a fresh i per loop round." }
+        - { id: fs-w09-d3-g18, difficulty: hard, type: multi, prompt: "Which fire while typing in a text box? (Select all.)", choices: ["input", "keydown", "keyup", "submit"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Build elements"
+        secondsPerQuestion: 9
+        questions:
+          - { id: fs-w09-d3-rf01, difficulty: easy, type: mcq, prompt: "Make a new li", choices: ["document.createElement(\"li\")", "new li()", "document.li()", "createLi()"], answer: 0 }
+          - { id: fs-w09-d3-rf02, difficulty: easy, type: mcq, prompt: "Add it to the end of a list", choices: ["list.append(li)", "list.push(li)", "list.add(li)", "list += li"], answer: 0 }
+          - { id: fs-w09-d3-rf03, difficulty: easy, type: mcq, prompt: "Take an element out of the page", choices: ["el.remove()", "el.delete()", "delete el", "el.hidden()"], answer: 0 }
+          - { id: fs-w09-d3-rf04, difficulty: easy, type: mcq, prompt: "Clear a list's contents", choices: ["list.innerHTML = \"\"", "list = []", "list.clear()", "list.remove()"], answer: 0 }
+          - { id: fs-w09-d3-rf05, difficulty: easy, type: mcq, prompt: "The render pattern draws the page from…", choices: ["your data (an array)", "the old HTML", "localStorage only", "CSS"], answer: 0 }
+          - { id: fs-w09-d3-rf06, difficulty: easy, type: truefalse, prompt: "React works on the same idea: data → render.", answer: true }
+          - { id: fs-w09-d3-rf07, difficulty: easy, type: mcq, prompt: "User text in a new li", choices: ["li.textContent = text", "li.innerHTML = text", "li.html(text)", "li.value = text"], answer: 0 }
+          - { id: fs-w09-d3-rf08, difficulty: easy, type: mcq, prompt: "A delete button removes its row with…", choices: ["button.addEventListener(\"click\", () => li.remove())", "button.remove(li)", "li.delete", "list.pop()"], answer: 0 }
+          - { id: fs-w09-d3-rf09, difficulty: easy, type: mcq, prompt: "Add text and a button to an li", choices: ["li.append(\" \", button)", "li + button", "li.push(button)", "li.text = button"], answer: 0 }
+          - { id: fs-w09-d3-rf10, difficulty: easy, type: truefalse, prompt: "Rebuilding a whole list is fine for small lists.", answer: true }
+      - kind: brain-teaser
+        title: "Render logic"
+        questions:
+          - id: fs-w09-d3-bt01
+            difficulty: medium
+            type: text
+            prompt: "This builds the list's HTML as text. What does it print?"
+            code: |
+              const items = ["Rice", "Beans"]
+              console.log(items.map((i) => `<li>${i}</li>`).join(""))
+            accept: ["<li>Rice</li><li>Beans</li>"]
+          - id: fs-w09-d3-bt02
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              let list = ["A", "B", "C"]
+              list = list.filter((_, i) => i !== 0)
+              console.log(list.join(""))
+            accept: ["BC"]
+          - { id: fs-w09-d3-bt03, difficulty: medium, type: mcq, prompt: "renderList(items) is called twice and the list shows 6 items instead of 3. Missing?", choices: ["Clearing the list (list.innerHTML = \"\") at the start", "A return", "A semicolon", "async"], answer: 0 }
+          - { id: fs-w09-d3-bt04, difficulty: hard, type: mcq, prompt: "Why is `list.innerHTML = \"\"` safe here but `li.innerHTML = userText` not?", choices: ["Clearing inserts no user text; userText could contain code", "innerHTML is always safe", "Neither is safe", "Both are unsafe"], answer: 0 }
+          - id: fs-w09-d3-bt05
+            difficulty: hard
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const cards = [{ t: "Weather", u: "w" }, { t: "Expenses", u: "e" }]
+              console.log(cards.map(({ t, u }) => `${t}:${u}`).join("|"))
+            accept: ["Weather:w|Expenses:e"]
+
+  # ─────────────────────────── DAY 4 ───────────────────────────
+  - day: 4
+    gate:
+      title: "Checkpoint: creating and rendering"
+      covers: "Week 9 · Day 3: createElement, append, remove, the render pattern, delete buttons, safe text"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w09-d4-g01, difficulty: easy, type: mcq, prompt: "Create a button element", choices: ["document.createElement(\"button\")", "new Button()", "document.button()", "<button>"], answer: 0 }
+        - { id: fs-w09-d4-g02, difficulty: easy, type: mcq, prompt: "Remove an element", choices: ["el.remove()", "el.hide()", "el = null", "el.clear()"], answer: 0 }
+        - { id: fs-w09-d4-g03, difficulty: easy, type: truefalse, prompt: "append adds an element at the end.", answer: true }
+        - { id: fs-w09-d4-g04, difficulty: easy, type: mcq, prompt: "The render pattern keeps the truth in…", choices: ["an array (state)", "the HTML", "the CSS", "the URL"], answer: 0 }
+        - { id: fs-w09-d4-g05, difficulty: easy, type: mcq, prompt: "Start of renderList", choices: ["list.innerHTML = \"\"", "list.remove()", "return", "location.reload()"], answer: 0 }
+        - { id: fs-w09-d4-g06, difficulty: easy, type: mcq, prompt: "Text of a new li", choices: ["li.textContent = item", "li = item", "li.add(item)", "li.innerText() = item"], answer: 0 }
+        - { id: fs-w09-d4-g07, difficulty: medium, type: order, prompt: "Order: add a row with a delete button.", items: ["const li = document.createElement(\"li\")", "li.textContent = item", "const del = document.createElement(\"button\")", "del.addEventListener(\"click\", () => li.remove())", "li.append(\" \", del)", "list.append(li)"] }
+        - { id: fs-w09-d4-g08, difficulty: medium, type: match, prompt: "Match.", pairs: [["createElement", "make a new element"], ["append", "put it in the page"], ["remove", "take it out"], ["innerHTML = \"\"", "clear"]] }
+        - { id: fs-w09-d4-g09, difficulty: medium, type: truefalse, prompt: "li.innerHTML = userText is safe if you trust your users.", answer: false }
+        - { id: fs-w09-d4-g10, difficulty: medium, type: mcq, prompt: "renderList(['<b>x</b>']) should show…", choices: ["the text <b>x</b>", "a bold x", "nothing", "an error"], answer: 0 }
+        - id: fs-w09-d4-g11
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const cards = [{ title: "Weather" }, { title: "Expenses" }, { title: "Contacts" }]
+            console.log(cards.map((c) => c.title.length).join(","))
+          accept: ["7,8,8"]
+        - { id: fs-w09-d4-g12, difficulty: medium, type: mcq, prompt: "Why build project cards from an array instead of hand-written HTML?", choices: ["Add a project once in data; the page follows", "HTML can't show cards", "It's required by GitHub", "It loads slower"], answer: 0 }
+        - { id: fs-w09-d4-g13, difficulty: medium, type: mcq, prompt: "Each li needs its own delete behaviour. The listener should be added…", choices: ["inside the loop, when the li is created", "once for the whole page with a fixed index", "in CSS", "after the page loads only"], answer: 0 }
+        - { id: fs-w09-d4-g14, difficulty: medium, type: truefalse, prompt: "li.append(\" \", button) adds a space then the button.", answer: true }
+        - { id: fs-w09-d4-g15, difficulty: medium, type: mcq, prompt: "After li.remove(), the array still has the item. Problem?", choices: ["The page and the data disagree: the next render brings it back", "No problem ever", "The browser crashes", "localStorage fixes it"], answer: 0 }
+        - id: fs-w09-d4-g16
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            let state = ["A", "B", "C"]
+            const removeAt = (i) => { state = state.filter((_, j) => j !== i) }
+            removeAt(1)
+            removeAt(0)
+            console.log(state.join(""))
+          accept: ["C"]
+        - { id: fs-w09-d4-g17, difficulty: hard, type: mcq, prompt: "Best fix for page/data disagreement when deleting?", choices: ["Delete from the array, then call render()", "Only call li.remove()", "Reload the page", "Hide the li"], answer: 0 }
+        - { id: fs-w09-d4-g18, difficulty: hard, type: multi, prompt: "Which are part of the render pattern? (Select all.)", choices: ["Data in an array", "One function rebuilds the list", "Events change the data then re-render", "Editing the HTML file by hand"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Forms"
+        secondsPerQuestion: 9
+        questions:
+          - { id: fs-w09-d4-rf01, difficulty: easy, type: mcq, prompt: "Stop the page reloading on submit", choices: ["e.preventDefault()", "e.stop()", "return false always", "form.stop()"], answer: 0 }
+          - { id: fs-w09-d4-rf02, difficulty: easy, type: mcq, prompt: "Listen for a form being sent", choices: ["form.addEventListener(\"submit\", …)", "button.addEventListener(\"click\") only", "form.onsend", "form.post()"], answer: 0 }
+          - { id: fs-w09-d4-rf03, difficulty: easy, type: mcq, prompt: "Read the field named phone", choices: ["form.elements.phone.value", "form.phone.text", "form.get(\"phone\")", "phone.value()"], answer: 0 }
+          - { id: fs-w09-d4-rf04, difficulty: easy, type: mcq, prompt: "Clear all fields", choices: ["form.reset()", "form.clear()", "form.empty()", "form.value = \"\""], answer: 0 }
+          - { id: fs-w09-d4-rf05, difficulty: easy, type: mcq, prompt: "Form values are…", choices: ["strings", "numbers", "objects", "booleans"], answer: 0 }
+          - { id: fs-w09-d4-rf06, difficulty: easy, type: mcq, prompt: "Exactly 11 digits (regex)", choices: ["/^\\d{11}$/", "/11/", "/\\d+/", "/^[0-9]$/"], answer: 0 }
+          - { id: fs-w09-d4-rf07, difficulty: easy, type: truefalse, prompt: "Pressing Enter in a field also submits the form.", answer: true }
+          - { id: fs-w09-d4-rf08, difficulty: easy, type: mcq, prompt: "Test a regex", choices: ["/^\\d{11}$/.test(phone)", "phone.match11()", "regex(phone)", "phone.test(/…/)"], answer: 0 }
+          - { id: fs-w09-d4-rf09, difficulty: easy, type: mcq, prompt: "Remove spaces from a phone", choices: ["phone.replaceAll(\" \", \"\")", "phone.trim() only", "phone.strip()", "phone.clean()"], answer: 0 }
+          - { id: fs-w09-d4-rf10, difficulty: easy, type: truefalse, prompt: "HTML validation (required) is enough; skip JS checks.", answer: false }
+      - kind: brain-teaser
+        title: "Validate it"
+        questions:
+          - id: fs-w09-d4-bt01
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const ok = (p) => /^\d{11}$/.test(p.replaceAll(" ", ""))
+              console.log(ok("0803 123 4567"), ok("0803 123 456"), ok("0803123456a"))
+            accept: ["true false false"]
+          - id: fs-w09-d4-bt02
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              function validate(name, phone) {
+                if (name.trim() === "") return "Name is required"
+                if (!/^\d{11}$/.test(phone.replaceAll(" ", ""))) return "Phone must be 11 digits"
+                return `Thanks, ${name.trim()}!`
+              }
+              console.log(validate("  ", "08031234567"), "|", validate(" Tolu ", "0803 123 4567"))
+            accept: ["Name is required | Thanks, Tolu!"]
+          - id: fs-w09-d4-bt03
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const amount = Number("1,200")
+              console.log(amount, amount > 0)
+            accept: ["NaN false"]
+          - { id: fs-w09-d4-bt04, difficulty: hard, type: mcq, prompt: "The page flashes and your message vanishes when you press Send. Missing?", choices: ["e.preventDefault() in the submit handler", "form.reset()", "a button type", "CSS"], answer: 0 }
+          - id: fs-w09-d4-bt05
+            difficulty: hard
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const valid = (v) => v.trim() !== "" && Number(v) > 0
+              console.log(["1200", "abc", "-5", "", "0"].filter(valid).length)
+            accept: ["1"]
+
+  # ─────────────────────────── DAY 5 ───────────────────────────
+  - day: 5
+    gate:
+      title: "Checkpoint: forms"
+      covers: "Week 9 · Day 4: submit, preventDefault, form.elements, validation with regex, messages, reset, Number()"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w09-d5-g01, difficulty: easy, type: mcq, prompt: "First line in a submit handler", choices: ["e.preventDefault()", "form.reset()", "return", "location.reload()"], answer: 0 }
+        - { id: fs-w09-d5-g02, difficulty: easy, type: mcq, prompt: "Turn the amount field into a number", choices: ["Number(form.elements.amount.value)", "form.elements.amount.number", "parse(amount)", "amount.value * \"1\" only"], answer: 0 }
+        - { id: fs-w09-d5-g03, difficulty: easy, type: truefalse, prompt: "Listening to submit catches both the button and the Enter key.", answer: true }
+        - { id: fs-w09-d5-g04, difficulty: easy, type: mcq, prompt: "Clear the form after success", choices: ["form.reset()", "form.empty()", "form.clear()", "form = null"], answer: 0 }
+        - { id: fs-w09-d5-g05, difficulty: easy, type: mcq, prompt: "Show an error under the form", choices: ["error.textContent = \"Name is required\"", "alert only", "console.log only", "throw"], answer: 0 }
+        - { id: fs-w09-d5-g06, difficulty: easy, type: mcq, prompt: "Ignore spaces around a name", choices: ["name.trim()", "name.strip()", "name.clean()", "name.cut()"], answer: 0 }
+        - id: fs-w09-d5-g07
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            console.log(/^\d{11}$/.test("08031234567"), /^\d{11}$/.test("080312345678"))
+          accept: ["true false"]
+        - { id: fs-w09-d5-g08, difficulty: medium, type: match, prompt: "Match.", pairs: [["preventDefault", "stop the reload"], ["form.reset", "clear the fields"], ["trim", "remove outer spaces"], ["Number", "text to number"]] }
+        - id: fs-w09-d5-g09
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const v = "  "
+            console.log(v.trim() === "" ? "Name is required" : "ok")
+          accept: ["Name is required"]
+        - { id: fs-w09-d5-g10, difficulty: medium, type: truefalse, prompt: "`Number(\"\")` is 0, so an empty amount passes a `!isNaN` check.", answer: true, explain: "That's why you also check that the field isn't empty, or that the amount is > 0." }
+        - { id: fs-w09-d5-g11, difficulty: medium, type: mcq, prompt: "Return early on an error: `if (name === \"\") return showError(…)`. Why return?", choices: ["So the success code below doesn't run", "To reload the page", "It's required syntax", "To clear the form"], answer: 0 }
+        - id: fs-w09-d5-g12
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            console.log(Number("") , Number("12a"), Number(" 12 "))
+          accept: ["0 NaN 12"]
+        - { id: fs-w09-d5-g13, difficulty: medium, type: mcq, prompt: "On error, the old \"Thanks\" message should…", choices: ["be cleared", "stay", "turn red", "be logged"], answer: 0 }
+        - { id: fs-w09-d5-g14, difficulty: medium, type: truefalse, prompt: "The sandbox's form checks call form.requestSubmit(), which fires your submit listener.", answer: true }
+        - { id: fs-w09-d5-g15, difficulty: medium, type: mcq, prompt: "Read a field without form.elements", choices: ["document.querySelector(\"#name\").value", "document.name.text", "form.value(\"name\")", "#name.value"], answer: 0 }
+        - id: fs-w09-d5-g16
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const check = (raw) => {
+              const n = Number(raw)
+              return raw.trim() !== "" && n > 0 ? "ok" : "bad"
+            }
+            console.log(["5", "0", "", "x", " 7 "].map(check).join(","))
+          accept: ["ok,bad,bad,bad,ok"]
+        - { id: fs-w09-d5-g17, difficulty: hard, type: mcq, prompt: "Your form works in Safari but the submit handler never runs in a sandboxed iframe in Chrome. Why?", choices: ["The iframe lacks allow-forms, so Chrome blocks submission", "Chrome can't run JS", "preventDefault is missing", "Safari is wrong"], answer: 0 }
+        - { id: fs-w09-d5-g18, difficulty: hard, type: multi, prompt: "Which phones fail /^\\d{11}$/ after removing spaces? (Select all.)", choices: ["0803 123 456", "+2348031234567", "0803-123-4567", "0803 123 4567"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "State and render"
+        secondsPerQuestion: 9
+        questions:
+          - { id: fs-w09-d5-rf01, difficulty: easy, type: mcq, prompt: "Where does the truth live?", choices: ["the state array", "the HTML", "the CSS", "the console"], answer: 0 }
+          - { id: fs-w09-d5-rf02, difficulty: easy, type: mcq, prompt: "After changing state, call…", choices: ["render()", "location.reload()", "alert()", "nothing"], answer: 0 }
+          - { id: fs-w09-d5-rf03, difficulty: easy, type: mcq, prompt: "Save after each change to…", choices: ["storage", "the HTML", "a cookie only", "the URL"], answer: 0 }
+          - { id: fs-w09-d5-rf04, difficulty: easy, type: mcq, prompt: "Toggle done on item i", choices: ["todos.map((t, j) => (j === i ? { ...t, done: !t.done } : t))", "todos[i] = !todos[i]", "todos.toggle(i)", "todos.done = true"], answer: 0 }
+          - { id: fs-w09-d5-rf05, difficulty: easy, type: mcq, prompt: "Count unfinished todos", choices: ["todos.filter((t) => !t.done).length", "todos.length", "todos.count(false)", "todos.done.length"], answer: 0 }
+          - { id: fs-w09-d5-rf06, difficulty: easy, type: mcq, prompt: "Remove the done todos", choices: ["todos = todos.filter((t) => !t.done)", "todos.remove(done)", "delete todos.done", "todos.pop()"], answer: 0 }
+          - { id: fs-w09-d5-rf07, difficulty: easy, type: truefalse, prompt: "Events should change state, not edit the page directly.", answer: true }
+          - { id: fs-w09-d5-rf08, difficulty: easy, type: mcq, prompt: "Add a todo without mutating", choices: ["todos = [...todos, { text, done: false }]", "todos.push(text)", "todos += text", "todos.add(text)"], answer: 0 }
+          - { id: fs-w09-d5-rf09, difficulty: easy, type: mcq, prompt: "Style done items", choices: ["li.classList.toggle(\"done\", todo.done)", "li.done = true", "li.style = done", "li.cross()"], answer: 0 }
+          - { id: fs-w09-d5-rf10, difficulty: easy, type: mcq, prompt: "Load saved todos", choices: ["JSON.parse(storage.getItem(\"todos\") ?? \"[]\")", "storage.todos", "JSON.load(\"todos\")", "localStorage[\"todos\"] only"], answer: 0 }
+      - kind: brain-teaser
+        title: "To-do logic"
+        questions:
+          - id: fs-w09-d5-bt01
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              let todos = [{ text: "Buy rice", done: false }, { text: "Call Ada", done: false }]
+              todos = todos.map((t, j) => (j === 0 ? { ...t, done: !t.done } : t))
+              console.log(`${todos.filter((t) => !t.done).length} left`)
+            accept: ["1 left"]
+          - id: fs-w09-d5-bt02
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              let todos = [{ t: "a", done: true }, { t: "b", done: false }, { t: "c", done: true }]
+              todos = todos.filter((x) => !x.done)
+              console.log(todos.map((x) => x.t).join(""), todos.length)
+            accept: ["b 1"]
+          - id: fs-w09-d5-bt03
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const m = {}
+              const storage = { getItem: (k) => (k in m ? m[k] : null), setItem: (k, v) => { m[k] = String(v) } }
+              storage.setItem("todos", JSON.stringify([{ text: "x", done: false }]))
+              console.log(JSON.parse(storage.getItem("todos") ?? "[]").length, storage.getItem("none"))
+            accept: ["1 null"]
+          - { id: fs-w09-d5-bt04, difficulty: hard, type: mcq, prompt: "Why does the sandbox use a storage that falls back to memory?", choices: ["Sandboxed iframes block real localStorage", "localStorage is slow", "Memory is permanent", "To hide data from you"], answer: 0 }
+          - { id: fs-w09-d5-bt05, difficulty: hard, type: order, prompt: "Order one user action in the pattern.", items: ["User clicks a task", "Change the state (toggle done)", "Save state to storage", "render() redraws the list"] }
+
+  # ─────────────────────────── DAY 6 ───────────────────────────
+  - day: 6
+    gate:
+      title: "Checkpoint: state, render and saving"
+      covers: "Week 9 · Day 5: state array, render(), events change state, save then render, storage fallback"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w09-d6-g01, difficulty: easy, type: mcq, prompt: "In the pattern, events should…", choices: ["change the state, then update", "edit the HTML directly", "reload the page", "call alert"], answer: 0 }
+        - { id: fs-w09-d6-g02, difficulty: easy, type: mcq, prompt: "update() does…", choices: ["save, then render", "only render", "only save", "reload"], answer: 0 }
+        - { id: fs-w09-d6-g03, difficulty: easy, type: truefalse, prompt: "render() should draw everything from the state.", answer: true }
+        - { id: fs-w09-d6-g04, difficulty: easy, type: mcq, prompt: "Initial state", choices: ["let todos = JSON.parse(storage.getItem(\"todos\") ?? \"[]\")", "let todos", "const todos = 0", "todos = HTML"], answer: 0 }
+        - { id: fs-w09-d6-g05, difficulty: easy, type: mcq, prompt: "Call render() once at the end of the script so…", choices: ["saved items show on page load", "the page reloads", "storage clears", "nothing happens"], answer: 0 }
+        - { id: fs-w09-d6-g06, difficulty: easy, type: mcq, prompt: "Text for \"2 left\"", choices: ["`${todos.filter((t) => !t.done).length} left`", "todos.length + \"left\"", "\"2 left\"", "todos.left"], answer: 0 }
+        - id: fs-w09-d6-g07
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            let expenses = []
+            expenses = [...expenses, { item: "Bread", amount: 1200 }]
+            expenses = [...expenses, { item: "Bus", amount: 500 }]
+            expenses = expenses.filter((_, i) => i !== 1)
+            console.log(expenses.length, expenses[0].item)
+          accept: ["1 Bread"]
+        - { id: fs-w09-d6-g08, difficulty: medium, type: match, prompt: "Match.", pairs: [["state", "the data array"], ["render", "draw from state"], ["update", "save then render"], ["storage", "keeps it after reload"]] }
+        - id: fs-w09-d6-g09
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const naira = (n) => "₦" + n.toLocaleString("en-NG")
+            const list = [{ amount: 1200 }, { amount: 500 }]
+            console.log(naira(list.reduce((s, e) => s + e.amount, 0)))
+          accept: ["₦1,700"]
+        - { id: fs-w09-d6-g10, difficulty: medium, type: truefalse, prompt: "Saving amounts as strings like \"1200\" is fine because reduce adds them correctly.", answer: false, explain: "\"1200\" + \"500\" joins as text. Store numbers." }
+        - id: fs-w09-d6-g11
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            console.log(["1200", "500"].reduce((s, x) => s + x, 0))
+          accept: ["01200500"]
+        - { id: fs-w09-d6-g12, difficulty: medium, type: mcq, prompt: "Delete the expense at index i", choices: ["expenses = expenses.filter((_, j) => j !== i)", "delete expenses[i]", "expenses.remove(i)", "expenses[i] = null"], answer: 0 }
+        - { id: fs-w09-d6-g13, difficulty: medium, type: mcq, prompt: "Invalid amount: what should happen?", choices: ["Show an error and add nothing", "Add it as 0", "Reload", "Add it as text"], answer: 0 }
+        - { id: fs-w09-d6-g14, difficulty: medium, type: truefalse, prompt: "Only the real site's localStorage keeps data after you close the tab.", answer: true }
+        - { id: fs-w09-d6-g15, difficulty: medium, type: order, prompt: "Order the expense form's submit handler.", items: ["e.preventDefault()", "Read and validate the amount", "Add the expense to state", "form.reset()", "update() (save + render)"] }
+        - id: fs-w09-d6-g16
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            let state = [{ a: 1200, c: "Food" }, { a: 500, c: "Transport" }, { a: 2000, c: "Food" }]
+            const byCat = state.reduce((acc, e) => ({ ...acc, [e.c]: (acc[e.c] ?? 0) + e.a }), {})
+            state = state.filter((e) => e.c !== "Transport")
+            console.log(byCat.Food, state.length)
+          accept: ["3200 2"]
+        - { id: fs-w09-d6-g17, difficulty: hard, type: mcq, prompt: "Each delete button uses the index i from forEach. After deleting row 0 and re-rendering, row indexes…", choices: ["are recomputed by the new render, so they stay correct", "stay stale forever", "all become 0", "break the page"], answer: 0 }
+        - { id: fs-w09-d6-g18, difficulty: hard, type: multi, prompt: "Which belong in the live expense tracker? (Select all.)", choices: ["Form with validation", "List with delete buttons", "₦ total that updates", "A Python backend"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Week 9 lightning round"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fs-w09-d6-rf01, difficulty: easy, type: mcq, prompt: "First matching element", choices: ["querySelector", "querySelectorAll", "getAll", "select"], answer: 0 }
+          - { id: fs-w09-d6-rf02, difficulty: easy, type: mcq, prompt: "Safe text", choices: ["textContent", "innerHTML", "outerHTML", "write"], answer: 0 }
+          - { id: fs-w09-d6-rf03, difficulty: easy, type: mcq, prompt: "Listen", choices: ["addEventListener", "listen", "on", "watch"], answer: 0 }
+          - { id: fs-w09-d6-rf04, difficulty: easy, type: mcq, prompt: "Typing event", choices: ["input", "submit", "load", "click"], answer: 0 }
+          - { id: fs-w09-d6-rf05, difficulty: easy, type: mcq, prompt: "Make an element", choices: ["createElement", "newElement", "make", "build"], answer: 0 }
+          - { id: fs-w09-d6-rf06, difficulty: easy, type: mcq, prompt: "Stop the reload", choices: ["preventDefault", "stopReload", "halt", "return"], answer: 0 }
+          - { id: fs-w09-d6-rf07, difficulty: easy, type: mcq, prompt: "Clear the form", choices: ["reset", "clear", "empty", "wipe"], answer: 0 }
+          - { id: fs-w09-d6-rf08, difficulty: easy, type: mcq, prompt: "Form values are", choices: ["strings", "numbers", "arrays", "objects"], answer: 0 }
+          - { id: fs-w09-d6-rf09, difficulty: easy, type: mcq, prompt: "Draw from data", choices: ["render()", "draw()", "paint()", "reload()"], answer: 0 }
+          - { id: fs-w09-d6-rf10, difficulty: easy, type: truefalse, prompt: "React builds on the render pattern you learned this week.", answer: true }
+      - kind: brain-teaser
+        title: "Tracker app"
+        questions:
+          - id: fs-w09-d6-bt01
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const valid = (raw) => raw.trim() !== "" && Number(raw) > 0
+              let list = []
+              for (const [item, raw] of [["Bread", "1200"], ["Suya", "abc"], ["Bus", "500"], ["Gift", "-5"]]) {
+                if (valid(raw)) list = [...list, { item, amount: Number(raw) }]
+              }
+              console.log(list.map((e) => e.item).join(","), list.reduce((s, e) => s + e.amount, 0))
+            accept: ["Bread,Bus 1700"]
+          - id: fs-w09-d6-bt02
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const row = (e) => `${e.item} (${e.category}): ₦${e.amount.toLocaleString("en-NG")}`
+              console.log(row({ item: "Bread", category: "Food", amount: 1200 }))
+            accept: ["Bread (Food): ₦1,200"]
+          - { id: fs-w09-d6-bt03, difficulty: medium, type: mcq, prompt: "Store amounts as…", choices: ["numbers", "strings with ₦", "strings", "objects"], answer: 0 }
+          - { id: fs-w09-d6-bt04, difficulty: hard, type: mcq, prompt: "The tracker shows old data after you edit and reload. Most likely?", choices: ["You render but forgot to save after the change", "localStorage is read-only", "JSON.parse is broken", "CSS caching"], answer: 0 }
+          - { id: fs-w09-d6-bt05, difficulty: hard, type: multi, prompt: "Which skills from this week will React reuse? (Select all.)", choices: ["Events", "Rendering from state", "Forms and validation", "Editing HTML by hand"], answers: [0, 1, 2] }
