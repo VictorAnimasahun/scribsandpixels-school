@@ -11,16 +11,16 @@
 ## Quizzes (a slice at a time, no mass generation)
 - [x] Quiz engine: random weekly checkpoints (1–2/week), 70% pass, 60-min cooldown, new questions on retry
 - [x] French Week 1 · Excel Week 1 question banks
-- [x] French Weeks 2–7 · Excel Weeks 2–7
-- [ ] French Weeks 8–52
-- [ ] Excel Weeks 8–24
+- [x] French Weeks 2–8 · Excel Weeks 2–8
+- [ ] French Weeks 9–52
+- [ ] Excel Weeks 9–24
 - [x] Fullstack + ML Weeks 1–7 (every Python snippet checked by running it: `node scripts/check-quiz-code.mjs`)
 - [ ] Fullstack + ML later weeks as they're written
 
 ## Sandboxes (a slice at a time)
 - [x] Engines: French phrase builder, Excel spreadsheet, Python, web playground
 - [x] French W1, W2, W3, W7 + main lab · Excel W2, W3, W6 + playground · Fullstack: a sandbox for every day of W1–10 (65 sandboxes, 271 auto-checked tasks) + Python/web playgrounds
-- [x] End-to-end test of every sandbox in the real app (`npm run e2e [url] [chromium|webkit]`): 58/58 pass on the live site, Chrome and iPhone/WebKit
+- [x] End-to-end test of every sandbox in the real app (`npm run e2e [url] [chromium|webkit]`): 76/76 pass on the live site, Chrome and iPhone/WebKit
 - [x] Phone-ready code editor (key bar, auto-indent, smart-quote fix), tested on iPhone/Safari and Android/Chrome emulation
 - [ ] More French lesson sets (add each to `fr-main` include)
 - [ ] More Excel task sheets (every formula week)

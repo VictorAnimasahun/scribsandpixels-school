@@ -1,0 +1,299 @@
+# French · Week 8 quizzes. Format and rules: src/content/QUIZZES.md
+week: 8
+days:
+
+  # ─────────────────────────── DAY 1 ───────────────────────────
+  - day: 1
+    gate:
+      title: "Checkpoint: Week 7 review"
+      covers: "Week 7: food, partitive articles, quantities and prices, vouloir/prendre/boire, at the restaurant"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w08-d1-g01, difficulty: easy, type: mcq, prompt: "Je mange ___ riz.", choices: ["du", "de la", "le", "des"], answer: 0 }
+        - { id: fr-w08-d1-g02, difficulty: easy, type: mcq, prompt: "J'adore ___ poulet.", choices: ["le", "du", "de", "un"], answer: 0 }
+        - { id: fr-w08-d1-g03, difficulty: easy, type: mcq, prompt: "the bill", choices: ["l'addition", "la carte", "le menu", "le plat"], answer: 0 }
+        - { id: fr-w08-d1-g04, difficulty: easy, type: text, prompt: "ils ___ (prendre)", accept: ["prennent"] }
+        - { id: fr-w08-d1-g05, difficulty: easy, type: truefalse, prompt: "After a negative, du/de la/des become de.", answer: true }
+        - { id: fr-w08-d1-g06, difficulty: easy, type: mcq, prompt: "a bottle of water", choices: ["une bouteille d'eau", "une bouteille de l'eau", "une bouteille eau", "un bouteille d'eau"], answer: 0 }
+        - { id: fr-w08-d1-g07, difficulty: medium, type: text, prompt: "Translate: I don't drink coffee.", accept: ["Je ne bois pas de café.", "Je ne bois pas de café"] }
+        - { id: fr-w08-d1-g08, difficulty: medium, type: text, prompt: "nous ___ (boire)", accept: ["buvons"] }
+        - { id: fr-w08-d1-g09, difficulty: medium, type: match, prompt: "Match.", pairs: [["la carte", "the full menu"], ["le menu", "set menu"], ["l'entrée", "starter"], ["le plat", "main course"]] }
+        - { id: fr-w08-d1-g10, difficulty: medium, type: text, prompt: "Translate: a lot of friends", accept: ["beaucoup d'amis"] }
+        - { id: fr-w08-d1-g11, difficulty: medium, type: mcq, prompt: "Polite \"I would like\"", choices: ["je voudrais", "je veux", "j'exige", "donne-moi"], answer: 0 }
+        - { id: fr-w08-d1-g12, difficulty: medium, type: truefalse, prompt: "« J'aime du chocolat » is the normal way to say you like chocolate.", answer: false }
+        - { id: fr-w08-d1-g13, difficulty: medium, type: text, prompt: "Translate: How much is it?", accept: ["C'est combien ?", "C'est combien?", "Ça coûte combien ?", "C'est combien"] }
+        - { id: fr-w08-d1-g14, difficulty: medium, type: text, prompt: "Je ne (comprendre) ___ pas.", accept: ["comprends"] }
+        - { id: fr-w08-d1-g15, difficulty: medium, type: mcq, prompt: "Ils boivent ___ eau.", choices: ["de l'", "du", "de la", "des"], answer: 0 }
+        - { id: fr-w08-d1-g16, difficulty: hard, type: text, prompt: "Translate: I'd like a kilo of rice and some tomatoes, please.", accept: ["Je voudrais un kilo de riz et des tomates, s'il vous plaît.", "Je voudrais un kilo de riz et des tomates s'il vous plaît.", "Je voudrais un kilo de riz et des tomates, s'il vous plaît"] }
+        - { id: fr-w08-d1-g17, difficulty: hard, type: mcq, prompt: "Find the sentence with NO mistake.", choices: ["Comme entrée, je voudrais la salade.", "Je ne bois pas du lait.", "Ils prenent le bus.", "Un kilo des tomates."], answer: 0 }
+        - { id: fr-w08-d1-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["un peu de sucre", "une douzaine d'œufs", "assez d'argent", "beaucoup des amis"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Aller + places"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fr-w08-d1-rf01, difficulty: easy, type: text, prompt: "je ___ (aller)", accept: ["vais"] }
+          - { id: fr-w08-d1-rf02, difficulty: easy, type: text, prompt: "tu ___ (aller)", accept: ["vas"] }
+          - { id: fr-w08-d1-rf03, difficulty: easy, type: text, prompt: "il ___ (aller)", accept: ["va"] }
+          - { id: fr-w08-d1-rf04, difficulty: easy, type: text, prompt: "nous ___ (aller)", accept: ["allons"] }
+          - { id: fr-w08-d1-rf05, difficulty: easy, type: text, prompt: "vous ___ (aller)", accept: ["allez"] }
+          - { id: fr-w08-d1-rf06, difficulty: easy, type: text, prompt: "ils ___ (aller)", accept: ["vont"] }
+          - { id: fr-w08-d1-rf07, difficulty: easy, type: mcq, prompt: "Je vais ___ marché.", choices: ["au", "à la", "à le", "aux"], answer: 0 }
+          - { id: fr-w08-d1-rf08, difficulty: easy, type: mcq, prompt: "Elle va ___ banque.", choices: ["à la", "au", "à l'", "aux"], answer: 0 }
+          - { id: fr-w08-d1-rf09, difficulty: easy, type: mcq, prompt: "Nous allons ___ aéroport.", choices: ["à l'", "au", "à la", "aux"], answer: 0 }
+          - { id: fr-w08-d1-rf10, difficulty: easy, type: mcq, prompt: "Je vais ___ ma mère.", choices: ["chez", "à", "au", "à la"], answer: 0 }
+          - { id: fr-w08-d1-rf11, difficulty: easy, type: mcq, prompt: "la gare =", choices: ["train station", "garage", "airport", "market"], answer: 0 }
+      - kind: brain-teaser
+        title: "Où vas-tu ?"
+        questions:
+          - { id: fr-w08-d1-bt01, difficulty: medium, type: text, prompt: "Vous allez ___ le dentiste ?", accept: ["chez"] }
+          - { id: fr-w08-d1-bt02, difficulty: medium, type: text, prompt: "Ils vont ___ États-Unis.", accept: ["aux"] }
+          - { id: fr-w08-d1-bt03, difficulty: medium, type: text, prompt: "Translate: I'm going to the pharmacy.", accept: ["Je vais à la pharmacie.", "Je vais à la pharmacie"] }
+          - { id: fr-w08-d1-bt04, difficulty: hard, type: text, prompt: "Translate: On Sundays, we go to church.", accept: ["Le dimanche, nous allons à l'église.", "Le dimanche nous allons à l'église.", "Le dimanche, on va à l'église."] }
+          - { id: fr-w08-d1-bt05, difficulty: hard, type: mcq, prompt: "Why « chez le médecin » but « à l'hôpital »?", choices: ["chez + person, à + place", "médecin is feminine", "hôpital is plural", "random"], answer: 0 }
+
+  # ─────────────────────────── DAY 2 ───────────────────────────
+  - day: 2
+    gate:
+      title: "Checkpoint: aller and places"
+      covers: "Week 8 · Day 1: aller, à + le/la/l'/les, places in town, chez + person"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w08-d2-g01, difficulty: easy, type: text, prompt: "vous ___ (aller)", accept: ["allez"] }
+        - { id: fr-w08-d2-g02, difficulty: easy, type: text, prompt: "elles ___ (aller)", accept: ["vont"] }
+        - { id: fr-w08-d2-g03, difficulty: easy, type: mcq, prompt: "à + le =", choices: ["au", "à le", "aux", "à l'"], answer: 0 }
+        - { id: fr-w08-d2-g04, difficulty: easy, type: mcq, prompt: "à + les =", choices: ["aux", "à les", "au", "des"], answer: 0 }
+        - { id: fr-w08-d2-g05, difficulty: easy, type: truefalse, prompt: "« à la » doesn't change: Je vais à la poste.", answer: true }
+        - { id: fr-w08-d2-g06, difficulty: easy, type: mcq, prompt: "la salle de sport =", choices: ["the gym", "the sports shop", "the stadium", "the classroom"], answer: 0 }
+        - { id: fr-w08-d2-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["au", "le marché"], ["à la", "la plage"], ["à l'", "l'école"], ["aux", "les toilettes"]] }
+        - { id: fr-w08-d2-g08, difficulty: medium, type: text, prompt: "Translate: She goes to the supermarket.", accept: ["Elle va au supermarché.", "Elle va au supermarché"] }
+        - { id: fr-w08-d2-g09, difficulty: medium, type: text, prompt: "Translate: I'm going to my brother's place.", accept: ["Je vais chez mon frère.", "Je vais chez mon frère"] }
+        - { id: fr-w08-d2-g10, difficulty: medium, type: mcq, prompt: "the bus station", choices: ["la gare routière", "la gare", "l'arrêt", "le bus"], answer: 0 }
+        - { id: fr-w08-d2-g11, difficulty: medium, type: truefalse, prompt: "« Je vais à le cinéma » is correct.", answer: false }
+        - { id: fr-w08-d2-g12, difficulty: medium, type: text, prompt: "Translate: We are going to the hospital.", accept: ["Nous allons à l'hôpital.", "Nous allons à l'hôpital", "On va à l'hôpital."] }
+        - { id: fr-w08-d2-g13, difficulty: medium, type: mcq, prompt: "Ils vont ___ mosquée.", choices: ["à la", "au", "à l'", "chez"], answer: 0 }
+        - { id: fr-w08-d2-g14, difficulty: medium, type: text, prompt: "Translate: Are you going to the bank? (tu)", accept: ["Tu vas à la banque ?", "Tu vas à la banque?", "Est-ce que tu vas à la banque ?", "Tu vas à la banque"] }
+        - { id: fr-w08-d2-g15, difficulty: medium, type: order, prompt: "Build the sentence.", items: ["Le lundi,", "je", "vais", "au", "bureau"] }
+        - { id: fr-w08-d2-g16, difficulty: hard, type: text, prompt: "Translate: They (men) go to the restaurant, then to the cinema.", accept: ["Ils vont au restaurant, puis au cinéma.", "Ils vont au restaurant puis au cinéma.", "Ils vont au restaurant, ensuite au cinéma."] }
+        - { id: fr-w08-d2-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « Je vais à la marché puis à le médecin. »", choices: ["au marché … chez le médecin", "Only à la → au", "Only à le → au", "No error"], answer: 0 }
+        - { id: fr-w08-d2-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["Je vais à l'université.", "Elle va chez sa tante.", "Nous allons aux États-Unis.", "Tu vas au plage ?"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "The big four verbs"
+        secondsPerQuestion: 7
+        questions:
+          - { id: fr-w08-d2-rf01, difficulty: easy, type: text, prompt: "ils ___ (être)", accept: ["sont"] }
+          - { id: fr-w08-d2-rf02, difficulty: easy, type: text, prompt: "ils ___ (avoir)", accept: ["ont"] }
+          - { id: fr-w08-d2-rf03, difficulty: easy, type: text, prompt: "ils ___ (faire)", accept: ["font"] }
+          - { id: fr-w08-d2-rf04, difficulty: easy, type: text, prompt: "ils ___ (aller)", accept: ["vont"] }
+          - { id: fr-w08-d2-rf05, difficulty: easy, type: text, prompt: "nous ___ (être)", accept: ["sommes"] }
+          - { id: fr-w08-d2-rf06, difficulty: easy, type: text, prompt: "nous ___ (avoir)", accept: ["avons"] }
+          - { id: fr-w08-d2-rf07, difficulty: easy, type: text, prompt: "vous ___ (faire)", accept: ["faites"] }
+          - { id: fr-w08-d2-rf08, difficulty: easy, type: text, prompt: "vous ___ (être)", accept: ["êtes"] }
+          - { id: fr-w08-d2-rf09, difficulty: easy, type: text, prompt: "tu ___ (aller)", accept: ["vas"] }
+          - { id: fr-w08-d2-rf10, difficulty: easy, type: text, prompt: "j'___ (avoir)", accept: ["ai"] }
+          - { id: fr-w08-d2-rf11, difficulty: easy, type: text, prompt: "il ___ (faire)", accept: ["fait"] }
+      - kind: brain-teaser
+        title: "Pick the verb"
+        questions:
+          - { id: fr-w08-d2-bt01, difficulty: medium, type: text, prompt: "Nous ___ nigérians.", accept: ["sommes"] }
+          - { id: fr-w08-d2-bt02, difficulty: medium, type: text, prompt: "Ils ___ trois enfants.", accept: ["ont"] }
+          - { id: fr-w08-d2-bt03, difficulty: medium, type: text, prompt: "Elles ___ au cinéma.", accept: ["vont"] }
+          - { id: fr-w08-d2-bt04, difficulty: hard, type: text, prompt: "Vous ___ la cuisine ? (faire)", accept: ["faites"] }
+          - { id: fr-w08-d2-bt05, difficulty: hard, type: mcq, prompt: "What do sont, ont, font and vont have in common?", choices: ["They're the short irregular ils forms of être, avoir, faire, aller", "They're all regular", "They're all past tense", "They're all reflexive"], answer: 0 }
+
+  # ─────────────────────────── DAY 3 ───────────────────────────
+  - day: 3
+    gate:
+      title: "Checkpoint: être, avoir, faire, aller"
+      covers: "Week 8 · Day 2: the four key verbs in all persons and choosing the right one"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w08-d3-g01, difficulty: easy, type: text, prompt: "tu ___ (être)", accept: ["es"] }
+        - { id: fr-w08-d3-g02, difficulty: easy, type: text, prompt: "tu ___ (avoir)", accept: ["as"] }
+        - { id: fr-w08-d3-g03, difficulty: easy, type: text, prompt: "tu ___ (faire)", accept: ["fais"] }
+        - { id: fr-w08-d3-g04, difficulty: easy, type: text, prompt: "nous ___ (aller)", accept: ["allons"] }
+        - { id: fr-w08-d3-g05, difficulty: easy, type: truefalse, prompt: "« J'ai faim » uses avoir.", answer: true }
+        - { id: fr-w08-d3-g06, difficulty: easy, type: text, prompt: "On ___ fatigués. (être)", accept: ["est"] }
+        - { id: fr-w08-d3-g07, difficulty: medium, type: match, prompt: "Match the ils form.", pairs: [["être", "sont"], ["avoir", "ont"], ["faire", "font"], ["aller", "vont"]] }
+        - { id: fr-w08-d3-g08, difficulty: medium, type: text, prompt: "J'___ faim.", accept: ["ai"] }
+        - { id: fr-w08-d3-g09, difficulty: medium, type: text, prompt: "Il ___ à la banque.", accept: ["va"] }
+        - { id: fr-w08-d3-g10, difficulty: medium, type: text, prompt: "Tu ___ du sport ?", accept: ["fais"] }
+        - { id: fr-w08-d3-g11, difficulty: medium, type: truefalse, prompt: "« Il fait chaud » talks about the weather.", answer: true }
+        - { id: fr-w08-d3-g12, difficulty: medium, type: mcq, prompt: "They are 20 (years old).", choices: ["Ils ont vingt ans.", "Ils sont vingt ans.", "Ils font vingt ans.", "Ils vont vingt ans."], answer: 0 }
+        - { id: fr-w08-d3-g13, difficulty: medium, type: text, prompt: "Translate: We do the shopping and we go to the market.", accept: ["Nous faisons les courses et nous allons au marché.", "Nous faisons les courses et nous allons au marché", "On fait les courses et on va au marché."] }
+        - { id: fr-w08-d3-g14, difficulty: medium, type: mcq, prompt: "Vous ___ ingénieur ?", choices: ["êtes", "avez", "faites", "allez"], answer: 0 }
+        - { id: fr-w08-d3-g15, difficulty: medium, type: order, prompt: "Order être: je → ils.", items: ["suis", "es", "est", "sommes", "êtes", "sont"] }
+        - { id: fr-w08-d3-g16, difficulty: hard, type: text, prompt: "Translate: They (women) are tired because they go to the gym.", accept: ["Elles sont fatiguées parce qu'elles vont à la salle de sport.", "Elles sont fatiguées parce qu'elles vont à la salle de sport"] }
+        - { id: fr-w08-d3-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « Nous faisez du sport et ils sont faim. »", choices: ["faisons … ont faim", "Only faisez", "Only sont", "No error"], answer: 0 }
+        - { id: fr-w08-d3-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["Ils font la vaisselle.", "Vous avez raison.", "Elles vont chez Ada.", "Nous sont prêts."], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Article roundup"
+        secondsPerQuestion: 7
+        questions:
+          - { id: fr-w08-d3-rf01, difficulty: easy, type: mcq, prompt: "a (masc.)", choices: ["un", "une", "le", "du"], answer: 0 }
+          - { id: fr-w08-d3-rf02, difficulty: easy, type: mcq, prompt: "some (fem.)", choices: ["de la", "du", "une", "la"], answer: 0 }
+          - { id: fr-w08-d3-rf03, difficulty: easy, type: mcq, prompt: "the (plural)", choices: ["les", "des", "aux", "le"], answer: 0 }
+          - { id: fr-w08-d3-rf04, difficulty: easy, type: mcq, prompt: "à + le", choices: ["au", "du", "à le", "aux"], answer: 0 }
+          - { id: fr-w08-d3-rf05, difficulty: easy, type: mcq, prompt: "de + le", choices: ["du", "au", "de le", "des"], answer: 0 }
+          - { id: fr-w08-d3-rf06, difficulty: easy, type: mcq, prompt: "de + les", choices: ["des", "du", "aux", "les"], answer: 0 }
+          - { id: fr-w08-d3-rf07, difficulty: easy, type: mcq, prompt: "After pas, un/une/des become…", choices: ["de", "le", "du", "unchanged"], answer: 0 }
+          - { id: fr-w08-d3-rf08, difficulty: easy, type: mcq, prompt: "After pas, le/la/les…", choices: ["stay the same", "become de", "disappear", "become du"], answer: 0 }
+          - { id: fr-w08-d3-rf09, difficulty: easy, type: mcq, prompt: "some water", choices: ["de l'eau", "du eau", "de la eau", "des eau"], answer: 0 }
+          - { id: fr-w08-d3-rf10, difficulty: easy, type: mcq, prompt: "à + l'", choices: ["à l'", "au", "aux", "al"], answer: 0 }
+      - kind: brain-teaser
+        title: "Au marché avec ma sœur"
+        questions:
+          - { id: fr-w08-d3-bt01, difficulty: medium, type: text, prompt: "Le samedi, je vais ___ marché avec ___ sœur. (two words, comma)", accept: ["au, ma", "au,ma", "au ma"] }
+          - { id: fr-w08-d3-bt02, difficulty: medium, type: text, prompt: "Nous achetons ___ tomates, ___ riz et ___ huile. (three words, commas)", accept: ["des, du, de l'", "des,du,de l'", "des du de l'"] }
+          - { id: fr-w08-d3-bt03, difficulty: medium, type: text, prompt: "Ma sœur n'achète pas ___ viande.", accept: ["de"] }
+          - { id: fr-w08-d3-bt04, difficulty: hard, type: text, prompt: "Elle adore ___ légumes.", accept: ["les"] }
+          - { id: fr-w08-d3-bt05, difficulty: hard, type: text, prompt: "Ensuite, nous allons ___ pharmacie et ___ ma grand-mère. (two, comma)", accept: ["à la, chez", "à la,chez", "à la chez"] }
+
+  # ─────────────────────────── DAY 4 ───────────────────────────
+  - day: 4
+    gate:
+      title: "Checkpoint: all the articles"
+      covers: "Week 8 · Day 3: indefinite, definite, partitive, à + article, de + article, after negation"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w08-d4-g01, difficulty: easy, type: mcq, prompt: "Je mange ___ banane. (one)", choices: ["une", "de la", "la", "des"], answer: 0 }
+        - { id: fr-w08-d4-g02, difficulty: easy, type: mcq, prompt: "J'aime ___ musique.", choices: ["la", "de la", "une", "du"], answer: 0 }
+        - { id: fr-w08-d4-g03, difficulty: easy, type: mcq, prompt: "Je vais ___ toilettes.", choices: ["aux", "au", "à les", "des"], answer: 0 }
+        - { id: fr-w08-d4-g04, difficulty: easy, type: truefalse, prompt: "« Je n'aime pas les légumes » keeps les after pas.", answer: true }
+        - { id: fr-w08-d4-g05, difficulty: easy, type: mcq, prompt: "Il boit ___ lait. (some)", choices: ["du", "le", "de la", "un"], answer: 0 }
+        - { id: fr-w08-d4-g06, difficulty: easy, type: mcq, prompt: "Elle n'a pas ___ voiture.", choices: ["de", "une", "la", "des"], answer: 0 }
+        - { id: fr-w08-d4-g07, difficulty: medium, type: match, prompt: "Match the article type.", pairs: [["un/une", "a"], ["le/la", "the / general"], ["du/de la", "some"], ["au/aux", "to the"]] }
+        - { id: fr-w08-d4-g08, difficulty: medium, type: text, prompt: "Translate: I'm going to the market to buy some rice.", accept: ["Je vais au marché pour acheter du riz.", "Je vais au marché pour acheter du riz"] }
+        - { id: fr-w08-d4-g09, difficulty: medium, type: text, prompt: "Correct: Je ne mange pas des fruits.", accept: ["Je ne mange pas de fruits.", "Je ne mange pas de fruits"] }
+        - { id: fr-w08-d4-g10, difficulty: medium, type: mcq, prompt: "C'est ___ livre. → Ce n'est pas ___ livre.", choices: ["un … un", "un … de", "le … de", "du … de"], answer: 0, explain: "être keeps its article." }
+        - { id: fr-w08-d4-g11, difficulty: medium, type: truefalse, prompt: "« Je viens du marché » uses de + le = du.", answer: true }
+        - { id: fr-w08-d4-g12, difficulty: medium, type: text, prompt: "Translate: She is coming from the bank. (Elle revient…)", accept: ["Elle revient de la banque.", "Elle revient de la banque"] }
+        - { id: fr-w08-d4-g13, difficulty: medium, type: mcq, prompt: "Nous achetons ___ huile.", choices: ["de l'", "du", "de la", "des"], answer: 0 }
+        - { id: fr-w08-d4-g14, difficulty: medium, type: text, prompt: "Translate: I don't like fish.", accept: ["Je n'aime pas le poisson.", "Je n'aime pas le poisson"] }
+        - { id: fr-w08-d4-g15, difficulty: medium, type: mcq, prompt: "beaucoup ___ légumes", choices: ["de", "des", "les", "du"], answer: 0 }
+        - { id: fr-w08-d4-g16, difficulty: hard, type: text, prompt: "Translate: We are going to the market to buy some rice and tomatoes.", accept: ["Nous allons au marché pour acheter du riz et des tomates.", "Nous allons au marché pour acheter du riz et des tomates", "On va au marché pour acheter du riz et des tomates."] }
+        - { id: fr-w08-d4-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « Il va à le bureau et il ne mange pas du pain. »", choices: ["au bureau … pas de pain", "Only à le", "Only du", "No error"], answer: 0 }
+        - { id: fr-w08-d4-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["Je ne bois pas d'eau.", "J'adore les mangues.", "Elle vient de l'école.", "Nous mangeons de le riz."], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Correct it fast"
+        secondsPerQuestion: 10
+        questions:
+          - { id: fr-w08-d4-rf01, difficulty: easy, type: mcq, prompt: "Je suis 30 ans →", choices: ["J'ai 30 ans", "Je fais 30 ans", "Je vais 30 ans", "No change"], answer: 0 }
+          - { id: fr-w08-d4-rf02, difficulty: easy, type: mcq, prompt: "Elle ne mange pas du poisson →", choices: ["pas de poisson", "pas le poisson", "pas un poisson", "No change"], answer: 0 }
+          - { id: fr-w08-d4-rf03, difficulty: easy, type: mcq, prompt: "Nous faisez du sport →", choices: ["faisons", "faites", "font", "No change"], answer: 0 }
+          - { id: fr-w08-d4-rf04, difficulty: easy, type: mcq, prompt: "Il se lève pas tôt (written) →", choices: ["Il ne se lève pas tôt", "Il se ne lève pas tôt", "Il se lève ne pas tôt", "No change"], answer: 0 }
+          - { id: fr-w08-d4-rf05, difficulty: easy, type: mcq, prompt: "J'aime pas les pâtes (written) →", choices: ["Je n'aime pas les pâtes", "Je ne aime pas les pâtes", "J'aime ne pas les pâtes", "No change"], answer: 0 }
+          - { id: fr-w08-d4-rf06, difficulty: easy, type: mcq, prompt: "Tu vas à le bureau ? →", choices: ["au bureau", "à la bureau", "aux bureau", "No change"], answer: 0 }
+          - { id: fr-w08-d4-rf07, difficulty: easy, type: mcq, prompt: "Ils sont faim →", choices: ["Ils ont faim", "Ils font faim", "Ils vont faim", "No change"], answer: 0 }
+          - { id: fr-w08-d4-rf08, difficulty: easy, type: mcq, prompt: "Je me appelle →", choices: ["Je m'appelle", "Je appelle", "Me je appelle", "No change"], answer: 0 }
+          - { id: fr-w08-d4-rf09, difficulty: easy, type: mcq, prompt: "Est-ce que elle… →", choices: ["Est-ce qu'elle", "Est-ce que elle (fine)", "Est-elle que", "No change"], answer: 0 }
+          - { id: fr-w08-d4-rf10, difficulty: easy, type: mcq, prompt: "Ma amie →", choices: ["Mon amie", "Ma ami", "Mes amie", "No change"], answer: 0 }
+      - kind: brain-teaser
+        title: "Answer in full"
+        questions:
+          - { id: fr-w08-d4-bt01, difficulty: medium, type: mcq, prompt: "À quelle heure est-ce que tu te lèves ? — best answer", choices: ["Je me lève à six heures.", "Je lève à six heures.", "Je me lève six heure.", "À six."], answer: 0 }
+          - { id: fr-w08-d4-bt02, difficulty: medium, type: mcq, prompt: "Qu'est-ce que tu fais dans la vie ? — best answer", choices: ["Je suis comptable.", "Je fais comptable.", "Je suis un comptable.", "Je vie comptable."], answer: 0 }
+          - { id: fr-w08-d4-bt03, difficulty: medium, type: mcq, prompt: "Tu as des frères et sœurs ? — (one brother, no sisters)", choices: ["J'ai un frère, mais je n'ai pas de sœurs.", "J'ai un frère et pas des sœurs.", "Je suis un frère.", "J'ai frère, pas sœur."], answer: 0 }
+          - { id: fr-w08-d4-bt04, difficulty: hard, type: text, prompt: "Translate: Why are you learning French? (tu, with est-ce que)", accept: ["Pourquoi est-ce que tu apprends le français ?", "Pourquoi est-ce que tu apprends le français?", "Pourquoi est-ce que tu apprends le français"] }
+          - { id: fr-w08-d4-bt05, difficulty: hard, type: text, prompt: "Translate: I'm learning French because I'd like to live in Canada.", accept: ["J'apprends le français parce que je voudrais habiter au Canada.", "J'apprends le français parce que je voudrais habiter au Canada"] }
+
+  # ─────────────────────────── DAY 5 ───────────────────────────
+  - day: 5
+    gate:
+      title: "Checkpoint: verbs, negation, questions, reflexives"
+      covers: "Week 8 · Day 4: review of Weeks 5–6, answering in full sentences, common mistakes"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w08-d5-g01, difficulty: easy, type: mcq, prompt: "Correct: Je suis 30 ans.", choices: ["J'ai 30 ans.", "Je suis trente.", "J'ai 30.", "Je fais 30 ans."], answer: 0 }
+        - { id: fr-w08-d5-g02, difficulty: easy, type: mcq, prompt: "Correct: Tu vas à le bureau ?", choices: ["Tu vas au bureau ?", "Tu vas à la bureau ?", "Tu vas aux bureau ?", "Tu va au bureau ?"], answer: 0 }
+        - { id: fr-w08-d5-g03, difficulty: easy, type: truefalse, prompt: "Written French keeps ne in negatives.", answer: true }
+        - { id: fr-w08-d5-g04, difficulty: easy, type: mcq, prompt: "Comment tu t'appelles ? =", choices: ["What's your name?", "How are you?", "Where do you live?", "How old are you?"], answer: 0 }
+        - { id: fr-w08-d5-g05, difficulty: easy, type: mcq, prompt: "Où est-ce que tu habites ? =", choices: ["Where do you live?", "Where are you going?", "Where is it?", "Who do you live with?"], answer: 0 }
+        - { id: fr-w08-d5-g06, difficulty: easy, type: mcq, prompt: "Pourquoi =", choices: ["why", "because", "where", "when"], answer: 0 }
+        - { id: fr-w08-d5-g07, difficulty: medium, type: text, prompt: "Correct: Nous faisez du sport.", accept: ["Nous faisons du sport.", "Nous faisons du sport"] }
+        - { id: fr-w08-d5-g08, difficulty: medium, type: text, prompt: "Correct: Il se lève pas tôt. (written French)", accept: ["Il ne se lève pas tôt.", "Il ne se lève pas tôt"] }
+        - { id: fr-w08-d5-g09, difficulty: medium, type: match, prompt: "Match the question to a good answer.", pairs: [["Tu as des frères ?", "Oui, j'ai deux frères."], ["Où vas-tu le dimanche ?", "Je vais à l'église."], ["Tu aimes quoi ?", "J'aime lire."], ["Tu te lèves quand ?", "À six heures."]] }
+        - { id: fr-w08-d5-g10, difficulty: medium, type: text, prompt: "Translate: What do you like doing at the weekend? (tu)", accept: ["Qu'est-ce que tu aimes faire le week-end ?", "Qu'est-ce que tu aimes faire le week-end?", "Qu'est-ce que tu aimes faire le week-end"] }
+        - { id: fr-w08-d5-g11, difficulty: medium, type: truefalse, prompt: "« Qu'est-ce que tu manges au petit-déjeuner ? » asks about lunch.", answer: false }
+        - { id: fr-w08-d5-g12, difficulty: medium, type: text, prompt: "Translate: I don't like pasta.", accept: ["Je n'aime pas les pâtes.", "Je n'aime pas les pâtes"] }
+        - { id: fr-w08-d5-g13, difficulty: medium, type: mcq, prompt: "Best answer: Où est-ce que tu vas le dimanche ?", choices: ["Le dimanche, je vais à l'église.", "Dimanche je va église.", "Je vais au église.", "Le dimanche je vais à la église."], answer: 0 }
+        - { id: fr-w08-d5-g14, difficulty: medium, type: text, prompt: "Translate: At breakfast, I eat bread.", accept: ["Au petit-déjeuner, je mange du pain.", "Au petit-déjeuner je mange du pain.", "Au petit-déjeuner, je mange du pain"] }
+        - { id: fr-w08-d5-g15, difficulty: medium, type: order, prompt: "Order the introduction.", items: ["Bonjour, je m'appelle Tunde.", "Je suis nigérian.", "J'habite à Abuja.", "Je suis développeur.", "Au revoir !"] }
+        - { id: fr-w08-d5-g16, difficulty: hard, type: text, prompt: "Translate: I get up at six, I shower and I go to the office.", accept: ["Je me lève à six heures, je me douche et je vais au bureau.", "Je me lève à six heures, je me douche et je vais au bureau", "Je me lève à 6 heures, je me douche et je vais au bureau."] }
+        - { id: fr-w08-d5-g17, difficulty: hard, type: mcq, prompt: "Which sentence has TWO mistakes?", choices: ["Elle ne mange pas du poisson et va à le marché.", "Elle ne mange pas de poisson.", "Elle va au marché.", "Elle mange du poisson."], answer: 0 }
+        - { id: fr-w08-d5-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["Je ne me couche pas tard.", "Est-ce qu'il travaille ?", "Nous allons chez Ada.", "Tu te appelles comment ?"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "DELF A1 reading"
+        secondsPerQuestion: 12
+        questions:
+          - { id: fr-w08-d5-rf01, difficulty: easy, type: mcq, prompt: "« Fermé le dimanche » means…", choices: ["Closed on Sundays", "Open on Sundays", "Farm on Sunday", "Sunday sale"], answer: 0 }
+          - { id: fr-w08-d5-rf02, difficulty: easy, type: mcq, prompt: "« Sortie » on a sign =", choices: ["Exit", "Entrance", "Toilets", "Sale"], answer: 0 }
+          - { id: fr-w08-d5-rf03, difficulty: easy, type: mcq, prompt: "« Entrée » on a door =", choices: ["Entrance", "Exit", "Starter only", "Closed"], answer: 0 }
+          - { id: fr-w08-d5-rf04, difficulty: easy, type: mcq, prompt: "« Ouvert de 8h à 18h » =", choices: ["Open 8 am to 6 pm", "Open 8 to 18 days", "Closed 8–6", "Open at 18:08"], answer: 0 }
+          - { id: fr-w08-d5-rf05, difficulty: easy, type: mcq, prompt: "« Défense de fumer » =", choices: ["No smoking", "Smoking area", "Fire exit", "Defence"], answer: 0 }
+          - { id: fr-w08-d5-rf06, difficulty: easy, type: mcq, prompt: "« Soldes » =", choices: ["Sales (discounts)", "Soldiers", "Sold out", "Salt"], answer: 0 }
+          - { id: fr-w08-d5-rf07, difficulty: easy, type: mcq, prompt: "« Gare » on a sign =", choices: ["Station", "Garage", "War", "Guard"], answer: 0 }
+          - { id: fr-w08-d5-rf08, difficulty: easy, type: mcq, prompt: "« Prix : 5 € » =", choices: ["Price: €5", "Prize: €5", "5 people", "Free"], answer: 0 }
+          - { id: fr-w08-d5-rf09, difficulty: easy, type: mcq, prompt: "« Tirez » on a door =", choices: ["Pull", "Push", "Tired", "Turn"], answer: 0 }
+          - { id: fr-w08-d5-rf10, difficulty: easy, type: mcq, prompt: "« Poussez » on a door =", choices: ["Push", "Pull", "Wait", "Exit"], answer: 0 }
+      - kind: brain-teaser
+        title: "Read the message"
+        questions:
+          - { id: fr-w08-d5-bt01, difficulty: medium, type: mcq, prompt: "« Salut Ada ! Je suis à Dakar. Il fait très chaud. Je vais à la plage tous les jours. Bisous, Kemi » — Where is Kemi?", choices: ["In Dakar", "In Lagos", "At work", "At home"], answer: 0 }
+          - { id: fr-w08-d5-bt02, difficulty: medium, type: mcq, prompt: "Same postcard. What's the weather like?", choices: ["Very hot", "Cold", "Rainy", "Nice but cool"], answer: 0 }
+          - { id: fr-w08-d5-bt03, difficulty: medium, type: mcq, prompt: "Same postcard. What does Kemi do every day?", choices: ["She goes to the beach", "She works", "She cooks", "She goes to church"], answer: 0 }
+          - { id: fr-w08-d5-bt04, difficulty: hard, type: mcq, prompt: "« Rendez-vous samedi à 14h devant la gare. Apporte de l'eau ! — Tunde » What should you bring?", choices: ["Water", "Food", "Money", "Tickets"], answer: 0 }
+          - { id: fr-w08-d5-bt05, difficulty: hard, type: mcq, prompt: "Same message. When and where?", choices: ["Saturday 2 pm, in front of the station", "Sunday 4 pm, at the station", "Saturday 4 pm, behind the station", "Friday 2 pm, at the beach"], answer: 0 }
+
+  # ─────────────────────────── DAY 6 ───────────────────────────
+  - day: 6
+    gate:
+      title: "Checkpoint: mini-test skills"
+      covers: "Week 8 · Day 5: DELF A1 signs and short messages, writing a postcard"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w08-d6-g01, difficulty: easy, type: mcq, prompt: "« Fermé » =", choices: ["Closed", "Open", "Farm", "Firm"], answer: 0 }
+        - { id: fr-w08-d6-g02, difficulty: easy, type: mcq, prompt: "« Ouvert » =", choices: ["Open", "Closed", "Over", "Free"], answer: 0 }
+        - { id: fr-w08-d6-g03, difficulty: easy, type: truefalse, prompt: "DELF A1 is the exam you'll mock in Week 17.", answer: true }
+        - { id: fr-w08-d6-g04, difficulty: easy, type: mcq, prompt: "Start a postcard to a friend", choices: ["Salut Ada !", "Monsieur,", "Cher client,", "À qui de droit"], answer: 0 }
+        - { id: fr-w08-d6-g05, difficulty: easy, type: mcq, prompt: "End a postcard to a friend", choices: ["Bisous", "Veuillez agréer…", "Cordialement, la direction", "Fin"], answer: 0 }
+        - { id: fr-w08-d6-g06, difficulty: easy, type: mcq, prompt: "« Tirez » =", choices: ["Pull", "Push", "Shoot", "Tired"], answer: 0 }
+        - { id: fr-w08-d6-g07, difficulty: medium, type: text, prompt: "Translate: I'm in Dakar. It's hot.", accept: ["Je suis à Dakar. Il fait chaud.", "Je suis à Dakar. Il fait chaud", "Je suis à Dakar, il fait chaud."] }
+        - { id: fr-w08-d6-g08, difficulty: medium, type: match, prompt: "Match the sign.", pairs: [["Sortie", "Exit"], ["Soldes", "Sales"], ["Défense de fumer", "No smoking"], ["Poussez", "Push"]] }
+        - { id: fr-w08-d6-g09, difficulty: medium, type: text, prompt: "Translate: Every day, I eat fish and rice.", accept: ["Tous les jours, je mange du poisson et du riz.", "Tous les jours je mange du poisson et du riz.", "Tous les jours, je mange du poisson et du riz"] }
+        - { id: fr-w08-d6-g10, difficulty: medium, type: mcq, prompt: "« Je rentre le 15 août » =", choices: ["I'm coming home on 15 August", "I'm going out on 15 August", "I entered on 15 August", "I rent on 15 August"], answer: 0 }
+        - { id: fr-w08-d6-g11, difficulty: medium, type: truefalse, prompt: "A DELF A1 postcard should be about 40–50 words.", answer: true }
+        - { id: fr-w08-d6-g12, difficulty: medium, type: text, prompt: "Translate: I go to the beach every day.", accept: ["Je vais à la plage tous les jours.", "Je vais à la plage tous les jours", "Tous les jours, je vais à la plage."] }
+        - { id: fr-w08-d6-g13, difficulty: medium, type: mcq, prompt: "« Rendez-vous devant la gare » =", choices: ["Meet in front of the station", "Meet behind the station", "The station is closed", "Go to the station"], answer: 0 }
+        - { id: fr-w08-d6-g14, difficulty: medium, type: text, prompt: "Translate: See you soon!", accept: ["À bientôt !", "À bientôt!", "À bientôt"] }
+        - { id: fr-w08-d6-g15, difficulty: medium, type: order, prompt: "Order the postcard.", items: ["Salut Ada !", "Je suis à Dakar.", "Il fait très chaud.", "Je vais à la plage tous les jours.", "Je rentre samedi. Bisous, Kemi"] }
+        - { id: fr-w08-d6-g16, difficulty: hard, type: text, prompt: "Translate: I come home on Saturday. Kisses, Tunde", accept: ["Je rentre samedi. Bisous, Tunde", "Je rentre samedi. Bisous, Tunde.", "Je rentre le samedi. Bisous, Tunde"] }
+        - { id: fr-w08-d6-g17, difficulty: hard, type: mcq, prompt: "« Le musée est ouvert tous les jours sauf le lundi. » When is it closed?", choices: ["Mondays", "Every day", "Sundays", "Never"], answer: 0 }
+        - { id: fr-w08-d6-g18, difficulty: hard, type: multi, prompt: "Which belong in your 2-minute milestone video? (Select all.)", choices: ["Name, nationality, city", "Family and job", "Daily routine and likes", "A full memorised script read from paper"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Phase 1 lightning round"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fr-w08-d6-rf01, difficulty: easy, type: text, prompt: "nous ___ (être)", accept: ["sommes"] }
+          - { id: fr-w08-d6-rf02, difficulty: easy, type: text, prompt: "ils ___ (aller)", accept: ["vont"] }
+          - { id: fr-w08-d6-rf03, difficulty: easy, type: mcq, prompt: "Je vais ___ marché.", choices: ["au", "à la", "à le", "aux"], answer: 0 }
+          - { id: fr-w08-d6-rf04, difficulty: easy, type: mcq, prompt: "Je ne bois pas ___ café.", choices: ["de", "du", "le", "un"], answer: 0 }
+          - { id: fr-w08-d6-rf05, difficulty: easy, type: mcq, prompt: "I'm 30.", choices: ["J'ai trente ans.", "Je suis trente ans.", "Je fais trente ans.", "J'ai trente."], answer: 0 }
+          - { id: fr-w08-d6-rf06, difficulty: easy, type: mcq, prompt: "her father", choices: ["son père", "sa père", "ses père", "leur père"], answer: 0 }
+          - { id: fr-w08-d6-rf07, difficulty: easy, type: text, prompt: "80", accept: ["quatre-vingts", "quatre vingts"] }
+          - { id: fr-w08-d6-rf08, difficulty: easy, type: mcq, prompt: "je ___ lève", choices: ["me", "se", "te", "le"], answer: 0 }
+          - { id: fr-w08-d6-rf09, difficulty: easy, type: mcq, prompt: "half past seven", choices: ["sept heures et demie", "sept heures et quart", "huit heures moins demie", "sept et demi heures"], answer: 0 }
+          - { id: fr-w08-d6-rf10, difficulty: easy, type: mcq, prompt: "chez + …", choices: ["a person", "a city", "a country", "a time"], answer: 0 }
+      - kind: brain-teaser
+        title: "Two minutes of me"
+        questions:
+          - { id: fr-w08-d6-bt01, difficulty: medium, type: text, prompt: "Translate: My name is Tunde. I'm Nigerian and I live in Abuja.", accept: ["Je m'appelle Tunde. Je suis nigérian et j'habite à Abuja.", "Je m'appelle Tunde. Je suis nigérian et j'habite à Abuja"] }
+          - { id: fr-w08-d6-bt02, difficulty: medium, type: text, prompt: "Translate: I have two sisters and one brother.", accept: ["J'ai deux sœurs et un frère.", "J'ai deux sœurs et un frère"] }
+          - { id: fr-w08-d6-bt03, difficulty: medium, type: text, prompt: "Translate: I'm a developer and I like my job.", accept: ["Je suis développeur et j'aime mon travail.", "Je suis développeur et j'aime mon travail", "Je suis développeuse et j'aime mon travail."] }
+          - { id: fr-w08-d6-bt04, difficulty: hard, type: text, prompt: "Translate: I don't eat meat, but I love fish.", accept: ["Je ne mange pas de viande, mais j'adore le poisson.", "Je ne mange pas de viande mais j'adore le poisson.", "Je ne mange pas de viande, mais j'adore le poisson"] }
+          - { id: fr-w08-d6-bt05, difficulty: hard, type: mcq, prompt: "Find the sentence with NO mistake.", choices: ["Le samedi, je fais les courses et je vais chez ma mère.", "Je suis 25 ans et je vais à le marché.", "Nous faisez du sport.", "Elle ne mange pas des fruits."], answer: 0 }

@@ -1,0 +1,297 @@
+# Excel · Week 8 quizzes. Format and rules: src/content/QUIZZES.md
+week: 8
+days:
+
+  # ─────────────────────────── DAY 1 ───────────────────────────
+  - day: 1
+    gate:
+      title: "Checkpoint: Week 7 review"
+      covers: "Week 7: TRIM/PROPER, LEFT/MID/FIND, SUBSTITUTE, TEXTBEFORE/TEXTAFTER, TEXT/VALUE, cleaning the customer list"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w08-d1-g01, difficulty: easy, type: mcq, prompt: "Remove extra spaces", choices: ["TRIM", "CLEAN", "PROPER", "LEN"], answer: 0 }
+        - { id: xl-w08-d1-g02, difficulty: easy, type: mcq, prompt: "Text after a delimiter (365)", choices: ["TEXTAFTER", "TEXTBEFORE", "RIGHT", "SPLIT"], answer: 0 }
+        - { id: xl-w08-d1-g03, difficulty: easy, type: text, prompt: "=PROPER(\"ADA OKAFOR\")", accept: ["Ada Okafor"] }
+        - { id: xl-w08-d1-g04, difficulty: easy, type: truefalse, prompt: "SEARCH is not case-sensitive; FIND is.", answer: true }
+        - { id: xl-w08-d1-g05, difficulty: easy, type: mcq, prompt: "Text → number", choices: ["VALUE", "TEXT", "NUMBER", "INT"], answer: 0 }
+        - { id: xl-w08-d1-g06, difficulty: easy, type: text, prompt: "Clean customers after removing duplicates?", accept: ["300"] }
+        - { id: xl-w08-d1-g07, difficulty: medium, type: text, prompt: "=SUBSTITUTE(\"0803 123 4567\",\" \",\"\")", accept: ["08031234567"] }
+        - { id: xl-w08-d1-g08, difficulty: medium, type: text, prompt: "=LEFT(\"Tolu Eze\",FIND(\" \",\"Tolu Eze\")-1)", accept: ["Tolu"] }
+        - { id: xl-w08-d1-g09, difficulty: medium, type: match, prompt: "Match.", pairs: [["SUBSTITUTE", "replace matching text"], ["REPLACE", "replace by position"], ["TEXTJOIN", "join with a separator"], ["TEXT", "number → formatted text"]] }
+        - { id: xl-w08-d1-g10, difficulty: medium, type: text, prompt: "=TEXTAFTER(\"tolu@gmail.com\",\"@\")", accept: ["gmail.com"] }
+        - { id: xl-w08-d1-g11, difficulty: medium, type: truefalse, prompt: "Never overwrite the raw data; build clean columns beside it.", answer: true }
+        - { id: xl-w08-d1-g12, difficulty: medium, type: text, prompt: "Lagos customers after cleaning?", accept: ["56"] }
+        - { id: xl-w08-d1-g13, difficulty: medium, type: mcq, prompt: "\"₦788,000\" → number", choices: ["=VALUE(SUBSTITUTE(SUBSTITUTE(A2,\"₦\",\"\"),\",\",\"\"))", "=TEXT(A2)", "=TRIM(A2)", "=VALUE(A2) only"], answer: 0 }
+        - { id: xl-w08-d1-g14, difficulty: medium, type: text, prompt: "\"N/A\" spend values in the raw file?", accept: ["77"] }
+        - { id: xl-w08-d1-g15, difficulty: medium, type: text, prompt: "=TEXT(1500000,\"₦#,##0\")", accept: ["₦1,500,000"] }
+        - { id: xl-w08-d1-g16, difficulty: hard, type: text, prompt: "=REPLACE(\"+2348031234567\",1,4,\"0\")", accept: ["08031234567"] }
+        - { id: xl-w08-d1-g17, difficulty: hard, type: mcq, prompt: "=PROPER(\"Lag0s\") gives…", choices: ["Lag0S", "Lagos", "LAG0S", "Lag0s"], answer: 0 }
+        - { id: xl-w08-d1-g18, difficulty: hard, type: multi, prompt: "Which return \"Ikeja\"? (Select all.)", choices: ["=TEXTAFTER(\"Lagos - Ikeja\",\" - \")", "=MID(\"Lagos - Ikeja\",9,5)", "=RIGHT(\"Lagos - Ikeja\",5)", "=TEXTBEFORE(\"Lagos - Ikeja\",\" - \")"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Dates are numbers"
+        secondsPerQuestion: 9
+        questions:
+          - { id: xl-w08-d1-rf01, difficulty: easy, type: mcq, prompt: "1 January 2025 as a serial number", choices: ["45658", "2025", "1", "45000"], answer: 0 }
+          - { id: xl-w08-d1-rf02, difficulty: easy, type: mcq, prompt: "12:00 noon as a number", choices: ["0.5", "12", "0.25", "1"], answer: 0 }
+          - { id: xl-w08-d1-rf03, difficulty: easy, type: mcq, prompt: "18:00 as a number", choices: ["0.75", "0.18", "18", "0.5"], answer: 0 }
+          - { id: xl-w08-d1-rf04, difficulty: easy, type: mcq, prompt: "Today's date (updates)", choices: ["TODAY()", "NOW() only", "DATE()", "TIME()"], answer: 0 }
+          - { id: xl-w08-d1-rf05, difficulty: easy, type: mcq, prompt: "Build a date", choices: ["DATE(y, m, d)", "DATE(d, m, y)", "MAKEDATE()", "TODAY(y, m, d)"], answer: 0 }
+          - { id: xl-w08-d1-rf06, difficulty: easy, type: mcq, prompt: "Monday = 1 … Sunday = 7", choices: ["WEEKDAY(d, 2)", "WEEKDAY(d)", "DAY(d)", "WEEKNUM(d)"], answer: 0 }
+          - { id: xl-w08-d1-rf07, difficulty: easy, type: mcq, prompt: "Day name", choices: ["TEXT(d, \"dddd\")", "DAY(d)", "NAME(d)", "WEEKDAY(d)"], answer: 0 }
+          - { id: xl-w08-d1-rf08, difficulty: easy, type: truefalse, prompt: "A left-aligned \"date\" is probably text.", answer: true }
+          - { id: xl-w08-d1-rf09, difficulty: easy, type: mcq, prompt: "Days between A2 and B2", choices: ["=B2-A2", "=DAYS(A2)", "=A2+B2", "=DATE(B2-A2)"], answer: 0 }
+          - { id: xl-w08-d1-rf10, difficulty: easy, type: text, prompt: "=MONTH(DATE(2025,3,15))", accept: ["3"] }
+      - kind: brain-teaser
+        title: "Weekend orders"
+        questions:
+          - { id: xl-w08-d1-bt01, difficulty: medium, type: text, prompt: "How many 2025 orders were on a weekend?", accept: ["546"] }
+          - { id: xl-w08-d1-bt02, difficulty: medium, type: mcq, prompt: "Flag weekends with WEEKDAY(B2,2):", choices: ["=IF(WEEKDAY(B2,2)>=6,\"Weekend\",\"Weekday\")", "=IF(WEEKDAY(B2,2)<=2,\"Weekend\",\"Weekday\")", "=IF(WEEKDAY(B2)=7,\"Weekend\")", "=WEEKEND(B2)"], answer: 0 }
+          - { id: xl-w08-d1-bt03, difficulty: medium, type: mcq, prompt: "1 January 2025 was a…", choices: ["Wednesday", "Monday", "Sunday", "Friday"], answer: 0 }
+          - { id: xl-w08-d1-bt04, difficulty: hard, type: text, prompt: "=DATE(2025,1,1)+31 is which date? (dd/mm/yyyy)", accept: ["01/02/2025", "1/2/2025"] }
+          - { id: xl-w08-d1-bt05, difficulty: hard, type: text, prompt: "Weekday orders in 2025? (2,400 total)", accept: ["1854", "1,854"] }
+
+  # ─────────────────────────── DAY 2 ───────────────────────────
+  - day: 2
+    gate:
+      title: "Checkpoint: how dates work"
+      covers: "Week 8 · Day 1: serial numbers, time as fractions, date formats, TODAY/NOW, YEAR/MONTH/DAY, DATE, WEEKDAY, TEXT"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w08-d2-g01, difficulty: easy, type: mcq, prompt: "Excel stores dates as…", choices: ["days since 1 January 1900", "text", "seconds since 1970", "months"], answer: 0 }
+        - { id: xl-w08-d2-g02, difficulty: easy, type: text, prompt: "=YEAR(DATE(2025,3,15))", accept: ["2025"] }
+        - { id: xl-w08-d2-g03, difficulty: easy, type: truefalse, prompt: "You can subtract one date from another to get days.", answer: true }
+        - { id: xl-w08-d2-g04, difficulty: easy, type: text, prompt: "=DAY(DATE(2025,3,15))", accept: ["15"] }
+        - { id: xl-w08-d2-g05, difficulty: easy, type: mcq, prompt: "NOW() returns…", choices: ["today's date and the current time", "only the time", "only the date", "the year"], answer: 0 }
+        - { id: xl-w08-d2-g06, difficulty: easy, type: mcq, prompt: "Format a date as \"March 2025\"", choices: ["mmmm yyyy", "mm yy", "dddd", "mmm d"], answer: 0 }
+        - { id: xl-w08-d2-g07, difficulty: medium, type: text, prompt: "=WEEKDAY(DATE(2025,1,1),2)", accept: ["3"], explain: "1 January 2025 was a Wednesday." }
+        - { id: xl-w08-d2-g08, difficulty: medium, type: match, prompt: "Match the format to its look for 1 Jan 2025.", pairs: [["dd/mm/yyyy", "01/01/2025"], ["dddd", "Wednesday"], ["mmmm yyyy", "January 2025"], ["ddd d mmm", "Wed 1 Jan"]] }
+        - { id: xl-w08-d2-g09, difficulty: medium, type: text, prompt: "=DATE(2025,3,31)-DATE(2025,3,1)", accept: ["30"] }
+        - { id: xl-w08-d2-g10, difficulty: medium, type: text, prompt: "Weekend orders in 2025?", accept: ["546"] }
+        - { id: xl-w08-d2-g11, difficulty: medium, type: truefalse, prompt: "TODAY() changes every day the file recalculates.", answer: true }
+        - { id: xl-w08-d2-g12, difficulty: medium, type: text, prompt: "=TIME(18,0,0) as a decimal", accept: ["0.75"] }
+        - { id: xl-w08-d2-g13, difficulty: medium, type: mcq, prompt: "Format a cell to show Wednesday, 1 January 2025", choices: ["dddd, d mmmm yyyy", "dd/mm/yy", "d m y", "General"], answer: 0 }
+        - { id: xl-w08-d2-g14, difficulty: medium, type: text, prompt: "=DATE(2025,13,1) gives which date? (dd/mm/yyyy)", accept: ["01/01/2026", "1/1/2026"], explain: "Month 13 rolls into the next year." }
+        - { id: xl-w08-d2-g15, difficulty: medium, type: mcq, prompt: "A typed \"15/03/2025\" sits on the left and won't subtract. Why?", choices: ["Excel read it as text (date order doesn't match your settings)", "Dates can't be subtracted", "It's bold", "Wrong font"], answer: 0 }
+        - { id: xl-w08-d2-g16, difficulty: hard, type: text, prompt: "=TEXT(DATE(2025,10,1),\"dddd\")", accept: ["Wednesday"] }
+        - { id: xl-w08-d2-g17, difficulty: hard, type: text, prompt: "45658 + 0.5 formatted as dd/mm/yyyy hh:mm", accept: ["01/01/2025 12:00"] }
+        - { id: xl-w08-d2-g18, difficulty: hard, type: multi, prompt: "Which give 1 January 2025? (Select all.)", choices: ["=DATE(2025,1,1)", "45658 formatted as a date", "=DATE(2024,12,32)", "=DATE(2025,0,1)"], answers: [0, 1, 2], explain: "DATE(2025,0,1) is 1 December 2024." }
+    quizzes:
+      - kind: rapid-fire
+        title: "Ages and tenure"
+        secondsPerQuestion: 9
+        questions:
+          - { id: xl-w08-d2-rf01, difficulty: easy, type: mcq, prompt: "Completed years between two dates", choices: ["DATEDIF(start, end, \"y\")", "YEAR(end-start)", "YEARS(start, end)", "end-start"], answer: 0 }
+          - { id: xl-w08-d2-rf02, difficulty: easy, type: mcq, prompt: "Decimal years", choices: ["YEARFRAC", "DATEDIF \"y\"", "YEAR", "DAYS"], answer: 0 }
+          - { id: xl-w08-d2-rf03, difficulty: easy, type: mcq, prompt: "Months after the full years", choices: ["\"ym\"", "\"m\"", "\"yd\"", "\"y\""], answer: 0 }
+          - { id: xl-w08-d2-rf04, difficulty: easy, type: mcq, prompt: "Reports should use…", choices: ["a fixed as-of date", "TODAY()", "NOW()", "a random date"], answer: 0 }
+          - { id: xl-w08-d2-rf05, difficulty: easy, type: truefalse, prompt: "DATEDIF doesn't autocomplete, but it works.", answer: true }
+          - { id: xl-w08-d2-rf06, difficulty: easy, type: text, prompt: "Average staff age at 31/12/2025 (1 decimal)?", accept: ["41.0", "41"] }
+          - { id: xl-w08-d2-rf07, difficulty: easy, type: text, prompt: "Oldest staff member's age?", accept: ["55"] }
+          - { id: xl-w08-d2-rf08, difficulty: easy, type: text, prompt: "Youngest staff member's age?", accept: ["28"] }
+          - { id: xl-w08-d2-rf09, difficulty: easy, type: text, prompt: "Staff with 5+ years of service?", accept: ["68"] }
+          - { id: xl-w08-d2-rf10, difficulty: easy, type: mcq, prompt: "First hire", choices: ["E092 Tolu Suleiman", "E001 Nneka Abubakar", "E120", "E050"], answer: 0 }
+      - kind: brain-teaser
+        title: "How old?"
+        questions:
+          - { id: xl-w08-d2-bt01, difficulty: medium, type: text, prompt: "=DATEDIF(DATE(1990,6,15),DATE(2025,12,31),\"y\")", accept: ["35"] }
+          - { id: xl-w08-d2-bt02, difficulty: medium, type: text, prompt: "=DATEDIF(DATE(1990,12,31),DATE(2025,12,30),\"y\")", accept: ["34"], explain: "One day short of the 35th birthday." }
+          - { id: xl-w08-d2-bt03, difficulty: medium, type: text, prompt: "=DATEDIF(DATE(2020,3,1),DATE(2025,12,31),\"ym\")", accept: ["9"] }
+          - { id: xl-w08-d2-bt04, difficulty: hard, type: mcq, prompt: "\"5 years, 9 months\" from hire date G2 and as-of P1:", choices: ["=DATEDIF(G2,$P$1,\"y\")&\" years, \"&DATEDIF(G2,$P$1,\"ym\")&\" months\"", "=YEAR(P1-G2)&\" years\"", "=DATEDIF(G2,P1,\"m\")&\" months\"", "=TEXT(P1-G2,\"y years\")"], answer: 0 }
+          - { id: xl-w08-d2-bt05, difficulty: hard, type: text, prompt: "Staff born in January?", accept: ["12"] }
+
+  # ─────────────────────────── DAY 3 ───────────────────────────
+  - day: 3
+    gate:
+      title: "Checkpoint: ages and tenure"
+      covers: "Week 8 · Day 2: DATEDIF y/m/d/ym, YEARFRAC, a fixed as-of date, HR age and tenure figures"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w08-d3-g01, difficulty: easy, type: mcq, prompt: "Completed years from G2 to P1", choices: ["=DATEDIF(G2,P1,\"y\")", "=YEAR(P1)-YEAR(G2)", "=P1-G2", "=YEARFRAC(G2)"], answer: 0 }
+        - { id: xl-w08-d3-g02, difficulty: easy, type: truefalse, prompt: "YEAR(end) − YEAR(start) can overstate age before the birthday.", answer: true }
+        - { id: xl-w08-d3-g03, difficulty: easy, type: mcq, prompt: "Why a fixed as-of date (e.g. 31/12/2025)?", choices: ["Results don't change every day", "TODAY() is broken", "DATEDIF needs it", "To save space"], answer: 0 }
+        - { id: xl-w08-d3-g04, difficulty: easy, type: text, prompt: "Staff with 5+ years of service?", accept: ["68"] }
+        - { id: xl-w08-d3-g05, difficulty: easy, type: mcq, prompt: "Tenure to 1 decimal", choices: ["=ROUND(YEARFRAC(G2,$P$1),1)", "=DATEDIF(G2,P1,\"y\")", "=YEAR(G2)", "=P1-G2"], answer: 0 }
+        - { id: xl-w08-d3-g06, difficulty: easy, type: text, prompt: "Youngest staff age?", accept: ["28"] }
+        - { id: xl-w08-d3-g07, difficulty: medium, type: text, prompt: "=DATEDIF(DATE(2015,4,18),DATE(2025,12,31),\"y\")", accept: ["10"] }
+        - { id: xl-w08-d3-g08, difficulty: medium, type: match, prompt: "Match the DATEDIF unit.", pairs: [["\"y\"", "completed years"], ["\"m\"", "completed months"], ["\"d\"", "days"], ["\"ym\"", "months after the years"]] }
+        - { id: xl-w08-d3-g09, difficulty: medium, type: text, prompt: "Average staff age (1 decimal)?", accept: ["41.0", "41"] }
+        - { id: xl-w08-d3-g10, difficulty: medium, type: mcq, prompt: "Who was hired first, and when?", choices: ["E092 Tolu Suleiman, 18/04/2015", "E001, 10/12/2022", "E120, 01/01/2010", "E050, 2018"], answer: 0 }
+        - { id: xl-w08-d3-g11, difficulty: medium, type: truefalse, prompt: "YEARFRAC gives decimals like 5.7.", answer: true }
+        - { id: xl-w08-d3-g12, difficulty: medium, type: text, prompt: "=YEAR(DATE(2025,12,31))-YEAR(DATE(1990,12,31))", accept: ["35"] }
+        - { id: xl-w08-d3-g13, difficulty: medium, type: mcq, prompt: "Count staff with 5+ years (TenureYears in Q):", choices: ["=COUNTIF(Q2:Q121,\">=5\")", "=SUMIF(Q2:Q121,5)", "=COUNT(Q2:Q121)", "=MAX(Q2:Q121)"], answer: 0 }
+        - { id: xl-w08-d3-g14, difficulty: medium, type: text, prompt: "Oldest staff age?", accept: ["55"] }
+        - { id: xl-w08-d3-g15, difficulty: medium, type: mcq, prompt: "Birthday month name from H2", choices: ["=TEXT(H2,\"mmmm\")", "=MONTH(H2,\"name\")", "=DAY(H2)", "=TEXT(H2,\"dddd\")"], answer: 0 }
+        - { id: xl-w08-d3-g16, difficulty: hard, type: text, prompt: "=DATEDIF(DATE(2024,2,29),DATE(2025,2,28),\"y\")", accept: ["0"], explain: "A full year hasn't passed since 29 Feb." }
+        - { id: xl-w08-d3-g17, difficulty: hard, type: text, prompt: "=DATEDIF(DATE(2019,1,31),DATE(2025,12,31),\"ym\")", accept: ["11"] }
+        - { id: xl-w08-d3-g18, difficulty: hard, type: multi, prompt: "Which give completed years correctly for every date? (Select all.)", choices: ["=DATEDIF(A2,B2,\"y\")", "=YEAR(B2)-YEAR(A2)", "=ROUND((B2-A2)/365,0)", "=MONTH(B2-A2)"], answers: [0], explain: "YEAR differences overcount before the birthday; dividing by 365 drifts with leap years." }
+    quizzes:
+      - kind: rapid-fire
+        title: "Deadlines"
+        secondsPerQuestion: 9
+        questions:
+          - { id: xl-w08-d3-rf01, difficulty: easy, type: mcq, prompt: "Same day n months later", choices: ["EDATE", "EOMONTH", "WORKDAY", "DATE"], answer: 0 }
+          - { id: xl-w08-d3-rf02, difficulty: easy, type: mcq, prompt: "Last day of a month", choices: ["EOMONTH", "EDATE", "ENDMONTH", "DAY"], answer: 0 }
+          - { id: xl-w08-d3-rf03, difficulty: easy, type: mcq, prompt: "Date n working days later", choices: ["WORKDAY", "NETWORKDAYS", "EDATE", "WEEKDAY"], answer: 0 }
+          - { id: xl-w08-d3-rf04, difficulty: easy, type: mcq, prompt: "Working days between two dates", choices: ["NETWORKDAYS", "WORKDAY", "DAYS", "DATEDIF"], answer: 0 }
+          - { id: xl-w08-d3-rf05, difficulty: easy, type: mcq, prompt: "Friday–Saturday weekends", choices: ["NETWORKDAYS.INTL", "NETWORKDAYS", "WEEKDAY", "EDATE"], answer: 0 }
+          - { id: xl-w08-d3-rf06, difficulty: easy, type: text, prompt: "Working days in March 2025 (no holidays)", accept: ["21"] }
+          - { id: xl-w08-d3-rf07, difficulty: easy, type: text, prompt: "…with Eid-el-Fitr on 31 March as a holiday", accept: ["20"] }
+          - { id: xl-w08-d3-rf08, difficulty: easy, type: truefalse, prompt: "Holidays go in a range passed as the 3rd argument.", answer: true }
+          - { id: xl-w08-d3-rf09, difficulty: easy, type: mcq, prompt: "Probation ends 6 months after hire (G2)", choices: ["=EDATE(G2,6)", "=G2+6", "=EOMONTH(G2,6)", "=WORKDAY(G2,6)"], answer: 0 }
+          - { id: xl-w08-d3-rf10, difficulty: easy, type: mcq, prompt: "Due end of next month (order B2)", choices: ["=EOMONTH(B2,1)", "=EDATE(B2,1)", "=B2+30", "=EOMONTH(B2,0)"], answer: 0 }
+      - kind: brain-teaser
+        title: "When is it due?"
+        questions:
+          - { id: xl-w08-d3-bt01, difficulty: medium, type: text, prompt: "=EOMONTH(DATE(2025,1,15),1) (dd/mm/yyyy)", accept: ["28/02/2025"] }
+          - { id: xl-w08-d3-bt02, difficulty: medium, type: text, prompt: "=EDATE(DATE(2025,1,31),1) (dd/mm/yyyy)", accept: ["28/02/2025"], explain: "No 31 February, so it lands on the last day." }
+          - { id: xl-w08-d3-bt03, difficulty: medium, type: mcq, prompt: "Ordered Friday 7 March 2025, ships in 5 working days. Arrives…", choices: ["Friday 14 March 2025", "Wednesday 12 March", "Monday 17 March", "Thursday 13 March"], answer: 0 }
+          - { id: xl-w08-d3-bt04, difficulty: hard, type: text, prompt: "=EOMONTH(DATE(2024,2,10),0) (dd/mm/yyyy)", accept: ["29/02/2024"] }
+          - { id: xl-w08-d3-bt05, difficulty: hard, type: multi, prompt: "Which are Nigerian public holidays? (Select all.)", choices: ["1 October (Independence)", "12 June (Democracy Day)", "1 May (Workers' Day)", "4 July"], answers: [0, 1, 2] }
+
+  # ─────────────────────────── DAY 4 ───────────────────────────
+  - day: 4
+    gate:
+      title: "Checkpoint: deadlines"
+      covers: "Week 8 · Day 3: EDATE, EOMONTH, WORKDAY, NETWORKDAYS, holiday ranges, .INTL weekends"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w08-d4-g01, difficulty: easy, type: mcq, prompt: "EDATE vs EOMONTH", choices: ["EDATE keeps the day; EOMONTH gives the month's last day", "Same thing", "EOMONTH keeps the day", "EDATE counts working days"], answer: 0 }
+        - { id: xl-w08-d4-g02, difficulty: easy, type: text, prompt: "Working days in March 2025 (no holidays)?", accept: ["21"] }
+        - { id: xl-w08-d4-g03, difficulty: easy, type: truefalse, prompt: "WORKDAY skips weekends.", answer: true }
+        - { id: xl-w08-d4-g04, difficulty: easy, type: mcq, prompt: "Pass holidays to NETWORKDAYS", choices: ["as the 3rd argument (a range)", "you can't", "in a comment", "as text"], answer: 0 }
+        - { id: xl-w08-d4-g05, difficulty: easy, type: mcq, prompt: "Name a range \"Holidays\"", choices: ["Formulas → Define Name", "Data → Sort", "Home → Styles", "Insert → Table only"], answer: 0 }
+        - { id: xl-w08-d4-g06, difficulty: easy, type: text, prompt: "=EDATE(DATE(2025,3,15),6) (dd/mm/yyyy)", accept: ["15/09/2025"] }
+        - { id: xl-w08-d4-g07, difficulty: medium, type: text, prompt: "=EOMONTH(DATE(2025,3,7),0) (dd/mm/yyyy)", accept: ["31/03/2025"] }
+        - { id: xl-w08-d4-g08, difficulty: medium, type: match, prompt: "Match the task to the function.", pairs: [["Probation end", "EDATE"], ["Invoice due end of next month", "EOMONTH"], ["Delivery in 5 working days", "WORKDAY"], ["Working days in a month", "NETWORKDAYS"]] }
+        - { id: xl-w08-d4-g09, difficulty: medium, type: text, prompt: "Working days in March 2025 with Eid on 31 March?", accept: ["20"] }
+        - { id: xl-w08-d4-g10, difficulty: medium, type: mcq, prompt: "=WORKDAY(DATE(2025,3,7),5) gives…", choices: ["Friday 14 March 2025", "Wednesday 12 March 2025", "Thursday 13 March 2025", "Monday 17 March 2025"], answer: 0 }
+        - { id: xl-w08-d4-g11, difficulty: medium, type: truefalse, prompt: "=NETWORKDAYS counts both the start and end dates if they're working days.", answer: true }
+        - { id: xl-w08-d4-g12, difficulty: medium, type: text, prompt: "=EOMONTH(DATE(2025,11,20),1) (dd/mm/yyyy)", accept: ["31/12/2025"] }
+        - { id: xl-w08-d4-g13, difficulty: medium, type: mcq, prompt: "A business works Sunday–Thursday. Use…", choices: ["NETWORKDAYS.INTL with a custom weekend", "NETWORKDAYS", "WEEKDAY", "EDATE"], answer: 0 }
+        - { id: xl-w08-d4-g14, difficulty: medium, type: text, prompt: "=NETWORKDAYS(DATE(2025,3,3),DATE(2025,3,7))", accept: ["5"] }
+        - { id: xl-w08-d4-g15, difficulty: medium, type: mcq, prompt: "Payment due at the end of the month after the order:", choices: ["=EOMONTH(B2,1)", "=EOMONTH(B2,0)", "=EDATE(B2,1)", "=B2+31"], answer: 0 }
+        - { id: xl-w08-d4-g16, difficulty: hard, type: text, prompt: "=NETWORKDAYS(DATE(2025,3,1),DATE(2025,3,9))", accept: ["5"], explain: "1–2 and 8–9 March are weekends." }
+        - { id: xl-w08-d4-g17, difficulty: hard, type: text, prompt: "=WORKDAY(DATE(2025,3,28),1) (dd/mm/yyyy, no holidays)", accept: ["31/03/2025"] }
+        - { id: xl-w08-d4-g18, difficulty: hard, type: multi, prompt: "Which change if you add a holiday range? (Select all.)", choices: ["WORKDAY", "NETWORKDAYS", "EDATE", "EOMONTH"], answers: [0, 1] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Time maths"
+        secondsPerQuestion: 9
+        questions:
+          - { id: xl-w08-d4-rf01, difficulty: easy, type: mcq, prompt: "Hours worked from C2 (in) and D2 (out)", choices: ["=(D2-C2)*24", "=D2-C2", "=(C2-D2)*24", "=HOURS(D2,C2)"], answer: 0 }
+          - { id: xl-w08-d4-rf02, difficulty: easy, type: mcq, prompt: "Night shift crossing midnight", choices: ["=MOD(D2-C2,1)*24", "=(D2-C2)*24", "=ABS(D2-C2)", "=D2+C2"], answer: 0 }
+          - { id: xl-w08-d4-rf03, difficulty: easy, type: mcq, prompt: "Show 30 hours as 30:00", choices: ["[h]:mm", "hh:mm", "h:mm AM/PM", "General"], answer: 0 }
+          - { id: xl-w08-d4-rf04, difficulty: easy, type: mcq, prompt: "08:30 as a time", choices: ["=TIME(8,30,0)", "=8.30", "=\"8:30\"", "=HOUR(8,30)"], answer: 0 }
+          - { id: xl-w08-d4-rf05, difficulty: easy, type: mcq, prompt: "Late if clock-in after 08:30", choices: ["=IF(C2>TIME(8,30,0),\"Late\",\"On time\")", "=IF(C2>8.30,\"Late\")", "=LATE(C2)", "=IF(C2>\"08:30\",\"Late\")"], answer: 0 }
+          - { id: xl-w08-d4-rf06, difficulty: easy, type: mcq, prompt: "Overtime above 8 hours (E2 = hours)", choices: ["=MAX(0,E2-8)", "=E2-8", "=MIN(0,E2-8)", "=IF(E2>8,8)"], answer: 0 }
+          - { id: xl-w08-d4-rf07, difficulty: easy, type: text, prompt: "08:07 → 18:31 in hours (2 decimals)", accept: ["10.40", "10.4"] }
+          - { id: xl-w08-d4-rf08, difficulty: easy, type: text, prompt: "Total hours in the March timesheet (2 decimals)", accept: ["3548.90", "3548.9", "3,548.90"] }
+          - { id: xl-w08-d4-rf09, difficulty: easy, type: text, prompt: "Late arrivals in March", accept: ["81"] }
+          - { id: xl-w08-d4-rf10, difficulty: easy, type: truefalse, prompt: "Without ×24, D2−C2 gives a fraction of a day.", answer: true }
+      - kind: brain-teaser
+        title: "Timesheet check"
+        questions:
+          - { id: xl-w08-d4-bt01, difficulty: medium, type: text, prompt: "Average shift length (2 decimals)?", accept: ["8.87"] }
+          - { id: xl-w08-d4-bt02, difficulty: medium, type: text, prompt: "Total overtime hours (2 decimals)?", accept: ["383.65"] }
+          - { id: xl-w08-d4-bt03, difficulty: medium, type: text, prompt: "Days with overtime?", accept: ["310"] }
+          - { id: xl-w08-d4-bt04, difficulty: hard, type: text, prompt: "A night shift 22:00 → 06:00: hours with =MOD(D2-C2,1)*24?", accept: ["8"] }
+          - { id: xl-w08-d4-bt05, difficulty: hard, type: text, prompt: "Rows in the March timesheet?", accept: ["400"] }
+
+  # ─────────────────────────── DAY 5 ───────────────────────────
+  - day: 5
+    gate:
+      title: "Checkpoint: time calculations"
+      covers: "Week 8 · Day 4: hours worked, MOD for night shifts, [h]:mm, TIME, late flags, overtime"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w08-d5-g01, difficulty: easy, type: mcq, prompt: "Times are…", choices: ["fractions of a day", "whole numbers", "text", "minutes"], answer: 0 }
+        - { id: xl-w08-d5-g02, difficulty: easy, type: mcq, prompt: "Convert a time difference to hours", choices: ["multiply by 24", "divide by 24", "multiply by 60", "nothing"], answer: 0 }
+        - { id: xl-w08-d5-g03, difficulty: easy, type: truefalse, prompt: "[h]:mm shows totals above 24 hours.", answer: true }
+        - { id: xl-w08-d5-g04, difficulty: easy, type: text, prompt: "First row E001: 08:07 → 18:31. Hours (2 decimals)?", accept: ["10.40", "10.4"] }
+        - { id: xl-w08-d5-g05, difficulty: easy, type: mcq, prompt: "Overtime when E2 is hours worked", choices: ["=MAX(0,E2-8)", "=E2*1.5", "=E2-8", "=8-E2"], answer: 0 }
+        - { id: xl-w08-d5-g06, difficulty: easy, type: text, prompt: "Late arrivals (after 08:30) in March?", accept: ["81"] }
+        - { id: xl-w08-d5-g07, difficulty: medium, type: text, prompt: "=(TIME(17,30,0)-TIME(8,0,0))*24", accept: ["9.5"] }
+        - { id: xl-w08-d5-g08, difficulty: medium, type: match, prompt: "Match.", pairs: [["=(D2-C2)*24", "hours worked"], ["=MOD(D2-C2,1)*24", "night shift"], ["[h]:mm", "show 30:00"], ["=TIME(8,30,0)", "08:30"]] }
+        - { id: xl-w08-d5-g09, difficulty: medium, type: text, prompt: "Total hours in March (2 decimals)?", accept: ["3548.90", "3548.9", "3,548.90"] }
+        - { id: xl-w08-d5-g10, difficulty: medium, type: text, prompt: "E001: days worked in March?", accept: ["19"] }
+        - { id: xl-w08-d5-g11, difficulty: medium, type: truefalse, prompt: "Without MOD, a 22:00 → 06:00 shift gives a negative number.", answer: true }
+        - { id: xl-w08-d5-g12, difficulty: medium, type: text, prompt: "E001: total hours in March (2 decimals)?", accept: ["168.43"] }
+        - { id: xl-w08-d5-g13, difficulty: medium, type: mcq, prompt: "Count late arrivals with flags in G2:G401", choices: ["=COUNTIF(G2:G401,\"Late\")", "=SUM(G2:G401)", "=COUNT(G2:G401)", "=LATE(G2:G401)"], answer: 0 }
+        - { id: xl-w08-d5-g14, difficulty: medium, type: text, prompt: "E001: overtime hours in March (2 decimals)?", accept: ["18.02"] }
+        - { id: xl-w08-d5-g15, difficulty: medium, type: mcq, prompt: "E001's total hours from the whole sheet:", choices: ["=SUMIFS(E2:E401,A2:A401,\"E001\")", "=SUM(E2:E20)", "=COUNTIF(A2:A401,\"E001\")", "=SUMIF(\"E001\",E2:E401)"], answer: 0 }
+        - { id: xl-w08-d5-g16, difficulty: hard, type: text, prompt: "Overtime hours across all staff (2 decimals)?", accept: ["383.65"] }
+        - { id: xl-w08-d5-g17, difficulty: hard, type: text, prompt: "=MOD(TIME(6,0,0)-TIME(22,0,0),1)*24", accept: ["8"] }
+        - { id: xl-w08-d5-g18, difficulty: hard, type: multi, prompt: "Which flag clock-in after 08:30 correctly? (Select all.)", choices: ["=IF(C2>TIME(8,30,0),\"Late\",\"On time\")", "=IF(C2>8.5/24,\"Late\",\"On time\")", "=IF(C2>\"08:30\",\"Late\",\"On time\")", "=IF(C2>8.3,\"Late\",\"On time\")"], answers: [0, 1] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Payroll maths"
+        secondsPerQuestion: 10
+        questions:
+          - { id: xl-w08-d5-rf01, difficulty: easy, type: text, prompt: "Standard monthly hours: 22 days × 8 h", accept: ["176"] }
+          - { id: xl-w08-d5-rf02, difficulty: easy, type: text, prompt: "₦352,000 monthly ÷ 176 h = hourly rate? (digits)", accept: ["2000", "2,000"] }
+          - { id: xl-w08-d5-rf03, difficulty: easy, type: text, prompt: "Overtime rate at 1.5× ₦2,000? (digits)", accept: ["3000", "3,000"] }
+          - { id: xl-w08-d5-rf04, difficulty: easy, type: text, prompt: "10 overtime hours at ₦3,000? (digits)", accept: ["30000", "30,000"] }
+          - { id: xl-w08-d5-rf05, difficulty: easy, type: mcq, prompt: "Where do rates live?", choices: ["input cells", "inside formulas", "comments", "headers"], answer: 0 }
+          - { id: xl-w08-d5-rf06, difficulty: easy, type: mcq, prompt: "Days worked by E005 (IDs in A)", choices: ["=COUNTIFS(A:A,\"E005\")", "=SUMIFS(A:A,\"E005\")", "=COUNT(\"E005\")", "=MAX(A:A)"], answer: 0 }
+          - { id: xl-w08-d5-rf07, difficulty: easy, type: truefalse, prompt: "Next week, salaries will come from HR with a lookup.", answer: true }
+          - { id: xl-w08-d5-rf08, difficulty: easy, type: mcq, prompt: "Pay = ", choices: ["regular × rate + overtime × rate × 1.5", "hours × 1.5", "salary + hours", "rate ÷ hours"], answer: 0 }
+          - { id: xl-w08-d5-rf09, difficulty: easy, type: text, prompt: "Employees in the March timesheet", accept: ["20"] }
+          - { id: xl-w08-d5-rf10, difficulty: easy, type: mcq, prompt: "Flag more than 5 late arrivals (count in H2)", choices: ["=IF(H2>5,\"HR talk\",\"\")", "=IF(H2>=5,\"HR\")", "=H2>5%", "=COUNTIF(H2,5)"], answer: 0 }
+      - kind: brain-teaser
+        title: "Who needs a talk?"
+        questions:
+          - { id: xl-w08-d5-bt01, difficulty: medium, type: text, prompt: "How many employees had more than 5 late arrivals in March?", accept: ["5", "five"] }
+          - { id: xl-w08-d5-bt02, difficulty: medium, type: mcq, prompt: "Which of these had more than 5 late arrivals?", choices: ["E004", "E001", "E002", "E020"], answer: 0 }
+          - { id: xl-w08-d5-bt03, difficulty: medium, type: text, prompt: "Hourly rate for a ₦264,000 salary at 176 h? (digits)", accept: ["1500", "1,500"] }
+          - { id: xl-w08-d5-bt04, difficulty: hard, type: text, prompt: "₦264,000 salary, 18 overtime hours at 1.5×: overtime pay? (digits)", accept: ["40500", "40,500"] }
+          - { id: xl-w08-d5-bt05, difficulty: hard, type: mcq, prompt: "Overtime pay with salary in D2, standard hours in $B$1, multiplier in $B$2, OT hours in F2:", choices: ["=F2*(D2/$B$1)*$B$2", "=F2*D2*1.5", "=D2/F2*$B$2", "=F2+$B$2"], answer: 0 }
+
+  # ─────────────────────────── DAY 6 ───────────────────────────
+  - day: 6
+    gate:
+      title: "Checkpoint: payroll"
+      covers: "Week 8 · Day 5: hourly rates, overtime pay, COUNTIFS/SUMIFS per employee, late flags"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w08-d6-g01, difficulty: easy, type: mcq, prompt: "Hourly rate", choices: ["monthly salary ÷ standard hours", "salary × hours", "salary ÷ 12", "hours ÷ salary"], answer: 0 }
+        - { id: xl-w08-d6-g02, difficulty: easy, type: text, prompt: "22 days × 8 h = ?", accept: ["176"] }
+        - { id: xl-w08-d6-g03, difficulty: easy, type: truefalse, prompt: "Overtime multiplier belongs in an input cell.", answer: true }
+        - { id: xl-w08-d6-g04, difficulty: easy, type: mcq, prompt: "Total hours for one employee", choices: ["SUMIFS", "COUNTIFS", "MAXIFS", "AVERAGE"], answer: 0 }
+        - { id: xl-w08-d6-g05, difficulty: easy, type: mcq, prompt: "Days worked for one employee", choices: ["COUNTIFS", "SUMIFS", "MINIFS", "TEXT"], answer: 0 }
+        - { id: xl-w08-d6-g06, difficulty: easy, type: text, prompt: "₦176,000 ÷ 176 h = ? (digits)", accept: ["1000", "1,000"] }
+        - { id: xl-w08-d6-g07, difficulty: medium, type: text, prompt: "Rate ₦1,000/h, 10 OT hours at 1.5×: overtime pay? (digits)", accept: ["15000", "15,000"] }
+        - { id: xl-w08-d6-g08, difficulty: medium, type: match, prompt: "Match the payroll column to its formula.", pairs: [["Days worked", "COUNTIFS"], ["Total hours", "SUMIFS"], ["Overtime hours", "SUMIFS on the OT column"], ["Late count", "COUNTIFS with \"Late\""]] }
+        - { id: xl-w08-d6-g09, difficulty: medium, type: text, prompt: "Employees with more than 5 late arrivals?", accept: ["5", "five"] }
+        - { id: xl-w08-d6-g10, difficulty: medium, type: mcq, prompt: "Absence days per employee:", choices: ["NETWORKDAYS(month) − days worked", "days worked − 22", "COUNTBLANK(timesheet)", "hours ÷ 8"], answer: 0 }
+        - { id: xl-w08-d6-g11, difficulty: medium, type: truefalse, prompt: "A template should keep all rates and thresholds on an Inputs sheet.", answer: true }
+        - { id: xl-w08-d6-g12, difficulty: medium, type: text, prompt: "E001 worked 19 of 21 working days in March. Absence days?", accept: ["2"] }
+        - { id: xl-w08-d6-g13, difficulty: medium, type: mcq, prompt: "Late threshold in Inputs!$B$3. Late flag:", choices: ["=IF(C2>Inputs!$B$3,\"Late\",\"On time\")", "=IF(C2>TIME(8,30,0),…) typed in every formula", "=LATE(C2)", "=C2-Inputs!B3"], answer: 0 }
+        - { id: xl-w08-d6-g14, difficulty: medium, type: text, prompt: "E001 overtime in March (2 decimals)?", accept: ["18.02"] }
+        - { id: xl-w08-d6-g15, difficulty: medium, type: order, prompt: "Order the template's sheets.", items: ["Inputs", "Timesheet", "Payroll summary", "Calendar check"] }
+        - { id: xl-w08-d6-g16, difficulty: hard, type: text, prompt: "Rate ₦2,000/h. 168.43 total h, 18.02 OT h. Pay = regular h × rate + OT h × rate × 1.5? (2 decimals)", accept: ["354880.00", "354880", "354,880.00"], explain: "(168.43 − 18.02) × 2,000 + 18.02 × 3,000 = 300,820 + 54,060 = 354,880." }
+        - { id: xl-w08-d6-g17, difficulty: hard, type: mcq, prompt: "You change the overtime multiplier to 2 and nothing updates. Most likely?", choices: ["1.5 is typed inside the formulas instead of referencing the input", "Excel needs restarting", "SUMIFS can't multiply", "The sheet is protected"], answer: 0 }
+        - { id: xl-w08-d6-g18, difficulty: hard, type: multi, prompt: "Which belong on the Inputs sheet? (Select all.)", choices: ["Standard day (8 h)", "Overtime multiplier (1.5)", "Late threshold (08:30)", "Each employee's clock-in times"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Week 8 lightning round"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w08-d6-rf01, difficulty: easy, type: mcq, prompt: "Noon as a number", choices: ["0.5", "12", "1", "0.12"], answer: 0 }
+          - { id: xl-w08-d6-rf02, difficulty: easy, type: mcq, prompt: "Completed years", choices: ["DATEDIF \"y\"", "YEAR", "DAYS", "EDATE"], answer: 0 }
+          - { id: xl-w08-d6-rf03, difficulty: easy, type: mcq, prompt: "Last day of the month", choices: ["EOMONTH", "EDATE", "DAY", "WORKDAY"], answer: 0 }
+          - { id: xl-w08-d6-rf04, difficulty: easy, type: mcq, prompt: "Working days between", choices: ["NETWORKDAYS", "WORKDAY", "DATEDIF", "WEEKDAY"], answer: 0 }
+          - { id: xl-w08-d6-rf05, difficulty: easy, type: mcq, prompt: "Hours worked", choices: ["=(D2-C2)*24", "=D2-C2", "=(D2+C2)*24", "=D2/C2"], answer: 0 }
+          - { id: xl-w08-d6-rf06, difficulty: easy, type: mcq, prompt: "Show 30:00", choices: ["[h]:mm", "hh:mm", "h", "General"], answer: 0 }
+          - { id: xl-w08-d6-rf07, difficulty: easy, type: text, prompt: "Weekend orders in 2025", accept: ["546"] }
+          - { id: xl-w08-d6-rf08, difficulty: easy, type: text, prompt: "Working days in March 2025", accept: ["21"] }
+          - { id: xl-w08-d6-rf09, difficulty: easy, type: text, prompt: "Late arrivals in March", accept: ["81"] }
+          - { id: xl-w08-d6-rf10, difficulty: easy, type: truefalse, prompt: "Reports should use a fixed as-of date.", answer: true }
+      - kind: brain-teaser
+        title: "HR & payroll challenge"
+        questions:
+          - { id: xl-w08-d6-bt01, difficulty: medium, type: text, prompt: "Staff with 5+ years of service at 31/12/2025?", accept: ["68"] }
+          - { id: xl-w08-d6-bt02, difficulty: medium, type: text, prompt: "Average shift length (2 decimals)?", accept: ["8.87"] }
+          - { id: xl-w08-d6-bt03, difficulty: medium, type: text, prompt: "=EOMONTH(DATE(2025,12,5),1) (dd/mm/yyyy)", accept: ["31/01/2026"] }
+          - { id: xl-w08-d6-bt04, difficulty: hard, type: text, prompt: "=NETWORKDAYS(DATE(2025,12,22),DATE(2025,12,31),Holidays) with 25 and 26 December as holidays", accept: ["6"] }
+          - { id: xl-w08-d6-bt05, difficulty: hard, type: mcq, prompt: "Who was the first hire, and how many completed years by 31/12/2025?", choices: ["E092 Tolu Suleiman, 10 years", "E001, 3 years", "E092, 11 years", "E120, 10 years"], answer: 0 }
