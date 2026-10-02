@@ -1,0 +1,298 @@
+# French · Week 11 quizzes. Format and rules: src/content/QUIZZES.md
+week: 11
+days:
+
+  # ─────────────────────────── DAY 1 ───────────────────────────
+  - day: 1
+    gate:
+      title: "Checkpoint: Week 10 review"
+      covers: "Week 10: rooms and housing, furniture, colour agreement, BANGS, bel/nouvel/vieil, rental ads, il n'y a pas de"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w11-d1-g01, difficulty: easy, type: mcq, prompt: "la chambre", choices: ["bedroom", "room (any)", "chamber", "kitchen"], answer: 0 }
+        - { id: fr-w11-d1-g02, difficulty: easy, type: mcq, prompt: "une armoire (blanc)", choices: ["blanche", "blanc", "blance", "blancs"], answer: 0 }
+        - { id: fr-w11-d1-g03, difficulty: easy, type: truefalse, prompt: "« marron » never changes, even in the plural.", answer: true }
+        - { id: fr-w11-d1-g04, difficulty: easy, type: mcq, prompt: "a big kitchen", choices: ["une grande cuisine", "une cuisine grande", "un grand cuisine", "une grand cuisine"], answer: 0 }
+        - { id: fr-w11-d1-g05, difficulty: easy, type: mcq, prompt: "le loyer", choices: ["the rent", "the landlord", "the lawyer", "the tenant"], answer: 0 }
+        - { id: fr-w11-d1-g06, difficulty: easy, type: mcq, prompt: "au premier étage", choices: ["one floor above the ground floor", "on the ground floor", "on the top floor", "in the basement"], answer: 0 }
+        - { id: fr-w11-d1-g07, difficulty: medium, type: text, prompt: "un appartement (beau)", accept: ["un bel appartement"] }
+        - { id: fr-w11-d1-g08, difficulty: medium, type: text, prompt: "Translate: There is no garden.", accept: ["Il n'y a pas de jardin.", "Il n'y a pas de jardin"] }
+        - { id: fr-w11-d1-g09, difficulty: medium, type: match, prompt: "Match.", pairs: [["beau", "bel"], ["nouveau", "nouvel"], ["vieux", "vieil"], ["blanc (fem.)", "blanche"]] }
+        - { id: fr-w11-d1-g10, difficulty: medium, type: text, prompt: "des maisons (grand), written French", accept: ["de grandes maisons"] }
+        - { id: fr-w11-d1-g11, difficulty: medium, type: truefalse, prompt: "« meublé » means furnished.", answer: true }
+        - { id: fr-w11-d1-g12, difficulty: medium, type: text, prompt: "des rideaux (noir)", accept: ["noirs"] }
+        - { id: fr-w11-d1-g13, difficulty: medium, type: mcq, prompt: "BANGS stands for…", choices: ["Beauty, Age, Number, Goodness, Size", "Big, Accent, Noun, Gender, Sound", "Before, After, Noun, Gender, Size", "Beauty, Accent, Number, Grammar, Style"], answer: 0 }
+        - { id: fr-w11-d1-g14, difficulty: medium, type: text, prompt: "un hôtel (vieux)", accept: ["un vieil hôtel"] }
+        - { id: fr-w11-d1-g15, difficulty: medium, type: mcq, prompt: "Québec 4 ½", choices: ["4 rooms + a bathroom", "4.5 bedrooms", "4th floor", "4 rooms half-furnished"], answer: 0 }
+        - { id: fr-w11-d1-g16, difficulty: hard, type: text, prompt: "Translate: I live in an old building, but my flat is bright.", accept: ["J'habite dans un vieil immeuble, mais mon appartement est lumineux.", "J'habite dans un vieil immeuble mais mon appartement est lumineux.", "J'habite dans un vieil immeuble, mais mon appartement est lumineux"] }
+        - { id: fr-w11-d1-g17, difficulty: hard, type: mcq, prompt: "Correct: « un beau appartement, un vieux hôtel, des grandes maisons »", choices: ["un bel appartement, un vieil hôtel, de grandes maisons", "un belle appartement, un vieille hôtel, des grandes maisons", "un appartement beau, un hôtel vieux, des maisons grandes", "No changes"], answer: 0 }
+        - { id: fr-w11-d1-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["une petite maison blanche", "des chaises marron", "Il n'y a pas d'ascenseur.", "un nouveau appartement"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Appearance"
+        secondsPerQuestion: 7
+        questions:
+          - { id: fr-w11-d1-rf01, difficulty: easy, type: mcq, prompt: "mince", choices: ["slim", "tall", "short", "strong"], answer: 0 }
+          - { id: fr-w11-d1-rf02, difficulty: easy, type: mcq, prompt: "de taille moyenne", choices: ["medium height", "average age", "small size", "middle-aged"], answer: 0 }
+          - { id: fr-w11-d1-rf03, difficulty: easy, type: mcq, prompt: "chauve", choices: ["bald", "hot", "curly", "bearded"], answer: 0 }
+          - { id: fr-w11-d1-rf04, difficulty: easy, type: mcq, prompt: "les cheveux bouclés", choices: ["curly hair", "braided hair", "short hair", "grey hair"], answer: 0 }
+          - { id: fr-w11-d1-rf05, difficulty: easy, type: mcq, prompt: "les cheveux tressés", choices: ["braided hair", "curly hair", "long hair", "dyed hair"], answer: 0 }
+          - { id: fr-w11-d1-rf06, difficulty: easy, type: mcq, prompt: "une barbe", choices: ["a beard", "a barber", "a moustache", "a bar"], answer: 0 }
+          - { id: fr-w11-d1-rf07, difficulty: easy, type: mcq, prompt: "Il porte des lunettes.", choices: ["He wears glasses.", "He carries glasses.", "He buys glasses.", "He has bad eyes."], answer: 0 }
+          - { id: fr-w11-d1-rf08, difficulty: easy, type: mcq, prompt: "Hair and eyes use…", choices: ["avoir", "être", "faire", "porter"], answer: 0 }
+          - { id: fr-w11-d1-rf09, difficulty: easy, type: mcq, prompt: "âgé(e)", choices: ["elderly (polite)", "angry", "aged cheese", "young"], answer: 0 }
+          - { id: fr-w11-d1-rf10, difficulty: easy, type: mcq, prompt: "mignon (fem.)", choices: ["mignonne", "mignone", "mignon", "mignonnes"], answer: 0 }
+          - { id: fr-w11-d1-rf11, difficulty: easy, type: mcq, prompt: "fort(e) for a person", choices: ["well-built (kinder than gros)", "loud", "fortunate", "short"], answer: 0 }
+      - kind: brain-teaser
+        title: "Describe them"
+        questions:
+          - { id: fr-w11-d1-bt01, difficulty: medium, type: text, prompt: "Translate: She has long hair.", accept: ["Elle a les cheveux longs.", "Elle a les cheveux longs"] }
+          - { id: fr-w11-d1-bt02, difficulty: medium, type: text, prompt: "Translate: He has brown eyes.", accept: ["Il a les yeux marron.", "Il a les yeux marron"] }
+          - { id: fr-w11-d1-bt03, difficulty: medium, type: mcq, prompt: "« Elle a un cheveu long » means…", choices: ["She has one long hair (a single strand)", "She has long hair", "She has a long horse", "She has long eyelashes"], answer: 0 }
+          - { id: fr-w11-d1-bt04, difficulty: hard, type: text, prompt: "Translate: She has long, braided hair and brown eyes.", accept: ["Elle a les cheveux longs et tressés et les yeux marron.", "Elle a les cheveux longs et tressés et les yeux marron"] }
+          - { id: fr-w11-d1-bt05, difficulty: hard, type: mcq, prompt: "Spot the error: « Il est les cheveux courts et il a grand. »", choices: ["Il a les cheveux courts … il est grand", "Only cheveux", "Only grand", "No error"], answer: 0 }
+
+  # ─────────────────────────── DAY 2 ───────────────────────────
+  - day: 2
+    gate:
+      title: "Checkpoint: appearance"
+      covers: "Week 11 · Day 1: il/elle est + build and age, il/elle a + hair, eyes, beard; porter des lunettes"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w11-d2-g01, difficulty: easy, type: mcq, prompt: "tall (fem.)", choices: ["grande", "grand", "grosse", "longue"], answer: 0 }
+        - { id: fr-w11-d2-g02, difficulty: easy, type: mcq, prompt: "Elle a ___ cheveux noirs.", choices: ["les", "des", "un", "la"], answer: 0 }
+        - { id: fr-w11-d2-g03, difficulty: easy, type: truefalse, prompt: "« les cheveux » is always plural.", answer: true }
+        - { id: fr-w11-d2-g04, difficulty: easy, type: mcq, prompt: "les yeux", choices: ["the eyes", "the ears", "the eyebrows", "the yes"], answer: 0 }
+        - { id: fr-w11-d2-g05, difficulty: easy, type: mcq, prompt: "Il ___ chauve.", choices: ["est", "a", "porte", "fait"], answer: 0 }
+        - { id: fr-w11-d2-g06, difficulty: easy, type: mcq, prompt: "short hair", choices: ["les cheveux courts", "les cheveux petits", "les cheveux bas", "le cheveu court"], answer: 0 }
+        - { id: fr-w11-d2-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["crépus", "kinky/afro"], ["bouclés", "curly"], ["tressés", "braided"], ["gris", "grey"]] }
+        - { id: fr-w11-d2-g08, difficulty: medium, type: text, prompt: "Translate: He wears glasses.", accept: ["Il porte des lunettes.", "Il porte des lunettes"] }
+        - { id: fr-w11-d2-g09, difficulty: medium, type: text, prompt: "Translate: She is slim.", accept: ["Elle est mince.", "Elle est mince"] }
+        - { id: fr-w11-d2-g10, difficulty: medium, type: mcq, prompt: "Politer than « vieux » for a person", choices: ["âgé", "ancien", "fort", "chauve"], answer: 0 }
+        - { id: fr-w11-d2-g11, difficulty: medium, type: truefalse, prompt: "« Il a une barbe » means he has a beard.", answer: true }
+        - { id: fr-w11-d2-g12, difficulty: medium, type: text, prompt: "Translate: He is of medium height.", accept: ["Il est de taille moyenne.", "Il est de taille moyenne"] }
+        - { id: fr-w11-d2-g13, difficulty: medium, type: mcq, prompt: "green eyes", choices: ["les yeux verts", "les yeux vertes", "les œils verts", "les yeux vert"], answer: 0 }
+        - { id: fr-w11-d2-g14, difficulty: medium, type: text, prompt: "Translate: She has curly hair.", accept: ["Elle a les cheveux bouclés.", "Elle a les cheveux bouclés"] }
+        - { id: fr-w11-d2-g15, difficulty: medium, type: mcq, prompt: "Kinder than « gros »", choices: ["fort", "mince", "petit", "grand"], answer: 0 }
+        - { id: fr-w11-d2-g16, difficulty: hard, type: text, prompt: "Translate: My father is tall, he is bald and he has a beard.", accept: ["Mon père est grand, il est chauve et il a une barbe.", "Mon père est grand, il est chauve et il a une barbe", "Mon père est grand il est chauve et il a une barbe."] }
+        - { id: fr-w11-d2-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « Ma sœur a les yeux marrons et elle est petit. »", choices: ["marron (no -s) … petite", "Only marrons", "Only petit", "No error"], answer: 0 }
+        - { id: fr-w11-d2-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["Elle a les cheveux courts.", "Il est de taille moyenne.", "Il porte des lunettes.", "Elle est les yeux bleus."], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Feminine forms"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fr-w11-d2-rf01, difficulty: easy, type: mcq, prompt: "généreux →", choices: ["généreuse", "généreuxe", "généreusse", "généreux"], answer: 0 }
+          - { id: fr-w11-d2-rf02, difficulty: easy, type: mcq, prompt: "travailleur →", choices: ["travailleuse", "travailleure", "travailleusse", "travailleur"], answer: 0 }
+          - { id: fr-w11-d2-rf03, difficulty: easy, type: mcq, prompt: "sportif →", choices: ["sportive", "sportife", "sportiffe", "sportif"], answer: 0 }
+          - { id: fr-w11-d2-rf04, difficulty: easy, type: mcq, prompt: "naturel →", choices: ["naturelle", "naturele", "naturel", "naturelles"], answer: 0 }
+          - { id: fr-w11-d2-rf05, difficulty: easy, type: mcq, prompt: "bon →", choices: ["bonne", "bone", "bonn", "bon"], answer: 0 }
+          - { id: fr-w11-d2-rf06, difficulty: easy, type: mcq, prompt: "fier →", choices: ["fière", "fiere", "fieré", "fierre"], answer: 0 }
+          - { id: fr-w11-d2-rf07, difficulty: easy, type: mcq, prompt: "créateur →", choices: ["créatrice", "créateuse", "créatrise", "créateure"], answer: 0 }
+          - { id: fr-w11-d2-rf08, difficulty: easy, type: mcq, prompt: "doux →", choices: ["douce", "douse", "douxe", "douche"], answer: 0 }
+          - { id: fr-w11-d2-rf09, difficulty: easy, type: mcq, prompt: "gentil →", choices: ["gentille", "gentile", "gentil", "gentilles"], answer: 0 }
+          - { id: fr-w11-d2-rf10, difficulty: easy, type: mcq, prompt: "sympa (fem.)", choices: ["sympa", "sympae", "sympathe", "sympas"], answer: 0 }
+      - kind: brain-teaser
+        title: "Make it feminine"
+        questions:
+          - { id: fr-w11-d2-bt01, difficulty: medium, type: text, prompt: "ambitieux →", accept: ["ambitieuse"] }
+          - { id: fr-w11-d2-bt02, difficulty: medium, type: text, prompt: "conservateur →", accept: ["conservatrice"] }
+          - { id: fr-w11-d2-bt03, difficulty: medium, type: text, prompt: "créatif →", accept: ["créative"] }
+          - { id: fr-w11-d2-bt04, difficulty: hard, type: text, prompt: "Translate: My sister is hard-working and generous.", accept: ["Ma sœur est travailleuse et généreuse.", "Ma sœur est travailleuse et généreuse"] }
+          - { id: fr-w11-d2-bt05, difficulty: hard, type: match, prompt: "Match the irregular feminine.", pairs: [["long", "longue"], ["frais", "fraîche"], ["fou", "folle"], ["blanc", "blanche"]] }
+
+  # ─────────────────────────── DAY 3 ───────────────────────────
+  - day: 3
+    gate:
+      title: "Checkpoint: personality and feminine forms"
+      covers: "Week 11 · Day 2: -eux/-euse, -eur/-euse, -teur/-trice, -if/-ive, -el/-elle, -on/-onne, -er/-ère, irregulars, personality words"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w11-d3-g01, difficulty: easy, type: mcq, prompt: "paresseux", choices: ["lazy", "patient", "generous", "stubborn"], answer: 0 }
+        - { id: fr-w11-d3-g02, difficulty: easy, type: mcq, prompt: "bavard", choices: ["chatty", "brave", "shy", "rude"], answer: 0 }
+        - { id: fr-w11-d3-g03, difficulty: easy, type: truefalse, prompt: "-if adjectives become -ive in the feminine.", answer: true }
+        - { id: fr-w11-d3-g04, difficulty: easy, type: mcq, prompt: "têtu", choices: ["stubborn", "head", "polite", "funny"], answer: 0 }
+        - { id: fr-w11-d3-g05, difficulty: easy, type: mcq, prompt: "drôle", choices: ["funny", "strange only", "droll and sad", "drunk"], answer: 0 }
+        - { id: fr-w11-d3-g06, difficulty: easy, type: mcq, prompt: "sérieux →", choices: ["sérieuse", "sérieuxe", "sérieusse", "sérieux"], answer: 0 }
+        - { id: fr-w11-d3-g07, difficulty: medium, type: match, prompt: "Match the pattern.", pairs: [["-eux", "-euse"], ["-teur", "-trice"], ["-if", "-ive"], ["-er", "-ère"]] }
+        - { id: fr-w11-d3-g08, difficulty: medium, type: text, prompt: "travailleur →", accept: ["travailleuse"] }
+        - { id: fr-w11-d3-g09, difficulty: medium, type: text, prompt: "naturel →", accept: ["naturelle"] }
+        - { id: fr-w11-d3-g10, difficulty: medium, type: mcq, prompt: "italien →", choices: ["italienne", "italiene", "italienn", "italien"], answer: 0 }
+        - { id: fr-w11-d3-g11, difficulty: medium, type: truefalse, prompt: "« ouvert » means open-minded when describing a person.", answer: true }
+        - { id: fr-w11-d3-g12, difficulty: medium, type: text, prompt: "fier →", accept: ["fière"] }
+        - { id: fr-w11-d3-g13, difficulty: medium, type: mcq, prompt: "menteur", choices: ["liar", "mentor", "minder", "mental"], answer: 0 }
+        - { id: fr-w11-d3-g14, difficulty: medium, type: text, prompt: "doux →", accept: ["douce"] }
+        - { id: fr-w11-d3-g15, difficulty: medium, type: mcq, prompt: "Which don't change in the feminine?", choices: ["sympa, calme, timide, honnête", "gentil, poli, têtu, ouvert", "sportif, actif, naïf, créatif", "bon, mignon, italien, cruel"], answer: 0 }
+        - { id: fr-w11-d3-g16, difficulty: hard, type: text, prompt: "Translate: My mother is creative, sporty and very kind.", accept: ["Ma mère est créative, sportive et très gentille.", "Ma mère est créative, sportive et très gentille"] }
+        - { id: fr-w11-d3-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « Ma tante est généreuse, travailleuse et créatrice, mais un peu paresseux. »", choices: ["paresseux → paresseuse", "créatrice → créative", "travailleuse → travailleure", "No error"], answer: 0 }
+        - { id: fr-w11-d3-g18, difficulty: hard, type: multi, prompt: "Which feminine forms are correct? (Select all.)", choices: ["courageuse", "active", "cruelle", "fiere"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Nuance and opposites"
+        secondsPerQuestion: 7
+        questions:
+          - { id: fr-w11-d3-rf01, difficulty: easy, type: mcq, prompt: "très", choices: ["very", "too", "quite", "a bit"], answer: 0 }
+          - { id: fr-w11-d3-rf02, difficulty: easy, type: mcq, prompt: "trop", choices: ["too (negative)", "very", "quite", "a lot of fun"], answer: 0 }
+          - { id: fr-w11-d3-rf03, difficulty: easy, type: mcq, prompt: "assez", choices: ["quite", "enough only", "too", "not at all"], answer: 0 }
+          - { id: fr-w11-d3-rf04, difficulty: easy, type: mcq, prompt: "un peu (for flaws)", choices: ["a bit", "a lot", "very", "never"], answer: 0 }
+          - { id: fr-w11-d3-rf05, difficulty: easy, type: mcq, prompt: "pas du tout", choices: ["not at all", "not all", "not yet", "everything"], answer: 0 }
+          - { id: fr-w11-d3-rf06, difficulty: easy, type: mcq, prompt: "généreux ↔", choices: ["égoïste", "paresseux", "timide", "impoli"], answer: 0 }
+          - { id: fr-w11-d3-rf07, difficulty: easy, type: mcq, prompt: "travailleur ↔", choices: ["paresseux", "égoïste", "nerveux", "fermé"], answer: 0 }
+          - { id: fr-w11-d3-rf08, difficulty: easy, type: mcq, prompt: "calme ↔", choices: ["nerveux", "timide", "poli", "drôle"], answer: 0 }
+          - { id: fr-w11-d3-rf09, difficulty: easy, type: mcq, prompt: "sociable ↔", choices: ["timide", "généreux", "patient", "ouvert"], answer: 0 }
+          - { id: fr-w11-d3-rf10, difficulty: easy, type: mcq, prompt: "une qualité / un défaut", choices: ["a strength / a flaw", "a quality / a default setting", "a gift / a fault line", "a level / a defeat"], answer: 0 }
+      - kind: brain-teaser
+        title: "Say it nicely"
+        questions:
+          - { id: fr-w11-d3-bt01, difficulty: medium, type: mcq, prompt: "« Il est trop bavard » sounds…", choices: ["critical", "like a compliment", "neutral", "very polite"], answer: 0 }
+          - { id: fr-w11-d3-bt02, difficulty: medium, type: text, prompt: "Translate: She is quite shy.", accept: ["Elle est assez timide.", "Elle est assez timide"] }
+          - { id: fr-w11-d3-bt03, difficulty: medium, type: text, prompt: "Translate: He isn't selfish at all.", accept: ["Il n'est pas du tout égoïste.", "Il n'est pas du tout égoïste"] }
+          - { id: fr-w11-d3-bt04, difficulty: hard, type: mcq, prompt: "Diplomatic for « Il est méchant »", choices: ["Il n'est pas très sympa. / Il a un caractère difficile.", "Il est très méchant.", "Il est un peu gentil.", "Il est trop sympa."], answer: 0 }
+          - { id: fr-w11-d3-bt05, difficulty: hard, type: text, prompt: "Translate: He is very kind, but a bit stubborn.", accept: ["Il est très gentil, mais un peu têtu.", "Il est très gentil mais un peu têtu.", "Il est très gentil, mais un peu têtu"] }
+
+  # ─────────────────────────── DAY 4 ───────────────────────────
+  - day: 4
+    gate:
+      title: "Checkpoint: nuance and opposites"
+      covers: "Week 11 · Day 3: très, assez, trop, un peu, pas du tout; opposite pairs; diplomatic French"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w11-d4-g01, difficulty: easy, type: mcq, prompt: "too chatty", choices: ["trop bavard", "très bavard", "assez bavard", "un peu bavard"], answer: 0 }
+        - { id: fr-w11-d4-g02, difficulty: easy, type: mcq, prompt: "poli ↔", choices: ["impoli", "impatient", "égoïste", "fermé"], answer: 0 }
+        - { id: fr-w11-d4-g03, difficulty: easy, type: truefalse, prompt: "« un peu » is used to soften negative traits.", answer: true }
+        - { id: fr-w11-d4-g04, difficulty: easy, type: mcq, prompt: "optimiste ↔", choices: ["pessimiste", "timide", "nerveux", "paresseux"], answer: 0 }
+        - { id: fr-w11-d4-g05, difficulty: easy, type: mcq, prompt: "very kind", choices: ["très gentil", "trop gentil", "assez gentille only", "pas gentil"], answer: 0 }
+        - { id: fr-w11-d4-g06, difficulty: easy, type: mcq, prompt: "ouvert ↔", choices: ["fermé", "timide", "impoli", "nerveux"], answer: 0 }
+        - { id: fr-w11-d4-g07, difficulty: medium, type: match, prompt: "Match the opposites.", pairs: [["généreux", "égoïste"], ["patient", "impatient"], ["travailleur", "paresseux"], ["calme", "nerveux"]] }
+        - { id: fr-w11-d4-g08, difficulty: medium, type: text, prompt: "Translate: She is quite patient.", accept: ["Elle est assez patiente.", "Elle est assez patiente"] }
+        - { id: fr-w11-d4-g09, difficulty: medium, type: text, prompt: "Translate: You (tu) are too chatty!", accept: ["Tu es trop bavard !", "Tu es trop bavarde !", "Tu es trop bavard!", "Tu es trop bavarde!"] }
+        - { id: fr-w11-d4-g10, difficulty: medium, type: mcq, prompt: "« Il a un caractère difficile » =", choices: ["He has a difficult personality", "He has difficult handwriting", "His character in the film is hard", "He is in a difficult situation"], answer: 0 }
+        - { id: fr-w11-d4-g11, difficulty: medium, type: truefalse, prompt: "« trop » and « très » mean the same thing.", answer: false }
+        - { id: fr-w11-d4-g12, difficulty: medium, type: text, prompt: "Translate: She isn't lazy at all.", accept: ["Elle n'est pas du tout paresseuse.", "Elle n'est pas du tout paresseuse"] }
+        - { id: fr-w11-d4-g13, difficulty: medium, type: mcq, prompt: "Job interview: your flaw, softened", choices: ["Je suis un peu impatient.", "Je suis trop paresseux.", "Je suis très égoïste.", "Je suis méchant."], answer: 0 }
+        - { id: fr-w11-d4-g14, difficulty: medium, type: text, prompt: "Translate: He is very hard-working.", accept: ["Il est très travailleur.", "Il est très travailleur"] }
+        - { id: fr-w11-d4-g15, difficulty: medium, type: mcq, prompt: "nerveuse is the feminine of…", choices: ["nerveux", "nerveur", "nervif", "nerveul"], answer: 0 }
+        - { id: fr-w11-d4-g16, difficulty: hard, type: text, prompt: "Translate: My boss is very generous, but he is a bit impatient.", accept: ["Mon patron est très généreux, mais il est un peu impatient.", "Mon patron est très généreux mais il est un peu impatient.", "Mon patron est très généreux, mais il est un peu impatient"] }
+        - { id: fr-w11-d4-g17, difficulty: hard, type: mcq, prompt: "Which sounds most diplomatic?", choices: ["Elle n'est pas très sympa.", "Elle est méchante.", "Elle est trop méchante.", "Elle est très impolie."], answer: 0 }
+        - { id: fr-w11-d4-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["Il est assez timide.", "Elle est un peu têtue.", "Ils ne sont pas du tout égoïstes.", "Elle est très paresseux."], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "C'est or il est?"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fr-w11-d4-rf01, difficulty: easy, type: mcq, prompt: "___ ma cousine.", choices: ["C'est", "Elle est"], answer: 0 }
+          - { id: fr-w11-d4-rf02, difficulty: easy, type: mcq, prompt: "___ très drôle. (Ada)", choices: ["Elle est", "C'est"], answer: 0 }
+          - { id: fr-w11-d4-rf03, difficulty: easy, type: mcq, prompt: "___ professeur. (Kofi)", choices: ["Il est", "C'est"], answer: 0 }
+          - { id: fr-w11-d4-rf04, difficulty: easy, type: mcq, prompt: "___ un excellent professeur.", choices: ["C'est", "Il est"], answer: 0 }
+          - { id: fr-w11-d4-rf05, difficulty: easy, type: mcq, prompt: "Paris ? ___ magnifique !", choices: ["C'est", "Il est"], answer: 0 }
+          - { id: fr-w11-d4-rf06, difficulty: easy, type: mcq, prompt: "___ nigérian. (Tunde)", choices: ["Il est", "C'est"], answer: 0 }
+          - { id: fr-w11-d4-rf07, difficulty: easy, type: mcq, prompt: "Qui est-ce ? ___ Kofi.", choices: ["C'est", "Il est"], answer: 0 }
+          - { id: fr-w11-d4-rf08, difficulty: easy, type: mcq, prompt: "___ moi !", choices: ["C'est", "Je suis"], answer: 0 }
+          - { id: fr-w11-d4-rf09, difficulty: easy, type: mcq, prompt: "___ des voisins.", choices: ["Ce sont", "Ils sont"], answer: 0 }
+          - { id: fr-w11-d4-rf10, difficulty: easy, type: mcq, prompt: "The exam? ___ difficile.", choices: ["C'est", "Il est"], answer: 0 }
+      - kind: brain-teaser
+        title: "The article decides"
+        questions:
+          - { id: fr-w11-d4-bt01, difficulty: medium, type: mcq, prompt: "Why « Il est ingénieur » but « C'est un ingénieur »?", choices: ["The article (un) forces c'est", "Random", "ingénieur is feminine", "c'est is formal"], answer: 0 }
+          - { id: fr-w11-d4-bt02, difficulty: medium, type: text, prompt: "Translate: He's a good engineer.", accept: ["C'est un bon ingénieur.", "C'est un bon ingénieur"] }
+          - { id: fr-w11-d4-bt03, difficulty: medium, type: text, prompt: "Translate: She's Ghanaian.", accept: ["Elle est ghanéenne.", "Elle est ghanéenne"] }
+          - { id: fr-w11-d4-bt04, difficulty: hard, type: text, prompt: "Translate: It's my brother. He's tall. He's an accountant.", accept: ["C'est mon frère. Il est grand. Il est comptable.", "C'est mon frère. Il est grand. Il est comptable"] }
+          - { id: fr-w11-d4-bt05, difficulty: hard, type: mcq, prompt: "Spot the error: « Il est un médecin. C'est très sympa. » (about a man)", choices: ["C'est un médecin … Il est très sympa", "Only the first", "Only the second", "No error"], answer: 0 }
+
+  # ─────────────────────────── DAY 5 ───────────────────────────
+  - day: 5
+    gate:
+      title: "Checkpoint: c'est vs il/elle est"
+      covers: "Week 11 · Day 4: c'est + determiner/noun, name, stressed pronoun, general situations; il/elle est + adjective, profession or nationality alone"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w11-d5-g01, difficulty: easy, type: mcq, prompt: "___ mon patron.", choices: ["C'est", "Il est"], answer: 0 }
+        - { id: fr-w11-d5-g02, difficulty: easy, type: mcq, prompt: "___ sympa. (your boss)", choices: ["Il est", "C'est"], answer: 0 }
+        - { id: fr-w11-d5-g03, difficulty: easy, type: truefalse, prompt: "A profession alone takes « il/elle est »: Il est médecin.", answer: true }
+        - { id: fr-w11-d5-g04, difficulty: easy, type: mcq, prompt: "___ Aminata.", choices: ["C'est", "Elle est"], answer: 0 }
+        - { id: fr-w11-d5-g05, difficulty: easy, type: mcq, prompt: "Lagos traffic? ___ terrible !", choices: ["C'est", "Il est"], answer: 0 }
+        - { id: fr-w11-d5-g06, difficulty: easy, type: mcq, prompt: "___ infirmière. (Funmi)", choices: ["Elle est", "C'est"], answer: 0 }
+        - { id: fr-w11-d5-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["C'est un ami.", "determiner + noun"], ["Il est sympa.", "adjective about a person"], ["Elle est avocate.", "profession alone"], ["C'est cher !", "general situation"]] }
+        - { id: fr-w11-d5-g08, difficulty: medium, type: text, prompt: "Translate: She's a nurse. (with an article)", accept: ["C'est une infirmière.", "C'est une infirmière"] }
+        - { id: fr-w11-d5-g09, difficulty: medium, type: text, prompt: "Translate: He's a doctor. (no article)", accept: ["Il est médecin.", "Il est médecin"] }
+        - { id: fr-w11-d5-g10, difficulty: medium, type: mcq, prompt: "___ un bon médecin / ___ médecin / ___ sympa / ___ difficile (situation)", choices: ["C'est / Il est / Il est / C'est", "Il est / C'est / C'est / Il est", "C'est / C'est / Il est / Il est", "Il est / Il est / C'est / C'est"], answer: 0 }
+        - { id: fr-w11-d5-g11, difficulty: medium, type: truefalse, prompt: "« C'est lui ! » uses c'est with a stressed pronoun.", answer: true }
+        - { id: fr-w11-d5-g12, difficulty: medium, type: text, prompt: "Translate: They're (m) neighbours. (with des)", accept: ["Ce sont des voisins.", "Ce sont des voisins"] }
+        - { id: fr-w11-d5-g13, difficulty: medium, type: mcq, prompt: "___ une personne formidable.", choices: ["C'est", "Elle est"], answer: 0 }
+        - { id: fr-w11-d5-g14, difficulty: medium, type: text, prompt: "Translate: It's good!", accept: ["C'est bien !", "C'est bien!", "C'est bon !", "C'est bien"] }
+        - { id: fr-w11-d5-g15, difficulty: medium, type: mcq, prompt: "___ canadienne. (Julie)", choices: ["Elle est", "C'est"], answer: 0 }
+        - { id: fr-w11-d5-g16, difficulty: hard, type: text, prompt: "Translate: It's my sister. She's a very serious accountant.", accept: ["C'est ma sœur. C'est une comptable très sérieuse.", "C'est ma sœur. C'est une comptable très sérieuse"] }
+        - { id: fr-w11-d5-g17, difficulty: hard, type: mcq, prompt: "Find the sentence with NO mistake.", choices: ["C'est un comptable très sérieux.", "Il est un bon comptable.", "Elle est ma cousine.", "C'est très grande. (about Ada)"], answer: 0 }
+        - { id: fr-w11-d5-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["Il est nigérian.", "C'est mon frère.", "C'est difficile !", "Il est un ingénieur."], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Funmi's portrait"
+        secondsPerQuestion: 9
+        questions:
+          - { id: fr-w11-d5-rf01, difficulty: easy, type: mcq, prompt: "Funmi's job", choices: ["nurse", "teacher", "doctor", "accountant"], answer: 0 }
+          - { id: fr-w11-d5-rf02, difficulty: easy, type: mcq, prompt: "Her age", choices: ["33", "23", "30", "43"], answer: 0 }
+          - { id: fr-w11-d5-rf03, difficulty: easy, type: mcq, prompt: "Her hair", choices: ["braided", "curly", "short", "grey"], answer: 0 }
+          - { id: fr-w11-d5-rf04, difficulty: easy, type: mcq, prompt: "Her eyes", choices: ["brown", "black", "green", "blue"], answer: 0 }
+          - { id: fr-w11-d5-rf05, difficulty: easy, type: mcq, prompt: "Her glasses", choices: ["red", "black", "blue", "she has none"], answer: 0 }
+          - { id: fr-w11-d5-rf06, difficulty: easy, type: mcq, prompt: "Her flaw", choices: ["a bit stubborn", "lazy", "too chatty", "impatient"], answer: 0 }
+          - { id: fr-w11-d5-rf07, difficulty: easy, type: mcq, prompt: "Her weekends", choices: ["dancing and cooking for friends", "football", "reading", "sleeping"], answer: 0 }
+          - { id: fr-w11-d5-rf08, difficulty: easy, type: mcq, prompt: "« ma meilleure amie »", choices: ["my best friend (f)", "my better friend", "my old friend", "my girlfriend only"], answer: 0 }
+          - { id: fr-w11-d5-rf09, difficulty: easy, type: mcq, prompt: "Her build", choices: ["small and slim", "tall and slim", "well-built", "medium height"], answer: 0 }
+          - { id: fr-w11-d5-rf10, difficulty: easy, type: mcq, prompt: "Her qualities", choices: ["generous and hard-working", "shy and calm", "lazy and funny", "patient and quiet"], answer: 0 }
+      - kind: brain-teaser
+        title: "Write the portrait"
+        questions:
+          - { id: fr-w11-d5-bt01, difficulty: medium, type: text, prompt: "Quelle est la profession de Funmi ? (answer in French)", accept: ["Elle est infirmière.", "Elle est infirmière", "C'est une infirmière."] }
+          - { id: fr-w11-d5-bt02, difficulty: medium, type: text, prompt: "Décrivez ses cheveux.", accept: ["Elle a les cheveux tressés.", "Elle a les cheveux tressés"] }
+          - { id: fr-w11-d5-bt03, difficulty: medium, type: text, prompt: "Quel est son défaut ?", accept: ["Elle est un peu têtue.", "Elle est un peu têtue"] }
+          - { id: fr-w11-d5-bt04, difficulty: hard, type: text, prompt: "Translate: My best friend is called Kemi. She's a teacher.", accept: ["Ma meilleure amie s'appelle Kemi. Elle est professeure.", "Ma meilleure amie s'appelle Kemi. Elle est professeur.", "Ma meilleure amie s'appelle Kemi. C'est une professeure.", "Ma meilleure amie s'appelle Kemi. Elle est enseignante."] }
+          - { id: fr-w11-d5-bt05, difficulty: hard, type: order, prompt: "Order the portrait structure.", items: ["Name", "Job and age", "Appearance", "Personality: qualities and a flaw", "Hobbies", "Conclusion"] }
+
+  # ─────────────────────────── DAY 6 ───────────────────────────
+  - day: 6
+    gate:
+      title: "Checkpoint: portraits"
+      covers: "Week 11 · Day 5: full portraits combining appearance, personality, c'est/il est, nuance and hobbies"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w11-d6-g01, difficulty: easy, type: mcq, prompt: "She's called Funmi.", choices: ["Elle s'appelle Funmi.", "Elle appelle Funmi.", "C'est appelle Funmi.", "Elle est Funmi appelle."], answer: 0 }
+        - { id: fr-w11-d6-g02, difficulty: easy, type: mcq, prompt: "She's 33.", choices: ["Elle a trente-trois ans.", "Elle est trente-trois ans.", "Elle a trente-trois.", "Elle fait trente-trois ans."], answer: 0 }
+        - { id: fr-w11-d6-g03, difficulty: easy, type: truefalse, prompt: "« C'est une personne formidable » is correct (article + noun).", answer: true }
+        - { id: fr-w11-d6-g04, difficulty: easy, type: mcq, prompt: "She loves dancing.", choices: ["Elle adore danser.", "Elle adore de danser.", "Elle adore dansant.", "Elle adore à danser."], answer: 0 }
+        - { id: fr-w11-d6-g05, difficulty: easy, type: mcq, prompt: "She wears red glasses.", choices: ["Elle porte des lunettes rouges.", "Elle a des rouges lunettes.", "Elle porte des lunette rouge.", "Elle est lunettes rouges."], answer: 0 }
+        - { id: fr-w11-d6-g06, difficulty: easy, type: mcq, prompt: "my best friend (m)", choices: ["mon meilleur ami", "mon meilleure ami", "ma meilleur ami", "mon bon ami"], answer: 0 }
+        - { id: fr-w11-d6-g07, difficulty: medium, type: text, prompt: "Translate: She is small and slim.", accept: ["Elle est petite et mince.", "Elle est petite et mince"] }
+        - { id: fr-w11-d6-g08, difficulty: medium, type: text, prompt: "Translate: He is very funny.", accept: ["Il est très drôle.", "Il est très drôle"] }
+        - { id: fr-w11-d6-g09, difficulty: medium, type: match, prompt: "Match the portrait part.", pairs: [["Elle s'appelle Funmi.", "name"], ["C'est une infirmière.", "job"], ["Elle a les cheveux tressés.", "appearance"], ["Elle est un peu têtue.", "flaw"]] }
+        - { id: fr-w11-d6-g10, difficulty: medium, type: mcq, prompt: "« Elle est aussi très drôle » — aussi =", choices: ["also", "so", "always", "as"], answer: 0 }
+        - { id: fr-w11-d6-g11, difficulty: medium, type: truefalse, prompt: "« Funmi est très généreuse et travailleuse » agrees both adjectives with Funmi.", answer: true }
+        - { id: fr-w11-d6-g12, difficulty: medium, type: text, prompt: "Translate: He has short hair and black eyes.", accept: ["Il a les cheveux courts et les yeux noirs.", "Il a les cheveux courts et les yeux noirs"] }
+        - { id: fr-w11-d6-g13, difficulty: medium, type: mcq, prompt: "Guess who: « Il est footballeur. Il est nigérian. Il est grand. » Which is correct?", choices: ["All three", "Only the first", "None: use c'est", "Only the last"], answer: 0 }
+        - { id: fr-w11-d6-g14, difficulty: medium, type: text, prompt: "Translate: At the weekend, he loves cooking.", accept: ["Le week-end, il adore cuisiner.", "Le week-end il adore cuisiner.", "Le week-end, il adore cuisiner"] }
+        - { id: fr-w11-d6-g15, difficulty: medium, type: mcq, prompt: "Guess who: « ___ un chanteur très célèbre. »", choices: ["C'est", "Il est"], answer: 0 }
+        - { id: fr-w11-d6-g16, difficulty: hard, type: text, prompt: "Translate: My brother is an engineer. He's tall and very generous, but a bit lazy.", accept: ["Mon frère est ingénieur. Il est grand et très généreux, mais un peu paresseux.", "Mon frère est ingénieur. Il est grand et très généreux mais un peu paresseux."] }
+        - { id: fr-w11-d6-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « Elle est une infirmière. Elle a les cheveux longs et elle est très généreux. »", choices: ["Elle est une infirmière → C'est une infirmière (or Elle est infirmière); généreux → généreuse", "Only généreux", "Only cheveux", "No error"], answer: 0 }
+        - { id: fr-w11-d6-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["C'est une personne formidable.", "Elle est un peu têtue.", "Il a les yeux marron.", "Il est un chanteur."], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Week 11 lightning round"
+        secondsPerQuestion: 7
+        questions:
+          - { id: fr-w11-d6-rf01, difficulty: easy, type: mcq, prompt: "Hair and eyes use…", choices: ["avoir", "être", "porter", "faire"], answer: 0 }
+          - { id: fr-w11-d6-rf02, difficulty: easy, type: mcq, prompt: "chauve", choices: ["bald", "hot", "bearded", "curly"], answer: 0 }
+          - { id: fr-w11-d6-rf03, difficulty: easy, type: mcq, prompt: "généreux (fem.)", choices: ["généreuse", "généreuxe", "généreux", "généreusse"], answer: 0 }
+          - { id: fr-w11-d6-rf04, difficulty: easy, type: mcq, prompt: "créateur (fem.)", choices: ["créatrice", "créateuse", "créateure", "créative"], answer: 0 }
+          - { id: fr-w11-d6-rf05, difficulty: easy, type: mcq, prompt: "trop", choices: ["too", "very", "quite", "a bit"], answer: 0 }
+          - { id: fr-w11-d6-rf06, difficulty: easy, type: mcq, prompt: "paresseux ↔", choices: ["travailleur", "généreux", "calme", "ouvert"], answer: 0 }
+          - { id: fr-w11-d6-rf07, difficulty: easy, type: mcq, prompt: "___ un ami.", choices: ["C'est", "Il est"], answer: 0 }
+          - { id: fr-w11-d6-rf08, difficulty: easy, type: mcq, prompt: "___ médecin. (Kofi)", choices: ["Il est", "C'est"], answer: 0 }
+          - { id: fr-w11-d6-rf09, difficulty: easy, type: mcq, prompt: "têtu", choices: ["stubborn", "polite", "chatty", "shy"], answer: 0 }
+          - { id: fr-w11-d6-rf10, difficulty: easy, type: mcq, prompt: "Il porte des lunettes.", choices: ["He wears glasses.", "He has bad eyes.", "He drinks from glasses.", "He sells glasses."], answer: 0 }
+      - kind: brain-teaser
+        title: "Qui est-ce ?"
+        questions:
+          - { id: fr-w11-d6-bt01, difficulty: medium, type: text, prompt: "Translate: He's a Nigerian musician. (c'est)", accept: ["C'est un musicien nigérian.", "C'est un musicien nigérian"] }
+          - { id: fr-w11-d6-bt02, difficulty: medium, type: text, prompt: "Translate: She's very generous and hard-working.", accept: ["Elle est très généreuse et travailleuse.", "Elle est très généreuse et travailleuse"] }
+          - { id: fr-w11-d6-bt03, difficulty: medium, type: mcq, prompt: "Guess who: « C'est une chanteuse. Elle est nigériane. Elle a les cheveux tressés. » How many sentences use c'est/il est correctly?", choices: ["All three", "Two", "One", "None"], answer: 0 }
+          - { id: fr-w11-d6-bt04, difficulty: hard, type: text, prompt: "Translate: He has a difficult personality.", accept: ["Il a un caractère difficile.", "Il a un caractère difficile"] }
+          - { id: fr-w11-d6-bt05, difficulty: hard, type: mcq, prompt: "Find the sentence with NO mistake.", choices: ["C'est un footballeur très rapide; il est grand et il a les cheveux courts.", "Il est un footballeur.", "Elle a très grande.", "Il est les yeux noirs."], answer: 0 }

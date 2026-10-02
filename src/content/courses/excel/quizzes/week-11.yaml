@@ -1,0 +1,298 @@
+# Excel · Week 11 quizzes. Format and rules: src/content/QUIZZES.md
+# Figures verified against datasets/sales_2025.csv (columns: A OrderID, B OrderDate, C Region, D Store, E Salesperson, F CustomerType, G ProductID, H Product…).
+week: 11
+days:
+
+  # ─────────────────────────── DAY 1 ───────────────────────────
+  - day: 1
+    gate:
+      title: "Checkpoint: Week 10 review"
+      covers: "Week 10: Excel Tables, structured references, data validation, dependent drop-downs, cleaning tools, protection"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w11-d1-g01, difficulty: easy, type: mcq, prompt: "Make a table", choices: ["Ctrl+T", "Ctrl+E", "Ctrl+1", "F5"], answer: 0 }
+        - { id: xl-w11-d1-g02, difficulty: easy, type: mcq, prompt: "This row's Units in a table", choices: ["[@Units]", "tblSales[Units]", "$Units", "Units!"], answer: 0 }
+        - { id: xl-w11-d1-g03, difficulty: easy, type: truefalse, prompt: "Locked cells are only protected once the sheet is protected.", answer: true }
+        - { id: xl-w11-d1-g04, difficulty: easy, type: mcq, prompt: "Drop-down list", choices: ["Data Validation → List", "Insert → List", "Filter", "Home → Drop-down"], answer: 0 }
+        - { id: xl-w11-d1-g05, difficulty: easy, type: mcq, prompt: "Flash Fill", choices: ["Ctrl+E", "Ctrl+F", "Ctrl+T", "Ctrl+D"], answer: 0 }
+        - { id: xl-w11-d1-g06, difficulty: easy, type: mcq, prompt: "$H$2# means…", choices: ["the whole spill range from H2", "H2 only", "a hidden cell", "an error"], answer: 0 }
+        - { id: xl-w11-d1-g07, difficulty: medium, type: text, prompt: "=SUM(tblSales[NetSales]) (₦, no symbol)", accept: ["834046700", "834,046,700"] }
+        - { id: xl-w11-d1-g08, difficulty: medium, type: text, prompt: "=COUNTA(UNIQUE(tblSales[Salesperson]))", accept: ["27"] }
+        - { id: xl-w11-d1-g09, difficulty: medium, type: match, prompt: "Match.", pairs: [["Text to Columns", "split by a delimiter"], ["Remove Duplicates", "delete repeated rows"], ["Go To Special", "select blanks"], ["Circle Invalid Data", "find entries breaking validation"]] }
+        - { id: xl-w11-d1-g10, difficulty: medium, type: mcq, prompt: "Dependent list helper (category in B2)", choices: ["=FILTER(tblProducts[Product],tblProducts[Category]=B2)", "=VLOOKUP(B2,tblProducts,2)", "=UNIQUE(B2)", "=COUNTIF(B2)"], answer: 0 }
+        - { id: xl-w11-d1-g11, difficulty: medium, type: truefalse, prompt: "Excel sheet passwords are real security for confidential data.", answer: false }
+        - { id: xl-w11-d1-g12, difficulty: medium, type: text, prompt: "Phones in tblProducts?", accept: ["4"] }
+        - { id: xl-w11-d1-g13, difficulty: medium, type: mcq, prompt: "Fill selected blanks with the value above", choices: ["Type = and the cell above, Ctrl+Enter", "Ctrl+D", "Enter", "Paste Special"], answer: 0 }
+        - { id: xl-w11-d1-g14, difficulty: medium, type: mcq, prompt: "Custom rule for unique IDs in A", choices: ["=COUNTIF($A:$A,A2)=1", "=UNIQUE(A2)", "=A2<>A1", "=COUNT(A2)=1"], answer: 0 }
+        - { id: xl-w11-d1-g15, difficulty: medium, type: multi, prompt: "Table advantages (Select all.)", choices: ["Auto-expanding", "Calculated columns", "Total Row", "Real passwords"], answers: [0, 1, 2] }
+        - { id: xl-w11-d1-g16, difficulty: hard, type: mcq, prompt: "Users must type only in yellow inputs. Steps:", choices: ["Unlock the inputs (Ctrl+1 → Protection), then Review → Protect Sheet", "Protect the sheet, then lock the inputs", "Hide formulas only", "Protect Workbook"], answer: 0 }
+        - { id: xl-w11-d1-g17, difficulty: hard, type: text, prompt: "=\"NM-\"&TEXT(ROW()-1,\"00000\") in row 101", accept: ["NM-00100"] }
+        - { id: xl-w11-d1-g18, difficulty: hard, type: multi, prompt: "Tidy-data rules (Select all.)", choices: ["One row per record", "One value per cell", "No merged cells inside data", "Blank rows between groups"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Conditional formatting"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w11-d1-rf01, difficulty: easy, type: mcq, prompt: "Where is Conditional Formatting?", choices: ["Home tab", "Data tab", "Insert tab", "Review tab"], answer: 0 }
+          - { id: xl-w11-d1-rf02, difficulty: easy, type: mcq, prompt: "In-cell bar charts", choices: ["Data Bars", "Sparklines", "Icon Sets", "Colour Scales"], answer: 0 }
+          - { id: xl-w11-d1-rf03, difficulty: easy, type: mcq, prompt: "Heat map", choices: ["Colour Scales", "Data Bars", "Icon Sets", "Top 10"], answer: 0 }
+          - { id: xl-w11-d1-rf04, difficulty: easy, type: mcq, prompt: "Arrows and traffic lights", choices: ["Icon Sets", "Data Bars", "Colour Scales", "Sparklines"], answer: 0 }
+          - { id: xl-w11-d1-rf05, difficulty: easy, type: mcq, prompt: "Flag repeated phone numbers", choices: ["Highlight Cells → Duplicate Values", "Top 10", "Data Bars", "Remove Duplicates"], answer: 0 }
+          - { id: xl-w11-d1-rf06, difficulty: easy, type: mcq, prompt: "See the order and scope of rules", choices: ["Manage Rules", "Clear Rules", "Format Painter", "Name Manager"], answer: 0 }
+          - { id: xl-w11-d1-rf07, difficulty: easy, type: truefalse, prompt: "More rules on one table is usually better.", answer: false }
+          - { id: xl-w11-d1-rf08, difficulty: easy, type: mcq, prompt: "Outliers above the mean", choices: ["Top/Bottom → Above Average", "Data Bars", "Duplicate Values", "Icon Sets"], answer: 0 }
+          - { id: xl-w11-d1-rf09, difficulty: easy, type: text, prompt: "Orders with NetSales ≥ ₦1,000,000 in 2025?", accept: ["140"] }
+          - { id: xl-w11-d1-rf10, difficulty: easy, type: mcq, prompt: "Highlight NetSales ≥ ₦1M", choices: ["Highlight Cells → Greater Than (999,999) or a formula rule", "Top 10", "Colour Scale", "Data Bars"], answer: 0 }
+      - kind: brain-teaser
+        title: "Pick the rule"
+        questions:
+          - { id: xl-w11-d1-bt01, difficulty: medium, type: mcq, prompt: "Category × region grid: which cells are big at a glance?", choices: ["3-colour scale", "Duplicate values", "Icon sets on text", "Text contains"], answer: 0 }
+          - { id: xl-w11-d1-bt02, difficulty: medium, type: mcq, prompt: "\"% change vs previous month\" column", choices: ["Icon set: up/flat/down arrows", "Data bars", "Duplicate values", "Colour scale on text"], answer: 0 }
+          - { id: xl-w11-d1-bt03, difficulty: medium, type: mcq, prompt: "Two rules hit the same cell. Which wins?", choices: ["The one higher in Manage Rules (unless Stop If True matters)", "The newest always", "Both blend colours", "The one with green"], answer: 0 }
+          - { id: xl-w11-d1-bt04, difficulty: hard, type: mcq, prompt: "Greater Than 1000000 highlights ₦1,000,000 itself?", choices: ["No: use ≥ via a formula rule or Greater Than 999,999", "Yes", "Only in tables", "Only with data bars"], answer: 0 }
+          - { id: xl-w11-d1-bt05, difficulty: hard, type: text, prompt: "Of the 140 orders ≥ ₦1M, how many are Wholesale?", accept: ["107"] }
+
+  # ─────────────────────────── DAY 2 ───────────────────────────
+  - day: 2
+    gate:
+      title: "Checkpoint: built-in conditional formatting"
+      covers: "Week 11 · Day 1: highlight rules, top/bottom, data bars, colour scales, icon sets, Manage Rules"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w11-d2-g01, difficulty: easy, type: mcq, prompt: "Conditional Formatting is on the…", choices: ["Home tab", "Data tab", "Formulas tab", "View tab"], answer: 0 }
+        - { id: xl-w11-d2-g02, difficulty: easy, type: mcq, prompt: "Green → red heat map", choices: ["Colour Scale", "Data Bars", "Icon Set", "Highlight Cells"], answer: 0 }
+        - { id: xl-w11-d2-g03, difficulty: easy, type: truefalse, prompt: "Data Bars draw a bar inside each cell.", answer: true }
+        - { id: xl-w11-d2-g04, difficulty: easy, type: mcq, prompt: "Find duplicate phones visually", choices: ["Duplicate Values rule", "Remove Duplicates", "Sort", "Data Bars"], answer: 0 }
+        - { id: xl-w11-d2-g05, difficulty: easy, type: mcq, prompt: "Top 10 is under…", choices: ["Top/Bottom Rules", "Highlight Cells", "Icon Sets", "Data Bars"], answer: 0 }
+        - { id: xl-w11-d2-g06, difficulty: easy, type: mcq, prompt: "Less is more:", choices: ["one or two rules per table", "a rule per column", "five colours minimum", "always icons"], answer: 0 }
+        - { id: xl-w11-d2-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["Data Bars", "in-cell bars"], ["Colour Scales", "heat map"], ["Icon Sets", "arrows / traffic lights"], ["Highlight Cells", "flag specific values"]] }
+        - { id: xl-w11-d2-g08, difficulty: medium, type: text, prompt: "Orders with NetSales ≥ ₦1,000,000?", accept: ["140"] }
+        - { id: xl-w11-d2-g09, difficulty: medium, type: mcq, prompt: "Monthly sales table: show size at a glance without a chart", choices: ["Data Bars", "Duplicate Values", "Text Contains", "Icon Sets on months"], answer: 0 }
+        - { id: xl-w11-d2-g10, difficulty: medium, type: truefalse, prompt: "Manage Rules shows which range each rule applies to.", answer: true }
+        - { id: xl-w11-d2-g11, difficulty: medium, type: mcq, prompt: "Highlight Cells → Text that Contains \"Lagos\" on the Store column finds…", choices: ["every Lagos store (e.g. Lagos - Surulere)", "only cells exactly \"Lagos\"", "nothing", "regions only"], answer: 0 }
+        - { id: xl-w11-d2-g12, difficulty: medium, type: text, prompt: "Highest month of 2025 (e.g. 2025-12)?", accept: ["2025-12", "December", "Dec"] }
+        - { id: xl-w11-d2-g13, difficulty: medium, type: mcq, prompt: "Remove all formatting rules from a sheet", choices: ["Conditional Formatting → Clear Rules → Entire Sheet", "Delete key", "Ctrl+Z", "Clear Contents"], answer: 0 }
+        - { id: xl-w11-d2-g14, difficulty: medium, type: text, prompt: "Lowest month of 2025?", accept: ["2025-01", "January", "Jan"] }
+        - { id: xl-w11-d2-g15, difficulty: medium, type: multi, prompt: "Built-in rule families (Select all.)", choices: ["Highlight Cells", "Top/Bottom", "Data Bars", "Pivot Rules"], answers: [0, 1, 2] }
+        - { id: xl-w11-d2-g16, difficulty: hard, type: mcq, prompt: "A colour scale on a grid that includes the Total row/column…", choices: ["makes the totals the only dark cells; apply it to the inner grid only", "is fine", "ignores totals automatically", "errors"], answer: 0 }
+        - { id: xl-w11-d2-g17, difficulty: hard, type: text, prompt: "December 2025 net sales in ₦ millions (1 decimal)?", accept: ["109.6", "109.6M", "₦109.6M"] }
+        - { id: xl-w11-d2-g18, difficulty: hard, type: multi, prompt: "Good uses (Select all.)", choices: ["Heat map on a category × region grid", "Duplicate highlight on phone numbers", "Arrows on % change", "Rainbow colours on every column"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Formula rules"
+        secondsPerQuestion: 9
+        questions:
+          - { id: xl-w11-d2-rf01, difficulty: easy, type: mcq, prompt: "A formula rule must return…", choices: ["TRUE or FALSE", "a colour", "a number", "text"], answer: 0 }
+          - { id: xl-w11-d2-rf02, difficulty: easy, type: mcq, prompt: "Write the formula for…", choices: ["the first row of the selection", "the last row", "every row separately", "the header"], answer: 0 }
+          - { id: xl-w11-d2-rf03, difficulty: easy, type: mcq, prompt: "Whole row where Region (C) = Lagos", choices: ["=$C2=\"Lagos\"", "=C$2=\"Lagos\"", "=$C$2=\"Lagos\"", "=C:C=\"Lagos\""], answer: 0 }
+          - { id: xl-w11-d2-rf04, difficulty: easy, type: mcq, prompt: "The $ in $C2 locks…", choices: ["the column", "the row", "both", "nothing"], answer: 0 }
+          - { id: xl-w11-d2-rf05, difficulty: easy, type: mcq, prompt: "Weekends (date in B)", choices: ["=WEEKDAY($B2,2)>=6", "=WEEKDAY($B2)>5", "=DAY($B2)>=6", "=$B2=\"Saturday\""], answer: 0 }
+          - { id: xl-w11-d2-rf06, difficulty: easy, type: mcq, prompt: "Row matches a selector cell Z1", choices: ["=$C2=$Z$1", "=C2=Z1", "=$C$2=Z1", "=$C2=Z$1$"], answer: 0 }
+          - { id: xl-w11-d2-rf07, difficulty: easy, type: mcq, prompt: "Search box on Product (H)", choices: ["=ISNUMBER(SEARCH($Z$1,$H2))", "=SEARCH(Z1)", "=FIND($H2)", "=$H2=$Z$1"], answer: 0 }
+          - { id: xl-w11-d2-rf08, difficulty: easy, type: truefalse, prompt: "SEARCH is case-insensitive, so \"tecno\" finds \"Tecno Spark 20\".", answer: true }
+          - { id: xl-w11-d2-rf09, difficulty: easy, type: mcq, prompt: "Late arrival (clock-in in C)", choices: ["=$C2>TIME(8,30,0)", "=$C2>8.30", "=HOUR($C2)>8", "=$C2>\"08:30\""], answer: 0 }
+          - { id: xl-w11-d2-rf10, difficulty: easy, type: mcq, prompt: "Below reorder level (stock H, level G)", choices: ["=$H2<$G2", "=H$2<G$2", "=$H$2<$G$2", "=H:H<G:G"], answer: 0 }
+      - kind: brain-teaser
+        title: "Highlight the rows"
+        questions:
+          - { id: xl-w11-d2-bt01, difficulty: medium, type: mcq, prompt: "Wholesale (F) orders with NetSales (O) ≥ 1M, whole row", choices: ["=AND($F2=\"Wholesale\",$O2>=1000000)", "=OR($F2=\"Wholesale\",$O2>=1000000)", "=$F2=\"Wholesale\"*O2", "=AND(F$2=\"Wholesale\",O$2>=1000000)"], answer: 0 }
+          - { id: xl-w11-d2-bt02, difficulty: medium, type: text, prompt: "How many rows does that rule highlight?", accept: ["107"] }
+          - { id: xl-w11-d2-bt03, difficulty: medium, type: mcq, prompt: "Rule =C2=\"Lagos\" (no $) on A2:Q2401 highlights…", choices: ["cells whose own column-relative cell is Lagos (patchy, not whole rows)", "whole Lagos rows", "nothing", "only column C"], answer: 0 }
+          - { id: xl-w11-d2-bt04, difficulty: hard, type: mcq, prompt: "Rule =$C$2=\"Lagos\" on A2:Q2401…", choices: ["highlights everything or nothing, based on C2 only", "highlights Lagos rows", "highlights column C", "errors"], answer: 0 }
+          - { id: xl-w11-d2-bt05, difficulty: hard, type: mcq, prompt: "Search box empty: =ISNUMBER(SEARCH($Z$1,$H2)) highlights…", choices: ["every row (an empty search matches position 1)", "no rows", "only blanks", "an error"], answer: 0 }
+
+  # ─────────────────────────── DAY 3 ───────────────────────────
+  - day: 3
+    gate:
+      title: "Checkpoint: formula-based formatting"
+      covers: "Week 11 · Day 2: TRUE/FALSE rules, first-row formulas, $ on the column for whole rows, selector cells, search box"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w11-d3-g01, difficulty: easy, type: mcq, prompt: "New Rule type for custom logic", choices: ["Use a formula to determine which cells to format", "Format only top values", "Format all cells based on values", "Format unique values"], answer: 0 }
+        - { id: xl-w11-d3-g02, difficulty: easy, type: mcq, prompt: "Whole row where Region (C) = Abuja", choices: ["=$C2=\"Abuja\"", "=C2=\"Abuja\"", "=$C$2=\"Abuja\"", "=C$2=\"Abuja\""], answer: 0 }
+        - { id: xl-w11-d3-g03, difficulty: easy, type: truefalse, prompt: "The rule formula is written for the first row of the selected range.", answer: true }
+        - { id: xl-w11-d3-g04, difficulty: easy, type: mcq, prompt: "Selector in Z1, lock it as…", choices: ["$Z$1", "Z1", "$Z1", "Z$1 only"], answer: 0 }
+        - { id: xl-w11-d3-g05, difficulty: easy, type: mcq, prompt: "WEEKDAY(date,2) returns 6 and 7 for…", choices: ["Saturday and Sunday", "Friday and Saturday", "Sunday and Monday", "the 6th and 7th"], answer: 0 }
+        - { id: xl-w11-d3-g06, difficulty: easy, type: mcq, prompt: "Rules return…", choices: ["TRUE/FALSE", "colours", "numbers", "text"], answer: 0 }
+        - { id: xl-w11-d3-g07, difficulty: medium, type: match, prompt: "Match the rule.", pairs: [["=$C2=\"Lagos\"", "Lagos rows"], ["=WEEKDAY($B2,2)>=6", "weekend orders"], ["=$C2=$Z$1", "rows matching a selector"], ["=ISNUMBER(SEARCH($Z$1,$H2))", "product search box"]] }
+        - { id: xl-w11-d3-g08, difficulty: medium, type: text, prompt: "Weekend orders the weekend rule highlights (from Week 8)?", accept: ["546"] }
+        - { id: xl-w11-d3-g09, difficulty: medium, type: mcq, prompt: "Why ISNUMBER around SEARCH?", choices: ["SEARCH returns a position or #VALUE!; ISNUMBER turns that into TRUE/FALSE", "To round", "To count matches", "No reason"], answer: 0 }
+        - { id: xl-w11-d3-g10, difficulty: medium, type: truefalse, prompt: "Without the $ on the column, a whole-row rule breaks: each column of the row checks a different column.", answer: true }
+        - { id: xl-w11-d3-g11, difficulty: medium, type: text, prompt: "Wholesale orders ≥ ₦1M (the Day 2 practice rule)?", accept: ["107"] }
+        - { id: xl-w11-d3-g12, difficulty: medium, type: mcq, prompt: "Orange late arrivals in the timesheet (clock-in in C)", choices: ["=$C2>TIME(8,30,0)", "=$C2>830", "=C$2>TIME(8,30,0)", "=HOUR($C2)>=8"], answer: 0 }
+        - { id: xl-w11-d3-g13, difficulty: medium, type: text, prompt: "Late arrivals that rule colours in the March timesheet?", accept: ["81"] }
+        - { id: xl-w11-d3-g14, difficulty: medium, type: mcq, prompt: "Region drop-down in Z1 drives the highlight. Changing Z1…", choices: ["re-highlights instantly", "needs the rule re-created", "breaks the rule", "only works after saving"], answer: 0 }
+        - { id: xl-w11-d3-g15, difficulty: medium, type: mcq, prompt: "Rows with NetSales (O) above the average", choices: ["=$O2>AVERAGE($O$2:$O$2401)", "=$O2>AVERAGE(O2:O2401)", "=O$2>AVERAGE", "=AVERAGE($O2)"], answer: 0 }
+        - { id: xl-w11-d3-g16, difficulty: hard, type: mcq, prompt: "Search box for \"tecno\" in Product: which rows light up?", choices: ["Tecno Spark 20 orders (SEARCH ignores case)", "none (case matters)", "all rows", "#VALUE! everywhere"], answer: 0 }
+        - { id: xl-w11-d3-g17, difficulty: hard, type: mcq, prompt: "Rule =$O2>AVERAGE(O2:O2401) (no $ on the range)…", choices: ["drifts row by row, comparing against shrinking ranges", "works perfectly", "errors", "highlights nothing"], answer: 0 }
+        - { id: xl-w11-d3-g18, difficulty: hard, type: multi, prompt: "Which highlight whole rows correctly on A2:Q2401? (Select all.)", choices: ["=$C2=\"Kano\"", "=WEEKDAY($B2,2)>=6", "=$F2=$Z$1", "=$C$2=\"Kano\""], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Which chart?"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w11-d3-rf01, difficulty: easy, type: mcq, prompt: "Change over time", choices: ["line", "pie", "scatter", "doughnut"], answer: 0 }
+          - { id: xl-w11-d3-rf02, difficulty: easy, type: mcq, prompt: "Compare categories", choices: ["bar/column, sorted", "line", "pie with 10 slices", "3D cone"], answer: 0 }
+          - { id: xl-w11-d3-rf03, difficulty: easy, type: mcq, prompt: "Part of a whole, 3 parts", choices: ["pie/doughnut or 100% stacked bar", "line", "scatter", "histogram"], answer: 0 }
+          - { id: xl-w11-d3-rf04, difficulty: easy, type: mcq, prompt: "Relationship between two numbers", choices: ["scatter", "pie", "line", "column"], answer: 0 }
+          - { id: xl-w11-d3-rf05, difficulty: easy, type: mcq, prompt: "Distribution", choices: ["histogram", "pie", "line", "doughnut"], answer: 0 }
+          - { id: xl-w11-d3-rf06, difficulty: easy, type: mcq, prompt: "Two measures, different scales", choices: ["combo with a secondary axis", "two pies", "3D column", "scatter"], answer: 0 }
+          - { id: xl-w11-d3-rf07, difficulty: easy, type: mcq, prompt: "Instant chart shortcut", choices: ["Alt+F1", "F11 only", "Ctrl+C", "Alt+="], answer: 0 }
+          - { id: xl-w11-d3-rf08, difficulty: easy, type: truefalse, prompt: "3D charts make comparisons clearer.", answer: false }
+          - { id: xl-w11-d3-rf09, difficulty: easy, type: mcq, prompt: "A good title…", choices: ["states the insight", "says \"Chart 1\"", "lists the columns", "is blank"], answer: 0 }
+          - { id: xl-w11-d3-rf10, difficulty: easy, type: mcq, prompt: "Colours", choices: ["few, with one highlight colour", "one per bar", "rainbow", "black only"], answer: 0 }
+      - kind: brain-teaser
+        title: "Insight titles"
+        questions:
+          - { id: xl-w11-d3-bt01, difficulty: medium, type: text, prompt: "Lagos share of 2025 net sales, whole %?", accept: ["39%", "39", "38.6%", "38.6"] }
+          - { id: xl-w11-d3-bt02, difficulty: medium, type: mcq, prompt: "Best title for the region chart", choices: ["Lagos drives 39% of sales", "Net sales by region", "Chart 1", "Regions"], answer: 0 }
+          - { id: xl-w11-d3-bt03, difficulty: medium, type: text, prompt: "Second-biggest region?", accept: ["Abuja"] }
+          - { id: xl-w11-d3-bt04, difficulty: hard, type: text, prompt: "Top category by net sales?", accept: ["Groceries"] }
+          - { id: xl-w11-d3-bt05, difficulty: hard, type: mcq, prompt: "Customer type with nearly half of net sales", choices: ["Wholesale (49.1%)", "Retail (37.0%)", "Online (13.9%)", "All equal"], answer: 0 }
+
+  # ─────────────────────────── DAY 4 ───────────────────────────
+  - day: 4
+    gate:
+      title: "Checkpoint: choosing the right chart"
+      covers: "Week 11 · Day 3: chart types for comparison, trend, part of whole, relationship, distribution; Alt+F1; design rules"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w11-d4-g01, difficulty: easy, type: mcq, prompt: "Monthly net sales for 2025", choices: ["line chart", "pie chart", "scatter", "doughnut"], answer: 0 }
+        - { id: xl-w11-d4-g02, difficulty: easy, type: mcq, prompt: "Net sales by region", choices: ["sorted bar/column", "line", "pie with 6 slices only", "3D pie"], answer: 0 }
+        - { id: xl-w11-d4-g03, difficulty: easy, type: truefalse, prompt: "Bar charts should usually be sorted so the ranking is visible.", answer: true }
+        - { id: xl-w11-d4-g04, difficulty: easy, type: mcq, prompt: "Alt+F1 makes…", choices: ["an instant chart on the sheet", "a new sheet", "a table", "a PivotTable"], answer: 0 }
+        - { id: xl-w11-d4-g05, difficulty: easy, type: mcq, prompt: "Avoid…", choices: ["3D anything", "data labels", "sorted bars", "insight titles"], answer: 0 }
+        - { id: xl-w11-d4-g06, difficulty: easy, type: mcq, prompt: "Pie charts are OK for…", choices: ["2–5 parts of a whole", "trends over 12 months", "10+ categories", "two measures"], answer: 0 }
+        - { id: xl-w11-d4-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["line", "change over time"], ["bar", "compare categories"], ["scatter", "relationship"], ["histogram", "distribution"]] }
+        - { id: xl-w11-d4-g08, difficulty: medium, type: text, prompt: "Lagos share of net sales (1 decimal %)?", accept: ["38.6%", "38.6"] }
+        - { id: xl-w11-d4-g09, difficulty: medium, type: mcq, prompt: "Category net sales (10 categories)", choices: ["sorted horizontal bar", "pie", "line", "doughnut"], answer: 0 }
+        - { id: xl-w11-d4-g10, difficulty: medium, type: truefalse, prompt: "Deleting unneeded gridlines and legends improves most business charts.", answer: true }
+        - { id: xl-w11-d4-g11, difficulty: medium, type: text, prompt: "Insight title: \"Sales peak in December at ₦___M\" (1 decimal)", accept: ["109.6"] }
+        - { id: xl-w11-d4-g12, difficulty: medium, type: mcq, prompt: "Label values directly instead of…", choices: ["making readers trace to the axis", "using titles", "sorting", "using colour"], answer: 0 }
+        - { id: xl-w11-d4-g13, difficulty: medium, type: text, prompt: "Smallest region by net sales?", accept: ["Enugu"] }
+        - { id: xl-w11-d4-g14, difficulty: medium, type: mcq, prompt: "Insert → Recommended Charts…", choices: ["suggests charts that fit the selected data", "creates a dashboard", "makes a PivotTable", "formats a table"], answer: 0 }
+        - { id: xl-w11-d4-g15, difficulty: medium, type: mcq, prompt: "Highlight Lagos in the region chart", choices: ["one strong colour for Lagos, grey for the rest", "a rainbow", "a 3D effect", "a pattern fill"], answer: 0 }
+        - { id: xl-w11-d4-g16, difficulty: hard, type: mcq, prompt: "Port Harcourt (₦89.7M) and Kano (₦89.1M) look identical in a pie. Better:", choices: ["a sorted bar with data labels", "a bigger pie", "a 3D pie", "a doughnut"], answer: 0 }
+        - { id: xl-w11-d4-g17, difficulty: hard, type: mcq, prompt: "Customer type mix (Online 13.9%, Retail 37.0%, Wholesale 49.1%)", choices: ["100% stacked bar or doughnut", "line", "scatter", "histogram"], answer: 0 }
+        - { id: xl-w11-d4-g18, difficulty: hard, type: multi, prompt: "Chart design rules (Select all.)", choices: ["Insight title", "Sorted bars", "One highlight colour", "3D effects"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Combo charts and sparklines"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w11-d4-rf01, difficulty: easy, type: mcq, prompt: "Net sales (₦M) + order count on one chart", choices: ["combo with secondary axis", "two pies", "stacked column", "scatter"], answer: 0 }
+          - { id: xl-w11-d4-rf02, difficulty: easy, type: mcq, prompt: "Actual vs target", choices: ["columns for actual, line/markers for target", "two pies", "a doughnut", "3D columns"], answer: 0 }
+          - { id: xl-w11-d4-rf03, difficulty: easy, type: mcq, prompt: "A tiny chart inside a cell", choices: ["sparkline", "data bar", "icon set", "thumbnail"], answer: 0 }
+          - { id: xl-w11-d4-rf04, difficulty: easy, type: mcq, prompt: "Sparklines are on the…", choices: ["Insert tab", "Home tab", "Data tab", "View tab"], answer: 0 }
+          - { id: xl-w11-d4-rf05, difficulty: easy, type: mcq, prompt: "Reuse your house style", choices: ["Save as Template", "Format Painter only", "Copy the sheet", "Themes only"], answer: 0 }
+          - { id: xl-w11-d4-rf06, difficulty: easy, type: truefalse, prompt: "Sparklines can mark the high point.", answer: true }
+          - { id: xl-w11-d4-rf07, difficulty: easy, type: mcq, prompt: "When do you need a secondary axis?", choices: ["measures on very different scales", "always", "never", "for pies"], answer: 0 }
+          - { id: xl-w11-d4-rf08, difficulty: easy, type: text, prompt: "Orders in December 2025?", accept: ["330"] }
+          - { id: xl-w11-d4-rf09, difficulty: easy, type: mcq, prompt: "Combo is under…", choices: ["Insert → Combo", "Data → Combo", "Home → Combo", "Review → Combo"], answer: 0 }
+          - { id: xl-w11-d4-rf10, difficulty: easy, type: mcq, prompt: "A row of 12 months per region, at a glance", choices: ["line sparklines", "12 pies", "a scatter", "icon sets"], answer: 0 }
+      - kind: brain-teaser
+        title: "Two scales"
+        questions:
+          - { id: xl-w11-d4-bt01, difficulty: medium, type: mcq, prompt: "December: ₦109.6M and 330 orders on one axis. Problem?", choices: ["The orders line is flat at the bottom; put it on a secondary axis", "None", "Use a pie", "The columns disappear"], answer: 0 }
+          - { id: xl-w11-d4-bt02, difficulty: medium, type: mcq, prompt: "Regions × months table for sparklines needs…", choices: ["SUMIFS with region and month criteria", "VLOOKUP", "a PivotChart only", "COUNTIF"], answer: 0 }
+          - { id: xl-w11-d4-bt03, difficulty: medium, type: mcq, prompt: "Save a chart as a template", choices: ["Right-click → Save as Template", "File → Save As → .xltx", "Copy → Paste Special", "Ctrl+S"], answer: 0 }
+          - { id: xl-w11-d4-bt04, difficulty: hard, type: text, prompt: "Average order value in 2025 (₦, nearest naira, no symbol)?", accept: ["347519", "347,519"] }
+          - { id: xl-w11-d4-bt05, difficulty: hard, type: mcq, prompt: "Sparklines for 6 regions default to each row's own scale. Risk?", choices: ["Small regions look as volatile as Lagos; set the same min/max for all", "None", "They hide data", "They error"], answer: 0 }
+
+  # ─────────────────────────── DAY 5 ───────────────────────────
+  - day: 5
+    gate:
+      title: "Checkpoint: combo charts and sparklines"
+      covers: "Week 11 · Day 4: combo charts, secondary axis, actual vs target, sparklines, chart templates"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w11-d5-g01, difficulty: easy, type: mcq, prompt: "Columns + a line on one chart", choices: ["combo chart", "stacked bar", "scatter", "pie"], answer: 0 }
+        - { id: xl-w11-d5-g02, difficulty: easy, type: mcq, prompt: "Sparkline", choices: ["a tiny chart inside a cell", "a highlight rule", "a chart title", "a PivotChart"], answer: 0 }
+        - { id: xl-w11-d5-g03, difficulty: easy, type: truefalse, prompt: "A secondary axis helps when two measures have very different scales.", answer: true }
+        - { id: xl-w11-d5-g04, difficulty: easy, type: mcq, prompt: "Insert sparklines from…", choices: ["Insert → Sparklines", "Home → Sparklines", "Data → Sparklines", "View → Sparklines"], answer: 0 }
+        - { id: xl-w11-d5-g05, difficulty: easy, type: mcq, prompt: "Target shown as…", choices: ["a line or markers", "a pie", "a second workbook", "icons"], answer: 0 }
+        - { id: xl-w11-d5-g06, difficulty: easy, type: mcq, prompt: "Chart template saves…", choices: ["your formatting style", "the data", "the workbook", "macros"], answer: 0 }
+        - { id: xl-w11-d5-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["combo chart", "two measures"], ["sparkline", "trend in a cell"], ["secondary axis", "different scales"], ["chart template", "reuse a style"]] }
+        - { id: xl-w11-d5-g08, difficulty: medium, type: text, prompt: "Orders in December 2025?", accept: ["330"] }
+        - { id: xl-w11-d5-g09, difficulty: medium, type: mcq, prompt: "Monthly combo: which goes on the secondary axis?", choices: ["number of orders (line)", "net sales (columns)", "months", "both"], answer: 0 }
+        - { id: xl-w11-d5-g10, difficulty: medium, type: truefalse, prompt: "Sparklines live in cells and resize with them.", answer: true }
+        - { id: xl-w11-d5-g11, difficulty: medium, type: mcq, prompt: "Region × month sales cell (region A3, month C2 as \"2025-01\" text, data in tblSales with a Month column)", choices: ["=SUMIFS(tblSales[NetSales],tblSales[Region],$A3,tblSales[Month],C$2)", "=SUMIF(A3,C2)", "=VLOOKUP(A3,C2)", "=SUMIFS(C2,A3)"], answer: 0 }
+        - { id: xl-w11-d5-g12, difficulty: medium, type: text, prompt: "Highest month (net sales)?", accept: ["2025-12", "December", "Dec"] }
+        - { id: xl-w11-d5-g13, difficulty: medium, type: mcq, prompt: "Mark the high point of a sparkline", choices: ["Sparkline → Show → High Point", "Conditional formatting", "Bold the cell", "Insert a shape"], answer: 0 }
+        - { id: xl-w11-d5-g14, difficulty: medium, type: mcq, prompt: "Actual vs target monthly by region uses which dataset besides sales?", choices: ["targets_2025.csv", "products.csv", "employees.csv", "timesheet"], answer: 0 }
+        - { id: xl-w11-d5-g15, difficulty: medium, type: mcq, prompt: "Why $A3 and C$2 in the grid SUMIFS?", choices: ["Lock the region column and the month row so it fills both ways", "Style only", "To speed up", "Required by SUMIFS"], answer: 0 }
+        - { id: xl-w11-d5-g16, difficulty: hard, type: mcq, prompt: "Combo chart where order counts (≈200–330) share the ₦ axis (up to ₦110M)…", choices: ["The orders line hugs zero; it needs the secondary axis", "Looks fine", "Columns vanish", "Excel refuses"], answer: 0 }
+        - { id: xl-w11-d5-g17, difficulty: hard, type: text, prompt: "January 2025 net sales in ₦ millions (1 decimal)?", accept: ["43.2", "43.2M", "₦43.2M"] }
+        - { id: xl-w11-d5-g18, difficulty: hard, type: multi, prompt: "Good combo pairings (Select all.)", choices: ["Net sales + order count", "Actual + target", "Revenue + margin %", "Three pies"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Dynamic charts"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w11-d5-rf01, difficulty: easy, type: mcq, prompt: "A chart changes with a drop-down when…", choices: ["it points at a helper table driven by the drop-down", "you redraw it", "it's 3D", "it's a pie"], answer: 0 }
+          - { id: xl-w11-d5-rf02, difficulty: easy, type: mcq, prompt: "Helper table formulas", choices: ["SUMIFS using the selected region", "VLOOKUP TRUE", "COUNTA", "RAND"], answer: 0 }
+          - { id: xl-w11-d5-rf03, difficulty: easy, type: mcq, prompt: "Dynamic title cell", choices: ["=\"Monthly net sales — \"&Z1", "=Z1+\"title\"", "=TITLE(Z1)", "Type it each time"], answer: 0 }
+          - { id: xl-w11-d5-rf04, difficulty: easy, type: mcq, prompt: "Link the chart title to a cell", choices: ["Select the title, type = in the formula bar, click the cell", "Right-click → Link", "Ctrl+K", "Data → Link"], answer: 0 }
+          - { id: xl-w11-d5-rf05, difficulty: easy, type: truefalse, prompt: "Charts built on Excel Tables grow when rows are added.", answer: true }
+          - { id: xl-w11-d5-rf06, difficulty: easy, type: mcq, prompt: "The selector cell uses…", choices: ["Data Validation → List", "a macro", "a slicer only", "conditional formatting"], answer: 0 }
+          - { id: xl-w11-d5-rf07, difficulty: easy, type: mcq, prompt: "Rows in the monthly helper table", choices: ["12", "6", "2,400", "1"], answer: 0 }
+          - { id: xl-w11-d5-rf08, difficulty: easy, type: mcq, prompt: "Add Category as a second filter", choices: ["add a Category criterion to the SUMIFS", "a second chart", "VLOOKUP", "a pie"], answer: 0 }
+          - { id: xl-w11-d5-rf09, difficulty: easy, type: mcq, prompt: "& in formulas", choices: ["joins text", "adds numbers", "means AND", "is an error"], answer: 0 }
+          - { id: xl-w11-d5-rf10, difficulty: easy, type: mcq, prompt: "Z1 = \"Kano\": the title reads…", choices: ["Monthly net sales — Kano", "Kano", "Monthly net sales — Z1", "#VALUE!"], answer: 0 }
+      - kind: brain-teaser
+        title: "Wire the chart"
+        questions:
+          - { id: xl-w11-d5-bt01, difficulty: medium, type: order, prompt: "Order the build.", items: ["Region drop-down in Z1", "Helper table: 12 months with SUMIFS on Z1", "Line chart on the helper table", "Title linked to a cell with =\"Monthly net sales — \"&Z1"] }
+          - { id: xl-w11-d5-bt02, difficulty: medium, type: mcq, prompt: "Helper cell for month in A2 (text \"2025-01\"), region Z1, category Z2", choices: ["=SUMIFS(tblSales[NetSales],tblSales[Month],A2,tblSales[Region],$Z$1,tblSales[Category],$Z$2)", "=SUMIF(A2,Z1,Z2)", "=VLOOKUP(A2,Z1:Z2,2)", "=SUMIFS(A2,Z1,Z2)"], answer: 0 }
+          - { id: xl-w11-d5-bt03, difficulty: medium, type: mcq, prompt: "Z1 = \"Lagos\": helper total over 12 months =", choices: ["₦321.7M (Lagos's year)", "₦834.0M", "₦174.3M", "₦109.6M"], answer: 0 }
+          - { id: xl-w11-d5-bt04, difficulty: hard, type: mcq, prompt: "Add \"All\" to the drop-down. The SUMIFS region criterion becomes…", choices: ["IF($Z$1=\"All\",\"*\",$Z$1)", "\"All\"", "blank always", "TRUE"], answer: 0 }
+          - { id: xl-w11-d5-bt05, difficulty: hard, type: text, prompt: "Z1 = \"Abuja\": the year total (₦ millions, 1 decimal)?", accept: ["174.3", "174.3M", "₦174.3M"] }
+
+  # ─────────────────────────── DAY 6 ───────────────────────────
+  - day: 6
+    gate:
+      title: "Checkpoint: dynamic charts"
+      covers: "Week 11 · Day 5: selector cells, SUMIFS helper tables, charts and titles that change with a drop-down"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w11-d6-g01, difficulty: easy, type: mcq, prompt: "What drives a dynamic chart?", choices: ["a selector cell and a helper table", "a macro", "a 3D effect", "a PivotTable only"], answer: 0 }
+        - { id: xl-w11-d6-g02, difficulty: easy, type: mcq, prompt: "Selector cell type", choices: ["drop-down (Data Validation → List)", "merged cell", "text box", "comment"], answer: 0 }
+        - { id: xl-w11-d6-g03, difficulty: easy, type: truefalse, prompt: "A chart title can be linked to a cell.", answer: true }
+        - { id: xl-w11-d6-g04, difficulty: easy, type: mcq, prompt: "Join text and a cell", choices: ["&", "+", "*", "#"], answer: 0 }
+        - { id: xl-w11-d6-g05, difficulty: easy, type: mcq, prompt: "Helper table per month uses…", choices: ["SUMIFS", "VLOOKUP", "COUNTA", "TODAY"], answer: 0 }
+        - { id: xl-w11-d6-g06, difficulty: easy, type: mcq, prompt: "Visual Report KPI row", choices: ["net sales, orders, average order, profit", "every order", "the raw data", "a pie"], answer: 0 }
+        - { id: xl-w11-d6-g07, difficulty: medium, type: text, prompt: "Lagos 2025 net sales (₦ millions, 1 decimal)?", accept: ["321.7", "321.7M", "₦321.7M"] }
+        - { id: xl-w11-d6-g08, difficulty: medium, type: text, prompt: "Average order value (₦, nearest naira)?", accept: ["347519", "347,519", "₦347,519"] }
+        - { id: xl-w11-d6-g09, difficulty: medium, type: match, prompt: "Match the Visual Report chart.", pairs: [["monthly trend", "line"], ["region comparison", "sorted bar"], ["customer type", "100% stacked bar or doughnut"], ["region × month table", "heat map + sparklines"]] }
+        - { id: xl-w11-d6-g10, difficulty: medium, type: truefalse, prompt: "Print the Visual Report as one landscape PDF page.", answer: true }
+        - { id: xl-w11-d6-g11, difficulty: medium, type: mcq, prompt: "Dynamic title formula (region in Z1)", choices: ["=\"Monthly net sales — \"&Z1", "=Z1&&\"sales\"", "=CONCAT(Z1)", "=\"Z1\""], answer: 0 }
+        - { id: xl-w11-d6-g12, difficulty: medium, type: text, prompt: "2025 total profit (₦, no symbol), for the KPI row?", accept: ["129531600", "129,531,600"] }
+        - { id: xl-w11-d6-g13, difficulty: medium, type: mcq, prompt: "Two drop-downs (Region, Category): the helper SUMIFS needs…", choices: ["both criteria", "two charts", "VLOOKUP", "a macro"], answer: 0 }
+        - { id: xl-w11-d6-g14, difficulty: medium, type: text, prompt: "Orders (KPI)?", accept: ["2400", "2,400"] }
+        - { id: xl-w11-d6-g15, difficulty: medium, type: mcq, prompt: "Insight title for the customer-type chart", choices: ["Wholesale brings in almost half of sales", "Customer types", "Chart 4", "Pie"], answer: 0 }
+        - { id: xl-w11-d6-g16, difficulty: hard, type: mcq, prompt: "The dynamic chart stays on Lagos when Z1 changes. Most likely…", choices: ["The helper formulas use \"Lagos\" typed in, not $Z$1", "Charts can't be dynamic", "Z1 is protected", "Calculation is automatic"], answer: 0 }
+        - { id: xl-w11-d6-g17, difficulty: hard, type: text, prompt: "Wholesale share of net sales (1 decimal %)?", accept: ["49.1%", "49.1"] }
+        - { id: xl-w11-d6-g18, difficulty: hard, type: multi, prompt: "A manager understands it in 5 seconds when… (Select all.)", choices: ["titles state the insight", "the key bar is highlighted", "numbers are formatted (₦M)", "every chart is 3D"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Week 11 lightning round"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w11-d6-rf01, difficulty: easy, type: mcq, prompt: "Trend over time", choices: ["line", "pie", "scatter", "doughnut"], answer: 0 }
+          - { id: xl-w11-d6-rf02, difficulty: easy, type: mcq, prompt: "Heat map", choices: ["Colour Scale", "Data Bars", "Icon Sets", "Top 10"], answer: 0 }
+          - { id: xl-w11-d6-rf03, difficulty: easy, type: mcq, prompt: "Whole Lagos rows", choices: ["=$C2=\"Lagos\"", "=C2=\"Lagos\"", "=$C$2=\"Lagos\"", "=C$2=\"Lagos\""], answer: 0 }
+          - { id: xl-w11-d6-rf04, difficulty: easy, type: mcq, prompt: "Tiny chart in a cell", choices: ["sparkline", "data bar", "icon", "thumbnail"], answer: 0 }
+          - { id: xl-w11-d6-rf05, difficulty: easy, type: mcq, prompt: "Two scales", choices: ["secondary axis", "3D", "pie", "legend"], answer: 0 }
+          - { id: xl-w11-d6-rf06, difficulty: easy, type: mcq, prompt: "Instant chart", choices: ["Alt+F1", "Ctrl+T", "Ctrl+E", "F4"], answer: 0 }
+          - { id: xl-w11-d6-rf07, difficulty: easy, type: text, prompt: "Peak month net sales (₦M, 1 decimal)", accept: ["109.6"] }
+          - { id: xl-w11-d6-rf08, difficulty: easy, type: text, prompt: "Biggest region", accept: ["Lagos"] }
+          - { id: xl-w11-d6-rf09, difficulty: easy, type: mcq, prompt: "Good title", choices: ["states the insight", "Chart 1", "the sheet name", "blank"], answer: 0 }
+          - { id: xl-w11-d6-rf10, difficulty: easy, type: truefalse, prompt: "Bars should usually be sorted.", answer: true }
+      - kind: brain-teaser
+        title: "Five-second report"
+        questions:
+          - { id: xl-w11-d6-bt01, difficulty: medium, type: mcq, prompt: "Region bar insight", choices: ["Lagos drives 39% of sales", "Sales by region", "Regions 2025", "Bar chart"], answer: 0 }
+          - { id: xl-w11-d6-bt02, difficulty: medium, type: mcq, prompt: "Monthly line insight", choices: ["Sales peak in December at ₦109.6M", "Monthly sales", "Line", "2025"], answer: 0 }
+          - { id: xl-w11-d6-bt03, difficulty: medium, type: mcq, prompt: "Category bar insight", choices: ["Groceries lead at ₦157.5M", "Categories", "Bar 3", "Products"], answer: 0 }
+          - { id: xl-w11-d6-bt04, difficulty: hard, type: mcq, prompt: "Big KPI numbers: ₦834,046,700 shown best as…", choices: ["₦834.0M", "834046700", "8.34E+08", "₦834,046,700.00"], answer: 0 }
+          - { id: xl-w11-d6-bt05, difficulty: hard, type: mcq, prompt: "Number format for ₦ millions", choices: ["\"₦\"#,##0.0,,\"M\"", "#,##0", "0.00%", "₦0"], answer: 0 }
