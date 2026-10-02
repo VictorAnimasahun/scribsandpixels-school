@@ -1,0 +1,3 @@
+{
+  "js": "const addExpense = (list, item, amount, category) => [...list, { item, amount, category }]\nconst total = (list) => list.reduce((sum, e) => sum + e.amount, 0)\nconst byCategory = (list) => list.reduce((acc, e) => {\n  acc[e.category] = (acc[e.category] ?? 0) + e.amount\n  return acc\n}, {})\nconst biggest = (list) => list.length ? list.reduce((a, b) => (b.amount > a.amount ? b : a)) : null\nfunction save(key, list, storage = localStorage) {\n  storage.setItem(key, JSON.stringify(list))\n}\nfunction load(key, storage = localStorage) {\n  return JSON.parse(storage.getItem(key) ?? \"[]\")\n}\n"
+}

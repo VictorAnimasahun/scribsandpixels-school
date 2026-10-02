@@ -1,0 +1,42 @@
+# Week 8 · Day 3 mini-task
+id: web-w08-d3-map-filter
+kind: web
+title: "map, filter, find"
+description: "The array methods behind every React list. Each function is tested on other data too."
+html: |
+  <p>Work in the <strong>JS</strong> tab.</p>
+css: |
+  body { font-family: system-ui, sans-serif; padding: 1rem; }
+js: |
+  const products = [
+    { name: "Tecno Spark 20", price: 145000, category: "Phones", inStock: true },
+    { name: "Indomie Carton", price: 13500, category: "Groceries", inStock: true },
+    { name: "JBL Flip 6", price: 129000, category: "Electronics", inStock: false },
+    { name: "Peak Milk Tin", price: 16500, category: "Groceries", inStock: true },
+  ]
+
+  // 1. getNames(list) with map: ["Tecno Spark 20", "Indomie Carton", …]
+
+
+  // 2. affordable(list, max) with filter: products costing max or less
+
+
+  // 3. findByName(list, name) with find: the product object, or undefined
+
+
+  // 4. withVat(list): new objects with priceWithVat = price * 1.075 (don't change the originals)
+
+
+  // 5. allInStock(list) with every
+tasks:
+  - prompt: "getNames(list) uses map."
+    check: "typeof getNames === 'function' && JSON.stringify(getNames(products)) === JSON.stringify(['Tecno Spark 20', 'Indomie Carton', 'JBL Flip 6', 'Peak Milk Tin']) && getNames([]).length === 0 && /\\.map\\(/.test(getNames.toString())"
+  - prompt: "affordable(list, max) uses filter."
+    check: "typeof affordable === 'function' && JSON.stringify(affordable(products, 16500).map((p) => p.name)) === '[\"Indomie Carton\",\"Peak Milk Tin\"]' && affordable(products, 1).length === 0 && /\\.filter\\(/.test(affordable.toString())"
+  - prompt: "findByName(list, name) uses find."
+    check: "typeof findByName === 'function' && findByName(products, 'JBL Flip 6') === products[2] && findByName(products, 'iPhone') === undefined && /\\.find\\(/.test(findByName.toString())"
+  - prompt: "withVat(list) adds priceWithVat without changing the originals."
+    check: "typeof withVat === 'function' && (() => { const out = withVat(products); return out.length === 4 && Math.abs(out[1].priceWithVat - 14512.5) < 0.001 && out[0].name === 'Tecno Spark 20' && products[0].priceWithVat === undefined && out[0] !== products[0] })()"
+    hint: "list.map((p) => ({ ...p, priceWithVat: p.price * 1.075 }))"
+  - prompt: "allInStock(list) uses every."
+    check: "typeof allInStock === 'function' && allInStock(products) === false && allInStock(products.filter((p) => p.inStock)) === true && /\\.every\\(/.test(allInStock.toString())"

@@ -3212,6 +3212,340 @@
           }
         ],
         "quizNote": "If you can answer all ten without notes, you're ready for Week 8. **Answers:** check each day's lesson; for 7: `false`, `0`, `\"\"`, `null`, `undefined`, `NaN`."
+      },
+      {
+        "number": 8,
+        "title": "Arrays, Objects and JSON",
+        "theme": "Real data in JavaScript: lists of things, things with properties, and the array methods every React app uses.",
+        "bigQuestion": "How do I store, change and summarise data in JavaScript, and keep it after the page reloads?",
+        "resources": [
+          {
+            "kind": "reading",
+            "title": "javascript.info — Data types",
+            "url": "https://javascript.info/data-types",
+            "note": "Arrays, Array methods, Objects, JSON. Read the matching section each day."
+          },
+          {
+            "kind": "reading",
+            "title": "Eloquent JavaScript (free online)",
+            "url": "https://eloquentjavascript.net/",
+            "note": "Chapter 4 (Data Structures: Objects and Arrays) and chapter 5 (Higher-Order Functions)."
+          },
+          {
+            "kind": "reading",
+            "title": "MDN — Array",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+            "note": "Your reference for every array method."
+          },
+          {
+            "kind": "interactive",
+            "title": "The Odin Project — Foundations",
+            "url": "https://www.theodinproject.com/paths/foundations/courses/foundations",
+            "note": "JavaScript Basics: \"Arrays and Loops\" and \"Object Basics\"."
+          },
+          {
+            "kind": "interactive",
+            "title": "freeCodeCamp — JavaScript",
+            "url": "https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/",
+            "note": "Saturday: continue Basic JavaScript."
+          }
+        ],
+        "days": [
+          {
+            "number": 1,
+            "weekday": "Monday",
+            "topic": "Arrays",
+            "hours": 2.5,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "lesson",
+                "kind": "lesson",
+                "title": "Lesson",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "practice",
+                "kind": "practice",
+                "title": "Practice",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "mini-task",
+                "kind": "mini-task",
+                "title": "Mini-Task",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          },
+          {
+            "number": 2,
+            "weekday": "Tuesday",
+            "topic": "Objects",
+            "hours": 2.5,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "lesson",
+                "kind": "lesson",
+                "title": "Lesson",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "practice",
+                "kind": "practice",
+                "title": "Practice",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "mini-task",
+                "kind": "mini-task",
+                "title": "Mini-Task",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          },
+          {
+            "number": 3,
+            "weekday": "Wednesday",
+            "topic": "map, filter, find",
+            "hours": 2.5,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "lesson",
+                "kind": "lesson",
+                "title": "Lesson",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "practice",
+                "kind": "practice",
+                "title": "Practice",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "mini-task",
+                "kind": "mini-task",
+                "title": "Mini-Task",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          },
+          {
+            "number": 4,
+            "weekday": "Thursday",
+            "topic": "reduce and sort",
+            "hours": 2.5,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "lesson",
+                "kind": "lesson",
+                "title": "Lesson",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "practice",
+                "kind": "practice",
+                "title": "Practice",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "mini-task",
+                "kind": "mini-task",
+                "title": "Mini-Task",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          },
+          {
+            "number": 5,
+            "weekday": "Friday",
+            "topic": "JSON, localStorage and destructuring",
+            "hours": 2.5,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "lesson",
+                "kind": "lesson",
+                "title": "Lesson",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "practice",
+                "kind": "practice",
+                "title": "Practice",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "mini-task",
+                "kind": "mini-task",
+                "title": "Mini-Task",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          },
+          {
+            "number": 6,
+            "weekday": "Saturday",
+            "topic": "Project day: the expense tracker, in JavaScript",
+            "hours": 3,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "project",
+                "kind": "project",
+                "title": "Weekly Project",
+                "minutes": 120,
+                "body": ""
+              },
+              {
+                "key": "freecodecamp",
+                "kind": "freecodecamp",
+                "title": "FreeCodeCamp",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          }
+        ],
+        "quiz": [
+          {
+            "id": "w8q1",
+            "prompt": "How do you add to the end of an array, and how do you get the last item?"
+          },
+          {
+            "id": "w8q2",
+            "prompt": "What's the difference between dot and bracket notation?"
+          },
+          {
+            "id": "w8q3",
+            "prompt": "Write the counting pattern with `??`."
+          },
+          {
+            "id": "w8q4",
+            "prompt": "What do `map`, `filter` and `find` give back?"
+          },
+          {
+            "id": "w8q5",
+            "prompt": "Write a total with `reduce`."
+          },
+          {
+            "id": "w8q6",
+            "prompt": "Why copy with `[...arr]` before `sort`, and why does `[10, 9, 100].sort()` look wrong?"
+          },
+          {
+            "id": "w8q7",
+            "prompt": "What does `{ ...p, price: 0 }` do?"
+          },
+          {
+            "id": "w8q8",
+            "prompt": "How do you save an array to localStorage and load it back?"
+          },
+          {
+            "id": "w8q9",
+            "prompt": "What does `getItem` return when the key doesn't exist?"
+          },
+          {
+            "id": "w8q10",
+            "prompt": "Write `const { name, price } = product` in Python terms."
+          }
+        ],
+        "quizNote": "If you can answer all ten without notes, you're ready for Week 9. **Answers:** check each day's lesson; for 9: `null`."
       }
     ]
   }

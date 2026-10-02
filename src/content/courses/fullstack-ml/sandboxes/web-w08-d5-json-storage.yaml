@@ -1,0 +1,35 @@
+# Week 8 · Day 5 mini-task
+id: web-w08-d5-json-storage
+kind: web
+title: "JSON and storage"
+description: "Turn data into text and back, save it, and destructure objects. The checks pass in a fake storage, the way Week 6 passed in fake_get."
+html: |
+  <p>Work in the <strong>JS</strong> tab. (Real localStorage is blocked inside this sandbox, so always pass a storage in.)</p>
+css: |
+  body { font-family: system-ui, sans-serif; padding: 1rem; }
+js: |
+  // 1. toJSON(data): the JSON text for any value
+
+
+  // 2. fromJSON(text): parse it back; return [] if the text is empty or not valid JSON
+
+
+  // 3. save(key, data, storage): store data as JSON under key
+
+
+  // 4. load(key, storage): the saved data, or [] if nothing is saved yet
+
+
+  // 5. label({ name, price }): "Milo (₦3200)"  — destructure in the parameter
+tasks:
+  - prompt: "toJSON(data) returns JSON text."
+    check: "typeof toJSON === 'function' && toJSON([{ a: 1 }]) === '[{\"a\":1}]' && toJSON('hi') === '\"hi\"'"
+  - prompt: "fromJSON(text) parses, or returns [] for empty/invalid text (try/catch)."
+    check: "typeof fromJSON === 'function' && JSON.stringify(fromJSON('[1,2]')) === '[1,2]' && JSON.stringify(fromJSON('')) === '[]' && JSON.stringify(fromJSON('{oops')) === '[]'"
+  - prompt: "save(key, data, storage) stores JSON text."
+    check: "typeof save === 'function' && (() => { const s = (() => ({ data: {}, setItem(k, v) { this.data[k] = String(v) }, getItem(k) { return k in this.data ? this.data[k] : null } }))(); save('expenses', [{ amount: 500 }], s); return s.data.expenses === '[{\"amount\":500}]' })()"
+  - prompt: "load(key, storage) returns the data, or [] when nothing is saved."
+    check: "typeof load === 'function' && (() => { const s = (() => ({ data: {}, setItem(k, v) { this.data[k] = String(v) }, getItem(k) { return k in this.data ? this.data[k] : null } }))(); s.setItem('x', '[3,4]'); return JSON.stringify(load('x', s)) === '[3,4]' && JSON.stringify(load('missing', s)) === '[]' })()"
+    hint: "JSON.parse(storage.getItem(key) ?? \"[]\")"
+  - prompt: "label destructures name and price in its parameter."
+    check: "typeof label === 'function' && label({ name: 'Milo', price: 3200 }) === 'Milo (₦3200)' && /\\(\\s*\\{\\s*name\\s*,\\s*price\\s*\\}/.test(label.toString())"

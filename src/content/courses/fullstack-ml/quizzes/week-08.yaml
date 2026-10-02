@@ -1,0 +1,833 @@
+# Fullstack + ML · Week 8 quizzes. Format and rules: src/content/QUIZZES.md
+week: 8
+days:
+
+  # ─────────────────────────── DAY 1 ───────────────────────────
+  - day: 1
+    gate:
+      title: "Checkpoint: Week 7 review"
+      covers: "Week 7: JS variables and types, functions, decisions, loops, strings and debugging"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w08-d1-g01, difficulty: easy, type: mcq, prompt: "Never reassigned", choices: ["const", "let", "var", "static"], answer: 0 }
+        - { id: fs-w08-d1-g02, difficulty: easy, type: mcq, prompt: "Strict equality", choices: ["===", "==", "=", "equals"], answer: 0 }
+        - { id: fs-w08-d1-g03, difficulty: easy, type: mcq, prompt: "Python and", choices: ["&&", "and", "&", "||"], answer: 0 }
+        - { id: fs-w08-d1-g04, difficulty: easy, type: truefalse, prompt: "\"10\" + 5 gives \"105\" in JavaScript.", answer: true }
+        - { id: fs-w08-d1-g05, difficulty: easy, type: mcq, prompt: "Length of a string s", choices: ["s.length", "len(s)", "s.length()", "s.size"], answer: 0 }
+        - { id: fs-w08-d1-g06, difficulty: easy, type: mcq, prompt: "Arrow function", choices: ["(x) => x * 2", "x -> x * 2", "lambda x: x * 2", "fn x => x"], answer: 0 }
+        - id: fs-w08-d1-g07
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const greet = (name = "friend") => `Hi, ${name}!`
+            console.log(greet(), greet("Ada"))
+          accept: ["Hi, friend! Hi, Ada!"]
+        - id: fs-w08-d1-g08
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            let total = 0
+            for (let i = 1; i <= 5; i++) total += i
+            console.log(total)
+          accept: ["15"]
+        - { id: fs-w08-d1-g09, difficulty: medium, type: match, prompt: "Match Python to JavaScript.", pairs: [["len(s)", "s.length"], ["s.strip()", "s.trim()"], ["elif", "else if"], ["None", "null"]] }
+        - id: fs-w08-d1-g10
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const score = 58
+            console.log(score >= 70 ? "A" : score >= 50 ? "C" : "F")
+          accept: ["C"]
+        - { id: fs-w08-d1-g11, difficulty: medium, type: truefalse, prompt: "\"0\" is falsy.", answer: false }
+        - id: fs-w08-d1-g12
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            console.log(Number("12") + 3, "12" + 3)
+          accept: ["15 123"]
+        - { id: fs-w08-d1-g13, difficulty: medium, type: mcq, prompt: "ReferenceError usually means…", choices: ["a typo or a variable that doesn't exist", "a missing }", "dividing by zero", "a slow network"], answer: 0 }
+        - id: fs-w08-d1-g14
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            let count = 0
+            for (const ch of "Ibadan") if ("aeiou".includes(ch.toLowerCase())) count++
+            console.log(count)
+          accept: ["3"]
+        - { id: fs-w08-d1-g15, difficulty: medium, type: mcq, prompt: "Python `x if c else y`", choices: ["c ? x : y", "x ? c : y", "if c then x", "c && x || y only"], answer: 0 }
+        - id: fs-w08-d1-g16
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            function grade(s) {
+              switch (true) {
+                case s >= 70: return "A"
+                case s >= 60: return "B"
+                default: return "F"
+              }
+            }
+            console.log(grade(65) + grade(90) + grade(10))
+          accept: ["BAF"]
+        - id: fs-w08-d1-g17
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const v = Number("abc")
+            console.log(Number.isNaN(v), v === v)
+          accept: ["true false"]
+        - { id: fs-w08-d1-g18, difficulty: hard, type: multi, prompt: "Which are falsy? (Select all.)", choices: ["0", "\"\"", "undefined", "\"false\""], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Array basics"
+        secondsPerQuestion: 9
+        questions:
+          - { id: fs-w08-d1-rf01, difficulty: easy, type: mcq, prompt: "Add to the end", choices: ["push", "append", "add", "insert"], answer: 0 }
+          - { id: fs-w08-d1-rf02, difficulty: easy, type: mcq, prompt: "Remove the last", choices: ["pop", "remove", "delete", "cut"], answer: 0 }
+          - { id: fs-w08-d1-rf03, difficulty: easy, type: mcq, prompt: "Is \"yam\" in the array?", choices: ["foods.includes(\"yam\")", "\"yam\" in foods", "foods.has(\"yam\")", "foods.contains(\"yam\")"], answer: 0 }
+          - { id: fs-w08-d1-rf04, difficulty: easy, type: mcq, prompt: "Last item", choices: ["foods[foods.length - 1]", "foods[-1]", "foods.last", "foods[length]"], answer: 0 }
+          - { id: fs-w08-d1-rf05, difficulty: easy, type: mcq, prompt: "Join with \", \"", choices: ["foods.join(\", \")", "\", \".join(foods)", "foods.concat(\", \")", "join(foods)"], answer: 0 }
+          - { id: fs-w08-d1-rf06, difficulty: easy, type: mcq, prompt: "indexOf when missing", choices: ["-1", "undefined", "null", "0"], answer: 0 }
+          - { id: fs-w08-d1-rf07, difficulty: easy, type: mcq, prompt: "Python foods[1:3]", choices: ["foods.slice(1, 3)", "foods[1:3]", "foods.cut(1, 3)", "foods.splice(1, 3)"], answer: 0 }
+          - { id: fs-w08-d1-rf08, difficulty: easy, type: mcq, prompt: "Remove 1 item at index 2", choices: ["foods.splice(2, 1)", "foods.slice(2, 1)", "delete foods[2]", "foods.remove(2)"], answer: 0 }
+          - { id: fs-w08-d1-rf09, difficulty: easy, type: truefalse, prompt: "You can push into a const array.", answer: true }
+          - { id: fs-w08-d1-rf10, difficulty: easy, type: mcq, prompt: "Text → array", choices: ["\"a,b\".split(\",\")", "\"a,b\".join(\",\")", "Array(\"a,b\")", "\"a,b\".list()"], answer: 0 }
+      - kind: brain-teaser
+        title: "Array puzzles"
+        questions:
+          - id: fs-w08-d1-bt01
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const foods = ["rice", "beans", "yam"]
+              foods.push("suya")
+              foods.splice(foods.indexOf("beans"), 1)
+              console.log(foods.join(", "))
+            accept: ["rice, yam, suya"]
+          - id: fs-w08-d1-bt02
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const cities = "Lagos,Abuja,Kano".split(",")
+              console.log(cities.length, cities[cities.length - 1])
+            accept: ["3 Kano"]
+          - id: fs-w08-d1-bt03
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const nums = [5, 12, 8, 20]
+              console.log(nums.slice(1, 3).join(","))
+            accept: ["12,8"]
+          - id: fs-w08-d1-bt04
+            difficulty: hard
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const a = [1, 2, 3]
+              const b = a
+              b.push(4)
+              console.log(a.length)
+            accept: ["4"]
+            explain: "b and a are the same array."
+          - id: fs-w08-d1-bt05
+            difficulty: hard
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const foods = ["rice", "yam"]
+              console.log(foods[-1], foods.at(-1))
+            accept: ["undefined yam"]
+
+  # ─────────────────────────── DAY 2 ───────────────────────────
+  - day: 2
+    gate:
+      title: "Checkpoint: arrays"
+      covers: "Week 8 · Day 1: arrays, push/pop, includes, indexOf, slice, splice, join/split, looping"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w08-d2-g01, difficulty: easy, type: mcq, prompt: "Python append in JS", choices: ["push", "append", "add", "put"], answer: 0 }
+        - { id: fs-w08-d2-g02, difficulty: easy, type: mcq, prompt: "First item of foods", choices: ["foods[0]", "foods[1]", "foods.first()", "foods(0)"], answer: 0 }
+        - { id: fs-w08-d2-g03, difficulty: easy, type: truefalse, prompt: "JS arrays support negative indexes like foods[-1].", answer: false, explain: "Use foods[foods.length - 1] or foods.at(-1)." }
+        - { id: fs-w08-d2-g04, difficulty: easy, type: mcq, prompt: "Number of items", choices: ["foods.length", "len(foods)", "foods.count()", "foods.size"], answer: 0 }
+        - { id: fs-w08-d2-g05, difficulty: easy, type: mcq, prompt: "Loop with index and item", choices: ["foods.forEach((food, i) => …)", "for (i, food in foods)", "foods.each(i, food)", "for food, i of foods"], answer: 0 }
+        - { id: fs-w08-d2-g06, difficulty: easy, type: mcq, prompt: "Does slice change the original?", choices: ["No", "Yes", "Only for strings", "Only with const"], answer: 0 }
+        - id: fs-w08-d2-g07
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const list = ["a", "b", "c", "d"]
+            list.splice(1, 2)
+            console.log(list.join(""))
+          accept: ["ad"]
+        - id: fs-w08-d2-g08
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const nums = [3, 7, 2]
+            const last = nums.pop()
+            console.log(last, nums.length)
+          accept: ["2 2"]
+        - { id: fs-w08-d2-g09, difficulty: medium, type: match, prompt: "Match.", pairs: [["push", "add to the end"], ["pop", "remove the last"], ["splice", "remove at a position"], ["slice", "copy a part"]] }
+        - id: fs-w08-d2-g10
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const names = ["Ada", "Tolu"]
+            console.log(names.map((n, i) => `${i + 1}. ${n}`).join(" / "))
+          accept: ["1. Ada / 2. Tolu"]
+        - { id: fs-w08-d2-g11, difficulty: medium, type: truefalse, prompt: "`const foods = []` then `foods = [\"rice\"]` is allowed.", answer: false, explain: "That replaces the const; pushing into it is fine." }
+        - id: fs-w08-d2-g12
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            console.log(["Kano", "Jos"].includes("jos"), ["Kano", "Jos"].indexOf("Jos"))
+          accept: ["false 1"]
+        - { id: fs-w08-d2-g13, difficulty: medium, type: mcq, prompt: "Count numbers above 10 in nums", choices: ["a loop with a counter (or filter(...).length)", "nums.count(10)", "nums.length > 10", "nums.above(10)"], answer: 0 }
+        - id: fs-w08-d2-g14
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const word = "naija"
+            console.log(word.split("").reverse().join(""))
+          accept: ["ajian"]
+        - { id: fs-w08-d2-g15, difficulty: medium, type: mcq, prompt: "[first, last] of arr", choices: ["[arr[0], arr[arr.length - 1]]", "[arr[0], arr[-1]]", "[arr.first, arr.last]", "arr.ends()"], answer: 0 }
+        - id: fs-w08-d2-g16
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const a = [1, 2, 3]
+            const b = [...a]
+            b.push(4)
+            console.log(a.length, b.length)
+          accept: ["3 4"]
+        - id: fs-w08-d2-g17
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const q = []
+            q.push("Ada")
+            q.push("Tolu")
+            q.unshift("Emeka")
+            console.log(q.shift(), q.join(","))
+          accept: ["Emeka Ada,Tolu"]
+        - { id: fs-w08-d2-g18, difficulty: hard, type: multi, prompt: "Which change the original array? (Select all.)", choices: ["push", "splice", "pop", "slice"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Object basics"
+        secondsPerQuestion: 9
+        questions:
+          - { id: fs-w08-d2-rf01, difficulty: easy, type: mcq, prompt: "Read a property", choices: ["product.price", "product->price", "product::price", "price(product)"], answer: 0 }
+          - { id: fs-w08-d2-rf02, difficulty: easy, type: mcq, prompt: "Key in a variable", choices: ["product[key]", "product.key", "product{key}", "product(key)"], answer: 0 }
+          - { id: fs-w08-d2-rf03, difficulty: easy, type: mcq, prompt: "Remove a property", choices: ["delete product.inStock", "product.remove(\"inStock\")", "del product.inStock", "product.inStock = delete"], answer: 0 }
+          - { id: fs-w08-d2-rf04, difficulty: easy, type: mcq, prompt: "All the keys", choices: ["Object.keys(obj)", "obj.keys()", "keys(obj)", "obj.allKeys"], answer: 0 }
+          - { id: fs-w08-d2-rf05, difficulty: easy, type: mcq, prompt: "All the values", choices: ["Object.values(obj)", "obj.values()", "values(obj)", "Object.items(obj)"], answer: 0 }
+          - { id: fs-w08-d2-rf06, difficulty: easy, type: mcq, prompt: "Key-value pairs", choices: ["Object.entries(obj)", "obj.items()", "Object.pairs(obj)", "obj.entries"], answer: 0 }
+          - { id: fs-w08-d2-rf07, difficulty: easy, type: mcq, prompt: "Python d.get(k, 0)", choices: ["obj[k] ?? 0", "obj.get(k, 0)", "obj[k] || null", "obj(k, 0)"], answer: 0 }
+          - { id: fs-w08-d2-rf08, difficulty: easy, type: truefalse, prompt: "Object keys usually don't need quotes.", answer: true }
+          - { id: fs-w08-d2-rf09, difficulty: easy, type: mcq, prompt: "Missing property gives…", choices: ["undefined", "an error", "null", "0"], answer: 0 }
+          - { id: fs-w08-d2-rf10, difficulty: easy, type: mcq, prompt: "Python dict in JS", choices: ["object", "array", "string", "map only"], answer: 0 }
+      - kind: brain-teaser
+        title: "Object puzzles"
+        questions:
+          - id: fs-w08-d2-bt01
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const product = { name: "Milo", price: 3200 }
+              product.price = 3000
+              product.category = "Groceries"
+              console.log(Object.keys(product).length, product.price)
+            accept: ["3 3000"]
+          - id: fs-w08-d2-bt02
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const stock = { rice: 20, beans: 15 }
+              const key = "beans"
+              console.log(stock[key], stock.key)
+            accept: ["15 undefined"]
+          - id: fs-w08-d2-bt03
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const orders = [{ city: "Lagos" }, { city: "Kano" }, { city: "Lagos" }]
+              const counts = {}
+              for (const o of orders) counts[o.city] = (counts[o.city] ?? 0) + 1
+              console.log(counts.Lagos, counts.Kano, counts.Abuja)
+            accept: ["2 1 undefined"]
+          - id: fs-w08-d2-bt04
+            difficulty: hard
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const inv = { rice: 20, beans: 15, yam: 5 }
+              console.log(Object.values(inv).reduce((a, b) => a + b, 0))
+            accept: ["40"]
+          - id: fs-w08-d2-bt05
+            difficulty: hard
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const p = { name: "Ada", city: { name: "Lagos", zone: "SW" } }
+              console.log(p.city.zone, p["city"]["name"])
+            accept: ["SW Lagos"]
+
+  # ─────────────────────────── DAY 3 ───────────────────────────
+  - day: 3
+    gate:
+      title: "Checkpoint: objects"
+      covers: "Week 8 · Day 2: properties, dot vs bracket, Object.keys/values/entries, arrays of objects, counting with ??"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w08-d3-g01, difficulty: easy, type: mcq, prompt: "Add a category to product", choices: ["product.category = \"Phones\"", "product.add(\"category\")", "product += category", "add(product, \"Phones\")"], answer: 0 }
+        - { id: fs-w08-d3-g02, difficulty: easy, type: mcq, prompt: "Bracket notation is needed when…", choices: ["the key is in a variable", "the value is a number", "the object is const", "never"], answer: 0 }
+        - { id: fs-w08-d3-g03, difficulty: easy, type: truefalse, prompt: "Object.entries gives [key, value] pairs.", answer: true }
+        - { id: fs-w08-d3-g04, difficulty: easy, type: mcq, prompt: "?? returns the right side when the left is…", choices: ["null or undefined", "false", "0", "any falsy value"], answer: 0 }
+        - { id: fs-w08-d3-g05, difficulty: easy, type: mcq, prompt: "An order list is usually…", choices: ["an array of objects", "one long string", "an object of arrays only", "a number"], answer: 0 }
+        - { id: fs-w08-d3-g06, difficulty: easy, type: mcq, prompt: "obj.missing gives…", choices: ["undefined", "null", "an error", "\"\""], answer: 0 }
+        - id: fs-w08-d3-g07
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const p = { name: "Tecno Spark 20", price: 139000 }
+            console.log(`${p.name}: ₦${p.price.toLocaleString("en-NG")}`)
+          accept: ["Tecno Spark 20: ₦139,000"]
+        - id: fs-w08-d3-g08
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const p = { a: 1, b: 2 }
+            for (const [k, v] of Object.entries(p)) console.log(k + v)
+          accept: ["a1 b2", "a1 ⏎ b2"]
+        - { id: fs-w08-d3-g09, difficulty: medium, type: match, prompt: "Match.", pairs: [["Object.keys", "the keys"], ["Object.values", "the values"], ["Object.entries", "[key, value] pairs"], ["delete obj.k", "remove a property"]] }
+        - id: fs-w08-d3-g10
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const counts = {}
+            for (const pay of ["POS", "Cash", "POS"]) counts[pay] = (counts[pay] ?? 0) + 1
+            console.log(JSON.stringify(counts))
+          accept: ["{\"POS\":2,\"Cash\":1}"]
+        - { id: fs-w08-d3-g11, difficulty: medium, type: truefalse, prompt: "`0 ?? 5` gives 5.", answer: false, explain: "0 isn't null or undefined, so ?? keeps it. (0 || 5 would give 5.)" }
+        - id: fs-w08-d3-g12
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const products = [{ name: "A", price: 300 }, { name: "B", price: 100 }]
+            let best = products[0]
+            for (const p of products) if (p.price < best.price) best = p
+            console.log(best.name)
+          accept: ["B"]
+        - { id: fs-w08-d3-g13, difficulty: medium, type: mcq, prompt: "Count by any key in a function countBy(items, key):", choices: ["counts[item[key]] = (counts[item[key]] ?? 0) + 1", "counts.key++", "counts[key]++", "item.key += 1"], answer: 0 }
+        - id: fs-w08-d3-g14
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const p = { name: "Milo", price: 3200 }
+            delete p.price
+            console.log(Object.keys(p).join(","), p.price)
+          accept: ["name undefined"]
+        - { id: fs-w08-d3-g15, difficulty: medium, type: mcq, prompt: "Python Week 5 totals.get(city, 0) + amount in JS", choices: ["(totals[city] ?? 0) + amount", "totals.get(city, 0) + amount", "totals[city] + amount", "totals(city) + amount"], answer: 0 }
+        - id: fs-w08-d3-g16
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const orders = [{ city: "Lagos", amount: 100 }, { city: "Abuja", amount: 400 }, { city: "Lagos", amount: 350 }]
+            const t = {}
+            for (const o of orders) t[o.city] = (t[o.city] ?? 0) + o.amount
+            console.log(JSON.stringify(t))
+          accept: ["{\"Lagos\":450,\"Abuja\":400}"]
+        - id: fs-w08-d3-g17
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const a = { n: 1 }
+            const b = a
+            b.n = 2
+            console.log(a.n)
+          accept: ["2"]
+        - { id: fs-w08-d3-g18, difficulty: hard, type: multi, prompt: "Which read the price? (Select all.)", choices: ["p.price", "p[\"price\"]", "p[key] with key = \"price\"", "p.key with key = \"price\""], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "map, filter, find"
+        secondsPerQuestion: 9
+        questions:
+          - { id: fs-w08-d3-rf01, difficulty: easy, type: mcq, prompt: "Transform every item", choices: ["map", "filter", "find", "every"], answer: 0 }
+          - { id: fs-w08-d3-rf02, difficulty: easy, type: mcq, prompt: "Keep only some items", choices: ["filter", "map", "find", "sort"], answer: 0 }
+          - { id: fs-w08-d3-rf03, difficulty: easy, type: mcq, prompt: "The first match", choices: ["find", "filter", "some", "map"], answer: 0 }
+          - { id: fs-w08-d3-rf04, difficulty: easy, type: mcq, prompt: "At least one passes", choices: ["some", "every", "find", "all"], answer: 0 }
+          - { id: fs-w08-d3-rf05, difficulty: easy, type: mcq, prompt: "All pass", choices: ["every", "some", "filter", "all"], answer: 0 }
+          - { id: fs-w08-d3-rf06, difficulty: easy, type: mcq, prompt: "find with no match", choices: ["undefined", "null", "[]", "-1"], answer: 0 }
+          - { id: fs-w08-d3-rf07, difficulty: easy, type: mcq, prompt: "map's result length", choices: ["same as the original", "fewer", "always 1", "doubled"], answer: 0 }
+          - { id: fs-w08-d3-rf08, difficulty: easy, type: truefalse, prompt: "filter changes the original array.", answer: false }
+          - { id: fs-w08-d3-rf09, difficulty: easy, type: mcq, prompt: "Copy an object and change one property", choices: ["({ ...p, price: 0 })", "p.price = 0", "copy(p)", "Object(p, 0)"], answer: 0 }
+          - { id: fs-w08-d3-rf10, difficulty: easy, type: mcq, prompt: "Python any()", choices: ["some", "every", "find", "includes"], answer: 0 }
+      - kind: brain-teaser
+        title: "Pipeline puzzles"
+        questions:
+          - id: fs-w08-d3-bt01
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const prices = [145000, 13500, 129000]
+              console.log(prices.filter((p) => p < 130000).length)
+            accept: ["2"]
+          - id: fs-w08-d3-bt02
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const products = [{ name: "Milo", price: 3200 }, { name: "Peak", price: 16500 }]
+              console.log(products.map((p) => p.name.toUpperCase()).join(" "))
+            accept: ["MILO PEAK"]
+          - id: fs-w08-d3-bt03
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const products = [{ name: "Milo", price: 3200 }, { name: "Peak", price: 16500 }]
+              const found = products.find((p) => p.price > 10000)
+              console.log(found.name, products.find((p) => p.price > 99999))
+            accept: ["Peak undefined"]
+          - id: fs-w08-d3-bt04
+            difficulty: hard
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const products = [{ name: "Milo", price: 2000 }]
+              const vat = products.map((p) => ({ ...p, price: p.price * 1.075 }))
+              console.log(products[0].price, vat[0].price)
+            accept: ["2000 2150"]
+          - id: fs-w08-d3-bt05
+            difficulty: hard
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const items = [{ inStock: true }, { inStock: false }]
+              console.log(items.some((i) => i.inStock), items.every((i) => i.inStock))
+            accept: ["true false"]
+
+  # ─────────────────────────── DAY 4 ───────────────────────────
+  - day: 4
+    gate:
+      title: "Checkpoint: map, filter, find"
+      covers: "Week 8 · Day 3: map, filter, find, some, every, spread to copy objects"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w08-d4-g01, difficulty: easy, type: mcq, prompt: "All product names", choices: ["products.map((p) => p.name)", "products.filter((p) => p.name)", "products.find((p) => p.name)", "products.name"], answer: 0 }
+        - { id: fs-w08-d4-g02, difficulty: easy, type: mcq, prompt: "Products under ₦50,000", choices: ["products.filter((p) => p.price < 50000)", "products.map((p) => p.price < 50000)", "products.find((p) => p.price < 50000)", "products.every(…)"], answer: 0 }
+        - { id: fs-w08-d4-g03, difficulty: easy, type: truefalse, prompt: "map, filter and find don't change the original array.", answer: true }
+        - { id: fs-w08-d4-g04, difficulty: easy, type: mcq, prompt: "Python [x*2 for x in xs]", choices: ["xs.map((x) => x * 2)", "xs.filter((x) => x * 2)", "xs.forEach(x * 2)", "map(xs, 2)"], answer: 0 }
+        - { id: fs-w08-d4-g05, difficulty: easy, type: mcq, prompt: "Is any product a phone?", choices: ["products.some((p) => p.category === \"Phones\")", "products.every(…)", "products.find(\"Phones\")", "products.includes(\"Phones\")"], answer: 0 }
+        - { id: fs-w08-d4-g06, difficulty: easy, type: mcq, prompt: "find returns…", choices: ["the first matching item", "all matches", "true/false", "the index"], answer: 0 }
+        - id: fs-w08-d4-g07
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const nums = [1, 2, 3, 4, 5, 6]
+            console.log(nums.filter((n) => n % 2 === 0).map((n) => n * 10).join(","))
+          accept: ["20,40,60"]
+        - { id: fs-w08-d4-g08, difficulty: medium, type: match, prompt: "Match the method to its Python cousin.", pairs: [["map", "[f(x) for x in xs]"], ["filter", "[x for x in xs if t(x)]"], ["some", "any(...)"], ["every", "all(...)"]] }
+        - id: fs-w08-d4-g09
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const cities = ["Lagos", "Kano", "Abuja"]
+            console.log(cities.find((c) => c.startsWith("K")), cities.find((c) => c.startsWith("Z")))
+          accept: ["Kano undefined"]
+        - { id: fs-w08-d4-g10, difficulty: medium, type: mcq, prompt: "Why `({ ...p, priceWithVat: … })` in map?", choices: ["It copies p, so the original objects stay unchanged", "It's faster", "map requires it", "To delete p"], answer: 0 }
+        - { id: fs-w08-d4-g11, difficulty: medium, type: truefalse, prompt: "`[].every((x) => x > 5)` is true.", answer: true, explain: "No item fails, so every() is true for an empty array." }
+        - id: fs-w08-d4-g12
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const products = [{ name: "A", price: 10 }, { name: "B", price: 20 }]
+            const names = products.map((p) => p.name)
+            console.log(names.join(","), products.length)
+          accept: ["A,B 2"]
+        - { id: fs-w08-d4-g13, difficulty: medium, type: mcq, prompt: "products.filter(...) with no matches gives…", choices: ["[]", "undefined", "null", "an error"], answer: 0 }
+        - id: fs-w08-d4-g14
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const items = [{ q: 2 }, { q: 0 }, { q: 5 }]
+            console.log(items.filter((i) => i.q).length)
+          accept: ["2"]
+        - { id: fs-w08-d4-g15, difficulty: medium, type: mcq, prompt: "Mistake: `products.map((p) => { p.name })` gives…", choices: ["an array of undefined (no return inside braces)", "the names", "an error", "the original array"], answer: 0 }
+        - id: fs-w08-d4-g16
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const products = [{ name: "A", price: 100 }]
+            products.map((p) => { p.price = 0; return p })
+            console.log(products[0].price)
+          accept: ["0"]
+          explain: "Changing p inside map changes the original object. Copy with spread instead."
+        - id: fs-w08-d4-g17
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const scores = [70, 45, 88, 39]
+            console.log(scores.map((s) => (s >= 50 ? "P" : "F")).join(""))
+          accept: ["PFPF"]
+        - { id: fs-w08-d4-g18, difficulty: hard, type: multi, prompt: "Which return an array? (Select all.)", choices: ["map", "filter", "slice", "find"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "reduce and sort"
+        secondsPerQuestion: 9
+        questions:
+          - { id: fs-w08-d4-rf01, difficulty: easy, type: mcq, prompt: "Sum with reduce, starting at 0", choices: ["arr.reduce((s, x) => s + x, 0)", "arr.reduce(0)", "arr.sum()", "reduce(arr, +)"], answer: 0 }
+          - { id: fs-w08-d4-rf02, difficulty: easy, type: mcq, prompt: "Cheapest first", choices: ["sort((a, b) => a.price - b.price)", "sort((a, b) => b.price - a.price)", "sort()", "reverse()"], answer: 0 }
+          - { id: fs-w08-d4-rf03, difficulty: easy, type: mcq, prompt: "Most expensive first", choices: ["sort((a, b) => b.price - a.price)", "sort((a, b) => a.price - b.price)", "sort()", "max()"], answer: 0 }
+          - { id: fs-w08-d4-rf04, difficulty: easy, type: mcq, prompt: "A to Z by name", choices: ["sort((a, b) => a.name.localeCompare(b.name))", "sort((a, b) => a.name - b.name)", "sortByName()", "sort(name)"], answer: 0 }
+          - { id: fs-w08-d4-rf05, difficulty: easy, type: mcq, prompt: "Copy before sorting", choices: ["[...arr]", "arr.copy", "copy(arr)", "arr.clone()"], answer: 0 }
+          - { id: fs-w08-d4-rf06, difficulty: easy, type: text, prompt: "[10, 9, 100].sort() gives…", accept: ["[10, 100, 9]", "10,100,9", "[ 10, 100, 9 ]"] }
+          - { id: fs-w08-d4-rf07, difficulty: easy, type: truefalse, prompt: "sort changes the original array.", answer: true }
+          - { id: fs-w08-d4-rf08, difficulty: easy, type: mcq, prompt: "reduce's last argument is…", choices: ["the starting value", "the array", "the index", "the result"], answer: 0 }
+          - { id: fs-w08-d4-rf09, difficulty: easy, type: mcq, prompt: "Top 3 after sorting", choices: ["slice(0, 3)", "splice(3)", "top(3)", "first(3)"], answer: 0 }
+          - { id: fs-w08-d4-rf10, difficulty: easy, type: mcq, prompt: "Compare function returns negative →", choices: ["a comes first", "b comes first", "they're equal", "error"], answer: 0 }
+      - kind: brain-teaser
+        title: "Rank and total"
+        questions:
+          - id: fs-w08-d4-bt01
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const prices = [145000, 13500, 129000]
+              console.log(prices.reduce((sum, p) => sum + p, 0))
+            accept: ["287500"]
+          - id: fs-w08-d4-bt02
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const nums = [10, 9, 100]
+              console.log([...nums].sort((a, b) => a - b).join(","), nums.join(","))
+            accept: ["9,10,100 10,9,100"]
+          - id: fs-w08-d4-bt03
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const p = [{ c: "Phones", v: 100 }, { c: "Food", v: 30 }, { c: "Phones", v: 50 }]
+              const t = p.reduce((acc, x) => { acc[x.c] = (acc[x.c] ?? 0) + x.v; return acc }, {})
+              console.log(JSON.stringify(t))
+            accept: ["{\"Phones\":150,\"Food\":30}"]
+          - id: fs-w08-d4-bt04
+            difficulty: hard
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const products = [{ n: "A", p: 5 }, { n: "B", p: 9 }, { n: "C", p: 7 }]
+              console.log([...products].sort((a, b) => b.p - a.p).slice(0, 2).map((x) => x.n).join(""))
+            accept: ["BC"]
+          - id: fs-w08-d4-bt05
+            difficulty: hard
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const names = ["tolu", "Ada", "emeka"]
+              console.log([...names].sort().join(","), [...names].sort((a, b) => a.localeCompare(b)).join(","))
+            accept: ["Ada,emeka,tolu Ada,emeka,tolu"]
+
+  # ─────────────────────────── DAY 5 ───────────────────────────
+  - day: 5
+    gate:
+      title: "Checkpoint: reduce and sort"
+      covers: "Week 8 · Day 4: reduce to totals and objects, sort with compare functions, localeCompare, copying, chaining"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w08-d5-g01, difficulty: easy, type: mcq, prompt: "Total price with reduce", choices: ["list.reduce((sum, p) => sum + p.price, 0)", "list.reduce(p.price)", "list.sum(\"price\")", "reduce(list)"], answer: 0 }
+        - { id: fs-w08-d5-g02, difficulty: easy, type: mcq, prompt: "Sort without changing the original", choices: ["[...list].sort(…)", "list.sort(…)", "sort(list)", "list.sorted(…)"], answer: 0 }
+        - { id: fs-w08-d5-g03, difficulty: easy, type: truefalse, prompt: "Without a compare function, sort compares as text.", answer: true }
+        - { id: fs-w08-d5-g04, difficulty: easy, type: mcq, prompt: "Strings A–Z (with accents handled)", choices: ["localeCompare", "a - b", "a > b only", "toUpperCase"], answer: 0 }
+        - { id: fs-w08-d5-g05, difficulty: easy, type: mcq, prompt: "reduce into an object starts with…", choices: ["{}", "0", "[]", "null"], answer: 0 }
+        - { id: fs-w08-d5-g06, difficulty: easy, type: mcq, prompt: "Chained pipeline order for top-2 names", choices: ["sort → slice → map", "map → sort → filter", "slice → sort → map", "find → sort"], answer: 0 }
+        - id: fs-w08-d5-g07
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const xs = [3, 1, 2]
+            const sorted = [...xs].sort((a, b) => b - a)
+            console.log(sorted.join(""), xs.join(""))
+          accept: ["321 312"]
+        - id: fs-w08-d5-g08
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const e = [{ a: 1200 }, { a: 500 }, { a: 2000 }]
+            console.log(e.reduce((s, x) => s + x.a, 0))
+          accept: ["3700"]
+        - { id: fs-w08-d5-g09, difficulty: medium, type: match, prompt: "Match the compare function.", pairs: [["(a, b) => a - b", "ascending numbers"], ["(a, b) => b - a", "descending numbers"], ["(a, b) => a.localeCompare(b)", "A to Z"], ["(a, b) => b.localeCompare(a)", "Z to A"]] }
+        - id: fs-w08-d5-g10
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            console.log([5, 25, 100, 1].sort().join(","))
+          accept: ["1,100,25,5"]
+        - { id: fs-w08-d5-g11, difficulty: medium, type: truefalse, prompt: "reduce without a starting value on an empty array throws an error.", answer: true }
+        - id: fs-w08-d5-g12
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const words = ["yam", "rice", "suya"]
+            console.log(words.reduce((longest, w) => (w.length > longest.length ? w : longest), ""))
+          accept: ["rice"]
+        - { id: fs-w08-d5-g13, difficulty: medium, type: mcq, prompt: "biggest expense object with reduce", choices: ["list.reduce((a, b) => (b.amount > a.amount ? b : a))", "list.max(\"amount\")", "list.sort()[0]", "Math.max(list)"], answer: 0 }
+        - id: fs-w08-d5-g14
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const p = [{ n: "Kano", v: 3 }, { n: "Abuja", v: 3 }, { n: "Lagos", v: 9 }]
+            console.log([...p].sort((a, b) => b.v - a.v || a.n.localeCompare(b.n)).map((x) => x.n).join(","))
+          accept: ["Lagos,Abuja,Kano"]
+        - { id: fs-w08-d5-g15, difficulty: medium, type: mcq, prompt: "Math.max on an array of numbers", choices: ["Math.max(...nums)", "Math.max(nums)", "nums.max()", "max(nums)"], answer: 0 }
+        - id: fs-w08-d5-g16
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const sales = [{ c: "Lagos", v: 100 }, { c: "Kano", v: 300 }, { c: "Lagos", v: 250 }]
+            const t = sales.reduce((acc, s) => ({ ...acc, [s.c]: (acc[s.c] ?? 0) + s.v }), {})
+            console.log(Object.entries(t).sort((a, b) => b[1] - a[1])[0][0])
+          accept: ["Lagos"]
+        - id: fs-w08-d5-g17
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const nums = [4, 8, 15, 16]
+            console.log(nums.reduce((acc, n) => acc + (n % 2 === 0 ? n : 0), 0))
+          accept: ["28"]
+        - { id: fs-w08-d5-g18, difficulty: hard, type: multi, prompt: "Which give the total 6 for [1, 2, 3]? (Select all.)", choices: ["arr.reduce((s, x) => s + x, 0)", "arr.reduce((s, x) => s + x)", "eval(arr.join(\"+\"))", "arr.length * 2"], answers: [0, 1, 2, 3], explain: "All four happen to give 6 here; only the first two are good ways to total." }
+    quizzes:
+      - kind: rapid-fire
+        title: "JSON and storage"
+        secondsPerQuestion: 9
+        questions:
+          - { id: fs-w08-d5-rf01, difficulty: easy, type: mcq, prompt: "Data → JSON text", choices: ["JSON.stringify", "JSON.parse", "JSON.text", "toString"], answer: 0 }
+          - { id: fs-w08-d5-rf02, difficulty: easy, type: mcq, prompt: "JSON text → data", choices: ["JSON.parse", "JSON.stringify", "JSON.load", "Number"], answer: 0 }
+          - { id: fs-w08-d5-rf03, difficulty: easy, type: mcq, prompt: "Save in the browser", choices: ["localStorage.setItem", "localStorage.save", "browser.store", "cookie.set"], answer: 0 }
+          - { id: fs-w08-d5-rf04, difficulty: easy, type: mcq, prompt: "Read it back", choices: ["localStorage.getItem", "localStorage.load", "localStorage.read", "getItem()"], answer: 0 }
+          - { id: fs-w08-d5-rf05, difficulty: easy, type: mcq, prompt: "getItem for a missing key", choices: ["null", "undefined", "\"\"", "an error"], answer: 0 }
+          - { id: fs-w08-d5-rf06, difficulty: easy, type: mcq, prompt: "localStorage stores…", choices: ["text only", "any object", "numbers only", "files"], answer: 0 }
+          - { id: fs-w08-d5-rf07, difficulty: easy, type: mcq, prompt: "Two variables from an object", choices: ["const { name, price } = product", "const name, price = product", "const [name, price] = product", "let name = product, price"], answer: 0 }
+          - { id: fs-w08-d5-rf08, difficulty: easy, type: truefalse, prompt: "JSON.parse on bad text throws a SyntaxError.", answer: true }
+          - { id: fs-w08-d5-rf09, difficulty: easy, type: mcq, prompt: "See saved data in DevTools", choices: ["Application → Local Storage", "Console only", "Network", "Elements"], answer: 0 }
+          - { id: fs-w08-d5-rf10, difficulty: easy, type: mcq, prompt: "Python a, b = pair", choices: ["const [a, b] = pair", "const { a, b } = pair", "const a, b = pair", "[a, b] := pair"], answer: 0 }
+      - kind: brain-teaser
+        title: "Round trips"
+        questions:
+          - id: fs-w08-d5-bt01
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const text = JSON.stringify([{ item: "Bus", amount: 500 }])
+              console.log(text)
+            accept: ["[{\"item\":\"Bus\",\"amount\":500}]"]
+          - id: fs-w08-d5-bt02
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const back = JSON.parse('{"city":"Abuja","temps":[29,31]}')
+              console.log(back.temps[1] - back.temps[0])
+            accept: ["2"]
+          - id: fs-w08-d5-bt03
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const { name, price } = { name: "Milo", price: 3200, size: "500g" }
+              console.log(`${name} (₦${price})`)
+            accept: ["Milo (₦3200)"]
+          - id: fs-w08-d5-bt04
+            difficulty: hard
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const saved = null
+              const list = JSON.parse(saved ?? "[]")
+              list.push("first")
+              console.log(JSON.stringify(list))
+            accept: ["[\"first\"]"]
+          - id: fs-w08-d5-bt05
+            difficulty: hard
+            type: text
+            prompt: "What does this print?"
+            code: |
+              function fromJSON(text) {
+                try { return JSON.parse(text) } catch { return [] }
+              }
+              console.log(fromJSON("{oops").length, fromJSON("[1,2,3]").length)
+            accept: ["0 3"]
+
+  # ─────────────────────────── DAY 6 ───────────────────────────
+  - day: 6
+    gate:
+      title: "Checkpoint: JSON, storage and destructuring"
+      covers: "Week 8 · Day 5: JSON.stringify/parse, localStorage, null from getItem, storage parameters, destructuring"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w08-d6-g01, difficulty: easy, type: mcq, prompt: "Save an array to localStorage", choices: ["localStorage.setItem(\"k\", JSON.stringify(arr))", "localStorage.setItem(\"k\", arr)", "localStorage.k = arr", "save(arr)"], answer: 0 }
+        - { id: fs-w08-d6-g02, difficulty: easy, type: mcq, prompt: "Load it safely", choices: ["JSON.parse(localStorage.getItem(\"k\") ?? \"[]\")", "localStorage.getItem(\"k\")", "JSON.parse(localStorage.k)", "load(\"k\")"], answer: 0 }
+        - { id: fs-w08-d6-g03, difficulty: easy, type: truefalse, prompt: "localStorage survives a page reload.", answer: true }
+        - { id: fs-w08-d6-g04, difficulty: easy, type: mcq, prompt: "Why pass storage as a parameter?", choices: ["So tests can pass a fake storage (like fake_get in Week 6)", "localStorage needs it", "It's faster", "To encrypt data"], answer: 0 }
+        - { id: fs-w08-d6-g05, difficulty: easy, type: mcq, prompt: "Destructure name from product", choices: ["const { name } = product", "const name = { product }", "const [name] = product", "name := product"], answer: 0 }
+        - { id: fs-w08-d6-g06, difficulty: easy, type: mcq, prompt: "Python json.dumps in JS", choices: ["JSON.stringify", "JSON.parse", "JSON.dump", "String"], answer: 0 }
+        - id: fs-w08-d6-g07
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const store = { data: {}, setItem(k, v) { this.data[k] = String(v) }, getItem(k) { return this.data[k] ?? null } }
+            store.setItem("n", JSON.stringify([1, 2]))
+            console.log(typeof store.data.n, JSON.parse(store.getItem("n")).length)
+          accept: ["string 2"]
+        - id: fs-w08-d6-g08
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const [first, , third] = ["Lagos", "Abuja", "Kano"]
+            console.log(first, third)
+          accept: ["Lagos Kano"]
+        - { id: fs-w08-d6-g09, difficulty: medium, type: match, prompt: "Match.", pairs: [["JSON.stringify", "data → text"], ["JSON.parse", "text → data"], ["setItem", "save text under a key"], ["getItem", "read text (or null)"]] }
+        - id: fs-w08-d6-g10
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            function label({ name, price = 0 }) {
+              return `${name}: ${price}`
+            }
+            console.log(label({ name: "Bread" }))
+          accept: ["Bread: 0"]
+        - { id: fs-w08-d6-g11, difficulty: medium, type: truefalse, prompt: "Storing an object without JSON.stringify saves \"[object Object]\".", answer: true }
+        - id: fs-w08-d6-g12
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            console.log(String({ a: 1 }), JSON.stringify({ a: 1 }))
+          accept: ["[object Object] {\"a\":1}"]
+        - { id: fs-w08-d6-g13, difficulty: medium, type: mcq, prompt: "JSON.parse(null) gives…", choices: ["null", "[]", "an error", "undefined"], answer: 0, explain: "null becomes the text \"null\", which parses to null; hence ?? \"[]\" before parsing." }
+        - id: fs-w08-d6-g14
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const addExpense = (list, item, amount) => [...list, { item, amount }]
+            const a = []
+            const b = addExpense(a, "Bus", 500)
+            console.log(a.length, b.length, b[0].item)
+          accept: ["0 1 Bus"]
+        - { id: fs-w08-d6-g15, difficulty: medium, type: mcq, prompt: "`{ item, amount }` (shorthand) means…", choices: ["{ item: item, amount: amount }", "an array", "two strings", "an error"], answer: 0 }
+        - id: fs-w08-d6-g16
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const list = [{ amount: 500 }, { amount: 2000 }, { amount: 1200 }]
+            const biggest = list.length ? list.reduce((a, b) => (b.amount > a.amount ? b : a)) : null
+            console.log(biggest.amount, [].length ? 1 : null)
+          accept: ["2000 null"]
+        - id: fs-w08-d6-g17
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const s = { data: {}, setItem(k, v) { this.data[k] = String(v) }, getItem(k) { return k in this.data ? this.data[k] : null } }
+            const save = (k, d, storage) => storage.setItem(k, JSON.stringify(d))
+            const load = (k, storage) => JSON.parse(storage.getItem(k) ?? "[]")
+            save("e", [{ a: 1 }], s)
+            console.log(load("e", s)[0].a, load("x", s).length)
+          accept: ["1 0"]
+        - { id: fs-w08-d6-g18, difficulty: hard, type: multi, prompt: "Which are true about localStorage? (Select all.)", choices: ["It stores text", "It's per website", "It survives reloads", "It syncs to your phone automatically"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Week 8 lightning round"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fs-w08-d6-rf01, difficulty: easy, type: mcq, prompt: "Add to the end", choices: ["push", "pop", "shift", "add"], answer: 0 }
+          - { id: fs-w08-d6-rf02, difficulty: easy, type: mcq, prompt: "Transform every item", choices: ["map", "filter", "find", "reduce"], answer: 0 }
+          - { id: fs-w08-d6-rf03, difficulty: easy, type: mcq, prompt: "Keep some items", choices: ["filter", "map", "sort", "find"], answer: 0 }
+          - { id: fs-w08-d6-rf04, difficulty: easy, type: mcq, prompt: "Combine into one value", choices: ["reduce", "map", "join", "every"], answer: 0 }
+          - { id: fs-w08-d6-rf05, difficulty: easy, type: mcq, prompt: "First match", choices: ["find", "filter", "some", "indexOf"], answer: 0 }
+          - { id: fs-w08-d6-rf06, difficulty: easy, type: mcq, prompt: "Copy an array", choices: ["[...arr]", "arr", "copy(arr)", "arr.copy()"], answer: 0 }
+          - { id: fs-w08-d6-rf07, difficulty: easy, type: mcq, prompt: "All object keys", choices: ["Object.keys", "obj.keys()", "keys()", "Object.all"], answer: 0 }
+          - { id: fs-w08-d6-rf08, difficulty: easy, type: mcq, prompt: "Data → text", choices: ["JSON.stringify", "JSON.parse", "String", "toJSON()"], answer: 0 }
+          - { id: fs-w08-d6-rf09, difficulty: easy, type: mcq, prompt: "Missing localStorage key", choices: ["null", "undefined", "\"\"", "[]"], answer: 0 }
+          - { id: fs-w08-d6-rf10, difficulty: easy, type: mcq, prompt: "Default when null/undefined", choices: ["??", "||", "&&", "?:"], answer: 0 }
+      - kind: brain-teaser
+        title: "Tracker logic"
+        questions:
+          - id: fs-w08-d6-bt01
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const list = [{ amount: 1200, category: "Food" }, { amount: 500, category: "Transport" }, { amount: 2000, category: "Food" }]
+              const t = list.reduce((acc, e) => { acc[e.category] = (acc[e.category] ?? 0) + e.amount; return acc }, {})
+              console.log(t.Food, t.Transport)
+            accept: ["3200 500"]
+          - id: fs-w08-d6-bt02
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              let list = []
+              list = [...list, { item: "Bread", amount: 1200 }]
+              list = [...list, { item: "Bus", amount: 500 }]
+              console.log(list.map((e) => e.item).join("+"), list.reduce((s, e) => s + e.amount, 0))
+            accept: ["Bread+Bus 1700"]
+          - id: fs-w08-d6-bt03
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const format = (n) => "₦" + n.toLocaleString("en-NG")
+              console.log(format([1200, 500, 2000].reduce((a, b) => a + b, 0)))
+            accept: ["₦3,700"]
+          - { id: fs-w08-d6-bt04, difficulty: hard, type: mcq, prompt: "Why does addExpense return a new array instead of pushing?", choices: ["No hidden changes to the old list; React relies on this style", "push doesn't work in JS", "It's shorter", "localStorage needs it"], answer: 0 }
+          - { id: fs-w08-d6-bt05, difficulty: hard, type: multi, prompt: "Which belong in the js-expenses project? (Select all.)", choices: ["addExpense, total, byCategory, biggest", "save/load with a storage parameter", "A README", "A Python virtual environment"], answers: [0, 1, 2] }

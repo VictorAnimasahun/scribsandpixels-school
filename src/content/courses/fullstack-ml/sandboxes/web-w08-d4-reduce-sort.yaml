@@ -1,0 +1,43 @@
+# Week 8 · Day 4 mini-task
+id: web-w08-d4-reduce-sort
+kind: web
+title: "reduce and sort"
+description: "Totals, groups and rankings, without changing the original array."
+html: |
+  <p>Work in the <strong>JS</strong> tab.</p>
+css: |
+  body { font-family: system-ui, sans-serif; padding: 1rem; }
+js: |
+  const products = [
+    { name: "Tecno Spark 20", price: 145000, category: "Phones" },
+    { name: "Indomie Carton", price: 13500, category: "Groceries" },
+    { name: "JBL Flip 6", price: 129000, category: "Electronics" },
+    { name: "Peak Milk Tin", price: 16500, category: "Groceries" },
+    { name: "Infinix Hot 40", price: 179000, category: "Phones" },
+  ]
+
+  // 1. total(list) with reduce
+
+
+  // 2. sortByPrice(list): cheapest first, as a NEW array
+
+
+  // 3. sortByName(list): A to Z with localeCompare, as a new array
+
+
+  // 4. categoryTotals(list) with reduce: { Phones: 324000, Groceries: 30000, Electronics: 129000 }
+
+
+  // 5. topN(list, n): the names of the n most expensive products
+tasks:
+  - prompt: "total(list) uses reduce."
+    check: "typeof total === 'function' && total(products) === 483000 && total([]) === 0 && /\\.reduce\\(/.test(total.toString())"
+  - prompt: "sortByPrice returns a new array, cheapest first."
+    check: "typeof sortByPrice === 'function' && (() => { const before = products.map((p) => p.name).join(); const out = sortByPrice(products); return out.map((p) => p.price).join() === '13500,16500,129000,145000,179000' && products.map((p) => p.name).join() === before })()"
+    hint: "[...list].sort((a, b) => a.price - b.price)"
+  - prompt: "sortByName sorts A–Z with localeCompare, without changing the original."
+    check: "typeof sortByName === 'function' && (() => { const before = products.map((p) => p.name).join(); const out = sortByName(products); return out[0].name === 'Indomie Carton' && out[4].name === 'Tecno Spark 20' && products.map((p) => p.name).join() === before && /localeCompare/.test(sortByName.toString()) })()"
+  - prompt: "categoryTotals groups prices by category with reduce."
+    check: "typeof categoryTotals === 'function' && JSON.stringify(categoryTotals(products)) === '{\"Phones\":324000,\"Groceries\":30000,\"Electronics\":129000}' && JSON.stringify(categoryTotals([])) === '{}'"
+  - prompt: "topN(list, n) chains sort, slice and map."
+    check: "typeof topN === 'function' && JSON.stringify(topN(products, 2)) === '[\"Infinix Hot 40\",\"Tecno Spark 20\"]' && topN(products, 0).length === 0 && products[0].name === 'Tecno Spark 20'"

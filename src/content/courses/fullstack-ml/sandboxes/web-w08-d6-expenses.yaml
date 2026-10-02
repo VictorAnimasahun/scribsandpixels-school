@@ -1,0 +1,35 @@
+# Week 8 · Day 6 project core
+id: web-w08-d6-expenses
+kind: web
+title: "Expense tracker logic"
+description: "Your Week 5 Python tracker, in JavaScript: pure functions plus save/load with a storage parameter."
+html: |
+  <p>Work in the <strong>JS</strong> tab.</p>
+css: |
+  body { font-family: system-ui, sans-serif; padding: 1rem; }
+js: |
+  // 1. addExpense(list, item, amount, category): returns a NEW array with { item, amount, category } added
+
+
+  // 2. total(list)
+
+
+  // 3. byCategory(list): { Food: 3200, Transport: 500 }
+
+
+  // 4. biggest(list): the expense object with the largest amount, or null if the list is empty
+
+
+  // 5. save(key, list, storage) and load(key, storage) (load gives [] when nothing is saved)
+tasks:
+  - prompt: "addExpense returns a new array and leaves the old one alone."
+    check: "typeof addExpense === 'function' && (() => { const a = []; const b = addExpense(a, 'Bread', 1200, 'Food'); return a.length === 0 && b.length === 1 && JSON.stringify(b[0]) === '{\"item\":\"Bread\",\"amount\":1200,\"category\":\"Food\"}' })()"
+    hint: "return [...list, { item, amount, category }]"
+  - prompt: "total(list) adds the amounts."
+    check: "typeof total === 'function' && total([{ amount: 1200 }, { amount: 500 }, { amount: 2000 }]) === 3700 && total([]) === 0"
+  - prompt: "byCategory(list) totals per category."
+    check: "typeof byCategory === 'function' && JSON.stringify(byCategory([{ amount: 1200, category: 'Food' }, { amount: 500, category: 'Transport' }, { amount: 2000, category: 'Food' }])) === '{\"Food\":3200,\"Transport\":500}'"
+  - prompt: "biggest(list) returns the largest expense, or null."
+    check: "typeof biggest === 'function' && biggest([]) === null && biggest([{ item: 'Bus', amount: 500 }, { item: 'Suya', amount: 2000 }, { item: 'Bread', amount: 1200 }]).item === 'Suya'"
+  - prompt: "save and load round-trip through any storage."
+    check: "typeof save === 'function' && typeof load === 'function' && (() => { const s = (() => ({ data: {}, setItem(k, v) { this.data[k] = String(v) }, getItem(k) { return k in this.data ? this.data[k] : null } }))(); const list = [{ item: 'Bus', amount: 500, category: 'Transport' }]; save('expenses', list, s); return JSON.stringify(load('expenses', s)) === JSON.stringify(list) && JSON.stringify(load('nothing', s)) === '[]' })()"

@@ -1,0 +1,37 @@
+# Week 8 · Day 2 mini-task
+id: web-w08-d2-objects
+kind: web
+title: "Objects"
+description: "Properties, Object.values, arrays of objects and the counting pattern. Work in the JS tab."
+html: |
+  <p>Work in the <strong>JS</strong> tab.</p>
+css: |
+  body { font-family: system-ui, sans-serif; padding: 1rem; }
+js: |
+  const product = { name: "Tecno Spark 20", price: 145000, inStock: true }
+  // 1. The price drops to 139000, and add a category: "Phones"
+
+
+  // 2. describe(p): "Tecno Spark 20: ₦139,000"
+
+
+  // 3. totalStock(inventory): { rice: 20, beans: 15 } → 35   (use Object.values)
+
+
+  // 4. cheapest(products): the NAME of the product with the lowest price
+
+
+  // 5. countBy(items, key): countBy([{ city: "Lagos" }, { city: "Kano" }, { city: "Lagos" }], "city") → { Lagos: 2, Kano: 1 }
+tasks:
+  - prompt: "Change the price to 139000 and add category \"Phones\"."
+    check: "product.price === 139000 && product.category === 'Phones' && product.name === 'Tecno Spark 20'"
+  - prompt: "describe(p) uses the object's properties and ₦ formatting."
+    check: "typeof describe === 'function' && describe(product) === 'Tecno Spark 20: ₦139,000' && describe({ name: 'Milo', price: 3200 }) === 'Milo: ₦3,200'"
+    hint: "`${p.name}: ₦${p.price.toLocaleString(\"en-NG\")}`"
+  - prompt: "totalStock(inventory) adds all the values."
+    check: "typeof totalStock === 'function' && totalStock({ rice: 20, beans: 15 }) === 35 && totalStock({}) === 0 && /Object\\.values/.test(totalStock.toString())"
+  - prompt: "cheapest(products) returns the cheapest product's name."
+    check: "typeof cheapest === 'function' && cheapest([{ name: 'A', price: 300 }, { name: 'B', price: 100 }, { name: 'C', price: 200 }]) === 'B' && cheapest([{ name: 'Only', price: 9 }]) === 'Only'"
+  - prompt: "countBy(items, key) counts by any key (bracket notation)."
+    check: "typeof countBy === 'function' && JSON.stringify(countBy([{ city: 'Lagos' }, { city: 'Kano' }, { city: 'Lagos' }], 'city')) === '{\"Lagos\":2,\"Kano\":1}' && JSON.stringify(countBy([{ pay: 'POS' }, { pay: 'POS' }], 'pay')) === '{\"POS\":2}' && JSON.stringify(countBy([], 'x')) === '{}'"
+    hint: "counts[item[key]] = (counts[item[key]] ?? 0) + 1"

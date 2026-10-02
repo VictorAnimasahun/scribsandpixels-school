@@ -1,0 +1,37 @@
+# Week 8 · Day 1 mini-task
+id: web-w08-d1-arrays
+kind: web
+title: "Arrays"
+description: "push, splice, length, join and loops on JavaScript arrays. Work in the JS tab."
+html: |
+  <p>Work in the <strong>JS</strong> tab.</p>
+css: |
+  body { font-family: system-ui, sans-serif; padding: 1rem; }
+js: |
+  const foods = ["rice", "beans", "yam", "plantain", "egusi"]
+  // 1. Add "suya" to the end and remove "beans" (use indexOf + splice). foods ends with 5 items.
+
+
+  // 2. numbered(list): ["rice", "yam"] → "1. rice\n2. yam"  (one line per item)
+
+
+  // 3. firstAndLast(arr): returns [first item, last item]
+
+
+  // 4. listText(arr): ["Lagos", "Abuja"] → "Lagos, Abuja"
+
+
+  // 5. countOver(nums, limit): how many numbers are bigger than limit
+tasks:
+  - prompt: "Add suya and remove beans with array methods (foods keeps 5 items)."
+    check: "foods.length === 5 && foods.includes('suya') && !foods.includes('beans') && foods[foods.length - 1] === 'suya'"
+    hint: "foods.push(\"suya\"); foods.splice(foods.indexOf(\"beans\"), 1)"
+  - prompt: "numbered(list) numbers each item on its own line."
+    check: "typeof numbered === 'function' && numbered(['rice', 'yam']) === '1. rice\\n2. yam' && numbered(['a']) === '1. a' && numbered([]) === ''"
+  - prompt: "firstAndLast(arr) returns the first and last items."
+    check: "typeof firstAndLast === 'function' && JSON.stringify(firstAndLast(['a', 'b', 'c'])) === '[\"a\",\"c\"]' && JSON.stringify(firstAndLast([7])) === '[7,7]'"
+    hint: "return [arr[0], arr[arr.length - 1]]"
+  - prompt: "listText(arr) joins with a comma and a space."
+    check: "typeof listText === 'function' && listText(['Lagos', 'Abuja']) === 'Lagos, Abuja' && listText(['Kano']) === 'Kano'"
+  - prompt: "countOver(nums, limit) counts numbers above the limit."
+    check: "typeof countOver === 'function' && countOver([5, 12, 8, 20], 10) === 2 && countOver([], 1) === 0 && countOver([10, 10], 10) === 0"
