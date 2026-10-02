@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import type { Sandbox } from '../../content/sandboxes.ts'
 import { CodeEditor } from './shared.tsx'
-import { loadSaved, save } from './storage.ts'
+import { loadSaved, remove, save } from './storage.ts'
 
 type Props = { sandbox: Extract<Sandbox, { kind: 'web' }> }
 type Tab = 'html' | 'css' | 'js'
@@ -21,9 +21,22 @@ const bridge = `<script>
 export default function WebSandbox({ sandbox }: Props) {
   const key = `web:${sandbox.id}`
   const initial = useMemo(() => {
-    const saved = loadSaved(key)
-    return saved ? (JSON.parse(saved) as Record<Tab, string>) : { html: sandbox.html ?? '', css: sandbox.css ?? '', js: sandbox.js ?? '' }
+    const starter = { html: sandbox.html ?? '', css: sandbox.css ?? '', js: sandbox.js ?? '' }
+    try {
+      const saved = JSON.parse(loadSaved(key) ?? 'null') as Partial<Record<Tab, unknown>> | null
+      if (saved && typeof saved === 'object') {
+        return { html: typeof saved.html === 'string' ? saved.html : starter.html, css: typeof saved.css === 'string' ? saved.css : starter.css, js: typeof saved.js === 'string' ? saved.js : starter.js }
+      }
+    } catch {
+      // unreadable save: start from the starter files
+    }
+    return starter
   }, [key, sandbox])
+  // Set while a run is starting, cleared when the page has finished running its scripts. If it's
+  // still set when the sandbox opens, the last run never finished (an infinite loop froze the tab),
+  // so the saved code isn't run again automatically: otherwise the lesson page would freeze on every visit.
+  const runningKey = `${key}:running`
+  const [frozeLastTime] = useState(() => loadSaved(runningKey) !== null)
   const [files, setFiles] = useState(initial)
   const [tab, setTab] = useState<Tab>('html')
   const [doc, setDoc] = useState('')
@@ -33,7 +46,7 @@ export default function WebSandbox({ sandbox }: Props) {
   const previewRef = useRef<HTMLIFrameElement>(null)
 
   const page = (extra = '') =>
-    `<!doctype html><html><head><meta charset="utf-8"><style>${files.css}</style>${bridge}</head><body>${files.html}<script>${files.js}</script>${extra}</body></html>`
+    `<!doctype html><html><head><meta charset="utf-8"><style>${files.css}</style>${bridge}</head><body>${files.html}<script>${files.js}</script><script>parent.postMessage({ snpRan: true }, '*')</script>${extra}</body></html>`
 
   // Every Run/Check mounts a fresh iframe (keyed by this counter). Reusing one failed twice over:
   // an identical srcDoc doesn't reload (Run/Check pressed twice showed nothing), and Chrome
@@ -41,6 +54,7 @@ export default function WebSandbox({ sandbox }: Props) {
   const [run, setRun] = useState(0)
 
   const render = () => {
+    save(runningKey, String(Date.now()))
     setLogs([])
     setRun((n) => n + 1)
     setDoc(page())
@@ -83,6 +97,7 @@ export default function WebSandbox({ sandbox }: Props) {
       window.addEventListener('load', () => (document.fonts ? document.fonts.ready : Promise.resolve())
         .then(() => settle(run)));
     </script>`
+    save(runningKey, String(Date.now()))
     setRun((n) => n + 1)
     setDoc(page(checker))
     // Off-screen frames may not be laid out, so bring the preview into view while it's checked.
@@ -90,10 +105,15 @@ export default function WebSandbox({ sandbox }: Props) {
   }
 
   useEffect(() => save(key, JSON.stringify(files)), [key, files])
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(render, [])
+  useEffect(() => {
+    if (!frozeLastTime) render()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
   useEffect(() => {
     const onMessage = (e: MessageEvent) => {
+      // Only this sandbox's own preview: a page can hold two sandboxes, and their messages must not mix.
+      if (!previewRef.current || e.source !== previewRef.current.contentWindow) return
+      if (e.data?.snpRan) remove(runningKey)
       if (e.data?.snpConsole) setLogs((l) => [...l, { level: e.data.level, text: e.data.text }])
       if (Array.isArray(e.data?.snpChecks)) setResults(e.data.snpChecks as boolean[])
     }
@@ -111,6 +131,9 @@ export default function WebSandbox({ sandbox }: Props) {
         {tasks.length > 0 && <button onClick={check}>✓ Check tasks</button>}
         <button onClick={() => { if (confirm('Reset all three files?')) setFiles({ html: sandbox.html ?? '', css: sandbox.css ?? '', js: sandbox.js ?? '' }) }}>Reset</button>
       </div>
+      {frozeLastTime && run === 0 && (
+        <p className="fail-detail small">⚠ Your last run didn't finish, maybe an infinite loop (a <code>while</code> or <code>for</code> that never stops). Your code is kept but wasn't run. Fix the loop, then press ▶ Run.</p>
+      )}
       <CodeEditor key={tab} value={files[tab]} onChange={(v) => setFiles((f) => ({ ...f, [tab]: v }))} onRun={render} language={tab} rows={10} />
       {/* allow-forms: without it Chrome blocks form submission, so submit handlers never run */}
       <iframe key={run} ref={previewRef} className="preview" title="Preview" sandbox="allow-scripts allow-modals allow-forms" srcDoc={doc} />

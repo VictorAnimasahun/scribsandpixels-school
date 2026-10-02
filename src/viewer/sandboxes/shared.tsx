@@ -96,6 +96,7 @@ export function CodeEditor({ value, onChange, onRun, language, rows = 12 }: Edit
             key={k.label}
             type="button"
             title={k.title}
+            aria-label={k.title}
             // Act on press and cancel the default so the textarea keeps focus and the
             // phone keyboard stays open. (Safari then drops the click, so don't rely on it.)
             onPointerDown={(e) => {

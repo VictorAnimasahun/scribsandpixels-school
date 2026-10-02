@@ -53,6 +53,20 @@ describe('markAnswer', () => {
     expect(markAnswer({ id: 'd', difficulty: 'easy', type: 'match', prompt: 'x', pairs: [['un', '1'], ['deux', '2'], ['trois', '3']] }, ['1', '2', '3']).correct).toBe(true)
   })
 
+  it('ignores French spacing before ?, commas, guillemets, curly apostrophes and thousands separators', () => {
+    const q = (accept: string[]): Question => ({ id: 'n', difficulty: 'easy', type: 'text', prompt: 'x', accept })
+    expect(markAnswer(q(['Tu vas où ?']), 'tu vas où?').correct).toBe(true)
+    expect(markAnswer(q(['Le samedi, je vais au marché.']), 'Le samedi je vais au marché').correct).toBe(true)
+    expect(markAnswer(q(["C'est l'heure"]), 'C’est l’heure').correct).toBe(true)
+    expect(markAnswer(q(['Comment on dit « bank » en français ?']), 'Comment on dit bank en français?').correct).toBe(true)
+    expect(markAnswer(q(['9800']), '9,800').correct).toBe(true)
+    // …but content still counts: a different number or word is wrong, and code quotes stay meaningful.
+    expect(markAnswer(q(['9800']), '98').correct).toBe(false)
+    expect(markAnswer(q(['1,2']), '12').correct).toBe(false)
+    expect(markAnswer(q(['"5"']), '5').correct).toBe(false)
+    expect(markAnswer(q(['"5"']), '“5”').correct).toBe(true)
+  })
+
   it('counts a timeout (no response) as wrong', () => {
     expect(markAnswer(text, undefined).correct).toBe(false)
   })

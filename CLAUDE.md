@@ -46,6 +46,7 @@ More courses will follow; nothing may assume a single course. To add one: a new 
 - `npm test`: Vitest (parser on the real week files + domain rules)
 - `npm run check:python` / `npm run check:web`: prove every sandbox task against its reference solution (CI runs both)
 - `npm run e2e [baseUrl] [chromium|webkit] [filter]`: drives every sandbox in the real app (types each reference solution, presses Check, plays every phrase challenge). Run it against the live site after UI changes; start `npx vite --port 5179` for local runs
+- `npm run sweep [baseUrl] [--no-external]`: visits every course, week and day page at phone width; reports JS errors, sideways scrolling, links to missing pages and dead external links
 - `node scripts/check-quiz-code.mjs [week-NN]` (Python snippets in Python, JS snippets in Node): run quiz Python snippets and print real output next to each answer key
 - `npm run sync:functions`: regenerate `supabase/functions/_shared` after changing `src/domain` or content
 

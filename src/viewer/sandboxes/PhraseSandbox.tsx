@@ -39,7 +39,14 @@ export default function PhraseSandbox({ sandbox: raw }: Props) {
   const [heard, setHeard] = useState<{ text: string; score: number } | null>(null)
   const [listening, setListening] = useState(false)
   const savedKey = `phrases:${raw.id}`
-  const [saved, setSaved] = useState<string[]>(() => JSON.parse(loadSaved(savedKey) ?? '[]') as string[])
+  const [saved, setSaved] = useState<string[]>(() => {
+    try {
+      const list: unknown = JSON.parse(loadSaved(savedKey) ?? '[]')
+      return Array.isArray(list) ? list.filter((x): x is string => typeof x === 'string').slice(0, 200) : []
+    } catch {
+      return [] // unreadable save
+    }
+  })
   useEffect(() => save(savedKey, JSON.stringify(saved)), [savedKey, saved])
 
   const pattern = sandbox.patterns[patternIndex]
@@ -63,6 +70,7 @@ export default function PhraseSandbox({ sandbox: raw }: Props) {
 
   const startChallenge = (c: PhraseChallenge) => {
     const index = sandbox.patterns.findIndex((p) => p.id === c.pattern)
+    if (index < 0) return
     selectPattern(index)
     setChallenge(c)
   }
@@ -85,7 +93,13 @@ export default function PhraseSandbox({ sandbox: raw }: Props) {
     rec.onerror = (e) => setHeard({ text: `(microphone: ${e.error})`, score: 0 })
     rec.onend = () => setListening(false)
     setListening(true)
-    rec.start()
+    try {
+      rec.start()
+    } catch {
+      // e.g. microphone permission blocked, or a recognition already running
+      setListening(false)
+      setHeard({ text: '(microphone unavailable)', score: 0 })
+    }
   }
 
   return (

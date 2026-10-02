@@ -1,9 +1,10 @@
 import { marked } from 'marked'
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import App from '../App.tsx'
 import { catalog, findCourse, type CatalogCourse } from '../content/catalog.ts'
-import { DEFAULT_QUIZ_RULES } from '../content/quizzes.ts'
+import { DEFAULT_QUIZ_RULES, type Question } from '../content/quizzes.ts'
 import { drawAttempt, gateDaysForWeek, gateStatus, seededRandom } from '../domain/quizGate.ts'
+import { ErrorBoundary } from './ErrorBoundary.tsx'
 import { foldAnswers } from './foldAnswers.ts'
 import { QuizPlayer } from './QuizPlayer.tsx'
 import { SandboxHost } from './sandboxes/SandboxHost.tsx'
@@ -34,11 +35,16 @@ function Markdown({ text }: { text: string }) {
 
 // ─── Gate lock ────────────────────────────────────────────────────────────
 
-/** The first gate that has popped up and hasn't been passed. It locks the whole app. */
+const gateQuiz = (slug: string, week: number, day: number) =>
+  findCourse(slug)?.quizzes.get(week)?.days.find((d) => d.day === day)?.gate
+
+/** The first gate that has popped up and hasn't been passed. It locks the whole app.
+ *  A gate whose quiz no longer exists (renamed content, an edited save) is ignored, never a dead lock. */
 function pendingGate(state: State) {
   for (const [key, gate] of Object.entries(state.gates)) {
     if (!gate.attempts.some((a) => a.passed)) {
       const [slug, week, day] = key.split(':')
+      if (!gateQuiz(slug, Number(week), Number(day))) continue
       return { key, slug, week: Number(week), day: Number(day), gate }
     }
   }
@@ -54,21 +60,52 @@ function useNow(everyMs: number) {
   return now
 }
 
-function GateLock({ pending }: { pending: NonNullable<ReturnType<typeof pendingGate>> }) {
+function GateLock({ pending, onPassed }: { pending: NonNullable<ReturnType<typeof pendingGate>>; onPassed: (score: number) => void }) {
   const now = useNow(1000)
   const course = findCourse(pending.slug)
-  const quiz = course?.quizzes.get(pending.week)?.days.find((d) => d.day === pending.day)?.gate
+  const quiz = gateQuiz(pending.slug, pending.week, pending.day)
   const status = gateStatus(pending.gate.attempts.map((a) => ({ finishedAt: new Date(a.finishedAt), passed: a.passed })), new Date(now))
-  const [started, setStarted] = useState(false)
-  const attemptNo = pending.gate.attempts.length + 1
-  const questions = useMemo(
-    () => (quiz ? drawAttempt(quiz.bank, quiz.blueprint, pending.gate.seen, seededRandom(Date.now() % 1_000_000_007)) : []),
-    // A new draw for each attempt; stable within one.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [quiz, attemptNo],
-  )
+  // The attempt in progress: its questions are drawn once, when it starts.
+  const [attempt, setAttempt] = useState<{ no: number; questions: Question[]; failed?: boolean } | null>(null)
+  const startedRef = useRef(false)
 
   if (!quiz) return null
+
+  const start = () => {
+    if (startedRef.current) return // a double tap must not record two attempts
+    startedRef.current = true
+    const questions = drawAttempt(quiz.bank, quiz.blueprint, pending.gate.seen, seededRandom(Date.now() % 1_000_000_007))
+    const no = pending.gate.attempts.length + 1
+    // Starting counts: the attempt is saved as a fail straight away and replaced by the real result
+    // at the end. Reloading or leaving mid-quiz can't dodge the cooldown or re-roll the questions.
+    update((s) => {
+      const g = s.gates[pending.key]
+      return {
+        ...s,
+        gates: {
+          ...s.gates,
+          [pending.key]: {
+            ...g,
+            attempts: [...g.attempts, { finishedAt: Date.now(), passed: false, score: 0 }],
+            seen: [...g.seen.filter((id) => !questions.some((q) => q.id === id)), ...questions.map((q) => q.id)],
+          },
+        },
+      }
+    })
+    setAttempt({ no, questions })
+  }
+
+  const finish = (result: { passed: boolean; score: number }) => {
+    update((s) => {
+      const g = s.gates[pending.key]
+      const attempts = [...g.attempts]
+      attempts[attempts.length - 1] = { finishedAt: Date.now(), passed: result.passed, score: result.score }
+      return { ...s, gates: { ...s.gates, [pending.key]: { ...g, attempts } } }
+    })
+    // A pass unlocks the app at once (the lock disappears), so the score is shown on the page behind it.
+    if (result.passed) onPassed(result.score)
+    else setAttempt((a) => (a ? { ...a, failed: true } : a))
+  }
 
   return (
     <div className="lock">
@@ -76,42 +113,29 @@ function GateLock({ pending }: { pending: NonNullable<ReturnType<typeof pendingG
         <p className="eyebrow">🔒 CHECKPOINT · {course?.title}</p>
         <h2>{quiz.title}</h2>
         <p className="muted">Covers: {quiz.covers}. Everything stays locked until you score {Math.round(DEFAULT_QUIZ_RULES.passMark * 100)}%.</p>
-        {status.kind === 'cooldown' ? (
+        {attempt ? (
+          <>
+            <QuizPlayer
+              key={attempt.no}
+              title={`Checkpoint · attempt ${attempt.no}`}
+              questions={attempt.questions}
+              passNote={`Pass mark ${Math.round(DEFAULT_QUIZ_RULES.passMark * 100)}%`}
+              onDone={finish}
+            />
+            {attempt.failed
+              ? <button className="primary" onClick={() => { startedRef.current = false; setAttempt(null) }}>Continue</button>
+              : <p className="muted small">Leaving or reloading before the end counts as a failed attempt.</p>}
+          </>
+        ) : status.kind === 'cooldown' ? (
           <div className="cooldown">
             <p>You didn't pass. Rest, review, and try again in</p>
             <p className="big">{formatLeft(status.until.getTime() - now)}</p>
             <p className="muted">Your next attempt covers the same topics with different questions.</p>
           </div>
-        ) : started ? (
-          <QuizPlayer
-            key={attemptNo}
-            title={`Checkpoint · attempt ${attemptNo}`}
-            questions={questions}
-            passNote={`Pass mark ${Math.round(DEFAULT_QUIZ_RULES.passMark * 100)}%`}
-            onDone={(result) => {
-              setTimeout(() => {
-                update((s) => {
-                  const g = s.gates[pending.key]
-                  return {
-                    ...s,
-                    gates: {
-                      ...s.gates,
-                      [pending.key]: {
-                        ...g,
-                        attempts: [...g.attempts, { finishedAt: Date.now(), passed: result.passed, score: result.score }],
-                        seen: [...g.seen.filter((id) => !questions.some((q) => q.id === id)), ...questions.map((q) => q.id)],
-                      },
-                    },
-                  }
-                })
-                setStarted(false)
-              }, 2500)
-            }}
-          />
         ) : (
-          <button className="primary big-btn" onClick={() => setStarted(true)}>Start checkpoint ({questions.length} questions)</button>
+          <button className="primary big-btn" onClick={start}>Start checkpoint ({quiz.blueprint.easy + quiz.blueprint.medium + quiz.blueprint.hard} questions)</button>
         )}
-        {pending.gate.attempts.length > 0 && (
+        {pending.gate.attempts.length > 0 && !attempt && (
           <p className="muted small">Previous attempts: {pending.gate.attempts.map((a) => `${Math.round(a.score * 100)}%`).join(', ')}</p>
         )}
       </div>
@@ -125,6 +149,17 @@ function formatLeft(ms: number) {
 }
 
 // ─── Pages ────────────────────────────────────────────────────────────────
+
+function NotFound({ what, course }: { what: string; course: CatalogCourse }) {
+  return (
+    <>
+      <p className="crumbs"><a href={href.home()}>Courses</a> / <a href={href.course(course.slug)}>{course.title}</a></p>
+      <h1>{what} isn't here</h1>
+      <p className="muted">It may not be written yet, or the link is wrong.</p>
+      <p><a href={href.course(course.slug)}>See the weeks of {course.title} →</a></p>
+    </>
+  )
+}
 
 function Home() {
   return (
@@ -185,7 +220,7 @@ function CoursePage({ course }: { course: CatalogCourse }) {
 function WeekPage({ course, week }: { course: CatalogCourse; week: number }) {
   const state = useStore()
   const w = course.weeks.find((x) => x.number === week)
-  if (!w) return <p>Week not found.</p>
+  if (!w) return <NotFound what={`Week ${week}`} course={course} />
   const quizWeek = course.quizzes.get(week)
   return (
     <>
@@ -234,9 +269,10 @@ function DayPage({ course, week, day }: { course: CatalogCourse; week: number; d
     }
   }, [key, quizDay, state.gates, state.learnerId, course.slug, week, day])
 
-  if (!w || !d) return <p>Day not found.</p>
+  if (!w || !d) return <NotFound what={`Week ${week}, Day ${day}`} course={course} />
   const prev = day > 1 ? href.day(course.slug, week, day - 1) : week > 1 ? href.week(course.slug, week - 1) : null
-  const next = day < w.days.length ? href.day(course.slug, week, day + 1) : href.week(course.slug, week + 1)
+  const hasNextWeek = course.weeks.some((x) => x.number === week + 1)
+  const next = day < w.days.length ? href.day(course.slug, week, day + 1) : hasNextWeek ? href.week(course.slug, week + 1) : null
 
   return (
     <>
@@ -291,7 +327,7 @@ function DayPage({ course, week, day }: { course: CatalogCourse; week: number; d
 
       <nav className="pager">
         {prev ? <a href={prev}>← Previous</a> : <span />}
-        <a href={next}>Next →</a>
+        {next ? <a href={next}>Next →</a> : <a href={href.course(course.slug)}>Back to the course</a>}
       </nav>
     </>
   )
@@ -307,7 +343,7 @@ function TesterTools() {
   const gateDays = route.page === 'week' || route.page === 'day' ? gateDaysForWeek(state.learnerId, route.slug, route.week) : null
   return (
     <div className={`tester ${open ? 'open' : ''}`}>
-      <button onClick={() => setOpen(!open)}>🧪 Tester tools</button>
+      <button onClick={() => setOpen(!open)} aria-label="Tester tools" title="Tester tools">{open ? '✕ Close' : '🧪'}</button>
       {open && (
         <div className="tester-body">
           {gateDays && <p>Your random checkpoint days this week: <b>{gateDays.map((d) => `Day ${d}`).join(' & ')}</b></p>}
@@ -335,6 +371,7 @@ export function Viewer() {
   const route = useRoute()
   const state = useStore()
   const pending = pendingGate(state)
+  const [passedScore, setPassedScore] = useState<number | null>(null)
   useEffect(() => { window.scrollTo(0, 0) }, [route])
 
   if (route.page === 'mockup') return <App />
@@ -358,7 +395,14 @@ export function Viewer() {
         <a href={href.home()} className="brand-v">S <span>scribs&amp;pixels</span></a>
         <span className="muted small">test build</span>
       </header>
-      <main>{pending ? <GateLock key={pending.key} pending={pending} /> : page}</main>
+      <main>
+        {passedScore !== null && !pending && (
+          <p className="banner pass" role="status">✅ Checkpoint passed with {Math.round(passedScore * 100)}%. The school is unlocked. <button className="link" onClick={() => setPassedScore(null)}>Dismiss</button></p>
+        )}
+        <ErrorBoundary label="page" resetKey={window.location.hash}>
+          {pending ? <GateLock key={pending.key} pending={pending} onPassed={setPassedScore} /> : page}
+        </ErrorBoundary>
+      </main>
       <TesterTools />
     </div>
   )

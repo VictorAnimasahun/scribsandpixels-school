@@ -23,18 +23,47 @@ export type State = {
 
 const KEY = 'snp-test-state-v1'
 
+const isObject = (v: unknown): v is Record<string, unknown> => typeof v === 'object' && v !== null && !Array.isArray(v)
+
+const isGate = (g: unknown): g is GateRecord =>
+  isObject(g) && typeof g.triggeredAt === 'number' && Array.isArray(g.seen) &&
+  Array.isArray(g.attempts) && g.attempts.every((a) => isObject(a) && typeof a.finishedAt === 'number' && typeof a.passed === 'boolean' && typeof a.score === 'number')
+
+/** Saved state is untrusted (an old version, a half-written save, or a hand edit): keep only the
+ *  parts with the right shape, so bad data can never crash or lock the app. */
+export function sanitise(raw: unknown): State {
+  const v = isObject(raw) ? raw : {}
+  const pick = <T,>(o: unknown, ok: (x: unknown) => x is T) =>
+    Object.fromEntries(Object.entries(isObject(o) ? o : {}).filter(([, x]) => ok(x))) as Record<string, T>
+  return {
+    learnerId: typeof v.learnerId === 'string' && v.learnerId ? v.learnerId : Math.random().toString(36).slice(2, 10),
+    checked: pick(v.checked, (x): x is true => x === true),
+    bestScores: pick(v.bestScores, (x): x is number => typeof x === 'number' && x >= 0 && x <= 1),
+    gates: pick(v.gates, isGate),
+  }
+}
+
 function load(): State {
   try {
     const raw = localStorage.getItem(KEY)
-    if (raw) return JSON.parse(raw) as State
+    if (raw) return sanitise(JSON.parse(raw))
   } catch {
-    // storage unavailable: fall through to a fresh state
+    // storage unavailable or unreadable: fall through to a fresh state
   }
-  return { learnerId: Math.random().toString(36).slice(2, 10), checked: {}, bestScores: {}, gates: {} }
+  return sanitise(null)
 }
 
 let state: State = load()
 const listeners = new Set<() => void>()
+
+// Another tab saved progress: pick it up, so two open tabs don't overwrite each other's ticks.
+if (typeof window !== 'undefined') {
+  window.addEventListener('storage', (e) => {
+    if (e.key !== KEY) return
+    state = load()
+    listeners.forEach((l) => l())
+  })
+}
 
 function save() {
   try {

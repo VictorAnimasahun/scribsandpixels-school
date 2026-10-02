@@ -1,5 +1,6 @@
 import { lazy, Suspense } from 'react'
 import { findSandbox } from '../../content/sandboxes.ts'
+import { ErrorBoundary } from '../ErrorBoundary.tsx'
 
 // Each engine is its own chunk: a French page never downloads the spreadsheet or Python code.
 const engines = {
@@ -21,10 +22,12 @@ export function SandboxHost({ id, compact = false }: { id: string; compact?: boo
         <h3>{icons[sandbox.kind]} Sandbox: {sandbox.title}</h3>
         {sandbox.description && <p className="muted small">{sandbox.description}</p>}
       </header>
-      <Suspense fallback={<p className="muted">Loading sandbox…</p>}>
-        {/* keyed by id: moving from one sandbox to another must not keep the previous one's code, cells or output */}
-        <Engine key={sandbox.id} sandbox={sandbox} />
-      </Suspense>
+      <ErrorBoundary label="sandbox" resetKey={sandbox.id}>
+        <Suspense fallback={<p className="muted">Loading sandbox…</p>}>
+          {/* keyed by id: moving from one sandbox to another must not keep the previous one's code, cells or output */}
+          <Engine key={sandbox.id} sandbox={sandbox} />
+        </Suspense>
+      </ErrorBoundary>
     </section>
   )
 }

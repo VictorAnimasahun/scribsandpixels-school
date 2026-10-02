@@ -70,7 +70,7 @@ patterns:
           - { text: "arrivé", en: "(past participle)", needs: { who: [p1s, p3p] }, why: "After venir de, use the infinitive: « je viens d'arriver », never « arrivé »." }
       - { id: end, fixed: "." }
 
-  - id: where-is
+  - id: town-where-is
     label: "La banque est près du marché"
     slots:
       - id: thing
@@ -190,10 +190,10 @@ challenges:
   - { prompt: "Tunde has just arrived.", pattern: just-did, answer: { who: "Tunde", verb: "vient", action: "arriver" } }
   - { prompt: "We've just eaten.", pattern: just-did, answer: { who: "Nous", verb: "venons", action: "manger" } }
   - { prompt: "They've just bought a car.", pattern: just-did, answer: { who: "Ils", verb: "viennent", action: "acheter une voiture" } }
-  - { prompt: "The bank is near the market.", pattern: where-is, answer: { thing: "La banque", prep: "près de", the: "le", spot: "marché" } }
-  - { prompt: "The pharmacy is opposite the church.", pattern: where-is, answer: { thing: "La pharmacie", prep: "en face de", the: "la", spot: "église" } }
-  - { prompt: "The hotel is far from the shops.", pattern: where-is, answer: { thing: "L'hôtel", prep: "loin de", the: "les", spot: "magasins" } }
-  - { prompt: "The café is at the end of the street.", pattern: where-is, answer: { thing: "Le café", prep: "au bout de", the: "la", spot: "rue" } }
+  - { prompt: "The bank is near the market.", pattern: town-where-is, answer: { thing: "La banque", prep: "près de", the: "le", spot: "marché" } }
+  - { prompt: "The pharmacy is opposite the church.", pattern: town-where-is, answer: { thing: "La pharmacie", prep: "en face de", the: "la", spot: "église" } }
+  - { prompt: "The hotel is far from the shops.", pattern: town-where-is, answer: { thing: "L'hôtel", prep: "loin de", the: "les", spot: "magasins" } }
+  - { prompt: "The café is at the end of the street.", pattern: town-where-is, answer: { thing: "Le café", prep: "au bout de", the: "la", spot: "rue" } }
   - { prompt: "Madam, turn left.", pattern: directions, answer: { to: "Madame,", verb: "tournez", how: "à gauche" } }
   - { prompt: "Tunde, go straight on.", pattern: directions, answer: { to: "Tunde,", verb: "va", how: "tout droit" } }
   - { prompt: "Sir, take the first street on the right.", pattern: directions, answer: { to: "Monsieur,", verb: "prenez", how: "la première rue à droite" } }

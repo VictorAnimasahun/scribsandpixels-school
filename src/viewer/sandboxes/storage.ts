@@ -13,3 +13,11 @@ export function save(key: string, value: string) {
     // storage unavailable: work just isn't kept
   }
 }
+
+export function remove(key: string) {
+  try {
+    localStorage.removeItem(`snp-sandbox:${key}`)
+  } catch {
+    // storage unavailable
+  }
+}

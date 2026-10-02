@@ -17,6 +17,24 @@ describe('sandbox content', () => {
     }
   })
 
+  it('a merged phrase lab has unique pattern ids, and every challenge opens a pattern that has its slots', () => {
+    // Challenges find their pattern by id: two included sets with the same id make the second set's
+    // challenges open the first set's pattern, which can't build the asked sentence.
+    for (const s of sandboxes.filter((x) => x.kind === 'phrases')) {
+      const merged = resolvePhrases(s.id)!
+      const ids = merged.patterns.map((p) => p.id)
+      expect(ids.filter((id, i) => ids.indexOf(id) !== i), `${s.id}: duplicate pattern ids`).toEqual([])
+      for (const c of merged.challenges ?? []) {
+        const pattern = merged.patterns.find((p) => p.id === c.pattern)
+        expect(pattern, `${s.id}: "${c.prompt}" → missing pattern ${c.pattern}`).toBeDefined()
+        for (const slot of pattern!.slots) {
+          if (!('options' in slot)) continue
+          expect(slot.options.some((o) => (o.label ?? o.text) === c.answer[slot.id]), `${s.id}: "${c.prompt}" has no option "${c.answer[slot.id]}" in slot ${slot.id}`).toBe(true)
+        }
+      }
+    }
+  })
+
   it('every ::sandbox embed in a lesson points at a sandbox of the same course', () => {
     for (const [path, md] of Object.entries(weekFiles)) {
       for (const line of md.split('\n')) {

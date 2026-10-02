@@ -86,7 +86,7 @@ button.primary { background: var(--green); color: #fff; border-color: var(--gree
 .pager { display: flex; justify-content: space-between; margin-top: 28px; }
 
 .tester { position: fixed; right: 12px; bottom: 12px; max-width: min(340px, calc(100vw - 24px)); z-index: 10; }
-.tester > button { background: var(--ink); color: #fff; border-color: var(--ink); float: right; }
+.tester > button { background: var(--ink); color: #fff; border-color: var(--ink); float: right; min-width: 44px; min-height: 44px; border-radius: 22px; opacity: .85; }
 .tester-body { clear: both; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 12px; margin-top: 8px; display: flex; flex-direction: column; gap: 8px; box-shadow: 0 6px 24px rgba(0,0,0,.12); font-size: 14px; }
 .tester-body p { margin: 0; }
 
@@ -161,3 +161,6 @@ details.reveal[open] { background: #fff; }
   textarea.code, textarea.stdin, .formula-bar input, .text-answer input, .cell-input { font-size: 16px; }
 }
 .q-code { margin: 0; background: #14201b; color: #e7f0e9; padding: 12px 14px; border-radius: 10px; font: 15px/1.5 ui-monospace, Menlo, monospace; white-space: pre-wrap; overflow-x: auto; }
+.banner { padding: 10px 14px; border-radius: 10px; margin: 8px 0 16px; }
+.banner.pass { background: #e7f5dc; border: 1px solid var(--ok); }
+.crash { border: 1px solid var(--red); background: #fdf0ee; border-radius: 10px; padding: 12px 14px; margin: 10px 0; }

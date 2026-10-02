@@ -162,4 +162,19 @@ describe('text, date and time functions used in Weeks 7–8', () => {
     expect(ev('=TEXTAFTER("ada.okafor@yahoo.com",".",-1)')).toBe('com')
     expect(ev('=TEXTBEFORE("a-b-c","-",2)')).toBe('a-b')
   })
+
+  it('survives hostile input without hanging or exhausting memory', () => {
+    const ev = (cells: Record<string, string | number>) => new Sheet(cells).get('A1')
+    expect(ev({ A1: '=REPT("x",100000000)' })).toEqual({ error: '#VALUE!' })
+    expect(ev({ A1: '=REPT("ab",3)' })).toBe('ababab')
+    // Doubling text 25 times would make 33 million characters: capped at Excel's 32,767.
+    const cells: Record<string, string> = { Y1: 'xx' }
+    const cols = 'ABCDEFGHIJKLMNOPQRSTUVWXY'
+    for (let i = 0; i < cols.length - 1; i++) cells[`${cols[i]}1`] = `=${cols[i + 1]}1&${cols[i + 1]}1`
+    expect(ev(cells)).toEqual({ error: '#VALUE!' })
+    expect(ev({ A1: '=constructor.constructor("return 1")()' })).toEqual({ error: '#NAME?' })
+    expect(ev({ A1: '=__proto__' })).toEqual({ error: '#NAME?' })
+    expect(ev({ A1: '=SUM(' })).toEqual({ error: '#ERROR!' })
+    expect(ev({ A1: '=B1', B1: '=A1' })).toEqual({ error: '#CIRCULAR!' })
+  })
 })

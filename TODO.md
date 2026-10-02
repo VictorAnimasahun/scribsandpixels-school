@@ -27,6 +27,18 @@
 - [x] Web-sandbox auto-checks (in-page checks; `npm run check:web` proves them in headless Chrome)
 - [x] Excel `mustUse`: tasks can require `$` references, not just the right number
 
+## Hardening (weekend 3 Oct 2026)
+- [x] Saved progress is validated on load (corrupt or hand-edited data can't crash or lock the app); two open tabs stay in sync
+- [x] A checkpoint whose quiz no longer exists can't lock the app; starting a checkpoint counts (reload/leave = failed attempt, no dodging the cooldown or re-rolling questions); double-tap safe
+- [x] Fairer typed answers: French spacing before ?/!, commas, guillemets, curly quotes and thousands separators don't decide a mark
+- [x] Python: Stop can't kill a later run; runaway print loops stop at 100,000 characters; output batched
+- [x] Web sandbox: an infinite loop can't brick a lesson (saved code isn't auto-run again); messages only from its own preview; corrupt saves ignored
+- [x] Sheet: =REPT and text results capped at 32,767 characters (no memory crash); corrupt or out-of-range saves ignored
+- [x] Error boundaries: a sandbox that fails to load (site redeployed while open) shows "Reload" instead of blanking the page
+- [x] `npm run sweep`: every page at phone width (606 pages: no JS errors, no sideways scroll); external link report
+- [x] Fixed: French main lab had a duplicate pattern id (Week 9 "where-is"), so those challenges opened the Week 3 builder; a test now forbids duplicates
+- [ ] Check by hand: automatetheboringstuff.com links (unreachable from the test machine on 3 Oct) and sites that block robots (realpython, forvo, innerfrench, myonlinetraininghub, upwork)
+
 ## Content
 - [x] Fullstack + ML Week 3 (HTML & CSS) · Week 4 (Flexbox, responsive, Git + GitHub) · Week 5 (dictionaries, exceptions, modules, JSON) · Week 6 (Open-Meteo weather script, accessibility, portfolio, first gigs)
 - [x] Fullstack + ML Weeks 7–10 (JavaScript basics; arrays, objects, JSON; the DOM; fetch and async)

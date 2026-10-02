@@ -25,6 +25,8 @@ export type WorkerMessage =
   | { id: number; type: 'done'; ok: boolean; error?: string }
 
 let pyodide: Promise<Pyodide> | null = null
+const MAX_OUTPUT = 100_000
+const OUTPUT_LIMIT = 'Output limit reached (100,000 characters). Is something printing in a loop?'
 const decoder = new TextDecoder()
 
 async function load(): Promise<Pyodide> {
@@ -58,18 +60,35 @@ self.onmessage = async (event: MessageEvent<RunRequest>) => {
 
   const lines = [...stdin]
   let printed = ''
+  let limitHit = false
+  // Output is sent in batches (every 50 ms or 4 KB), not one message per print: thousands of tiny
+  // messages would make the page re-draw the console thousands of times and feel frozen.
+  let buffer = ''
+  let lastFlush = Date.now()
+  const flush = () => {
+    if (buffer) post({ id, type: 'out', text: buffer })
+    buffer = ''
+    lastFlush = Date.now()
+  }
   py.setStdout({
     write: (b) => {
       const text = decoder.decode(b)
+      // A runaway print loop would flood the page with millions of lines: stop the program instead.
+      if (printed.length + text.length > MAX_OUTPUT) {
+        limitHit = true
+        throw new Error(OUTPUT_LIMIT)
+      }
       printed += text
-      post({ id, type: 'out', text })
+      buffer += text
+      if (buffer.length > 4096 || Date.now() - lastFlush > 50) flush()
       return b.length
     },
   })
-  py.setStderr({ write: (b) => (post({ id, type: 'err', text: decoder.decode(b) }), b.length) })
+  py.setStderr({ write: (b) => (flush(), post({ id, type: 'err', text: decoder.decode(b) }), b.length) })
   py.setStdin({
     stdin: () => {
       const line = lines.shift()
+      flush()
       if (line !== undefined) post({ id, type: 'out', text: `${line}\n` }) // echo, like a terminal
       return line
     },
@@ -86,9 +105,16 @@ self.onmessage = async (event: MessageEvent<RunRequest>) => {
       globals.set('__code__', code)
       await py.runPythonAsync(tests, { globals })
     }
+    flush()
     post({ id, type: 'done', ok: true })
   } catch (error) {
-    const message = cleanTraceback(String((error as Error).message ?? error))
+    flush()
+    const raw = String((error as Error).message ?? error)
+    if (limitHit) {
+      post({ id, type: 'done', ok: false, error: OUTPUT_LIMIT })
+      return
+    }
+    const message = cleanTraceback(raw)
     const friendly = /EOFError/.test(message) ? `${message}\n\n(Your program asked for more input than the Input box has. Add another line.)` : message
     post({ id, type: 'done', ok: false, error: friendly })
   }

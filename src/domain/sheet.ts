@@ -166,7 +166,17 @@ function lookupIndex(needle: unknown, haystack: unknown[], mode: number): number
   return best
 }
 
+/** Excel's limit on the length of a cell's text. Longer results are #VALUE! (and REPT checks first,
+ *  so =REPT("x",1e9) can't exhaust the browser's memory). */
+export const MAX_TEXT = 32_767
+
 const extraFunctions: Record<string, (...args: Arg[]) => unknown> = {
+  REPT: (text, times) => {
+    const t = String(scalar(text) ?? '')
+    const n = Math.floor(num(scalar(times)))
+    if (!(n >= 0)) return FormulaError.VALUE
+    return t.length * n > MAX_TEXT ? FormulaError.VALUE : t.repeat(n)
+  },
   SUMIFS: (sum, ...pairs) => numbersAt(flat(sum), matchingIndexes(pairs)).reduce((a, b) => a + b, 0),
   COUNTIFS: (...pairs) => matchingIndexes(pairs).length,
   AVERAGEIFS: (avg, ...pairs) => {
@@ -363,7 +373,8 @@ export class Sheet {
     if (Array.isArray(result)) return this.normalise((result as unknown[][])[0]?.[0] ?? null) // no spilling in the sandbox
     if (result === null || result === undefined) return 0
     if (typeof result === 'number') return Number.isFinite(result) ? result : { error: '#NUM!' }
-    if (typeof result === 'string' || typeof result === 'boolean') return result
+    if (typeof result === 'string') return result.length > MAX_TEXT ? { error: '#VALUE!' } : result
+    if (typeof result === 'boolean') return result
     const text = String(result)
     if (ERROR_TEXT.test(text)) return { error: text.match(ERROR_TEXT)![0] }
     return text

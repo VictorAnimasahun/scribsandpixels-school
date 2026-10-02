@@ -14,6 +14,24 @@ const datasets: Record<string, () => Promise<{ default: string }>> = {
   'timesheet_2025-03': () => import('../../content/courses/excel/datasets/timesheet_2025-03.csv?raw'),
 }
 
+/** Saved cells are untrusted: keep only text values at sensible addresses, so a corrupted save
+ *  (or one pointing at cell ZZ99999) can't crash the sandbox or make it draw a million cells. */
+function readSaved(raw: string | null): Record<string, string> | null {
+  if (!raw) return null
+  try {
+    const parsed: unknown = JSON.parse(raw)
+    if (typeof parsed !== 'object' || parsed === null || Array.isArray(parsed)) return null
+    const cells: Record<string, string> = {}
+    for (const [ref, value] of Object.entries(parsed)) {
+      if (typeof value !== 'string' || !/^[A-Z]{1,2}[1-9]\d{0,3}$/.test(ref)) continue
+      cells[ref] = value.slice(0, 2000)
+    }
+    return cells
+  } catch {
+    return null
+  }
+}
+
 export default function SheetSandbox({ sandbox }: Props) {
   const key = `sheet:${sandbox.id}`
   const [initial, setInitial] = useState<Record<string, string> | null>(null)
@@ -34,8 +52,7 @@ export default function SheetSandbox({ sandbox }: Props) {
       if (cancelled) return
       const start = buildSheetCells(sandbox, csv)
       setInitial(start)
-      const saved = loadSaved(key)
-      setCells(saved ? (JSON.parse(saved) as Record<string, string>) : start)
+      setCells(readSaved(loadSaved(key)) ?? start)
     })
     return () => { cancelled = true }
   }, [sandbox, key])

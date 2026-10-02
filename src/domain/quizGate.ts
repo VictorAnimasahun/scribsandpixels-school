@@ -72,7 +72,19 @@ export function gateDaysForWeek(learnerSeed: string, courseSlug: string, week: n
 }
 
 function normalise(text: string, { accents, caseSensitive }: { accents: boolean; caseSensitive: boolean }): string {
-  let out = text.trim().replace(/\s+/g, ' ').replace(/[.!?]+$/, '').replace(/[’`]/g, "'")
+  // Forgiving about form, strict about content: spacing, commas, quote marks and end punctuation
+  // never decide a mark ("Tu vas où ?" = "Tu vas où?", "₦9,800" = "₦9800", "Le samedi, je…" = "Le samedi je…").
+  let out = text
+    .replace(/[’`‘]/g, "'")
+    .replace(/[“”]/g, '"') // phone keyboards curl quotes; code answers need the straight ones
+    .replace(/[«»]/g, ' ')
+    .replace(/(\d),(?=\d{3}\b)/g, '$1') // thousands separators
+    .replace(/,/g, ' ')
+    .replace(/\s+([?!:;.])/g, '$1')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .replace(/[.!?]+$/, '')
+    .trim()
   if (!caseSensitive) out = out.toLowerCase()
   if (!accents) out = out.normalize('NFD').replace(/[̀-ͯ]/g, '')
   return out

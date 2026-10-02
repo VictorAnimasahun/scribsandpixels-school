@@ -41,7 +41,8 @@ export function QuizPlayer({ title, questions, secondsPerQuestion, passNote, onD
     return questions.map<View>((q) => ({
       choiceOrder: 'choices' in q ? shuffled(q.choices.map((_, i) => i), random) : [],
       orderPool: q.type === 'order' ? shuffled(q.items, random) : [],
-      matchOptions: q.type === 'match' ? shuffled(q.pairs.map(([, r]) => r), random) : [],
+      // A right-hand value can belong to two pairs (e.g. two "TRUE"s): list each value once.
+      matchOptions: q.type === 'match' ? shuffled([...new Set(q.pairs.map(([, r]) => r))], random) : [],
     }))
   }, [questions, seed])
 
@@ -65,7 +66,8 @@ export function QuizPlayer({ title, questions, secondsPerQuestion, passNote, onD
   useEffect(() => {
     if (!secondsPerQuestion || marked || result) return
     if (timeLeft <= 0) {
-      submit(undefined)
+      // A typed answer that wasn't sent in time still counts; anything else is "time up".
+      submit(question.type === 'text' && String(draft ?? '').trim() ? String(draft) : undefined)
       return
     }
     const t = setTimeout(() => setTimeLeft((s) => s - 1), 1000)
@@ -84,6 +86,8 @@ export function QuizPlayer({ title, questions, secondsPerQuestion, passNote, onD
       onDone(final, responses)
     }
   }
+
+  if (!question && !result) return <p className="muted">This quiz has no questions yet.</p>
 
   if (result) {
     return (
@@ -164,9 +168,9 @@ function Input({ question: q, view, draft, setDraft, submit, locked }: InputProp
     }
     case 'text':
       return (
-        <form className="text-answer" onSubmit={(e) => { e.preventDefault(); submit(String(draft ?? '')) }}>
+        <form className="text-answer" onSubmit={(e) => { e.preventDefault(); if (String(draft ?? '').trim()) submit(String(draft)) }}>
           <input autoFocus disabled={locked} value={String(draft ?? '')} onChange={(e) => setDraft(e.target.value)} placeholder="Type your answer…" autoCapitalize="off" autoCorrect="off" spellCheck={false} />
-          {!locked && <button className="primary" type="submit">Check</button>}
+          {!locked && <button className="primary" type="submit" disabled={!String(draft ?? '').trim()}>Check</button>}
         </form>
       )
     case 'order': {

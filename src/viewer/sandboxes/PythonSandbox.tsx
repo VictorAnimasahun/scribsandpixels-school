@@ -13,19 +13,33 @@ const TASK_TIMEOUT_MS = 10_000
 function useRunner() {
   const worker = useRef<Worker | null>(null)
   const nextId = useRef(1)
+  // Runs still waiting for an answer: Stop (or a timeout) settles every one of them and clears its
+  // timer, so a stale timer can never kill a later run.
+  const pending = useRef(new Map<number, { timer: ReturnType<typeof setTimeout>; finish: (r: RunResult) => void }>())
   const make = () => new Worker(new URL('./pyWorker.ts', import.meta.url), { type: 'module' })
   useEffect(() => () => worker.current?.terminate(), [])
+
+  const stop = (reason = 'Stopped.') => {
+    worker.current?.terminate()
+    worker.current = null
+    for (const { finish } of [...pending.current.values()]) finish({ ok: false, output: '', error: reason })
+  }
 
   const run = (code: string, stdin: string[], onChunk: (m: WorkerMessage) => void, tests?: string) =>
     new Promise<RunResult>((resolve) => {
       worker.current ??= make()
+      const w = worker.current
       const id = nextId.current++
       let output = ''
-      const onTimeout = () => {
-        stop()
-        resolve({ ok: false, output, error: 'Stopped after 10 seconds. Is there an infinite loop?' })
+      const arm = (ms: number) => setTimeout(() => stop('Stopped after 10 seconds. Is there an infinite loop?'), ms)
+      const finish = (result: RunResult) => {
+        const entry = pending.current.get(id)
+        if (!entry) return
+        clearTimeout(entry.timer)
+        pending.current.delete(id)
+        w.removeEventListener('message', listener)
+        resolve({ ...result, output: result.output || output })
       }
-      let timer = setTimeout(onTimeout, TASK_TIMEOUT_MS)
       const listener = (event: MessageEvent<WorkerMessage>) => {
         const m = event.data
         if (m.id !== id) return
@@ -33,23 +47,16 @@ function useRunner() {
         if (m.type === 'out' || m.type === 'err') output += m.text
         if (m.type === 'status') {
           // Loading Python the first time doesn't count against the run's time limit.
-          clearTimeout(timer)
-          timer = setTimeout(onTimeout, TASK_TIMEOUT_MS + 60_000)
+          clearTimeout(pending.current.get(id)?.timer)
+          pending.current.set(id, { timer: arm(TASK_TIMEOUT_MS + 60_000), finish })
         }
-        if (m.type === 'done') {
-          clearTimeout(timer)
-          worker.current?.removeEventListener('message', listener)
-          resolve({ ok: m.ok, output, error: m.error })
-        }
+        if (m.type === 'done') finish({ ok: m.ok, output, error: m.error })
       }
-      worker.current.addEventListener('message', listener)
-      worker.current.postMessage({ id, code, stdin, tests } satisfies RunRequest)
+      pending.current.set(id, { timer: arm(TASK_TIMEOUT_MS), finish })
+      w.addEventListener('message', listener)
+      w.postMessage({ id, code, stdin, tests } satisfies RunRequest)
     })
 
-  const stop = () => {
-    worker.current?.terminate()
-    worker.current = null
-  }
   return { run, stop }
 }
 
@@ -82,6 +89,7 @@ export default function PythonSandbox({ sandbox }: Props) {
     setRunning(true)
     for (const [i, task] of (sandbox.tasks ?? []).entries()) {
       const result = await run(code, task.stdin ?? [], () => {}, task.tests)
+      if (result.error === 'Stopped.') break
       const passed = taskPassed(task, result)
       const missing = (task.expectOutput ?? []).filter((line) => !result.output.includes(line))
       setTaskState((s) => ({
@@ -97,7 +105,7 @@ export default function PythonSandbox({ sandbox }: Props) {
       <CodeEditor value={code} onChange={setCode} onRun={runCode} language="python" />
       <div className="sandbox-row">
         <button className="primary" onClick={runCode} disabled={running}>▶ Run</button>
-        {running && <button onClick={() => { stop(); setRunning(false); setOutput((o) => `${o}\n■ Stopped.`) }}>■ Stop</button>}
+        {running && <button onClick={() => stop()}>■ Stop</button>}
         {sandbox.tasks?.length ? <button onClick={checkTasks} disabled={running}>✓ Check tasks</button> : null}
         <button onClick={() => { if (confirm('Reset to the starter code?')) setCode(sandbox.starter ?? '') }}>Reset</button>
       </div>
