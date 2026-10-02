@@ -1,0 +1,136 @@
+# Week 10 · Chez moi: BANGS adjectives before the noun (bel/nouvel/vieil, de + plural adjective), colours after and agreeing, il n'y a pas de.
+id: fr-w10-maison
+kind: phrases
+title: "Chez moi"
+description: "BANGS adjectives (beauty, age, number, goodness, size) go before the noun; colours go after and agree. Try beau before a vowel, or des before a plural adjective, to see the rules."
+voice: fr-FR
+patterns:
+  - id: bangs
+    label: "C'est un bel appartement (BANGS)"
+    slots:
+      - id: start
+        label: "It's / They're"
+        options:
+          - { text: "C'est", en: "It's", needs: { home: [sg] }, why: "« C'est » is for one thing; use « Ce sont » for plurals." }
+          - { text: "Ce sont", en: "They're", needs: { home: [pl] }, why: "« Ce sont » is for plurals; use « C'est » for one thing." }
+      - id: art
+        label: "a / some"
+        options:
+          - { text: "un", en: "a (masc.)", needs: { home: [m, sg] }, why: "« un » is for a masculine singular noun." }
+          - { text: "une", en: "a (fem.)", needs: { home: [f, sg] }, why: "« une » is for a feminine singular noun." }
+          - { text: "de", en: "some (before an adjective)", needs: { home: [pl] }, why: "« de » replaces des before a plural adjective, so it's for plurals." }
+          - { text: "des", en: "(wrong here)", needs: { home: [sg, pl] }, why: "In written French, des becomes « de » before a plural adjective: « de grandes maisons »." }
+      - id: adj
+        label: "BANGS adjective"
+        options:
+          - { text: "grand", en: "big", needs: { home: [m, sg] }, why: "« grand » is masculine singular." }
+          - { text: "grande", en: "big", needs: { home: [f, sg] }, why: "« grande » is feminine singular." }
+          - { text: "grandes", en: "big", needs: { home: [f, pl] }, why: "« grandes » is feminine plural." }
+          - { text: "petit", en: "small", needs: { home: [m, sg] }, why: "« petit » is masculine singular." }
+          - { text: "petite", en: "small", needs: { home: [f, sg] }, why: "« petite » is feminine singular." }
+          - { text: "beau", en: "beautiful", needs: { home: [m, sg, c] }, why: "« beau » is masculine before a consonant. Before a vowel: « bel » (un bel appartement). Feminine: « belle »." }
+          - { text: "bel", en: "beautiful", needs: { home: [m, sg, v] }, why: "« bel » is only for a masculine noun starting with a vowel or mute h." }
+          - { text: "belle", en: "beautiful", needs: { home: [f, sg] }, why: "« belle » is feminine singular." }
+          - { text: "beaux", en: "beautiful", needs: { home: [m, pl] }, why: "« beaux » is masculine plural." }
+          - { text: "nouveau", en: "new", needs: { home: [m, sg, c] }, why: "« nouveau » is masculine before a consonant. Before a vowel: « nouvel »." }
+          - { text: "nouvel", en: "new", needs: { home: [m, sg, v] }, why: "« nouvel » is only for a masculine noun starting with a vowel or mute h." }
+          - { text: "nouvelle", en: "new", needs: { home: [f, sg] }, why: "« nouvelle » is feminine singular." }
+          - { text: "vieux", en: "old", needs: { home: [m, sg, c] }, why: "« vieux » is masculine before a consonant. Before a vowel: « vieil »." }
+          - { text: "vieil", en: "old", needs: { home: [m, sg, v] }, why: "« vieil » is only for a masculine noun starting with a vowel or mute h." }
+          - { text: "vieille", en: "old", needs: { home: [f, sg] }, why: "« vieille » is feminine singular." }
+          - { text: "jolie", en: "pretty", needs: { home: [f, sg] }, why: "« jolie » is feminine singular." }
+          - { text: "bon", en: "good", needs: { home: [m, sg] }, why: "« bon » is masculine singular (feminine: bonne)." }
+      - id: home
+        label: "Noun"
+        options:
+          - { text: "appartement", en: "flat", tags: [m, sg, v] }
+          - { text: "immeuble", en: "building", tags: [m, sg, v] }
+          - { text: "hôtel", en: "hotel", tags: [m, sg, v] }
+          - { text: "salon", en: "living room", tags: [m, sg, c] }
+          - { text: "quartier", en: "neighbourhood", tags: [m, sg, c] }
+          - { text: "maison", en: "house", tags: [f, sg] }
+          - { text: "cuisine", en: "kitchen", tags: [f, sg] }
+          - { text: "chambre", en: "bedroom", tags: [f, sg] }
+          - { text: "maisons", en: "houses", tags: [f, pl] }
+          - { text: "fenêtres", en: "windows", tags: [f, pl] }
+          - { text: "jardins", en: "gardens", tags: [m, pl] }
+      - { id: end, fixed: "." }
+
+  - id: colours
+    label: "Une armoire blanche (colours)"
+    slots:
+      - { id: start, fixed: "Il y a" }
+      - id: art
+        label: "a / some"
+        options:
+          - { text: "un", en: "a (masc.)", needs: { thing: [m, sg] }, why: "« un » is for a masculine singular noun." }
+          - { text: "une", en: "a (fem.)", needs: { thing: [f, sg] }, why: "« une » is for a feminine singular noun." }
+          - { text: "des", en: "some", needs: { thing: [pl] }, why: "« des » is for plurals (the colour comes after, so des stays)." }
+      - id: thing
+        label: "Furniture"
+        options:
+          - { text: "canapé", en: "sofa", tags: [m, sg] }
+          - { text: "tapis", en: "rug", tags: [m, sg] }
+          - { text: "fauteuil", en: "armchair", tags: [m, sg] }
+          - { text: "armoire", en: "wardrobe", tags: [f, sg] }
+          - { text: "table basse", en: "coffee table", tags: [f, sg] }
+          - { text: "rideaux", en: "curtains", tags: [m, pl] }
+          - { text: "coussins", en: "cushions", tags: [m, pl] }
+          - { text: "chaises", en: "chairs", tags: [f, pl] }
+      - id: colour
+        label: "Colour"
+        options:
+          - { text: "blanc", en: "white", needs: { thing: [m, sg] }, why: "« blanc » is masculine singular. Feminine: « blanche »." }
+          - { text: "blanche", en: "white", needs: { thing: [f, sg] }, why: "« blanche » is feminine singular (not « blance »)." }
+          - { text: "blancs", en: "white", needs: { thing: [m, pl] }, why: "« blancs » is masculine plural." }
+          - { text: "blanches", en: "white", needs: { thing: [f, pl] }, why: "« blanches » is feminine plural." }
+          - { text: "noir", en: "black", needs: { thing: [m, sg] }, why: "« noir » is masculine singular." }
+          - { text: "noire", en: "black", needs: { thing: [f, sg] }, why: "« noire » is feminine singular." }
+          - { text: "noirs", en: "black", needs: { thing: [m, pl] }, why: "« noirs » is masculine plural." }
+          - { text: "verte", en: "green", needs: { thing: [f, sg] }, why: "« verte » is feminine singular." }
+          - { text: "vert", en: "green", needs: { thing: [m, sg] }, why: "« vert » is masculine singular." }
+          - { text: "bleu", en: "blue", needs: { thing: [m, sg] }, why: "« bleu » is masculine singular." }
+          - { text: "bleues", en: "blue", needs: { thing: [f, pl] }, why: "« bleues » is feminine plural." }
+          - { text: "rouge", en: "red", needs: { thing: [sg] }, why: "« rouge » is the same for masculine and feminine, but plurals take -s: « rouges »." }
+          - { text: "rouges", en: "red", needs: { thing: [pl] }, why: "« rouges » is plural." }
+          - { text: "marron", en: "brown (never changes)" }
+          - { text: "orange", en: "orange (never changes)" }
+          - { text: "marrons", en: "(wrong)", needs: { thing: [sg, pl] }, why: "« marron » never changes, not even in the plural: des chaises marron." }
+      - { id: end, fixed: "." }
+
+  - id: none
+    label: "Il n'y a pas de jardin"
+    slots:
+      - { id: start, fixed: "Il n'y a pas" }
+      - id: art
+        label: "Article"
+        options:
+          - { text: "de", en: "any (after pas)" }
+          - { text: "un", en: "(wrong)", needs: { room: [m, f] }, why: "After « pas », un/une/des become « de »: il n'y a pas de jardin." }
+          - { text: "une", en: "(wrong)", needs: { room: [m, f] }, why: "After « pas », un/une/des become « de »: il n'y a pas de cuisine." }
+      - id: room
+        label: "What's missing"
+        options:
+          - { text: "jardin", en: "garden", tags: [m] }
+          - { text: "balcon", en: "balcony", tags: [m] }
+          - { text: "garage", en: "garage", tags: [m] }
+          - { text: "ascenseur", en: "lift", tags: [m] }
+          - { text: "climatisation", en: "air con", tags: [f] }
+          - { text: "groupe électrogène", en: "generator", tags: [m] }
+      - { id: end, fixed: "." }
+
+challenges:
+  - { prompt: "It's a beautiful flat.", pattern: bangs, answer: { start: "C'est", art: "un", adj: "bel", home: "appartement" } }
+  - { prompt: "It's a new hotel.", pattern: bangs, answer: { start: "C'est", art: "un", adj: "nouvel", home: "hôtel" } }
+  - { prompt: "It's an old building.", pattern: bangs, answer: { start: "C'est", art: "un", adj: "vieil", home: "immeuble" } }
+  - { prompt: "It's a small bedroom.", pattern: bangs, answer: { start: "C'est", art: "une", adj: "petite", home: "chambre" } }
+  - { prompt: "It's a good neighbourhood.", pattern: bangs, answer: { start: "C'est", art: "un", adj: "bon", home: "quartier" } }
+  - { prompt: "They're big houses.", pattern: bangs, answer: { start: "Ce sont", art: "de", adj: "grandes", home: "maisons" } }
+  - { prompt: "They're beautiful gardens.", pattern: bangs, answer: { start: "Ce sont", art: "de", adj: "beaux", home: "jardins" } }
+  - { prompt: "There's a white wardrobe.", pattern: colours, answer: { art: "une", thing: "armoire", colour: "blanche" } }
+  - { prompt: "There are black curtains.", pattern: colours, answer: { art: "des", thing: "rideaux", colour: "noirs" } }
+  - { prompt: "There's a blue sofa.", pattern: colours, answer: { art: "un", thing: "canapé", colour: "bleu" } }
+  - { prompt: "There are brown chairs.", pattern: colours, answer: { art: "des", thing: "chaises", colour: "marron" } }
+  - { prompt: "There are orange cushions.", pattern: colours, answer: { art: "des", thing: "coussins", colour: "orange" } }
+  - { prompt: "There's no lift.", pattern: none, answer: { art: "de", room: "ascenseur" } }
+  - { prompt: "There's no garden.", pattern: none, answer: { art: "de", room: "jardin" } }

@@ -174,3 +174,24 @@ describe('fr-w09-ville challenges', () => {
     ])
   })
 })
+
+describe('fr-w10-maison challenges', () => {
+  it('BANGS adjectives, colour agreement and pas de produce correct French', async () => {
+    expect(await challengeSentences('fr-w10-maison')).toEqual([
+      "C'est un bel appartement.",
+      "C'est un nouvel hôtel.",
+      "C'est un vieil immeuble.",
+      "C'est une petite chambre.",
+      "C'est un bon quartier.",
+      'Ce sont de grandes maisons.',
+      'Ce sont de beaux jardins.',
+      'Il y a une armoire blanche.',
+      'Il y a des rideaux noirs.',
+      'Il y a un canapé bleu.',
+      'Il y a des chaises marron.',
+      'Il y a des coussins orange.',
+      "Il n'y a pas d'ascenseur.",
+      "Il n'y a pas de jardin.",
+    ])
+  })
+})

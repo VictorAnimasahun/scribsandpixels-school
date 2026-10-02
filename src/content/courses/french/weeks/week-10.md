@@ -74,6 +74,10 @@ Agree the colours:
 
 **Check:** 1. noire 2. blancs 3. verte 4. orange 5. blanche
 
+**Sandbox:** the *Une armoire blanche* tab: colours go after the noun and agree. Try *marrons* to see why it's wrong.
+
+::sandbox fr-w10-maison
+
 ### Speak & Listen (10 min)
 - Language Transfer tracks 77–78.
 - Name the colour of 10 objects in your home, with agreement.
@@ -114,6 +118,10 @@ Put the adjective in the right place and form:
 1. une cuisine (moderne)  2. un appartement (beau)  3. une chambre (petit)  4. un quartier (calme)  5. des maisons (grand)  6. un hôtel (nouveau)
 
 **Check:** 1. une cuisine moderne 2. un bel appartement 3. une petite chambre 4. un quartier calme 5. de grandes maisons 6. un nouvel hôtel
+
+**Sandbox:** the *C'est un bel appartement* tab. Try *beau* with *appartement*, or *des* with *grandes maisons*, to see the rules.
+
+::sandbox fr-w10-maison
 
 ### Speak & Listen (10 min)
 - Language Transfer tracks 79–80.
@@ -168,6 +176,10 @@ Build rich descriptions with everything you know:
 
 ### Practice (15 min)
 Answer in writing: *Décrivez votre logement. Qu'est-ce que vous aimez ? Qu'est-ce que vous n'aimez pas ?* (8–10 sentences)
+
+**Sandbox:** the *Il n'y a pas de jardin* tab, then describe a room with the other two tabs.
+
+::sandbox fr-w10-maison
 
 ### Speak & Listen (10 min)
 Read your text aloud twice, then describe your home again from memory.
