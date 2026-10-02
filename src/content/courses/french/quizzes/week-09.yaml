@@ -1,0 +1,298 @@
+# French · Week 9 quizzes. Format and rules: src/content/QUIZZES.md
+week: 9
+days:
+
+  # ─────────────────────────── DAY 1 ───────────────────────────
+  - day: 1
+    gate:
+      title: "Checkpoint: Week 8 review"
+      covers: "Week 8: aller and places, être/avoir/faire/aller, all articles, review of Weeks 5–6, DELF A1 signs"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w09-d1-g01, difficulty: easy, type: text, prompt: "nous ___ (aller)", accept: ["allons"] }
+        - { id: fr-w09-d1-g02, difficulty: easy, type: mcq, prompt: "Je vais ___ marché.", choices: ["au", "à la", "à le", "aux"], answer: 0 }
+        - { id: fr-w09-d1-g03, difficulty: easy, type: mcq, prompt: "Je vais ___ le médecin.", choices: ["chez", "au", "à", "à la"], answer: 0 }
+        - { id: fr-w09-d1-g04, difficulty: easy, type: text, prompt: "ils ___ (faire)", accept: ["font"] }
+        - { id: fr-w09-d1-g05, difficulty: easy, type: truefalse, prompt: "« Il fait chaud » means it's hot.", answer: true }
+        - { id: fr-w09-d1-g06, difficulty: easy, type: text, prompt: "ils ___ (avoir)", accept: ["ont"] }
+        - { id: fr-w09-d1-g07, difficulty: medium, type: text, prompt: "Correct: Je ne mange pas des fruits.", accept: ["Je ne mange pas de fruits.", "Je ne mange pas de fruits"] }
+        - { id: fr-w09-d1-g08, difficulty: medium, type: text, prompt: "Translate: We are going to the hospital.", accept: ["Nous allons à l'hôpital.", "Nous allons à l'hôpital", "On va à l'hôpital."] }
+        - { id: fr-w09-d1-g09, difficulty: medium, type: match, prompt: "Match the ils forms.", pairs: [["être", "sont"], ["avoir", "ont"], ["faire", "font"], ["aller", "vont"]] }
+        - { id: fr-w09-d1-g10, difficulty: medium, type: mcq, prompt: "Where is chez used instead of à?", choices: ["With people: chez ma mère", "With countries", "With shops", "With times"], answer: 0 }
+        - { id: fr-w09-d1-g11, difficulty: medium, type: truefalse, prompt: "After pas, le/la/les stay the same.", answer: true }
+        - { id: fr-w09-d1-g12, difficulty: medium, type: text, prompt: "Correct: Tu vas à le bureau ?", accept: ["Tu vas au bureau ?", "Tu vas au bureau?", "Tu vas au bureau"] }
+        - { id: fr-w09-d1-g13, difficulty: medium, type: text, prompt: "Translate: I go to my mother's place.", accept: ["Je vais chez ma mère.", "Je vais chez ma mère"] }
+        - { id: fr-w09-d1-g14, difficulty: medium, type: text, prompt: "Translate: They (men) are going to the United States.", accept: ["Ils vont aux États-Unis.", "Ils vont aux États-Unis"] }
+        - { id: fr-w09-d1-g15, difficulty: medium, type: mcq, prompt: "Nous achetons ___ huile.", choices: ["de l'", "du", "de la", "des"], answer: 0 }
+        - { id: fr-w09-d1-g16, difficulty: hard, type: text, prompt: "Translate: On Saturdays, I go to the market with my sister.", accept: ["Le samedi, je vais au marché avec ma sœur.", "Le samedi je vais au marché avec ma sœur.", "Le samedi, je vais au marché avec ma sœur"] }
+        - { id: fr-w09-d1-g17, difficulty: hard, type: mcq, prompt: "Find the sentence with NO mistake.", choices: ["Elle va à la pharmacie puis chez sa tante.", "Nous faisez les courses.", "Ils sont faim.", "Je vais à le cinéma."], answer: 0 }
+        - { id: fr-w09-d1-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["Je n'ai pas d'argent.", "Elle va à l'école.", "Vous allez chez Ada ?", "On vont au marché."], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Venir"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fr-w09-d1-rf01, difficulty: easy, type: text, prompt: "je ___ (venir)", accept: ["viens"] }
+          - { id: fr-w09-d1-rf02, difficulty: easy, type: text, prompt: "tu ___ (venir)", accept: ["viens"] }
+          - { id: fr-w09-d1-rf03, difficulty: easy, type: text, prompt: "il ___ (venir)", accept: ["vient"] }
+          - { id: fr-w09-d1-rf04, difficulty: easy, type: text, prompt: "nous ___ (venir)", accept: ["venons"] }
+          - { id: fr-w09-d1-rf05, difficulty: easy, type: text, prompt: "vous ___ (venir)", accept: ["venez"] }
+          - { id: fr-w09-d1-rf06, difficulty: easy, type: text, prompt: "ils ___ (venir)", accept: ["viennent"] }
+          - { id: fr-w09-d1-rf07, difficulty: easy, type: mcq, prompt: "de + le", choices: ["du", "de le", "des", "au"], answer: 0 }
+          - { id: fr-w09-d1-rf08, difficulty: easy, type: mcq, prompt: "de + les", choices: ["des", "du", "de les", "aux"], answer: 0 }
+          - { id: fr-w09-d1-rf09, difficulty: easy, type: mcq, prompt: "Je viens ___ Nigeria.", choices: ["du", "de", "des", "de la"], answer: 0 }
+          - { id: fr-w09-d1-rf10, difficulty: easy, type: mcq, prompt: "Je viens ___ France.", choices: ["de", "du", "des", "de la"], answer: 0 }
+          - { id: fr-w09-d1-rf11, difficulty: easy, type: mcq, prompt: "Where are you from? (tu)", choices: ["Tu viens d'où ?", "Tu vas où ?", "Où tu es ?", "D'où tu vas ?"], answer: 0 }
+      - kind: brain-teaser
+        title: "Where from?"
+        questions:
+          - { id: fr-w09-d1-bt01, difficulty: medium, type: text, prompt: "Ils (revenir) ___ du Canada.", accept: ["reviennent"] }
+          - { id: fr-w09-d1-bt02, difficulty: medium, type: text, prompt: "Nous venons ___ école.", accept: ["de l'"] }
+          - { id: fr-w09-d1-bt03, difficulty: medium, type: text, prompt: "Elle vient ___ Sénégal.", accept: ["du"] }
+          - { id: fr-w09-d1-bt04, difficulty: hard, type: text, prompt: "Translate: We come from the United States.", accept: ["Nous venons des États-Unis.", "Nous venons des États-Unis", "On vient des États-Unis."] }
+          - { id: fr-w09-d1-bt05, difficulty: hard, type: mcq, prompt: "Why « je viens de France » but « je viens du Nigeria »?", choices: ["Feminine countries take plain de; masculine take du", "France is a city", "Nigeria is plural", "Random"], answer: 0 }
+
+  # ─────────────────────────── DAY 2 ───────────────────────────
+  - day: 2
+    gate:
+      title: "Checkpoint: venir and de + article"
+      covers: "Week 9 · Day 1: venir, revenir, devenir, de + le/la/l'/les, countries"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w09-d2-g01, difficulty: easy, type: text, prompt: "Tu (venir) ___ avec nous ?", accept: ["viens"] }
+        - { id: fr-w09-d2-g02, difficulty: easy, type: text, prompt: "Je viens ___ bureau.", accept: ["du"] }
+        - { id: fr-w09-d2-g03, difficulty: easy, type: text, prompt: "Vous venez ___ France ?", accept: ["de"] }
+        - { id: fr-w09-d2-g04, difficulty: easy, type: truefalse, prompt: "de + la stays « de la ».", answer: true }
+        - { id: fr-w09-d2-g05, difficulty: easy, type: mcq, prompt: "Elle vient ___ banque.", choices: ["de la", "du", "des", "de l'"], answer: 0 }
+        - { id: fr-w09-d2-g06, difficulty: easy, type: mcq, prompt: "devenir =", choices: ["to become", "to come back", "to come", "to divide"], answer: 0 }
+        - { id: fr-w09-d2-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["du", "de + le"], ["de la", "de + la"], ["de l'", "de + l'"], ["des", "de + les"]] }
+        - { id: fr-w09-d2-g08, difficulty: medium, type: text, prompt: "Il vient ___ aéroport.", accept: ["de l'"] }
+        - { id: fr-w09-d2-g09, difficulty: medium, type: text, prompt: "Translate: I come from Lagos.", accept: ["Je viens de Lagos.", "Je viens de Lagos"] }
+        - { id: fr-w09-d2-g10, difficulty: medium, type: text, prompt: "elles ___ (revenir)", accept: ["reviennent"] }
+        - { id: fr-w09-d2-g11, difficulty: medium, type: truefalse, prompt: "« Je viens de le marché » is correct.", answer: false }
+        - { id: fr-w09-d2-g12, difficulty: medium, type: text, prompt: "Translate: She comes back from the market.", accept: ["Elle revient du marché.", "Elle revient du marché"] }
+        - { id: fr-w09-d2-g13, difficulty: medium, type: mcq, prompt: "Nous venons ___ Ghana.", choices: ["du", "de", "des", "de la"], answer: 0 }
+        - { id: fr-w09-d2-g14, difficulty: medium, type: text, prompt: "Translate: Where do you (vous) come from?", accept: ["Vous venez d'où ?", "D'où venez-vous ?", "Vous venez d'où?", "D'où est-ce que vous venez ?"] }
+        - { id: fr-w09-d2-g15, difficulty: medium, type: order, prompt: "Order venir: je → ils.", items: ["viens", "viens", "vient", "venons", "venez", "viennent"] }
+        - { id: fr-w09-d2-g16, difficulty: hard, type: text, prompt: "Translate: They (men) come from the pharmacy and from the bank.", accept: ["Ils viennent de la pharmacie et de la banque.", "Ils viennent de la pharmacie et de la banque"] }
+        - { id: fr-w09-d2-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « Nous venons de les États-Unis et du France. »", choices: ["des États-Unis … de France", "Only de les", "Only du France", "No error"], answer: 0 }
+        - { id: fr-w09-d2-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["Je viens du Cameroun.", "Elle vient de Belgique.", "Ils viennent de l'hôpital.", "Tu viens de le cinéma ?"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Just done"
+        secondsPerQuestion: 9
+        questions:
+          - { id: fr-w09-d2-rf01, difficulty: easy, type: mcq, prompt: "I've just eaten.", choices: ["Je viens de manger.", "Je vais manger.", "Je mange.", "Je viens manger."], answer: 0 }
+          - { id: fr-w09-d2-rf02, difficulty: easy, type: mcq, prompt: "He has just arrived.", choices: ["Il vient d'arriver.", "Il va arriver.", "Il arrive.", "Il vient arriver."], answer: 0 }
+          - { id: fr-w09-d2-rf03, difficulty: easy, type: mcq, prompt: "venir de + …", choices: ["infinitive", "past participle", "noun only", "-ing form"], answer: 0 }
+          - { id: fr-w09-d2-rf04, difficulty: easy, type: mcq, prompt: "Je vais manger =", choices: ["I'm going to eat", "I've just eaten", "I eat", "I ate"], answer: 0 }
+          - { id: fr-w09-d2-rf05, difficulty: easy, type: mcq, prompt: "Nous venons de finir =", choices: ["We've just finished", "We're going to finish", "We come to finish", "We finish"], answer: 0 }
+          - { id: fr-w09-d2-rf06, difficulty: easy, type: mcq, prompt: "de before a vowel", choices: ["d'", "de", "du", "des"], answer: 0 }
+          - { id: fr-w09-d2-rf07, difficulty: easy, type: truefalse, prompt: "« Je viens de manger » means \"I come to eat\".", answer: false }
+          - { id: fr-w09-d2-rf08, difficulty: easy, type: mcq, prompt: "They've just left. (partir)", choices: ["Ils viennent de partir.", "Ils vont partir.", "Ils partent.", "Ils viennent partir."], answer: 0 }
+          - { id: fr-w09-d2-rf09, difficulty: easy, type: mcq, prompt: "You've (tu) just got up. (se lever)", choices: ["Tu viens de te lever.", "Tu viens de se lever.", "Tu vas te lever.", "Tu viens te lever."], answer: 0 }
+          - { id: fr-w09-d2-rf10, difficulty: easy, type: mcq, prompt: "Three time frames: just did / doing / about to", choices: ["viens de / mange / vais", "vais / mange / viens de", "mange / viens de / vais", "suis / ai / vais"], answer: 0 }
+      - kind: brain-teaser
+        title: "What just happened?"
+        questions:
+          - { id: fr-w09-d2-bt01, difficulty: medium, type: text, prompt: "Tunde / arriver à Paris (just)", accept: ["Tunde vient d'arriver à Paris.", "Tunde vient d'arriver à Paris"] }
+          - { id: fr-w09-d2-bt02, difficulty: medium, type: text, prompt: "nous / regarder un film (just)", accept: ["Nous venons de regarder un film.", "Nous venons de regarder un film"] }
+          - { id: fr-w09-d2-bt03, difficulty: medium, type: text, prompt: "elles / acheter une voiture (just)", accept: ["Elles viennent d'acheter une voiture.", "Elles viennent d'acheter une voiture"] }
+          - { id: fr-w09-d2-bt04, difficulty: hard, type: text, prompt: "Translate: I've just finished work and I'm going to eat.", accept: ["Je viens de finir le travail et je vais manger.", "Je viens de finir le travail et je vais manger"] }
+          - { id: fr-w09-d2-bt05, difficulty: hard, type: mcq, prompt: "Spot the error: « Ils viennent de se coucher et elle vient d'arrive. »", choices: ["d'arrive → d'arriver (infinitive)", "se coucher is wrong", "viennent → vient", "No error"], answer: 0 }
+
+  # ─────────────────────────── DAY 3 ───────────────────────────
+  - day: 3
+    gate:
+      title: "Checkpoint: venir de + infinitive"
+      covers: "Week 9 · Day 2: the recent past, compared with present and aller + infinitive"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w09-d3-g01, difficulty: easy, type: mcq, prompt: "Je viens de manger =", choices: ["I've just eaten", "I'm going to eat", "I come to eat", "I eat"], answer: 0 }
+        - { id: fr-w09-d3-g02, difficulty: easy, type: mcq, prompt: "We've just arrived.", choices: ["Nous venons d'arriver.", "Nous allons arriver.", "Nous arrivons.", "Nous venons arriver."], answer: 0 }
+        - { id: fr-w09-d3-g03, difficulty: easy, type: truefalse, prompt: "venir de is followed by an infinitive.", answer: true }
+        - { id: fr-w09-d3-g04, difficulty: easy, type: text, prompt: "Elle ___ de partir. (venir)", accept: ["vient"] }
+        - { id: fr-w09-d3-g05, difficulty: easy, type: mcq, prompt: "I'm going to eat.", choices: ["Je vais manger.", "Je viens de manger.", "Je mange.", "Je veux mangé."], answer: 0 }
+        - { id: fr-w09-d3-g06, difficulty: easy, type: text, prompt: "Vous ___ de finir ? (venir)", accept: ["venez"] }
+        - { id: fr-w09-d3-g07, difficulty: medium, type: text, prompt: "Translate: They (men) have just eaten.", accept: ["Ils viennent de manger.", "Ils viennent de manger"] }
+        - { id: fr-w09-d3-g08, difficulty: medium, type: text, prompt: "Translate: I've just arrived.", accept: ["Je viens d'arriver.", "Je viens d'arriver"] }
+        - { id: fr-w09-d3-g09, difficulty: medium, type: match, prompt: "Match.", pairs: [["Je viens de manger.", "I've just eaten."], ["Je mange.", "I'm eating."], ["Je vais manger.", "I'm going to eat."], ["Je ne mange pas.", "I'm not eating."]] }
+        - { id: fr-w09-d3-g10, difficulty: medium, type: text, prompt: "Translate: You (tu) have just got up.", accept: ["Tu viens de te lever.", "Tu viens de te lever"] }
+        - { id: fr-w09-d3-g11, difficulty: medium, type: truefalse, prompt: "« Il vient d'arriver » uses d' because arriver starts with a vowel.", answer: true }
+        - { id: fr-w09-d3-g12, difficulty: medium, type: text, prompt: "Translate: We've just watched a film.", accept: ["Nous venons de regarder un film.", "Nous venons de regarder un film", "On vient de regarder un film."] }
+        - { id: fr-w09-d3-g13, difficulty: medium, type: mcq, prompt: "Which is the recent past?", choices: ["Elle vient de téléphoner.", "Elle va téléphoner.", "Elle téléphone.", "Elle veut téléphoner."], answer: 0 }
+        - { id: fr-w09-d3-g14, difficulty: medium, type: text, prompt: "Translate: She has just bought a car.", accept: ["Elle vient d'acheter une voiture.", "Elle vient d'acheter une voiture"] }
+        - { id: fr-w09-d3-g15, difficulty: medium, type: order, prompt: "Build: We've just finished work.", items: ["Nous", "venons", "de", "finir", "le travail"] }
+        - { id: fr-w09-d3-g16, difficulty: hard, type: text, prompt: "Translate: My parents have just come back from the United States.", accept: ["Mes parents viennent de revenir des États-Unis.", "Mes parents viennent de revenir des États-Unis"] }
+        - { id: fr-w09-d3-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « Je viens de mangé. »", choices: ["mangé → manger (infinitive)", "viens → vais", "de → du", "No error"], answer: 0 }
+        - { id: fr-w09-d3-g18, difficulty: hard, type: multi, prompt: "Which mean \"just did\"? (Select all.)", choices: ["Il vient de sortir.", "Nous venons de manger.", "Tu viens d'appeler.", "Je vais sortir."], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Where is it?"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fr-w09-d3-rf01, difficulty: easy, type: mcq, prompt: "near", choices: ["près de", "loin de", "en face de", "derrière"], answer: 0 }
+          - { id: fr-w09-d3-rf02, difficulty: easy, type: mcq, prompt: "far from", choices: ["loin de", "près de", "à côté de", "devant"], answer: 0 }
+          - { id: fr-w09-d3-rf03, difficulty: easy, type: mcq, prompt: "opposite", choices: ["en face de", "à côté de", "entre", "au bout de"], answer: 0 }
+          - { id: fr-w09-d3-rf04, difficulty: easy, type: mcq, prompt: "between … and …", choices: ["entre … et …", "près de … et", "devant … derrière", "à … de"], answer: 0 }
+          - { id: fr-w09-d3-rf05, difficulty: easy, type: mcq, prompt: "at the corner of", choices: ["au coin de", "au bout de", "à côté de", "en face de"], answer: 0 }
+          - { id: fr-w09-d3-rf06, difficulty: easy, type: mcq, prompt: "at the end of", choices: ["au bout de", "au coin de", "loin de", "à droite de"], answer: 0 }
+          - { id: fr-w09-d3-rf07, difficulty: easy, type: mcq, prompt: "to the left of", choices: ["à gauche de", "à droite de", "tout droit", "devant"], answer: 0 }
+          - { id: fr-w09-d3-rf08, difficulty: easy, type: mcq, prompt: "près ___ marché", choices: ["du", "de le", "au", "des"], answer: 0 }
+          - { id: fr-w09-d3-rf09, difficulty: easy, type: mcq, prompt: "en face ___ église", choices: ["de l'", "du", "de la", "à l'"], answer: 0 }
+          - { id: fr-w09-d3-rf10, difficulty: easy, type: truefalse, prompt: "« devant » and « derrière » don't need de.", answer: true }
+      - kind: brain-teaser
+        title: "Locate it"
+        questions:
+          - { id: fr-w09-d3-bt01, difficulty: medium, type: text, prompt: "La pharmacie est en face ___ hôpital et à côté ___ marché. (two, comma)", accept: ["de l', du", "de l',du", "de l' du"] }
+          - { id: fr-w09-d3-bt02, difficulty: medium, type: text, prompt: "Translate: The bank is near the market.", accept: ["La banque est près du marché.", "La banque est près du marché"] }
+          - { id: fr-w09-d3-bt03, difficulty: medium, type: text, prompt: "Translate: The post office is between the bank and the cinema.", accept: ["La poste est entre la banque et le cinéma.", "La poste est entre la banque et le cinéma"] }
+          - { id: fr-w09-d3-bt04, difficulty: hard, type: text, prompt: "Translate: The airport is far from the city.", accept: ["L'aéroport est loin de la ville.", "L'aéroport est loin de la ville"] }
+          - { id: fr-w09-d3-bt05, difficulty: hard, type: mcq, prompt: "Spot the error: « Le café est à côté de la gare et près de le cinéma. »", choices: ["près de le → près du", "à côté de la → à côté du", "est → sont", "No error"], answer: 0 }
+
+  # ─────────────────────────── DAY 4 ───────────────────────────
+  - day: 4
+    gate:
+      title: "Checkpoint: prepositions of place"
+      covers: "Week 9 · Day 3: près de, loin de, en face de, à côté de, entre, au coin de, à gauche/droite de, au bout de"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w09-d4-g01, difficulty: easy, type: mcq, prompt: "en face de =", choices: ["opposite", "next to", "behind", "far from"], answer: 0 }
+        - { id: fr-w09-d4-g02, difficulty: easy, type: mcq, prompt: "à droite de =", choices: ["to the right of", "straight on", "to the left of", "in front of"], answer: 0 }
+        - { id: fr-w09-d4-g03, difficulty: easy, type: truefalse, prompt: "près de + le = près du.", answer: true }
+        - { id: fr-w09-d4-g04, difficulty: easy, type: mcq, prompt: "au bout de la rue =", choices: ["at the end of the street", "at the corner of the street", "across the street", "far from the street"], answer: 0 }
+        - { id: fr-w09-d4-g05, difficulty: easy, type: mcq, prompt: "à côté ___ gare", choices: ["de la", "du", "de l'", "des"], answer: 0 }
+        - { id: fr-w09-d4-g06, difficulty: easy, type: mcq, prompt: "loin ___ ville", choices: ["de la", "du", "à la", "des"], answer: 0 }
+        - { id: fr-w09-d4-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["près de", "near"], ["loin de", "far from"], ["au coin de", "at the corner of"], ["entre", "between"]] }
+        - { id: fr-w09-d4-g08, difficulty: medium, type: text, prompt: "La banque est près ___ supermarché.", accept: ["du"] }
+        - { id: fr-w09-d4-g09, difficulty: medium, type: text, prompt: "La pharmacie est en face ___ église.", accept: ["de l'"] }
+        - { id: fr-w09-d4-g10, difficulty: medium, type: text, prompt: "Translate: The café is next to the station.", accept: ["Le café est à côté de la gare.", "Le café est à côté de la gare"] }
+        - { id: fr-w09-d4-g11, difficulty: medium, type: truefalse, prompt: "« entre la banque et le cinéma » needs de.", answer: false }
+        - { id: fr-w09-d4-g12, difficulty: medium, type: text, prompt: "Translate: at the corner of the street", accept: ["au coin de la rue"] }
+        - { id: fr-w09-d4-g13, difficulty: medium, type: mcq, prompt: "à droite ___ supermarché", choices: ["du", "de la", "au", "de le"], answer: 0 }
+        - { id: fr-w09-d4-g14, difficulty: medium, type: text, prompt: "Translate: The hotel is opposite the bank.", accept: ["L'hôtel est en face de la banque.", "L'hôtel est en face de la banque"] }
+        - { id: fr-w09-d4-g15, difficulty: medium, type: mcq, prompt: "près ___ toilettes", choices: ["des", "du", "de les", "aux"], answer: 0 }
+        - { id: fr-w09-d4-g16, difficulty: hard, type: text, prompt: "Translate: The restaurant is at the end of the street, to the left of the cinema.", accept: ["Le restaurant est au bout de la rue, à gauche du cinéma.", "Le restaurant est au bout de la rue à gauche du cinéma.", "Le restaurant est au bout de la rue, à gauche du cinéma"] }
+        - { id: fr-w09-d4-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « La poste est en face de le hôpital. »", choices: ["de le hôpital → de l'hôpital", "en face → en face à", "est → sont", "No error"], answer: 0 }
+        - { id: fr-w09-d4-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["près de l'école", "loin des magasins", "à côté du café", "en face de le parc"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Directions"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fr-w09-d4-rf01, difficulty: easy, type: mcq, prompt: "Go straight on (vous)", choices: ["Allez tout droit.", "Tournez à droite.", "Traversez.", "Continuez à gauche."], answer: 0 }
+          - { id: fr-w09-d4-rf02, difficulty: easy, type: mcq, prompt: "Turn left (vous)", choices: ["Tournez à gauche.", "Tournez à droite.", "Allez tout droit.", "Prenez à gauche."], answer: 0 }
+          - { id: fr-w09-d4-rf03, difficulty: easy, type: mcq, prompt: "Take the first street on the right", choices: ["Prenez la première rue à droite.", "Prenez la première rue à gauche.", "Tournez la rue.", "Allez la première."], answer: 0 }
+          - { id: fr-w09-d4-rf04, difficulty: easy, type: mcq, prompt: "Cross the bridge", choices: ["Traversez le pont.", "Tournez le pont.", "Continuez le pont.", "Prenez le pont à droite."], answer: 0 }
+          - { id: fr-w09-d4-rf05, difficulty: easy, type: mcq, prompt: "until the traffic light", choices: ["jusqu'au feu", "jusqu'à la feu", "au feu de", "devant le feu"], answer: 0 }
+          - { id: fr-w09-d4-rf06, difficulty: easy, type: mcq, prompt: "tu imperative of tourner", choices: ["tourne", "tournes", "tournez", "tourner"], answer: 0 }
+          - { id: fr-w09-d4-rf07, difficulty: easy, type: mcq, prompt: "tu imperative of aller", choices: ["va", "vas", "allez", "aller"], answer: 0 }
+          - { id: fr-w09-d4-rf08, difficulty: easy, type: mcq, prompt: "tu imperative of prendre", choices: ["prends", "prend", "prenez", "prendre"], answer: 0 }
+          - { id: fr-w09-d4-rf09, difficulty: easy, type: mcq, prompt: "Let's go!", choices: ["Allons-y !", "Allez !", "Va !", "Aller !"], answer: 0 }
+          - { id: fr-w09-d4-rf10, difficulty: easy, type: mcq, prompt: "It's five minutes on foot.", choices: ["C'est à cinq minutes à pied.", "C'est cinq minutes en pied.", "Il est à cinq minutes.", "C'est à pied cinq."], answer: 0 }
+      - kind: brain-teaser
+        title: "Give directions"
+        questions:
+          - { id: fr-w09-d4-bt01, difficulty: medium, type: mcq, prompt: "Why « Tourne à gauche ! » and not « Tournes »?", choices: ["-er verbs drop the -s in the tu imperative", "tournes is plural", "It's informal", "Random"], answer: 0 }
+          - { id: fr-w09-d4-bt02, difficulty: medium, type: text, prompt: "Translate: Excuse me, where is the station, please?", accept: ["Pardon, où est la gare, s'il vous plaît ?", "Pardon, où est la gare s'il vous plaît ?", "Excusez-moi, où est la gare, s'il vous plaît ?", "Pardon, où est la gare, s'il vous plaît?"] }
+          - { id: fr-w09-d4-bt03, difficulty: medium, type: order, prompt: "Order the directions.", items: ["Allez tout droit.", "Tournez à gauche au feu.", "Traversez la place.", "C'est à droite."] }
+          - { id: fr-w09-d4-bt04, difficulty: hard, type: text, prompt: "Translate (vous): Continue until the traffic light, then turn right.", accept: ["Continuez jusqu'au feu, puis tournez à droite.", "Continuez jusqu'au feu puis tournez à droite.", "Continuez jusqu'au feu, ensuite tournez à droite."] }
+          - { id: fr-w09-d4-bt05, difficulty: hard, type: mcq, prompt: "Imperative of être (vous)", choices: ["soyez", "êtes", "soyons", "sois"], answer: 0 }
+
+  # ─────────────────────────── DAY 5 ───────────────────────────
+  - day: 5
+    gate:
+      title: "Checkpoint: imperative and directions"
+      covers: "Week 9 · Day 4: imperative (tu/nous/vous), dropping -s, sois/aie, asking for and giving directions"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w09-d5-g01, difficulty: easy, type: mcq, prompt: "Turn right (vous)", choices: ["Tournez à droite.", "Tourne à gauche.", "Tournez tout droit.", "Allez à gauche."], answer: 0 }
+        - { id: fr-w09-d5-g02, difficulty: easy, type: mcq, prompt: "The imperative is the present tense…", choices: ["without the subject", "with \"let\"", "in the past", "with être"], answer: 0 }
+        - { id: fr-w09-d5-g03, difficulty: easy, type: truefalse, prompt: "« Va ! » is the tu imperative of aller.", answer: true }
+        - { id: fr-w09-d5-g04, difficulty: easy, type: mcq, prompt: "tout droit =", choices: ["straight on", "all right", "to the right", "everything"], answer: 0 }
+        - { id: fr-w09-d5-g05, difficulty: easy, type: mcq, prompt: "C'est loin ? — Non, c'est…", choices: ["tout près", "tout droit", "à gauche", "loin"], answer: 0 }
+        - { id: fr-w09-d5-g06, difficulty: easy, type: mcq, prompt: "nous imperative of continuer (let's continue)", choices: ["continuons", "continuez", "continue", "continuer"], answer: 0 }
+        - { id: fr-w09-d5-g07, difficulty: medium, type: match, prompt: "Match tu / vous.", pairs: [["tourne", "tournez"], ["prends", "prenez"], ["va", "allez"], ["traverse", "traversez"]] }
+        - { id: fr-w09-d5-g08, difficulty: medium, type: text, prompt: "Imperative (tu) of continuer", accept: ["continue"] }
+        - { id: fr-w09-d5-g09, difficulty: medium, type: text, prompt: "Translate (vous): Take the second street on the left.", accept: ["Prenez la deuxième rue à gauche.", "Prenez la deuxième rue à gauche"] }
+        - { id: fr-w09-d5-g10, difficulty: medium, type: mcq, prompt: "Imperative of avoir (tu)", choices: ["aie", "as", "ayez", "avoir"], answer: 0 }
+        - { id: fr-w09-d5-g11, difficulty: medium, type: truefalse, prompt: "« Prends le bus ! » keeps its -s because prendre isn't an -er verb.", answer: true }
+        - { id: fr-w09-d5-g12, difficulty: medium, type: text, prompt: "Translate: How do I get to the station, please? (Pour aller…)", accept: ["Pour aller à la gare, s'il vous plaît ?", "Pour aller à la gare, s'il vous plaît?", "Pour aller à la gare s'il vous plaît ?"] }
+        - { id: fr-w09-d5-g13, difficulty: medium, type: mcq, prompt: "Be patient! (vous)", choices: ["Soyez patients !", "Êtes patients !", "Soyons patients !", "Sois patients !"], answer: 0 }
+        - { id: fr-w09-d5-g14, difficulty: medium, type: text, prompt: "Translate (vous): Cross the square.", accept: ["Traversez la place.", "Traversez la place"] }
+        - { id: fr-w09-d5-g15, difficulty: medium, type: order, prompt: "Order the exchange.", items: ["Pardon, où est la pharmacie ?", "Allez tout droit, puis tournez à droite.", "C'est loin ?", "Non, c'est à cinq minutes à pied."] }
+        - { id: fr-w09-d5-g16, difficulty: hard, type: text, prompt: "Translate (tu): Go straight on, then take the first street on the right.", accept: ["Va tout droit, puis prends la première rue à droite.", "Va tout droit puis prends la première rue à droite.", "Va tout droit, ensuite prends la première rue à droite."] }
+        - { id: fr-w09-d5-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « Tournes à gauche et vas tout droit ! »", choices: ["Tourne … va (no -s)", "Only tournes", "Only vas", "No error"], answer: 0 }
+        - { id: fr-w09-d5-g18, difficulty: hard, type: multi, prompt: "Which are correct imperatives? (Select all.)", choices: ["Mange !", "Prenez le bus !", "Allons au marché !", "Manges !"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "En ou à ?"
+        secondsPerQuestion: 7
+        questions:
+          - { id: fr-w09-d5-rf01, difficulty: easy, type: mcq, prompt: "___ bus", choices: ["en", "à"], answer: 0 }
+          - { id: fr-w09-d5-rf02, difficulty: easy, type: mcq, prompt: "___ pied", choices: ["à", "en"], answer: 0 }
+          - { id: fr-w09-d5-rf03, difficulty: easy, type: mcq, prompt: "___ avion", choices: ["en", "à"], answer: 0 }
+          - { id: fr-w09-d5-rf04, difficulty: easy, type: mcq, prompt: "___ moto", choices: ["à", "en"], answer: 0 }
+          - { id: fr-w09-d5-rf05, difficulty: easy, type: mcq, prompt: "___ voiture", choices: ["en", "à"], answer: 0 }
+          - { id: fr-w09-d5-rf06, difficulty: easy, type: mcq, prompt: "___ vélo", choices: ["à", "en"], answer: 0 }
+          - { id: fr-w09-d5-rf07, difficulty: easy, type: mcq, prompt: "___ train", choices: ["en", "à"], answer: 0 }
+          - { id: fr-w09-d5-rf08, difficulty: easy, type: mcq, prompt: "a return ticket", choices: ["un aller-retour", "un aller simple", "un retour", "un billet simple"], answer: 0 }
+          - { id: fr-w09-d5-rf09, difficulty: easy, type: mcq, prompt: "a one-way ticket", choices: ["un aller simple", "un aller-retour", "un ticket double", "un retour"], answer: 0 }
+          - { id: fr-w09-d5-rf10, difficulty: easy, type: mcq, prompt: "Which platform?", choices: ["Quel quai ?", "Quelle porte ?", "Quel train ?", "Quelle gare ?"], answer: 0 }
+      - kind: brain-teaser
+        title: "À la gare"
+        questions:
+          - { id: fr-w09-d5-bt01, difficulty: medium, type: mcq, prompt: "en vs à for transport:", choices: ["en = inside a vehicle, à = on it / on foot", "en = slow, à = fast", "random", "en = public, à = private always"], answer: 0 }
+          - { id: fr-w09-d5-bt02, difficulty: medium, type: text, prompt: "Translate: I go to work by bus and I come home on foot.", accept: ["Je vais au travail en bus et je rentre à pied.", "Je vais au travail en bus et je rentre à pied"] }
+          - { id: fr-w09-d5-bt03, difficulty: medium, type: text, prompt: "Translate: A return ticket to Lyon, please.", accept: ["Un aller-retour pour Lyon, s'il vous plaît.", "Un aller-retour pour Lyon s'il vous plaît.", "Un aller-retour pour Lyon, s'il vous plaît"] }
+          - { id: fr-w09-d5-bt04, difficulty: hard, type: text, prompt: "Translate: What time does the next train for Lyon leave?", accept: ["Le prochain train pour Lyon part à quelle heure ?", "À quelle heure part le prochain train pour Lyon ?", "Le prochain train pour Lyon part à quelle heure?"] }
+          - { id: fr-w09-d5-bt05, difficulty: hard, type: mcq, prompt: "Station dialogue: « Il y a un train à 8 h 15. Ça fait 64 euros. » When and how much?", choices: ["8:15, €64", "8:50, €46", "6:15, €84", "8:15, €46"], answer: 0 }
+
+  # ─────────────────────────── DAY 6 ───────────────────────────
+  - day: 6
+    gate:
+      title: "Checkpoint: transport"
+      covers: "Week 9 · Day 5: en vs à with transport, prendre + transport, tickets, station phrases"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w09-d6-g01, difficulty: easy, type: mcq, prompt: "by taxi", choices: ["en taxi", "à taxi", "au taxi", "par taxi only"], answer: 0 }
+        - { id: fr-w09-d6-g02, difficulty: easy, type: mcq, prompt: "on foot", choices: ["à pied", "en pied", "au pied", "par pied"], answer: 0 }
+        - { id: fr-w09-d6-g03, difficulty: easy, type: truefalse, prompt: "« Je prends le bus » uses prendre for transport.", answer: true }
+        - { id: fr-w09-d6-g04, difficulty: easy, type: mcq, prompt: "un billet is for…", choices: ["a train or plane", "only the bus", "food", "a concert only"], answer: 0 }
+        - { id: fr-w09-d6-g05, difficulty: easy, type: mcq, prompt: "by okada (motorbike)", choices: ["à moto", "en moto", "au moto", "par moto"], answer: 0 }
+        - { id: fr-w09-d6-g06, difficulty: easy, type: mcq, prompt: "Bon voyage ! =", choices: ["Have a good trip!", "Good journey ended!", "Good morning!", "Welcome!"], answer: 0 }
+        - { id: fr-w09-d6-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["en avion", "by plane"], ["à vélo", "by bike"], ["en métro", "by underground"], ["en bateau", "by boat"]] }
+        - { id: fr-w09-d6-g08, difficulty: medium, type: text, prompt: "Translate: I take a taxi.", accept: ["Je prends un taxi.", "Je prends un taxi"] }
+        - { id: fr-w09-d6-g09, difficulty: medium, type: text, prompt: "Translate: It's ten minutes by taxi.", accept: ["C'est à dix minutes en taxi.", "C'est à dix minutes en taxi"] }
+        - { id: fr-w09-d6-g10, difficulty: medium, type: mcq, prompt: "Pour quand ? =", choices: ["For when?", "For whom?", "Why?", "How much?"], answer: 0 }
+        - { id: fr-w09-d6-g11, difficulty: medium, type: truefalse, prompt: "« un ticket » is used for the bus or metro.", answer: true }
+        - { id: fr-w09-d6-g12, difficulty: medium, type: text, prompt: "Translate: It leaves from platform 3.", accept: ["Il part du quai numéro 3.", "Il part du quai 3.", "Il part du quai numéro trois.", "Il part du quai trois."] }
+        - { id: fr-w09-d6-g13, difficulty: medium, type: mcq, prompt: "Nous allons à Abuja ___ avion.", choices: ["en", "à", "au", "par le"], answer: 0 }
+        - { id: fr-w09-d6-g14, difficulty: medium, type: text, prompt: "Translate: for tomorrow morning", accept: ["pour demain matin"] }
+        - { id: fr-w09-d6-g15, difficulty: medium, type: order, prompt: "Order the ticket purchase.", items: ["Un aller-retour pour Lyon, s'il vous plaît.", "Pour quand ?", "Pour demain matin.", "Ça fait 64 euros.", "Il part de quel quai ?"] }
+        - { id: fr-w09-d6-g16, difficulty: hard, type: text, prompt: "Translate: My brother goes to university by bike, and my sister by car.", accept: ["Mon frère va à l'université à vélo, et ma sœur en voiture.", "Mon frère va à l'université à vélo et ma sœur en voiture.", "Mon frère va à l'université à vélo, et ma sœur en voiture"] }
+        - { id: fr-w09-d6-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « Je vais au bureau à bus et je rentre en pied. »", choices: ["en bus … à pied", "Only à bus", "Only en pied", "No error"], answer: 0 }
+        - { id: fr-w09-d6-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["Elle vient en métro.", "Nous rentrons à pied.", "Ils voyagent en train.", "Je vais à voiture."], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Week 9 lightning round"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fr-w09-d6-rf01, difficulty: easy, type: text, prompt: "ils ___ (venir)", accept: ["viennent"] }
+          - { id: fr-w09-d6-rf02, difficulty: easy, type: mcq, prompt: "Je viens ___ marché.", choices: ["du", "de le", "au", "des"], answer: 0 }
+          - { id: fr-w09-d6-rf03, difficulty: easy, type: mcq, prompt: "I've just eaten.", choices: ["Je viens de manger.", "Je vais manger.", "Je mange.", "J'ai manger."], answer: 0 }
+          - { id: fr-w09-d6-rf04, difficulty: easy, type: mcq, prompt: "opposite", choices: ["en face de", "à côté de", "près de", "loin de"], answer: 0 }
+          - { id: fr-w09-d6-rf05, difficulty: easy, type: mcq, prompt: "Turn left (tu)", choices: ["Tourne à gauche.", "Tournes à gauche.", "Tournez à droite.", "Tourner à gauche."], answer: 0 }
+          - { id: fr-w09-d6-rf06, difficulty: easy, type: mcq, prompt: "Go straight on (vous)", choices: ["Allez tout droit.", "Va tout droit.", "Allons à droite.", "Allez à gauche."], answer: 0 }
+          - { id: fr-w09-d6-rf07, difficulty: easy, type: mcq, prompt: "___ pied", choices: ["à", "en"], answer: 0 }
+          - { id: fr-w09-d6-rf08, difficulty: easy, type: mcq, prompt: "___ bus", choices: ["en", "à"], answer: 0 }
+          - { id: fr-w09-d6-rf09, difficulty: easy, type: mcq, prompt: "a return ticket", choices: ["un aller-retour", "un aller simple", "un retour simple", "un billet aller"], answer: 0 }
+          - { id: fr-w09-d6-rf10, difficulty: easy, type: mcq, prompt: "near the school", choices: ["près de l'école", "près du école", "près de la école", "près l'école"], answer: 0 }
+      - kind: brain-teaser
+        title: "Guide a visitor"
+        questions:
+          - { id: fr-w09-d6-bt01, difficulty: medium, type: text, prompt: "Translate (vous): Take the bus, then walk for five minutes. (marcher)", accept: ["Prenez le bus, puis marchez pendant cinq minutes.", "Prenez le bus puis marchez pendant cinq minutes.", "Prenez le bus, puis marchez cinq minutes."] }
+          - { id: fr-w09-d6-bt02, difficulty: medium, type: text, prompt: "Translate: The pharmacy is opposite the bank.", accept: ["La pharmacie est en face de la banque.", "La pharmacie est en face de la banque"] }
+          - { id: fr-w09-d6-bt03, difficulty: medium, type: mcq, prompt: "Tandem message: « J'apprends le français depuis deux mois » =", choices: ["I've been learning French for two months", "I learned French two months ago", "I'll learn French in two months", "I learn French twice a month"], answer: 0 }
+          - { id: fr-w09-d6-bt04, difficulty: hard, type: text, prompt: "Translate: I live in Lagos. I've been learning French for two months.", accept: ["J'habite à Lagos. J'apprends le français depuis deux mois.", "J'habite à Lagos. J'apprends le français depuis deux mois"] }
+          - { id: fr-w09-d6-bt05, difficulty: hard, type: mcq, prompt: "Find the sentence with NO mistake.", choices: ["Le restaurant est près du marché, à dix minutes à pied.", "Tournes à droite au feu.", "Je viens de le bureau.", "Elle va à l'école en pied."], answer: 0 }

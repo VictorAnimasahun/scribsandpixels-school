@@ -11,10 +11,10 @@
 ## Quizzes (a slice at a time, no mass generation)
 - [x] Quiz engine: random weekly checkpoints (1–2/week), 70% pass, 60-min cooldown, new questions on retry
 - [x] French Week 1 · Excel Week 1 question banks
-- [x] French Weeks 2–8 · Excel Weeks 2–8
-- [ ] French Weeks 9–52
-- [ ] Excel Weeks 9–24
-- [x] Fullstack + ML Weeks 1–7 (every Python snippet checked by running it: `node scripts/check-quiz-code.mjs`)
+- [x] French Weeks 2–9 · Excel Weeks 2–9 (Excel figures recomputed from the datasets)
+- [ ] French Weeks 10–52
+- [ ] Excel Weeks 10–24
+- [x] Fullstack + ML Weeks 1–10 (every Python snippet checked by running it: `node scripts/check-quiz-code.mjs`)
 - [ ] Fullstack + ML later weeks as they're written
 
 ## Sandboxes (a slice at a time)

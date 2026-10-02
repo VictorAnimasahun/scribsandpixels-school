@@ -1,0 +1,298 @@
+# Excel · Week 9 quizzes. Format and rules: src/content/QUIZZES.md
+# Figures verified against datasets/ (products.csv, sales_2025.csv, employees.csv).
+week: 9
+days:
+
+  # ─────────────────────────── DAY 1 ───────────────────────────
+  - day: 1
+    gate:
+      title: "Checkpoint: Week 8 review"
+      covers: "Week 8: date serials, DATEDIF, EDATE/EOMONTH/WORKDAY/NETWORKDAYS, time calculations, payroll from the timesheet"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w09-d1-g01, difficulty: easy, type: mcq, prompt: "Last day of the month, n months later", choices: ["EOMONTH", "EDATE", "WORKDAY", "DAY"], answer: 0 }
+        - { id: xl-w09-d1-g02, difficulty: easy, type: mcq, prompt: "Hours worked from ClockIn (C2) and ClockOut (D2)", choices: ["=(D2-C2)*24", "=D2-C2", "=(D2-C2)/24", "=HOUR(D2)-C2"], answer: 0 }
+        - { id: xl-w09-d1-g03, difficulty: easy, type: truefalse, prompt: "In Excel, a date is a whole number of days and a time is a fraction of a day.", answer: true }
+        - { id: xl-w09-d1-g04, difficulty: easy, type: mcq, prompt: "Overtime above 8 hours (E2 = hours)", choices: ["=MAX(0,E2-8)", "=MIN(0,E2-8)", "=E2-8", "=IF(E2>8,8)"], answer: 0 }
+        - { id: xl-w09-d1-g05, difficulty: easy, type: mcq, prompt: "Working days between two dates", choices: ["NETWORKDAYS", "WORKDAY", "DAYS", "DATEDIF"], answer: 0 }
+        - { id: xl-w09-d1-g06, difficulty: easy, type: mcq, prompt: "Show durations over 24 hours", choices: ["[h]:mm", "hh:mm", "h:mm AM/PM", "General"], answer: 0 }
+        - { id: xl-w09-d1-g07, difficulty: medium, type: text, prompt: "Working days in March 2025 (no holidays)?", accept: ["21"] }
+        - { id: xl-w09-d1-g08, difficulty: medium, type: text, prompt: "08:07 → 18:31, hours to 2 decimals?", accept: ["10.40", "10.4"] }
+        - { id: xl-w09-d1-g09, difficulty: medium, type: match, prompt: "Match.", pairs: [["EDATE", "same day n months later"], ["EOMONTH", "last day of a month"], ["WORKDAY", "n working days later"], ["NETWORKDAYS", "count working days"]] }
+        - { id: xl-w09-d1-g10, difficulty: medium, type: mcq, prompt: "Night shift 22:00 → 06:00", choices: ["=MOD(D2-C2,1)*24", "=(D2-C2)*24", "=ABS(D2-C2)", "=(C2-D2)*24"], answer: 0 }
+        - { id: xl-w09-d1-g11, difficulty: medium, type: truefalse, prompt: "=IF(C2>TIME(8,30,0),\"Late\",\"On time\") flags 08:30 exactly as Late.", answer: false }
+        - { id: xl-w09-d1-g12, difficulty: medium, type: text, prompt: "Late arrivals in the March timesheet?", accept: ["81"] }
+        - { id: xl-w09-d1-g13, difficulty: medium, type: mcq, prompt: "Hourly rate for ₦176,000/month on 22 days × 8 h", choices: ["₦1,000", "₦8,000", "₦800", "₦1,100"], answer: 0 }
+        - { id: xl-w09-d1-g14, difficulty: medium, type: mcq, prompt: "=EOMONTH(DATE(2025,1,15),1)", choices: ["28/02/2025", "15/02/2025", "31/01/2025", "01/03/2025"], answer: 0 }
+        - { id: xl-w09-d1-g15, difficulty: medium, type: text, prompt: "Total overtime hours in the March timesheet (2 decimals)?", accept: ["383.65"] }
+        - { id: xl-w09-d1-g16, difficulty: hard, type: mcq, prompt: "Order on Friday 7 March 2025, ships in 5 working days.", choices: ["Friday 14 March 2025", "Wednesday 12 March 2025", "Thursday 13 March 2025", "Monday 17 March 2025"], answer: 0 }
+        - { id: xl-w09-d1-g17, difficulty: hard, type: mcq, prompt: "Rate ₦1,000/h, 176 regular hours, 10 overtime hours at 1.5×. Pay?", choices: ["₦191,000", "₦186,000", "₦176,000", "₦201,000"], answer: 0 }
+        - { id: xl-w09-d1-g18, difficulty: hard, type: multi, prompt: "Which return 28/02/2025? (Select all.)", choices: ["=EDATE(DATE(2025,1,31),1)", "=EOMONTH(DATE(2025,2,10),0)", "=DATE(2025,3,0)", "=EDATE(DATE(2025,1,28),2)"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "VLOOKUP basics"
+        secondsPerQuestion: 9
+        questions:
+          - { id: xl-w09-d1-rf01, difficulty: easy, type: mcq, prompt: "VLOOKUP searches in…", choices: ["the first column of the table", "any column", "the last column", "the header row"], answer: 0 }
+          - { id: xl-w09-d1-rf02, difficulty: easy, type: mcq, prompt: "The 4th argument for an exact match", choices: ["FALSE", "TRUE", "1", "blank"], answer: 0 }
+          - { id: xl-w09-d1-rf03, difficulty: easy, type: mcq, prompt: "Products: A ID, B Product, C Category, D Supplier, E UnitCost. Column number for UnitCost?", choices: ["5", "4", "6", "E"], answer: 0 }
+          - { id: xl-w09-d1-rf04, difficulty: easy, type: mcq, prompt: "…and for Supplier?", choices: ["4", "3", "5", "D"], answer: 0 }
+          - { id: xl-w09-d1-rf05, difficulty: easy, type: mcq, prompt: "Lock the table range with…", choices: ["$A$2:$G$41", "A2:G41", "A$2:G41", "#A2:G41"], answer: 0 }
+          - { id: xl-w09-d1-rf06, difficulty: easy, type: truefalse, prompt: "VLOOKUP can return a value from a column to the LEFT of the lookup column.", answer: false }
+          - { id: xl-w09-d1-rf07, difficulty: easy, type: mcq, prompt: "P040's UnitCost", choices: ["₦9,800", "₦14,500", "₦98,000", "₦4,700"], answer: 0 }
+          - { id: xl-w09-d1-rf08, difficulty: easy, type: mcq, prompt: "P040's Supplier", choices: ["HP Nigeria", "Dell Nigeria", "Oraimo", "Transsion Nigeria"], answer: 0 }
+          - { id: xl-w09-d1-rf09, difficulty: easy, type: mcq, prompt: "Not found →", choices: ["#N/A", "#VALUE!", "#REF!", "0"], answer: 0 }
+          - { id: xl-w09-d1-rf10, difficulty: easy, type: mcq, prompt: "Someone inserts a column inside the table. VLOOKUP's col_index…", choices: ["now points at the wrong column", "updates itself", "turns into #REF!", "is unaffected"], answer: 0 }
+      - kind: brain-teaser
+        title: "Why FALSE matters"
+        questions:
+          - { id: xl-w09-d1-bt01, difficulty: medium, type: mcq, prompt: "VLOOKUP with TRUE on IDs that aren't sorted…", choices: ["can silently return a wrong row", "always returns #N/A", "sorts the table first", "is just slower"], answer: 0 }
+          - { id: xl-w09-d1-bt02, difficulty: medium, type: text, prompt: "=VLOOKUP(\"P001\",Products!$A$2:$G$41,4,FALSE)", accept: ["Transsion Nigeria"] }
+          - { id: xl-w09-d1-bt03, difficulty: medium, type: text, prompt: "=VLOOKUP(\"P026\",Products!$A$2:$G$41,2,FALSE)", accept: ["Indomie Carton (40)"] }
+          - { id: xl-w09-d1-bt04, difficulty: hard, type: mcq, prompt: "You need the ProductID for the name in B2. VLOOKUP can't, because…", choices: ["ID is left of Product, and VLOOKUP only looks right", "names aren't unique", "IDs are text", "it needs TRUE"], answer: 0 }
+          - { id: xl-w09-d1-bt05, difficulty: hard, type: text, prompt: "=VLOOKUP(\"P005\",Products!$A$2:$G$41,6,FALSE)-VLOOKUP(\"P005\",Products!$A$2:$G$41,5,FALSE) (UnitPrice − UnitCost)", accept: ["6500", "6,500", "₦6,500"] }
+
+  # ─────────────────────────── DAY 2 ───────────────────────────
+  - day: 2
+    gate:
+      title: "Checkpoint: VLOOKUP"
+      covers: "Week 9 · Day 1: VLOOKUP, exact match, column numbers, locked ranges, its weaknesses"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w09-d2-g01, difficulty: easy, type: mcq, prompt: "=VLOOKUP(G2, Products!$A$2:$G$41, 5, FALSE) returns…", choices: ["UnitCost for the ID in G2", "the 5th product", "the row number", "Supplier"], answer: 0 }
+        - { id: xl-w09-d2-g02, difficulty: easy, type: truefalse, prompt: "Always end VLOOKUP with FALSE unless you mean an approximate match.", answer: true }
+        - { id: xl-w09-d2-g03, difficulty: easy, type: mcq, prompt: "VLOOKUP's lookup column must be…", choices: ["the first column of the table", "sorted descending", "numbers only", "column A of the sheet"], answer: 0 }
+        - { id: xl-w09-d2-g04, difficulty: easy, type: mcq, prompt: "Why $ on the table range?", choices: ["So it doesn't move when filled down", "To show currency", "To make it faster", "To sort it"], answer: 0 }
+        - { id: xl-w09-d2-g05, difficulty: easy, type: mcq, prompt: "The V in VLOOKUP", choices: ["Vertical", "Value", "Variable", "Visual"], answer: 0 }
+        - { id: xl-w09-d2-g06, difficulty: easy, type: text, prompt: "Products!A:G: column number of UnitPrice (F)?", accept: ["6"] }
+        - { id: xl-w09-d2-g07, difficulty: medium, type: text, prompt: "=VLOOKUP(\"P040\",Products!$A$2:$G$41,5,FALSE)", accept: ["9800", "9,800", "₦9,800"] }
+        - { id: xl-w09-d2-g08, difficulty: medium, type: text, prompt: "=VLOOKUP(\"P024\",Products!$A$2:$G$41,4,FALSE)", accept: ["Mama Gold Mills"] }
+        - { id: xl-w09-d2-g09, difficulty: medium, type: multi, prompt: "VLOOKUP weaknesses (Select all.)", choices: ["Can't look left", "Column number breaks when columns are inserted", "Slow on huge data", "Can't do exact matches"], answers: [0, 1, 2] }
+        - { id: xl-w09-d2-g10, difficulty: medium, type: mcq, prompt: "=VLOOKUP(\"P999\",Products!$A$2:$G$41,5,FALSE)", choices: ["#N/A", "0", "#REF!", "blank"], answer: 0 }
+        - { id: xl-w09-d2-g11, difficulty: medium, type: truefalse, prompt: "A col_index larger than the table's width gives #REF!.", answer: true }
+        - { id: xl-w09-d2-g12, difficulty: medium, type: text, prompt: "=VLOOKUP(\"P012\",Products!$A$2:$G$41,3,FALSE)", accept: ["TV & Audio"] }
+        - { id: xl-w09-d2-g13, difficulty: medium, type: mcq, prompt: "The lookup table lives on the Products sheet. Write the range as…", choices: ["Products!$A$2:$G$41", "Products:$A$2:$G$41", "[Products]A2:G41", "Products.A2:G41"], answer: 0 }
+        - { id: xl-w09-d2-g14, difficulty: medium, type: mcq, prompt: "Why still learn VLOOKUP?", choices: ["It's in millions of old files", "It's faster than XLOOKUP", "XLOOKUP can't do exact match", "It looks left"], answer: 0 }
+        - { id: xl-w09-d2-g15, difficulty: medium, type: text, prompt: "=VLOOKUP(\"P010\",Products!$A$2:$G$41,6,FALSE)", accept: ["649000", "649,000", "₦649,000"] }
+        - { id: xl-w09-d2-g16, difficulty: hard, type: mcq, prompt: "=VLOOKUP(G2,Products!A2:G41,5,FALSE) filled down 2,400 rows without $. Row 3 uses…", choices: ["A3:G42, so P001 drops out of the table", "the same range", "an error everywhere", "A2:G41 plus one column"], answer: 0 }
+        - { id: xl-w09-d2-g17, difficulty: hard, type: text, prompt: "Units 3 of P026: =3*VLOOKUP(\"P026\",Products!$A$2:$G$41,6,FALSE)", accept: ["40500", "40,500", "₦40,500"] }
+        - { id: xl-w09-d2-g18, difficulty: hard, type: mcq, prompt: "A lookup returns 14500 for P040 instead of the cost 9800. Most likely…", choices: ["col_index 6 (UnitPrice) instead of 5", "missing FALSE", "the table isn't locked", "P040 is text"], answer: 0 }
+    quizzes:
+      - kind: rapid-fire
+        title: "XLOOKUP"
+        secondsPerQuestion: 9
+        questions:
+          - { id: xl-w09-d2-rf01, difficulty: easy, type: mcq, prompt: "XLOOKUP's 3 required arguments", choices: ["lookup_value, lookup_array, return_array", "value, table, col_index", "range, criteria, sum_range", "value, row, column"], answer: 0 }
+          - { id: xl-w09-d2-rf02, difficulty: easy, type: mcq, prompt: "XLOOKUP's default match", choices: ["exact", "approximate", "wildcard", "next larger"], answer: 0 }
+          - { id: xl-w09-d2-rf03, difficulty: easy, type: truefalse, prompt: "XLOOKUP can look to the left.", answer: true }
+          - { id: xl-w09-d2-rf04, difficulty: easy, type: mcq, prompt: "4th argument", choices: ["if_not_found", "match_mode", "col_index", "search_mode"], answer: 0 }
+          - { id: xl-w09-d2-rf05, difficulty: easy, type: mcq, prompt: "match_mode -1", choices: ["exact or next smaller", "exact or next larger", "wildcard", "last to first"], answer: 0 }
+          - { id: xl-w09-d2-rf06, difficulty: easy, type: mcq, prompt: "Return array Products!D2:E41 →", choices: ["spills Supplier and UnitCost", "#VALUE!", "only Supplier", "a sum"], answer: 0 }
+          - { id: xl-w09-d2-rf07, difficulty: easy, type: mcq, prompt: "Profit per order", choices: ["NetSales − Units × UnitCost", "UnitPrice − UnitCost", "NetSales × margin", "Units × UnitPrice"], answer: 0 }
+          - { id: xl-w09-d2-rf08, difficulty: easy, type: mcq, prompt: "Margin", choices: ["profit ÷ net sales", "net sales ÷ profit", "cost ÷ price", "profit − cost"], answer: 0 }
+          - { id: xl-w09-d2-rf09, difficulty: easy, type: mcq, prompt: "Older Excel without XLOOKUP? Use…", choices: ["INDEX/MATCH", "HLOOKUP only", "SUMIFS", "Nothing"], answer: 0 }
+          - { id: xl-w09-d2-rf10, difficulty: easy, type: mcq, prompt: "=XLOOKUP(\"P999\",ids,costs,\"Not found\")", choices: ["Not found", "#N/A", "0", "blank"], answer: 0 }
+      - kind: brain-teaser
+        title: "NaijaMart's profit"
+        questions:
+          - { id: xl-w09-d2-bt01, difficulty: medium, type: text, prompt: "Total profit for 2025 (₦, no symbol)?", accept: ["129531600", "129,531,600"] }
+          - { id: xl-w09-d2-bt02, difficulty: medium, type: text, prompt: "Overall margin, 1 decimal %?", accept: ["15.5%", "15.5"] }
+          - { id: xl-w09-d2-bt03, difficulty: medium, type: text, prompt: "How many orders made a loss?", accept: ["21"] }
+          - { id: xl-w09-d2-bt04, difficulty: hard, type: mcq, prompt: "Every loss order is Rice 50kg (Local): cost ₦68,000, price ₦78,000. Why the loss?", choices: ["Sold at 15% off: ₦66,300 < ₦68,000", "Sold at 5% off", "The price is below cost", "Returned goods"], answer: 0 }
+          - { id: xl-w09-d2-bt05, difficulty: hard, type: mcq, prompt: "Tiers 0→2%, 500000→3%, 2000000→5%. =XLOOKUP(2000000,tiers,rates,,-1)", choices: ["5%", "3%", "2%", "#N/A"], answer: 0 }
+
+  # ─────────────────────────── DAY 3 ───────────────────────────
+  - day: 3
+    gate:
+      title: "Checkpoint: XLOOKUP"
+      covers: "Week 9 · Day 2: XLOOKUP, if_not_found, multiple columns, approximate bands, profit and margin"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w09-d3-g01, difficulty: easy, type: mcq, prompt: "=XLOOKUP(G2, Products!$A$2:$A$41, Products!$E$2:$E$41)", choices: ["UnitCost for G2's ID", "Supplier", "the row number", "the price"], answer: 0 }
+        - { id: xl-w09-d3-g02, difficulty: easy, type: truefalse, prompt: "XLOOKUP needs FALSE for an exact match.", answer: false }
+        - { id: xl-w09-d3-g03, difficulty: easy, type: mcq, prompt: "A built-in not-found message goes in argument…", choices: ["4", "3", "5", "6"], answer: 0 }
+        - { id: xl-w09-d3-g04, difficulty: easy, type: mcq, prompt: "Commission tiers or tax bands need…", choices: ["approximate match (-1)", "exact match", "wildcards", "search_mode -1"], answer: 0 }
+        - { id: xl-w09-d3-g05, difficulty: easy, type: truefalse, prompt: "Inserting a column doesn't break XLOOKUP.", answer: true }
+        - { id: xl-w09-d3-g06, difficulty: easy, type: mcq, prompt: "Profit", choices: ["NetSales − Units × UnitCost", "UnitPrice × Units", "NetSales ÷ Units", "UnitCost − UnitPrice"], answer: 0 }
+        - { id: xl-w09-d3-g07, difficulty: medium, type: text, prompt: "Tiers 0→2%, 500000→3%, 2000000→5%. =XLOOKUP(1200000,tiers,rates,,-1)", accept: ["3%", "0.03"] }
+        - { id: xl-w09-d3-g08, difficulty: medium, type: text, prompt: "Same tiers: =XLOOKUP(499999,tiers,rates,,-1)", accept: ["2%", "0.02"] }
+        - { id: xl-w09-d3-g09, difficulty: medium, type: match, prompt: "Match the match_mode.", pairs: [["0", "exact"], ["-1", "exact or next smaller"], ["1", "exact or next larger"], ["2", "wildcard"]] }
+        - { id: xl-w09-d3-g10, difficulty: medium, type: text, prompt: "Profit on row 2 (P040, 1 unit, ₦14,500, no discount, cost ₦9,800)?", accept: ["4700", "4,700", "₦4,700"] }
+        - { id: xl-w09-d3-g11, difficulty: medium, type: truefalse, prompt: "search_mode -1 searches from last to first.", answer: true }
+        - { id: xl-w09-d3-g12, difficulty: medium, type: text, prompt: "NaijaMart 2025 margin (1 decimal %)?", accept: ["15.5%", "15.5"] }
+        - { id: xl-w09-d3-g13, difficulty: medium, type: mcq, prompt: "=XLOOKUP(\"P001\",Products!A2:A41,Products!D2:E41)", choices: ["Transsion Nigeria | 118000 (spills 2 cells)", "#VALUE!", "Transsion Nigeria only", "118000 only"], answer: 0 }
+        - { id: xl-w09-d3-g14, difficulty: medium, type: mcq, prompt: "A product name in B2; return its ID from column A.", choices: ["=XLOOKUP(B2,Products!B2:B41,Products!A2:A41)", "=VLOOKUP(B2,Products!A2:G41,1,FALSE)", "=XLOOKUP(B2,Products!A2:A41,Products!B2:B41)", "Impossible"], answer: 0 }
+        - { id: xl-w09-d3-g15, difficulty: medium, type: text, prompt: "Loss-making orders in 2025?", accept: ["21"] }
+        - { id: xl-w09-d3-g16, difficulty: hard, type: text, prompt: "Profit on 2 × Rice 50kg (Local) at 15% off (price ₦78,000, cost ₦68,000)?", accept: ["-3400", "-3,400", "-₦3,400"] }
+        - { id: xl-w09-d3-g17, difficulty: hard, type: mcq, prompt: "Tiers listed as 0, 2000000, 500000 (unsorted). Approximate XLOOKUP…", choices: ["still works: XLOOKUP's match_mode doesn't need sorted data", "needs them sorted like VLOOKUP TRUE", "returns #N/A", "returns the first tier always"], answer: 0 }
+        - { id: xl-w09-d3-g18, difficulty: hard, type: multi, prompt: "Advantages of XLOOKUP over VLOOKUP (Select all.)", choices: ["Exact match by default", "Looks left", "Built-in not-found value", "Works in Excel 2010"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "INDEX and MATCH"
+        secondsPerQuestion: 9
+        questions:
+          - { id: xl-w09-d3-rf01, difficulty: easy, type: mcq, prompt: "MATCH returns…", choices: ["a position", "a value", "TRUE/FALSE", "a range"], answer: 0 }
+          - { id: xl-w09-d3-rf02, difficulty: easy, type: mcq, prompt: "INDEX returns…", choices: ["the value at a position", "a position", "a count", "an address"], answer: 0 }
+          - { id: xl-w09-d3-rf03, difficulty: easy, type: mcq, prompt: "MATCH's exact-match argument", choices: ["0", "1", "-1", "FALSE only"], answer: 0 }
+          - { id: xl-w09-d3-rf04, difficulty: easy, type: text, prompt: "=MATCH(\"P005\",Products!A2:A41,0) (IDs P001…P040 in order)", accept: ["5"] }
+          - { id: xl-w09-d3-rf05, difficulty: easy, type: text, prompt: "=INDEX({10,20,30},2)", accept: ["20"] }
+          - { id: xl-w09-d3-rf06, difficulty: easy, type: truefalse, prompt: "INDEX/MATCH works in every version of Excel.", answer: true }
+          - { id: xl-w09-d3-rf07, difficulty: easy, type: mcq, prompt: "The modern MATCH", choices: ["XMATCH", "XINDEX", "MATCHX", "FIND"], answer: 0 }
+          - { id: xl-w09-d3-rf08, difficulty: easy, type: mcq, prompt: "Two-way lookup needs…", choices: ["INDEX with two MATCHes", "two VLOOKUPs", "SUMIFS only", "HLOOKUP"], answer: 0 }
+          - { id: xl-w09-d3-rf09, difficulty: easy, type: mcq, prompt: "=MATCH(\"P999\",Products!A2:A41,0)", choices: ["#N/A", "0", "41", "#REF!"], answer: 0 }
+          - { id: xl-w09-d3-rf10, difficulty: easy, type: text, prompt: "=INDEX(Products!F2:F41,26) (P026's UnitPrice)", accept: ["13500", "13,500", "₦13,500"] }
+      - kind: brain-teaser
+        title: "Look it up"
+        questions:
+          - { id: xl-w09-d3-bt01, difficulty: medium, type: order, prompt: "Build: UnitCost for the ID in G2.", items: ["=INDEX(", "Products!$E$2:$E$41,", "MATCH(G2,", "Products!$A$2:$A$41,", "0))"] }
+          - { id: xl-w09-d3-bt02, difficulty: medium, type: text, prompt: "HR: JobTitle of E042?", accept: ["Senior Sales Associate"] }
+          - { id: xl-w09-d3-bt03, difficulty: medium, type: text, prompt: "HR: E042's region?", accept: ["Abuja"] }
+          - { id: xl-w09-d3-bt04, difficulty: hard, type: mcq, prompt: "Two-way: categories in A2:A8, regions in B1:E1, values B2:E8. Phones (H1) in Lagos (H2)?", choices: ["=INDEX(B2:E8,MATCH(H1,A2:A8,0),MATCH(H2,B1:E1,0))", "=INDEX(B2:E8,MATCH(H2,B1:E1,0),MATCH(H1,A2:A8,0))", "=VLOOKUP(H1,A2:E8,H2,FALSE)", "=MATCH(H1,H2,0)"], answer: 0 }
+          - { id: xl-w09-d3-bt05, difficulty: hard, type: mcq, prompt: "Why doesn't INDEX/MATCH break when a column is inserted?", choices: ["It points at real ranges, not a column count", "It recalculates column numbers", "It locks the sheet", "It does break"], answer: 0 }
+
+  # ─────────────────────────── DAY 4 ───────────────────────────
+  - day: 4
+    gate:
+      title: "Checkpoint: INDEX and MATCH"
+      covers: "Week 9 · Day 3: MATCH positions, INDEX values, INDEX/MATCH, two-way lookups, XMATCH"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w09-d4-g01, difficulty: easy, type: mcq, prompt: "MATCH(value, range, 0) returns…", choices: ["the position of the value", "the value", "TRUE if found", "the row of the sheet always"], answer: 0 }
+        - { id: xl-w09-d4-g02, difficulty: easy, type: mcq, prompt: "INDEX(range, n) returns…", choices: ["the nth value in the range", "the position of n", "n", "the address"], answer: 0 }
+        - { id: xl-w09-d4-g03, difficulty: easy, type: truefalse, prompt: "INDEX/MATCH can look to the left.", answer: true }
+        - { id: xl-w09-d4-g04, difficulty: easy, type: text, prompt: "=MATCH(\"C\",{\"A\",\"B\",\"C\",\"D\"},0)", accept: ["3"] }
+        - { id: xl-w09-d4-g05, difficulty: easy, type: text, prompt: "=INDEX({\"Lagos\",\"Abuja\",\"Kano\"},3)", accept: ["Kano"] }
+        - { id: xl-w09-d4-g06, difficulty: easy, type: mcq, prompt: "XMATCH is…", choices: ["the modern MATCH", "a two-way XLOOKUP", "an error catcher", "a text function"], answer: 0 }
+        - { id: xl-w09-d4-g07, difficulty: medium, type: text, prompt: "=MATCH(\"P026\",Products!A2:A41,0)", accept: ["26"] }
+        - { id: xl-w09-d4-g08, difficulty: medium, type: text, prompt: "=INDEX(Products!B2:B41,MATCH(\"P005\",Products!A2:A41,0))", accept: ["Oraimo Power Bank 20000mAh"] }
+        - { id: xl-w09-d4-g09, difficulty: medium, type: order, prompt: "Build: price for G2.", items: ["=INDEX(", "Prices,", "MATCH(", "G2, IDs,", "0))"] }
+        - { id: xl-w09-d4-g10, difficulty: medium, type: mcq, prompt: "MATCH with 1 (or omitted) needs…", choices: ["the range sorted ascending", "exact values", "text only", "nothing special"], answer: 0 }
+        - { id: xl-w09-d4-g11, difficulty: medium, type: truefalse, prompt: "MATCH returns the position within the range, not the sheet row number.", answer: true }
+        - { id: xl-w09-d4-g12, difficulty: medium, type: text, prompt: "=INDEX(Products!E2:E41,40) (P040's cost)", accept: ["9800", "9,800", "₦9,800"] }
+        - { id: xl-w09-d4-g13, difficulty: medium, type: mcq, prompt: "Two-way INDEX: the order of MATCHes is…", choices: ["row MATCH, then column MATCH", "column, then row", "either order", "only one MATCH"], answer: 0 }
+        - { id: xl-w09-d4-g14, difficulty: medium, type: text, prompt: "HR: E042's JobTitle?", accept: ["Senior Sales Associate"] }
+        - { id: xl-w09-d4-g15, difficulty: medium, type: mcq, prompt: "=INDEX(B2:E8,3,2) returns…", choices: ["the cell in the 3rd row, 2nd column of B2:E8 (C4)", "B3", "C3", "#REF!"], answer: 0 }
+        - { id: xl-w09-d4-g16, difficulty: hard, type: text, prompt: "HR: E042's monthly salary (₦, no symbol)?", accept: ["197000", "197,000"] }
+        - { id: xl-w09-d4-g17, difficulty: hard, type: mcq, prompt: "=INDEX(Products!A2:A41,MATCH(\"Indomie Carton (40)\",Products!B2:B41,0))", choices: ["P026", "26", "#N/A", "Dufil Prima"], answer: 0 }
+        - { id: xl-w09-d4-g18, difficulty: hard, type: multi, prompt: "Which return P001's UnitCost (118000)? (Select all.)", choices: ["=INDEX(Products!E2:E41,MATCH(\"P001\",Products!A2:A41,0))", "=XLOOKUP(\"P001\",Products!A2:A41,Products!E2:E41)", "=VLOOKUP(\"P001\",Products!A2:G41,5,FALSE)", "=VLOOKUP(\"P001\",Products!A2:G41,6,FALSE)"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Errors and names"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w09-d4-rf01, difficulty: easy, type: mcq, prompt: "A lookup's \"not found\" error", choices: ["#N/A", "#DIV/0!", "#NAME?", "#REF!"], answer: 0 }
+          - { id: xl-w09-d4-rf02, difficulty: easy, type: mcq, prompt: "Catches only #N/A", choices: ["IFNA", "IFERROR", "ISERR", "IF"], answer: 0 }
+          - { id: xl-w09-d4-rf03, difficulty: easy, type: mcq, prompt: "Catches every error", choices: ["IFERROR", "IFNA", "ERROR.TYPE", "ISNA"], answer: 0 }
+          - { id: xl-w09-d4-rf04, difficulty: easy, type: mcq, prompt: "Name a range: select it, then type in the…", choices: ["Name Box", "Formula bar", "Status bar", "Ribbon"], answer: 0 }
+          - { id: xl-w09-d4-rf05, difficulty: easy, type: mcq, prompt: "Name Manager shortcut", choices: ["Ctrl+F3", "Ctrl+N", "F4", "Alt+="], answer: 0 }
+          - { id: xl-w09-d4-rf06, difficulty: easy, type: mcq, prompt: "\" P001\" fails to match P001 because of…", choices: ["a leading space", "case", "the P", "nothing"], answer: 0 }
+          - { id: xl-w09-d4-rf07, difficulty: easy, type: mcq, prompt: "Fix it inside the lookup with…", choices: ["TRIM", "PROPER", "VALUE", "CLEAN"], answer: 0 }
+          - { id: xl-w09-d4-rf08, difficulty: easy, type: truefalse, prompt: "Range names can contain spaces.", answer: false }
+          - { id: xl-w09-d4-rf09, difficulty: easy, type: mcq, prompt: "=IFNA(XLOOKUP(\"P999\",ProductIDs,ProductCosts),\"Not found\")", choices: ["Not found", "#N/A", "0", "P999"], answer: 0 }
+          - { id: xl-w09-d4-rf10, difficulty: easy, type: mcq, prompt: "The number 1001 vs the text \"1001\" in a lookup", choices: ["don't match", "match", "match if formatted", "give #VALUE!"], answer: 0 }
+      - kind: brain-teaser
+        title: "Debug the lookup"
+        questions:
+          - { id: xl-w09-d4-bt01, difficulty: medium, type: mcq, prompt: "Why is IFNA safer than IFERROR?", choices: ["It hides only not-found; real errors still show", "It's faster", "It works in more versions", "It returns 0"], answer: 0 }
+          - { id: xl-w09-d4-bt02, difficulty: medium, type: multi, prompt: "Likely causes of #N/A when the value looks identical (Select all.)", choices: ["Extra spaces", "Number stored as text", "Text stored as number", "Wrong font"], answers: [0, 1, 2] }
+          - { id: xl-w09-d4-bt03, difficulty: medium, type: mcq, prompt: "=IFERROR(XLOOKUP(G2,ProductIDs,ProductCosts)/0,\"Not found\") shows \"Not found\" for P001. The real problem?", choices: ["#DIV/0!, hidden by IFERROR", "P001 is missing", "The name is wrong", "Nothing"], answer: 0 }
+          - { id: xl-w09-d4-bt04, difficulty: hard, type: text, prompt: "Fix the space: =XLOOKUP(___(G2),ProductIDs,ProductCosts)", accept: ["TRIM"] }
+          - { id: xl-w09-d4-bt05, difficulty: hard, type: mcq, prompt: "IDs in the HR file are numbers but your cell holds \"1042\" as text. Fix:", choices: ["=XLOOKUP(VALUE(G2),…)", "=XLOOKUP(TRIM(G2),…)", "=XLOOKUP(PROPER(G2),…)", "=XLOOKUP(G2&\"\",…) on the number side only"], answer: 0 }
+
+  # ─────────────────────────── DAY 5 ───────────────────────────
+  - day: 5
+    gate:
+      title: "Checkpoint: errors, IFNA, named ranges"
+      covers: "Week 9 · Day 4: #N/A causes, IFERROR vs IFNA, TRIM in lookups, named ranges, cross-workbook lookups"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w09-d5-g01, difficulty: easy, type: mcq, prompt: "#N/A from a lookup means…", choices: ["not found", "divide by zero", "bad reference", "unknown function"], answer: 0 }
+        - { id: xl-w09-d5-g02, difficulty: easy, type: mcq, prompt: "Safer error catcher for lookups", choices: ["IFNA", "IFERROR", "ISBLANK", "IF"], answer: 0 }
+        - { id: xl-w09-d5-g03, difficulty: easy, type: truefalse, prompt: "=XLOOKUP(G2, ProductIDs, ProductCosts) uses named ranges.", answer: true }
+        - { id: xl-w09-d5-g04, difficulty: easy, type: mcq, prompt: "Manage named ranges", choices: ["Formulas → Name Manager", "Data → Names", "Home → Styles", "View → Names"], answer: 0 }
+        - { id: xl-w09-d5-g05, difficulty: easy, type: mcq, prompt: "A misspelled range name gives…", choices: ["#NAME?", "#N/A", "#REF!", "#VALUE!"], answer: 0 }
+        - { id: xl-w09-d5-g06, difficulty: easy, type: mcq, prompt: "Remove a leading space", choices: ["TRIM", "CLEAN", "LEFT", "SUBSTITUTE(\" \")"], answer: 0 }
+        - { id: xl-w09-d5-g07, difficulty: medium, type: text, prompt: "=IFNA(XLOOKUP(\"P999\",ProductIDs,ProductCosts),\"Not found\")", accept: ["Not found"] }
+        - { id: xl-w09-d5-g08, difficulty: medium, type: text, prompt: "=XLOOKUP(TRIM(\" P001\"),ProductIDs,ProductCosts)", accept: ["118000", "118,000", "₦118,000"] }
+        - { id: xl-w09-d5-g09, difficulty: medium, type: match, prompt: "Match the error.", pairs: [["#N/A", "lookup value not found"], ["#NAME?", "unknown function or name"], ["#REF!", "invalid reference"], ["#DIV/0!", "divide by zero"]] }
+        - { id: xl-w09-d5-g10, difficulty: medium, type: mcq, prompt: "IFERROR around a lookup with a typo in the range name shows \"Not found\". Problem?", choices: ["It hides the #NAME? bug", "No problem", "It slows the sheet", "It changes the result"], answer: 0 }
+        - { id: xl-w09-d5-g11, difficulty: medium, type: truefalse, prompt: "A lookup across two workbooks works while both are open.", answer: true }
+        - { id: xl-w09-d5-g12, difficulty: medium, type: mcq, prompt: "Which name is valid?", choices: ["ProductCosts", "Product Costs", "2Costs", "A1"], answer: 0 }
+        - { id: xl-w09-d5-g13, difficulty: medium, type: text, prompt: "Payroll: E042's salary via XLOOKUP from HR (₦, no symbol)?", accept: ["197000", "197,000"] }
+        - { id: xl-w09-d5-g14, difficulty: medium, type: mcq, prompt: "Named ranges are absolute, so when filled down they…", choices: ["don't move", "shift one row", "break", "turn relative"], answer: 0 }
+        - { id: xl-w09-d5-g15, difficulty: medium, type: multi, prompt: "#N/A causes (Select all.)", choices: ["A typo in the ID", "An extra space", "Number stored as text", "Bold formatting"], answers: [0, 1, 2] }
+        - { id: xl-w09-d5-g16, difficulty: hard, type: mcq, prompt: "Best formula for a clean, safe UnitCost from a typed ID in G2", choices: ["=IFNA(XLOOKUP(TRIM(G2),ProductIDs,ProductCosts),\"Not found\")", "=IFERROR(VLOOKUP(G2,A:G,5,TRUE),0)", "=XLOOKUP(G2,ProductIDs,ProductCosts)", "=IFERROR(XLOOKUP(G2,ProductIDs,ProductCosts),\"\")"], answer: 0 }
+        - { id: xl-w09-d5-g17, difficulty: hard, type: text, prompt: "Hourly rate for E042 (₦197,000 ÷ 176 h), nearest naira?", accept: ["1119", "1,119", "₦1,119"] }
+        - { id: xl-w09-d5-g18, difficulty: hard, type: mcq, prompt: "XLOOKUP's own not-found vs IFNA wrapper:", choices: ["Same effect; the 4th argument is shorter", "IFNA catches more", "XLOOKUP's ignores #N/A", "Only IFNA works with names"], answer: 0 }
+    quizzes:
+      - kind: rapid-fire
+        title: "Invoice parts"
+        secondsPerQuestion: 9
+        questions:
+          - { id: xl-w09-d5-rf01, difficulty: easy, type: mcq, prompt: "Due date: end of next month", choices: ["=EOMONTH(date,1)", "=EDATE(date,1)", "=date+30", "=WORKDAY(date,1)"], answer: 0 }
+          - { id: xl-w09-d5-rf02, difficulty: easy, type: mcq, prompt: "Line total", choices: ["Qty × UnitPrice", "Qty + UnitPrice", "UnitPrice − Cost", "Qty × UnitCost"], answer: 0 }
+          - { id: xl-w09-d5-rf03, difficulty: easy, type: mcq, prompt: "Nigeria's VAT", choices: ["7.5%", "5%", "10%", "15%"], answer: 0 }
+          - { id: xl-w09-d5-rf04, difficulty: easy, type: mcq, prompt: "Keep empty lines clean", choices: ["=IF(B12=\"\",\"\",XLOOKUP(…))", "=IFNA(XLOOKUP(…),0)", "=XLOOKUP(…)", "Delete the formula"], answer: 0 }
+          - { id: xl-w09-d5-rf05, difficulty: easy, type: text, prompt: "P001 × 2 at ₦145,000 (no symbol)", accept: ["290000", "290,000"] }
+          - { id: xl-w09-d5-rf06, difficulty: easy, type: text, prompt: "P005 × 3 at ₦21,000", accept: ["63000", "63,000"] }
+          - { id: xl-w09-d5-rf07, difficulty: easy, type: text, prompt: "P026 × 10 at ₦13,500", accept: ["135000", "135,000"] }
+          - { id: xl-w09-d5-rf08, difficulty: easy, type: text, prompt: "Subtotal of those three lines", accept: ["488000", "488,000"] }
+          - { id: xl-w09-d5-rf09, difficulty: easy, type: text, prompt: "VAT 7.5% on ₦488,000", accept: ["36600", "36,600"] }
+          - { id: xl-w09-d5-rf10, difficulty: easy, type: text, prompt: "Total due", accept: ["524600", "524,600"] }
+      - kind: brain-teaser
+        title: "Invoice logic"
+        questions:
+          - { id: xl-w09-d5-bt01, difficulty: medium, type: text, prompt: "Subtotal ₦488,000, 10% discount, then 7.5% VAT. Total due?", accept: ["472140", "472,140", "₦472,140"] }
+          - { id: xl-w09-d5-bt02, difficulty: medium, type: text, prompt: "One Dell Inspiron 15 (P010, ₦649,000) + 7.5% VAT. Total?", accept: ["697675", "697,675", "₦697,675"] }
+          - { id: xl-w09-d5-bt03, difficulty: medium, type: mcq, prompt: "Invoice dated 14/03/2025, due =EOMONTH(date,1)", choices: ["30/04/2025", "14/04/2025", "31/03/2025", "31/04/2025"], answer: 0 }
+          - { id: xl-w09-d5-bt04, difficulty: hard, type: mcq, prompt: "Line formula: =IF(B12=\"\",\"\",C12*XLOOKUP(B12,ProductIDs,ProductPrices)). An unknown code is typed. You see…", choices: ["#N/A (add IFNA or a not-found message)", "blank", "0", "Not found"], answer: 0 }
+          - { id: xl-w09-d5-bt05, difficulty: hard, type: mcq, prompt: "Highlight cells showing \"Not found\"", choices: ["Conditional Formatting → Highlight Cells Rules → Text that Contains", "Data Validation", "Format Painter", "Cell Styles → Bad"], answer: 0 }
+
+  # ─────────────────────────── DAY 6 ───────────────────────────
+  - day: 6
+    gate:
+      title: "Checkpoint: the invoice"
+      covers: "Week 9 · Day 5: invoice layout, ID/quantity lookups, clean empty lines, subtotal, discount, VAT, due date"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w09-d6-g01, difficulty: easy, type: mcq, prompt: "On an invoice line the user types…", choices: ["ProductID and Quantity", "Product name and price", "Total", "VAT"], answer: 0 }
+        - { id: xl-w09-d6-g02, difficulty: easy, type: mcq, prompt: "VAT rate used", choices: ["7.5%", "5%", "12.5%", "10%"], answer: 0 }
+        - { id: xl-w09-d6-g03, difficulty: easy, type: truefalse, prompt: "Product name and UnitPrice come from lookups, not typing.", answer: true }
+        - { id: xl-w09-d6-g04, difficulty: easy, type: mcq, prompt: "Due date formula", choices: ["=EOMONTH(date,1)", "=TODAY()+30", "=EDATE(date,30)", "=date+1"], answer: 0 }
+        - { id: xl-w09-d6-g05, difficulty: easy, type: text, prompt: "Line: P026 × 10 at ₦13,500 (no symbol)", accept: ["135000", "135,000"] }
+        - { id: xl-w09-d6-g06, difficulty: easy, type: mcq, prompt: "Save a blank reusable invoice as…", choices: [".xltx (template)", ".csv", ".xlsm", ".pdf"], answer: 0 }
+        - { id: xl-w09-d6-g07, difficulty: medium, type: text, prompt: "Test invoice (P001×2, P005×3, P026×10) subtotal?", accept: ["488000", "488,000", "₦488,000"] }
+        - { id: xl-w09-d6-g08, difficulty: medium, type: text, prompt: "…its total due with 7.5% VAT?", accept: ["524600", "524,600", "₦524,600"] }
+        - { id: xl-w09-d6-g09, difficulty: medium, type: order, prompt: "Order the totals block.", items: ["Subtotal", "Discount", "VAT 7.5%", "Total due"] }
+        - { id: xl-w09-d6-g10, difficulty: medium, type: mcq, prompt: "=IF(B12=\"\",\"\",XLOOKUP(B12,ProductIDs,ProductNames)) on an empty line", choices: ["shows nothing", "#N/A", "0", "the first product"], answer: 0 }
+        - { id: xl-w09-d6-g11, difficulty: medium, type: truefalse, prompt: "Change a price in Products, and a lookup-based invoice updates by itself.", answer: true }
+        - { id: xl-w09-d6-g12, difficulty: medium, type: text, prompt: "VAT 7.5% on ₦200,000", accept: ["15000", "15,000", "₦15,000"] }
+        - { id: xl-w09-d6-g13, difficulty: medium, type: mcq, prompt: "Subtotal for 10 lines in E12:E21", choices: ["=SUM(E12:E21)", "=E12+E21", "=COUNT(E12:E21)", "=SUMIF(E12:E21)"], answer: 0 }
+        - { id: xl-w09-d6-g14, difficulty: medium, type: text, prompt: "=EOMONTH(DATE(2025,3,14),1) as dd/mm/yyyy", accept: ["30/04/2025"] }
+        - { id: xl-w09-d6-g15, difficulty: medium, type: mcq, prompt: "Where should the VAT rate live?", choices: ["In an input cell, referenced with $", "Typed into every formula", "In the header text", "Hidden in a comment"], answer: 0 }
+        - { id: xl-w09-d6-g16, difficulty: hard, type: text, prompt: "Subtotal ₦488,000, 10% discount, then VAT 7.5%: total due?", accept: ["472140", "472,140", "₦472,140"] }
+        - { id: xl-w09-d6-g17, difficulty: hard, type: mcq, prompt: "An unknown code shows #N/A on the line and the subtotal too. Best fix?", choices: ["Line: IFNA(…,\"Not found\") for the name, 0 for the total, plus a red highlight", "IFERROR(SUM(…),0) on the subtotal only", "Delete the line", "Use VLOOKUP TRUE"], answer: 0 }
+        - { id: xl-w09-d6-g18, difficulty: hard, type: multi, prompt: "Good invoice practice (Select all.)", choices: ["Lookups for name and price", "Rates in input cells", "Clean empty lines", "Typing prices by hand"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Week 9 lightning round"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w09-d6-rf01, difficulty: easy, type: mcq, prompt: "VLOOKUP exact match ends with…", choices: ["FALSE", "TRUE", "0.5", "-1"], answer: 0 }
+          - { id: xl-w09-d6-rf02, difficulty: easy, type: mcq, prompt: "Looks left, exact by default", choices: ["XLOOKUP", "VLOOKUP", "HLOOKUP", "LOOKUP"], answer: 0 }
+          - { id: xl-w09-d6-rf03, difficulty: easy, type: mcq, prompt: "Position of a value", choices: ["MATCH", "INDEX", "FIND", "SEARCH"], answer: 0 }
+          - { id: xl-w09-d6-rf04, difficulty: easy, type: mcq, prompt: "Value at a position", choices: ["INDEX", "MATCH", "OFFSET", "CHOOSE"], answer: 0 }
+          - { id: xl-w09-d6-rf05, difficulty: easy, type: mcq, prompt: "Hide only not-found", choices: ["IFNA", "IFERROR", "ISNA", "NA"], answer: 0 }
+          - { id: xl-w09-d6-rf06, difficulty: easy, type: mcq, prompt: "Tax bands lookup match_mode", choices: ["-1", "0", "2", "1"], answer: 0 }
+          - { id: xl-w09-d6-rf07, difficulty: easy, type: text, prompt: "NaijaMart 2025 margin (1 decimal %)", accept: ["15.5%", "15.5"] }
+          - { id: xl-w09-d6-rf08, difficulty: easy, type: text, prompt: "Loss-making orders", accept: ["21"] }
+          - { id: xl-w09-d6-rf09, difficulty: easy, type: text, prompt: "E042's JobTitle", accept: ["Senior Sales Associate"] }
+          - { id: xl-w09-d6-rf10, difficulty: easy, type: text, prompt: "Test invoice total due (no symbol)", accept: ["524600", "524,600"] }
+      - kind: brain-teaser
+        title: "Payroll lookups"
+        questions:
+          - { id: xl-w09-d6-bt01, difficulty: medium, type: mcq, prompt: "Bands: 0→\"Band A\", 100000→\"Band B\", 300000→\"Band C\". =XLOOKUP(250000,bands,names,,-1)", choices: ["Band B", "Band C", "Band A", "#N/A"], answer: 0 }
+          - { id: xl-w09-d6-bt02, difficulty: medium, type: mcq, prompt: "Same bands, salary ₦300,000", choices: ["Band C", "Band B", "Band A", "#N/A"], answer: 0 }
+          - { id: xl-w09-d6-bt03, difficulty: medium, type: mcq, prompt: "Same bands, salary ₦50,000 with match_mode 1 (next larger)", choices: ["Band B", "Band A", "Band C", "#N/A"], answer: 0 }
+          - { id: xl-w09-d6-bt04, difficulty: hard, type: mcq, prompt: "Payroll: name, department and salary should come from HR by…", choices: ["XLOOKUP on EmployeeID", "Copy-paste each month", "VLOOKUP on name with TRUE", "Typing"], answer: 0 }
+          - { id: xl-w09-d6-bt05, difficulty: hard, type: mcq, prompt: "Self-check: you change a salary in HR, and payroll doesn't move. Most likely…", choices: ["Payroll holds pasted values, not lookups", "Excel is broken", "The salary is text", "VAT is wrong"], answer: 0 }
