@@ -66,6 +66,10 @@ More than two outcomes? Nest IFs, or better, use **IFS** (Excel 2019+):
 
 **Check:** Large **140** · Medium **1,391** · Small **869**
 
+**Sandbox:** practise IFS, AND/OR and SWITCH on 40 orders, with answers checked as you go.
+
+::sandbox xl-w05-logic
+
 ### Mini-Task (10 min)
 Build the grading formula for 10 made-up exam scores and test the boundaries (69, 70, 44, 45, 39).
 
@@ -127,6 +131,10 @@ Put the thresholds and rates in a small table (e.g. V1:W3) and reference them wi
 
 **Check:** total commission at 5/3/2% = **₦26,596,692** (rounded)
 
+**Sandbox:** the commission task there only passes if your formula uses the rates table with `$`.
+
+::sandbox xl-w05-logic
+
 ### Mini-Task (10 min)
 Add a rule: online orders get **no** commission. Wrap it: `=IF(F2="Online",0, …)`.
 
@@ -153,6 +161,10 @@ Rebuild the commission formula from memory.
 1. Add a **Zone** column with SWITCH (geopolitical zones as above).
 2. Add a **PaymentType** column: Cash → "Cash", everything else → "Electronic" (IF or SWITCH).
 3. Filter: how many Electronic payments? (**1,893**)
+
+**Sandbox:** finish the zone (SWITCH) and cash-check tasks.
+
+::sandbox xl-w05-logic
 
 ### Mini-Task (10 min)
 Rewrite a nested IF you wrote this week as IFS or SWITCH. Which is easier to read?

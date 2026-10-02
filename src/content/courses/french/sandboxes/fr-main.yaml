@@ -6,4 +6,4 @@ title: "French phrase lab"
 description: "Free play with everything you've learned: build sentences, hear them in French, and practise saying them."
 main: true
 voice: fr-FR
-include: [fr-w01-greetings, fr-w02-intro, fr-w03-articles, fr-w07-market]
+include: [fr-w01-greetings, fr-w02-intro, fr-w03-articles, fr-w05-verbs, fr-w07-market]

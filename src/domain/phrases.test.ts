@@ -86,3 +86,26 @@ describe('fr-w03-articles challenges', () => {
     ])
   })
 })
+
+describe('fr-w05-verbs challenges', () => {
+  it('produce correct French, with je → j\' and ne → n\'', async () => {
+    const { findSandbox } = await import('../content/sandboxes.ts')
+    const sandbox = findSandbox('fr-w05-verbs')
+    if (sandbox?.kind !== 'phrases') throw new Error('fr-w05-verbs missing')
+    const sentences = (sandbox.challenges ?? []).map((c) => {
+      const pattern = sandbox.patterns.find((p) => p.id === c.pattern)!
+      const chosen = Object.fromEntries(pattern.slots.flatMap((s) => ('fixed' in s ? [] : [[s.id, s.options.find((o) => o.text === c.answer[s.id])]])))
+      return joinFrench(tokensFor(pattern, chosen))
+    })
+    expect(sentences).toEqual([
+      'Nous parlons anglais.',
+      'Ils travaillent dans une banque.',
+      'Tu parles yoruba.',
+      'Je travaille à Lagos.',
+      "Je n'aime pas le riz.",
+      'Elle ne mange pas de viande.',
+      'Nous ne mangeons pas de poisson.',
+      "Vous n'aimez pas les pâtes.",
+    ])
+  })
+})

@@ -1,0 +1,80 @@
+# Week 5 · J'aime, je n'aime pas: -er verb endings, negation and articles after pas.
+id: fr-w05-verbs
+kind: phrases
+title: "Verbes en -er"
+description: "Match every ending to its subject, then make it negative. The builder knows that « du riz » becomes « pas de riz » but « le riz » stays « pas le riz »."
+voice: fr-FR
+patterns:
+  - id: present
+    label: "Present tense"
+    slots:
+      - &who
+        id: who
+        label: "Who"
+        options:
+          - { text: "Je", en: "I", tags: [p1s] }
+          - { text: "Tu", en: "You (friend)", tags: [p2s] }
+          - { text: "Elle", en: "She", tags: [p3s] }
+          - { text: "Nous", en: "We", tags: [p1p] }
+          - { text: "Vous", en: "You (formal/plural)", tags: [p2p] }
+          - { text: "Ils", en: "They", tags: [p3p] }
+      - id: verb
+        label: "Verb"
+        options:
+          - { text: "parle", en: "speak(s)", tags: [speak], needs: { who: ["p1s|p3s"] }, why: "« parle » goes with je or il/elle (-e)." }
+          - { text: "parles", en: "speak", tags: [speak], needs: { who: [p2s] }, why: "« parles » goes with tu (-es)." }
+          - { text: "parlons", en: "speak", tags: [speak], needs: { who: [p1p] }, why: "« parlons » goes with nous (-ons)." }
+          - { text: "parlez", en: "speak", tags: [speak], needs: { who: [p2p] }, why: "« parlez » goes with vous (-ez)." }
+          - { text: "parlent", en: "speak", tags: [speak], needs: { who: [p3p] }, why: "« parlent » goes with ils/elles (-ent, silent)." }
+          - { text: "travaille", en: "work(s)", tags: [work], needs: { who: ["p1s|p3s"] }, why: "« travaille » goes with je or il/elle." }
+          - { text: "travaillons", en: "work", tags: [work], needs: { who: [p1p] }, why: "« travaillons » goes with nous." }
+          - { text: "travaillent", en: "work", tags: [work], needs: { who: [p3p] }, why: "« travaillent » goes with ils/elles." }
+      - id: rest
+        label: "What / where"
+        options:
+          - { text: "anglais", en: "English", needs: { verb: [speak] }, why: "You speak a language, not work it." }
+          - { text: "yoruba", en: "Yoruba", needs: { verb: [speak] }, why: "You speak a language." }
+          - { text: "français", en: "French", needs: { verb: [speak] }, why: "You speak a language." }
+          - { text: "à Lagos", en: "in Lagos", needs: { verb: [work] }, why: "Use « travailler » with a place." }
+          - { text: "dans une banque", en: "in a bank", needs: { verb: [work] }, why: "Use « travailler » with a place." }
+      - { id: end, fixed: "." }
+
+  - id: negative
+    label: "Negative: ne … pas"
+    slots:
+      - *who
+      - { id: ne, fixed: "ne" }
+      - id: verb
+        label: "Verb"
+        options:
+          - { text: "aime", en: "like(s)", tags: [like], needs: { who: ["p1s|p3s"] }, why: "« aime » goes with je or il/elle." }
+          - { text: "aimes", en: "like", tags: [like], needs: { who: [p2s] }, why: "« aimes » goes with tu." }
+          - { text: "aimons", en: "like", tags: [like], needs: { who: [p1p] }, why: "« aimons » goes with nous." }
+          - { text: "aimez", en: "like", tags: [like], needs: { who: [p2p] }, why: "« aimez » goes with vous." }
+          - { text: "aiment", en: "like", tags: [like], needs: { who: [p3p] }, why: "« aiment » goes with ils/elles." }
+          - { text: "mange", en: "eat(s)", tags: [eat], needs: { who: ["p1s|p3s"] }, why: "« mange » goes with je or il/elle." }
+          - { text: "manges", en: "eat", tags: [eat], needs: { who: [p2s] }, why: "« manges » goes with tu." }
+          - { text: "mangeons", en: "eat", tags: [eat], needs: { who: [p1p] }, why: "« mangeons » goes with nous (keep the e!)." }
+          - { text: "mangez", en: "eat", tags: [eat], needs: { who: [p2p] }, why: "« mangez » goes with vous." }
+          - { text: "mangent", en: "eat", tags: [eat], needs: { who: [p3p] }, why: "« mangent » goes with ils/elles." }
+      - { id: pas, fixed: "pas" }
+      - id: food
+        label: "Food"
+        options:
+          - { text: "le riz", en: "rice (in general)", needs: { verb: [like] }, why: "After « manger … pas », use « de »: je ne mange pas de riz." }
+          - { text: "la viande", en: "meat (in general)", needs: { verb: [like] }, why: "After « manger … pas », use « de »: pas de viande." }
+          - { text: "les pâtes", en: "pasta (in general)", needs: { verb: [like] }, why: "After « manger … pas », use « de »: pas de pâtes." }
+          - { text: "de riz", en: "(any) rice", needs: { verb: [eat] }, why: "Likes keep their article: je n'aime pas le riz." }
+          - { text: "de viande", en: "(any) meat", needs: { verb: [eat] }, why: "Likes keep their article: je n'aime pas la viande." }
+          - { text: "de poisson", en: "(any) fish", needs: { verb: [eat] }, why: "Likes keep their article: je n'aime pas le poisson." }
+      - { id: end, fixed: "." }
+
+challenges:
+  - { prompt: "We speak English.", pattern: present, answer: { who: "Nous", verb: "parlons", rest: "anglais" } }
+  - { prompt: "They work in a bank.", pattern: present, answer: { who: "Ils", verb: "travaillent", rest: "dans une banque" } }
+  - { prompt: "You (friend) speak Yoruba.", pattern: present, answer: { who: "Tu", verb: "parles", rest: "yoruba" } }
+  - { prompt: "I work in Lagos.", pattern: present, answer: { who: "Je", verb: "travaille", rest: "à Lagos" } }
+  - { prompt: "I don't like rice.", pattern: negative, answer: { who: "Je", verb: "aime", food: "le riz" } }
+  - { prompt: "She doesn't eat meat.", pattern: negative, answer: { who: "Elle", verb: "mange", food: "de viande" } }
+  - { prompt: "We don't eat fish.", pattern: negative, answer: { who: "Nous", verb: "mangeons", food: "de poisson" } }
+  - { prompt: "You (vous) don't like pasta.", pattern: negative, answer: { who: "Vous", verb: "aimez", food: "les pâtes" } }

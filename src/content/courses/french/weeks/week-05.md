@@ -38,6 +38,10 @@ Conjugate:
 
 **Check:** 1. travailles 2. habitons 3. écoutent 4. aime 5. parlez 6. regarde
 
+**Sandbox:** match every ending to its subject. Wrong endings get flagged with the reason.
+
+::sandbox fr-w05-verbs
+
 ### Speak & Listen (10 min)
 - Language Transfer tracks 39–40.
 - Conjugate *parler, aimer, habiter* out loud. Remember the *-ent* is silent.
@@ -110,6 +114,10 @@ Make these negative:
 1. Je travaille le samedi.  2. Elle a un frère.  3. Nous aimons le fromage.  4. Ils regardent des films.  5. C'est une banque.
 
 **Check:** 1. *Je ne travaille pas le samedi.* 2. *Elle n'a pas de frère.* 3. *Nous n'aimons pas le fromage.* 4. *Ils ne regardent pas de films.* 5. *Ce n'est pas une banque.*
+
+**Sandbox:** switch to the *Negative* tab: the builder knows when *du riz* becomes *pas de riz* and when *le riz* stays.
+
+::sandbox fr-w05-verbs
 
 ### Speak & Listen (10 min)
 - Language Transfer tracks 43–44.

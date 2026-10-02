@@ -1,0 +1,40 @@
+# Week 5 · Logic: IF, IFS, AND/OR, SWITCH and a tiered commission on 40 NaijaMart orders.
+id: xl-w05-logic
+kind: sheet
+title: "Teach Excel to decide"
+description: "40 orders with NetSales already calculated. Label sizes, flag key accounts, pay tiered commission from the rates table, map zones, and flag cash orders to check."
+dataset:
+  file: sales_2025
+  rows: 40
+  columns: [Region, CustomerType, Units, UnitPrice, DiscountPct, PaymentMethod]
+cells:
+  G1: NetSales
+  H1: OrderSize
+  I1: KeyAccount
+  J1: Commission
+  K1: Zone
+  L1: Check
+  N1: Threshold
+  O1: Rate
+  N2: 2000000
+  O2: "5%"
+  N3: 500000
+  O3: "3%"
+  N4: 0
+  O4: "2%"
+  N7: Medium orders
+  N8: Key accounts
+  N9: Total commission
+  N10: Lagos/Abuja cash to check
+cols: 15
+rows: 42
+formulaFill:
+  G: "=C{r}*D{r}*(1-E{r}/100)"
+tasks:
+  - { prompt: "H2: OrderSize for order 1 with IFS: Large (≥ ₦1,000,000), Medium (≥ ₦100,000), otherwise Small.", cell: H2, expect: "Small", formula: true, mustUse: ["IFS("], solution: "=IFS(G2>=1000000,\"Large\",G2>=100000,\"Medium\",TRUE,\"Small\")", hint: "Biggest threshold first; TRUE catches everything else." }
+  - { prompt: "Fill H down, then O7: how many Medium orders? (COUNTIF)", cell: O7, expect: 23, formula: true, solution: "=COUNTIF(H2:H41,\"Medium\")", solutionFill: { H: "=IFS(G{r}>=1000000,\"Large\",G{r}>=100000,\"Medium\",TRUE,\"Small\")" }, hint: "=COUNTIF(H2:H41,\"Medium\")" }
+  - { prompt: "I: \"Key\" when the customer is Wholesale AND the order is ≥ ₦1,000,000 (else empty). O8: how many key accounts?", cell: O8, expect: 1, formula: true, solution: "=COUNTIF(I2:I41,\"Key\")", solutionFill: { I: "=IF(AND(B{r}=\"Wholesale\",G{r}>=1000000),\"Key\",\"\")" }, hint: "=IF(AND(B2=\"Wholesale\",G2>=1000000),\"Key\",\"\")" }
+  - { prompt: "J2: commission for order 1 using the rates table N2:O4, locked with $ (5% from ₦2m, 3% from ₦500k, else 2%).", cell: J2, expect: 290, formula: true, mustUse: ["$N$2", "$O$2", "$N$3", "$O$3", "$O$4"], solution: "=G2*IFS(G2>=$N$2,$O$2,G2>=$N$3,$O$3,TRUE,$O$4)", hint: "=G2*IFS(G2>=$N$2,$O$2,G2>=$N$3,$O$3,TRUE,$O$4)" }
+  - { prompt: "Fill J down. O9: total commission on the 40 orders.", cell: O9, expect: 362314.9, tolerance: 0.1, formula: true, solution: "=SUM(J2:J41)", solutionFill: { J: "=G{r}*IFS(G{r}>=$N$2,$O$2,G{r}>=$N$3,$O$3,TRUE,$O$4)" }, hint: "=SUM(J2:J41)" }
+  - { prompt: "K2: the zone of order 1's region with SWITCH (Lagos/Ibadan → South-West, Abuja → North-Central, Kano → North-West, Port Harcourt → South-South, Enugu → South-East).", cell: K2, expect: "North-Central", formula: true, mustUse: ["SWITCH("], solution: "=SWITCH(A2,\"Lagos\",\"South-West\",\"Ibadan\",\"South-West\",\"Abuja\",\"North-Central\",\"Kano\",\"North-West\",\"Port Harcourt\",\"South-South\",\"Enugu\",\"South-East\",\"Unknown\")", hint: "=SWITCH(A2,\"Lagos\",\"South-West\",…,\"Unknown\")" }
+  - { prompt: "L: \"Check\" for Lagos-or-Abuja orders paid by Cash (else empty). O10: how many to check?", cell: O10, expect: 3, formula: true, solution: "=COUNTIF(L2:L41,\"Check\")", solutionFill: { L: "=IF(AND(OR(A{r}=\"Lagos\",A{r}=\"Abuja\"),F{r}=\"Cash\"),\"Check\",\"\")" }, hint: "=IF(AND(OR(A2=\"Lagos\",A2=\"Abuja\"),F2=\"Cash\"),\"Check\",\"\")" }
