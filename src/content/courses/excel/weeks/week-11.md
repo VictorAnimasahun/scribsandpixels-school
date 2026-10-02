@@ -61,6 +61,10 @@ From memory: data bars and a colour scale.
 2. Highlight the whole row of any order in the region chosen in a drop-down cell (reuse Week 10).
 3. In the timesheet, highlight late arrivals (after 08:30) in orange.
 
+**Sandbox:** write each rule as a TRUE/FALSE helper column and count what it would highlight (the first 8 tasks).
+
+::sandbox xl-w11-rules
+
 ### Mini-Task (10 min)
 Build a "search box": type any text in a cell and highlight rows whose Product contains it: `=ISNUMBER(SEARCH($Z$1,$H2))`.
 
@@ -139,6 +143,10 @@ Charts on Excel Tables also grow automatically when rows are added.
 
 ### Practice (20 min)
 Build a "Monthly sales for [Region]" line chart driven by a region drop-down. Its title can also be dynamic: select the title, type `=` in the formula bar, click a cell containing `="Monthly net sales — "&Z1`.
+
+**Sandbox:** the selector tasks (N9–N11) are the helper cells and title a dynamic chart needs. Change N1 to Abuja and watch them update.
+
+::sandbox xl-w11-rules
 
 ### Mini-Task (10 min)
 Add a second drop-down for Category and make the chart respond to both.

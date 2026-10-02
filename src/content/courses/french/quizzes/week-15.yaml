@@ -1,0 +1,297 @@
+# French · Week 15 quizzes. Format and rules: src/content/QUIZZES.md
+week: 15
+days:
+
+  # ─────────────────────────── DAY 1 ───────────────────────────
+  - day: 1
+    gate:
+      title: "Checkpoint: Week 14 review"
+      covers: "Week 14: finir-type, partir-type and -RE verbs, clothes, mettre vs porter, ce/cet/cette/ces, shopping"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w15-d1-g01, difficulty: easy, type: text, prompt: "nous ___ (finir)", accept: ["finissons"] }
+        - { id: fr-w15-d1-g02, difficulty: easy, type: text, prompt: "je ___ (partir)", accept: ["pars"] }
+        - { id: fr-w15-d1-g03, difficulty: easy, type: truefalse, prompt: "« attendre » takes no preposition: J'attends le bus.", answer: true }
+        - { id: fr-w15-d1-g04, difficulty: easy, type: mcq, prompt: "___ hôtel", choices: ["cet", "ce", "cette", "ces"], answer: 0 }
+        - { id: fr-w15-d1-g05, difficulty: easy, type: mcq, prompt: "shoe size", choices: ["la pointure", "la taille", "la mesure", "le numéro"], answer: 0 }
+        - { id: fr-w15-d1-g06, difficulty: easy, type: mcq, prompt: "la jupe", choices: ["skirt", "jumper", "dress", "jacket"], answer: 0 }
+        - { id: fr-w15-d1-g07, difficulty: medium, type: text, prompt: "Ils (réussir) ___ l'examen.", accept: ["réussissent"] }
+        - { id: fr-w15-d1-g08, difficulty: medium, type: text, prompt: "il ___ (attendre)", accept: ["attend"] }
+        - { id: fr-w15-d1-g09, difficulty: medium, type: match, prompt: "Match verb to family.", pairs: [["choisir", "-IR (-iss-)"], ["dormir", "partir-type"], ["vendre", "-RE"], ["mettre", "irregular"]] }
+        - { id: fr-w15-d1-g10, difficulty: medium, type: text, prompt: "Translate: She is wearing a red dress.", accept: ["Elle porte une robe rouge.", "Elle porte une robe rouge"] }
+        - { id: fr-w15-d1-g11, difficulty: medium, type: truefalse, prompt: "« porter » = to put on (action).", answer: false }
+        - { id: fr-w15-d1-g12, difficulty: medium, type: text, prompt: "Translate: these shoes", accept: ["ces chaussures"] }
+        - { id: fr-w15-d1-g13, difficulty: medium, type: mcq, prompt: "It's too tight. Do you have it in black?", choices: ["C'est trop serré. Vous l'avez en noir ?", "C'est très serré. Vous avez noir ?", "C'est trop petit. Avez en noir ?", "Il est serré. En noir vous ?"], answer: 0 }
+        - { id: fr-w15-d1-g14, difficulty: medium, type: text, prompt: "ils ___ (mettre)", accept: ["mettent"] }
+        - { id: fr-w15-d1-g15, difficulty: medium, type: mcq, prompt: "What size are you?", choices: ["Quelle taille faites-vous ?", "Quelle pointure êtes-vous ?", "Combien taille ?", "Vous êtes quelle taille ?"], answer: 0 }
+        - { id: fr-w15-d1-g16, difficulty: hard, type: text, prompt: "Translate: We get off the bus and we wait for Ada.", accept: ["Nous descendons du bus et nous attendons Ada.", "On descend du bus et on attend Ada."] }
+        - { id: fr-w15-d1-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « Nous choisons ce robe. »", choices: ["choisissons … cette robe", "Only choisons", "Only ce", "No error"], answer: 0 }
+        - { id: fr-w15-d1-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["Je mets mon manteau.", "Il dort bien.", "Tu perds tes clés.", "Elle attende le bus."], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Big numbers"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fr-w15-d1-rf01, difficulty: easy, type: mcq, prompt: "200", choices: ["deux cents", "deux cent", "deux centes", "deux-cents mille"], answer: 0 }
+          - { id: fr-w15-d1-rf02, difficulty: easy, type: mcq, prompt: "250", choices: ["deux cent cinquante", "deux cents cinquante", "deux-cents-cinquante", "deux cent cinquantes"], answer: 0 }
+          - { id: fr-w15-d1-rf03, difficulty: easy, type: mcq, prompt: "1 000", choices: ["mille", "un mille", "milles", "mil"], answer: 0 }
+          - { id: fr-w15-d1-rf04, difficulty: easy, type: mcq, prompt: "3 000", choices: ["trois mille", "trois milles", "trois mil", "trois mille-s"], answer: 0 }
+          - { id: fr-w15-d1-rf05, difficulty: easy, type: mcq, prompt: "1 000 000 people", choices: ["un million de personnes", "un million personnes", "un millions de personnes", "mille mille personnes"], answer: 0 }
+          - { id: fr-w15-d1-rf06, difficulty: easy, type: mcq, prompt: "un milliard", choices: ["a billion", "a million", "a thousand", "a trillion"], answer: 0 }
+          - { id: fr-w15-d1-rf07, difficulty: easy, type: mcq, prompt: "1 500,50 € =", choices: ["€1,500.50", "€1.50050", "€150,050", "€15.00"], answer: 0 }
+          - { id: fr-w15-d1-rf08, difficulty: easy, type: mcq, prompt: "2026", choices: ["deux mille vingt-six", "vingt vingt-six", "deux milles vingt-six", "deux mil vingt-six"], answer: 0 }
+          - { id: fr-w15-d1-rf09, difficulty: easy, type: mcq, prompt: "gagner", choices: ["to earn", "to spend", "to save", "to cost"], answer: 0 }
+          - { id: fr-w15-d1-rf10, difficulty: easy, type: mcq, prompt: "économiser", choices: ["to save", "to spend", "to economise only fuel", "to earn"], answer: 0 }
+      - kind: brain-teaser
+        title: "Write the number"
+        questions:
+          - { id: fr-w15-d1-bt01, difficulty: medium, type: text, prompt: "In words: 310", accept: ["trois cent dix"] }
+          - { id: fr-w15-d1-bt02, difficulty: medium, type: text, prompt: "In words: 1 250", accept: ["mille deux cent cinquante"] }
+          - { id: fr-w15-d1-bt03, difficulty: medium, type: text, prompt: "In words: 1984", accept: ["mille neuf cent quatre-vingt-quatre"] }
+          - { id: fr-w15-d1-bt04, difficulty: hard, type: mcq, prompt: "Why « deux cents » but « deux cent dix »?", choices: ["cent takes -s only when multiplied and ending the number", "random", "dix is plural", "cents is formal"], answer: 0 }
+          - { id: fr-w15-d1-bt05, difficulty: hard, type: text, prompt: "In words: 280", accept: ["deux cent quatre-vingts"] }
+
+  # ─────────────────────────── DAY 2 ───────────────────────────
+  - day: 2
+    gate:
+      title: "Checkpoint: big numbers and money"
+      covers: "Week 15 · Day 1: cent(s), mille, million/milliard de, years, French number formatting, money verbs"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w15-d2-g01, difficulty: easy, type: mcq, prompt: "300", choices: ["trois cents", "trois cent", "trois-cents", "trois centes"], answer: 0 }
+        - { id: fr-w15-d2-g02, difficulty: easy, type: mcq, prompt: "2 000", choices: ["deux mille", "deux milles", "deux mil", "deux-milles"], answer: 0 }
+        - { id: fr-w15-d2-g03, difficulty: easy, type: truefalse, prompt: "« mille » never takes -s.", answer: true }
+        - { id: fr-w15-d2-g04, difficulty: easy, type: mcq, prompt: "dépenser", choices: ["to spend", "to depend", "to earn", "to save"], answer: 0 }
+        - { id: fr-w15-d2-g05, difficulty: easy, type: mcq, prompt: "un virement", choices: ["a bank transfer", "a virus", "a turn", "a salary"], answer: 0 }
+        - { id: fr-w15-d2-g06, difficulty: easy, type: mcq, prompt: "French decimal separator", choices: ["comma", "point", "space", "apostrophe"], answer: 0 }
+        - { id: fr-w15-d2-g07, difficulty: medium, type: text, prompt: "In words: 500", accept: ["cinq cents"] }
+        - { id: fr-w15-d2-g08, difficulty: medium, type: text, prompt: "In words: 5 000", accept: ["cinq mille"] }
+        - { id: fr-w15-d2-g09, difficulty: medium, type: match, prompt: "Match.", pairs: [["gagner", "to earn"], ["dépenser", "to spend"], ["économiser", "to save"], ["coûter", "to cost"]] }
+        - { id: fr-w15-d2-g10, difficulty: medium, type: text, prompt: "Translate: He earns 3,000 euros a month.", accept: ["Il gagne 3 000 euros par mois.", "Il gagne trois mille euros par mois.", "Il gagne 3000 euros par mois."] }
+        - { id: fr-w15-d2-g11, difficulty: medium, type: truefalse, prompt: "« deux millions de nairas » needs de.", answer: true }
+        - { id: fr-w15-d2-g12, difficulty: medium, type: text, prompt: "In words: 2026", accept: ["deux mille vingt-six"] }
+        - { id: fr-w15-d2-g13, difficulty: medium, type: mcq, prompt: "This phone costs 450,000 naira.", choices: ["Ce téléphone coûte 450 000 nairas.", "Ce téléphone coûte 450.000 nairas.", "Cet téléphone coûte 450 000.", "Ce téléphone coûte quatre cents cinquante mille."], answer: 0 }
+        - { id: fr-w15-d2-g14, difficulty: medium, type: text, prompt: "In words: 1 999", accept: ["mille neuf cent quatre-vingt-dix-neuf"] }
+        - { id: fr-w15-d2-g15, difficulty: medium, type: mcq, prompt: "€3,750.25 written French-style", choices: ["3 750,25 €", "3,750.25 €", "3.750,25€ only", "3750.25 €"], answer: 0 }
+        - { id: fr-w15-d2-g16, difficulty: hard, type: text, prompt: "In words: 200 000", accept: ["deux cent mille"] }
+        - { id: fr-w15-d2-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « deux milles trois cents euros »", choices: ["milles → mille", "cents → cent", "both", "No error"], answer: 0 }
+        - { id: fr-w15-d2-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["quatre cents", "quatre cent vingt", "trois mille", "trois cents dix"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Lire, écrire, dire"
+        secondsPerQuestion: 7
+        questions:
+          - { id: fr-w15-d2-rf01, difficulty: easy, type: text, prompt: "je ___ (lire)", accept: ["lis"] }
+          - { id: fr-w15-d2-rf02, difficulty: easy, type: text, prompt: "il ___ (lire)", accept: ["lit"] }
+          - { id: fr-w15-d2-rf03, difficulty: easy, type: text, prompt: "nous ___ (lire)", accept: ["lisons"] }
+          - { id: fr-w15-d2-rf04, difficulty: easy, type: text, prompt: "j'___ (écrire)", accept: ["écris"] }
+          - { id: fr-w15-d2-rf05, difficulty: easy, type: text, prompt: "nous ___ (écrire)", accept: ["écrivons"] }
+          - { id: fr-w15-d2-rf06, difficulty: easy, type: text, prompt: "ils ___ (écrire)", accept: ["écrivent"] }
+          - { id: fr-w15-d2-rf07, difficulty: easy, type: text, prompt: "vous ___ (dire)", accept: ["dites"] }
+          - { id: fr-w15-d2-rf08, difficulty: easy, type: text, prompt: "ils ___ (dire)", accept: ["disent"] }
+          - { id: fr-w15-d2-rf09, difficulty: easy, type: mcq, prompt: "la réunion", choices: ["meeting", "reunion party", "region", "report"], answer: 0 }
+          - { id: fr-w15-d2-rf10, difficulty: easy, type: mcq, prompt: "un CDI", choices: ["permanent contract", "fixed-term contract", "a CD", "internship"], answer: 0 }
+      - kind: brain-teaser
+        title: "At the office"
+        questions:
+          - { id: fr-w15-d2-bt01, difficulty: medium, type: text, prompt: "Nous (écrire) ___ un rapport.", accept: ["écrivons"] }
+          - { id: fr-w15-d2-bt02, difficulty: medium, type: text, prompt: "Qu'est-ce que vous (dire) ___ ?", accept: ["dites"] }
+          - { id: fr-w15-d2-bt03, difficulty: medium, type: text, prompt: "Tu (écrire) ___ à ton chef ?", accept: ["écris"] }
+          - { id: fr-w15-d2-bt04, difficulty: hard, type: mcq, prompt: "What's special about « vous dites »?", choices: ["irregular, like faites and êtes", "it's formal only", "it's a typo of disez", "it's past tense"], answer: 0 }
+          - { id: fr-w15-d2-bt05, difficulty: hard, type: match, prompt: "Match.", pairs: [["le/la stagiaire", "intern"], ["la date limite", "deadline"], ["les congés", "leave"], ["un CDD", "fixed-term contract"]] }
+
+  # ─────────────────────────── DAY 3 ───────────────────────────
+  - day: 3
+    gate:
+      title: "Checkpoint: lire, écrire, dire + work words"
+      covers: "Week 15 · Day 2: lire, écrire, dire (vous dites); réunion, rendez-vous, dossier, rapport, congés, télétravail, CDI/CDD"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w15-d3-g01, difficulty: easy, type: text, prompt: "Il (lire) ___ ses emails.", accept: ["lit"] }
+        - { id: fr-w15-d3-g02, difficulty: easy, type: text, prompt: "Ils (dire) ___ bonjour.", accept: ["disent"] }
+        - { id: fr-w15-d3-g03, difficulty: easy, type: truefalse, prompt: "« vous disez » is correct.", answer: false }
+        - { id: fr-w15-d3-g04, difficulty: easy, type: mcq, prompt: "le télétravail", choices: ["remote work", "TV work", "phone work", "overtime"], answer: 0 }
+        - { id: fr-w15-d3-g05, difficulty: easy, type: mcq, prompt: "le rendez-vous (work)", choices: ["appointment", "date only", "meeting room", "deadline"], answer: 0 }
+        - { id: fr-w15-d3-g06, difficulty: easy, type: mcq, prompt: "l'entreprise", choices: ["company", "entrance", "enterprise spirit", "boss"], answer: 0 }
+        - { id: fr-w15-d3-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["le dossier", "file/case"], ["le rapport", "report"], ["le chef / la cheffe", "boss"], ["le service", "department"]] }
+        - { id: fr-w15-d3-g08, difficulty: medium, type: text, prompt: "vous ___ (écrire)", accept: ["écrivez"] }
+        - { id: fr-w15-d3-g09, difficulty: medium, type: text, prompt: "Translate: I have a meeting at 10.", accept: ["J'ai une réunion à 10 h.", "J'ai une réunion à dix heures.", "J'ai une réunion à 10 heures."] }
+        - { id: fr-w15-d3-g10, difficulty: medium, type: mcq, prompt: "What are you saying? (vous)", choices: ["Qu'est-ce que vous dites ?", "Qu'est-ce que vous disez ?", "Que vous dire ?", "Vous dit quoi ?"], answer: 0 }
+        - { id: fr-w15-d3-g11, difficulty: medium, type: truefalse, prompt: "« un CDD » is a fixed-term contract.", answer: true }
+        - { id: fr-w15-d3-g12, difficulty: medium, type: text, prompt: "elles ___ (lire)", accept: ["lisent"] }
+        - { id: fr-w15-d3-g13, difficulty: medium, type: mcq, prompt: "I'm on leave next week.", choices: ["Je suis en congé la semaine prochaine.", "Je suis congé semaine prochaine.", "J'ai congés la semaine dernière.", "Je fais congé."], answer: 0 }
+        - { id: fr-w15-d3-g14, difficulty: medium, type: text, prompt: "nous ___ (dire)", accept: ["disons"] }
+        - { id: fr-w15-d3-g15, difficulty: medium, type: order, prompt: "Order écrire: je → ils.", items: ["écris", "écris", "écrit", "écrivons", "écrivez", "écrivent"] }
+        - { id: fr-w15-d3-g16, difficulty: hard, type: text, prompt: "Translate: The intern writes the report and the boss reads it. (le lit)", accept: ["Le stagiaire écrit le rapport et le chef le lit.", "La stagiaire écrit le rapport et la cheffe le lit.", "Le stagiaire écrit le rapport et la cheffe le lit."] }
+        - { id: fr-w15-d3-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « Nous écrisons un email et vous disez merci. »", choices: ["écrivons … dites", "Only écrisons", "Only disez", "No error"], answer: 0 }
+        - { id: fr-w15-d3-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["Tu lis le dossier.", "Il dit la vérité.", "Vous écrivez au client.", "Ils lit le rapport."], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "On the phone"
+        secondsPerQuestion: 7
+        questions:
+          - { id: fr-w15-d3-rf01, difficulty: easy, type: mcq, prompt: "Allô ?", choices: ["Hello? (phone only)", "Hi everyone", "Go!", "All right?"], answer: 0 }
+          - { id: fr-w15-d3-rf02, difficulty: easy, type: mcq, prompt: "C'est de la part de qui ?", choices: ["Who's calling?", "Which department?", "Who's it for?", "Who's there? (door)"], answer: 0 }
+          - { id: fr-w15-d3-rf03, difficulty: easy, type: mcq, prompt: "Ne quittez pas.", choices: ["Hold the line.", "Don't quit your job.", "Don't leave the room.", "Hang up."], answer: 0 }
+          - { id: fr-w15-d3-rf04, difficulty: easy, type: mcq, prompt: "Je vous la passe.", choices: ["I'll put you through (to her).", "I pass.", "I'll pass it on.", "I'm passing by."], answer: 0 }
+          - { id: fr-w15-d3-rf05, difficulty: easy, type: mcq, prompt: "Elle est en réunion.", choices: ["She's in a meeting.", "She's on holiday.", "She's on the phone.", "She's out."], answer: 0 }
+          - { id: fr-w15-d3-rf06, difficulty: easy, type: mcq, prompt: "Can I leave a message?", choices: ["Je peux laisser un message ?", "Je peux quitter un message ?", "Je laisse message ?", "Je dois un message ?"], answer: 0 }
+          - { id: fr-w15-d3-rf07, difficulty: easy, type: mcq, prompt: "Can you call me back?", choices: ["Pouvez-vous me rappeler ?", "Pouvez-vous m'appeler arrière ?", "Vous rappelez-moi ?", "Rappel moi ?"], answer: 0 }
+          - { id: fr-w15-d3-rf08, difficulty: easy, type: mcq, prompt: "You've got the wrong number.", choices: ["Vous avez fait un faux numéro.", "Vous avez un mauvais téléphone.", "C'est faux.", "Numéro erreur."], answer: 0 }
+          - { id: fr-w15-d3-rf09, difficulty: easy, type: mcq, prompt: "C'est noté.", choices: ["Noted.", "It's a note.", "It's famous.", "It's marked wrong."], answer: 0 }
+          - { id: fr-w15-d3-rf10, difficulty: easy, type: mcq, prompt: "en ligne (on the phone)", choices: ["on another call", "online shopping", "in line", "offline"], answer: 0 }
+      - kind: brain-teaser
+        title: "Take a message"
+        questions:
+          - { id: fr-w15-d3-bt01, difficulty: medium, type: text, prompt: "Translate: I would like to speak to Madame Martin, please.", accept: ["Je voudrais parler à Madame Martin, s'il vous plaît.", "Je voudrais parler à Madame Martin s'il vous plaît.", "Je voudrais parler à Mme Martin, s'il vous plaît."] }
+          - { id: fr-w15-d3-bt02, difficulty: medium, type: order, prompt: "Order the call.", items: ["Allô, Société Durand, bonjour !", "Je voudrais parler à Madame Martin.", "C'est de la part de qui ?", "De Monsieur Adeyemi.", "Ne quittez pas…", "Elle est en réunion. Vous voulez laisser un message ?"] }
+          - { id: fr-w15-d3-bt03, difficulty: medium, type: mcq, prompt: "Mr Adeyemi's number", choices: ["06 45 12 78 90", "06 54 21 87 09", "06 45 12 87 90", "07 45 12 78 90"], answer: 0 }
+          - { id: fr-w15-d3-bt04, difficulty: hard, type: text, prompt: "Translate: He is out. Do you want to leave a message? (vous)", accept: ["Il est absent. Vous voulez laisser un message ?", "Il est absent. Voulez-vous laisser un message ?", "Il est absent. Vous voulez laisser un message?"] }
+          - { id: fr-w15-d3-bt05, difficulty: hard, type: mcq, prompt: "French phone numbers are read…", choices: ["in pairs: zéro six, quarante-cinq, douze…", "digit by digit only", "in threes", "as one big number"], answer: 0 }
+
+  # ─────────────────────────── DAY 4 ───────────────────────────
+  - day: 4
+    gate:
+      title: "Checkpoint: on the phone"
+      covers: "Week 15 · Day 3: answering, who's calling, hold the line, putting through, absent/in a meeting, messages, call back"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w15-d4-g01, difficulty: easy, type: mcq, prompt: "Who's calling?", choices: ["C'est de la part de qui ?", "Qui est là ?", "Vous êtes qui, toi ?", "C'est pour quoi ?"], answer: 0 }
+        - { id: fr-w15-d4-g02, difficulty: easy, type: mcq, prompt: "Hold the line.", choices: ["Ne quittez pas.", "Ne partez pas.", "Attendez la ligne.", "Restez là."], answer: 0 }
+        - { id: fr-w15-d4-g03, difficulty: easy, type: truefalse, prompt: "« Allô » is used only on the phone.", answer: true }
+        - { id: fr-w15-d4-g04, difficulty: easy, type: mcq, prompt: "He's out.", choices: ["Il est absent.", "Il est dehors.", "Il est parti en ligne.", "Il n'est rien."], answer: 0 }
+        - { id: fr-w15-d4-g05, difficulty: easy, type: mcq, prompt: "Noted.", choices: ["C'est noté.", "C'est notable.", "Je note pas.", "Noté c'est."], answer: 0 }
+        - { id: fr-w15-d4-g06, difficulty: easy, type: mcq, prompt: "I'll put you through (to him).", choices: ["Je vous le passe.", "Je vous la passe.", "Je le vous passe.", "Je passe lui."], answer: 0 }
+        - { id: fr-w15-d4-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["Ne quittez pas.", "Hold the line."], ["Il est en ligne.", "He's on another call."], ["Pouvez-vous me rappeler ?", "Can you call me back?"], ["C'est noté.", "Noted."]] }
+        - { id: fr-w15-d4-g08, difficulty: medium, type: text, prompt: "Translate: Can you call me back? (vous, inverted)", accept: ["Pouvez-vous me rappeler ?", "Pouvez-vous me rappeler?"] }
+        - { id: fr-w15-d4-g09, difficulty: medium, type: text, prompt: "Translate: She's in a meeting.", accept: ["Elle est en réunion.", "Elle est en réunion"] }
+        - { id: fr-w15-d4-g10, difficulty: medium, type: mcq, prompt: "Can you tell her to call me back?", choices: ["Pouvez-vous lui dire de me rappeler ?", "Pouvez-vous la dire me rappeler ?", "Vous dites rappeler moi ?", "Dites-la de rappeler."], answer: 0 }
+        - { id: fr-w15-d4-g11, difficulty: medium, type: truefalse, prompt: "« Je vous la passe » means you'll be put through to a woman.", answer: true }
+        - { id: fr-w15-d4-g12, difficulty: medium, type: text, prompt: "Translate: My number is 06 45 12 78 90. (Mon numéro, c'est le…)", accept: ["Mon numéro, c'est le 06 45 12 78 90.", "Mon numéro c'est le 06 45 12 78 90."] }
+        - { id: fr-w15-d4-g13, difficulty: medium, type: mcq, prompt: "Calling a hotel: I'd like to book a room.", choices: ["Je voudrais réserver une chambre.", "Je veux booker une salle.", "Je voudrais une réservation pièce.", "Je réserve chambre."], answer: 0 }
+        - { id: fr-w15-d4-g14, difficulty: medium, type: text, prompt: "Translate: You've got the wrong number.", accept: ["Vous avez fait un faux numéro.", "Vous avez fait un faux numéro"] }
+        - { id: fr-w15-d4-g15, difficulty: medium, type: mcq, prompt: "Answering formally", choices: ["Allô, Société Durand, bonjour !", "Ouais ?", "Allô, c'est qui ?", "Quoi ?"], answer: 0 }
+        - { id: fr-w15-d4-g16, difficulty: hard, type: text, prompt: "Translate: Hello, this is Mr Adeyemi. I'd like to speak to Mr Durand. (C'est…)", accept: ["Bonjour, c'est Monsieur Adeyemi. Je voudrais parler à Monsieur Durand.", "Bonjour, c'est M. Adeyemi. Je voudrais parler à M. Durand."] }
+        - { id: fr-w15-d4-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « Je vous le passe » when transferring to Madame Martin.", choices: ["le → la", "passe → passez", "vous → te", "No error"], answer: 0 }
+        - { id: fr-w15-d4-g18, difficulty: hard, type: multi, prompt: "Polite phone phrases (Select all.)", choices: ["Ne quittez pas.", "C'est de la part de qui ?", "Je peux laisser un message ?", "Raccroche !"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Formal emails"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fr-w15-d4-rf01, difficulty: easy, type: mcq, prompt: "Greeting to an unknown person", choices: ["Madame, Monsieur,", "Salut,", "Coucou,", "Chers amis,"], answer: 0 }
+          - { id: fr-w15-d4-rf02, difficulty: easy, type: mcq, prompt: "Formal sign-off", choices: ["Cordialement,", "Bises,", "À plus,", "Ciao,"], answer: 0 }
+          - { id: fr-w15-d4-rf03, difficulty: easy, type: mcq, prompt: "Je vous écris pour…", choices: ["I'm writing to you to…", "I wrote you for…", "Write to me for…", "I read you for…"], answer: 0 }
+          - { id: fr-w15-d4-rf04, difficulty: easy, type: mcq, prompt: "Vous trouverez ci-joint mon CV.", choices: ["Please find my CV attached.", "You will find my CV online.", "Find my CV below.", "I lost my CV."], answer: 0 }
+          - { id: fr-w15-d4-rf05, difficulty: easy, type: mcq, prompt: "Pourriez-vous… ?", choices: ["Could you… ?", "Can I… ?", "Must you… ?", "Did you… ?"], answer: 0 }
+          - { id: fr-w15-d4-rf06, difficulty: easy, type: mcq, prompt: "Je vous remercie par avance.", choices: ["Thank you in advance.", "I thanked you before.", "Thanks for nothing.", "Advance payment."], answer: 0 }
+          - { id: fr-w15-d4-rf07, difficulty: easy, type: mcq, prompt: "en pièce jointe", choices: ["as an attachment", "in one piece", "jointly", "in person"], answer: 0 }
+          - { id: fr-w15-d4-rf08, difficulty: easy, type: mcq, prompt: "Objet :", choices: ["Subject:", "Object:", "Objection:", "Attachment:"], answer: 0 }
+          - { id: fr-w15-d4-rf09, difficulty: easy, type: mcq, prompt: "Je souhaiterais…", choices: ["I would like…", "I wish you…", "I hoped…", "I must…"], answer: 0 }
+          - { id: fr-w15-d4-rf10, difficulty: easy, type: truefalse, prompt: "« Bises » is fine to end an email to a recruiter.", answer: false }
+      - kind: brain-teaser
+        title: "Write it properly"
+        questions:
+          - { id: fr-w15-d4-bt01, difficulty: medium, type: text, prompt: "Translate: I'm writing to you about your French courses. (au sujet de)", accept: ["Je vous écris au sujet de vos cours de français.", "Je vous écris au sujet de vos cours de français"] }
+          - { id: fr-w15-d4-bt02, difficulty: medium, type: text, prompt: "Translate: Could you send me the prices?", accept: ["Pourriez-vous m'envoyer les tarifs ?", "Pourriez-vous m'envoyer les prix ?", "Pourriez-vous m'envoyer les tarifs?"] }
+          - { id: fr-w15-d4-bt03, difficulty: medium, type: order, prompt: "Order the formal email.", items: ["Objet : Demande d'informations", "Madame, Monsieur,", "Je vous écris pour…", "Pourriez-vous m'indiquer… ?", "Je vous remercie par avance.", "Cordialement,"] }
+          - { id: fr-w15-d4-bt04, difficulty: hard, type: text, prompt: "Translate: Please find my CV attached.", accept: ["Vous trouverez ci-joint mon CV.", "Vous trouverez ci-joint mon CV", "Veuillez trouver ci-joint mon CV."] }
+          - { id: fr-w15-d4-bt05, difficulty: hard, type: mcq, prompt: "Ifeanyi's email asks about…", choices: ["evening class times, prices and online courses", "a job", "a hotel room", "a refund"], answer: 0 }
+
+  # ─────────────────────────── DAY 5 ───────────────────────────
+  - day: 5
+    gate:
+      title: "Checkpoint: the formal email"
+      covers: "Week 15 · Day 4: formal vs semi-formal greetings, purpose, requests (pourriez-vous, je souhaiterais), attachments, thanks, sign-offs"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w15-d5-g01, difficulty: easy, type: mcq, prompt: "Colleague email greeting", choices: ["Bonjour Julien,", "Madame, Monsieur,", "Cher Monsieur le Directeur,", "Yo Julien,"], answer: 0 }
+        - { id: fr-w15-d5-g02, difficulty: easy, type: mcq, prompt: "Formal sign-off", choices: ["Bien cordialement,", "Bisous,", "À+,", "Salut,"], answer: 0 }
+        - { id: fr-w15-d5-g03, difficulty: easy, type: truefalse, prompt: "« Pourriez-vous… ? » is a polite request.", answer: true }
+        - { id: fr-w15-d5-g04, difficulty: easy, type: mcq, prompt: "Thanks in advance (colleague)", choices: ["Merci d'avance !", "Je vous remercie par avance.", "Merci pour avance !", "Avance merci !"], answer: 0 }
+        - { id: fr-w15-d5-g05, difficulty: easy, type: mcq, prompt: "ci-joint", choices: ["attached", "jointly", "below", "enclosed envelope"], answer: 0 }
+        - { id: fr-w15-d5-g06, difficulty: easy, type: mcq, prompt: "Subject line word", choices: ["Objet", "Sujet only", "Titre", "Thème"], answer: 0 }
+        - { id: fr-w15-d5-g07, difficulty: medium, type: match, prompt: "Match formal / semi-formal.", pairs: [["Madame, Monsieur,", "formal greeting"], ["Bonjour Julien,", "colleague greeting"], ["Cordialement,", "formal sign-off"], ["À bientôt,", "friendly sign-off"]] }
+        - { id: fr-w15-d5-g08, difficulty: medium, type: text, prompt: "Translate: Thank you in advance for your answer.", accept: ["Je vous remercie par avance pour votre réponse.", "Merci d'avance pour votre réponse.", "Je vous remercie par avance de votre réponse."] }
+        - { id: fr-w15-d5-g09, difficulty: medium, type: text, prompt: "Translate: I would like information about the rooms. (Je souhaiterais…)", accept: ["Je souhaiterais des informations sur les chambres.", "Je souhaiterais avoir des informations sur les chambres."] }
+        - { id: fr-w15-d5-g10, difficulty: medium, type: mcq, prompt: "Can you… ? to a colleague (tu)", choices: ["Est-ce que tu peux… ?", "Pourriez-vous… ?", "Peux-vous… ?", "Tu pourriez… ?"], answer: 0 }
+        - { id: fr-w15-d5-g11, difficulty: medium, type: truefalse, prompt: "« Madame, Monsieur, » is for a recipient whose name you don't know.", answer: true }
+        - { id: fr-w15-d5-g12, difficulty: medium, type: text, prompt: "Translate: I'm sending you the report as an attachment. (tu)", accept: ["Je t'envoie le rapport en pièce jointe.", "Je t'envoie le rapport en pièce jointe"] }
+        - { id: fr-w15-d5-g13, difficulty: medium, type: mcq, prompt: "Hotel email: ask about airport transport", choices: ["Pourriez-vous m'indiquer s'il y a une navette pour l'aéroport ?", "Tu as un taxi ?", "Aéroport transport ?", "Donne-moi le bus."], answer: 0 }
+        - { id: fr-w15-d5-g14, difficulty: medium, type: text, prompt: "Translate: I am a beginner and I work during the day.", accept: ["Je suis débutant et je travaille la journée.", "Je suis débutante et je travaille la journée.", "Je suis débutant et je travaille pendant la journée."] }
+        - { id: fr-w15-d5-g15, difficulty: medium, type: mcq, prompt: "Which tense is « pourriez-vous » (learn fully in Week 31)?", choices: ["conditional", "future", "past", "present"], answer: 0 }
+        - { id: fr-w15-d5-g16, difficulty: hard, type: text, prompt: "Translate: Madam, Sir, I am writing to you to ask about your prices.", accept: ["Madame, Monsieur, je vous écris pour avoir des informations sur vos tarifs.", "Madame, Monsieur, je vous écris pour me renseigner sur vos tarifs.", "Madame, Monsieur, je vous écris pour demander vos tarifs."] }
+        - { id: fr-w15-d5-g17, difficulty: hard, type: mcq, prompt: "Spot the problem: « Salut ! Envoie-moi tes prix. Bises. » to a hotel", choices: ["far too informal: use Madame, Monsieur / Pourriez-vous / Cordialement", "grammar only", "fine", "too long"], answer: 0 }
+        - { id: fr-w15-d5-g18, difficulty: hard, type: multi, prompt: "Formal email essentials (Select all.)", choices: ["Objet", "Madame, Monsieur,", "Cordialement,", "Bises,"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "The job ad"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fr-w15-d5-rf01, difficulty: easy, type: mcq, prompt: "une offre d'emploi", choices: ["a job ad", "an offer of help", "a job offer letter only", "a sale"], answer: 0 }
+          - { id: fr-w15-d5-rf02, difficulty: easy, type: mcq, prompt: "(H/F)", choices: ["male/female", "hours/fees", "home/field", "high/full"], answer: 0 }
+          - { id: fr-w15-d5-rf03, difficulty: easy, type: mcq, prompt: "temps plein", choices: ["full time", "part time", "free time", "on time"], answer: 0 }
+          - { id: fr-w15-d5-rf04, difficulty: easy, type: mcq, prompt: "la lettre de motivation", choices: ["cover letter", "motivational speech", "reference letter", "contract"], answer: 0 }
+          - { id: fr-w15-d5-rf05, difficulty: easy, type: mcq, prompt: "Contract in the ad", choices: ["CDI, full time", "CDD, part time", "internship", "freelance"], answer: 0 }
+          - { id: fr-w15-d5-rf06, difficulty: easy, type: mcq, prompt: "Salary in the ad", choices: ["450 000 FCFA/month", "450 000 €/year", "45 000 FCFA", "4 500 FCFA"], answer: 0 }
+          - { id: fr-w15-d5-rf07, difficulty: easy, type: mcq, prompt: "Deadline", choices: ["30 November", "13 November", "30 September", "1 December"], answer: 0 }
+          - { id: fr-w15-d5-rf08, difficulty: easy, type: mcq, prompt: "Experience required", choices: ["2 years minimum", "none", "5 years", "1 year"], answer: 0 }
+          - { id: fr-w15-d5-rf09, difficulty: easy, type: mcq, prompt: "Company city", choices: ["Abidjan", "Dakar", "Lagos", "Paris"], answer: 0 }
+          - { id: fr-w15-d5-rf10, difficulty: easy, type: mcq, prompt: "la maîtrise d'Excel", choices: ["command of Excel", "a master's in Excel", "Excel mistress", "basic Excel"], answer: 0 }
+      - kind: brain-teaser
+        title: "Apply"
+        questions:
+          - { id: fr-w15-d5-bt01, difficulty: medium, type: text, prompt: "Quel type de contrat ?", accept: ["Un CDI à temps plein.", "Un CDI à temps plein", "C'est un CDI à temps plein."] }
+          - { id: fr-w15-d5-bt02, difficulty: medium, type: text, prompt: "Quelles langues faut-il parler ?", accept: ["Français et anglais.", "Le français et l'anglais.", "Français et anglais", "Il faut parler français et anglais."] }
+          - { id: fr-w15-d5-bt03, difficulty: medium, type: multi, prompt: "Missions in the ad (Select all.)", choices: ["accueillir les clients", "répondre au téléphone", "organiser les réunions", "conduire le camion"], answers: [0, 1, 2] }
+          - { id: fr-w15-d5-bt04, difficulty: hard, type: text, prompt: "Translate: I am very interested in this position. (Ce poste m'intéresse beaucoup.)", accept: ["Ce poste m'intéresse beaucoup.", "Ce poste m'intéresse beaucoup", "Je suis très intéressé par ce poste.", "Je suis très intéressée par ce poste."] }
+          - { id: fr-w15-d5-bt05, difficulty: hard, type: mcq, prompt: "FCFA is…", choices: ["the West African CFA franc", "a French bank", "a job title", "a contract type"], answer: 0 }
+
+  # ─────────────────────────── DAY 6 ───────────────────────────
+  - day: 6
+    gate:
+      title: "Checkpoint: reading a job ad"
+      covers: "Week 15 · Day 5: offre d'emploi, H/F, temps plein/partiel, missions, profil, maîtrise de, lettre de motivation"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w15-d6-g01, difficulty: easy, type: mcq, prompt: "temps partiel", choices: ["part time", "full time", "overtime", "past time"], answer: 0 }
+        - { id: fr-w15-d6-g02, difficulty: easy, type: mcq, prompt: "les missions", choices: ["duties", "missions abroad", "messages", "salaries"], answer: 0 }
+        - { id: fr-w15-d6-g03, difficulty: easy, type: truefalse, prompt: "« le profil » in a job ad = the requirements.", answer: true }
+        - { id: fr-w15-d6-g04, difficulty: easy, type: mcq, prompt: "Where to send the application", choices: ["recrutement@techafrique.ci", "jobs@abidjan.com", "the post office", "by phone"], answer: 0 }
+        - { id: fr-w15-d6-g05, difficulty: easy, type: mcq, prompt: "Job title", choices: ["Bilingual administrative assistant", "Accountant", "Developer", "Driver"], answer: 0 }
+        - { id: fr-w15-d6-g06, difficulty: easy, type: mcq, prompt: "Personality wanted", choices: ["serious and organised", "funny and chatty", "lazy and calm", "shy"], answer: 0 }
+        - { id: fr-w15-d6-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["une offre d'emploi", "job ad"], ["la lettre de motivation", "cover letter"], ["temps plein", "full time"], ["un CDI", "permanent contract"]] }
+        - { id: fr-w15-d6-g08, difficulty: medium, type: text, prompt: "Quelle est la date limite ?", accept: ["Le 30 novembre.", "Le 30 novembre", "Le trente novembre."] }
+        - { id: fr-w15-d6-g09, difficulty: medium, type: text, prompt: "Translate: I am responsible for the clients. (Je suis responsable de…)", accept: ["Je suis responsable des clients.", "Je suis responsable des clients"] }
+        - { id: fr-w15-d6-g10, difficulty: medium, type: mcq, prompt: "I take care of the reports.", choices: ["Je m'occupe des rapports.", "Je m'occupe de les rapports.", "J'occupe les rapports.", "Je soigne les rapports."], answer: 0 }
+        - { id: fr-w15-d6-g11, difficulty: medium, type: truefalse, prompt: "The ad wants a monolingual French speaker.", answer: false }
+        - { id: fr-w15-d6-g12, difficulty: medium, type: text, prompt: "Translate: I work full time in a bank.", accept: ["Je travaille à temps plein dans une banque.", "Je travaille à temps plein dans une banque"] }
+        - { id: fr-w15-d6-g13, difficulty: medium, type: mcq, prompt: "Professional self-intro opener", choices: ["Je m'appelle Ifeanyi Obi et je suis comptable chez…", "Salut, moi c'est Ife lol", "Je suis là.", "Bonjour, CV."], answer: 0 }
+        - { id: fr-w15-d6-g14, difficulty: medium, type: text, prompt: "Translate: My career goal is to work in Canada.", accept: ["Mon objectif professionnel, c'est de travailler au Canada.", "Mon objectif professionnel est de travailler au Canada.", "Mon objectif de carrière est de travailler au Canada."] }
+        - { id: fr-w15-d6-g15, difficulty: medium, type: order, prompt: "Order the application email.", items: ["Objet : Candidature — Assistant administratif bilingue", "Madame, Monsieur,", "Je vous écris pour poser ma candidature…", "Vous trouverez ci-joint mon CV.", "Je vous remercie par avance.", "Cordialement,"] }
+        - { id: fr-w15-d6-g16, difficulty: hard, type: text, prompt: "Translate: I speak French and English and I have a good command of Excel.", accept: ["Je parle français et anglais et j'ai une bonne maîtrise d'Excel.", "Je parle français et anglais, et j'ai une bonne maîtrise d'Excel."] }
+        - { id: fr-w15-d6-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « Madame, Monsieur, je vous écris pour la poste d'assistant. Bises. »", choices: ["le poste (job is masculine) … Cordialement", "Only la poste", "Only Bises", "No error"], answer: 0 }
+        - { id: fr-w15-d6-g18, difficulty: hard, type: multi, prompt: "Good in a professional profile (Select all.)", choices: ["Je suis responsable de…", "Je m'occupe de…", "Mon objectif est de…", "Je déteste mon chef."], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Week 15 lightning round"
+        secondsPerQuestion: 7
+        questions:
+          - { id: fr-w15-d6-rf01, difficulty: easy, type: mcq, prompt: "200", choices: ["deux cents", "deux cent", "deux-cents", "deux centes"], answer: 0 }
+          - { id: fr-w15-d6-rf02, difficulty: easy, type: mcq, prompt: "1 000", choices: ["mille", "milles", "un mille", "mil"], answer: 0 }
+          - { id: fr-w15-d6-rf03, difficulty: easy, type: text, prompt: "vous ___ (dire)", accept: ["dites"] }
+          - { id: fr-w15-d6-rf04, difficulty: easy, type: text, prompt: "nous ___ (écrire)", accept: ["écrivons"] }
+          - { id: fr-w15-d6-rf05, difficulty: easy, type: mcq, prompt: "Hold the line.", choices: ["Ne quittez pas.", "Raccrochez.", "Rappelez.", "Allô."], answer: 0 }
+          - { id: fr-w15-d6-rf06, difficulty: easy, type: mcq, prompt: "Formal sign-off", choices: ["Cordialement,", "Bises,", "À plus,", "Bisous,"], answer: 0 }
+          - { id: fr-w15-d6-rf07, difficulty: easy, type: mcq, prompt: "un CDI", choices: ["permanent contract", "fixed-term", "internship", "CD player"], answer: 0 }
+          - { id: fr-w15-d6-rf08, difficulty: easy, type: mcq, prompt: "cover letter", choices: ["la lettre de motivation", "le CV", "l'offre", "le contrat"], answer: 0 }
+          - { id: fr-w15-d6-rf09, difficulty: easy, type: mcq, prompt: "Who's calling?", choices: ["C'est de la part de qui ?", "Qui appelle-t-il ?", "C'est qui là ?", "Vous êtes où ?"], answer: 0 }
+          - { id: fr-w15-d6-rf10, difficulty: easy, type: mcq, prompt: "€1,500.50 in French", choices: ["1 500,50 €", "1,500.50 €", "1500.50€", "1.500,50 € only"], answer: 0 }
+      - kind: brain-teaser
+        title: "My professional profile"
+        questions:
+          - { id: fr-w15-d6-bt01, difficulty: medium, type: text, prompt: "Translate: I am an accountant in a company in Lagos.", accept: ["Je suis comptable dans une entreprise à Lagos.", "Je suis comptable dans une entreprise à Lagos"] }
+          - { id: fr-w15-d6-bt02, difficulty: medium, type: text, prompt: "Translate: I work from 8 am to 5 pm.", accept: ["Je travaille de 8 h à 17 h.", "Je travaille de huit heures à dix-sept heures.", "Je travaille de 8 heures à 17 heures."] }
+          - { id: fr-w15-d6-bt03, difficulty: medium, type: text, prompt: "Translate: I take care of the clients and the reports.", accept: ["Je m'occupe des clients et des rapports.", "Je m'occupe des clients et des rapports"] }
+          - { id: fr-w15-d6-bt04, difficulty: hard, type: text, prompt: "Translate: I earn two hundred thousand naira a month. (in words)", accept: ["Je gagne deux cent mille nairas par mois.", "Je gagne deux cent mille nairas par mois"] }
+          - { id: fr-w15-d6-bt05, difficulty: hard, type: mcq, prompt: "Find the sentence with NO mistake.", choices: ["Je vous écris pour avoir des informations sur le poste.", "Vous disez que c'est cher.", "Il gagne trois milles euros.", "Madame, Monsieur, bises."], answer: 0 }

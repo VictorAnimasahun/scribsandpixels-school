@@ -1,0 +1,42 @@
+# Week 11 · Conditional-formatting rule formulas as TRUE/FALSE helper columns, and a selector-driven helper for a dynamic chart.
+id: xl-w11-rules
+kind: sheet
+title: "Rule formulas and selectors"
+description: "The first 200 orders of 2025 (1 Jan – 10 Feb), with NetSales in G. Every conditional-formatting rule is just a TRUE/FALSE formula for the first row: write each one here as a helper column, count what it would highlight, then build the numbers a dynamic chart needs."
+dataset:
+  file: sales_2025
+  rows: 200
+  columns: [OrderDate, Region, Product, Units, UnitPrice, DiscountPct]
+cells:
+  G1: NetSales
+  H1: "Lagos row?"
+  I1: "Weekend?"
+  J1: "Search hit?"
+  K1: "Big order here?"
+  M1: "Region"
+  N1: "Lagos"
+  M2: "Search"
+  N2: "tecno"
+  M4: "Lagos rows"
+  M5: "Weekend rows"
+  M6: "Search hits"
+  M7: "Big orders in N1"
+  M9: "Net sales in N1"
+  M10: "January, N1"
+  M11: "Chart title"
+cols: 14
+rows: 202
+formulaFill:
+  G: "=D{r}*E{r}*(1-F{r}/100)"
+tasks:
+  - {"prompt": "H2: the rule for \"highlight Lagos rows\": TRUE when the Region in B is Lagos. Lock the column with $.", "cell": "H2", "expect": "FALSE", "formula": true, "mustUse": ["$B2"], "solution": "=$B2=\"Lagos\"", "hint": "=$B2=\"Lagos\""}
+  - {"prompt": "Fill H down, then N4: how many rows would that rule highlight? (COUNTIF the TRUEs.)", "cell": "N4", "expect": 78, "formula": true, "solution": "=COUNTIF(H2:H201,TRUE)", "solutionFill": {"H": "=$B{r}=\"Lagos\""}, "hint": "=COUNTIF(H2:H201,TRUE)"}
+  - {"prompt": "I2: the weekend rule: TRUE when the date in A is a Saturday or Sunday (WEEKDAY with type 2).", "cell": "I2", "expect": "FALSE", "formula": true, "mustUse": ["WEEKDAY(", "$A2"], "solution": "=WEEKDAY($A2,2)>=6", "hint": "=WEEKDAY($A2,2)>=6"}
+  - {"prompt": "Fill I down, then N5: weekend orders.", "cell": "N5", "expect": 57, "formula": true, "solution": "=COUNTIF(I2:I201,TRUE)", "solutionFill": {"I": "=WEEKDAY($A{r},2)>=6"}, "hint": "=COUNTIF(I2:I201,TRUE)"}
+  - {"prompt": "J2: the search-box rule: TRUE when the Product in C contains the text in N2 (any case).", "cell": "J2", "expect": "FALSE", "formula": true, "mustUse": ["ISNUMBER(", "SEARCH(", "$N$2"], "solution": "=ISNUMBER(SEARCH($N$2,$C2))", "hint": "=ISNUMBER(SEARCH($N$2,$C2))"}
+  - {"prompt": "Fill J down, then N6: how many rows match \"tecno\"? (Change N2 afterwards and watch it update.)", "cell": "N6", "expect": 6, "formula": true, "solution": "=COUNTIF(J2:J201,TRUE)", "solutionFill": {"J": "=ISNUMBER(SEARCH($N$2,$C{r}))"}, "hint": "=COUNTIF(J2:J201,TRUE)"}
+  - {"prompt": "K2: TRUE when the row's region is the one chosen in N1 AND NetSales is at least ₦1,000,000.", "cell": "K2", "expect": "FALSE", "formula": true, "mustUse": ["AND(", "$N$1"], "solution": "=AND($B2=$N$1,$G2>=1000000)", "hint": "=AND($B2=$N$1,$G2>=1000000)"}
+  - {"prompt": "Fill K down, then N7: big orders in the chosen region.", "cell": "N7", "expect": 3, "formula": true, "solution": "=COUNTIF(K2:K201,TRUE)", "solutionFill": {"K": "=AND($B{r}=$N$1,$G{r}>=1000000)"}, "hint": "=COUNTIF(K2:K201,TRUE)"}
+  - {"prompt": "N9: net sales for the region in N1 (this is a dynamic chart's helper cell).", "cell": "N9", "expect": 21305760, "formula": true, "mustUse": ["$N$1"], "solution": "=SUMIFS(G2:G201,B2:B201,$N$1)", "hint": "=SUMIFS(G2:G201,B2:B201,$N$1)"}
+  - {"prompt": "N10: January net sales for the region in N1 (dates before 1 Feb 2025).", "cell": "N10", "expect": 15177460, "formula": true, "mustUse": ["$N$1", "DATE("], "solution": "=SUMIFS(G2:G201,B2:B201,$N$1,A2:A201,\"<\"&DATE(2025,2,1))", "hint": "=SUMIFS(G2:G201,B2:B201,$N$1,A2:A201,\"<\"&DATE(2025,2,1))"}
+  - {"prompt": "N11: a dynamic chart title: \"Monthly net sales for \" joined to N1.", "cell": "N11", "expect": "Monthly net sales for Lagos", "formula": true, "mustUse": ["N1"], "solution": "=\"Monthly net sales for \"&N1", "hint": "=\"Monthly net sales for \"&N1"}
