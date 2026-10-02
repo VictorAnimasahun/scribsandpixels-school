@@ -43,6 +43,72 @@ const scalar = (arg: Arg | undefined): unknown => (arg === undefined ? undefined
 const num = (v: unknown): number => (typeof v === 'number' ? v : typeof v === 'boolean' ? Number(v) : Number(v ?? 0))
 const isNum = (v: unknown) => typeof v === 'number' && Number.isFinite(v)
 
+/** Index of the nth delimiter (negative n counts from the end), or -1. */
+function nthIndex(text: string, delim: string, n: number): number {
+  if (!delim || n === 0) return -1
+  const positions: number[] = []
+  for (let i = text.indexOf(delim); i >= 0; i = text.indexOf(delim, i + delim.length)) positions.push(i)
+  const pick = n > 0 ? positions[n - 1] : positions[positions.length + n]
+  return pick ?? -1
+}
+
+const EXCEL_EPOCH = Date.UTC(1899, 11, 30)
+const DAY_MS = 86400000
+const DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+
+/** Excel's TEXT for the formats the course uses: ₦#,##0 · 0.0 · 0.0% · dddd · d mmmm yyyy · hh:mm. */
+export function formatText(value: unknown, format: string): string {
+  if (typeof value !== 'number') return value === null || value === undefined ? '' : String(value)
+  const bare = format.replace(/"[^"]*"/g, '')
+  if (/[dyhs]/i.test(bare) || /^m+$/i.test(bare.trim()) || /m{3,}/i.test(bare)) return formatDate(value, format)
+  const m = format.match(/([#0,]+)(\.([0#]+))?/)
+  if (!m) return format.replace(/"/g, '')
+  const prefix = format.slice(0, m.index).replace(/"/g, '')
+  const suffix = format.slice(m.index! + m[0].length).replace(/"/g, '')
+  const decimals = m[3]?.length ?? 0
+  const x = suffix.includes('%') ? value * 100 : value
+  const body = Math.abs(x).toLocaleString('en-US', { minimumFractionDigits: decimals, maximumFractionDigits: decimals, useGrouping: m[1].includes(',') })
+  return (x < 0 ? '-' : '') + prefix + body + suffix
+}
+
+function formatDate(serial: number, format: string): string {
+  const d = new Date(EXCEL_EPOCH + Math.round(serial * DAY_MS))
+  const tokens = /yyyy|yy|mmmm|mmm|mm|m|dddd|ddd|dd|d|hh|h|ss|"[^"]*"/gi
+  let afterHour = false
+  return format.replace(tokens, (t) => {
+    const lower = t.toLowerCase()
+    if (t.startsWith('"')) return t.slice(1, -1)
+    const pad = (n: number) => String(n).padStart(2, '0')
+    let out: string
+    if (lower === 'yyyy') out = String(d.getUTCFullYear())
+    else if (lower === 'yy') out = pad(d.getUTCFullYear() % 100)
+    else if (lower === 'mmmm') out = MONTHS[d.getUTCMonth()]
+    else if (lower === 'mmm') out = MONTHS[d.getUTCMonth()].slice(0, 3)
+    else if (lower === 'mm') out = afterHour ? pad(d.getUTCMinutes()) : pad(d.getUTCMonth() + 1)
+    else if (lower === 'm') out = afterHour ? String(d.getUTCMinutes()) : String(d.getUTCMonth() + 1)
+    else if (lower === 'dddd') out = DAYS[d.getUTCDay()]
+    else if (lower === 'ddd') out = DAYS[d.getUTCDay()].slice(0, 3)
+    else if (lower === 'dd') out = pad(d.getUTCDate())
+    else if (lower === 'd') out = String(d.getUTCDate())
+    else if (lower === 'hh') out = pad(d.getUTCHours())
+    else if (lower === 'h') out = String(d.getUTCHours())
+    else out = pad(d.getUTCSeconds())
+    afterHour = lower === 'hh' || lower === 'h'
+    return out
+  })
+}
+
+/** A typed time (08:07) or ISO date (2025-03-15): stored as Excel numbers, shown as typed. */
+export function typedDateTime(raw: string): number | null {
+  const t = raw.trim()
+  const time = t.match(/^(\d{1,2}):(\d{2})(?::(\d{2}))?$/)
+  if (time && Number(time[1]) < 24 && Number(time[2]) < 60) return (Number(time[1]) * 3600 + Number(time[2]) * 60 + Number(time[3] ?? 0)) / 86400
+  const iso = t.match(/^(\d{4})-(\d{2})-(\d{2})$/)
+  if (iso) return (Date.UTC(Number(iso[1]), Number(iso[2]) - 1, Number(iso[3])) - EXCEL_EPOCH) / DAY_MS
+  return null
+}
+
 /** Excel-style criteria: 5, "Lagos", ">=1000", "<>Cash", "Lag*", "?ano". */
 export function matchesCriteria(value: unknown, criteria: unknown): boolean {
   if (typeof criteria === 'number' || typeof criteria === 'boolean') return value === criteria || (isNum(value) && value === Number(criteria))
@@ -133,20 +199,28 @@ const extraFunctions: Record<string, (...args: Arg[]) => unknown> = {
     const skip = Boolean(scalar(ignoreEmpty))
     return rest.flatMap(flat).filter((v) => !(skip && (v === null || v === ''))).map((v) => (v === null ? '' : String(v))).join(String(scalar(delim) ?? ''))
   },
+  // fast-formula-parser's SEARCH fails on plain text; Excel's is case-insensitive with * and ? wildcards.
+  SEARCH: (findText, within, start) => {
+    const from = start === undefined ? 1 : num(scalar(start))
+    const pattern = new RegExp(String(scalar(findText) ?? '').replace(/[.+^${}()|[\]\\]/g, '\\$&').replace(/\*/g, '.*').replace(/\?/g, '.'), 'i')
+    const i = String(scalar(within) ?? '').slice(from - 1).search(pattern)
+    return i < 0 ? FormulaError.VALUE : i + from
+  },
+  TEXT: (value, format) => formatText(scalar(value), String(scalar(format) ?? '')),
   SWITCH: (expr, ...cases) => {
     const v = scalar(expr)
     for (let i = 0; i + 1 < cases.length; i += 2) if (scalar(cases[i]) === v) return scalar(cases[i + 1])
     return cases.length % 2 === 1 ? scalar(cases[cases.length - 1]) : FormulaError.NA
   },
-  TEXTBEFORE: (text, delim) => {
+  TEXTBEFORE: (text, delim, instance) => {
     const t = String(scalar(text) ?? '')
-    const i = t.indexOf(String(scalar(delim)))
+    const i = nthIndex(t, String(scalar(delim)), instance === undefined ? 1 : num(scalar(instance)))
     return i < 0 ? FormulaError.NA : t.slice(0, i)
   },
-  TEXTAFTER: (text, delim) => {
+  TEXTAFTER: (text, delim, instance) => {
     const t = String(scalar(text) ?? '')
     const d = String(scalar(delim))
-    const i = t.indexOf(d)
+    const i = nthIndex(t, d, instance === undefined ? 1 : num(scalar(instance)))
     return i < 0 ? FormulaError.NA : t.slice(i + d.length)
   },
   // Basics the parser library lacks, or does differently from Excel
@@ -192,6 +266,8 @@ function literal(raw: string): CellValue {
   if (t === '') return null
   if (/^-?\d+(\.\d+)?$/.test(t)) return Number(t)
   if (/^-?\d+(\.\d+)?%$/.test(t)) return Number(t.slice(0, -1)) / 100
+  const dateTime = typedDateTime(t)
+  if (dateTime !== null) return dateTime
   if (/^(true|false)$/i.test(t)) return t.toLowerCase() === 'true'
   return raw.startsWith("'") ? raw.slice(1) : raw
 }

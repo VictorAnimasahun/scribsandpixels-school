@@ -122,3 +122,35 @@ describe('display', () => {
     expect(display({ error: '#N/A' })).toBe('#N/A')
   })
 })
+
+describe('text, date and time functions used in Weeks 7–8', () => {
+  const s = new Sheet({ D1: 'Lagos - Ikeja', H1: '08:07', I1: '18:31', F1: '2025-03-15', J1: '22:00', K1: '06:00' })
+  const ev = (f: string) => {
+    s.set('Z1', f)
+    return s.get('Z1')
+  }
+  it('SEARCH is case-insensitive and errors when missing', () => {
+    expect(ev('=SEARCH("ikeja",D1)')).toBe(9)
+    expect(ev('=SEARCH("L?gos",D1)')).toBe(1)
+    expect(ev('=SEARCH("x",D1)')).toEqual({ error: '#VALUE!' })
+  })
+  it('TEXT formats numbers, percentages, dates and times', () => {
+    expect(ev('=TEXT(1500000,"₦#,##0")')).toBe('₦1,500,000')
+    expect(ev('=TEXT(0.386,"0.0%")')).toBe('38.6%')
+    expect(ev('=TEXT(2.5,"0.00")')).toBe('2.50')
+    expect(ev('=TEXT(DATE(2025,1,1),"dddd, d mmmm yyyy")')).toBe('Wednesday, 1 January 2025')
+    expect(ev('=TEXT(DATE(2025,3,15),"dd/mm/yyyy")')).toBe('15/03/2025')
+    expect(ev('=TEXT(TIME(8,30,0),"hh:mm")')).toBe('08:30')
+  })
+  it('typed times and ISO dates are numbers, so date and time maths works', () => {
+    expect(ev('=ROUND((I1-H1)*24,2)')).toBe(10.4)
+    expect(ev('=MOD(K1-J1,1)*24')).toBe(8)
+    expect(ev('=YEAR(F1)')).toBe(2025)
+    expect(ev('=H1>TIME(8,30,0)')).toBe(false)
+  })
+  it('TEXTBEFORE/TEXTAFTER take an occurrence number', () => {
+    expect(ev('=TEXTAFTER("a-b-c","-",2)')).toBe('c')
+    expect(ev('=TEXTAFTER("ada.okafor@yahoo.com",".",-1)')).toBe('com')
+    expect(ev('=TEXTBEFORE("a-b-c","-",2)')).toBe('a-b')
+  })
+})

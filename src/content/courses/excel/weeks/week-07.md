@@ -38,6 +38,10 @@ Combine: `=PROPER(TRIM(B2))`
 
 **Check:** raw file has **315** rows and **24** different city spellings; names like `"Ibrahim, Ngozi"` still need fixing (tomorrow).
 
+**Sandbox:** clean the first 20 rows right here; each task checks your formula's result.
+
+::sandbox xl-w07-text
+
 ### Mini-Task (10 min)
 Count blanks: phones and emails with COUNTBLANK. (**58** blank phones, **76** blank emails)
 
@@ -101,6 +105,10 @@ From memory: first name and last name from a full name.
    - Step 2: `=IF(LEFT(K2,4)="+234","0"&MID(K2,5,20), IF(LEFT(K2,3)="234","0"&MID(K2,4,20), K2))`
 3. Check: every non-blank phone should now have **11** characters (use LEN and COUNTIF).
 
+**Sandbox:** do the name and phone tasks in the sandbox.
+
+::sandbox xl-w07-text
+
 ### Mini-Task (10 min)
 Create a staff email from first and last name: `=LOWER(F2&"."&G2&"@naijamart.ng")`.
 
@@ -154,6 +162,10 @@ From memory: TEXTBEFORE and TEXTAFTER on a store name.
 1. **CityClean** column with the mapping formula. Check with Remove Duplicates on a copy: exactly 6 cities.
 2. **SpendClean** as a real number ("N/A" → blank). How many N/A? (**77**)
 3. A **Label** column: `=Name&" — "&CityClean&" — "&TEXT(SpendClean,"₦#,##0")`
+
+**Sandbox:** finish the city and spend tasks.
+
+::sandbox xl-w07-text
 
 ### Mini-Task (10 min)
 Remove duplicate rows (Data → Remove Duplicates, all columns) on a **copy** of the sheet. How many removed? (**15**)

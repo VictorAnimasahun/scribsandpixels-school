@@ -1,0 +1,31 @@
+# Week 7 · Clean the first 20 rows of messy_customers.csv with text formulas.
+id: xl-w07-text
+kind: sheet
+title: "Clean the customer list"
+description: "The first 20 rows of the real messy customer file. Build clean columns next to the raw data: names, phones, emails, cities and spend."
+dataset:
+  file: messy_customers
+  rows: 20
+  columns: [FullName, Phone, Email, City, TotalSpend]
+cells:
+  G1: "Name"
+  H1: "PhoneStep"
+  I1: "Phone"
+  J1: "Email"
+  K1: "City"
+  L1: "Spend"
+  N2: "Lagos customers"
+  N3: "Total spend"
+  N4: "No phone"
+cols: 15
+rows: 22
+tasks:
+  - {"prompt": "G2: a clean name for row 2 with PROPER and TRIM.", "cell": "G2", "expect": "Dayo Onyeka", "formula": true, "mustUse": ["PROPER(", "TRIM("], "solution": "=PROPER(TRIM(A2))", "hint": "=PROPER(TRIM(A2))"}
+  - {"prompt": "Fix \"Surname, First\" names too: G4 (Ibrahim, Ngozi) should read Ngozi Ibrahim. Use FIND for the comma, then fill G down.", "cell": "G4", "expect": "Ngozi Ibrahim", "formula": true, "mustUse": ["FIND("], "solution": "=IF(ISNUMBER(FIND(\",\",A4)),PROPER(TRIM(MID(A4,FIND(\",\",A4)+1,100))&\" \"&TRIM(LEFT(A4,FIND(\",\",A4)-1))),PROPER(TRIM(A4)))", "solutionFill": {"G": "=IF(ISNUMBER(FIND(\",\",A{r})),PROPER(TRIM(MID(A{r},FIND(\",\",A{r})+1,100))&\" \"&TRIM(LEFT(A{r},FIND(\",\",A{r})-1))),PROPER(TRIM(A{r})))"}, "hint": "=IF(ISNUMBER(FIND(\",\",A4)), PROPER(TRIM(MID(A4,FIND(\",\",A4)+1,100))&\" \"&TRIM(LEFT(A4,FIND(\",\",A4)-1))), PROPER(TRIM(A4)))"}
+  - {"prompt": "H: remove spaces and dashes from the phone (nested SUBSTITUTE). I: turn +234…/234… into 0…. I19 (234-703-407-0899) should be 07034070899.", "cell": "I19", "expect": "07034070899", "formula": true, "solution": "=IF(LEFT(H19,4)=\"+234\",\"0\"&MID(H19,5,20),IF(LEFT(H19,3)=\"234\",\"0\"&MID(H19,4,20),H19))", "solutionFill": {"H": "=SUBSTITUTE(SUBSTITUTE(B{r},\" \",\"\"),\"-\",\"\")", "I": "=IF(LEFT(H{r},4)=\"+234\",\"0\"&MID(H{r},5,20),IF(LEFT(H{r},3)=\"234\",\"0\"&MID(H{r},4,20),H{r}))"}, "hint": "H2: =SUBSTITUTE(SUBSTITUTE(B2,\" \",\"\"),\"-\",\"\")  I2: =IF(LEFT(H2,4)=\"+234\",\"0\"&MID(H2,5,20),IF(LEFT(H2,3)=\"234\",\"0\"&MID(H2,4,20),H2))"}
+  - {"prompt": "Fill H and I down. I5 (+2348167637920) should be 08167637920.", "cell": "I5", "expect": "08167637920", "formula": true, "solution": "=IF(LEFT(H5,4)=\"+234\",\"0\"&MID(H5,5,20),IF(LEFT(H5,3)=\"234\",\"0\"&MID(H5,4,20),H5))"}
+  - {"prompt": "J9: the email in lower case, trimmed.", "cell": "J9", "expect": "maryam.adeyemi@gmail.com", "formula": true, "mustUse": ["LOWER("], "solution": "=LOWER(TRIM(C9))", "hint": "=LOWER(TRIM(C9))"}
+  - {"prompt": "K: map every city spelling to one of 6 clean names (SEARCH + IF). K5 (PH) should be Port Harcourt.", "cell": "K5", "expect": "Port Harcourt", "formula": true, "mustUse": ["SEARCH("], "solution": "=IF(ISNUMBER(SEARCH(\"lag\",D5)),\"Lagos\",IF(ISNUMBER(SEARCH(\"abuja\",D5)),\"Abuja\",IF(OR(ISNUMBER(SEARCH(\"port\",D5)),TRIM(D5)=\"PH\"),\"Port Harcourt\",PROPER(TRIM(SUBSTITUTE(D5,\", Oyo\",\"\"))))))", "solutionFill": {"K": "=IF(ISNUMBER(SEARCH(\"lag\",D{r})),\"Lagos\",IF(ISNUMBER(SEARCH(\"abuja\",D{r})),\"Abuja\",IF(OR(ISNUMBER(SEARCH(\"port\",D{r})),TRIM(D{r})=\"PH\"),\"Port Harcourt\",PROPER(TRIM(SUBSTITUTE(D{r},\", Oyo\",\"\"))))))"}, "hint": "=IF(ISNUMBER(SEARCH(\"lag\",D2)),\"Lagos\",IF(ISNUMBER(SEARCH(\"abuja\",D2)),\"Abuja\",IF(OR(ISNUMBER(SEARCH(\"port\",D2)),TRIM(D2)=\"PH\"),\"Port Harcourt\",PROPER(TRIM(SUBSTITUTE(D2,\", Oyo\",\"\"))))))"}
+  - {"prompt": "Fill K down. O2: how many Lagos customers in these 20 rows? (COUNTIF on K)", "cell": "O2", "expect": 5, "formula": true, "solution": "=COUNTIF(K2:K21,\"Lagos\")"}
+  - {"prompt": "L: spend as a real number (₦ and commas removed, \"N/A\" → blank). O3: total spend of the 20.", "cell": "O3", "expect": 7772000, "formula": true, "solution": "=SUM(L2:L21)", "solutionFill": {"L": "=IFERROR(VALUE(SUBSTITUTE(SUBSTITUTE(E{r},\"₦\",\"\"),\",\",\"\")),\"\")"}, "hint": "L2: =IFERROR(VALUE(SUBSTITUTE(SUBSTITUTE(E2,\"₦\",\"\"),\",\",\"\")),\"\")  O3: =SUM(L2:L21)"}
+  - {"prompt": "O4: how many customers have no phone? (COUNTBLANK on column B)", "cell": "O4", "expect": 2, "formula": true, "solution": "=COUNTBLANK(B2:B21)", "hint": "=COUNTBLANK(B2:B21)"}

@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState, type KeyboardEvent } from 'react'
 import type { Sandbox } from '../../content/sandboxes.ts'
-import { colToLetters, display, parseRef, Sheet, toRef } from '../../domain/sheet.ts'
+import { colToLetters, display, parseRef, Sheet, toRef, typedDateTime } from '../../domain/sheet.ts'
 import { applySolution, buildSheetCells, missingParts, taskPassed } from '../../domain/sheetSandbox.ts'
 import { loadSaved, save } from './storage.ts'
 
@@ -10,6 +10,8 @@ const datasets: Record<string, () => Promise<{ default: string }>> = {
   sales_2025: () => import('../../content/courses/excel/datasets/sales_2025.csv?raw'),
   products: () => import('../../content/courses/excel/datasets/products.csv?raw'),
   employees: () => import('../../content/courses/excel/datasets/employees.csv?raw'),
+  messy_customers: () => import('../../content/courses/excel/datasets/messy_customers.csv?raw'),
+  'timesheet_2025-03': () => import('../../content/courses/excel/datasets/timesheet_2025-03.csv?raw'),
 }
 
 export default function SheetSandbox({ sandbox }: Props) {
@@ -151,7 +153,8 @@ export default function SheetSandbox({ sandbox }: Props) {
                           onBlur={() => finishEdit()}
                         />
                       ) : (
-                        display(value)
+                        // typed times/dates are numbers inside, but show as typed (like Excel's formatting)
+                        typedDateTime(sheet.getRaw(ref)) !== null ? sheet.getRaw(ref) : display(value)
                       )}
                     </td>
                   )

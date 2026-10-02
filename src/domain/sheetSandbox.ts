@@ -41,7 +41,8 @@ export function buildSheetCells(sandbox: SheetSandbox, csv?: string): Record<str
       if (source < 0) throw new Error(`${sandbox.id}: dataset has no column ${name}`)
       cells[toRef(c + 1, 1)] = name
       // Text that looks like a formula or number stays literal via the leading apostrophe rule only when needed.
-      picked.forEach((row, r) => { cells[toRef(c + 1, r + 2)] = row[source] })
+      // Digits with a leading 0 (phone numbers) stay text, like typing '0803… in Excel.
+      picked.forEach((row, r) => { cells[toRef(c + 1, r + 2)] = /^0\d+$/.test(row[source]) ? `'${row[source]}` : row[source] })
     })
   }
   for (const [ref, value] of Object.entries(sandbox.cells ?? {})) cells[ref.toUpperCase()] = String(value)

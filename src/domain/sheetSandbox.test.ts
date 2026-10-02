@@ -3,10 +3,12 @@ import { sandboxes } from '../content/sandboxes.ts'
 import sales from '../content/courses/excel/datasets/sales_2025.csv?raw'
 import products from '../content/courses/excel/datasets/products.csv?raw'
 import employees from '../content/courses/excel/datasets/employees.csv?raw'
+import messyCustomers from '../content/courses/excel/datasets/messy_customers.csv?raw'
+import timesheet from '../content/courses/excel/datasets/timesheet_2025-03.csv?raw'
 import { Sheet } from './sheet.ts'
 import { applySolution, buildSheetCells, parseCsv, taskPassed, taskSolution } from './sheetSandbox.ts'
 
-const csv = { sales_2025: sales, products, employees }
+const csv = { sales_2025: sales, products, employees, messy_customers: messyCustomers, 'timesheet_2025-03': timesheet }
 
 describe('parseCsv', () => {
   it('handles quoted commas and quotes', () => {

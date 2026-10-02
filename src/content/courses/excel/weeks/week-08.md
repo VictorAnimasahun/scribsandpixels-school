@@ -130,6 +130,10 @@ Save `timesheet_2025-03.csv` as **Timesheet_March.xlsx**:
 
 **Check:** first row E001 on 03/03: 08:07 → 18:31 = **10.40 h** · total **3,548.90 h** · average shift **8.87 h** · overtime **383.65 h** on **310** days · late arrivals **81**
 
+**Sandbox:** practise on E001's March: hours, overtime, late flags and working days.
+
+::sandbox xl-w08-time
+
 ### Mini-Task (10 min)
 E001's March: days worked, total hours, overtime (SUMIFS/COUNTIFS). **Check:** 19 days, 168.43 h, 18.02 h overtime.
 

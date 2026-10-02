@@ -1,0 +1,35 @@
+# Week 8 · E001's March timesheet: hours, overtime, late flags, day names and working days.
+id: xl-w08-time
+kind: sheet
+title: "Timesheet and overtime"
+description: "E001's real March 2025 timesheet (19 days). Times and dates are real Excel numbers, so the time maths from the lesson works."
+dataset:
+  file: timesheet_2025-03
+  rows: 19
+  columns: [EmployeeID, Date, ClockIn, ClockOut]
+cells:
+  E1: "Hours"
+  F1: "Overtime"
+  G1: "Late"
+  H1: "Day"
+  J1: "Standard day (h)"
+  K1: 8
+  J2: "Late after"
+  K2: "08:30"
+  J5: "Total hours"
+  J6: "Overtime hours"
+  J7: "Late arrivals"
+  J8: "Working days (March)"
+  J9: "Absence days"
+cols: 11
+rows: 21
+tasks:
+  - {"prompt": "E2: hours worked on E001's first day (ClockOut − ClockIn, × 24).", "cell": "E2", "expect": 10.4, "tolerance": 0.01, "formula": true, "solution": "=(D2-C2)*24", "hint": "=(D2-C2)*24"}
+  - {"prompt": "F2: overtime above the standard day in K1 (locked with $).", "cell": "F2", "expect": 2.4, "tolerance": 0.01, "formula": true, "mustUse": ["$K$1"], "solution": "=MAX(0,E2-$K$1)", "hint": "=MAX(0,E2-$K$1)"}
+  - {"prompt": "G2: \"Late\" if clock-in is after the time in K2, else \"On time\" (lock K2).", "cell": "G2", "expect": "On time", "formula": true, "mustUse": ["$K$2"], "solution": "=IF(C2>$K$2,\"Late\",\"On time\")", "hint": "=IF(C2>$K$2,\"Late\",\"On time\")"}
+  - {"prompt": "H2: the day name for the date in B2 (TEXT).", "cell": "H2", "expect": "Monday", "formula": true, "mustUse": ["TEXT("], "solution": "=TEXT(B2,\"dddd\")", "hint": "=TEXT(B2,\"dddd\")"}
+  - {"prompt": "Fill E down, then K5: E001's total hours in March.", "cell": "K5", "expect": 168.43, "tolerance": 0.01, "formula": true, "solution": "=SUM(E2:E20)", "solutionFill": {"E": "=(D{r}-C{r})*24"}, "hint": "=SUM(E2:E20)"}
+  - {"prompt": "Fill F down, then K6: total overtime hours.", "cell": "K6", "expect": 18.02, "tolerance": 0.01, "formula": true, "solution": "=SUM(F2:F20)", "solutionFill": {"F": "=MAX(0,E{r}-$K$1)"}, "hint": "=SUM(F2:F20)"}
+  - {"prompt": "Fill G down, then K7: how many late arrivals?", "cell": "K7", "expect": 3, "formula": true, "solution": "=COUNTIF(G2:G20,\"Late\")", "solutionFill": {"G": "=IF(C{r}>$K$2,\"Late\",\"On time\")"}, "hint": "=COUNTIF(G2:G20,\"Late\")"}
+  - {"prompt": "K8: working days in March 2025 (NETWORKDAYS with DATE).", "cell": "K8", "expect": 21, "formula": true, "mustUse": ["NETWORKDAYS("], "solution": "=NETWORKDAYS(DATE(2025,3,1),DATE(2025,3,31))", "hint": "=NETWORKDAYS(DATE(2025,3,1),DATE(2025,3,31))"}
+  - {"prompt": "K9: absence days (working days − days worked; days worked = COUNT of dates in B).", "cell": "K9", "expect": 2, "formula": true, "solution": "=K8-COUNT(B2:B20)", "hint": "=K8-COUNT(B2:B20)"}

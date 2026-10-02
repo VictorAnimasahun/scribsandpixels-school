@@ -42,7 +42,7 @@ export type SheetTask = {
   /** Model answer that fills whole columns (column → template with {r}) over the dataset rows. */
   solutionFill?: Record<string, string>
 }
-export type SheetDataset = { file: 'sales_2025' | 'products' | 'employees'; rows: number; columns: string[] }
+export type SheetDataset = { file: 'sales_2025' | 'products' | 'employees' | 'messy_customers' | 'timesheet_2025-03'; rows: number; columns: string[] }
 
 // ── Programming: Python + web ──────────────────────────────────────────────
 export type PythonTask = {
