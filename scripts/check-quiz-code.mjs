@@ -1,4 +1,4 @@
-// Runs every quiz snippet that has `code` through Python 3 and prints its real
+// Runs every quiz snippet that has `code` (Python 3, or Node for JavaScript) and prints its real
 // output next to the model answer, so "what does this print?" keys can be checked.
 // Snippets that call input() get the value named in the prompt ("The user types X").
 import { parse } from 'yaml'
@@ -21,8 +21,12 @@ for (const course of readdirSync(join(root, 'src/content/courses'))) {
       // HTML and CSS snippets aren't Python; skip them.
       for (const q of questions.filter((q) => q.code && !/^\s*(<|\/\*|@|[\w.#:-]+\s*\{)/.test(q.code))) {
         const typed = [...q.prompt.matchAll(/types ([^ .?]+)(?: then ([^ .?]+))?/g)].flatMap((m) => [m[1], m[2]]).filter(Boolean)
-        const r = spawnSync('python3', ['-c', q.code], { input: typed.join('\n') + '\n', encoding: 'utf8', timeout: 3000, cwd: mkdtempSync(join(sandboxDir, 'q-')) })
-        const out = (r.stdout.trim() || r.stderr.trim().split('\n').pop() || '(no output)').replace(/\n/g, ' ⏎ ')
+        // JavaScript snippets (console.log, const/let, arrow functions) run in Node; the rest in Python.
+        const isJs = /console\.log|=>|^\s*(const|let)\s/m.test(q.code)
+        const r = isJs
+          ? spawnSync('node', ['-e', q.code], { encoding: 'utf8', timeout: 3000, cwd: mkdtempSync(join(sandboxDir, 'q-')) })
+          : spawnSync('python3', ['-c', q.code], { input: typed.join('\n') + '\n', encoding: 'utf8', timeout: 3000, cwd: mkdtempSync(join(sandboxDir, 'q-')) })
+        const out = (r.stdout.trim() || r.stderr.match(/^\w*Error\b.*$/m)?.[0] || r.stderr.trim().split('\n').pop() || '(no output)').replace(/\n/g, ' ⏎ ')
         const model = q.type === 'mcq' ? q.choices[q.answer] : q.type === 'text' ? q.accept[0] : '(n/a)'
         console.log(`${q.id.padEnd(16)} real: ${out.slice(0, 70).padEnd(70)} | key: ${model}`)
       }

@@ -1,0 +1,864 @@
+# Fullstack + ML · Week 7 quizzes. Format and rules: src/content/QUIZZES.md
+week: 7
+days:
+
+  # ─────────────────────────── DAY 1 ───────────────────────────
+  - day: 1
+    gate:
+      title: "Checkpoint: Week 6 review"
+      covers: "Week 6: APIs and requests, weather codes, robust scripts, accessibility, portfolio and gigs"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w07-d1-g01, difficulty: easy, type: mcq, prompt: "Status code for OK", choices: ["200", "404", "500", "400"], answer: 0 }
+        - { id: fs-w07-d1-g02, difficulty: easy, type: mcq, prompt: "Turn a requests response into a Python dict", choices: ["response.json()", "response.dict()", "json.dump(response)", "response.text()"], answer: 0 }
+        - { id: fs-w07-d1-g03, difficulty: easy, type: mcq, prompt: "Pair with target=\"_blank\"", choices: ["rel=\"noopener\"", "alt=\"\"", "rel=\"stylesheet\"", "href=\"#\""], answer: 0 }
+        - { id: fs-w07-d1-g04, difficulty: easy, type: truefalse, prompt: "Open-Meteo needs no API key.", answer: true }
+        - { id: fs-w07-d1-g05, difficulty: easy, type: mcq, prompt: "Run main() only when the file is run directly", choices: ["if __name__ == \"__main__\":", "if main:", "while True:", "def __main__():"], answer: 0 }
+        - { id: fs-w07-d1-g06, difficulty: easy, type: mcq, prompt: "WhatsApp link for 0803 123 4567", choices: ["https://wa.me/2348031234567", "https://wa.me/08031234567", "wa:+234 803 123 4567", "tel:wa.me/0803"], answer: 0 }
+        - id: fs-w07-d1-g07
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            CODES = {0: "Clear sky", 3: "Overcast"}
+            print(CODES.get(3, "Unknown"), "|", CODES.get(45, "Unknown"))
+          accept: ["Overcast | Unknown"]
+        - id: fs-w07-d1-g08
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            def check(status, body):
+                if status != 200:
+                    raise RuntimeError(body.get("reason", "Unknown error"))
+                return body["current"]
+            try:
+                check(400, {"reason": "Bad latitude"})
+            except RuntimeError as e:
+                print(e)
+          accept: ["Bad latitude"]
+        - { id: fs-w07-d1-g09, difficulty: medium, type: match, prompt: "Match the trouble to the fix.", pairs: [["Unknown city", "raise ValueError, catch in main"], ["No internet", "catch requests.exceptions.RequestException"], ["Slow server", "timeout=10"], ["Status 500", "raise RuntimeError with the reason"]] }
+        - { id: fs-w07-d1-g10, difficulty: medium, type: mcq, prompt: "Best link text", choices: ["View the weather script on GitHub", "click here", "here", "link"], answer: 0 }
+        - { id: fs-w07-d1-g11, difficulty: medium, type: truefalse, prompt: "Removing focus outlines without a replacement hurts keyboard users.", answer: true }
+        - id: fs-w07-d1-g12
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            latitude, longitude = (9.06, 7.49)
+            print(round(latitude + longitude, 2))
+          accept: ["16.55"]
+        - { id: fs-w07-d1-g13, difficulty: medium, type: mcq, prompt: "requirements.txt for the weather script lists…", choices: ["requests", "json", "python", "math"], answer: 0 }
+        - { id: fs-w07-d1-g14, difficulty: medium, type: mcq, prompt: "Why test weather_report with fake_get?", choices: ["Check the logic offline with saved data; real_get uses the internet", "fake_get is faster in production", "requests can't be imported", "It hides errors"], answer: 0 }
+        - { id: fs-w07-d1-g15, difficulty: medium, type: mcq, prompt: "Status 400 means…", choices: ["your request was wrong", "the server crashed", "OK", "not found"], answer: 0 }
+        - id: fs-w07-d1-g16
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            def rainy(code):
+                return 51 <= code <= 82 or 95 <= code <= 99
+            print(sum(1 for c in [0, 61, 82, 83, 96, 45] if rainy(c)))
+          accept: ["3"]
+        - { id: fs-w07-d1-g17, difficulty: hard, type: mcq, prompt: "Every element in a page measures 0×0. Lighthouse can't help because…", choices: ["it's a rendering problem, not an accessibility rule", "Lighthouse only checks Python", "0×0 is normal", "alt is missing"], answer: 0 }
+        - { id: fs-w07-d1-g18, difficulty: hard, type: multi, prompt: "Which belong in the Phase 1 graduation check? (Select all.)", choices: ["weather.py prints a real Lagos report", "No crash on unknown city or no internet", "Site live with links to your repos", "A React app"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "JS basics"
+        secondsPerQuestion: 9
+        questions:
+          - { id: fs-w07-d1-rf01, difficulty: easy, type: mcq, prompt: "Print in JavaScript", choices: ["console.log()", "print()", "echo()", "log.print()"], answer: 0 }
+          - { id: fs-w07-d1-rf02, difficulty: easy, type: mcq, prompt: "A variable that never changes", choices: ["const", "let", "var", "fixed"], answer: 0 }
+          - { id: fs-w07-d1-rf03, difficulty: easy, type: mcq, prompt: "A variable that will change", choices: ["let", "const", "set", "change"], answer: 0 }
+          - { id: fs-w07-d1-rf04, difficulty: easy, type: mcq, prompt: "Don't use…", choices: ["var", "let", "const", "function"], answer: 0 }
+          - { id: fs-w07-d1-rf05, difficulty: easy, type: mcq, prompt: "JS comment", choices: ["// note", "# note", "-- note", "<!-- note -->"], answer: 0 }
+          - { id: fs-w07-d1-rf06, difficulty: easy, type: mcq, prompt: "Python True in JS", choices: ["true", "True", "TRUE", "1"], answer: 0 }
+          - { id: fs-w07-d1-rf07, difficulty: easy, type: mcq, prompt: "Python None in JS", choices: ["null", "None", "nil", "void"], answer: 0 }
+          - { id: fs-w07-d1-rf08, difficulty: easy, type: mcq, prompt: "Template literals use…", choices: ["backticks `…`", "double quotes", "f\"…\"", "single quotes"], answer: 0 }
+          - { id: fs-w07-d1-rf09, difficulty: easy, type: mcq, prompt: "typeof 42", choices: ["\"number\"", "\"int\"", "\"integer\"", "\"float\""], answer: 0 }
+          - { id: fs-w07-d1-rf10, difficulty: easy, type: mcq, prompt: "Blocks in JS are marked by…", choices: ["{ }", "indentation only", "begin/end", "( )"], answer: 0 }
+          - { id: fs-w07-d1-rf11, difficulty: easy, type: mcq, prompt: "Where does console.log output appear in the browser?", choices: ["DevTools → Console", "the page", "the address bar", "View Source"], answer: 0 }
+      - kind: brain-teaser
+        title: "Predict the console"
+        questions:
+          - id: fs-w07-d1-bt01
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const shop = "NaijaMart"
+              let price = 1500
+              price = price + 200
+              console.log(`${shop}: ₦${price}`)
+            accept: ["NaijaMart: ₦1700"]
+          - id: fs-w07-d1-bt02
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              console.log(typeof "5", typeof 5, typeof true)
+            accept: ["string number boolean"]
+          - id: fs-w07-d1-bt03
+            difficulty: medium
+            type: mcq
+            prompt: "What happens?"
+            code: |
+              const rate = 1550
+              rate = 1600
+              console.log(rate)
+            choices: ["TypeError: Assignment to constant variable", "1600", "1550", "undefined"]
+            answer: 0
+          - id: fs-w07-d1-bt04
+            difficulty: hard
+            type: text
+            prompt: "What does this print?"
+            code: |
+              let x
+              console.log(typeof x, typeof null)
+            accept: ["undefined object"]
+          - id: fs-w07-d1-bt05
+            difficulty: hard
+            type: text
+            prompt: "What does this print?"
+            code: |
+              console.log(2 + 3 * 4, `${2 + 3}` + 4)
+            accept: ["14 54"]
+
+  # ─────────────────────────── DAY 2 ───────────────────────────
+  - day: 2
+    gate:
+      title: "Checkpoint: variables and types"
+      covers: "Week 7 · Day 1: console, const/let, types and typeof, template literals, script tags"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w07-d2-g01, difficulty: easy, type: mcq, prompt: "Declare a price that will change", choices: ["let price = 1500", "const price = 1500", "price := 1500", "var price == 1500"], answer: 0 }
+        - { id: fs-w07-d2-g02, difficulty: easy, type: mcq, prompt: "typeof \"Lagos\"", choices: ["\"string\"", "\"text\"", "\"str\"", "\"word\""], answer: 0 }
+        - { id: fs-w07-d2-g03, difficulty: easy, type: truefalse, prompt: "JavaScript has one number type for whole and decimal numbers.", answer: true }
+        - { id: fs-w07-d2-g04, difficulty: easy, type: mcq, prompt: "Load app.js into a page", choices: ["<script src=\"app.js\"></script>", "<link href=\"app.js\">", "<js>app.js</js>", "import app.js"], answer: 0 }
+        - { id: fs-w07-d2-g05, difficulty: easy, type: mcq, prompt: "Python's f\"{name}\" in JS", choices: ["`${name}`", "\"${name}\"", "f`{name}`", "'{name}'"], answer: 0 }
+        - { id: fs-w07-d2-g06, difficulty: easy, type: mcq, prompt: "\"no value yet\" in JS", choices: ["undefined", "None", "empty", "void"], answer: 0 }
+        - id: fs-w07-d2-g07
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const name = "Ada"
+            const age = 24
+            console.log(`${name} is ${age + 1} next year`)
+          accept: ["Ada is 25 next year"]
+        - id: fs-w07-d2-g08
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            let count = 10
+            count = count - 3
+            count += 5
+            console.log(count)
+          accept: ["12"]
+        - { id: fs-w07-d2-g09, difficulty: medium, type: match, prompt: "Match the value to typeof.", pairs: [["\"5\"", "string"], ["5", "number"], ["false", "boolean"], ["undefined", "undefined"]] }
+        - { id: fs-w07-d2-g10, difficulty: medium, type: mcq, prompt: "Why prefer const by default?", choices: ["You can't reassign it by accident", "It's faster", "let is deprecated", "const works in Python too"], answer: 0 }
+        - { id: fs-w07-d2-g11, difficulty: medium, type: truefalse, prompt: "Semicolons at line ends are optional in most JavaScript.", answer: true }
+        - id: fs-w07-d2-g12
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            console.log(typeof null)
+          accept: ["object"]
+          explain: "A famous old JavaScript quirk."
+        - { id: fs-w07-d2-g13, difficulty: medium, type: mcq, prompt: "Where do you put the <script> tag for app.js?", choices: ["At the end of <body>", "Before <!DOCTYPE>", "Inside <title>", "In style.css"], answer: 0 }
+        - id: fs-w07-d2-g14
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const city = "Abuja"
+            console.log(`Welcome to ${city}!`.length)
+          accept: ["17"]
+        - { id: fs-w07-d2-g15, difficulty: medium, type: mcq, prompt: "Python `is_open = True` in JS:", choices: ["const isOpen = true", "const is_open = True", "let isOpen = True", "isOpen := true"], answer: 0 }
+        - id: fs-w07-d2-g16
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            let a = 5
+            let b = a
+            a = 10
+            console.log(a, b)
+          accept: ["10 5"]
+        - id: fs-w07-d2-g17
+          difficulty: hard
+          type: mcq
+          prompt: "What happens?"
+          code: |
+            console.log(total)
+            let total = 100
+          choices: ["ReferenceError: can't access total before it's declared", "100", "undefined", "0"]
+          answer: 0
+        - { id: fs-w07-d2-g18, difficulty: hard, type: multi, prompt: "Which are valid JavaScript? (Select all.)", choices: ["const x = 5", "let name = \"Ada\"", "console.log(`Hi ${name}`)", "print(f\"Hi {name}\")"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Functions in JS"
+        secondsPerQuestion: 9
+        questions:
+          - { id: fs-w07-d2-rf01, difficulty: easy, type: mcq, prompt: "Python def in JS", choices: ["function", "def", "func", "fn"], answer: 0 }
+          - { id: fs-w07-d2-rf02, difficulty: easy, type: mcq, prompt: "Arrow function", choices: ["(x) => x * 2", "x -> x * 2", "lambda x: x * 2", "fn(x) x*2"], answer: 0 }
+          - { id: fs-w07-d2-rf03, difficulty: easy, type: mcq, prompt: "Default parameter", choices: ["(name = \"friend\")", "(name: \"friend\")", "(name := \"friend\")", "(default name)"], answer: 0 }
+          - { id: fs-w07-d2-rf04, difficulty: easy, type: mcq, prompt: "No return gives back…", choices: ["undefined", "null", "0", "None"], answer: 0 }
+          - { id: fs-w07-d2-rf05, difficulty: easy, type: mcq, prompt: "JS naming style", choices: ["camelCase: isEven", "snake_case: is_even", "PascalCase always", "kebab-case"], answer: 0 }
+          - { id: fs-w07-d2-rf06, difficulty: easy, type: text, prompt: "(1500000).toLocaleString(\"en-NG\")", accept: ["1,500,000", "\"1,500,000\""] }
+          - { id: fs-w07-d2-rf07, difficulty: easy, type: truefalse, prompt: "An arrow function with one expression returns it automatically.", answer: true }
+          - { id: fs-w07-d2-rf08, difficulty: easy, type: truefalse, prompt: "An arrow function with { } needs return.", answer: true }
+          - { id: fs-w07-d2-rf09, difficulty: easy, type: mcq, prompt: "Call toNaira with 10", choices: ["toNaira(10)", "toNaira 10", "call toNaira(10)", "toNaira[10]"], answer: 0 }
+          - { id: fs-w07-d2-rf10, difficulty: easy, type: mcq, prompt: "Function body goes inside…", choices: ["{ }", "( )", "[ ]", "indentation only"], answer: 0 }
+      - kind: brain-teaser
+        title: "Function puzzles"
+        questions:
+          - id: fs-w07-d2-bt01
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              function area(w, h) {
+                return w * h
+              }
+              console.log(area(4, 5) + 1)
+            accept: ["21"]
+          - id: fs-w07-d2-bt02
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const greet = (name = "friend") => `Hello, ${name}!`
+              console.log(greet(), greet("Tolu"))
+            accept: ["Hello, friend! Hello, Tolu!"]
+          - id: fs-w07-d2-bt03
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const add = (a, b) => {
+                a + b
+              }
+              console.log(add(2, 3))
+            accept: ["undefined"]
+            explain: "With braces you must write return."
+          - id: fs-w07-d2-bt04
+            difficulty: hard
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const vat = (amount) => amount * 0.075
+              const withVat = (amount) => amount + vat(amount)
+              console.log(withVat(2000))
+            accept: ["2150"]
+          - id: fs-w07-d2-bt05
+            difficulty: hard
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const formatNaira = (n) => "₦" + n.toLocaleString("en-NG")
+              console.log(formatNaira(15500 * 3))
+            accept: ["₦46,500"]
+
+  # ─────────────────────────── DAY 3 ───────────────────────────
+  - day: 3
+    gate:
+      title: "Checkpoint: functions"
+      covers: "Week 7 · Day 2: function declarations, arrow functions, default parameters, return, toLocaleString"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w07-d3-g01, difficulty: easy, type: mcq, prompt: "Which declares a function?", choices: ["function toNaira(usd) { return usd * 1550 }", "def toNaira(usd): return usd * 1550", "toNaira = usd => { usd * 1550", "func toNaira(usd)"], answer: 0 }
+        - { id: fs-w07-d3-g02, difficulty: easy, type: mcq, prompt: "Python `def greet(name=\"friend\"):` in JS", choices: ["function greet(name = \"friend\") {", "function greet(name: \"friend\") {", "def greet(name = \"friend\") {", "greet(name=\"friend\") =>"], answer: 0 }
+        - { id: fs-w07-d3-g03, difficulty: easy, type: truefalse, prompt: "Arrow functions are common in modern JS and React.", answer: true }
+        - { id: fs-w07-d3-g04, difficulty: easy, type: mcq, prompt: "Python is_even in JS style", choices: ["isEven", "is_even", "IsEven", "iseven"], answer: 0 }
+        - { id: fs-w07-d3-g05, difficulty: easy, type: mcq, prompt: "A function without return gives…", choices: ["undefined", "null", "0", "an error"], answer: 0 }
+        - { id: fs-w07-d3-g06, difficulty: easy, type: mcq, prompt: "Format 1500 as \"1,500\"", choices: ["(1500).toLocaleString(\"en-NG\")", "format(1500)", "1500.comma()", "String(1500, \",\")"], answer: 0 }
+        - id: fs-w07-d3-g07
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            function toNaira(usd) {
+              return usd * 1550
+            }
+            console.log(toNaira(2) + toNaira(1))
+          accept: ["4650"]
+        - id: fs-w07-d3-g08
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const double = (n) => n * 2
+            console.log(double(double(3)))
+          accept: ["12"]
+        - { id: fs-w07-d3-g09, difficulty: medium, type: match, prompt: "Match Python to JavaScript.", pairs: [["def", "function"], ["None", "undefined / null"], ["True", "true"], ["f\"{x}\"", "`${x}`"]] }
+        - id: fs-w07-d3-g10
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            function greet(name = "friend") {
+              return "Hi " + name
+            }
+            console.log(greet(undefined), greet("Ada"))
+          accept: ["Hi friend Hi Ada"]
+        - { id: fs-w07-d3-g11, difficulty: medium, type: truefalse, prompt: "`const f = (x) => { return x + 1 }` and `const f = (x) => x + 1` behave the same.", answer: true }
+        - id: fs-w07-d3-g12
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const square = (n) => { n * n }
+            console.log(square(4))
+          accept: ["undefined"]
+        - { id: fs-w07-d3-g13, difficulty: medium, type: mcq, prompt: "Best way to give a value back to the caller", choices: ["return", "console.log", "print", "alert"], answer: 0 }
+        - id: fs-w07-d3-g14
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const formatNaira = (n) => "₦" + n.toLocaleString("en-NG")
+            console.log(formatNaira(1234567))
+          accept: ["₦1,234,567"]
+        - { id: fs-w07-d3-g15, difficulty: medium, type: mcq, prompt: "Arrow functions have no `prototype`, so the sandbox can tell them apart. Which is an arrow function?", choices: ["const vat = (a) => a * 0.075", "function vat(a) { return a * 0.075 }", "const vat = function (a) { return a * 0.075 }", "vat(a) = a * 0.075"], answer: 0 }
+        - id: fs-w07-d3-g16
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const applyDiscount = (price, percent = 10) => price - price * percent / 100
+            console.log(applyDiscount(5000), applyDiscount(5000, 20))
+          accept: ["4500 4000"]
+        - id: fs-w07-d3-g17
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            function outer() {
+              const inner = (x) => x + 1
+              return inner(inner(1))
+            }
+            console.log(outer())
+          accept: ["3"]
+        - { id: fs-w07-d3-g18, difficulty: hard, type: multi, prompt: "Which return 10 for f(5)? (Select all.)", choices: ["const f = (n) => n * 2", "function f(n) { return n + 5 }", "const f = (n) => { return n * 2 }", "const f = (n) => { n * 2 }"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Comparisons and logic"
+        secondsPerQuestion: 9
+        questions:
+          - { id: fs-w07-d3-rf01, difficulty: easy, type: mcq, prompt: "Strict equality", choices: ["===", "==", "=", "is"], answer: 0 }
+          - { id: fs-w07-d3-rf02, difficulty: easy, type: mcq, prompt: "Strict not equal", choices: ["!==", "!=", "<>", "not"], answer: 0 }
+          - { id: fs-w07-d3-rf03, difficulty: easy, type: mcq, prompt: "Python and", choices: ["&&", "and", "&", "AND"], answer: 0 }
+          - { id: fs-w07-d3-rf04, difficulty: easy, type: mcq, prompt: "Python or", choices: ["||", "or", "|", "OR"], answer: 0 }
+          - { id: fs-w07-d3-rf05, difficulty: easy, type: mcq, prompt: "Python not", choices: ["!", "not", "~", "NOT"], answer: 0 }
+          - { id: fs-w07-d3-rf06, difficulty: easy, type: mcq, prompt: "Python elif", choices: ["else if", "elif", "elseif", "elsif"], answer: 0 }
+          - { id: fs-w07-d3-rf07, difficulty: easy, type: text, prompt: "5 === \"5\"", accept: ["false"] }
+          - { id: fs-w07-d3-rf08, difficulty: easy, type: text, prompt: "5 == \"5\"", accept: ["true"] }
+          - { id: fs-w07-d3-rf09, difficulty: easy, type: mcq, prompt: "Ternary operator", choices: ["cond ? a : b", "a if cond else b", "cond ?? a : b", "if cond then a"], answer: 0 }
+          - { id: fs-w07-d3-rf10, difficulty: easy, type: truefalse, prompt: "\"0\" is falsy in JavaScript.", answer: false, explain: "Only the empty string is falsy; \"0\" is truthy." }
+      - kind: brain-teaser
+        title: "Which branch?"
+        questions:
+          - id: fs-w07-d3-bt01
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const score = 64
+              if (score >= 70) {
+                console.log("A")
+              } else if (score >= 60) {
+                console.log("B")
+              } else {
+                console.log("F")
+              }
+            accept: ["B"]
+          - id: fs-w07-d3-bt02
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const age = 17
+              console.log(age >= 18 ? "Can vote" : "Too young")
+            accept: ["Too young"]
+          - id: fs-w07-d3-bt03
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const values = [0, "", "0", null, "Lagos"]
+              let count = 0
+              for (const v of values) {
+                if (v) count++
+              }
+              console.log(count)
+            accept: ["2"]
+          - id: fs-w07-d3-bt04
+            difficulty: hard
+            type: text
+            prompt: "What does this print?"
+            code: |
+              function light(color) {
+                switch (color) {
+                  case "red": return "Stop"
+                  case "green": return "Go"
+                  default: return "Broken light"
+                }
+              }
+              console.log(light("Red"))
+            accept: ["Broken light"]
+            explain: "Comparison is case-sensitive."
+          - id: fs-w07-d3-bt05
+            difficulty: hard
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const isStudent = true
+              const age = 20
+              console.log(age < 12 || isStudent ? 1000 : 2000)
+            accept: ["1000"]
+
+  # ─────────────────────────── DAY 4 ───────────────────────────
+  - day: 4
+    gate:
+      title: "Checkpoint: decisions"
+      covers: "Week 7 · Day 3: if / else if / else, === vs ==, &&, ||, !, ternary, truthy/falsy, switch"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w07-d4-g01, difficulty: easy, type: mcq, prompt: "Always compare with…", choices: ["===", "==", "=", "equals()"], answer: 0 }
+        - { id: fs-w07-d4-g02, difficulty: easy, type: mcq, prompt: "Python `x and y` in JS", choices: ["x && y", "x and y", "x & y", "x || y"], answer: 0 }
+        - { id: fs-w07-d4-g03, difficulty: easy, type: truefalse, prompt: "0 is falsy.", answer: true }
+        - { id: fs-w07-d4-g04, difficulty: easy, type: mcq, prompt: "Which keyword catches every other case in a switch?", choices: ["default", "else", "otherwise", "case else"], answer: 0 }
+        - { id: fs-w07-d4-g05, difficulty: easy, type: text, prompt: "!true", accept: ["false"] }
+        - { id: fs-w07-d4-g06, difficulty: easy, type: mcq, prompt: "Python `a if c else b` in JS", choices: ["c ? a : b", "a ? c : b", "if c a else b", "c && a : b"], answer: 0 }
+        - id: fs-w07-d4-g07
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const x = 10
+            if (x > 5 && x < 20) {
+              console.log("in range")
+            } else {
+              console.log("out")
+            }
+          accept: ["in range"]
+        - { id: fs-w07-d4-g08, difficulty: medium, type: match, prompt: "Match the expression to its value.", pairs: [["5 === \"5\"", "false"], ["5 == \"5\"", "true"], ["!0", "true"], ["\"\" || \"default\"", "default"]] }
+        - id: fs-w07-d4-g09
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const name = ""
+            console.log(name ? `Hello, ${name}` : "Hello, guest")
+          accept: ["Hello, guest"]
+        - { id: fs-w07-d4-g10, difficulty: medium, type: multi, prompt: "Which are falsy? (Select all.)", choices: ["0", "\"\"", "null", "\"false\""], answers: [0, 1, 2] }
+        - { id: fs-w07-d4-g11, difficulty: medium, type: truefalse, prompt: "`if (day = \"Saturday\")` compares day with Saturday.", answer: false, explain: "= assigns; it's always truthy here." }
+        - id: fs-w07-d4-g12
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const canVote = (age) => age >= 18
+            console.log(canVote(18), canVote(17))
+          accept: ["true false"]
+        - { id: fs-w07-d4-g13, difficulty: medium, type: mcq, prompt: "Why is == risky?", choices: ["It converts types, so \"5\" == 5 is true", "It's slower", "It only works on numbers", "It's not valid JS"], answer: 0 }
+        - id: fs-w07-d4-g14
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            function grade(s) {
+              if (s >= 70) return "A"
+              else if (s >= 60) return "B"
+              else if (s >= 50) return "C"
+              return "F"
+            }
+            console.log(grade(70) + grade(59) + grade(10))
+          accept: ["ACF"]
+        - { id: fs-w07-d4-g15, difficulty: medium, type: order, prompt: "Order the parts of an if/else chain.", items: ["if (score >= 70) {", "} else if (score >= 60) {", "} else {", "}"] }
+        - id: fs-w07-d4-g16
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            function ticket(age, isStudent) {
+              if (age < 12) return 500
+              if (isStudent) return 1000
+              return 2000
+            }
+            console.log(ticket(10, true) + ticket(25, true) + ticket(25, false))
+          accept: ["3500"]
+        - id: fs-w07-d4-g17
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            let day = "Monday"
+            let weekend = false
+            if (day = "Saturday") weekend = true
+            console.log(weekend)
+          accept: ["true"]
+          explain: "The bug: = assigns \"Saturday\", which is truthy. With const it would even throw."
+        - { id: fs-w07-d4-g18, difficulty: hard, type: multi, prompt: "Which print Go? (Select all.)", choices: ["console.log(true ? \"Go\" : \"Stop\")", "console.log(1 === 1 && \"Go\")", "console.log(null || \"Go\")", "console.log(\"\" && \"Go\")"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Loops"
+        secondsPerQuestion: 9
+        questions:
+          - { id: fs-w07-d4-rf01, difficulty: easy, type: mcq, prompt: "Python range(1, 6) loop in JS", choices: ["for (let i = 1; i <= 5; i++)", "for (i in range(1, 6))", "for i = 1 to 5", "loop (1..5)"], answer: 0 }
+          - { id: fs-w07-d4-rf02, difficulty: easy, type: mcq, prompt: "i++ means…", choices: ["i = i + 1", "i = i * 2", "i is positive", "print i"], answer: 0 }
+          - { id: fs-w07-d4-rf03, difficulty: easy, type: mcq, prompt: "Loop over the letters of a word", choices: ["for (const letter of word)", "for (letter in range(word))", "for letter in word:", "foreach word as letter"], answer: 0 }
+          - { id: fs-w07-d4-rf04, difficulty: easy, type: mcq, prompt: "Leave a loop early", choices: ["break", "stop", "exit", "return loop"], answer: 0 }
+          - { id: fs-w07-d4-rf05, difficulty: easy, type: mcq, prompt: "Skip to the next round", choices: ["continue", "next", "skip", "pass"], answer: 0 }
+          - { id: fs-w07-d4-rf06, difficulty: easy, type: truefalse, prompt: "A while loop whose condition never becomes false freezes the tab.", answer: true }
+          - { id: fs-w07-d4-rf07, difficulty: easy, type: mcq, prompt: "total = total + x, shorter", choices: ["total += x", "total =+ x", "total ++ x", "total + = x"], answer: 0 }
+          - { id: fs-w07-d4-rf08, difficulty: easy, type: mcq, prompt: "Count down from 5", choices: ["for (let i = 5; i >= 1; i--)", "for (let i = 5; i <= 1; i++)", "for (let i = 5; i > 5; i--)", "for (i = 5 to 1)"], answer: 0 }
+          - { id: fs-w07-d4-rf09, difficulty: easy, type: mcq, prompt: "The 3 parts of a for loop", choices: ["start; condition; step", "start; end", "condition only", "step; start; end"], answer: 0 }
+          - { id: fs-w07-d4-rf10, difficulty: easy, type: mcq, prompt: "Python `for letter in word:`", choices: ["for (const letter of word) {", "for (const letter in word) {", "for (letter of word):", "for letter of word {"], answer: 0 }
+      - kind: brain-teaser
+        title: "Trace the loop"
+        questions:
+          - id: fs-w07-d4-bt01
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              let total = 0
+              for (let i = 1; i <= 4; i++) {
+                total += i
+              }
+              console.log(total)
+            accept: ["10"]
+          - id: fs-w07-d4-bt02
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              let count = 0
+              for (const letter of "Abuja") {
+                if ("aeiou".includes(letter.toLowerCase())) count++
+              }
+              console.log(count)
+            accept: ["3"]
+          - id: fs-w07-d4-bt03
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              let text = ""
+              for (let i = 1; i <= 3; i++) {
+                text += (i > 1 ? ", " : "") + i * 2
+              }
+              console.log(text)
+            accept: ["2, 4, 6"]
+          - id: fs-w07-d4-bt04
+            difficulty: hard
+            type: text
+            prompt: "What does this print?"
+            code: |
+              let balance = 1000
+              let years = 0
+              while (balance < 2000) {
+                balance = balance * 1.25
+                years++
+              }
+              console.log(years)
+            accept: ["4"]
+          - id: fs-w07-d4-bt05
+            difficulty: hard
+            type: text
+            prompt: "What does this print?"
+            code: |
+              let out = ""
+              for (let i = 1; i <= 10; i++) {
+                if (i % 2 === 0) continue
+                if (i > 7) break
+                out += i
+              }
+              console.log(out)
+            accept: ["1357"]
+
+  # ─────────────────────────── DAY 5 ───────────────────────────
+  - day: 5
+    gate:
+      title: "Checkpoint: loops"
+      covers: "Week 7 · Day 4: for loops, for…of, while, break/continue, building strings in loops"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w07-d5-g01, difficulty: easy, type: mcq, prompt: "Which loop walks through the letters of \"Lagos\"?", choices: ["for (const letter of \"Lagos\")", "for (let i of 5)", "while (\"Lagos\")", "for (\"Lagos\")"], answer: 0 }
+        - { id: fs-w07-d5-g02, difficulty: easy, type: mcq, prompt: "i-- means…", choices: ["i = i - 1", "i = -i", "delete i", "i is negative"], answer: 0 }
+        - { id: fs-w07-d5-g03, difficulty: easy, type: truefalse, prompt: "break and continue work as in Python.", answer: true }
+        - { id: fs-w07-d5-g04, difficulty: easy, type: mcq, prompt: "Python while in JS", choices: ["while (balance < 2000) {", "while balance < 2000:", "loop while balance < 2000", "do balance < 2000"], answer: 0 }
+        - { id: fs-w07-d5-g05, difficulty: easy, type: mcq, prompt: "A for loop's middle part is…", choices: ["the condition to keep going", "the start", "the step", "the result"], answer: 0 }
+        - { id: fs-w07-d5-g06, difficulty: easy, type: mcq, prompt: "Your tab freezes after you run a loop. Likely?", choices: ["An infinite loop", "Too few variables", "A missing semicolon", "A const"], answer: 0 }
+        - id: fs-w07-d5-g07
+          difficulty: medium
+          type: text
+          prompt: "What does this print? (numbers joined with a space)"
+          code: |
+            let out = []
+            for (let i = 3; i >= 1; i--) out.push(i)
+            console.log(out.join(" "))
+          accept: ["3 2 1"]
+        - id: fs-w07-d5-g08
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            function sumTo(n) {
+              let total = 0
+              for (let i = 1; i <= n; i++) total += i
+              return total
+            }
+            console.log(sumTo(10))
+          accept: ["55"]
+        - id: fs-w07-d5-g09
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            let n = 0
+            while (n < 20) n += 6
+            console.log(n)
+          accept: ["24"]
+        - { id: fs-w07-d5-g10, difficulty: medium, type: match, prompt: "Match the loop to its use.", pairs: [["for (let i = 0; …)", "count with a number"], ["for (const x of word)", "each letter/item"], ["while (…)", "repeat until a condition changes"], ["break", "leave early"]] }
+        - id: fs-w07-d5-g11
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            let line = ""
+            for (const ch of "naija") line = ch + line
+            console.log(line)
+          accept: ["ajian"]
+        - { id: fs-w07-d5-g12, difficulty: medium, type: truefalse, prompt: "for (let i = 1; i <= 5; i++) runs 5 times.", answer: true }
+        - id: fs-w07-d5-g13
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            let count = 0
+            for (let i = 0; i < 10; i += 3) count++
+            console.log(count)
+          accept: ["4"]
+        - { id: fs-w07-d5-g14, difficulty: medium, type: mcq, prompt: "7 times table, line 3: `${7} x ${3} = ${7 * 3}` gives…", choices: ["7 x 3 = 21", "7 x 3 = 73", "${7} x ${3}", "21"], answer: 0 }
+        - id: fs-w07-d5-g15
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            let found = "none"
+            for (const city of ["Kano", "Jos", "Lagos", "Ibadan"]) {
+              if (city.startsWith("L")) { found = city; break }
+            }
+            console.log(found)
+          accept: ["Lagos"]
+        - id: fs-w07-d5-g16
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            let years = 0
+            let savings = 100000
+            while (savings < 150000) {
+              savings += savings * 0.1
+              years++
+            }
+            console.log(years)
+          accept: ["5"]
+        - id: fs-w07-d5-g17
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            let s = ""
+            for (let i = 1; i <= 3; i++) {
+              for (let j = 1; j <= i; j++) s += "*"
+              s += "|"
+            }
+            console.log(s)
+          accept: ["*|**|***|"]
+        - { id: fs-w07-d5-g18, difficulty: hard, type: multi, prompt: "Which loops run forever? (Select all.)", choices: ["while (true) {}", "for (let i = 0; i < 5; i--) {}", "for (let i = 0; i < 5; i++) {}", "let n = 1; while (n > 0) { n++ }"], answers: [0, 1, 3] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Strings and numbers"
+        secondsPerQuestion: 9
+        questions:
+          - { id: fs-w07-d5-rf01, difficulty: easy, type: mcq, prompt: "Python len(s)", choices: ["s.length", "len(s)", "s.length()", "s.size"], answer: 0 }
+          - { id: fs-w07-d5-rf02, difficulty: easy, type: mcq, prompt: "Python s.upper()", choices: ["s.toUpperCase()", "s.upper()", "upper(s)", "s.caps()"], answer: 0 }
+          - { id: fs-w07-d5-rf03, difficulty: easy, type: mcq, prompt: "Python s.strip()", choices: ["s.trim()", "s.strip()", "s.clean()", "trim(s)"], answer: 0 }
+          - { id: fs-w07-d5-rf04, difficulty: easy, type: mcq, prompt: "Python \"ab\" in s", choices: ["s.includes(\"ab\")", "\"ab\" in s", "s.has(\"ab\")", "s.contains(\"ab\")"], answer: 0 }
+          - { id: fs-w07-d5-rf05, difficulty: easy, type: mcq, prompt: "Python s[0:3]", choices: ["s.slice(0, 3)", "s[0:3]", "s.cut(0, 3)", "s.sub(3)"], answer: 0 }
+          - { id: fs-w07-d5-rf06, difficulty: easy, type: text, prompt: "\"10\" + 5", accept: ["105", "\"105\""] }
+          - { id: fs-w07-d5-rf07, difficulty: easy, type: text, prompt: "Number(\"10\") + 5", accept: ["15"] }
+          - { id: fs-w07-d5-rf08, difficulty: easy, type: mcq, prompt: "Number(\"ten\")", choices: ["NaN", "0", "10", "undefined"], answer: 0 }
+          - { id: fs-w07-d5-rf09, difficulty: easy, type: text, prompt: "(2.5).toFixed(2)", accept: ["2.50", "\"2.50\""] }
+          - { id: fs-w07-d5-rf10, difficulty: easy, type: mcq, prompt: "Pause code at a line in DevTools", choices: ["a breakpoint", "a comment", "alert", "Lighthouse"], answer: 0 }
+      - kind: brain-teaser
+        title: "Debug it"
+        questions:
+          - { id: fs-w07-d5-bt01, difficulty: medium, type: mcq, prompt: "What error?", code: "function totalPrice(price, qty) {\n  return price * quantity\n}\nconsole.log(totalPrice(1500, 3))", choices: ["ReferenceError: quantity is not defined", "TypeError", "SyntaxError", "4500"], answer: 0 }
+          - id: fs-w07-d5-bt02
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const addStock = (current, incoming) => current + incoming
+              console.log(addStock(10, "5"))
+            accept: ["105"]
+          - id: fs-w07-d5-bt03
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              console.log(" 0803 123 4567 ".trim().replaceAll(" ", ""))
+            accept: ["08031234567"]
+          - id: fs-w07-d5-bt04
+            difficulty: hard
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const applyDiscount = (price, percent) => price - price * percent
+              console.log(applyDiscount(2000, 10))
+            accept: ["-18000"]
+            explain: "percent should be divided by 100."
+          - id: fs-w07-d5-bt05
+            difficulty: hard
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const v = Number("abc")
+              console.log(v === v, Number.isNaN(v))
+            accept: ["false true"]
+            explain: "NaN is the only value not equal to itself."
+
+  # ─────────────────────────── DAY 6 ───────────────────────────
+  - day: 6
+    gate:
+      title: "Checkpoint: strings, numbers and debugging"
+      covers: "Week 7 · Day 5: length, toUpperCase, trim, includes, slice, replaceAll, Number, NaN, toFixed, reading errors, breakpoints"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w07-d6-g01, difficulty: easy, type: mcq, prompt: "Length of a string s", choices: ["s.length", "s.length()", "len(s)", "s.count"], answer: 0 }
+        - { id: fs-w07-d6-g02, difficulty: easy, type: mcq, prompt: "Form inputs arrive as…", choices: ["strings", "numbers", "booleans", "objects"], answer: 0 }
+        - { id: fs-w07-d6-g03, difficulty: easy, type: truefalse, prompt: "\"10\" + 5 is \"105\".", answer: true }
+        - { id: fs-w07-d6-g04, difficulty: easy, type: mcq, prompt: "Check for NaN", choices: ["Number.isNaN(x)", "x === NaN", "x == NaN", "isNumber(x)"], answer: 0 }
+        - { id: fs-w07-d6-g05, difficulty: easy, type: mcq, prompt: "A missing } usually gives…", choices: ["SyntaxError", "ReferenceError", "TypeError", "NaN"], answer: 0 }
+        - { id: fs-w07-d6-g06, difficulty: easy, type: mcq, prompt: "A typo in a variable name usually gives…", choices: ["ReferenceError", "SyntaxError", "NaN", "a warning only"], answer: 0 }
+        - id: fs-w07-d6-g07
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const s = "Port Harcourt"
+            console.log(s.slice(0, 4).toUpperCase(), s.length)
+          accept: ["PORT 13"]
+        - id: fs-w07-d6-g08
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            console.log("Lagos - Lekki".includes("Lekki"), "abuja".includes("A"))
+          accept: ["true false"]
+        - { id: fs-w07-d6-g09, difficulty: medium, type: match, prompt: "Match Python to JavaScript.", pairs: [["len(s)", "s.length"], ["s.strip()", "s.trim()"], ["s.upper()", "s.toUpperCase()"], ["\"x\" in s", "s.includes(\"x\")"]] }
+        - id: fs-w07-d6-g10
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            console.log(Number("12") + Number("8"), "12" + "8")
+          accept: ["20 128"]
+        - { id: fs-w07-d6-g11, difficulty: medium, type: truefalse, prompt: "toFixed returns a string.", answer: true }
+        - id: fs-w07-d6-g12
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            console.log((1550 / 3).toFixed(2))
+          accept: ["516.67"]
+        - { id: fs-w07-d6-g13, difficulty: medium, type: mcq, prompt: "\"Cannot read properties of undefined\" is a…", choices: ["TypeError", "SyntaxError", "ReferenceError", "RangeError"], answer: 0 }
+        - id: fs-w07-d6-g14
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const word = "  Ibadan  "
+            console.log(word.length, word.trim().length)
+          accept: ["10 6"]
+        - { id: fs-w07-d6-g15, difficulty: medium, type: mcq, prompt: "Best first step when a function gives a strange result", choices: ["console.log the values going in and out (or set a breakpoint)", "Rewrite everything", "Add more semicolons", "Delete the function"], answer: 0 }
+        - id: fs-w07-d6-g16
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const checkAnswer = (given, correct) => given.trim().toLowerCase() === correct.toLowerCase()
+            console.log(checkAnswer(" ABUJA ", "Abuja"), checkAnswer("Abj", "Abuja"))
+          accept: ["true false"]
+        - id: fs-w07-d6-g17
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const input = "1,500"
+            console.log(Number(input), Number(input.replaceAll(",", "")))
+          accept: ["NaN 1500"]
+        - { id: fs-w07-d6-g18, difficulty: hard, type: multi, prompt: "Which give the number 15? (Select all.)", choices: ["Number(\"10\") + 5", "10 + Number(\"5\")", "\"10\" * 1 + 5", "\"10\" + 5"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Week 7 lightning round"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fs-w07-d6-rf01, difficulty: easy, type: mcq, prompt: "Print", choices: ["console.log", "print", "echo", "say"], answer: 0 }
+          - { id: fs-w07-d6-rf02, difficulty: easy, type: mcq, prompt: "Never reassigned", choices: ["const", "let", "var", "fix"], answer: 0 }
+          - { id: fs-w07-d6-rf03, difficulty: easy, type: mcq, prompt: "Strict equality", choices: ["===", "==", "=", "eq"], answer: 0 }
+          - { id: fs-w07-d6-rf04, difficulty: easy, type: mcq, prompt: "Python and", choices: ["&&", "and", "&", "+"], answer: 0 }
+          - { id: fs-w07-d6-rf05, difficulty: easy, type: mcq, prompt: "Arrow function", choices: ["() =>", "->", "lambda", "fn"], answer: 0 }
+          - { id: fs-w07-d6-rf06, difficulty: easy, type: mcq, prompt: "String length", choices: ["s.length", "len(s)", "s.size()", "s.len"], answer: 0 }
+          - { id: fs-w07-d6-rf07, difficulty: easy, type: mcq, prompt: "Remove spaces at the ends", choices: ["trim()", "strip()", "clean()", "cut()"], answer: 0 }
+          - { id: fs-w07-d6-rf08, difficulty: easy, type: mcq, prompt: "Text → number", choices: ["Number(\"5\")", "int(\"5\")", "\"5\".number", "toNumber(5)"], answer: 0 }
+          - { id: fs-w07-d6-rf09, difficulty: easy, type: mcq, prompt: "Ask the user (old-fashioned pop-up)", choices: ["prompt()", "input()", "ask()", "read()"], answer: 0 }
+          - { id: fs-w07-d6-rf10, difficulty: easy, type: mcq, prompt: "Show a message pop-up", choices: ["alert()", "print()", "popup()", "show()"], answer: 0 }
+      - kind: brain-teaser
+        title: "Quiz game logic"
+        questions:
+          - id: fs-w07-d6-bt01
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              function scoreMessage(score, total) {
+                const percent = score / total * 100
+                let message = "Keep practising"
+                if (percent >= 80) message = "Excellent!"
+                else if (percent >= 50) message = "Good effort"
+                return `You scored ${score}/${total}. ${message}`
+              }
+              console.log(scoreMessage(2, 3))
+            accept: ["You scored 2/3. Good effort"]
+          - id: fs-w07-d6-bt02
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const check = (g, c) => g.trim().toLowerCase() === c.toLowerCase()
+              let score = 0
+              if (check("abuja", "Abuja")) score++
+              if (check("13", "12")) score++
+              if (check(" LAGOS", "Lagos")) score++
+              console.log(score)
+            accept: ["2"]
+          - { id: fs-w07-d6-bt03, difficulty: medium, type: mcq, prompt: "prompt() returns what when the user presses Cancel?", choices: ["null", "\"\"", "undefined", "false"], answer: 0 }
+          - id: fs-w07-d6-bt04
+            difficulty: hard
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const answer = null
+              const safe = (answer ?? "").trim()
+              console.log(`[${safe}]`)
+            accept: ["[]"]
+            explain: "?? gives the right side when the left is null or undefined."
+          - { id: fs-w07-d6-bt05, difficulty: hard, type: multi, prompt: "Which are real differences between Python and JavaScript? (Select all.)", choices: ["{ } blocks vs indentation", "=== vs ==", "true vs True", "JavaScript can't do loops"], answers: [0, 1, 2] }
