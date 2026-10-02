@@ -1,0 +1,298 @@
+# Excel · Week 12 quizzes. Format and rules: src/content/QUIZZES.md
+# Figures verified against datasets/sales_2025.csv.
+week: 12
+days:
+
+  # ─────────────────────────── DAY 1 ───────────────────────────
+  - day: 1
+    gate:
+      title: "Checkpoint: Week 11 review"
+      covers: "Week 11: conditional formatting (built-in and formula rules), choosing charts, combo charts, sparklines, dynamic charts"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w12-d1-g01, difficulty: easy, type: mcq, prompt: "Change over time", choices: ["line chart", "pie chart", "scatter", "doughnut"], answer: 0 }
+        - { id: xl-w12-d1-g02, difficulty: easy, type: mcq, prompt: "Heat map", choices: ["Colour Scale", "Data Bars", "Icon Set", "Top 10"], answer: 0 }
+        - { id: xl-w12-d1-g03, difficulty: easy, type: truefalse, prompt: "A formula rule must return TRUE or FALSE.", answer: true }
+        - { id: xl-w12-d1-g04, difficulty: easy, type: mcq, prompt: "Whole Lagos rows (Region in C)", choices: ["=$C2=\"Lagos\"", "=C2=\"Lagos\"", "=$C$2=\"Lagos\"", "=C$2=\"Lagos\""], answer: 0 }
+        - { id: xl-w12-d1-g05, difficulty: easy, type: mcq, prompt: "A tiny chart in a cell", choices: ["sparkline", "data bar", "icon set", "thumbnail"], answer: 0 }
+        - { id: xl-w12-d1-g06, difficulty: easy, type: mcq, prompt: "Instant chart", choices: ["Alt+F1", "Ctrl+T", "Alt+F5", "F4"], answer: 0 }
+        - { id: xl-w12-d1-g07, difficulty: medium, type: text, prompt: "December 2025 net sales (₦M, 1 decimal)?", accept: ["109.6", "109.6M", "₦109.6M"] }
+        - { id: xl-w12-d1-g08, difficulty: medium, type: text, prompt: "Orders with NetSales ≥ ₦1,000,000?", accept: ["140"] }
+        - { id: xl-w12-d1-g09, difficulty: medium, type: match, prompt: "Match.", pairs: [["line", "trend"], ["sorted bar", "comparison"], ["combo + secondary axis", "two scales"], ["scatter", "relationship"]] }
+        - { id: xl-w12-d1-g10, difficulty: medium, type: mcq, prompt: "Search-box rule on Product (H), text in Z1", choices: ["=ISNUMBER(SEARCH($Z$1,$H2))", "=SEARCH(Z1,H2)", "=$H2=$Z$1", "=FIND(Z1)"], answer: 0 }
+        - { id: xl-w12-d1-g11, difficulty: medium, type: truefalse, prompt: "A good chart title states the insight.", answer: true }
+        - { id: xl-w12-d1-g12, difficulty: medium, type: text, prompt: "Lagos share of net sales (1 decimal %)?", accept: ["38.6%", "38.6"] }
+        - { id: xl-w12-d1-g13, difficulty: medium, type: mcq, prompt: "A chart changes with a drop-down when…", choices: ["it points at a helper table whose formulas use the drop-down", "it's 3D", "you redraw it", "it's a pie"], answer: 0 }
+        - { id: xl-w12-d1-g14, difficulty: medium, type: mcq, prompt: "Weekends (date in B)", choices: ["=WEEKDAY($B2,2)>=6", "=WEEKDAY(B2)>=6", "=DAY($B2)>5", "=$B2>=6"], answer: 0 }
+        - { id: xl-w12-d1-g15, difficulty: medium, type: multi, prompt: "Chart design rules (Select all.)", choices: ["Insight title", "Sorted bars", "Few colours", "3D effects"], answers: [0, 1, 2] }
+        - { id: xl-w12-d1-g16, difficulty: hard, type: mcq, prompt: "Combo chart: ₦M net sales and ~300 orders share one axis. Fix:", choices: ["Put orders on a secondary axis", "Use a pie", "Delete orders", "Use 3D"], answer: 0 }
+        - { id: xl-w12-d1-g17, difficulty: hard, type: text, prompt: "Wholesale share of net sales (1 decimal %)?", accept: ["49.1%", "49.1"] }
+        - { id: xl-w12-d1-g18, difficulty: hard, type: multi, prompt: "Which highlight whole rows on A2:Q2401? (Select all.)", choices: ["=$C2=\"Kano\"", "=$F2=$Z$1", "=WEEKDAY($B2,2)>=6", "=$C$2=\"Kano\""], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "PivotTable basics"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w12-d1-rf01, difficulty: easy, type: mcq, prompt: "Insert a PivotTable from…", choices: ["Insert → PivotTable", "Data → Pivot", "Home → Pivot", "Review → Pivot"], answer: 0 }
+          - { id: xl-w12-d1-rf02, difficulty: easy, type: mcq, prompt: "Groups down the side", choices: ["Rows", "Columns", "Values", "Filters"], answer: 0 }
+          - { id: xl-w12-d1-rf03, difficulty: easy, type: mcq, prompt: "The numbers", choices: ["Values", "Rows", "Columns", "Filters"], answer: 0 }
+          - { id: xl-w12-d1-rf04, difficulty: easy, type: mcq, prompt: "Filter the whole pivot", choices: ["Filters", "Rows", "Values", "Columns"], answer: 0 }
+          - { id: xl-w12-d1-rf05, difficulty: easy, type: mcq, prompt: "Refresh shortcut", choices: ["Alt+F5", "F5", "Ctrl+R", "F9"], answer: 0 }
+          - { id: xl-w12-d1-rf06, difficulty: easy, type: truefalse, prompt: "Pivots update automatically when the data changes.", answer: false }
+          - { id: xl-w12-d1-rf07, difficulty: easy, type: mcq, prompt: "Change Sum to Average", choices: ["Value Field Settings", "Format Cells", "Group", "Refresh"], answer: 0 }
+          - { id: xl-w12-d1-rf08, difficulty: easy, type: mcq, prompt: "See the rows behind a number", choices: ["double-click it", "right-click → Delete", "Ctrl+Z", "Refresh"], answer: 0 }
+          - { id: xl-w12-d1-rf09, difficulty: easy, type: text, prompt: "Most-used payment method by count?", accept: ["Transfer"] }
+          - { id: xl-w12-d1-rf10, difficulty: easy, type: text, prompt: "Top category by net sales?", accept: ["Groceries"] }
+      - kind: brain-teaser
+        title: "First pivots"
+        questions:
+          - { id: xl-w12-d1-bt01, difficulty: medium, type: text, prompt: "Count of orders paid by Transfer?", accept: ["1075", "1,075"] }
+          - { id: xl-w12-d1-bt02, difficulty: medium, type: text, prompt: "Average net sale for Wholesale (₦, no symbol)?", accept: ["1156902", "1,156,902"] }
+          - { id: xl-w12-d1-bt03, difficulty: medium, type: mcq, prompt: "Orders by payment method, largest first", choices: ["Transfer 1,075 · POS 601 · Cash 507 · Card 217", "Cash · Transfer · POS · Card", "POS · Transfer · Card · Cash", "Card · Cash · POS · Transfer"], answer: 0 }
+          - { id: xl-w12-d1-bt04, difficulty: hard, type: mcq, prompt: "Wholesale averages ₦1,156,902 but Retail only ₦211,628. Wholesale orders count…", choices: ["354 (few, very large orders)", "1,458", "588", "2,400"], answer: 0 }
+          - { id: xl-w12-d1-bt05, difficulty: hard, type: mcq, prompt: "You fix a typo in tblSales and the pivot still shows the old figure. Why?", choices: ["Pivots use a cached copy; press Alt+F5", "Pivots can't show typos", "The table is protected", "Values are text"], answer: 0 }
+
+  # ─────────────────────────── DAY 2 ───────────────────────────
+  - day: 2
+    gate:
+      title: "Checkpoint: your first PivotTable"
+      covers: "Week 12 · Day 1: the 4 areas, Value Field Settings, number format, refresh, drill-down"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w12-d2-g01, difficulty: easy, type: mcq, prompt: "The 4 areas", choices: ["Rows, Columns, Values, Filters", "Rows, Cells, Sums, Filters", "Top, Side, Middle, Bottom", "Data, Chart, Table, Sheet"], answer: 0 }
+        - { id: xl-w12-d2-g02, difficulty: easy, type: mcq, prompt: "Refresh a pivot", choices: ["Alt+F5", "F5", "Ctrl+S", "Ctrl+F5"], answer: 0 }
+        - { id: xl-w12-d2-g03, difficulty: easy, type: truefalse, prompt: "Double-clicking a pivot number creates a sheet with the underlying rows.", answer: true }
+        - { id: xl-w12-d2-g04, difficulty: easy, type: mcq, prompt: "Region in Rows, NetSales in Values gives…", choices: ["Sum of NetSales per region", "a count of regions", "a chart", "an error"], answer: 0 }
+        - { id: xl-w12-d2-g05, difficulty: easy, type: mcq, prompt: "Format pivot numbers as ₦", choices: ["Value Field Settings → Number Format", "Home → Bold", "Insert → Symbol", "Data → Format"], answer: 0 }
+        - { id: xl-w12-d2-g06, difficulty: easy, type: mcq, prompt: "Count of orders: put OrderID in Values as…", choices: ["Count", "Sum", "Max", "Average"], answer: 0 }
+        - { id: xl-w12-d2-g07, difficulty: medium, type: text, prompt: "Lagos net sales in the region pivot (₦, no symbol)?", accept: ["321703800", "321,703,800"] }
+        - { id: xl-w12-d2-g08, difficulty: medium, type: text, prompt: "Groceries net sales (₦, no symbol)?", accept: ["157534275", "157,534,275"] }
+        - { id: xl-w12-d2-g09, difficulty: medium, type: match, prompt: "Match the average net sale.", pairs: [["Wholesale", "₦1,156,902"], ["Retail", "₦211,628"], ["Online", "₦197,194"], ["All orders", "₦347,519"]] }
+        - { id: xl-w12-d2-g10, difficulty: medium, type: text, prompt: "Card orders?", accept: ["217"] }
+        - { id: xl-w12-d2-g11, difficulty: medium, type: truefalse, prompt: "A pivot on tblSales picks up new rows after a refresh.", answer: true }
+        - { id: xl-w12-d2-g12, difficulty: medium, type: text, prompt: "POS orders?", accept: ["601"] }
+        - { id: xl-w12-d2-g13, difficulty: medium, type: mcq, prompt: "Sort categories largest first", choices: ["Right-click a value → Sort → Largest to Smallest", "Data → Sort A→Z", "Drag rows by hand", "Filter → Top 10"], answer: 0 }
+        - { id: xl-w12-d2-g14, difficulty: medium, type: text, prompt: "Cash orders?", accept: ["507"] }
+        - { id: xl-w12-d2-g15, difficulty: medium, type: mcq, prompt: "Pivot vs SUMIFS for net sales by region", choices: ["Same numbers; the pivot needs no formulas", "Pivot is always different", "SUMIFS can't do regions", "Pivot rounds"], answer: 0 }
+        - { id: xl-w12-d2-g16, difficulty: hard, type: mcq, prompt: "Drill-down on Kano's net sales gives a sheet with…", choices: ["only Kano's order rows", "every order", "a chart", "a copy of the pivot"], answer: 0 }
+        - { id: xl-w12-d2-g17, difficulty: hard, type: text, prompt: "Retail orders?", accept: ["1458", "1,458"] }
+        - { id: xl-w12-d2-g18, difficulty: hard, type: multi, prompt: "Value Field Settings can… (Select all.)", choices: ["change Sum to Count", "set the number format", "rename the header", "add a new data column to tblSales"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Cross-tabs and layouts"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w12-d2-rf01, difficulty: easy, type: mcq, prompt: "Region in Rows + CustomerType in Columns =", choices: ["a cross-tab", "a list", "a chart", "a filter"], answer: 0 }
+          - { id: xl-w12-d2-rf02, difficulty: easy, type: mcq, prompt: "Store under Region in Rows =", choices: ["nested rows", "a cross-tab", "a filter", "an error"], answer: 0 }
+          - { id: xl-w12-d2-rf03, difficulty: easy, type: mcq, prompt: "Expand/collapse groups", choices: ["+/− buttons", "Ctrl+E", "Refresh", "Filters"], answer: 0 }
+          - { id: xl-w12-d2-rf04, difficulty: easy, type: mcq, prompt: "Show labels in every row", choices: ["Repeat all item labels", "Compact form", "Subtotals", "Grand totals"], answer: 0 }
+          - { id: xl-w12-d2-rf05, difficulty: easy, type: mcq, prompt: "Each field in its own column", choices: ["Tabular form", "Compact form", "Outline only", "Pie form"], answer: 0 }
+          - { id: xl-w12-d2-rf06, difficulty: easy, type: truefalse, prompt: "You can put NetSales in Values more than once.", answer: true }
+          - { id: xl-w12-d2-rf07, difficulty: easy, type: mcq, prompt: "Layout options are on the…", choices: ["Design tab", "Home tab", "Data tab", "Review tab"], answer: 0 }
+          - { id: xl-w12-d2-rf08, difficulty: easy, type: mcq, prompt: "Rename \"Sum of NetSales\"", choices: ["type over the header (or Value Field Settings → Custom Name)", "impossible", "Refresh", "Ctrl+H"], answer: 0 }
+          - { id: xl-w12-d2-rf09, difficulty: easy, type: mcq, prompt: "Category × PaymentMethod count", choices: ["Category in Rows, PaymentMethod in Columns, Count of OrderID", "Both in Values", "Both in Filters", "Category in Values"], answer: 0 }
+          - { id: xl-w12-d2-rf10, difficulty: easy, type: mcq, prompt: "Turn off subtotals", choices: ["Design → Subtotals → Do Not Show", "Delete rows", "Filter", "Refresh"], answer: 0 }
+      - kind: brain-teaser
+        title: "Three values"
+        questions:
+          - { id: xl-w12-d2-bt01, difficulty: medium, type: mcq, prompt: "Region → Store with Orders, Net sales, Avg order: Values needs…", choices: ["OrderID (Count), NetSales (Sum), NetSales (Average)", "NetSales once", "Store in Values", "Region in Values"], answer: 0 }
+          - { id: xl-w12-d2-bt02, difficulty: medium, type: text, prompt: "Biggest store by net sales?", accept: ["Lagos - Ikeja"] }
+          - { id: xl-w12-d2-bt03, difficulty: medium, type: mcq, prompt: "Remove the \"Row Labels\" text", choices: ["PivotTable Analyze → Field Headers off, or type a new header", "Delete the row", "Refresh", "Unprotect"], answer: 0 }
+          - { id: xl-w12-d2-bt04, difficulty: hard, type: text, prompt: "Lagos - Ikeja net sales (₦, no symbol)?", accept: ["131822325", "131,822,325"] }
+          - { id: xl-w12-d2-bt05, difficulty: hard, type: mcq, prompt: "Region × CustomerType: which is the largest group?", choices: ["Wholesale overall is the biggest column (49.1%)", "Online", "Retail is always biggest", "They're equal"], answer: 0 }
+
+  # ─────────────────────────── DAY 3 ───────────────────────────
+  - day: 3
+    gate:
+      title: "Checkpoint: rows × columns"
+      covers: "Week 12 · Day 2: cross-tabs, nested rows, several values, renaming headers, tabular layout, subtotals"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w12-d3-g01, difficulty: easy, type: mcq, prompt: "A cross-tab puts one field in Rows and one in…", choices: ["Columns", "Filters", "Values", "nowhere"], answer: 0 }
+        - { id: xl-w12-d3-g02, difficulty: easy, type: mcq, prompt: "Nested rows", choices: ["two fields stacked in Rows", "two pivots", "two sheets", "two filters"], answer: 0 }
+        - { id: xl-w12-d3-g03, difficulty: easy, type: truefalse, prompt: "Tabular form puts each Row field in its own column.", answer: true }
+        - { id: xl-w12-d3-g04, difficulty: easy, type: mcq, prompt: "Grand totals on/off is on the…", choices: ["Design tab", "Data tab", "Home tab", "Insert tab"], answer: 0 }
+        - { id: xl-w12-d3-g05, difficulty: easy, type: mcq, prompt: "Avg order needs NetSales set to…", choices: ["Average", "Sum", "Count", "Max"], answer: 0 }
+        - { id: xl-w12-d3-g06, difficulty: easy, type: mcq, prompt: "Repeat all item labels helps when…", choices: ["you copy the pivot out as data", "making charts only", "refreshing", "filtering"], answer: 0 }
+        - { id: xl-w12-d3-g07, difficulty: medium, type: text, prompt: "Stores in the dataset?", accept: ["9"] }
+        - { id: xl-w12-d3-g08, difficulty: medium, type: text, prompt: "Abuja - Wuse net sales (₦, no symbol)?", accept: ["116088535", "116,088,535"] }
+        - { id: xl-w12-d3-g09, difficulty: medium, type: match, prompt: "Match the layout term.", pairs: [["Compact", "all rows in one column"], ["Tabular", "one column per field"], ["Subtotals", "totals per group"], ["Grand totals", "overall totals"]] }
+        - { id: xl-w12-d3-g10, difficulty: medium, type: truefalse, prompt: "A pivot can show Sum, Count and Average of different fields side by side.", answer: true }
+        - { id: xl-w12-d3-g11, difficulty: medium, type: mcq, prompt: "Category × PaymentMethod: the value should be…", choices: ["Count of OrderID", "Sum of Units only", "Max of Region", "Average of Category"], answer: 0 }
+        - { id: xl-w12-d3-g12, difficulty: medium, type: text, prompt: "Lagos - Lekki net sales (₦, no symbol)?", accept: ["112680455", "112,680,455"] }
+        - { id: xl-w12-d3-g13, difficulty: medium, type: mcq, prompt: "Store in Rows above Region (wrong order) gives…", choices: ["each store with its single region underneath (less useful)", "an error", "the same as Region → Store", "nothing"], answer: 0 }
+        - { id: xl-w12-d3-g14, difficulty: medium, type: text, prompt: "Abuja net sales (₦, no symbol)?", accept: ["174309590", "174,309,590"] }
+        - { id: xl-w12-d3-g15, difficulty: medium, type: mcq, prompt: "Apply a pivot style from…", choices: ["Design → PivotTable Styles", "Home → Cell Styles", "Page Layout → Themes only", "Format Painter"], answer: 0 }
+        - { id: xl-w12-d3-g16, difficulty: hard, type: mcq, prompt: "Region (Rows) × CustomerType (Columns): Lagos Wholesale + Lagos Retail + Lagos Online =", choices: ["₦321,703,800 (Lagos row total)", "₦834,046,700", "₦174,309,590", "it depends on filters only"], answer: 0 }
+        - { id: xl-w12-d3-g17, difficulty: hard, type: text, prompt: "Top 3 stores above ₦100M, in order (comma-separated)", accept: ["Lagos - Ikeja, Abuja - Wuse, Lagos - Lekki"] }
+        - { id: xl-w12-d3-g18, difficulty: hard, type: multi, prompt: "Design-tab layout options (Select all.)", choices: ["Report Layout", "Subtotals", "Grand Totals", "Remove Duplicates"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Grouping"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w12-d3-rf01, difficulty: easy, type: mcq, prompt: "Dates in Rows group into…", choices: ["Years/Quarters/Months", "Hours only", "Weeks only", "nothing"], answer: 0 }
+          - { id: xl-w12-d3-rf02, difficulty: easy, type: mcq, prompt: "Group manually", choices: ["right-click → Group", "Ctrl+G", "Data → Group only", "Refresh"], answer: 0 }
+          - { id: xl-w12-d3-rf03, difficulty: easy, type: mcq, prompt: "Units grouped from 0 by 10 →", choices: ["0–9, 10–19, …", "0–10, 10–20 overlapping", "1, 2, 3…", "10, 20, 30 only"], answer: 0 }
+          - { id: xl-w12-d3-rf04, difficulty: easy, type: mcq, prompt: "North = Kano + Abuja is…", choices: ["a manual text group", "a date group", "a number group", "a filter"], answer: 0 }
+          - { id: xl-w12-d3-rf05, difficulty: easy, type: text, prompt: "Phones net sales in Q4 (₦, no symbol)?", accept: ["44691400", "44,691,400"] }
+          - { id: xl-w12-d3-rf06, difficulty: easy, type: text, prompt: "Phones' best quarter?", accept: ["Q4", "4"] }
+          - { id: xl-w12-d3-rf07, difficulty: easy, type: truefalse, prompt: "South earns more than North.", answer: true }
+          - { id: xl-w12-d3-rf08, difficulty: easy, type: mcq, prompt: "Bins of ₦250,000 on NetSales", choices: ["NetSales in Rows → Group → By 250000", "Filters", "Values → Average", "Columns"], answer: 0 }
+          - { id: xl-w12-d3-rf09, difficulty: easy, type: mcq, prompt: "Ungroup", choices: ["right-click → Ungroup", "Delete", "Refresh", "Ctrl+Z only"], answer: 0 }
+          - { id: xl-w12-d3-rf10, difficulty: easy, type: mcq, prompt: "Category in Rows, Quarters in Columns shows…", choices: ["each category's sales per quarter", "a list of dates", "only totals", "a chart"], answer: 0 }
+      - kind: brain-teaser
+        title: "North vs South"
+        questions:
+          - { id: xl-w12-d3-bt01, difficulty: medium, type: text, prompt: "South net sales (₦, no symbol)?", accept: ["570636550", "570,636,550"] }
+          - { id: xl-w12-d3-bt02, difficulty: medium, type: text, prompt: "North net sales (₦, no symbol)?", accept: ["263410150", "263,410,150"] }
+          - { id: xl-w12-d3-bt03, difficulty: medium, type: mcq, prompt: "Phones by quarter", choices: ["Q1 ₦29.9M · Q2 ₦34.9M · Q3 ₦30.5M · Q4 ₦44.7M", "flat all year", "falls every quarter", "Q1 biggest"], answer: 0 }
+          - { id: xl-w12-d3-bt04, difficulty: hard, type: mcq, prompt: "Grouping dates fails with \"Cannot group that selection\". Most likely…", choices: ["some OrderDate cells are text or blank", "too many rows", "the pivot is sorted", "Phones isn't a date"], answer: 0 }
+          - { id: xl-w12-d3-bt05, difficulty: hard, type: mcq, prompt: "North share of net sales (≈)", choices: ["31.6%", "50%", "20.9%", "68.4%"], answer: 0 }
+
+  # ─────────────────────────── DAY 4 ───────────────────────────
+  - day: 4
+    gate:
+      title: "Checkpoint: grouping"
+      covers: "Week 12 · Day 3: grouping dates into quarters/months, number bins, manual text groups"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w12-d4-g01, difficulty: easy, type: mcq, prompt: "Group dates by quarter", choices: ["right-click a date → Group → Quarters", "Data → Quarter", "Filter by quarter", "Format Cells"], answer: 0 }
+        - { id: xl-w12-d4-g02, difficulty: easy, type: mcq, prompt: "North = ?", choices: ["Kano + Abuja", "Lagos + Ibadan", "Enugu + Port Harcourt", "All six"], answer: 0 }
+        - { id: xl-w12-d4-g03, difficulty: easy, type: truefalse, prompt: "You can group numbers into equal-width bins in a pivot.", answer: true }
+        - { id: xl-w12-d4-g04, difficulty: easy, type: mcq, prompt: "Which quarter was Phones' best?", choices: ["Q4", "Q1", "Q2", "Q3"], answer: 0 }
+        - { id: xl-w12-d4-g05, difficulty: easy, type: mcq, prompt: "Grouping text items", choices: ["select items → right-click → Group", "type a formula", "use Filters", "rename the sheet"], answer: 0 }
+        - { id: xl-w12-d4-g06, difficulty: easy, type: mcq, prompt: "Which earns more?", choices: ["South", "North", "equal", "can't tell"], answer: 0 }
+        - { id: xl-w12-d4-g07, difficulty: medium, type: text, prompt: "Phones Q1 net sales (₦, no symbol)?", accept: ["29885950", "29,885,950"] }
+        - { id: xl-w12-d4-g08, difficulty: medium, type: text, prompt: "South net sales (₦, no symbol)?", accept: ["570636550", "570,636,550"] }
+        - { id: xl-w12-d4-g09, difficulty: medium, type: match, prompt: "Match Phones' quarters.", pairs: [["Q1", "₦29,885,950"], ["Q2", "₦34,904,200"], ["Q3", "₦30,497,150"], ["Q4", "₦44,691,400"]] }
+        - { id: xl-w12-d4-g10, difficulty: medium, type: truefalse, prompt: "Grouping dates needs every cell in the field to be a real date.", answer: true }
+        - { id: xl-w12-d4-g11, difficulty: medium, type: mcq, prompt: "Bins of ₦250,000 starting at 0: an order of ₦260,000 falls in…", choices: ["250000–499999", "0–249999", "500000–749999", "its own bin"], answer: 0 }
+        - { id: xl-w12-d4-g12, difficulty: medium, type: text, prompt: "North net sales (₦, no symbol)?", accept: ["263410150", "263,410,150"] }
+        - { id: xl-w12-d4-g13, difficulty: medium, type: mcq, prompt: "Months alone (no Years) for 2-year data would…", choices: ["merge January 2025 with January 2026", "split them", "error", "skip months"], answer: 0 }
+        - { id: xl-w12-d4-g14, difficulty: medium, type: mcq, prompt: "Phones Q2 vs Q3", choices: ["Q2 higher (₦34.9M vs ₦30.5M)", "Q3 higher", "equal", "no data"], answer: 0 }
+        - { id: xl-w12-d4-g15, difficulty: medium, type: mcq, prompt: "Group Units starting at 0 by 10. Units = 10 goes in…", choices: ["10–19", "0–9", "0–10", "its own group"], answer: 0 }
+        - { id: xl-w12-d4-g16, difficulty: hard, type: text, prompt: "Phones full-year net sales (₦, no symbol)?", accept: ["139978700", "139,978,700"] }
+        - { id: xl-w12-d4-g17, difficulty: hard, type: mcq, prompt: "Why group regions in the pivot rather than editing tblSales?", choices: ["The source data stays untouched and the group is easy to change", "Tables can't hold text", "It's faster to refresh", "Pivots can't read regions"], answer: 0 }
+        - { id: xl-w12-d4-g18, difficulty: hard, type: multi, prompt: "Things a pivot can group (Select all.)", choices: ["dates", "numbers into bins", "chosen text items", "formulas in tblSales"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Show Values As"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w12-d4-rf01, difficulty: easy, type: mcq, prompt: "Each region's share of everything", choices: ["% of Grand Total", "Running Total", "Difference From", "Rank"], answer: 0 }
+          - { id: xl-w12-d4-rf02, difficulty: easy, type: mcq, prompt: "Month-on-month growth %", choices: ["% Difference From (previous)", "% of Grand Total", "Running Total", "Rank"], answer: 0 }
+          - { id: xl-w12-d4-rf03, difficulty: easy, type: mcq, prompt: "Year-to-date", choices: ["Running Total In", "% of Row Total", "Rank", "Difference From"], answer: 0 }
+          - { id: xl-w12-d4-rf04, difficulty: easy, type: mcq, prompt: "A ranking", choices: ["Rank Largest to Smallest", "Running Total", "% of Column Total", "Index"], answer: 0 }
+          - { id: xl-w12-d4-rf05, difficulty: easy, type: mcq, prompt: "Mix within each column", choices: ["% of Column Total", "% of Grand Total", "Running Total", "Rank"], answer: 0 }
+          - { id: xl-w12-d4-rf06, difficulty: easy, type: text, prompt: "Lagos % of grand total (1 decimal)?", accept: ["38.6%", "38.6"] }
+          - { id: xl-w12-d4-rf07, difficulty: easy, type: text, prompt: "Month with the biggest jump vs the month before?", accept: ["March", "Mar", "2025-03"] }
+          - { id: xl-w12-d4-rf08, difficulty: easy, type: text, prompt: "Rank 1 salesperson?", accept: ["Tolu Eze"] }
+          - { id: xl-w12-d4-rf09, difficulty: easy, type: truefalse, prompt: "Show Values As changes the source data.", answer: false }
+          - { id: xl-w12-d4-rf10, difficulty: easy, type: mcq, prompt: "Amount and % side by side", choices: ["add NetSales to Values twice", "two pivots", "a formula column", "impossible"], answer: 0 }
+      - kind: brain-teaser
+        title: "Read the percentages"
+        questions:
+          - { id: xl-w12-d4-bt01, difficulty: medium, type: text, prompt: "March vs February growth (1 decimal %)?", accept: ["89.7%", "89.7", "+89.7%"] }
+          - { id: xl-w12-d4-bt02, difficulty: medium, type: text, prompt: "December vs November growth (1 decimal %)?", accept: ["42.5%", "42.5", "+42.5%"] }
+          - { id: xl-w12-d4-bt03, difficulty: medium, type: text, prompt: "YTD running total at 31 December (₦, no symbol)?", accept: ["834046700", "834,046,700"] }
+          - { id: xl-w12-d4-bt04, difficulty: hard, type: mcq, prompt: "Which region depends most on Groceries (% of column total)?", choices: ["Port Harcourt (32.9%)", "Lagos", "Abuja (19.7%)", "Kano"], answer: 0 }
+          - { id: xl-w12-d4-bt05, difficulty: hard, type: mcq, prompt: "% Difference From (previous) shows blank for January because…", choices: ["there's no previous month to compare with", "January had no sales", "it's an error", "January is filtered"], answer: 0 }
+
+  # ─────────────────────────── DAY 5 ───────────────────────────
+  - day: 5
+    gate:
+      title: "Checkpoint: Show Values As"
+      covers: "Week 12 · Day 4: % of grand/column/row total, difference and % difference from, running total, rank"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w12-d5-g01, difficulty: easy, type: mcq, prompt: "Right-click a value → …", choices: ["Show Values As", "Group", "Refresh", "Sort only"], answer: 0 }
+        - { id: xl-w12-d5-g02, difficulty: easy, type: mcq, prompt: "Cumulative year-to-date", choices: ["Running Total In", "% of Grand Total", "Rank", "Difference From"], answer: 0 }
+        - { id: xl-w12-d5-g03, difficulty: easy, type: truefalse, prompt: "% of Grand Total for all regions adds up to 100%.", answer: true }
+        - { id: xl-w12-d5-g04, difficulty: easy, type: mcq, prompt: "Change vs last month in ₦", choices: ["Difference From (previous)", "% of Row Total", "Running Total", "Rank"], answer: 0 }
+        - { id: xl-w12-d5-g05, difficulty: easy, type: mcq, prompt: "Who ranks first?", choices: ["Tolu Eze", "Zainab Obi", "Uche Uzor", "Bola Musa"], answer: 0 }
+        - { id: xl-w12-d5-g06, difficulty: easy, type: mcq, prompt: "Category mix within each region", choices: ["% of Column Total (regions in columns)", "% of Grand Total", "Running Total", "Rank"], answer: 0 }
+        - { id: xl-w12-d5-g07, difficulty: medium, type: text, prompt: "March vs February (1 decimal %)?", accept: ["89.7%", "89.7", "+89.7%"] }
+        - { id: xl-w12-d5-g08, difficulty: medium, type: text, prompt: "Groceries share of Port Harcourt's sales (1 decimal %)?", accept: ["32.9%", "32.9"] }
+        - { id: xl-w12-d5-g09, difficulty: medium, type: match, prompt: "Match the question to the option.", pairs: [["Lagos share of total", "% of Grand Total"], ["month-on-month growth", "% Difference From"], ["year-to-date", "Running Total In"], ["top salesperson", "Rank Largest to Smallest"]] }
+        - { id: xl-w12-d5-g10, difficulty: medium, type: truefalse, prompt: "% of Row Total makes each row add up to 100%.", answer: true }
+        - { id: xl-w12-d5-g11, difficulty: medium, type: text, prompt: "Second-ranked salesperson?", accept: ["Uche Uzor"] }
+        - { id: xl-w12-d5-g12, difficulty: medium, type: text, prompt: "Dec vs Nov growth (1 decimal %)?", accept: ["42.5%", "42.5", "+42.5%"] }
+        - { id: xl-w12-d5-g13, difficulty: medium, type: mcq, prompt: "Running Total at 30 June =", choices: ["Jan–Jun net sales added up", "June only", "June − May", "the year total"], answer: 0 }
+        - { id: xl-w12-d5-g14, difficulty: medium, type: text, prompt: "Abuja % of grand total (1 decimal)?", accept: ["20.9%", "20.9"] }
+        - { id: xl-w12-d5-g15, difficulty: medium, type: mcq, prompt: "Why add NetSales twice?", choices: ["One as ₦, one as a %", "To double it", "Pivots need two values", "For subtotals"], answer: 0 }
+        - { id: xl-w12-d5-g16, difficulty: hard, type: mcq, prompt: "Net sales rose from ₦46.3M (Feb) to ₦87.9M (Mar). % Difference From shows…", choices: ["+89.7%", "+47.3%", "+41.6M", "189.7%"], answer: 0 }
+        - { id: xl-w12-d5-g17, difficulty: hard, type: text, prompt: "Tolu Eze's net sales (₦, no symbol)?", accept: ["54011110", "54,011,110"] }
+        - { id: xl-w12-d5-g18, difficulty: hard, type: multi, prompt: "Show Values As options (Select all.)", choices: ["% of Grand Total", "Running Total In", "Rank Largest to Smallest", "Remove Duplicates"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Filters and PivotCharts"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w12-d5-rf01, difficulty: easy, type: mcq, prompt: "Top 10 products", choices: ["Value Filters → Top 10", "Sort A→Z", "Group", "Refresh"], answer: 0 }
+          - { id: xl-w12-d5-rf02, difficulty: easy, type: mcq, prompt: "Stores with net sales > ₦100M", choices: ["Value Filters → Greater Than", "Label Filters → Contains", "Group", "Show Values As"], answer: 0 }
+          - { id: xl-w12-d5-rf03, difficulty: easy, type: mcq, prompt: "A chart that follows the pivot", choices: ["PivotChart", "Sparkline", "Combo only", "Picture"], answer: 0 }
+          - { id: xl-w12-d5-rf04, difficulty: easy, type: mcq, prompt: "One sheet per region, automatically", choices: ["Show Report Filter Pages", "Drill-down", "Group", "Copy sheet"], answer: 0 }
+          - { id: xl-w12-d5-rf05, difficulty: easy, type: text, prompt: "Top product by net sales?", accept: ["Rice 50kg (Local)"] }
+          - { id: xl-w12-d5-rf06, difficulty: easy, type: text, prompt: "How many stores are above ₦100M?", accept: ["3", "three"] }
+          - { id: xl-w12-d5-rf07, difficulty: easy, type: text, prompt: "Lowest salesperson by net sales?", accept: ["Zainab Obi"] }
+          - { id: xl-w12-d5-rf08, difficulty: easy, type: truefalse, prompt: "A PivotChart changes when you filter its pivot.", answer: true }
+          - { id: xl-w12-d5-rf09, difficulty: easy, type: mcq, prompt: "Report Filter Pages needs the field in…", choices: ["Filters", "Rows", "Values", "Columns"], answer: 0 }
+          - { id: xl-w12-d5-rf10, difficulty: easy, type: mcq, prompt: "Show only Retail orders", choices: ["CustomerType in Filters → Retail", "Delete other rows", "Sort", "Group"], answer: 0 }
+      - kind: brain-teaser
+        title: "Top and bottom"
+        questions:
+          - { id: xl-w12-d5-bt01, difficulty: medium, type: text, prompt: "Second product by net sales?", accept: ["Dell Inspiron 15"] }
+          - { id: xl-w12-d5-bt02, difficulty: medium, type: text, prompt: "Zainab Obi's net sales (₦, no symbol)?", accept: ["15424715", "15,424,715"] }
+          - { id: xl-w12-d5-bt03, difficulty: medium, type: mcq, prompt: "Stores > ₦100M", choices: ["Lagos - Ikeja, Abuja - Wuse, Lagos - Lekki", "every Lagos store", "Abuja - Wuse only", "none"], answer: 0 }
+          - { id: xl-w12-d5-bt04, difficulty: hard, type: text, prompt: "Rice 50kg (Local) net sales (₦, no symbol)?", accept: ["68920800", "68,920,800"] }
+          - { id: xl-w12-d5-bt05, difficulty: hard, type: mcq, prompt: "Rice is the top product by sales, but all 21 loss orders are rice. Lesson?", choices: ["Top revenue isn't top profit; check margins too", "Rice is perfect", "Pivots are wrong", "Discounts don't matter"], answer: 0 }
+
+  # ─────────────────────────── DAY 6 ───────────────────────────
+  - day: 6
+    gate:
+      title: "Checkpoint: filters and PivotCharts"
+      covers: "Week 12 · Day 5: Filters area, label/value filters, sorting by value, PivotCharts, Report Filter Pages"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: xl-w12-d6-g01, difficulty: easy, type: mcq, prompt: "Top 10 is a…", choices: ["Value Filter", "Label Filter", "Group", "Style"], answer: 0 }
+        - { id: xl-w12-d6-g02, difficulty: easy, type: mcq, prompt: "Insert a PivotChart from…", choices: ["PivotTable Analyze → PivotChart", "Data → Chart", "Review → Chart", "Home → Chart"], answer: 0 }
+        - { id: xl-w12-d6-g03, difficulty: easy, type: truefalse, prompt: "Report Filter Pages creates one pivot sheet per filter item.", answer: true }
+        - { id: xl-w12-d6-g04, difficulty: easy, type: mcq, prompt: "Products containing \"Samsung\"", choices: ["Label Filters → Contains", "Value Filters → Top 10", "Group", "Show Values As"], answer: 0 }
+        - { id: xl-w12-d6-g05, difficulty: easy, type: mcq, prompt: "Most-used payment method (count)", choices: ["Transfer", "Cash", "POS", "Card"], answer: 0 }
+        - { id: xl-w12-d6-g06, difficulty: easy, type: mcq, prompt: "Bottom 5 salespeople", choices: ["Value Filters → Top 10 → Bottom 5", "Sort A→Z", "Group", "Delete the top"], answer: 0 }
+        - { id: xl-w12-d6-g07, difficulty: medium, type: text, prompt: "Weekend share of net sales (1 decimal %)?", accept: ["23.2%", "23.2"] }
+        - { id: xl-w12-d6-g08, difficulty: medium, type: text, prompt: "Transfer net sales (₦, no symbol)?", accept: ["352411740", "352,411,740"] }
+        - { id: xl-w12-d6-g09, difficulty: medium, type: match, prompt: "Match the CEO question to the pivot.", pairs: [["best month", "dates grouped by month"], ["region share", "% of Grand Total"], ["top 5 products", "Value Filter Top 5"], ["avg order per customer type", "Average of NetSales"]] }
+        - { id: xl-w12-d6-g10, difficulty: medium, type: truefalse, prompt: "Transfer is the top payment method by count and by value.", answer: true }
+        - { id: xl-w12-d6-g11, difficulty: medium, type: text, prompt: "Region that gave the most discount (₦)?", accept: ["Lagos"] }
+        - { id: xl-w12-d6-g12, difficulty: medium, type: text, prompt: "Biggest category in Abuja?", accept: ["Phones"] }
+        - { id: xl-w12-d6-g13, difficulty: medium, type: mcq, prompt: "Weekend share needs a Weekend column first. Its formula (date in B):", choices: ["=IF(WEEKDAY([@OrderDate],2)>=6,\"Weekend\",\"Weekday\")", "=WEEKDAY(B:B)", "=DAY([@OrderDate])", "=TEXT(B2)"], answer: 0 }
+        - { id: xl-w12-d6-g14, difficulty: medium, type: text, prompt: "Biggest category in Kano?", accept: ["TV & Audio"] }
+        - { id: xl-w12-d6-g15, difficulty: medium, type: mcq, prompt: "Top 3 salespeople", choices: ["Tolu Eze, Uche Uzor, Bola Musa", "Zainab Obi, Tolu Eze, Bola Musa", "Uche Uzor, Tolu Eze, Chidi Uzor", "Bola Musa, Uche Uzor, Tolu Eze"], answer: 0 }
+        - { id: xl-w12-d6-g16, difficulty: hard, type: text, prompt: "Discount given in Lagos (₦, no symbol)?", accept: ["28964400", "28,964,400"] }
+        - { id: xl-w12-d6-g17, difficulty: hard, type: mcq, prompt: "Store growth Q1 → Q4 needs…", choices: ["Store in Rows, quarters in Columns, then compare (or % Difference From)", "a filter on Q1 only", "Running Total by store", "Rank"], answer: 0 }
+        - { id: xl-w12-d6-g18, difficulty: hard, type: multi, prompt: "Correct biggest categories by region (Select all.)", choices: ["Lagos: Groceries", "Enugu: Appliances", "Ibadan: Phones", "Kano: Groceries"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Week 12 lightning round"
+        secondsPerQuestion: 8
+        questions:
+          - { id: xl-w12-d6-rf01, difficulty: easy, type: mcq, prompt: "Refresh a pivot", choices: ["Alt+F5", "F5", "Ctrl+R", "F9"], answer: 0 }
+          - { id: xl-w12-d6-rf02, difficulty: easy, type: mcq, prompt: "The 4 areas", choices: ["Rows, Columns, Values, Filters", "Top, Side, Middle, Bottom", "Data, Chart, Sheet, Table", "Sum, Count, Max, Min"], answer: 0 }
+          - { id: xl-w12-d6-rf03, difficulty: easy, type: mcq, prompt: "See the rows behind a number", choices: ["double-click", "right-click → Delete", "F2", "Ctrl+Z"], answer: 0 }
+          - { id: xl-w12-d6-rf04, difficulty: easy, type: mcq, prompt: "Month-on-month growth", choices: ["% Difference From", "% of Grand Total", "Running Total", "Rank"], answer: 0 }
+          - { id: xl-w12-d6-rf05, difficulty: easy, type: mcq, prompt: "One sheet per region", choices: ["Show Report Filter Pages", "Group", "Drill-down", "Slicer"], answer: 0 }
+          - { id: xl-w12-d6-rf06, difficulty: easy, type: text, prompt: "Average wholesale order (₦, no symbol)", accept: ["1156902", "1,156,902"] }
+          - { id: xl-w12-d6-rf07, difficulty: easy, type: text, prompt: "Best month", accept: ["December", "Dec", "2025-12"] }
+          - { id: xl-w12-d6-rf08, difficulty: easy, type: text, prompt: "Worst month", accept: ["January", "Jan", "2025-01"] }
+          - { id: xl-w12-d6-rf09, difficulty: easy, type: text, prompt: "Weekend share (1 decimal %)", accept: ["23.2%", "23.2"] }
+          - { id: xl-w12-d6-rf10, difficulty: easy, type: truefalse, prompt: "Pivots on an Excel Table pick up new rows after a refresh.", answer: true }
+      - kind: brain-teaser
+        title: "The CEO's questions"
+        questions:
+          - { id: xl-w12-d6-bt01, difficulty: medium, type: mcq, prompt: "Q1: Which region sells most, and what share?", choices: ["Lagos, 38.6%", "Abuja, 20.9%", "Lagos, 50%", "Kano, 10.7%"], answer: 0 }
+          - { id: xl-w12-d6-bt02, difficulty: medium, type: mcq, prompt: "Q3: Top 5 products by net sales", choices: ["Rice 50kg (Local), Dell Inspiron 15, Infinix Hot 40, Tecno Spark 20, Samsung Galaxy A15", "Indomie, Rice, HP Ink, Oraimo, LG TV", "Dell, LG TV, Samsung, Rice, Tecno", "Phones only"], answer: 0 }
+          - { id: xl-w12-d6-bt03, difficulty: medium, type: mcq, prompt: "Q5: Payment method by value", choices: ["Transfer ₦352.4M · Cash ₦209.5M · POS ₦203.6M · Card ₦68.5M", "Cash first", "Card first", "all equal"], answer: 0 }
+          - { id: xl-w12-d6-bt04, difficulty: hard, type: mcq, prompt: "Cash has fewer orders than POS (507 vs 601) but more value (₦209.5M vs ₦203.6M). So…", choices: ["Cash orders are larger on average", "the pivot is wrong", "POS orders are larger", "they're identical"], answer: 0 }
+          - { id: xl-w12-d6-bt05, difficulty: hard, type: mcq, prompt: "Q8: discount by region needs…", choices: ["a Discount column (Units × UnitPrice × DiscountPct/100), summed by region", "Average of DiscountPct only", "Count of DiscountPct", "a filter on 15%"], answer: 0 }

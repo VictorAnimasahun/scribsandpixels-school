@@ -1,0 +1,298 @@
+# French · Week 12 quizzes. Format and rules: src/content/QUIZZES.md
+week: 12
+days:
+
+  # ─────────────────────────── DAY 1 ───────────────────────────
+  - day: 1
+    gate:
+      title: "Checkpoint: Week 11 review"
+      covers: "Week 11: appearance, personality and irregular feminines, nuance words, c'est vs il/elle est, portraits"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w12-d1-g01, difficulty: easy, type: mcq, prompt: "Hair and eyes use…", choices: ["avoir", "être", "faire", "porter"], answer: 0 }
+        - { id: fr-w12-d1-g02, difficulty: easy, type: mcq, prompt: "généreux (fem.)", choices: ["généreuse", "généreuxe", "généreux", "généreusse"], answer: 0 }
+        - { id: fr-w12-d1-g03, difficulty: easy, type: truefalse, prompt: "« trop » means too (negative); « très » means very.", answer: true }
+        - { id: fr-w12-d1-g04, difficulty: easy, type: mcq, prompt: "___ mon frère.", choices: ["C'est", "Il est"], answer: 0 }
+        - { id: fr-w12-d1-g05, difficulty: easy, type: mcq, prompt: "___ médecin. (Kofi)", choices: ["Il est", "C'est"], answer: 0 }
+        - { id: fr-w12-d1-g06, difficulty: easy, type: mcq, prompt: "têtu", choices: ["stubborn", "shy", "chatty", "polite"], answer: 0 }
+        - { id: fr-w12-d1-g07, difficulty: medium, type: text, prompt: "travailleur (fem.)", accept: ["travailleuse"] }
+        - { id: fr-w12-d1-g08, difficulty: medium, type: text, prompt: "Translate: She has long hair and brown eyes.", accept: ["Elle a les cheveux longs et les yeux marron.", "Elle a les cheveux longs et les yeux marron"] }
+        - { id: fr-w12-d1-g09, difficulty: medium, type: match, prompt: "Match the opposites.", pairs: [["généreux", "égoïste"], ["travailleur", "paresseux"], ["poli", "impoli"], ["calme", "nerveux"]] }
+        - { id: fr-w12-d1-g10, difficulty: medium, type: text, prompt: "Translate: He's a good engineer.", accept: ["C'est un bon ingénieur.", "C'est un bon ingénieur"] }
+        - { id: fr-w12-d1-g11, difficulty: medium, type: truefalse, prompt: "« Il est un médecin » is correct.", answer: false }
+        - { id: fr-w12-d1-g12, difficulty: medium, type: text, prompt: "créateur (fem.)", accept: ["créatrice"] }
+        - { id: fr-w12-d1-g13, difficulty: medium, type: mcq, prompt: "Diplomatic for « Il est méchant »", choices: ["Il n'est pas très sympa.", "Il est trop méchant.", "Il est un peu gentil.", "Il est méchant, voilà."], answer: 0 }
+        - { id: fr-w12-d1-g14, difficulty: medium, type: text, prompt: "Translate: She is a bit stubborn.", accept: ["Elle est un peu têtue.", "Elle est un peu têtue"] }
+        - { id: fr-w12-d1-g15, difficulty: medium, type: mcq, prompt: "Paris ? ___ magnifique !", choices: ["C'est", "Il est"], answer: 0 }
+        - { id: fr-w12-d1-g16, difficulty: hard, type: text, prompt: "Translate: My sister is a nurse. She's very generous, but a bit impatient.", accept: ["Ma sœur est infirmière. Elle est très généreuse, mais un peu impatiente.", "Ma sœur est infirmière. Elle est très généreuse mais un peu impatiente."] }
+        - { id: fr-w12-d1-g17, difficulty: hard, type: mcq, prompt: "Find the sentence with NO mistake.", choices: ["C'est une personne formidable.", "Elle a très grande.", "Il est un professeur.", "Elle est les yeux verts."], answer: 0 }
+        - { id: fr-w12-d1-g18, difficulty: hard, type: multi, prompt: "Which feminine forms are correct? (Select all.)", choices: ["sportive", "naturelle", "douce", "fiere"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Futur proche"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fr-w12-d1-rf01, difficulty: easy, type: mcq, prompt: "I'm going to eat.", choices: ["Je vais manger.", "Je viens de manger.", "Je mange.", "Je vais mangé."], answer: 0 }
+          - { id: fr-w12-d1-rf02, difficulty: easy, type: mcq, prompt: "We're going to travel.", choices: ["Nous allons voyager.", "Nous allez voyager.", "Nous vont voyager.", "Nous allons voyagé."], answer: 0 }
+          - { id: fr-w12-d1-rf03, difficulty: easy, type: mcq, prompt: "They're going to work.", choices: ["Ils vont travailler.", "Ils vont travaillent.", "Ils allons travailler.", "Ils va travailler."], answer: 0 }
+          - { id: fr-w12-d1-rf04, difficulty: easy, type: mcq, prompt: "futur proche =", choices: ["aller + infinitive", "venir de + infinitive", "être + participle", "avoir + infinitive"], answer: 0 }
+          - { id: fr-w12-d1-rf05, difficulty: easy, type: mcq, prompt: "Negative: I'm not going to work.", choices: ["Je ne vais pas travailler.", "Je vais ne pas travailler.", "Je ne vais travailler pas.", "Je vais pas ne travailler."], answer: 0 }
+          - { id: fr-w12-d1-rf06, difficulty: easy, type: mcq, prompt: "demain", choices: ["tomorrow", "tonight", "soon", "the day after"], answer: 0 }
+          - { id: fr-w12-d1-rf07, difficulty: easy, type: mcq, prompt: "la semaine prochaine", choices: ["next week", "last week", "this week", "every week"], answer: 0 }
+          - { id: fr-w12-d1-rf08, difficulty: easy, type: mcq, prompt: "bientôt", choices: ["soon", "well", "early", "late"], answer: 0 }
+          - { id: fr-w12-d1-rf09, difficulty: easy, type: mcq, prompt: "dans deux jours", choices: ["in two days", "two days ago", "for two days", "every two days"], answer: 0 }
+          - { id: fr-w12-d1-rf10, difficulty: easy, type: mcq, prompt: "après-demain", choices: ["the day after tomorrow", "after lunch", "yesterday", "later today"], answer: 0 }
+          - { id: fr-w12-d1-rf11, difficulty: easy, type: mcq, prompt: "ce soir", choices: ["tonight", "this morning", "tomorrow", "this year"], answer: 0 }
+      - kind: brain-teaser
+        title: "Going to…"
+        questions:
+          - { id: fr-w12-d1-bt01, difficulty: medium, type: text, prompt: "Futur proche: Tu te couches tard.", accept: ["Tu vas te coucher tard.", "Tu vas te coucher tard"] }
+          - { id: fr-w12-d1-bt02, difficulty: medium, type: text, prompt: "Futur proche: Elle n'achète pas de voiture.", accept: ["Elle ne va pas acheter de voiture.", "Elle ne va pas acheter de voiture"] }
+          - { id: fr-w12-d1-bt03, difficulty: medium, type: text, prompt: "Futur proche: Ils font les courses.", accept: ["Ils vont faire les courses.", "Ils vont faire les courses"] }
+          - { id: fr-w12-d1-bt04, difficulty: hard, type: text, prompt: "Futur proche of se lever for nous, negative.", accept: ["Nous n'allons pas nous lever.", "Nous n'allons pas nous lever"] }
+          - { id: fr-w12-d1-bt05, difficulty: hard, type: mcq, prompt: "Spot the error: « Ils vont se marier et nous allons les aider demain. Je vais me couche tôt. »", choices: ["me couche → me coucher", "se marier → marier", "les aider → aider les", "No error"], answer: 0 }
+
+  # ─────────────────────────── DAY 2 ───────────────────────────
+  - day: 2
+    gate:
+      title: "Checkpoint: futur proche"
+      covers: "Week 12 · Day 1: aller + infinitive, reflexives, negation around aller, future time markers"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w12-d2-g01, difficulty: easy, type: text, prompt: "Je ___ travailler. (aller)", accept: ["vais"] }
+        - { id: fr-w12-d2-g02, difficulty: easy, type: text, prompt: "Vous ___ partir. (aller)", accept: ["allez"] }
+        - { id: fr-w12-d2-g03, difficulty: easy, type: truefalse, prompt: "In the futur proche, the second verb stays in the infinitive.", answer: true }
+        - { id: fr-w12-d2-g04, difficulty: easy, type: mcq, prompt: "next year", choices: ["l'année prochaine", "l'année dernière", "cette année", "un an"], answer: 0 }
+        - { id: fr-w12-d2-g05, difficulty: easy, type: mcq, prompt: "this weekend", choices: ["ce week-end", "le week-end dernier", "chaque week-end", "un week-end"], answer: 0 }
+        - { id: fr-w12-d2-g06, difficulty: easy, type: text, prompt: "Ils ___ voyager. (aller)", accept: ["vont"] }
+        - { id: fr-w12-d2-g07, difficulty: medium, type: text, prompt: "Futur proche: Nous partons à Abuja.", accept: ["Nous allons partir à Abuja.", "Nous allons partir à Abuja"] }
+        - { id: fr-w12-d2-g08, difficulty: medium, type: text, prompt: "Translate: I'm not going to work tomorrow.", accept: ["Je ne vais pas travailler demain.", "Je ne vais pas travailler demain"] }
+        - { id: fr-w12-d2-g09, difficulty: medium, type: match, prompt: "Match.", pairs: [["ce soir", "tonight"], ["le mois prochain", "next month"], ["un jour", "one day"], ["dans deux jours", "in two days"]] }
+        - { id: fr-w12-d2-g10, difficulty: medium, type: mcq, prompt: "They're going to get married.", choices: ["Ils vont se marier.", "Ils se vont marier.", "Ils vont marier se.", "Ils vont se mariés."], answer: 0 }
+        - { id: fr-w12-d2-g11, difficulty: medium, type: truefalse, prompt: "In « Je vais me lever », the reflexive pronoun goes with the infinitive.", answer: true }
+        - { id: fr-w12-d2-g12, difficulty: medium, type: text, prompt: "Translate: We're going to travel in December.", accept: ["Nous allons voyager en décembre.", "Nous allons voyager en décembre", "On va voyager en décembre."] }
+        - { id: fr-w12-d2-g13, difficulty: medium, type: mcq, prompt: "She's not going to buy a car.", choices: ["Elle ne va pas acheter de voiture.", "Elle ne va pas acheter une voiture.", "Elle va ne pas acheter de voiture.", "Elle ne va acheter pas de voiture."], answer: 0 }
+        - { id: fr-w12-d2-g14, difficulty: medium, type: text, prompt: "Translate: You (tu) are going to go to bed late.", accept: ["Tu vas te coucher tard.", "Tu vas te coucher tard"] }
+        - { id: fr-w12-d2-g15, difficulty: medium, type: order, prompt: "Build: I'm not going to eat tonight.", items: ["Je", "ne", "vais", "pas", "manger", "ce soir"] }
+        - { id: fr-w12-d2-g16, difficulty: hard, type: text, prompt: "Translate: Next week, my parents are going to visit Lagos.", accept: ["La semaine prochaine, mes parents vont visiter Lagos.", "La semaine prochaine mes parents vont visiter Lagos.", "La semaine prochaine, mes parents vont visiter Lagos"] }
+        - { id: fr-w12-d2-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « Demain, nous allons faisons les courses. »", choices: ["faisons → faire", "allons → allez", "Demain → Hier", "No error"], answer: 0 }
+        - { id: fr-w12-d2-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["Je vais partir bientôt.", "Elle ne va pas venir.", "Nous allons nous reposer.", "Ils vont mangent."], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Quel temps fait-il ?"
+        secondsPerQuestion: 7
+        questions:
+          - { id: fr-w12-d2-rf01, difficulty: easy, type: mcq, prompt: "It's nice weather.", choices: ["Il fait beau.", "Il est beau.", "Il a beau.", "C'est beau temps."], answer: 0 }
+          - { id: fr-w12-d2-rf02, difficulty: easy, type: mcq, prompt: "It's raining.", choices: ["Il pleut.", "Il fait pluie.", "Il pleure.", "Il y a pleut."], answer: 0 }
+          - { id: fr-w12-d2-rf03, difficulty: easy, type: mcq, prompt: "It's hot.", choices: ["Il fait chaud.", "Il est chaud.", "J'ai chaud.", "C'est chaud."], answer: 0 }
+          - { id: fr-w12-d2-rf04, difficulty: easy, type: mcq, prompt: "It's windy.", choices: ["Il y a du vent.", "Il fait vent.", "Il vente beaucoup.", "Il est vent."], answer: 0 }
+          - { id: fr-w12-d2-rf05, difficulty: easy, type: mcq, prompt: "It's snowing.", choices: ["Il neige.", "Il fait neige.", "Il y a neiger.", "Il est neige."], answer: 0 }
+          - { id: fr-w12-d2-rf06, difficulty: easy, type: mcq, prompt: "un orage", choices: ["a storm", "an orange", "a cloud", "a rainbow"], answer: 0 }
+          - { id: fr-w12-d2-rf07, difficulty: easy, type: mcq, prompt: "in spring", choices: ["au printemps", "en printemps", "à printemps", "dans printemps"], answer: 0 }
+          - { id: fr-w12-d2-rf08, difficulty: easy, type: mcq, prompt: "in winter", choices: ["en hiver", "au hiver", "à l'hiver only", "dans hiver"], answer: 0 }
+          - { id: fr-w12-d2-rf09, difficulty: easy, type: mcq, prompt: "Il fait doux.", choices: ["It's mild.", "It's sweet.", "It's cold.", "It's soft rain."], answer: 0 }
+          - { id: fr-w12-d2-rf10, difficulty: easy, type: mcq, prompt: "It's going to rain.", choices: ["Il va pleuvoir.", "Il va pleut.", "Il vient de pleuvoir.", "Il pleuvra va."], answer: 0 }
+      - kind: brain-teaser
+        title: "La météo"
+        questions:
+          - { id: fr-w12-d2-bt01, difficulty: medium, type: text, prompt: "Translate: It's 30 degrees.", accept: ["Il fait 30 degrés.", "Il fait trente degrés.", "Il fait 30 degrés"] }
+          - { id: fr-w12-d2-bt02, difficulty: medium, type: text, prompt: "Translate: Tomorrow, it's going to be hot.", accept: ["Demain, il va faire chaud.", "Demain il va faire chaud.", "Demain, il va faire chaud"] }
+          - { id: fr-w12-d2-bt03, difficulty: medium, type: mcq, prompt: "Which season takes « au »?", choices: ["le printemps", "l'été", "l'automne", "l'hiver"], answer: 0 }
+          - { id: fr-w12-d2-bt04, difficulty: hard, type: text, prompt: "Translate: In winter in Montréal, it's minus twenty!", accept: ["En hiver à Montréal, il fait moins vingt !", "En hiver à Montréal, il fait moins vingt!", "En hiver à Montréal il fait moins vingt !"] }
+          - { id: fr-w12-d2-bt05, difficulty: hard, type: mcq, prompt: "Spot the error: « Il fait du soleil et il fait pluie. »", choices: ["Il y a du soleil … il pleut", "Only soleil", "Only pluie", "No error"], answer: 0 }
+
+  # ─────────────────────────── DAY 3 ───────────────────────────
+  - day: 3
+    gate:
+      title: "Checkpoint: weather and seasons"
+      covers: "Week 12 · Day 2: il fait…, il pleut/neige, il y a du soleil/vent, seasons with au/en, future weather"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w12-d3-g01, difficulty: easy, type: mcq, prompt: "What's the weather like?", choices: ["Quel temps fait-il ?", "Quelle heure est-il ?", "Comment est le temps ?", "Il fait quoi ?"], answer: 0 }
+        - { id: fr-w12-d3-g02, difficulty: easy, type: mcq, prompt: "It's cold.", choices: ["Il fait froid.", "Il est froid.", "Il a froid.", "C'est froid temps."], answer: 0 }
+        - { id: fr-w12-d3-g03, difficulty: easy, type: truefalse, prompt: "« Il pleut » doesn't use faire.", answer: true }
+        - { id: fr-w12-d3-g04, difficulty: easy, type: mcq, prompt: "in summer", choices: ["en été", "au été", "à l'été", "dans été"], answer: 0 }
+        - { id: fr-w12-d3-g05, difficulty: easy, type: mcq, prompt: "It's cloudy.", choices: ["Il y a des nuages.", "Il fait nuages.", "Il nuage.", "Il est nuageux temps."], answer: 0 }
+        - { id: fr-w12-d3-g06, difficulty: easy, type: mcq, prompt: "Il fait mauvais.", choices: ["The weather is bad.", "He's bad.", "It's evil.", "It's done badly."], answer: 0 }
+        - { id: fr-w12-d3-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["la pluie", "rain"], ["la neige", "snow"], ["le vent", "wind"], ["le soleil", "sun"]] }
+        - { id: fr-w12-d3-g08, difficulty: medium, type: text, prompt: "Translate: It's sunny.", accept: ["Il y a du soleil.", "Il y a du soleil", "Il fait soleil."] }
+        - { id: fr-w12-d3-g09, difficulty: medium, type: text, prompt: "Translate: in autumn", accept: ["en automne"] }
+        - { id: fr-w12-d3-g10, difficulty: medium, type: mcq, prompt: "the rainy season", choices: ["la saison des pluies", "la saison sèche", "l'harmattan", "le printemps"], answer: 0 }
+        - { id: fr-w12-d3-g11, difficulty: medium, type: truefalse, prompt: "« Il fait frais » means it's cool.", answer: true }
+        - { id: fr-w12-d3-g12, difficulty: medium, type: text, prompt: "Translate: It's going to snow.", accept: ["Il va neiger.", "Il va neiger"] }
+        - { id: fr-w12-d3-g13, difficulty: medium, type: mcq, prompt: "The sky is grey.", choices: ["Le ciel est gris.", "Le ciel fait gris.", "Il y a gris ciel.", "Le ciel a gris."], answer: 0 }
+        - { id: fr-w12-d3-g14, difficulty: medium, type: text, prompt: "Translate: There's a storm.", accept: ["Il y a un orage.", "Il y a un orage"] }
+        - { id: fr-w12-d3-g15, difficulty: medium, type: mcq, prompt: "Lagos in the dry season: the dusty wind from the Sahara is…", choices: ["l'harmattan", "l'orage", "la neige", "le printemps"], answer: 0 }
+        - { id: fr-w12-d3-g16, difficulty: hard, type: text, prompt: "Translate: Tomorrow in Lagos, it's going to rain and it's going to be 28 degrees.", accept: ["Demain à Lagos, il va pleuvoir et il va faire 28 degrés.", "Demain à Lagos il va pleuvoir et il va faire 28 degrés.", "Demain à Lagos, il va pleuvoir et il va faire vingt-huit degrés."] }
+        - { id: fr-w12-d3-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « En printemps, il fait beau. »", choices: ["En printemps → Au printemps", "il fait → il est", "beau → belle", "No error"], answer: 0 }
+        - { id: fr-w12-d3-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["Il fait chaud.", "Il pleut.", "Il y a du vent.", "Il fait neige."], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Invitations"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fr-w12-d3-rf01, difficulty: easy, type: mcq, prompt: "Are you free on Saturday?", choices: ["Tu es libre samedi ?", "Tu es gratuit samedi ?", "Tu as libre samedi ?", "Tu libres samedi ?"], answer: 0 }
+          - { id: fr-w12-d3-rf02, difficulty: easy, type: mcq, prompt: "Ça te dit d'aller au cinéma ?", choices: ["Do you fancy going to the cinema?", "Did you tell the cinema?", "Is the cinema open?", "You said cinema?"], answer: 0 }
+          - { id: fr-w12-d3-rf03, difficulty: easy, type: mcq, prompt: "Volontiers !", choices: ["Gladly!", "Volunteers!", "Never!", "Maybe."], answer: 0 }
+          - { id: fr-w12-d3-rf04, difficulty: easy, type: mcq, prompt: "Je suis pris(e).", choices: ["I'm busy.", "I'm caught.", "I'm taken to hospital.", "I'm ready."], answer: 0 }
+          - { id: fr-w12-d3-rf05, difficulty: easy, type: mcq, prompt: "Sorry, I can't.", choices: ["Désolé(e), je ne peux pas.", "Pardon, je ne veux pas.", "Désolé, je n'ai pas.", "Excuse, je ne sais pas."], answer: 0 }
+          - { id: fr-w12-d3-rf06, difficulty: easy, type: mcq, prompt: "Ça marche !", choices: ["Deal!", "It walks!", "It's broken!", "Let's walk!"], answer: 0 }
+          - { id: fr-w12-d3-rf07, difficulty: easy, type: mcq, prompt: "Une autre fois, peut-être ?", choices: ["Another time, maybe?", "Another one, please?", "Once more?", "Maybe now?"], answer: 0 }
+          - { id: fr-w12-d3-rf08, difficulty: easy, type: mcq, prompt: "Where shall we meet?", choices: ["On se retrouve où ?", "On se trouve quand ?", "Où tu vas ?", "On va où ?"], answer: 0 }
+          - { id: fr-w12-d3-rf09, difficulty: easy, type: mcq, prompt: "je dois", choices: ["I must / I have to", "I owe nothing", "I can", "I want"], answer: 0 }
+          - { id: fr-w12-d3-rf10, difficulty: easy, type: mcq, prompt: "Pourquoi pas !", choices: ["Why not!", "Why?", "Because!", "Not now!"], answer: 0 }
+      - kind: brain-teaser
+        title: "Say yes, say no"
+        questions:
+          - { id: fr-w12-d3-bt01, difficulty: medium, type: text, prompt: "Translate: Do you want to come to my birthday? (tu)", accept: ["Tu veux venir à mon anniversaire ?", "Tu veux venir à mon anniversaire?", "Est-ce que tu veux venir à mon anniversaire ?"] }
+          - { id: fr-w12-d3-bt02, difficulty: medium, type: text, prompt: "Translate: Sorry, I have to work.", accept: ["Désolé, je dois travailler.", "Désolée, je dois travailler.", "Désolé(e), je dois travailler."] }
+          - { id: fr-w12-d3-bt03, difficulty: medium, type: order, prompt: "Order the conversation.", items: ["Tu es libre samedi ?", "Oui, pourquoi ?", "Ça te dit d'aller au cinéma ?", "Bonne idée ! À quelle heure ?", "À 19 h, devant le cinéma.", "Ça marche ! À samedi !"] }
+          - { id: fr-w12-d3-bt04, difficulty: hard, type: text, prompt: "Decline politely and propose another time: \"That's a shame, I'm busy. Another time, maybe?\"", accept: ["C'est dommage, je suis pris. Une autre fois, peut-être ?", "C'est dommage, je suis prise. Une autre fois, peut-être ?", "C'est dommage, je suis pris(e). Une autre fois, peut-être ?"] }
+          - { id: fr-w12-d3-bt05, difficulty: hard, type: mcq, prompt: "Which is NOT a way to accept?", choices: ["Je suis pris(e).", "Avec plaisir !", "Volontiers !", "Bonne idée !"], answer: 0 }
+
+  # ─────────────────────────── DAY 4 ───────────────────────────
+  - day: 4
+    gate:
+      title: "Checkpoint: invitations"
+      covers: "Week 12 · Day 3: inviting, accepting, declining, settling details, pouvoir/devoir previews"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w12-d4-g01, difficulty: easy, type: mcq, prompt: "Avec plaisir !", choices: ["With pleasure!", "No thanks!", "Please!", "Have fun!"], answer: 0 }
+        - { id: fr-w12-d4-g02, difficulty: easy, type: mcq, prompt: "At what time?", choices: ["À quelle heure ?", "Quelle heure est-il ?", "Quand ?", "Combien de temps ?"], answer: 0 }
+        - { id: fr-w12-d4-g03, difficulty: easy, type: truefalse, prompt: "« Je ne peux pas » means I can't.", answer: true }
+        - { id: fr-w12-d4-g04, difficulty: easy, type: mcq, prompt: "See you Saturday!", choices: ["À samedi !", "Au samedi !", "Bon samedi !", "Samedi, au revoir !"], answer: 0 }
+        - { id: fr-w12-d4-g05, difficulty: easy, type: mcq, prompt: "Good idea!", choices: ["Bonne idée !", "Bon idée !", "Belle idée !", "Idée bonne !"], answer: 0 }
+        - { id: fr-w12-d4-g06, difficulty: easy, type: mcq, prompt: "Je t'invite à dîner.", choices: ["I'm inviting you to dinner (my treat).", "Invite me to dinner.", "You invite me.", "Dinner is cancelled."], answer: 0 }
+        - { id: fr-w12-d4-g07, difficulty: medium, type: match, prompt: "Match: invite / accept / decline.", pairs: [["Tu es libre samedi ?", "invite"], ["Volontiers !", "accept"], ["Je suis prise.", "decline"], ["Ça marche !", "agree on details"]] }
+        - { id: fr-w12-d4-g08, difficulty: medium, type: text, prompt: "Translate: Shall we go to the restaurant tonight? (on)", accept: ["On va au restaurant ce soir ?", "On va au restaurant ce soir?"] }
+        - { id: fr-w12-d4-g09, difficulty: medium, type: text, prompt: "il ___ (pouvoir)", accept: ["peut"] }
+        - { id: fr-w12-d4-g10, difficulty: medium, type: mcq, prompt: "« C'est dommage, je ne suis pas là. »", choices: ["That's a shame, I won't be there.", "It's damaged, I'm not here.", "Shame on you, I'm not there.", "It's a pity, I'm here."], answer: 0 }
+        - { id: fr-w12-d4-g11, difficulty: medium, type: truefalse, prompt: "« Je dois travailler » means I have to work.", answer: true }
+        - { id: fr-w12-d4-g12, difficulty: medium, type: text, prompt: "Translate: In front of the cinema, at 7 pm.", accept: ["Devant le cinéma, à 19 h.", "Devant le cinéma, à dix-neuf heures.", "Devant le cinéma à 19 h.", "Devant le cinéma, à 19 heures."] }
+        - { id: fr-w12-d4-g13, difficulty: medium, type: mcq, prompt: "The most polite decline", choices: ["Désolée, je ne peux pas. Une autre fois, peut-être ?", "Non.", "Je ne veux pas.", "Pas question !"], answer: 0 }
+        - { id: fr-w12-d4-g14, difficulty: medium, type: text, prompt: "tu ___ (pouvoir)", accept: ["peux"] }
+        - { id: fr-w12-d4-g15, difficulty: medium, type: mcq, prompt: "OK, what time?", choices: ["D'accord, à quelle heure ?", "D'accord, quelle heure est-il ?", "OK, combien ?", "D'accord, quand est-il ?"], answer: 0 }
+        - { id: fr-w12-d4-g16, difficulty: hard, type: text, prompt: "Translate: Do you fancy going to the cinema on Saturday? (Ça te dit…)", accept: ["Ça te dit d'aller au cinéma samedi ?", "Ça te dit d'aller au cinéma samedi?"] }
+        - { id: fr-w12-d4-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « Désolé, je ne peut pas. Je doit travailler. »", choices: ["peux … dois", "Only peut", "Only doit", "No error"], answer: 0 }
+        - { id: fr-w12-d4-g18, difficulty: hard, type: multi, prompt: "Ways to accept (Select all.)", choices: ["Avec plaisir !", "Pourquoi pas !", "Volontiers !", "Je suis pris."], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Plans and dreams"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fr-w12-d4-rf01, difficulty: easy, type: mcq, prompt: "J'ai l'intention de…", choices: ["I intend to…", "I'm attentive to…", "I have the attention of…", "I'm tense about…"], answer: 0 }
+          - { id: fr-w12-d4-rf02, difficulty: easy, type: mcq, prompt: "J'ai envie de…", choices: ["I feel like…", "I envy…", "I have to…", "I'm invited to…"], answer: 0 }
+          - { id: fr-w12-d4-rf03, difficulty: easy, type: mcq, prompt: "Je voudrais…", choices: ["I would like…", "I want (rude)", "I wanted…", "I will…"], answer: 0 }
+          - { id: fr-w12-d4-rf04, difficulty: easy, type: mcq, prompt: "Je compte partir…", choices: ["I plan to leave…", "I count the leaving…", "I'm leaving now…", "I counted…"], answer: 0 }
+          - { id: fr-w12-d4-rf05, difficulty: easy, type: mcq, prompt: "mon rêve", choices: ["my dream", "my review", "my river", "my plan"], answer: 0 }
+          - { id: fr-w12-d4-rf06, difficulty: easy, type: mcq, prompt: "mon objectif", choices: ["my goal", "my objection", "my lens", "my job"], answer: 0 }
+          - { id: fr-w12-d4-rf07, difficulty: easy, type: mcq, prompt: "J'ai l'intention ___ apprendre.", choices: ["d'", "de", "à", "pour"], answer: 0 }
+          - { id: fr-w12-d4-rf08, difficulty: easy, type: mcq, prompt: "J'ai envie ___ dormir.", choices: ["de", "d'", "à", "pour"], answer: 0 }
+          - { id: fr-w12-d4-rf09, difficulty: easy, type: mcq, prompt: "Je compte ___ partir.", choices: ["(nothing)", "de", "à", "pour"], answer: 0 }
+          - { id: fr-w12-d4-rf10, difficulty: easy, type: mcq, prompt: "Mon projet, c'est ___ trouver un travail.", choices: ["de", "à", "pour", "(nothing)"], answer: 0 }
+      - kind: brain-teaser
+        title: "One day…"
+        questions:
+          - { id: fr-w12-d4-bt01, difficulty: medium, type: text, prompt: "Translate: I intend to learn French.", accept: ["J'ai l'intention d'apprendre le français.", "J'ai l'intention d'apprendre le français"] }
+          - { id: fr-w12-d4-bt02, difficulty: medium, type: text, prompt: "Translate: I would like to live in Canada.", accept: ["Je voudrais vivre au Canada.", "Je voudrais vivre au Canada", "Je voudrais habiter au Canada."] }
+          - { id: fr-w12-d4-bt03, difficulty: medium, type: text, prompt: "Translate: I feel like travelling.", accept: ["J'ai envie de voyager.", "J'ai envie de voyager"] }
+          - { id: fr-w12-d4-bt04, difficulty: hard, type: text, prompt: "Translate: My plan is to find a job in Toronto.", accept: ["Mon projet, c'est de trouver un travail à Toronto.", "Mon projet c'est de trouver un travail à Toronto.", "Mon projet, c'est de trouver un emploi à Toronto."] }
+          - { id: fr-w12-d4-bt05, difficulty: hard, type: mcq, prompt: "Spot the error: « Je compte de partir en 2027. »", choices: ["Je compte partir (no de)", "compte → compter", "en → à", "No error"], answer: 0 }
+
+  # ─────────────────────────── DAY 5 ───────────────────────────
+  - day: 5
+    gate:
+      title: "Checkpoint: plans and intentions"
+      covers: "Week 12 · Day 4: j'ai l'intention de, j'ai envie de, je voudrais, mon projet c'est de, je compte + infinitive; goals"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w12-d5-g01, difficulty: easy, type: mcq, prompt: "I feel like sleeping.", choices: ["J'ai envie de dormir.", "J'envie dormir.", "Je suis envie de dormir.", "J'ai envie dormir."], answer: 0 }
+        - { id: fr-w12-d5-g02, difficulty: easy, type: mcq, prompt: "one day", choices: ["un jour", "une journée only", "un an", "aujourd'hui"], answer: 0 }
+        - { id: fr-w12-d5-g03, difficulty: easy, type: truefalse, prompt: "« Je compte » is followed directly by the infinitive.", answer: true }
+        - { id: fr-w12-d5-g04, difficulty: easy, type: mcq, prompt: "I would like to travel.", choices: ["Je voudrais voyager.", "Je voudrais de voyager.", "Je veux voyager rude.", "Je voudrais à voyager."], answer: 0 }
+        - { id: fr-w12-d5-g05, difficulty: easy, type: mcq, prompt: "mon objectif", choices: ["my goal", "my objection", "my object", "my office"], answer: 0 }
+        - { id: fr-w12-d5-g06, difficulty: easy, type: mcq, prompt: "J'ai l'intention ___ partir.", choices: ["de", "d'", "à", "(nothing)"], answer: 0 }
+        - { id: fr-w12-d5-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["J'ai l'intention de", "I intend to"], ["J'ai envie de", "I feel like"], ["Je compte", "I plan to"], ["Je voudrais", "I would like to"]] }
+        - { id: fr-w12-d5-g08, difficulty: medium, type: text, prompt: "Translate: I plan to leave in 2027.", accept: ["Je compte partir en 2027.", "Je compte partir en 2027"] }
+        - { id: fr-w12-d5-g09, difficulty: medium, type: text, prompt: "Translate: My dream is to live in Montréal. (Mon rêve, c'est de…)", accept: ["Mon rêve, c'est de vivre à Montréal.", "Mon rêve c'est de vivre à Montréal.", "Mon rêve, c'est d'habiter à Montréal."] }
+        - { id: fr-w12-d5-g10, difficulty: medium, type: mcq, prompt: "J'ai l'intention ___ apprendre.", choices: ["d'", "de", "à", "(nothing)"], answer: 0 }
+        - { id: fr-w12-d5-g11, difficulty: medium, type: truefalse, prompt: "« J'ai envie d'un café » is also correct (envie de + noun).", answer: true }
+        - { id: fr-w12-d5-g12, difficulty: medium, type: text, prompt: "Translate: Next year, I'm going to look for a job.", accept: ["L'année prochaine, je vais chercher un travail.", "L'année prochaine je vais chercher un travail.", "L'année prochaine, je vais chercher un emploi."] }
+        - { id: fr-w12-d5-g13, difficulty: medium, type: mcq, prompt: "Most polite for \"I want to…\" in a shop or email", choices: ["Je voudrais…", "Je veux…", "J'exige…", "Donne-moi…"], answer: 0 }
+        - { id: fr-w12-d5-g14, difficulty: medium, type: text, prompt: "Translate: My goal is to pass the TCF.", accept: ["Mon objectif, c'est de réussir le TCF.", "Mon objectif c'est de réussir le TCF.", "Mon objectif est de réussir le TCF."] }
+        - { id: fr-w12-d5-g15, difficulty: medium, type: mcq, prompt: "Which needs de/d'?", choices: ["J'ai l'intention ___ partir.", "Je compte ___ partir.", "Je voudrais ___ partir.", "Je vais ___ partir."], answer: 0 }
+        - { id: fr-w12-d5-g16, difficulty: hard, type: text, prompt: "Translate: One day, I would like to work in Canada, so I intend to learn French.", accept: ["Un jour, je voudrais travailler au Canada, alors j'ai l'intention d'apprendre le français.", "Un jour je voudrais travailler au Canada, alors j'ai l'intention d'apprendre le français."] }
+        - { id: fr-w12-d5-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « J'ai envie voyager et je voudrais de vivre au Canada. »", choices: ["envie de voyager … voudrais vivre", "Only envie", "Only voudrais", "No error"], answer: 0 }
+        - { id: fr-w12-d5-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["Je compte partir bientôt.", "J'ai l'intention d'étudier.", "Mon projet, c'est de voyager.", "Je voudrais de dormir."], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Dayo's weekend"
+        secondsPerQuestion: 9
+        questions:
+          - { id: fr-w12-d5-rf01, difficulty: easy, type: mcq, prompt: "Where is Dayo going?", choices: ["Ibadan, to his parents'", "Abuja", "Lekki", "Paris"], answer: 0 }
+          - { id: fr-w12-d5-rf02, difficulty: easy, type: mcq, prompt: "The weather", choices: ["very hot", "rainy", "cold", "windy"], answer: 0 }
+          - { id: fr-w12-d5-rf03, difficulty: easy, type: mcq, prompt: "Saturday afternoon", choices: ["the swimming pool", "the cinema", "church", "the market"], answer: 0 }
+          - { id: fr-w12-d5-rf04, difficulty: easy, type: mcq, prompt: "His mother will cook…", choices: ["amala", "jollof", "pounded yam", "suya"], answer: 0 }
+          - { id: fr-w12-d5-rf05, difficulty: easy, type: mcq, prompt: "Saturday evening", choices: ["watch a film", "go to a club", "sleep early", "travel"], answer: 0 }
+          - { id: fr-w12-d5-rf06, difficulty: easy, type: mcq, prompt: "Sunday morning", choices: ["church", "the pool", "the market", "work"], answer: 0 }
+          - { id: fr-w12-d5-rf07, difficulty: easy, type: mcq, prompt: "How he goes back to Lagos", choices: ["by bus", "by car", "by plane", "by train"], answer: 0 }
+          - { id: fr-w12-d5-rf08, difficulty: easy, type: mcq, prompt: "What he proposes to Aïcha", choices: ["a restaurant on Sunday evening", "the pool on Saturday", "church", "a film"], answer: 0 }
+          - { id: fr-w12-d5-rf09, difficulty: easy, type: mcq, prompt: "The new restaurant", choices: ["Lebanese, in Lekki", "Italian, in Ikeja", "French, in Yaba", "Chinese, in Ibadan"], answer: 0 }
+          - { id: fr-w12-d5-rf10, difficulty: easy, type: mcq, prompt: "« Bises »", choices: ["kisses (informal sign-off)", "best regards (formal)", "bye-bye forever", "busy"], answer: 0 }
+      - kind: brain-teaser
+        title: "Answer Dayo"
+        questions:
+          - { id: fr-w12-d5-bt01, difficulty: medium, type: text, prompt: "Où va Dayo ce week-end ?", accept: ["À Ibadan, chez ses parents.", "Il va à Ibadan, chez ses parents.", "À Ibadan chez ses parents.", "Il va à Ibadan chez ses parents."] }
+          - { id: fr-w12-d5-bt02, difficulty: medium, type: text, prompt: "Pourquoi est-ce qu'ils vont à la piscine ?", accept: ["Parce qu'il va faire très chaud.", "Parce qu'il va faire très chaud"] }
+          - { id: fr-w12-d5-bt03, difficulty: medium, type: text, prompt: "Comment est-ce que Dayo va rentrer ?", accept: ["En bus.", "En bus", "Il va rentrer en bus."] }
+          - { id: fr-w12-d5-bt04, difficulty: hard, type: text, prompt: "Aïcha accepts: \"Yes, with pleasure! At what time?\"", accept: ["Oui, avec plaisir ! À quelle heure ?", "Oui, avec plaisir! À quelle heure?", "Oui, avec plaisir ! À quelle heure?"] }
+          - { id: fr-w12-d5-bt05, difficulty: hard, type: mcq, prompt: "In the email, « on va aller à la piscine » is…", choices: ["futur proche (on = we)", "present", "recent past", "imperative"], answer: 0 }
+
+  # ─────────────────────────── DAY 6 ───────────────────────────
+  - day: 6
+    gate:
+      title: "Checkpoint: reading a weekend plan"
+      covers: "Week 12 · Day 5: Dayo's email (futur proche, weather, invitation), writing a reply"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fr-w12-d6-g01, difficulty: easy, type: mcq, prompt: "Objet (in an email)", choices: ["Subject", "Object", "Objective", "Attachment"], answer: 0 }
+        - { id: fr-w12-d6-g02, difficulty: easy, type: mcq, prompt: "Salut", choices: ["Hi (informal)", "Health", "Salute (army)", "Goodbye forever"], answer: 0 }
+        - { id: fr-w12-d6-g03, difficulty: easy, type: truefalse, prompt: "Dayo goes back to Lagos by bus.", answer: true }
+        - { id: fr-w12-d6-g04, difficulty: easy, type: mcq, prompt: "la piscine", choices: ["the swimming pool", "the fish market", "the pizza place", "the beach"], answer: 0 }
+        - { id: fr-w12-d6-g05, difficulty: easy, type: mcq, prompt: "Tu es libre dimanche soir ?", choices: ["Are you free on Sunday evening?", "Are you free every Sunday?", "Is Sunday free?", "Were you free on Sunday?"], answer: 0 }
+        - { id: fr-w12-d6-g06, difficulty: easy, type: mcq, prompt: "Dayo's parents live in…", choices: ["Ibadan", "Lagos", "Lekki", "Abuja"], answer: 0 }
+        - { id: fr-w12-d6-g07, difficulty: medium, type: match, prompt: "Match Dayo's plans.", pairs: [["samedi après-midi", "la piscine"], ["samedi soir", "un film"], ["dimanche matin", "l'église"], ["dimanche soir", "le restaurant ?"]] }
+        - { id: fr-w12-d6-g08, difficulty: medium, type: text, prompt: "Translate: This weekend, I'm going to Ibadan.", accept: ["Ce week-end, je vais à Ibadan.", "Ce week-end je vais à Ibadan.", "Ce week-end, je vais à Ibadan"] }
+        - { id: fr-w12-d6-g09, difficulty: medium, type: text, prompt: "Translate: It's going to be very hot.", accept: ["Il va faire très chaud.", "Il va faire très chaud"] }
+        - { id: fr-w12-d6-g10, difficulty: medium, type: mcq, prompt: "« alors on va aller à la piscine » — alors =", choices: ["so", "then only", "always", "although"], answer: 0 }
+        - { id: fr-w12-d6-g11, difficulty: medium, type: truefalse, prompt: "« Bises » is fine in an email to your landlord.", answer: false }
+        - { id: fr-w12-d6-g12, difficulty: medium, type: text, prompt: "Translate: If it rains, we're going to go to the museum.", accept: ["S'il pleut, on va aller au musée.", "S'il pleut on va aller au musée.", "S'il pleut, nous allons aller au musée."] }
+        - { id: fr-w12-d6-g13, difficulty: medium, type: mcq, prompt: "Aïcha declines politely:", choices: ["Désolée, je suis prise dimanche. Une autre fois ?", "Non, merci, au revoir.", "Je ne veux pas.", "Pas possible !"], answer: 0 }
+        - { id: fr-w12-d6-g14, difficulty: medium, type: text, prompt: "Translate: Are you free for a video call on Tuesday? (tu)", accept: ["Tu es libre pour un appel vidéo mardi ?", "Tu es libre pour un appel vidéo mardi?"] }
+        - { id: fr-w12-d6-g15, difficulty: medium, type: order, prompt: "Order Dayo's weekend.", items: ["Il va à Ibadan.", "Samedi après-midi : la piscine.", "Samedi soir : de l'amala et un film.", "Dimanche : l'église.", "Il rentre à Lagos en bus."] }
+        - { id: fr-w12-d6-g16, difficulty: hard, type: text, prompt: "Translate: On Saturday, we're going to visit the Louvre, and on Sunday we're going to take the metro to Montmartre.", accept: ["Samedi, on va visiter le Louvre, et dimanche on va prendre le métro pour aller à Montmartre.", "Samedi, nous allons visiter le Louvre, et dimanche nous allons prendre le métro jusqu'à Montmartre.", "Samedi, on va visiter le Louvre et dimanche on va prendre le métro jusqu'à Montmartre."] }
+        - { id: fr-w12-d6-g17, difficulty: hard, type: mcq, prompt: "Spot the error: « Ce week-end, je vais visite mes parents et il va fait chaud. »", choices: ["visiter … faire", "Only visite", "Only fait", "No error"], answer: 0 }
+        - { id: fr-w12-d6-g18, difficulty: hard, type: multi, prompt: "Which are correct? (Select all.)", choices: ["S'il pleut, on va rester à la maison.", "Il va faire beau demain.", "Tu es libre ce soir ?", "Il va pleut demain."], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Week 12 lightning round"
+        secondsPerQuestion: 7
+        questions:
+          - { id: fr-w12-d6-rf01, difficulty: easy, type: mcq, prompt: "I'm going to work.", choices: ["Je vais travailler.", "Je viens de travailler.", "Je travaille.", "Je vais travaille."], answer: 0 }
+          - { id: fr-w12-d6-rf02, difficulty: easy, type: mcq, prompt: "tomorrow", choices: ["demain", "hier", "ce soir", "bientôt"], answer: 0 }
+          - { id: fr-w12-d6-rf03, difficulty: easy, type: mcq, prompt: "It's raining.", choices: ["Il pleut.", "Il fait pluie.", "Il est pluie.", "Il pleure."], answer: 0 }
+          - { id: fr-w12-d6-rf04, difficulty: easy, type: mcq, prompt: "in spring", choices: ["au printemps", "en printemps", "à printemps", "le printemps"], answer: 0 }
+          - { id: fr-w12-d6-rf05, difficulty: easy, type: mcq, prompt: "Gladly!", choices: ["Volontiers !", "Désolé !", "Pas du tout !", "Dommage !"], answer: 0 }
+          - { id: fr-w12-d6-rf06, difficulty: easy, type: mcq, prompt: "I'm busy.", choices: ["Je suis pris(e).", "Je suis libre.", "J'ai pris.", "Je prends."], answer: 0 }
+          - { id: fr-w12-d6-rf07, difficulty: easy, type: mcq, prompt: "I feel like…", choices: ["J'ai envie de…", "J'ai besoin…", "Je compte de…", "Je voudrais de…"], answer: 0 }
+          - { id: fr-w12-d6-rf08, difficulty: easy, type: mcq, prompt: "It's going to rain.", choices: ["Il va pleuvoir.", "Il va pleut.", "Il vient pleuvoir.", "Il fait pleuvoir."], answer: 0 }
+          - { id: fr-w12-d6-rf09, difficulty: easy, type: mcq, prompt: "Deal!", choices: ["Ça marche !", "Ça va ?", "Ça y est.", "C'est tout."], answer: 0 }
+          - { id: fr-w12-d6-rf10, difficulty: easy, type: mcq, prompt: "next month", choices: ["le mois prochain", "le mois dernier", "ce mois", "un mois"], answer: 0 }
+      - kind: brain-teaser
+        title: "A weekend in Paris"
+        questions:
+          - { id: fr-w12-d6-bt01, difficulty: medium, type: text, prompt: "Translate: On Saturday morning, we're going to visit the Eiffel Tower.", accept: ["Samedi matin, on va visiter la tour Eiffel.", "Samedi matin, nous allons visiter la tour Eiffel.", "Samedi matin on va visiter la tour Eiffel."] }
+          - { id: fr-w12-d6-bt02, difficulty: medium, type: text, prompt: "Translate: It's going to be mild and sunny. (doux; il va y avoir du soleil)", accept: ["Il va faire doux et il va y avoir du soleil.", "Il va faire doux et il va y avoir du soleil"] }
+          - { id: fr-w12-d6-bt03, difficulty: medium, type: mcq, prompt: "Backup plan if it rains", choices: ["S'il pleut, on va aller au musée.", "Si il pleut, on va au musée.", "S'il pleuvoir, musée.", "Quand pleut, on va musée."], answer: 0 }
+          - { id: fr-w12-d6-bt04, difficulty: hard, type: text, prompt: "Translate: We're not going to take a taxi; we're going to take the metro.", accept: ["On ne va pas prendre de taxi, on va prendre le métro.", "Nous n'allons pas prendre de taxi, nous allons prendre le métro.", "On ne va pas prendre de taxi ; on va prendre le métro."] }
+          - { id: fr-w12-d6-bt05, difficulty: hard, type: mcq, prompt: "Find the sentence with NO mistake.", choices: ["Dimanche, on va se promener au bord de la Seine.", "On va se promène.", "Il va fait beau.", "En printemps, Paris est beau."], answer: 0 }
