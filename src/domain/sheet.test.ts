@@ -97,6 +97,15 @@ describe('Sheet: Weeks 5–9 functions', () => {
     expect(value(s, '=INDEX(D2:D5,MATCH("Kano",A2:A5,0))')).toBe(13500)
     expect(value(s, '=VLOOKUP("Kano",A2:D5,4,FALSE)')).toBe(13500)
     expect(value(s, '=XLOOKUP("Enugu",A2:A5,D2:D5)')).toEqual({ error: '#N/A' })
+    expect(value(s, '=IFNA(XLOOKUP("Enugu",A2:A5,D2:D5),"Not found")')).toBe('Not found')
+  })
+
+  it('approximate lookups for tiers, with an empty not-found argument', () => {
+    const s = new Sheet({ A1: 0, A2: 500000, A3: 2000000, B1: '2%', B2: '3%', B3: '5%' })
+    expect(value(s, '=XLOOKUP(1200000,A1:A3,B1:B3,,-1)')).toBe(0.03)
+    expect(value(s, '=XLOOKUP(2000000,A1:A3,B1:B3,,-1)')).toBe(0.05)
+    expect(value(s, '=XLOOKUP(499999,A1:A3,B1:B3,,-1)')).toBe(0.02)
+    expect(value(s, '=XLOOKUP(50000,A1:A3,B1:B3,,1)')).toBe(0.03)
   })
 
   it('dates and finance', () => {

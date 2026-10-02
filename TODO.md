@@ -19,7 +19,7 @@
 
 ## Sandboxes (a slice at a time)
 - [x] Engines: French phrase builder, Excel spreadsheet, Python, web playground
-- [x] French W1–W7 + main lab · Excel W2, W3, W5, W6, W7, W8 + playground · Fullstack: a sandbox for every day of W1–10 (65 sandboxes, 271 auto-checked tasks) + Python/web playgrounds
+- [x] French W1–W7 + main lab · Excel W2, W3, W5, W6, W7, W8, W9 + playground · Fullstack: a sandbox for every day of W1–10 (65 sandboxes, 271 auto-checked tasks) + Python/web playgrounds
 - [x] End-to-end test of every sandbox in the real app (`npm run e2e [url] [chromium|webkit]`): 76/76 pass on the live site, Chrome and iPhone/WebKit
 - [x] Phone-ready code editor (key bar, auto-indent, smart-quote fix), tested on iPhone/Safari and Android/Chrome emulation
 - [ ] More French lesson sets (add each to `fr-main` include)

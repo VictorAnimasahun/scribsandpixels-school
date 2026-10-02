@@ -1,0 +1,58 @@
+# Week 9 · Lookups on the real Products table: VLOOKUP, XLOOKUP, INDEX/MATCH, IFNA, TRIM, an invoice and commission tiers.
+id: xl-w09-lookups
+kind: sheet
+title: "Lookups and the invoice"
+description: "NaijaMart's 40 products in A1:G41. Look up costs, prices and suppliers, fix a broken lookup, then price a three-line invoice."
+dataset:
+  file: products
+  rows: 40
+  columns: [ProductID, Product, Category, Supplier, UnitCost, UnitPrice, ReorderLevel]
+cells:
+  I1: "Look up"
+  J1: "Result"
+  I2: "P040"
+  I3: "P001"
+  I4: "P026"
+  I5: "Oraimo Power Bank 20000mAh"
+  I6: "P024"
+  I7: "P999"
+  I8: "' P001"
+  I10: "Invoice ID"
+  J10: "Qty"
+  K10: "Line total"
+  I11: "P001"
+  J11: 2
+  I12: "P005"
+  J12: 3
+  I13: "P026"
+  J13: 10
+  J14: "Subtotal"
+  J15: "VAT"
+  J16: "Total due"
+  L15: "7.5%"
+  I18: "Sales"
+  J18: "Rate"
+  I19: 1200000
+  M1: "Threshold"
+  N1: "Rate"
+  M2: 0
+  N2: "2%"
+  M3: 500000
+  N3: "3%"
+  M4: 2000000
+  N4: "5%"
+cols: 14
+rows: 41
+tasks:
+  - {"prompt": "J2: UnitCost (column 5) of the ID in I2, with VLOOKUP and an exact match. Lock the table.", "cell": "J2", "expect": 9800, "formula": true, "mustUse": ["VLOOKUP(", "FALSE", "$A$2:$G$41"], "solution": "=VLOOKUP(I2,$A$2:$G$41,5,FALSE)", "hint": "=VLOOKUP(I2,$A$2:$G$41,5,FALSE)"}
+  - {"prompt": "J3: Supplier of the ID in I3, with VLOOKUP.", "cell": "J3", "expect": "Transsion Nigeria", "formula": true, "mustUse": ["VLOOKUP("], "solution": "=VLOOKUP(I3,$A$2:$G$41,4,FALSE)", "hint": "Supplier is column 4 of the table."}
+  - {"prompt": "J4: UnitPrice of the ID in I4, with XLOOKUP.", "cell": "J4", "expect": 13500, "formula": true, "mustUse": ["XLOOKUP("], "solution": "=XLOOKUP(I4,$A$2:$A$41,$F$2:$F$41)", "hint": "=XLOOKUP(I4,$A$2:$A$41,$F$2:$F$41)"}
+  - {"prompt": "J5: the ProductID for the product NAME in I5. VLOOKUP can't look left; XLOOKUP can.", "cell": "J5", "expect": "P005", "formula": true, "mustUse": ["XLOOKUP("], "solution": "=XLOOKUP(I5,$B$2:$B$41,$A$2:$A$41)", "hint": "Search column B, return column A."}
+  - {"prompt": "J6: UnitCost of the ID in I6 with INDEX and MATCH.", "cell": "J6", "expect": 68000, "formula": true, "mustUse": ["INDEX(", "MATCH("], "solution": "=INDEX($E$2:$E$41,MATCH(I6,$A$2:$A$41,0))", "hint": "=INDEX($E$2:$E$41,MATCH(I6,$A$2:$A$41,0))"}
+  - {"prompt": "J7: look up I7's UnitCost, showing \"Not found\" instead of #N/A (use IFNA).", "cell": "J7", "expect": "Not found", "formula": true, "mustUse": ["IFNA("], "solution": "=IFNA(XLOOKUP(I7,$A$2:$A$41,$E$2:$E$41),\"Not found\")", "hint": "=IFNA(XLOOKUP(…),\"Not found\")"}
+  - {"prompt": "J8: I8 has a hidden leading space. Look up its UnitCost anyway.", "cell": "J8", "expect": 118000, "formula": true, "mustUse": ["TRIM("], "solution": "=XLOOKUP(TRIM(I8),$A$2:$A$41,$E$2:$E$41)", "hint": "Wrap the lookup value in TRIM."}
+  - {"prompt": "K11: line total = Qty × the UnitPrice looked up for I11. Lock the lookup ranges, then fill K11:K13.", "cell": "K11", "expect": 290000, "formula": true, "solution": "=J11*XLOOKUP(I11,$A$2:$A$41,$F$2:$F$41)", "hint": "=J11*XLOOKUP(I11,$A$2:$A$41,$F$2:$F$41)"}
+  - {"prompt": "K14: invoice subtotal.", "cell": "K14", "expect": 488000, "formula": true, "solution": "=SUM(K11:K13)", "solutionFill": {"K": "=J{r}*XLOOKUP(I{r},$A$2:$A$41,$F$2:$F$41)"}, "hint": "=SUM(K11:K13)"}
+  - {"prompt": "K15: VAT at the rate in L15.", "cell": "K15", "expect": 36600, "formula": true, "mustUse": ["L15"], "solution": "=K14*L15", "hint": "=K14*L15"}
+  - {"prompt": "K16: total due.", "cell": "K16", "expect": 524600, "formula": true, "solution": "=K14+K15", "hint": "=K14+K15"}
+  - {"prompt": "J19: commission rate for the sales in I19 from the tier table M2:N4 (approximate XLOOKUP: exact or next smaller).", "cell": "J19", "expect": 0.03, "formula": true, "mustUse": ["XLOOKUP(", "-1"], "solution": "=XLOOKUP(I19,$M$2:$M$4,$N$2:$N$4,\"\",-1)", "hint": "=XLOOKUP(I19,$M$2:$M$4,$N$2:$N$4,,-1)"}

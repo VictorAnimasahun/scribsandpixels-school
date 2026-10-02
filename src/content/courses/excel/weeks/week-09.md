@@ -60,6 +60,10 @@ From memory: VLOOKUP for UnitCost.
 
 **Check:** total profit **₦129,531,600** · margin **15.5%** · loss-making orders **21**
 
+**Sandbox:** VLOOKUP, XLOOKUP (including looking left), INDEX/MATCH and the not-found fixes on the real Products table.
+
+::sandbox xl-w09-lookups
+
 ### Mini-Task (10 min)
 Commission tiers with approximate XLOOKUP: a table of thresholds (0, 500000, 2000000) and rates (2%, 3%, 5%); `=XLOOKUP(O2, $V$2:$V$4, $W$2:$W$4, , -1)`. Compare with your Week 5 IFS result.
 
@@ -135,6 +139,10 @@ An **invoice template** is the classic lookup project:
 Build the invoice on a new sheet with 10 lines. Test it with: P001 × 2, P005 × 3, P026 × 10.
 
 **Check:** subtotal ₦290,000 + ₦63,000 + ₦135,000 = **₦488,000** · VAT 7.5% = ₦36,600 · total **₦524,600**
+
+**Sandbox:** the invoice lines and totals, plus commission tiers, are the last tasks here.
+
+::sandbox xl-w09-lookups
 
 ### Mini-Task (10 min)
 Add a "Not found" warning if an unknown product code is typed, and turn the cell red with conditional formatting (preview of Week 11: Home → Conditional Formatting → Highlight Cells Rules → Text that Contains).
