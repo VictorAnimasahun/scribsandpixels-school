@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Victor's Task Program</title>
+<style>
+  @page { size: A4; margin: 16mm 15mm 18mm; }
+  :root { --ink:#16211c; --muted:#5b6b63; --line:#cfd8d3; --green:#164f3b; --lime:#c7e85c; --code:#f3f6f4; --warn:#fff4d6; --warnline:#e0b94a; --stop:#fde8e6; --stopline:#d9655b; }
+  * { box-sizing: border-box; }
+  body { font-family: "Helvetica Neue", Arial, sans-serif; color: var(--ink); font-size: 10.5pt; line-height: 1.45; margin: 0; }
+  h1 { font-size: 24pt; margin: 0 0 4pt; color: var(--green); letter-spacing: -0.5px; }
+  h2 { font-size: 15pt; color: var(--green); margin: 0 0 6pt; padding-top: 2pt; border-bottom: 2px solid var(--lime); padding-bottom: 3pt; }
+  h3 { font-size: 11.5pt; margin: 12pt 0 4pt; }
+  p { margin: 4pt 0; }
+  code, .mono { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 9.2pt; }
+  code { background: var(--code); padding: 0 3px; border-radius: 3px; }
+  pre { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 9pt; background: var(--code); border: 1px solid var(--line); border-radius: 6px; padding: 7pt 9pt; white-space: pre-wrap; margin: 5pt 0; page-break-inside: avoid; }
+  .cover { height: 250mm; display: flex; flex-direction: column; justify-content: center; }
+  .cover .sub { font-size: 13pt; color: var(--muted); margin-bottom: 18pt; }
+  .page { page-break-before: always; }
+  .proc { border: 1.5px solid var(--green); border-radius: 8px; padding: 9pt 11pt; margin: 8pt 0; }
+  .sig { font-family: "SF Mono", Menlo, monospace; font-size: 10pt; background: var(--green); color: #fff; padding: 4pt 8pt; border-radius: 5px; display: inline-block; margin-bottom: 6pt; }
+  .tag { display: inline-block; font-size: 8.5pt; font-weight: 700; padding: 1pt 6pt; border-radius: 10px; margin-left: 4pt; vertical-align: middle; }
+  .now { background: var(--lime); color: var(--green); }
+  .hold { background: #e3e7e5; color: #46544d; }
+  table.kv { border-collapse: collapse; width: 100%; margin: 4pt 0; }
+  table.kv td { border: 1px solid var(--line); padding: 3pt 6pt; vertical-align: top; }
+  table.kv td:first-child { width: 26%; font-weight: 700; background: #f7f9f8; }
+  ol.steps { margin: 4pt 0; padding-left: 0; list-style: none; counter-reset: s; }
+  ol.steps > li { counter-increment: s; position: relative; padding: 3pt 0 3pt 44pt; border-bottom: 1px dotted var(--line); page-break-inside: avoid; }
+  ol.steps > li::before { content: "☐ " counter(s, decimal-leading-zero); position: absolute; left: 0; top: 3pt; font-family: "SF Mono", Menlo, monospace; font-size: 9.5pt; color: var(--green); font-weight: 700; }
+  .box { border-radius: 6px; padding: 6pt 9pt; margin: 6pt 0; page-break-inside: avoid; }
+  .warn { background: var(--warn); border-left: 4px solid var(--warnline); }
+  .stop { background: var(--stop); border-left: 4px solid var(--stopline); }
+  .ok { background: #ecf7e0; border-left: 4px solid #7fb53a; }
+  .muted { color: var(--muted); }
+  .small { font-size: 9pt; }
+  ul { margin: 3pt 0 3pt 14pt; padding: 0; }
+  .toc td { padding: 2pt 6pt; border-bottom: 1px dotted var(--line); }
+  .toc { border-collapse: collapse; width: 100%; }
+  .kw { color: var(--green); font-weight: 700; font-family: "SF Mono", Menlo, monospace; }
+</style>
+</head>
+<body>
+
+<section class="cover">
+  <p class="mono muted">scribs&amp;pixels school · v1 · 2 October 2026</p>
+  <h1>Victor's Task Program</h1>
+  <p class="sub">Everything you, not Claude, have to do, written like code: explicit inputs, numbered steps, IF/ELSE branches, expected output and what to do on error. Work through it slowly, one procedure at a time.</p>
+  <table class="toc">
+    <tr><td class="mono">00</td><td>How to run this program (read first)</td><td><span class="tag now">DO NOW</span></td></tr>
+    <tr><td class="mono">01</td><td>answer_phase2_questions()</td><td><span class="tag now">DO NOW</span></td></tr>
+    <tr><td class="mono">02</td><td>confirm_school_rules()</td><td><span class="tag now">DO NOW</span></td></tr>
+    <tr><td class="mono">03</td><td>test_school_as_learner()</td><td><span class="tag now">DO NOW · weekends</span></td></tr>
+    <tr><td class="mono">04</td><td>bring_back_ui_design()</td><td><span class="tag now">WHEN READY</span></td></tr>
+    <tr><td class="mono">05</td><td>deploy_on_vercel()</td><td><span class="tag hold">ON HOLD</span></td></tr>
+    <tr><td class="mono">06</td><td>connect_subdomain()</td><td><span class="tag hold">ON HOLD</span></td></tr>
+    <tr><td class="mono">07</td><td>create_supabase_project()</td><td><span class="tag hold">ON HOLD</span></td></tr>
+    <tr><td class="mono">08</td><td>set_up_resend()</td><td><span class="tag hold">ON HOLD</span></td></tr>
+    <tr><td class="mono">09</td><td>deploy_email_nudges()</td><td><span class="tag hold">ON HOLD</span></td></tr>
+    <tr><td class="mono">10</td><td>Appendix: words, tools and message templates</td><td></td></tr>
+  </table>
+  <div class="box warn" style="margin-top:16pt"><b>Why some procedures are ON HOLD.</b> You put hosting and the backend on hold. They're written out in full so they're ready when you decide. <b>Doing 07–09 today won't change anything you can see</b>, because the app doesn't log people in yet. Claude wires accounts into the app after your UI design comes back.</div>
+</section>
+
+<!-- ─────────────────────────── 00 ─────────────────────────── -->
+<section class="page">
+  <h2>00 · How to run this program</h2>
+  <p>Read this page once. It works like the rules of a programming language: every procedure after it follows them.</p>
+  <h3>The rules</h3>
+  <ol class="steps">
+    <li><b>One procedure at a time.</b> Finish it, or stop it cleanly, before starting another. Never run two at once.</li>
+    <li><b>Run the steps in order.</b> Don't skip a step because it "looks obvious". If a step says <i>copy</i>, copy; don't retype.</li>
+    <li><b>Tick each ☐</b> with a pen as you finish it. If you stop halfway, the last tick tells you where to resume.</li>
+    <li><b>Check the EXPECTED OUTPUT</b> at the end of each procedure. If what you see matches, the procedure is done.</li>
+    <li><b>ON ERROR, stop.</b> Don't improvise. Take a screenshot, then send Claude the error template from the Appendix (section 10).</li>
+    <li><b>Secrets never go into chat, email, WhatsApp or the repo.</b> A secret is any value this document labels <span class="kw">SECRET</span>. Keep them in a password manager (Apple Passwords, 1Password or Bitwarden).</li>
+  </ol>
+  <h3>How to read a procedure</h3>
+  <table class="kv">
+    <tr><td>PROCEDURE</td><td>The name of the task, like a function name.</td></tr>
+    <tr><td>WHY</td><td>What it achieves, in one sentence.</td></tr>
+    <tr><td>INPUTS</td><td>What you need before you start. If you don't have every input, don't start.</td></tr>
+    <tr><td>TIME</td><td>Roughly how long it takes.</td></tr>
+    <tr><td>STEPS</td><td>Numbered actions, done in order.</td></tr>
+    <tr><td>IF / ELSE</td><td>A fork: do the branch that matches what you see.</td></tr>
+    <tr><td>EXPECTED OUTPUT</td><td>What "done" looks like.</td></tr>
+    <tr><td>ON ERROR</td><td>What to do when it doesn't work.</td></tr>
+  </table>
+  <h3>Notation</h3>
+  <ul>
+    <li><b>Bold text in steps</b> = a button, menu or label to click on screen, spelt exactly as it appears.</li>
+    <li><code>Grey monospace</code> = text to type or paste exactly, character for character.</li>
+    <li><code>&lt;LIKE_THIS&gt;</code> = a placeholder. Replace the whole thing, including the &lt; &gt;, with your own value.</li>
+    <li>→ = "then click". <b>Settings → Domains</b> means click Settings, then click Domains.</li>
+    <li>"Terminal" = the Mac app called Terminal (press <b>⌘ + Space</b>, type <code>Terminal</code>, press Enter).</li>
+  </ul>
+</section>
+
+<!-- ─────────────────────────── 01 ─────────────────────────── -->
+<section class="page">
+  <h2>01 · answer_phase2_questions() <span class="tag now">DO NOW</span></h2>
+  <div class="proc">
+    <span class="sig">PROCEDURE answer_phase2_questions() → 3 answers</span>
+    <table class="kv">
+      <tr><td>WHY</td><td>Fullstack Weeks 11–14 can't be written until you decide these. Weeks 1–10 are written and live.</td></tr>
+      <tr><td>INPUTS</td><td>15 quiet minutes. Optional: the draft plan at <code>src/content/courses/fullstack-ml/phase-2-plan.md</code> (on GitHub: repo → that path).</td></tr>
+      <tr><td>TIME</td><td>15 minutes</td></tr>
+    </table>
+    <ol class="steps">
+      <li><b>Question 1: order.</b> The draft is: Week 11 modern CSS (Grid, multi-page sites) → Weeks 12–13 React (components, then state and fetching) → Week 14 milestone in plain HTML/CSS/JS. Decide:<br>
+        <span class="kw">IF</span> you're happy with that order → answer <code>Order: keep</code><br>
+        <span class="kw">ELSE IF</span> you want React earlier and the milestone built in React → answer <code>Order: React first</code></li>
+      <li><b>Question 2: milestone business.</b> Week 14's milestone is a multi-page website (Home · Menu · About · Contact) for a pretend Nigerian business. The suggestion is <b>"Mama Put Kitchen"</b>, a Lagos buka: menu with ₦ prices, opening hours, WhatsApp ordering. Alternatives: an Abuja tailor, an Enugu phone-repair shop.<br>
+        <span class="kw">IF</span> you like it → <code>Business: Mama Put Kitchen</code><br>
+        <span class="kw">ELSE</span> → <code>Business: &lt;YOUR_IDEA&gt;</code> plus one sentence about what it sells.</li>
+      <li><b>Question 3: Saturdays.</b> As drafted, the Saturdays of Weeks 11–14 all build towards the milestone site. The alternative is one separate project each Saturday.<br>
+        <span class="kw">IF</span> yes → <code>Saturdays: build the milestone</code>&nbsp;&nbsp;<span class="kw">ELSE</span> → <code>Saturdays: separate mini-projects</code></li>
+      <li>Open Claude Code (Mac or claude.ai/code) in this project.</li>
+      <li>Paste this message, with your three answers filled in, and send it:
+<pre>Phase 2 decisions:
+Order: &lt;keep | React first&gt;
+Business: &lt;Mama Put Kitchen | your idea + one sentence&gt;
+Saturdays: &lt;build the milestone | separate mini-projects&gt;
+Write Fullstack Weeks 11–14 when it's a weekday.</pre></li>
+    </ol>
+    <div class="box ok"><b>EXPECTED OUTPUT:</b> Claude replies confirming the plan. On the next weekday it writes Weeks 11–14 and pushes them to the test site.</div>
+    <div class="box stop"><b>ON ERROR:</b> If you can't decide, send <code>Phase 2: use your defaults</code>. The defaults are: keep the order, Mama Put Kitchen, Saturdays build the milestone.</div>
+  </div>
+</section>
+
+<!-- ─────────────────────────── 02 ─────────────────────────── -->
+<section class="page">
+  <h2>02 · confirm_school_rules() <span class="tag now">DO NOW</span></h2>
+  <div class="proc">
+    <span class="sig">PROCEDURE confirm_school_rules() → 5 decisions</span>
+    <table class="kv">
+      <tr><td>WHY</td><td>The app runs on default rules that you haven't approved yet. Each rule lives in one place in the code, so changing it later is cheap, but approving them now stops guesswork.</td></tr>
+      <tr><td>INPUTS</td><td>The table below.</td></tr>
+      <tr><td>TIME</td><td>10 minutes</td></tr>
+    </table>
+    <p>For each row, write <b>KEEP</b> or <b>CHANGE: &lt;how&gt;</b> in the last column.</p>
+    <table class="kv">
+      <tr><td>Rule</td><td><b>Current default</b></td></tr>
+      <tr><td>R1 Pacing</td><td>"Today" = your first unfinished day. Missing an evening never puts you behind. &nbsp;&nbsp;☐ KEEP ☐ CHANGE: ____________</td></tr>
+      <tr><td>R2 Week quiz pass mark</td><td>The end-of-week quiz is self-marked; you pass when every question is answered and marked "got it". (Daily gates stay at 70%.) &nbsp;&nbsp;☐ KEEP ☐ CHANGE: ____________</td></tr>
+      <tr><td>R3 Streak</td><td>Counts Mon–Sat study days. Sunday is rest and never breaks or adds to it. &nbsp;&nbsp;☐ KEEP ☐ CHANGE: ____________</td></tr>
+      <tr><td>R4 "Need a nudge?" button</td><td>No behaviour yet. Ideas: send a reminder email in 1 hour · show the 10-minute version of today · open a motivational note. &nbsp;&nbsp;☐ pick: ____________</td></tr>
+      <tr><td>R5 Who writes new weeks</td><td>Claude writes them in Claude Code, a slice at a time, verified before pushing. &nbsp;&nbsp;☐ KEEP ☐ CHANGE: ____________</td></tr>
+    </table>
+    <ol class="steps">
+      <li>Fill in all five rows on paper.</li>
+      <li>Send Claude:
+<pre>School rules:
+R1 pacing: &lt;KEEP | CHANGE: ...&gt;
+R2 week quiz: &lt;KEEP | CHANGE: ...&gt;
+R3 streak: &lt;KEEP | CHANGE: ...&gt;
+R4 nudge button: &lt;your pick&gt;
+R5 writing weeks: &lt;KEEP | CHANGE: ...&gt;</pre></li>
+    </ol>
+    <div class="box ok"><b>EXPECTED OUTPUT:</b> Claude moves these from "Open decisions" to "Decided" in CLAUDE.md, and changes code only for rows you marked CHANGE.</div>
+  </div>
+</section>
+
+<!-- ─────────────────────────── 03 ─────────────────────────── -->
+<section class="page">
+  <h2>03 · test_school_as_learner() <span class="tag now">DO NOW · weekends</span></h2>
+  <div class="proc">
+    <span class="sig">PROCEDURE test_school_as_learner(course) → bug reports</span>
+    <table class="kv">
+      <tr><td>WHY</td><td>You're the first real learner. Things you trip over will trip up every learner after you.</td></tr>
+      <tr><td>INPUTS</td><td>Your phone <b>and</b> a laptop. The test site: <code>victoranimasahun.github.io/scribsandpixels-school</code></td></tr>
+      <tr><td>TIME</td><td>20–40 minutes per session. Repeat any weekend.</td></tr>
+    </table>
+    <div class="box warn"><b>Know this first:</b> progress is saved <b>in this browser only</b>. A different phone or browser, a private tab, or clearing site data starts you from zero. That's expected until accounts exist.</div>
+    <ol class="steps">
+      <li>Open the test site on your phone.</li>
+      <li>Tap one course. Choose one per session: Fullstack, French or Excel.</li>
+      <li>Open the week you're actually on, then today's day.</li>
+      <li>Do the day <b>as a learner</b>: read, open the links, tick blocks, do the quiz, use any sandbox, write the log.</li>
+      <li>While doing it, note anything in these 5 bug types:
+        <ul>
+          <li><b>BROKEN</b>: an error, a blank screen, a button that does nothing.</li>
+          <li><b>WRONG</b>: a wrong quiz answer, a wrong number, a typo, a dead link.</li>
+          <li><b>CONFUSING</b>: you didn't know what to do next.</li>
+          <li><b>UGLY</b>: overlapping text, too small on the phone, bad colours.</li>
+          <li><b>SLOW</b>: you waited more than 3 seconds.</li>
+        </ul></li>
+      <li>For each bug: take a screenshot, then copy the address bar (the bit after <code>#/</code> says exactly which page).</li>
+      <li>Optional, to test checkpoints quickly: tap <b>🧪 Tester tools</b> (bottom of the page) → <b>Force checkpoint on this day</b>. To skip a 60-minute cooldown: <b>End cooldown now</b>.</li>
+      <li><span class="kw">IF</span> you want to start a course again → <b>🧪 Tester tools → Reset my progress</b> → <b>OK</b>. <span class="kw">ELSE</span> leave it.</li>
+      <li>Send all bugs from the session in one message, using the bug template in section 10.</li>
+    </ol>
+    <div class="box ok"><b>EXPECTED OUTPUT:</b> One message to Claude listing your bugs. Claude fixes them and replies with what changed.</div>
+    <div class="box stop"><b>ON ERROR:</b> If the whole site is blank, reload once. If it's still blank, try another browser. If it's blank everywhere, send <code>Site is blank on &lt;device/browser&gt;</code> with a screenshot.</div>
+  </div>
+</section>
+
+<!-- ─────────────────────────── 04 ─────────────────────────── -->
+<section class="page">
+  <h2>04 · bring_back_ui_design() <span class="tag now">WHEN READY</span></h2>
+  <div class="proc">
+    <span class="sig">PROCEDURE bring_back_ui_design() → design handed to Claude Code</span>
+    <table class="kv">
+      <tr><td>WHY</td><td>The test site has plain screens. The real look is being designed on claude.ai. Claude Code can only build it once the design is in the project.</td></tr>
+      <tr><td>INPUTS</td><td>Your finished design conversation or artifact on claude.ai.</td></tr>
+      <tr><td>TIME</td><td>15 minutes</td></tr>
+    </table>
+    <ol class="steps">
+      <li>On claude.ai, open the design conversation.</li>
+      <li>Ask it: <code>Give me the final design as one HTML file plus a list of every screen and what each button does.</code></li>
+      <li><span class="kw">IF</span> it produced an artifact → click it → <b>Share / Publish</b> (or the link icon) → copy the link.<br>
+          <span class="kw">ELSE</span> → copy the whole HTML it gave you into a file named <code>design.html</code>.</li>
+      <li>In Claude Code, send:
+<pre>Here is the final UI design: &lt;LINK or attach design.html&gt;.
+Screens and buttons: &lt;paste the list&gt;.
+Build it, replacing the test screens. Keep all content, quizzes and sandboxes working.</pre></li>
+    </ol>
+    <div class="box ok"><b>EXPECTED OUTPUT:</b> Claude confirms it can read the design and plans the build. Building happens on weekdays.</div>
+    <div class="box stop"><b>ON ERROR:</b> If Claude says it can't open the link, attach the HTML file instead (step 3, ELSE branch).</div>
+  </div>
+</section>
+
+<!-- ─────────────────────────── 05 ─────────────────────────── -->
+<section class="page">
+  <h2>05 · deploy_on_vercel() <span class="tag hold">ON HOLD</span></h2>
+  <div class="proc">
+    <span class="sig">PROCEDURE deploy_on_vercel() → a second live copy of the site</span>
+    <table class="kv">
+      <tr><td>WHY</td><td>Vercel is faster and handles custom domains easily. GitHub Pages keeps working either way.</td></tr>
+      <tr><td>INPUTS</td><td>Your GitHub login (account <b>VictorAnimasahun</b>).</td></tr>
+      <tr><td>TIME</td><td>10 minutes</td></tr>
+    </table>
+    <ol class="steps">
+      <li>Go to <code>vercel.com</code> → <b>Sign Up</b> → <b>Continue with GitHub</b>. Choose the free <b>Hobby</b> plan.</li>
+      <li>On the dashboard: <b>Add New…</b> → <b>Project</b>.</li>
+      <li>Find <code>scribsandpixels-school</code> in the list → <b>Import</b>.<br>
+          <span class="kw">IF</span> it isn't listed → <b>Adjust GitHub App Permissions</b> → allow the repo → come back.</li>
+      <li>Check the settings. Change only what's different:
+        <ul>
+          <li>Framework Preset: <code>Vite</code></li>
+          <li>Build Command: <code>npm run build</code></li>
+          <li>Output Directory: <code>dist</code></li>
+          <li>Environment Variables: <b>none</b>. Leave the section empty.</li>
+        </ul></li>
+      <li>Click <b>Deploy</b>. Wait for the confetti (about 1–2 minutes).</li>
+      <li>Click the preview image. A new tab opens on a <code>….vercel.app</code> address.</li>
+      <li>Check that the home page shows the three courses, then open any day.</li>
+      <li>Send Claude: <code>Vercel is live at &lt;URL&gt;</code></li>
+    </ol>
+    <div class="box ok"><b>EXPECTED OUTPUT:</b> The same school at a <code>.vercel.app</code> address. Every push to <code>main</code> redeploys it automatically.</div>
+    <div class="box stop"><b>ON ERROR:</b> If the build fails, open the build log, scroll to the first red line, screenshot it and send it to Claude. Don't change settings by guessing.</div>
+  </div>
+</section>
+
+<!-- ─────────────────────────── 06 ─────────────────────────── -->
+<section class="page">
+  <h2>06 · connect_subdomain() <span class="tag hold">ON HOLD</span></h2>
+  <div class="proc">
+    <span class="sig">PROCEDURE connect_subdomain(domain) → school.&lt;yourdomain&gt;</span>
+    <table class="kv">
+      <tr><td>WHY</td><td>A clean address like <code>school.scribsandpixels.com</code> instead of the long GitHub one.</td></tr>
+      <tr><td>INPUTS</td><td>(a) 05 done. (b) A login to the company that holds your domain (the "registrar" or DNS host, e.g. Namecheap, GoDaddy, Cloudflare, Whogohost). (c) The exact domain and the subdomain you want.</td></tr>
+      <tr><td>TIME</td><td>15 minutes, then up to 24 hours for the internet to catch up</td></tr>
+    </table>
+    <ol class="steps">
+      <li>Decide the address, e.g. <code>school.&lt;yourdomain&gt;</code>. Write it here: ______________________</li>
+      <li>In Vercel: open the project → <b>Settings</b> → <b>Domains</b> → type the address → <b>Add</b>.</li>
+      <li>Vercel shows a record to create. It's usually: Type <code>CNAME</code>, Name <code>school</code>, Value <code>cname.vercel-dns.com</code>. Copy what <i>it</i> shows if that's different.</li>
+      <li>Log in to your registrar → find <b>DNS</b> / <b>DNS Records</b> / <b>Advanced DNS</b> for the domain.</li>
+      <li><b>Add record</b> → fill in exactly the Type, Name and Value from step 3. Leave TTL on Automatic → <b>Save</b>.<br>
+          <span class="kw">IF</span> your registrar is Cloudflare → set the orange cloud (proxy) to <b>grey / DNS only</b>.</li>
+      <li>Back in Vercel → <b>Domains</b>. Wait until the status says <b>Valid Configuration</b> (a refresh every few minutes is fine).</li>
+      <li>Open the new address in your phone browser.</li>
+      <li>Send Claude: <code>Subdomain live: &lt;address&gt;. Make it the main host and update APP_URL references.</code></li>
+    </ol>
+    <div class="box ok"><b>EXPECTED OUTPUT:</b> The school opens at your subdomain with a padlock (https).</div>
+    <div class="box stop"><b>ON ERROR:</b> "Invalid configuration" after 24 hours → screenshot the registrar's DNS page and Vercel's Domains page, and send both. <b>Don't delete other DNS records</b>: they run your email and main website.</div>
+  </div>
+</section>
+
+<!-- ─────────────────────────── 07 ─────────────────────────── -->
+<section class="page">
+  <h2>07 · create_supabase_project() <span class="tag hold">ON HOLD</span></h2>
+  <div class="proc">
+    <span class="sig">PROCEDURE create_supabase_project() → database with tables + 2 keys</span>
+    <table class="kv">
+      <tr><td>WHY</td><td>Supabase will store learners' accounts and progress, so progress follows you across devices. Only useful once Claude wires accounts into the app.</td></tr>
+      <tr><td>INPUTS</td><td>A GitHub login, a password manager, and the Mac with this project.</td></tr>
+      <tr><td>TIME</td><td>25 minutes</td></tr>
+    </table>
+    <ol class="steps">
+      <li>Go to <code>supabase.com</code> → <b>Start your project</b> → <b>Continue with GitHub</b>.</li>
+      <li><b>New project</b>. Name: <code>scribsandpixels-school</code>. Region: <b>West EU (London)</b> or <b>Central EU (Frankfurt)</b>, the closest to Lagos. Plan: <b>Free</b>.</li>
+      <li>Database Password: click <b>Generate a password</b> → save it in your password manager as <span class="kw">SECRET</span> "Supabase DB password" → <b>Create new project</b>. Wait about 2 minutes.</li>
+      <li>Open the Terminal and install the Supabase tool (one time only):
+<pre>brew install supabase/tap/supabase</pre>
+          <span class="kw">IF</span> it says <code>brew: command not found</code> → stop and send that error to Claude (Homebrew needs installing first).</li>
+      <li>Log in from the Terminal (a browser window opens; approve it):
+<pre>supabase login</pre></li>
+      <li>In Supabase: <b>Project Settings</b> (gear icon) → <b>General</b> → copy <b>Project ID</b> (the "project ref", 20 letters).</li>
+      <li>In the Terminal, go to the project and link it (paste your ref; type the DB password when asked):
+<pre>cd ~/Desktop/scribsandpixels-school
+supabase link --project-ref &lt;PROJECT_REF&gt;</pre></li>
+      <li>Create all the tables (this runs the migration file Claude wrote):
+<pre>supabase db push</pre>
+          When asked <code>Do you want to push these migrations?</code> type <code>Y</code> and press Enter.</li>
+      <li>In Supabase: <b>Table Editor</b>. You should see tables including <code>profiles</code>, <code>enrollments</code> and <code>quiz_attempts</code>.</li>
+      <li>In Supabase: <b>Project Settings → API</b> (or <b>API Keys</b>). Copy the <b>Project URL</b> and the <b>anon / publishable</b> key. Both are safe for the browser.</li>
+      <li>In the Terminal, create the local settings file:
+<pre>cp .env.example .env.local
+open -e .env.local</pre>
+          Replace the two placeholder values with your URL and anon key → save (⌘S) → close.</li>
+      <li>Send Claude: <code>Supabase project created and migrated. .env.local is filled in.</code> (Don't paste any keys.)</li>
+    </ol>
+    <div class="box stop"><b>NEVER copy the <code>service_role</code> key</b> anywhere except the password manager. It bypasses all security. If it ever leaks: Supabase → API settings → roll (regenerate) it.</div>
+    <div class="box ok"><b>EXPECTED OUTPUT:</b> The tables are visible in the Table Editor, and <code>.env.local</code> holds two real values.</div>
+    <div class="box stop"><b>ON ERROR:</b> If <code>supabase db push</code> prints red text → copy the whole Terminal output (⌘A, ⌘C) → send it to Claude. Don't run it again repeatedly.</div>
+  </div>
+</section>
+
+<!-- ─────────────────────────── 08 ─────────────────────────── -->
+<section class="page">
+  <h2>08 · set_up_resend() <span class="tag hold">ON HOLD</span></h2>
+  <div class="proc">
+    <span class="sig">PROCEDURE set_up_resend(domain) → verified sending domain + API key</span>
+    <table class="kv">
+      <tr><td>WHY</td><td>Resend sends the daily nudge and Sunday review emails, from an address on your own domain.</td></tr>
+      <tr><td>INPUTS</td><td>A registrar/DNS login (as in 06) and a password manager.</td></tr>
+      <tr><td>TIME</td><td>20 minutes, then up to a few hours for verification</td></tr>
+    </table>
+    <ol class="steps">
+      <li>Go to <code>resend.com</code> → <b>Sign up</b> (the free plan is enough).</li>
+      <li><b>Domains</b> → <b>Add Domain</b> → type your domain, e.g. <code>&lt;yourdomain&gt;</code> (or a subdomain like <code>mail.&lt;yourdomain&gt;</code>) → choose the region closest to you → <b>Add</b>.</li>
+      <li>Resend shows 3–4 DNS records (TXT, MX, DKIM). For <b>each</b> one: registrar → DNS → <b>Add record</b> → copy Type, Name and Value exactly → <b>Save</b>.</li>
+      <li>Back in Resend → <b>Verify DNS Records</b>. Repeat every 15 minutes until every row is green / <b>Verified</b>.</li>
+      <li><b>API Keys</b> → <b>Create API Key</b>. Name: <code>school-nudges</code>. Permission: <b>Sending access</b> → <b>Add</b>.</li>
+      <li>Copy the key <b>now</b> (it starts with <code>re_</code> and is shown only once) → save it in your password manager as <span class="kw">SECRET</span> "Resend API key".</li>
+      <li>Decide the From address, e.g. <code>Scribs &amp; Pixels &lt;school@&lt;yourdomain&gt;&gt;</code>. Write it here: ______________________</li>
+      <li><span class="kw">OPTIONAL</span>, for login emails from your domain too: Supabase → <b>Authentication → Emails → SMTP Settings</b> → enable custom SMTP: host <code>smtp.resend.com</code>, port <code>465</code>, username <code>resend</code>, password = your Resend API key, sender = your From address → <b>Save</b>.</li>
+    </ol>
+    <div class="box ok"><b>EXPECTED OUTPUT:</b> The domain shows <b>Verified</b> in Resend, and the API key is in your password manager.</div>
+    <div class="box stop"><b>ON ERROR:</b> If records won't verify after 24 hours → screenshot Resend's domain page and your DNS page, and send both. A common cause is the registrar adding your domain to the Name automatically (e.g. <code>send.yourdomain.com.yourdomain.com</code>): type only the part Resend shows before your domain.</div>
+  </div>
+</section>
+
+<!-- ─────────────────────────── 09 ─────────────────────────── -->
+<section class="page">
+  <h2>09 · deploy_email_nudges() <span class="tag hold">ON HOLD</span></h2>
+  <div class="proc">
+    <span class="sig">PROCEDURE deploy_email_nudges() → hourly emails running</span>
+    <table class="kv">
+      <tr><td>WHY</td><td>Switches on the daily nudge (Mon–Sat, at each learner's chosen hour, only if they haven't studied) and the Sunday review digest.</td></tr>
+      <tr><td>INPUTS</td><td>07 and 08 done. Your project ref, Resend API key, From address, and the site address (APP_URL: the Pages, Vercel or subdomain URL).</td></tr>
+      <tr><td>TIME</td><td>20 minutes</td></tr>
+    </table>
+    <ol class="steps">
+      <li>Make a cron password in the Terminal and save the output in your password manager as <span class="kw">SECRET</span> "CRON_SECRET":
+<pre>openssl rand -hex 32</pre></li>
+      <li>Set the four secrets. Paste this as <b>one</b> command after filling in the four placeholders; keep the quotes:
+<pre>cd ~/Desktop/scribsandpixels-school
+supabase secrets set RESEND_API_KEY="&lt;re_...&gt;" EMAIL_FROM="Scribs &amp; Pixels &lt;school@yourdomain&gt;" APP_URL="&lt;https://site-address&gt;" CRON_SECRET="&lt;from step 1&gt;"</pre></li>
+      <li>Upload the email function:
+<pre>supabase functions deploy send-nudges --no-verify-jwt</pre></li>
+      <li>Do a safe dry run, which shows what <i>would</i> be sent without sending anything (replace both placeholders):
+<pre>curl -s -X POST "https://&lt;PROJECT_REF&gt;.supabase.co/functions/v1/send-nudges?dry-run" -H "Authorization: Bearer &lt;CRON_SECRET&gt;"</pre>
+          <span class="kw">IF</span> it prints JSON (even an empty list) → continue. <span class="kw">ELSE IF</span> it says <code>Unauthorized</code> → the CRON_SECRET doesn't match step 2; redo step 2.</li>
+      <li>In the project folder, open <code>supabase/setup/schedule-nudges.sql</code> in TextEdit. <b>Don't save changes to it</b>; you'll paste a filled-in copy instead.</li>
+      <li>Copy its whole content. In Supabase → <b>SQL Editor</b> → <b>New query</b> → paste.</li>
+      <li>In the pasted text only, replace <code>&lt;project-ref&gt;</code> with your project ref and <code>&lt;CRON_SECRET&gt;</code> with your cron secret.</li>
+      <li>Click <b>Run</b>.</li>
+      <li>Check it's scheduled: new query → <code>select jobname, schedule from cron.job;</code> → <b>Run</b>. You should see <code>send-nudges</code> with <code>0 * * * *</code>.</li>
+      <li>Send Claude: <code>Nudges deployed and scheduled. Dry run returned &lt;paste the output&gt;.</code></li>
+    </ol>
+    <div class="box ok"><b>EXPECTED OUTPUT:</b> The cron job is listed and the dry run returns JSON. Real emails start once learners have accounts.</div>
+    <div class="box stop"><b>ON ERROR:</b> If the SQL editor says <code>secret already exists</code>, you ran the script twice. Send Claude the message; don't try to delete vault secrets yourself.</div>
+  </div>
+</section>
+
+<!-- ─────────────────────────── 10 ─────────────────────────── -->
+<section class="page">
+  <h2>10 · Appendix: words, tools and message templates</h2>
+  <h3>Message template: error</h3>
+<pre>ERROR in procedure &lt;number + name&gt;, step &lt;number&gt;.
+What I did: &lt;one sentence&gt;
+What I expected: &lt;from EXPECTED OUTPUT&gt;
+What I saw: &lt;exact text or "see screenshot"&gt;
+Device/browser: &lt;e.g. iPhone 13 Safari&gt;</pre>
+  <h3>Message template: bugs from a test session</h3>
+<pre>TEST SESSION &lt;date&gt;, course &lt;Fullstack | French | Excel&gt;, device &lt;...&gt;
+1. [BROKEN|WRONG|CONFUSING|UGLY|SLOW] page #/&lt;address after #/&gt;
+   What happened: ...
+   What I expected: ...
+2. ...</pre>
+  <h3>Words</h3>
+  <table class="kv">
+    <tr><td>Repo</td><td>The project's folder on GitHub: <code>github.com/VictorAnimasahun/scribsandpixels-school</code>. Claude pushes every finished change to its <code>main</code> branch.</td></tr>
+    <tr><td>Deploy</td><td>Putting the latest version on the internet. GitHub Pages does it automatically about 2 minutes after each push.</td></tr>
+    <tr><td>DNS / record</td><td>The internet's address book. A CNAME record says "this name points to that server".</td></tr>
+    <tr><td>Registrar</td><td>The company you bought the domain from. That's where DNS records are edited.</td></tr>
+    <tr><td>Migration</td><td>A file that creates database tables. Running it twice is safe for Supabase; it skips what's done.</td></tr>
+    <tr><td>Secret / key</td><td>A password for a service. "anon/publishable" keys are safe in the browser. "service_role", the Resend API key, CRON_SECRET and the DB password are <span class="kw">SECRET</span>.</td></tr>
+    <tr><td>Edge function</td><td>A small program that runs on Supabase's servers. Here: <code>send-nudges</code>, the email sender.</td></tr>
+    <tr><td>Cron</td><td>A timer. <code>0 * * * *</code> means "every hour, on the hour".</td></tr>
+    <tr><td>Dry run</td><td>A rehearsal that shows what would happen without doing it.</td></tr>
+  </table>
+  <h3>Where to find things</h3>
+  <table class="kv">
+    <tr><td>Test site</td><td><code>victoranimasahun.github.io/scribsandpixels-school</code></td></tr>
+    <tr><td>To-do list (Claude's)</td><td><code>TODO.md</code> in the repo</td></tr>
+    <tr><td>Project rules</td><td><code>CLAUDE.md</code> in the repo</td></tr>
+    <tr><td>Phase 2 draft</td><td><code>src/content/courses/fullstack-ml/phase-2-plan.md</code></td></tr>
+    <tr><td>This document's source</td><td><code>docs/your-tasks/your-tasks.html</code>. Ask Claude to update it when tasks change.</td></tr>
+  </table>
+</section>
+
+</body>
+</html>
