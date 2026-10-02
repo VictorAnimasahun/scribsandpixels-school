@@ -1,0 +1,27 @@
+# Week 10 · Day 1 mini-task
+id: web-w10-d1-async
+kind: web
+title: "Timers and Promises"
+description: "setTimeout, Promises and async/await. Checks wait for your Promises."
+html: |
+  <p>Work in the <strong>JS</strong> tab.</p>
+css: |
+  body { font-family: system-ui, sans-serif; padding: 1rem; }
+js: |
+  // 1. wait(ms): a Promise that resolves after ms milliseconds
+
+  // 2. later(value, ms): a Promise that resolves WITH value after ms
+
+  // 3. async function addLater(a, b): await later(a, 10) and later(b, 10), return the sum
+
+  // 4. async function countdown(): log 3, 2, 1, Go! with await wait(20) between them
+tasks:
+  - prompt: "wait(ms) resolves after about ms milliseconds."
+    check: "(async () => { if (typeof wait !== 'function') return false; const t = Date.now(); const p = wait(60); if (!(p instanceof Promise)) return false; await p; return Date.now() - t >= 50 })()"
+    hint: "const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms))"
+  - prompt: "later(value, ms) resolves with the value."
+    check: "(async () => typeof later === 'function' && (await later('Hi', 10)) === 'Hi' && (await later(42, 5)) === 42)()"
+  - prompt: "addLater(a, b) is async and awaits both values."
+    check: "(async () => { if (typeof addLater !== 'function') return false; const p = addLater(2, 3); return p instanceof Promise && (await p) === 5 })()"
+  - prompt: "countdown() logs 3, 2, 1, Go! in order with waits between."
+    check: "(async () => { if (typeof countdown !== 'function') return false; const start = window.__logs.length; const t = Date.now(); await countdown(); return window.__logs.slice(start).join('|') === '3|2|1|Go!' && Date.now() - t >= 50 })()"

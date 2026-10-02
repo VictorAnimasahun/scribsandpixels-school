@@ -1,0 +1,35 @@
+# Week 10 · Day 5 mini-task
+id: web-w10-d5-many
+kind: web
+title: "Many requests at once"
+description: "Promise.all for parallel requests, Promise.allSettled when some may fail."
+html: |
+  <p>Work in the <strong>JS</strong> tab.</p>
+css: |
+  body { font-family: system-ui, sans-serif; padding: 1rem; }
+js: |
+  // getTemp(lat, lon, fetchFn) is given: it fetches one city's current temperature.
+  async function getTemp(lat, lon, fetchFn = fetch) {
+    const response = await fetchFn(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m`)
+    if (!response.ok) throw new Error(`HTTP ${response.status}`)
+    const data = await response.json()
+    return data.current.temperature_2m
+  }
+
+  // 1. async allTemps(cities, fetchFn = fetch): cities like { Lagos: [6.52, 3.38], Abuja: [9.06, 7.49] }
+  //    fetch them ALL AT ONCE with Promise.all and return { Lagos: 25.7, Abuja: 23.1 }
+
+  // 2. async someTemps(cities, fetchFn = fetch): like allTemps, but with Promise.allSettled:
+  //    a city that fails gets null instead of breaking everything
+
+  // 3. hottest(temps): the name of the hottest city, ignoring nulls
+tasks:
+  - prompt: "allTemps returns every city's temperature."
+    check: "(async () => { if (typeof allTemps !== 'function') return false; const f = async (url) => ({ ok: true, status: 200, json: async () => ({ current: { temperature_2m: url.includes('latitude=6.52') ? 25.7 : 23.1 } }) }); const t = await allTemps({ Lagos: [6.52, 3.38], Abuja: [9.06, 7.49] }, f); return t.Lagos === 25.7 && t.Abuja === 23.1 && Object.keys(t).length === 2 })()"
+  - prompt: "allTemps runs the requests in parallel (all start before any finishes)."
+    check: "(async () => { if (typeof allTemps !== 'function') return false; let started = 0; let maxStartedBeforeFirstDone = 0; let done = false; const f = (url) => { started++; return new Promise((r) => setTimeout(() => { if (!done) { maxStartedBeforeFirstDone = started; done = true } r({ ok: true, status: 200, json: async () => ({ current: { temperature_2m: 30 } }) }) }, 40)) }; await allTemps({ A: [1, 1], B: [2, 2], C: [3, 3] }, f); return maxStartedBeforeFirstDone === 3 })()"
+    hint: "await Promise.all(Object.entries(cities).map(async ([name, [lat, lon]]) => [name, await getTemp(lat, lon, fetchFn)]))"
+  - prompt: "someTemps gives null for a failing city instead of failing."
+    check: "(async () => { if (typeof someTemps !== 'function') return false; const f = async (url) => url.includes('latitude=9.06') ? Promise.reject(new TypeError('Failed to fetch')) : ({ ok: true, status: 200, json: async () => ({ current: { temperature_2m: 25.7 } }) }); const t = await someTemps({ Lagos: [6.52, 3.38], Abuja: [9.06, 7.49] }, f); return t.Lagos === 25.7 && t.Abuja === null && /allSettled/.test(someTemps.toString()) })()"
+  - prompt: "hottest(temps) ignores nulls."
+    check: "(() => typeof hottest === 'function' && hottest({ Lagos: 25.7, Kano: 34.1, Abuja: null }) === 'Kano' && hottest({ Jos: null, Enugu: 22 }) === 'Enugu')()"

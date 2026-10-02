@@ -1,0 +1,31 @@
+# Week 10 · Day 3 mini-task
+id: web-w10-d3-loading
+kind: web
+title: "Loading and error states"
+description: "Show Loading…, disable the button, render on success, show an error on failure, re-enable with finally."
+html: |
+  <button id="load">Load cities</button>
+  <p id="status"></p>
+  <ul id="list"></ul>
+css: |
+  body { font-family: system-ui, sans-serif; padding: 1rem; }
+  #status { color: #555; }
+js: |
+  // async loadCities(fetchFn = fetch):
+  //   - immediately: #status "Loading…" and disable #load
+  //   - fetch https://example.test/cities.json → JSON like ["Lagos", "Abuja"]
+  //   - success: one <li> per city in #list, #status ""
+  //   - error (network failure or !response.ok): #status "Couldn't load cities"
+  //   - always (finally): enable #load again
+  // Clicking #load calls loadCities()
+tasks:
+  - prompt: "While loading: #status says Loading… and the button is disabled."
+    check: "(async () => { const fakeFetch = (data, ok = true, status = 200, delay = 0) => { const calls = []; const f = (url) => { calls.push(String(url)); return new Promise((r) => setTimeout(() => r({ ok, status, json: async () => data }), delay)) }; f.calls = calls; return f }; if (typeof loadCities !== 'function') return false; const p = loadCities(fakeFetch(['Lagos', 'Abuja'], true, 200, 80)); const ok = document.querySelector('#status').textContent === 'Loading…' && document.querySelector('#load').disabled === true; await p; return ok })()"
+    hint: "Set the status and disabled BEFORE the first await."
+  - prompt: "On success: one li per city, status cleared, button enabled."
+    check: "(async () => { const fakeFetch = (data, ok = true, status = 200, delay = 0) => { const calls = []; const f = (url) => { calls.push(String(url)); return new Promise((r) => setTimeout(() => r({ ok, status, json: async () => data }), delay)) }; f.calls = calls; return f }; if (typeof loadCities !== 'function') return false; await loadCities(fakeFetch(['Lagos', 'Abuja', 'Kano'])); const lis = document.querySelectorAll('#list li'); return lis.length === 3 && lis[2].textContent === 'Kano' && document.querySelector('#status').textContent === '' && !document.querySelector('#load').disabled })()"
+  - prompt: "On a network failure: the error message shows and the button is enabled again."
+    check: "(async () => { const failFetch = () => Promise.reject(new TypeError('Failed to fetch')); if (typeof loadCities !== 'function') return false; await loadCities(failFetch); return document.querySelector('#status').textContent === \"Couldn't load cities\" && !document.querySelector('#load').disabled })()"
+    hint: "try { … } catch { status.textContent = \"Couldn't load cities\" } finally { button.disabled = false }"
+  - prompt: "A bad status (500) is treated as an error too."
+    check: "(async () => { const fakeFetch = (data, ok = true, status = 200, delay = 0) => { const calls = []; const f = (url) => { calls.push(String(url)); return new Promise((r) => setTimeout(() => r({ ok, status, json: async () => data }), delay)) }; f.calls = calls; return f }; if (typeof loadCities !== 'function') return false; await loadCities(fakeFetch({}, false, 500)); return document.querySelector('#status').textContent === \"Couldn't load cities\" })()"

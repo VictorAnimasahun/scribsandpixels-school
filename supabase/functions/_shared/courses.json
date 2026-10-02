@@ -3880,6 +3880,340 @@
           }
         ],
         "quizNote": "If you can answer all ten without notes, you're ready for Week 10. **Answers:** check each day's lesson."
+      },
+      {
+        "number": 10,
+        "title": "Talking to APIs from the Browser",
+        "theme": "Asynchronous JavaScript: wait for things without freezing the page, fetch live data, and show loading and error states.",
+        "bigQuestion": "How does a web page get fresh data from the internet while you keep using it?",
+        "resources": [
+          {
+            "kind": "reading",
+            "title": "javascript.info — Promises, async/await",
+            "url": "https://javascript.info/async",
+            "note": "Callbacks, Promises, Promise.all, async/await. The clearest reference."
+          },
+          {
+            "kind": "reading",
+            "title": "MDN — Using the Fetch API",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch",
+            "note": "Tuesday."
+          },
+          {
+            "kind": "reading",
+            "title": "MDN — How to use promises",
+            "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Async_JS/Promises",
+            "note": "Monday, as a second explanation."
+          },
+          {
+            "kind": "interactive",
+            "title": "Open-Meteo — Weather Forecast API",
+            "url": "https://open-meteo.com/en/docs",
+            "note": "The same free API as Week 6. It allows calls straight from web pages."
+          },
+          {
+            "kind": "reading",
+            "title": "MDN — CORS",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS",
+            "note": "Friday: just the introduction."
+          }
+        ],
+        "days": [
+          {
+            "number": 1,
+            "weekday": "Monday",
+            "topic": "Asynchronous JavaScript: timers and Promises",
+            "hours": 2.5,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "lesson",
+                "kind": "lesson",
+                "title": "Lesson",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "practice",
+                "kind": "practice",
+                "title": "Practice",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "mini-task",
+                "kind": "mini-task",
+                "title": "Mini-Task",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          },
+          {
+            "number": 2,
+            "weekday": "Tuesday",
+            "topic": "fetch and JSON",
+            "hours": 2.5,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "lesson",
+                "kind": "lesson",
+                "title": "Lesson",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "practice",
+                "kind": "practice",
+                "title": "Practice",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "mini-task",
+                "kind": "mini-task",
+                "title": "Mini-Task",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          },
+          {
+            "number": 3,
+            "weekday": "Wednesday",
+            "topic": "Loading and error states",
+            "hours": 2.5,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "lesson",
+                "kind": "lesson",
+                "title": "Lesson",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "practice",
+                "kind": "practice",
+                "title": "Practice",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "mini-task",
+                "kind": "mini-task",
+                "title": "Mini-Task",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          },
+          {
+            "number": 4,
+            "weekday": "Thursday",
+            "topic": "Building URLs and shaping API data",
+            "hours": 2.5,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "lesson",
+                "kind": "lesson",
+                "title": "Lesson",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "practice",
+                "kind": "practice",
+                "title": "Practice",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "mini-task",
+                "kind": "mini-task",
+                "title": "Mini-Task",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          },
+          {
+            "number": 5,
+            "weekday": "Friday",
+            "topic": "Many requests at once, CORS and API keys",
+            "hours": 2.5,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "lesson",
+                "kind": "lesson",
+                "title": "Lesson",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "practice",
+                "kind": "practice",
+                "title": "Practice",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "mini-task",
+                "kind": "mini-task",
+                "title": "Mini-Task",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          },
+          {
+            "number": 6,
+            "weekday": "Saturday",
+            "topic": "Project day: the Lagos weather page",
+            "hours": 3,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "project",
+                "kind": "project",
+                "title": "Weekly Project",
+                "minutes": 120,
+                "body": ""
+              },
+              {
+                "key": "freecodecamp",
+                "kind": "freecodecamp",
+                "title": "FreeCodeCamp",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          }
+        ],
+        "quiz": [
+          {
+            "id": "w10q1",
+            "prompt": "Why is browser JavaScript asynchronous?"
+          },
+          {
+            "id": "w10q2",
+            "prompt": "What's a Promise? What do `.then` and `.catch` do?"
+          },
+          {
+            "id": "w10q3",
+            "prompt": "What does an `async` function always return? Where can you use `await`?"
+          },
+          {
+            "id": "w10q4",
+            "prompt": "Write a fetch that checks `response.ok` and reads the JSON."
+          },
+          {
+            "id": "w10q5",
+            "prompt": "When does `fetch` reject?"
+          },
+          {
+            "id": "w10q6",
+            "prompt": "What three states should every data screen show?"
+          },
+          {
+            "id": "w10q7",
+            "prompt": "What does `finally` do?"
+          },
+          {
+            "id": "w10q8",
+            "prompt": "What does URLSearchParams do?"
+          },
+          {
+            "id": "w10q9",
+            "prompt": "What's the difference between `Promise.all` and `Promise.allSettled`?"
+          },
+          {
+            "id": "w10q10",
+            "prompt": "Why must secret API keys never be in front-end code?"
+          }
+        ],
+        "quizNote": "If you can answer all ten without notes, you're ready for Week 11. **Answers:** check each day's lesson; for 5: only when the network fails."
       }
     ]
   }

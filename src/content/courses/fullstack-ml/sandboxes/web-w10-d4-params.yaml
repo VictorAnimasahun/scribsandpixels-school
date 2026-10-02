@@ -1,0 +1,29 @@
+# Week 10 · Day 4 mini-task
+id: web-w10-d4-params
+kind: web
+title: "URLs and API data"
+description: "URLSearchParams, and turning an API's parallel arrays into one object per day."
+html: |
+  <table id="forecast"><tbody></tbody></table>
+css: |
+  body { font-family: system-ui, sans-serif; padding: 1rem; }
+  td { padding: 0.25rem 0.75rem; border-bottom: 1px solid #ddd; }
+js: |
+  // 1. forecastUrl(lat, lon): use URLSearchParams to build
+  //    https://api.open-meteo.com/v1/forecast?latitude=6.52&longitude=3.38&daily=temperature_2m_max,temperature_2m_min&forecast_days=3&timezone=Africa/Lagos
+  //    (URLSearchParams encodes , and / as %2C and %2F; that's correct)
+
+  // 2. toDays(daily): { time: [...], temperature_2m_max: [...], temperature_2m_min: [...] }
+  //    → [{ date, max, min }, …] one object per day
+
+  // 3. renderForecast(days): one <tr> per day in #forecast tbody with 3 <td>: date, max°, min°
+tasks:
+  - prompt: "forecastUrl uses URLSearchParams with all five parameters."
+    check: "(() => { if (typeof forecastUrl !== 'function') return false; const u = new URL(forecastUrl(6.52, 3.38)); const p = u.searchParams; return u.origin + u.pathname === 'https://api.open-meteo.com/v1/forecast' && p.get('latitude') === '6.52' && p.get('longitude') === '3.38' && p.get('daily') === 'temperature_2m_max,temperature_2m_min' && p.get('forecast_days') === '3' && p.get('timezone') === 'Africa/Lagos' && /URLSearchParams/.test(forecastUrl.toString()) })()"
+  - prompt: "toDays turns parallel arrays into one object per day."
+    check: "(() => typeof toDays === 'function' && JSON.stringify(toDays({ time: ['2026-10-02', '2026-10-03'], temperature_2m_max: [29.2, 28.3], temperature_2m_min: [24.4, 23.6] })) === JSON.stringify([{ date: '2026-10-02', max: 29.2, min: 24.4 }, { date: '2026-10-03', max: 28.3, min: 23.6 }]) && toDays({ time: [], temperature_2m_max: [], temperature_2m_min: [] }).length === 0)()"
+    hint: "daily.time.map((date, i) => ({ date, max: daily.temperature_2m_max[i], min: daily.temperature_2m_min[i] }))"
+  - prompt: "renderForecast shows one row per day with date, max and min."
+    check: "(() => { if (typeof renderForecast !== 'function') return false; renderForecast([{ date: '2026-10-02', max: 29.2, min: 24.4 }, { date: '2026-10-03', max: 28.3, min: 23.6 }]); const rows = document.querySelectorAll('#forecast tbody tr'); if (rows.length !== 2) return false; const cells = rows[0].querySelectorAll('td'); return cells.length === 3 && cells[0].textContent === '2026-10-02' && cells[1].textContent.includes('29.2') && cells[2].textContent.includes('24.4') })()"
+  - prompt: "Rendering again replaces the old rows."
+    check: "(() => { if (typeof renderForecast !== 'function') return false; renderForecast([{ date: 'a', max: 1, min: 0 }, { date: 'b', max: 1, min: 0 }]); renderForecast([{ date: 'c', max: 2, min: 1 }]); return document.querySelectorAll('#forecast tbody tr').length === 1 })()"

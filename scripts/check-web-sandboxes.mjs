@@ -34,9 +34,17 @@ const run = async (files, checks) => {
   await page.setContent(doc, { waitUntil: 'load' })
   // Same settling as the in-app checker: fonts, then two frames.
   await page.evaluate(() => document.fonts.ready.then(() => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)))))
-  const results = await page.evaluate((checks) => checks.map((src) => {
-    try { return !!(0, eval)('(' + src + ')') } catch { return false }
-  }), checks)
+  // Same as the app: one check at a time, async checks awaited (5 s limit each).
+  const results = await page.evaluate(async (checks) => {
+    const out = []
+    for (const src of checks) {
+      try {
+        const value = (0, eval)('(' + src + ')')
+        out.push(!!(await Promise.race([value, new Promise((r) => setTimeout(() => r(false), 5000))])))
+      } catch { out.push(false) }
+    }
+    return out
+  }, checks)
   await page.close()
   return results
 }

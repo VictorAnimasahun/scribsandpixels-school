@@ -1,0 +1,40 @@
+# Week 10 · Day 6 project core
+id: web-w10-d6-weather-page
+kind: web
+title: "Lagos weather page"
+description: "Your Week 6 script as a web page: select a city, fetch current weather, show loading and errors. Checks use a fake fetch."
+html: |
+  <label for="city">City</label>
+  <select id="city">
+    <option>Lagos</option><option>Abuja</option><option>Kano</option>
+  </select>
+  <button id="go">Get weather</button>
+  <p id="status"></p>
+  <p id="current"></p>
+css: |
+  body { font-family: system-ui, sans-serif; padding: 1rem; }
+js: |
+  const CITIES = { Lagos: [6.52, 3.38], Abuja: [9.06, 7.49], Kano: [12.0, 8.52] }
+  const CODES = { 0: "Clear sky", 1: "Mainly clear", 2: "Partly cloudy", 3: "Overcast", 61: "Rain", 63: "Rain", 95: "Thunderstorm" }
+
+  // 1. describe(code): words for a code, or "Unknown"
+
+  // 2. async showWeather(city, fetchFn = fetch):
+  //    - #status "Loading…", #go disabled
+  //    - fetch https://api.open-meteo.com/v1/forecast?latitude=…&longitude=…&current=temperature_2m,weather_code
+  //    - success: #current "Lagos: Partly cloudy, 25.7°C" and #status ""
+  //    - failure (network or !ok): #status "Couldn't get the weather" and #current ""
+  //    - finally: #go enabled
+  // 3. Clicking #go calls showWeather with the selected city
+tasks:
+  - prompt: "describe(code) uses CODES and falls back to Unknown."
+    check: "(() => typeof describe === 'function' && describe(2) === 'Partly cloudy' && describe(95) === 'Thunderstorm' && describe(7) === 'Unknown')()"
+  - prompt: "showWeather fetches the right city and shows the report."
+    check: "(async () => { const fakeFetch = (data, ok = true, status = 200, delay = 0) => { const calls = []; const f = (url) => { calls.push(String(url)); return new Promise((r) => setTimeout(() => r({ ok, status, json: async () => data }), delay)) }; f.calls = calls; return f }; if (typeof showWeather !== 'function') return false; const f = fakeFetch({ current: { temperature_2m: 25.7, weather_code: 2 } }); await showWeather('Lagos', f); const u = f.calls[0] || ''; return u.includes('latitude=6.52') && u.includes('longitude=3.38') && u.includes('weather_code') && document.querySelector('#current').textContent === 'Lagos: Partly cloudy, 25.7°C' && document.querySelector('#status').textContent === '' })()"
+  - prompt: "While loading: Loading… and the button disabled."
+    check: "(async () => { const fakeFetch = (data, ok = true, status = 200, delay = 0) => { const calls = []; const f = (url) => { calls.push(String(url)); return new Promise((r) => setTimeout(() => r({ ok, status, json: async () => data }), delay)) }; f.calls = calls; return f }; if (typeof showWeather !== 'function') return false; const p = showWeather('Abuja', fakeFetch({ current: { temperature_2m: 23.1, weather_code: 63 } }, true, 200, 80)); const ok = document.querySelector('#status').textContent === 'Loading…' && document.querySelector('#go').disabled; await p; return ok && !document.querySelector('#go').disabled && document.querySelector('#current').textContent === 'Abuja: Rain, 23.1°C' })()"
+  - prompt: "Errors show Couldn't get the weather and clear the old report."
+    check: "(async () => { const fakeFetch = (data, ok = true, status = 200, delay = 0) => { const calls = []; const f = (url) => { calls.push(String(url)); return new Promise((r) => setTimeout(() => r({ ok, status, json: async () => data }), delay)) }; f.calls = calls; return f }; const failFetch = () => Promise.reject(new TypeError('Failed to fetch')); if (typeof showWeather !== 'function') return false; await showWeather('Kano', failFetch); const a = document.querySelector('#status').textContent === \"Couldn't get the weather\" && document.querySelector('#current').textContent === ''; await showWeather('Kano', fakeFetch({}, false, 500)); return a && document.querySelector('#status').textContent === \"Couldn't get the weather\" && !document.querySelector('#go').disabled })()"
+  - prompt: "The button uses the selected city."
+    check: "(async () => { const calls = []; const original = window.fetch; window.fetch = async (url) => { calls.push(String(url)); return { ok: true, status: 200, json: async () => ({ current: { temperature_2m: 34, weather_code: 0 } }) } }; try { document.querySelector('#city').value = 'Kano'; document.querySelector('#go').click(); await new Promise((r) => setTimeout(r, 50)); return calls.some((u) => u.includes('latitude=12')) && document.querySelector('#current').textContent === 'Kano: Clear sky, 34°C' } finally { window.fetch = original } })()"
+    hint: "go.addEventListener(\"click\", () => showWeather(select.value)) — and use fetchFn = fetch as the default so the real fetch is used"

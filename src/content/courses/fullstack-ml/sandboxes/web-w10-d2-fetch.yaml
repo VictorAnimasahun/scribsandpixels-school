@@ -1,0 +1,28 @@
+# Week 10 · Day 2 mini-task
+id: web-w10-d2-fetch
+kind: web
+title: "fetch and JSON"
+description: "Fetch JSON, check response.ok, handle errors. The checks pass in a fake fetch (fetchFn), like Week 6's fake_get."
+html: |
+  <p>Work in the <strong>JS</strong> tab.</p>
+css: |
+  body { font-family: system-ui, sans-serif; padding: 1rem; }
+js: |
+  // 1. async getJSON(url, fetchFn = fetch): fetch the url; if !response.ok throw new Error(`HTTP ${response.status}`); else return the JSON
+
+  // 2. async getCurrentTemp(lat, lon, fetchFn = fetch):
+  //    fetch https://api.open-meteo.com/v1/forecast?latitude=…&longitude=…&current=temperature_2m
+  //    and return data.current.temperature_2m
+
+  // 3. async safeTemp(lat, lon, fetchFn = fetch): like getCurrentTemp, but return null instead of throwing
+tasks:
+  - prompt: "getJSON returns the parsed JSON."
+    check: "(async () => { const fakeFetch = (data, ok = true, status = 200, delay = 0) => { const calls = []; const f = (url) => { calls.push(String(url)); return new Promise((r) => setTimeout(() => r({ ok, status, json: async () => data }), delay)) }; f.calls = calls; return f }; if (typeof getJSON !== 'function') return false; const f = fakeFetch({ a: 1 }); const data = await getJSON('https://x.test/a', f); return data.a === 1 && f.calls[0] === 'https://x.test/a' })()"
+  - prompt: "getJSON throws Error(\"HTTP 404\") when the response isn't ok."
+    check: "(async () => { const fakeFetch = (data, ok = true, status = 200, delay = 0) => { const calls = []; const f = (url) => { calls.push(String(url)); return new Promise((r) => setTimeout(() => r({ ok, status, json: async () => data }), delay)) }; f.calls = calls; return f }; if (typeof getJSON !== 'function') return false; try { await getJSON('https://x.test/missing', fakeFetch({}, false, 404)); return false } catch (e) { return e.message === 'HTTP 404' } })()"
+    hint: "if (!response.ok) throw new Error(`HTTP ${response.status}`)"
+  - prompt: "getCurrentTemp builds the Open-Meteo URL and returns the temperature."
+    check: "(async () => { const fakeFetch = (data, ok = true, status = 200, delay = 0) => { const calls = []; const f = (url) => { calls.push(String(url)); return new Promise((r) => setTimeout(() => r({ ok, status, json: async () => data }), delay)) }; f.calls = calls; return f }; if (typeof getCurrentTemp !== 'function') return false; const f = fakeFetch({ current: { temperature_2m: 25.7 } }); const t = await getCurrentTemp(6.52, 3.38, f); const u = f.calls[0] || ''; return t === 25.7 && u.startsWith('https://api.open-meteo.com/v1/forecast?') && u.includes('latitude=6.52') && u.includes('longitude=3.38') && u.includes('current=temperature_2m') })()"
+  - prompt: "safeTemp returns null on a network failure or a bad status."
+    check: "(async () => { const fakeFetch = (data, ok = true, status = 200, delay = 0) => { const calls = []; const f = (url) => { calls.push(String(url)); return new Promise((r) => setTimeout(() => r({ ok, status, json: async () => data }), delay)) }; f.calls = calls; return f }; const failFetch = () => Promise.reject(new TypeError('Failed to fetch')); if (typeof safeTemp !== 'function') return false; return (await safeTemp(1, 2, failFetch)) === null && (await safeTemp(1, 2, fakeFetch({}, false, 500))) === null && (await safeTemp(1, 2, fakeFetch({ current: { temperature_2m: 31 } }))) === 31 })()"
+    hint: "try { return await getCurrentTemp(lat, lon, fetchFn) } catch { return null }"

@@ -77,6 +77,8 @@ tasks:
     check: "parseFloat(getComputedStyle(document.querySelector('.card')).borderTopLeftRadius) > 0"
     hint: ".card { border-radius: 8px; }"
 ```
+- Checks run one at a time, in order. A check may be async (return a Promise); it's awaited, with a 5 s limit. Test network code by passing a fake: write `async function getJSON(url, fetchFn = fetch)` and have the check call it with a fake fetch.
+- `window.__logs` holds every `console.log` line, so checks can test printed output.
 - The page is built as `<style>css</style>` + `<body>html<script>js</script></body>`, so learners write body content (a `<title>` in it still counts).
 - Check real structure and computed styles, not raw text, so any correct solution passes.
 - Reference solution in `scripts/web-solutions/<id>.json` (`{ html?, css?, js? }`, missing parts = the starter's). `npm run check:web` (also in CI) runs every check in headless Chrome: the solution must pass all, the starter must fail at least one. Needs Chrome locally, or set `CHROME_PATH`.

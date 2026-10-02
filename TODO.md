@@ -19,7 +19,7 @@
 
 ## Sandboxes (a slice at a time)
 - [x] Engines: French phrase builder, Excel spreadsheet, Python, web playground
-- [x] French W1, W2, W3, W7 + main lab · Excel W2, W3, W6 + playground · Fullstack: a sandbox for every day of W1–9 (59 sandboxes, 246 auto-checked tasks) + Python/web playgrounds
+- [x] French W1, W2, W3, W7 + main lab · Excel W2, W3, W6 + playground · Fullstack: a sandbox for every day of W1–10 (65 sandboxes, 271 auto-checked tasks) + Python/web playgrounds
 - [x] End-to-end test of every sandbox in the real app (`npm run e2e [url] [chromium|webkit]`): 58/58 pass on the live site, Chrome and iPhone/WebKit
 - [x] Phone-ready code editor (key bar, auto-indent, smart-quote fix), tested on iPhone/Safari and Android/Chrome emulation
 - [ ] More French lesson sets (add each to `fr-main` include)
@@ -29,8 +29,8 @@
 
 ## Content
 - [x] Fullstack + ML Week 3 (HTML & CSS) · Week 4 (Flexbox, responsive, Git + GitHub) · Week 5 (dictionaries, exceptions, modules, JSON) · Week 6 (Open-Meteo weather script, accessibility, portfolio, first gigs)
-- [x] Fullstack + ML Weeks 7–9 (JavaScript basics; arrays, objects, JSON; the DOM)
-- [ ] Fullstack + ML Weeks 10–14: draft outline in `courses/fullstack-ml/phase-2-plan.md`; Weeks 11–14 wait for Victor's 3 decisions (order, milestone business, Saturdays)
+- [x] Fullstack + ML Weeks 7–10 (JavaScript basics; arrays, objects, JSON; the DOM; fetch and async)
+- [ ] Fullstack + ML Weeks 11–14: draft outline in `courses/fullstack-ml/phase-2-plan.md`; Weeks 11–14 wait for Victor's 3 decisions (order, milestone business, Saturdays)
 - [ ] French: Year 2 (B2 / NCLC 7) weeks, if wanted
 - [ ] Add `course.ts` frameworks for French and Excel (only `overview.md` today)
 

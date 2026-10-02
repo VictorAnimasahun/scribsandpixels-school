@@ -1,0 +1,756 @@
+# Fullstack + ML · Week 10 quizzes. Format and rules: src/content/QUIZZES.md
+week: 10
+days:
+
+  # ─────────────────────────── DAY 1 ───────────────────────────
+  - day: 1
+    gate:
+      title: "Checkpoint: Week 9 review"
+      covers: "Week 9: selecting and changing elements, events, rendering lists, forms, state → render → save"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w10-d1-g01, difficulty: easy, type: mcq, prompt: "First element matching a selector", choices: ["document.querySelector", "document.querySelectorAll", "document.find", "document.get"], answer: 0 }
+        - { id: fs-w10-d1-g02, difficulty: easy, type: mcq, prompt: "Safe way to show user text", choices: ["textContent", "innerHTML", "outerHTML", "document.write"], answer: 0 }
+        - { id: fs-w10-d1-g03, difficulty: easy, type: mcq, prompt: "Stop a form reloading the page", choices: ["e.preventDefault()", "form.stop()", "return true", "e.halt()"], answer: 0 }
+        - { id: fs-w10-d1-g04, difficulty: easy, type: truefalse, prompt: "Form values are always strings.", answer: true }
+        - { id: fs-w10-d1-g05, difficulty: easy, type: mcq, prompt: "Make a new element", choices: ["document.createElement(\"li\")", "new Element(\"li\")", "document.li()", "make(\"li\")"], answer: 0 }
+        - { id: fs-w10-d1-g06, difficulty: easy, type: mcq, prompt: "Every keystroke in a text box", choices: ["input", "change", "submit", "load"], answer: 0 }
+        - id: fs-w10-d1-g07
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            let todos = [{ t: "a", done: false }, { t: "b", done: false }]
+            todos = todos.map((x, i) => (i === 1 ? { ...x, done: true } : x))
+            console.log(`${todos.filter((x) => !x.done).length} left`)
+          accept: ["1 left"]
+        - { id: fs-w10-d1-g08, difficulty: medium, type: order, prompt: "Order the render pattern for one click.", items: ["Event fires", "Change the state", "Save to storage", "render()"] }
+        - { id: fs-w10-d1-g09, difficulty: medium, type: match, prompt: "Match.", pairs: [["click", "a tap"], ["submit", "form sent"], ["keydown", "key pressed"], ["change", "select changed"]] }
+        - id: fs-w10-d1-g10
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const ok = (p) => /^\d{11}$/.test(p.replaceAll(" ", ""))
+            console.log(ok("0803 123 4567"), ok("+2348031234567"))
+          accept: ["true false"]
+        - { id: fs-w10-d1-g11, difficulty: medium, type: truefalse, prompt: "Chrome blocks forms in sandboxed iframes that lack allow-forms.", answer: true }
+        - { id: fs-w10-d1-g12, difficulty: medium, type: mcq, prompt: "Why rebuild the list from the array instead of editing rows?", choices: ["Page and data can't disagree", "It's required by browsers", "It uses less memory always", "To avoid CSS"], answer: 0 }
+        - id: fs-w10-d1-g13
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            console.log(["1200", "500"].reduce((s, x) => s + Number(x), 0))
+          accept: ["1700"]
+        - { id: fs-w10-d1-g14, difficulty: medium, type: mcq, prompt: "`button.addEventListener(\"click\", save())` is wrong because…", choices: ["save runs immediately; pass save", "click needs capitals", "save must be async", "buttons can't listen"], answer: 0 }
+        - { id: fs-w10-d1-g15, difficulty: medium, type: mcq, prompt: "Where does the app's truth live?", choices: ["In the state array", "In the HTML", "In CSS", "In the console"], answer: 0 }
+        - id: fs-w10-d1-g16
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const valid = (raw) => raw.trim() !== "" && Number(raw) > 0
+            console.log(["5", "", "0", "abc", "12"].filter(valid).join("+"))
+          accept: ["5+12"]
+        - { id: fs-w10-d1-g17, difficulty: hard, type: mcq, prompt: "Showing a user's name with innerHTML lets them…", choices: ["inject code that runs (XSS)", "change the font only", "nothing", "reload the page"], answer: 0 }
+        - { id: fs-w10-d1-g18, difficulty: hard, type: multi, prompt: "Which belong in the expense tracker page? (Select all.)", choices: ["Form with validation", "List with delete buttons", "₦ total", "A Python server"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Async basics"
+        secondsPerQuestion: 9
+        questions:
+          - { id: fs-w10-d1-rf01, difficulty: easy, type: mcq, prompt: "Run code later", choices: ["setTimeout(fn, ms)", "wait(fn)", "sleep(ms)", "delay(fn)"], answer: 0 }
+          - { id: fs-w10-d1-rf02, difficulty: easy, type: mcq, prompt: "A value that arrives later", choices: ["Promise", "Callback", "Event", "Array"], answer: 0 }
+          - { id: fs-w10-d1-rf03, difficulty: easy, type: mcq, prompt: "Runs when a Promise succeeds", choices: [".then", ".catch", ".finally only", ".done"], answer: 0 }
+          - { id: fs-w10-d1-rf04, difficulty: easy, type: mcq, prompt: "Runs when a Promise fails", choices: [".catch", ".then", ".fail", ".error"], answer: 0 }
+          - { id: fs-w10-d1-rf05, difficulty: easy, type: mcq, prompt: "Pause until a Promise resolves", choices: ["await", "wait", "pause", "yield"], answer: 0 }
+          - { id: fs-w10-d1-rf06, difficulty: easy, type: mcq, prompt: "An async function always returns…", choices: ["a Promise", "undefined", "a string", "nothing"], answer: 0 }
+          - { id: fs-w10-d1-rf07, difficulty: easy, type: truefalse, prompt: "await works inside an async function.", answer: true }
+          - { id: fs-w10-d1-rf08, difficulty: easy, type: truefalse, prompt: "Browser JS freezes the whole page while waiting for a network reply.", answer: false }
+          - { id: fs-w10-d1-rf09, difficulty: easy, type: mcq, prompt: "setTimeout's second argument is…", choices: ["milliseconds", "seconds", "minutes", "a function"], answer: 0 }
+          - { id: fs-w10-d1-rf10, difficulty: easy, type: mcq, prompt: "Browser JS runs on…", choices: ["one thread", "many threads always", "the server", "the GPU"], answer: 0 }
+      - kind: brain-teaser
+        title: "What prints first?"
+        questions:
+          - id: fs-w10-d1-bt01
+            difficulty: medium
+            type: text
+            prompt: "What does this print? (lines joined with a space)"
+            code: |
+              console.log("1")
+              setTimeout(() => console.log("3"), 0)
+              console.log("2")
+            accept: ["1 2 3"]
+          - id: fs-w10-d1-bt02
+            difficulty: medium
+            type: text
+            prompt: "What does this print? (lines joined with a space)"
+            code: |
+              const later = (v, ms) => new Promise((r) => setTimeout(() => r(v), ms))
+              later("slow", 50).then(console.log)
+              later("fast", 10).then(console.log)
+            accept: ["fast slow"]
+          - id: fs-w10-d1-bt03
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              async function add(a, b) { return a + b }
+              add(2, 3).then((x) => console.log(x * 10))
+            accept: ["50"]
+          - id: fs-w10-d1-bt04
+            difficulty: hard
+            type: text
+            prompt: "What does this print? (lines joined with a space)"
+            code: |
+              async function run() {
+                console.log("A")
+                await null
+                console.log("C")
+              }
+              run()
+              console.log("B")
+            accept: ["A B C"]
+            explain: "await always lets other code run first, even for a value that's ready."
+          - id: fs-w10-d1-bt05
+            difficulty: hard
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const p = Promise.reject(new Error("boom"))
+              p.then(() => console.log("ok")).catch((e) => console.log("caught", e.message))
+            accept: ["caught boom"]
+
+  # ─────────────────────────── DAY 2 ───────────────────────────
+  - day: 2
+    gate:
+      title: "Checkpoint: timers and Promises"
+      covers: "Week 10 · Day 1: one thread, setTimeout, Promises, then/catch, async/await"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w10-d2-g01, difficulty: easy, type: mcq, prompt: "A Promise that resolves after ms", choices: ["new Promise((resolve) => setTimeout(resolve, ms))", "setTimeout(ms)", "Promise(ms)", "await ms"], answer: 0 }
+        - { id: fs-w10-d2-g02, difficulty: easy, type: mcq, prompt: "Where can you use await?", choices: ["Inside an async function", "Anywhere", "Only in loops", "Only in HTML"], answer: 0 }
+        - { id: fs-w10-d2-g03, difficulty: easy, type: truefalse, prompt: "setTimeout(fn, 0) still runs fn after the current code finishes.", answer: true }
+        - { id: fs-w10-d2-g04, difficulty: easy, type: mcq, prompt: "Promise succeeded", choices: ["resolved", "rejected", "pending", "thrown"], answer: 0 }
+        - { id: fs-w10-d2-g05, difficulty: easy, type: mcq, prompt: "Promise failed", choices: ["rejected", "resolved", "finished", "settled only"], answer: 0 }
+        - { id: fs-w10-d2-g06, difficulty: easy, type: mcq, prompt: "Catch errors from await", choices: ["try / catch", "if / else", ".then only", "switch"], answer: 0 }
+        - id: fs-w10-d2-g07
+          difficulty: medium
+          type: text
+          prompt: "What does this print? (lines joined with a space)"
+          code: |
+            setTimeout(() => console.log("B"), 20)
+            setTimeout(() => console.log("A"), 10)
+            console.log("start")
+          accept: ["start A B"]
+        - id: fs-w10-d2-g08
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const later = (v, ms) => new Promise((r) => setTimeout(() => r(v), ms))
+            async function addLater(a, b) {
+              return (await later(a, 5)) + (await later(b, 5))
+            }
+            addLater(4, 6).then(console.log)
+          accept: ["10"]
+        - { id: fs-w10-d2-g09, difficulty: medium, type: match, prompt: "Match.", pairs: [["setTimeout", "run later"], ["Promise", "value that arrives later"], ["await", "pause this function"], ["async", "function that returns a Promise"]] }
+        - id: fs-w10-d2-g10
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            async function f() { return "hi" }
+            console.log(f() instanceof Promise)
+          accept: ["true"]
+        - { id: fs-w10-d2-g11, difficulty: medium, type: truefalse, prompt: "`await wait(1000)` freezes the whole page for a second.", answer: false }
+        - id: fs-w10-d2-g12
+          difficulty: medium
+          type: text
+          prompt: "What does this print? (lines joined with a space)"
+          code: |
+            const wait = (ms) => new Promise((r) => setTimeout(r, ms))
+            async function countdown() {
+              for (const n of ["3", "2", "1"]) { console.log(n); await wait(5) }
+              console.log("Go!")
+            }
+            countdown()
+          accept: ["3 2 1 Go!"]
+        - { id: fs-w10-d2-g13, difficulty: medium, type: mcq, prompt: "`const x = later(5, 10)` (no await). x is…", choices: ["a Promise", "5", "undefined", "an error"], answer: 0 }
+        - id: fs-w10-d2-g14
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            Promise.resolve(2).then((x) => x * 3).then((x) => console.log(x + 1))
+          accept: ["7"]
+        - { id: fs-w10-d2-g15, difficulty: medium, type: mcq, prompt: "Why are network calls asynchronous in the browser?", choices: ["So the page keeps responding while waiting", "Networks are fast", "JS can't wait at all", "To save data"], answer: 0 }
+        - id: fs-w10-d2-g16
+          difficulty: hard
+          type: text
+          prompt: "What does this print? (lines joined with a space)"
+          code: |
+            async function a() { console.log("1"); await null; console.log("3") }
+            a()
+            Promise.resolve().then(() => console.log("4"))
+            console.log("2")
+          accept: ["1 2 3 4"]
+        - id: fs-w10-d2-g17
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            async function f() { throw new Error("nope") }
+            f().catch((e) => console.log(e.message.toUpperCase()))
+          accept: ["NOPE"]
+        - { id: fs-w10-d2-g18, difficulty: hard, type: multi, prompt: "Which give you the value 5 eventually? (Select all.)", choices: ["Promise.resolve(5).then(…)", "await Promise.resolve(5) (inside async)", "new Promise((r) => r(5))", "Promise.reject(5).then(…)"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "fetch"
+        secondsPerQuestion: 9
+        questions:
+          - { id: fs-w10-d2-rf01, difficulty: easy, type: mcq, prompt: "Python requests.get in the browser", choices: ["fetch", "get", "request", "ajax"], answer: 0 }
+          - { id: fs-w10-d2-rf02, difficulty: easy, type: mcq, prompt: "Read the JSON body", choices: ["await response.json()", "response.json", "JSON(response)", "response.body.json"], answer: 0 }
+          - { id: fs-w10-d2-rf03, difficulty: easy, type: mcq, prompt: "True for status 200–299", choices: ["response.ok", "response.good", "response.success", "response.done"], answer: 0 }
+          - { id: fs-w10-d2-rf04, difficulty: easy, type: mcq, prompt: "The HTTP status number", choices: ["response.status", "response.code", "response.statusCode", "response.http"], answer: 0 }
+          - { id: fs-w10-d2-rf05, difficulty: easy, type: truefalse, prompt: "fetch rejects when the server answers 404.", answer: false }
+          - { id: fs-w10-d2-rf06, difficulty: easy, type: truefalse, prompt: "fetch rejects when there's no internet.", answer: true }
+          - { id: fs-w10-d2-rf07, difficulty: easy, type: mcq, prompt: "Treat a bad status as an error", choices: ["if (!response.ok) throw new Error(…)", "if (response) throw", "response.throw()", "nothing needed"], answer: 0 }
+          - { id: fs-w10-d2-rf08, difficulty: easy, type: mcq, prompt: "Test without the internet", choices: ["pass a fetchFn (a fake fetch)", "unplug the router", "use alert", "skip testing"], answer: 0 }
+          - { id: fs-w10-d2-rf09, difficulty: easy, type: mcq, prompt: "Is response.json() async?", choices: ["Yes: await it", "No", "Only in Safari", "Only for big files"], answer: 0 }
+          - { id: fs-w10-d2-rf10, difficulty: easy, type: mcq, prompt: "Read an Error's text", choices: ["error.message", "error.text", "error.string", "String(error) only"], answer: 0 }
+      - kind: brain-teaser
+        title: "Fake fetch puzzles"
+        questions:
+          - id: fs-w10-d2-bt01
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const fakeFetch = async () => ({ ok: true, status: 200, json: async () => ({ current: { temperature_2m: 25.7 } }) })
+              async function temp(f) {
+                const r = await f("x")
+                const d = await r.json()
+                return d.current.temperature_2m
+              }
+              temp(fakeFetch).then((t) => console.log(`${t}°C`))
+            accept: ["25.7°C"]
+          - id: fs-w10-d2-bt02
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              async function getJSON(url, f) {
+                const r = await f(url)
+                if (!r.ok) throw new Error(`HTTP ${r.status}`)
+                return r.json()
+              }
+              getJSON("x", async () => ({ ok: false, status: 404 })).catch((e) => console.log(e.message))
+            accept: ["HTTP 404"]
+          - id: fs-w10-d2-bt03
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              async function safe(f) {
+                try { const r = await f(); return (await r.json()).v } catch { return null }
+              }
+              safe(() => Promise.reject(new TypeError("Failed to fetch"))).then(console.log)
+            accept: ["null"]
+          - { id: fs-w10-d2-bt04, difficulty: hard, type: mcq, prompt: "Your weather page shows \"undefined°C\" when the server returns 500. Why?", choices: ["You didn't check response.ok, so you read an error body", "fetch rejected", "JSON is broken", "°C is invalid"], answer: 0 }
+          - id: fs-w10-d2-bt05
+            difficulty: hard
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const calls = []
+              const f = async (url) => { calls.push(url); return { ok: true, json: async () => ({}) } }
+              const lat = 6.52, lon = 3.38
+              f(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}`).then(() => console.log(calls[0].split("?")[1]))
+            accept: ["latitude=6.52&longitude=3.38"]
+
+  # ─────────────────────────── DAY 3 ───────────────────────────
+  - day: 3
+    gate:
+      title: "Checkpoint: fetch and JSON"
+      covers: "Week 10 · Day 2: fetch, response.ok/status, response.json(), errors, fetchFn for testing"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w10-d3-g01, difficulty: easy, type: mcq, prompt: "First line to get a reply", choices: ["const response = await fetch(url)", "const response = fetch.get(url)", "fetch(url).json", "await url"], answer: 0 }
+        - { id: fs-w10-d3-g02, difficulty: easy, type: mcq, prompt: "response.ok is true for…", choices: ["200–299", "only 200", "any status", "400+"], answer: 0 }
+        - { id: fs-w10-d3-g03, difficulty: easy, type: truefalse, prompt: "You must await response.json().", answer: true }
+        - { id: fs-w10-d3-g04, difficulty: easy, type: mcq, prompt: "fetch rejects on…", choices: ["network failure", "404", "500", "any status"], answer: 0 }
+        - { id: fs-w10-d3-g05, difficulty: easy, type: mcq, prompt: "Python response.status_code in JS", choices: ["response.status", "response.code", "response.ok", "response.http"], answer: 0 }
+        - { id: fs-w10-d3-g06, difficulty: easy, type: mcq, prompt: "Default parameter for testability", choices: ["async function getJSON(url, fetchFn = fetch)", "function getJSON(fetch)", "getJSON(url) only", "fetch = fake"], answer: 0 }
+        - id: fs-w10-d3-g07
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const f = async () => ({ ok: false, status: 500 })
+            f().then((r) => console.log(r.ok, r.status))
+          accept: ["false 500"]
+        - { id: fs-w10-d3-g08, difficulty: medium, type: match, prompt: "Match Python to JS.", pairs: [["requests.get(url)", "await fetch(url)"], ["response.status_code", "response.status"], ["response.json()", "await response.json()"], ["except", "catch"]] }
+        - id: fs-w10-d3-g09
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            async function getJSON(url, f) {
+              const r = await f(url)
+              if (!r.ok) throw new Error(`HTTP ${r.status}`)
+              return r.json()
+            }
+            getJSON("u", async () => ({ ok: true, json: async () => ({ a: [1, 2, 3] }) })).then((d) => console.log(d.a.length))
+          accept: ["3"]
+        - { id: fs-w10-d3-g10, difficulty: medium, type: truefalse, prompt: "A 404 response makes fetch go to catch automatically.", answer: false }
+        - { id: fs-w10-d3-g11, difficulty: medium, type: mcq, prompt: "Read the temperature from Open-Meteo's JSON", choices: ["data.current.temperature_2m", "data.temperature", "data.current[0]", "data.temp_2m"], answer: 0 }
+        - id: fs-w10-d3-g12
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const data = JSON.parse('{"current":{"temperature_2m":31.4,"weather_code":95}}')
+            console.log(data.current.weather_code, data.current.temperature_2m)
+          accept: ["95 31.4"]
+        - { id: fs-w10-d3-g13, difficulty: medium, type: mcq, prompt: "safeTemp should return null on failure. Best structure?", choices: ["try { return await getTemp(…) } catch { return null }", "if (getTemp) return", "getTemp().then(null)", "return getTemp() ?? null"], answer: 0 }
+        - id: fs-w10-d3-g14
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            async function safe(f) { try { return await f() } catch { return null } }
+            Promise.all([safe(async () => 1), safe(async () => { throw new Error("x") })]).then((r) => console.log(r.join(",")))
+          accept: ["1,"]
+        - { id: fs-w10-d3-g15, difficulty: medium, type: mcq, prompt: "`return getTemp()` vs `return await getTemp()` inside try/catch:", choices: ["only await lets the catch see a rejection", "no difference ever", "await is slower and wrong", "return can't return Promises"], answer: 0 }
+        - id: fs-w10-d3-g16
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            async function noAwait(f) { try { return f() } catch { return "caught" } }
+            noAwait(() => Promise.reject(new Error("late"))).catch((e) => console.log("escaped:", e.message))
+          accept: ["escaped: late"]
+        - id: fs-w10-d3-g17
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const f = async (url) => ({ ok: true, json: async () => ({ url }) })
+            async function go() {
+              const d = await (await f("https://x.test/a?b=1")).json()
+              console.log(new URL(d.url).searchParams.get("b"))
+            }
+            go()
+          accept: ["1"]
+        - { id: fs-w10-d3-g18, difficulty: hard, type: multi, prompt: "Which should be treated as errors? (Select all.)", choices: ["Network failure", "Status 404", "Status 500", "Status 200"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Loading states"
+        secondsPerQuestion: 9
+        questions:
+          - { id: fs-w10-d3-rf01, difficulty: easy, type: mcq, prompt: "Runs on success AND error", choices: ["finally", "then", "catch", "always"], answer: 0 }
+          - { id: fs-w10-d3-rf02, difficulty: easy, type: mcq, prompt: "Stop double clicks while loading", choices: ["button.disabled = true", "button.hidden", "button.remove()", "button.stop()"], answer: 0 }
+          - { id: fs-w10-d3-rf03, difficulty: easy, type: mcq, prompt: "The three states of a data screen", choices: ["loading, error, success", "on, off, idle", "start, stop, pause", "red, amber, green"], answer: 0 }
+          - { id: fs-w10-d3-rf04, difficulty: easy, type: mcq, prompt: "Simulate no internet", choices: ["DevTools → Network → Offline", "Close the laptop", "View Source", "Lighthouse"], answer: 0 }
+          - { id: fs-w10-d3-rf05, difficulty: easy, type: mcq, prompt: "Simulate a slow network", choices: ["DevTools → Network → Slow 3G", "Zoom out", "Sources", "Console"], answer: 0 }
+          - { id: fs-w10-d3-rf06, difficulty: easy, type: truefalse, prompt: "Set \"Loading…\" before the first await.", answer: true }
+          - { id: fs-w10-d3-rf07, difficulty: easy, type: mcq, prompt: "Re-enable the button in…", choices: ["finally", "only then", "only catch", "never"], answer: 0 }
+          - { id: fs-w10-d3-rf08, difficulty: easy, type: mcq, prompt: "On error, show…", choices: ["a clear message", "nothing", "undefined", "the stack trace"], answer: 0 }
+          - { id: fs-w10-d3-rf09, difficulty: easy, type: mcq, prompt: "On success, the status should be…", choices: ["cleared", "Loading…", "an error", "hidden forever"], answer: 0 }
+          - { id: fs-w10-d3-rf10, difficulty: easy, type: truefalse, prompt: "React apps use the same three states.", answer: true }
+      - kind: brain-teaser
+        title: "Trace the states"
+        questions:
+          - id: fs-w10-d3-bt01
+            difficulty: medium
+            type: text
+            prompt: "What does this print? (lines joined with a space)"
+            code: |
+              async function load(f) {
+                console.log("Loading…")
+                try { await f(); console.log("done") } catch { console.log("error") } finally { console.log("enabled") }
+              }
+              load(async () => {})
+            accept: ["Loading… done enabled"]
+          - id: fs-w10-d3-bt02
+            difficulty: medium
+            type: text
+            prompt: "What does this print? (lines joined with a space)"
+            code: |
+              async function load(f) {
+                try { await f(); console.log("done") } catch { console.log("error") } finally { console.log("enabled") }
+              }
+              load(() => Promise.reject(new Error("x")))
+            accept: ["error enabled"]
+          - id: fs-w10-d3-bt03
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const state = { status: "", disabled: false }
+              async function load(f) {
+                state.status = "Loading…"; state.disabled = true
+                try { await f() ; state.status = "" } catch { state.status = "Couldn't load" } finally { state.disabled = false }
+              }
+              const p = load(() => new Promise((r) => setTimeout(r, 10)))
+              console.log(state.status, state.disabled)
+            accept: ["Loading… true"]
+          - { id: fs-w10-d3-bt04, difficulty: hard, type: mcq, prompt: "Your button stays disabled forever after an error. Why?", choices: ["You re-enable it in try instead of finally", "disabled can't be undone", "fetch disabled it", "CSS"], answer: 0 }
+          - { id: fs-w10-d3-bt05, difficulty: hard, type: order, prompt: "Order loadCities.", items: ["status = Loading…; button.disabled = true", "await fetch and check response.ok", "render the list; clear the status", "catch: show the error", "finally: button.disabled = false"] }
+
+  # ─────────────────────────── DAY 4 ───────────────────────────
+  - day: 4
+    gate:
+      title: "Checkpoint: loading and error states"
+      covers: "Week 10 · Day 3: Loading…, disabling the button, try/catch/finally, success and error states, DevTools throttling"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w10-d4-g01, difficulty: easy, type: mcq, prompt: "What does finally do?", choices: ["Runs after try/catch whether it worked or not", "Runs only on success", "Ends the program", "Retries"], answer: 0 }
+        - { id: fs-w10-d4-g02, difficulty: easy, type: mcq, prompt: "Why disable the button while loading?", choices: ["To stop duplicate requests", "To style it", "Browsers require it", "To hide it"], answer: 0 }
+        - { id: fs-w10-d4-g03, difficulty: easy, type: truefalse, prompt: "Every data screen needs loading, error and success states.", answer: true }
+        - { id: fs-w10-d4-g04, difficulty: easy, type: mcq, prompt: "Test the error state on your laptop", choices: ["DevTools → Network → Offline", "Turn off the screen", "Delete the HTML", "Use View Source"], answer: 0 }
+        - { id: fs-w10-d4-g05, difficulty: easy, type: mcq, prompt: "Show Loading… …", choices: ["before the first await", "after the data arrives", "in finally", "never"], answer: 0 }
+        - { id: fs-w10-d4-g06, difficulty: easy, type: mcq, prompt: "Treat status 500 as…", choices: ["an error", "success", "loading", "ignored"], answer: 0 }
+        - id: fs-w10-d4-g07
+          difficulty: medium
+          type: text
+          prompt: "What does this print? (lines joined with a space)"
+          code: |
+            async function run(f) {
+              try { await f(); return "ok" } catch { return "error" } finally { console.log("cleanup") }
+            }
+            run(async () => { throw new Error("x") }).then(console.log)
+          accept: ["cleanup error"]
+        - { id: fs-w10-d4-g08, difficulty: medium, type: match, prompt: "Match the state to what the user sees.", pairs: [["loading", "Loading… and a disabled button"], ["error", "a clear message"], ["success", "the data"], ["finally", "button enabled again"]] }
+        - { id: fs-w10-d4-g09, difficulty: medium, type: mcq, prompt: "Status 500 but the page shows the list as empty with no message. Missing?", choices: ["if (!response.ok) throw …", "finally", "button.disabled", "await"], answer: 0 }
+        - id: fs-w10-d4-g10
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            let disabled = false
+            async function load() { disabled = true; try { await Promise.reject(1) } catch {} finally { disabled = false } }
+            load().then(() => console.log(disabled))
+          accept: ["false"]
+        - { id: fs-w10-d4-g11, difficulty: medium, type: truefalse, prompt: "Slow 3G throttling lets you see your loading state.", answer: true }
+        - id: fs-w10-d4-g12
+          difficulty: medium
+          type: text
+          prompt: "What does this print? (lines joined with a space)"
+          code: |
+            const log = []
+            async function load(f) {
+              log.push("loading")
+              try { log.push(await f()) } catch { log.push("error") } finally { log.push("enabled") }
+            }
+            load(async () => "data").then(() => console.log(log.join(" ")))
+          accept: ["loading data enabled"]
+        - { id: fs-w10-d4-g13, difficulty: medium, type: mcq, prompt: "Good error message for a Nigerian mobile user", choices: ["Couldn't load. Check your connection and try again.", "Error 0x80004005", "undefined", "TypeError: Failed to fetch"], answer: 0 }
+        - { id: fs-w10-d4-g14, difficulty: medium, type: truefalse, prompt: "Clearing the old data on error avoids showing stale information.", answer: true }
+        - { id: fs-w10-d4-g15, difficulty: medium, type: order, prompt: "Order the user's view of a slow, successful load.", items: ["Button clicked", "Loading… shown, button disabled", "Data arrives", "List shown, status cleared", "Button enabled"] }
+        - id: fs-w10-d4-g16
+          difficulty: hard
+          type: text
+          prompt: "What does this print? (lines joined with a space)"
+          code: |
+            async function load(f) {
+              try { const v = await f(); console.log("got", v); return v } finally { console.log("finally") }
+            }
+            load(async () => 7).then((v) => console.log(v * 2))
+          accept: ["got 7 finally 14"]
+        - { id: fs-w10-d4-g17, difficulty: hard, type: mcq, prompt: "Two quick clicks start two loads; the slower first one finishes last and overwrites the newer data. A simple guard?", choices: ["Disable the button while loading", "Use innerHTML", "Remove finally", "Use var"], answer: 0 }
+        - { id: fs-w10-d4-g18, difficulty: hard, type: multi, prompt: "Which belong in a good loading function? (Select all.)", choices: ["Loading message before await", "response.ok check", "catch with a friendly message", "Leaving the button disabled after errors"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "URLs and shapes"
+        secondsPerQuestion: 9
+        questions:
+          - { id: fs-w10-d4-rf01, difficulty: easy, type: mcq, prompt: "Build ?a=1&b=2 safely", choices: ["new URLSearchParams({ a: 1, b: 2 })", "\"?\" + a + b", "encodeURL(a, b)", "URL.params(a, b)"], answer: 0 }
+          - { id: fs-w10-d4-rf02, difficulty: easy, type: mcq, prompt: "Python params= in JS", choices: ["URLSearchParams", "fetch.params", "JSON.stringify", "Object.keys"], answer: 0 }
+          - { id: fs-w10-d4-rf03, difficulty: easy, type: mcq, prompt: "URLSearchParams encodes a comma as…", choices: ["%2C", ",", "%20", "&"], answer: 0 }
+          - { id: fs-w10-d4-rf04, difficulty: easy, type: mcq, prompt: "Read b from a URL", choices: ["new URL(u).searchParams.get(\"b\")", "u.b", "u.get(\"b\")", "URL(u).b"], answer: 0 }
+          - { id: fs-w10-d4-rf05, difficulty: easy, type: mcq, prompt: "Parallel arrays → objects", choices: ["daily.time.map((date, i) => ({ … }))", "daily.join()", "Object.keys(daily)", "daily.filter()"], answer: 0 }
+          - { id: fs-w10-d4-rf06, difficulty: easy, type: mcq, prompt: "Open-Meteo's daily dates", choices: ["daily.time", "daily.dates", "daily.day", "time.daily"], answer: 0 }
+          - { id: fs-w10-d4-rf07, difficulty: easy, type: truefalse, prompt: "Parallel arrays share the same index for the same day.", answer: true }
+          - { id: fs-w10-d4-rf08, difficulty: easy, type: mcq, prompt: "Days in the forecast", choices: ["forecast_days", "days", "limit", "count"], answer: 0 }
+          - { id: fs-w10-d4-rf09, difficulty: easy, type: mcq, prompt: "A table row element", choices: ["tr", "td", "th", "row"], answer: 0 }
+          - { id: fs-w10-d4-rf10, difficulty: easy, type: mcq, prompt: "Use the URLSearchParams in a URL", choices: ["`${base}?${params}`", "base + params.list", "base(params)", "params.url(base)"], answer: 0 }
+      - kind: brain-teaser
+        title: "Shape the data"
+        questions:
+          - id: fs-w10-d4-bt01
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const p = new URLSearchParams({ latitude: 6.52, daily: "a,b", timezone: "Africa/Lagos" })
+              console.log(String(p))
+            accept: ["latitude=6.52&daily=a%2Cb&timezone=Africa%2FLagos"]
+          - id: fs-w10-d4-bt02
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const daily = { time: ["2026-10-02", "2026-10-03"], temperature_2m_max: [29.2, 28.3] }
+              const days = daily.time.map((date, i) => ({ date, max: daily.temperature_2m_max[i] }))
+              console.log(days[1].date, days[1].max)
+            accept: ["2026-10-03 28.3"]
+          - id: fs-w10-d4-bt03
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const u = new URL("https://api.open-meteo.com/v1/forecast?latitude=6.52&forecast_days=3")
+              console.log(u.searchParams.get("forecast_days"), u.pathname)
+            accept: ["3 /v1/forecast"]
+          - id: fs-w10-d4-bt04
+            difficulty: hard
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const daily = { time: ["a", "b", "c"], weather_code: [51, 95, 80] }
+              const CODES = { 51: "Drizzle", 95: "Thunderstorm" }
+              console.log(daily.time.map((d, i) => `${d}:${CODES[daily.weather_code[i]] ?? "Unknown"}`).join(","))
+            accept: ["a:Drizzle,b:Thunderstorm,c:Unknown"]
+          - id: fs-w10-d4-bt05
+            difficulty: hard
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const p = new URLSearchParams({ q: "Port Harcourt & GRA" })
+              console.log(p.toString())
+            accept: ["q=Port+Harcourt+%26+GRA"]
+
+  # ─────────────────────────── DAY 5 ───────────────────────────
+  - day: 5
+    gate:
+      title: "Checkpoint: URLs and API data"
+      covers: "Week 10 · Day 4: URLSearchParams, encoding, parallel arrays to objects, rendering a forecast table"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w10-d5-g01, difficulty: easy, type: mcq, prompt: "Why use URLSearchParams instead of gluing strings?", choices: ["It encodes spaces and special characters correctly", "It's shorter only", "fetch requires it", "It adds the API key"], answer: 0 }
+        - { id: fs-w10-d5-g02, difficulty: easy, type: mcq, prompt: "Open-Meteo returns the forecast as…", choices: ["parallel arrays under daily", "one object per day", "CSV", "HTML"], answer: 0 }
+        - { id: fs-w10-d5-g03, difficulty: easy, type: truefalse, prompt: "A space in URLSearchParams becomes +.", answer: true }
+        - { id: fs-w10-d5-g04, difficulty: easy, type: mcq, prompt: "Get the i-th day's max", choices: ["daily.temperature_2m_max[i]", "daily[i].max", "daily.max(i)", "daily.time[i].max"], answer: 0 }
+        - { id: fs-w10-d5-g05, difficulty: easy, type: mcq, prompt: "Render rows from days", choices: ["the Week 9 render pattern", "innerHTML with user text", "document.write", "alert"], answer: 0 }
+        - { id: fs-w10-d5-g06, difficulty: easy, type: mcq, prompt: "Join params onto the base URL", choices: ["`${base}?${params}`", "base + \"&\" + params", "base.add(params)", "fetch(base, params) always"], answer: 0 }
+        - id: fs-w10-d5-g07
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const p = new URLSearchParams({ latitude: 9.06, longitude: 7.49 })
+            console.log(`https://x.test/v1?${p}`)
+          accept: ["https://x.test/v1?latitude=9.06&longitude=7.49"]
+        - { id: fs-w10-d5-g08, difficulty: medium, type: match, prompt: "Match the encoding.", pairs: [["space", "+"], [",", "%2C"], ["/", "%2F"], ["&", "%26"]] }
+        - id: fs-w10-d5-g09
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const daily = { time: ["d1", "d2", "d3"], temperature_2m_min: [24.4, 23.6, 23.8] }
+            console.log(Math.min(...daily.temperature_2m_min))
+          accept: ["23.6"]
+        - { id: fs-w10-d5-g10, difficulty: medium, type: truefalse, prompt: "The server decodes %2C back into a comma.", answer: true }
+        - id: fs-w10-d5-g11
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const days = [{ date: "a", max: 29 }, { date: "b", max: 31 }]
+            console.log(days.map((d) => `${d.date}: ${d.max}°`).join(" | "))
+          accept: ["a: 29° | b: 31°"]
+        - { id: fs-w10-d5-g12, difficulty: medium, type: mcq, prompt: "Re-render the forecast without duplicating rows", choices: ["Clear tbody first", "Append only", "Reload the page", "Use a new table each time"], answer: 0 }
+        - id: fs-w10-d5-g13
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const u = new URL("https://x.test/?daily=a%2Cb")
+            console.log(u.searchParams.get("daily").split(",").length)
+          accept: ["2"]
+        - { id: fs-w10-d5-g14, difficulty: medium, type: mcq, prompt: "Which parameter sets the timezone for dates?", choices: ["timezone", "tz", "zone", "utc"], answer: 0 }
+        - { id: fs-w10-d5-g15, difficulty: medium, type: truefalse, prompt: "daily.time.map(...) gives one result per day.", answer: true }
+        - id: fs-w10-d5-g16
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const daily = { time: ["d1", "d2", "d3"], temperature_2m_max: [29.2, 28.3, 27.5] }
+            const hottest = daily.time[daily.temperature_2m_max.indexOf(Math.max(...daily.temperature_2m_max))]
+            console.log(hottest)
+          accept: ["d1"]
+        - id: fs-w10-d5-g17
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const p = new URLSearchParams("a=1&b=2&a=3")
+            console.log(p.get("a"), p.getAll("a").join("+"))
+          accept: ["1 1+3"]
+        - { id: fs-w10-d5-g18, difficulty: hard, type: multi, prompt: "Which give the same URL query? (Select all.)", choices: ["new URLSearchParams({ a: 1, b: 2 }).toString()", "\"a=1&b=2\"", "new URLSearchParams([[\"a\", 1], [\"b\", 2]]).toString()", "\"b=2&a=1\""], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Parallel and safe"
+        secondsPerQuestion: 9
+        questions:
+          - { id: fs-w10-d5-rf01, difficulty: easy, type: mcq, prompt: "Wait for many Promises at once", choices: ["Promise.all", "Promise.each", "await all", "Promise.many"], answer: 0 }
+          - { id: fs-w10-d5-rf02, difficulty: easy, type: mcq, prompt: "Wait for all, even failures", choices: ["Promise.allSettled", "Promise.all", "Promise.any", "Promise.race"], answer: 0 }
+          - { id: fs-w10-d5-rf03, difficulty: easy, type: mcq, prompt: "If one fails, Promise.all…", choices: ["rejects", "ignores it", "returns null for it", "retries"], answer: 0 }
+          - { id: fs-w10-d5-rf04, difficulty: easy, type: mcq, prompt: "allSettled result status values", choices: ["\"fulfilled\" or \"rejected\"", "true or false", "\"ok\" or \"error\"", "200 or 500"], answer: 0 }
+          - { id: fs-w10-d5-rf05, difficulty: easy, type: mcq, prompt: "Pairs → object", choices: ["Object.fromEntries(pairs)", "Object.keys(pairs)", "JSON.parse(pairs)", "pairs.toObject()"], answer: 0 }
+          - { id: fs-w10-d5-rf06, difficulty: easy, type: mcq, prompt: "Browsers let you read another site's API only if it allows…", choices: ["CORS (Access-Control-Allow-Origin)", "cookies", "HTTPS only", "JSON"], answer: 0 }
+          - { id: fs-w10-d5-rf07, difficulty: easy, type: truefalse, prompt: "A secret API key in front-end JS is safe if it's minified.", answer: false }
+          - { id: fs-w10-d5-rf08, difficulty: easy, type: mcq, prompt: "Where do secret keys belong?", choices: ["On a server", "In app.js", "In HTML comments", "In localStorage"], answer: 0 }
+          - { id: fs-w10-d5-rf09, difficulty: easy, type: mcq, prompt: "Six cities with Promise.all take about as long as…", choices: ["the slowest one", "all six added up", "zero", "double"], answer: 0 }
+          - { id: fs-w10-d5-rf10, difficulty: easy, type: truefalse, prompt: "Open-Meteo allows requests from any web page.", answer: true }
+      - kind: brain-teaser
+        title: "All at once"
+        questions:
+          - id: fs-w10-d5-bt01
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const later = (v, ms) => new Promise((r) => setTimeout(() => r(v), ms))
+              Promise.all([later("Lagos", 30), later("Abuja", 10)]).then((r) => console.log(r.join(",")))
+            accept: ["Lagos,Abuja"]
+            explain: "Promise.all keeps the original order, not finishing order."
+          - id: fs-w10-d5-bt02
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              Promise.allSettled([Promise.resolve(1), Promise.reject(new Error("x"))]).then((r) => console.log(r.map((x) => x.status).join(",")))
+            accept: ["fulfilled,rejected"]
+          - id: fs-w10-d5-bt03
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const pairs = [["Lagos", 25.7], ["Kano", 34.1]]
+              const t = Object.fromEntries(pairs)
+              console.log(t.Kano)
+            accept: ["34.1"]
+          - id: fs-w10-d5-bt04
+            difficulty: hard
+            type: text
+            prompt: "What does this print?"
+            code: |
+              Promise.all([Promise.resolve(1), Promise.reject(new Error("down"))]).then(() => console.log("all ok")).catch((e) => console.log("failed:", e.message))
+            accept: ["failed: down"]
+          - id: fs-w10-d5-bt05
+            difficulty: hard
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const temps = { Lagos: 25.7, Kano: 34.1, Abuja: null }
+              const ranked = Object.entries(temps).filter(([, t]) => t !== null).sort((a, b) => b[1] - a[1]).map(([n]) => n)
+              console.log(ranked.join(">"))
+            accept: ["Kano>Lagos"]
+
+  # ─────────────────────────── DAY 6 ───────────────────────────
+  - day: 6
+    gate:
+      title: "Checkpoint: many requests, CORS and keys"
+      covers: "Week 10 · Day 5: Promise.all, Promise.allSettled, Object.fromEntries, CORS, never shipping secret keys"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w10-d6-g01, difficulty: easy, type: mcq, prompt: "Fetch 6 cities in parallel", choices: ["await Promise.all(cities.map(…))", "a for loop with await", "six setTimeouts", "Promise.race"], answer: 0 }
+        - { id: fs-w10-d6-g02, difficulty: easy, type: mcq, prompt: "Keep going when one city fails", choices: ["Promise.allSettled", "Promise.all", "Promise.race", "Promise.reject"], answer: 0 }
+        - { id: fs-w10-d6-g03, difficulty: easy, type: truefalse, prompt: "Everything in your front-end code can be read by anyone.", answer: true }
+        - { id: fs-w10-d6-g04, difficulty: easy, type: mcq, prompt: "CORS is enforced by…", choices: ["the browser", "your CSS", "GitHub", "the API key"], answer: 0 }
+        - { id: fs-w10-d6-g05, difficulty: easy, type: mcq, prompt: "An API without CORS for your site means…", choices: ["you need your own backend to call it (Phase 3)", "you can't use the internet", "use innerHTML", "use HTTP"], answer: 0 }
+        - { id: fs-w10-d6-g06, difficulty: easy, type: mcq, prompt: "Why use Open-Meteo for this course?", choices: ["Free, no key, and it allows browser requests", "It's the only weather API", "It's Nigerian", "It requires a backend"], answer: 0 }
+        - id: fs-w10-d6-g07
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const getTemp = async (lat) => (lat > 10 ? 34 : 26)
+            const cities = { Lagos: 6.5, Kano: 12 }
+            Promise.all(Object.entries(cities).map(async ([n, lat]) => [n, await getTemp(lat)])).then((r) => console.log(JSON.stringify(Object.fromEntries(r))))
+          accept: ["{\"Lagos\":26,\"Kano\":34}"]
+        - { id: fs-w10-d6-g08, difficulty: medium, type: match, prompt: "Match.", pairs: [["Promise.all", "all must succeed"], ["Promise.allSettled", "report each result"], ["CORS", "browser permission to read another site"], ["API key", "keep it on a server"]] }
+        - id: fs-w10-d6-g09
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            Promise.allSettled([Promise.reject(new Error("a")), Promise.resolve(5)]).then((r) => console.log(r.map((x) => (x.status === "fulfilled" ? x.value : null)).join(",")))
+          accept: [",5"]
+        - { id: fs-w10-d6-g10, difficulty: medium, type: truefalse, prompt: "`for (const c of cities) await getTemp(c)` runs the requests in parallel.", answer: false, explain: "Each await waits for the previous one: one after another." }
+        - { id: fs-w10-d6-g11, difficulty: medium, type: mcq, prompt: "A free API asks for a key. Is it OK in front-end code?", choices: ["Only if the provider says the key is public/restricted; secret keys never", "Always", "Never use APIs", "Only on weekends"], answer: 0 }
+        - id: fs-w10-d6-g12
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const later = (v, ms) => new Promise((r) => setTimeout(() => r(v), ms))
+            const start = Date.now()
+            Promise.all([later(1, 50), later(2, 50), later(3, 50)]).then(() => console.log(Date.now() - start < 120))
+          accept: ["true"]
+        - { id: fs-w10-d6-g13, difficulty: medium, type: mcq, prompt: "Hottest city ignoring failures (null):", choices: ["filter out nulls, then pick the max", "Math.max(...Object.values(temps)) always", "sort strings", "the first key"], answer: 0 }
+        - id: fs-w10-d6-g14
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const temps = { Jos: null, Enugu: 22, Lagos: 25.7 }
+            let best = null
+            for (const [n, t] of Object.entries(temps)) if (t !== null && (best === null || t > temps[best])) best = n
+            console.log(best)
+          accept: ["Lagos"]
+        - { id: fs-w10-d6-g15, difficulty: medium, type: truefalse, prompt: "Promise.all keeps results in the same order as the input.", answer: true }
+        - id: fs-w10-d6-g16
+          difficulty: hard
+          type: text
+          prompt: "What does this print? (lines joined with a space)"
+          code: |
+            const later = (v, ms) => new Promise((r) => setTimeout(() => { console.log("done", v); r(v) }, ms))
+            Promise.all([later("A", 30), later("B", 10)]).then((r) => console.log(r.join("")))
+          accept: ["done B done A AB"]
+        - { id: fs-w10-d6-g17, difficulty: hard, type: mcq, prompt: "You fetch 6 cities with Promise.all and one city's request fails. What does the user see if you don't use allSettled?", choices: ["Nothing for any city (the whole Promise.all rejects)", "Five cities", "Six cities", "A retry"], answer: 0 }
+        - { id: fs-w10-d6-g18, difficulty: hard, type: multi, prompt: "Which are true? (Select all.)", choices: ["CORS is a browser rule", "Server-to-server requests aren't blocked by CORS", "Secret keys belong on servers", "CORS stops Python scripts from calling APIs"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Week 10 lightning round"
+        secondsPerQuestion: 8
+        questions:
+          - { id: fs-w10-d6-rf01, difficulty: easy, type: mcq, prompt: "Value that arrives later", choices: ["Promise", "Array", "Event", "Object"], answer: 0 }
+          - { id: fs-w10-d6-rf02, difficulty: easy, type: mcq, prompt: "Pause for a Promise", choices: ["await", "wait", "stop", "hold"], answer: 0 }
+          - { id: fs-w10-d6-rf03, difficulty: easy, type: mcq, prompt: "Browser HTTP request", choices: ["fetch", "get", "curl", "ajax()"], answer: 0 }
+          - { id: fs-w10-d6-rf04, difficulty: easy, type: mcq, prompt: "Status 200–299", choices: ["response.ok", "response.good", "response.yes", "response.200"], answer: 0 }
+          - { id: fs-w10-d6-rf05, difficulty: easy, type: mcq, prompt: "Runs either way", choices: ["finally", "then", "catch", "else"], answer: 0 }
+          - { id: fs-w10-d6-rf06, difficulty: easy, type: mcq, prompt: "Build a query string", choices: ["URLSearchParams", "JSON.stringify", "encodeAll", "String.join"], answer: 0 }
+          - { id: fs-w10-d6-rf07, difficulty: easy, type: mcq, prompt: "Parallel requests", choices: ["Promise.all", "for await", "setTimeout", "async only"], answer: 0 }
+          - { id: fs-w10-d6-rf08, difficulty: easy, type: mcq, prompt: "Some may fail", choices: ["Promise.allSettled", "Promise.all", "Promise.race", "try only"], answer: 0 }
+          - { id: fs-w10-d6-rf09, difficulty: easy, type: mcq, prompt: "Secret keys go…", choices: ["on a server", "in app.js", "in index.html", "in CSS"], answer: 0 }
+          - { id: fs-w10-d6-rf10, difficulty: easy, type: truefalse, prompt: "fetch rejects on 404.", answer: false }
+      - kind: brain-teaser
+        title: "Weather page logic"
+        questions:
+          - id: fs-w10-d6-bt01
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const CODES = { 2: "Partly cloudy", 63: "Rain" }
+              const describe = (c) => CODES[c] ?? "Unknown"
+              const current = { temperature_2m: 25.7, weather_code: 2 }
+              console.log(`Lagos: ${describe(current.weather_code)}, ${current.temperature_2m}°C`)
+            accept: ["Lagos: Partly cloudy, 25.7°C"]
+          - id: fs-w10-d6-bt02
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const CITIES = { Lagos: [6.52, 3.38], Kano: [12.0, 8.52] }
+              const [lat, lon] = CITIES["Kano"]
+              console.log(String(new URLSearchParams({ latitude: lat, longitude: lon })))
+            accept: ["latitude=12&longitude=8.52"]
+          - { id: fs-w10-d6-bt03, difficulty: medium, type: mcq, prompt: "Default `fetchFn = fetch` is evaluated…", choices: ["each time the function is called", "once when the page loads", "never", "only in tests"], answer: 0 }
+          - { id: fs-w10-d6-bt04, difficulty: hard, type: mcq, prompt: "Your weather page works locally but the button does nothing on your phone. First check?", choices: ["DevTools/console errors and that the script loads (path, defer)", "Buy a new phone", "Change the API", "Remove CSS"], answer: 0 }
+          - { id: fs-w10-d6-bt05, difficulty: hard, type: multi, prompt: "Which belong in the weather page project? (Select all.)", choices: ["City select and button", "Loading, error and success states", "3-day forecast", "A secret API key in app.js"], answers: [0, 1, 2] }

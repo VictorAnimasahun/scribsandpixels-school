@@ -1,0 +1,3 @@
+{
+  "js": "const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms))\nconst later = (value, ms) => new Promise((resolve) => setTimeout(() => resolve(value), ms))\nasync function addLater(a, b) {\n  const x = await later(a, 10)\n  const y = await later(b, 10)\n  return x + y\n}\nasync function countdown() {\n  for (const step of [\"3\", \"2\", \"1\"]) {\n    console.log(step)\n    await wait(20)\n  }\n  console.log(\"Go!\")\n}\n"
+}

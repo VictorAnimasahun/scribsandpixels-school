@@ -67,9 +67,17 @@ export default function WebSandbox({ sandbox }: Props) {
         };
         tick();
       };
-      const run = () => {
+      // Checks run one at a time, in order; a check may be async (it returns a Promise), and
+      // each gets up to 5 s so a stuck await can't hang the others.
+      const run = async () => {
         const checks = ${JSON.stringify(tasks.map((t) => t.check)).replace(/</g, '\\u003c')};
-        const results = checks.map((src) => { try { return !!(0, eval)('(' + src + ')'); } catch (e) { return false; } });
+        const results = [];
+        for (const src of checks) {
+          try {
+            const value = (0, eval)('(' + src + ')');
+            results.push(!!(await Promise.race([value, new Promise((r) => setTimeout(() => r(false), 5000))])));
+          } catch (e) { results.push(false); }
+        }
         parent.postMessage({ snpChecks: results }, '*');
       };
       window.addEventListener('load', () => (document.fonts ? document.fonts.ready : Promise.resolve())
