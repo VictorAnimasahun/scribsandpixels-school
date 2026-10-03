@@ -54,7 +54,7 @@ More courses will follow; nothing may assume a single course. To add one: a new 
 - **Done:** content model + Weeks 1–2 + all 52 outlines; domain rules with tests; Supabase schema; API layer; email function.
 - **UI not wired yet:** `src/App.tsx` is still the static dashboard mockup using `src/data/curriculum.ts` (placeholder JS/React modules that don't match the real course; delete it when the UI is rebuilt). The user is designing the UI/UX on claude.ai and will bring it back.
 - **Not yet run against a real Supabase project:** no project is linked. The migration was verified in PGlite; `api.ts` and the edge function are type-checked only.
-- Fullstack Weeks 11+ need writing; Weeks 11–14 wait for Victor's Phase 2 decisions. Draft week plan: `src/content/courses/fullstack-ml/phase-2-plan.md` (awaiting approval; once approved, add its outlines to `course.ts`). Week 6's weather script uses Open-Meteo (free, no key); sandboxes use saved responses because the browser sandbox has no network.
+- Fullstack Weeks 11+ need writing; Phase 2 decisions so far: keep the order, milestone = "Mama Put Kitchen"; Weeks 11–14 still wait for decision 3 (Saturdays). Draft week plan: `src/content/courses/fullstack-ml/phase-2-plan.md` (awaiting approval; once approved, add its outlines to `course.ts`). Week 6's weather script uses Open-Meteo (free, no key); sandboxes use saved responses because the browser sandbox has no network.
 
 ## Setup still needed (user)
 1. Create a Supabase project → run the migration (`supabase link` + `supabase db push`, or paste into the SQL editor) → put the URL + publishable key in `.env.local`.

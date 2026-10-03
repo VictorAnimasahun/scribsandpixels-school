@@ -39,6 +39,8 @@ A multi-page site (Home · Menu/Products · About · Contact) for a fictional bu
 Weeks 7–11 use the existing web sandbox (HTML/CSS/JS with checks). React weeks need a small addition: JSX runs in the browser via a CDN-loaded transformer, so a `react` sandbox kind (or the web kind with React preloaded). To be built in Week 12 if this plan is approved.
 
 ## Open questions for Victor
-1. Is this order right, or should React start earlier (and the milestone be built in React)?
-2. Which fictional business for the milestone?
+1. ✅ **Decided (3 Oct 2026): keep the order** (CSS Week 11, React Weeks 12–13, plain HTML/CSS/JS milestone in Week 14).
+   ~~Is this order right, or should React start earlier (and the milestone be built in React)?~~
+2. ✅ **Decided (3 Oct 2026): "Mama Put Kitchen"**, a Lagos buka (menu with ₦ prices, opening hours, WhatsApp ordering).
+   ~~Which fictional business for the milestone?~~
 3. Keep Saturdays as one project each, or let Weeks 11–14 all build towards the milestone (as drafted)?

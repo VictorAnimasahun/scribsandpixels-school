@@ -42,7 +42,7 @@
 ## Content
 - [x] Fullstack + ML Week 3 (HTML & CSS) · Week 4 (Flexbox, responsive, Git + GitHub) · Week 5 (dictionaries, exceptions, modules, JSON) · Week 6 (Open-Meteo weather script, accessibility, portfolio, first gigs)
 - [x] Fullstack + ML Weeks 7–10 (JavaScript basics; arrays, objects, JSON; the DOM; fetch and async)
-- [ ] Fullstack + ML Weeks 11–14: draft outline in `courses/fullstack-ml/phase-2-plan.md`; Weeks 11–14 wait for Victor's 3 decisions (order, milestone business, Saturdays)
+- [ ] Fullstack + ML Weeks 11–14: draft outline in `courses/fullstack-ml/phase-2-plan.md`; decided: keep the order, milestone = Mama Put Kitchen; still waiting on decision 3 (Saturdays: all build the milestone, or separate projects)
 - [ ] French: Year 2 (B2 / NCLC 7) weeks, if wanted
 - [ ] Add `course.ts` frameworks for French and Excel (only `overview.md` today)
 
