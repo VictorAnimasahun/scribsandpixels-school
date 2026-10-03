@@ -1,4 +1,4 @@
-# Phase 2 plan (Weeks 7–14): DRAFT, awaiting Victor's approval
+# Phase 2 plan (Weeks 7–14): APPROVED by Victor, 3 Oct 2026
 
 **Phase:** Web development: making things you can see. **Topics:** JavaScript, CSS, React.
 **Milestone (from the original plan):** a multi-page website for a fictional Nigerian business, live on GitHub Pages.
@@ -43,4 +43,5 @@ Weeks 7–11 use the existing web sandbox (HTML/CSS/JS with checks). React weeks
    ~~Is this order right, or should React start earlier (and the milestone be built in React)?~~
 2. ✅ **Decided (3 Oct 2026): "Mama Put Kitchen"**, a Lagos buka (menu with ₦ prices, opening hours, WhatsApp ordering).
    ~~Which fictional business for the milestone?~~
-3. Keep Saturdays as one project each, or let Weeks 11–14 all build towards the milestone (as drafted)?
+3. ✅ **Decided (3 Oct 2026): Saturdays of Weeks 11–14 all build towards the milestone.**
+   ~~Keep Saturdays as one project each, or let Weeks 11–14 all build towards the milestone (as drafted)?~~
