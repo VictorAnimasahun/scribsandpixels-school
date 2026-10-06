@@ -1,0 +1,67 @@
+# Week 13 · Day 5 mini-task
+id: web-w13-d5-lift
+kind: web
+react: true
+title: "Lifting state up"
+description: "The menu adds, the cart shows, the summary totals: three components sharing one cart that lives in their parent."
+html: |
+  <div id="root"></div>
+css: |
+  body { font-family: system-ui, sans-serif; padding: 1rem; background: #fff8ef; color: #2b1d16; }
+  button { margin: 0.15rem; }
+  .counter, .card, form, .cart { background: #fff; border: 2px solid #c0392b; border-radius: 12px; padding: 0.5rem 0.75rem; margin: 0.5rem 0; }
+  .error { color: #c0392b; }
+  .fav { background: #fff3c4; }
+  input, select, textarea { display: block; margin: 0.25rem 0; font: inherit; }
+js: |
+  import { useState } from "react"
+  import { createRoot } from "react-dom/client"
+
+  const dishes = [
+    { id: 1, name: "Party jollof", price: 3500 },
+    { id: 2, name: "Pepper soup", price: 3000 },
+    { id: 3, name: "Zobo (50cl)", price: 700 },
+  ]
+
+  // Lift the cart up into App (one source of truth), then:
+  // 1. MenuList({ dishes, onAdd }): one button per dish, "Add Party jollof", calling onAdd(dish)
+  // 2. Adding the same dish again increases its qty (no duplicate rows)
+  // 3. Cart({ cart, onChangeQty }): <ul className="cart"> with <li> "Party jollof × 2" and "−" / "+" buttons;
+  //    a qty of 0 removes the row
+  // 4. CartSummary({ cart }): <p className="summary">"3 plates · ₦7,700"</p> (total qty · total price, derived)
+  function MenuList({ dishes }) {
+    return dishes.map((d) => <button key={d.id}>Add {d.name}</button>)
+  }
+
+  function Cart({ cart }) {
+    return <ul className="cart"></ul>
+  }
+
+  function CartSummary({ cart }) {
+    return <p className="summary">0 plates · ₦0</p>
+  }
+
+  function App() {
+    return (
+      <>
+        <MenuList dishes={dishes} />
+        <Cart cart={[]} />
+        <CartSummary cart={[]} />
+      </>
+    )
+  }
+
+  createRoot(document.getElementById("root")).render(<App />)
+tasks:
+  - prompt: "Two \"Add Party jollof\" clicks \u2192 one row \"Party jollof \u00d7 2\" and \"2 plates \u00b7 \u20a67,000\"."
+    check: "(async () => { const tick = () => new Promise((r) => setTimeout(r, 80)); const btn = (root, t) => [...root.querySelectorAll('button')].find((b) => b.textContent.trim() === t); const type = (el, v) => { const proto = el.tagName === 'TEXTAREA' ? HTMLTextAreaElement : el.tagName === 'SELECT' ? HTMLSelectElement : HTMLInputElement; Object.getOwnPropertyDescriptor(proto.prototype, 'value').set.call(el, v); el.dispatchEvent(new Event(el.tagName === 'SELECT' ? 'change' : 'input', { bubbles: true })) }; const sum = () => document.querySelector('#root .summary')?.textContent; const rows = () => [...document.querySelectorAll('#root .cart li')].map((l) => l.querySelector('span')?.textContent || l.textContent); const empty = async () => { for (let k = 0; k < 20 && document.querySelector('#root .cart li'); k++) { btn(document.querySelector('#root .cart li'), '\u2212').click(); await tick() } }; await empty(); btn(document, 'Add Party jollof').click(); await tick(); btn(document, 'Add Party jollof').click(); await tick(); return rows().join('|') === 'Party jollof \u00d7 2' && sum() === '2 plates \u00b7 \u20a67,000' })()"
+    hint: "const [cart, setCart] = useState([]) in App, and <MenuList dishes={dishes} onAdd={add} />"
+  - prompt: "Adding Zobo too \u2192 \"3 plates \u00b7 \u20a67,700\"."
+    check: "(async () => { const tick = () => new Promise((r) => setTimeout(r, 80)); const btn = (root, t) => [...root.querySelectorAll('button')].find((b) => b.textContent.trim() === t); const type = (el, v) => { const proto = el.tagName === 'TEXTAREA' ? HTMLTextAreaElement : el.tagName === 'SELECT' ? HTMLSelectElement : HTMLInputElement; Object.getOwnPropertyDescriptor(proto.prototype, 'value').set.call(el, v); el.dispatchEvent(new Event(el.tagName === 'SELECT' ? 'change' : 'input', { bubbles: true })) }; const sum = () => document.querySelector('#root .summary')?.textContent; const rows = () => [...document.querySelectorAll('#root .cart li')].map((l) => l.querySelector('span')?.textContent || l.textContent); const empty = async () => { for (let k = 0; k < 20 && document.querySelector('#root .cart li'); k++) { btn(document.querySelector('#root .cart li'), '\u2212').click(); await tick() } }; await empty(); btn(document, 'Add Party jollof').click(); await tick(); btn(document, 'Add Party jollof').click(); await tick(); btn(document, 'Add Zobo (50cl)').click(); await tick(); return sum() === '3 plates \u00b7 \u20a67,700' && rows().length === 2 })()"
+  - prompt: "\"+\" and \"\u2212\" change a row's quantity."
+    check: "(async () => { const tick = () => new Promise((r) => setTimeout(r, 80)); const btn = (root, t) => [...root.querySelectorAll('button')].find((b) => b.textContent.trim() === t); const type = (el, v) => { const proto = el.tagName === 'TEXTAREA' ? HTMLTextAreaElement : el.tagName === 'SELECT' ? HTMLSelectElement : HTMLInputElement; Object.getOwnPropertyDescriptor(proto.prototype, 'value').set.call(el, v); el.dispatchEvent(new Event(el.tagName === 'SELECT' ? 'change' : 'input', { bubbles: true })) }; const sum = () => document.querySelector('#root .summary')?.textContent; const rows = () => [...document.querySelectorAll('#root .cart li')].map((l) => l.querySelector('span')?.textContent || l.textContent); const empty = async () => { for (let k = 0; k < 20 && document.querySelector('#root .cart li'); k++) { btn(document.querySelector('#root .cart li'), '\u2212').click(); await tick() } }; await empty(); btn(document, 'Add Pepper soup').click(); await tick(); const li = () => document.querySelector('#root .cart li'); btn(li(), '+').click(); await tick(); btn(li(), '+').click(); await tick(); const three = rows()[0] === 'Pepper soup \u00d7 3'; btn(li(), '\u2212').click(); await tick(); return three && rows()[0] === 'Pepper soup \u00d7 2' && sum() === '2 plates \u00b7 \u20a66,000' })()"
+    hint: "function changeQty(id, delta) { setCart((c) => c.map(\u2026).filter((i) => i.qty > 0)) }"
+  - prompt: "Going below 1 removes the row."
+    check: "(async () => { const tick = () => new Promise((r) => setTimeout(r, 80)); const btn = (root, t) => [...root.querySelectorAll('button')].find((b) => b.textContent.trim() === t); const type = (el, v) => { const proto = el.tagName === 'TEXTAREA' ? HTMLTextAreaElement : el.tagName === 'SELECT' ? HTMLSelectElement : HTMLInputElement; Object.getOwnPropertyDescriptor(proto.prototype, 'value').set.call(el, v); el.dispatchEvent(new Event(el.tagName === 'SELECT' ? 'change' : 'input', { bubbles: true })) }; const sum = () => document.querySelector('#root .summary')?.textContent; const rows = () => [...document.querySelectorAll('#root .cart li')].map((l) => l.querySelector('span')?.textContent || l.textContent); const empty = async () => { for (let k = 0; k < 20 && document.querySelector('#root .cart li'); k++) { btn(document.querySelector('#root .cart li'), '\u2212').click(); await tick() } }; await empty(); btn(document, 'Add Zobo (50cl)').click(); await tick(); btn(document.querySelector('#root .cart li'), '\u2212').click(); await tick(); return rows().length === 0 && sum() === '0 plates \u00b7 \u20a60' })()"
+  - prompt: "The cart lives in App (MenuList, Cart and CartSummary have no useState of their own)."
+    check: "typeof App === 'function' && typeof MenuList === 'function' && ![MenuList, Cart, CartSummary].some((f) => /useState/.test(f.toString())) && /useState/.test(App.toString())"

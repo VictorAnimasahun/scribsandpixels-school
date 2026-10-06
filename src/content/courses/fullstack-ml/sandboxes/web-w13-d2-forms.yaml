@@ -1,0 +1,57 @@
+# Week 13 · Day 2 mini-task
+id: web-w13-d2-forms
+kind: web
+react: true
+title: "Controlled forms"
+description: "An order form React fully controls: validation, a disabled button, a field that appears on demand, and a live character count."
+html: |
+  <div id="root"></div>
+css: |
+  body { font-family: system-ui, sans-serif; padding: 1rem; background: #fff8ef; color: #2b1d16; }
+  button { margin: 0.15rem; }
+  .counter, .card, form, .cart { background: #fff; border: 2px solid #c0392b; border-radius: 12px; padding: 0.5rem 0.75rem; margin: 0.5rem 0; }
+  .error { color: #c0392b; }
+  .fav { background: #fff3c4; }
+  input, select, textarea { display: block; margin: 0.25rem 0; font: inherit; }
+js: |
+  import { useState } from "react"
+  import { createRoot } from "react-dom/client"
+
+  // Make every field controlled (value + onChange), then:
+  // 1. #phone: show <p className="error">Use 11 digits starting with 0</p> when it's filled but wrong (derive it: /^0\d{10}$/)
+  // 2. The Send button is disabled until the name isn't blank and the phone is valid
+  // 3. #address shows only when #mode is "delivery"
+  // 4. Under #notes: <p className="chars">{length}/200</p> (derived, not stored)
+  // 5. On submit (no page reload): replace the form with <p className="thanks">Thanks, NAME! We'll call PHONE.</p>
+  function OrderForm() {
+    return (
+      <form>
+        <input id="name" placeholder="Your name" />
+        <input id="phone" placeholder="0803…" />
+        <select id="mode">
+          <option value="pickup">Pickup</option>
+          <option value="delivery">Delivery</option>
+        </select>
+        <input id="address" placeholder="Delivery address" />
+        <textarea id="notes" placeholder="Notes for the kitchen" />
+        <button>Send</button>
+      </form>
+    )
+  }
+
+  createRoot(document.getElementById("root")).render(<OrderForm />)
+tasks:
+  - prompt: "A wrong phone shows the .error; a valid one removes it."
+    check: "(async () => { const tick = () => new Promise((r) => setTimeout(r, 80)); const btn = (root, t) => [...root.querySelectorAll('button')].find((b) => b.textContent.trim() === t); const type = (el, v) => { const proto = el.tagName === 'TEXTAREA' ? HTMLTextAreaElement : el.tagName === 'SELECT' ? HTMLSelectElement : HTMLInputElement; Object.getOwnPropertyDescriptor(proto.prototype, 'value').set.call(el, v); el.dispatchEvent(new Event(el.tagName === 'SELECT' ? 'change' : 'input', { bubbles: true })) }; const q = (s) => document.querySelector('#root ' + s); type(q('#phone'), '123'); await tick(); const bad = !!q('.error'); type(q('#phone'), '08031234567'); await tick(); return bad && !q('.error') })()"
+    hint: "{phone && !phoneOk && <p className=\"error\">\u2026</p>}"
+  - prompt: "Send is disabled until the name and phone are both valid."
+    check: "(async () => { const tick = () => new Promise((r) => setTimeout(r, 80)); const btn = (root, t) => [...root.querySelectorAll('button')].find((b) => b.textContent.trim() === t); const type = (el, v) => { const proto = el.tagName === 'TEXTAREA' ? HTMLTextAreaElement : el.tagName === 'SELECT' ? HTMLSelectElement : HTMLInputElement; Object.getOwnPropertyDescriptor(proto.prototype, 'value').set.call(el, v); el.dispatchEvent(new Event(el.tagName === 'SELECT' ? 'change' : 'input', { bubbles: true })) }; const q = (s) => document.querySelector('#root ' + s); type(q('#name'), ''); type(q('#phone'), '08031234567'); await tick(); const off1 = btn(document, 'Send').disabled; type(q('#name'), 'Ada'); await tick(); const on = !btn(document, 'Send').disabled; type(q('#phone'), '0803'); await tick(); const off2 = btn(document, 'Send').disabled; return off1 && on && off2 })()"
+    hint: "<button disabled={!canSend}>Send</button>"
+  - prompt: "#address shows only for delivery."
+    check: "(async () => { const tick = () => new Promise((r) => setTimeout(r, 80)); const btn = (root, t) => [...root.querySelectorAll('button')].find((b) => b.textContent.trim() === t); const type = (el, v) => { const proto = el.tagName === 'TEXTAREA' ? HTMLTextAreaElement : el.tagName === 'SELECT' ? HTMLSelectElement : HTMLInputElement; Object.getOwnPropertyDescriptor(proto.prototype, 'value').set.call(el, v); el.dispatchEvent(new Event(el.tagName === 'SELECT' ? 'change' : 'input', { bubbles: true })) }; const q = (s) => document.querySelector('#root ' + s); type(q('#mode'), 'pickup'); await tick(); const hidden = !q('#address'); type(q('#mode'), 'delivery'); await tick(); const shown = !!q('#address'); type(q('#mode'), 'pickup'); await tick(); return hidden && shown && !q('#address') })()"
+    hint: "{mode === \"delivery\" && <input id=\"address\" \u2026 />}"
+  - prompt: "p.chars counts the notes live (\"No pepper\" \u2192 9/200)."
+    check: "(async () => { const tick = () => new Promise((r) => setTimeout(r, 80)); const btn = (root, t) => [...root.querySelectorAll('button')].find((b) => b.textContent.trim() === t); const type = (el, v) => { const proto = el.tagName === 'TEXTAREA' ? HTMLTextAreaElement : el.tagName === 'SELECT' ? HTMLSelectElement : HTMLInputElement; Object.getOwnPropertyDescriptor(proto.prototype, 'value').set.call(el, v); el.dispatchEvent(new Event(el.tagName === 'SELECT' ? 'change' : 'input', { bubbles: true })) }; const q = (s) => document.querySelector('#root ' + s); type(q('#notes'), 'No pepper'); await tick(); return q('.chars')?.textContent === '9/200' })()"
+  - prompt: "Submitting shows \"Thanks, Ada! We'll call 08031234567.\" without reloading the page (preventDefault)."
+    check: "(async () => { const tick = () => new Promise((r) => setTimeout(r, 80)); const btn = (root, t) => [...root.querySelectorAll('button')].find((b) => b.textContent.trim() === t); const type = (el, v) => { const proto = el.tagName === 'TEXTAREA' ? HTMLTextAreaElement : el.tagName === 'SELECT' ? HTMLSelectElement : HTMLInputElement; Object.getOwnPropertyDescriptor(proto.prototype, 'value').set.call(el, v); el.dispatchEvent(new Event(el.tagName === 'SELECT' ? 'change' : 'input', { bubbles: true })) }; const q = (s) => document.querySelector('#root ' + s); type(q('#name'), 'Ada'); type(q('#phone'), '08031234567'); await tick(); btn(document, 'Send').click(); await tick(); return !window.__formReloaded && q('.thanks')?.textContent === \"Thanks, Ada! We'll call 08031234567.\" })()"
+    hint: "function handleSubmit(e) { e.preventDefault(); if (canSend) setSent(true) }"

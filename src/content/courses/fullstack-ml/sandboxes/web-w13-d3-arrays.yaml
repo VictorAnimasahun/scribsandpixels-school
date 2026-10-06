@@ -1,0 +1,61 @@
+# Week 13 · Day 3 mini-task
+id: web-w13-d3-arrays
+kind: web
+react: true
+title: "Arrays in state"
+description: "Add, remove and update dishes in a list held in state, using new arrays every time (no push, no splice)."
+html: |
+  <div id="root"></div>
+css: |
+  body { font-family: system-ui, sans-serif; padding: 1rem; background: #fff8ef; color: #2b1d16; }
+  button { margin: 0.15rem; }
+  .counter, .card, form, .cart { background: #fff; border: 2px solid #c0392b; border-radius: 12px; padding: 0.5rem 0.75rem; margin: 0.5rem 0; }
+  .error { color: #c0392b; }
+  .fav { background: #fff3c4; }
+  input, select, textarea { display: block; margin: 0.25rem 0; font: inherit; }
+js: |
+  import { useState } from "react"
+  import { createRoot } from "react-dom/client"
+
+  const starting = [
+    { id: 1, name: "Party jollof", fav: false },
+    { id: 2, name: "Moi moi", fav: false },
+    { id: 3, name: "Pepper soup", fav: false },
+  ]
+
+  // Keep the list in state and never mutate it (no push/splice/direct edits):
+  // 1. The form adds a dish from #new (ignore blank names), then clears the box
+  // 2. "Remove" deletes that dish (filter)
+  // 3. "★" toggles fav on that dish only (map + { ...dish, fav: !dish.fav }); a fav <li> gets className="fav"
+  // Tip: new ids can be Date.now()
+  function Dishes() {
+    return (
+      <>
+        <ul>
+          {starting.map((d) => (
+            <li key={d.id}>
+              <span>{d.name}</span> <button>★</button> <button>Remove</button>
+            </li>
+          ))}
+        </ul>
+        <form>
+          <input id="new" placeholder="New dish" />
+          <button>Add</button>
+        </form>
+      </>
+    )
+  }
+
+  createRoot(document.getElementById("root")).render(<Dishes />)
+tasks:
+  - prompt: "Adding \"Zobo\" puts it at the end and clears the box."
+    check: "(async () => { const tick = () => new Promise((r) => setTimeout(r, 80)); const btn = (root, t) => [...root.querySelectorAll('button')].find((b) => b.textContent.trim() === t); const type = (el, v) => { const proto = el.tagName === 'TEXTAREA' ? HTMLTextAreaElement : el.tagName === 'SELECT' ? HTMLSelectElement : HTMLInputElement; Object.getOwnPropertyDescriptor(proto.prototype, 'value').set.call(el, v); el.dispatchEvent(new Event(el.tagName === 'SELECT' ? 'change' : 'input', { bubbles: true })) }; const items = () => [...document.querySelectorAll('#root li')]; const names = () => items().map((l) => l.querySelector('span').textContent).join('|'); const row = (t) => items().find((l) => l.querySelector('span').textContent === t); type(document.querySelector('#new'), 'Zobo'); await tick(); btn(document, 'Add').click(); await tick(); return names() === 'Party jollof|Moi moi|Pepper soup|Zobo' && document.querySelector('#new').value === '' })()"
+    hint: "setDishes([...dishes, { id: Date.now(), name, fav: false }])"
+  - prompt: "A blank name isn't added."
+    check: "(async () => { const tick = () => new Promise((r) => setTimeout(r, 80)); const btn = (root, t) => [...root.querySelectorAll('button')].find((b) => b.textContent.trim() === t); const type = (el, v) => { const proto = el.tagName === 'TEXTAREA' ? HTMLTextAreaElement : el.tagName === 'SELECT' ? HTMLSelectElement : HTMLInputElement; Object.getOwnPropertyDescriptor(proto.prototype, 'value').set.call(el, v); el.dispatchEvent(new Event(el.tagName === 'SELECT' ? 'change' : 'input', { bubbles: true })) }; const items = () => [...document.querySelectorAll('#root li')]; const names = () => items().map((l) => l.querySelector('span').textContent).join('|'); const row = (t) => items().find((l) => l.querySelector('span').textContent === t); const before = items().length; type(document.querySelector('#new'), '   '); await tick(); btn(document, 'Add').click(); await tick(); return items().length === before })()"
+  - prompt: "Remove deletes only that dish."
+    check: "(async () => { const tick = () => new Promise((r) => setTimeout(r, 80)); const btn = (root, t) => [...root.querySelectorAll('button')].find((b) => b.textContent.trim() === t); const type = (el, v) => { const proto = el.tagName === 'TEXTAREA' ? HTMLTextAreaElement : el.tagName === 'SELECT' ? HTMLSelectElement : HTMLInputElement; Object.getOwnPropertyDescriptor(proto.prototype, 'value').set.call(el, v); el.dispatchEvent(new Event(el.tagName === 'SELECT' ? 'change' : 'input', { bubbles: true })) }; const items = () => [...document.querySelectorAll('#root li')]; const names = () => items().map((l) => l.querySelector('span').textContent).join('|'); const row = (t) => items().find((l) => l.querySelector('span').textContent === t); btn(row('Moi moi'), 'Remove').click(); await tick(); return !names().includes('Moi moi') && names().includes('Party jollof') && names().includes('Pepper soup') })()"
+    hint: "setDishes(dishes.filter((x) => x.id !== d.id))"
+  - prompt: "\u2605 toggles fav on that dish only (className \"fav\")."
+    check: "(async () => { const tick = () => new Promise((r) => setTimeout(r, 80)); const btn = (root, t) => [...root.querySelectorAll('button')].find((b) => b.textContent.trim() === t); const type = (el, v) => { const proto = el.tagName === 'TEXTAREA' ? HTMLTextAreaElement : el.tagName === 'SELECT' ? HTMLSelectElement : HTMLInputElement; Object.getOwnPropertyDescriptor(proto.prototype, 'value').set.call(el, v); el.dispatchEvent(new Event(el.tagName === 'SELECT' ? 'change' : 'input', { bubbles: true })) }; const items = () => [...document.querySelectorAll('#root li')]; const names = () => items().map((l) => l.querySelector('span').textContent).join('|'); const row = (t) => items().find((l) => l.querySelector('span').textContent === t); btn(row('Pepper soup'), '\u2605').click(); await tick(); const on = row('Pepper soup').className === 'fav' && items().filter((l) => l.className === 'fav').length === 1; btn(row('Pepper soup'), '\u2605').click(); await tick(); return on && !items().some((l) => l.className === 'fav') })()"
+    hint: "dishes.map((x) => (x.id === d.id ? { ...x, fav: !x.fav } : x))"

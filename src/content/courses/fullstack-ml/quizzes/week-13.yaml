@@ -1,0 +1,483 @@
+# Fullstack + ML · Week 13 quizzes. Format and rules: src/content/QUIZZES.md
+week: 13
+days:
+
+  # ─────────────────────────── DAY 1 ───────────────────────────
+  - day: 1
+    gate:
+      title: "Checkpoint: Week 12 review"
+      covers: "Week 12: Node/npm/Vite, JSX rules, components and props, lists and keys, exports, building and deploying"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w13-d1-g01, difficulty: easy, type: mcq, prompt: "Start a Vite dev server", choices: ["npm run dev", "npm run build", "npm install", "node vite"], answer: 0 }
+        - { id: fs-w13-d1-g02, difficulty: easy, type: mcq, prompt: "CSS class in JSX", choices: ["className", "class", "cssClass", "classList"], answer: 0 }
+        - { id: fs-w13-d1-g03, difficulty: easy, type: truefalse, prompt: "A component may change its own props.", answer: false }
+        - { id: fs-w13-d1-g04, difficulty: easy, type: mcq, prompt: "What's between a component's tags", choices: ["children", "props.inner", "slot", "content"], answer: 0 }
+        - { id: fs-w13-d1-g05, difficulty: easy, type: mcq, prompt: "List items need a…", choices: ["key", "class", "ref", "name"], answer: 0 }
+        - { id: fs-w13-d1-g06, difficulty: easy, type: mcq, prompt: "Production build folder", choices: ["dist/", "src/", "public/", "node_modules/"], answer: 0 }
+        - { id: fs-w13-d1-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["export default", "any import name"], ["export const", "import with braces"], ["base", "site's path on the server"], ["key", "stable identity in a list"]] }
+        - { id: fs-w13-d1-g08, difficulty: medium, type: mcq, prompt: "{count && <p>Items</p>} with count = 0 renders…", choices: ["0", "nothing", "Items", "false"], answer: 0 }
+        - { id: fs-w13-d1-g09, difficulty: medium, type: mcq, prompt: "price=\"3500\" then price + 500 →", choices: ["\"3500500\"", "4000", "NaN", "error"], answer: 0 }
+        - { id: fs-w13-d1-g10, difficulty: medium, type: truefalse, prompt: "The array index is a fine key for a list you reorder.", answer: false }
+        - { id: fs-w13-d1-g11, difficulty: medium, type: text, prompt: "Write JSX that renders DishCard with name \"Zobo\" and price 700 (number).", accept: ["<DishCard name=\"Zobo\" price={700} />", "<DishCard name='Zobo' price={700} />"] }
+        - id: fs-w13-d1-g12
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const cats = ["Rice", "Drinks", "Rice", "Sides"]
+            console.log([...new Set(cats)].length)
+          accept: ["3"]
+        - { id: fs-w13-d1-g13, difficulty: medium, type: mcq, prompt: "Deployed React page is blank, assets 404. Fix:", choices: ["set base to the repo path, rebuild", "add keys", "use className", "npm install again"], answer: 0 }
+        - { id: fs-w13-d1-g14, difficulty: medium, type: mcq, prompt: "style={{ fontSize: 18 }} →", choices: ["18px", "18em", "error", "18%"], answer: 0 }
+        - { id: fs-w13-d1-g15, difficulty: medium, type: mcq, prompt: "<welcome /> (lowercase) renders…", choices: ["an unknown HTML tag, not your component", "your component", "nothing ever", "an error always"], answer: 0 }
+        - id: fs-w13-d1-g16
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const order = ["Rice", "Soups", "Drinks"]
+            const dishes = [{ c: "Drinks" }, { c: "Rice" }, { c: "Drinks" }]
+            console.log(order.map((o) => dishes.filter((d) => d.c === o).length).join("-"))
+          accept: ["1-0-2"]
+        - { id: fs-w13-d1-g17, difficulty: hard, type: mcq, prompt: "Two items share key 3. React…", choices: ["warns and may mix them up on update", "merges them", "drops one silently with no warning", "fails the build"], answer: 0 }
+        - { id: fs-w13-d1-g18, difficulty: hard, type: multi, prompt: "True about JSX (Select all.)", choices: ["{ } holds expressions", "every tag must close", "one parent per return", "if statements go inside { }"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "useState"
+        secondsPerQuestion: 10
+        questions:
+          - { id: fs-w13-d1-rf01, difficulty: easy, type: mcq, prompt: "Data React remembers between renders", choices: ["state", "props", "keys", "refs only"], answer: 0 }
+          - { id: fs-w13-d1-rf02, difficulty: easy, type: mcq, prompt: "useState(0) returns…", choices: ["[value, setter]", "a number", "a function only", "an object"], answer: 0 }
+          - { id: fs-w13-d1-rf03, difficulty: easy, type: mcq, prompt: "Change state", choices: ["call the setter", "assign to the variable", "edit the DOM", "reload"], answer: 0 }
+          - { id: fs-w13-d1-rf04, difficulty: easy, type: mcq, prompt: "Changing state causes…", choices: ["a re-render", "a page reload", "a build", "nothing"], answer: 0 }
+          - { id: fs-w13-d1-rf05, difficulty: easy, type: mcq, prompt: "Next value depends on the last", choices: ["setCount((c) => c + 1)", "setCount(count++)", "count += 1", "setCount += 1"], answer: 0 }
+          - { id: fs-w13-d1-rf06, difficulty: easy, type: mcq, prompt: "Functions starting with use are…", choices: ["hooks", "props", "events", "components"], answer: 0 }
+          - { id: fs-w13-d1-rf07, difficulty: easy, type: truefalse, prompt: "Two <Counter />s share one count.", answer: false }
+          - { id: fs-w13-d1-rf08, difficulty: easy, type: mcq, prompt: "Where to call hooks", choices: ["top level of the component", "inside if", "inside loops", "inside handlers"], answer: 0 }
+          - { id: fs-w13-d1-rf09, difficulty: easy, type: mcq, prompt: "let count = 0; count++ in a click handler →", choices: ["the screen doesn't change", "the screen updates", "an error", "a reload"], answer: 0 }
+          - { id: fs-w13-d1-rf10, difficulty: easy, type: mcq, prompt: "onClick={handleClick()} (with brackets)", choices: ["calls it during render: a bug", "correct", "same as without", "syntax error"], answer: 0 }
+      - kind: brain-teaser
+        title: "What's the count?"
+        questions:
+          - { id: fs-w13-d1-bt01, difficulty: medium, type: mcq, prompt: "count = 0; one click runs setCount(count + 1) three times. New count?", choices: ["1", "3", "0", "error"], answer: 0, explain: "All three read the same count (0) from this render." }
+          - { id: fs-w13-d1-bt02, difficulty: medium, type: mcq, prompt: "count = 0; one click runs setCount((c) => c + 1) three times. New count?", choices: ["3", "1", "0", "error"], answer: 0 }
+          - { id: fs-w13-d1-bt03, difficulty: medium, type: mcq, prompt: "Remove that never goes below 0", choices: ["setCount(Math.max(0, count - 1))", "setCount(count - 1)", "count--", "setCount(-1)"], answer: 0 }
+          - { id: fs-w13-d1-bt04, difficulty: hard, type: mcq, prompt: "console.log(count) right after setCount(5) in the same handler prints…", choices: ["the old value", "5", "undefined", "an error"], answer: 0, explain: "State updates show on the next render." }
+          - { id: fs-w13-d1-bt05, difficulty: hard, type: mcq, prompt: "Why must hooks not go inside an if?", choices: ["React identifies hooks by call order; it must be the same every render", "if is slow", "style rule only", "they'd run twice"], answer: 0 }
+
+  # ─────────────────────────── DAY 2 ───────────────────────────
+  - day: 2
+    gate:
+      title: "Checkpoint: useState"
+      covers: "Week 13 · Day 1: state vs variables, useState, setters, re-render, functional updates, hook rules"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w13-d2-g01, difficulty: easy, type: mcq, prompt: "Import useState", choices: ["import { useState } from \"react\"", "import useState from \"react-dom\"", "require(\"state\")", "React.state()"], answer: 0 }
+        - { id: fs-w13-d2-g02, difficulty: easy, type: mcq, prompt: "Starting value of useState(\"\")", choices: ["an empty string", "undefined", "null", "0"], answer: 0 }
+        - { id: fs-w13-d2-g03, difficulty: easy, type: truefalse, prompt: "Calling the setter makes React run the component again.", answer: true }
+        - { id: fs-w13-d2-g04, difficulty: easy, type: mcq, prompt: "Never do this with state", choices: ["assign to it directly", "read it", "pass it as a prop", "show it"], answer: 0 }
+        - { id: fs-w13-d2-g05, difficulty: easy, type: mcq, prompt: "Each component instance has…", choices: ["its own state", "shared state", "no state", "global state"], answer: 0 }
+        - { id: fs-w13-d2-g06, difficulty: easy, type: mcq, prompt: "Reset button", choices: ["onClick={() => setCount(0)}", "onClick={setCount(0)}", "count = 0", "onClick=\"reset\""], answer: 0 }
+        - { id: fs-w13-d2-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["useState", "remember a value"], ["setter", "change it + re-render"], ["(c) => c + 1", "update from the latest value"], ["hook rules", "top level, same order"]] }
+        - { id: fs-w13-d2-g08, difficulty: medium, type: text, prompt: "Write the line that creates a state called plates starting at 0.", accept: ["const [plates, setPlates] = useState(0)", "const [plates, setPlates] = useState(0);"] }
+        - { id: fs-w13-d2-g09, difficulty: medium, type: mcq, prompt: "Three setCount(count + 1) calls in one click, count 4 →", choices: ["5", "7", "4", "error"], answer: 0 }
+        - { id: fs-w13-d2-g10, difficulty: medium, type: truefalse, prompt: "useState inside a for loop is fine.", answer: false }
+        - { id: fs-w13-d2-g11, difficulty: medium, type: mcq, prompt: "Pass a handler, not call it", choices: ["onClick={add}", "onClick={add()}", "onClick=\"add()\"", "onclick={add}"], answer: 0 }
+        - { id: fs-w13-d2-g12, difficulty: medium, type: mcq, prompt: "A re-render means…", choices: ["React calls your component again and updates what changed", "the page reloads", "the server restarts", "CSS reloads"], answer: 0 }
+        - { id: fs-w13-d2-g13, difficulty: medium, type: mcq, prompt: "Toggle a boolean", choices: ["setOpen((o) => !o)", "setOpen(!)", "open = !open", "setOpen(toggle)"], answer: 0 }
+        - { id: fs-w13-d2-g14, difficulty: medium, type: text, prompt: "count is 2. After one click running setCount((c) => c * 2) twice, count is?", accept: ["8"] }
+        - { id: fs-w13-d2-g15, difficulty: medium, type: mcq, prompt: "State vs props", choices: ["state is owned and changed by the component; props come from the parent", "same thing", "props change, state can't", "state is global"], answer: 0 }
+        - { id: fs-w13-d2-g16, difficulty: hard, type: text, prompt: "count is 5. One click runs setCount(count + 1) then setCount((c) => c + 10). New count?", accept: ["16"], explain: "First queued value 6, then 6 + 10." }
+        - { id: fs-w13-d2-g17, difficulty: hard, type: mcq, prompt: "Expensive starting value read from localStorage once", choices: ["useState(() => localStorage.getItem(\"x\"))", "useState(localStorage.getItem(\"x\")) always the same", "useEffect only", "global variable"], answer: 0, explain: "The function form runs only on the first render." }
+        - { id: fs-w13-d2-g18, difficulty: hard, type: multi, prompt: "True? (Select all.)", choices: ["state updates show on the next render", "the function form avoids stale values", "each instance has its own state", "hooks can be called conditionally"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Forms and events"
+        secondsPerQuestion: 10
+        questions:
+          - { id: fs-w13-d2-rf01, difficulty: easy, type: mcq, prompt: "A controlled input has…", choices: ["value={state} + onChange", "only defaultValue", "an id", "a ref only"], answer: 0 }
+          - { id: fs-w13-d2-rf02, difficulty: easy, type: mcq, prompt: "The text in an onChange handler", choices: ["e.target.value", "e.value", "this.value", "e.text"], answer: 0 }
+          - { id: fs-w13-d2-rf03, difficulty: easy, type: mcq, prompt: "Stop the form reloading", choices: ["e.preventDefault()", "return false", "e.stop()", "form.cancel()"], answer: 0 }
+          - { id: fs-w13-d2-rf04, difficulty: easy, type: mcq, prompt: "Form submit handler goes on…", choices: ["<form onSubmit={…}>", "<button onSubmit>", "<input onSubmit>", "window"], answer: 0 }
+          - { id: fs-w13-d2-rf05, difficulty: easy, type: mcq, prompt: "A value computed from state, not stored", choices: ["derived value", "prop", "effect", "key"], answer: 0 }
+          - { id: fs-w13-d2-rf06, difficulty: easy, type: truefalse, prompt: "A <select> can be controlled like an input.", answer: true }
+          - { id: fs-w13-d2-rf07, difficulty: easy, type: mcq, prompt: "Disable Send until valid", choices: ["<button disabled={!canSend}>", "<button off>", "<button if={canSend}>", "button.hidden"], answer: 0 }
+          - { id: fs-w13-d2-rf08, difficulty: easy, type: mcq, prompt: "Nigerian mobile number check", choices: ["/^0\\d{10}$/", "/\\d+/", "/^0$/", "/^\\d{5}$/"], answer: 0 }
+          - { id: fs-w13-d2-rf09, difficulty: easy, type: mcq, prompt: "Show the address only for delivery", choices: ["{mode === \"delivery\" && <input … />}", "<input if=delivery>", "{mode && <input>}", "hidden={delivery}"], answer: 0 }
+          - { id: fs-w13-d2-rf10, difficulty: easy, type: mcq, prompt: "Live character count", choices: ["{notes.length}/200", "store a separate count state", "count on submit only", "CSS counter"], answer: 0 }
+      - kind: brain-teaser
+        title: "Controlled or not?"
+        questions:
+          - { id: fs-w13-d2-bt01, difficulty: medium, type: mcq, prompt: "<input value={name} /> with no onChange: typing…", choices: ["does nothing (React keeps it at name)", "works normally", "crashes", "clears it"], answer: 0 }
+          - { id: fs-w13-d2-bt02, difficulty: medium, type: mcq, prompt: "Why derive phoneOk instead of storing it?", choices: ["it can never get out of sync with phone", "it's faster", "React requires it", "to save memory"], answer: 0 }
+          - id: fs-w13-d2-bt03
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const ok = (p) => /^0\d{10}$/.test(p)
+              console.log(ok("08031234567"), ok("8031234567"), ok("0803 123 4567"))
+            accept: ["true false false"]
+          - { id: fs-w13-d2-bt04, difficulty: hard, type: mcq, prompt: "Submit without preventDefault in React →", choices: ["the browser reloads the page and state is lost", "nothing", "React prevents it", "an error only"], answer: 0 }
+          - id: fs-w13-d2-bt05
+            difficulty: hard
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const name = "  Ada "
+              const phone = "08031234567"
+              const canSend = name.trim() !== "" && /^0\d{10}$/.test(phone)
+              console.log(canSend, `Thanks, ${name.trim()}!`)
+            accept: ["true Thanks, Ada!"]
+
+  # ─────────────────────────── DAY 3 ───────────────────────────
+  - day: 3
+    gate:
+      title: "Checkpoint: controlled forms"
+      covers: "Week 13 · Day 2: controlled inputs and selects, event objects, onSubmit + preventDefault, derived values, disabling buttons"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w13-d3-g01, difficulty: easy, type: mcq, prompt: "Input text in a handler", choices: ["e.target.value", "e.input", "value()", "e.data only"], answer: 0 }
+        - { id: fs-w13-d3-g02, difficulty: easy, type: mcq, prompt: "Controlled means…", choices: ["React state holds the input's value", "the input is disabled", "it has validation", "it's required"], answer: 0 }
+        - { id: fs-w13-d3-g03, difficulty: easy, type: truefalse, prompt: "In React you still call e.preventDefault() in onSubmit.", answer: true }
+        - { id: fs-w13-d3-g04, difficulty: easy, type: mcq, prompt: "A derived value is…", choices: ["calculated from state each render", "stored in its own state", "a prop", "an effect"], answer: 0 }
+        - { id: fs-w13-d3-g05, difficulty: easy, type: mcq, prompt: "Event for typing in React inputs", choices: ["onChange", "onType", "onKey", "onInputChange"], answer: 0 }
+        - { id: fs-w13-d3-g06, difficulty: easy, type: mcq, prompt: "Show the error only when filled and wrong", choices: ["{phone && !phoneOk && <p>…</p>}", "{!phoneOk && <p>}", "{phone || <p>}", "{phoneOk ? <p>}"], answer: 0 }
+        - { id: fs-w13-d3-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["value + onChange", "controlled input"], ["e.preventDefault()", "no reload"], ["disabled={!ok}", "block bad submits"], ["{a && <X />}", "show conditionally"]] }
+        - { id: fs-w13-d3-g08, difficulty: medium, type: text, prompt: "Write the onChange for an input bound to state name (arrow function).", accept: ["onChange={(e) => setName(e.target.value)}", "onChange={e => setName(e.target.value)}"] }
+        - { id: fs-w13-d3-g09, difficulty: medium, type: mcq, prompt: "Store both name and nameIsValid in state. Risk?", choices: ["they can disagree; derive validity instead", "none", "React forbids it", "slower typing only"], answer: 0 }
+        - { id: fs-w13-d3-g10, difficulty: medium, type: truefalse, prompt: "value without onChange makes a read-only box (React warns).", answer: true }
+        - { id: fs-w13-d3-g11, difficulty: medium, type: mcq, prompt: "Controlled select", choices: ["<select value={mode} onChange={(e) => setMode(e.target.value)}>", "<select selected={mode}>", "<select onSelect>", "<option value={mode}>"], answer: 0 }
+        - id: fs-w13-d3-g12
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const notes = "No pepper, extra dodo"
+            console.log(`${notes.length}/200`)
+          accept: ["21/200"]
+        - { id: fs-w13-d3-g13, difficulty: medium, type: mcq, prompt: "After sending, show a thank-you instead of the form", choices: ["if (sent) return <p>Thanks…</p>", "hide the form with CSS only", "reload the page", "alert()"], answer: 0 }
+        - { id: fs-w13-d3-g14, difficulty: medium, type: mcq, prompt: "Validate only after the user typed something because…", choices: ["errors on an empty, untouched form feel hostile", "React requires it", "regex fails on empty", "it's faster"], answer: 0 }
+        - { id: fs-w13-d3-g15, difficulty: medium, type: mcq, prompt: "Where does a controlled input's truth live?", choices: ["in state", "in the DOM", "in localStorage", "in the server"], answer: 0 }
+        - id: fs-w13-d3-g16
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const form = { name: "Ada", phone: "0803123456" }
+            const errors = []
+            if (!form.name.trim()) errors.push("name")
+            if (!/^0\d{10}$/.test(form.phone)) errors.push("phone")
+            console.log(errors.length ? errors.join(",") : "ok")
+          accept: ["phone"]
+        - { id: fs-w13-d3-g17, difficulty: hard, type: mcq, prompt: "A big form with 10 fields: tidy state", choices: ["one object state + update with { ...form, [field]: value }", "10 separate globals", "store in the DOM", "no state"], answer: 0 }
+        - { id: fs-w13-d3-g18, difficulty: hard, type: multi, prompt: "Good form habits (Select all.)", choices: ["controlled inputs", "derived validation", "preventDefault on submit", "storing every derived value in state"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Immutable updates"
+        secondsPerQuestion: 10
+        questions:
+          - { id: fs-w13-d3-rf01, difficulty: easy, type: mcq, prompt: "Add to an array in state", choices: ["setCart([...cart, item])", "cart.push(item)", "cart[cart.length] = item", "cart.add(item)"], answer: 0 }
+          - { id: fs-w13-d3-rf02, difficulty: easy, type: mcq, prompt: "Remove from an array in state", choices: ["setCart(cart.filter((i) => i.id !== id))", "cart.splice(i, 1)", "delete cart[i]", "cart.pop()"], answer: 0 }
+          - { id: fs-w13-d3-rf03, difficulty: easy, type: mcq, prompt: "Update one item", choices: ["cart.map((i) => (i.id === id ? { ...i, qty: i.qty + 1 } : i))", "cart[i].qty++", "cart.find(id).qty++", "cart.qty++"], answer: 0 }
+          - { id: fs-w13-d3-rf04, difficulty: easy, type: mcq, prompt: "Change one field of an object in state", choices: ["setCustomer({ ...customer, area: \"Surulere\" })", "customer.area = \"Surulere\"", "setCustomer(\"Surulere\")", "Object.set(customer)"], answer: 0 }
+          - { id: fs-w13-d3-rf05, difficulty: easy, type: mcq, prompt: "Why new copies?", choices: ["React compares references to see changes", "copies are faster", "JS forbids changes", "for CSS"], answer: 0 }
+          - { id: fs-w13-d3-rf06, difficulty: easy, type: truefalse, prompt: "cart.push(x) then setCart(cart) reliably re-renders.", answer: false }
+          - { id: fs-w13-d3-rf07, difficulty: easy, type: mcq, prompt: "This idea is called…", choices: ["immutability", "mutation", "hoisting", "closure"], answer: 0 }
+          - { id: fs-w13-d3-rf08, difficulty: easy, type: mcq, prompt: "[...a, x] puts x…", choices: ["at the end", "at the start", "in the middle", "nowhere"], answer: 0 }
+          - { id: fs-w13-d3-rf09, difficulty: easy, type: mcq, prompt: "[x, ...a] puts x…", choices: ["at the start", "at the end", "replacing a", "nowhere"], answer: 0 }
+          - { id: fs-w13-d3-rf10, difficulty: easy, type: mcq, prompt: "Toggle fav on dish 3", choices: ["dishes.map((d) => (d.id === 3 ? { ...d, fav: !d.fav } : d))", "dishes[3].fav = !fav", "dishes.fav(3)", "toggle(dishes)"], answer: 0 }
+      - kind: brain-teaser
+        title: "New array, same data?"
+        questions:
+          - id: fs-w13-d3-bt01
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const cart = [{ id: 1, qty: 1 }]
+              const next = [...cart, { id: 2, qty: 1 }]
+              console.log(cart.length, next.length, cart === next)
+            accept: ["1 2 false"]
+          - id: fs-w13-d3-bt02
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const cart = [{ id: 1, qty: 1 }, { id: 2, qty: 3 }]
+              const next = cart.map((i) => (i.id === 2 ? { ...i, qty: i.qty + 1 } : i))
+              console.log(cart[1].qty, next[1].qty, cart[0] === next[0])
+            accept: ["3 4 true"]
+          - id: fs-w13-d3-bt03
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const a = [1, 2, 3]
+              const b = a
+              b.push(4)
+              console.log(a.length, a === b)
+            accept: ["4 true"]
+          - { id: fs-w13-d3-bt04, difficulty: hard, type: mcq, prompt: "Why does the bt03 situation break React updates?", choices: ["the 'new' state is the same array, so React may skip the render", "push is slow", "arrays can't hold numbers", "it doesn't"], answer: 0 }
+          - id: fs-w13-d3-bt05
+            difficulty: hard
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const c = { name: "Ada", area: "Yaba" }
+              const d = { ...c, area: "Surulere" }
+              console.log(c.area, d.area, d.name)
+            accept: ["Yaba Surulere Ada"]
+
+  # ─────────────────────────── DAY 4 ───────────────────────────
+  - day: 4
+    gate:
+      title: "Checkpoint: arrays and objects in state"
+      covers: "Week 13 · Day 3: immutability; add with spread, remove with filter, update with map; objects with spread"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w13-d4-g01, difficulty: easy, type: mcq, prompt: "Add an item immutably", choices: ["[...list, item]", "list.push(item)", "list.unshift(item)", "list.add(item)"], answer: 0 }
+        - { id: fs-w13-d4-g02, difficulty: easy, type: mcq, prompt: "Remove id 7", choices: ["list.filter((x) => x.id !== 7)", "list.splice(7)", "delete list[7]", "list.remove(7)"], answer: 0 }
+        - { id: fs-w13-d4-g03, difficulty: easy, type: truefalse, prompt: "map returns a new array.", answer: true }
+        - { id: fs-w13-d4-g04, difficulty: easy, type: mcq, prompt: "Copy an object with one change", choices: ["{ ...obj, key: value }", "obj.key = value", "Object(obj)", "obj.copy()"], answer: 0 }
+        - { id: fs-w13-d4-g05, difficulty: easy, type: mcq, prompt: "Mutating means…", choices: ["changing the existing value in place", "making a copy", "deleting state", "re-rendering"], answer: 0 }
+        - { id: fs-w13-d4-g06, difficulty: easy, type: mcq, prompt: "Not allowed on state arrays", choices: ["push / splice / sort in place", "map", "filter", "spread"], answer: 0 }
+        - { id: fs-w13-d4-g07, difficulty: medium, type: match, prompt: "Mutating → immutable.", pairs: [["cart.push(x)", "[...cart, x]"], ["cart.splice(i, 1)", "cart.filter(…)"], ["cart[i].qty++", "cart.map(… { ...i, qty: i.qty + 1 } …)"], ["c.area = \"Ikeja\"", "{ ...c, area: \"Ikeja\" }"]] }
+        - { id: fs-w13-d4-g08, difficulty: medium, type: text, prompt: "Write the setDishes call that removes the dish with id 3.", accept: ["setDishes(dishes.filter((d) => d.id !== 3))", "setDishes(dishes.filter(d => d.id !== 3))", "setDishes((ds) => ds.filter((d) => d.id !== 3))"] }
+        - id: fs-w13-d4-g09
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const list = [3, 1, 2]
+            const sorted = [...list].sort((a, b) => a - b)
+            console.log(list.join(""), sorted.join(""))
+          accept: ["312 123"]
+        - { id: fs-w13-d4-g10, difficulty: medium, type: truefalse, prompt: "list.sort() changes the original array.", answer: true }
+        - { id: fs-w13-d4-g11, difficulty: medium, type: mcq, prompt: "New ids for added items (simple)", choices: ["Date.now() or crypto.randomUUID()", "the array length", "the name", "0"], answer: 0 }
+        - id: fs-w13-d4-g12
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const dishes = [{ id: 1, fav: false }, { id: 2, fav: false }]
+            const next = dishes.map((d) => (d.id === 2 ? { ...d, fav: !d.fav } : d))
+            console.log(next.filter((d) => d.fav).map((d) => d.id).join(), dishes[1].fav)
+          accept: ["2 false"]
+        - { id: fs-w13-d4-g13, difficulty: medium, type: mcq, prompt: "Ignore blank names on add", choices: ["if (!name.trim()) return", "if (name) add", "name.length > 0 only", "nothing"], answer: 0 }
+        - { id: fs-w13-d4-g14, difficulty: medium, type: mcq, prompt: "Clear the box after adding", choices: ["setName(\"\")", "input.value = \"\" only", "reload", "e.reset()"], answer: 0 }
+        - { id: fs-w13-d4-g15, difficulty: medium, type: mcq, prompt: "{ ...dish, fav: true } copies…", choices: ["every field, then sets fav", "only fav", "nothing", "nested objects deeply"], answer: 0 }
+        - id: fs-w13-d4-g16
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const order = { customer: { name: "Ada" }, total: 7000 }
+            const copy = { ...order, total: 8000 }
+            copy.customer.name = "Tunde"
+            console.log(order.customer.name, order.total)
+          accept: ["Tunde 7000"]
+          explain: "Spread copies one level deep: customer is still the same object."
+        - { id: fs-w13-d4-g17, difficulty: hard, type: mcq, prompt: "Update a nested field immutably", choices: ["{ ...order, customer: { ...order.customer, name: \"Tunde\" } }", "order.customer.name = \"Tunde\"", "{ ...order, name: \"Tunde\" }", "structuredClone only, then mutate the original"], answer: 0 }
+        - { id: fs-w13-d4-g18, difficulty: hard, type: multi, prompt: "Return new arrays (Select all.)", choices: ["map", "filter", "[...a]", "sort (in place)"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "useEffect"
+        secondsPerQuestion: 10
+        questions:
+          - { id: fs-w13-d4-rf01, difficulty: easy, type: mcq, prompt: "Effects run…", choices: ["after React updates the screen", "before rendering", "only on clicks", "on the server"], answer: 0 }
+          - { id: fs-w13-d4-rf02, difficulty: easy, type: mcq, prompt: "Run once after the first render", choices: ["[] as the dependency array", "no array", "[everything]", "null"], answer: 0 }
+          - { id: fs-w13-d4-rf03, difficulty: easy, type: mcq, prompt: "Re-run when city changes", choices: ["[city]", "[]", "no array", "[setCity]"], answer: 0 }
+          - { id: fs-w13-d4-rf04, difficulty: easy, type: mcq, prompt: "No dependency array →", choices: ["after every render", "once", "never", "on unmount only"], answer: 0 }
+          - { id: fs-w13-d4-rf05, difficulty: easy, type: mcq, prompt: "Undo an effect", choices: ["return a cleanup function", "call useCleanup", "setState(null)", "reload"], answer: 0 }
+          - { id: fs-w13-d4-rf06, difficulty: easy, type: mcq, prompt: "Belongs in an effect", choices: ["fetching data", "computing a total", "rendering JSX", "defining a component"], answer: 0 }
+          - { id: fs-w13-d4-rf07, difficulty: easy, type: truefalse, prompt: "In development, Strict Mode runs effects twice on purpose.", answer: true }
+          - { id: fs-w13-d4-rf08, difficulty: easy, type: mcq, prompt: "Three screen states for loaded data", choices: ["loading, error, ready", "on, off, idle", "new, old, gone", "red, amber, green"], answer: 0 }
+          - { id: fs-w13-d4-rf09, difficulty: easy, type: mcq, prompt: "Save the cart whenever it changes", choices: ["useEffect(() => save(cart), [cart])", "save in render", "useState(save)", "onClick only"], answer: 0 }
+          - { id: fs-w13-d4-rf10, difficulty: easy, type: mcq, prompt: "Clear a timer on unmount", choices: ["return () => clearInterval(id)", "clearInterval in render", "nothing needed", "setInterval(null)"], answer: 0 }
+      - kind: brain-teaser
+        title: "When does it run?"
+        questions:
+          - { id: fs-w13-d4-bt01, difficulty: medium, type: mcq, prompt: "useEffect(() => { fetchMenu() }) with no array, and fetchMenu sets state →", choices: ["an endless loop of fetch → render → fetch", "fetches once", "never fetches", "an error at build"], answer: 0 }
+          - { id: fs-w13-d4-bt02, difficulty: medium, type: mcq, prompt: "useEffect(() => { document.title = `${n} items` }, [n]) runs…", choices: ["after the first render and whenever n changes", "only once", "on every render", "never"], answer: 0 }
+          - { id: fs-w13-d4-bt03, difficulty: medium, type: mcq, prompt: "Pass loadMenu as a prop instead of calling fetch directly so…", choices: ["tests can pass a fake (and errors can be simulated)", "it's faster", "React requires it", "keys work"], answer: 0 }
+          - { id: fs-w13-d4-bt04, difficulty: hard, type: mcq, prompt: "City changes quickly Lagos → Abuja; Lagos's slow reply arrives last. Fix:", choices: ["ignore stale replies with a cleanup flag (let ignore = true in cleanup)", "add more keys", "use []", "nothing; it's fine"], answer: 0 }
+          - { id: fs-w13-d4-bt05, difficulty: hard, type: mcq, prompt: "A total computed from the cart should be…", choices: ["derived during render, not set in an effect", "stored via useEffect + setState", "fetched", "a global"], answer: 0 }
+
+  # ─────────────────────────── DAY 5 ───────────────────────────
+  - day: 5
+    gate:
+      title: "Checkpoint: useEffect"
+      covers: "Week 13 · Day 4: effects after render, dependency arrays, loading/error/ready, syncing to localStorage, cleanup, Strict Mode"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w13-d5-g01, difficulty: easy, type: mcq, prompt: "Import useEffect", choices: ["import { useEffect } from \"react\"", "import effect from \"react\"", "React.effect()", "require(\"effect\")"], answer: 0 }
+        - { id: fs-w13-d5-g02, difficulty: easy, type: mcq, prompt: "[] means the effect runs…", choices: ["once after the first render", "every render", "never", "on every click"], answer: 0 }
+        - { id: fs-w13-d5-g03, difficulty: easy, type: truefalse, prompt: "Fetching belongs in an effect, not directly in the render.", answer: true }
+        - { id: fs-w13-d5-g04, difficulty: easy, type: mcq, prompt: "Cleanup is…", choices: ["a function the effect returns", "a hook called useCleanup", "a CSS reset", "React.clean()"], answer: 0 }
+        - { id: fs-w13-d5-g05, difficulty: easy, type: mcq, prompt: "Show while waiting", choices: ["Loading…", "nothing at all", "an error", "the old page"], answer: 0 }
+        - { id: fs-w13-d5-g06, difficulty: easy, type: mcq, prompt: "Re-run when city changes", choices: ["[city]", "[]", "none", "[true]"], answer: 0 }
+        - { id: fs-w13-d5-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["[]", "once"], ["[city]", "when city changes"], ["no array", "every render"], ["return () => …", "cleanup"]] }
+        - { id: fs-w13-d5-g08, difficulty: medium, type: text, prompt: "Write the effect that saves cart to localStorage whenever cart changes.", accept: ["useEffect(() => { localStorage.setItem(\"cart\", JSON.stringify(cart)) }, [cart])", "useEffect(() => localStorage.setItem(\"cart\", JSON.stringify(cart)), [cart])", "useEffect(() => { localStorage.setItem('cart', JSON.stringify(cart)) }, [cart])"] }
+        - { id: fs-w13-d5-g09, difficulty: medium, type: mcq, prompt: "Read the saved city as the starting state", choices: ["useState(() => localStorage.getItem(\"city\") ?? \"Lagos\")", "useEffect to read it every render", "a global", "useState(\"Lagos\") only"], answer: 0 }
+        - { id: fs-w13-d5-g10, difficulty: medium, type: truefalse, prompt: "Strict Mode's double effect run only happens in development.", answer: true }
+        - { id: fs-w13-d5-g11, difficulty: medium, type: mcq, prompt: "If loadMenu rejects", choices: ["catch → setStatus(\"error\")", "React shows an error page", "the effect retries forever", "nothing"], answer: 0 }
+        - { id: fs-w13-d5-g12, difficulty: medium, type: mcq, prompt: "Forgetting cleanup on setInterval in a component that unmounts →", choices: ["the timer keeps running (a leak)", "React clears it", "an error", "nothing"], answer: 0 }
+        - { id: fs-w13-d5-g13, difficulty: medium, type: mcq, prompt: "Effect calling setState with no dependency array →", choices: ["infinite render loop", "one extra render", "nothing", "a build error"], answer: 0 }
+        - id: fs-w13-d5-g14
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const saved = JSON.stringify([{ id: 1, qty: 2 }])
+            const cart = JSON.parse(saved)
+            console.log(cart[0].qty + 1, typeof saved)
+          accept: ["3 string"]
+        - { id: fs-w13-d5-g15, difficulty: medium, type: mcq, prompt: "Where to set document.title from data", choices: ["in an effect", "in the render body", "in CSS", "in index.html only"], answer: 0 }
+        - { id: fs-w13-d5-g16, difficulty: hard, type: mcq, prompt: "useEffect(() => { load().then(setData) }, [load]) where load is a new function each render →", choices: ["it re-runs every render (new reference); define load outside or memoise it", "runs once", "never runs", "fine"], answer: 0 }
+        - { id: fs-w13-d5-g17, difficulty: hard, type: mcq, prompt: "Cleanup to ignore a stale fetch", choices: ["let ignore = false; … if (!ignore) setData(d); return () => { ignore = true }", "await longer", "use []", "abort the whole app"], answer: 0 }
+        - { id: fs-w13-d5-g18, difficulty: hard, type: multi, prompt: "Effects are for (Select all.)", choices: ["fetching", "timers", "syncing to localStorage", "computing a total from props"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Lifting state up"
+        secondsPerQuestion: 10
+        questions:
+          - { id: fs-w13-d5-rf01, difficulty: easy, type: mcq, prompt: "Two components need the same data: put the state in…", choices: ["their closest common parent", "both", "a global variable", "the CSS"], answer: 0 }
+          - { id: fs-w13-d5-rf02, difficulty: easy, type: mcq, prompt: "Data goes ___, events go ___", choices: ["down (props), up (callbacks)", "up, down", "sideways", "nowhere"], answer: 0 }
+          - { id: fs-w13-d5-rf03, difficulty: easy, type: mcq, prompt: "Callback prop naming", choices: ["onAdd, onRemove", "addHandlerProp", "doAdd", "add_cb"], answer: 0 }
+          - { id: fs-w13-d5-rf04, difficulty: easy, type: mcq, prompt: "One place that owns the data", choices: ["single source of truth", "derived value", "effect", "key"], answer: 0 }
+          - { id: fs-w13-d5-rf05, difficulty: easy, type: mcq, prompt: "Child asks parent to add", choices: ["onClick={() => onAdd(dish)}", "parent.cart.push", "setCart in the child (no access)", "window.add"], answer: 0 }
+          - { id: fs-w13-d5-rf06, difficulty: easy, type: truefalse, prompt: "The cart total should be stored in its own state.", answer: false }
+          - { id: fs-w13-d5-rf07, difficulty: easy, type: mcq, prompt: "Sum of price × qty", choices: ["cart.reduce((s, i) => s + i.price * i.qty, 0)", "cart.sum()", "cart.length * price", "Math.total(cart)"], answer: 0 }
+          - { id: fs-w13-d5-rf08, difficulty: easy, type: mcq, prompt: "Adding a dish already in the cart should…", choices: ["increase its qty", "add a duplicate row", "do nothing", "remove it"], answer: 0 }
+          - { id: fs-w13-d5-rf09, difficulty: easy, type: mcq, prompt: "Qty reaches 0", choices: ["remove the row", "show 0 forever", "go negative", "error"], answer: 0 }
+          - { id: fs-w13-d5-rf10, difficulty: easy, type: mcq, prompt: "If Menu and Cart each kept their own cart state…", choices: ["they'd disagree", "they'd sync", "React merges them", "faster"], answer: 0 }
+      - kind: brain-teaser
+        title: "Follow the data"
+        questions:
+          - id: fs-w13-d5-bt01
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const cart = [{ price: 3500, qty: 2 }, { price: 700, qty: 1 }]
+              const plates = cart.reduce((n, i) => n + i.qty, 0)
+              const total = cart.reduce((s, i) => s + i.price * i.qty, 0)
+              console.log(`${plates} plates · ₦${total.toLocaleString("en-NG")}`)
+            accept: ["3 plates · ₦7,700"]
+          - id: fs-w13-d5-bt02
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const add = (c, dish) =>
+                c.some((i) => i.id === dish.id)
+                  ? c.map((i) => (i.id === dish.id ? { ...i, qty: i.qty + 1 } : i))
+                  : [...c, { ...dish, qty: 1 }]
+              let cart = []
+              cart = add(cart, { id: 1 })
+              cart = add(cart, { id: 1 })
+              cart = add(cart, { id: 2 })
+              console.log(cart.map((i) => `${i.id}x${i.qty}`).join(" "))
+            accept: ["1x2 2x1"]
+          - id: fs-w13-d5-bt03
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const changeQty = (c, id, d) => c.map((i) => (i.id === id ? { ...i, qty: i.qty + d } : i)).filter((i) => i.qty > 0)
+              console.log(changeQty([{ id: 1, qty: 1 }, { id: 2, qty: 2 }], 1, -1).length)
+            accept: ["1"]
+          - { id: fs-w13-d5-bt04, difficulty: hard, type: mcq, prompt: "The cart header (in Layout) and the menu (in Page) both need the cart. State lives in…", choices: ["App, above both", "Layout", "Page", "each, copied"], answer: 0 }
+          - { id: fs-w13-d5-bt05, difficulty: hard, type: mcq, prompt: "Passing setCart itself vs an onAdd(dish) function to children", choices: ["onAdd keeps the update logic in one place", "same thing, always", "setCart is safer", "children can't receive functions"], answer: 0 }
+
+  # ─────────────────────────── DAY 6 ───────────────────────────
+  - day: 6
+    gate:
+      title: "Checkpoint: lifting state up"
+      covers: "Week 13 · Day 5: shared state in the common parent, props down, callbacks up, single source of truth, derived totals"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w13-d6-g01, difficulty: easy, type: mcq, prompt: "Where the cart lives", choices: ["App (the common parent)", "DishCard", "CartSummary", "localStorage only"], answer: 0 }
+        - { id: fs-w13-d6-g02, difficulty: easy, type: mcq, prompt: "How MenuList adds", choices: ["calls the onAdd prop", "edits the cart prop", "uses its own state", "reloads"], answer: 0 }
+        - { id: fs-w13-d6-g03, difficulty: easy, type: truefalse, prompt: "Callback props are just functions passed as props.", answer: true }
+        - { id: fs-w13-d6-g04, difficulty: easy, type: mcq, prompt: "Encode text for a URL", choices: ["encodeURIComponent", "JSON.stringify", "escape HTML", "btoa only"], answer: 0 }
+        - { id: fs-w13-d6-g05, difficulty: easy, type: mcq, prompt: "WhatsApp link format", choices: ["https://wa.me/<number>?text=<message>", "whatsapp://<message>", "wa.me/text/<number>", "mailto:"], answer: 0 }
+        - { id: fs-w13-d6-g06, difficulty: easy, type: mcq, prompt: "Sold-out dish: Add button", choices: ["disabled", "hidden text only", "removes the dish", "adds anyway"], answer: 0 }
+        - { id: fs-w13-d6-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["cart", "state in App"], ["onAdd", "event up"], ["subtotal", "derived"], ["storage.setItem", "an effect"]] }
+        - id: fs-w13-d6-g08
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const subtotal = 16000
+            const mode = "delivery"
+            const delivery = mode === "delivery" && subtotal < 15000 ? 1000 : 0
+            console.log(delivery, subtotal + delivery)
+          accept: ["0 16000"]
+        - id: fs-w13-d6-g09
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            console.log(encodeURIComponent("Jollof × 2 = ₦7,000").includes(" "))
+          accept: ["false"]
+        - { id: fs-w13-d6-g10, difficulty: medium, type: truefalse, prompt: "Line breaks in the WhatsApp message must be encoded (as %0A).", answer: true }
+        - { id: fs-w13-d6-g11, difficulty: medium, type: mcq, prompt: "Restore the saved cart on load", choices: ["useState(() => JSON.parse(storage.getItem(\"cart\") || \"[]\"))", "useEffect that reads it every render", "a global", "useState([]) only"], answer: 0 }
+        - id: fs-w13-d6-g12
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const subtotal = 7000
+            const delivery = subtotal < 15000 ? 1000 : 0
+            console.log(`Total: ₦${(subtotal + delivery).toLocaleString("en-NG")}`)
+          accept: ["Total: ₦8,000"]
+        - { id: fs-w13-d6-g13, difficulty: medium, type: mcq, prompt: "Why build the message from the cart (not typed by hand)?", choices: ["it always matches what the customer ordered", "WhatsApp requires it", "it's shorter", "SEO"], answer: 0 }
+        - id: fs-w13-d6-g14
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const lines = ["Order:", "Jollof × 2", "Total: ₦8,000"]
+            const msg = lines.join("\n")
+            console.log(decodeURIComponent(encodeURIComponent(msg)) === msg, msg.split("\n").length)
+          accept: ["true 3"]
+        - { id: fs-w13-d6-g15, difficulty: medium, type: mcq, prompt: "Free delivery from ₦15,000: subtotal exactly ₦15,000 →", choices: ["free (≥ 15,000)", "₦1,000", "₦15,000", "error"], answer: 0 }
+        - id: fs-w13-d6-g16
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const cart = [{ name: "Party jollof", price: 3500, qty: 2 }]
+            const naira = (n) => "₦" + n.toLocaleString("en-NG")
+            const sub = cart.reduce((s, i) => s + i.price * i.qty, 0)
+            const msg = ["Order from Mama Put Kitchen:", ...cart.map((i) => `${i.name} × ${i.qty} = ${naira(i.price * i.qty)}`), `Total: ${naira(sub + 1000)} (delivery)`].join("\n")
+            console.log(msg.split("\n")[2])
+          accept: ["Total: ₦8,000 (delivery)"]
+        - { id: fs-w13-d6-g17, difficulty: hard, type: mcq, prompt: "localStorage throws in some sandboxed/private contexts. Robust code…", choices: ["wraps it in try/catch with a fallback", "assumes it works", "uses cookies only", "gives up"], answer: 0 }
+        - { id: fs-w13-d6-g18, difficulty: hard, type: multi, prompt: "The milestone cart (Select all.)", choices: ["state lifted into App", "delivery fee derived from the subtotal", "WhatsApp text encoded", "totals stored in their own state"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Week 13 lightning round"
+        secondsPerQuestion: 9
+        questions:
+          - { id: fs-w13-d6-rf01, difficulty: easy, type: mcq, prompt: "Remember a value", choices: ["useState", "useEffect", "props", "key"], answer: 0 }
+          - { id: fs-w13-d6-rf02, difficulty: easy, type: mcq, prompt: "Load data after render", choices: ["useEffect", "useState", "render", "map"], answer: 0 }
+          - { id: fs-w13-d6-rf03, difficulty: easy, type: mcq, prompt: "Controlled input", choices: ["value + onChange", "defaultValue", "ref", "name"], answer: 0 }
+          - { id: fs-w13-d6-rf04, difficulty: easy, type: mcq, prompt: "Add immutably", choices: ["[...a, x]", "a.push(x)", "a.add(x)", "a[n] = x"], answer: 0 }
+          - { id: fs-w13-d6-rf05, difficulty: easy, type: mcq, prompt: "Once after first render", choices: ["[]", "no array", "[x]", "null"], answer: 0 }
+          - { id: fs-w13-d6-rf06, difficulty: easy, type: mcq, prompt: "Shared state goes in…", choices: ["the common parent", "each child", "CSS", "the server always"], answer: 0 }
+          - { id: fs-w13-d6-rf07, difficulty: easy, type: mcq, prompt: "Encode the message", choices: ["encodeURIComponent", "JSON.parse", "toString", "escape"], answer: 0 }
+          - { id: fs-w13-d6-rf08, difficulty: easy, type: mcq, prompt: "Function-form update", choices: ["setN((n) => n + 1)", "setN(n++)", "n += 1", "setN += 1"], answer: 0 }
+          - { id: fs-w13-d6-rf09, difficulty: easy, type: truefalse, prompt: "Derived values shouldn't be stored in state.", answer: true }
+          - { id: fs-w13-d6-rf10, difficulty: easy, type: mcq, prompt: "Stop a form reload", choices: ["e.preventDefault()", "return false only", "e.stop()", "noreload"], answer: 0 }
+      - kind: brain-teaser
+        title: "Where does it live?"
+        questions:
+          - { id: fs-w13-d6-bt01, difficulty: medium, type: mcq, prompt: "The text being typed in the name box lives in…", choices: ["state in the form component", "the DOM only", "App always", "localStorage"], answer: 0 }
+          - { id: fs-w13-d6-bt02, difficulty: medium, type: mcq, prompt: "The cart lives in…", choices: ["App, shared by menu and cart", "the DishCard", "the WhatsApp link", "the CSS"], answer: 0 }
+          - { id: fs-w13-d6-bt03, difficulty: medium, type: mcq, prompt: "The grand total lives in…", choices: ["nowhere: it's computed from the cart and mode", "its own state", "localStorage", "a prop from the server"], answer: 0 }
+          - { id: fs-w13-d6-bt04, difficulty: hard, type: mcq, prompt: "A refresh empties the cart. Missing piece?", choices: ["save in an effect and restore as the starting state", "more keys", "a bigger useState", "Strict Mode"], answer: 0 }
+          - { id: fs-w13-d6-bt05, difficulty: hard, type: multi, prompt: "Good React state design (Select all.)", choices: ["as little state as possible", "derive what you can", "lift shared state up", "duplicate data in several components"], answers: [0, 1, 2] }

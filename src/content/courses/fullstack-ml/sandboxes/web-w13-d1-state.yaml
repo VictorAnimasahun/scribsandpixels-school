@@ -1,0 +1,60 @@
+# Week 13 · Day 1 mini-task
+id: web-w13-d1-state
+kind: web
+react: true
+title: "useState"
+description: "Two plate counters that actually update: state, setters, and the function form for updates that depend on the last value."
+html: |
+  <div id="root"></div>
+css: |
+  body { font-family: system-ui, sans-serif; padding: 1rem; background: #fff8ef; color: #2b1d16; }
+  button { margin: 0.15rem; }
+  .counter, .card, form, .cart { background: #fff; border: 2px solid #c0392b; border-radius: 12px; padding: 0.5rem 0.75rem; margin: 0.5rem 0; }
+  .error { color: #c0392b; }
+  .fav { background: #fff3c4; }
+  input, select, textarea { display: block; margin: 0.25rem 0; font: inherit; }
+js: |
+  import { useState } from "react"
+  import { createRoot } from "react-dom/client"
+
+  function Counter({ label }) {
+    let count = 0 // ✗ a plain variable: the screen never updates. Make it state.
+
+    // 1. Add: +1        2. Remove: −1, but never below 0        3. Reset: back to 0
+    // 4. "Add 3": call the setter THREE times with the function form, so it really adds 3
+    return (
+      <div className="counter">
+        <h3>{label}</h3>
+        <p className="count">Plates: {count}</p>
+        <button>Add</button>
+        <button>Remove</button>
+        <button>Add 3</button>
+        <button>Reset</button>
+      </div>
+    )
+  }
+
+  function App() {
+    return (
+      <>
+        <Counter label="Party jollof" />
+        <Counter label="Pepper soup" />
+      </>
+    )
+  }
+
+  createRoot(document.getElementById("root")).render(<App />)
+tasks:
+  - prompt: "Add works: two clicks on the first counter show \"Plates: 2\"."
+    check: "(async () => { const tick = () => new Promise((r) => setTimeout(r, 80)); const btn = (root, t) => [...root.querySelectorAll('button')].find((b) => b.textContent.trim() === t); const type = (el, v) => { const proto = el.tagName === 'TEXTAREA' ? HTMLTextAreaElement : el.tagName === 'SELECT' ? HTMLSelectElement : HTMLInputElement; Object.getOwnPropertyDescriptor(proto.prototype, 'value').set.call(el, v); el.dispatchEvent(new Event(el.tagName === 'SELECT' ? 'change' : 'input', { bubbles: true })) }; const [a, b] = document.querySelectorAll('#root .counter'); const n = (c) => c.querySelector('.count').textContent; btn(a, 'Reset')?.click(); await tick(); btn(a, 'Add').click(); await tick(); btn(a, 'Add').click(); await tick(); return n(a) === 'Plates: 2' })()"
+    hint: "const [count, setCount] = useState(0) \u2026 onClick={() => setCount(count + 1)}"
+  - prompt: "The two counters are independent."
+    check: "(async () => { const tick = () => new Promise((r) => setTimeout(r, 80)); const btn = (root, t) => [...root.querySelectorAll('button')].find((b) => b.textContent.trim() === t); const type = (el, v) => { const proto = el.tagName === 'TEXTAREA' ? HTMLTextAreaElement : el.tagName === 'SELECT' ? HTMLSelectElement : HTMLInputElement; Object.getOwnPropertyDescriptor(proto.prototype, 'value').set.call(el, v); el.dispatchEvent(new Event(el.tagName === 'SELECT' ? 'change' : 'input', { bubbles: true })) }; const [a, b] = document.querySelectorAll('#root .counter'); const n = (c) => c.querySelector('.count').textContent; btn(a, 'Reset').click(); btn(b, 'Reset').click(); await tick(); btn(a, 'Add').click(); await tick(); return n(a) === 'Plates: 1' && n(b) === 'Plates: 0' })()"
+  - prompt: "Remove never goes below 0."
+    check: "(async () => { const tick = () => new Promise((r) => setTimeout(r, 80)); const btn = (root, t) => [...root.querySelectorAll('button')].find((b) => b.textContent.trim() === t); const type = (el, v) => { const proto = el.tagName === 'TEXTAREA' ? HTMLTextAreaElement : el.tagName === 'SELECT' ? HTMLSelectElement : HTMLInputElement; Object.getOwnPropertyDescriptor(proto.prototype, 'value').set.call(el, v); el.dispatchEvent(new Event(el.tagName === 'SELECT' ? 'change' : 'input', { bubbles: true })) }; const [a, b] = document.querySelectorAll('#root .counter'); const n = (c) => c.querySelector('.count').textContent; btn(a, 'Reset').click(); await tick(); btn(a, 'Remove').click(); await tick(); btn(a, 'Remove').click(); await tick(); return n(a) === 'Plates: 0' })()"
+    hint: "setCount(Math.max(0, count - 1))"
+  - prompt: "\"Add 3\" really adds 3 (function-form updates)."
+    check: "(async () => { const tick = () => new Promise((r) => setTimeout(r, 80)); const btn = (root, t) => [...root.querySelectorAll('button')].find((b) => b.textContent.trim() === t); const type = (el, v) => { const proto = el.tagName === 'TEXTAREA' ? HTMLTextAreaElement : el.tagName === 'SELECT' ? HTMLSelectElement : HTMLInputElement; Object.getOwnPropertyDescriptor(proto.prototype, 'value').set.call(el, v); el.dispatchEvent(new Event(el.tagName === 'SELECT' ? 'change' : 'input', { bubbles: true })) }; const [a, b] = document.querySelectorAll('#root .counter'); const n = (c) => c.querySelector('.count').textContent; btn(a, 'Reset').click(); await tick(); btn(a, 'Add 3').click(); await tick(); return n(a) === 'Plates: 3' })()"
+    hint: "setCount((c) => c + 1) three times"
+  - prompt: "Reset sets it back to 0."
+    check: "(async () => { const tick = () => new Promise((r) => setTimeout(r, 80)); const btn = (root, t) => [...root.querySelectorAll('button')].find((b) => b.textContent.trim() === t); const type = (el, v) => { const proto = el.tagName === 'TEXTAREA' ? HTMLTextAreaElement : el.tagName === 'SELECT' ? HTMLSelectElement : HTMLInputElement; Object.getOwnPropertyDescriptor(proto.prototype, 'value').set.call(el, v); el.dispatchEvent(new Event(el.tagName === 'SELECT' ? 'change' : 'input', { bubbles: true })) }; const [a, b] = document.querySelectorAll('#root .counter'); const n = (c) => c.querySelector('.count').textContent; btn(a, 'Add').click(); await tick(); btn(a, 'Reset').click(); await tick(); return n(a) === 'Plates: 0' })()"

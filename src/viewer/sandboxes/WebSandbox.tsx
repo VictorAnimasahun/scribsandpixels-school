@@ -71,6 +71,10 @@ export default function WebSandbox({ sandbox }: Props) {
     setLogs([])
     setResults(null)
     const checker = `<script>
+      // A form submit nobody prevented would reload the page and lose the checks: stop it, and record
+      // it so a task can still require preventDefault (window.__formReloaded).
+      window.__formReloaded = false;
+      window.addEventListener('submit', (e) => { if (!e.defaultPrevented) { e.preventDefault(); window.__formReloaded = true } });
       // Layout checks measure positions: wait for fonts, then until the page's size has stopped
       // changing (3 identical readings 25 ms apart, at most ~1 s). Timers, not requestAnimationFrame,
       // because browsers may pause animation frames in off-screen iframes.

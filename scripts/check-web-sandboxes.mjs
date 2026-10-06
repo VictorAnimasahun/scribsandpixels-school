@@ -25,7 +25,7 @@ if (!chrome) {
 const browser = await chromium.launch({ executablePath: chrome })
 let failures = 0
 // Same console.log capture as the app's bridge (WebSandbox.tsx), so checks can read window.__logs.
-const logCapture = `<script>window.__logs = []; window.__errors = []; (() => { const t = (a) => a.map((x) => typeof x === 'object' ? JSON.stringify(x) : String(x)).join(' '); const o = console.log; console.log = (...a) => { window.__logs.push(t(a)); o.apply(console, a) }; const e = console.error; console.error = (...a) => { window.__errors.push(t(a)); e.apply(console, a) } })()</script>`
+const logCapture = `<script>window.__formReloaded = false; window.addEventListener('submit', (e) => { if (!e.defaultPrevented) { e.preventDefault(); window.__formReloaded = true } }); window.__logs = []; window.__errors = []; (() => { const t = (a) => a.map((x) => typeof x === 'object' ? JSON.stringify(x) : String(x)).join(' '); const o = console.log; console.log = (...a) => { window.__logs.push(t(a)); o.apply(console, a) }; const e = console.error; console.error = (...a) => { window.__errors.push(t(a)); e.apply(console, a) } })()</script>`
 
 // React sandboxes: mirrors src/viewer/sandboxes/reactPage.ts (JSX + imports compiled with Sucrase, React 18 from cdnjs).
 const CDN = 'https://cdnjs.cloudflare.com/ajax/libs'

@@ -1,0 +1,61 @@
+# Week 13 · Day 6 project
+id: web-w13-d6-cart
+kind: web
+react: true
+title: "Mama Put Kitchen: the cart"
+description: "Milestone part 3: add to cart, change quantities, pickup or delivery, totals in \u20a6, a saved cart, and a WhatsApp order link."
+html: |
+  <div id="root"></div>
+css: |
+  body { font-family: system-ui, sans-serif; padding: 1rem; background: #fff8ef; color: #2b1d16; }
+  button { margin: 0.15rem; }
+  .counter, .card, form, .cart { background: #fff; border: 2px solid #c0392b; border-radius: 12px; padding: 0.5rem 0.75rem; margin: 0.5rem 0; }
+  .error { color: #c0392b; }
+  .fav { background: #fff3c4; }
+  input, select, textarea { display: block; margin: 0.25rem 0; font: inherit; }
+js: |
+  import { useEffect, useState } from "react"
+  import { createRoot } from "react-dom/client"
+
+  const dishes = [
+    { id: 1, name: "Party jollof", price: 3500, soldOut: false },
+    { id: 2, name: "Egusi + pounded yam", price: 4500, soldOut: false },
+    { id: 3, name: "Fried rice", price: 3500, soldOut: true },
+    { id: 4, name: "Zobo (50cl)", price: 700, soldOut: false },
+  ]
+  const WHATSAPP = "2348000000000"
+  const naira = (n) => "₦" + n.toLocaleString("en-NG")
+  // localStorage is blocked inside this sandbox's preview, so use `storage` (a stand-in with the same methods)
+  const storage = (() => { try { localStorage.setItem("_t", "1"); return localStorage } catch { const m = {}; return { getItem: (k) => (k in m ? m[k] : null), setItem: (k, v) => { m[k] = String(v) } } } })()
+
+  // Build App:
+  // 1. An <article className="card"> per dish with name, naira(price) and an "Add" button (disabled when sold out)
+  // 2. <ul className="cart">: <li> per item with <span>"Party jollof × 2"</span> and "−" / "+" (0 removes it)
+  // 3. <select id="mode"> pickup / delivery. Delivery costs ₦1,000, free when the subtotal is ₦15,000 or more
+  // 4. <p className="subtotal">Subtotal: ₦…</p>, <p className="delivery">Delivery: ₦…</p>, <p className="total">Total: ₦…</p>
+  // 5. Save the cart with an effect: storage.setItem("cart", JSON.stringify(cart)); start from what's saved
+  // 6. <a className="wa"> to https://wa.me/WHATSAPP?text=… with the message (encodeURIComponent!):
+  //      Order from Mama Put Kitchen:
+  //      Party jollof × 2 = ₦7,000
+  //      Total: ₦8,000 (delivery)
+  function App() {
+    return <h1>Mama Put Kitchen</h1>
+  }
+
+  createRoot(document.getElementById("root")).render(<App />)
+tasks:
+  - prompt: "Four dish cards; the sold-out one's Add is disabled."
+    check: "(async () => { const tick = () => new Promise((r) => setTimeout(r, 80)); const btn = (root, t) => [...root.querySelectorAll('button')].find((b) => b.textContent.trim() === t); const type = (el, v) => { const proto = el.tagName === 'TEXTAREA' ? HTMLTextAreaElement : el.tagName === 'SELECT' ? HTMLSelectElement : HTMLInputElement; Object.getOwnPropertyDescriptor(proto.prototype, 'value').set.call(el, v); el.dispatchEvent(new Event(el.tagName === 'SELECT' ? 'change' : 'input', { bubbles: true })) }; const card = (t) => [...document.querySelectorAll('#root .card')].find((c) => c.querySelector('h3')?.textContent === t); const txt = (s) => document.querySelector('#root ' + s)?.textContent; const empty = async () => { for (let k = 0; k < 40 && document.querySelector('#root .cart li'); k++) { btn(document.querySelector('#root .cart li'), '\u2212').click(); await tick() } }; const addN = async (t, n) => { for (let k = 0; k < n; k++) { btn(card(t), 'Add').click(); await tick() } }; return document.querySelectorAll('#root .card').length === 4 && btn(card('Fried rice'), 'Add').disabled && !btn(card('Party jollof'), 'Add').disabled })()"
+  - prompt: "Adding jollof twice \u2192 \"Party jollof \u00d7 2\", and \u2212 / + work (0 removes)."
+    check: "(async () => { const tick = () => new Promise((r) => setTimeout(r, 80)); const btn = (root, t) => [...root.querySelectorAll('button')].find((b) => b.textContent.trim() === t); const type = (el, v) => { const proto = el.tagName === 'TEXTAREA' ? HTMLTextAreaElement : el.tagName === 'SELECT' ? HTMLSelectElement : HTMLInputElement; Object.getOwnPropertyDescriptor(proto.prototype, 'value').set.call(el, v); el.dispatchEvent(new Event(el.tagName === 'SELECT' ? 'change' : 'input', { bubbles: true })) }; const card = (t) => [...document.querySelectorAll('#root .card')].find((c) => c.querySelector('h3')?.textContent === t); const txt = (s) => document.querySelector('#root ' + s)?.textContent; const empty = async () => { for (let k = 0; k < 40 && document.querySelector('#root .cart li'); k++) { btn(document.querySelector('#root .cart li'), '\u2212').click(); await tick() } }; const addN = async (t, n) => { for (let k = 0; k < n; k++) { btn(card(t), 'Add').click(); await tick() } }; await empty(); await addN('Party jollof', 2); const two = txt('.cart li span') === 'Party jollof \u00d7 2'; btn(document.querySelector('#root .cart li'), '+').click(); await tick(); const three = txt('.cart li span') === 'Party jollof \u00d7 3'; await empty(); return two && three && !document.querySelector('#root .cart li') })()"
+  - prompt: "Pickup: 2 jollof \u2192 Subtotal \u20a67,000, Delivery \u20a60, Total \u20a67,000."
+    check: "(async () => { const tick = () => new Promise((r) => setTimeout(r, 80)); const btn = (root, t) => [...root.querySelectorAll('button')].find((b) => b.textContent.trim() === t); const type = (el, v) => { const proto = el.tagName === 'TEXTAREA' ? HTMLTextAreaElement : el.tagName === 'SELECT' ? HTMLSelectElement : HTMLInputElement; Object.getOwnPropertyDescriptor(proto.prototype, 'value').set.call(el, v); el.dispatchEvent(new Event(el.tagName === 'SELECT' ? 'change' : 'input', { bubbles: true })) }; const card = (t) => [...document.querySelectorAll('#root .card')].find((c) => c.querySelector('h3')?.textContent === t); const txt = (s) => document.querySelector('#root ' + s)?.textContent; const empty = async () => { for (let k = 0; k < 40 && document.querySelector('#root .cart li'); k++) { btn(document.querySelector('#root .cart li'), '\u2212').click(); await tick() } }; const addN = async (t, n) => { for (let k = 0; k < n; k++) { btn(card(t), 'Add').click(); await tick() } }; await empty(); type(document.querySelector('#mode'), 'pickup'); await addN('Party jollof', 2); return txt('.subtotal') === 'Subtotal: \u20a67,000' && txt('.delivery') === 'Delivery: \u20a60' && txt('.total') === 'Total: \u20a67,000' })()"
+  - prompt: "Delivery costs \u20a61,000 under \u20a615,000 and is free from \u20a615,000."
+    check: "(async () => { const tick = () => new Promise((r) => setTimeout(r, 80)); const btn = (root, t) => [...root.querySelectorAll('button')].find((b) => b.textContent.trim() === t); const type = (el, v) => { const proto = el.tagName === 'TEXTAREA' ? HTMLTextAreaElement : el.tagName === 'SELECT' ? HTMLSelectElement : HTMLInputElement; Object.getOwnPropertyDescriptor(proto.prototype, 'value').set.call(el, v); el.dispatchEvent(new Event(el.tagName === 'SELECT' ? 'change' : 'input', { bubbles: true })) }; const card = (t) => [...document.querySelectorAll('#root .card')].find((c) => c.querySelector('h3')?.textContent === t); const txt = (s) => document.querySelector('#root ' + s)?.textContent; const empty = async () => { for (let k = 0; k < 40 && document.querySelector('#root .cart li'); k++) { btn(document.querySelector('#root .cart li'), '\u2212').click(); await tick() } }; const addN = async (t, n) => { for (let k = 0; k < n; k++) { btn(card(t), 'Add').click(); await tick() } }; await empty(); type(document.querySelector('#mode'), 'delivery'); await tick(); await addN('Party jollof', 2); const under = txt('.total') === 'Total: \u20a68,000' && txt('.delivery') === 'Delivery: \u20a61,000'; await addN('Egusi + pounded yam', 2); const at = txt('.subtotal') === 'Subtotal: \u20a616,000' && txt('.delivery') === 'Delivery: \u20a60' && txt('.total') === 'Total: \u20a616,000'; return under && at })()"
+    hint: "const delivery = mode === \"delivery\" && subtotal < 15000 ? 1000 : 0"
+  - prompt: "The cart is saved in storage as JSON."
+    check: "(async () => { const tick = () => new Promise((r) => setTimeout(r, 80)); const btn = (root, t) => [...root.querySelectorAll('button')].find((b) => b.textContent.trim() === t); const type = (el, v) => { const proto = el.tagName === 'TEXTAREA' ? HTMLTextAreaElement : el.tagName === 'SELECT' ? HTMLSelectElement : HTMLInputElement; Object.getOwnPropertyDescriptor(proto.prototype, 'value').set.call(el, v); el.dispatchEvent(new Event(el.tagName === 'SELECT' ? 'change' : 'input', { bubbles: true })) }; const card = (t) => [...document.querySelectorAll('#root .card')].find((c) => c.querySelector('h3')?.textContent === t); const txt = (s) => document.querySelector('#root ' + s)?.textContent; const empty = async () => { for (let k = 0; k < 40 && document.querySelector('#root .cart li'); k++) { btn(document.querySelector('#root .cart li'), '\u2212').click(); await tick() } }; const addN = async (t, n) => { for (let k = 0; k < n; k++) { btn(card(t), 'Add').click(); await tick() } }; await empty(); await addN('Zobo (50cl)', 3); await tick(); const saved = JSON.parse(storage.getItem('cart') || '[]'); return Array.isArray(saved) && saved.length === 1 && saved[0].qty === 3 })()"
+    hint: "useEffect(() => { storage.setItem(\"cart\", JSON.stringify(cart)) }, [cart])"
+  - prompt: "a.wa links to wa.me with the encoded order message."
+    check: "(async () => { const tick = () => new Promise((r) => setTimeout(r, 80)); const btn = (root, t) => [...root.querySelectorAll('button')].find((b) => b.textContent.trim() === t); const type = (el, v) => { const proto = el.tagName === 'TEXTAREA' ? HTMLTextAreaElement : el.tagName === 'SELECT' ? HTMLSelectElement : HTMLInputElement; Object.getOwnPropertyDescriptor(proto.prototype, 'value').set.call(el, v); el.dispatchEvent(new Event(el.tagName === 'SELECT' ? 'change' : 'input', { bubbles: true })) }; const card = (t) => [...document.querySelectorAll('#root .card')].find((c) => c.querySelector('h3')?.textContent === t); const txt = (s) => document.querySelector('#root ' + s)?.textContent; const empty = async () => { for (let k = 0; k < 40 && document.querySelector('#root .cart li'); k++) { btn(document.querySelector('#root .cart li'), '\u2212').click(); await tick() } }; const addN = async (t, n) => { for (let k = 0; k < n; k++) { btn(card(t), 'Add').click(); await tick() } }; await empty(); type(document.querySelector('#mode'), 'delivery'); await tick(); await addN('Party jollof', 2); const href = document.querySelector('#root a.wa')?.getAttribute('href') || ''; if (!href.startsWith('https://wa.me/2348000000000?text=') || /[\\s\u20a6]/.test(href)) return false; const msg = decodeURIComponent(href.split('text=')[1]); return msg === 'Order from Mama Put Kitchen:\\nParty jollof \u00d7 2 = \u20a67,000\\nTotal: \u20a68,000 (delivery)' })()"
+    hint: "href={`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(message)}`}"

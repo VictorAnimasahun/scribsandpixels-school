@@ -1,0 +1,54 @@
+# Week 13 · Day 4 mini-task
+id: web-w13-d4-effects
+kind: web
+react: true
+title: "useEffect"
+description: "Load the menu in an effect with loading and error states, call the API once, and sync the page title. The checks pass their own fake loaders."
+html: |
+  <div id="root"></div>
+css: |
+  body { font-family: system-ui, sans-serif; padding: 1rem; background: #fff8ef; color: #2b1d16; }
+  button { margin: 0.15rem; }
+  .counter, .card, form, .cart { background: #fff; border: 2px solid #c0392b; border-radius: 12px; padding: 0.5rem 0.75rem; margin: 0.5rem 0; }
+  .error { color: #c0392b; }
+  .fav { background: #fff3c4; }
+  input, select, textarea { display: block; margin: 0.25rem 0; font: inherit; }
+js: |
+  import { useEffect, useState } from "react"
+  import { createRoot } from "react-dom/client"
+
+  // A pretend API: resolves after 300 ms (pass a different loader to test errors)
+  const fakeLoad = () => new Promise((resolve) =>
+    setTimeout(() => resolve([
+      { id: 1, name: "Party jollof" },
+      { id: 2, name: "Egusi + pounded yam" },
+      { id: 3, name: "Pepper soup" },
+      { id: 4, name: "Zobo (50cl)" },
+    ]), 300))
+
+  // Menu({ loadMenu }):
+  // 1. While loading: <p className="status">Loading the menu…</p>
+  // 2. When loaded: <ul> of dish names (with keys)
+  // 3. If loadMenu rejects: <p className="status">Couldn't load the menu.</p>
+  // 4. Call loadMenu ONCE, in an effect (not on every render)
+  // 5. After loading, a second effect sets document.title to "Menu · 4 dishes" (the real count)
+  function Menu({ loadMenu }) {
+    return <p className="status">Loading the menu…</p>
+  }
+
+  createRoot(document.getElementById("root")).render(<Menu loadMenu={fakeLoad} />)
+tasks:
+  - prompt: "While loading it shows \"Loading the menu\u2026\"."
+    check: "(async () => { const tick = () => new Promise((r) => setTimeout(r, 80)); const btn = (root, t) => [...root.querySelectorAll('button')].find((b) => b.textContent.trim() === t); const type = (el, v) => { const proto = el.tagName === 'TEXTAREA' ? HTMLTextAreaElement : el.tagName === 'SELECT' ? HTMLSelectElement : HTMLInputElement; Object.getOwnPropertyDescriptor(proto.prototype, 'value').set.call(el, v); el.dispatchEvent(new Event(el.tagName === 'SELECT' ? 'change' : 'input', { bubbles: true })) }; const mount = (props) => { const box = document.createElement('div'); document.body.append(box); ReactDOM.createRoot(box).render(React.createElement(Menu, props)); return box }; const box = mount({ loadMenu: () => new Promise(() => {}) }); await tick(); return box.querySelector('.status')?.textContent === 'Loading the menu\u2026' })()"
+  - prompt: "When the data arrives, it lists the dishes."
+    check: "(async () => { const tick = () => new Promise((r) => setTimeout(r, 80)); const btn = (root, t) => [...root.querySelectorAll('button')].find((b) => b.textContent.trim() === t); const type = (el, v) => { const proto = el.tagName === 'TEXTAREA' ? HTMLTextAreaElement : el.tagName === 'SELECT' ? HTMLSelectElement : HTMLInputElement; Object.getOwnPropertyDescriptor(proto.prototype, 'value').set.call(el, v); el.dispatchEvent(new Event(el.tagName === 'SELECT' ? 'change' : 'input', { bubbles: true })) }; const mount = (props) => { const box = document.createElement('div'); document.body.append(box); ReactDOM.createRoot(box).render(React.createElement(Menu, props)); return box }; const box = mount({ loadMenu: () => Promise.resolve([{ id: 1, name: 'Moi moi' }, { id: 2, name: 'Zobo' }]) }); await tick(); await tick(); return [...box.querySelectorAll('li')].map((l) => l.textContent).join() === 'Moi moi,Zobo' })()"
+    hint: "useEffect(() => { loadMenu().then((data) => { setDishes(data); setStatus(\"ready\") }) }, [loadMenu])"
+  - prompt: "If loading fails, it says \"Couldn't load the menu.\""
+    check: "(async () => { const tick = () => new Promise((r) => setTimeout(r, 80)); const btn = (root, t) => [...root.querySelectorAll('button')].find((b) => b.textContent.trim() === t); const type = (el, v) => { const proto = el.tagName === 'TEXTAREA' ? HTMLTextAreaElement : el.tagName === 'SELECT' ? HTMLSelectElement : HTMLInputElement; Object.getOwnPropertyDescriptor(proto.prototype, 'value').set.call(el, v); el.dispatchEvent(new Event(el.tagName === 'SELECT' ? 'change' : 'input', { bubbles: true })) }; const mount = (props) => { const box = document.createElement('div'); document.body.append(box); ReactDOM.createRoot(box).render(React.createElement(Menu, props)); return box }; const box = mount({ loadMenu: () => Promise.reject(new Error('offline')) }); await tick(); await tick(); return box.querySelector('.status')?.textContent === \"Couldn't load the menu.\" })()"
+    hint: ".catch(() => setStatus(\"error\"))"
+  - prompt: "The loader is called once, not on every render."
+    check: "(async () => { const tick = () => new Promise((r) => setTimeout(r, 80)); const btn = (root, t) => [...root.querySelectorAll('button')].find((b) => b.textContent.trim() === t); const type = (el, v) => { const proto = el.tagName === 'TEXTAREA' ? HTMLTextAreaElement : el.tagName === 'SELECT' ? HTMLSelectElement : HTMLInputElement; Object.getOwnPropertyDescriptor(proto.prototype, 'value').set.call(el, v); el.dispatchEvent(new Event(el.tagName === 'SELECT' ? 'change' : 'input', { bubbles: true })) }; const mount = (props) => { const box = document.createElement('div'); document.body.append(box); ReactDOM.createRoot(box).render(React.createElement(Menu, props)); return box }; let calls = 0; const load = () => { calls++; return Promise.resolve([{ id: 1, name: 'A' }]) }; mount({ loadMenu: load }); await tick(); await tick(); await tick(); return calls === 1 })()"
+    hint: "Put the call in useEffect with [loadMenu] as the dependency array"
+  - prompt: "After loading, document.title is \"Menu \u00b7 N dishes\"."
+    check: "(async () => { const tick = () => new Promise((r) => setTimeout(r, 80)); const btn = (root, t) => [...root.querySelectorAll('button')].find((b) => b.textContent.trim() === t); const type = (el, v) => { const proto = el.tagName === 'TEXTAREA' ? HTMLTextAreaElement : el.tagName === 'SELECT' ? HTMLSelectElement : HTMLInputElement; Object.getOwnPropertyDescriptor(proto.prototype, 'value').set.call(el, v); el.dispatchEvent(new Event(el.tagName === 'SELECT' ? 'change' : 'input', { bubbles: true })) }; const mount = (props) => { const box = document.createElement('div'); document.body.append(box); ReactDOM.createRoot(box).render(React.createElement(Menu, props)); return box }; mount({ loadMenu: () => Promise.resolve([{ id: 1, name: 'A' }, { id: 2, name: 'B' }]) }); await tick(); await tick(); return document.title === 'Menu \u00b7 2 dishes' })()"
+    hint: "useEffect(() => { if (status === \"ready\") document.title = `Menu \u00b7 ${dishes.length} dishes` }, [status, dishes])"
