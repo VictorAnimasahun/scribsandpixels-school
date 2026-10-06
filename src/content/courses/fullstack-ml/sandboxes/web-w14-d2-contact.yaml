@@ -1,0 +1,51 @@
+# Week 14 · Day 2 mini-task
+id: web-w14-d2-contact
+kind: web
+title: "Open now + WhatsApp enquiry"
+description: "Opening hours in Lagos time (testable with any date), an Open now badge, and a validated enquiry form that builds a WhatsApp link."
+html: |
+  <h1>Contact Mama Put Kitchen</h1>
+  <p>Today: <span id="status" class="badge"></span></p>
+  <form id="enquiry">
+    <label for="name">Your name</label>
+    <input id="name">
+    <label for="phone">Phone</label>
+    <input id="phone" placeholder="0803…">
+    <label for="message">Message</label>
+    <textarea id="message"></textarea>
+    <p class="error" id="form-error"></p>
+    <button>Send on WhatsApp</button>
+  </form>
+  <p><a id="wa" href="#">(your WhatsApp link appears here)</a></p>
+css: |
+  body { font-family: system-ui, sans-serif; padding: 1rem; background: #fff8ef; color: #2b1d16; }
+  .card { background: #fff; border: 2px solid #c0392b; border-radius: 12px; padding: 0.5rem 0.75rem; margin: 0.5rem 0; min-width: 0; }
+  .favourites { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.75rem; }
+  .badge { display: inline-block; padding: 0.1rem 0.5rem; border-radius: 6px; color: #fff; }
+  .open { background: #2f7d4f; } .closed { background: #8e2a20; }
+  .error { color: #8e2a20; }
+js: |
+  const WHATSAPP = "2348000000000"
+  const HOURS = { 0: [12, 18], 1: [8, 21], 2: [8, 21], 3: [8, 21], 4: [8, 21], 5: [8, 21], 6: [8, 21] } // day → [open, close)
+
+  // 1. lagosNow(date = new Date()) → { day, hour } in Africa/Lagos time (Intl.DateTimeFormat + formatToParts)
+  // 2. isOpen(date = new Date()) → true when Lagos hour is in [open, close) for that day
+  // 3. #status: "Open now" with class "badge open", or "Closed" with class "badge closed"
+  // 4. On submit (no reload): if the name is blank or the phone isn't /^0\d{10}$/, put
+  //    "Please enter your name and an 11-digit phone number." in #form-error.
+  //    Otherwise clear the error and set #wa's href to https://wa.me/WHATSAPP?text=<encoded>, where the text is:
+  //    "Hello Mama Put Kitchen, this is NAME (PHONE): MESSAGE"
+tasks:
+  - prompt: "lagosNow(date) gives the Lagos day and hour (17:30 UTC on Sunday 11 Oct = 18:30 in Lagos: day 0, hour 18)."
+    check: "(() => { const r = lagosNow(new Date('2026-10-11T17:30:00Z')); return r.day === 0 && r.hour === 18 })() && lagosNow(new Date('2026-10-12T07:15:00Z')).hour === 8 && lagosNow(new Date('2026-10-12T07:15:00Z')).day === 1"
+    hint: "new Intl.DateTimeFormat(\"en-GB\", { timeZone: \"Africa/Lagos\", weekday: \"short\", hour: \"numeric\", hourCycle: \"h23\" })"
+  - prompt: "isOpen: Sunday 1 pm open, Sunday 7 pm closed, Monday 8 am open, Monday 9 pm closed (Lagos times)."
+    check: "isOpen(new Date('2026-10-11T13:00:00+01:00')) && !isOpen(new Date('2026-10-11T19:00:00+01:00')) && isOpen(new Date('2026-10-12T08:00:00+01:00')) && !isOpen(new Date('2026-10-12T21:00:00+01:00'))"
+    hint: "return hour >= open && hour < close"
+  - prompt: "#status shows Open now / Closed with the matching class, for right now."
+    check: "(() => { const s = document.querySelector('#status'); return isOpen() ? s.textContent === 'Open now' && s.classList.contains('open') : s.textContent === 'Closed' && s.classList.contains('closed') })()"
+  - prompt: "A bad phone shows the form error, without reloading."
+    check: "(async () => { const tick = (ms = 300) => new Promise((r) => setTimeout(r, ms)); const set = (id, v) => { document.querySelector(id).value = v }; set('#name', 'Ada'); set('#phone', '0803'); document.querySelector('#enquiry').requestSubmit(); await tick(50); return !window.__formReloaded && document.querySelector('#form-error').textContent === 'Please enter your name and an 11-digit phone number.' })()"
+  - prompt: "A valid form sets #wa to the encoded WhatsApp message."
+    check: "(async () => { const tick = (ms = 300) => new Promise((r) => setTimeout(r, ms)); const set = (id, v) => { document.querySelector(id).value = v }; set('#name', 'Ada'); set('#phone', '08031234567'); set('#message', 'Do you deliver to Surulere?'); document.querySelector('#enquiry').requestSubmit(); await tick(50); const href = document.querySelector('#wa').getAttribute('href'); return document.querySelector('#form-error').textContent === '' && href.startsWith('https://wa.me/2348000000000?text=') && !/\\s/.test(href) && decodeURIComponent(href.split('text=')[1]) === 'Hello Mama Put Kitchen, this is Ada (08031234567): Do you deliver to Surulere?' })()"
+    hint: "`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`"

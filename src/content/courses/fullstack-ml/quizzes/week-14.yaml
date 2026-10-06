@@ -1,0 +1,525 @@
+# Fullstack + ML · Week 14 quizzes. Format and rules: src/content/QUIZZES.md
+week: 14
+days:
+
+  # ─────────────────────────── DAY 1 ───────────────────────────
+  - day: 1
+    gate:
+      title: "Checkpoint: Week 13 review"
+      covers: "Week 13: useState, controlled forms, immutable updates, useEffect, lifting state up, the cart"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w14-d1-g01, difficulty: easy, type: mcq, prompt: "Remember a value between renders", choices: ["useState", "useEffect", "props", "a let variable"], answer: 0 }
+        - { id: fs-w14-d1-g02, difficulty: easy, type: mcq, prompt: "Load data after render", choices: ["useEffect", "useState", "map", "key"], answer: 0 }
+        - { id: fs-w14-d1-g03, difficulty: easy, type: truefalse, prompt: "cart.push(item) is the right way to add to a cart in state.", answer: false }
+        - { id: fs-w14-d1-g04, difficulty: easy, type: mcq, prompt: "Controlled input", choices: ["value={state} + onChange", "defaultValue only", "an id", "a placeholder"], answer: 0 }
+        - { id: fs-w14-d1-g05, difficulty: easy, type: mcq, prompt: "Shared state belongs in…", choices: ["the closest common parent", "every child", "CSS", "a global"], answer: 0 }
+        - { id: fs-w14-d1-g06, difficulty: easy, type: mcq, prompt: "[] as dependencies means…", choices: ["run once after the first render", "every render", "never", "on click"], answer: 0 }
+        - { id: fs-w14-d1-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["[...a, x]", "add"], ["a.filter(…)", "remove"], ["a.map(…{ ...i, qty: … }…)", "update one"], ["{ ...o, k: v }", "change an object field"]] }
+        - { id: fs-w14-d1-g08, difficulty: medium, type: mcq, prompt: "count 0; three setCount((c) => c + 1) in one click →", choices: ["3", "1", "0", "error"], answer: 0 }
+        - id: fs-w14-d1-g09
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const cart = [{ price: 3500, qty: 2 }, { price: 700, qty: 1 }]
+            console.log(cart.reduce((s, i) => s + i.price * i.qty, 0))
+          accept: ["7700"]
+        - { id: fs-w14-d1-g10, difficulty: medium, type: truefalse, prompt: "The cart total should be derived, not kept in its own state.", answer: true }
+        - { id: fs-w14-d1-g11, difficulty: medium, type: mcq, prompt: "useEffect with no dependency array that sets state →", choices: ["an infinite loop", "runs once", "never runs", "fine"], answer: 0 }
+        - { id: fs-w14-d1-g12, difficulty: medium, type: mcq, prompt: "Children change parent state by…", choices: ["calling a callback prop like onAdd", "editing props", "global variables", "reloading"], answer: 0 }
+        - id: fs-w14-d1-g13
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const c = [{ id: 1, qty: 1 }, { id: 2, qty: 2 }]
+            const next = c.map((i) => (i.id === 1 ? { ...i, qty: i.qty - 1 } : i)).filter((i) => i.qty > 0)
+            console.log(next.length, c.length)
+          accept: ["1 2"]
+        - { id: fs-w14-d1-g14, difficulty: medium, type: mcq, prompt: "Save the cart on change", choices: ["useEffect(() => save(cart), [cart])", "save during render", "useState(save)", "never"], answer: 0 }
+        - { id: fs-w14-d1-g15, difficulty: medium, type: mcq, prompt: "WhatsApp text must be passed through…", choices: ["encodeURIComponent", "JSON.parse", "toString", "nothing"], answer: 0 }
+        - id: fs-w14-d1-g16
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const subtotal = 15000
+            const delivery = subtotal < 15000 ? 1000 : 0
+            console.log(delivery, subtotal + delivery)
+          accept: ["0 15000"]
+        - { id: fs-w14-d1-g17, difficulty: hard, type: mcq, prompt: "count 5: setCount(count + 1) then setCount((c) => c + 10) →", choices: ["16", "15", "6", "11"], answer: 0 }
+        - { id: fs-w14-d1-g18, difficulty: hard, type: multi, prompt: "Good React state design (Select all.)", choices: ["minimal state", "derive what you can", "lift shared state", "copy data into many components"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "JSON and data"
+        secondsPerQuestion: 10
+        questions:
+          - { id: fs-w14-d1-rf01, difficulty: easy, type: mcq, prompt: "JSON strings use…", choices: ["double quotes only", "single quotes", "backticks", "no quotes"], answer: 0 }
+          - { id: fs-w14-d1-rf02, difficulty: easy, type: truefalse, prompt: "JSON allows comments.", answer: false }
+          - { id: fs-w14-d1-rf03, difficulty: easy, type: truefalse, prompt: "A trailing comma after the last item breaks JSON.", answer: true }
+          - { id: fs-w14-d1-rf04, difficulty: easy, type: mcq, prompt: "Why one menu.json?", choices: ["change a price once, every page updates", "it's faster to type", "GitHub requires it", "for CSS"], answer: 0 }
+          - { id: fs-w14-d1-rf05, difficulty: easy, type: mcq, prompt: "Read it in the browser", choices: ["fetch(\"menu.json\") then response.json()", "import menu.json in HTML", "localStorage.menu", "document.json"], answer: 0 }
+          - { id: fs-w14-d1-rf06, difficulty: easy, type: mcq, prompt: "fetch of a local file opened as file:// …", choices: ["usually fails: use a local server", "works everywhere", "needs a key", "works only in Safari"], answer: 0 }
+          - { id: fs-w14-d1-rf07, difficulty: easy, type: mcq, prompt: "Check a JSON file", choices: ["a JSON validator (jsonlint)", "Lighthouse", "axe", "Excel"], answer: 0 }
+          - { id: fs-w14-d1-rf08, difficulty: easy, type: mcq, prompt: "loadMenu(fetchFn = fetch) lets you…", choices: ["pass a fake in tests", "skip errors", "load faster", "avoid JSON"], answer: 0 }
+          - { id: fs-w14-d1-rf09, difficulty: easy, type: mcq, prompt: "The three states again", choices: ["loading, error, success", "start, run, stop", "red, amber, green", "open, closed, busy"], answer: 0 }
+          - { id: fs-w14-d1-rf10, difficulty: easy, type: mcq, prompt: "JSON's boolean values", choices: ["true / false", "\"true\" / \"false\" only", "1 / 0 only", "yes / no"], answer: 0 }
+      - kind: brain-teaser
+        title: "Valid JSON?"
+        questions:
+          - { id: fs-w14-d1-bt01, difficulty: medium, type: mcq, prompt: "{ 'name': 'Jollof' }", choices: ["invalid: single quotes", "valid", "valid in Chrome only", "valid without spaces"], answer: 0 }
+          - { id: fs-w14-d1-bt02, difficulty: medium, type: mcq, prompt: "{ \"price\": 3500, }", choices: ["invalid: trailing comma", "valid", "valid if one item", "invalid: number"], answer: 0 }
+          - id: fs-w14-d1-bt03
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const menu = JSON.parse('[{"n":"Jollof","fav":true},{"n":"Rice","fav":false},{"n":"Zobo","fav":true}]')
+              console.log(menu.filter((d) => d.fav).map((d) => d.n).join(","))
+            accept: ["Jollof,Zobo"]
+          - id: fs-w14-d1-bt04
+            difficulty: hard
+            type: text
+            prompt: "What does this print?"
+            code: |
+              try {
+                JSON.parse('{"price": 3500,}')
+                console.log("ok")
+              } catch (e) {
+                console.log(e.name)
+              }
+            accept: ["SyntaxError"]
+          - { id: fs-w14-d1-bt05, difficulty: hard, type: mcq, prompt: "The React menu in menu/ loads the site's menu.json with…", choices: ["fetch(\"../menu.json\")", "fetch(\"/menu.json\") always", "import from src", "fetch(\"menu/menu.json\")"], answer: 0 }
+
+  # ─────────────────────────── DAY 2 ───────────────────────────
+  - day: 2
+    gate:
+      title: "Checkpoint: one source of data"
+      covers: "Week 14 · Day 1: menu.json, JSON rules, fetch + ok check, fetchFn for tests, three states, local servers"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w14-d2-g01, difficulty: easy, type: mcq, prompt: "Where the menu lives now", choices: ["one menu.json", "each page", "the CSS", "localStorage"], answer: 0 }
+        - { id: fs-w14-d2-g02, difficulty: easy, type: mcq, prompt: "Read JSON from a response", choices: ["await response.json()", "response.body", "JSON(response)", "response.text only"], answer: 0 }
+        - { id: fs-w14-d2-g03, difficulty: easy, type: truefalse, prompt: "fetch rejects when the server answers 404.", answer: false }
+        - { id: fs-w14-d2-g04, difficulty: easy, type: mcq, prompt: "Test the page locally with fetch", choices: ["Live Server or npx serve", "double-click the file", "print it", "email it"], answer: 0 }
+        - { id: fs-w14-d2-g05, difficulty: easy, type: mcq, prompt: "JSON keys need…", choices: ["double quotes", "no quotes", "single quotes", "backticks"], answer: 0 }
+        - { id: fs-w14-d2-g06, difficulty: easy, type: mcq, prompt: "Show while loading", choices: ["\"Loading…\"", "nothing", "an error", "the old menu"], answer: 0 }
+        - { id: fs-w14-d2-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["response.ok", "status 200–299"], ["fetchFn", "swap in a fake"], ["menu.json", "single source of truth"], ["catch", "the error state"]] }
+        - id: fs-w14-d2-g08
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            async function loadMenu(fetchFn) {
+              const r = await fetchFn("menu.json")
+              if (!r.ok) throw new Error(`HTTP ${r.status}`)
+              return r.json()
+            }
+            loadMenu(async () => ({ ok: false, status: 404 })).catch((e) => console.log(e.message))
+          accept: ["HTTP 404"]
+        - { id: fs-w14-d2-g09, difficulty: medium, type: mcq, prompt: "Favourites shown on the home page", choices: ["filter favourite && !soldOut", "all dishes", "the first 4", "random"], answer: 0 }
+        - { id: fs-w14-d2-g10, difficulty: medium, type: truefalse, prompt: "Deleting dishes.js after switching to menu.json removes a second copy of the data.", answer: true }
+        - { id: fs-w14-d2-g11, difficulty: medium, type: mcq, prompt: "A single bad comma in menu.json makes…", choices: ["every page that reads it fail to load the menu", "only one dish disappear", "nothing", "the CSS break"], answer: 0 }
+        - id: fs-w14-d2-g12
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const dishes = [{ n: "A", fav: true, out: false }, { n: "B", fav: true, out: true }, { n: "C", fav: false, out: false }]
+            console.log(dishes.filter((d) => d.fav && !d.out).length)
+          accept: ["1"]
+        - { id: fs-w14-d2-g13, difficulty: medium, type: mcq, prompt: "The error message should…", choices: ["say what happened in plain words", "show the stack trace", "be empty", "say 'Error 0x'"], answer: 0 }
+        - { id: fs-w14-d2-g14, difficulty: medium, type: mcq, prompt: "In React, load menu.json with…", choices: ["useEffect + fetch", "useState only", "import JSON in JSX", "CSS"], answer: 0 }
+        - { id: fs-w14-d2-g15, difficulty: medium, type: mcq, prompt: "A price changes. With menu.json you edit…", choices: ["one line in one file", "every page", "the React build only", "the CSS"], answer: 0 }
+        - id: fs-w14-d2-g16
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const text = '[{"name":"Zobo","price":700}]'
+            const [first] = JSON.parse(text)
+            console.log(typeof first.price, first.price * 2)
+          accept: ["number 1400"]
+        - { id: fs-w14-d2-g17, difficulty: hard, type: mcq, prompt: "Why might the React menu still show old prices after editing menu.json on GitHub Pages?", choices: ["browser/CDN cache: reload hard or wait a minute", "JSON can't change", "React caches forever", "keys"], answer: 0 }
+        - { id: fs-w14-d2-g18, difficulty: hard, type: multi, prompt: "Benefits of one data file (Select all.)", choices: ["no copies to forget", "every page agrees", "easy to edit without touching code", "no need to validate it"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Open now"
+        secondsPerQuestion: 10
+        questions:
+          - { id: fs-w14-d2-rf01, difficulty: easy, type: mcq, prompt: "Lagos time zone name", choices: ["Africa/Lagos", "GMT+1/Lagos", "WAT/Nigeria", "Lagos/Africa"], answer: 0 }
+          - { id: fs-w14-d2-rf02, difficulty: easy, type: mcq, prompt: "Format a date in another time zone", choices: ["Intl.DateTimeFormat with timeZone", "date.setZone()", "new Date(\"Lagos\")", "Math.time()"], answer: 0 }
+          - { id: fs-w14-d2-rf03, difficulty: easy, type: mcq, prompt: "Why isOpen(date) takes a date", choices: ["so it can be tested with any time", "for speed", "Intl requires it", "no reason"], answer: 0 }
+          - { id: fs-w14-d2-rf04, difficulty: easy, type: mcq, prompt: "Open [8, 21) means open at…", choices: ["8:00 to 20:59", "8:00 to 21:59", "9:00 to 21:00", "all day"], answer: 0 }
+          - { id: fs-w14-d2-rf05, difficulty: easy, type: mcq, prompt: "Sunday is day…", choices: ["0", "7", "1", "6"], answer: 0 }
+          - { id: fs-w14-d2-rf06, difficulty: easy, type: truefalse, prompt: "Lagos is UTC+1 all year (no daylight saving).", answer: true }
+          - { id: fs-w14-d2-rf07, difficulty: easy, type: mcq, prompt: "A placeholder is…", choices: ["not a label", "a label", "required", "the value"], answer: 0 }
+          - { id: fs-w14-d2-rf08, difficulty: easy, type: mcq, prompt: "Phone rule", choices: ["/^0\\d{10}$/", "/\\d/", "/^\\d{5}$/", "/^0$/"], answer: 0 }
+          - { id: fs-w14-d2-rf09, difficulty: easy, type: mcq, prompt: "Submit a form from code", choices: ["form.requestSubmit()", "form.go()", "form.send()", "form.click()"], answer: 0 }
+          - { id: fs-w14-d2-rf10, difficulty: easy, type: mcq, prompt: "Link a label to an input", choices: ["<label for=\"phone\"> + <input id=\"phone\">", "<label name=\"phone\">", "<label input>", "aria-phone"], answer: 0 }
+      - kind: brain-teaser
+        title: "Is it open?"
+        questions:
+          - { id: fs-w14-d2-bt01, difficulty: medium, type: mcq, prompt: "Hours Sun [12, 18). Sunday 6:00 pm Lagos →", choices: ["closed (18 is excluded)", "open", "error", "half open"], answer: 0 }
+          - { id: fs-w14-d2-bt02, difficulty: medium, type: mcq, prompt: "A laptop set to London time at 7:30 Monday (Oct, UTC+1) → Lagos hour?", choices: ["7", "6", "8", "0"], answer: 0, explain: "In October London is on BST (UTC+1), the same as Lagos." }
+          - id: fs-w14-d2-bt03
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const HOURS = { 0: [12, 18], 1: [8, 21] }
+              const isOpen = (day, hour) => hour >= HOURS[day][0] && hour < HOURS[day][1]
+              console.log(isOpen(0, 12), isOpen(0, 18), isOpen(1, 20))
+            accept: ["true false true"]
+          - id: fs-w14-d2-bt04
+            difficulty: hard
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const parts = new Intl.DateTimeFormat("en-GB", { timeZone: "Africa/Lagos", hour: "numeric", hourCycle: "h23" }).formatToParts(new Date("2026-10-11T17:30:00Z"))
+              console.log(parts.find((p) => p.type === "hour").value)
+            accept: ["18"]
+          - { id: fs-w14-d2-bt05, difficulty: hard, type: mcq, prompt: "Using new Date().getHours() instead of Lagos time fails for…", choices: ["customers or devices in another time zone", "nobody", "only Safari", "weekends only"], answer: 0 }
+
+  # ─────────────────────────── DAY 3 ───────────────────────────
+  - day: 3
+    gate:
+      title: "Checkpoint: the Contact page"
+      covers: "Week 14 · Day 2: Lagos time with Intl, isOpen(date), hours tables, labelled forms, building the WhatsApp enquiry link"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w14-d3-g01, difficulty: easy, type: mcq, prompt: "Lagos time in code", choices: ["Intl.DateTimeFormat with timeZone: \"Africa/Lagos\"", "new Date().getHours()", "Date.lagos()", "toLocaleString() with no options"], answer: 0 }
+        - { id: fs-w14-d3-g02, difficulty: easy, type: mcq, prompt: "Every input needs…", choices: ["a <label>", "a placeholder only", "an onclick", "a title"], answer: 0 }
+        - { id: fs-w14-d3-g03, difficulty: easy, type: truefalse, prompt: "Passing a date into isOpen makes it testable.", answer: true }
+        - { id: fs-w14-d3-g04, difficulty: easy, type: mcq, prompt: "The enquiry opens…", choices: ["WhatsApp with the message filled in", "an email", "a phone call", "nothing"], answer: 0 }
+        - { id: fs-w14-d3-g05, difficulty: easy, type: mcq, prompt: "hourCycle: \"h23\" gives hours…", choices: ["0–23", "1–12 with AM/PM", "1–24", "0–11"], answer: 0 }
+        - { id: fs-w14-d3-g06, difficulty: easy, type: mcq, prompt: "Find the location", choices: ["a Google Maps share link", "a photo only", "GPS in JS", "no address"], answer: 0 }
+        - { id: fs-w14-d3-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["formatToParts", "date pieces by type"], ["timeZone", "whose clock to use"], ["encodeURIComponent", "safe URL text"], ["label for", "names an input"]] }
+        - id: fs-w14-d3-g08
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const text = "Hi, this is Ada (08031234567)"
+            const url = `https://wa.me/2348000000000?text=${encodeURIComponent(text)}`
+            console.log(url.includes(" "), decodeURIComponent(url.split("text=")[1]) === text)
+          accept: ["false true"]
+        - { id: fs-w14-d3-g09, difficulty: medium, type: mcq, prompt: "\"Open now\" badge colours", choices: ["green for open, dark red for closed, plus the words", "colour only, no words", "red for open", "blinking"], answer: 0, explain: "Never colour alone: some people can't tell red from green." }
+        - { id: fs-w14-d3-g10, difficulty: medium, type: truefalse, prompt: "new Date(\"2026-10-11T19:00:00+01:00\") is 7 pm in Lagos.", answer: true }
+        - id: fs-w14-d3-g11
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+            console.log(days.indexOf("Sun"), days.indexOf("Sat"))
+          accept: ["0 6"]
+        - { id: fs-w14-d3-g12, difficulty: medium, type: mcq, prompt: "Form invalid: what should happen?", choices: ["show a clear message and stop", "open WhatsApp anyway", "reload", "clear everything"], answer: 0 }
+        - { id: fs-w14-d3-g13, difficulty: medium, type: mcq, prompt: "WhatsApp number format in wa.me links", choices: ["international, no + or spaces: 2348000000000", "08000000000", "+234 800 000 0000", "with dashes"], answer: 0 }
+        - id: fs-w14-d3-g14
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const ok = (n, p) => n.trim() !== "" && /^0\d{10}$/.test(p)
+            console.log(ok("Ada", "08031234567"), ok(" ", "08031234567"), ok("Ada", "+2348031234567"))
+          accept: ["true false false"]
+        - { id: fs-w14-d3-g15, difficulty: medium, type: mcq, prompt: "Testing isOpen properly means trying…", choices: ["edges: just before/after opening and closing, and Sunday", "only right now", "random times", "midnight only"], answer: 0 }
+        - id: fs-w14-d3-g16
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const lagosHour = (d) => Number(new Intl.DateTimeFormat("en-GB", { timeZone: "Africa/Lagos", hour: "numeric", hourCycle: "h23" }).format(d))
+            console.log(lagosHour(new Date("2026-10-12T07:59:00Z")), lagosHour(new Date("2026-10-12T20:00:00Z")))
+          accept: ["8 21"]
+        - { id: fs-w14-d3-g17, difficulty: hard, type: mcq, prompt: "Open 8–21 Monday; Lagos 20:59 →", choices: ["open", "closed", "error", "depends on the laptop"], answer: 0 }
+        - { id: fs-w14-d3-g18, difficulty: hard, type: multi, prompt: "A good Contact page has (Select all.)", choices: ["hours and an open-now badge", "a map link", "a labelled enquiry form", "a login"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Accessibility"
+        secondsPerQuestion: 10
+        questions:
+          - { id: fs-w14-d3-rf01, difficulty: easy, type: mcq, prompt: "How many <main> per page?", choices: ["one", "as many as you like", "none", "two"], answer: 0 }
+          - { id: fs-w14-d3-rf02, difficulty: easy, type: mcq, prompt: "How many <h1> per page?", choices: ["one", "none", "one per section", "any"], answer: 0 }
+          - { id: fs-w14-d3-rf03, difficulty: easy, type: mcq, prompt: "Clickable thing that does an action", choices: ["<button>", "<div onclick>", "<span>", "<p>"], answer: 0 }
+          - { id: fs-w14-d3-rf04, difficulty: easy, type: mcq, prompt: "Show keyboard focus", choices: [":focus-visible { outline: 3px solid … }", "outline: none", "cursor: pointer", "display: none"], answer: 0 }
+          - { id: fs-w14-d3-rf05, difficulty: easy, type: mcq, prompt: "Body text contrast needs at least…", choices: ["4.5:1", "1:1", "2:1", "10:1"], answer: 0 }
+          - { id: fs-w14-d3-rf06, difficulty: easy, type: mcq, prompt: "Tell screen readers the language", choices: ["<html lang=\"en\">", "<meta lang>", "<body en>", "nothing"], answer: 0 }
+          - { id: fs-w14-d3-rf07, difficulty: easy, type: truefalse, prompt: "Choose heading levels by how big they look.", answer: false }
+          - { id: fs-w14-d3-rf08, difficulty: easy, type: mcq, prompt: "Free tool that finds a11y problems", choices: ["axe DevTools", "Excel", "Git", "npm"], answer: 0 }
+          - { id: fs-w14-d3-rf09, difficulty: easy, type: mcq, prompt: "Keyboard test keys", choices: ["Tab, Shift+Tab, Enter, Space", "only arrows", "F5", "Ctrl+C"], answer: 0 }
+          - { id: fs-w14-d3-rf10, difficulty: easy, type: mcq, prompt: "Landmark for the site's links", choices: ["<nav>", "<links>", "<menu> only", "<div class=nav>"], answer: 0 }
+      - kind: brain-teaser
+        title: "Fix the page"
+        questions:
+          - { id: fs-w14-d3-bt01, difficulty: medium, type: mcq, prompt: "<div onclick=\"order()\">Order</div> problem", choices: ["keyboards can't reach or press it; use <button>", "it's slow", "it's the wrong colour", "none"], answer: 0 }
+          - { id: fs-w14-d3-bt02, difficulty: medium, type: mcq, prompt: "<input placeholder=\"Phone\"> with no label", choices: ["screen readers may not announce it; the hint disappears when typing", "fine", "invalid HTML", "faster"], answer: 0 }
+          - { id: fs-w14-d3-bt03, difficulty: medium, type: mcq, prompt: "Headings h1 → h3 (skipping h2)", choices: ["breaks the outline; use h2", "fine", "required", "faster"], answer: 0 }
+          - { id: fs-w14-d3-bt04, difficulty: hard, type: mcq, prompt: "*:focus { outline: none } with nothing else", choices: ["keyboard users can't see where they are", "looks cleaner, no downside", "improves speed", "required for buttons"], answer: 0 }
+          - { id: fs-w14-d3-bt05, difficulty: hard, type: mcq, prompt: "Pale beige text #d9c9b8 on cream", choices: ["fails contrast: darken it", "fine for body text", "only fails on phones", "passes AAA"], answer: 0 }
+
+  # ─────────────────────────── DAY 4 ───────────────────────────
+  - day: 4
+    gate:
+      title: "Checkpoint: accessibility"
+      covers: "Week 14 · Day 3: landmarks, heading order, labels, real buttons, alt text, focus styles, contrast, lang, testing with keyboard/axe"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w14-d4-g01, difficulty: easy, type: mcq, prompt: "Landmarks", choices: ["header, nav, main, footer", "div, span, p", "h1, h2, h3", "ul, li"], answer: 0 }
+        - { id: fs-w14-d4-g02, difficulty: easy, type: mcq, prompt: "Decorative image alt", choices: ["alt=\"\"", "alt=\"image\"", "no alt", "alt=\"decoration\""], answer: 0 }
+        - { id: fs-w14-d4-g03, difficulty: easy, type: truefalse, prompt: "A placeholder can replace a label.", answer: false }
+        - { id: fs-w14-d4-g04, difficulty: easy, type: mcq, prompt: "About how many people live with a disability?", choices: ["1 in 6", "1 in 1,000", "1 in 50", "almost none"], answer: 0 }
+        - { id: fs-w14-d4-g05, difficulty: easy, type: mcq, prompt: "Style headings by…", choices: ["CSS, not by picking a different level", "choosing h4 for small text", "using bold divs", "font tags"], answer: 0 }
+        - { id: fs-w14-d4-g06, difficulty: easy, type: mcq, prompt: "Check contrast with…", choices: ["WebAIM's contrast checker", "Excel", "a ruler", "npm"], answer: 0 }
+        - { id: fs-w14-d4-g07, difficulty: medium, type: match, prompt: "Problem → fix.", pairs: [["div onclick", "<button>"], ["no label", "<label for>"], ["outline: none", ":focus-visible outline"], ["two h1s", "one h1 + h2s"]] }
+        - { id: fs-w14-d4-g08, difficulty: medium, type: text, prompt: "Write the label for an input with id=\"phone\" (text: Phone).", accept: ["<label for=\"phone\">Phone</label>", "<label for='phone'>Phone</label>"] }
+        - { id: fs-w14-d4-g09, difficulty: medium, type: mcq, prompt: "Accessible sites also help…", choices: ["everyone: small screens, sunlight, slow connections", "nobody else", "only Google", "only developers"], answer: 0 }
+        - { id: fs-w14-d4-g10, difficulty: medium, type: truefalse, prompt: "Screen-reader users can jump between landmarks.", answer: true }
+        - { id: fs-w14-d4-g11, difficulty: medium, type: mcq, prompt: ":focus-visible vs :focus", choices: [":focus-visible shows for keyboard use, not every mouse click", "same", ":focus-visible is for mobile", ":focus is deprecated"], answer: 0 }
+        - { id: fs-w14-d4-g12, difficulty: medium, type: mcq, prompt: "Status shown only by colour (green dot = open)", choices: ["add the words \"Open now\"", "fine", "use a brighter green", "use blinking"], answer: 0 }
+        - { id: fs-w14-d4-g13, difficulty: medium, type: mcq, prompt: "Zoom to 200% should…", choices: ["still work without sideways scrolling", "break the layout", "hide images", "be blocked"], answer: 0 }
+        - { id: fs-w14-d4-g14, difficulty: medium, type: mcq, prompt: "Link text \"click here\" problem", choices: ["out of context it means nothing; describe the target", "fine", "too short only", "SEO only"], answer: 0 }
+        - { id: fs-w14-d4-g15, difficulty: medium, type: mcq, prompt: "Best first a11y test", choices: ["unplug the mouse and use Tab", "change colours", "ask Google", "read the CSS"], answer: 0 }
+        - { id: fs-w14-d4-g16, difficulty: hard, type: mcq, prompt: "A modal opens but Tab moves to the page behind it. Problem?", choices: ["focus isn't moved into (and kept in) the dialog", "none", "colour contrast", "missing alt"], answer: 0 }
+        - { id: fs-w14-d4-g17, difficulty: hard, type: mcq, prompt: "An icon-only cart button (🛒) needs…", choices: ["an accessible name, e.g. aria-label=\"Cart\"", "nothing", "a bigger icon", "a tooltip only"], answer: 0 }
+        - { id: fs-w14-d4-g18, difficulty: hard, type: multi, prompt: "On the accessibility checklist (Select all.)", choices: ["one main and one h1", "labels on inputs", "visible focus", "autoplaying music"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Lighthouse and head tags"
+        secondsPerQuestion: 10
+        questions:
+          - { id: fs-w14-d4-rf01, difficulty: easy, type: mcq, prompt: "Lighthouse's four scores", choices: ["Performance, Accessibility, Best Practices, SEO", "HTML, CSS, JS, JSON", "Speed, Size, Style, Sound", "A, B, C, D"], answer: 0 }
+          - { id: fs-w14-d4-rf02, difficulty: easy, type: mcq, prompt: "Aim for…", choices: ["90+ on mobile", "50+", "100 only on desktop", "any score"], answer: 0 }
+          - { id: fs-w14-d4-rf03, difficulty: easy, type: mcq, prompt: "Text under your link in Google results", choices: ["meta description", "og:image", "favicon", "h1"], answer: 0 }
+          - { id: fs-w14-d4-rf04, difficulty: easy, type: mcq, prompt: "The photo in a WhatsApp link preview", choices: ["og:image", "favicon", "meta description", "title"], answer: 0 }
+          - { id: fs-w14-d4-rf05, difficulty: easy, type: mcq, prompt: "Title length guideline", choices: ["under ~60 characters", "over 200", "exactly 10", "no limit"], answer: 0 }
+          - { id: fs-w14-d4-rf06, difficulty: easy, type: mcq, prompt: "Phones need this meta tag", choices: ["viewport", "robots", "author", "keywords"], answer: 0 }
+          - { id: fs-w14-d4-rf07, difficulty: easy, type: mcq, prompt: "og:image URL must be…", choices: ["a full address (https://…)", "a relative path", "a data URL", "empty"], answer: 0 }
+          - { id: fs-w14-d4-rf08, difficulty: easy, type: mcq, prompt: "Good share image size", choices: ["1200×630", "50×50", "4000×4000", "100×1000"], answer: 0 }
+          - { id: fs-w14-d4-rf09, difficulty: easy, type: truefalse, prompt: "Every page should have its own title.", answer: true }
+          - { id: fs-w14-d4-rf10, difficulty: easy, type: mcq, prompt: "The tab icon", choices: ["favicon", "og:image", "logo meta", "apple icon only"], answer: 0 }
+      - kind: brain-teaser
+        title: "Audit it"
+        questions:
+          - id: fs-w14-d4-bt01
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              title = "Menu · Mama Put Kitchen, Yaba"
+              print(len(title) <= 60, len(title))
+            accept: ["True 29"]
+          - id: fs-w14-d4-bt02
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              from html.parser import HTMLParser
+              class H1Count(HTMLParser):
+                  def __init__(self):
+                      super().__init__()
+                      self.n = 0
+                  def handle_starttag(self, tag, attrs):
+                      if tag == "h1":
+                          self.n += 1
+              p = H1Count()
+              p.feed("<h1>A</h1><h2>B</h2><h1>C</h1>")
+              print(p.n)
+            accept: ["2"]
+          - id: fs-w14-d4-bt03
+            difficulty: medium
+            type: text
+            prompt: "What does this print? (alt=\"\" counts as present)"
+            code: |
+              imgs = [{"src": "a.jpg"}, {"src": "b.jpg", "alt": ""}, {"src": "c.jpg", "alt": "Moi moi"}]
+              print(sum(1 for i in imgs if "alt" not in i))
+            accept: ["1"]
+          - { id: fs-w14-d4-bt04, difficulty: hard, type: mcq, prompt: "Lighthouse Performance is low; the biggest item is a 3 MB hero photo. First fix:", choices: ["compress/resize it (and serve WebP)", "minify the HTML", "remove alt text", "add more meta tags"], answer: 0 }
+          - { id: fs-w14-d4-bt05, difficulty: hard, type: mcq, prompt: "The WhatsApp preview shows no picture. Likely cause:", choices: ["og:image is missing or a relative path", "no favicon", "title too short", "missing h1"], answer: 0 }
+
+  # ─────────────────────────── DAY 5 ───────────────────────────
+  - day: 5
+    gate:
+      title: "Checkpoint: Lighthouse and head tags"
+      covers: "Week 14 · Day 4: Lighthouse scores, title/description/viewport/favicon, Open Graph for sharing, image weight"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w14-d5-g01, difficulty: easy, type: mcq, prompt: "Run Lighthouse from", choices: ["Chrome DevTools → Lighthouse", "npm run build", "GitHub", "Excel"], answer: 0 }
+        - { id: fs-w14-d5-g02, difficulty: easy, type: mcq, prompt: "Shared-link title on WhatsApp", choices: ["og:title", "h1", "alt", "favicon"], answer: 0 }
+        - { id: fs-w14-d5-g03, difficulty: easy, type: truefalse, prompt: "Test Lighthouse in mobile mode.", answer: true }
+        - { id: fs-w14-d5-g04, difficulty: easy, type: mcq, prompt: "Meta description is for…", choices: ["search results and some previews", "screen readers only", "the tab icon", "CSS"], answer: 0 }
+        - { id: fs-w14-d5-g05, difficulty: easy, type: mcq, prompt: "Performance is usually mostly about…", choices: ["images", "comments in HTML", "colours", "headings"], answer: 0 }
+        - { id: fs-w14-d5-g06, difficulty: easy, type: mcq, prompt: "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"> makes…", choices: ["phones use the real screen width", "the page zoom out tiny", "text bigger always", "nothing"], answer: 0 }
+        - { id: fs-w14-d5-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["title", "tab + search heading"], ["meta description", "search snippet"], ["og:image", "share preview photo"], ["favicon", "tab icon"]] }
+        - { id: fs-w14-d5-g08, difficulty: medium, type: text, prompt: "Write the Open Graph image tag for https://ada.github.io/mama-put-kitchen/images/share.jpg.", accept: ["<meta property=\"og:image\" content=\"https://ada.github.io/mama-put-kitchen/images/share.jpg\">", "<meta property=\"og:image\" content=\"https://ada.github.io/mama-put-kitchen/images/share.jpg\" />"] }
+        - { id: fs-w14-d5-g09, difficulty: medium, type: mcq, prompt: "Why Open Graph matters for a Lagos buka", choices: ["most links are shared on WhatsApp; a photo preview gets clicks", "Google requires it", "it speeds up the page", "it's for accessibility"], answer: 0 }
+        - { id: fs-w14-d5-g10, difficulty: medium, type: truefalse, prompt: "Two pages with the same title is fine for SEO.", answer: false }
+        - id: fs-w14-d5-g11
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            metas = {"og:title": "Mama Put Kitchen", "description": ""}
+            problems = []
+            if not metas.get("description"):
+                problems.append("missing meta description")
+            if not metas.get("og:image"):
+                problems.append("missing og:image")
+            print(len(problems), problems[0])
+          accept: ["2 missing meta description"]
+        - { id: fs-w14-d5-g12, difficulty: medium, type: mcq, prompt: "A run fixes 3 suggestions; next step", choices: ["run Lighthouse again and compare", "stop", "delete images", "add more scripts"], answer: 0 }
+        - { id: fs-w14-d5-g13, difficulty: medium, type: mcq, prompt: "Python's built-in HTML reader", choices: ["html.parser.HTMLParser", "json", "re only", "csv"], answer: 0 }
+        - id: fs-w14-d5-g14
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            attrs = dict([("property", "og:image"), ("content", "https://x/y.jpg")])
+            key = attrs.get("name") or attrs.get("property")
+            print(key, attrs["content"].startswith("https://"))
+          accept: ["og:image True"]
+        - { id: fs-w14-d5-g15, difficulty: medium, type: mcq, prompt: "Where these tags go", choices: ["inside <head>", "at the end of <body>", "in CSS", "in menu.json"], answer: 0 }
+        - id: fs-w14-d5-g16
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            title = "Mama Put Kitchen · Home-style Nigerian food in Yaba, Lagos · Order on WhatsApp"
+            print("title longer than 60 characters" if len(title) > 60 else "ok", len(title))
+          accept: ["title longer than 60 characters 78"]
+        - { id: fs-w14-d5-g17, difficulty: hard, type: mcq, prompt: "Lighthouse says \"Image elements do not have explicit width and height\". Why care?", choices: ["the layout jumps as images load (layout shift)", "it's only cosmetic", "SEO only", "accessibility only"], answer: 0 }
+        - { id: fs-w14-d5-g18, difficulty: hard, type: multi, prompt: "Every page's head (Select all.)", choices: ["charset + viewport", "unique title + description", "og:title/og:image", "the full menu as text"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Bug bash and launch"
+        secondsPerQuestion: 10
+        questions:
+          - { id: fs-w14-d5-rf01, difficulty: easy, type: mcq, prompt: "A bug bash is…", choices: ["using the site like a fussy customer to break it", "deleting old code", "a team party", "a Lighthouse score"], answer: 0 }
+          - { id: fs-w14-d5-rf02, difficulty: easy, type: mcq, prompt: "GitHub Pages shows this for unknown addresses", choices: ["404.html from the repo root", "index.html", "nothing", "a GitHub error only"], answer: 0 }
+          - { id: fs-w14-d5-rf03, difficulty: easy, type: mcq, prompt: "Test on…", choices: ["a real phone", "DevTools only", "the code editor", "nothing"], answer: 0 }
+          - { id: fs-w14-d5-rf04, difficulty: easy, type: mcq, prompt: "Edge cases for the total", choices: ["exactly ₦15,000 and an empty cart", "only big orders", "none", "random"], answer: 0 }
+          - { id: fs-w14-d5-rf05, difficulty: easy, type: mcq, prompt: "Watching a friend use the site, you should…", choices: ["stay silent and note where they hesitate", "explain everything", "take over", "skip it"], answer: 0 }
+          - { id: fs-w14-d5-rf06, difficulty: easy, type: mcq, prompt: "README needs…", choices: ["description, screenshot, live link, what you learned", "only the code", "passwords", "nothing"], answer: 0 }
+          - { id: fs-w14-d5-rf07, difficulty: easy, type: truefalse, prompt: "Write every bug down before fixing any.", answer: true }
+          - { id: fs-w14-d5-rf08, difficulty: easy, type: mcq, prompt: "about.htm vs about.html", choices: ["a broken link", "the same file", "faster", "a style choice"], answer: 0 }
+          - { id: fs-w14-d5-rf09, difficulty: easy, type: mcq, prompt: "Sideways scrolling on phones is usually…", choices: ["something wider than the screen (often an image)", "normal", "Lighthouse", "JSON"], answer: 0 }
+          - { id: fs-w14-d5-rf10, difficulty: easy, type: mcq, prompt: "Lighthouse target for launch", choices: ["90+ mobile", "50+", "100 desktop only", "none"], answer: 0 }
+      - kind: brain-teaser
+        title: "Spot the bug"
+        questions:
+          - id: fs-w14-d5-bt01
+            difficulty: medium
+            type: text
+            prompt: "What does this print? (It has a bug.)"
+            code: |
+              const cart = [{ price: 3500, qty: 2 }, { price: 4500, qty: 2 }]
+              console.log(cart.reduce((sum, i) => sum + i.price, 0))
+            accept: ["8000"]
+            explain: "It forgot qty: the real subtotal is 16,000."
+          - id: fs-w14-d5-bt02
+            difficulty: medium
+            type: text
+            prompt: "What does this print? Rule: free delivery FROM ₦15,000."
+            code: |
+              const subtotal = 15000
+              console.log(subtotal > 15000 ? 0 : 1000)
+            accept: ["1000"]
+            explain: "Bug: should be >= 15000, so this order's delivery should be 0."
+          - { id: fs-w14-d5-bt03, difficulty: medium, type: mcq, prompt: ".banner { width: 1600px } on a 390px phone", choices: ["sideways scrolling; use max-width: 100%", "fine", "image hidden", "faster"], answer: 0 }
+          - id: fs-w14-d5-bt04
+            difficulty: hard
+            type: text
+            prompt: "What does this print? (aria-current should mark the page you're on.)"
+            code: |
+              const here = "contact.html"
+              const pages = ["index.html", "contact.html"]
+              console.log(pages.map((p) => (p === "index.html" ? "*" : "-")).join(""))
+            accept: ["*-"]
+            explain: "Bug: it compares with \"index.html\" instead of here, so Home is always marked."
+          - { id: fs-w14-d5-bt05, difficulty: hard, type: multi, prompt: "On the launch checklist (Select all.)", choices: ["works on a real phone", "every link goes somewhere", "a 404 page", "100% test coverage"], answers: [0, 1, 2] }
+
+  # ─────────────────────────── DAY 6 ───────────────────────────
+  - day: 6
+    gate:
+      title: "Checkpoint: bug bash and launch checklist"
+      covers: "Week 14 · Day 5: finding bugs systematically, edge cases, 404.html, README, user testing, the launch checklist"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w14-d6-g01, difficulty: easy, type: mcq, prompt: "File GitHub Pages uses for missing pages", choices: ["404.html", "error.html", "missing.html", "index.html"], answer: 0 }
+        - { id: fs-w14-d6-g02, difficulty: easy, type: mcq, prompt: "Phase 2 milestone pages", choices: ["Home, Menu (React), About, Contact", "Home only", "Login, Admin", "Blog, Shop"], answer: 0 }
+        - { id: fs-w14-d6-g03, difficulty: easy, type: truefalse, prompt: "A friend testing the site will find problems you can't see.", answer: true }
+        - { id: fs-w14-d6-g04, difficulty: easy, type: mcq, prompt: "The first thing in a README", choices: ["what the project is", "the licence text", "your CV", "a joke"], answer: 0 }
+        - { id: fs-w14-d6-g05, difficulty: easy, type: mcq, prompt: "Pure functions for the order logic make it…", choices: ["easy to test", "slower", "harder to read", "impossible to reuse"], answer: 0 }
+        - { id: fs-w14-d6-g06, difficulty: easy, type: mcq, prompt: "Who to pitch with your finished site", choices: ["real local businesses", "nobody yet", "only big companies", "your teacher"], answer: 0 }
+        - { id: fs-w14-d6-g07, difficulty: medium, type: match, prompt: "Match the Phase 2 week.", pairs: [["Week 11", "Grid + design tokens"], ["Week 12", "React components"], ["Week 13", "state + effects"], ["Week 14", "polish + launch"]] }
+        - id: fs-w14-d6-g08
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const totals = (sub, mode) => {
+              const delivery = mode === "delivery" && sub < 15000 ? 1000 : 0
+              return sub + delivery
+            }
+            console.log(totals(7500, "delivery"), totals(15000, "delivery"), totals(7500, "pickup"))
+          accept: ["8500 15000 7500"]
+        - { id: fs-w14-d6-g09, difficulty: medium, type: mcq, prompt: "addToCart(cart, dish) should…", choices: ["return a new cart, leaving the old one unchanged", "push into cart", "print the cart", "reload"], answer: 0 }
+        - { id: fs-w14-d6-g10, difficulty: medium, type: truefalse, prompt: "An empty cart's total should be ₦0 with no delivery fee for pickup.", answer: true }
+        - id: fs-w14-d6-g11
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const add = (c, d) => (c.some((i) => i.id === d.id) ? c.map((i) => (i.id === d.id ? { ...i, qty: i.qty + 1 } : i)) : [...c, { ...d, qty: 1 }])
+            const a = add([], { id: 1 })
+            const b = add(a, { id: 1 })
+            console.log(a[0].qty, b[0].qty)
+          accept: ["1 2"]
+        - { id: fs-w14-d6-g12, difficulty: medium, type: mcq, prompt: "Portfolio entry for Mama Put Kitchen", choices: ["screenshot + 2 sentences on what it does and what you built", "the full code pasted", "just the repo name", "nothing"], answer: 0 }
+        - { id: fs-w14-d6-g13, difficulty: medium, type: mcq, prompt: "What separates a finished site from a demo?", choices: ["it's tested, accessible, fast, findable and live for real users", "more animations", "more pages", "a bigger logo"], answer: 0 }
+        - id: fs-w14-d6-g14
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const link = (n, t) => `https://wa.me/${n}?text=${encodeURIComponent(t)}`
+            console.log(link("2348000000000", "A B").endsWith("A%20B"))
+          accept: ["true"]
+        - { id: fs-w14-d6-g15, difficulty: medium, type: mcq, prompt: "Phase 3 (next week) is about…", choices: ["the backend: servers and databases", "more CSS", "machine learning", "job interviews"], answer: 0 }
+        - id: fs-w14-d6-g16
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const naira = (n) => "₦" + n.toLocaleString("en-NG")
+            const cart = [{ name: "Party jollof", price: 3500, qty: 2 }]
+            const msg = ["Order from Mama Put Kitchen:", ...cart.map((i) => `${i.name} × ${i.qty} = ${naira(i.price * i.qty)}`)].join("\n")
+            console.log(msg.split("\n").length, msg.endsWith("₦7,000"))
+          accept: ["2 true"]
+        - { id: fs-w14-d6-g17, difficulty: hard, type: mcq, prompt: "Why is the WhatsApp order a good fit for a buka (vs an online payment checkout)?", choices: ["customers already use WhatsApp; no payment setup or fees needed to start", "it's more secure than payments", "Google requires it", "it's faster to code only"], answer: 0 }
+        - { id: fs-w14-d6-g18, difficulty: hard, type: multi, prompt: "Shipped by the end of Phase 2 (Select all.)", choices: ["one menu.json", "React menu with a cart", "Lighthouse 90+ and a 404 page", "a database"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Phase 2 lightning round"
+        secondsPerQuestion: 9
+        questions:
+          - { id: fs-w14-d6-rf01, difficulty: easy, type: mcq, prompt: "Two-direction layout", choices: ["Grid", "Flexbox", "float", "table"], answer: 0 }
+          - { id: fs-w14-d6-rf02, difficulty: easy, type: mcq, prompt: "Design token", choices: ["--brand in :root", "a JWT", "a key prop", "an id"], answer: 0 }
+          - { id: fs-w14-d6-rf03, difficulty: easy, type: mcq, prompt: "Build a React project", choices: ["npm run build", "npm run dev", "git push", "npm install"], answer: 0 }
+          - { id: fs-w14-d6-rf04, difficulty: easy, type: mcq, prompt: "A component's inputs", choices: ["props", "state", "effects", "keys"], answer: 0 }
+          - { id: fs-w14-d6-rf05, difficulty: easy, type: mcq, prompt: "Remember a value", choices: ["useState", "useEffect", "map", "fetch"], answer: 0 }
+          - { id: fs-w14-d6-rf06, difficulty: easy, type: mcq, prompt: "Load data after render", choices: ["useEffect", "useState", "JSX", "CSS"], answer: 0 }
+          - { id: fs-w14-d6-rf07, difficulty: easy, type: mcq, prompt: "Shared state goes…", choices: ["up to the common parent", "into each child", "into CSS", "away"], answer: 0 }
+          - { id: fs-w14-d6-rf08, difficulty: easy, type: mcq, prompt: "Real button", choices: ["<button>", "<div onclick>", "<span>", "<a> with no href"], answer: 0 }
+          - { id: fs-w14-d6-rf09, difficulty: easy, type: mcq, prompt: "WhatsApp preview photo", choices: ["og:image", "favicon", "alt", "h1"], answer: 0 }
+          - { id: fs-w14-d6-rf10, difficulty: easy, type: truefalse, prompt: "Phase 2 is done when Mama Put Kitchen is live and tested.", answer: true }
+      - kind: brain-teaser
+        title: "Phase 2 retrospective"
+        questions:
+          - { id: fs-w14-d6-bt01, difficulty: medium, type: mcq, prompt: "The single biggest idea of React", choices: ["UI = components built from data and state", "faster CSS", "no JavaScript", "databases"], answer: 0 }
+          - { id: fs-w14-d6-bt02, difficulty: medium, type: mcq, prompt: "Why test pure functions instead of clicking around?", choices: ["fast, repeatable, and they catch edge cases", "clicking is wrong", "React requires it", "no reason"], answer: 0 }
+          - { id: fs-w14-d6-bt03, difficulty: medium, type: mcq, prompt: "Accessibility work helped…", choices: ["every visitor, not only disabled ones", "only Google", "only blind users", "nobody"], answer: 0 }
+          - { id: fs-w14-d6-bt04, difficulty: hard, type: mcq, prompt: "What's still missing for a real business (Phase 3 territory)?", choices: ["a backend: saved orders, an admin to edit the menu, accounts", "more colours", "more pages", "nothing"], answer: 0 }
+          - { id: fs-w14-d6-bt05, difficulty: hard, type: multi, prompt: "You can now (Select all.)", choices: ["build responsive multi-page sites", "build React apps with state", "ship accessible, tested sites to the web", "design databases"], answers: [0, 1, 2] }

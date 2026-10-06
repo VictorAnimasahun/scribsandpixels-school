@@ -1,0 +1,41 @@
+# Week 14 · Day 6 project
+id: web-w14-d6-launch
+kind: web
+title: "Graduation: the order logic"
+description: "The heart of Mama Put Kitchen as pure, testable functions: cart updates, totals with the delivery rule, the order message and the WhatsApp link."
+html: |
+  <h1>Mama Put Kitchen · order logic</h1>
+  <p>Write the functions in the JS tab. The checks call them directly.</p>
+css: |
+  body { font-family: system-ui, sans-serif; padding: 1rem; background: #fff8ef; color: #2b1d16; }
+  .card { background: #fff; border: 2px solid #c0392b; border-radius: 12px; padding: 0.5rem 0.75rem; margin: 0.5rem 0; min-width: 0; }
+  .favourites { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.75rem; }
+  .badge { display: inline-block; padding: 0.1rem 0.5rem; border-radius: 6px; color: #fff; }
+  .open { background: #2f7d4f; } .closed { background: #8e2a20; }
+  .error { color: #8e2a20; }
+js: |
+  // Graduation check: the order logic, in plain JavaScript functions (no DOM needed).
+  const DELIVERY_FEE = 1000
+  const FREE_FROM = 15000
+  const naira = (n) => "₦" + n.toLocaleString("en-NG")
+
+  // 1. addToCart(cart, dish) → a NEW cart: +1 qty if the dish is there, else add it with qty 1 (don't mutate cart)
+  // 2. changeQty(cart, id, delta) → a NEW cart; rows reaching 0 are removed
+  // 3. totals(cart, mode) → { subtotal, delivery, total }: delivery ₦1,000 for "delivery" under ₦15,000, else 0
+  // 4. orderMessage(cart, mode) → "Order from Mama Put Kitchen:\nParty jollof × 2 = ₦7,000\nTotal: ₦8,000 (delivery)"
+  // 5. whatsappLink(number, text) → "https://wa.me/<number>?text=<encoded text>"
+tasks:
+  - prompt: "addToCart adds new dishes and increases existing ones, without changing the old cart."
+    check: "(() => { const jollof = { id: 1, name: 'Party jollof', price: 3500 }; const egusi = { id: 3, name: 'Egusi + pounded yam', price: 4500 }; const a = addToCart([], jollof); const b = addToCart(a, jollof); const c = addToCart(b, egusi); return a.length === 1 && a[0].qty === 1 && b[0].qty === 2 && a[0].qty === 1 && c.length === 2 && c[1].qty === 1 })()"
+    hint: "cart.some(\u2026) ? cart.map(\u2026 { ...i, qty: i.qty + 1 } \u2026) : [...cart, { \u2026dish, qty: 1 }]"
+  - prompt: "changeQty changes a row and removes it at 0, without mutating."
+    check: "(() => { const cart = [{ id: 1, name: 'A', price: 100, qty: 1 }, { id: 2, name: 'B', price: 200, qty: 2 }]; const a = changeQty(cart, 2, 1); const b = changeQty(cart, 1, -1); return a[1].qty === 3 && cart[1].qty === 2 && b.length === 1 && b[0].id === 2 })()"
+  - prompt: "totals applies the delivery rule (\u20a61,000 under \u20a615,000; free from \u20a615,000; never for pickup)."
+    check: "(() => { const c = (q) => [{ id: 1, name: 'X', price: 7500, qty: q }]; const t1 = totals(c(1), 'delivery'), t2 = totals(c(2), 'delivery'), t3 = totals(c(1), 'pickup'); return t1.subtotal === 7500 && t1.delivery === 1000 && t1.total === 8500 && t2.delivery === 0 && t2.total === 15000 && t3.delivery === 0 && t3.total === 7500 })()"
+    hint: "const delivery = mode === \"delivery\" && subtotal < FREE_FROM ? DELIVERY_FEE : 0"
+  - prompt: "totals of an empty cart is all zeros (pickup)."
+    check: "(() => { const t = totals([], 'pickup'); return t.subtotal === 0 && t.delivery === 0 && t.total === 0 })()"
+  - prompt: "orderMessage builds the exact message."
+    check: "(() => { const jollof = { id: 1, name: 'Party jollof', price: 3500 }; const egusi = { id: 3, name: 'Egusi + pounded yam', price: 4500 }; const cart = addToCart(addToCart([], jollof), jollof); return orderMessage(cart, 'delivery') === 'Order from Mama Put Kitchen:\\nParty jollof \u00d7 2 = \u20a67,000\\nTotal: \u20a68,000 (delivery)' })()"
+  - prompt: "whatsappLink encodes the text (no spaces, \u20a6 or line breaks left raw)."
+    check: "(() => { const l = whatsappLink('2348000000000', 'Total: \u20a68,000\\nThanks'); return l.startsWith('https://wa.me/2348000000000?text=') && !/[\\s\u20a6]/.test(l) && decodeURIComponent(l.split('text=')[1]) === 'Total: \u20a68,000\\nThanks' })()"

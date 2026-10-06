@@ -1,0 +1,105 @@
+# Week 14 · Day 4 mini-task
+id: py-w14-d4-audit
+kind: python
+title: "A mini Lighthouse"
+description: "Head tags can't go in a browser sandbox, so write the checker instead: a Python script that audits a page's HTML for the rules Lighthouse cares about."
+starter: |
+  from html.parser import HTMLParser
+
+  PAGE = """<!doctype html>
+  <html>
+  <head>
+    <title>Mama Put Kitchen</title>
+    <meta property="og:title" content="Mama Put Kitchen">
+  </head>
+  <body>
+    <h1>Mama Put Kitchen</h1>
+    <img src="jollof.jpg" alt="Party jollof with plantain">
+    <img src="logo.png">
+    <h1>Today's favourites</h1>
+  </body>
+  </html>"""
+
+
+  class Audit(HTMLParser):
+      """Collects what the checks need while the page is parsed."""
+
+      def __init__(self):
+          super().__init__()
+          self.lang = None
+          self.title = ""
+          self.in_title = False
+          self.metas = {}        # name or property → content, e.g. {"description": "...", "og:title": "..."}
+          self.h1_count = 0
+          self.images_without_alt = 0
+
+      def handle_starttag(self, tag, attrs):
+          attrs = dict(attrs)
+          # 1. <html lang="..."> → self.lang
+          # 2. <title> → start collecting text (self.in_title = True)
+          # 3. <meta name=... content=...> or <meta property=... content=...> → self.metas
+          # 4. count <h1>s, and <img>s with no alt attribute (alt="" is fine: decoration)
+          pass
+
+      def handle_endtag(self, tag):
+          if tag == "title":
+              self.in_title = False
+
+      def handle_data(self, data):
+          if self.in_title:
+              self.title += data
+
+
+  def audit(html):
+      """Return a list of problems (strings). An empty list means the page passes."""
+      a = Audit()
+      a.feed(html)
+      problems = []
+      # 5. Add these exact messages when they apply:
+      #    "missing lang on <html>"
+      #    "missing <title>"                      (no title, or only spaces)
+      #    "title longer than 60 characters"
+      #    "missing meta description"
+      #    "missing og:image"
+      #    "expected 1 <h1>, found N"
+      #    "N image(s) without alt"
+      return problems
+
+
+  def main():
+      problems = audit(PAGE)
+      if not problems:
+          print("✓ No problems found")
+      for p in problems:
+          print("✗", p)
+
+
+  if __name__ == "__main__":
+      main()
+tasks:
+  - prompt: "The parser records lang, title, metas (by name or property), the h1 count and images with no alt."
+    tests: |
+      a = Audit()
+      a.feed('<html lang="en"><head><title>Menu · Mama Put Kitchen, Yaba</title><meta name="description" content="Jollof and egusi in Yaba."><meta property="og:image" content="https://x.github.io/m/share.jpg"></head><body><h1>Menu</h1><img src="a.jpg" alt=""><img src="b.jpg" alt="Egusi soup"></body></html>')
+      assert a.lang == "en", f"lang: {a.lang!r}"
+      assert a.title.strip() == "Menu · Mama Put Kitchen, Yaba", f"title: {a.title!r}"
+      assert a.metas.get("description") == "Jollof and egusi in Yaba.", f"metas: {a.metas}"
+      assert a.metas.get("og:image", "").startswith("https://"), f"metas: {a.metas}"
+      assert a.h1_count == 1, f"h1_count: {a.h1_count}"
+      assert a.images_without_alt == 0, "alt=\"\" counts as having alt"
+      b = Audit()
+      b.feed("<html><body><h1>A</h1><h1>B</h1><img src='x'><img src='y'><img src='z' alt='Moi moi'></body></html>")
+      assert b.h1_count == 2 and b.images_without_alt == 2, f"h1={b.h1_count}, no-alt={b.images_without_alt}"
+  - prompt: "audit() returns [] for a good page."
+    tests: |
+      assert audit('<html lang="en"><head><title>Menu · Mama Put Kitchen, Yaba</title><meta name="description" content="Jollof and egusi in Yaba."><meta property="og:image" content="https://x.github.io/m/share.jpg"></head><body><h1>Menu</h1><img src="a.jpg" alt=""><img src="b.jpg" alt="Egusi soup"></body></html>') == [], f"got {audit('<html lang="en"><head><title>Menu · Mama Put Kitchen, Yaba</title><meta name="description" content="Jollof and egusi in Yaba."><meta property="og:image" content="https://x.github.io/m/share.jpg"></head><body><h1>Menu</h1><img src="a.jpg" alt=""><img src="b.jpg" alt="Egusi soup"></body></html>')}"
+  - prompt: "audit() reports each problem with the exact message."
+    tests: |
+      bad = "<html><head><title>   </title></head><body><img src='x'></body></html>"
+      got = audit(bad)
+      for msg in ["missing lang on <html>", "missing <title>", "missing meta description", "missing og:image", "expected 1 <h1>, found 0", "1 image(s) without alt"]:
+          assert msg in got, f"missing {msg!r} in {got}"
+      long = "<html lang='en'><head><title>" + "x" * 61 + "</title><meta name='description' content='d'><meta property='og:image' content='https://a/b.jpg'></head><body><h1>A</h1></body></html>"
+      assert audit(long) == ["title longer than 60 characters"], f"got {audit(long)}"
+  - prompt: "Running the script prints every problem with the built-in PAGE."
+    expectOutput: ["✗ missing lang on <html>", "✗ missing meta description", "✗ missing og:image", "✗ expected 1 <h1>, found 2", "✗ 1 image(s) without alt"]

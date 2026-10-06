@@ -1,0 +1,47 @@
+# Week 14 · Day 3 mini-task
+id: web-w14-d3-a11y
+kind: web
+title: "Accessibility fixes"
+description: "A page full of classic accessibility bugs. Fix landmarks, headings, alt text, labels, buttons and focus styles."
+html: |
+  <div class="top">
+    <div class="logo">Mama Put Kitchen</div>
+    <div class="links"><a href="index.html">Home</a> <a href="menu/">Menu</a> <a href="contact.html">Contact</a></div>
+  </div>
+  <div class="content">
+    <h3>Order today</h3>
+    <img src="https://picsum.photos/seed/jollof/300/200">
+    <input id="phone" placeholder="Phone number">
+    <div class="btn" onclick="alert('Sent!')">Send</div>
+    <h1>Our story</h1>
+  </div>
+  <div class="bottom">© Mama Put Kitchen</div>
+css: |
+  body { font-family: system-ui, sans-serif; padding: 1rem; background: #fff8ef; color: #2b1d16; }
+  .btn { display: inline-block; background: #c0392b; color: #fff; padding: 0.5rem 1rem; border-radius: 8px; cursor: pointer; }
+  .muted { color: #d9c9b8; } /* too pale on cream: contrast fails */
+  *:focus { outline: none; }  /* ✗ hides where the keyboard is */
+js: |
+  // Fix the accessibility bugs. You may rewrite the HTML and CSS tabs (and use JS if you prefer).
+  // 1. Landmarks: the top bar becomes <header> with a <nav> for the links, the content is <main>, the bottom is <footer>
+  // 2. Headings in order: exactly one <h1> ("Order today" is the page title), "Our story" becomes an <h2> after it
+  // 3. The image gets alt text describing the food
+  // 4. The phone input gets a real <label for="phone">
+  // 5. "Send" becomes a real <button>
+  // 6. Replace "*:focus { outline: none; }" with a visible :focus-visible outline (3px solid)
+tasks:
+  - prompt: "Landmarks: header containing a nav, then one main, then a footer."
+    check: "!!document.querySelector('header nav a') && document.querySelectorAll('main').length === 1 && !!document.querySelector('footer')"
+    hint: "<header>\u2026<nav>links</nav></header> <main>\u2026</main> <footer>\u2026</footer>"
+  - prompt: "Exactly one h1 (\"Order today\"), and \"Our story\" is an h2."
+    check: "document.querySelectorAll('h1').length === 1 && document.querySelector('h1').textContent.trim() === 'Order today' && [...document.querySelectorAll('h2')].some((h) => h.textContent.trim() === 'Our story') && !document.querySelector('h3')"
+  - prompt: "Every image has alt text of 2+ words."
+    check: "[...document.querySelectorAll('img')].every((i) => (i.getAttribute('alt') || '').trim().split(/\\s+/).length >= 2)"
+  - prompt: "The phone input has a real label."
+    check: "(() => { const i = document.querySelector('#phone'); return !!i && i.labels && i.labels.length > 0 && i.labels[0].textContent.trim().length > 0 })()"
+    hint: "<label for=\"phone\">Phone number</label>"
+  - prompt: "\"Send\" is a <button>, and no div has an onclick."
+    check: "[...document.querySelectorAll('button')].some((b) => b.textContent.trim() === 'Send') && !document.querySelector('div[onclick]')"
+  - prompt: "Focus is visible: no outline: none on *:focus, and a 3px :focus-visible outline exists."
+    check: "(() => { const rules = [...document.styleSheets[0].cssRules]; const hides = rules.some((r) => /:focus\\b/.test(r.selectorText || '') && !/focus-visible/.test(r.selectorText) && /none/.test(r.style.outlineStyle || r.style.outline || '')); const shows = rules.some((r) => /:focus-visible/.test(r.selectorText || '') && /3px/.test(r.style.outlineWidth || r.style.outline || '')); return !hides && shows })()"
+    hint: ":focus-visible { outline: 3px solid #c0392b; outline-offset: 2px; }"

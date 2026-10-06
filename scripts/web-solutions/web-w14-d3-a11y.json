@@ -1,0 +1,4 @@
+{
+  "html": "<header>\n  <div class=\"logo\">Mama Put Kitchen</div>\n  <nav><a href=\"index.html\">Home</a> <a href=\"menu/\">Menu</a> <a href=\"contact.html\">Contact</a></nav>\n</header>\n<main>\n  <h1>Order today</h1>\n  <img src=\"https://picsum.photos/seed/jollof/300/200\" alt=\"Party jollof rice with fried plantain\">\n  <label for=\"phone\">Phone number</label>\n  <input id=\"phone\" placeholder=\"0803…\">\n  <button class=\"btn\" onclick=\"alert('Sent!')\">Send</button>\n  <h2>Our story</h2>\n</main>\n<footer>© Mama Put Kitchen</footer>",
+  "css": "body { font-family: system-ui, sans-serif; padding: 1rem; background: #fff8ef; color: #2b1d16; }\n.btn { display: inline-block; background: #c0392b; color: #fff; padding: 0.5rem 1rem; border-radius: 8px; cursor: pointer; border: 0; font: inherit; }\n:focus-visible { outline: 3px solid #c0392b; outline-offset: 2px; }\n"
+}

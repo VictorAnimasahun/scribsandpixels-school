@@ -1,0 +1,45 @@
+# Week 14 · Day 1 mini-task
+id: web-w14-d1-json
+kind: web
+title: "The menu from JSON"
+description: "Every page reads one menu.json. Load it with the three states, and keep the fetch swappable so it can be tested."
+html: |
+  <h1>Today's favourites</h1>
+  <div class="favourites"></div>
+css: |
+  body { font-family: system-ui, sans-serif; padding: 1rem; background: #fff8ef; color: #2b1d16; }
+  .card { background: #fff; border: 2px solid #c0392b; border-radius: 12px; padding: 0.5rem 0.75rem; margin: 0.5rem 0; min-width: 0; }
+  .favourites { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.75rem; }
+  .badge { display: inline-block; padding: 0.1rem 0.5rem; border-radius: 6px; color: #fff; }
+  .open { background: #2f7d4f; } .closed { background: #8e2a20; }
+  .error { color: #8e2a20; }
+js: |
+  // A pretend server: fakeFetch("menu.json") answers like fetch would, after 200 ms.
+  const MENU_JSON = "[{\"id\":1,\"name\":\"Party jollof\",\"price\":3500,\"category\":\"Rice\",\"favourite\":true,\"soldOut\":false},{\"id\":2,\"name\":\"Fried rice\",\"price\":3500,\"category\":\"Rice\",\"favourite\":false,\"soldOut\":true},{\"id\":3,\"name\":\"Egusi + pounded yam\",\"price\":4500,\"category\":\"Soups & swallow\",\"favourite\":true,\"soldOut\":false},{\"id\":4,\"name\":\"Pepper soup\",\"price\":3000,\"category\":\"Soups & swallow\",\"favourite\":true,\"soldOut\":false},{\"id\":5,\"name\":\"Fried plantain\",\"price\":1200,\"category\":\"Sides\",\"favourite\":false,\"soldOut\":false},{\"id\":6,\"name\":\"Zobo (50cl)\",\"price\":700,\"category\":\"Drinks\",\"favourite\":true,\"soldOut\":false}]"
+  const fakeFetch = (url) => new Promise((resolve) => setTimeout(() => resolve(
+    url === "menu.json"
+      ? { ok: true, status: 200, json: async () => JSON.parse(MENU_JSON) }
+      : { ok: false, status: 404, json: async () => ({}) }), 200))
+  const naira = (n) => "₦" + n.toLocaleString("en-NG")
+
+  // 1. async loadMenu(fetchFn = fetch): fetch "menu.json", throw Error(`HTTP ${status}`) if !ok, return the JSON
+  // 2. cardHTML(dish): <article class="card"><h3>name</h3><p>naira(price)</p></article>
+  // 3. async showFavourites(fetchFn = fetch):
+  //    - .favourites shows "Loading…" first
+  //    - then only the favourite dishes that aren't sold out, as cards
+  //    - on any error: <p class="error">Couldn't load today's favourites.</p>
+  // 4. Call showFavourites(fakeFetch) at the bottom
+tasks:
+  - prompt: "loadMenu(fetchFn) returns the parsed menu (6 dishes)."
+    check: "(async () => { const tick = (ms = 300) => new Promise((r) => setTimeout(r, ms)); const m = await loadMenu(fakeFetch); return Array.isArray(m) && m.length === 6 && m[0].name === 'Party jollof' })()"
+    hint: "const response = await fetchFn(\"menu.json\"); \u2026 return response.json()"
+  - prompt: "loadMenu throws \"HTTP 404\" when the response isn't ok."
+    check: "(async () => { const tick = (ms = 300) => new Promise((r) => setTimeout(r, ms)); try { await loadMenu(async () => ({ ok: false, status: 404, json: async () => ({}) })); return false } catch (e) { return e.message === 'HTTP 404' } })()"
+  - prompt: "showFavourites shows \"Loading\u2026\" while it waits."
+    check: "(async () => { const tick = (ms = 300) => new Promise((r) => setTimeout(r, ms)); const box = document.querySelector('.favourites'); const names = () => [...box.querySelectorAll('.card h3')].map((h) => h.textContent).join('|'); const p = showFavourites(() => new Promise(() => {})); await tick(20); return box.textContent === 'Loading\u2026' })()"
+  - prompt: "Then only favourite, in-stock dishes appear, as cards with \u20a6 prices."
+    check: "(async () => { const tick = (ms = 300) => new Promise((r) => setTimeout(r, ms)); const box = document.querySelector('.favourites'); const names = () => [...box.querySelectorAll('.card h3')].map((h) => h.textContent).join('|'); await showFavourites(fakeFetch); return names() === 'Party jollof|Egusi + pounded yam|Pepper soup|Zobo (50cl)' && box.querySelector('.card p').textContent === '\u20a63,500' })()"
+    hint: "dishes.filter((d) => d.favourite && !d.soldOut).map(cardHTML).join(\"\")"
+  - prompt: "A failed load shows the .error message."
+    check: "(async () => { const tick = (ms = 300) => new Promise((r) => setTimeout(r, ms)); const box = document.querySelector('.favourites'); const names = () => [...box.querySelectorAll('.card h3')].map((h) => h.textContent).join('|'); await showFavourites(async () => { throw new Error('offline') }); return box.querySelector('.error')?.textContent === \"Couldn't load today's favourites.\" })()"
+    hint: "catch { box.innerHTML = `<p class=\"error\">\u2026</p>` }"

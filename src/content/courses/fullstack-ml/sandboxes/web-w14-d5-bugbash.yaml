@@ -1,0 +1,58 @@
+# Week 14 · Day 5 mini-task
+id: web-w14-d5-bugbash
+kind: web
+title: "Bug bash"
+description: "A Mama Put Kitchen page with 5 real bugs: a broken link, the wrong current page, a wrong total, an off-by-one delivery rule, and a banner that breaks the layout without alt text. Find and fix them."
+html: |
+  <header id="site-header"></header>
+  <main>
+    <h1>Your order</h1>
+    <ul id="lines"></ul>
+    <p id="subtotal"></p>
+    <p id="delivery"></p>
+    <p id="total"></p>
+    <img src="https://picsum.photos/seed/dodo/1600/400" class="banner">
+  </main>
+css: |
+  body { font-family: system-ui, sans-serif; margin: 0; background: #fff8ef; color: #2b1d16; }
+  main { padding: 1rem; }
+  nav { display: flex; gap: 1rem; padding: 0.75rem; background: #2b1d16; }
+  nav a { color: #fff; }
+  nav a[aria-current="page"] { font-weight: bold; }
+  .banner { width: 1600px; }
+js: |
+  // BUG BASH: this order page has 5 bugs. Find and fix them all (CSS or JS).
+  const pages = [
+    { href: "index.html", label: "Home" },
+    { href: "menu.html", label: "Menu" },
+    { href: "about.htm", label: "About" },
+    { href: "contact.html", label: "Contact" },
+  ]
+  const here = "contact.html"
+  const cart = [
+    { name: "Party jollof", price: 3500, qty: 2 },
+    { name: "Egusi + pounded yam", price: 4500, qty: 2 },
+  ]
+  const naira = (n) => "₦" + n.toLocaleString("en-NG")
+
+  document.querySelector("#site-header").innerHTML = "<nav>" + pages
+    .map((p) => `<a href="${p.href}"${p.href === "index.html" ? ' aria-current="page"' : ""}>${p.label}</a>`)
+    .join("") + "</nav>"
+
+  const subtotal = cart.reduce((sum, i) => sum + i.price, 0)
+  const delivery = subtotal > 15000 ? 0 : 1000      // free FROM ₦15,000
+  document.querySelector("#lines").innerHTML = cart.map((i) => `<li>${i.name} × ${i.qty}</li>`).join("")
+  document.querySelector("#subtotal").textContent = "Subtotal: " + naira(subtotal)
+  document.querySelector("#delivery").textContent = "Delivery: " + naira(delivery)
+  document.querySelector("#total").textContent = "Total: " + naira(subtotal + delivery)
+tasks:
+  - prompt: "Every nav link points at a real page (.html)."
+    check: "[...document.querySelectorAll('nav a')].every((a) => /\\.html$/.test(a.getAttribute('href')))"
+  - prompt: "The nav marks the page you're on (Contact) as current, and only that one."
+    check: "(() => { const c = document.querySelectorAll('nav [aria-current=\"page\"]'); return c.length === 1 && c[0].textContent === 'Contact' })()"
+  - prompt: "The subtotal counts quantities: \u20a616,000."
+    check: "document.querySelector('#subtotal').textContent === 'Subtotal: \u20a616,000'"
+  - prompt: "Delivery is free from \u20a615,000 (this order: \u20a60, total \u20a616,000)."
+    check: "document.querySelector('#delivery').textContent === 'Delivery: \u20a60' && document.querySelector('#total').textContent === 'Total: \u20a616,000'"
+  - prompt: "The banner fits the screen (no sideways scroll) and has alt text."
+    check: "(() => { const b = document.querySelector('.banner'); return b.getBoundingClientRect().width <= document.documentElement.clientWidth && document.documentElement.scrollWidth <= document.documentElement.clientWidth + 1 && (b.getAttribute('alt') || '').trim().split(/\\s+/).length >= 2 })()"
