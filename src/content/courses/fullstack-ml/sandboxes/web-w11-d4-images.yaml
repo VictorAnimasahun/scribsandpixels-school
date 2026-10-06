@@ -1,0 +1,38 @@
+# Week 11 · Day 4 mini-task
+id: web-w11-d4-images
+kind: web
+title: "Responsive images"
+description: "Three dish photos of different shapes and a very wide banner. Make them fit, match and load politely."
+html: |
+  <h1>Photos of the day</h1>
+  <div class="dishes">
+    <figure class="dish"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='900'%3E%3Crect width='100%25' height='100%25' fill='%23e67e22'/%3E%3C/svg%3E"><figcaption>Party jollof</figcaption></figure>
+    <figure class="dish"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='900'%3E%3Crect width='100%25' height='100%25' fill='%2327ae60'/%3E%3C/svg%3E"><figcaption>Efo riro</figcaption></figure>
+    <figure class="dish"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='900'%3E%3Crect width='100%25' height='100%25' fill='%23f1c40f'/%3E%3C/svg%3E"><figcaption>Moi moi</figcaption></figure>
+  </div>
+  <p><img id="banner" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2400' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23c0392b'/%3E%3C/svg%3E"></p>
+css: |
+  body { font-family: system-ui, sans-serif; padding: 1rem; background: #fff8ef; }
+  .dishes { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1rem; }
+  figure { margin: 0; }
+
+  /* Your CSS below:
+     1. No image may be wider than its box (max-width + height: auto)
+     2. .dish img: full width, 4 / 3 shape, cropped not squashed (object-fit) */
+js: |
+  // JavaScript for the HTML attributes (you'd normally write these in the HTML):
+  // 3. Every .dish img gets loading="lazy"
+  // 4. Every image gets a useful alt text (2+ words that describe the food or banner)
+tasks:
+  - prompt: "The banner (2400px wide) stays inside the page."
+    check: "document.querySelector('#banner').getBoundingClientRect().width <= document.body.clientWidth"
+  - prompt: "Every dish photo is the same 4:3 shape."
+    check: "[...document.querySelectorAll('.dish img')].every((i) => { const r = i.getBoundingClientRect(); return r.width > 0 && Math.abs(r.width / r.height - 4 / 3) < 0.03 })"
+    hint: ".dish img { width: 100%; aspect-ratio: 4 / 3; }"
+  - prompt: "Photos are cropped, not squashed."
+    check: "[...document.querySelectorAll('.dish img')].every((i) => getComputedStyle(i).objectFit === 'cover')"
+  - prompt: "Every dish photo has loading=\"lazy\"."
+    check: "[...document.querySelectorAll('.dish img')].every((i) => i.getAttribute('loading') === 'lazy')"
+  - prompt: "Every image has a useful alt text (2+ words)."
+    check: "[...document.querySelectorAll('img')].every((i) => (i.getAttribute('alt') || '').trim().split(/\\s+/).length >= 2)"
+    hint: "img.alt = \"Party jollof with plantain\""

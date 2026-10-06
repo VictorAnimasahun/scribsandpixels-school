@@ -1,0 +1,71 @@
+# Week 11 · Day 6 project
+id: web-w11-d6-home
+kind: web
+title: "Mama Put Kitchen: home page"
+description: "Milestone part 1: the home page, built from design tokens, a responsive grid, data and the shared header."
+html: |
+  <header id="site-header"></header>
+  <main>
+    <section class="hero">
+      <h1>Mama Put Kitchen</h1>
+      <p>Home-style Nigerian food in Yaba. Order on WhatsApp, pick up hot.</p>
+      <a class="button" href="https://wa.me/2348000000000">Order on WhatsApp</a>
+    </section>
+    <h2>Today's favourites</h2>
+    <div class="favourites"></div>
+    <section class="hours">
+      <h2>Opening hours</h2>
+      <p>Mon–Sat 8 am – 9 pm · Sun 12 – 6 pm · 12 Herbert Macaulay Way, Yaba</p>
+    </section>
+  </main>
+  <footer id="site-footer"></footer>
+css: |
+  /* 1. Design tokens in :root: --brand, --cream, --ink, --space, --radius
+     2. body uses --cream and --ink; .button uses --brand and --radius
+     3. .favourites: responsive grid (auto-fit + minmax 150px), gap var(--space)
+     4. .dish img: 4 / 3, object-fit: cover, full width */
+  :root {
+  }
+
+  body { font-family: system-ui, sans-serif; margin: 0; }
+  main, #site-footer { padding: 1rem; }
+  nav { display: flex; gap: 1rem; padding: 0.75rem; background: #2b1d16; }
+  nav a { color: #fff; }
+  .button { display: inline-block; color: #fff; padding: 0.5rem 1rem; text-decoration: none; }
+  .dish { background: #fff; border-radius: 12px; overflow: hidden; }
+  .dish h3, .dish p { margin: 0.5rem; }
+  img { max-width: 100%; display: block; }
+js: |
+  const pages = [
+    { href: "index.html", label: "Home" },
+    { href: "menu.html", label: "Menu" },
+    { href: "about.html", label: "About" },
+    { href: "contact.html", label: "Contact" },
+  ]
+  const here = "index.html"
+  const favourites = [
+    { name: "Party jollof", price: 3500, photo: "https://picsum.photos/seed/jollof/400/300" },
+    { name: "Egusi + pounded yam", price: 4500, photo: "https://picsum.photos/seed/egusi/400/300" },
+    { name: "Pepper soup", price: 3000, photo: "https://picsum.photos/seed/pepper/400/300" },
+    { name: "Fried plantain", price: 1200, photo: "https://picsum.photos/seed/dodo/400/300" },
+  ]
+  const naira = (n) => "₦" + n.toLocaleString("en-NG")
+
+  // 5. The shared header from Friday (Home marked aria-current="page")
+  // 6. One <article class="dish"> per favourite in .favourites: <img> (alt = the dish name, loading lazy),
+  //    <h3> name, <p> price as naira(...)
+  // 7. Footer with the year: "© <year> Mama Put Kitchen"
+tasks:
+  - prompt: ":root has --brand, --cream, --ink, --space and --radius; the page and button use them."
+    check: "(() => { const r = getComputedStyle(document.documentElement); const ok = ['--brand', '--cream', '--ink', '--space', '--radius'].every((v) => r.getPropertyValue(v).trim()); const b = getComputedStyle(document.body); const btn = getComputedStyle(document.querySelector('.button')); return ok && b.backgroundColor !== 'rgba(0, 0, 0, 0)' && btn.backgroundColor !== 'rgba(0, 0, 0, 0)' && btn.borderTopLeftRadius !== '0px' })()"
+  - prompt: "The header nav has 4 links with Home marked current."
+    check: "document.querySelectorAll('#site-header nav a').length === 4 && document.querySelector('#site-header [aria-current=\"page\"]')?.textContent === 'Home'"
+  - prompt: "Four .dish cards, each with a lazy image (alt = dish name), an h3 and a \u20a6 price."
+    check: "(() => { const d = [...document.querySelectorAll('.favourites .dish')]; return d.length === 4 && d.every((x) => { const i = x.querySelector('img'); const h = x.querySelector('h3'); return i && h && i.getAttribute('loading') === 'lazy' && i.getAttribute('alt') === h.textContent && /\u20a6[\\d,]+/.test(x.querySelector('p')?.textContent || '') }) && d[0].querySelector('p').textContent === '\u20a63,500' })()"
+  - prompt: ".favourites is a responsive auto-fit grid (min 150px) with a var(--space) gap."
+    check: "(() => { const rule = (sel) => [...document.styleSheets[0].cssRules].find((r) => r.selectorText === sel); const r = rule('.favourites'); return !!r && /auto-fit/.test(r.style.gridTemplateColumns) && /minmax\\(\\s*150px/.test(r.style.gridTemplateColumns) && /var\\(--space\\)/.test(r.style.gap || r.style.columnGap) })()"
+    hint: ".favourites { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--space); }"
+  - prompt: "Dish photos are 4:3 and cropped, not squashed."
+    check: "[...document.querySelectorAll('.dish img')].length === 4 && [...document.querySelectorAll('.dish img')].every((i) => getComputedStyle(i).objectFit === 'cover' && getComputedStyle(i).aspectRatio.replace(/\\s/g, '') === '4/3')"
+  - prompt: "The footer shows this year and the name."
+    check: "(() => { const t = document.querySelector('#site-footer').textContent; return t.includes(String(new Date().getFullYear())) && t.includes('Mama Put Kitchen') })()"

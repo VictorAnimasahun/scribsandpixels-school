@@ -1,0 +1,41 @@
+# Week 11 · Day 5 mini-task
+id: web-w11-d5-header
+kind: web
+title: "One header for every page"
+description: "Build the site nav and footer from data with JavaScript, so four pages share one header."
+html: |
+  <header id="site-header"></header>
+  <main><h1>Our menu</h1><p>(Pretend this is menu.html.)</p></main>
+  <footer id="site-footer"></footer>
+css: |
+  body { font-family: system-ui, sans-serif; margin: 0; background: #fff8ef; }
+  nav { display: flex; gap: 1rem; padding: 0.75rem; background: #c0392b; }
+  nav a { color: #fff; }
+  nav a[aria-current="page"] { font-weight: bold; text-decoration: none; border-bottom: 2px solid #fff; }
+  main, #site-footer { padding: 0.75rem; }
+js: |
+  const pages = [
+    { href: "index.html", label: "Home" },
+    { href: "menu.html", label: "Menu" },
+    { href: "about.html", label: "About" },
+    { href: "contact.html", label: "Contact" },
+  ]
+  // In a real site: const here = location.pathname.split("/").pop() || "index.html"
+  const here = "menu.html"
+
+  // 1. Build the nav from `pages`: one <a href=...>label</a> per page, inside <nav>, put into #site-header
+  // 2. The link for `here` gets aria-current="page" (and only that one)
+  // 3. #site-footer shows: "Open Mon–Sat 8am–9pm · © <this year> Mama Put Kitchen"
+  // 4. Log how many links the nav has
+tasks:
+  - prompt: "#site-header holds a <nav> with 4 links, in order: Home, Menu, About, Contact."
+    check: "[...document.querySelectorAll('#site-header nav a')].map((a) => a.textContent).join() === 'Home,Menu,About,Contact'"
+  - prompt: "Each link points at its page."
+    check: "[...document.querySelectorAll('#site-header nav a')].map((a) => a.getAttribute('href')).join() === 'index.html,menu.html,about.html,contact.html'"
+  - prompt: "Only the Menu link has aria-current=\"page\"."
+    check: "(() => { const cur = document.querySelectorAll('#site-header [aria-current=\"page\"]'); return cur.length === 1 && cur[0].textContent === 'Menu' })()"
+    hint: "${p.href === here ? ' aria-current=\"page\"' : \"\"}"
+  - prompt: "The footer shows the hours and this year."
+    check: "(() => { const t = document.querySelector('#site-footer').textContent; return t.includes(String(new Date().getFullYear())) && /Mama Put Kitchen/.test(t) && /8am/.test(t) })()"
+  - prompt: "Log the number of nav links (4)."
+    check: "window.__logs.includes('4')"

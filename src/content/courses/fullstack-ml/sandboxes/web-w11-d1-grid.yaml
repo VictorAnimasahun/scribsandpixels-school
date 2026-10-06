@@ -1,0 +1,43 @@
+# Week 11 · Day 1 mini-task
+id: web-w11-d1-grid
+kind: web
+title: "A menu grid"
+description: "Lay out six dishes in a three-column grid with CSS only. Edit the CSS tab."
+html: |
+  <h1>Mama Put Kitchen · Menu</h1>
+  <section class="menu">
+    <article class="dish special"><h2>Party jollof</h2><p class="price">₦3,500</p></article>
+    <article class="dish"><h2>Fried rice</h2><p class="price">₦3,500</p></article>
+    <article class="dish"><h2>Egusi + pounded yam</h2><p class="price">₦4,500</p></article>
+    <article class="dish"><h2>Efo riro</h2><p class="price">₦4,000</p></article>
+    <article class="dish"><h2>Moi moi</h2><p class="price">₦1,000</p></article>
+    <article class="dish"><h2>Fried plantain</h2><p class="price">₦1,200</p></article>
+  </section>
+css: |
+  body { font-family: system-ui, sans-serif; padding: 1rem; background: #fff8ef; }
+  .dish { background: #fff; border: 2px solid #c0392b; border-radius: 12px; padding: 0.75rem; min-width: 0; overflow-wrap: anywhere; }
+  .dish h2 { font-size: 1rem; margin: 0 0 0.25rem; }
+  .price { margin: 0; font-weight: bold; color: #c0392b; }
+
+  /* Your CSS below:
+     1. Make .menu a grid
+     2. Three equal columns, written with repeat()
+     3. A 1rem gap between the cards
+     4. Make .special (the first card) span 2 columns */
+js: |
+  // No JavaScript today: this is all CSS.
+tasks:
+  - prompt: "Make .menu a grid."
+    check: "getComputedStyle(document.querySelector('.menu')).display === 'grid'"
+  - prompt: "Three equal columns."
+    check: "(() => { const t = getComputedStyle(document.querySelector('.menu')).gridTemplateColumns.split(' ').map(parseFloat); return t.length === 3 && Math.max(...t) - Math.min(...t) < 1 })()"
+    hint: "grid-template-columns: 1fr 1fr 1fr;"
+  - prompt: "Write the columns with repeat()."
+    check: "(() => { const rule = (sel) => [...document.styleSheets[0].cssRules].find((r) => r.selectorText === sel); const r = rule('.menu'); return !!r && /repeat\\(\\s*3\\s*,\\s*1fr\\s*\\)/.test(r.style.gridTemplateColumns) })()"
+    hint: "grid-template-columns: repeat(3, 1fr);"
+  - prompt: "A 1rem (16px) gap between the cards, both ways."
+    check: "(() => { const s = getComputedStyle(document.querySelector('.menu')); return s.columnGap === '16px' && s.rowGap === '16px' })()"
+    hint: "gap: 1rem;"
+  - prompt: "The .special card spans 2 columns."
+    check: "(() => { const a = document.querySelector('.special').getBoundingClientRect(); const b = document.querySelectorAll('.dish')[1].getBoundingClientRect(); return a.width > b.width * 1.8 })()"
+    hint: ".special { grid-column: span 2; }"

@@ -14,7 +14,7 @@
 - [x] French Weeks 2–16 · Excel Weeks 2–15 (Excel figures recomputed from the datasets)
 - [ ] French Weeks 17–52
 - [ ] Excel Weeks 16–24
-- [x] Fullstack + ML Weeks 1–10 (every Python snippet checked by running it: `node scripts/check-quiz-code.mjs`)
+- [x] Fullstack + ML Weeks 1–11 (every Python snippet checked by running it: `node scripts/check-quiz-code.mjs`)
 - [ ] Fullstack + ML later weeks as they're written
 
 ## Sandboxes (a slice at a time)
@@ -42,6 +42,7 @@
 ## Content
 - [x] Fullstack + ML Week 3 (HTML & CSS) · Week 4 (Flexbox, responsive, Git + GitHub) · Week 5 (dictionaries, exceptions, modules, JSON) · Week 6 (Open-Meteo weather script, accessibility, portfolio, first gigs)
 - [x] Fullstack + ML Weeks 7–10 (JavaScript basics; arrays, objects, JSON; the DOM; fetch and async)
+- [x] Fullstack + ML Week 11 (CSS Grid, custom properties, responsive images, shared header; Mama Put Kitchen home page) + quizzes + 6 sandboxes
 - [ ] Fullstack + ML Weeks 11–14: draft outline in `courses/fullstack-ml/phase-2-plan.md`; plan approved 3 Oct (keep the order · milestone = Mama Put Kitchen · Saturdays build the milestone). Write Weeks 11–14 on Monday; add the plan's outlines to `course.ts` then
 - [x] Fullstack + ML production-engineering thread (concurrency, observability, reliability, scalability, auth, databases, tradeoffs) planned into Weeks 15–34 and 45–52: `courses/fullstack-ml/production-track.md` + outlines in `course.ts`
 - [ ] French: Year 2 (B2 / NCLC 7) weeks, if wanted
@@ -49,6 +50,7 @@
 
 ## Product (decisions come from the web chat)
 - [ ] Final UI/UX design, replacing the test build's plain screens
+- [ ] "Need a nudge?" button (decided 6 Oct: all three): remind me in 1 hour (email) · 10-minute version of today · motivational note
 - [ ] Real accounts and saved progress (today progress lives in the browser only)
 - [ ] Move quiz answers server-side so learners can't read them in the page code
 - [ ] Remove the 🧪 Tester tools for real learners

@@ -1,0 +1,409 @@
+# Fullstack + ML · Week 11 quizzes. Format and rules: src/content/QUIZZES.md
+week: 11
+days:
+
+  # ─────────────────────────── DAY 1 ───────────────────────────
+  - day: 1
+    gate:
+      title: "Checkpoint: Week 10 review"
+      covers: "Week 10: timers and promises, async/await, fetch + JSON, loading/error states, URLSearchParams, Promise.all"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w11-d1-g01, difficulty: easy, type: mcq, prompt: "An async function always returns…", choices: ["a Promise", "undefined", "a string", "the value directly"], answer: 0 }
+        - { id: fs-w11-d1-g02, difficulty: easy, type: mcq, prompt: "Check the HTTP status worked (200–299)", choices: ["response.ok", "response.done", "response.success", "response.status === true"], answer: 0 }
+        - { id: fs-w11-d1-g03, difficulty: easy, type: truefalse, prompt: "fetch rejects on a 404 response.", answer: false }
+        - { id: fs-w11-d1-g04, difficulty: easy, type: mcq, prompt: "Read a JSON body", choices: ["await response.json()", "response.body", "JSON.parse(response)", "response.text"], answer: 0 }
+        - { id: fs-w11-d1-g05, difficulty: easy, type: mcq, prompt: "Runs after try or catch, every time", choices: ["finally", "then", "always", "done"], answer: 0 }
+        - { id: fs-w11-d1-g06, difficulty: easy, type: mcq, prompt: "Three states every data screen needs", choices: ["loading, error, success", "start, middle, end", "open, closed, locked", "red, amber, green"], answer: 0 }
+        - id: fs-w11-d1-g07
+          difficulty: medium
+          type: text
+          prompt: "What does this print, in order? (separate with commas)"
+          code: |
+            console.log("a")
+            setTimeout(() => console.log("b"), 0)
+            Promise.resolve().then(() => console.log("c"))
+            console.log("d")
+          accept: ["a, d, c, b", "a,d,c,b", "a d c b"]
+          explain: "Synchronous code first (a, d), then promise callbacks (c), then timers (b)."
+        - id: fs-w11-d1-g08
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const params = new URLSearchParams({ city: "Lagos", days: 3 })
+            console.log(params.toString())
+          accept: ["city=Lagos&days=3"]
+        - { id: fs-w11-d1-g09, difficulty: medium, type: match, prompt: "Match.", pairs: [["Promise.all", "fails if any one fails"], ["Promise.allSettled", "waits for all, reports each"], ["await", "pause until a promise settles"], ["setTimeout", "run later"]] }
+        - { id: fs-w11-d1-g10, difficulty: medium, type: truefalse, prompt: "Six requests with Promise.all take about as long as the slowest one, not the sum.", answer: true }
+        - { id: fs-w11-d1-g11, difficulty: medium, type: mcq, prompt: "Why disable the button while loading?", choices: ["to stop double requests from double taps", "to save battery", "browsers require it", "to hide errors"], answer: 0 }
+        - { id: fs-w11-d1-g12, difficulty: medium, type: mcq, prompt: "Where may a secret API key live?", choices: ["on a server, never in browser JS", "in a JS file", "in localStorage", "in an HTML comment"], answer: 0 }
+        - id: fs-w11-d1-g13
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const daily = { time: ["Mon", "Tue"], max: [31, 29] }
+            const days = daily.time.map((d, i) => `${d}:${daily.max[i]}`)
+            console.log(days.join(" "))
+          accept: ["Mon:31 Tue:29"]
+        - { id: fs-w11-d1-g14, difficulty: medium, type: mcq, prompt: "CORS decides whether…", choices: ["your page may read another site's API response", "your server can start", "cookies expire", "HTML is valid"], answer: 0 }
+        - { id: fs-w11-d1-g15, difficulty: medium, type: mcq, prompt: "await works inside…", choices: ["an async function (or a module's top level)", "any function", "only loops", "only classes"], answer: 0 }
+        - id: fs-w11-d1-g16
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const wait = (ms, v) => new Promise((r) => setTimeout(() => r(v), ms))
+            async function main() {
+              const results = await Promise.all([wait(30, "slow"), wait(10, "fast")])
+              console.log(results.join(","))
+            }
+            main()
+          accept: ["slow,fast"]
+          explain: "Promise.all keeps the input order, not the finishing order."
+        - id: fs-w11-d1-g17
+          difficulty: hard
+          type: mcq
+          prompt: "What does this log?"
+          code: |
+            async function getTemp(fetchFn) {
+              const res = await fetchFn()
+              if (!res.ok) throw new Error(`HTTP ${res.status}`)
+              return (await res.json()).temp
+            }
+            getTemp(async () => ({ ok: false, status: 500 }))
+              .then((t) => console.log(t))
+              .catch((e) => console.log(e.message))
+          choices: ["HTTP 500", "undefined", "500", "nothing"]
+          answer: 0
+        - { id: fs-w11-d1-g18, difficulty: hard, type: multi, prompt: "Which are true? (Select all.)", choices: ["fetch only rejects when the network fails", "response.json() returns a Promise", "Promise.allSettled never rejects", "await blocks the whole page"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Grid basics"
+        secondsPerQuestion: 10
+        questions:
+          - { id: fs-w11-d1-rf01, difficulty: easy, type: mcq, prompt: "Turn on grid layout", choices: ["display: grid", "grid: on", "display: flex-grid", "layout: grid"], answer: 0 }
+          - { id: fs-w11-d1-rf02, difficulty: easy, type: mcq, prompt: "Three equal columns", choices: ["grid-template-columns: 1fr 1fr 1fr", "grid-columns: 3", "columns: 3 equal", "grid-template-rows: 1fr 1fr 1fr"], answer: 0 }
+          - { id: fs-w11-d1-rf03, difficulty: easy, type: mcq, prompt: "Short for 1fr 1fr 1fr 1fr", choices: ["repeat(4, 1fr)", "4fr", "fr(4)", "1fr * 4"], answer: 0 }
+          - { id: fs-w11-d1-rf04, difficulty: easy, type: mcq, prompt: "Space between grid cells", choices: ["gap", "margin-grid", "spacing", "padding-cells"], answer: 0 }
+          - { id: fs-w11-d1-rf05, difficulty: easy, type: mcq, prompt: "1fr means…", choices: ["one share of the free space", "1 frame", "1 pixel", "first row"], answer: 0 }
+          - { id: fs-w11-d1-rf06, difficulty: easy, type: mcq, prompt: "Grid vs Flexbox", choices: ["Grid: rows and columns; Flexbox: one direction", "same thing", "Flexbox: two directions", "Grid is only for tables"], answer: 0 }
+          - { id: fs-w11-d1-rf07, difficulty: easy, type: mcq, prompt: "Make an item two columns wide", choices: ["grid-column: span 2", "width: 2fr", "columns: 2", "grid-span: 2"], answer: 0 }
+          - { id: fs-w11-d1-rf08, difficulty: easy, type: mcq, prompt: "200px 1fr gives…", choices: ["a fixed 200px column and a flexible one", "two 200px columns", "one column", "an error"], answer: 0 }
+          - { id: fs-w11-d1-rf09, difficulty: easy, type: truefalse, prompt: "Grid items wrap onto the next row by themselves.", answer: true }
+          - { id: fs-w11-d1-rf10, difficulty: easy, type: mcq, prompt: "2fr 1fr: the first column is…", choices: ["twice as wide as the second", "2px wider", "half as wide", "the same"], answer: 0 }
+      - kind: brain-teaser
+        title: "Read the grid"
+        questions:
+          - { id: fs-w11-d1-bt01, difficulty: medium, type: mcq, prompt: "6 items in a 3-column grid: how many rows?", choices: ["2", "3", "6", "1"], answer: 0 }
+          - { id: fs-w11-d1-bt02, difficulty: medium, type: mcq, prompt: "7 items in repeat(3, 1fr): the 7th sits…", choices: ["alone at the start of row 3", "squeezed into row 2", "hidden", "in a 4th column"], answer: 0 }
+          - { id: fs-w11-d1-bt03, difficulty: medium, type: mcq, prompt: "Why gap instead of margins on cards?", choices: ["gap only goes between items: no extra edge space", "margins don't work in grid", "gap is faster", "no difference"], answer: 0 }
+          - { id: fs-w11-d1-bt04, difficulty: hard, type: mcq, prompt: "Container 620px wide, columns 1fr 1fr 1fr, gap 10px. Each column is…", choices: ["200px", "206px", "180px", "210px"], answer: 0, explain: "620 − 2 gaps × 10 = 600, ÷ 3 = 200." }
+          - { id: fs-w11-d1-bt05, difficulty: hard, type: mcq, prompt: "First of 6 cards spans 2 in a 3-column grid. How many rows now?", choices: ["3", "2", "4", "6"], answer: 0, explain: "It uses 7 cell slots, so a third row starts." }
+
+  # ─────────────────────────── DAY 2 ───────────────────────────
+  - day: 2
+    gate:
+      title: "Checkpoint: Grid basics"
+      covers: "Week 11 · Day 1: display grid, fr units, repeat(), gap, spanning columns"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w11-d2-g01, difficulty: easy, type: mcq, prompt: "Turn on grid", choices: ["display: grid", "display: block", "grid: true", "position: grid"], answer: 0 }
+        - { id: fs-w11-d2-g02, difficulty: easy, type: mcq, prompt: "repeat(3, 1fr) equals", choices: ["1fr 1fr 1fr", "3fr", "1fr 3", "33% 33% 33% 1fr"], answer: 0 }
+        - { id: fs-w11-d2-g03, difficulty: easy, type: truefalse, prompt: "gap adds space only between cells, not around the outside.", answer: true }
+        - { id: fs-w11-d2-g04, difficulty: easy, type: mcq, prompt: "Grid lays things out in…", choices: ["two directions", "one direction", "three dimensions", "a circle"], answer: 0 }
+        - { id: fs-w11-d2-g05, difficulty: easy, type: mcq, prompt: "A card that's 2 columns wide", choices: ["grid-column: span 2", "colspan=2", "width: 200%", "flex: 2"], answer: 0 }
+        - { id: fs-w11-d2-g06, difficulty: easy, type: mcq, prompt: "fr stands for…", choices: ["fraction", "frame", "free", "front"], answer: 0 }
+        - { id: fs-w11-d2-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["1fr 1fr", "two equal columns"], ["200px 1fr", "fixed sidebar + flexible main"], ["2fr 1fr", "first twice as wide"], ["repeat(4, 1fr)", "four equal columns"]] }
+        - { id: fs-w11-d2-g08, difficulty: medium, type: text, prompt: "Container 430px, columns 1fr 1fr, gap 30px. Width of each column (px)?", accept: ["200", "200px"] }
+        - { id: fs-w11-d2-g09, difficulty: medium, type: mcq, prompt: "Most real pages use…", choices: ["Grid for the big layout, Flexbox inside small parts", "only Grid", "only Flexbox", "tables"], answer: 0 }
+        - { id: fs-w11-d2-g10, difficulty: medium, type: truefalse, prompt: "1fr and 33% are the same in a 3-column grid with a gap.", answer: false, explain: "33% × 3 + gaps overflows; fr shares only the space left after gaps." }
+        - { id: fs-w11-d2-g11, difficulty: medium, type: mcq, prompt: "8 items, 3 columns: items in the last row?", choices: ["2", "3", "1", "0"], answer: 0 }
+        - { id: fs-w11-d2-g12, difficulty: medium, type: mcq, prompt: "Space between rows only", choices: ["row-gap", "column-gap", "gap-row", "line-height"], answer: 0 }
+        - { id: fs-w11-d2-g13, difficulty: medium, type: mcq, prompt: "Nav bar with 4 links in a row: best tool", choices: ["Flexbox", "Grid areas", "a table", "float"], answer: 0 }
+        - { id: fs-w11-d2-g14, difficulty: medium, type: text, prompt: "Write the property and value for 3 equal columns using repeat.", accept: ["grid-template-columns: repeat(3, 1fr)", "grid-template-columns: repeat(3, 1fr);", "grid-template-columns:repeat(3,1fr)"] }
+        - { id: fs-w11-d2-g15, difficulty: medium, type: mcq, prompt: "Make a card two rows tall", choices: ["grid-row: span 2", "height: 2fr", "rows: 2", "grid-column: span 2"], answer: 0 }
+        - { id: fs-w11-d2-g16, difficulty: hard, type: text, prompt: "Container 1000px, columns 2fr 1fr 1fr, gap 20px. Width of the first column (px)?", accept: ["480", "480px"], explain: "1000 − 40 = 960 free; 960 ÷ 4 shares = 240; first = 2 × 240." }
+        - { id: fs-w11-d2-g17, difficulty: hard, type: mcq, prompt: "6 cards, 3 columns; cards 1 and 4 both span 2. Rows used?", choices: ["3", "2", "4", "5"], answer: 0, explain: "Row 1: card 1 (2 cells) + card 2. Row 2: card 3, then card 4 fits the 2 cells left. Row 3: cards 5 and 6." }
+        - { id: fs-w11-d2-g18, difficulty: hard, type: multi, prompt: "Which give three equal columns? (Select all.)", choices: ["repeat(3, 1fr)", "1fr 1fr 1fr", "repeat(3, minmax(0, 1fr))", "3fr"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Responsive grids and areas"
+        secondsPerQuestion: 10
+        questions:
+          - { id: fs-w11-d2-rf01, difficulty: easy, type: mcq, prompt: "As many columns as fit, at least 220px", choices: ["repeat(auto-fit, minmax(220px, 1fr))", "repeat(220px)", "columns: auto 220px", "minmax(auto-fit)"], answer: 0 }
+          - { id: fs-w11-d2-rf02, difficulty: easy, type: mcq, prompt: "minmax(220px, 1fr) means…", choices: ["at least 220px, at most a share of the space", "exactly 220px", "at most 220px", "between 1 and 220"], answer: 0 }
+          - { id: fs-w11-d2-rf03, difficulty: easy, type: mcq, prompt: "Name parts of a page layout", choices: ["grid-template-areas", "grid-names", "area-map", "layout-names"], answer: 0 }
+          - { id: fs-w11-d2-rf04, difficulty: easy, type: mcq, prompt: "Put <main> in the \"main\" area", choices: ["main { grid-area: main; }", "main { area: main; }", "main { grid: main; }", "<main area>"], answer: 0 }
+          - { id: fs-w11-d2-rf05, difficulty: easy, type: mcq, prompt: "Change the layout under 600px", choices: ["@media (max-width: 600px)", "@screen 600", "@media (width > 600)", "@phone"], answer: 0 }
+          - { id: fs-w11-d2-rf06, difficulty: easy, type: truefalse, prompt: "The auto-fit + minmax grid needs no media query.", answer: true }
+          - { id: fs-w11-d2-rf07, difficulty: easy, type: mcq, prompt: "Open DevTools' device toolbar", choices: ["Ctrl+Shift+M / ⌘⇧M", "F5", "Ctrl+P", "Ctrl+D"], answer: 0 }
+          - { id: fs-w11-d2-rf08, difficulty: easy, type: mcq, prompt: "\"header header\" spans the header across…", choices: ["both columns", "one column", "two rows", "nothing"], answer: 0 }
+          - { id: fs-w11-d2-rf09, difficulty: easy, type: mcq, prompt: "To rearrange areas on phones, you change…", choices: ["the CSS areas, not the HTML", "the HTML order", "JavaScript", "nothing possible"], answer: 0 }
+          - { id: fs-w11-d2-rf10, difficulty: easy, type: mcq, prompt: "A screen 900px wide, cards minmax(220px, 1fr), no gap: columns?", choices: ["4", "3", "5", "2"], answer: 0 }
+      - kind: brain-teaser
+        title: "Fit the screen"
+        questions:
+          - { id: fs-w11-d2-bt01, difficulty: medium, type: mcq, prompt: "Phone 360px, minmax(220px, 1fr), auto-fit: columns?", choices: ["1", "2", "0", "3"], answer: 0 }
+          - { id: fs-w11-d2-bt02, difficulty: medium, type: mcq, prompt: "Laptop 1000px, minmax(220px, 1fr), gap 20px: columns?", choices: ["4", "3", "5", "2"], answer: 0, explain: "4 × 220 + 3 × 20 = 940 ≤ 1000; 5 would need 1180." }
+          - { id: fs-w11-d2-bt03, difficulty: medium, type: mcq, prompt: "Areas \"header header\" \"main aside\": how many columns?", choices: ["2", "1", "3", "4"], answer: 0 }
+          - { id: fs-w11-d2-bt04, difficulty: hard, type: mcq, prompt: "Phone areas \"header\" \"main\" \"aside\" \"footer\" but columns still 1fr 250px. Result?", choices: ["invalid area map vs columns: the layout breaks; set columns to 1fr too", "works perfectly", "aside disappears", "header is wider"], answer: 0 }
+          - { id: fs-w11-d2-bt05, difficulty: hard, type: mcq, prompt: "auto-fit vs auto-fill with only 2 cards on a wide screen", choices: ["auto-fit stretches the 2 cards; auto-fill keeps empty column slots", "same", "auto-fill stretches them", "both hide cards"], answer: 0 }
+
+  # ─────────────────────────── DAY 3 ───────────────────────────
+  - day: 3
+    gate:
+      title: "Checkpoint: responsive grids and page areas"
+      covers: "Week 11 · Day 2: auto-fit + minmax, grid-template-areas, grid-area, media queries for layouts"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w11-d3-g01, difficulty: easy, type: mcq, prompt: "Cards that fit any width", choices: ["repeat(auto-fit, minmax(220px, 1fr))", "repeat(3, 220px)", "width: 220px", "flex-wrap only"], answer: 0 }
+        - { id: fs-w11-d3-g02, difficulty: easy, type: mcq, prompt: "Assign an element to an area", choices: ["grid-area", "grid-name", "area", "place"], answer: 0 }
+        - { id: fs-w11-d3-g03, difficulty: easy, type: truefalse, prompt: "grid-template-areas is a little drawing of the layout.", answer: true }
+        - { id: fs-w11-d3-g04, difficulty: easy, type: mcq, prompt: "Phone-only CSS", choices: ["@media (max-width: 600px) { … }", "@phone { … }", "@media phone", "if (phone)"], answer: 0 }
+        - { id: fs-w11-d3-g05, difficulty: easy, type: mcq, prompt: "minmax(220px, 1fr): the smallest a column gets", choices: ["220px", "1fr", "0", "unlimited"], answer: 0 }
+        - { id: fs-w11-d3-g06, difficulty: easy, type: mcq, prompt: "Header across two columns", choices: ["\"header header\"", "\"header\"", "\"header . header\"", "header*2"], answer: 0 }
+        - { id: fs-w11-d3-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["auto-fit", "as many columns as fit"], ["minmax(220px, 1fr)", "220px minimum, stretch to share"], ["grid-template-areas", "name the layout's regions"], ["@media (max-width: 600px)", "rules for narrow screens"]] }
+        - { id: fs-w11-d3-g08, difficulty: medium, type: text, prompt: "Screen 700px, minmax(220px, 1fr), no gap. How many columns?", accept: ["3"] }
+        - { id: fs-w11-d3-g09, difficulty: medium, type: mcq, prompt: "The aside should appear under main on phones. You…", choices: ["redraw the areas in a media query", "move it in the HTML", "use JavaScript", "use position: absolute"], answer: 0 }
+        - { id: fs-w11-d3-g10, difficulty: medium, type: truefalse, prompt: "Area names in the map must match the grid-area values on the elements.", answer: true }
+        - { id: fs-w11-d3-g11, difficulty: medium, type: mcq, prompt: "Empty cell in an area map", choices: ["a dot: \".\"", "a space", "none", "empty"], answer: 0 }
+        - { id: fs-w11-d3-g12, difficulty: medium, type: text, prompt: "Areas for a phone: header, main, aside, footer stacked. Write the value of grid-template-areas.", accept: ["\"header\" \"main\" \"aside\" \"footer\"", "'header' 'main' 'aside' 'footer'"] }
+        - { id: fs-w11-d3-g13, difficulty: medium, type: mcq, prompt: "Laptop 1200px, minmax(220px, 1fr), gap 16px: columns?", choices: ["5", "4", "6", "3"], answer: 0, explain: "5 × 220 + 4 × 16 = 1164 ≤ 1200; 6 would need 1400." }
+        - { id: fs-w11-d3-g14, difficulty: medium, type: mcq, prompt: "Why prefer auto-fit grids for card lists?", choices: ["one rule works on every screen", "they're faster", "they're required by browsers", "they look 3D"], answer: 0 }
+        - { id: fs-w11-d3-g15, difficulty: medium, type: mcq, prompt: "Areas must be…", choices: ["rectangles", "any shape", "squares", "single cells"], answer: 0 }
+        - { id: fs-w11-d3-g16, difficulty: hard, type: mcq, prompt: "Map \"a b\" \"b b\" is…", choices: ["invalid: b isn't a rectangle (L-shape)", "valid", "valid but b is hidden", "a 3-column grid"], answer: 0 }
+        - { id: fs-w11-d3-g17, difficulty: hard, type: text, prompt: "Screen 500px, repeat(auto-fit, minmax(220px, 1fr)), gap 20px. Width of each column (px)?", accept: ["240", "240px"], explain: "2 columns fit (460 ≤ 500); (500 − 20) ÷ 2 = 240." }
+        - { id: fs-w11-d3-g18, difficulty: hard, type: multi, prompt: "True about grid-template-areas? (Select all.)", choices: ["Each string is a row", "Repeating a name spans cells", "\".\" leaves a cell empty", "It changes the HTML order"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Custom properties"
+        secondsPerQuestion: 10
+        questions:
+          - { id: fs-w11-d3-rf01, difficulty: easy, type: mcq, prompt: "Define a variable for the whole page", choices: [":root { --brand: red; }", "body { $brand: red; }", "var brand = red", "@brand: red"], answer: 0 }
+          - { id: fs-w11-d3-rf02, difficulty: easy, type: mcq, prompt: "Use a variable", choices: ["var(--brand)", "--brand", "$brand", "@brand"], answer: 0 }
+          - { id: fs-w11-d3-rf03, difficulty: easy, type: mcq, prompt: "A fallback if --brand isn't set", choices: ["var(--brand, red)", "var(--brand || red)", "var(--brand ? red)", "--brand: red !default"], answer: 0 }
+          - { id: fs-w11-d3-rf04, difficulty: easy, type: mcq, prompt: "Maths with variables", choices: ["calc(var(--space) * 2)", "var(--space) * 2", "math(--space * 2)", "--space x2"], answer: 0 }
+          - { id: fs-w11-d3-rf05, difficulty: easy, type: mcq, prompt: ":root means…", choices: ["the whole document (html)", "the first div", "the server", "body only"], answer: 0 }
+          - { id: fs-w11-d3-rf06, difficulty: easy, type: truefalse, prompt: "A section can redefine a variable for just its own content.", answer: true }
+          - { id: fs-w11-d3-rf07, difficulty: easy, type: mcq, prompt: "Change --brand from JavaScript", choices: ["document.documentElement.style.setProperty('--brand', 'green')", "css.brand = 'green'", "document.brand = 'green'", "var('--brand') = 'green'"], answer: 0 }
+          - { id: fs-w11-d3-rf08, difficulty: easy, type: mcq, prompt: "A named set of colours, spacing and fonts is a…", choices: ["design system", "framework", "database", "router"], answer: 0 }
+          - { id: fs-w11-d3-rf09, difficulty: easy, type: mcq, prompt: "Variable names start with…", choices: ["--", "$", "@", "#"], answer: 0 }
+          - { id: fs-w11-d3-rf10, difficulty: easy, type: mcq, prompt: "Why variables instead of typing #c0392b everywhere?", choices: ["change it once, it updates everywhere", "faster download only", "browsers require it", "they're shorter"], answer: 0 }
+      - kind: brain-teaser
+        title: "Which colour wins?"
+        questions:
+          - { id: fs-w11-d3-bt01, difficulty: medium, type: mcq, prompt: ":root { --c: red } .box { --c: blue } .box p { color: var(--c) } — the p is…", choices: ["blue", "red", "black", "invalid"], answer: 0 }
+          - { id: fs-w11-d3-bt02, difficulty: medium, type: mcq, prompt: "color: var(--missing, green) when --missing isn't defined", choices: ["green", "black", "transparent", "an error"], answer: 0 }
+          - { id: fs-w11-d3-bt03, difficulty: medium, type: text, prompt: "--space: 1rem; padding: calc(var(--space) * 3) → how many px (1rem = 16px)?", accept: ["48", "48px"] }
+          - { id: fs-w11-d3-bt04, difficulty: hard, type: mcq, prompt: "The brand colour changes. With tokens, you edit…", choices: ["one line in :root", "every page's CSS", "every HTML file", "the server"], answer: 0 }
+          - { id: fs-w11-d3-bt05, difficulty: hard, type: mcq, prompt: ".dark { --cream: #1f1a17 } — buttons inside .dark that use var(--cream)…", choices: ["turn dark too, automatically", "stay cream", "lose their style", "need new CSS"], answer: 0 }
+
+  # ─────────────────────────── DAY 4 ───────────────────────────
+  - day: 4
+    gate:
+      title: "Checkpoint: custom properties"
+      covers: "Week 11 · Day 3: defining variables in :root, var() with fallbacks, calc(), redefining in a section, design tokens"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w11-d4-g01, difficulty: easy, type: mcq, prompt: "Where to define page-wide variables", choices: [":root", "body only", "the <head>", "a script"], answer: 0 }
+        - { id: fs-w11-d4-g02, difficulty: easy, type: mcq, prompt: "Read --radius", choices: ["var(--radius)", "(--radius)", "--radius()", "radius"], answer: 0 }
+        - { id: fs-w11-d4-g03, difficulty: easy, type: truefalse, prompt: "Custom property names are case-sensitive: --Brand and --brand differ.", answer: true }
+        - { id: fs-w11-d4-g04, difficulty: easy, type: mcq, prompt: "A design token is…", choices: ["a named design decision (colour, space, font)", "a login token", "an image", "a font file"], answer: 0 }
+        - { id: fs-w11-d4-g05, difficulty: easy, type: mcq, prompt: "Double the spacing", choices: ["calc(var(--space) * 2)", "var(--space) * 2", "var(--space * 2)", "2var(--space)"], answer: 0 }
+        - { id: fs-w11-d4-g06, difficulty: easy, type: mcq, prompt: "Fallback syntax", choices: ["var(--x, 10px)", "var(--x | 10px)", "var(--x) or 10px", "var(--x ?? 10px)"], answer: 0 }
+        - { id: fs-w11-d4-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [[":root", "page-wide scope"], ["var()", "read a variable"], ["calc()", "do maths"], [".dark { --bg: … }", "override inside a section"]] }
+        - { id: fs-w11-d4-g08, difficulty: medium, type: text, prompt: "Write the declaration that sets a button's background to the --brand variable.", accept: ["background: var(--brand)", "background: var(--brand);", "background-color: var(--brand)", "background-color: var(--brand);"] }
+        - { id: fs-w11-d4-g09, difficulty: medium, type: mcq, prompt: "Variables inherit, so a value set on .card applies to…", choices: [".card and everything inside it", "the whole page", "only .card itself", "siblings"], answer: 0 }
+        - { id: fs-w11-d4-g10, difficulty: medium, type: truefalse, prompt: "You can use var() inside a media query condition like @media (max-width: var(--bp)).", answer: false }
+        - { id: fs-w11-d4-g11, difficulty: medium, type: mcq, prompt: "Read a variable's value in JS", choices: ["getComputedStyle(document.documentElement).getPropertyValue('--brand')", "document.var('--brand')", "css.get('--brand')", "window.brand"], answer: 0 }
+        - { id: fs-w11-d4-g12, difficulty: medium, type: mcq, prompt: "--space: 8px; margin: calc(var(--space) + 4px) →", choices: ["12px", "84px", "8px4px", "invalid"], answer: 0 }
+        - { id: fs-w11-d4-g13, difficulty: medium, type: mcq, prompt: "Dark mode the easy way", choices: ["redefine the colour variables under a dark selector", "write a second stylesheet of every rule", "invert with filter on everything", "JavaScript per element"], answer: 0 }
+        - { id: fs-w11-d4-g14, difficulty: medium, type: text, prompt: "--space: 1rem. calc(var(--space) / 2) is how many px (1rem = 16px)?", accept: ["8", "8px"] }
+        - { id: fs-w11-d4-g15, difficulty: medium, type: mcq, prompt: "No raw colours below :root means…", choices: ["every colour comes from a token", "no colours at all", "only black and white", "colours only in HTML"], answer: 0 }
+        - { id: fs-w11-d4-g16, difficulty: hard, type: mcq, prompt: ":root { --a: 10px; --b: calc(var(--a) * 2) } .x { --a: 50px; width: var(--b) } — .x is…", choices: ["20px (--b was computed at :root)", "100px", "50px", "invalid"], answer: 0, explain: "--b is resolved where it's defined (:root) and inherited as 20px." }
+        - { id: fs-w11-d4-g17, difficulty: hard, type: mcq, prompt: "--brand: #c0392b with a typo: color: var(--brnd). Result?", choices: ["the inherited/default colour (no error shown)", "a console error", "#c0392b", "red"], answer: 0 }
+        - { id: fs-w11-d4-g18, difficulty: hard, type: multi, prompt: "Good tokens for a design system (Select all.)", choices: ["--brand", "--space", "--radius", "--red-button-on-home-page-only"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Images"
+        secondsPerQuestion: 10
+        questions:
+          - { id: fs-w11-d4-rf01, difficulty: easy, type: mcq, prompt: "Never wider than its box", choices: ["img { max-width: 100%; height: auto; }", "img { width: 9999px; }", "img { overflow: hidden; }", "img { float: left; }"], answer: 0 }
+          - { id: fs-w11-d4-rf02, difficulty: easy, type: mcq, prompt: "Same shape for every card photo", choices: ["aspect-ratio: 4 / 3", "shape: 4x3", "ratio: 4:3", "height: 4/3"], answer: 0 }
+          - { id: fs-w11-d4-rf03, difficulty: easy, type: mcq, prompt: "Fill the box without squashing", choices: ["object-fit: cover", "object-fit: fill", "stretch: none", "fit: crop"], answer: 0 }
+          - { id: fs-w11-d4-rf04, difficulty: easy, type: mcq, prompt: "Load only near the screen", choices: ["loading=\"lazy\"", "defer", "async", "lazy=\"true\""], answer: 0 }
+          - { id: fs-w11-d4-rf05, difficulty: easy, type: mcq, prompt: "Text for screen readers", choices: ["alt", "title", "caption", "name"], answer: 0 }
+          - { id: fs-w11-d4-rf06, difficulty: easy, type: mcq, prompt: "Offer several file sizes", choices: ["srcset", "src-list", "sources", "sizes only"], answer: 0 }
+          - { id: fs-w11-d4-rf07, difficulty: easy, type: truefalse, prompt: "width and height attributes stop the page jumping as images load.", answer: true }
+          - { id: fs-w11-d4-rf08, difficulty: easy, type: mcq, prompt: "Free tool to shrink images", choices: ["Squoosh", "Excel", "Paint only", "Word"], answer: 0 }
+          - { id: fs-w11-d4-rf09, difficulty: easy, type: mcq, prompt: "Often half the size of JPEG", choices: ["WebP", "BMP", "TIFF", "PSD"], answer: 0 }
+          - { id: fs-w11-d4-rf10, difficulty: easy, type: mcq, prompt: "Good alt text", choices: ["Party jollof rice with fried plantain", "image", "IMG_2041.jpg", "photo of image"], answer: 0 }
+      - kind: brain-teaser
+        title: "Light pages"
+        questions:
+          - { id: fs-w11-d4-bt01, difficulty: medium, type: mcq, prompt: "object-fit: fill on a tall photo in a 4:3 box", choices: ["squashes it", "crops it", "leaves gaps", "rotates it"], answer: 0 }
+          - { id: fs-w11-d4-bt02, difficulty: medium, type: mcq, prompt: "object-fit: contain in a 4:3 box with a tall photo", choices: ["shows it all, with empty bands", "crops it", "squashes it", "hides it"], answer: 0 }
+          - { id: fs-w11-d4-bt03, difficulty: medium, type: text, prompt: "6 photos at 4 MB each → after Squoosh, 150 KB each. Megabytes saved (to 1 decimal)?", accept: ["23.1", "23.1 MB", "23.1MB"], explain: "24 MB − 0.9 MB = 23.1 MB." }
+          - { id: fs-w11-d4-bt04, difficulty: hard, type: mcq, prompt: "sizes=\"(max-width: 600px) 100vw, 33vw\" on a 1200px laptop: the image displays at…", choices: ["about 400px wide", "1200px", "600px", "100px"], answer: 0 }
+          - { id: fs-w11-d4-bt05, difficulty: hard, type: mcq, prompt: "Why loading=\"lazy\" matters on Nigerian mobile data", choices: ["visitors don't pay for images they never scroll to", "it makes images sharper", "it's required for alt text", "it hides errors"], answer: 0 }
+
+  # ─────────────────────────── DAY 5 ───────────────────────────
+  - day: 5
+    gate:
+      title: "Checkpoint: responsive images"
+      covers: "Week 11 · Day 4: max-width, aspect-ratio + object-fit, srcset/sizes, loading lazy, width/height, alt, image weight"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w11-d5-g01, difficulty: easy, type: mcq, prompt: "Stop images overflowing", choices: ["max-width: 100%", "min-width: 100%", "overflow: scroll", "width: auto !important"], answer: 0 }
+        - { id: fs-w11-d5-g02, difficulty: easy, type: mcq, prompt: "Crop to fill a box", choices: ["object-fit: cover", "object-fit: contain", "object-fit: none", "background-size: 0"], answer: 0 }
+        - { id: fs-w11-d5-g03, difficulty: easy, type: truefalse, prompt: "alt text should describe what's in the image.", answer: true }
+        - { id: fs-w11-d5-g04, difficulty: easy, type: mcq, prompt: "Delay off-screen images", choices: ["loading=\"lazy\"", "defer", "hidden", "async"], answer: 0 }
+        - { id: fs-w11-d5-g05, difficulty: easy, type: mcq, prompt: "Usually the heaviest part of a page", choices: ["images", "HTML", "CSS", "the title"], answer: 0 }
+        - { id: fs-w11-d5-g06, difficulty: easy, type: mcq, prompt: "Several sizes of one photo", choices: ["srcset", "src", "alt", "poster"], answer: 0 }
+        - { id: fs-w11-d5-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["aspect-ratio", "fix the shape"], ["object-fit: cover", "crop, don't squash"], ["srcset + sizes", "pick the right file size"], ["width/height attributes", "reserve space, no jumping"]] }
+        - { id: fs-w11-d5-g08, difficulty: medium, type: text, prompt: "A 400px-wide image box with aspect-ratio 4 / 3. Height in px?", accept: ["300", "300px"] }
+        - { id: fs-w11-d5-g09, difficulty: medium, type: mcq, prompt: "Decorative divider image: alt should be…", choices: ["alt=\"\" (empty, so readers skip it)", "alt=\"divider image\"", "no alt attribute", "alt=\"image\""], answer: 0 }
+        - { id: fs-w11-d5-g10, difficulty: medium, type: truefalse, prompt: "srcset lets the browser download a smaller file on a phone.", answer: true }
+        - { id: fs-w11-d5-g11, difficulty: medium, type: mcq, prompt: "Check total page weight", choices: ["DevTools → Network, reload", "View source", "Ctrl+F", "Lighthouse only"], answer: 0 }
+        - { id: fs-w11-d5-g12, difficulty: medium, type: text, prompt: "Write the CSS declaration that crops images to fill their box.", accept: ["object-fit: cover", "object-fit: cover;"] }
+        - { id: fs-w11-d5-g13, difficulty: medium, type: mcq, prompt: "The page jumps as images appear. Fix:", choices: ["add width and height (or aspect-ratio)", "add loading=lazy", "add alt", "use PNG"], answer: 0 }
+        - { id: fs-w11-d5-g14, difficulty: medium, type: mcq, prompt: "Hero image at the very top of the page: lazy?", choices: ["no: it's needed straight away", "yes, always", "only on phones", "doesn't matter"], answer: 0 }
+        - { id: fs-w11-d5-g15, difficulty: medium, type: text, prompt: "Box 360px wide, aspect-ratio 16 / 9. Height in px?", accept: ["202.5", "202.5px"] }
+        - { id: fs-w11-d5-g16, difficulty: hard, type: mcq, prompt: "srcset 400w/800w/1600w, sizes 100vw, a 400px-wide phone with a 2× screen. Likely file?", choices: ["800w", "400w", "1600w", "none"], answer: 0, explain: "400 CSS px × 2 device pixels = 800 pixels needed." }
+        - { id: fs-w11-d5-g17, difficulty: hard, type: mcq, prompt: "A menu of 40 dishes with photos on a phone. Best first fix for speed?", choices: ["compress images + loading=lazy", "minify HTML", "remove alt text", "use fewer CSS colours"], answer: 0 }
+        - { id: fs-w11-d5-g18, difficulty: hard, type: multi, prompt: "Good for image-heavy pages on mobile data (Select all.)", choices: ["WebP or compressed JPEG", "loading=\"lazy\" below the fold", "srcset sizes", "uploading 6000px originals"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Multi-page sites"
+        secondsPerQuestion: 10
+        questions:
+          - { id: fs-w11-d5-rf01, difficulty: easy, type: mcq, prompt: "Link to the menu page in the same folder", choices: ["<a href=\"menu.html\">", "<a href=\"C:/site/menu.html\">", "<link menu>", "<a src=\"menu.html\">"], answer: 0 }
+          - { id: fs-w11-d5-rf02, difficulty: easy, type: mcq, prompt: "The home page file", choices: ["index.html", "home.htm only", "main.html", "start.html"], answer: 0 }
+          - { id: fs-w11-d5-rf03, difficulty: easy, type: mcq, prompt: "Mark the current page for screen readers", choices: ["aria-current=\"page\"", "class=\"current\" only", "current=true", "role=\"here\""], answer: 0 }
+          - { id: fs-w11-d5-rf04, difficulty: easy, type: mcq, prompt: "Run a script after the HTML loads", choices: ["<script src=\"site.js\" defer>", "<script late>", "<script after>", "<script wait>"], answer: 0 }
+          - { id: fs-w11-d5-rf05, difficulty: easy, type: truefalse, prompt: "Every page should link the same styles.css.", answer: true }
+          - { id: fs-w11-d5-rf06, difficulty: easy, type: mcq, prompt: "Problem with copy-pasting the header into 4 pages", choices: ["every change must be made 4 times", "it's slower", "browsers block it", "none"], answer: 0 }
+          - { id: fs-w11-d5-rf07, difficulty: easy, type: mcq, prompt: "The current file name in JS", choices: ["location.pathname.split(\"/\").pop()", "document.file", "window.page", "location.file"], answer: 0 }
+          - { id: fs-w11-d5-rf08, difficulty: easy, type: mcq, prompt: "What React will give you for the header problem", choices: ["components", "databases", "routers only", "nothing"], answer: 0 }
+          - { id: fs-w11-d5-rf09, difficulty: easy, type: mcq, prompt: "Relative links keep working…", choices: ["on your laptop and on GitHub Pages", "only on your laptop", "only online", "only in Chrome"], answer: 0 }
+          - { id: fs-w11-d5-rf10, difficulty: easy, type: mcq, prompt: "Style the current nav link", choices: ["nav a[aria-current=\"page\"] { … }", "nav a:current { … }", "nav .now", "a:here"], answer: 0 }
+      - kind: brain-teaser
+        title: "Build the nav"
+        questions:
+          - id: fs-w11-d5-bt01
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const pages = ["index.html", "menu.html", "about.html"]
+              const here = "about.html"
+              console.log(pages.map((p) => (p === here ? `[${p}]` : p)).join(" "))
+            accept: ["index.html menu.html [about.html]"]
+          - id: fs-w11-d5-bt02
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const path = "/mama-put-kitchen/menu.html"
+              console.log(path.split("/").pop())
+            accept: ["menu.html"]
+          - id: fs-w11-d5-bt03
+            difficulty: medium
+            type: text
+            prompt: "What does this print? (GitHub Pages serves index.html for a folder URL)"
+            code: |
+              const path = "/mama-put-kitchen/"
+              console.log(path.split("/").pop() || "index.html")
+            accept: ["index.html"]
+          - id: fs-w11-d5-bt04
+            difficulty: hard
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const pages = [{ href: "index.html", label: "Home" }, { href: "menu.html", label: "Menu" }]
+              const here = "menu.html"
+              const html = pages.map((p) => `<a href="${p.href}"${p.href === here ? ' aria-current="page"' : ""}>${p.label}</a>`).join("")
+              console.log((html.match(/aria-current/g) || []).length, html.includes(">Menu<"))
+            accept: ["1 true"]
+          - { id: fs-w11-d5-bt05, difficulty: hard, type: mcq, prompt: "The script runs before <header id=\"site-header\"> exists and crashes. Fix:", choices: ["add defer (or put the script at the end of body)", "use innerText", "rename the id", "use async on the CSS"], answer: 0 }
+
+  # ─────────────────────────── DAY 6 ───────────────────────────
+  - day: 6
+    gate:
+      title: "Checkpoint: multi-page sites"
+      covers: "Week 11 · Day 5: folder structure, relative links, shared styles, a shared header from data, aria-current, defer"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w11-d6-g01, difficulty: easy, type: mcq, prompt: "Pages of the Mama Put Kitchen site", choices: ["Home, Menu, About, Contact", "Home only", "Login, Admin", "Cart, Checkout, Pay"], answer: 0 }
+        - { id: fs-w11-d6-g02, difficulty: easy, type: mcq, prompt: "One stylesheet for every page", choices: ["styles.css linked from each page", "a <style> block per page", "inline styles", "no CSS"], answer: 0 }
+        - { id: fs-w11-d6-g03, difficulty: easy, type: truefalse, prompt: "aria-current=\"page\" should be on exactly one nav link.", answer: true }
+        - { id: fs-w11-d6-g04, difficulty: easy, type: mcq, prompt: "<script src=\"site.js\" defer> runs…", choices: ["after the HTML is parsed", "before the HTML", "never", "only on click"], answer: 0 }
+        - { id: fs-w11-d6-g05, difficulty: easy, type: mcq, prompt: "Images go in…", choices: ["an images/ folder", "the CSS file", "the README", "the root of the drive"], answer: 0 }
+        - { id: fs-w11-d6-g06, difficulty: easy, type: mcq, prompt: "Link from menu.html to images/jollof.jpg", choices: ["src=\"images/jollof.jpg\"", "src=\"/C:/images/jollof.jpg\"", "src=\"jollof\"", "src=\"../images\""], answer: 0 }
+        - { id: fs-w11-d6-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["index.html", "home page"], ["styles.css", "shared design"], ["site.js", "shared header/footer"], ["images/", "photos"]] }
+        - { id: fs-w11-d6-g08, difficulty: medium, type: text, prompt: "Write the attribute that marks the current page's nav link.", accept: ["aria-current=\"page\"", "aria-current='page'", "aria-current=page"] }
+        - { id: fs-w11-d6-g09, difficulty: medium, type: mcq, prompt: "Why build the header from a pages array?", choices: ["add a page once, every page's nav updates", "it's required by GitHub", "it's faster to download", "SEO needs it"], answer: 0 }
+        - { id: fs-w11-d6-g10, difficulty: medium, type: truefalse, prompt: "An absolute path like /Users/ada/site/menu.html works on GitHub Pages.", answer: false }
+        - { id: fs-w11-d6-g11, difficulty: medium, type: mcq, prompt: "The footer year should come from…", choices: ["new Date().getFullYear()", "a typed number", "the server", "Math.year()"], answer: 0 }
+        - id: fs-w11-d6-g12
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const naira = (n) => "₦" + n.toLocaleString("en-NG")
+            console.log(naira(3500), naira(12000))
+          accept: ["₦3,500 ₦12,000"]
+        - { id: fs-w11-d6-g13, difficulty: medium, type: mcq, prompt: "One header in JS: a downside", choices: ["visitors with JS off see no nav (keep a plain-HTML fallback for key links)", "it's slower than copying", "CSS can't style it", "it breaks GitHub Pages"], answer: 0 }
+        - { id: fs-w11-d6-g14, difficulty: medium, type: mcq, prompt: "Show the current page in bold", choices: ["nav a[aria-current=\"page\"] { font-weight: bold; }", "nav a:active { font-weight: bold; }", "nav b { … }", "a.current only"], answer: 0 }
+        - id: fs-w11-d6-g15
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const dishes = [{ n: "Jollof", p: 3500 }, { n: "Zobo", p: 700 }]
+            console.log(dishes.map((d) => `${d.n} ₦${d.p}`).join(" | "))
+          accept: ["Jollof ₦3500 | Zobo ₦700"]
+        - { id: fs-w11-d6-g16, difficulty: hard, type: mcq, prompt: "On GitHub Pages the URL is /mama-put-kitchen/ (no file name). Your here-detection must…", choices: ["fall back to index.html when the last part is empty", "use the domain", "use document.title", "nothing; it works"], answer: 0 }
+        - id: fs-w11-d6-g17
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const pages = ["index.html", "menu.html", "about.html", "contact.html"]
+            const here = "/site/".split("/").pop() || "index.html"
+            console.log(pages.indexOf(here))
+          accept: ["0"]
+        - { id: fs-w11-d6-g18, difficulty: hard, type: multi, prompt: "Good habits for a multi-page site (Select all.)", choices: ["relative links", "one shared stylesheet", "the nav built once", "a different colour scheme per page"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Week 11 lightning round"
+        secondsPerQuestion: 9
+        questions:
+          - { id: fs-w11-d6-rf01, difficulty: easy, type: mcq, prompt: "Two-direction layout", choices: ["Grid", "Flexbox", "float", "inline"], answer: 0 }
+          - { id: fs-w11-d6-rf02, difficulty: easy, type: mcq, prompt: "Cards that fit any screen", choices: ["repeat(auto-fit, minmax(220px, 1fr))", "repeat(3, 220px)", "width: 33%", "float: left"], answer: 0 }
+          - { id: fs-w11-d6-rf03, difficulty: easy, type: mcq, prompt: "Name page regions", choices: ["grid-template-areas", "grid-names", "region-map", "areas()"], answer: 0 }
+          - { id: fs-w11-d6-rf04, difficulty: easy, type: mcq, prompt: "Define a token", choices: [":root { --brand: #c0392b; }", "$brand = #c0392b", "@brand #c0392b", "brand := #c0392b"], answer: 0 }
+          - { id: fs-w11-d6-rf05, difficulty: easy, type: mcq, prompt: "Same-shape photos", choices: ["aspect-ratio + object-fit: cover", "width only", "height only", "float"], answer: 0 }
+          - { id: fs-w11-d6-rf06, difficulty: easy, type: mcq, prompt: "Load later", choices: ["loading=\"lazy\"", "defer", "async", "slow"], answer: 0 }
+          - { id: fs-w11-d6-rf07, difficulty: easy, type: mcq, prompt: "Current page marker", choices: ["aria-current=\"page\"", "aria-page", "current", "role=current"], answer: 0 }
+          - { id: fs-w11-d6-rf08, difficulty: easy, type: mcq, prompt: "Sketch wireframes in…", choices: ["Excalidraw", "Excel", "the terminal", "Word"], answer: 0 }
+          - { id: fs-w11-d6-rf09, difficulty: easy, type: mcq, prompt: "Mama Put Kitchen orders arrive via…", choices: ["WhatsApp", "fax", "post", "a call centre"], answer: 0 }
+          - { id: fs-w11-d6-rf10, difficulty: easy, type: truefalse, prompt: "Raw colours should live only in :root in the milestone.", answer: true }
+      - kind: brain-teaser
+        title: "Milestone thinking"
+        questions:
+          - { id: fs-w11-d6-bt01, difficulty: medium, type: mcq, prompt: "The site's main goal", choices: ["see the menu and order on WhatsApp in under a minute on a phone", "win a design award", "show every recipe", "collect emails"], answer: 0 }
+          - { id: fs-w11-d6-bt02, difficulty: medium, type: mcq, prompt: "Wireframes first because…", choices: ["layout decisions are cheap on paper and expensive in code", "GitHub requires them", "they replace CSS", "clients pay for them"], answer: 0 }
+          - id: fs-w11-d6-bt03
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const hours = { weekdays: "8 am – 9 pm", sunday: "12 – 6 pm" }
+              const day = 0 // Sunday
+              console.log(day === 0 ? hours.sunday : hours.weekdays)
+            accept: ["12 – 6 pm", "12 - 6 pm"]
+          - { id: fs-w11-d6-bt04, difficulty: hard, type: mcq, prompt: "Test the home page on a phone first because…", choices: ["most of the buka's customers order from phones", "phones are faster", "GitHub Pages is phone-only", "desktop is deprecated"], answer: 0 }
+          - { id: fs-w11-d6-bt05, difficulty: hard, type: multi, prompt: "The home page must have (Select all.)", choices: ["design tokens in :root", "a responsive favourites grid", "opening hours", "a login form"], answers: [0, 1, 2] }

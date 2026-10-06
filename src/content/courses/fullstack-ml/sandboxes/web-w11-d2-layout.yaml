@@ -1,0 +1,48 @@
+# Week 11 · Day 2 mini-task
+id: web-w11-d2-layout
+kind: web
+title: "Responsive page layout"
+description: "A card grid that fits any width, and a whole-page layout drawn with grid-template-areas that changes on phones."
+html: |
+  <div class="page">
+    <header>Mama Put Kitchen</header>
+    <main>
+      <h1>Today's favourites</h1>
+      <div class="cards">
+        <article class="card">Party jollof · ₦3,500</article>
+        <article class="card">Egusi + pounded yam · ₦4,500</article>
+        <article class="card">Pepper soup · ₦3,000</article>
+        <article class="card">Zobo (50cl) · ₦700</article>
+      </div>
+    </main>
+    <aside>Open today 8 am – 9 pm</aside>
+    <footer>Yaba, Lagos</footer>
+  </div>
+css: |
+  body { font-family: system-ui, sans-serif; margin: 0; background: #fff8ef; }
+  header, aside, footer { background: #c0392b; color: #fff; padding: 0.75rem; }
+  aside { background: #8e2a20; }
+  main { padding: 0.5rem; }
+  .card { background: #fff; border: 2px solid #c0392b; border-radius: 12px; padding: 0.75rem; }
+
+  /* Your CSS below:
+     1. .cards: as many columns as fit, each at least 140px (auto-fit + minmax), gap 1rem
+     2. .page: a grid with areas "header header" / "main aside" / "footer footer",
+        columns 1fr 160px, and give header/main/aside/footer their grid-area
+     3. Under 600px wide: one column, with areas header / main / aside / footer */
+js: |
+  // CSS only again.
+tasks:
+  - prompt: ".cards uses repeat(auto-fit, minmax(140px, 1fr))."
+    check: "(() => { const rule = (sel) => [...document.styleSheets[0].cssRules].find((r) => r.selectorText === sel); const r = rule('.cards'); return !!r && getComputedStyle(document.querySelector('.cards')).display === 'grid' && /auto-fit/.test(r.style.gridTemplateColumns) && /minmax\\(\\s*140px\\s*,\\s*1fr\\s*\\)/.test(r.style.gridTemplateColumns) })()"
+    hint: "grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));"
+  - prompt: ".cards has a 1rem gap."
+    check: "getComputedStyle(document.querySelector('.cards')).columnGap === '16px'"
+  - prompt: ".page is a grid with the three rows of areas."
+    check: "(() => { const rule = (sel) => [...document.styleSheets[0].cssRules].find((r) => r.selectorText === sel); const r = rule('.page'); if (!r) return false; const a = r.style.gridTemplateAreas.replace(/\\s+/g, ' '); return /\"header header\" \"main aside\" \"footer footer\"/.test(a) })()"
+    hint: "grid-template-areas: \"header header\" \"main aside\" \"footer footer\";"
+  - prompt: "header, main, aside and footer each have their grid-area."
+    check: "['header', 'main', 'aside', 'footer'].every((t) => getComputedStyle(document.querySelector(t)).gridArea.split(' / ')[0] === t)"
+  - prompt: "Under 600px, .page becomes one column: header, main, aside, footer."
+    check: "(() => { const mediaRule = (sel) => [...document.styleSheets[0].cssRules].filter((r) => r.media && /max-width/.test(r.media.mediaText)).flatMap((m) => [...m.cssRules]).find((r) => r.selectorText === sel); const r = mediaRule('.page'); if (!r) return false; const a = r.style.gridTemplateAreas.replace(/\\s+/g, ' '); return /\"header\" \"main\" \"aside\" \"footer\"/.test(a) })()"
+    hint: "@media (max-width: 600px) { .page { grid-template-columns: 1fr; grid-template-areas: \"header\" \"main\" \"aside\" \"footer\"; } }"

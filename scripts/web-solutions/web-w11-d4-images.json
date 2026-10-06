@@ -1,0 +1,4 @@
+{
+  "css": "body { font-family: system-ui, sans-serif; padding: 1rem; background: #fff8ef; }\n.dishes { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1rem; }\nfigure { margin: 0; }\n\n/* Your CSS below:\n   1. No image may be wider than its box (max-width + height: auto)\n   2. .dish img: full width, 4 / 3 shape, cropped not squashed (object-fit) */\nimg { max-width: 100%; height: auto; display: block; }\n.dish img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }\n",
+  "js": "const alts = [\"Party jollof with plantain\", \"Efo riro with assorted meat\", \"Moi moi in a leaf wrap\"]\ndocument.querySelectorAll(\".dish img\").forEach((img, i) => {\n  img.loading = \"lazy\"\n  img.alt = alts[i]\n})\ndocument.querySelector(\"#banner\").alt = \"Mama Put Kitchen red welcome banner\"\n"
+}

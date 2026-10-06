@@ -1,0 +1,55 @@
+# Week 11 · Day 3 mini-task
+id: web-w11-d3-tokens
+kind: web
+title: "Design tokens"
+description: "Mama Put Kitchen's mini design system: name the colours, spacing and radius once in :root, then use them everywhere."
+html: |
+  <header class="hero">
+    <h1>Mama Put Kitchen</h1>
+    <p>Home-style Nigerian food in Yaba.</p>
+    <a class="button" href="#">Order on WhatsApp</a>
+  </header>
+  <section class="dark">
+    <h2>Late-night pepper soup</h2>
+    <p>Fridays until 11 pm.</p>
+    <a class="button" href="#">See the menu</a>
+  </section>
+css: |
+  /* Your design tokens go here. Define in :root:
+     --brand: #c0392b   --brand-dark: #8e2a20   --cream: #fff8ef   --ink: #2b1d16
+     --space: 1rem      --radius: 12px
+     Then replace every ??? below with var(...). No raw colours below :root. */
+  :root {
+
+  }
+
+  body { font-family: system-ui, sans-serif; margin: 0; background: ???; color: ???; }
+  .hero, .dark { padding: ???; }
+  .button {
+    display: inline-block;
+    background: ???;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: ???;
+    text-decoration: none;
+  }
+  .button:hover { background: ???; }
+
+  /* The .dark section: redefine --cream and --ink inside it (dark background, light text)
+     and give it the same background/color rules as body, using the variables. */
+js: |
+  // Bonus (not checked): try changing the brand colour from JavaScript:
+  // document.documentElement.style.setProperty('--brand', 'green')
+tasks:
+  - prompt: ":root defines --brand (#c0392b) and --brand-dark (#8e2a20)."
+    check: "getComputedStyle(document.documentElement).getPropertyValue('--brand').trim().toLowerCase() === '#c0392b' && getComputedStyle(document.documentElement).getPropertyValue('--brand-dark').trim().toLowerCase() === '#8e2a20'"
+  - prompt: ":root defines --cream, --ink, --space (1rem) and --radius (12px)."
+    check: "['--cream', '--ink'].every((v) => getComputedStyle(document.documentElement).getPropertyValue(v).trim() !== '') && getComputedStyle(document.documentElement).getPropertyValue('--space').trim() === '1rem' && getComputedStyle(document.documentElement).getPropertyValue('--radius').trim() === '12px'"
+  - prompt: "The page background and text colour come from --cream and --ink."
+    check: "(() => { const s = getComputedStyle(document.body); return s.backgroundColor === 'rgb(255, 248, 239)' && s.color === 'rgb(43, 29, 22)' })()"
+  - prompt: "The button uses --brand and --radius (and there's no ??? left)."
+    check: "(() => { const s = getComputedStyle(document.querySelector('.button')); return s.backgroundColor === 'rgb(192, 57, 43)' && s.borderTopLeftRadius === '12px' && !document.styleSheets[0].cssRules[0].parentStyleSheet.ownerNode.textContent.includes('???') })()"
+    hint: "background: var(--brand); border-radius: var(--radius);"
+  - prompt: "The .dark section redefines --cream and --ink, so it's dark with light text."
+    check: "(() => { const d = document.querySelector('.dark'); const s = getComputedStyle(d); return s.getPropertyValue('--cream').trim() !== getComputedStyle(document.documentElement).getPropertyValue('--cream').trim() && s.color === 'rgb(255, 248, 239)' && s.backgroundColor !== 'rgb(255, 248, 239)' && s.backgroundColor !== 'rgba(0, 0, 0, 0)' })()"
+    hint: ".dark { --cream: #1f1a17; --ink: #fff8ef; background: var(--cream); color: var(--ink); }"
