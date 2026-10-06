@@ -1,0 +1,396 @@
+# Fullstack + ML · Week 12 quizzes. Format and rules: src/content/QUIZZES.md
+week: 12
+days:
+
+  # ─────────────────────────── DAY 1 ───────────────────────────
+  - day: 1
+    gate:
+      title: "Checkpoint: Week 11 review"
+      covers: "Week 11: CSS Grid, auto-fit + minmax, grid areas, custom properties, responsive images, multi-page sites with a shared header"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w12-d1-g01, difficulty: easy, type: mcq, prompt: "Two-direction layout", choices: ["Grid", "Flexbox", "float", "position"], answer: 0 }
+        - { id: fs-w12-d1-g02, difficulty: easy, type: mcq, prompt: "Cards that fit any screen", choices: ["repeat(auto-fit, minmax(220px, 1fr))", "repeat(3, 220px)", "width: 33%", "columns: auto"], answer: 0 }
+        - { id: fs-w12-d1-g03, difficulty: easy, type: truefalse, prompt: "Custom properties are defined in :root to be used page-wide.", answer: true }
+        - { id: fs-w12-d1-g04, difficulty: easy, type: mcq, prompt: "Same-shape photos without squashing", choices: ["aspect-ratio + object-fit: cover", "width: 100% only", "object-fit: fill", "height: 300px only"], answer: 0 }
+        - { id: fs-w12-d1-g05, difficulty: easy, type: mcq, prompt: "Mark the current page link", choices: ["aria-current=\"page\"", "class=\"now\" only", "role=\"current\"", "current"], answer: 0 }
+        - { id: fs-w12-d1-g06, difficulty: easy, type: mcq, prompt: "Load images only near the screen", choices: ["loading=\"lazy\"", "defer", "async", "hidden"], answer: 0 }
+        - { id: fs-w12-d1-g07, difficulty: medium, type: text, prompt: "Container 620px, columns repeat(3, 1fr), gap 10px. Column width (px)?", accept: ["200", "200px"] }
+        - { id: fs-w12-d1-g08, difficulty: medium, type: match, prompt: "Match.", pairs: [["grid-template-areas", "draw the page layout"], ["var(--brand)", "use a token"], ["srcset", "offer file sizes"], ["defer", "run script after HTML"]] }
+        - { id: fs-w12-d1-g09, difficulty: medium, type: mcq, prompt: "Phone layout with areas: you change…", choices: ["the area map in a media query", "the HTML order", "JavaScript", "nothing possible"], answer: 0 }
+        - { id: fs-w12-d1-g10, difficulty: medium, type: truefalse, prompt: "A section can redefine a variable just for its own content.", answer: true }
+        - { id: fs-w12-d1-g11, difficulty: medium, type: text, prompt: "A 400px-wide box with aspect-ratio 4 / 3. Height (px)?", accept: ["300", "300px"] }
+        - { id: fs-w12-d1-g12, difficulty: medium, type: mcq, prompt: "Why build the header once in site.js?", choices: ["change it in one place, every page updates", "it loads faster", "GitHub needs it", "CSS can't style copied headers"], answer: 0 }
+        - id: fs-w12-d1-g13
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const path = "/mama-put-kitchen/"
+            console.log(path.split("/").pop() || "index.html")
+          accept: ["index.html"]
+        - { id: fs-w12-d1-g14, difficulty: medium, type: mcq, prompt: ":root { --c: red } .box { --c: blue } .box p { color: var(--c) } — the p is…", choices: ["blue", "red", "black", "invalid"], answer: 0 }
+        - { id: fs-w12-d1-g15, difficulty: medium, type: mcq, prompt: "Decorative image alt", choices: ["alt=\"\"", "alt=\"image\"", "no alt", "alt=\"decoration image\""], answer: 0 }
+        - { id: fs-w12-d1-g16, difficulty: hard, type: text, prompt: "Screen 500px, repeat(auto-fit, minmax(220px, 1fr)), gap 20px. Column width (px)?", accept: ["240", "240px"] }
+        - { id: fs-w12-d1-g17, difficulty: hard, type: mcq, prompt: "A 2× phone 400px wide, srcset 400w/800w/1600w, sizes 100vw. File chosen?", choices: ["800w", "400w", "1600w", "none"], answer: 0 }
+        - { id: fs-w12-d1-g18, difficulty: hard, type: multi, prompt: "True? (Select all.)", choices: ["fr shares space left after gaps", "Grid areas must be rectangles", "var() can't be used in a media query condition", "auto-fit always needs a media query"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Node, npm, Vite"
+        secondsPerQuestion: 10
+        questions:
+          - { id: fs-w12-d1-rf01, difficulty: easy, type: mcq, prompt: "Runs JavaScript outside the browser", choices: ["Node.js", "npm", "Vite", "React"], answer: 0 }
+          - { id: fs-w12-d1-rf02, difficulty: easy, type: mcq, prompt: "Downloads packages", choices: ["npm", "Node", "Vite", "Git"], answer: 0 }
+          - { id: fs-w12-d1-rf03, difficulty: easy, type: mcq, prompt: "Creates the project, dev server, builds", choices: ["Vite", "npm", "React", "GitHub"], answer: 0 }
+          - { id: fs-w12-d1-rf04, difficulty: easy, type: mcq, prompt: "Start the dev server", choices: ["npm run dev", "npm start build", "vite deploy", "node dev"], answer: 0 }
+          - { id: fs-w12-d1-rf05, difficulty: easy, type: mcq, prompt: "Folder you never edit or commit", choices: ["node_modules", "src", "public", "dist only"], answer: 0 }
+          - { id: fs-w12-d1-rf06, difficulty: easy, type: mcq, prompt: "Lists the project's dependencies and scripts", choices: ["package.json", "index.html", "main.jsx", ".gitignore"], answer: 0 }
+          - { id: fs-w12-d1-rf07, difficulty: easy, type: mcq, prompt: "Component names start with…", choices: ["a capital letter", "a lowercase letter", "a $", "use"], answer: 0 }
+          - { id: fs-w12-d1-rf08, difficulty: easy, type: mcq, prompt: "HTML-looking code inside JS", choices: ["JSX", "JSON", "XML", "HTMX"], answer: 0 }
+          - { id: fs-w12-d1-rf09, difficulty: easy, type: truefalse, prompt: "Browsers run JSX directly.", answer: false }
+          - { id: fs-w12-d1-rf10, difficulty: easy, type: mcq, prompt: "Use a component called Greeting", choices: ["<Greeting />", "Greeting()", "<greeting>", "{Greeting}"], answer: 0 }
+      - kind: brain-teaser
+        title: "First component"
+        questions:
+          - { id: fs-w12-d1-bt01, difficulty: medium, type: mcq, prompt: "A component is…", choices: ["a function that returns what to show", "a CSS file", "an HTML page", "a database row"], answer: 0 }
+          - { id: fs-w12-d1-bt02, difficulty: medium, type: mcq, prompt: "Why must component names be capitalised?", choices: ["JSX treats lowercase tags as HTML elements", "style rule only", "npm requires it", "it's faster"], answer: 0 }
+          - { id: fs-w12-d1-bt03, difficulty: medium, type: mcq, prompt: "main.jsx usually…", choices: ["puts <App /> into #root", "holds the CSS", "lists packages", "builds dist/"], answer: 0 }
+          - { id: fs-w12-d1-bt04, difficulty: hard, type: mcq, prompt: "You cloned a React repo; npm run dev says vite: not found. Fix:", choices: ["npm install first", "delete package.json", "install React globally", "use Python"], answer: 0 }
+          - { id: fs-w12-d1-bt05, difficulty: hard, type: mcq, prompt: "Why not commit node_modules?", choices: ["it's huge and npm install recreates it from package.json", "it's secret", "Git can't store JS", "it's empty"], answer: 0 }
+
+  # ─────────────────────────── DAY 2 ───────────────────────────
+  - day: 2
+    gate:
+      title: "Checkpoint: Node, npm, Vite and components"
+      covers: "Week 12 · Day 1: Node vs npm vs Vite, project files, npm run dev, components, JSX, createRoot"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w12-d2-g01, difficulty: easy, type: mcq, prompt: "Create a Vite React project", choices: ["npm create vite@latest my-app -- --template react", "npm new react", "vite react new", "node create react"], answer: 0 }
+        - { id: fs-w12-d2-g02, difficulty: easy, type: mcq, prompt: "Download a project's packages", choices: ["npm install", "npm get", "node install", "vite install"], answer: 0 }
+        - { id: fs-w12-d2-g03, difficulty: easy, type: truefalse, prompt: "npm comes with Node.", answer: true }
+        - { id: fs-w12-d2-g04, difficulty: easy, type: mcq, prompt: "The div React fills", choices: ["#root", "#app always", "body", "#react"], answer: 0 }
+        - { id: fs-w12-d2-g05, difficulty: easy, type: mcq, prompt: "Vite's dev server address", choices: ["http://localhost:5173", "http://localhost:80", "file://", "github.io"], answer: 0 }
+        - { id: fs-w12-d2-g06, difficulty: easy, type: mcq, prompt: "Which version of Node to install", choices: ["LTS", "the oldest", "nightly", "any beta"], answer: 0 }
+        - { id: fs-w12-d2-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["Node.js", "runs JS on your laptop"], ["npm", "downloads packages"], ["Vite", "dev server + build"], ["React", "builds UIs from components"]] }
+        - { id: fs-w12-d2-g08, difficulty: medium, type: text, prompt: "Write the JSX to use a component named MenuCard (no props).", accept: ["<MenuCard />", "<MenuCard/>", "<MenuCard></MenuCard>"] }
+        - { id: fs-w12-d2-g09, difficulty: medium, type: mcq, prompt: "<menuCard /> (lowercase) renders…", choices: ["an unknown HTML element, not your component", "your component", "an error always", "nothing"], answer: 0 }
+        - { id: fs-w12-d2-g10, difficulty: medium, type: truefalse, prompt: "A component must return something renderable (JSX, a string, or null).", answer: true }
+        - { id: fs-w12-d2-g11, difficulty: medium, type: mcq, prompt: "Live reload means…", choices: ["save the file, the browser updates", "the server restarts daily", "Git commits for you", "the page refreshes every second"], answer: 0 }
+        - { id: fs-w12-d2-g12, difficulty: medium, type: mcq, prompt: "Where does the dist/ folder come from?", choices: ["npm run build", "npm install", "npm run dev", "git clone"], answer: 0 }
+        - { id: fs-w12-d2-g13, difficulty: medium, type: mcq, prompt: "Render App into #root", choices: ["ReactDOM.createRoot(document.getElementById(\"root\")).render(<App />)", "React.render(App)", "document.root = <App />", "App.mount('#root')"], answer: 0 }
+        - { id: fs-w12-d2-g14, difficulty: medium, type: text, prompt: "Command to check Node is installed and see its version?", accept: ["node --version", "node -v"] }
+        - { id: fs-w12-d2-g15, difficulty: medium, type: mcq, prompt: "Last week's site.js header was a step towards…", choices: ["components: one piece, reused everywhere", "databases", "CSS Grid", "APIs"], answer: 0 }
+        - { id: fs-w12-d2-g16, difficulty: hard, type: mcq, prompt: "A teammate adds a package. You pull their code. Before npm run dev you should…", choices: ["npm install (package.json changed)", "delete node_modules forever", "nothing ever", "reinstall Node"], answer: 0 }
+        - { id: fs-w12-d2-g17, difficulty: hard, type: mcq, prompt: "function welcome() { return <h1>Hi</h1> } then <welcome /> shows…", choices: ["nothing useful: React treats it as an HTML tag", "Hi", "a crash on build only", "welcome"], answer: 0 }
+        - { id: fs-w12-d2-g18, difficulty: hard, type: multi, prompt: "Files in a fresh Vite React project (Select all.)", choices: ["index.html", "package.json", "src/main.jsx", "manage.py"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "JSX rules"
+        secondsPerQuestion: 10
+        questions:
+          - { id: fs-w12-d2-rf01, difficulty: easy, type: mcq, prompt: "CSS class in JSX", choices: ["className", "class", "cssClass", "classes"], answer: 0 }
+          - { id: fs-w12-d2-rf02, difficulty: easy, type: mcq, prompt: "Insert a JS value", choices: ["{price}", "${price}", "{{price}}", "(price)"], answer: 0 }
+          - { id: fs-w12-d2-rf03, difficulty: easy, type: mcq, prompt: "Image tag in JSX", choices: ["<img src=\"a.jpg\" alt=\"…\" />", "<img src=\"a.jpg\">", "<img>a.jpg</img>", "<image />"], answer: 0 }
+          - { id: fs-w12-d2-rf04, difficulty: easy, type: mcq, prompt: "Wrap two siblings without a div", choices: ["<> </> (a fragment)", "<div hidden>", "[ ]", "<span>"], answer: 0 }
+          - { id: fs-w12-d2-rf05, difficulty: easy, type: mcq, prompt: "Show only if soldOut", choices: ["{soldOut && <p>Sold out</p>}", "{if (soldOut) <p>…}", "<p if={soldOut}>", "{soldOut ? <p>}"], answer: 0 }
+          - { id: fs-w12-d2-rf06, difficulty: easy, type: mcq, prompt: "Choose between two", choices: ["{ok ? \"Yes\" : \"No\"}", "{if ok \"Yes\" else \"No\"}", "{ok || \"Yes\" : \"No\"}", "<if ok>"], answer: 0 }
+          - { id: fs-w12-d2-rf07, difficulty: easy, type: mcq, prompt: "Inline style in JSX", choices: ["style={{ color: \"red\" }}", "style=\"color: red\"", "style={color: red}", "css={red}"], answer: 0 }
+          - { id: fs-w12-d2-rf08, difficulty: easy, type: mcq, prompt: "font-weight in a style object", choices: ["fontWeight", "font-weight", "fontweight", "FontWeight"], answer: 0 }
+          - { id: fs-w12-d2-rf09, difficulty: easy, type: mcq, prompt: "A JSX comment", choices: ["{/* note */}", "<!-- note -->", "// note", "# note"], answer: 0 }
+          - { id: fs-w12-d2-rf10, difficulty: easy, type: truefalse, prompt: "You can put an if statement directly inside { } in JSX.", answer: false }
+      - kind: brain-teaser
+        title: "What renders?"
+        questions:
+          - { id: fs-w12-d2-bt01, difficulty: medium, type: mcq, prompt: "const n = 0; {n && <p>Items</p>} renders…", choices: ["0", "nothing", "Items", "false"], answer: 0, explain: "0 is falsy, so && returns 0, and React prints numbers. Use n > 0 &&." }
+          - { id: fs-w12-d2-bt02, difficulty: medium, type: text, prompt: "price = 3500. What does <p>₦{price.toLocaleString(\"en-NG\")}</p> show?", accept: ["₦3,500"] }
+          - { id: fs-w12-d2-bt03, difficulty: medium, type: mcq, prompt: "return <h1>A</h1><p>B</p> (no wrapper)", choices: ["syntax error: one parent needed", "renders both", "renders only A", "renders only B"], answer: 0 }
+          - { id: fs-w12-d2-bt04, difficulty: hard, type: mcq, prompt: "{false}, {null}, {undefined} in JSX render…", choices: ["nothing", "the words false/null/undefined", "an error", "0"], answer: 0 }
+          - { id: fs-w12-d2-bt05, difficulty: hard, type: mcq, prompt: "Fix: {count && <p>{count} in cart</p>} shows a stray 0 when empty", choices: ["{count > 0 && …}", "{count ?? …}", "{!count && …}", "{count || …}"], answer: 0 }
+
+  # ─────────────────────────── DAY 3 ───────────────────────────
+  - day: 3
+    gate:
+      title: "Checkpoint: JSX rules"
+      covers: "Week 12 · Day 2: one parent and fragments, className, {expressions}, closing tags, && and ternaries, style objects"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w12-d3-g01, difficulty: easy, type: mcq, prompt: "class in JSX is written", choices: ["className", "class", "klass", "cls"], answer: 0 }
+        - { id: fs-w12-d3-g02, difficulty: easy, type: mcq, prompt: "A fragment", choices: ["<> </>", "<frag>", "<div>", "{ }"], answer: 0 }
+        - { id: fs-w12-d3-g03, difficulty: easy, type: truefalse, prompt: "Every JSX tag must be closed, including <img />.", answer: true }
+        - { id: fs-w12-d3-g04, difficulty: easy, type: mcq, prompt: "{ } in JSX holds…", choices: ["a JavaScript expression", "a CSS rule", "a comment only", "HTML"], answer: 0 }
+        - { id: fs-w12-d3-g05, difficulty: easy, type: mcq, prompt: "style in JSX is…", choices: ["an object", "a string", "an array", "a class"], answer: 0 }
+        - { id: fs-w12-d3-g06, difficulty: easy, type: mcq, prompt: "Ternary syntax", choices: ["cond ? a : b", "cond ?? a : b", "if cond a else b", "cond => a | b"], answer: 0 }
+        - { id: fs-w12-d3-g07, difficulty: medium, type: match, prompt: "HTML → JSX.", pairs: [["class=\"x\"", "className=\"x\""], ["<br>", "<br />"], ["style=\"color: red\"", "style={{ color: \"red\" }}"], ["<!-- c -->", "{/* c */}"]] }
+        - { id: fs-w12-d3-g08, difficulty: medium, type: text, prompt: "Write JSX that shows <p>Sold out</p> only when soldOut is true.", accept: ["{soldOut && <p>Sold out</p>}"] }
+        - { id: fs-w12-d3-g09, difficulty: medium, type: mcq, prompt: "Why return ( … ) with brackets?", choices: ["so multi-line JSX isn't cut off by automatic semicolons", "React requires brackets", "for speed", "for CSS"], answer: 0 }
+        - { id: fs-w12-d3-g10, difficulty: medium, type: truefalse, prompt: "A for loop can't go directly inside JSX braces, but map can.", answer: true }
+        - { id: fs-w12-d3-g11, difficulty: medium, type: mcq, prompt: "background-color in a style object", choices: ["backgroundColor", "background-color", "bgColor", "BackgroundColor"], answer: 0 }
+        - { id: fs-w12-d3-g12, difficulty: medium, type: text, prompt: "Write a ternary that shows \"Open\" if isOpen, else \"Closed\" (just the JSX expression in braces).", accept: ["{isOpen ? \"Open\" : \"Closed\"}", "{isOpen ? 'Open' : 'Closed'}"] }
+        - { id: fs-w12-d3-g13, difficulty: medium, type: mcq, prompt: "Read a Vite error overlay for class= in JSX. It usually means…", choices: ["you must use className", "React is broken", "reinstall Node", "nothing"], answer: 0 }
+        - { id: fs-w12-d3-g14, difficulty: medium, type: mcq, prompt: "alt={name} vs alt=\"{name}\"", choices: ["the first uses the variable; the second is the literal text {name}", "same", "both errors", "second uses the variable"], answer: 0 }
+        - { id: fs-w12-d3-g15, difficulty: medium, type: mcq, prompt: "Show nothing at all", choices: ["return null", "return false string", "return \"\" only", "return undefined in HTML"], answer: 0 }
+        - { id: fs-w12-d3-g16, difficulty: hard, type: mcq, prompt: "items = []; {items.length && <p>Cart</p>} shows…", choices: ["0", "nothing", "Cart", "[]"], answer: 0 }
+        - { id: fs-w12-d3-g17, difficulty: hard, type: mcq, prompt: "style={{ fontSize: 18 }} gives…", choices: ["18px (React adds px for numbers)", "18em", "an error", "no size"], answer: 0 }
+        - { id: fs-w12-d3-g18, difficulty: hard, type: multi, prompt: "Valid JSX (Select all.)", choices: ["<img src={url} alt=\"\" />", "<p>{a + b}</p>", "<>{x}</>", "<p class=\"x\">"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Props"
+        secondsPerQuestion: 10
+        questions:
+          - { id: fs-w12-d3-rf01, difficulty: easy, type: mcq, prompt: "Props are…", choices: ["a component's inputs", "its CSS", "its state", "its file"], answer: 0 }
+          - { id: fs-w12-d3-rf02, difficulty: easy, type: mcq, prompt: "Pass a number", choices: ["price={3500}", "price=\"3500\" (number)", "price=3500", "{price: 3500}"], answer: 0 }
+          - { id: fs-w12-d3-rf03, difficulty: easy, type: mcq, prompt: "Pass a string", choices: ["name=\"Moi moi\"", "name={Moi moi}", "name=Moi moi", "name:{\"Moi moi\"}"], answer: 0 }
+          - { id: fs-w12-d3-rf04, difficulty: easy, type: mcq, prompt: "<DishCard spicy /> sets spicy to…", choices: ["true", "\"spicy\"", "undefined", "false"], answer: 0 }
+          - { id: fs-w12-d3-rf05, difficulty: easy, type: mcq, prompt: "Read props neatly", choices: ["function DishCard({ name, price })", "function DishCard(name, price)", "DishCard.props", "this.name"], answer: 0 }
+          - { id: fs-w12-d3-rf06, difficulty: easy, type: mcq, prompt: "Default for a prop", choices: ["{ spicy = false }", "{ spicy || false }", "spicy: default", "@default spicy"], answer: 0 }
+          - { id: fs-w12-d3-rf07, difficulty: easy, type: truefalse, prompt: "A component may change its own props.", answer: false }
+          - { id: fs-w12-d3-rf08, difficulty: easy, type: mcq, prompt: "What's between a component's tags", choices: ["children", "inner", "content", "slot"], answer: 0 }
+          - { id: fs-w12-d3-rf09, difficulty: easy, type: mcq, prompt: "Props are like…", choices: ["function arguments", "global variables", "CSS classes", "database tables"], answer: 0 }
+          - { id: fs-w12-d3-rf10, difficulty: easy, type: mcq, prompt: "Small components combined into bigger ones is called…", choices: ["composition", "inheritance", "compilation", "hosting"], answer: 0 }
+      - kind: brain-teaser
+        title: "Read the props"
+        questions:
+          - { id: fs-w12-d3-bt01, difficulty: medium, type: mcq, prompt: "<DishCard name=\"Jollof\" price=\"3500\" /> then price + 500 is…", choices: ["\"3500500\" (a string!)", "4000", "NaN", "an error"], answer: 0 }
+          - { id: fs-w12-d3-bt02, difficulty: medium, type: mcq, prompt: "function Card({ title }) used as <Card name=\"A\" /> shows title as…", choices: ["undefined (nothing)", "A", "name", "an error"], answer: 0 }
+          - { id: fs-w12-d3-bt03, difficulty: medium, type: mcq, prompt: "<Section title=\"Rice\"><DishCard … /></Section>: the DishCard arrives as…", choices: ["children", "title", "props.dish", "nothing"], answer: 0 }
+          - id: fs-w12-d3-bt04
+            difficulty: hard
+            type: text
+            prompt: "Plain JavaScript, same idea as props. What does this print?"
+            code: |
+              function label({ name, price, spicy = false }) {
+                return `${name}${spicy ? " (hot)" : ""}: ${price}`
+              }
+              console.log(label({ name: "Pepper soup", price: 3000, spicy: true }), "|", label({ name: "Moi moi", price: 1000 }))
+            accept: ["Pepper soup (hot): 3000 | Moi moi: 1000"]
+          - { id: fs-w12-d3-bt05, difficulty: hard, type: mcq, prompt: "Why are props read-only?", choices: ["the parent owns the data; changing it below would make the UI unpredictable", "JavaScript forbids it", "for speed", "no reason"], answer: 0 }
+
+  # ─────────────────────────── DAY 4 ───────────────────────────
+  - day: 4
+    gate:
+      title: "Checkpoint: components and props"
+      covers: "Week 12 · Day 3: props, strings vs braces, boolean props, defaults, read-only props, children, composition"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w12-d4-g01, difficulty: easy, type: mcq, prompt: "Pass the number 3000 as price", choices: ["price={3000}", "price=\"3000\"", "price=3000", "{3000}"], answer: 0 }
+        - { id: fs-w12-d4-g02, difficulty: easy, type: mcq, prompt: "Content between tags arrives as", choices: ["children", "content", "inner", "body"], answer: 0 }
+        - { id: fs-w12-d4-g03, difficulty: easy, type: truefalse, prompt: "Props flow from parent to child.", answer: true }
+        - { id: fs-w12-d4-g04, difficulty: easy, type: mcq, prompt: "<Badge sale /> means sale is…", choices: ["true", "\"sale\"", "false", "null"], answer: 0 }
+        - { id: fs-w12-d4-g05, difficulty: easy, type: mcq, prompt: "Default value for size", choices: ["function Btn({ size = \"md\" })", "function Btn({ size: \"md\" })", "Btn.size = \"md\" only", "size ||= md"], answer: 0 }
+        - { id: fs-w12-d4-g06, difficulty: easy, type: mcq, prompt: "A component can change its props?", choices: ["No, they're read-only", "Yes, any time", "Only strings", "Only in Vite"], answer: 0 }
+        - { id: fs-w12-d4-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["name=\"Moi moi\"", "a string prop"], ["price={1000}", "a number prop"], ["spicy", "a true boolean prop"], ["children", "what's between the tags"]] }
+        - { id: fs-w12-d4-g08, difficulty: medium, type: text, prompt: "Write the JSX to use DishCard with name Zobo and price 700 (a number).", accept: ["<DishCard name=\"Zobo\" price={700} />", "<DishCard name='Zobo' price={700} />", "<DishCard price={700} name=\"Zobo\" />"] }
+        - { id: fs-w12-d4-g09, difficulty: medium, type: mcq, prompt: "Section({ title, children }) returns…", choices: ["<section><h2>{title}</h2>{children}</section>", "<section>{title.children}</section>", "<section children={title} />", "{children.title}"], answer: 0 }
+        - { id: fs-w12-d4-g10, difficulty: medium, type: truefalse, prompt: "An optional photo prop can be shown with {photo && <img src={photo} alt=\"\" />}.", answer: true }
+        - { id: fs-w12-d4-g11, difficulty: medium, type: mcq, prompt: "price=\"3500\" then price * 2 →", choices: ["7000 (* converts strings)", "\"35003500\"", "NaN", "error"], answer: 0 }
+        - { id: fs-w12-d4-g12, difficulty: medium, type: mcq, prompt: "Best component size", choices: ["small, one job each", "one giant App", "one per CSS rule", "one per letter"], answer: 0 }
+        - id: fs-w12-d4-g13
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const props = { name: "Fried rice", price: 3500 }
+            const { name, spicy = false } = props
+            console.log(name, spicy)
+          accept: ["Fried rice false"]
+        - { id: fs-w12-d4-g14, difficulty: medium, type: mcq, prompt: "Pass an object as a prop", choices: ["dish={dish}", "dish=\"dish\"", "{...}", "dish:dish"], answer: 0 }
+        - { id: fs-w12-d4-g15, difficulty: medium, type: mcq, prompt: "{...dish} on a component (spread) passes…", choices: ["each field as its own prop", "one prop called dish", "nothing", "an array"], answer: 0 }
+        - id: fs-w12-d4-g16
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const dish = { name: "Efo riro", price: 4000 }
+            const props = { ...dish, spicy: true }
+            console.log(Object.keys(props).join(","))
+          accept: ["name,price,spicy"]
+        - { id: fs-w12-d4-g17, difficulty: hard, type: mcq, prompt: "A child needs to change a value its parent owns. Proper way?", choices: ["the parent passes a function as a prop for the child to call", "the child edits props", "global variables", "impossible"], answer: 0, explain: "Coming in Week 13 with state." }
+        - { id: fs-w12-d4-g18, difficulty: hard, type: multi, prompt: "True about props (Select all.)", choices: ["read-only in the child", "any JS value can be passed", "children is a prop", "only strings allowed"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Lists and keys"
+        secondsPerQuestion: 10
+        questions:
+          - { id: fs-w12-d4-rf01, difficulty: easy, type: mcq, prompt: "Turn an array into components", choices: ["map", "forEach", "reduce only", "for…in"], answer: 0 }
+          - { id: fs-w12-d4-rf02, difficulty: easy, type: mcq, prompt: "Each list item needs a…", choices: ["key", "id attribute", "class", "ref"], answer: 0 }
+          - { id: fs-w12-d4-rf03, difficulty: easy, type: mcq, prompt: "Best key", choices: ["a stable id from the data", "the array index", "Math.random()", "the name if duplicates exist"], answer: 0 }
+          - { id: fs-w12-d4-rf04, difficulty: easy, type: mcq, prompt: "Only soups, then render", choices: ["filter then map", "map then filter", "sort only", "find"], answer: 0 }
+          - { id: fs-w12-d4-rf05, difficulty: easy, type: mcq, prompt: "Missing keys cause…", choices: ["a console warning (and update bugs)", "a build failure", "nothing", "a crash always"], answer: 0 }
+          - { id: fs-w12-d4-rf06, difficulty: easy, type: mcq, prompt: "Unique categories", choices: ["[...new Set(dishes.map((d) => d.category))]", "dishes.unique()", "Set(dishes)", "dishes.category"], answer: 0 }
+          - { id: fs-w12-d4-rf07, difficulty: easy, type: mcq, prompt: "Empty state", choices: ["{list.length === 0 && <p>None</p>}", "{list && <p>None</p>}", "<p if empty>", "{!list}"], answer: 0 }
+          - { id: fs-w12-d4-rf08, difficulty: easy, type: truefalse, prompt: "Keys must be unique among siblings.", answer: true }
+          - { id: fs-w12-d4-rf09, difficulty: easy, type: mcq, prompt: "Where does key go?", choices: ["on the outermost element returned in map", "on the ul", "in CSS", "on the data"], answer: 0 }
+          - { id: fs-w12-d4-rf10, difficulty: easy, type: mcq, prompt: "Where to look for key warnings", choices: ["the browser console", "the terminal only", "package.json", "nowhere"], answer: 0 }
+      - kind: brain-teaser
+        title: "Map it"
+        questions:
+          - id: fs-w12-d4-bt01
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const dishes = [
+                { id: 1, name: "Jollof", category: "Rice" },
+                { id: 2, name: "Egusi", category: "Soups" },
+                { id: 3, name: "Fried rice", category: "Rice" },
+              ]
+              console.log(dishes.filter((d) => d.category === "Rice").map((d) => d.name).join(", "))
+            accept: ["Jollof, Fried rice"]
+          - id: fs-w12-d4-bt02
+            difficulty: medium
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const cats = ["Rice", "Soups", "Rice", "Sides", "Soups"]
+              console.log([...new Set(cats)].join("|"))
+            accept: ["Rice|Soups|Sides"]
+          - { id: fs-w12-d4-bt03, difficulty: medium, type: mcq, prompt: "Index keys break when you…", choices: ["insert, delete or reorder items", "change CSS", "add a prop", "never"], answer: 0 }
+          - id: fs-w12-d4-bt04
+            difficulty: hard
+            type: text
+            prompt: "What does this print?"
+            code: |
+              const dishes = [{ id: 7, p: 3500 }, { id: 9, p: 1200 }, { id: 4, p: 700 }]
+              const keys = dishes.filter((d) => d.p >= 1000).map((d) => d.id)
+              console.log(keys.join(","), new Set(keys).size === keys.length)
+            accept: ["7,9 true"]
+          - { id: fs-w12-d4-bt05, difficulty: hard, type: mcq, prompt: "Two dishes share id 3. React…", choices: ["warns about duplicate keys and may mix them up on update", "merges them", "ignores the second", "crashes the build"], answer: 0 }
+
+  # ─────────────────────────── DAY 5 ───────────────────────────
+  - day: 5
+    gate:
+      title: "Checkpoint: lists and keys"
+      covers: "Week 12 · Day 4: map to components, keys, filter then map, empty states, unique categories"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w12-d5-g01, difficulty: easy, type: mcq, prompt: "Render many dishes", choices: ["dishes.map((d) => <DishCard key={d.id} … />)", "for (d of dishes) <DishCard>", "dishes.forEach(<DishCard>)", "<DishCard repeat>"], answer: 0 }
+        - { id: fs-w12-d5-g02, difficulty: easy, type: mcq, prompt: "Key comes from…", choices: ["a stable id", "the index", "random numbers", "the CSS"], answer: 0 }
+        - { id: fs-w12-d5-g03, difficulty: easy, type: truefalse, prompt: "filter returns a new array; map can then render it.", answer: true }
+        - { id: fs-w12-d5-g04, difficulty: easy, type: mcq, prompt: "Show 'No dishes today' when empty", choices: ["{dishes.length === 0 && <p>No dishes today</p>}", "{dishes || <p>…}", "{!dishes.map}", "<Empty />"], answer: 0 }
+        - { id: fs-w12-d5-g05, difficulty: easy, type: mcq, prompt: "map returns…", choices: ["a new array", "nothing", "the first item", "a number"], answer: 0 }
+        - { id: fs-w12-d5-g06, difficulty: easy, type: mcq, prompt: "A key warning appears in…", choices: ["the console", "the page", "the terminal only", "Git"], answer: 0 }
+        - { id: fs-w12-d5-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["map", "data → components"], ["filter", "keep only some"], ["key", "stable identity"], ["new Set", "unique values"]] }
+        - { id: fs-w12-d5-g08, difficulty: medium, type: text, prompt: "Write the JSX for one <li> per dish with key dish.id showing dish.name (the map expression in braces).", accept: ["{dishes.map((dish) => <li key={dish.id}>{dish.name}</li>)}", "{dishes.map(dish => <li key={dish.id}>{dish.name}</li>)}", "{dishes.map((d) => <li key={d.id}>{d.name}</li>)}"] }
+        - { id: fs-w12-d5-g09, difficulty: medium, type: mcq, prompt: "The key goes on…", choices: ["the element returned by map", "the parent ul", "every child inside li", "the data array"], answer: 0 }
+        - { id: fs-w12-d5-g10, difficulty: medium, type: truefalse, prompt: "key is passed to the component as a normal prop you can read.", answer: false }
+        - { id: fs-w12-d5-g11, difficulty: medium, type: mcq, prompt: "One section per category, in a fixed order", choices: ["map over an order array, filter dishes inside", "sort dishes randomly", "one map only", "Set + sort alphabetically always"], answer: 0 }
+        - id: fs-w12-d5-g12
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const dishes = [{ c: "Rice" }, { c: "Drinks" }, { c: "Rice" }]
+            const order = ["Rice", "Soups", "Drinks"]
+            console.log(order.map((o) => `${o}:${dishes.filter((d) => d.c === o).length}`).join(" "))
+          accept: ["Rice:2 Soups:0 Drinks:1"]
+        - { id: fs-w12-d5-g13, difficulty: medium, type: mcq, prompt: "Using Math.random() as a key causes…", choices: ["every item remounts on every render", "nothing", "faster lists", "a build error"], answer: 0 }
+        - id: fs-w12-d5-g14
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const prices = [3500, 1200, 700]
+            console.log(prices.map((p) => `₦${p.toLocaleString("en-NG")}`).join(" "))
+          accept: ["₦3,500 ₦1,200 ₦700"]
+        - { id: fs-w12-d5-g15, difficulty: medium, type: mcq, prompt: "Sections from categories: key for each section", choices: ["the category name", "the index of a dish", "nothing needed", "Math.random()"], answer: 0 }
+        - id: fs-w12-d5-g16
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const dishes = [{ id: 1, s: true }, { id: 2, s: false }, { id: 3, s: true }]
+            const soldOut = dishes.filter((d) => d.s).length
+            console.log(`${dishes.length} dishes · ${soldOut} sold out`)
+          accept: ["3 dishes · 2 sold out"]
+        - { id: fs-w12-d5-g17, difficulty: hard, type: mcq, prompt: "A todo list keyed by index; you delete item 1 of 3 while editing item 2's text box. Risk?", choices: ["the typed text jumps to the wrong item", "nothing", "the list sorts", "a crash"], answer: 0 }
+        - { id: fs-w12-d5-g18, difficulty: hard, type: multi, prompt: "Good keys (Select all.)", choices: ["database id", "order number", "a slug unique in the list", "array index for a list you reorder"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Files, exports, builds"
+        secondsPerQuestion: 10
+        questions:
+          - { id: fs-w12-d5-rf01, difficulty: easy, type: mcq, prompt: "One per file, imported with any name", choices: ["export default", "export const", "module.exports only", "import *"], answer: 0 }
+          - { id: fs-w12-d5-rf02, difficulty: easy, type: mcq, prompt: "Import a named export", choices: ["import { dishes } from \"./data/dishes.js\"", "import dishes from \"dishes\"", "require dishes", "import * dishes"], answer: 0 }
+          - { id: fs-w12-d5-rf03, difficulty: easy, type: mcq, prompt: "Compile for production", choices: ["npm run build", "npm run dev", "npm install", "vite serve"], answer: 0 }
+          - { id: fs-w12-d5-rf04, difficulty: easy, type: mcq, prompt: "The build goes into…", choices: ["dist/", "src/", "node_modules/", "public/"], answer: 0 }
+          - { id: fs-w12-d5-rf05, difficulty: easy, type: mcq, prompt: "Check the build locally", choices: ["npm run preview", "npm run dev", "open src", "git push"], answer: 0 }
+          - { id: fs-w12-d5-rf06, difficulty: easy, type: mcq, prompt: "Images served as-is", choices: ["public/", "src/components", "node_modules", "dist only"], answer: 0 }
+          - { id: fs-w12-d5-rf07, difficulty: easy, type: mcq, prompt: "Tell Vite the GitHub Pages path", choices: ["base in vite.config.js", "homepage in index.html", "a .env file", "nothing"], answer: 0 }
+          - { id: fs-w12-d5-rf08, difficulty: easy, type: truefalse, prompt: "dist/ contains no JSX, only plain JS, HTML and CSS.", answer: true }
+          - { id: fs-w12-d5-rf09, difficulty: easy, type: mcq, prompt: "Import CSS in a component", choices: ["import \"./App.css\"", "<link> in JSX", "require css", "@import in JS"], answer: 0 }
+          - { id: fs-w12-d5-rf10, difficulty: easy, type: mcq, prompt: "#1 cause of a blank deployed React page", choices: ["wrong base path", "too much CSS", "using Grid", "commas in prices"], answer: 0 }
+      - kind: brain-teaser
+        title: "Deploy it right"
+        questions:
+          - { id: fs-w12-d5-bt01, difficulty: medium, type: mcq, prompt: "Repo mama-put-kitchen, React app published under /menu/. base =", choices: ["\"/mama-put-kitchen/menu/\"", "\"/\"", "\"menu\"", "\"./dist\""], answer: 0 }
+          - { id: fs-w12-d5-bt02, difficulty: medium, type: mcq, prompt: "export default function App + import Main from \"./App.jsx\" →", choices: ["Main is App (default imports can be renamed)", "error: name must match", "undefined", "two Apps"], answer: 0 }
+          - { id: fs-w12-d5-bt03, difficulty: medium, type: mcq, prompt: "export const dishes + import { meals } from \"./data.js\" →", choices: ["meals is undefined/import error: named imports must match", "meals = dishes", "works by position", "dishes renamed"], answer: 0 }
+          - { id: fs-w12-d5-bt04, difficulty: hard, type: mcq, prompt: "Vite refuses to empty ../menu during build. Fix:", choices: ["set build.emptyOutDir: true", "delete package.json", "use npm run dev", "rename menu to dist"], answer: 0 }
+          - { id: fs-w12-d5-bt05, difficulty: hard, type: mcq, prompt: "The deployed page is blank and the console shows 404s for /assets/index-abc.js. Likely fix:", choices: ["set base to the repo path and rebuild", "add more keys", "use className", "reinstall Node"], answer: 0 }
+
+  # ─────────────────────────── DAY 6 ───────────────────────────
+  - day: 6
+    gate:
+      title: "Checkpoint: project files and deploying"
+      covers: "Week 12 · Day 5: one component per file, default vs named exports, public/ and imported assets, npm run build/preview, base path"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: fs-w12-d6-g01, difficulty: easy, type: mcq, prompt: "Components usually live in…", choices: ["src/components/", "public/", "dist/", "node_modules/"], answer: 0 }
+        - { id: fs-w12-d6-g02, difficulty: easy, type: mcq, prompt: "Import a default export", choices: ["import DishCard from \"./DishCard.jsx\"", "import { DishCard } always", "import * DishCard", "require(DishCard)"], answer: 0 }
+        - { id: fs-w12-d6-g03, difficulty: easy, type: truefalse, prompt: "A file can have one default export and many named exports.", answer: true }
+        - { id: fs-w12-d6-g04, difficulty: easy, type: mcq, prompt: "npm run build creates…", choices: ["dist/", "src/", "public/", "a commit"], answer: 0 }
+        - { id: fs-w12-d6-g05, difficulty: easy, type: mcq, prompt: "Preview the production build", choices: ["npm run preview", "npm run dev", "npm test", "vite edit"], answer: 0 }
+        - { id: fs-w12-d6-g06, difficulty: easy, type: mcq, prompt: "Use public/jollof.jpg in JSX", choices: ["src=\"/jollof.jpg\"", "src=\"public/jollof.jpg\"", "src={public.jollof}", "src=\"../../public\""], answer: 0 }
+        - { id: fs-w12-d6-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["export default", "one per file, any import name"], ["export const", "named, imported with braces"], ["base", "where the site lives on the server"], ["dist/", "the built files"]] }
+        - { id: fs-w12-d6-g08, difficulty: medium, type: text, prompt: "Write the import for a named export called dishes from ./data/dishes.js.", accept: ["import { dishes } from \"./data/dishes.js\"", "import { dishes } from './data/dishes.js'", "import { dishes } from \"./data/dishes.js\";", "import { dishes } from './data/dishes.js';"] }
+        - { id: fs-w12-d6-g09, difficulty: medium, type: mcq, prompt: "Why build before deploying?", choices: ["browsers can't run JSX; the build makes plain JS", "GitHub requires zips", "to delete node_modules", "to run tests"], answer: 0 }
+        - { id: fs-w12-d6-g10, difficulty: medium, type: truefalse, prompt: "Changing a dish in data/dishes.js updates every component that imports it.", answer: true }
+        - { id: fs-w12-d6-g11, difficulty: medium, type: mcq, prompt: "The site nav's Menu link after the React menu ships", choices: ["menu/", "menu.html", "menu-app/src", "localhost:5173"], answer: 0 }
+        - { id: fs-w12-d6-g12, difficulty: medium, type: mcq, prompt: "Commit the built menu/ folder because…", choices: ["GitHub Pages serves files from the repo; it doesn't run npm", "it's required by React", "it's smaller than src", "it holds node_modules"], answer: 0 }
+        - id: fs-w12-d6-g13
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const order = ["Rice", "Soups & swallow", "Sides", "Drinks"]
+            console.log(order.indexOf("Sides") + 1, order.length)
+          accept: ["3 4"]
+        - { id: fs-w12-d6-g14, difficulty: medium, type: mcq, prompt: "Sold-out style without a second component", choices: ["className={dish.soldOut ? \"card sold-out\" : \"card\"}", "<SoldOutCard>", "style=\"sold-out\"", "if in JSX"], answer: 0 }
+        - { id: fs-w12-d6-g15, difficulty: medium, type: mcq, prompt: "Same design tokens in the React menu", choices: ["copy the :root block into src/index.css", "rewrite all colours", "use inline styles", "no styling"], answer: 0 }
+        - id: fs-w12-d6-g16
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            const dishes = [
+              { n: "A", c: "Rice", hot: true }, { n: "B", c: "Rice", hot: false },
+              { n: "C", c: "Drinks", hot: false }, { n: "D", c: "Soups", hot: true },
+            ]
+            const spicyPerCat = ["Rice", "Soups", "Drinks"].map((c) => dishes.filter((d) => d.c === c && d.hot).length)
+            console.log(spicyPerCat.join(""))
+          accept: ["110"]
+        - { id: fs-w12-d6-g17, difficulty: hard, type: mcq, prompt: "Menu works with npm run dev but is blank on GitHub Pages; site is at /mama-put-kitchen/menu/. Check first:", choices: ["base in vite.config.js and rebuild", "React version", "the keys", "the CSS grid"], answer: 0 }
+        - { id: fs-w12-d6-g18, difficulty: hard, type: multi, prompt: "In the milestone's React menu (Select all.)", choices: ["data in src/data/dishes.js", "DishCard and MenuSection components", "sold-out badges", "a database server"], answers: [0, 1, 2] }
+    quizzes:
+      - kind: rapid-fire
+        title: "Week 12 lightning round"
+        secondsPerQuestion: 9
+        questions:
+          - { id: fs-w12-d6-rf01, difficulty: easy, type: mcq, prompt: "Start a Vite dev server", choices: ["npm run dev", "npm build", "node vite", "vite deploy"], answer: 0 }
+          - { id: fs-w12-d6-rf02, difficulty: easy, type: mcq, prompt: "CSS class in JSX", choices: ["className", "class", "styleClass", "cssClass"], answer: 0 }
+          - { id: fs-w12-d6-rf03, difficulty: easy, type: mcq, prompt: "Wrap siblings", choices: ["<> </>", "<div hidden>", "( )", "[ ]"], answer: 0 }
+          - { id: fs-w12-d6-rf04, difficulty: easy, type: mcq, prompt: "A component's inputs", choices: ["props", "state", "keys", "refs"], answer: 0 }
+          - { id: fs-w12-d6-rf05, difficulty: easy, type: mcq, prompt: "Between the tags", choices: ["children", "inner", "slot", "content"], answer: 0 }
+          - { id: fs-w12-d6-rf06, difficulty: easy, type: mcq, prompt: "Data → components", choices: ["map", "forEach", "find", "some"], answer: 0 }
+          - { id: fs-w12-d6-rf07, difficulty: easy, type: mcq, prompt: "Identity for list items", choices: ["key", "id attr", "name", "index"], answer: 0 }
+          - { id: fs-w12-d6-rf08, difficulty: easy, type: mcq, prompt: "Production files", choices: ["npm run build → dist/", "npm run dev → src/", "npm install → public/", "git → dist/"], answer: 0 }
+          - { id: fs-w12-d6-rf09, difficulty: easy, type: mcq, prompt: "GitHub Pages subpath setting", choices: ["base", "root", "path", "homepage"], answer: 0 }
+          - { id: fs-w12-d6-rf10, difficulty: easy, type: truefalse, prompt: "Components can't change their own props.", answer: true }
+      - kind: brain-teaser
+        title: "Think in components"
+        questions:
+          - { id: fs-w12-d6-bt01, difficulty: medium, type: mcq, prompt: "Split the menu page into components", choices: ["App → MenuSection → DishCard", "one big App", "one component per word", "CSS files only"], answer: 0 }
+          - { id: fs-w12-d6-bt02, difficulty: medium, type: mcq, prompt: "Where should the dishes array live?", choices: ["in a data file, imported where needed", "copied into every component", "in the CSS", "in index.html"], answer: 0 }
+          - { id: fs-w12-d6-bt03, difficulty: medium, type: mcq, prompt: "Adding a new dish should require…", choices: ["one new object in the data file", "a new component", "editing JSX in 3 places", "a rebuild of React"], answer: 0 }
+          - { id: fs-w12-d6-bt04, difficulty: hard, type: mcq, prompt: "Why do almost all modern web apps use components?", choices: ["reuse, one place to change, and each piece is easy to understand and test", "browsers require them", "they're faster than HTML", "for SEO only"], answer: 0 }
+          - { id: fs-w12-d6-bt05, difficulty: hard, type: multi, prompt: "A good DishCard (Select all.)", choices: ["takes a dish (or name/price) as props", "shows sold-out from the data", "doesn't fetch the whole menu itself", "edits its props when clicked"], answers: [0, 1, 2] }

@@ -1,0 +1,51 @@
+# Week 12 · Day 6 project
+id: web-w12-d6-menu
+kind: web
+react: true
+title: "Mama Put Kitchen: the React menu"
+description: "Milestone part 2: the full menu from data, with sections, spicy markers and sold-out badges."
+html: |
+  <div id="root"></div>
+css: |
+  body { font-family: system-ui, sans-serif; padding: 1rem; background: #fff8ef; color: #2b1d16; }
+  .card { background: #fff; border: 2px solid #c0392b; border-radius: 12px; padding: 0.5rem 0.75rem; margin: 0.5rem 0; }
+  .card h3 { margin: 0; font-size: 1rem; }
+  .card p { margin: 0.25rem 0 0; }
+  .sold-out { opacity: 0.5; }
+  .badge { background: #2b1d16; color: #fff; border-radius: 6px; padding: 0 0.4rem; font-size: 0.8rem; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.75rem; }
+js: |
+  const dishes = [
+    { id: 1, name: "Party jollof", price: 3500, category: "Rice", spicy: false, soldOut: false },
+    { id: 2, name: "Fried rice", price: 3500, category: "Rice", spicy: false, soldOut: true },
+    { id: 3, name: "Ofada rice + ayamase", price: 4800, category: "Rice", spicy: true, soldOut: false },
+    { id: 4, name: "Egusi + pounded yam", price: 4500, category: "Soups & swallow", spicy: false, soldOut: false },
+    { id: 5, name: "Efo riro + eba", price: 4000, category: "Soups & swallow", spicy: true, soldOut: false },
+    { id: 6, name: "Pepper soup", price: 3000, category: "Soups & swallow", spicy: true, soldOut: false },
+    { id: 7, name: "Fried plantain", price: 1200, category: "Sides", spicy: false, soldOut: false },
+    { id: 8, name: "Moi moi", price: 1000, category: "Sides", spicy: false, soldOut: true },
+    { id: 9, name: "Zobo (50cl)", price: 700, category: "Drinks", spicy: false, soldOut: false },
+    { id: 10, name: "Chapman", price: 1500, category: "Drinks", spicy: false, soldOut: false },
+  ]
+  const order = ["Rice", "Soups & swallow", "Sides", "Drinks"]
+
+  // 1. DishCard({ dish }): <article className="card"> (add " sold-out" to the class when sold out)
+  //    with <h3> name + " 🌶️" when spicy, <p> ₦price with commas, and <span className="badge">Sold out</span> when sold out
+  // 2. MenuSection({ title, dishes }): <section><h2>{title}</h2><div className="grid"> one DishCard per dish (key!)</div></section>
+  // 3. App: <h1>Mama Put Kitchen · Menu</h1>, then one MenuSection per category in `order`
+  // 4. Under the h1: <p className="count"> "10 dishes · 2 sold out" (count them from the data)
+tasks:
+  - prompt: "Four sections in order: Rice, Soups & swallow, Sides, Drinks."
+    check: "[...document.querySelectorAll('#root section h2')].map((h) => h.textContent).join('|') === 'Rice|Soups & swallow|Sides|Drinks'"
+  - prompt: "Each section's .grid holds only its category's cards (3, 3, 2, 2)."
+    check: "[...document.querySelectorAll('#root section')].map((s) => s.querySelectorAll('.grid .card').length).join() === '3,3,2,2'"
+    hint: "dishes={dishes.filter((d) => d.category === c)}"
+  - prompt: "Prices show with \u20a6 and commas (Ofada rice \u20a64,800)."
+    check: "[...document.querySelectorAll('#root .card')].find((c) => c.textContent.includes('Ofada'))?.querySelector('p').textContent === '\u20a64,800' && [...document.querySelectorAll('#root .card')].every((c) => /^\u20a6[\\d,]+$/.test(c.querySelector('p').textContent))"
+  - prompt: "Exactly the 3 spicy dishes show \ud83c\udf36\ufe0f."
+    check: "[...document.querySelectorAll('#root .card')].filter((c) => c.querySelector('h3').textContent.includes('\ud83c\udf36\ufe0f')).length === 3"
+  - prompt: "The 2 sold-out dishes have the sold-out class and a Sold out badge (and no others do)."
+    check: "[...document.querySelectorAll('#root .card')].filter((c) => c.classList.contains('sold-out')).map((c) => c.querySelector('h3').textContent).join() === 'Fried rice,Moi moi' && document.querySelectorAll('#root .badge').length === 2"
+    hint: "className={dish.soldOut ? \"card sold-out\" : \"card\"}"
+  - prompt: "p.count says \"10 dishes \u00b7 2 sold out\", and there are no key warnings."
+    check: "document.querySelector('#root .count')?.textContent === '10 dishes \u00b7 2 sold out' && !window.__errors.some((e) => /key/i.test(e))"

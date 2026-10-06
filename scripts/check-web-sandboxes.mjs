@@ -7,6 +7,7 @@ import { parse } from 'yaml'
 import { readFileSync, readdirSync, existsSync } from 'node:fs'
 import { join } from 'node:path'
 import { chromium } from 'playwright-core'
+import { transform } from 'sucrase'
 
 const root = new URL('..', import.meta.url).pathname
 const chrome = [
@@ -24,10 +25,29 @@ if (!chrome) {
 const browser = await chromium.launch({ executablePath: chrome })
 let failures = 0
 // Same console.log capture as the app's bridge (WebSandbox.tsx), so checks can read window.__logs.
-const logCapture = `<script>window.__logs = []; (() => { const o = console.log; console.log = (...a) => { window.__logs.push(a.map((x) => typeof x === 'object' ? JSON.stringify(x) : String(x)).join(' ')); o.apply(console, a) } })()</script>`
+const logCapture = `<script>window.__logs = []; window.__errors = []; (() => { const t = (a) => a.map((x) => typeof x === 'object' ? JSON.stringify(x) : String(x)).join(' '); const o = console.log; console.log = (...a) => { window.__logs.push(t(a)); o.apply(console, a) }; const e = console.error; console.error = (...a) => { window.__errors.push(t(a)); e.apply(console, a) } })()</script>`
+
+// React sandboxes: mirrors src/viewer/sandboxes/reactPage.ts (JSX + imports compiled with Sucrase, React 18 from cdnjs).
+const CDN = 'https://cdnjs.cloudflare.com/ajax/libs'
+const REACT_SCRIPTS = `<script src="${CDN}/react/18.3.1/umd/react.development.js"></script><script src="${CDN}/react-dom/18.3.1/umd/react-dom.development.js"></script>`
+const MODULE_SHIM = `var exports = {}, module = { exports: exports };
+function require(name) {
+  if (name === 'react') return React;
+  if (name === 'react-dom' || name === 'react-dom/client') return ReactDOM;
+  throw new Error('Only "react" and "react-dom/client" can be imported here (got "' + name + '")');
+}
+`
+const compileReact = (source) => {
+  try {
+    return MODULE_SHIM + transform(source, { transforms: ['jsx', 'imports'], jsxRuntime: 'classic', production: false }).code
+  } catch (error) {
+    return `console.error(${JSON.stringify(`JSX error: ${error.message}`)})`
+  }
+}
 
 const run = async (files, checks) => {
-  const doc = `<!doctype html><html><head><meta charset="utf-8"><style>${files.css ?? ''}</style>${logCapture}</head><body>${files.html ?? ''}<script>${files.js ?? ''}</script></body></html>`
+  const js = files.react ? compileReact(files.js ?? '') : files.js ?? ''
+  const doc = `<!doctype html><html><head><meta charset="utf-8"><style>${files.css ?? ''}</style>${logCapture}${files.react ? REACT_SCRIPTS : ''}</head><body>${files.html ?? ''}<script>${js}</script></body></html>`
   // A fresh tab per run: document replacement keeps JS globals, so reusing a tab would leak
   // the solution's functions into the starter's run.
   const page = await browser.newPage()

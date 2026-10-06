@@ -7,13 +7,13 @@ type Props = { sandbox: Extract<Sandbox, { kind: 'web' }> }
 type Tab = 'html' | 'css' | 'js'
 
 /** console.log from the page is forwarded to the parent so learners can see it, and kept in
- *  window.__logs so task checks can test printed output (scripts/check-web-sandboxes.mjs mirrors this). */
+ *  window.__logs (console.error in window.__errors) so task checks can test printed output (scripts/check-web-sandboxes.mjs mirrors this). */
 const bridge = `<script>
   (function () {
-    window.__logs = [];
+    window.__logs = []; window.__errors = [];
     const text = (args) => args.map(a => typeof a === 'object' ? JSON.stringify(a) : String(a)).join(' ');
     const send = (level, args) => parent.postMessage({ snpConsole: true, level, text: text(args) }, '*');
-    ['log', 'warn', 'error'].forEach(level => { const orig = console[level]; console[level] = (...a) => { if (level === 'log') window.__logs.push(text(a)); send(level, a); orig.apply(console, a); }; });
+    ['log', 'warn', 'error'].forEach(level => { const orig = console[level]; console[level] = (...a) => { if (level === 'log') window.__logs.push(text(a)); if (level === 'error') window.__errors.push(text(a)); send(level, a); orig.apply(console, a); }; });
     window.addEventListener('error', e => send('error', [e.message + ' (line ' + e.lineno + ')']));
   })();
 </script>`
@@ -45,8 +45,12 @@ export default function WebSandbox({ sandbox }: Props) {
   const tasks = sandbox.tasks ?? []
   const previewRef = useRef<HTMLIFrameElement>(null)
 
-  const page = (extra = '') =>
-    `<!doctype html><html><head><meta charset="utf-8"><style>${files.css}</style>${bridge}</head><body>${files.html}<script>${files.js}</script><script>parent.postMessage({ snpRan: true }, '*')</script>${extra}</body></html>`
+  // React sandboxes compile JSX first; the compiler is downloaded only for them.
+  const page = async (extra = '') => {
+    const react = sandbox.react ? await import('./reactPage.ts') : null
+    const js = react ? react.compileReact(files.js) : files.js
+    return `<!doctype html><html><head><meta charset="utf-8"><style>${files.css}</style>${bridge}${react ? react.REACT_SCRIPTS : ''}</head><body>${files.html}<script>${js}</script><script>parent.postMessage({ snpRan: true }, '*')</script>${extra}</body></html>`
+  }
 
   // Every Run/Check mounts a fresh iframe (keyed by this counter). Reusing one failed twice over:
   // an identical srcDoc doesn't reload (Run/Check pressed twice showed nothing), and Chrome
@@ -56,8 +60,10 @@ export default function WebSandbox({ sandbox }: Props) {
   const render = () => {
     save(runningKey, String(Date.now()))
     setLogs([])
-    setRun((n) => n + 1)
-    setDoc(page())
+    void page().then((html) => {
+      setRun((n) => n + 1)
+      setDoc(html)
+    })
   }
 
   /** Re-render with a checker script that evaluates each task inside the page and reports back. */
@@ -98,8 +104,10 @@ export default function WebSandbox({ sandbox }: Props) {
         .then(() => settle(run)));
     </script>`
     save(runningKey, String(Date.now()))
-    setRun((n) => n + 1)
-    setDoc(page(checker))
+    void page(checker).then((html) => {
+      setRun((n) => n + 1)
+      setDoc(html)
+    })
     // Off-screen frames may not be laid out, so bring the preview into view while it's checked.
     previewRef.current?.scrollIntoView({ block: 'nearest' })
   }

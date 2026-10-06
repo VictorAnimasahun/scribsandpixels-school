@@ -1,0 +1,40 @@
+# Week 12 · Day 5 mini-task
+id: web-w12-d5-compose
+kind: web
+react: true
+title: "Compose and export"
+description: "A Layout that wraps any page in the same header and footer, written Vite-style with import and export."
+html: |
+  <div id="root"></div>
+css: |
+  body { font-family: system-ui, sans-serif; padding: 1rem; background: #fff8ef; color: #2b1d16; }
+  .card { background: #fff; border: 2px solid #c0392b; border-radius: 12px; padding: 0.5rem 0.75rem; margin: 0.5rem 0; }
+  .card h3 { margin: 0; font-size: 1rem; }
+  .card p { margin: 0.25rem 0 0; }
+  .sold-out { opacity: 0.5; }
+  .badge { background: #2b1d16; color: #fff; border-radius: 6px; padding: 0 0.4rem; font-size: 0.8rem; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.75rem; }
+js: |
+  // Write it like a Vite project file: imports at the top, exports where you'd split files.
+  import { createRoot } from "react-dom/client"
+
+  // 1. A named export:  export const restaurant = { name: "Mama Put Kitchen", area: "Yaba" }
+  // 2. Header(): <header><h1>{restaurant.name}</h1><p>{restaurant.area}, Lagos</p></header>
+  // 3. Footer(): <footer>© (this year) {restaurant.name}</footer>
+  // 4. Layout({ children }): Header, then <main>{children}</main>, then Footer
+  // 5. export default function App(): a Layout containing <h2>Today's menu</h2>
+  // 6. Render <App /> with createRoot (imported above)
+tasks:
+  - prompt: "A named export restaurant = { name: \"Mama Put Kitchen\", area: \"Yaba\" }."
+    check: "exports.restaurant?.name === 'Mama Put Kitchen' && exports.restaurant?.area === 'Yaba'"
+    hint: "export const restaurant = { name: \"Mama Put Kitchen\", area: \"Yaba\" }"
+  - prompt: "App is the default export."
+    check: "typeof exports.default === 'function' && exports.default.name === 'App'"
+    hint: "export default function App() { \u2026 }"
+  - prompt: "The header shows the name and \"Yaba, Lagos\"."
+    check: "document.querySelector('#root header h1')?.textContent === 'Mama Put Kitchen' && document.querySelector('#root header p')?.textContent === 'Yaba, Lagos'"
+  - prompt: "main holds the h2, between the header and the footer."
+    check: "(() => { const r = [...document.querySelector('#root').children].map((e) => e.tagName).join(); return r === 'HEADER,MAIN,FOOTER' && document.querySelector('#root main h2')?.textContent === \"Today's menu\" })()"
+    hint: "function Layout({ children }) { return (<><Header /><main>{children}</main><Footer /></>) }"
+  - prompt: "The footer shows this year and the name."
+    check: "(() => { const t = document.querySelector('#root footer')?.textContent || ''; return t.includes(String(new Date().getFullYear())) && t.includes('Mama Put Kitchen') })()"

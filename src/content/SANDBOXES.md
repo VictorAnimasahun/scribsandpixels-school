@@ -78,7 +78,9 @@ tasks:
     hint: ".card { border-radius: 8px; }"
 ```
 - Checks run one at a time, in order. A check may be async (return a Promise); it's awaited, with a 5 s limit. Test network code by passing a fake: write `async function getJSON(url, fetchFn = fetch)` and have the check call it with a fake fetch.
-- `window.__logs` holds every `console.log` line, so checks can test printed output.
+- `window.__logs` holds every `console.log` line and `window.__errors` every `console.error` line (React's key warnings land there), so checks can test printed output.
+- **`react: true`** makes it a React sandbox: the JS tab is JSX, compiled in the browser with Sucrase (`src/viewer/sandboxes/reactPage.ts`), and React 18 + ReactDOM (development builds, so learners see warnings) load from cdnjs. Learners may write Vite-style `import { useState } from "react"` / `import { createRoot } from "react-dom/client"` and `export`; exports land on a global `exports` object, so a check can test `exports.default`. Top-level function components are globals (`typeof App === 'function'`). React renders asynchronously: checks that click must wait a moment (`await new Promise((r) => setTimeout(r, 50))`).
+- Layout checks run at different widths (CI: 1280px; the app: ~330px on a phone, ~800px on a laptop). Make them width-independent: read the CSS rule (`document.styleSheets[0].cssRules`) or compare elements, and give content `min-width: 0` so long words can't widen grid columns.
 - The page is built as `<style>css</style>` + `<body>html<script>js</script></body>`, so learners write body content (a `<title>` in it still counts).
 - Check real structure and computed styles, not raw text, so any correct solution passes.
 - Reference solution in `scripts/web-solutions/<id>.json` (`{ html?, css?, js? }`, missing parts = the starter's). `npm run check:web` (also in CI) runs every check in headless Chrome: the solution must pass all, the starter must fail at least one. Needs Chrome locally, or set `CHROME_PATH`.

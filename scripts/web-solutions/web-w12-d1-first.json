@@ -1,0 +1,3 @@
+{
+  "js": "function Tagline() {\n  return <p>Home-style Nigerian food in Yaba</p>\n}\n\nfunction Welcome() {\n  return (\n    <>\n      <h1>Mama Put Kitchen</h1>\n      <Tagline />\n    </>\n  )\n}\n\nReactDOM.createRoot(document.getElementById(\"root\")).render(<Welcome />)\n"
+}

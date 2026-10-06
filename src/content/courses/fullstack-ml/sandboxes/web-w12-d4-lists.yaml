@@ -1,0 +1,51 @@
+# Week 12 · Day 4 mini-task
+id: web-w12-d4-lists
+kind: web
+react: true
+title: "Lists and keys"
+description: "Render the menu from data with map, filter it by category, and show an empty state. Watch the console for key warnings."
+html: |
+  <div id="root"></div>
+css: |
+  body { font-family: system-ui, sans-serif; padding: 1rem; background: #fff8ef; color: #2b1d16; }
+  .card { background: #fff; border: 2px solid #c0392b; border-radius: 12px; padding: 0.5rem 0.75rem; margin: 0.5rem 0; }
+  .card h3 { margin: 0; font-size: 1rem; }
+  .card p { margin: 0.25rem 0 0; }
+  .sold-out { opacity: 0.5; }
+  .badge { background: #2b1d16; color: #fff; border-radius: 6px; padding: 0 0.4rem; font-size: 0.8rem; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.75rem; }
+js: |
+  const dishes = [
+    { id: 1, name: "Party jollof", price: 3500, category: "Rice" },
+    { id: 2, name: "Fried rice", price: 3500, category: "Rice" },
+    { id: 3, name: "Egusi + pounded yam", price: 4500, category: "Soups" },
+    { id: 4, name: "Pepper soup", price: 3000, category: "Soups" },
+    { id: 5, name: "Fried plantain", price: 1200, category: "Sides" },
+    { id: 6, name: "Moi moi", price: 1000, category: "Sides" },
+  ]
+
+  // 1. AllDishes: a <ul className="all"> with one <li key={dish.id}> per dish: "Party jollof: ₦3,500"
+  // 2. Category({ name }): <section><h2>{name}</h2> + a <ul> of only that category's dish names</section>
+  // 3. App: <AllDishes /> then one <Category> per unique category, in the order they first appear
+  //    (unique categories: [...new Set(dishes.map((d) => d.category))])
+  // 4. Empty state: Category shows <p className="empty">Nothing here today</p> if it has no dishes.
+  //    Test it by adding <Category name="Drinks" /> at the end of App.
+
+  function App() {
+    return <main></main>
+  }
+
+  ReactDOM.createRoot(document.getElementById("root")).render(<App />)
+tasks:
+  - prompt: "ul.all lists all 6 dishes as \"name: \u20a6price\"."
+    check: "[...document.querySelectorAll('#root ul.all li')].map((l) => l.textContent).join('|') === 'Party jollof: \u20a63,500|Fried rice: \u20a63,500|Egusi + pounded yam: \u20a64,500|Pepper soup: \u20a63,000|Fried plantain: \u20a61,200|Moi moi: \u20a61,000'"
+    hint: "{dishes.map((dish) => <li key={dish.id}>{dish.name}: \u20a6{dish.price.toLocaleString()}</li>)}"
+  - prompt: "One section per category, in order: Rice, Soups, Sides (then Drinks)."
+    check: "[...document.querySelectorAll('#root section h2')].map((h) => h.textContent).join() === 'Rice,Soups,Sides,Drinks'"
+  - prompt: "Each category lists only its own dishes."
+    check: "[...document.querySelectorAll('#root section')].slice(0, 3).map((s) => s.querySelectorAll('li').length).join() === '2,2,2' && [...document.querySelectorAll('#root section')][1].textContent.includes('Pepper soup') && ![...document.querySelectorAll('#root section')][0].textContent.includes('Pepper soup')"
+    hint: "const items = dishes.filter((d) => d.category === name)"
+  - prompt: "Drinks shows the empty state, and only Drinks does."
+    check: "[...document.querySelectorAll('#root .empty')].length === 1 && document.querySelector('#root .empty').closest('section').querySelector('h2').textContent === 'Drinks'"
+  - prompt: "No React key warnings in the console."
+    check: "!window.__logs.join(' ').includes('unique \"key\"') && !(window.__errors || []).length && typeof App === 'function'"

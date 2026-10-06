@@ -79,7 +79,8 @@ export type Sandbox =
       tasks?: SheetTask[]
     })
   | (Base & { kind: 'python'; starter?: string; tasks?: PythonTask[] })
-  | (Base & { kind: 'web'; html?: string; css?: string; js?: string; tasks?: WebTask[] })
+  /** react: the JS tab is JSX, compiled in the browser, with React 18 + ReactDOM loaded (see reactPage.ts). */
+  | (Base & { kind: 'web'; react?: boolean; html?: string; css?: string; js?: string; tasks?: WebTask[] })
 
 export class SandboxError extends Error {
   constructor(source: string, message: string) {

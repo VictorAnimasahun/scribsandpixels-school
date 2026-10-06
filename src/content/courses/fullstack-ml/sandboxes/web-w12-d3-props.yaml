@@ -1,0 +1,40 @@
+# Week 12 · Day 3 mini-task
+id: web-w12-d3-props
+kind: web
+react: true
+title: "Props and children"
+description: "One DishCard component used four times with different props, grouped by a Section component that takes children."
+html: |
+  <div id="root"></div>
+css: |
+  body { font-family: system-ui, sans-serif; padding: 1rem; background: #fff8ef; color: #2b1d16; }
+  .card { background: #fff; border: 2px solid #c0392b; border-radius: 12px; padding: 0.5rem 0.75rem; margin: 0.5rem 0; }
+  .card h3 { margin: 0; font-size: 1rem; }
+  .card p { margin: 0.25rem 0 0; }
+  .sold-out { opacity: 0.5; }
+  .badge { background: #2b1d16; color: #fff; border-radius: 6px; padding: 0 0.4rem; font-size: 0.8rem; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.75rem; }
+js: |
+  // 1. Write DishCard({ name, price, spicy = false }) that returns:
+  //    <article className="card"><h3>name (+ " 🌶️" when spicy)</h3><p>₦price with commas</p></article>
+  // 2. Write Section({ title, children }) returning <section><h2>{title}</h2>{children}</section>
+  // 3. In Menu, make two Sections:
+  //    "Rice":  Party jollof 3500, Fried rice 3500
+  //    "Soups": Egusi + pounded yam 4500, Pepper soup 3000 (spicy)
+
+  function Menu() {
+    return <main>{/* your Sections and DishCards */}</main>
+  }
+
+  ReactDOM.createRoot(document.getElementById("root")).render(<Menu />)
+tasks:
+  - prompt: "DishCard and Section components exist."
+    check: "typeof DishCard === 'function' && typeof Section === 'function'"
+  - prompt: "Four .card articles with the right names and \u20a6 prices."
+    check: "[...document.querySelectorAll('#root .card')].map((c) => c.querySelector('h3').textContent.replace(' \ud83c\udf36\ufe0f', '') + '=' + c.querySelector('p').textContent).join('|') === 'Party jollof=\u20a63,500|Fried rice=\u20a63,500|Egusi + pounded yam=\u20a64,500|Pepper soup=\u20a63,000'"
+  - prompt: "Only Pepper soup shows the \ud83c\udf36\ufe0f."
+    check: "[...document.querySelectorAll('#root .card')].filter((c) => c.textContent.includes('\ud83c\udf36\ufe0f')).map((c) => c.querySelector('h3').textContent).join() === 'Pepper soup \ud83c\udf36\ufe0f'"
+    hint: "<h3>{name}{spicy && \" \ud83c\udf36\ufe0f\"}</h3>"
+  - prompt: "Two sections titled Rice and Soups, each holding two cards."
+    check: "[...document.querySelectorAll('#root section')].map((s) => s.querySelector('h2')?.textContent + ':' + s.querySelectorAll('.card').length).join() === 'Rice:2,Soups:2'"
+    hint: "<Section title=\"Rice\">\u2026cards\u2026</Section>"

@@ -1,0 +1,3 @@
+{
+  "js": "import { createRoot } from \"react-dom/client\"\n\nexport const restaurant = { name: \"Mama Put Kitchen\", area: \"Yaba\" }\n\nfunction Header() {\n  return (\n    <header>\n      <h1>{restaurant.name}</h1>\n      <p>{restaurant.area}, Lagos</p>\n    </header>\n  )\n}\n\nfunction Footer() {\n  return <footer>© {new Date().getFullYear()} {restaurant.name}</footer>\n}\n\nfunction Layout({ children }) {\n  return (\n    <>\n      <Header />\n      <main>{children}</main>\n      <Footer />\n    </>\n  )\n}\n\nexport default function App() {\n  return (\n    <Layout>\n      <h2>Today's menu</h2>\n    </Layout>\n  )\n}\n\ncreateRoot(document.getElementById(\"root\")).render(<App />)\n"
+}
