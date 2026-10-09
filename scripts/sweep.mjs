@@ -26,9 +26,17 @@ const flag = (where, what) => problems.push(`${where}: ${what}`)
 async function visit(hash) {
   errors = []
   // A fresh load each time (not just a hash change), like opening a link in a new tab.
-  await page.goto('about:blank')
-  await page.goto(base + hash, { waitUntil: 'domcontentloaded' })
-  await page.waitForSelector('main h1, main .lock, main p', { timeout: 15000 })
+  // One retry: a slow response from the host shouldn't end the whole sweep.
+  for (let tries = 1; ; tries++) {
+    await page.goto('about:blank')
+    await page.goto(base + hash, { waitUntil: 'domcontentloaded' })
+    try {
+      await page.waitForSelector('main h1, main .lock, main p', { timeout: 15000 })
+      break
+    } catch (e) {
+      if (tries === 2) { flag(hash, 'never finished loading (twice)'); return { text: '', h1: '', wide: 0, links: [] } }
+    }
+  }
   await page.waitForTimeout(150)
   const info = await page.evaluate(() => ({
     text: document.querySelector('main')?.innerText ?? '',

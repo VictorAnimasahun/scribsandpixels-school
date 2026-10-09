@@ -54,6 +54,8 @@
 ## Product (decisions come from the web chat)
 - [x] UI design built into the test build (9 Oct 2026): Today, day page, course year ledger, week page, checkpoint lock + cooldown, desktop sidebar (`docs/design/`)
 - [ ] UX pass (claude.ai): what the 10-minute version counts for · reading lessons during a cooldown · does a failed checkpoint keep the streak
+- [ ] UX pass (claude.ai), found 9 Oct: ticking a block then unticking it still marks today as a study day, so one tap keeps the streak (`setBlockDone` in `src/viewer/actions.ts`). Decide what counts as a study day (a whole day done? a block still ticked at midnight?)
+- [ ] First React lesson (Week 12 Day 1) downloads React (~300 KB) from cdnjs before the preview runs; on a slow connection it looks frozen. Show "Loading React…" in the preview while it downloads
 - [x] "Need a nudge?" sheet: 10-minute version (`#/c/<slug>/w/<n>/d/<n>/short`) and the note work
 - [ ] "Remind me in an hour" email (shown disabled until accounts + Resend are live)
 - [ ] Daily log form + "Still confusing you" on Today (designed; needs saved logs)
