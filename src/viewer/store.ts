@@ -23,6 +23,10 @@ export type State = {
   startedOn: Record<string, string>
   /** "slug:week" → week-quiz attempts (same record shape as a gate). */
   weekQuizzes: Record<string, GateRecord>
+  /** Local dates ('YYYY-MM-DD') on which at least one block was ticked: the streak is built from these. */
+  studied: Record<string, true>
+  /** The course Today shows; the last one opened. */
+  activeCourse: string | null
 }
 
 const KEY = 'snp-test-state-v1'
@@ -46,6 +50,8 @@ export function sanitise(raw: unknown): State {
     gates: pick(v.gates, isGate),
     startedOn: pick(v.startedOn, (x): x is string => typeof x === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(x)),
     weekQuizzes: pick(v.weekQuizzes, isGate),
+    studied: Object.fromEntries(Object.entries(pick(v.studied, (x): x is true => x === true)).filter(([d]) => /^\d{4}-\d{2}-\d{2}$/.test(d))),
+    activeCourse: typeof v.activeCourse === 'string' && v.activeCourse ? v.activeCourse : null,
   }
 }
 
@@ -86,7 +92,7 @@ export function update(change: (draft: State) => State) {
 }
 
 export function resetProgress() {
-  update((s) => ({ learnerId: s.learnerId, checked: {}, bestScores: {}, gates: {}, startedOn: {}, weekQuizzes: {} }))
+  update((s) => ({ learnerId: s.learnerId, checked: {}, bestScores: {}, gates: {}, startedOn: {}, weekQuizzes: {}, studied: {}, activeCourse: s.activeCourse }))
 }
 
 export function useStore(): State {

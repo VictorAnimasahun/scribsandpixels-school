@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Checkpoint cooldown</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600&amp;family=Public+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap">
+<style>
+body{margin:0;background:#16211D;font-family:'Public Sans',system-ui,sans-serif}
+.serif{font-family:'Literata',Georgia,serif}
+.q{width:22px;height:22px;border-radius:3px}
+.link{display:flex;align-items:center;gap:12px;min-height:56px;padding:0 14px;border-radius:8px;background:#22302A;color:#E6EDE3;text-decoration:none;font-size:15px}
+.link:focus-visible{outline:2px solid #C7E85C;outline-offset:2px}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; display: flex; flex-direction: column; gap: 22px; padding: 18px 20px 24px; background: #16211D; color: #E6EDE3">
+
+<header style="display: flex; flex-direction: column; gap: 8px">
+  <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: #C7E85C">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+    Checkpoint on yesterday
+  </span>
+  <h1 class="serif" style="margin: 0; font-size: 26px; line-height: 1.2; font-weight: 600; color: #F2F5EC">6 of 10. Not quite there.</h1>
+</header>
+
+<div style="display: flex; flex-direction: column; gap: 8px">
+  <div style="display: flex; gap: 6px" aria-label="6 right, 4 wrong">
+    <span class="q" style="background: #C7E85C"></span><span class="q" style="background: #C7E85C"></span><span class="q" style="background: #F08A72"></span><span class="q" style="background: #C7E85C"></span><span class="q" style="background: #C7E85C"></span><span class="q" style="background: #F08A72"></span><span class="q" style="background: #C7E85C"></span><span class="q" style="background: #F08A72"></span><span class="q" style="background: #C7E85C"></span><span class="q" style="background: #F08A72"></span>
+  </div>
+  <span style="font-size: 13px; color: #B8C4B6">You needed 7. Missed: slicing (2), <code style="font-family: 'JetBrains Mono', monospace">in</code> on a list, <code style="font-family: 'JetBrains Mono', monospace">.sort()</code> vs <code style="font-family: 'JetBrains Mono', monospace">sorted()</code></span>
+</div>
+
+<section style="display: flex; flex-direction: column; gap: 6px; padding: 22px 0; border-top: 1px solid #2C3B35; border-bottom: 1px solid #2C3B35">
+  <span style="font-size: 14px; color: #B8C4B6">Next attempt opens in</span>
+  <span class="serif" style="font-size: 64px; line-height: 1; font-weight: 600; color: #F2F5EC; font-variant-numeric: tabular-nums">47:12</span>
+  <span style="font-size: 14px; color: #B8C4B6">At 9:38 pm. Same topics, different questions.</span>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 10px">
+  <strong style="font-size: 16px; color: #F2F5EC">While you wait</strong>
+  <a class="link" href="#">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C7E85C" stroke-width="2" aria-hidden="true"><path d="M2 4h7a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H2z"/><path d="M22 4h-7a3 3 0 0 0-3 3v13a2 2 0 0 1 2-2h8z"/></svg>
+    Reread Tuesday's lesson on slicing
+  </a>
+  <a class="link" href="#">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C7E85C" stroke-width="2" aria-hidden="true"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>
+    Try slices in the Python sandbox
+  </a>
+  <a class="link" href="#">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C7E85C" stroke-width="2" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+    Email me when it opens
+  </a>
+</section>
+
+<p style="margin: auto 0 0; font-size: 13px; line-height: 1.5; color: #8F9C92">Your streak is safe. A checkpoint attempt counts as showing up today.</p>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

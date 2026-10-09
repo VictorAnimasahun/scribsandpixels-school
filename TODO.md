@@ -52,8 +52,11 @@
 - [ ] Add `course.ts` frameworks for French and Excel (only `overview.md` today)
 
 ## Product (decisions come from the web chat)
-- [ ] Final UI/UX design, replacing the test build's plain screens
-- [ ] "Need a nudge?" button (decided 6 Oct: all three): remind me in 1 hour (email) · 10-minute version of today · motivational note
+- [x] UI design built into the test build (9 Oct 2026): Today, day page, course year ledger, week page, checkpoint lock + cooldown, desktop sidebar (`docs/design/`)
+- [ ] UX pass (claude.ai): what the 10-minute version counts for · reading lessons during a cooldown · does a failed checkpoint keep the streak
+- [x] "Need a nudge?" sheet: 10-minute version (`#/c/<slug>/w/<n>/d/<n>/short`) and the note work
+- [ ] "Remind me in an hour" email (shown disabled until accounts + Resend are live)
+- [ ] Daily log form + "Still confusing you" on Today (designed; needs saved logs)
 - [ ] Real accounts and saved progress (today progress lives in the browser only)
 - [ ] Move quiz answers server-side so learners can't read them in the page code
 - [ ] Remove the 🧪 Tester tools for real learners

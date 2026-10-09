@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Today on desktop</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600&amp;family=Public+Sans:wght@400;500;600;700&amp;family=Kalam:wght@400&amp;display=swap">
+<style>
+body{margin:0;background:#F2F5EC;color:#16211D;font-family:'Public Sans',system-ui,sans-serif}
+a{color:#164F3B}a:hover{color:#0E3628}
+.serif{font-family:'Literata',Georgia,serif}
+.hand{font-family:'Kalam','Segoe Print','Bradley Hand',cursive}
+.sheet{background:#FBFCF7 linear-gradient(90deg,transparent 55px,#E9A595 55px,#E9A595 56.5px,transparent 56.5px);border:1px solid #D8E0D2;border-radius:6px}
+.row{display:flex;align-items:center;gap:12px;min-height:60px;border-bottom:1px solid #E1E8DA;padding-right:20px}
+.tick{width:56px;flex:none;display:flex;justify-content:center}
+.box{width:18px;height:18px;border:2px solid #A9B3A4;border-radius:4px;box-sizing:border-box}
+.mins{margin-left:auto;font-size:14px;color:#55615A;flex:none}
+.nav{display:flex;align-items:center;gap:10px;min-height:44px;padding:0 12px;border-radius:6px;color:#3F4B45;text-decoration:none;font-weight:500}
+.nav.on{background:#E1EAD8;color:#164F3B;font-weight:700}
+.nav:focus-visible,.btn:focus-visible,.chip:focus-visible{outline:2px solid #C24A33;outline-offset:2px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border-radius:8px;font:600 16px 'Public Sans',system-ui,sans-serif;border:0;cursor:pointer;text-decoration:none}
+.chip{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 14px;border-radius:999px;border:1px solid #C9D3C2;background:#FBFCF7;color:#16211D;font:500 14px 'Public Sans',system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.px{width:4px;height:4px;background:#D8E0D2}
+.px.done{background:#164F3B}
+.px.today{background:#C7E85C;box-shadow:0 0 0 1px #164F3B}
+.card{display:flex;flex-direction:column;gap:12px;padding:18px;border:1px solid #D8E0D2;border-radius:6px;background:#FBFCF7}
+</style>
+</helmet>
+<div style="display: flex; flex-wrap: wrap; min-height: 900px; background: #F2F5EC">
+
+<nav style="flex: 1 1 220px; max-width: 260px; box-sizing: border-box; padding: 24px 16px; display: flex; flex-direction: column; gap: 4px; border-right: 1px solid #D8E0D2" aria-label="Main">
+  <div style="display: flex; align-items: center; gap: 10px; padding: 0 8px 22px">
+    <span class="serif" style="display: grid; place-items: center; width: 32px; height: 32px; background: #164F3B; color: #C7E85C; font-weight: 600; font-size: 18px; transform: rotate(-6deg); border-radius: 3px">S</span>
+    <span class="serif" style="font-size: 18px; color: #164F3B">Scribs &amp; Pixels</span>
+  </div>
+  <a class="nav on" href="#" aria-current="page">Today</a>
+  <a class="nav" href="#">Course</a>
+  <a class="nav" href="#">Log</a>
+  <a class="nav" href="#">Sandboxes</a>
+  <span style="margin: 22px 12px 6px; font-size: 13px; color: #55615A">Your courses</span>
+  <a class="nav" href="#" style="font-weight: 600; color: #16211D">Fullstack + ML<span style="margin-left: auto; font-size: 12px; color: #55615A">Wk 2</span></a>
+  <a class="nav" href="#">Le français de A à Z</a>
+  <a class="nav" href="#">Excel: Zero to Expert</a>
+</nav>
+
+<main style="flex: 999 1 560px; min-width: 0; box-sizing: border-box; padding: 32px 40px; display: flex; flex-direction: column; gap: 22px; max-width: 720px">
+  <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap">
+    <div style="display: flex; flex-direction: column; gap: 8px; min-width: 0">
+      <p style="margin: 0; color: #55615A; font-size: 15px">Wednesday evening, Victor. Week 2, Day 3 of 6.</p>
+      <h1 class="serif" style="margin: 0; font-size: 40px; line-height: 1.1; font-weight: 600; text-wrap: balance; letter-spacing: -0.01em">Functions: writing reusable blocks of code</h1>
+    </div>
+    <a class="chip" href="Nudge.dc.html">Need a nudge?</a>
+  </div>
+
+  <div class="sheet">
+    <div class="row" style="min-height: 52px"><span class="tick"></span><strong>Tonight's session, about 2½ hours</strong><span class="mins">1 of 5 done</span></div>
+    <div class="row"><span class="tick"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C24A33" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-label="Done"><path d="m4 13 5 5L20 6"/></svg></span><span style="color: #6B766F; text-decoration: line-through; text-decoration-color: #A9B3A4">Review: lists from memory</span><span class="mins">30 min</span></div>
+    <div class="row" style="background: #EEF6D6"><span class="tick"><span class="box" style="border-color: #164F3B; background: #FBFCF7"></span></span><span><strong>Lesson: def, parameters, return</strong><span style="display: block; font-size: 13px; color: #3F4B45">Mosh 2:30:00 to 3:00:00, Corey Schafer, Automate the Boring Stuff ch. 3</span></span><span class="mins" style="color: #3F4B45">45 min</span></div>
+    <div class="row"><span class="tick"><span class="box"></span></span><span>Practice: multiply and is_adult</span><span class="mins">45 min</span></div>
+    <div class="row"><span class="tick"><span class="box"></span></span><span>Mini-task: Naira calculator as a function<span style="display: block; font-size: 13px; color: #55615A">In the Python sandbox, checked automatically</span></span><span class="mins">30 min</span></div>
+    <div class="row" style="border-bottom: 0"><span class="tick"><span class="box"></span></span><span>Log: three questions</span><span class="mins">10 min</span></div>
+    <div style="display: flex; gap: 10px; flex-wrap: wrap; padding: 4px 20px 20px 56px">
+      <a class="btn" href="Lesson.dc.html" style="background: #164F3B; color: #F2F5EC">Continue with the lesson</a>
+      <a class="btn" href="#" style="background: transparent; color: #164F3B; border: 1px solid #C9D3C2">Rapid-fire quiz</a>
+      <a class="btn" href="#" style="background: transparent; color: #164F3B; border: 1px solid #C9D3C2">Brain teaser</a>
+    </div>
+  </div>
+</main>
+
+<aside style="flex: 1 1 360px; min-width: 0; box-sizing: border-box; padding: 32px 32px 32px 16px; display: flex; flex-direction: column; gap: 16px; max-width: 400px">
+  <section class="card">
+    <div style="display: flex; align-items: baseline; gap: 10px">
+      <span class="serif" style="font-size: 40px; font-weight: 600; line-height: 1; color: #164F3B">8</span>
+      <strong>study days in a row</strong>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; text-align: center; font-size: 12px; color: #55615A">
+      <span style="display: flex; flex-direction: column; gap: 4px; align-items: center"><span style="width: 26px; height: 26px; border-radius: 5px; background: #164F3B"></span>M</span>
+      <span style="display: flex; flex-direction: column; gap: 4px; align-items: center"><span style="width: 26px; height: 26px; border-radius: 5px; background: #164F3B"></span>T</span>
+      <span style="display: flex; flex-direction: column; gap: 4px; align-items: center; color: #16211D; font-weight: 700"><span style="width: 26px; height: 26px; border-radius: 5px; background: #C7E85C; box-shadow: inset 0 0 0 2px #164F3B"></span>W</span>
+      <span style="display: flex; flex-direction: column; gap: 4px; align-items: center"><span style="width: 26px; height: 26px; border-radius: 5px; background: #E1E8DA"></span>T</span>
+      <span style="display: flex; flex-direction: column; gap: 4px; align-items: center"><span style="width: 26px; height: 26px; border-radius: 5px; background: #E1E8DA"></span>F</span>
+      <span style="display: flex; flex-direction: column; gap: 4px; align-items: center"><span style="width: 26px; height: 26px; border-radius: 5px; background: #E1E8DA"></span>S</span>
+      <span style="display: flex; flex-direction: column; gap: 4px; align-items: center"><span style="width: 26px; height: 26px; border-radius: 5px; border: 1.5px dashed #A9B3A4; box-sizing: border-box"></span>Rest</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <div style="display: flex; justify-content: space-between; align-items: baseline"><strong>Your year</strong><a href="Year.dc.html" style="font-size: 14px; font-weight: 600">Week 2 of 52</a></div>
+    <div style="display: flex; gap: 1px; overflow: hidden" aria-label="Study days: 8 done of 312">
+      <sc-for list="{{weeks}}" as="w" hint-placeholder-count="52">
+        <div style="display: flex; flex-direction: column; gap: 1px; margin-left: {{w.gap}}">
+          <sc-for list="{{w.days}}" as="d" hint-placeholder-count="6"><span class="{{d.cls}}"></span></sc-for>
+        </div>
+      </sc-for>
+    </div>
+    <p style="margin: 0; font-size: 13px; color: #55615A">Phase 1, Foundations. Milestone: a personal webpage and a Lagos weather script.</p>
+  </section>
+
+  <section class="card">
+    <strong>Still confusing you</strong>
+    <div style="display: flex; flex-direction: column; gap: 4px; padding-bottom: 12px; border-bottom: 1px solid #E1E8DA">
+      <span class="hand" style="font-size: 18px; line-height: 1.3; color: #1F3A8A">why does nums[1:3] stop before index 3??</span>
+      <span style="display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: #55615A">Week 2, Tuesday<button class="chip" type="button" style="min-height: 34px; font-size: 13px">It's clear now</button></span>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 4px">
+      <span class="hand" style="font-size: 18px; line-height: 1.3; color: #1F3A8A">= vs == still mixing them up in if statements</span>
+      <span style="display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: #55615A">Week 1, Thursday<button class="chip" type="button" style="min-height: 34px; font-size: 13px">It's clear now</button></span>
+    </div>
+  </section>
+</aside>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var phaseStarts = [7, 15, 25, 35, 45];
+    var weeks = [];
+    for (var w = 1; w <= 52; w++) {
+      var days = [];
+      for (var d = 1; d <= 6; d++) {
+        var cls = 'px';
+        if (w === 1 || (w === 2 && d < 3)) cls = 'px done';
+        else if (w === 2 && d === 3) cls = 'px today';
+        days.push({ cls: cls });
+      }
+      weeks.push({ days: days, gap: phaseStarts.indexOf(w) >= 0 ? '3px' : '0' });
+    }
+    return { weeks: weeks };
+  }
+}
+</script>
+</body>
+</html>

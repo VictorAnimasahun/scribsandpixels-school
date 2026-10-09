@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Week 2, Wednesday</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600&amp;family=Public+Sans:wght@400;500;600;700&amp;family=Kalam:wght@400&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap">
+<style>
+body{margin:0;background:#F2F5EC;color:#16211D;font-family:'Public Sans',system-ui,sans-serif}
+a{color:#164F3B}a:hover{color:#0E3628}
+.serif{font-family:'Literata',Georgia,serif}
+.mono{font-family:'JetBrains Mono',ui-monospace,monospace}
+.sheet{background:#FBFCF7 linear-gradient(90deg,transparent 47px,#E9A595 47px,#E9A595 48.5px,transparent 48.5px);border:1px solid #D8E0D2;border-radius:6px}
+.head{display:flex;align-items:center;min-height:56px;padding-right:12px;gap:8px}
+.tick{width:48px;flex:none;display:flex;justify-content:center}
+.box{width:18px;height:18px;border:2px solid #A9B3A4;border-radius:4px;box-sizing:border-box}
+.mins{margin-left:auto;font-size:13px;color:#55615A;flex:none}
+.body{padding:0 18px 20px 62px;display:flex;flex-direction:column;gap:14px}
+.prose{font-family:'Literata',Georgia,serif;font-size:17px;line-height:1.6;margin:0}
+.res{display:flex;align-items:center;gap:12px;padding:12px;border:1px solid #D8E0D2;border-radius:6px;background:#F2F5EC;text-decoration:none;color:#16211D}
+.res small{display:block;color:#55615A;font-size:13px;margin-top:2px}
+.code{margin:0;padding:12px 14px;border-radius:6px;background:#173A2E;color:#E6F0DA;font:400 13px/1.6 'JetBrains Mono',ui-monospace,monospace;overflow-x:auto;white-space:pre}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;min-height:48px;border-radius:8px;font:600 16px 'Public Sans',system-ui,sans-serif;text-decoration:none;border:0;cursor:pointer;padding:0 18px}
+.btn:focus-visible,a:focus-visible{outline:2px solid #C24A33;outline-offset:2px}
+.seg{flex:1;height:6px;border-radius:1px;background:#D8E0D2}
+</style>
+</helmet>
+<div style="width: 390px; min-height: 1960px; display: flex; flex-direction: column; gap: 14px; background: #F2F5EC; padding-bottom: 28px">
+
+<header style="position: sticky; top: 0; z-index: 1; background: #F2F5EC; padding: 10px 16px 12px; display: flex; flex-direction: column; gap: 10px; border-bottom: 1px solid #D8E0D2">
+  <div style="display: flex; align-items: center; gap: 8px">
+    <a href="Main.dc.html" style="display: inline-flex; align-items: center; gap: 4px; min-height: 44px; font-weight: 600; text-decoration: none">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>Today
+    </a>
+    <span style="margin-left: auto; font-size: 14px; color: #55615A">Week 2, Wednesday</span>
+  </div>
+  <div style="display: flex; gap: 4px" aria-label="1 of 5 blocks done">
+    <span class="seg" style="background: #164F3B"></span>
+    <span class="seg" style="background: #C7E85C; box-shadow: inset 0 0 0 1px #164F3B"></span>
+    <span class="seg"></span><span class="seg"></span><span class="seg"></span>
+  </div>
+</header>
+
+<section style="padding: 8px 20px 4px; display: flex; flex-direction: column; gap: 8px">
+  <h1 class="serif" style="margin: 0; font-size: 30px; line-height: 1.15; font-weight: 600; text-wrap: balance">Functions: writing reusable blocks of code</h1>
+  <p style="margin: 0; color: #55615A; font-size: 14px">About 2½ hours tonight. Tick each block as you finish it.</p>
+</section>
+
+<article class="sheet" style="margin: 0 16px">
+  <div class="head">
+    <span class="tick"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C24A33" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-label="Done"><path d="m4 13 5 5L20 6"/></svg></span>
+    <span style="color: #6B766F"><strong style="color: #3F4B45">Review</strong>: lists from memory</span>
+    <span class="mins">30 min</span>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#55615A" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+  </div>
+</article>
+
+<article class="sheet" style="margin: 0 16px; border-color: #164F3B">
+  <div class="head">
+    <span class="tick"><span class="box" style="border-color: #164F3B"></span></span>
+    <strong>Lesson</strong>
+    <span class="mins">45 min</span>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#55615A" stroke-width="2" aria-hidden="true"><path d="m18 15-6-6-6 6"/></svg>
+  </div>
+  <div class="body">
+    <a class="res" href="#">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C24A33" stroke-width="1.8" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="m10 9 5 3-5 3z" fill="#C24A33"/></svg>
+      <span><strong style="font-size: 15px">Mosh: Python for Beginners</strong><small>Watch 2:30:00 to 3:00:00, the functions section</small></span>
+    </a>
+    <a class="res" href="#">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C24A33" stroke-width="1.8" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="m10 9 5 3-5 3z" fill="#C24A33"/></svg>
+      <span><strong style="font-size: 15px">Corey Schafer: Python Functions</strong><small>The whole video, 15 min</small></span>
+    </a>
+    <p class="prose">A function is a named block of code you can run whenever you want. You <b>define</b> it once with <code class="mono" style="font-size: 14px">def</code>, then <b>call</b> it as many times as you need. It can take <b>parameters</b> (inputs) and <b>return</b> a value (output).</p>
+    <pre class="code"># Basic shape: study this carefully
+def function_name(parameter):
+    # code goes here
+    return something</pre>
+    <p class="prose">Imagine you wrote 20 lines to check a password. Without a function you copy those 20 lines everywhere. With one, you write it once and call it everywhere.</p>
+    <a class="res" href="#">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#164F3B" stroke-width="1.8" aria-hidden="true"><path d="M2 4h7a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H2z"/><path d="M22 4h-7a3 3 0 0 0-3 3v13a2 2 0 0 1 2-2h8z"/></svg>
+      <span><strong style="font-size: 15px">Automate the Boring Stuff, chapter 3</strong><small>Read the whole chapter</small></span>
+    </a>
+    <button class="btn" type="button" style="background: #164F3B; color: #F2F5EC">Mark the lesson done</button>
+  </div>
+</article>
+
+<article class="sheet" style="margin: 0 16px">
+  <div class="head">
+    <span class="tick"><span class="box"></span></span>
+    <span><strong>Practice</strong>: multiply and is_adult</span>
+    <span class="mins">45 min</span>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#55615A" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+  </div>
+</article>
+
+<article class="sheet" style="margin: 0 16px">
+  <div class="head">
+    <span class="tick"><span class="box"></span></span>
+    <span><strong>Mini-task</strong>: your Naira calculator as a function</span>
+    <span class="mins">30 min</span>
+  </div>
+  <div class="body" style="padding-left: 16px; padding-right: 16px">
+    <p class="prose" style="padding-left: 46px; font-size: 16px">Rewrite last week's calculator as <code class="mono" style="font-size: 14px">convert_to_naira(usd_amount)</code>. Call it three times and print each result.</p>
+    <div style="border: 1px solid #C9D3C2; border-radius: 6px; overflow: hidden; background: #FFFFFF">
+      <div style="display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-bottom: 1px solid #E1E8DA; background: #F2F5EC; font-size: 13px">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#164F3B" stroke-width="2" aria-hidden="true"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>
+        <strong>Python sandbox</strong>
+        <span style="margin-left: auto; color: #55615A">Saved</span>
+      </div>
+      <pre class="mono" style="margin: 0; padding: 10px 12px; font-size: 13px; line-height: 1.7; overflow-x: auto; color: #16211D"><span style="color: #9AA49C">1</span>  <span style="color: #164F3B; font-weight: 600">def</span> convert_to_naira(usd_amount):
+<span style="color: #9AA49C">2</span>      rate = <span style="color: #A1471F">1550</span>
+<span style="color: #9AA49C">3</span>      naira_amount = usd_amount * rate
+<span style="color: #9AA49C">4</span>      <span style="color: #164F3B; font-weight: 600">return</span> naira_amount
+<span style="color: #9AA49C">5</span>
+<span style="color: #9AA49C">6</span>  print(convert_to_naira(<span style="color: #A1471F">20</span>))</pre>
+      <div style="display: flex; gap: 8px; padding: 8px 10px; border-top: 1px solid #E1E8DA">
+        <button class="btn" type="button" style="min-height: 44px; background: #F2F5EC; color: #16211D; border: 1px solid #C9D3C2; font-size: 15px">Run</button>
+        <button class="btn" type="button" style="min-height: 44px; background: #164F3B; color: #F2F5EC; font-size: 15px">Check my code</button>
+      </div>
+      <div style="padding: 10px 12px; border-top: 1px solid #E1E8DA; background: #F7F9F2; display: flex; flex-direction: column; gap: 6px; font-size: 14px">
+        <span style="display: flex; gap: 8px"><span style="color: #164F3B; font-weight: 700">✓</span>convert_to_naira(20) returns 31000</span>
+        <span style="display: flex; gap: 8px"><span style="color: #164F3B; font-weight: 700">✓</span>It returns the number instead of printing it</span>
+        <span style="display: flex; gap: 8px"><span style="color: #C24A33; font-weight: 700">✕</span>Call it three times with different amounts</span>
+      </div>
+    </div>
+  </div>
+</article>
+
+<article class="sheet" style="margin: 0 16px">
+  <div class="head">
+    <span class="tick"><span class="box"></span></span>
+    <span><strong>Log</strong>: three questions</span>
+    <span class="mins">10 min</span>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#55615A" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+  </div>
+</article>
+
+<section style="margin: 10px 20px 0; display: flex; flex-direction: column; gap: 10px">
+  <strong style="font-size: 16px">Tonight's quizzes</strong>
+  <div style="display: flex; align-items: center; gap: 12px; padding: 12px 14px; border: 1px solid #D8E0D2; border-radius: 6px; background: #FBFCF7">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#164F3B" stroke-width="2" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+    <span><strong style="display: block">Rapid-fire</strong><span style="font-size: 13px; color: #55615A">8 questions, 10 s each</span></span>
+    <button class="btn" type="button" style="margin-left: auto; min-height: 40px; font-size: 14px; background: #F2F5EC; border: 1px solid #C9D3C2; color: #16211D">Start</button>
+  </div>
+  <div style="display: flex; align-items: center; gap: 12px; padding: 12px 14px; border: 1px solid #D8E0D2; border-radius: 6px; background: #FBFCF7">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#164F3B" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+    <span><strong style="display: block">Brain teaser</strong><span style="font-size: 13px; color: #55615A">4 questions. Best so far: none</span></span>
+    <button class="btn" type="button" style="margin-left: auto; min-height: 40px; font-size: 14px; background: #F2F5EC; border: 1px solid #C9D3C2; color: #16211D">Start</button>
+  </div>
+</section>
+
+<nav style="margin: 10px 20px 0; display: flex; justify-content: space-between; align-items: center; gap: 12px; font-size: 14px">
+  <a href="#" style="display: inline-flex; align-items: center; gap: 4px; min-height: 44px; font-weight: 600; text-decoration: none"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>Tuesday</a>
+  <span style="color: #55615A; text-align: right">Thursday opens when tonight is done</span>
+</nav>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1960}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

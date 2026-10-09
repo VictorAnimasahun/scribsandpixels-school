@@ -4,7 +4,7 @@ A multi-course online school for adult self-learners with day jobs. Its core ide
 
 ## Workflow
 Open tasks live in `TODO.md`; keep it updated. Test build: https://victoranimasahun.github.io/scribsandpixels-school/ (GitHub Pages, auto-deploys from `main`).
-Brainstorming and UI/UX design happen on claude.ai; final decisions and designs come back here to build. The user works across Claude Code on this Mac and Claude Code on the web (claude.ai/code), so **commit and push finished work to `main`**, otherwise the other side starts from a stale repo.
+Brainstorming and UI/UX design happen on claude.ai; final decisions and designs come back here to build. The current design lives in `docs/design/`. The user works across Claude Code on this Mac and Claude Code on the web (claude.ai/code), so **commit and push finished work to `main`**, otherwise the other side starts from a stale repo.
 
 ## Courses
 1. **12-Month Fullstack + ML** (`fullstack-ml`, first course, in progress). Framework in `src/content/courses/fullstack-ml/course.ts`; written weeks in `weeks/week-NN.md`.
@@ -53,7 +53,7 @@ More courses will follow; nothing may assume a single course. To add one: a new 
 
 ## Current state (as of 2026-10-01)
 - **Done:** content model + Weeks 1–2 + all 52 outlines; domain rules with tests; Supabase schema; API layer; email function.
-- **UI not wired yet:** `src/App.tsx` is still the static dashboard mockup using `src/data/curriculum.ts` (placeholder JS/React modules that don't match the real course; delete it when the UI is rebuilt). The user is designing the UI/UX on claude.ai and will bring it back.
+- **UI (9 Oct 2026):** the claude.ai design is built into the test build. Design source and tokens: `docs/design/` (README + the canvas artboards). Code: `src/viewer/` — `Viewer.tsx` (shell, checkpoint lock, tester tools), `TodayPage.tsx` (Today + "Need a nudge?" sheet), `pages.tsx` (course year ledger, week, day), `ui.tsx` (icons, margin tick, ledger, markdown), `today.ts` (pure: today position, phases, ledger; tested), `actions.ts` (ticking a block records the study date), `viewer.css` (all tokens and styles). Old mockup (`App.tsx`, `src/data/curriculum.ts`) deleted. The UX pass (on claude.ai) still decides: what the 10-minute version counts for, whether lessons stay readable during a cooldown, whether a failed checkpoint counts toward the streak. "Remind me in an hour" is shown disabled until accounts and email are live; the log prompts and "Still confusing you" need the log data that real accounts bring.
 - **Not yet run against a real Supabase project:** no project is linked. The migration was verified in PGlite; `api.ts` and the edge function are type-checked only.
 - Fullstack Weeks 11+ need writing; Phase 2 plan approved (3 Oct 2026): keep the order, milestone = "Mama Put Kitchen", Saturdays of Weeks 11–14 build the milestone. Weeks 11–14 written (6 Oct): Phase 2 complete. Phase 3 (backend, Weeks 15–24) is next, with the production-engineering thread. Week plan: `src/content/courses/fullstack-ml/phase-2-plan.md` (approved; add its outlines to `course.ts` when writing Weeks 11–14). Week 6's weather script uses Open-Meteo (free, no key); sandboxes use saved responses because the browser sandbox has no network.
 

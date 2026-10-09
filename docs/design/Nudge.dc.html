@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Need a nudge?</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&amp;family=Public+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#F2F5EC;font-family:'Public Sans',system-ui,sans-serif;color:#16211D}
+.serif{font-family:'Literata',Georgia,serif}
+.opt{display:flex;align-items:flex-start;gap:14px;width:100%;padding:16px;border:1px solid #D8E0D2;border-radius:8px;background:#FBFCF7;color:#16211D;text-align:left;font:inherit;cursor:pointer;text-decoration:none;box-sizing:border-box}
+.opt:focus-visible,.btn:focus-visible{outline:2px solid #C24A33;outline-offset:2px}
+.opt small{display:block;margin-top:3px;font-size:13px;line-height:1.45;color:#55615A}
+.ico{display:grid;place-items:center;width:40px;height:40px;border-radius:8px;background:#E6EEDD;flex:none}
+.btn{display:flex;align-items:center;justify-content:center;min-height:48px;border-radius:8px;font:600 16px 'Public Sans',system-ui,sans-serif;border:0;cursor:pointer;text-decoration:none}
+</style>
+</helmet>
+<div style="position: relative; width: 390px; height: 844px; overflow: hidden; background: #F2F5EC">
+
+<div aria-hidden="true" style="padding: 26px 20px; display: flex; flex-direction: column; gap: 10px">
+  <p style="margin: 0; color: #55615A; font-size: 15px">Wednesday evening, Victor</p>
+  <p class="serif" style="margin: 0; font-size: 30px; line-height: 1.15; font-weight: 600">Functions: writing reusable blocks of code</p>
+</div>
+<a href="Main.dc.html" aria-label="Close" style="position: absolute; inset: 0; background: rgba(22,33,29,.55)"></a>
+
+<section role="dialog" aria-label="Need a nudge?" style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; flex-direction: column; gap: 12px; padding: 10px 16px 26px; background: #F2F5EC; border-radius: 16px 16px 0 0">
+  <span style="align-self: center; width: 40px; height: 4px; border-radius: 2px; background: #C9D3C2"></span>
+  <div style="display: flex; flex-direction: column; gap: 4px; padding: 4px 4px 2px">
+    <h2 class="serif" style="margin: 0; font-size: 24px; font-weight: 600">Not feeling it tonight?</h2>
+    <p style="margin: 0; font-size: 14px; color: #55615A">Pick what helps. All three keep you moving.</p>
+  </div>
+
+  <button class="opt" type="button">
+    <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#164F3B" stroke-width="2" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2M5 3 2 6M22 6l-3-3"/></svg></span>
+    <span><strong>Remind me in an hour</strong><small>One email at 8:51 pm with a link straight back to tonight's lesson.</small></span>
+  </button>
+
+  <a class="opt" href="Lesson.dc.html">
+    <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#164F3B" stroke-width="2" aria-hidden="true"><path d="M10 2h4M12 14l3-3"/><circle cx="12" cy="14" r="8"/></svg></span>
+    <span><strong>Do the 10-minute version</strong><small>Review plus the mini-task. Keeps your 8-day streak. The rest of Wednesday stays open for tomorrow.</small></span>
+  </a>
+
+  <div class="opt" style="flex-direction: column; gap: 12px; border-color: #164F3B; background: #FBFCF7; cursor: default">
+    <span style="display: flex; gap: 14px; align-items: flex-start">
+      <span class="ico" style="background: #C7E85C"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#164F3B" stroke-width="2" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+      <span><strong>A note for tonight</strong></span>
+    </span>
+    <p class="serif" style="margin: 0; font-size: 17px; line-height: 1.55; font-style: italic; color: #24302B">Tired after a full workday is normal. Week 1 felt this hard too, and you finished all six days of it. Open the lesson and give it ten minutes. You can stop after that.</p>
+    <a class="btn" href="Lesson.dc.html" style="background: #164F3B; color: #F2F5EC">Open the lesson</a>
+  </div>
+</section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

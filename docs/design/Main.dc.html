@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Today</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600&amp;family=Public+Sans:wght@400;500;600;700&amp;family=Kalam:wght@400&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap">
+<style>
+body{margin:0;background:#F2F5EC;color:#16211D;font-family:'Public Sans',system-ui,sans-serif}
+a{color:#164F3B}a:hover{color:#0E3628}
+.serif{font-family:'Literata',Georgia,serif}
+.hand{font-family:'Kalam','Segoe Print','Bradley Hand',cursive}
+.sheet{background:#FBFCF7 linear-gradient(90deg,transparent 47px,#E9A595 47px,#E9A595 48.5px,transparent 48.5px);border:1px solid #D8E0D2;border-radius:6px}
+.row{display:flex;align-items:center;min-height:52px;border-bottom:1px solid #E1E8DA;padding-right:16px}
+.row:last-of-type{border-bottom:0}
+.tick{width:48px;flex:none;display:flex;justify-content:center}
+.px{width:5px;height:5px;background:#D8E0D2}
+.px.done{background:#164F3B}
+.px.today{background:#C7E85C;box-shadow:0 0 0 1px #164F3B}
+.px.rest{background:transparent}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;min-height:48px;border-radius:8px;font:600 16px 'Public Sans',system-ui,sans-serif;text-decoration:none;border:0;cursor:pointer}
+.btn:focus-visible,.chip:focus-visible,a:focus-visible{outline:2px solid #C24A33;outline-offset:2px}
+.chip{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 14px;border-radius:999px;border:1px solid #C9D3C2;background:#FBFCF7;color:#16211D;font:500 14px 'Public Sans',system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:10px 0 12px;color:#55615A;text-decoration:none;font-size:12px;font-weight:500}
+.tab.on{color:#164F3B;font-weight:700}
+</style>
+</helmet>
+<div style="width: 390px; min-height: 1320px; display: flex; flex-direction: column; background: #F2F5EC">
+
+<header style="display: flex; align-items: center; gap: 10px; padding: 14px 16px 6px">
+  <span class="serif" style="display: grid; place-items: center; width: 32px; height: 32px; background: #164F3B; color: #C7E85C; font-weight: 600; font-size: 18px; transform: rotate(-6deg); border-radius: 3px">S</span>
+  <button class="chip" type="button" style="border-color: transparent; background: transparent; padding: 0 8px">
+    Fullstack + ML
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+  </button>
+  <span style="margin-left: auto; display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: #E6A15A; color: #16211D; font-weight: 700; font-size: 13px">VA</span>
+</header>
+
+<section style="padding: 12px 20px 18px; display: flex; flex-direction: column; gap: 10px">
+  <p style="margin: 0; color: #55615A; font-size: 15px">Wednesday evening, Victor</p>
+  <h1 class="serif" style="margin: 0; font-size: 30px; line-height: 1.15; font-weight: 600; text-wrap: balance; letter-spacing: -0.01em">Functions: writing reusable blocks of code</h1>
+  <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap">
+    <p style="margin: 0; color: #55615A; font-size: 14px">Week 2, Day 3 of 6. About 2½ hours.</p>
+    <a class="chip" href="Nudge.dc.html">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+      Need a nudge?
+    </a>
+  </div>
+</section>
+
+<section style="margin: 0 16px">
+  <div class="sheet">
+    <div class="row" style="min-height: 46px">
+      <span class="tick"></span>
+      <strong style="font-size: 15px">Tonight's session</strong>
+      <span style="margin-left: auto; font-size: 13px; color: #55615A; font-variant-numeric: tabular-nums">1 of 5 done</span>
+    </div>
+    <div class="row">
+      <span class="tick"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C24A33" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-label="Done"><path d="m4 13 5 5L20 6"/></svg></span>
+      <span style="color: #6B766F; text-decoration: line-through; text-decoration-color: #A9B3A4">Review: lists from memory</span>
+      <span style="margin-left: auto; font-size: 13px; color: #6B766F">30 min</span>
+    </div>
+    <div class="row" style="background: #EEF6D6">
+      <span class="tick"><span style="width: 18px; height: 18px; border: 2px solid #164F3B; border-radius: 4px; background: #FBFCF7"></span></span>
+      <span style="display: flex; flex-direction: column; gap: 2px; padding: 8px 0"><strong>Lesson: def, parameters, return</strong><span style="font-size: 13px; color: #3F4B45">You're here</span></span>
+      <span style="margin-left: auto; font-size: 13px; color: #3F4B45">45 min</span>
+    </div>
+    <div class="row">
+      <span class="tick"><span style="width: 18px; height: 18px; border: 2px solid #A9B3A4; border-radius: 4px"></span></span>
+      <span>Practice: multiply and is_adult</span>
+      <span style="margin-left: auto; font-size: 13px; color: #55615A">45 min</span>
+    </div>
+    <div class="row">
+      <span class="tick"><span style="width: 18px; height: 18px; border: 2px solid #A9B3A4; border-radius: 4px"></span></span>
+      <span style="display: flex; flex-direction: column; gap: 2px; padding: 8px 0"><span>Mini-task: Naira calculator as a function</span><span style="font-size: 13px; color: #55615A">In the Python sandbox</span></span>
+      <span style="margin-left: auto; font-size: 13px; color: #55615A">30 min</span>
+    </div>
+    <div class="row">
+      <span class="tick"><span style="width: 18px; height: 18px; border: 2px solid #A9B3A4; border-radius: 4px"></span></span>
+      <span>Log: three questions</span>
+      <span style="margin-left: auto; font-size: 13px; color: #55615A">10 min</span>
+    </div>
+    <div style="padding: 14px 16px 16px 48px">
+      <a class="btn" href="Lesson.dc.html" style="background: #164F3B; color: #F2F5EC">Continue with the lesson</a>
+    </div>
+  </div>
+</section>
+
+<section style="margin: 14px 16px 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+  <a href="Lesson.dc.html" style="display: flex; flex-direction: column; gap: 4px; padding: 14px; border-radius: 6px; background: #FBFCF7; border: 1px solid #D8E0D2; text-decoration: none; color: #16211D">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#164F3B" stroke-width="2" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+    <strong style="font-size: 15px">Rapid-fire</strong>
+    <span style="font-size: 13px; color: #55615A">8 questions, 10 s each</span>
+  </a>
+  <a href="Lesson.dc.html" style="display: flex; flex-direction: column; gap: 4px; padding: 14px; border-radius: 6px; background: #FBFCF7; border: 1px solid #D8E0D2; text-decoration: none; color: #16211D">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#164F3B" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+    <strong style="font-size: 15px">Brain teaser</strong>
+    <span style="font-size: 13px; color: #55615A">4 questions, untimed</span>
+  </a>
+</section>
+
+<section style="margin: 28px 20px 0; display: flex; flex-direction: column; gap: 14px">
+  <div style="display: flex; align-items: baseline; gap: 10px">
+    <span class="serif" style="font-size: 44px; font-weight: 600; line-height: 1; color: #164F3B; font-variant-numeric: tabular-nums">8</span>
+    <span style="font-size: 16px; font-weight: 600">study days in a row</span>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; text-align: center; font-size: 12px; color: #55615A">
+    <div style="display: flex; flex-direction: column; gap: 4px; align-items: center"><span style="width: 34px; height: 34px; border-radius: 6px; background: #164F3B"></span>Mon</div>
+    <div style="display: flex; flex-direction: column; gap: 4px; align-items: center"><span style="width: 34px; height: 34px; border-radius: 6px; background: #164F3B"></span>Tue</div>
+    <div style="display: flex; flex-direction: column; gap: 4px; align-items: center; color: #16211D; font-weight: 700"><span style="width: 34px; height: 34px; border-radius: 6px; background: #C7E85C; box-shadow: inset 0 0 0 2px #164F3B"></span>Wed</div>
+    <div style="display: flex; flex-direction: column; gap: 4px; align-items: center"><span style="width: 34px; height: 34px; border-radius: 6px; background: #E1E8DA"></span>Thu</div>
+    <div style="display: flex; flex-direction: column; gap: 4px; align-items: center"><span style="width: 34px; height: 34px; border-radius: 6px; background: #E1E8DA"></span>Fri</div>
+    <div style="display: flex; flex-direction: column; gap: 4px; align-items: center"><span style="width: 34px; height: 34px; border-radius: 6px; background: #E1E8DA"></span>Sat</div>
+    <div style="display: flex; flex-direction: column; gap: 4px; align-items: center"><span style="width: 34px; height: 34px; border-radius: 6px; border: 1.5px dashed #A9B3A4; box-sizing: border-box"></span>Rest</div>
+  </div>
+  <p style="margin: 0; font-size: 14px; color: #3F4B45">Finish tonight's session to make it 9. Sunday is for your weekly review and never breaks the chain.</p>
+</section>
+
+<section style="margin: 28px 20px 0; display: flex; flex-direction: column; gap: 10px">
+  <div style="display: flex; align-items: baseline; justify-content: space-between">
+    <strong style="font-size: 16px">Your year</strong>
+    <a href="#" style="font-size: 14px; font-weight: 600">Week 2 of 52</a>
+  </div>
+  <div style="display: flex; gap: 1px" aria-label="Study days: 8 done of 312">
+    <sc-for list="{{weeks}}" as="w" hint-placeholder-count="52">
+      <div style="display: flex; flex-direction: column; gap: 1px; margin-left: {{w.gap}}">
+        <sc-for list="{{w.days}}" as="d" hint-placeholder-count="6">
+          <span class="{{d.cls}}"></span>
+        </sc-for>
+      </div>
+    </sc-for>
+  </div>
+  <p style="margin: 0; font-size: 13px; color: #55615A">One square per study day, grouped by phase. You're in Foundations. Its milestone is a personal webpage and a script that prints today's weather in Lagos.</p>
+</section>
+
+<section style="margin: 28px 16px 0">
+  <div class="sheet" style="padding-bottom: 6px">
+    <div class="row" style="min-height: 46px">
+      <span class="tick"></span>
+      <strong style="font-size: 15px">Still confusing you</strong>
+      <span style="margin-left: auto; font-size: 13px; color: #55615A">from your logs</span>
+    </div>
+    <div class="row" style="align-items: flex-start; padding-top: 10px; padding-bottom: 10px; gap: 8px">
+      <span class="tick" style="padding-top: 4px"><span style="width: 8px; height: 8px; border-radius: 50%; background: #C24A33"></span></span>
+      <span style="display: flex; flex-direction: column; gap: 4px; min-width: 0">
+        <span class="hand" style="font-size: 18px; line-height: 1.3; color: #1F3A8A">why does nums[1:3] stop before index 3??</span>
+        <span style="font-size: 12px; color: #55615A">Week 2, Tuesday</span>
+      </span>
+      <button class="chip" type="button" style="margin-left: auto; min-height: 36px; font-size: 13px; flex: none">It's clear now</button>
+    </div>
+    <div class="row" style="align-items: flex-start; padding-top: 10px; padding-bottom: 10px; gap: 8px">
+      <span class="tick" style="padding-top: 4px"><span style="width: 8px; height: 8px; border-radius: 50%; background: #C24A33"></span></span>
+      <span style="display: flex; flex-direction: column; gap: 4px; min-width: 0">
+        <span class="hand" style="font-size: 18px; line-height: 1.3; color: #1F3A8A">= vs == still mixing them up in if statements</span>
+        <span style="font-size: 12px; color: #55615A">Week 1, Thursday</span>
+      </span>
+      <button class="chip" type="button" style="margin-left: auto; min-height: 36px; font-size: 13px; flex: none">It's clear now</button>
+    </div>
+  </div>
+</section>
+
+<nav style="margin-top: auto; position: sticky; bottom: 0; display: flex; background: #FBFCF7; border-top: 1px solid #D8E0D2" aria-label="Main">
+  <a class="tab on" href="Main.dc.html" aria-current="page"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg>Today</a>
+  <a class="tab" href="Year.dc.html"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>Course</a>
+  <a class="tab" href="#"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>Log</a>
+  <a class="tab" href="#"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>Me</a>
+</nav>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1320}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var phaseStarts = [7, 15, 25, 35, 45];
+    var weeks = [];
+    for (var w = 1; w <= 52; w++) {
+      var days = [];
+      for (var d = 1; d <= 6; d++) {
+        var cls = 'px';
+        if (w === 1 || (w === 2 && d < 3)) cls = 'px done';
+        else if (w === 2 && d === 3) cls = 'px today';
+        days.push({ cls: cls });
+      }
+      weeks.push({ days: days, gap: phaseStarts.indexOf(w) >= 0 ? '3px' : '0' });
+    }
+    return { weeks: weeks };
+  }
+}
+</script>
+</body>
+</html>

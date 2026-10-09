@@ -1,54 +1,24 @@
-import { marked } from 'marked'
-import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react'
-import App from '../App.tsx'
-import { catalog, findCourse, loadQuizWeek, quizVersion, quizWeek, quizWeekFailed, quizWeekSettled, subscribeQuizzes, type CatalogCourse } from '../content/catalog.ts'
+import { useEffect, useRef, useState } from 'react'
+import { catalog, findCourse, quizWeek, quizWeekSettled } from '../content/catalog.ts'
 import { DEFAULT_QUIZ_RULES, type Question } from '../content/quizzes.ts'
-import { drawAttempt, drawWeekQuiz, gateDaysForWeek, gateStatus, seededRandom, WEEK_QUIZ_RULES } from '../domain/quizGate.ts'
-import { courseStartMonday, dayKey as progressKey, pace, type Pace } from '../domain/progress.ts'
-import { addDays, localDate, weekday } from '../domain/streak.ts'
+import { drawAttempt, gateDaysForWeek, gateStatus, seededRandom } from '../domain/quizGate.ts'
 import { ErrorBoundary } from './ErrorBoundary.tsx'
-import { foldAnswers } from './foldAnswers.ts'
+import { CoursePage, DayPage, WeekPage } from './pages.tsx'
 import { QuizPlayer } from './QuizPlayer.tsx'
 import { SandboxHost } from './sandboxes/SandboxHost.tsx'
-import { sandboxes, SANDBOX_EMBED } from '../content/sandboxes.ts'
-import { href, useRoute } from './router.ts'
+import { href, useRoute, type Route } from './router.ts'
 import { dayKey, resetProgress, update, useStore, type State } from './store.ts'
+import { TodayPage } from './TodayPage.tsx'
+import { activeCourseOf, shortTitle } from './today.ts'
+import { Icon } from './ui.tsx'
+import { formatLeft, useNow } from './useNow.ts'
+import { useQuizWeek, useQuizzesLoaded } from './useQuizWeek.ts'
 import './viewer.css'
-
-function Html({ text }: { text: string }) {
-  const html = useMemo(() => (marked.parse(text, { async: false }) as string).replace(/<a href=/g, '<a target="_blank" rel="noreferrer" href='), [text])
-  return <div className="md" dangerouslySetInnerHTML={{ __html: html }} />
-}
-
-/** Markdown where a line `::sandbox <id>` becomes a live sandbox. */
-function Markdown({ text }: { text: string }) {
-  const parts: ({ md: string } | { sandbox: string })[] = []
-  let buffer: string[] = []
-  for (const line of foldAnswers(text).split('\n')) {
-    const m = line.match(SANDBOX_EMBED)
-    if (m) {
-      parts.push({ md: buffer.join('\n') }, { sandbox: m[1] })
-      buffer = []
-    } else buffer.push(line)
-  }
-  parts.push({ md: buffer.join('\n') })
-  return <>{parts.map((p, i) => ('sandbox' in p ? <SandboxHost key={i} id={p.sandbox} compact /> : p.md.trim() ? <Html key={i} text={p.md} /> : null))}</>
-}
 
 // ─── Gate lock ────────────────────────────────────────────────────────────
 
 const gateQuiz = (slug: string, week: number, day: number) =>
   quizWeek(slug, week)?.days.find((d) => d.day === day)?.gate
-
-/** Re-render when a week's quiz bank finishes downloading. */
-const useQuizzesLoaded = () => useSyncExternalStore(subscribeQuizzes, quizVersion)
-
-/** The week's quiz bank, downloading it the first time it's needed. */
-function useQuizWeek(slug: string, week: number) {
-  useQuizzesLoaded()
-  useEffect(() => { void loadQuizWeek(slug, week) }, [slug, week])
-  return { quiz: quizWeek(slug, week), settled: quizWeekSettled(slug, week), failed: quizWeekFailed(slug, week) }
-}
 
 /** The first gate that has popped up and hasn't been passed. It locks the whole app.
  *  A gate whose quiz no longer exists (renamed content, an edited save) is ignored, never a dead lock. */
@@ -65,14 +35,7 @@ function pendingGate(state: State) {
   return null
 }
 
-function useNow(everyMs: number) {
-  const [now, setNow] = useState(() => Date.now())
-  useEffect(() => {
-    const t = setInterval(() => setNow(Date.now()), everyMs)
-    return () => clearInterval(t)
-  }, [everyMs])
-  return now
-}
+const pct = (score: number) => `${Math.round(score * 100)}%`
 
 function GateLock({ pending, onPassed }: { pending: NonNullable<ReturnType<typeof pendingGate>>; onPassed: (score: number) => void }) {
   const now = useNow(1000)
@@ -83,13 +46,15 @@ function GateLock({ pending, onPassed }: { pending: NonNullable<ReturnType<typeo
   // The attempt in progress: its questions are drawn once, when it starts.
   const [attempt, setAttempt] = useState<{ no: number; questions: Question[]; failed?: boolean } | null>(null)
   const startedRef = useRef(false)
+  const passMark = pct(DEFAULT_QUIZ_RULES.passMark)
 
   if (!quiz) return (
-    <div className="lock"><div className="lock-card">
+    <div className="lock">
+      <p className="lock-label"><Icon name="lock" size={16} />Checkpoint</p>
       {failed
-        ? <><p><b>The checkpoint couldn't load.</b></p><p className="muted small">Check your connection, then reload. It stays locked until it's passed.</p><button className="primary" onClick={() => window.location.reload()}>Reload</button></>
-        : <p className="muted">Loading checkpoint…</p>}
-    </div></div>
+        ? <><h1>The checkpoint couldn't load</h1><p className="lock-text">Check your connection, then reload. The school stays locked until it's passed.</p><button type="button" className="btn lime" onClick={() => window.location.reload()}>Reload</button></>
+        : <p className="lock-text">Loading checkpoint…</p>}
+    </div>
   )
 
   const start = () => {
@@ -128,343 +93,50 @@ function GateLock({ pending, onPassed }: { pending: NonNullable<ReturnType<typeo
     else setAttempt((a) => (a ? { ...a, failed: true } : a))
   }
 
+  const last = pending.gate.attempts.at(-1)
+  const total = quiz.blueprint.easy + quiz.blueprint.medium + quiz.blueprint.hard
+  const until = status.kind === 'cooldown' ? status.until : null
+
   return (
     <div className="lock">
-      <div className="lock-card">
-        <p className="eyebrow">🔒 CHECKPOINT · {course?.title}</p>
-        <h2>{quiz.title}</h2>
-        <p className="muted">Covers: {quiz.covers}. Everything stays locked until you score {Math.round(DEFAULT_QUIZ_RULES.passMark * 100)}%.</p>
-        {attempt ? (
-          <>
+      <p className="lock-label"><Icon name="lock" size={16} />Checkpoint{course ? `: ${shortTitle(course.title)}` : ''}</p>
+      {attempt ? (
+        <>
+          <h1>{quiz.title}</h1>
+          <div className="lock-card">
             <QuizPlayer
               key={attempt.no}
-              title={`Checkpoint · attempt ${attempt.no}`}
+              title={`Attempt ${attempt.no}`}
               questions={attempt.questions}
-              passNote={`Pass mark ${Math.round(DEFAULT_QUIZ_RULES.passMark * 100)}%`}
+              passNote={`Pass mark ${passMark}`}
               onDone={finish}
             />
             {attempt.failed
-              ? <button className="primary" onClick={() => { startedRef.current = false; setAttempt(null) }}>Continue</button>
-              : <p className="muted small">Leaving or reloading before the end counts as a failed attempt.</p>}
-          </>
-        ) : status.kind === 'cooldown' ? (
-          <div className="cooldown">
-            <p>You didn't pass. Rest, review, and try again in</p>
-            <p className="big">{formatLeft(status.until.getTime() - now)}</p>
-            <p className="muted">Your next attempt covers the same topics with different questions.</p>
+              ? <button type="button" className="btn primary" onClick={() => { startedRef.current = false; setAttempt(null) }}>Continue</button>
+              : <p className="small muted-2">Leaving or reloading before the end counts as a failed attempt.</p>}
           </div>
-        ) : (
-          <button className="primary big-btn" onClick={start}>Start checkpoint ({quiz.blueprint.easy + quiz.blueprint.medium + quiz.blueprint.hard} questions)</button>
-        )}
-        {pending.gate.attempts.length > 0 && !attempt && (
-          <p className="muted small">Previous attempts: {pending.gate.attempts.map((a) => `${Math.round(a.score * 100)}%`).join(', ')}</p>
-        )}
-      </div>
+        </>
+      ) : until ? (
+        <>
+          <h1>{last ? `${pct(last.score)}. Not quite there.` : 'Not quite there.'}</h1>
+          <p className="lock-text">You needed {passMark}. It covered {quiz.covers}.</p>
+          <div className="countdown">
+            <span className="lock-text">Next attempt opens in</span>
+            <span className="count num">{formatLeft(until.getTime() - now)}</span>
+            <span className="lock-text">At {until.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' })}. Same topics, different questions.</span>
+          </div>
+        </>
+      ) : (
+        <>
+          <h1>{quiz.title}</h1>
+          <p className="lock-text">A quick check on the previous day: {quiz.covers}. Score {passMark} to open the school again. Leaving before the end counts as an attempt.</p>
+          <button type="button" className="btn lime big" onClick={start}>Start the checkpoint ({total} questions)</button>
+          {pending.gate.attempts.length > 0 && (
+            <p className="lock-text small">Earlier attempts: {pending.gate.attempts.map((a) => pct(a.score)).join(', ')}</p>
+          )}
+        </>
+      )}
     </div>
-  )
-}
-
-function formatLeft(ms: number) {
-  const s = Math.max(0, Math.floor(ms / 1000))
-  return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`
-}
-
-// ─── Calendar pacing (test build) ─────────────────────────────────────────
-
-const browserZone = () => Intl.DateTimeFormat().resolvedOptions().timeZone || 'Africa/Lagos'
-const todayLocal = () => localDate(new Date(), browserZone())
-const WEEKDAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
-const prettyDate = (iso: string) => `${WEEKDAYS[weekday(iso)]} ${Number(iso.slice(8, 10))} ${new Date(`${iso}T00:00:00Z`).toLocaleString('en-GB', { month: 'short', timeZone: 'UTC' })}`
-
-/** The test build's progress in the domain's shape: a day is done when all its blocks are ticked. */
-function learnerProgress(course: CatalogCourse, state: State) {
-  const completedDays = new Set<string>()
-  for (const w of course.weeks)
-    for (const d of w.days)
-      if (d.blocks.length && d.blocks.every((b) => state.checked[`${dayKey(course.slug, w.number, d.number)}:${b.key}`])) completedDays.add(progressKey(w.number, d.number))
-  const passedWeeks = new Set(
-    Object.entries(state.weekQuizzes)
-      .filter(([k, r]) => k.startsWith(`${course.slug}:`) && r.attempts.some((a) => a.passed))
-      .map(([k]) => Number(k.split(':')[1])),
-  )
-  return { completedDays, passedWeeks }
-}
-
-function coursePace(course: CatalogCourse, state: State): Pace | null {
-  const started = state.startedOn[course.slug]
-  return started ? pace(course, learnerProgress(course, state), started, todayLocal()) : null
-}
-
-function CalendarPanel({ course }: { course: CatalogCourse }) {
-  const state = useStore()
-  const started = state.startedOn[course.slug]
-  const setStart = (date: string) => update((s) => ({ ...s, startedOn: { ...s.startedOn, [course.slug]: date } }))
-  const nextMonday = courseStartMonday(addDays(todayLocal(), 1))
-  if (!started) {
-    return (
-      <section className="block calendar">
-        <h3>📅 Your schedule</h3>
-        <p className="muted small">Each date has its lesson: Monday is Day 1, Saturday Day 6, Sunday is rest and review. Missed days stay owed until you catch up.</p>
-        <button className="primary" onClick={() => setStart(nextMonday)}>Start on {prettyDate(nextMonday)}</button>
-      </section>
-    )
-  }
-  const p = coursePace(course, state)!
-  const s = p.scheduled
-  const first = p.behind[0]
-  return (
-    <section className="block calendar">
-      <h3>📅 Your schedule</h3>
-      <p>
-        {s.kind === 'not-started' && <>Starts on <b>{prettyDate(s.startsOn)}</b>.</>}
-        {s.kind === 'day' && <>Today the calendar says <a href={href.day(course.slug, s.week, s.day)}><b>Week {s.week}, Day {s.day}</b></a>.</>}
-        {s.kind === 'review' && <>Sunday: rest, and the <b>Week {s.week}</b> review.</>}
-        {s.kind === 'ended' && <>The scheduled course has ended.</>}
-      </p>
-      {p.behind.length === 0 && p.quizzesOverdue.length === 0 && s.kind !== 'not-started'
-        ? <p className="ok-line">✓ On track</p>
-        : null}
-      {p.behind.length > 0 && (
-        <p className="behind">You're <b>{p.behind.length} study day{p.behind.length === 1 ? '' : 's'} behind</b>. Catch up in order, starting with <a href={href.day(course.slug, first.week, first.day)}>Week {first.week}, Day {first.day}</a>.</p>
-      )}
-      {p.quizzesOverdue.length > 0 && <p className="behind">Week quiz overdue: {p.quizzesOverdue.map((w) => <a key={w} href={href.week(course.slug, w)}> Week {w}</a>)}</p>}
-      <p className="muted small">Started {prettyDate(courseStartMonday(started))}. <button className="link" onClick={() => { if (confirm(`Re-plan so Day 1 is Monday ${prettyDate(nextMonday)}? Ticked days stay ticked.`)) setStart(nextMonday) }}>Re-plan from next Monday</button></p>
-    </section>
-  )
-}
-
-function WeekQuiz({ course, week }: { course: CatalogCourse; week: number }) {
-  const state = useStore()
-  const now = useNow(1000)
-  const { quiz: bank, failed } = useQuizWeek(course.slug, week)
-  const key = `${course.slug}:${week}`
-  const record = state.weekQuizzes[key] ?? { triggeredAt: 0, attempts: [], seen: [] }
-  const status = gateStatus(record.attempts.map((a) => ({ finishedAt: new Date(a.finishedAt), passed: a.passed })), new Date(now), WEEK_QUIZ_RULES)
-  const [attempt, setAttempt] = useState<{ no: number; questions: Question[] } | null>(null)
-  if (failed) return <p className="muted">The week quiz couldn't load. <button className="link" onClick={() => window.location.reload()}>Reload</button></p>
-  if (!bank) return <p className="muted">Loading the week quiz…</p>
-  const best = Math.max(0, ...record.attempts.map((a) => a.score))
-  const start = () => {
-    const questions = drawWeekQuiz(bank, record.seen, seededRandom(Date.now() % 1_000_000_007))
-    update((s) => {
-      const r = s.weekQuizzes[key] ?? { triggeredAt: Date.now(), attempts: [], seen: [] }
-      return { ...s, weekQuizzes: { ...s.weekQuizzes, [key]: { ...r, seen: [...r.seen.filter((id) => !questions.some((q) => q.id === id)), ...questions.map((q) => q.id)] } } }
-    })
-    setAttempt({ no: record.attempts.length + 1, questions })
-  }
-  const finish = (result: { passed: boolean; score: number }) =>
-    update((s) => {
-      const r = s.weekQuizzes[key] ?? { triggeredAt: Date.now(), attempts: [], seen: [] }
-      return { ...s, weekQuizzes: { ...s.weekQuizzes, [key]: { ...r, attempts: [...r.attempts, { finishedAt: Date.now(), passed: result.passed, score: result.score }] } } }
-    })
-  return (
-    <section className="block quiz-card">
-      <header>
-        <h3>📝 Week {week} quiz</h3>
-        <span className="muted">15 questions from this week · {Math.round(WEEK_QUIZ_RULES.passMark * 100)}% to pass{record.attempts.length ? ` · best ${Math.round(best * 100)}%` : ''}</span>
-      </header>
-      {status.kind === 'passed' && !attempt && <p className="ok-line">✓ Passed. Week {week + 1} is open.</p>}
-      {attempt ? (
-        <>
-          <QuizPlayer key={attempt.no} title={`Week ${week} quiz · attempt ${attempt.no}`} questions={attempt.questions} rules={WEEK_QUIZ_RULES} passNote={`Pass mark ${Math.round(WEEK_QUIZ_RULES.passMark * 100)}%`} onDone={finish} />
-          <button className="link" onClick={() => setAttempt(null)}>Close</button>
-        </>
-      ) : status.kind === 'cooldown' ? (
-        <p>Not passed yet. Review the week, then try again in <b>{formatLeft(status.until.getTime() - now)}</b> (new questions).</p>
-      ) : status.kind !== 'passed' ? (
-        <button className="primary" onClick={start}>{record.attempts.length ? 'Retake the week quiz' : 'Start the week quiz'}</button>
-      ) : null}
-    </section>
-  )
-}
-
-// ─── Pages ────────────────────────────────────────────────────────────────
-
-function NotFound({ what, course }: { what: string; course: CatalogCourse }) {
-  return (
-    <>
-      <p className="crumbs"><a href={href.home()}>Courses</a> / <a href={href.course(course.slug)}>{course.title}</a></p>
-      <h1>{what} isn't here</h1>
-      <p className="muted">It may not be written yet, or the link is wrong.</p>
-      <p><a href={href.course(course.slug)}>See the weeks of {course.title} →</a></p>
-    </>
-  )
-}
-
-function Home() {
-  return (
-    <>
-      <h1>Scribs &amp; Pixels School</h1>
-      <p className="muted">Test build: all content is loaded from the repo; your progress is saved in this browser only.</p>
-      <div className="cards">
-        {catalog.map((c) => (
-          <a key={c.slug} className="card" href={href.course(c.slug)}>
-            <strong>{c.title}</strong>
-            <span>{c.weeks.length} weeks written · quizzes for {c.quizWeeks.size} week{c.quizWeeks.size === 1 ? '' : 's'}</span>
-          </a>
-        ))}
-      </div>
-    </>
-  )
-}
-
-function CoursePage({ course }: { course: CatalogCourse }) {
-  const [showOverview, setShowOverview] = useState(false)
-  return (
-    <>
-      <p className="crumbs"><a href={href.home()}>Courses</a></p>
-      <h1>{course.title}</h1>
-      <CalendarPanel course={course} />
-      {course.overview && (
-        <>
-          <button onClick={() => setShowOverview(!showOverview)}>{showOverview ? 'Hide' : 'Show'} course overview</button>
-          {showOverview && <Markdown text={course.overview.replace(/^# .+\n/, '')} />}
-        </>
-      )}
-      {sandboxes.some((x) => x.course === course.slug && x.main) && (
-        <>
-          <h3>🧪 Sandboxes</h3>
-          <div className="cards">
-            {sandboxes.filter((x) => x.course === course.slug && x.main).map((x) => (
-              <a key={x.id} className="card" href={href.sandbox(course.slug, x.id)}>
-                <strong>{x.title}</strong>
-                <span>{x.description}</span>
-              </a>
-            ))}
-          </div>
-          <h3>Weeks</h3>
-        </>
-      )}
-      <div className="list">
-        {course.weeks.map((w) => (
-          <a key={w.number} className="list-item" href={href.week(course.slug, w.number)}>
-            <span className="num">{w.number}</span>
-            <span><strong>{w.title}</strong><small>{w.theme}</small></span>
-            {course.quizWeeks.has(w.number) ? <span className="tag">quizzes</span> : <span className="tag off">no quizzes yet</span>}
-          </a>
-        ))}
-      </div>
-    </>
-  )
-}
-
-function WeekPage({ course, week }: { course: CatalogCourse; week: number }) {
-  const state = useStore()
-  const w = course.weeks.find((x) => x.number === week)
-  if (!w) return <NotFound what={`Week ${week}`} course={course} />
-  const hasQuizzes = course.quizWeeks.has(week)
-  return (
-    <>
-      <p className="crumbs"><a href={href.home()}>Courses</a> / <a href={href.course(course.slug)}>{course.title}</a></p>
-      <h1>Week {w.number}: {w.title}</h1>
-      <p><b>Theme:</b> {w.theme}</p>
-      <p><i>{w.bigQuestion}</i></p>
-      <h3>Resources</h3>
-      <ul className="resources">
-        {w.resources.map((r) => <li key={r.title}>{r.url ? <a href={r.url} target="_blank" rel="noreferrer">{r.title}</a> : r.title}{r.note ? `: ${r.note}` : ''}</li>)}
-      </ul>
-      <h3>Days</h3>
-      <div className="list">
-        {w.days.map((d) => {
-          const done = d.blocks.filter((b) => state.checked[`${dayKey(course.slug, week, d.number)}:${b.key}`]).length
-          return (
-            <a key={d.number} className="list-item" href={href.day(course.slug, week, d.number)}>
-              <span className="num">{d.number}</span>
-              <span><strong>{d.weekday}</strong><small>{d.topic}</small></span>
-              <span className="tag">{done}/{d.blocks.length} blocks</span>
-            </a>
-          )
-        })}
-      </div>
-      {!hasQuizzes && <p className="muted">Quizzes for this week haven't been written yet.</p>}
-      {hasQuizzes && <WeekQuiz course={course} week={week} />}
-      <h3>{hasQuizzes ? 'Review questions (answer from memory first)' : 'Week quiz'}</h3>
-      <ol>{w.quiz.map((q) => <li key={q.id}><Markdown text={q.prompt} /></li>)}</ol>
-      {w.quizNote && <Markdown text={w.quizNote} />}
-    </>
-  )
-}
-
-function DayPage({ course, week, day }: { course: CatalogCourse; week: number; day: number }) {
-  const state = useStore()
-  const w = course.weeks.find((x) => x.number === week)
-  const d = w?.days.find((x) => x.number === day)
-  const { quiz: quizBank, settled: quizzesSettled, failed: quizzesFailed } = useQuizWeek(course.slug, week)
-  const quizDay = quizBank?.days.find((x) => x.day === day)
-  const key = dayKey(course.slug, week, day)
-  const [active, setActive] = useState<number | null>(null)
-
-  // Random checkpoint: pops up on this learner's gate days for the week.
-  useEffect(() => {
-    if (!quizDay?.gate || state.gates[key]) return
-    if (gateDaysForWeek(state.learnerId, course.slug, week).includes(day)) {
-      update((s) => ({ ...s, gates: { ...s.gates, [key]: { triggeredAt: Date.now(), attempts: [], seen: [] } } }))
-    }
-  }, [key, quizDay, state.gates, state.learnerId, course.slug, week, day])
-
-  if (!w || !d) return <NotFound what={`Week ${week}, Day ${day}`} course={course} />
-  const prev = day > 1 ? href.day(course.slug, week, day - 1) : week > 1 ? href.week(course.slug, week - 1) : null
-  const hasNextWeek = course.weeks.some((x) => x.number === week + 1)
-  const next = day < w.days.length ? href.day(course.slug, week, day + 1) : hasNextWeek ? href.week(course.slug, week + 1) : null
-
-  return (
-    <>
-      <p className="crumbs"><a href={href.home()}>Courses</a> / <a href={href.course(course.slug)}>{course.title}</a> / <a href={href.week(course.slug, week)}>Week {week}</a></p>
-      <h1>Day {d.number}: {d.weekday}</h1>
-      <p className="topic">{d.topic} · ~{d.hours} h</p>
-      {d.blocks.map((b) => {
-        const k = `${key}:${b.key}`
-        const done = !!state.checked[k]
-        return (
-          <section key={b.key} className={`block ${done ? 'done' : ''}`}>
-            <header>
-              <h3>{b.title}{b.minutes ? <small> · {b.minutes} min</small> : null}</h3>
-              <label className="done-toggle">
-                <input type="checkbox" checked={done} onChange={() => update((s) => {
-                  const checked = { ...s.checked }
-                  if (done) delete checked[k]
-                  else checked[k] = true
-                  return { ...s, checked }
-                })} /> Done
-              </label>
-            </header>
-            <Markdown text={b.body} />
-          </section>
-        )
-      })}
-
-      <h2>Today's quizzes</h2>
-      {!quizDay && (quizzesFailed
-        ? <p className="muted">Today's quizzes couldn't load. <button className="link" onClick={() => window.location.reload()}>Reload</button></p>
-        : <p className="muted">{quizzesSettled ? "Quizzes for this week haven't been written yet." : 'Loading quizzes…'}</p>)}
-      {quizDay?.quizzes.map((quiz, i) => {
-        const scoreKey = `${key}:quiz${i}`
-        const best = state.bestScores[scoreKey]
-        return (
-          <section key={i} className="block quiz-card">
-            <header>
-              <h3>{quiz.kind === 'rapid-fire' ? '⚡ ' : '🧠 '}{quiz.title}</h3>
-              <span className="muted">{quiz.questions.length} questions{quiz.secondsPerQuestion ? ` · ${quiz.secondsPerQuestion}s each` : ''}{best !== undefined ? ` · best ${Math.round(best * 100)}%` : ''}</span>
-            </header>
-            {active === i ? (
-              <QuizPlayer
-                title={quiz.title}
-                questions={quiz.questions}
-                secondsPerQuestion={quiz.secondsPerQuestion}
-                onDone={(result) => update((s) => ({ ...s, bestScores: { ...s.bestScores, [scoreKey]: Math.max(result.score, s.bestScores[scoreKey] ?? 0) } }))}
-              />
-            ) : (
-              <button className="primary" onClick={() => setActive(i)}>{best === undefined ? 'Start' : 'Retake'}</button>
-            )}
-          </section>
-        )
-      })}
-
-      <nav className="pager">
-        {prev ? <a href={prev}>← Previous</a> : <span />}
-        {next ? <a href={next}>Next →</a> : <a href={href.course(course.slug)}>Back to the course</a>}
-      </nav>
-    </>
   )
 }
 
@@ -474,26 +146,29 @@ function TesterTools() {
   const state = useStore()
   const route = useRoute()
   const [open, setOpen] = useState(false)
+  const [confirmReset, setConfirmReset] = useState(false)
   const pending = pendingGate(state)
   const gateDays = route.page === 'week' || route.page === 'day' ? gateDaysForWeek(state.learnerId, route.slug, route.week) : null
   return (
     <div className={`tester ${open ? 'open' : ''}`}>
-      <button onClick={() => setOpen(!open)} aria-label="Tester tools" title="Tester tools">{open ? '✕ Close' : '🧪'}</button>
+      <button type="button" onClick={() => { setOpen(!open); setConfirmReset(false) }} aria-label="Tester tools" title="Tester tools">{open ? 'Close' : '🧪'}</button>
       {open && (
         <div className="tester-body">
           {gateDays && <p>Your random checkpoint days this week: <b>{gateDays.map((d) => `Day ${d}`).join(' & ')}</b></p>}
           {route.page === 'day' && (
-            <button onClick={() => { setOpen(false); update((s) => ({ ...s, gates: { ...s.gates, [dayKey(route.slug, route.week, route.day)]: { triggeredAt: Date.now(), attempts: [], seen: [] } } })) }}>Force checkpoint on this day</button>
+            <button type="button" onClick={() => { setOpen(false); update((s) => ({ ...s, gates: { ...s.gates, [dayKey(route.slug, route.week, route.day)]: { triggeredAt: Date.now(), attempts: [], seen: [] } } })) }}>Force checkpoint on this day</button>
           )}
           {pending && (
-            <button onClick={() => update((s) => {
+            <button type="button" onClick={() => update((s) => {
               setOpen(false)
               const g = s.gates[pending.key]
               return { ...s, gates: { ...s.gates, [pending.key]: { ...g, attempts: g.attempts.map((a) => ({ ...a, finishedAt: 0 })) } } }
             })}>End cooldown now</button>
           )}
-          <button onClick={() => { if (confirm('Reset all progress in this browser?')) { setOpen(false); resetProgress() } }}>Reset my progress</button>
-          <p className="muted small">Only for testing. Real learners won't see this panel.</p>
+          {confirmReset
+            ? <button type="button" className="danger" onClick={() => { setOpen(false); setConfirmReset(false); resetProgress() }}>Yes, reset all progress in this browser</button>
+            : <button type="button" onClick={() => setConfirmReset(true)}>Reset my progress</button>}
+          <p className="small muted-2">Only for testing. Real learners won't see this panel.</p>
         </div>
       )}
     </div>
@@ -501,6 +176,29 @@ function TesterTools() {
 }
 
 // ─── App shell ─────────────────────────────────────────────────────────────
+
+function Navigation({ route, activeSlug }: { route: Route; activeSlug: string }) {
+  const onToday = route.page === 'home'
+  const onCourse = !onToday && route.page !== 'sandbox'
+  return (
+    <>
+      <nav className="sidebar" aria-label="Main">
+        <a className="brand" href={href.home()}><span className="brand-mark">S</span>Scribs &amp; Pixels</a>
+        <a className={`side-link ${onToday ? 'on' : ''}`} href={href.home()} aria-current={onToday ? 'page' : undefined}><Icon name="today" />Today</a>
+        <a className={`side-link ${onCourse ? 'on' : ''}`} href={href.course(activeSlug)} aria-current={onCourse ? 'page' : undefined}><Icon name="course" />Course</a>
+        <p className="side-label">Your courses</p>
+        {catalog.map((c) => (
+          <a key={c.slug} className={`side-link course ${c.slug === activeSlug ? 'active' : ''}`} href={href.course(c.slug)}>{shortTitle(c.title)}</a>
+        ))}
+        <p className="side-foot">Test build: progress is saved in this browser only.</p>
+      </nav>
+      <nav className="tabbar" aria-label="Main">
+        <a className={onToday ? 'on' : ''} href={href.home()} aria-current={onToday ? 'page' : undefined}><Icon name="today" size={22} />Today</a>
+        <a className={onCourse ? 'on' : ''} href={href.course(activeSlug)} aria-current={onCourse ? 'page' : undefined}><Icon name="course" size={22} />Course</a>
+      </nav>
+    </>
+  )
+}
 
 export function Viewer() {
   const route = useRoute()
@@ -510,33 +208,47 @@ export function Viewer() {
   const [passedScore, setPassedScore] = useState<number | null>(null)
   useEffect(() => { window.scrollTo(0, 0) }, [route])
 
-  if (route.page === 'mockup') return <App />
-
   const course = route.page !== 'home' ? findCourse(route.slug) : undefined
+  // Opening a course page makes it the course Today shows.
+  useEffect(() => {
+    if (course && state.activeCourse !== course.slug) update((s) => ({ ...s, activeCourse: course.slug }))
+  }, [course, state.activeCourse])
+  const activeSlug = course?.slug ?? activeCourseOf(state).slug
+
   let page
-  if (route.page === 'home' || !course) page = <Home />
+  if (route.page === 'home' || !course) page = <TodayPage />
   else if (route.page === 'course') page = <CoursePage course={course} />
   else if (route.page === 'week') page = <WeekPage course={course} week={route.week} />
   else if (route.page === 'sandbox') page = (
-    <>
-      <p className="crumbs"><a href={href.home()}>Courses</a> / <a href={href.course(course.slug)}>{course.title}</a></p>
+    <div className="page">
+      <a className="back" href={href.course(course.slug)}><Icon name="back" size={18} />{shortTitle(course.title)}</a>
       <SandboxHost id={route.id} />
-    </>
+    </div>
   )
-  else page = <DayPage key={`${route.week}-${route.day}`} course={course} week={route.week} day={route.day} />
+  else page = <DayPage key={`${route.week}-${route.day}`} course={course} week={route.week} day={route.day} short={route.short} />
+
+  if (pending) {
+    return (
+      <div className="locked-shell">
+        <main>
+          <ErrorBoundary label="page" resetKey={window.location.hash}>
+            <GateLock key={pending.key} pending={pending} onPassed={setPassedScore} />
+          </ErrorBoundary>
+        </main>
+        <TesterTools />
+      </div>
+    )
+  }
 
   return (
-    <div className="viewer">
-      <header className="topbar-v">
-        <a href={href.home()} className="brand-v">S <span>scribs&amp;pixels</span></a>
-        <span className="muted small">test build</span>
-      </header>
-      <main>
-        {passedScore !== null && !pending && (
-          <p className="banner pass" role="status">✅ Checkpoint passed with {Math.round(passedScore * 100)}%. The school is unlocked. <button className="link" onClick={() => setPassedScore(null)}>Dismiss</button></p>
+    <div className="shell">
+      <Navigation route={route} activeSlug={activeSlug} />
+      <main className="content">
+        {passedScore !== null && (
+          <p className="banner pass" role="status">Checkpoint passed with {pct(passedScore)}. The school is open again. <button type="button" className="link" onClick={() => setPassedScore(null)}>Dismiss</button></p>
         )}
         <ErrorBoundary label="page" resetKey={window.location.hash}>
-          {pending ? <GateLock key={pending.key} pending={pending} onPassed={setPassedScore} /> : page}
+          {page}
         </ErrorBoundary>
       </main>
       <TesterTools />

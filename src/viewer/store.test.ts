@@ -26,4 +26,10 @@ describe('sanitise saved progress', () => {
     expect(s.bestScores).toEqual({ a: 0.8 })
     expect(Object.keys(s.gates)).toEqual(['french:2:3'])
   })
+  it('keeps only real dates in the study record', () => {
+    const s = sanitise({ studied: { '2026-10-07': true, '2026-10-08': 'yes', yesterday: true }, activeCourse: 'french' })
+    expect(s.studied).toEqual({ '2026-10-07': true })
+    expect(s.activeCourse).toBe('french')
+    expect(sanitise({ activeCourse: 4 }).activeCourse).toBeNull()
+  })
 })

@@ -1,5 +1,6 @@
-:root { font-family: 'Trebuchet MS', 'Avenir Next', sans-serif; color: #17211e; background: #f4f5ef; font-synthesis: none; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+/* Base reset. The design tokens and every component style live in src/viewer/viewer.css. */
 * { box-sizing: border-box; }
-body { margin: 0; min-width: 320px; }
-button, a { font: inherit; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; min-width: 320px; font-synthesis: none; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+button, a, input, select, textarea { font: inherit; }
 button { cursor: pointer; }
