@@ -58,9 +58,10 @@ More courses will follow; nothing may assume a single course. To add one: a new 
 - Fullstack Weeks 11+ need writing; Phase 2 plan approved (3 Oct 2026): keep the order, milestone = "Mama Put Kitchen", Saturdays of Weeks 11–14 build the milestone. Weeks 11–14 written (6 Oct): Phase 2 complete. Phase 3 (backend, Weeks 15–24) is next, with the production-engineering thread. Week plan: `src/content/courses/fullstack-ml/phase-2-plan.md` (approved; add its outlines to `course.ts` when writing Weeks 11–14). Week 6's weather script uses Open-Meteo (free, no key); sandboxes use saved responses because the browser sandbox has no network.
 
 ## Setup still needed (user)
-1. Create a Supabase project → run the migration (`supabase link` + `supabase db push`, or paste into the SQL editor) → put the URL + publishable key in `.env.local`.
+Run the Supabase CLI with `npx supabase …` (the npm package; Homebrew fails on this Mac because its Command Line Tools are outdated).
+1. Create a Supabase project → run the migration (`npx supabase link` + `npx supabase db push`, or paste into the SQL editor) → put the URL + publishable key in `.env.local`.
 2. Resend: verify a sending domain, create an API key. Optionally set Resend as Supabase Auth's SMTP so magic-link emails come from the school too.
-3. Deploy the function: `supabase secrets set RESEND_API_KEY=… EMAIL_FROM="Scribs & Pixels <school@domain>" APP_URL=https://school.scribsandpixels.com CRON_SECRET=…` then `supabase functions deploy send-nudges --no-verify-jwt`, then run `supabase/setup/schedule-nudges.sql`.
+3. Deploy the function: `npx supabase secrets set RESEND_API_KEY=… EMAIL_FROM="Scribs & Pixels <school@domain>" APP_URL=https://school.scribsandpixels.com CRON_SECRET=…` then `npx supabase functions deploy send-nudges --no-verify-jwt`, then run `supabase/setup/schedule-nudges.sql`.
 
 ## Decisions (9 Oct 2026: school rules R1–R5)
 - R1 pacing: calendar-based (above). R2 week quiz: auto-marked, 80% (above). R3 streak: keep (Mon–Sat, Sunday rest). R5 writing weeks: keep (Claude writes and verifies each week here, a slice at a time).

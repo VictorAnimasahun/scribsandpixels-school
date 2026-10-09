@@ -293,17 +293,19 @@ Build it, replacing the test screens. Keep all content, quizzes and sandboxes wo
       <li>Go to <code>supabase.com</code> → <b>Start your project</b> → <b>Continue with GitHub</b>.</li>
       <li><b>New project</b>. Name: <code>scribsandpixels-school</code>. Region: <b>West EU (London)</b> or <b>Central EU (Frankfurt)</b>, the closest to Lagos. Plan: <b>Free</b>.</li>
       <li>Database Password: click <b>Generate a password</b> → save it in your password manager as <span class="kw">SECRET</span> "Supabase DB password" → <b>Create new project</b>. Wait about 2 minutes.</li>
-      <li>Open the Terminal and install the Supabase tool (one time only):
-<pre>brew install supabase/tap/supabase</pre>
-          <span class="kw">IF</span> it says <code>brew: command not found</code> → stop and send that error to Claude (Homebrew needs installing first).</li>
+      <li>Open the Terminal and check the Supabase tool runs. Nothing to install: <code>npx</code> (part of Node, already on the Mac) fetches it the first time, which takes about a minute.
+<pre>cd ~/Desktop/scribsandpixels-school
+npx supabase --version</pre>
+          It prints a version number such as <code>2.120.0</code>. If it asks <code>Ok to proceed? (y)</code>, type <code>y</code> and press Enter.<br>
+          Every Supabase command below starts with <code>npx</code>. Don't use <code>brew install supabase</code>: on this Mac it fails with "Command Line Tools are too outdated".</li>
       <li>Log in from the Terminal (a browser window opens; approve it):
-<pre>supabase login</pre></li>
+<pre>npx supabase login</pre></li>
       <li>In Supabase: <b>Project Settings</b> (gear icon) → <b>General</b> → copy <b>Project ID</b> (the "project ref", 20 letters).</li>
       <li>In the Terminal, go to the project and link it (paste your ref; type the DB password when asked):
 <pre>cd ~/Desktop/scribsandpixels-school
-supabase link --project-ref &lt;PROJECT_REF&gt;</pre></li>
+npx supabase link --project-ref &lt;PROJECT_REF&gt;</pre></li>
       <li>Create all the tables (this runs the migration file Claude wrote):
-<pre>supabase db push</pre>
+<pre>npx supabase db push</pre>
           When asked <code>Do you want to push these migrations?</code> type <code>Y</code> and press Enter.</li>
       <li>In Supabase: <b>Table Editor</b>. You should see tables including <code>profiles</code>, <code>enrollments</code> and <code>quiz_attempts</code>.</li>
       <li>In Supabase: <b>Project Settings → API</b> (or <b>API Keys</b>). Copy the <b>Project URL</b> and the <b>anon / publishable</b> key. Both are safe for the browser.</li>
@@ -321,7 +323,7 @@ open -e .env.local</pre>
     </ol>
     <div class="box stop"><b>NEVER copy the <code>service_role</code> key</b> anywhere except the password manager. It bypasses all security. If it ever leaks: Supabase → API settings → roll (regenerate) it.</div>
     <div class="box ok"><b>EXPECTED OUTPUT:</b> The tables are visible in the Table Editor, and <code>.env.local</code> holds two real values.</div>
-    <div class="box stop"><b>ON ERROR:</b> If <code>supabase db push</code> prints red text → copy the whole Terminal output (⌘A, ⌘C) → send it to Claude. Don't run it again repeatedly.</div>
+    <div class="box stop"><b>ON ERROR:</b> If <code>npx supabase db push</code> prints red text → copy the whole Terminal output (⌘A, ⌘C) → send it to Claude. Don't run it again repeatedly.</div>
   </div>
 </section>
 
@@ -365,9 +367,9 @@ open -e .env.local</pre>
 <pre>openssl rand -hex 32</pre></li>
       <li>Set the four secrets. Paste this as <b>one</b> command after filling in the four placeholders; keep the quotes:
 <pre>cd ~/Desktop/scribsandpixels-school
-supabase secrets set RESEND_API_KEY="&lt;re_...&gt;" EMAIL_FROM="Scribs &amp; Pixels &lt;school@scribsandpixels.com&gt;" APP_URL="https://school.scribsandpixels.com" CRON_SECRET="&lt;from step 1&gt;"</pre></li>
+npx supabase secrets set RESEND_API_KEY="&lt;re_...&gt;" EMAIL_FROM="Scribs &amp; Pixels &lt;school@scribsandpixels.com&gt;" APP_URL="https://school.scribsandpixels.com" CRON_SECRET="&lt;from step 1&gt;"</pre></li>
       <li>Upload the email function:
-<pre>supabase functions deploy send-nudges --no-verify-jwt</pre></li>
+<pre>npx supabase functions deploy send-nudges --no-verify-jwt</pre></li>
       <li>Do a safe dry run, which shows what <i>would</i> be sent without sending anything (replace both placeholders):
 <pre>curl -s -X POST "https://&lt;PROJECT_REF&gt;.supabase.co/functions/v1/send-nudges?dry-run" -H "Authorization: Bearer &lt;CRON_SECRET&gt;"</pre>
           <span class="kw">IF</span> it prints JSON (even an empty list) → continue. <span class="kw">ELSE IF</span> it says <code>Unauthorized</code> → the CRON_SECRET doesn't match step 2; redo step 2.</li>
