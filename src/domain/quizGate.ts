@@ -1,4 +1,4 @@
-import { DEFAULT_QUIZ_RULES, type Blueprint, type Difficulty, type Question, type QuizRules } from '../content/quizzes.ts'
+import { DEFAULT_QUIZ_RULES, type Blueprint, type Difficulty, type Question, type QuizRules, type QuizWeek } from '../content/quizzes.ts'
 
 /*
  * Gate quizzes: a pop-up quiz that blocks the day until passed. They appear
@@ -154,3 +154,25 @@ export function gateStatus(attempts: GateAttempt[], now: Date, rules: QuizRules 
 
 /** The dashboard and all learning materials unlock only when today's gate is passed. */
 export const isLocked = (status: GateStatus) => status.kind !== 'passed'
+
+// ─── Week quiz (decided 9 Oct 2026: auto-marked, 80% to pass) ─────────────
+
+export const WEEK_QUIZ_RULES: QuizRules = { ...DEFAULT_QUIZ_RULES, passMark: 0.8 }
+
+/** Per day: two medium questions and one hard. */
+const WEEK_QUIZ_BLUEPRINT: Blueprint = { easy: 0, medium: 2, hard: 1 }
+
+/**
+ * The end-of-week quiz, drawn from the week's own checkpoint banks. Day N's bank tests Day N−1,
+ * so Days 2–6 cover the week's lessons (Day 1's bank reviews the previous week and is skipped):
+ * 5 days × 3 = 15 questions. Retries draw unseen questions first, like checkpoints.
+ */
+export function drawWeekQuiz(week: QuizWeek, seenOldestFirst: string[], random: () => number): Question[] {
+  return week.days
+    .filter((d) => d.day >= 2 && d.gate)
+    .sort((a, b) => a.day - b.day)
+    .flatMap((d) => drawAttempt(d.gate!.bank, WEEK_QUIZ_BLUEPRINT, seenOldestFirst, random))
+}
+
+export const gradeWeekQuiz = (questions: Question[], responses: Record<string, Response | undefined>): Result =>
+  gradeAttempt(questions, responses, WEEK_QUIZ_RULES)

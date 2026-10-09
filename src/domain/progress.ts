@@ -1,8 +1,12 @@
 import type { Course, Day, Week } from '../content/types.ts'
+import { addDays, weekday, type IsoDate } from './streak.ts'
 
 /*
- * Pacing is progress-based: "today" is the learner's next unfinished day, not
- * a calendar date. A week's quiz must be passed before the next week opens.
+ * Pacing is calendar-based (decided 9 Oct 2026): from the course's start Monday, every date has
+ * its lesson (Mon = Day 1 … Sat = Day 6, Sunday = the weekly review). `pace` says where the
+ * calendar is and which scheduled days are still undone ("behind"); missed days must be caught
+ * up in order, because a week's quiz must be passed before the next week opens.
+ * `currentPosition` is the next thing to do (the first unfinished day), which is where catching up starts.
  */
 
 export type LearnerProgress = {
@@ -70,7 +74,70 @@ export type QuizAnswer = {
 
 export type QuizResult = { score: number; total: number; passed: boolean }
 
-/** The plan's rule: "If you can answer all of them, you passed." */
+// ─── Calendar pacing ──────────────────────────────────────────────────────
+
+/** A course starts on the first Monday on or after enrolment, so Day 1 is always a Monday. */
+export function courseStartMonday(startedOn: IsoDate): IsoDate {
+  const wd = weekday(startedOn) // 0 = Sunday
+  return addDays(startedOn, wd === 1 ? 0 : (8 - wd) % 7)
+}
+
+const daysBetween = (from: IsoDate, to: IsoDate) =>
+  Math.round((Date.parse(`${to}T00:00:00Z`) - Date.parse(`${from}T00:00:00Z`)) / 86_400_000)
+
+export type Scheduled =
+  | { kind: 'not-started'; startsOn: IsoDate }
+  | { kind: 'day'; week: number; day: number }
+  /** Sunday: rest and the weekly review of `week`. */
+  | { kind: 'review'; week: number }
+  | { kind: 'ended' }
+
+/** What the calendar says `today` is in the course. */
+export function scheduledFor(totalWeeks: number, startedOn: IsoDate, today: IsoDate): Scheduled {
+  const start = courseStartMonday(startedOn)
+  const elapsed = daysBetween(start, today)
+  if (elapsed < 0) return { kind: 'not-started', startsOn: start }
+  const week = Math.floor(elapsed / 7) + 1
+  if (week > totalWeeks) return { kind: 'ended' }
+  const offset = elapsed % 7 // 0 = Monday … 6 = Sunday
+  return offset === 6 ? { kind: 'review', week } : { kind: 'day', week, day: offset + 1 }
+}
+
+export type Pace = {
+  scheduled: Scheduled
+  /** Scheduled study days before today that aren't done, oldest first (only written weeks count). */
+  behind: { week: number; day: number }[]
+  /** Weeks whose Sunday has passed without the quiz being passed. */
+  quizzesOverdue: number[]
+}
+
+export function pace(course: Pick<Course, 'totalWeeks' | 'weeks'>, progress: LearnerProgress, startedOn: IsoDate, today: IsoDate): Pace {
+  const scheduled = scheduledFor(course.totalWeeks, startedOn, today)
+  const behind: Pace['behind'] = []
+  const quizzesOverdue: number[] = []
+  if (scheduled.kind === 'not-started') return { scheduled, behind, quizzesOverdue }
+  // How far the calendar has got: every day strictly before today is due.
+  const lastWeek = scheduled.kind === 'ended' ? course.totalWeeks : scheduled.week
+  for (let number = 1; number <= lastWeek; number++) {
+    if (progress.passedWeeks.has(number)) continue
+    const week = course.weeks.find((w) => w.number === number)
+    if (!week) continue
+    const isCurrent = scheduled.kind !== 'ended' && number === scheduled.week
+    const dueDays = isCurrent ? (scheduled.kind === 'day' ? scheduled.day - 1 : 6) : 6
+    for (const d of week.days) {
+      if (d.number <= dueDays && !progress.completedDays.has(dayKey(number, d.number))) behind.push({ week: number, day: d.number })
+    }
+    // A week's quiz is due by its Sunday; overdue once that Sunday is over.
+    if (!isCurrent) quizzesOverdue.push(number)
+  }
+  return { scheduled, behind, quizzesOverdue }
+}
+
+// ─── Week quiz ────────────────────────────────────────────────────────────
+// Weeks with a quiz bank use the auto-marked quiz (drawWeekQuiz / gradeWeekQuiz in quizGate.ts,
+// 80% to pass, decided 9 Oct 2026). gradeQuiz below is the fallback for weeks without a bank.
+
+/** Self-marked fallback: "If you can answer all of them, you passed." */
 export function gradeQuiz(week: Week, answers: QuizAnswer[]): QuizResult {
   const byId = new Map(answers.map((a) => [a.questionId, a]))
   const score = week.quiz.filter((q) => {

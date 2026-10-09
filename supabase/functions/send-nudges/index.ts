@@ -11,7 +11,7 @@
 import { createClient } from 'npm:@supabase/supabase-js@2'
 import coursesJson from '../_shared/courses.json' with { type: 'json' }
 import type { Course } from '../_shared/src/content/types.ts'
-import { currentPosition, dayKey, type Position } from '../_shared/src/domain/progress.ts'
+import { currentPosition, dayKey, pace, type Position } from '../_shared/src/domain/progress.ts'
 import { addDays, localDate, streak, studyDatesFrom, weekday } from '../_shared/src/domain/streak.ts'
 
 const courses = coursesJson as unknown as Course[]
@@ -66,7 +66,7 @@ async function buildEmail(profile: Profile, now: Date): Promise<Email | null> {
   const name = profile.display_name ?? 'there'
 
   const [enrollments, days, quizzes] = await Promise.all([
-    supabase.from('enrollments').select('course_slug').eq('user_id', profile.id).eq('status', 'active'),
+    supabase.from('enrollments').select('course_slug, started_on').eq('user_id', profile.id).eq('status', 'active'),
     supabase.from('day_progress').select('course_slug, week, day, completed_at').eq('user_id', profile.id),
     supabase.from('quiz_attempts').select('course_slug, week').eq('user_id', profile.id).eq('passed', true),
   ])
@@ -74,18 +74,22 @@ async function buildEmail(profile: Profile, now: Date): Promise<Email | null> {
 
   const dates = studyDatesFrom(days.data!.map((d) => new Date(d.completed_at)), profile.timezone)
   const { current } = streak(dates, today)
-  const next = enrollments.data!.flatMap(({ course_slug }) => {
+  const next = enrollments.data!.flatMap(({ course_slug, started_on }) => {
     const course = courses.find((c) => c.slug === course_slug)
     if (!course) return []
-    const position = currentPosition(course, {
+    const progress = {
       completedDays: new Set(days.data!.filter((d) => d.course_slug === course_slug).map((d) => dayKey(d.week, d.day))),
       passedWeeks: new Set(quizzes.data!.filter((q) => q.course_slug === course_slug).map((q) => q.week)),
-    })
-    return [{ course, ...describe(course, position) }]
+    }
+    // Calendar pacing: missed days are owed, oldest first, before today's.
+    const { behind } = pace(course, progress, started_on, today)
+    return [{ course, behind: behind.length, ...describe(course, currentPosition(course, progress)) }]
   })
   if (!next.length) return null
 
-  const nextLines = next.map((n) => `<strong>${escape(n.headline)}</strong><br>${escape(n.detail)}`)
+  const nextLines = next.map((n) =>
+    `<strong>${escape(n.headline)}</strong><br>${escape(n.detail)}` +
+    (n.behind ? `<br><em>You're ${n.behind} study day${n.behind === 1 ? '' : 's'} behind in ${escape(n.course.title)}. Catch up in order, starting with this one.</em>` : ''))
 
   if (!isSunday) {
     if (dates.has(today)) return null // already showed up today

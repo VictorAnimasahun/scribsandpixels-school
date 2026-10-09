@@ -19,6 +19,10 @@ export type State = {
   /** Best score (0–1) per quiz key. */
   bestScores: Record<string, number>
   gates: Record<string, GateRecord>
+  /** Course slug → enrolment date (calendar pacing starts the following Monday). */
+  startedOn: Record<string, string>
+  /** "slug:week" → week-quiz attempts (same record shape as a gate). */
+  weekQuizzes: Record<string, GateRecord>
 }
 
 const KEY = 'snp-test-state-v1'
@@ -40,6 +44,8 @@ export function sanitise(raw: unknown): State {
     checked: pick(v.checked, (x): x is true => x === true),
     bestScores: pick(v.bestScores, (x): x is number => typeof x === 'number' && x >= 0 && x <= 1),
     gates: pick(v.gates, isGate),
+    startedOn: pick(v.startedOn, (x): x is string => typeof x === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(x)),
+    weekQuizzes: pick(v.weekQuizzes, isGate),
   }
 }
 
@@ -80,7 +86,7 @@ export function update(change: (draft: State) => State) {
 }
 
 export function resetProgress() {
-  update((s) => ({ learnerId: s.learnerId, checked: {}, bestScores: {}, gates: {} }))
+  update((s) => ({ learnerId: s.learnerId, checked: {}, bestScores: {}, gates: {}, startedOn: {}, weekQuizzes: {} }))
 }
 
 export function useStore(): State {

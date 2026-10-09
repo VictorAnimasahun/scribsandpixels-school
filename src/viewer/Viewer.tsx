@@ -3,7 +3,9 @@ import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'reac
 import App from '../App.tsx'
 import { catalog, findCourse, loadQuizWeek, quizVersion, quizWeek, quizWeekFailed, quizWeekSettled, subscribeQuizzes, type CatalogCourse } from '../content/catalog.ts'
 import { DEFAULT_QUIZ_RULES, type Question } from '../content/quizzes.ts'
-import { drawAttempt, gateDaysForWeek, gateStatus, seededRandom } from '../domain/quizGate.ts'
+import { drawAttempt, drawWeekQuiz, gateDaysForWeek, gateStatus, seededRandom, WEEK_QUIZ_RULES } from '../domain/quizGate.ts'
+import { courseStartMonday, dayKey as progressKey, pace, type Pace } from '../domain/progress.ts'
+import { addDays, localDate, weekday } from '../domain/streak.ts'
 import { ErrorBoundary } from './ErrorBoundary.tsx'
 import { foldAnswers } from './foldAnswers.ts'
 import { QuizPlayer } from './QuizPlayer.tsx'
@@ -167,6 +169,115 @@ function formatLeft(ms: number) {
   return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`
 }
 
+// ─── Calendar pacing (test build) ─────────────────────────────────────────
+
+const browserZone = () => Intl.DateTimeFormat().resolvedOptions().timeZone || 'Africa/Lagos'
+const todayLocal = () => localDate(new Date(), browserZone())
+const WEEKDAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+const prettyDate = (iso: string) => `${WEEKDAYS[weekday(iso)]} ${Number(iso.slice(8, 10))} ${new Date(`${iso}T00:00:00Z`).toLocaleString('en-GB', { month: 'short', timeZone: 'UTC' })}`
+
+/** The test build's progress in the domain's shape: a day is done when all its blocks are ticked. */
+function learnerProgress(course: CatalogCourse, state: State) {
+  const completedDays = new Set<string>()
+  for (const w of course.weeks)
+    for (const d of w.days)
+      if (d.blocks.length && d.blocks.every((b) => state.checked[`${dayKey(course.slug, w.number, d.number)}:${b.key}`])) completedDays.add(progressKey(w.number, d.number))
+  const passedWeeks = new Set(
+    Object.entries(state.weekQuizzes)
+      .filter(([k, r]) => k.startsWith(`${course.slug}:`) && r.attempts.some((a) => a.passed))
+      .map(([k]) => Number(k.split(':')[1])),
+  )
+  return { completedDays, passedWeeks }
+}
+
+function coursePace(course: CatalogCourse, state: State): Pace | null {
+  const started = state.startedOn[course.slug]
+  return started ? pace(course, learnerProgress(course, state), started, todayLocal()) : null
+}
+
+function CalendarPanel({ course }: { course: CatalogCourse }) {
+  const state = useStore()
+  const started = state.startedOn[course.slug]
+  const setStart = (date: string) => update((s) => ({ ...s, startedOn: { ...s.startedOn, [course.slug]: date } }))
+  const nextMonday = courseStartMonday(addDays(todayLocal(), 1))
+  if (!started) {
+    return (
+      <section className="block calendar">
+        <h3>📅 Your schedule</h3>
+        <p className="muted small">Each date has its lesson: Monday is Day 1, Saturday Day 6, Sunday is rest and review. Missed days stay owed until you catch up.</p>
+        <button className="primary" onClick={() => setStart(nextMonday)}>Start on {prettyDate(nextMonday)}</button>
+      </section>
+    )
+  }
+  const p = coursePace(course, state)!
+  const s = p.scheduled
+  const first = p.behind[0]
+  return (
+    <section className="block calendar">
+      <h3>📅 Your schedule</h3>
+      <p>
+        {s.kind === 'not-started' && <>Starts on <b>{prettyDate(s.startsOn)}</b>.</>}
+        {s.kind === 'day' && <>Today the calendar says <a href={href.day(course.slug, s.week, s.day)}><b>Week {s.week}, Day {s.day}</b></a>.</>}
+        {s.kind === 'review' && <>Sunday: rest, and the <b>Week {s.week}</b> review.</>}
+        {s.kind === 'ended' && <>The scheduled course has ended.</>}
+      </p>
+      {p.behind.length === 0 && p.quizzesOverdue.length === 0 && s.kind !== 'not-started'
+        ? <p className="ok-line">✓ On track</p>
+        : null}
+      {p.behind.length > 0 && (
+        <p className="behind">You're <b>{p.behind.length} study day{p.behind.length === 1 ? '' : 's'} behind</b>. Catch up in order, starting with <a href={href.day(course.slug, first.week, first.day)}>Week {first.week}, Day {first.day}</a>.</p>
+      )}
+      {p.quizzesOverdue.length > 0 && <p className="behind">Week quiz overdue: {p.quizzesOverdue.map((w) => <a key={w} href={href.week(course.slug, w)}> Week {w}</a>)}</p>}
+      <p className="muted small">Started {prettyDate(courseStartMonday(started))}. <button className="link" onClick={() => { if (confirm(`Re-plan so Day 1 is Monday ${prettyDate(nextMonday)}? Ticked days stay ticked.`)) setStart(nextMonday) }}>Re-plan from next Monday</button></p>
+    </section>
+  )
+}
+
+function WeekQuiz({ course, week }: { course: CatalogCourse; week: number }) {
+  const state = useStore()
+  const now = useNow(1000)
+  const { quiz: bank, failed } = useQuizWeek(course.slug, week)
+  const key = `${course.slug}:${week}`
+  const record = state.weekQuizzes[key] ?? { triggeredAt: 0, attempts: [], seen: [] }
+  const status = gateStatus(record.attempts.map((a) => ({ finishedAt: new Date(a.finishedAt), passed: a.passed })), new Date(now), WEEK_QUIZ_RULES)
+  const [attempt, setAttempt] = useState<{ no: number; questions: Question[] } | null>(null)
+  if (failed) return <p className="muted">The week quiz couldn't load. <button className="link" onClick={() => window.location.reload()}>Reload</button></p>
+  if (!bank) return <p className="muted">Loading the week quiz…</p>
+  const best = Math.max(0, ...record.attempts.map((a) => a.score))
+  const start = () => {
+    const questions = drawWeekQuiz(bank, record.seen, seededRandom(Date.now() % 1_000_000_007))
+    update((s) => {
+      const r = s.weekQuizzes[key] ?? { triggeredAt: Date.now(), attempts: [], seen: [] }
+      return { ...s, weekQuizzes: { ...s.weekQuizzes, [key]: { ...r, seen: [...r.seen.filter((id) => !questions.some((q) => q.id === id)), ...questions.map((q) => q.id)] } } }
+    })
+    setAttempt({ no: record.attempts.length + 1, questions })
+  }
+  const finish = (result: { passed: boolean; score: number }) =>
+    update((s) => {
+      const r = s.weekQuizzes[key] ?? { triggeredAt: Date.now(), attempts: [], seen: [] }
+      return { ...s, weekQuizzes: { ...s.weekQuizzes, [key]: { ...r, attempts: [...r.attempts, { finishedAt: Date.now(), passed: result.passed, score: result.score }] } } }
+    })
+  return (
+    <section className="block quiz-card">
+      <header>
+        <h3>📝 Week {week} quiz</h3>
+        <span className="muted">15 questions from this week · {Math.round(WEEK_QUIZ_RULES.passMark * 100)}% to pass{record.attempts.length ? ` · best ${Math.round(best * 100)}%` : ''}</span>
+      </header>
+      {status.kind === 'passed' && !attempt && <p className="ok-line">✓ Passed. Week {week + 1} is open.</p>}
+      {attempt ? (
+        <>
+          <QuizPlayer key={attempt.no} title={`Week ${week} quiz · attempt ${attempt.no}`} questions={attempt.questions} rules={WEEK_QUIZ_RULES} passNote={`Pass mark ${Math.round(WEEK_QUIZ_RULES.passMark * 100)}%`} onDone={finish} />
+          <button className="link" onClick={() => setAttempt(null)}>Close</button>
+        </>
+      ) : status.kind === 'cooldown' ? (
+        <p>Not passed yet. Review the week, then try again in <b>{formatLeft(status.until.getTime() - now)}</b> (new questions).</p>
+      ) : status.kind !== 'passed' ? (
+        <button className="primary" onClick={start}>{record.attempts.length ? 'Retake the week quiz' : 'Start the week quiz'}</button>
+      ) : null}
+    </section>
+  )
+}
+
 // ─── Pages ────────────────────────────────────────────────────────────────
 
 function NotFound({ what, course }: { what: string; course: CatalogCourse }) {
@@ -203,6 +314,7 @@ function CoursePage({ course }: { course: CatalogCourse }) {
     <>
       <p className="crumbs"><a href={href.home()}>Courses</a></p>
       <h1>{course.title}</h1>
+      <CalendarPanel course={course} />
       {course.overview && (
         <>
           <button onClick={() => setShowOverview(!showOverview)}>{showOverview ? 'Hide' : 'Show'} course overview</button>
@@ -265,7 +377,8 @@ function WeekPage({ course, week }: { course: CatalogCourse; week: number }) {
         })}
       </div>
       {!hasQuizzes && <p className="muted">Quizzes for this week haven't been written yet.</p>}
-      <h3>Week quiz</h3>
+      {hasQuizzes && <WeekQuiz course={course} week={week} />}
+      <h3>{hasQuizzes ? 'Review questions (answer from memory first)' : 'Week quiz'}</h3>
       <ol>{w.quiz.map((q) => <li key={q.id}><Markdown text={q.prompt} /></li>)}</ol>
       {w.quizNote && <Markdown text={w.quizNote} />}
     </>

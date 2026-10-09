@@ -34,10 +34,10 @@ More courses will follow; nothing may assume a single course. To add one: a new 
 - `supabase/setup/schedule-nudges.sql`: one-time pg_cron schedule (holds secrets; not a migration).
 
 ## Rules implemented (defaults for the open decisions; each lives in one function)
-- **Pacing (progress-based):** "today" = first unfinished day (`currentPosition`). Missing an evening never puts you behind.
+- **Pacing (calendar-based, decided 9 Oct 2026):** a course starts on the first Monday on/after enrolment (`courseStartMonday`); each date has its lesson (Mon = Day 1 … Sat = Day 6, Sunday = review) (`scheduledFor`). `pace` lists scheduled days not yet done ("behind") and overdue week quizzes; missed days are caught up in order, starting from `currentPosition` (the first unfinished day). Learners can re-plan from next Monday.
 - **Day complete:** every block ticked + log saved (`missingForDay`).
 - **Week unlock:** Week N+1 opens when the Week N quiz is passed; the quiz opens when all 6 days are done.
-- **Quiz:** self-marked; pass = every question answered and marked "got it" (`gradeQuiz`), per the plan's "if you can answer all of them, you passed".
+- **Week quiz (auto-marked, decided 9 Oct 2026):** 15 questions drawn from the week's banks (Days 2–6: 2 medium + 1 hard each; `drawWeekQuiz`), 80% to pass (`gradeWeekQuiz`, `WEEK_QUIZ_RULES`), new questions on retry, 60-min cooldown after a fail like checkpoints. The lesson's open "## Quiz" questions stay as review prompts. Weeks without a bank fall back to the self-marked `gradeQuiz`.
 - **Streak:** consecutive Mon–Sat study days; Sunday is rest and never breaks or adds; today counts as alive until it ends (`streak`).
 - **Logs:** 3 prompts daily; day 7 = Sunday weekly review. "Things That Confused Me" = unresolved non-empty `confused` entries.
 - **Emails:** at the learner's `nudge_hour` (default 19:00) in their `timezone` (default Africa/Lagos).
@@ -62,7 +62,6 @@ More courses will follow; nothing may assume a single course. To add one: a new 
 2. Resend: verify a sending domain, create an API key. Optionally set Resend as Supabase Auth's SMTP so magic-link emails come from the school too.
 3. Deploy the function: `supabase secrets set RESEND_API_KEY=… EMAIL_FROM="Scribs & Pixels <school@domain>" APP_URL=… CRON_SECRET=…` then `supabase functions deploy send-nudges --no-verify-jwt`, then run `supabase/setup/schedule-nudges.sql`.
 
-## Open decisions (defaults above are in place until decided)
-- Pacing, quiz grading and streak rules: confirm or change the defaults.
-- Who writes Weeks 3+, and how (drafted on claude.ai in the week format is the current assumption).
+## Decisions (9 Oct 2026: school rules R1–R5)
+- R1 pacing: calendar-based (above). R2 week quiz: auto-marked, 80% (above). R3 streak: keep (Mon–Sat, Sunday rest). R5 writing weeks: keep (Claude writes and verifies each week here, a slice at a time).
 - ~~The "Need a nudge?" button~~ **Decided (6 Oct 2026): all three.** The button offers (1) "Remind me in 1 hour" (one email via the send-nudges function), (2) "Give me the 10-minute version" of today (needs a short version of each day, e.g. Review + the mini-task only), (3) a motivational note. Build it with the new UI.

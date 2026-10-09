@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import type { Question } from '../content/quizzes.ts'
+import type { Question, QuizRules } from '../content/quizzes.ts'
 import { gradeAttempt, markAnswer, seededRandom, type Marked, type Response, type Result } from '../domain/quizGate.ts'
 
 type Props = {
@@ -8,6 +8,8 @@ type Props = {
   secondsPerQuestion?: number
   /** Shown on the result screen, e.g. "Pass mark 70%". */
   passNote?: string
+  /** Pass mark etc.; defaults to the checkpoint rules (70%). */
+  rules?: QuizRules
   onDone: (result: Result, responses: Record<string, Response | undefined>) => void
 }
 
@@ -34,7 +36,7 @@ function modelAnswer(q: Question): string {
   }
 }
 
-export function QuizPlayer({ title, questions, secondsPerQuestion, passNote, onDone }: Props) {
+export function QuizPlayer({ title, questions, secondsPerQuestion, passNote, rules, onDone }: Props) {
   const [seed] = useState(() => Math.floor(Math.random() * 1_000_000_007))
   const views = useMemo(() => {
     const random = seededRandom(seed)
@@ -81,7 +83,7 @@ export function QuizPlayer({ title, questions, secondsPerQuestion, passNote, onD
       setDraft(undefined)
       setTimeLeft(secondsPerQuestion ?? 0)
     } else {
-      const final = gradeAttempt(questions, responses)
+      const final = gradeAttempt(questions, responses, rules)
       setResult(final)
       onDone(final, responses)
     }

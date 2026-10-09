@@ -4553,6 +4553,1342 @@
           }
         ],
         "quizNote": "If you can answer all ten without notes, you're ready for Week 11. **Answers:** check each day's lesson; for 5: only when the network fails."
+      },
+      {
+        "number": 11,
+        "title": "Modern CSS and Multi-page Sites",
+        "theme": "Lay out whole pages with CSS Grid, keep a design consistent with custom properties, and start the Phase 2 milestone: a multi-page site for Mama Put Kitchen.",
+        "bigQuestion": "How do real websites keep many pages looking like one design?",
+        "resources": [
+          {
+            "kind": "video",
+            "title": "Kevin Powell — CSS Grid (YouTube channel)",
+            "url": "https://www.youtube.com/@KevinPowell",
+            "note": "Search \"learn CSS Grid the easy way\". Monday and Tuesday."
+          },
+          {
+            "kind": "reading",
+            "title": "Grid Garden",
+            "url": "https://cssgridgarden.com/",
+            "note": "A game that teaches Grid. Do levels 1–14 on Monday, the rest on Tuesday."
+          },
+          {
+            "kind": "reading",
+            "title": "MDN — CSS grid layout",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout",
+            "note": "The reference."
+          },
+          {
+            "kind": "reading",
+            "title": "MDN — Using CSS custom properties",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties",
+            "note": "Wednesday."
+          },
+          {
+            "kind": "reading",
+            "title": "MDN — Responsive images",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Responsive_images",
+            "note": "Thursday."
+          },
+          {
+            "kind": "reading",
+            "title": "Excalidraw",
+            "url": "https://excalidraw.com/",
+            "note": "Saturday: sketch your wireframes (free, no account)."
+          }
+        ],
+        "days": [
+          {
+            "number": 1,
+            "weekday": "Monday",
+            "topic": "CSS Grid I: rows, columns and gaps",
+            "hours": 2.5,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "lesson",
+                "kind": "lesson",
+                "title": "Lesson",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "practice",
+                "kind": "practice",
+                "title": "Practice",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "mini-task",
+                "kind": "mini-task",
+                "title": "Mini-Task",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          },
+          {
+            "number": 2,
+            "weekday": "Tuesday",
+            "topic": "CSS Grid II: responsive grids and page layouts",
+            "hours": 2.5,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "lesson",
+                "kind": "lesson",
+                "title": "Lesson",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "practice",
+                "kind": "practice",
+                "title": "Practice",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "mini-task",
+                "kind": "mini-task",
+                "title": "Mini-Task",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          },
+          {
+            "number": 3,
+            "weekday": "Wednesday",
+            "topic": "Custom properties: a mini design system",
+            "hours": 2.5,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "lesson",
+                "kind": "lesson",
+                "title": "Lesson",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "practice",
+                "kind": "practice",
+                "title": "Practice",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "mini-task",
+                "kind": "mini-task",
+                "title": "Mini-Task",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          },
+          {
+            "number": 4,
+            "weekday": "Thursday",
+            "topic": "Responsive images and media",
+            "hours": 2.5,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "lesson",
+                "kind": "lesson",
+                "title": "Lesson",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "practice",
+                "kind": "practice",
+                "title": "Practice",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "mini-task",
+                "kind": "mini-task",
+                "title": "Mini-Task",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          },
+          {
+            "number": 5,
+            "weekday": "Friday",
+            "topic": "Multi-page sites and a shared header",
+            "hours": 2.5,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "lesson",
+                "kind": "lesson",
+                "title": "Lesson",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "practice",
+                "kind": "practice",
+                "title": "Practice",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "mini-task",
+                "kind": "mini-task",
+                "title": "Mini-Task",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          },
+          {
+            "number": 6,
+            "weekday": "Saturday",
+            "topic": "Milestone, part 1: plan Mama Put Kitchen and build the home page",
+            "hours": 3,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "project",
+                "kind": "project",
+                "title": "Weekly Project",
+                "minutes": 120,
+                "body": ""
+              },
+              {
+                "key": "freecodecamp",
+                "kind": "freecodecamp",
+                "title": "FreeCodeCamp",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          }
+        ],
+        "quiz": [
+          {
+            "id": "w11q1",
+            "prompt": "When would you choose Grid over Flexbox?"
+          },
+          {
+            "id": "w11q2",
+            "prompt": "What does `1fr` mean?"
+          },
+          {
+            "id": "w11q3",
+            "prompt": "Write a card grid that fits any screen width without a media query."
+          },
+          {
+            "id": "w11q4",
+            "prompt": "What does `grid-template-areas` let you do, and how do you change a layout on phones with it?"
+          },
+          {
+            "id": "w11q5",
+            "prompt": "Where do you define custom properties so the whole page can use them, and how do you use one?"
+          },
+          {
+            "id": "w11q6",
+            "prompt": "How would you make one section dark by changing only two variables?"
+          },
+          {
+            "id": "w11q7",
+            "prompt": "Which CSS makes card images the same shape without squashing them?"
+          },
+          {
+            "id": "w11q8",
+            "prompt": "What do `srcset`, `loading=\"lazy\"` and `alt` each do?"
+          },
+          {
+            "id": "w11q9",
+            "prompt": "Why link pages with relative paths?"
+          },
+          {
+            "id": "w11q10",
+            "prompt": "How did you avoid copy-pasting the header into every page, and what does `aria-current=\"page\"` do?"
+          }
+        ],
+        "quizNote": "If you can answer all ten without notes, you're ready for Week 12. **Answers:** check each day's lesson; for 3: `grid-template-columns: repeat(auto-fit, minmax(220px, 1fr))`."
+      },
+      {
+        "number": 12,
+        "title": "React I: Components",
+        "theme": "Build pages from reusable pieces with React: set up a real project with Node, npm and Vite, write JSX, pass props, render lists, and deploy.",
+        "bigQuestion": "Why do almost all modern web apps build pages out of components?",
+        "resources": [
+          {
+            "kind": "reading",
+            "title": "react.dev — Learn",
+            "url": "https://react.dev/learn",
+            "note": "The official tutorial. Read \"Describing the UI\" this week."
+          },
+          {
+            "kind": "video",
+            "title": "Mosh — React Tutorial for Beginners",
+            "url": "https://www.youtube.com/watch?v=SqcY0GlETPk",
+            "note": "Watch the first hour across Monday–Wednesday."
+          },
+          {
+            "kind": "reading",
+            "title": "Vite — Getting Started",
+            "url": "https://vite.dev/guide/",
+            "note": "Monday."
+          },
+          {
+            "kind": "interactive",
+            "title": "Node.js — Download (LTS)",
+            "url": "https://nodejs.org/en/download",
+            "note": "Install the LTS version on Monday."
+          },
+          {
+            "kind": "reading",
+            "title": "Vite — Deploying a static site",
+            "url": "https://vite.dev/guide/static-deploy.html",
+            "note": "Friday: the GitHub Pages section."
+          }
+        ],
+        "days": [
+          {
+            "number": 1,
+            "weekday": "Monday",
+            "topic": "Node, npm, Vite and your first component",
+            "hours": 2.5,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "lesson",
+                "kind": "lesson",
+                "title": "Lesson",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "practice",
+                "kind": "practice",
+                "title": "Practice",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "mini-task",
+                "kind": "mini-task",
+                "title": "Mini-Task",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          },
+          {
+            "number": 2,
+            "weekday": "Tuesday",
+            "topic": "JSX rules",
+            "hours": 2.5,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "lesson",
+                "kind": "lesson",
+                "title": "Lesson",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "practice",
+                "kind": "practice",
+                "title": "Practice",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "mini-task",
+                "kind": "mini-task",
+                "title": "Mini-Task",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          },
+          {
+            "number": 3,
+            "weekday": "Wednesday",
+            "topic": "Components and props",
+            "hours": 2.5,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "lesson",
+                "kind": "lesson",
+                "title": "Lesson",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "practice",
+                "kind": "practice",
+                "title": "Practice",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "mini-task",
+                "kind": "mini-task",
+                "title": "Mini-Task",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          },
+          {
+            "number": 4,
+            "weekday": "Thursday",
+            "topic": "Rendering lists, and keys",
+            "hours": 2.5,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "lesson",
+                "kind": "lesson",
+                "title": "Lesson",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "practice",
+                "kind": "practice",
+                "title": "Practice",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "mini-task",
+                "kind": "mini-task",
+                "title": "Mini-Task",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          },
+          {
+            "number": 5,
+            "weekday": "Friday",
+            "topic": "Organising a React project and deploying it",
+            "hours": 2.5,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "lesson",
+                "kind": "lesson",
+                "title": "Lesson",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "practice",
+                "kind": "practice",
+                "title": "Practice",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "mini-task",
+                "kind": "mini-task",
+                "title": "Mini-Task",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          },
+          {
+            "number": 6,
+            "weekday": "Saturday",
+            "topic": "Milestone, part 2: the Mama Put Kitchen menu in React",
+            "hours": 3,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "project",
+                "kind": "project",
+                "title": "Weekly Project",
+                "minutes": 120,
+                "body": ""
+              },
+              {
+                "key": "freecodecamp",
+                "kind": "freecodecamp",
+                "title": "FreeCodeCamp",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          }
+        ],
+        "quiz": [
+          {
+            "id": "w12q1",
+            "prompt": "What do Node, npm and Vite each do?"
+          },
+          {
+            "id": "w12q2",
+            "prompt": "Why must component names start with a capital letter?"
+          },
+          {
+            "id": "w12q3",
+            "prompt": "Give 4 ways JSX differs from HTML."
+          },
+          {
+            "id": "w12q4",
+            "prompt": "How do you show something only when a condition is true, and how do you choose between two things?"
+          },
+          {
+            "id": "w12q5",
+            "prompt": "What are props, and can a component change its own props?"
+          },
+          {
+            "id": "w12q6",
+            "prompt": "What is `children`?"
+          },
+          {
+            "id": "w12q7",
+            "prompt": "Write JSX that renders an array of dishes as a list."
+          },
+          {
+            "id": "w12q8",
+            "prompt": "Why do list items need a `key`, and why not use the array index?"
+          },
+          {
+            "id": "w12q9",
+            "prompt": "What's the difference between a default export and a named export?"
+          },
+          {
+            "id": "w12q10",
+            "prompt": "What does `npm run build` produce, and why does the `base` setting matter on GitHub Pages?"
+          }
+        ],
+        "quizNote": "If you can answer all ten without notes, you're ready for Week 13. **Answers:** check each day's lesson; for 8: keys let React match items between renders, and indexes change when the list changes."
+      },
+      {
+        "number": 13,
+        "title": "React II: State and Effects",
+        "theme": "Make React apps interactive: state that changes the page, forms React controls, data loaded with effects, and state shared between components.",
+        "bigQuestion": "When something changes on the screen, where does that \"something\" live?",
+        "resources": [
+          {
+            "kind": "reading",
+            "title": "react.dev — Adding Interactivity",
+            "url": "https://react.dev/learn/adding-interactivity",
+            "note": "State, events, updating objects and arrays. Monday–Wednesday."
+          },
+          {
+            "kind": "reading",
+            "title": "react.dev — Synchronizing with Effects",
+            "url": "https://react.dev/learn/synchronizing-with-effects",
+            "note": "Thursday."
+          },
+          {
+            "kind": "reading",
+            "title": "react.dev — Sharing State Between Components",
+            "url": "https://react.dev/learn/sharing-state-between-components",
+            "note": "Friday."
+          },
+          {
+            "kind": "video",
+            "title": "Mosh — React Tutorial for Beginners",
+            "url": "https://www.youtube.com/watch?v=SqcY0GlETPk",
+            "note": "The state and forms sections."
+          }
+        ],
+        "days": [
+          {
+            "number": 1,
+            "weekday": "Monday",
+            "topic": "useState: data that changes the screen",
+            "hours": 2.5,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "lesson",
+                "kind": "lesson",
+                "title": "Lesson",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "practice",
+                "kind": "practice",
+                "title": "Practice",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "mini-task",
+                "kind": "mini-task",
+                "title": "Mini-Task",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          },
+          {
+            "number": 2,
+            "weekday": "Tuesday",
+            "topic": "Events and controlled forms",
+            "hours": 2.5,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "lesson",
+                "kind": "lesson",
+                "title": "Lesson",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "practice",
+                "kind": "practice",
+                "title": "Practice",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "mini-task",
+                "kind": "mini-task",
+                "title": "Mini-Task",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          },
+          {
+            "number": 3,
+            "weekday": "Wednesday",
+            "topic": "State with arrays and objects",
+            "hours": 2.5,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "lesson",
+                "kind": "lesson",
+                "title": "Lesson",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "practice",
+                "kind": "practice",
+                "title": "Practice",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "mini-task",
+                "kind": "mini-task",
+                "title": "Mini-Task",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          },
+          {
+            "number": 4,
+            "weekday": "Thursday",
+            "topic": "useEffect: loading data and syncing with the outside world",
+            "hours": 2.5,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "lesson",
+                "kind": "lesson",
+                "title": "Lesson",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "practice",
+                "kind": "practice",
+                "title": "Practice",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "mini-task",
+                "kind": "mini-task",
+                "title": "Mini-Task",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          },
+          {
+            "number": 5,
+            "weekday": "Friday",
+            "topic": "Lifting state up: props down, events up",
+            "hours": 2.5,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "lesson",
+                "kind": "lesson",
+                "title": "Lesson",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "practice",
+                "kind": "practice",
+                "title": "Practice",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "mini-task",
+                "kind": "mini-task",
+                "title": "Mini-Task",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          },
+          {
+            "number": 6,
+            "weekday": "Saturday",
+            "topic": "Milestone, part 3: the Mama Put Kitchen cart",
+            "hours": 3,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "project",
+                "kind": "project",
+                "title": "Weekly Project",
+                "minutes": 120,
+                "body": ""
+              },
+              {
+                "key": "freecodecamp",
+                "kind": "freecodecamp",
+                "title": "FreeCodeCamp",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          }
+        ],
+        "quiz": [
+          {
+            "id": "w13q1",
+            "prompt": "Why doesn't changing a normal variable update the screen?"
+          },
+          {
+            "id": "w13q2",
+            "prompt": "What does `useState` return?"
+          },
+          {
+            "id": "w13q3",
+            "prompt": "When should you pass a function to the setter (`setCount((c) => c + 1)`)?"
+          },
+          {
+            "id": "w13q4",
+            "prompt": "What makes an input \"controlled\"?"
+          },
+          {
+            "id": "w13q5",
+            "prompt": "What's a derived value? Give an example from this week."
+          },
+          {
+            "id": "w13q6",
+            "prompt": "Why must you not use `push` on an array in state? What do you do instead?"
+          },
+          {
+            "id": "w13q7",
+            "prompt": "What do `[]`, `[city]` and no dependency array mean for `useEffect`?"
+          },
+          {
+            "id": "w13q8",
+            "prompt": "What is an effect's cleanup function for?"
+          },
+          {
+            "id": "w13q9",
+            "prompt": "What does \"lifting state up\" mean, and how does a child ask the parent to change it?"
+          },
+          {
+            "id": "w13q10",
+            "prompt": "Why must the WhatsApp message go through `encodeURIComponent`?"
+          }
+        ],
+        "quizNote": "If you can answer all ten without notes, you're ready for Week 14. **Answers:** check each day's lesson; for 6: it changes the same array, so React may not see a change: make a new array with spread, `map` or `filter`."
+      },
+      {
+        "number": 14,
+        "title": "Phase 2 Graduation",
+        "theme": "Turn Mama Put Kitchen from \"it works on my laptop\" into a site a real business could use: one source of data, a working order page, accessible, fast, findable, tested and live.",
+        "bigQuestion": "What separates a finished website from a working demo?",
+        "resources": [
+          {
+            "kind": "reading",
+            "title": "web.dev — Learn Accessibility",
+            "url": "https://web.dev/learn/accessibility",
+            "note": "Wednesday."
+          },
+          {
+            "kind": "reading",
+            "title": "Lighthouse (Chrome DevTools)",
+            "url": "https://developer.chrome.com/docs/lighthouse/overview",
+            "note": "Thursday and Friday: DevTools → Lighthouse → Analyze."
+          },
+          {
+            "kind": "reading",
+            "title": "axe DevTools (free browser extension)",
+            "url": "https://www.deque.com/axe/devtools/",
+            "note": "Wednesday: finds accessibility problems for you."
+          },
+          {
+            "kind": "reading",
+            "title": "The Open Graph protocol",
+            "url": "https://ogp.me/",
+            "note": "Thursday: how links look when shared on WhatsApp."
+          },
+          {
+            "kind": "reading",
+            "title": "WebAIM — Contrast checker",
+            "url": "https://webaim.org/resources/contrastchecker/",
+            "note": "Wednesday."
+          }
+        ],
+        "days": [
+          {
+            "number": 1,
+            "weekday": "Monday",
+            "topic": "One source of data: the menu as JSON",
+            "hours": 2.5,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "lesson",
+                "kind": "lesson",
+                "title": "Lesson",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "practice",
+                "kind": "practice",
+                "title": "Practice",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "mini-task",
+                "kind": "mini-task",
+                "title": "Mini-Task",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          },
+          {
+            "number": 2,
+            "weekday": "Tuesday",
+            "topic": "The Contact page: opening hours, \"open now\", and a WhatsApp enquiry form",
+            "hours": 2.5,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "lesson",
+                "kind": "lesson",
+                "title": "Lesson",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "practice",
+                "kind": "practice",
+                "title": "Practice",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "mini-task",
+                "kind": "mini-task",
+                "title": "Mini-Task",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          },
+          {
+            "number": 3,
+            "weekday": "Wednesday",
+            "topic": "Accessibility: a site everyone can use",
+            "hours": 2.5,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "lesson",
+                "kind": "lesson",
+                "title": "Lesson",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "practice",
+                "kind": "practice",
+                "title": "Practice",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "mini-task",
+                "kind": "mini-task",
+                "title": "Mini-Task",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          },
+          {
+            "number": 4,
+            "weekday": "Thursday",
+            "topic": "Speed, search and sharing: Lighthouse, meta tags and Open Graph",
+            "hours": 2.5,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "lesson",
+                "kind": "lesson",
+                "title": "Lesson",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "practice",
+                "kind": "practice",
+                "title": "Practice",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "mini-task",
+                "kind": "mini-task",
+                "title": "Mini-Task",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          },
+          {
+            "number": 5,
+            "weekday": "Friday",
+            "topic": "Bug bash and launch checklist",
+            "hours": 2.5,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "lesson",
+                "kind": "lesson",
+                "title": "Lesson",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "practice",
+                "kind": "practice",
+                "title": "Practice",
+                "minutes": 45,
+                "body": ""
+              },
+              {
+                "key": "mini-task",
+                "kind": "mini-task",
+                "title": "Mini-Task",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          },
+          {
+            "number": 6,
+            "weekday": "Saturday",
+            "topic": "Graduation: ship Mama Put Kitchen and review Phase 2",
+            "hours": 3,
+            "blocks": [
+              {
+                "key": "review",
+                "kind": "review",
+                "title": "Review",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "project",
+                "kind": "project",
+                "title": "Weekly Project",
+                "minutes": 120,
+                "body": ""
+              },
+              {
+                "key": "freecodecamp",
+                "kind": "freecodecamp",
+                "title": "FreeCodeCamp",
+                "minutes": 30,
+                "body": ""
+              },
+              {
+                "key": "log",
+                "kind": "log",
+                "title": "Log",
+                "minutes": 10,
+                "body": ""
+              }
+            ]
+          }
+        ],
+        "quiz": [
+          {
+            "id": "w14q1",
+            "prompt": "Why keep the menu in one `menu.json` instead of in each page?"
+          },
+          {
+            "id": "w14q2",
+            "prompt": "Name 3 JSON mistakes that break a file."
+          },
+          {
+            "id": "w14q3",
+            "prompt": "Why does `isOpen` take a `date` parameter, and why use the Africa/Lagos time zone?"
+          },
+          {
+            "id": "w14q4",
+            "prompt": "Name 6 items from the accessibility checklist."
+          },
+          {
+            "id": "w14q5",
+            "prompt": "Why is a `<div onclick>` an accessibility bug?"
+          },
+          {
+            "id": "w14q6",
+            "prompt": "What does Lighthouse measure, and what score should you aim for?"
+          },
+          {
+            "id": "w14q7",
+            "prompt": "Which tags should every page's `<head>` have?"
+          },
+          {
+            "id": "w14q8",
+            "prompt": "What is Open Graph, and why does it matter for a Lagos business?"
+          },
+          {
+            "id": "w14q9",
+            "prompt": "What's a bug bash, and what's on your launch checklist?"
+          },
+          {
+            "id": "w14q10",
+            "prompt": "What does `404.html` do on GitHub Pages?"
+          }
+        ],
+        "quizNote": "If you can answer all ten without notes, you've finished Phase 2. 🎓 **Answers:** check each day's lesson; for 5: keyboards and screen readers can't reach or activate it, so use `<button>`."
       }
     ]
   }

@@ -1,5 +1,6 @@
 import type { Course, Day, Phase, Week, WeekOutline } from '../content/types.ts'
-import { courseCompletion, currentPosition, dayKey, type LearnerProgress, type Position, type QuizAnswer } from './progress.ts'
+import { courseCompletion, currentPosition, dayKey, pace, type LearnerProgress, type Pace, type Position } from './progress.ts'
+import type { Response } from './quizGate.ts'
 import { localDate, streak, studyDatesFrom, weekDots, type IsoDate, type Streak, type WeekDot } from './streak.ts'
 
 export type Profile = {
@@ -34,7 +35,8 @@ export type LogEntry = {
 export type QuizAttempt = {
   id: string
   week: number
-  answers: QuizAnswer[]
+  /** Question id → the learner's response (auto-marked week quiz). */
+  answers: Record<string, Response | undefined>
   score: number
   total: number
   passed: boolean
@@ -56,7 +58,10 @@ export type LearnerState = {
 
 export type DashboardSummary = {
   today: IsoDate
+  /** The next thing to do: the first unfinished day (where catching up starts). */
   position: Position
+  /** Calendar pacing: where the calendar is, and what's behind. */
+  pace: Pace
   phase?: Phase
   outline?: WeekOutline
   week?: Week
@@ -81,6 +86,7 @@ export function dashboardSummary(course: Course, state: LearnerState, now = new 
   return {
     today,
     position,
+    pace: pace(course, state.progress, state.enrollment.startedOn, today),
     phase: weekNumber ? course.phases.find((p) => weekNumber >= p.firstWeek && weekNumber <= p.lastWeek) : undefined,
     outline: weekNumber ? course.outlines.find((o) => o.number === weekNumber) : undefined,
     week: weekNumber ? course.weeks.find((w) => w.number === weekNumber) : undefined,

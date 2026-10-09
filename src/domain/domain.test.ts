@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { courses } from '../content/index.ts'
-import { courseCompletion, currentPosition, dayKey, gradeQuiz, missingForDay, weekStatus } from './progress.ts'
+import { courseCompletion, courseStartMonday, currentPosition, dayKey, gradeQuiz, missingForDay, pace, scheduledFor, weekStatus } from './progress.ts'
 import { addDays, localDate, streak, weekDots, weekday } from './streak.ts'
 
 const course = courses[0]
@@ -112,5 +112,42 @@ describe('weekDots', () => {
     expect(dots[0]).toMatchObject({ date: '2026-09-21', studied: true })
     expect(dots[3]).toMatchObject({ isToday: true, studied: false, isFuture: false })
     expect(dots[6]).toMatchObject({ date: '2026-09-27', isFuture: true, isRestDay: true })
+  })
+})
+
+describe('calendar pacing (decided 9 Oct 2026)', () => {
+  it('starts on the first Monday on or after enrolment', () => {
+    expect(courseStartMonday('2026-10-05')).toBe('2026-10-05') // a Monday
+    expect(courseStartMonday('2026-10-07')).toBe('2026-10-12') // Wednesday → next Monday
+    expect(courseStartMonday('2026-10-11')).toBe('2026-10-12') // Sunday → next day
+  })
+
+  it('maps each date to its scheduled day, with Sunday as the review', () => {
+    const start = '2026-10-05'
+    expect(scheduledFor(52, start, '2026-10-04')).toEqual({ kind: 'not-started', startsOn: '2026-10-05' })
+    expect(scheduledFor(52, start, '2026-10-05')).toEqual({ kind: 'day', week: 1, day: 1 })
+    expect(scheduledFor(52, start, '2026-10-10')).toEqual({ kind: 'day', week: 1, day: 6 })
+    expect(scheduledFor(52, start, '2026-10-11')).toEqual({ kind: 'review', week: 1 })
+    expect(scheduledFor(52, start, '2026-10-14')).toEqual({ kind: 'day', week: 2, day: 3 })
+    expect(scheduledFor(52, start, addDays(start, 52 * 7))).toEqual({ kind: 'ended' })
+  })
+
+  it('lists missed days (not today) as behind, and overdue week quizzes', () => {
+    const start = '2026-10-05'
+    // Wednesday of Week 2; Week 1 days 1–4 done, quiz not passed.
+    const progress = { completedDays: days([1, 1], [1, 2], [1, 3], [1, 4]), passedWeeks: new Set<number>() }
+    const p = pace(course, progress, start, '2026-10-14')
+    expect(p.behind).toEqual([{ week: 1, day: 5 }, { week: 1, day: 6 }, { week: 2, day: 1 }, { week: 2, day: 2 }])
+    expect(p.quizzesOverdue).toEqual([1])
+    // On time: everything due is done and Week 1 is passed.
+    const onTime = pace(course, { completedDays: days(...fullWeek(1), [2, 1], [2, 2]), passedWeeks: new Set([1]) }, start, '2026-10-14')
+    expect(onTime.behind).toEqual([])
+    expect(onTime.quizzesOverdue).toEqual([])
+  })
+
+  it('never counts unwritten weeks as behind', () => {
+    const start = '2026-01-05'
+    const p = pace(course, { completedDays: new Set(), passedWeeks: new Set(written) }, start, addDays(start, (next + 2) * 7))
+    expect(p.behind).toEqual([])
   })
 })

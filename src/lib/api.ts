@@ -1,6 +1,8 @@
 import type { Course } from '../content/types.ts'
 import type { Enrollment, LearnerState, LogEntry, Profile, QuizAttempt } from '../domain/learner.ts'
-import { dayKey, gradeQuiz, missingForDay, weekStatus, type QuizAnswer, type QuizResult } from '../domain/progress.ts'
+import { dayKey, missingForDay, weekStatus } from '../domain/progress.ts'
+import { gradeWeekQuiz, type Response, type Result } from '../domain/quizGate.ts'
+import type { Question } from '../content/quizzes.ts'
 import { supabase } from './supabase.ts'
 
 /*
@@ -38,7 +40,7 @@ type LogRow = {
   id: string; week: number; day: number; learned: string; confused: string; review_tomorrow: string
   answers: Record<string, string>; confusion_resolved_at: string | null; updated_at: string
 }
-type QuizRow = { id: string; week: number; answers: QuizAnswer[]; score: number; total: number; passed: boolean; created_at: string }
+type QuizRow = { id: string; week: number; answers: Record<string, Response | undefined>; score: number; total: number; passed: boolean; created_at: string }
 
 const toProfile = (r: ProfileRow): Profile => ({
   id: r.id, email: r.email, displayName: r.display_name, timezone: r.timezone, emailNudges: r.email_nudges, nudgeHour: r.nudge_hour,
@@ -138,13 +140,18 @@ export async function completeDay(course: Course, state: LearnerState, week: num
   check(await supabase.from('day_progress').upsert({ user_id: state.profile.id, course_slug: course.slug, week, day }, { ignoreDuplicates: true }))
 }
 
-export async function submitQuiz(course: Course, state: LearnerState, week: number, answers: QuizAnswer[]): Promise<QuizResult> {
+/** The auto-marked week quiz (drawWeekQuiz → 80% to pass). Questions come from the week's banks. */
+export async function submitQuiz(course: Course, state: LearnerState, week: number, questions: Question[], responses: Record<string, Response | undefined>): Promise<Result> {
   const content = course.weeks.find((w) => w.number === week)
   if (!content) throw new Error(`Week ${week} hasn't been written yet`)
   const unfinished = content.days.filter((d) => !state.progress.completedDays.has(dayKey(week, d.number)))
   if (unfinished.length) throw new Error(`Finish all of Week ${week} before the quiz`)
-  const result = gradeQuiz(content, answers)
-  check(await supabase.from('quiz_attempts').insert({ user_id: state.profile.id, course_slug: course.slug, week, answers, ...result }))
+  if (!questions.length) throw new Error(`Week ${week} has no quiz questions`)
+  const result = gradeWeekQuiz(questions, responses)
+  check(await supabase.from('quiz_attempts').insert({
+    user_id: state.profile.id, course_slug: course.slug, week, answers: responses,
+    score: result.correct, total: result.total, passed: result.passed,
+  }))
   return result
 }
 

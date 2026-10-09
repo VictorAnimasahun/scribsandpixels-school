@@ -164,3 +164,5 @@ details.reveal[open] { background: #fff; }
 .banner { padding: 10px 14px; border-radius: 10px; margin: 8px 0 16px; }
 .banner.pass { background: #e7f5dc; border: 1px solid var(--ok); }
 .crash { border: 1px solid var(--red); background: #fdf0ee; border-radius: 10px; padding: 12px 14px; margin: 10px 0; }
+.calendar .behind { color: var(--red); }
+.calendar .ok-line { color: var(--ok); font-weight: 600; }

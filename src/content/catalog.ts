@@ -21,6 +21,7 @@ export type CatalogCourse = {
   title: string
   overview?: string
   weeks: Week[]
+  totalWeeks: number
   /** Weeks that have a quiz bank (load it with loadQuizWeek). */
   quizWeeks: Set<number>
 }
@@ -29,6 +30,8 @@ const slugOf = (path: string) => path.split('/')[2]
 const weekOf = (path: string) => Number(path.match(/week-(\d+)\.yaml$/)?.[1])
 
 const fallbackTitles: Record<string, string> = { [fullstackMl.slug]: fullstackMl.title }
+/** Course length from its course.ts when it has one; otherwise the written weeks are the whole course. */
+const knownLengths: Record<string, number> = { [fullstackMl.slug]: fullstackMl.totalWeeks }
 
 function build(): CatalogCourse[] {
   const slugs = [...new Set(Object.keys(weekFiles).map(slugOf))]
@@ -40,7 +43,7 @@ function build(): CatalogCourse[] {
       .map(([p, md]) => parseWeek(md, p))
       .sort((a, b) => a.number - b.number)
     const quizWeeks = new Set(Object.keys(quizFiles).filter((p) => slugOf(p) === slug).map(weekOf))
-    return { slug, title, overview, weeks, quizWeeks }
+    return { slug, title, overview, weeks, totalWeeks: knownLengths[slug] ?? weeks.length, quizWeeks }
   }).sort((a, b) => a.title.localeCompare(b.title))
 }
 

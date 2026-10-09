@@ -118,3 +118,32 @@ describe('gateDaysForWeek', () => {
     expect(gateDaysForWeek('learner-2', 'french', 5)).not.toEqual(gateDaysForWeek('learner-1', 'french', 5)) // almost surely
   })
 })
+
+describe('week quiz (auto-marked, 80%)', async () => {
+  const { drawWeekQuiz, gradeWeekQuiz, seededRandom: seeded } = await import('./quizGate.ts')
+  const { parseQuizWeek } = await import('../content/quizzes.ts')
+  const files = import.meta.glob<string>('../content/courses/fullstack-ml/quizzes/week-10.yaml', { query: '?raw', import: 'default', eager: true })
+  const week = parseQuizWeek(Object.values(files)[0], 'week-10.yaml')
+
+  it('draws 15 questions from Days 2–6 (2 medium + 1 hard each), none from Day 1', () => {
+    const qs = drawWeekQuiz(week, [], seeded(1))
+    expect(qs).toHaveLength(15)
+    expect(qs.filter((q) => q.difficulty === 'hard')).toHaveLength(5)
+    expect(qs.every((q) => !q.id.includes('-d1-'))).toBe(true)
+    expect(new Set(qs.map((q) => q.id)).size).toBe(15)
+  })
+
+  it('a retry draws unseen questions first', () => {
+    const first = drawWeekQuiz(week, [], seeded(2))
+    const second = drawWeekQuiz(week, first.map((q) => q.id), seeded(3))
+    expect(second.filter((q) => first.some((f) => f.id === q.id))).toHaveLength(0)
+  })
+
+  it('passes at 80%: 12 of 15, not 11', () => {
+    const qs = drawWeekQuiz(week, [], seeded(4))
+    const right = (q: (typeof qs)[number]) => (q.type === 'mcq' ? q.answer : q.type === 'truefalse' ? q.answer : q.type === 'text' ? q.accept[0] : q.type === 'multi' ? q.answers : q.type === 'order' ? q.items : q.pairs.map(([, r]) => r))
+    const responses = (n: number) => Object.fromEntries(qs.map((q, i) => [q.id, i < n ? right(q) : undefined]))
+    expect(gradeWeekQuiz(qs, responses(12)).passed).toBe(true)
+    expect(gradeWeekQuiz(qs, responses(11)).passed).toBe(false)
+  })
+})
