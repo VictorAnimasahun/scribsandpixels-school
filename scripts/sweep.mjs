@@ -61,18 +61,18 @@ async function passAllGates(keys) {
 }
 
 const home = await visit('#/')
-const courses = home.links.filter((h) => /^#\/c\/[^/]+$/.test(h))
+const courses = [...new Set(home.links.filter((h) => /^#\/c\/[^/]+$/.test(h)))]
 let pages = 1
 for (const course of courses) {
   const slug = course.split('/')[2]
   const coursePage = await visit(course)
   pages++
-  const weeks = coursePage.links.filter((h) => /^#\/c\/[^/]+\/w\/\d+$/.test(h))
+  const weeks = [...new Set(coursePage.links.filter((h) => /^#\/c\/[^/]+\/w\/\d+$/.test(h)))]
   const dayLinks = []
   for (const week of weeks) {
     const info = await visit(week)
     pages++
-    dayLinks.push(...info.links.filter((h) => /\/w\/\d+\/d\/\d+$/.test(h)))
+    for (const h of info.links) if (/\/w\/\d+\/d\/\d+$/.test(h) && !dayLinks.includes(h)) dayLinks.push(h)
   }
   await passAllGates(dayLinks.map((h) => { const [, , s, , w, , d] = h.split('/'); return `${s}:${w}:${d}` }))
   for (const day of dayLinks) {
