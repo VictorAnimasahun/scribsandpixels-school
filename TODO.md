@@ -55,6 +55,7 @@
 - [ ] UX pass (claude.ai), found 9 Oct: ticking a block then unticking it still marks today as a study day, so one tap keeps the streak (`setBlockDone` in `src/viewer/actions.ts`). Decide what counts as a study day (a whole day done? a block still ticked at midnight?)
 - [ ] First React lesson (Week 12 Day 1) downloads React (~300 KB) from cdnjs before the preview runs; on a slow connection it looks frozen. Show "Loading React…" in the preview while it downloads
 - [x] Fixed 9 Oct: pressing ✓ Check on a React sandbox before its first preview finished building could hang forever (WebKit resolved the two builds out of order and the plain preview replaced the checking one). Only the newest Run/Check now updates the preview
+- [ ] Watch: `xl-w11-rules` timed out on a grid-cell click in 2 of 12 WebKit e2e runs on 9 Oct (all just after a deploy; 0 of the next 6, and it passes in full runs on every host). If it shows up again, print the full Playwright error (it names what blocks the click)
 - [x] "Need a nudge?" sheet: 10-minute version (`#/c/<slug>/w/<n>/d/<n>/short`) and the note work
 - [ ] "Remind me in an hour" email (shown disabled until accounts + Resend are live)
 - [ ] Daily log form + "Still confusing you" on Today (designed; needs saved logs)
