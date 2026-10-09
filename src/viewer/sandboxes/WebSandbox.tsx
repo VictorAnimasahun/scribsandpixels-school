@@ -44,6 +44,9 @@ export default function WebSandbox({ sandbox }: Props) {
   const [results, setResults] = useState<boolean[] | null>(null)
   const tasks = sandbox.tasks ?? []
   const previewRef = useRef<HTMLIFrameElement>(null)
+  // Building a page is async (React pages load a compiler first), so a slow earlier Run could land
+  // after a later Check and replace it. Only the newest request may show its page.
+  const latest = useRef(0)
 
   // React sandboxes compile JSX first; the compiler is downloaded only for them.
   const page = async (extra = '') => {
@@ -60,7 +63,9 @@ export default function WebSandbox({ sandbox }: Props) {
   const render = () => {
     save(runningKey, String(Date.now()))
     setLogs([])
+    const request = ++latest.current
     void page().then((html) => {
+      if (request !== latest.current) return
       setRun((n) => n + 1)
       setDoc(html)
     })
@@ -108,7 +113,9 @@ export default function WebSandbox({ sandbox }: Props) {
         .then(() => settle(run)));
     </script>`
     save(runningKey, String(Date.now()))
+    const request = ++latest.current
     void page(checker).then((html) => {
+      if (request !== latest.current) return
       setRun((n) => n + 1)
       setDoc(html)
     })

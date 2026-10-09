@@ -54,7 +54,7 @@
     <tr><td class="mono">03</td><td>test_school_as_learner()</td><td><span class="tag now">DO NOW · weekends</span></td></tr>
     <tr><td class="mono">04</td><td>bring_back_ui_design()</td><td><span class="tag now">WHEN READY</span></td></tr>
     <tr><td class="mono">05</td><td>deploy_on_vercel()</td><td><span class="tag hold">✓ DONE 9 Oct</span></td></tr>
-    <tr><td class="mono">06</td><td>connect_subdomain()</td><td><span class="tag hold">ON HOLD</span></td></tr>
+    <tr><td class="mono">06</td><td>connect_subdomain()</td><td><span class="tag hold">✓ DONE 9 Oct</span></td></tr>
     <tr><td class="mono">07</td><td>create_supabase_project()</td><td><span class="tag hold">ON HOLD</span></td></tr>
     <tr><td class="mono">08</td><td>set_up_resend()</td><td><span class="tag hold">ON HOLD</span></td></tr>
     <tr><td class="mono">09</td><td>deploy_email_nudges()</td><td><span class="tag hold">ON HOLD</span></td></tr>
@@ -169,7 +169,7 @@ R5 writing weeks: &lt;KEEP | CHANGE: ...&gt;</pre></li>
     <span class="sig">PROCEDURE test_school_as_learner(course) → bug reports</span>
     <table class="kv">
       <tr><td>WHY</td><td>You're the first real learner. Things you trip over will trip up every learner after you.</td></tr>
-      <tr><td>INPUTS</td><td>Your phone <b>and</b> a laptop. The test site: <code>victoranimasahun.github.io/scribsandpixels-school</code></td></tr>
+      <tr><td>INPUTS</td><td>Your phone <b>and</b> a laptop. The school: <code>school.scribsandpixels.com</code></td></tr>
       <tr><td>TIME</td><td>20–40 minutes per session. Repeat any weekend.</td></tr>
     </table>
     <div class="box warn"><b>Know this first:</b> progress is saved <b>in this browser only</b>. A different phone or browser, a private tab, or clearing site data starts you from zero. That's expected until accounts exist.<br><b>Checkpoints are strict:</b> once you press <b>Start checkpoint</b>, leaving, reloading or closing the page counts as a failed attempt (60-minute cooldown). Start only when you have 10 calm minutes.</div>
@@ -255,7 +255,7 @@ Build it, replacing the test screens. Keep all content, quizzes and sandboxes wo
 
 <!-- ─────────────────────────── 06 ─────────────────────────── -->
 <section class="page">
-  <h2>06 · connect_subdomain() <span class="tag hold">ON HOLD</span></h2>
+  <h2>06 · connect_subdomain() <span class="tag hold">✓ DONE 9 Oct</span></h2>
   <div class="proc">
     <span class="sig">PROCEDURE connect_subdomain(domain) → school.&lt;yourdomain&gt;</span>
     <table class="kv">
@@ -264,7 +264,7 @@ Build it, replacing the test screens. Keep all content, quizzes and sandboxes wo
       <tr><td>TIME</td><td>15 minutes, then up to 24 hours for the internet to catch up</td></tr>
     </table>
     <ol class="steps">
-      <li>Decide the address, e.g. <code>school.&lt;yourdomain&gt;</code>. Write it here: ______________________</li>
+      <li>Decide the address, e.g. <code>school.&lt;yourdomain&gt;</code>. Done: <code>school.scribsandpixels.com</code></li>
       <li>In Vercel: open the project → <b>Settings</b> → <b>Domains</b> → type the address → <b>Add</b>.</li>
       <li>Vercel shows a record to create. It's usually: Type <code>CNAME</code>, Name <code>school</code>, Value <code>cname.vercel-dns.com</code>. Copy what <i>it</i> shows if that's different.</li>
       <li>Log in to your registrar → find <b>DNS</b> / <b>DNS Records</b> / <b>Advanced DNS</b> for the domain.</li>
@@ -311,6 +311,12 @@ supabase link --project-ref &lt;PROJECT_REF&gt;</pre></li>
 <pre>cp .env.example .env.local
 open -e .env.local</pre>
           Replace the two placeholder values with your URL and anon key → save (⌘S) → close.</li>
+      <li>Tell Supabase where the school lives, so login emails link to it (not to <code>localhost</code>): <b>Authentication → URL Configuration</b>.
+        <ul>
+          <li>Site URL: <code>https://school.scribsandpixels.com</code> → <b>Save</b></li>
+          <li>Redirect URLs → <b>Add URL</b>, one at a time: <code>https://school.scribsandpixels.com/**</code>, <code>https://scribsandpixels-school.vercel.app/**</code>, <code>http://localhost:5173/**</code></li>
+        </ul></li>
+      <li>Give the live site the same two values: Vercel → the project → <b>Settings → Environment Variables</b>. Add <code>VITE_SUPABASE_URL</code> = your Project URL, and <code>VITE_SUPABASE_KEY</code> = the anon / publishable key (environments: all) → <b>Save</b>. Then <b>Deployments</b> → the top one → <b>⋯ → Redeploy</b>.</li>
       <li>Send Claude: <code>Supabase project created and migrated. .env.local is filled in.</code> (Don't paste any keys.)</li>
     </ol>
     <div class="box stop"><b>NEVER copy the <code>service_role</code> key</b> anywhere except the password manager. It bypasses all security. If it ever leaks: Supabase → API settings → roll (regenerate) it.</div>
@@ -336,7 +342,7 @@ open -e .env.local</pre>
       <li>Back in Resend → <b>Verify DNS Records</b>. Repeat every 15 minutes until every row is green / <b>Verified</b>.</li>
       <li><b>API Keys</b> → <b>Create API Key</b>. Name: <code>school-nudges</code>. Permission: <b>Sending access</b> → <b>Add</b>.</li>
       <li>Copy the key <b>now</b> (it starts with <code>re_</code> and is shown only once) → save it in your password manager as <span class="kw">SECRET</span> "Resend API key".</li>
-      <li>Decide the From address, e.g. <code>Scribs &amp; Pixels &lt;school@&lt;yourdomain&gt;&gt;</code>. Write it here: ______________________</li>
+      <li>Decide the From address, e.g. <code>Scribs &amp; Pixels &lt;school@scribsandpixels.com&gt;</code>. Write it here: ______________________</li>
       <li><span class="kw">OPTIONAL</span>, for login emails from your domain too: Supabase → <b>Authentication → Emails → SMTP Settings</b> → enable custom SMTP: host <code>smtp.resend.com</code>, port <code>465</code>, username <code>resend</code>, password = your Resend API key, sender = your From address → <b>Save</b>.</li>
     </ol>
     <div class="box ok"><b>EXPECTED OUTPUT:</b> The domain shows <b>Verified</b> in Resend, and the API key is in your password manager.</div>
@@ -351,7 +357,7 @@ open -e .env.local</pre>
     <span class="sig">PROCEDURE deploy_email_nudges() → hourly emails running</span>
     <table class="kv">
       <tr><td>WHY</td><td>Switches on the daily nudge (Mon–Sat, at each learner's chosen hour, only if they haven't studied) and the Sunday review digest.</td></tr>
-      <tr><td>INPUTS</td><td>07 and 08 done. Your project ref, Resend API key, From address, and the site address (APP_URL: the Pages, Vercel or subdomain URL).</td></tr>
+      <tr><td>INPUTS</td><td>07 and 08 done. Your project ref, Resend API key, From address, and the site address (APP_URL: <code>https://school.scribsandpixels.com</code>).</td></tr>
       <tr><td>TIME</td><td>20 minutes</td></tr>
     </table>
     <ol class="steps">
@@ -359,7 +365,7 @@ open -e .env.local</pre>
 <pre>openssl rand -hex 32</pre></li>
       <li>Set the four secrets. Paste this as <b>one</b> command after filling in the four placeholders; keep the quotes:
 <pre>cd ~/Desktop/scribsandpixels-school
-supabase secrets set RESEND_API_KEY="&lt;re_...&gt;" EMAIL_FROM="Scribs &amp; Pixels &lt;school@yourdomain&gt;" APP_URL="&lt;https://site-address&gt;" CRON_SECRET="&lt;from step 1&gt;"</pre></li>
+supabase secrets set RESEND_API_KEY="&lt;re_...&gt;" EMAIL_FROM="Scribs &amp; Pixels &lt;school@scribsandpixels.com&gt;" APP_URL="https://school.scribsandpixels.com" CRON_SECRET="&lt;from step 1&gt;"</pre></li>
       <li>Upload the email function:
 <pre>supabase functions deploy send-nudges --no-verify-jwt</pre></li>
       <li>Do a safe dry run, which shows what <i>would</i> be sent without sending anything (replace both placeholders):
@@ -406,7 +412,7 @@ Device/browser: &lt;e.g. iPhone 13 Safari&gt;</pre>
   </table>
   <h3>Where to find things</h3>
   <table class="kv">
-    <tr><td>Test site</td><td><code>victoranimasahun.github.io/scribsandpixels-school</code></td></tr>
+    <tr><td>The school</td><td><code>school.scribsandpixels.com</code> (main; Vercel). Copies: <code>scribsandpixels-school.vercel.app</code>, <code>victoranimasahun.github.io/scribsandpixels-school</code></td></tr>
     <tr><td>To-do list (Claude's)</td><td><code>TODO.md</code> in the repo</td></tr>
     <tr><td>Project rules</td><td><code>CLAUDE.md</code> in the repo</td></tr>
     <tr><td>Phase 2 draft</td><td><code>src/content/courses/fullstack-ml/phase-2-plan.md</code></td></tr>

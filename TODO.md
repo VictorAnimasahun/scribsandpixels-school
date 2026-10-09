@@ -3,10 +3,8 @@
 ## Hosting & domain
 - [x] Test build live on GitHub Pages: https://victoranimasahun.github.io/scribsandpixels-school/ (redeploys on every push to `main`)
 - [x] Deployed on Vercel (9 Oct 2026): https://scribsandpixels-school.vercel.app (redeploys on every push to `main`; dashboard: https://vercel.com/victor-animasahuns-projects/scribsandpixels-school). Builds with base `/` because `GITHUB_PAGES` isn't set there.
-- [ ] **Subdomain on the Scribs & Pixels domain** (Victor): confirm the exact domain and which subdomain (e.g. `school.<domain>`).
-  - On Vercel: Project → Settings → Domains → add the subdomain, then create the DNS `CNAME` record it shows (usually `cname.vercel-dns.com`).
-  - If GitHub Pages gets the subdomain instead: `CNAME` → `victoranimasahun.github.io`, set it under repo Settings → Pages, **and** change `base` in `vite.config.ts` to `'/'` (a custom domain serves from the root).
-- [ ] Decide which host is the main one (Vercel or Pages) and point the subdomain there.
+- [x] Subdomain live (9 Oct 2026): **https://school.scribsandpixels.com** is the main address, served by Vercel (CNAME → Vercel DNS, HTTPS, http redirects). Vercel is the main host; GitHub Pages stays as a copy (CI checks still run there).
+- [ ] When accounts go live: Supabase Auth → URL Configuration (Site URL = the subdomain, redirect URLs for the subdomain, vercel.app and localhost) and `VITE_SUPABASE_URL` / `VITE_SUPABASE_KEY` in Vercel's environment variables (both are steps in procedure 07)
 
 ## Quizzes (a slice at a time, no mass generation)
 - [x] Quiz engine: random weekly checkpoints (1–2/week), 70% pass, 60-min cooldown, new questions on retry
@@ -56,6 +54,7 @@
 - [ ] UX pass (claude.ai): what the 10-minute version counts for · reading lessons during a cooldown · does a failed checkpoint keep the streak
 - [ ] UX pass (claude.ai), found 9 Oct: ticking a block then unticking it still marks today as a study day, so one tap keeps the streak (`setBlockDone` in `src/viewer/actions.ts`). Decide what counts as a study day (a whole day done? a block still ticked at midnight?)
 - [ ] First React lesson (Week 12 Day 1) downloads React (~300 KB) from cdnjs before the preview runs; on a slow connection it looks frozen. Show "Loading React…" in the preview while it downloads
+- [x] Fixed 9 Oct: pressing ✓ Check on a React sandbox before its first preview finished building could hang forever (WebKit resolved the two builds out of order and the plain preview replaced the checking one). Only the newest Run/Check now updates the preview
 - [x] "Need a nudge?" sheet: 10-minute version (`#/c/<slug>/w/<n>/d/<n>/short`) and the note work
 - [ ] "Remind me in an hour" email (shown disabled until accounts + Resend are live)
 - [ ] Daily log form + "Still confusing you" on Today (designed; needs saved logs)

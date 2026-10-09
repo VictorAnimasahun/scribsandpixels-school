@@ -3,7 +3,7 @@
 A multi-course online school for adult self-learners with day jobs. Its core idea is **accountability over content**: the school gives the daily structure, the review loop, streaks and nudges, and links out to free external resources (YouTube, freeCodeCamp, CS50, books) for the actual teaching.
 
 ## Workflow
-Open tasks live in `TODO.md`; keep it updated. Test build: https://victoranimasahun.github.io/scribsandpixels-school/ (GitHub Pages) and https://scribsandpixels-school.vercel.app (Vercel); both auto-deploy from `main`.
+Open tasks live in `TODO.md`; keep it updated. The school: **https://school.scribsandpixels.com** (Vercel, the main host; APP_URL). Copies: https://scribsandpixels-school.vercel.app and https://victoranimasahun.github.io/scribsandpixels-school/ (GitHub Pages, built with `GITHUB_PAGES` for its sub-path). All auto-deploy from `main`.
 Brainstorming and UI/UX design happen on claude.ai; final decisions and designs come back here to build. The current design lives in `docs/design/`. The user works across Claude Code on this Mac and Claude Code on the web (claude.ai/code), so **commit and push finished work to `main`**, otherwise the other side starts from a stale repo.
 
 ## Courses
@@ -60,7 +60,7 @@ More courses will follow; nothing may assume a single course. To add one: a new 
 ## Setup still needed (user)
 1. Create a Supabase project → run the migration (`supabase link` + `supabase db push`, or paste into the SQL editor) → put the URL + publishable key in `.env.local`.
 2. Resend: verify a sending domain, create an API key. Optionally set Resend as Supabase Auth's SMTP so magic-link emails come from the school too.
-3. Deploy the function: `supabase secrets set RESEND_API_KEY=… EMAIL_FROM="Scribs & Pixels <school@domain>" APP_URL=… CRON_SECRET=…` then `supabase functions deploy send-nudges --no-verify-jwt`, then run `supabase/setup/schedule-nudges.sql`.
+3. Deploy the function: `supabase secrets set RESEND_API_KEY=… EMAIL_FROM="Scribs & Pixels <school@domain>" APP_URL=https://school.scribsandpixels.com CRON_SECRET=…` then `supabase functions deploy send-nudges --no-verify-jwt`, then run `supabase/setup/schedule-nudges.sql`.
 
 ## Decisions (9 Oct 2026: school rules R1–R5)
 - R1 pacing: calendar-based (above). R2 week quiz: auto-marked, 80% (above). R3 streak: keep (Mon–Sat, Sunday rest). R5 writing weeks: keep (Claude writes and verifies each week here, a slice at a time).
