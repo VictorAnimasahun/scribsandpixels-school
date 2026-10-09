@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import type { CatalogCourse } from '../content/catalog.ts'
 import type { Block } from '../content/types.ts'
 import { sandboxes } from '../content/sandboxes.ts'
@@ -177,24 +177,34 @@ function WeekQuiz({ course, week }: { course: CatalogCourse; week: number }) {
   const key = `${course.slug}:${week}`
   const record = state.weekQuizzes[key] ?? { triggeredAt: 0, attempts: [], seen: [] }
   const status = gateStatus(record.attempts.map((a) => ({ finishedAt: new Date(a.finishedAt), passed: a.passed })), new Date(now), WEEK_QUIZ_RULES)
-  const [attempt, setAttempt] = useState<{ no: number; questions: Question[] } | null>(null)
+  const [attempt, setAttempt] = useState<{ no: number; questions: Question[]; done?: boolean } | null>(null)
+  const startedRef = useRef(false)
   const passMark = `${Math.round(WEEK_QUIZ_RULES.passMark * 100)}%`
   if (failed) return <p className="small muted-2">The week quiz couldn't load. Check your connection, then <button type="button" className="link" onClick={() => window.location.reload()}>reload the page</button>.</p>
   if (!bank) return <p className="small muted-2">Loading the week quiz…</p>
   const best = Math.max(0, ...record.attempts.map((a) => a.score))
   const start = () => {
+    if (startedRef.current) return // a double tap must not record two attempts
+    startedRef.current = true
     const questions = drawWeekQuiz(bank, record.seen, seededRandom(Date.now() % 1_000_000_007))
+    // Starting counts, as for the checkpoint: the attempt is saved as a fail straight away and replaced
+    // at the end. Closing or reloading mid-quiz can't skip the cooldown or preview the bank for free.
     update((s) => {
       const r = s.weekQuizzes[key] ?? { triggeredAt: Date.now(), attempts: [], seen: [] }
-      return { ...s, weekQuizzes: { ...s.weekQuizzes, [key]: { ...r, seen: [...r.seen.filter((id) => !questions.some((q) => q.id === id)), ...questions.map((q) => q.id)] } } }
+      return { ...s, weekQuizzes: { ...s.weekQuizzes, [key]: { ...r, attempts: [...r.attempts, { finishedAt: Date.now(), passed: false, score: 0 }], seen: [...r.seen.filter((id) => !questions.some((q) => q.id === id)), ...questions.map((q) => q.id)] } } }
     })
     setAttempt({ no: record.attempts.length + 1, questions })
   }
-  const finish = (result: { passed: boolean; score: number }) =>
+  const finish = (result: { passed: boolean; score: number }) => {
+    startedRef.current = false
+    setAttempt((a) => (a ? { ...a, done: true } : a))
     update((s) => {
       const r = s.weekQuizzes[key] ?? { triggeredAt: Date.now(), attempts: [], seen: [] }
-      return { ...s, weekQuizzes: { ...s.weekQuizzes, [key]: { ...r, attempts: [...r.attempts, { finishedAt: Date.now(), passed: result.passed, score: result.score }] } } }
+      const attempts = [...r.attempts]
+      attempts[Math.max(0, attempts.length - 1)] = { finishedAt: Date.now(), passed: result.passed, score: result.score }
+      return { ...s, weekQuizzes: { ...s.weekQuizzes, [key]: { ...r, attempts } } }
     })
+  }
   return (
     <section className="quiz-card">
       <div className="quiz-card-head">
@@ -211,7 +221,9 @@ function WeekQuiz({ course, week }: { course: CatalogCourse; week: number }) {
       {attempt ? (
         <>
           <QuizPlayer key={attempt.no} title={`Attempt ${attempt.no}`} questions={attempt.questions} rules={WEEK_QUIZ_RULES} passNote={`Pass mark ${passMark}`} onDone={finish} />
-          <button type="button" className="link" onClick={() => setAttempt(null)}>Close the quiz</button>
+          {!attempt.done
+            ? <p className="small muted-2">Leaving or reloading before the end counts as a failed attempt.</p>
+            : <button type="button" className="link" onClick={() => setAttempt(null)}>Close the quiz</button>}
         </>
       ) : status.kind === 'cooldown' ? (
         <p className="small">Not passed yet. Review the week, then try again in <b className="num">{formatLeft(status.until.getTime() - now)}</b>, with new questions.</p>
