@@ -308,7 +308,13 @@ npx supabase link --project-ref &lt;PROJECT_REF&gt;</pre></li>
 <pre>npx supabase db push</pre>
           When asked <code>Do you want to push these migrations?</code> type <code>Y</code> and press Enter.</li>
       <li>In Supabase: <b>Table Editor</b>. You should see tables including <code>profiles</code>, <code>enrollments</code> and <code>quiz_attempts</code>.</li>
-      <li>In Supabase: <b>Project Settings → API</b> (or <b>API Keys</b>). Copy the <b>Project URL</b> and the <b>anon / publishable</b> key. Both are safe for the browser.</li>
+      <li>Get the two values. Both are safe for the browser.
+        <ul>
+          <li><b>Project URL</b>: already known, no need to look it up: <code>https://ookbfjjsnzgbrcgltkot.supabase.co</code> (it's <code>https://</code> + your project ref + <code>.supabase.co</code>).</li>
+          <li><b>Publishable key</b>: left sidebar → <b>Project Settings</b> (gear icon, bottom) → <b>API Keys</b>. Copy the key that starts with <code>sb_publishable_</code> (click the copy icon next to it).<br>
+              <span class="kw">IF</span> there's no <code>sb_publishable_</code> key → open the <b>Legacy API Keys</b> tab and copy <b>anon</b> (a long key starting with <code>eyJ</code>). Either works.</li>
+          <li><b>Never</b> copy <code>sb_secret_…</code> or <code>service_role</code>: those are secret.</li>
+        </ul></li>
       <li>In the Terminal, create the local settings file:
 <pre>cp .env.example .env.local
 open -e .env.local</pre>
