@@ -4,7 +4,8 @@
 - [x] Test build live on GitHub Pages: https://victoranimasahun.github.io/scribsandpixels-school/ (redeploys on every push to `main`)
 - [x] Deployed on Vercel (9 Oct 2026): https://scribsandpixels-school.vercel.app (redeploys on every push to `main`; dashboard: https://vercel.com/victor-animasahuns-projects/scribsandpixels-school). Builds with base `/` because `GITHUB_PAGES` isn't set there.
 - [x] Subdomain live (9 Oct 2026): **https://school.scribsandpixels.com** is the main address, served by Vercel (CNAME → Vercel DNS, HTTPS, http redirects). Vercel is the main host; GitHub Pages stays as a copy (CI checks still run there).
-- [ ] When accounts go live: Supabase Auth → URL Configuration (Site URL = the subdomain, redirect URLs for the subdomain, vercel.app and localhost) and `VITE_SUPABASE_URL` / `VITE_SUPABASE_KEY` in Vercel's environment variables (both are steps in procedure 07)
+- [x] Supabase project created, migrated and configured (12 Oct 2026): Auth URL Configuration + Vercel env vars done (procedure 07)
+- [ ] Wire accounts into the app: sign-in screen (needs a design from claude.ai), `api.ts` behind the viewer, move localStorage progress into Supabase on first sign-in
 
 ## Quizzes (a slice at a time, no mass generation)
 - [x] Quiz engine: random weekly checkpoints (1–2/week), 70% pass, 60-min cooldown, new questions on retry
