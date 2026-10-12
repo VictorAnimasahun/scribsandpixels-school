@@ -56,7 +56,7 @@
     <tr><td class="mono">05</td><td>deploy_on_vercel()</td><td><span class="tag hold">✓ DONE 9 Oct</span></td></tr>
     <tr><td class="mono">06</td><td>connect_subdomain()</td><td><span class="tag hold">✓ DONE 9 Oct</span></td></tr>
     <tr><td class="mono">07</td><td>create_supabase_project()</td><td><span class="tag hold">✓ DONE 12 Oct</span></td></tr>
-    <tr><td class="mono">08</td><td>set_up_resend()</td><td><span class="tag hold">ON HOLD</span></td></tr>
+    <tr><td class="mono">08</td><td>set_up_resend()</td><td><span class="tag hold">NEXT</span></td></tr>
     <tr><td class="mono">09</td><td>deploy_email_nudges()</td><td><span class="tag hold">ON HOLD</span></td></tr>
     <tr><td class="mono">10</td><td>Appendix: words, tools and message templates</td><td></td></tr>
   </table>
@@ -335,7 +335,7 @@ open -e .env.local</pre>
 
 <!-- ─────────────────────────── 08 ─────────────────────────── -->
 <section class="page">
-  <h2>08 · set_up_resend() <span class="tag hold">ON HOLD</span></h2>
+  <h2>08 · set_up_resend() <span class="tag hold">NEXT</span></h2>
   <div class="proc">
     <span class="sig">PROCEDURE set_up_resend(domain) → verified sending domain + API key</span>
     <table class="kv">
@@ -345,13 +345,13 @@ open -e .env.local</pre>
     </table>
     <ol class="steps">
       <li>Go to <code>resend.com</code> → <b>Sign up</b> (the free plan is enough).</li>
-      <li><b>Domains</b> → <b>Add Domain</b> → type your domain, e.g. <code>&lt;yourdomain&gt;</code> (or a subdomain like <code>mail.&lt;yourdomain&gt;</code>) → choose the region closest to you → <b>Add</b>.</li>
+      <li><b>Domains</b> → <b>Add Domain</b> → type your domain, <code>scribsandpixels.com</code> → choose the region closest to you → <b>Add</b>.</li>
       <li>Resend shows 3–4 DNS records (TXT, MX, DKIM). For <b>each</b> one: registrar → DNS → <b>Add record</b> → copy Type, Name and Value exactly → <b>Save</b>.</li>
       <li>Back in Resend → <b>Verify DNS Records</b>. Repeat every 15 minutes until every row is green / <b>Verified</b>.</li>
       <li><b>API Keys</b> → <b>Create API Key</b>. Name: <code>school-nudges</code>. Permission: <b>Sending access</b> → <b>Add</b>.</li>
       <li>Copy the key <b>now</b> (it starts with <code>re_</code> and is shown only once) → save it in your password manager as <span class="kw">SECRET</span> "Resend API key".</li>
       <li>Decide the From address, e.g. <code>Scribs &amp; Pixels &lt;school@scribsandpixels.com&gt;</code>. Write it here: ______________________</li>
-      <li><span class="kw">OPTIONAL</span>, for login emails from your domain too: Supabase → <b>Authentication → Emails → SMTP Settings</b> → enable custom SMTP: host <code>smtp.resend.com</code>, port <code>465</code>, username <code>resend</code>, password = your Resend API key, sender = your From address → <b>Save</b>.</li>
+      <li><span class="kw">REQUIRED</span> before anyone but you can sign in (Supabase's own email only reaches members of your Supabase team): Supabase → <b>Authentication → Emails → SMTP Settings</b> → enable custom SMTP: host <code>smtp.resend.com</code>, port <code>465</code>, username <code>resend</code>, password = your Resend API key, sender = your From address → <b>Save</b>.</li>
     </ol>
     <div class="box ok"><b>EXPECTED OUTPUT:</b> The domain shows <b>Verified</b> in Resend, and the API key is in your password manager.</div>
     <div class="box stop"><b>ON ERROR:</b> If records won't verify after 24 hours → screenshot Resend's domain page and your DNS page, and send both. A common cause is the registrar adding your domain to the Name automatically (e.g. <code>send.yourdomain.com.yourdomain.com</code>): type only the part Resend shows before your domain.</div>
