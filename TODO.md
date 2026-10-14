@@ -5,6 +5,7 @@
 - [x] Deployed on Vercel (9 Oct 2026): https://scribsandpixels-school.vercel.app (redeploys on every push to `main`; dashboard: https://vercel.com/victor-animasahuns-projects/scribsandpixels-school). Builds with base `/` because `GITHUB_PAGES` isn't set there.
 - [x] Subdomain live (9 Oct 2026): **https://school.scribsandpixels.com** is the main address, served by Vercel (CNAME → Vercel DNS, HTTPS, http redirects). Vercel is the main host; GitHub Pages stays as a copy (CI checks still run there).
 - [x] Supabase project created, migrated and configured (12 Oct 2026): Auth URL Configuration + Vercel env vars done (procedure 07)
+- [ ] Resend (procedure 08): domain scribsandpixels.com **verified 14 Oct 2026** (region eu-west-1; DKIM `resend._domainkey`, `send`/`rsend` CNAMEs, `_dmarc` p=none, all in Spaceship DNS; root MX/SPF are Spaceship email forwarding, leave them). Still to do: API key in the password manager, Supabase Auth custom SMTP (smtp.resend.com:465, user `resend`, sender school@scribsandpixels.com), then a test email
 - [ ] Wire accounts into the app: sign-in screen (needs a design from claude.ai), `api.ts` behind the viewer, move localStorage progress into Supabase on first sign-in
 
 ## Quizzes (a slice at a time, no mass generation)
