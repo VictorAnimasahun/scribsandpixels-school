@@ -6,7 +6,12 @@
 - [x] Subdomain live (9 Oct 2026): **https://school.scribsandpixels.com** is the main address, served by Vercel (CNAME → Vercel DNS, HTTPS, http redirects). Vercel is the main host; GitHub Pages stays as a copy (CI checks still run there).
 - [x] Supabase project created, migrated and configured (12 Oct 2026): Auth URL Configuration + Vercel env vars done (procedure 07)
 - [ ] Resend (procedure 08): domain scribsandpixels.com **verified 14 Oct 2026** (region eu-west-1; DKIM `resend._domainkey`, `send`/`rsend` CNAMEs, `_dmarc` p=none, all in Spaceship DNS; root MX/SPF are Spaceship email forwarding, leave them). Still to do: API key in the password manager, Supabase Auth custom SMTP (smtp.resend.com:465, user `resend`, sender school@scribsandpixels.com), then a test email
-- [ ] Wire accounts into the app: sign-in screen (needs a design from claude.ai), `api.ts` behind the viewer, move localStorage progress into Supabase on first sign-in
+- [x] Accounts built (15 Oct 2026): sign-in by code or link, local-first sync with three-way merge, checkpoint attempts permanent on the server, sign-out clears the browser; proven by `check:db` and `check:accounts` (both in CI)
+- [ ] **Victor: procedure 10** (`npx supabase db push`, paste the sign-in template), then sign in on laptop + phone
+- [ ] Sign-in/Account screen design (claude.ai): built from the tokens for now (`AccountPage.tsx`, noted in `docs/design/README.md`)
+- [ ] Week unlocks aren't enforced in the test-build UI (any week can be ticked); decide before real learners join (the domain rule exists: `weekStatus`)
+- [ ] The nudge function only knows Fullstack: register French and Excel in `scripts/sync-functions.ts` (needs their `course.ts`) so their learners get nudges
+- [ ] Daily log UI (the 3 prompts) + "Still confusing you": `api.ts` has `saveLog`/`listLogs`; the domain's "day complete" also wants the log
 
 ## Quizzes (a slice at a time, no mass generation)
 - [x] Quiz engine: random weekly checkpoints (1–2/week), 70% pass, 60-min cooldown, new questions on retry

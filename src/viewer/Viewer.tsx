@@ -2,6 +2,10 @@ import { useEffect, useRef, useState } from 'react'
 import { catalog, findCourse, quizWeek, quizWeekSettled } from '../content/catalog.ts'
 import { DEFAULT_QUIZ_RULES, type Question } from '../content/quizzes.ts'
 import { drawAttempt, gateDaysForWeek, gateStatus, seededRandom } from '../domain/quizGate.ts'
+import { accountConfig, hasStoredSession, urlHasAuthResult } from '../lib/accountConfig.ts'
+import { AccountPage } from './AccountPage.tsx'
+import { loadSync } from './loadSync.ts'
+import { isSignedIn, useAccountStatus } from './accountStatus.ts'
 import { ErrorBoundary } from './ErrorBoundary.tsx'
 import { CoursePage, DayPage, WeekPage } from './pages.tsx'
 import { QuizPlayer } from './QuizPlayer.tsx'
@@ -147,6 +151,7 @@ function TesterTools() {
   const route = useRoute()
   const [open, setOpen] = useState(false)
   const [confirmReset, setConfirmReset] = useState(false)
+  const signedIn = isSignedIn(useAccountStatus())
   const pending = pendingGate(state)
   const gateDays = route.page === 'week' || route.page === 'day' ? gateDaysForWeek(state.learnerId, route.slug, route.week) : null
   return (
@@ -158,16 +163,18 @@ function TesterTools() {
           {route.page === 'day' && (
             <button type="button" onClick={() => { setOpen(false); update((s) => ({ ...s, gates: { ...s.gates, [dayKey(route.slug, route.week, route.day)]: { triggeredAt: Date.now(), attempts: [], seen: [] } } })) }}>Force checkpoint on this day</button>
           )}
-          {pending && (
+          {pending && !signedIn && (
             <button type="button" onClick={() => update((s) => {
               setOpen(false)
               const g = s.gates[pending.key]
               return { ...s, gates: { ...s.gates, [pending.key]: { ...g, attempts: g.attempts.map((a) => ({ ...a, finishedAt: 0 })) } } }
             })}>End cooldown now</button>
           )}
-          {confirmReset
-            ? <button type="button" className="danger" onClick={() => { setOpen(false); setConfirmReset(false); resetProgress() }}>Yes, reset all progress in this browser</button>
-            : <button type="button" onClick={() => setConfirmReset(true)}>Reset my progress</button>}
+          {signedIn
+            ? <p className="small">Signed in: checkpoint results are saved to your account, so they can't be reset or skipped here.</p>
+            : confirmReset
+              ? <button type="button" className="danger" onClick={() => { setOpen(false); setConfirmReset(false); resetProgress() }}>Yes, reset all progress in this browser</button>
+              : <button type="button" onClick={() => setConfirmReset(true)}>Reset my progress</button>}
           <p className="small muted-2">Only for testing. Real learners won't see this panel.</p>
         </div>
       )}
@@ -178,8 +185,10 @@ function TesterTools() {
 // ─── App shell ─────────────────────────────────────────────────────────────
 
 function Navigation({ route, activeSlug }: { route: Route; activeSlug: string }) {
+  const account = useAccountStatus()
   const onToday = route.page === 'home'
-  const onCourse = !onToday && route.page !== 'sandbox'
+  const onAccount = route.page === 'account'
+  const onCourse = !onToday && !onAccount && route.page !== 'sandbox'
   return (
     <>
       <nav className="sidebar" aria-label="Main">
@@ -190,11 +199,17 @@ function Navigation({ route, activeSlug }: { route: Route; activeSlug: string })
         {catalog.map((c) => (
           <a key={c.slug} className={`side-link course ${c.slug === activeSlug ? 'active' : ''}`} href={href.course(c.slug)}>{shortTitle(c.title)}</a>
         ))}
-        <p className="side-foot">Test build: progress is saved in this browser only.</p>
+        <a className={`side-link ${onAccount ? 'on' : ''}`} href={href.account()} aria-current={onAccount ? 'page' : undefined}><Icon name="user" />Account</a>
+        <p className="side-foot">
+          {isSignedIn(account)
+            ? <>Signed in as {account.email}.<br />{account.state === 'offline' || account.state === 'error' ? 'Not saved yet: will retry.' : 'Progress is saved to your account.'}</>
+            : <>Progress is saved in this browser only.{accountConfig && <a className="side-account" href={href.account()}>Sign in to keep it</a>}</>}
+        </p>
       </nav>
       <nav className="tabbar" aria-label="Main">
         <a className={onToday ? 'on' : ''} href={href.home()} aria-current={onToday ? 'page' : undefined}><Icon name="today" size={22} />Today</a>
         <a className={onCourse ? 'on' : ''} href={href.course(activeSlug)} aria-current={onCourse ? 'page' : undefined}><Icon name="course" size={22} />Course</a>
+        <a className={onAccount ? 'on' : ''} href={href.account()} aria-current={onAccount ? 'page' : undefined}><Icon name="user" size={22} />Account</a>
       </nav>
     </>
   )
@@ -207,8 +222,12 @@ export function Viewer() {
   const pending = pendingGate(state)
   const [passedScore, setPassedScore] = useState<number | null>(null)
   useEffect(() => { window.scrollTo(0, 0) }, [route])
+  // Signed in before, or arriving from a sign-in email: start syncing (loads the Supabase client).
+  useEffect(() => {
+    if (accountConfig && (hasStoredSession() || urlHasAuthResult())) void loadSync()
+  }, [])
 
-  const course = route.page !== 'home' ? findCourse(route.slug) : undefined
+  const course = route.page !== 'home' && route.page !== 'account' ? findCourse(route.slug) : undefined
   // Opening a course page makes it the course Today shows.
   useEffect(() => {
     if (course && state.activeCourse !== course.slug) update((s) => ({ ...s, activeCourse: course.slug }))
@@ -216,7 +235,8 @@ export function Viewer() {
   const activeSlug = course?.slug ?? activeCourseOf(state).slug
 
   let page
-  if (route.page === 'home' || !course) page = <TodayPage />
+  if (route.page === 'account') page = <AccountPage />
+  else if (route.page === 'home' || !course) page = <TodayPage />
   else if (route.page === 'course') page = <CoursePage course={course} />
   else if (route.page === 'week') page = <WeekPage course={course} week={route.week} />
   else if (route.page === 'sandbox') page = (

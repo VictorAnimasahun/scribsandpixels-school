@@ -1,0 +1,135 @@
+// Proves the database rules in supabase/migrations against a real Postgres (PGlite, in-process):
+// the signup trigger, row level security between two learners, the checkpoint-attempt guard,
+// key/shape constraints, and that deleting an account still removes everything.
+//
+// Supabase's own pieces the migrations rely on are stubbed the way Supabase defines them:
+// the `auth` schema with `auth.users` and `auth.uid()` (read from the request's JWT claims),
+// and the `anon` / `authenticated` roles.
+//
+// Usage: npm run check:db
+import { PGlite } from '@electric-sql/pglite'
+import { readFileSync, readdirSync } from 'node:fs'
+import { join } from 'node:path'
+
+const root = new URL('..', import.meta.url).pathname
+const db = await PGlite.create()
+
+await db.exec(`
+  create role anon nologin;
+  create role authenticated nologin;
+  create schema auth;
+  create table auth.users (id uuid primary key, email text not null, raw_user_meta_data jsonb not null default '{}');
+  create function auth.uid() returns uuid language sql stable as
+    $$ select nullif(current_setting('request.jwt.claim.sub', true), '')::uuid $$;
+  grant usage on schema auth to anon, authenticated;
+  grant execute on function auth.uid() to anon, authenticated;
+`)
+
+const dir = join(root, 'supabase/migrations')
+for (const file of readdirSync(dir).filter((f) => f.endsWith('.sql')).sort()) {
+  await db.exec(readFileSync(join(dir, file), 'utf8'))
+}
+// Supabase grants table access to these roles by default; RLS then decides which rows.
+await db.exec(`
+  grant usage on schema public to anon, authenticated;
+  grant select, insert, update, delete on all tables in schema public to anon, authenticated;
+`)
+
+let failures = 0
+const ok = (name) => console.log(`✓ ${name}`)
+const fail = (name, detail) => { failures++; console.log(`✗ ${name}${detail ? `: ${detail}` : ''}`) }
+
+/** Run SQL as a signed-in learner (or anon when uid is null), inside a transaction that's rolled back unless keep. */
+async function as(uid, sql, params = [], { keep = false } = {}) {
+  await db.exec('begin')
+  try {
+    await db.exec(`set local role ${uid ? 'authenticated' : 'anon'}`)
+    await db.query(`select set_config('request.jwt.claim.sub', $1, true)`, [uid ?? ''])
+    const result = await db.query(sql, params)
+    await db.exec(keep ? 'commit' : 'rollback')
+    return result
+  } catch (error) {
+    await db.exec('rollback')
+    throw error
+  }
+}
+async function expectOk(name, fn) {
+  try { await fn(); ok(name) } catch (e) { fail(name, e.message) }
+}
+async function expectError(name, fn, pattern) {
+  try { await fn(); fail(name, 'it was allowed') } catch (e) {
+    if (pattern && !pattern.test(e.message)) fail(name, `wrong error: ${e.message}`)
+    else ok(name)
+  }
+}
+async function expectRows(name, fn, n) {
+  try {
+    const r = await fn()
+    // A SELECT returns rows; INSERT/UPDATE/DELETE report how many rows they touched.
+    const count = r.fields.length ? r.rows.length : (r.affectedRows ?? 0)
+    if (count === n) ok(name)
+    else fail(name, `expected ${n} rows, got ${count}`)
+  } catch (e) { fail(name, e.message) }
+}
+
+const A = '00000000-0000-0000-0000-00000000000a'
+const B = '00000000-0000-0000-0000-00000000000b'
+
+// Signup ---------------------------------------------------------------------
+await db.query(`insert into auth.users (id, email, raw_user_meta_data) values ($1, 'a@example.com', '{"display_name":"Ada"}'), ($2, 'b@example.com', '{}')`, [A, B])
+await expectRows('signup creates a profile for each new user', () => db.query('select id from public.profiles'), 2)
+await expectRows('a profile starts with an empty app_state object', () => db.query(`select 1 from public.profiles where id = $1 and app_state = '{}'::jsonb`, [A]), 1)
+
+// Row level security ---------------------------------------------------------
+await expectOk('A records a study day', () => as(A, `insert into public.study_days (user_id, studied_on) values ($1, '2026-10-12')`, [A], { keep: true }))
+await expectError("A can't record a study day for B", () => as(A, `insert into public.study_days (user_id, studied_on) values ($1, '2026-10-12')`, [B]), /row-level security/)
+await expectRows("B can't see A's study days", () => as(B, 'select * from public.study_days'), 0)
+await expectRows("anon can't see anyone's study days", () => as(null, 'select * from public.study_days'), 0)
+await expectRows("anon can't read profiles", () => as(null, 'select * from public.profiles'), 0)
+await expectRows('A sees only their own profile', () => as(A, 'select * from public.profiles'), 1)
+
+await expectOk('A saves app settings', () => as(A, `update public.profiles set app_state = '{"activeCourse":"french","bestScores":{"french:1:1:rapid":0.8}}' where id = $1`, [A], { keep: true }))
+await expectError('app_state must be an object', () => as(A, `update public.profiles set app_state = '[1,2]' where id = $1`, [A]), /app_state_is_object/)
+await expectRows("A can't change B's profile", () => as(A, `update public.profiles set app_state = '{"x":1}' where id = $1`, [B]), 0)
+
+// Checkpoints ----------------------------------------------------------------
+await expectOk('A opens a checkpoint', () => as(A, `insert into public.checkpoints (user_id, kind, key, seen) values ($1, 'gate', 'french:3:2', '{q1,q2}')`, [A], { keep: true }))
+await expectOk('A opens a week quiz', () => as(A, `insert into public.checkpoints (user_id, kind, key) values ($1, 'week', 'fullstack-ml:10')`, [A], { keep: true }))
+await expectError('a gate key must be course:week:day', () => as(A, `insert into public.checkpoints (user_id, kind, key) values ($1, 'gate', 'french:3')`, [A]), /checkpoint_key_shape/)
+await expectError('a week key must be course:week', () => as(A, `insert into public.checkpoints (user_id, kind, key) values ($1, 'week', 'french:3:2')`, [A]), /checkpoint_key_shape/)
+await expectError('a gate day is 1–6', () => as(A, `insert into public.checkpoints (user_id, kind, key) values ($1, 'gate', 'french:3:7')`, [A]), /checkpoint_key_shape/)
+await expectError('unknown kinds are refused', () => as(A, `insert into public.checkpoints (user_id, kind, key) values ($1, 'exam', 'french:3')`, [A]), /check/)
+await expectOk('A adds seen questions', () => as(A, `update public.checkpoints set seen = '{q1,q2,q3}' where user_id = $1 and kind = 'gate' and key = 'french:3:2'`, [A], { keep: true }))
+await expectRows("A can't delete a checkpoint (it would take its attempts with it)", () => as(A, `delete from public.checkpoints where user_id = $1`, [A]), 0)
+await expectRows("B can't see A's checkpoints", () => as(B, 'select * from public.checkpoints'), 0)
+await expectError("B can't open a checkpoint as A", () => as(B, `insert into public.checkpoints (user_id, kind, key) values ($1, 'gate', 'french:4:1')`, [A]), /row-level security/)
+
+// Attempts: start = provisional fail; finish replaces it once; then permanent.
+const attempt = (n, passed, score) => `insert into public.checkpoint_attempts (user_id, kind, key, attempt, finished_at, passed, score) values ($1, 'gate', 'french:3:2', ${n}, now(), ${passed}, ${score})`
+await expectOk('starting an attempt saves a provisional fail', () => as(A, attempt(1, false, 0), [A], { keep: true }))
+await expectOk('finishing replaces it with the result', () => as(A, `update public.checkpoint_attempts set passed = false, score = 0.5, finished_at = now() where user_id = $1 and attempt = 1`, [A], { keep: true }))
+await expectError("a finished result can't be rewritten (no turning a fail into a pass)", () => as(A, `update public.checkpoint_attempts set passed = true, score = 1 where user_id = $1 and attempt = 1`, [A]), /can't be changed/)
+await expectRows("a learner can't delete an attempt (no erasing a fail to skip the cooldown)", () => as(A, `delete from public.checkpoint_attempts where user_id = $1`, [A]), 0)
+await expectError('even code that bypasses row security (service role) can\'t delete an attempt', () => db.query(`delete from public.checkpoint_attempts where user_id = $1`, [A]), /permanent/)
+await expectError('an attempt can only be for an existing checkpoint', () => as(A, `insert into public.checkpoint_attempts (user_id, kind, key, attempt, finished_at, passed, score) values ($1, 'gate', 'french:9:9', 1, now(), true, 1)`, [A]), /foreign key|violates/)
+await expectError('scores are between 0 and 1', () => as(A, attempt(2, true, 1.5), [A]), /check/)
+await expectError("the same attempt number can't be saved twice", () => as(A, attempt(1, true, 1), [A]), /duplicate key/)
+await expectOk('a second attempt can pass', () => as(A, attempt(2, false, 0), [A], { keep: true }).then(() => as(A, `update public.checkpoint_attempts set passed = true, score = 0.83 where user_id = $1 and attempt = 2`, [A], { keep: true })))
+await expectError("an attempt can't be moved to another checkpoint", () => as(A, attempt(3, false, 0), [A], { keep: true }).then(() => as(A, `update public.checkpoint_attempts set attempt = 9 where user_id = $1 and attempt = 3`, [A])), /can't be moved/)
+await expectRows("B can't see A's attempts", () => as(B, 'select * from public.checkpoint_attempts'), 0)
+await expectError("B can't add an attempt to A's checkpoint", () => as(B, attempt(4, true, 1), [A]), /row-level security/)
+await expectRows("B can't finish A's provisional attempt", () => as(B, `update public.checkpoint_attempts set passed = true, score = 1 where user_id = $1 and attempt = 3`, [A]), 0)
+
+// Account deletion -------------------------------------------------------------
+await expectOk('deleting an account removes all its data (cascades past the attempt guard)', async () => {
+  await db.query('delete from auth.users where id = $1', [A])
+  for (const table of ['profiles', 'study_days', 'checkpoints', 'checkpoint_attempts']) {
+    const column = table === 'profiles' ? 'id' : 'user_id'
+    const { rows } = await db.query(`select count(*)::int as n from public.${table} where ${column} = $1`, [A])
+    if (rows[0].n !== 0) throw new Error(`${rows[0].n} rows left in ${table}`)
+  }
+})
+await expectRows("deleting A left B's profile alone", () => db.query('select 1 from public.profiles where id = $1', [B]), 1)
+
+console.log(failures ? `\n${failures} database check(s) failing` : '\nAll database checks pass')
+process.exit(failures ? 1 : 0)

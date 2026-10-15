@@ -12,7 +12,7 @@ import { createClient } from 'npm:@supabase/supabase-js@2'
 import coursesJson from '../_shared/courses.json' with { type: 'json' }
 import type { Course } from '../_shared/src/content/types.ts'
 import { currentPosition, dayKey, pace, type Position } from '../_shared/src/domain/progress.ts'
-import { addDays, localDate, streak, studyDatesFrom, weekday } from '../_shared/src/domain/streak.ts'
+import { addDays, localDate, streak, weekday } from '../_shared/src/domain/streak.ts'
 
 const courses = coursesJson as unknown as Course[]
 
@@ -65,21 +65,26 @@ async function buildEmail(profile: Profile, now: Date): Promise<Email | null> {
   const isSunday = weekday(today) === 0
   const name = profile.display_name ?? 'there'
 
-  const [enrollments, days, quizzes] = await Promise.all([
+  // The same sources the app uses: a study day is any day a block was ticked (study_days, in the
+  // learner's own calendar), a finished day has every block ticked (day_progress), and a week
+  // is passed when its auto-marked week quiz was (checkpoint_attempts, kind 'week', key 'slug:week').
+  const [enrollments, days, studyDays, weekPasses] = await Promise.all([
     supabase.from('enrollments').select('course_slug, started_on').eq('user_id', profile.id).eq('status', 'active'),
-    supabase.from('day_progress').select('course_slug, week, day, completed_at').eq('user_id', profile.id),
-    supabase.from('quiz_attempts').select('course_slug, week').eq('user_id', profile.id).eq('passed', true),
+    supabase.from('day_progress').select('course_slug, week, day').eq('user_id', profile.id),
+    supabase.from('study_days').select('studied_on').eq('user_id', profile.id),
+    supabase.from('checkpoint_attempts').select('key').eq('user_id', profile.id).eq('kind', 'week').eq('passed', true),
   ])
-  for (const r of [enrollments, days, quizzes]) if (r.error) throw new Error(r.error.message)
+  for (const r of [enrollments, days, studyDays, weekPasses]) if (r.error) throw new Error(r.error.message)
 
-  const dates = studyDatesFrom(days.data!.map((d) => new Date(d.completed_at)), profile.timezone)
+  const dates = new Set<string>(studyDays.data!.map((d) => d.studied_on))
   const { current } = streak(dates, today)
+  const passed = weekPasses.data!.map((r) => { const [slug, week] = r.key.split(':'); return { slug, week: Number(week) } })
   const next = enrollments.data!.flatMap(({ course_slug, started_on }) => {
     const course = courses.find((c) => c.slug === course_slug)
     if (!course) return []
     const progress = {
       completedDays: new Set(days.data!.filter((d) => d.course_slug === course_slug).map((d) => dayKey(d.week, d.day))),
-      passedWeeks: new Set(quizzes.data!.filter((q) => q.course_slug === course_slug).map((q) => q.week)),
+      passedWeeks: new Set(passed.filter((p) => p.slug === course_slug).map((p) => p.week)),
     }
     // Calendar pacing: missed days are owed, oldest first, before today's.
     const { behind } = pace(course, progress, started_on, today)

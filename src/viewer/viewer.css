@@ -409,3 +409,13 @@ table.grid { border-collapse: collapse; font-size: 13px; }
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; }
 }
+
+/* ── Account (sign-in, sync status) ─────────────────────────
+   Built from the existing tokens; the claude.ai design has no sign-in screen yet. */
+.banner.warn { background: var(--pen-tint); border: 1px solid var(--pen); color: var(--ink); }
+.account-form { display: flex; flex-direction: column; gap: 14px; max-width: 420px; }
+.field { display: flex; flex-direction: column; gap: 6px; font-weight: 600; font-size: 14px; }
+.field input { font: inherit; font-weight: 400; font-size: 17px; padding: 12px 14px; min-height: 48px; border: 1.5px solid var(--line-strong); border-radius: var(--r-btn); background: var(--white); color: var(--ink); min-width: 0; }
+.field input:focus { border-color: var(--green); }
+.code-input { font-family: var(--mono); letter-spacing: .3em; font-size: 22px !important; }
+.side-account { display: block; margin-top: 6px; color: var(--green); }

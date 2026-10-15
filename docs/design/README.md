@@ -45,5 +45,15 @@ Type: **Literata** (headings, lesson prose), **Public Sans** (interface), **Kala
 | `Year.dc.html` | Your year (phase ledger) | `#/c/<slug>` |
 | `Desktop.dc.html` | Today on desktop | `#/` at ≥ 1000px |
 
+Not designed yet (built from the tokens above so it works; restyle freely):
+
+| File | Screen | Route |
+|---|---|---|
+| `src/viewer/AccountPage.tsx` | Sign in (email → 6-digit code), Your account (save status, download now, sign out) | `#/account` |
+
+The Account entry is a third tab on phones and a sidebar link on desktop; the sidebar footer shows
+whether progress is saved to the account or to this browser only. Styles: the "Account" section at the
+end of `viewer.css`.
+
 Open UX questions (decided in the UX pass, not here): what the 10-minute version counts for, whether
 lessons stay readable during a cooldown, whether a failed checkpoint counts toward the streak.

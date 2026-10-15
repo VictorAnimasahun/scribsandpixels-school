@@ -1,8 +1,8 @@
 import { useSyncExternalStore } from 'react'
 
 /*
- * Test-build progress, kept in this browser's localStorage only. It's a
- * stand-in until real accounts exist; nothing leaves the device.
+ * Progress lives here, in this browser's localStorage. Without an account nothing leaves the
+ * device; once the learner signs in, sync.ts mirrors it to their account (see syncModel.ts).
  */
 
 export type GateRecord = {
@@ -89,6 +89,19 @@ export function update(change: (draft: State) => State) {
   state = change(state)
   save()
   listeners.forEach((l) => l())
+}
+
+export const getState = () => state
+
+/** Called on every change (from this tab or another one). */
+export function subscribe(listener: () => void): () => void {
+  listeners.add(listener)
+  return () => { listeners.delete(listener) }
+}
+
+/** Signing out: nothing of the last learner stays in this browser. */
+export function clearAll() {
+  update(() => sanitise(null))
 }
 
 export function resetProgress() {

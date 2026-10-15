@@ -111,7 +111,7 @@ export type Pace = {
   quizzesOverdue: number[]
 }
 
-export function pace(course: Course, progress: LearnerProgress, startedOn: IsoDate, today: IsoDate): Pace {
+export function pace(course: Pick<Course, 'totalWeeks' | 'weeks'>, progress: LearnerProgress, startedOn: IsoDate, today: IsoDate): Pace {
   const scheduled = scheduledFor(course.totalWeeks, startedOn, today)
   const behind: Pace['behind'] = []
   const quizzesOverdue: number[] = []

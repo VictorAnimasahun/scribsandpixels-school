@@ -63,12 +63,10 @@ async function testWeb(s) {
     await page.getByRole('button', { name: tab.toUpperCase(), exact: true }).click()
     await page.locator('.sandbox textarea').first().fill(solution[tab])
   }
-  let done = ''
   for (let round = 0; round < Number(process.env.ROUNDS ?? 2); round++) { // twice: a second check without edits must still report
     await page.getByRole('button', { name: '✓ Check tasks' }).click()
     await page.waitForFunction(() => /\d+ \/ \d+ tasks done/.test(document.body.innerText), null, { timeout: 15000 })
     await page.waitForTimeout(400)
-    done = (await page.locator('body').innerText()).match(/(\d+) \/ (\d+) tasks done/)
   }
   const items = await page.locator('ol.tasks li').evaluateAll((lis) => lis.map((li) => [li.textContent.includes('✅'), li.textContent.slice(0, 60)]))
   for (const [ok, text] of items) if (!ok) console.log(`    not passing: ${text}`)

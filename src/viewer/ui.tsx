@@ -26,6 +26,7 @@ const paths = {
   note: <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />,
   close: <path d="M18 6 6 18M6 6l12 12" />,
   check: <path d="m4 13 5 5L20 6" />,
+  user: <><circle cx="12" cy="8" r="4" /><path d="M4 21a8 8 0 0 1 16 0" /></>,
 } as const
 
 export type IconName = keyof typeof paths

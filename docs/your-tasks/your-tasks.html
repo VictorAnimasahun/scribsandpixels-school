@@ -56,11 +56,12 @@
     <tr><td class="mono">05</td><td>deploy_on_vercel()</td><td><span class="tag hold">✓ DONE 9 Oct</span></td></tr>
     <tr><td class="mono">06</td><td>connect_subdomain()</td><td><span class="tag hold">✓ DONE 9 Oct</span></td></tr>
     <tr><td class="mono">07</td><td>create_supabase_project()</td><td><span class="tag hold">✓ DONE 12 Oct</span></td></tr>
-    <tr><td class="mono">08</td><td>set_up_resend()</td><td><span class="tag hold">NEXT</span></td></tr>
+    <tr><td class="mono">08</td><td>set_up_resend()</td><td><span class="tag hold">✓ DONE 15 Oct</span></td></tr>
     <tr><td class="mono">09</td><td>deploy_email_nudges()</td><td><span class="tag hold">ON HOLD</span></td></tr>
-    <tr><td class="mono">10</td><td>Appendix: words, tools and message templates</td><td></td></tr>
+    <tr><td class="mono">10</td><td>switch_on_accounts()</td><td><span class="tag now">NEXT</span></td></tr>
+    <tr><td class="mono">11</td><td>Appendix: words, tools and message templates</td><td></td></tr>
   </table>
-  <div class="box warn" style="margin-top:16pt"><b>Why some procedures are ON HOLD.</b> You put hosting and the backend on hold. They're written out in full so they're ready when you decide. <b>Doing 07–09 today won't change anything you can see</b>, because the app doesn't log people in yet. Claude wires accounts into the app after your UI design comes back.</div>
+  <div class="box warn" style="margin-top:16pt"><b>Where things stand (15 Oct).</b> Hosting, the subdomain, Supabase and Resend are done. Accounts are built into the app; <b>10 switches them on</b>. 09 (the nudge emails) comes after 10, once your own account has some progress in it.</div>
 </section>
 
 <!-- ─────────────────────────── 00 ─────────────────────────── -->
@@ -335,7 +336,7 @@ open -e .env.local</pre>
 
 <!-- ─────────────────────────── 08 ─────────────────────────── -->
 <section class="page">
-  <h2>08 · set_up_resend() <span class="tag hold">NEXT</span></h2>
+  <h2>08 · set_up_resend() <span class="tag hold">✓ DONE 15 Oct</span></h2>
   <div class="proc">
     <span class="sig">PROCEDURE set_up_resend(domain) → verified sending domain + API key</span>
     <table class="kv">
@@ -393,7 +394,46 @@ npx supabase secrets set RESEND_API_KEY="&lt;re_...&gt;" EMAIL_FROM="Scribs &amp
 
 <!-- ─────────────────────────── 10 ─────────────────────────── -->
 <section class="page">
-  <h2>10 · Appendix: words, tools and message templates</h2>
+  <h2>10 · switch_on_accounts() <span class="tag now">NEXT</span></h2>
+  <div class="proc">
+    <span class="sig">PROCEDURE switch_on_accounts() → you sign in, and your progress follows you between devices</span>
+    <table class="kv">
+      <tr><td>WHY</td><td>The app can now save progress to your account. It needs two things only you can do: add the new tables to your database, and put the 6-digit code into the sign-in email.</td></tr>
+      <tr><td>INPUTS</td><td>07 and 08 done. The Mac with the project. Your Supabase database password (password manager) and your Mac login password (for the keychain prompt).</td></tr>
+      <tr><td>TIME</td><td>15 minutes</td></tr>
+    </table>
+    <ol class="steps">
+      <li>Get the latest project and add the new tables (checkpoints, attempts, study days). Paste in the Terminal:
+<pre>cd ~/Desktop/scribsandpixels-school
+git pull
+npx supabase db push</pre>
+          It lists <code>20261015120000_checkpoints_and_sync.sql</code> and asks <code>Do you want to push these migrations?</code> → type <code>Y</code> → Enter.<br>
+          <span class="kw">IF</span> macOS asks for your <b>login keychain</b> password ("supabase wants to use… Supabase CLI") → type your Mac password → <b>Allow</b>. That's the Supabase login you saved in 07.<br>
+          <span class="kw">IF</span> it asks for the database password → paste "Supabase DB password" from your password manager.</li>
+      <li>Check it worked: Supabase → <b>Table Editor</b>. You should now also see <code>checkpoints</code>, <code>checkpoint_attempts</code> and <code>study_days</code>.</li>
+      <li>Open the email template in TextEdit and copy all of it (⌘A, ⌘C):
+<pre>open -e supabase/templates/sign-in.html</pre></li>
+      <li>Supabase → <b>Authentication → Emails → Templates</b> → <b>Magic Link</b>:
+        <ul>
+          <li>Subject: <code>Your Scribs &amp; Pixels sign-in code</code></li>
+          <li>Body (message): select everything in the box, delete it, paste (⌘V) → <b>Save</b>.</li>
+        </ul></li>
+      <li>Same page → <b>Confirm signup</b> → the same subject and the same pasted body → <b>Save</b>. (New learners get this one the first time; it must have the code too.)</li>
+      <li>On the laptop: open <code>school.scribsandpixels.com</code> → <b>Account</b> → type your email → <b>Email me a sign-in code</b>.</li>
+      <li>Open the email (Gmail on your phone is fine). <span class="kw">IF</span> it shows a 6-digit code → type it on the laptop → <b>Sign in</b>. <span class="kw">ELSE</span> (only a link) → step 4 or 5 didn't save; redo them and ask for a new email.</li>
+      <li>You should see <b>Your account</b> and, a moment later, <b>Saved to your account</b>.</li>
+      <li>On your phone: <code>school.scribsandpixels.com</code> → <b>Account</b> → sign in the same way. The progress from the laptop appears.</li>
+      <li>Tick one block on the phone. On the laptop, open <b>Account</b> → <b>Download from my account now</b>. The tick appears there too.</li>
+      <li>Send Claude: <code>Accounts are on. Signed in on laptop and phone.</code></li>
+    </ol>
+    <div class="box ok"><b>EXPECTED OUTPUT:</b> Signed in on both devices, the same progress on both, and the email showing a code from <code>school@scribsandpixels.com</code>.</div>
+    <div class="box stop"><b>ON ERROR:</b> If the Account page says <i>Couldn't save to your account: Could not find the table 'public.…' in the schema cache</i> → step 1 didn't finish; run <code>npx supabase db push</code> again. If the email lands in spam → mark it "Not spam" and tell Claude. Anything else → copy the exact message on screen and send it with the error template below.</div>
+  </div>
+</section>
+
+<!-- ─────────────────────────── 11 ─────────────────────────── -->
+<section class="page">
+  <h2>11 · Appendix: words, tools and message templates</h2>
   <h3>Message template: error</h3>
 <pre>ERROR in procedure &lt;number + name&gt;, step &lt;number&gt;.
 What I did: &lt;one sentence&gt;

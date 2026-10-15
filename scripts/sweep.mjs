@@ -33,7 +33,7 @@ async function visit(hash) {
     try {
       await page.waitForSelector('main h1, main .lock, main p', { timeout: 15000 })
       break
-    } catch (e) {
+    } catch {
       if (tries === 2) { flag(hash, 'never finished loading (twice)'); return { text: '', h1: '', wide: 0, links: [] } }
     }
   }
