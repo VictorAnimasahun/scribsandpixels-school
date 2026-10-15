@@ -20,6 +20,26 @@ Each one follows the same loop: **build it → break it on purpose → watch it 
 | **Scalability** | 33, 47–48 | Stateless servers, load balancers, read replicas, queues as shock absorbers. Load test your Phase 4 app with Locust until it breaks, and write down where and why (33). |
 | **Tradeoffs** | 24, 27, 30, 33, 47–48 | Every milestone ships with a short design doc of the decisions and what each one cost (ADRs). Interviews test exactly this (47–48). |
 
+## Engineering over syntax (15 Oct 2026)
+
+Victor, after setting up the school's own hosting, database and email by hand:
+
+> All these steps are the real engineering and should be a part of the fullstack module. It's 2026, no one is writing copious lines of code manually again, so don't make syntax the main gist.
+
+From Phase 3 on, lessons assume an AI assistant writes most of the code. The learner's job is the part AI can't do for them: **specify** what to build, **review** the code it writes (and catch what's wrong), **ship** it, **configure** the services around it, **verify** it works, **operate** it when it breaks, and **explain the tradeoffs**. Syntax drills stay short and serve that work. Every Saturday's "done" means *live at a URL*, not "works on my laptop".
+
+The school's own setup (October 2026) is the worked example, done for real:
+
+| What Victor did | Where it's taught |
+|---|---|
+| Deploy from GitHub to Vercel; every push redeploys | Week 14 (static site), Week 15 (the job board, live on day one) |
+| Subdomain: CNAME at the registrar, DNS propagation, automatic HTTPS | Week 15 |
+| Hosted Postgres (Supabase): create, link with the CLI, run migrations, row-level security, publishable vs secret keys | Week 17 |
+| A tool install fails (`brew`: Command Line Tools outdated) → find another route (`npx`) instead of stopping | Week 15, and every "ON ERROR" box |
+| Auth redirect URLs; magic-link sign-in; why built-in email only reaches your own team | Week 19 |
+| Sending domain on Resend: DKIM, SPF, DMARC records, verification, a scoped API key, SMTP for auth emails | Week 22 |
+| Env vars in the host: config vs secret, what ends up in the browser bundle | Week 28 |
+
 ## "2 million users in 4 days": the capacity math (Week 33, again in Week 47)
 You learn to answer it with arithmetic, not vibes:
 - 2,000,000 sign-ups in 4 days = 500,000 a day ≈ **5.8 per second on average**.

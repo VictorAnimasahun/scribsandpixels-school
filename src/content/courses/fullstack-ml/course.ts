@@ -190,14 +190,14 @@ const phase2Outlines: WeekOutline[] = [
 // Phases 3, 4 and 6 carry the production-engineering thread (production-track.md): the things AI-assisted
 // "vibe coding" won't teach — concurrency, observability, reliability, scalability, auth, databases, tradeoffs.
 const phase3Outlines: WeekOutline[] = [
-  { number: 15, phase: 3, title: 'Backend Basics: HTTP and Django', topics: ['Requests, responses, status codes', 'Django project + apps', 'URLs and views', 'Job board: plan the data'] },
+  { number: 15, phase: 3, title: 'Backend Basics: HTTP and Django', topics: ['Requests, responses, status codes', 'Django project + apps', 'URLs and views', 'Ship on day one: the job board live at a URL (deploy from GitHub)', 'Your own subdomain: DNS, CNAME, HTTPS', 'Job board: plan the data'] },
   { number: 16, phase: 3, title: 'Models and SQL', topics: ['Django models + ORM', 'SQL SELECT/JOIN (SQLZoo)', 'The admin', 'Job board: jobs + companies'] },
-  { number: 17, phase: 3, title: 'Databases Properly', topics: ['Schema design + normalisation', 'Migrations', 'Indexes + EXPLAIN', 'Constraints that protect data'] },
+  { number: 17, phase: 3, title: 'Databases Properly', topics: ['Schema design + normalisation', 'Migrations, run against a hosted Postgres', 'Indexes + EXPLAIN', 'Constraints that protect data', 'Row-level security; publishable vs secret keys'] },
   { number: 18, phase: 3, title: 'Templates and Forms', topics: ['Templates', 'Forms + validation', 'Messages', 'Job board: post a job'] },
-  { number: 19, phase: 3, title: 'Auth I: Users and Permissions', topics: ['Sessions + cookies', 'Password hashing', 'Login/logout/signup', 'Permissions: who may edit what', 'OWASP top risks'] },
+  { number: 19, phase: 3, title: 'Auth I: Users and Permissions', topics: ['Sessions + cookies', 'Password hashing', 'Login/logout/signup', 'Build vs buy: your own auth or a hosted provider (redirect URLs, magic links)', 'Permissions: who may edit what', 'OWASP top risks'] },
   { number: 20, phase: 3, title: 'Transactions and Concurrency I', topics: ['ACID transactions', 'Race conditions (two applies, one slot)', 'select_for_update + unique constraints', 'Idempotency'] },
   { number: 21, phase: 3, title: 'Testing and Reliability I', topics: ['Unit + integration tests', 'Test data + fixtures', 'CI with GitHub Actions', 'Testing the race from Week 20'] },
-  { number: 22, phase: 3, title: 'Background Work', topics: ['Queues + workers', 'Sending emails off the request', 'Timeouts', 'Retries with backoff + jitter'] },
+  { number: 22, phase: 3, title: 'Background Work', topics: ['Queues + workers', 'Real email: a sending domain, DKIM/SPF/DMARC, SMTP, scoped API keys', 'Sending emails off the request', 'Timeouts', 'Retries with backoff + jitter', 'Why emails land in spam'] },
   { number: 23, phase: 3, title: 'Observability I', topics: ['Structured logging', 'Error tracking (Sentry)', 'Health checks', 'Reading a stack trace from production'] },
   { number: 24, phase: 3, title: 'Phase 3 Graduation', topics: ['Job board milestone', 'Design doc: the tradeoffs you made (ADRs)', 'Portfolio + applications'] },
 ]
@@ -206,7 +206,7 @@ const phase4Outlines: WeekOutline[] = [
   { number: 25, phase: 4, title: 'REST APIs with Django REST Framework', topics: ['Serializers', 'API views + routers', 'Pagination + filtering', 'API errors and status codes'] },
   { number: 26, phase: 4, title: 'React Meets the API', topics: ['Fetching from Django', 'Loading/error/empty states', 'Forms that POST', 'Optimistic updates'] },
   { number: 27, phase: 4, title: 'Auth II: Tokens and Tradeoffs', topics: ['JWT vs sessions: tradeoffs', 'Refresh tokens', 'CORS + CSRF', 'Storing tokens safely'] },
-  { number: 28, phase: 4, title: 'Deployment', topics: ['Render + Postgres in production', 'Environment variables + secrets', 'The Twelve-Factor App', 'Backups and restoring them'] },
+  { number: 28, phase: 4, title: 'Deployment', topics: ['Render + Postgres in production', 'Environment variables: config vs secret, build-time vs runtime', 'Rotating a leaked key', 'The Twelve-Factor App', 'Backups and restoring them'] },
   { number: 29, phase: 4, title: 'Concurrency II: Async, Threads, Processes', topics: ['The event loop (JS and Python)', 'asyncio', 'Threads vs processes vs async: when each helps', 'Deadlocks and shared state'] },
   { number: 30, phase: 4, title: 'Caching and Performance', topics: ['Measuring before optimising', 'N+1 queries', 'Redis + Django cache', 'HTTP caching + CDNs', 'Cache invalidation tradeoffs'] },
   { number: 31, phase: 4, title: 'Observability II', topics: ['Metrics + dashboards', 'Tracing (OpenTelemetry)', 'SLIs, SLOs, error budgets', 'Alerts that matter'] },
