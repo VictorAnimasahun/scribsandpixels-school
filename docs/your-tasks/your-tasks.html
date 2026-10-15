@@ -426,8 +426,8 @@ npx supabase db push</pre>
       <li>On your phone: <code>school.scribsandpixels.com</code> → <b>Account</b> → sign in the same way. The progress from the laptop appears.</li>
       <li>Tick one block on the phone. On the laptop, open <b>Account</b> → <b>Download from my account now</b>. The tick appears there too.</li>
       <li>Make yourself the school's admin. Supabase → <b>SQL Editor</b> → <b>New query</b> → paste:
-<pre>update public.profiles set role = 'admin' where email = 'animasahunvictor1@gmail.com';</pre>
-          → <b>Run</b>. It must say <code>Success. 1 row affected</code> (UPDATE 1). <span class="kw">IF</span> it says 0 rows → you haven't signed in with that email yet; do step 6 first.<br>
+<pre>update public.profiles set role = 'admin' where email = 'animasahunvictor1@gmail.com' returning email, role;</pre>
+          → <b>Run</b>. The results show one row: your email and <code>admin</code>. (<code>returning</code> makes the editor show the row it changed.) <span class="kw">IF</span> it says <code>Success. No rows returned</code> → no account has that email yet; sign in first (step 6), then run it again.<br>
           <b>What this does:</b> every account is a <i>student</i>. An <i>admin</i> can also <b>read</b> every learner's progress on the Learners page (ticks, finished days, streaks, checkpoints) but can't change anyone's data and can't read their daily logs. The app can't make anyone an admin (learners are only allowed to edit their own settings), so this is done here, as the database owner.</li>
       <li>On the laptop: <b>Account</b> → <b>Download from my account now</b>. A <b>Learners</b> link appears (sidebar, and "See all learners" on the Account page). Open it: you see yourself.</li>
       <li>Send Claude: <code>Accounts are on. Signed in on laptop and phone. Admin works.</code></li>
