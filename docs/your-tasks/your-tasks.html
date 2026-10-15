@@ -59,7 +59,8 @@
     <tr><td class="mono">08</td><td>set_up_resend()</td><td><span class="tag hold">✓ DONE 15 Oct</span></td></tr>
     <tr><td class="mono">09</td><td>deploy_email_nudges()</td><td><span class="tag hold">ON HOLD</span></td></tr>
     <tr><td class="mono">10</td><td>switch_on_accounts()</td><td><span class="tag now">NEXT</span></td></tr>
-    <tr><td class="mono">11</td><td>Appendix: words, tools and message templates</td><td></td></tr>
+    <tr><td class="mono">11</td><td>Understand what you did (05–10 explained)</td><td><span class="tag now">READ</span></td></tr>
+    <tr><td class="mono">12</td><td>Appendix: words, tools and message templates</td><td></td></tr>
   </table>
   <div class="box warn" style="margin-top:16pt"><b>Where things stand (15 Oct).</b> Hosting, the subdomain, Supabase and Resend are done. Accounts are built into the app; <b>10 switches them on</b>. 09 (the nudge emails) comes after 10, once your own account has some progress in it.</div>
 </section>
@@ -433,7 +434,82 @@ npx supabase db push</pre>
 
 <!-- ─────────────────────────── 11 ─────────────────────────── -->
 <section class="page">
-  <h2>11 · Appendix: words, tools and message templates</h2>
+  <h2>11 · Understand what you did</h2>
+  <p>Every step in 05–10 is real engineering. This section explains each one: <b>what it is</b> (in plain words), <b>what each line means</b>, and <b>what breaks without it</b>. Read it slowly; this is Fullstack Weeks 15, 17, 19, 22 and 28 done for real.</p>
+
+  <h3>1. Git, GitHub and "push to main"</h3>
+  <p><b>What it is.</b> Git keeps save points of the project, like the version history in Google Docs, but you decide when to save and you label each save. A <i>commit</i> is one labelled save. GitHub holds the shared copy online. <i>Pushing</i> uploads your new saves there. <code>main</code> is the official version of the school.</p>
+  <table class="kv">
+    <tr><td>.github/workflows/pages.yml</td><td>A recipe GitHub runs on its own computers after every push to main: install the exact library versions (<code>npm ci</code>), run every test (<code>npm test</code>, <code>check:db</code>, <code>check:python</code>, <code>check:web</code>, <code>check:accounts</code>), build, then publish to GitHub Pages. If any step fails, Pages keeps the old version.</td></tr>
+    <tr><td>Vercel</td><td>Watches the same repo and builds every push to main by itself. <b>It doesn't wait for those tests</b>, so a push that breaks a test still reaches school.scribsandpixels.com. (On Claude's list to fix.)</td></tr>
+  </table>
+  <div class="box stop"><b>Without it:</b> no history to go back to after a mistake, and no automatic publishing; someone would copy files to a server by hand.</div>
+
+  <h3>2. Vercel: "Build Command <code>npm run build</code>, Output Directory <code>dist</code>"</h3>
+  <p><b>What it is.</b> The school is written as many source files. A <i>build</i> turns them into a few files a browser can load quickly, like a printer turning a manuscript into a printed book. Vercel runs the build on its computers and serves the result from servers around the world.</p>
+  <table class="kv">
+    <tr><td>Framework Preset: Vite</td><td>Vite is the tool that does the building. The preset tells Vercel the usual settings for it.</td></tr>
+    <tr><td>Build Command</td><td><code>npm run build</code> runs <code>tsc -b &amp;&amp; vite build</code>: first check the code for type mistakes (<code>tsc</code>), then build it.</td></tr>
+    <tr><td>Output Directory: dist</td><td>Where the finished files land. Vercel publishes exactly that folder.</td></tr>
+    <tr><td>Why two hosts look different</td><td>GitHub Pages serves the school from a sub-folder (<code>/scribsandpixels-school/</code>), so its build is told that (<code>GITHUB_PAGES=true</code>). Vercel serves it from the root (<code>/</code>).</td></tr>
+  </table>
+
+  <h3>3. DNS: the internet's phonebook</h3>
+  <p><b>What it is.</b> Computers find each other by number (an IP address such as <code>216.198.79.1</code>); people use names. DNS is the phonebook that turns a name into a number. You bought <code>scribsandpixels.com</code> from Spaceship, and Spaceship also keeps its phonebook page (its <i>nameservers</i> are <code>launch1</code>/<code>launch2.spaceship.net</code>). Every row you added is one phonebook entry.</p>
+  <table class="kv">
+    <tr><td>Host</td><td>The part before your domain. <code>school</code> means school.scribsandpixels.com. <code>@</code> means the bare domain itself.</td></tr>
+    <tr><td>Type A</td><td>"This name lives at this exact number." Your <code>@ → 216.198.79.1</code> is a Vercel server, which redirects scribsandpixels.com to www.</td></tr>
+    <tr><td>Type CNAME</td><td>"This name lives wherever <i>that other name</i> lives." <code>school → fb47b490b1a42d37.vercel-dns-017.com.</code> lets Vercel move its servers without you ever editing DNS again. The trailing dot means "this is the complete name; add nothing to it".</td></tr>
+    <tr><td>TTL 30 min</td><td>How long other computers may remember an answer before asking again. That's why a change can take up to that long to reach everyone.</td></tr>
+    <tr><td>HTTPS, the padlock</td><td>Vercel got a free certificate from <b>Let's Encrypt</b> proving the server really is school.scribsandpixels.com, and it encrypts the connection. It lasts 90 days (this one: 9 Oct 2026 – 7 Jan 2027) and Vercel renews it automatically. Typing <code>http://</code> gets a <i>308 redirect</i>: "permanently moved to the https address".</td></tr>
+  </table>
+  <div class="box stop"><b>Without it:</b> nobody can reach the school by name. Without HTTPS, browsers warn "Not secure" and anyone on the same Wi-Fi could read the traffic.</div>
+
+  <h3>4. Supabase: the database and its keys</h3>
+  <p><b>What it is.</b> Supabase runs a <b>Postgres</b> database for you: tables of rows (like spreadsheets) with strict rules about what each row may contain, plus a web API in front of it and a login system.</p>
+  <table class="kv">
+    <tr><td>Project ref <code>ookbfjjsnzgbrcgltkot</code></td><td>The project's unique ID. The API address is built from it: <code>https://ookbfjjsnzgbrcgltkot.supabase.co</code>.</td></tr>
+    <tr><td>Database password</td><td>The master password of the database itself. Only the command-line tool uses it (to change the tables). The app never sees it.</td></tr>
+    <tr><td><code>brew</code> vs <code>npx</code></td><td>Homebrew is an app store for terminal tools; it builds some of them with Apple's Command Line Tools, which were out of date on your Mac, so it refused. <code>npx</code> runs a tool straight from npm (Node's package library) without installing it for good, and the Supabase tool is published there too. Same tool, different shop.</td></tr>
+    <tr><td><code>npx supabase login</code></td><td>Opens the browser and creates a <i>personal access token</i>: a key that lets the terminal tool act as you on supabase.com. It's stored in the macOS <b>Keychain</b> (the Mac's encrypted password vault). That's what the "supabase wants to use your confidential information" prompt was: the tool asking the vault for it.</td></tr>
+    <tr><td><code>npx supabase link --project-ref …</code></td><td>Tells the tool which project this folder belongs to, so later commands don't need the ID. It remembers it in <code>supabase/.temp</code>, which isn't uploaded to GitHub.</td></tr>
+    <tr><td>Migrations + <code>db push</code></td><td>Database changes are files of SQL (the database's language), numbered by date in <code>supabase/migrations</code>, applied oldest first. <code>db push</code> sends only the ones the database hasn't had yet and records each one, so nothing runs twice. Changes to the database are then reviewed, versioned and repeatable, like code.</td></tr>
+    <tr><td>Row level security (RLS)</td><td>A bouncer on every row. Each request carries a signed note saying who is asking; a <i>policy</i> such as <code>user_id = auth.uid()</code> means "you may only see and change rows that are yours". Asked without logging in, every table answered with nothing: that was RLS working.</td></tr>
+    <tr><td>Publishable key <code>sb_publishable_…</code></td><td>Identifies the app at the front door. Public by design: it's inside the website's code and anyone can read it. On its own it can do nothing the RLS rules don't allow.</td></tr>
+    <tr><td>Secret key / <code>service_role</code></td><td>The master key: it skips RLS completely. Only for code that runs on a server (the nudge emails). Never in the app, never in chat.</td></tr>
+    <tr><td><code>.env.local</code></td><td>A settings file the app reads when it runs on your Mac. Git ignores it, so it never goes to GitHub.</td></tr>
+  </table>
+  <div class="box stop"><b>Without RLS:</b> anyone with the public key could read every learner's data. That's why it's the first thing the database tests attack.</div>
+
+  <h3>5. Auth → URL Configuration</h3>
+  <table class="kv">
+    <tr><td>Site URL</td><td>Where login emails send people by default: <code>https://school.scribsandpixels.com</code>.</td></tr>
+    <tr><td>Redirect URLs</td><td>The only places a login may hand someone back to. <code>/**</code> means "any page on that site". <code>http://localhost:5173</code> is the school running on your own Mac (<code>npm run dev</code>).</td></tr>
+  </table>
+  <div class="box stop"><b>Without it:</b> a fake site could start a login and have it delivered to itself. The list is the guard against that. Missing entries make login links bounce to the wrong place (by default, <code>localhost</code>).</div>
+
+  <h3>6. Vercel environment variables, and why "Config", not "Secret"</h3>
+  <p>Names that start with <code>VITE_</code> are copied <i>into the website's code</i> during the build, so every visitor's browser receives them. That's fine for the URL and the publishable key (both public by design), and it's why marking them Secret would protect nothing. It's also why you clicked <b>Redeploy</b>: the values are baked in when the site is built, not read while it runs.</p>
+
+  <h3>7. Resend and the email records</h3>
+  <p><b>What it is.</b> Sending email that actually reaches inboxes needs servers with a good reputation and proof that they're allowed to send for your domain. Resend runs the servers; your DNS records are the proof. Gmail checks them on every email.</p>
+  <table class="kv">
+    <tr><td><b>DKIM</b> · TXT <code>resend._domainkey</code> = <code>p=MIGf…</code></td><td>A <i>public key</i>. Resend signs every email with the matching private key; Gmail looks up this record to check the signature. Like a wax seal: the record is the public picture of your seal. It proves the email was sent with your key and wasn't changed on the way.</td></tr>
+    <tr><td><b>SPF</b> · CNAME <code>send</code> → <code>send.forge.rmta.net</code></td><td>Every email carries a hidden return address for bounces (the <i>Return-Path</i>), here <code>@send.scribsandpixels.com</code>. Through this CNAME, Resend publishes the <b>guest list</b> of servers allowed to use it: <code>v=spf1 ip4:52.3.252.119 ip4:44.222.39.36 ip4:199.249.231.0/24 ~all</code> (Resend's own servers; <code>~all</code> means "treat anyone else as suspicious"), plus an MX pointing at <code>feedback.forge.rmta.net</code>, the mailbox where bounce and spam-complaint reports go, so Resend stops mailing dead addresses.</td></tr>
+    <tr><td><b>SPF</b> · CNAME <code>rsend</code> → <code>rsend-euw1.forge.rmta.net</code></td><td>The same job for a second route: Resend also sends through <b>Amazon SES in Ireland</b> (<code>eu-west-1</code>, the region you picked). Its guest list is <code>v=spf1 include:amazonses.com ~all</code> and its bounce mailbox is <code>feedback-smtp.eu-west-1.amazonses.com</code>. (Resend doesn't document this record; this is what your DNS actually returns.) Both are CNAMEs so Resend can update the server lists without asking you to edit DNS.</td></tr>
+    <tr><td><b>DMARC</b> · TXT <code>_dmarc</code> = <code>v=DMARC1; p=none;</code></td><td>Your published policy for mail that fails the checks above. <code>v=DMARC1</code> is the format version. <code>p=none</code> means "deliver it anyway; I'm only declaring a policy". Later it can become <code>p=quarantine</code> (spam folder) or <code>p=reject</code>. Since 2024, Gmail and Yahoo expect bulk senders to have one; without it, nudges drift to spam.</td></tr>
+    <tr><td>Spaceship's MX + <code>v=spf1 include:spf.efwd.spaceship.net</code></td><td>The <i>receiving</i> side: mail sent <i>to</i> your domain is forwarded by Spaceship. Sending and receiving are separate, which is why you left these alone.</td></tr>
+    <tr><td>API key: Sending access, one domain</td><td><i>Least privilege</i>: the key can send, only from scribsandpixels.com, and can't read or delete anything. If it ever leaked, the damage is limited and you'd roll (replace) it.</td></tr>
+    <tr><td>Supabase SMTP settings</td><td>SMTP is the language mail servers speak. Host <code>smtp.resend.com</code>; port <code>465</code> = encrypted from the first byte; username <code>resend</code> (always that word); password = the API key; sender <code>school@scribsandpixels.com</code>. Supabase now hands its login emails to Resend. Its own mailer is only for testing: it reaches your team members only, a few per hour.</td></tr>
+  </table>
+
+  <h3>8. How signing in works (code, link, PKCE)</h3>
+  <p>You ask for an email; it holds a <b>6-digit code</b> and a <b>link</b>. The code works on any device: ask on the laptop, read it on your phone, type it on the laptop. The link uses <b>PKCE</b>: when you ask, your browser invents a secret and sends only its fingerprint; the link brings back a one-time code that only swaps for a login together with that original secret. So a link forwarded to, or stolen by, someone else is useless; that's also why a link opened on a different device says "use the code instead". A code or link works once and expires after an hour. <i>Signing out</i> removes your progress from that browser; it stays in your account.</p>
+</section>
+
+<!-- ─────────────────────────── 12 ─────────────────────────── -->
+<section class="page">
+  <h2>12 · Appendix: words, tools and message templates</h2>
   <h3>Message template: error</h3>
 <pre>ERROR in procedure &lt;number + name&gt;, step &lt;number&gt;.
 What I did: &lt;one sentence&gt;

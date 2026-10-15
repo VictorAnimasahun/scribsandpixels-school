@@ -18,13 +18,15 @@ export type AccountStatus = {
   state: SyncState
   email: string | null
   userId: string | null
+  /** From the profile; only the database can make an account an admin. */
+  role: 'student' | 'admin' | null
   /** When this browser last finished a save or download (ms). */
   savedAt: number | null
   /** A message for the learner: why sync failed, why they were signed out, a sign-in link that expired… */
   message: string | null
 }
 
-let status: AccountStatus = { state: 'off', email: null, userId: null, savedAt: null, message: null }
+let status: AccountStatus = { state: 'off', email: null, userId: null, role: null, savedAt: null, message: null }
 const listeners = new Set<() => void>()
 
 export function setAccountStatus(change: Partial<AccountStatus>) {
@@ -43,3 +45,5 @@ export function useAccountStatus(): AccountStatus {
 
 /** Signed in (whatever the sync state): checkpoint results are then permanent on the server. */
 export const isSignedIn = (s: AccountStatus) => s.userId !== null
+
+export const isAdmin = (s: AccountStatus) => s.role === 'admin'

@@ -6,8 +6,8 @@ import { requireSupabase } from './supabase.ts'
  * and settings. Progress itself (ticks, study days, checkpoints, week quizzes, start dates) is
  * mirrored by src/viewer/sync.ts. Sign-in lives there too.
  *
- * Row level security scopes every query to the signed-in user, so no call here filters by user
- * id for safety, only to fill in user_id on inserts.
+ * Row level security scopes every query to the signed-in user. Reads still filter by user_id:
+ * an admin can read some tables for every learner, and "mine" must stay "mine".
  */
 
 function check<T>(result: { data?: T; error: { message: string } | null }): T {
@@ -34,7 +34,7 @@ const toLog = (r: LogRow): LogEntry => ({
 })
 
 export async function listLogs(courseSlug: string): Promise<LogEntry[]> {
-  return (check(await requireSupabase().from('logs').select('*').eq('course_slug', courseSlug)) as LogRow[]).map(toLog)
+  return (check(await requireSupabase().from('logs').select('*').eq('user_id', await userId()).eq('course_slug', courseSlug)) as LogRow[]).map(toLog)
 }
 
 export type LogInput = { learned: string; confused: string; reviewTomorrow: string; answers?: Record<string, string> }
@@ -66,7 +66,7 @@ export async function setConfusionResolved(logId: string, resolved: boolean) {
 export type Win = { id: string; note: string; createdAt: string }
 
 export async function listWins(): Promise<Win[]> {
-  const rows = check(await requireSupabase().from('wins').select('id, note, created_at').order('created_at', { ascending: false })) as { id: string; note: string; created_at: string }[]
+  const rows = check(await requireSupabase().from('wins').select('id, note, created_at').eq('user_id', await userId()).order('created_at', { ascending: false })) as { id: string; note: string; created_at: string }[]
   return rows.map((r) => ({ id: r.id, note: r.note, createdAt: r.created_at }))
 }
 
@@ -84,7 +84,7 @@ const toApplication = (r: ApplicationRow): JobApplication => ({
 })
 
 export async function listApplications(): Promise<JobApplication[]> {
-  const rows = check(await requireSupabase().from('job_applications').select('*').order('applied_on', { ascending: false })) as ApplicationRow[]
+  const rows = check(await requireSupabase().from('job_applications').select('*').eq('user_id', await userId()).order('applied_on', { ascending: false })) as ApplicationRow[]
   return rows.map(toApplication)
 }
 
@@ -105,7 +105,8 @@ export async function deleteApplication(id: string) {
 type ProfileRow = { id: string; email: string; display_name: string | null; timezone: string; email_nudges: boolean; nudge_hour: number }
 
 export async function getProfile(): Promise<Profile> {
-  const r = check(await requireSupabase().from('profiles').select('id, email, display_name, timezone, email_nudges, nudge_hour').single()) as ProfileRow
+  // By id: an admin can read every profile, so "the one row I can see" isn't enough.
+  const r = check(await requireSupabase().from('profiles').select('id, email, display_name, timezone, email_nudges, nudge_hour').eq('id', await userId()).single()) as ProfileRow
   return { id: r.id, email: r.email, displayName: r.display_name, timezone: r.timezone, emailNudges: r.email_nudges, nudgeHour: r.nudge_hour }
 }
 

@@ -25,15 +25,19 @@ await db.exec(`
   grant execute on function auth.uid() to anon, authenticated;
 `)
 
+// Supabase grants new tables and functions to these roles by default (row level security then
+// decides which rows). Done as default privileges *before* the migrations, as Supabase does, so a
+// migration's own REVOKE (e.g. learners can't update profiles.role) really takes effect.
+await db.exec(`
+  grant usage on schema public to anon, authenticated;
+  alter default privileges in schema public grant select, insert, update, delete on tables to anon, authenticated;
+  alter default privileges in schema public grant execute on functions to anon, authenticated;
+`)
 const dir = join(root, 'supabase/migrations')
 for (const file of readdirSync(dir).filter((f) => f.endsWith('.sql')).sort()) {
   await db.exec(readFileSync(join(dir, file), 'utf8'))
 }
-// Supabase grants table access to these roles by default; RLS then decides which rows.
-await db.exec(`
-  grant usage on schema public to anon, authenticated;
-  grant select, insert, update, delete on all tables in schema public to anon, authenticated;
-`)
+
 
 let failures = 0
 const ok = (name) => console.log(`✓ ${name}`)
@@ -119,6 +123,28 @@ await expectError("an attempt can't be moved to another checkpoint", () => as(A,
 await expectRows("B can't see A's attempts", () => as(B, 'select * from public.checkpoint_attempts'), 0)
 await expectError("B can't add an attempt to A's checkpoint", () => as(B, attempt(4, true, 1), [A]), /row-level security/)
 await expectRows("B can't finish A's provisional attempt", () => as(B, `update public.checkpoint_attempts set passed = true, score = 1 where user_id = $1 and attempt = 3`, [A]), 0)
+
+// Roles -----------------------------------------------------------------------
+await expectRows('everyone starts as a student', () => db.query("select 1 from public.profiles where role = 'student'"), 2)
+await expectError("a learner can't make themselves an admin", () => as(A, `update public.profiles set role = 'admin' where id = $1`, [A]), /permission denied/)
+await expectError("a learner can't change their email or id on the profile", () => as(A, `update public.profiles set email = 'x@y.z' where id = $1`, [A]), /permission denied/)
+await expectOk('a learner can still change their settings', () => as(A, `update public.profiles set display_name = 'Ada L', timezone = 'America/Toronto', nudge_hour = 20, email_nudges = false where id = $1`, [A], { keep: true }))
+await expectError("a learner can't create a second profile", () => as(A, `insert into public.profiles (id, email) values ($1, 'z@z.z')`, ['00000000-0000-0000-0000-0000000000cc']), /permission denied|row-level security/)
+await expectRows("is_admin() is false for a student", () => as(A, 'select 1 where public.is_admin()'), 0)
+await db.query("insert into public.logs (user_id, course_slug, week, day, learned) values ($1, 'french', 3, 2, 'private note')", [B])
+await db.query("insert into public.study_days (user_id, studied_on) values ($1, '2026-10-13')", [B])
+// The owner (SQL editor) grants the role.
+await db.query("update public.profiles set role = 'admin' where id = $1", [A])
+await expectRows('is_admin() is true for an admin', () => as(A, 'select 1 where public.is_admin()'), 1)
+await expectRows("an admin can read every learner's profile", () => as(A, 'select id from public.profiles'), 2)
+await expectRows("an admin can read another learner's study days", () => as(A, 'select 1 from public.study_days where user_id = $1', [B]), 1)
+await expectRows("an admin can read another learner's checkpoints", () => as(A, 'select 1 from public.checkpoints'), 2)
+await expectRows("an admin can't read another learner's private daily log", () => as(A, 'select 1 from public.logs where user_id = $1', [B]), 0)
+await expectError("an admin can't write another learner's progress", () => as(A, `insert into public.study_days (user_id, studied_on) values ($1, '2026-10-14')`, [B]), /row-level security/)
+await expectRows("an admin can't delete another learner's progress", () => as(A, 'delete from public.study_days where user_id = $1', [B]), 0)
+await expectRows("an admin can't change another learner's settings", () => as(A, `update public.profiles set nudge_hour = 5 where id = $1`, [B]), 0)
+await expectRows("a student still sees only their own rows (the admin's included)", () => as(B, 'select 1 from public.study_days where user_id = $1', [A]), 0)
+await expectError('anon is refused is_admin()', () => as(null, 'select public.is_admin()'), /permission denied/)
 
 // Account deletion -------------------------------------------------------------
 await expectOk('deleting an account removes all its data (cascades past the attempt guard)', async () => {

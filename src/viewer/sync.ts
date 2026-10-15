@@ -78,13 +78,17 @@ async function run(query: PromiseLike<{ error: unknown }>) {
 
 // ─── Download ───────────────────────────────────────────────────────────────
 
-/** Every row of a table, a page at a time (the API returns at most 1,000 rows per request). */
-async function fetchAll<T>(table: string, columns: string, orderBy: string[]): Promise<T[]> {
+/**
+ * Every row of a table that belongs to this learner, a page at a time (the API returns at most
+ * 1,000 rows per request). Always filtered by user_id: an admin may *read* everyone's rows, and
+ * those must never be pulled into the admin's own progress.
+ */
+async function fetchAll<T>(table: string, columns: string, orderBy: string[], uid: string): Promise<T[]> {
   const db = requireSupabase()
   const PAGE = 1000
   const out: T[] = []
   for (let from = 0; ; from += PAGE) {
-    let query = db.from(table).select(columns)
+    let query = db.from(table).select(columns).eq('user_id', uid)
     for (const column of orderBy) query = query.order(column)
     const { data, error } = await query.range(from, from + PAGE - 1)
     if (error) throw classify(error)
@@ -93,17 +97,18 @@ async function fetchAll<T>(table: string, columns: string, orderBy: string[]): P
   }
 }
 
-async function pull(): Promise<Synced> {
+async function pull(uid: string): Promise<Synced> {
   const db = requireSupabase()
   const [blocks, studyDays, enrollments, checkpoints, attempts, profile] = await Promise.all([
-    fetchAll<RemoteRows['blocks'][number]>('block_progress', 'course_slug, week, day, block_key', ['course_slug', 'week', 'day', 'block_key']),
-    fetchAll<RemoteRows['studyDays'][number]>('study_days', 'studied_on', ['studied_on']),
-    fetchAll<RemoteRows['enrollments'][number]>('enrollments', 'course_slug, started_on', ['course_slug']),
-    fetchAll<RemoteRows['checkpoints'][number]>('checkpoints', 'kind, key, triggered_at, seen', ['kind', 'key']),
-    fetchAll<RemoteRows['attempts'][number]>('checkpoint_attempts', 'kind, key, attempt, finished_at, passed, score', ['kind', 'key', 'attempt']),
-    db.from('profiles').select('app_state').maybeSingle(),
+    fetchAll<RemoteRows['blocks'][number]>('block_progress', 'course_slug, week, day, block_key', ['course_slug', 'week', 'day', 'block_key'], uid),
+    fetchAll<RemoteRows['studyDays'][number]>('study_days', 'studied_on', ['studied_on'], uid),
+    fetchAll<RemoteRows['enrollments'][number]>('enrollments', 'course_slug, started_on', ['course_slug'], uid),
+    fetchAll<RemoteRows['checkpoints'][number]>('checkpoints', 'kind, key, triggered_at, seen', ['kind', 'key'], uid),
+    fetchAll<RemoteRows['attempts'][number]>('checkpoint_attempts', 'kind, key, attempt, finished_at, passed, score', ['kind', 'key', 'attempt'], uid),
+    db.from('profiles').select('app_state, role').eq('id', uid).maybeSingle(),
   ])
   if (profile.error) throw classify(profile.error)
+  setAccountStatus({ role: profile.data?.role === 'admin' ? 'admin' : 'student' })
   return fromRows({ blocks, studyDays, enrollments, checkpoints, attempts, appState: profile.data?.app_state ?? {} })
 }
 
@@ -174,7 +179,7 @@ const saved = () => setAccountStatus({ state: 'saved', savedAt: Date.now(), mess
 
 /** Merge the server's state with this browser's and write back what the server is missing. */
 async function reconcile(uid: string): Promise<void> {
-  const remote = await pull()
+  const remote = await pull(uid)
   lastPull = Date.now()
   const meta = readMeta()
   let merged: Synced = EMPTY
@@ -278,7 +283,7 @@ function onSignedOut(expected: boolean) {
   unsubscribeStore?.()
   unsubscribeStore = null
   setAccountStatus({
-    state: 'signed-out', email: null, userId: null, savedAt: null,
+    state: 'signed-out', email: null, userId: null, role: null, savedAt: null,
     // Signed out somewhere else, or the session ran out: the progress here is kept, and signing
     // in again (same account) merges it.
     message: wasSignedIn && !expected ? 'You were signed out. Your progress is still on this device; sign in again to keep saving it.' : getAccountStatus().message,

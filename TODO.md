@@ -7,6 +7,7 @@
 - [x] Supabase project created, migrated and configured (12 Oct 2026): Auth URL Configuration + Vercel env vars done (procedure 07)
 - [ ] Resend (procedure 08): domain scribsandpixels.com **verified 14 Oct 2026** (region eu-west-1; DKIM `resend._domainkey`, `send`/`rsend` CNAMEs, `_dmarc` p=none, all in Spaceship DNS; root MX/SPF are Spaceship email forwarding, leave them). Still to do: API key in the password manager, Supabase Auth custom SMTP (smtp.resend.com:465, user `resend`, sender school@scribsandpixels.com), then a test email
 - [x] Accounts built (15 Oct 2026): sign-in by code or link, local-first sync with three-way merge, checkpoint attempts permanent on the server, sign-out clears the browser; proven by `check:db` and `check:accounts` (both in CI)
+- [ ] Vercel builds every push to main without waiting for the tests (CI only gates GitHub Pages). Make Vercel deploy only after CI passes (deploy from the workflow with a Vercel token, or an Ignored Build Step that checks the commit status)
 - [ ] **Victor: procedure 10** (`npx supabase db push`, paste the sign-in template), then sign in on laptop + phone
 - [ ] Sign-in/Account screen design (claude.ai): built from the tokens for now (`AccountPage.tsx`, noted in `docs/design/README.md`)
 - [ ] Week unlocks aren't enforced in the test-build UI (any week can be ticked); decide before real learners join (the domain rule exists: `weekStatus`)

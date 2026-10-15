@@ -49,13 +49,16 @@ await db.exec(`
     )::uuid $$;
   grant usage on schema auth to anon, authenticated, service_role;
 `)
+// Supabase's default privileges, set before the migrations so their REVOKEs take effect.
+await db.exec(`
+  grant usage on schema public to anon, authenticated, service_role;
+  alter default privileges in schema public grant select, insert, update, delete on tables to anon, authenticated, service_role;
+  alter default privileges in schema public grant execute on functions to anon, authenticated, service_role;
+`)
 for (const file of readdirSync(join(root, 'supabase/migrations')).filter((f) => f.endsWith('.sql')).sort()) {
   await db.exec(readFileSync(join(root, 'supabase/migrations', file), 'utf8'))
 }
-await db.exec(`
-  grant usage on schema public to anon, authenticated, service_role;
-  grant select, insert, update, delete on all tables in schema public to anon, authenticated, service_role;
-`)
+
 
 // PGlite answers an error inside an extended-protocol batch with ErrorResponse *and* an early
 // ReadyForQuery; real Postgres sends ReadyForQuery only at the batch's Sync and ignores the rest
