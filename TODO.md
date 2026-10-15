@@ -8,6 +8,8 @@
 - [ ] Resend (procedure 08): domain scribsandpixels.com **verified 14 Oct 2026** (region eu-west-1; DKIM `resend._domainkey`, `send`/`rsend` CNAMEs, `_dmarc` p=none, all in Spaceship DNS; root MX/SPF are Spaceship email forwarding, leave them). Still to do: API key in the password manager, Supabase Auth custom SMTP (smtp.resend.com:465, user `resend`, sender school@scribsandpixels.com), then a test email
 - [x] Accounts built (15 Oct 2026): sign-in by code or link, local-first sync with three-way merge, checkpoint attempts permanent on the server, sign-out clears the browser; proven by `check:db` and `check:accounts` (both in CI)
 - [ ] Vercel builds every push to main without waiting for the tests (CI only gates GitHub Pages). Make Vercel deploy only after CI passes (deploy from the workflow with a Vercel token, or an Ignored Build Step that checks the commit status)
+- [x] Installable app (PWA) with offline lessons and Python (15 Oct 2026), proven by check:offline; real icons replace the Vite placeholder favicon
+- [ ] Watch check:offline in CI: one local run (of 5) failed the offline week-quiz and Python steps right after an edit; not reproduced since
 - [ ] **Victor: procedure 10** (`npx supabase db push`, paste the sign-in template), then sign in on laptop + phone
 - [x] Student account (details + progress) and admin role/Learners page (15 Oct 2026), proven in check:db and check:accounts
 - [ ] Sign-in/Account screen design (claude.ai): built from the tokens for now (`AccountPage.tsx`, noted in `docs/design/README.md`)

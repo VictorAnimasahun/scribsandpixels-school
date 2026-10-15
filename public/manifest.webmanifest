@@ -1,0 +1,17 @@
+{
+  "name": "Scribs & Pixels School",
+  "short_name": "Scribs & Pixels",
+  "description": "A daily study plan with checkpoints, streaks and nudges: Fullstack + ML, French and Excel.",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F2F5EC",
+  "theme_color": "#F2F5EC",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

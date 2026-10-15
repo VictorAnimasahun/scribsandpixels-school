@@ -36,6 +36,8 @@ More courses will follow; nothing may assume a single course. To add one: a new 
 - `supabase/functions/send-nudges/`: hourly Resend emails (daily nudge Mon–Sat if not studied yet; Sunday weekly review digest). Reads the same sources as the app: `study_days` (streak, studied today), `day_progress`, week passes from `checkpoint_attempts`. It imports `_shared/`, which is **generated** by `npm run sync:functions`; never edit `_shared/` by hand. Only courses registered in `scripts/sync-functions.ts` are known to it (Fullstack so far). Type-check with `npx deno check supabase/functions/send-nudges/index.ts`.
 - `supabase/setup/schedule-nudges.sql`: one-time pg_cron schedule (holds secrets; not a migration).
 
+- **Installable app (PWA, 15 Oct 2026):** `public/manifest.webmanifest`, icons in `public/icons/`, service worker `public/sw.js` (registered in `main.tsx`, production only, not inside the Android app): pages network-first with the saved shell offline; `/assets` and `/icons` cache-first (hashed names); pinned CDN files (Pyodide, React, fonts) cache-first; Supabase/auth never cached; caches capped; the shell (page + its files) is saved on install and on every fresh page load, since the first visit happens before the worker exists. Bump `VERSION` in sw.js to drop all old caches.
+
 ## Rules implemented (defaults for the open decisions; each lives in one function)
 - **Pacing (calendar-based, decided 9 Oct 2026):** a course starts on the first Monday on/after enrolment (`courseStartMonday`); each date has its lesson (Mon = Day 1 … Sat = Day 6, Sunday = review) (`scheduledFor`). `pace` lists scheduled days not yet done ("behind") and overdue week quizzes; missed days are caught up in order, starting from `currentPosition` (the first unfinished day). Learners can re-plan from next Monday.
 - **Day complete:** every block ticked + log saved (`missingForDay`).
@@ -55,6 +57,8 @@ More courses will follow; nothing may assume a single course. To add one: a new 
 - `npm run sync:functions`: regenerate `supabase/functions/_shared` after changing `src/domain` or content
 - `npm run check:db`: the migrations in PGlite, attacked (other learners' rows, deleting/rewriting attempts, bad keys, anon access, account deletion)
 - `npm run check:accounts`: the real app in Chrome against a local Supabase stand-in (PGlite + real PostgREST, downloaded to `node_modules/.cache`, + a fake Auth): sign-in by code and link, two devices, unticks, offline, tampering, paging past 1,000 rows, sign-out. `HEADED=1` to watch, `DEBUG=1` for logs. Both run in CI.
+- `npm run check:offline`: builds and serves the app, visits once, cuts the network; the app, lessons, a visited week quiz and Python must still work; checks the install manifest and icons (CI)
+- `node scripts/build-icons.mjs`: renders `public/icons/*` and `favicon.svg` from the brand mark (Literata S on the tilted green tile)
 
 ## Current state (as of 2026-10-01)
 - **Done:** content model + Weeks 1–2 + all 52 outlines; domain rules with tests; Supabase schema; API layer; email function.

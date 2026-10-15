@@ -1,0 +1,52 @@
+// Renders the app icons from the design's brand mark (the tilted green tile with a lime "S" in
+// Literata, see .brand-mark in src/viewer/viewer.css) with Chrome, so the real font is used.
+// Output goes to public/icons/. Run again after changing the mark: node scripts/build-icons.mjs
+import { existsSync, mkdirSync, writeFileSync } from 'node:fs'
+import { join } from 'node:path'
+import { chromium } from 'playwright-core'
+
+const root = new URL('..', import.meta.url).pathname
+const out = join(root, 'public/icons')
+mkdirSync(out, { recursive: true })
+
+const PAPER = '#F2F5EC', GREEN = '#164F3B', LIME = '#C7E85C'
+const font = `<link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,600&display=block" rel="stylesheet">`
+
+/** kind 'any': paper background, tilted tile. 'maskable': full-bleed green, the S inside the 80% safe zone. */
+const page = (kind, size) => `<!doctype html><html><head>${font}<style>
+  html, body { margin: 0; width: ${size}px; height: ${size}px; }
+  body { display: grid; place-items: center; background: ${kind === 'maskable' ? GREEN : PAPER}; }
+  .tile { width: ${size * 0.74}px; height: ${size * 0.74}px; border-radius: ${size * 0.06}px; background: ${GREEN};
+          display: grid; place-items: center; transform: rotate(-6deg); }
+  .s { font: 600 ${kind === 'maskable' ? size * 0.5 : size * 0.52}px 'Literata', Georgia, serif; color: ${LIME}; line-height: 1;
+       transform: translateY(-${size * 0.02}px) ${kind === 'maskable' ? 'rotate(-6deg)' : ''}; }
+</style></head><body>${kind === 'maskable' ? `<span class="s">S</span>` : `<div class="tile"><span class="s">S</span></div>`}</body></html>`
+
+const chrome = process.env.CHROME_PATH ?? ['/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', '/usr/bin/google-chrome'].find(existsSync)
+const browser = await chromium.launch({ executablePath: chrome })
+const targets = [
+  ['icon-192.png', 'any', 192],
+  ['icon-512.png', 'any', 512],
+  ['icon-maskable-512.png', 'maskable', 512],
+  ['apple-touch-icon.png', 'any', 180],
+  ['favicon-48.png', 'any', 48],
+]
+for (const [file, kind, size] of targets) {
+  const p = await browser.newPage({ viewport: { width: size, height: size } })
+  await p.setContent(page(kind, size))
+  await p.evaluate(() => document.fonts.ready)
+  const literata = await p.evaluate(() => document.fonts.check("600 40px 'Literata'"))
+  if (!literata) throw new Error('Literata did not load (no network?): the icons would use a fallback font')
+  writeFileSync(join(out, file), await p.screenshot({ type: 'png' }))
+  await p.close()
+  console.log(`wrote public/icons/${file}`)
+}
+await browser.close()
+
+// The tab icon as SVG: the same tile; the S falls back to Georgia (favicons can't load web fonts).
+writeFileSync(join(root, 'public/favicon.svg'), `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <rect x="6" y="6" width="36" height="36" rx="3" fill="${GREEN}" transform="rotate(-6 24 24)"/>
+  <text x="24" y="33" text-anchor="middle" font-family="Literata, Georgia, 'Times New Roman', serif" font-weight="600" font-size="26" fill="${LIME}" transform="rotate(-6 24 24)">S</text>
+</svg>
+`)
+console.log('wrote public/favicon.svg')
