@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Scribs &amp; Pixels</string>
+    <string name="title_activity_main">Scribs &amp; Pixels</string>
+    <string name="package_name">com.scribsandpixels.school</string>
+    <string name="custom_url_scheme">com.scribsandpixels.school</string>
+</resources>

@@ -3,6 +3,7 @@ import { catalog } from '../content/catalog.ts'
 import type { Profile } from '../domain/learner.ts'
 import { streak } from '../domain/streak.ts'
 import { accountConfig } from '../lib/accountConfig.ts'
+import { isNativeApp } from '../lib/platform.ts'
 import { todayDate } from './actions.ts'
 import { isAdmin, isSignedIn, useAccountStatus, type AccountStatus } from './accountStatus.ts'
 import { loadSync, type SyncModule } from './loadSync.ts'
@@ -97,7 +98,8 @@ function SignIn({ sync, status }: { sync: SyncModule; status: AccountStatus }) {
         </form>
       ) : (
         <form className="account-form" onSubmit={(e) => { e.preventDefault(); void verify() }}>
-          <p>We sent a code to <b>{sentTo}</b>. Type it here, or tap the link in the email <i>on this device</i>.</p>
+          {/* In the Android app a link from the email opens the browser, not the app: only the code works here. */}
+          <p>We sent a code to <b>{sentTo}</b>. {isNativeApp() ? 'Type the code from the email here.' : <>Type it here, or tap the link in the email <i>on this device</i>.</>}</p>
           <label className="field">
             <span>Code from the email</span>
             <input className="code-input" required autoFocus inputMode="numeric" autoComplete="one-time-code" pattern="[0-9]{6,10}" maxLength={10} value={code} onChange={(e) => setCode(e.target.value.replace(/\D/g, ''))} placeholder="123456" />
