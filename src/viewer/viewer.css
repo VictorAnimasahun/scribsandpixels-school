@@ -419,3 +419,9 @@ table.grid { border-collapse: collapse; font-size: 13px; }
 .field input:focus { border-color: var(--green); }
 .code-input { font-family: var(--mono); letter-spacing: .3em; font-size: 22px !important; }
 .side-account { display: block; margin-top: 6px; color: var(--green); }
+.field select { font: inherit; font-size: 16px; padding: 10px 12px; min-height: 48px; border: 1.5px solid var(--line-strong); border-radius: var(--r-btn); background: var(--white); color: var(--ink); max-width: 100%; }
+.check-field { display: flex; gap: 10px; align-items: flex-start; font-size: 15px; }
+.check-field input { width: 22px; height: 22px; margin: 1px 0 0; flex: none; accent-color: var(--green); }
+.learner-card { display: flex; flex-direction: column; gap: 6px; padding: 14px; border: 1px solid var(--rule); border-radius: var(--r); background: var(--sheet); }
+.learner-courses { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 2px; }
+.pen { color: var(--pen); font-weight: 600; }

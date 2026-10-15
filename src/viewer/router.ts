@@ -7,10 +7,12 @@ export type Route =
   | { page: 'day'; slug: string; week: number; day: number; short: boolean }
   | { page: 'sandbox'; slug: string; id: string }
   | { page: 'account' }
+  | { page: 'admin' }
 
 export function parseRoute(hash: string): Route {
   const parts = hash.replace(/^#\/?/, '').split('/').filter(Boolean)
   if (parts[0] === 'account') return { page: 'account' }
+  if (parts[0] === 'admin') return { page: 'admin' }
   if (parts[0] !== 'c' || !parts[1]) return { page: 'home' }
   const slug = parts[1]
   const week = Number(parts[3])
@@ -30,6 +32,7 @@ export const href = {
   shortDay: (slug: string, week: number, day: number) => `#/c/${slug}/w/${week}/d/${day}/short`,
   sandbox: (slug: string, id: string) => `#/c/${slug}/s/${id}`,
   account: () => '#/account',
+  admin: () => '#/admin',
 }
 
 export function useRoute(): Route {

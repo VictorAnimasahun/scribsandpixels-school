@@ -4,8 +4,9 @@ import { DEFAULT_QUIZ_RULES, type Question } from '../content/quizzes.ts'
 import { drawAttempt, gateDaysForWeek, gateStatus, seededRandom } from '../domain/quizGate.ts'
 import { accountConfig, hasStoredSession, urlHasAuthResult } from '../lib/accountConfig.ts'
 import { AccountPage } from './AccountPage.tsx'
+import { AdminPage } from './AdminPage.tsx'
 import { loadSync } from './loadSync.ts'
-import { isSignedIn, useAccountStatus } from './accountStatus.ts'
+import { isAdmin, isSignedIn, useAccountStatus } from './accountStatus.ts'
 import { ErrorBoundary } from './ErrorBoundary.tsx'
 import { CoursePage, DayPage, WeekPage } from './pages.tsx'
 import { QuizPlayer } from './QuizPlayer.tsx'
@@ -188,7 +189,8 @@ function Navigation({ route, activeSlug }: { route: Route; activeSlug: string })
   const account = useAccountStatus()
   const onToday = route.page === 'home'
   const onAccount = route.page === 'account'
-  const onCourse = !onToday && !onAccount && route.page !== 'sandbox'
+  const onAdmin = route.page === 'admin'
+  const onCourse = !onToday && !onAccount && !onAdmin && route.page !== 'sandbox'
   return (
     <>
       <nav className="sidebar" aria-label="Main">
@@ -200,6 +202,7 @@ function Navigation({ route, activeSlug }: { route: Route; activeSlug: string })
           <a key={c.slug} className={`side-link course ${c.slug === activeSlug ? 'active' : ''}`} href={href.course(c.slug)}>{shortTitle(c.title)}</a>
         ))}
         <a className={`side-link ${onAccount ? 'on' : ''}`} href={href.account()} aria-current={onAccount ? 'page' : undefined}><Icon name="user" />Account</a>
+        {isAdmin(account) && <a className={`side-link ${onAdmin ? 'on' : ''}`} href={href.admin()} aria-current={onAdmin ? 'page' : undefined}><Icon name="table" />Learners</a>}
         <p className="side-foot">
           {isSignedIn(account)
             ? <>Signed in as {account.email}.<br />{account.state === 'offline' || account.state === 'error' ? 'Not saved yet: will retry.' : 'Progress is saved to your account.'}</>
@@ -227,7 +230,7 @@ export function Viewer() {
     if (accountConfig && (hasStoredSession() || urlHasAuthResult())) void loadSync()
   }, [])
 
-  const course = route.page !== 'home' && route.page !== 'account' ? findCourse(route.slug) : undefined
+  const course = route.page !== 'home' && route.page !== 'account' && route.page !== 'admin' ? findCourse(route.slug) : undefined
   // Opening a course page makes it the course Today shows.
   useEffect(() => {
     if (course && state.activeCourse !== course.slug) update((s) => ({ ...s, activeCourse: course.slug }))
@@ -236,6 +239,7 @@ export function Viewer() {
 
   let page
   if (route.page === 'account') page = <AccountPage />
+  else if (route.page === 'admin') page = <AdminPage />
   else if (route.page === 'home' || !course) page = <TodayPage />
   else if (route.page === 'course') page = <CoursePage course={course} />
   else if (route.page === 'week') page = <WeekPage course={course} week={route.week} />

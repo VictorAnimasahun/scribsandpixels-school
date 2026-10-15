@@ -197,7 +197,10 @@ async function reconcile(uid: string): Promise<void> {
   const ops = diff(remote, merged, doneDays)
   if (!isEmpty(ops)) await pushOps(ops, uid)
   writeMeta({ userId: uid, base: merged })
-  if (firstHere) await rememberTimezone(uid)
+  // A brand-new account (nothing on the server yet) takes this device's time zone. An existing
+  // account keeps the one the learner has, which they may have chosen on purpose.
+  const newAccount = Object.keys(remote.checked).length === 0 && Object.keys(remote.studied).length === 0 && Object.keys(remote.gates).length === 0
+  if (firstHere && newAccount) await rememberTimezone(uid)
 }
 
 /** Send this browser's changes since the last sync. */

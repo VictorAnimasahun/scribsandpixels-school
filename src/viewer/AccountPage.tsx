@@ -1,8 +1,14 @@
 import { useEffect, useState } from 'react'
+import { catalog } from '../content/catalog.ts'
+import type { Profile } from '../domain/learner.ts'
+import { streak } from '../domain/streak.ts'
 import { accountConfig } from '../lib/accountConfig.ts'
-import { isSignedIn, useAccountStatus, type AccountStatus } from './accountStatus.ts'
+import { todayDate } from './actions.ts'
+import { isAdmin, isSignedIn, useAccountStatus, type AccountStatus } from './accountStatus.ts'
 import { loadSync, type SyncModule } from './loadSync.ts'
+import { href } from './router.ts'
 import { useStore } from './store.ts'
+import { ledger, shortTitle, studyDaysDone } from './today.ts'
 import { Icon } from './ui.tsx'
 
 
@@ -109,6 +115,100 @@ function SignIn({ sync, status }: { sync: SyncModule; status: AccountStatus }) {
   )
 }
 
+/** Every IANA time zone the browser knows (falls back to a short list on old browsers). */
+function timeZones(current: string): string[] {
+  let zones: string[] = []
+  try { zones = Intl.supportedValuesOf('timeZone') } catch { /* old browser */ }
+  if (!zones.length) zones = ['Africa/Lagos', 'America/Toronto', 'America/Vancouver', 'Europe/London', 'UTC']
+  return zones.includes(current) ? zones : [current, ...zones]
+}
+
+const hourLabel = (h: number) => new Date(Date.UTC(2026, 0, 1, h)).toLocaleTimeString([], { hour: 'numeric', timeZone: 'UTC' })
+
+/** Name, time zone and the daily nudge email: the learner's own profile settings. */
+function Details() {
+  const [profile, setProfile] = useState<Profile | null>(null)
+  const [draft, setDraft] = useState<Profile | null>(null)
+  const [state, setState] = useState<'loading' | 'idle' | 'saving' | 'saved' | 'error'>('loading')
+  const [error, setError] = useState<string | null>(null)
+  useEffect(() => {
+    let live = true
+    import('../lib/api.ts').then((api) => api.getProfile()).then(
+      (p) => { if (live) { setProfile(p); setDraft(p); setState('idle') } },
+      (e: Error) => { if (live) { setError(e.message); setState('error') } },
+    )
+    return () => { live = false }
+  }, [])
+  if (!draft || !profile) return <section className="stack"><h2>Your details</h2><p className="small muted">{error ? `Couldn't load your details: ${error}` : 'Loading…'}</p></section>
+  const changed = JSON.stringify(draft) !== JSON.stringify(profile)
+  const save = async () => {
+    setState('saving')
+    setError(null)
+    try {
+      const api = await import('../lib/api.ts')
+      const name = draft.displayName?.trim() || null
+      await api.updateProfile({ displayName: name, timezone: draft.timezone, emailNudges: draft.emailNudges, nudgeHour: draft.nudgeHour })
+      const saved = { ...draft, displayName: name }
+      setProfile(saved)
+      setDraft(saved)
+      setState('saved')
+    } catch (e) {
+      setError((e as Error).message)
+      setState('error')
+    }
+  }
+  return (
+    <section className="stack">
+      <h2>Your details</h2>
+      <form className="account-form" onSubmit={(e) => { e.preventDefault(); void save() }}>
+        <label className="field">
+          <span>Name (used in your emails)</span>
+          <input maxLength={60} autoComplete="name" value={draft.displayName ?? ''} onChange={(e) => { setDraft({ ...draft, displayName: e.target.value }); setState('idle') }} placeholder="Your first name" />
+        </label>
+        <label className="field">
+          <span>Time zone (your study days and streak follow your own calendar)</span>
+          <select value={draft.timezone} onChange={(e) => { setDraft({ ...draft, timezone: e.target.value }); setState('idle') }}>
+            {timeZones(draft.timezone).map((z) => <option key={z} value={z}>{z.replace(/_/g, ' ')}</option>)}
+          </select>
+        </label>
+        <label className="check-field">
+          <input type="checkbox" checked={draft.emailNudges} onChange={(e) => { setDraft({ ...draft, emailNudges: e.target.checked }); setState('idle') }} />
+          <span>Email me a nudge on study days I haven't studied yet, and a review every Sunday</span>
+        </label>
+        <label className="field">
+          <span>Nudge time</span>
+          <select value={draft.nudgeHour} disabled={!draft.emailNudges} onChange={(e) => { setDraft({ ...draft, nudgeHour: Number(e.target.value) }); setState('idle') }}>
+            {Array.from({ length: 24 }, (_, h) => <option key={h} value={h}>{hourLabel(h)}</option>)}
+          </select>
+        </label>
+        <div className="row">
+          <button type="submit" className="btn primary small-btn" disabled={!changed || state === 'saving'}>{state === 'saving' ? 'Saving…' : 'Save details'}</button>
+          {state === 'saved' && !changed && <span className="status ok" role="status">Saved</span>}
+        </div>
+        {error && <p className="banner warn" role="alert">Couldn't save: {error}</p>}
+      </form>
+    </section>
+  )
+}
+
+/** Study days done per course and the streak, from this browser's (synced) progress. */
+function Progress() {
+  const state = useStore()
+  const value = streak(new Set(Object.keys(state.studied)), todayDate())
+  const courses = catalog
+    .map((c) => ({ title: shortTitle(c.title), days: studyDaysDone(ledger(c, state.checked)), total: c.weeks.reduce((n, w) => n + w.days.length, 0) }))
+    .filter((c) => c.days > 0)
+  return (
+    <section className="stack">
+      <h2>Your progress</h2>
+      <p className="small">Streak <b className="num">{value.current}</b> study day{value.current === 1 ? '' : 's'} (best <span className="num">{value.best}</span>). Sundays are rest and never break it.</p>
+      {courses.length
+        ? <ul className="learner-courses small">{courses.map((c) => <li key={c.title}><b>{c.title}</b>: <span className="num">{c.days}</span> of {c.total} written days done</li>)}</ul>
+        : <p className="small muted">Nothing ticked yet. Today's lesson is on the Today page.</p>}
+    </section>
+  )
+}
+
 function SignedIn({ sync, status }: { sync: SyncModule; status: AccountStatus }) {
   const [unsaved, setUnsaved] = useState(false)
   const [busy, setBusy] = useState(false)
@@ -133,6 +233,14 @@ function SignedIn({ sync, status }: { sync: SyncModule; status: AccountStatus })
           <button type="button" className="btn ghost small-btn" disabled={status.state === 'loading' || status.state === 'saving'} onClick={() => sync.refresh(true)}>Download from my account now</button>
         </div>
       </section>
+      <Progress />
+      <Details />
+      {isAdmin(status) && (
+        <section className="stack">
+          <h2>Admin</h2>
+          <div className="row"><a className="btn ghost small-btn" href={href.admin()}>See all learners</a></div>
+        </section>
+      )}
       <section className="stack">
         <h2>Sign out</h2>
         <p className="small muted-2">Signing out removes your progress from this browser. It stays in your account for next time.</p>

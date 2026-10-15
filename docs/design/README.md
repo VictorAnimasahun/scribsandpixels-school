@@ -50,6 +50,8 @@ Not designed yet (built from the tokens above so it works; restyle freely):
 | File | Screen | Route |
 |---|---|---|
 | `src/viewer/AccountPage.tsx` | Sign in (email → 6-digit code), Your account (save status, download now, sign out) | `#/account` |
+| `src/viewer/AccountPage.tsx` | Your progress, Your details (name, time zone, nudge email + time) | `#/account` |
+| `src/viewer/AdminPage.tsx` | Learners (admins only): one card per learner, who needs a nudge first | `#/admin` |
 
 The Account entry is a third tab on phones and a sidebar link on desktop; the sidebar footer shows
 whether progress is saved to the account or to this browser only. Styles: the "Account" section at the

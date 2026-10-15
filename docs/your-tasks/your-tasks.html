@@ -425,7 +425,12 @@ npx supabase db push</pre>
       <li>You should see <b>Your account</b> and, a moment later, <b>Saved to your account</b>.</li>
       <li>On your phone: <code>school.scribsandpixels.com</code> → <b>Account</b> → sign in the same way. The progress from the laptop appears.</li>
       <li>Tick one block on the phone. On the laptop, open <b>Account</b> → <b>Download from my account now</b>. The tick appears there too.</li>
-      <li>Send Claude: <code>Accounts are on. Signed in on laptop and phone.</code></li>
+      <li>Make yourself the school's admin. Supabase → <b>SQL Editor</b> → <b>New query</b> → paste:
+<pre>update public.profiles set role = 'admin' where email = 'animasahunvictor1@gmail.com';</pre>
+          → <b>Run</b>. It must say <code>Success. 1 row affected</code> (UPDATE 1). <span class="kw">IF</span> it says 0 rows → you haven't signed in with that email yet; do step 6 first.<br>
+          <b>What this does:</b> every account is a <i>student</i>. An <i>admin</i> can also <b>read</b> every learner's progress on the Learners page (ticks, finished days, streaks, checkpoints) but can't change anyone's data and can't read their daily logs. The app can't make anyone an admin (learners are only allowed to edit their own settings), so this is done here, as the database owner.</li>
+      <li>On the laptop: <b>Account</b> → <b>Download from my account now</b>. A <b>Learners</b> link appears (sidebar, and "See all learners" on the Account page). Open it: you see yourself.</li>
+      <li>Send Claude: <code>Accounts are on. Signed in on laptop and phone. Admin works.</code></li>
     </ol>
     <div class="box ok"><b>EXPECTED OUTPUT:</b> Signed in on both devices, the same progress on both, and the email showing a code from <code>school@scribsandpixels.com</code>.</div>
     <div class="box stop"><b>ON ERROR:</b> If the Account page says <i>Couldn't save to your account: Could not find the table 'public.…' in the schema cache</i> → step 1 didn't finish; run <code>npx supabase db push</code> again. If the email lands in spam → mark it "Not spam" and tell Claude. Anything else → copy the exact message on screen and send it with the error template below.</div>

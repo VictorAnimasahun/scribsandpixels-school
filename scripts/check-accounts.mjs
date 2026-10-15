@@ -17,6 +17,7 @@ import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 
 import http from 'node:http'
 import net from 'node:net'
 import { join } from 'node:path'
+import pg from 'pg'
 import { chromium } from 'playwright-core'
 import { createServer as createVite } from 'vite'
 
@@ -95,6 +96,12 @@ for (const file of readdirSync(join(root, 'supabase/migrations')).filter((f) => 
 
 const socket = new PGLiteSocketServer({ db, port: PG_PORT, host: '127.0.0.1', maxConnections: 4 })
 await socket.start()
+
+// The test's own SQL goes through the socket too, as an ordinary Postgres client. PGlite is one
+// session shared by every connection; the socket server keeps each connection's transaction
+// together, so a test write can't land inside one of PostgREST's (read-only) transactions.
+const client = new pg.Client({ host: '127.0.0.1', port: PG_PORT, user: 'postgres', database: 'postgres' })
+await client.connect()
 
 // ─── PostgREST ──────────────────────────────────────────────────────────────
 
@@ -178,7 +185,7 @@ async function userFor(email, create) {
   if (users.has(email)) return users.get(email)
   if (!create) return null
   const user = { id: randomUUID(), aud: 'authenticated', role: 'authenticated', email, app_metadata: { provider: 'email' }, user_metadata: {}, created_at: new Date().toISOString() }
-  await db.query('insert into auth.users (id, email) values ($1, $2)', [user.id, email]) // the signup trigger makes the profile
+  await client.query('insert into auth.users (id, email) values ($1, $2)', [user.id, email]) // the signup trigger makes the profile
   users.set(email, user)
   return user
 }
@@ -316,7 +323,7 @@ async function check(name, fn) {
   try { await fn(); ok(name) } catch (e) { fail(name, e.message.split('\n').slice(0, 4).join('\n    ')) }
 }
 const expect = (cond, message) => { if (!cond) throw new Error(message) }
-const sql = async (q, params = []) => (await db.query(q, params)).rows
+const sql = async (q, params = []) => (await client.query(q, params)).rows
 /** Poll until fn() returns something truthy (the app saves a moment after each change). */
 async function eventually(what, fn, timeout = 15_000) {
   const until = Date.now() + timeout
@@ -571,12 +578,8 @@ await check("a second learner starts empty and can't see the first learner's pro
 await check('an account with more than 1,000 ticks downloads all of them (paged)', async () => {
   const email = 'busy@example.com'
   const user = await userFor(email, true)
-  await db.exec('begin')
-  for (let w = 1; w <= 50; w++)
-    for (let d = 1; d <= 6; d++)
-      for (const b of ['review', 'lesson', 'practice', 'mini-task'])
-        await db.query('insert into block_progress (user_id, course_slug, week, day, block_key) values ($1, $2, $3, $4, $5)', [user.id, 'fullstack-ml', w, d, b])
-  await db.exec('commit')
+  await client.query(`insert into block_progress (user_id, course_slug, week, day, block_key)
+    select $1, 'fullstack-ml', w, d, b from generate_series(1, 50) w, generate_series(1, 6) d, unnest(array['review', 'lesson', 'practice', 'mini-task']) b`, [user.id])
   const dev = await device('busy')
   await signIn(dev.page, email)
   const n = Object.keys((await localState(dev.page)).checked).length
@@ -584,7 +587,63 @@ await check('an account with more than 1,000 ticks downloads all of them (paged)
   await dev.context.close()
 })
 
-// 9. Signing out.
+// 9. Student details and the admin page.
+await check('a learner can save their name, time zone and nudge settings', async () => {
+  await laptop.page.goto(`${APP}#/account`)
+  await laptop.page.getByRole('heading', { name: 'Your details' }).waitFor()
+  await laptop.page.getByLabel('Name (used in your emails)').fill('Victor')
+  await laptop.page.getByLabel(/Time zone/).selectOption('America/Toronto')
+  await laptop.page.getByLabel('Nudge time').selectOption('20')
+  await laptop.page.getByRole('button', { name: 'Save details' }).click()
+  await laptop.page.locator('.status.ok', { hasText: /^Saved$/ }).waitFor()
+  const [p] = await sql('select display_name, timezone, nudge_hour, email_nudges from profiles where id = $1', [victorId])
+  expect(p.display_name === 'Victor' && p.timezone === 'America/Toronto' && p.nudge_hour === 20 && p.email_nudges === true, JSON.stringify(p))
+})
+await check('the account page shows progress (study days per course and the streak)', async () => {
+  await laptop.page.goto(`${APP}#/account`)
+  await laptop.page.getByRole('heading', { name: 'Your progress' }).waitFor()
+  await laptop.page.getByText(/12-Month Fullstack \+ ML: \d+ of \d+ written days done/).waitFor()
+})
+await check('a student gets "admins only" on the admin page, and no admin link', async () => {
+  await laptop.page.goto(`${APP}#/admin`)
+  await laptop.page.getByText('Your account is a student account.').waitFor()
+  await laptop.page.goto(`${APP}#/account`)
+  expect(!(await laptop.page.getByRole('link', { name: 'See all learners' }).count()), 'a student is offered the admin page')
+})
+await check("an admin sees every learner, and the admin's own progress stays their own", async () => {
+  const mineBefore = Object.keys((await localState(laptop.page)).checked).length
+  await client.query("update public.profiles set role = 'admin' where id = $1", [victorId]) // what make-admin.sql does
+  await laptop.page.goto(`${APP}#/account`)
+  await laptop.page.getByRole('button', { name: 'Download from my account now' }).click()
+  await laptop.page.getByRole('link', { name: 'See all learners' }).click()
+  await laptop.page.getByRole('heading', { name: 'Learners' }).waitFor()
+  const cards = laptop.page.locator('.learner-card')
+  await cards.first().waitFor()
+  const n = await cards.count()
+  const accounts = (await sql('select count(*)::int as n from profiles'))[0].n
+  expect(n === accounts, `${n} cards for ${accounts} accounts`)
+  // Victor has finished days in Fullstack; busy@ has ticks but no finished day.
+  await laptop.page.locator('.learner-card', { hasText: 'victor@example.com' }).getByText(/12-Month Fullstack \+ ML: \d+ days done/).waitFor()
+  await laptop.page.locator('.learner-card', { hasText: 'busy@example.com' }).getByText('No finished days yet.').waitFor()
+  // The bug this guards against: admin read access must never pull other learners' ticks in.
+  await laptop.page.goto(`${APP}#/account`)
+  await laptop.page.getByRole('button', { name: 'Download from my account now' }).click()
+  await waitSaved(laptop.page)
+  const mineAfter = Object.keys((await localState(laptop.page)).checked).length
+  expect(mineAfter === mineBefore, `admin's ticks went from ${mineBefore} to ${mineAfter} (other learners' rows leaked in?)`)
+  const serverMine = (await sql('select count(*)::int as n from block_progress where user_id = $1', [victorId]))[0].n
+  expect(serverMine === mineBefore, `admin has ${serverMine} rows on the server, ${mineBefore} in the browser`)
+})
+
+await check('signing in on another device keeps a time zone the learner chose', async () => {
+  const d = await device('travel')
+  await signIn(d.page, VICTOR)
+  const [p] = await sql('select timezone from profiles where id = $1', [victorId])
+  expect(p.timezone === 'America/Toronto', `time zone reset to ${p.timezone}`)
+  await d.context.close()
+})
+
+// 10. Signing out.
 await check('signing out clears this browser but keeps the account', async () => {
   const rowsBefore = (await sql('select count(*)::int as n from block_progress where user_id = $1', [victorId]))[0].n
   await laptop.page.goto(`${APP}#/account`)
@@ -620,6 +679,7 @@ await check('no JavaScript errors on any device', async () => {
 console.log(failures ? `\n${failures} account check(s) failing` : '\nAll account checks pass')
 if (DEBUG) console.log('auth calls:', authLog.join(', '))
 await browser.close()
+await client.end()
 await vite.close()
 gateway.close()
 postgrest.kill()

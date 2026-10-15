@@ -9,6 +9,7 @@
 - [x] Accounts built (15 Oct 2026): sign-in by code or link, local-first sync with three-way merge, checkpoint attempts permanent on the server, sign-out clears the browser; proven by `check:db` and `check:accounts` (both in CI)
 - [ ] Vercel builds every push to main without waiting for the tests (CI only gates GitHub Pages). Make Vercel deploy only after CI passes (deploy from the workflow with a Vercel token, or an Ignored Build Step that checks the commit status)
 - [ ] **Victor: procedure 10** (`npx supabase db push`, paste the sign-in template), then sign in on laptop + phone
+- [x] Student account (details + progress) and admin role/Learners page (15 Oct 2026), proven in check:db and check:accounts
 - [ ] Sign-in/Account screen design (claude.ai): built from the tokens for now (`AccountPage.tsx`, noted in `docs/design/README.md`)
 - [ ] Week unlocks aren't enforced in the test-build UI (any week can be ticked); decide before real learners join (the domain rule exists: `weekStatus`)
 - [ ] The nudge function only knows Fullstack: register French and Excel in `scripts/sync-functions.ts` (needs their `course.ts`) so their learners get nudges
