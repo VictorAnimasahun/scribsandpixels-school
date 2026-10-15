@@ -59,8 +59,9 @@
     <tr><td class="mono">08</td><td>set_up_resend()</td><td><span class="tag hold">✓ DONE 15 Oct</span></td></tr>
     <tr><td class="mono">09</td><td>deploy_email_nudges()</td><td><span class="tag hold">ON HOLD</span></td></tr>
     <tr><td class="mono">10</td><td>switch_on_accounts()</td><td><span class="tag now">NEXT</span></td></tr>
-    <tr><td class="mono">11</td><td>Understand what you did (05–10 explained)</td><td><span class="tag now">READ</span></td></tr>
-    <tr><td class="mono">12</td><td>Appendix: words, tools and message templates</td><td></td></tr>
+    <tr><td class="mono">11</td><td>install_the_app()</td><td><span class="tag now">WHEN READY</span></td></tr>
+    <tr><td class="mono">12</td><td>Understand what you did (05–11 explained)</td><td><span class="tag now">READ</span></td></tr>
+    <tr><td class="mono">13</td><td>Appendix: words, tools and message templates</td><td></td></tr>
   </table>
   <div class="box warn" style="margin-top:16pt"><b>Where things stand (15 Oct).</b> Hosting, the subdomain, Supabase and Resend are done. Accounts are built into the app; <b>10 switches them on</b>. 09 (the nudge emails) comes after 10, once your own account has some progress in it.</div>
 </section>
@@ -439,8 +440,35 @@ npx supabase db push</pre>
 
 <!-- ─────────────────────────── 11 ─────────────────────────── -->
 <section class="page">
-  <h2>11 · Understand what you did</h2>
-  <p>Every step in 05–10 is real engineering. This section explains each one: <b>what it is</b> (in plain words), <b>what each line means</b>, and <b>what breaks without it</b>. Read it slowly; this is Fullstack Weeks 15, 17, 19, 22 and 28 done for real.</p>
+  <h2>11 · install_the_app() <span class="tag now">WHEN READY</span></h2>
+  <div class="proc">
+    <span class="sig">PROCEDURE install_the_app() → the school as an app on your phone</span>
+    <table class="kv">
+      <tr><td>WHY</td><td>An icon on your home screen, full screen, and lessons that open without data. Two ways: install the website (any phone, 1 minute) or the Android app file (APK).</td></tr>
+      <tr><td>INPUTS</td><td>Your phone. For the APK: an Android phone.</td></tr>
+      <tr><td>TIME</td><td>5 minutes</td></tr>
+    </table>
+    <ol class="steps">
+      <li><b>Option A, any phone (recommended first):</b> open <code>school.scribsandpixels.com</code> in Chrome (Android) or Safari (iPhone).<br>
+          Android: Chrome menu <b>⋮</b> → <b>Add to Home screen</b> (or <b>Install app</b>) → <b>Install</b>.<br>
+          iPhone: the <b>Share</b> button → <b>Add to Home Screen</b> → <b>Add</b>.</li>
+      <li>Open it from the new icon. It opens full screen, without the browser bar. Open a few lessons once while online; after that they open offline too.</li>
+      <li><b>Option B, the Android app (APK):</b> on the phone, open <code>github.com/VictorAnimasahun/scribsandpixels-school/releases/tag/android-latest</code> → tap <code>scribsandpixels-school.apk</code> to download it.</li>
+      <li>Open the downloaded file. <span class="kw">IF</span> Android says it can't install apps from this source → <b>Settings</b> → allow <b>Install unknown apps</b> for your browser → go back → <b>Install</b>.</li>
+      <li><span class="kw">IF</span> Play Protect warns about an unknown developer → <b>More details</b> → <b>Install anyway</b>. It warns because the app isn't from the Play Store yet, not because something is wrong with it.</li>
+      <li>Open <b>Scribs &amp; Pixels</b>. Sign in on the <b>Account</b> tab with the code from the email. The app can't use the link in the email: on a phone, links open the browser.</li>
+      <li>Later builds: download and install the new APK the same way. It installs over the old one and keeps your progress.</li>
+      <li>Send Claude: <code>App installed (A / B / both). Anything odd: &lt;what&gt;</code></li>
+    </ol>
+    <div class="box ok"><b>EXPECTED OUTPUT:</b> The green "S" icon on your home screen; the school opens full screen; lessons you've opened work in airplane mode.</div>
+    <div class="box stop"><b>ON ERROR:</b> "App not installed" when updating → an older build was signed with a different key: uninstall the app, then install the new one, and sign in again (your progress is in your account). The French "listen" and "speak" buttons don't work inside the Android app (its built-in browser has no speech); use the website in Chrome for those.</div>
+  </div>
+</section>
+
+<!-- ─────────────────────────── 12 ─────────────────────────── -->
+<section class="page">
+  <h2>12 · Understand what you did</h2>
+  <p>Every step in 05–11 is real engineering. This section explains each one: <b>what it is</b> (in plain words), <b>what each line means</b>, and <b>what breaks without it</b>. Read it slowly; this is Fullstack Weeks 15, 17, 19, 22 and 28 done for real.</p>
 
   <h3>1. Git, GitHub and "push to main"</h3>
   <p><b>What it is.</b> Git keeps save points of the project, like the version history in Google Docs, but you decide when to save and you label each save. A <i>commit</i> is one labelled save. GitHub holds the shared copy online. <i>Pushing</i> uploads your new saves there. <code>main</code> is the official version of the school.</p>
@@ -510,11 +538,20 @@ npx supabase db push</pre>
 
   <h3>8. How signing in works (code, link, PKCE)</h3>
   <p>You ask for an email; it holds a <b>6-digit code</b> and a <b>link</b>. The code works on any device: ask on the laptop, read it on your phone, type it on the laptop. The link uses <b>PKCE</b>: when you ask, your browser invents a secret and sends only its fingerprint; the link brings back a one-time code that only swaps for a login together with that original secret. So a link forwarded to, or stolen by, someone else is useless; that's also why a link opened on a different device says "use the code instead". A code or link works once and expires after an hour. <i>Signing out</i> removes your progress from that browser; it stays in your account.</p>
+  <h3>9. The app on your phone (PWA, APK, signing)</h3>
+  <table class="kv">
+    <tr><td>Installable website (PWA)</td><td>A <i>manifest</i> file tells the phone the app's name, icon and colours, and to open full screen. A <i>service worker</i> is a small script the browser runs between the school and the internet, like an assistant who keeps copies of what you've read: when the internet is there it fetches the newest version; when it isn't, it hands you the saved copy. It never saves your account data.</td></tr>
+    <tr><td>Capacitor</td><td>Wraps the same school in a real Android app: a native shell around a built-in browser window that shows the school's files, which ship inside the app. One codebase for the website and the app.</td></tr>
+    <tr><td>APK</td><td>The file format of an Android app, like a <code>.exe</code> on Windows. The Play Store installs APKs for you; here you install it yourself, which is why Android asks you to allow "unknown apps" for your browser.</td></tr>
+    <tr><td>Signing key</td><td>Every APK is signed, like a wax seal from its maker. Android only lets a new version replace an installed one if the seals match, so nobody can push a fake update over your app. The test builds use one fixed test key, kept in the project, so each new build installs over the last. The Play Store will need a <b>private</b> release key: lose it and you can never update the app there again, so it goes in your password manager.</td></tr>
+    <tr><td>versionCode</td><td>A number that must go up with every version; Android won't install an older number over a newer one. GitHub's build counter provides it.</td></tr>
+    <tr><td>GitHub Actions + release</td><td>On every push, GitHub's computers build the APK (Java 21 and the Android SDK) and attach it to the <code>android-latest</code> release page, where you download it.</td></tr>
+  </table>
 </section>
 
-<!-- ─────────────────────────── 12 ─────────────────────────── -->
+<!-- ─────────────────────────── 13 ─────────────────────────── -->
 <section class="page">
-  <h2>12 · Appendix: words, tools and message templates</h2>
+  <h2>13 · Appendix: words, tools and message templates</h2>
   <h3>Message template: error</h3>
 <pre>ERROR in procedure &lt;number + name&gt;, step &lt;number&gt;.
 What I did: &lt;one sentence&gt;
