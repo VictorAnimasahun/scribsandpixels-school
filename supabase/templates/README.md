@@ -5,7 +5,7 @@ link, but the app's sign-in also takes the **6-digit code**, which is what makes
 across devices (ask on the laptop, read the code on the phone). So both templates below include
 `{{ .Token }}` (the code) and `{{ .ConfirmationURL }}` (the link).
 
-Paste `sign-in.html` into **Supabase → Authentication → Emails → Templates** for both:
+Copy it with `pbcopy < supabase/templates/sign-in.html` (not TextEdit, which shows HTML as a formatted page) and paste it into **Supabase → Authentication → Emails → Templates** for both:
 
 | Template | Sent when | Subject |
 |---|---|---|

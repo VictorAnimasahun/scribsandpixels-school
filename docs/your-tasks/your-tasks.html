@@ -413,8 +413,9 @@ npx supabase db push</pre>
           <span class="kw">IF</span> macOS asks for your <b>login keychain</b> password ("supabase wants to use… Supabase CLI") → type your Mac password → <b>Allow</b>. That's the Supabase login you saved in 07.<br>
           <span class="kw">IF</span> it asks for the database password → paste "Supabase DB password" from your password manager.</li>
       <li>Check it worked: Supabase → <b>Table Editor</b>. You should now also see <code>checkpoints</code>, <code>checkpoint_attempts</code> and <code>study_days</code>.</li>
-      <li>Open the email template in TextEdit and copy all of it (⌘A, ⌘C):
-<pre>open -e supabase/templates/sign-in.html</pre></li>
+      <li>Copy the email template's code to the clipboard (paste this in the Terminal; it prints nothing):
+<pre>pbcopy &lt; supabase/templates/sign-in.html</pre>
+          <code>pbcopy</code> puts a file's exact text on the clipboard. <b>Don't open the file in TextEdit</b>: TextEdit shows an HTML file as a formatted page, and copying that gives formatted text, not the code Supabase needs. In the template you'll see <code>{{ .Token }}</code> and <code>{{ .ConfirmationURL }}</code>: placeholders that Supabase swaps for the real code and link in each email it sends.</li>
       <li>Supabase → <b>Authentication → Emails → Templates</b> → <b>Magic Link</b>:
         <ul>
           <li>Subject: <code>Your Scribs &amp; Pixels sign-in code</code></li>
