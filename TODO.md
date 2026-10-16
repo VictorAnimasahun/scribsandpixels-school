@@ -13,7 +13,7 @@
 - [x] Android app (15 Oct 2026): Capacitor, APK built by CI on every push, published on the `android-latest` release; tested in the emulator (Today, Account)
 - [ ] Android: Capacitor logs "Error injecting safe area CSS" at start-up (its own early script; layout is correct in the emulator). Check on a real phone; Android WebView has no speech synthesis or recognition, so the French "listen"/"speak" buttons won't work in the app (the website on Chrome is fine)
 - [ ] Play Store: make a private release key (keep it in the password manager), a signed release build (AAB), store listing
-- [ ] **Victor: procedure 10** (`npx supabase db push`, paste the sign-in template), then sign in on laptop + phone
+- [x] Procedure 10 done (16 Oct 2026): both migrations pushed, sign-in template with the code, signed in on laptop + phone, Victor is admin
 - [x] Student account (details + progress) and admin role/Learners page (15 Oct 2026), proven in check:db and check:accounts
 - [ ] Sign-in/Account screen design (claude.ai): built from the tokens for now (`AccountPage.tsx`, noted in `docs/design/README.md`)
 - [ ] Week unlocks aren't enforced in the test-build UI (any week can be ticked); decide before real learners join (the domain rule exists: `weekStatus`)
