@@ -1,0 +1,58 @@
+# Week 3 · Day 1 practice
+id: ml-w03-d1-clean
+kind: python
+title: "Fill the gaps the scikit-learn way"
+description: "Separate the features from the labels, fix the area names, then let SimpleImputer learn each column's median on the training set and fill the gaps."
+files: [lagos_housing.csv]
+starter: |
+  import numpy as np
+  import pandas as pd
+  from sklearn.model_selection import StratifiedShuffleSplit
+
+  df = pd.read_csv("lagos_housing.csv")
+  df["bed_cat"] = df["bedrooms"].clip(upper=5)
+  train_idx, test_idx = next(StratifiedShuffleSplit(n_splits=1, test_size=0.2, random_state=42).split(df, df["bed_cat"]))
+  train_set = df.iloc[train_idx].drop(columns="bed_cat")
+  test_set = df.iloc[test_idx].drop(columns="bed_cat")
+
+  AREA_FIX = {"surulere": "Surulere", "Ikeja Gra": "Ikeja GRA", "Ikeja G.R.A": "Ikeja GRA", "lekki phase 1": "Lekki Phase 1",
+              "Lekki Ph 1": "Lekki Phase 1", "V.I.": "Victoria Island", "Victoria island": "Victoria Island", "Ajah ": "Ajah"}
+  NUM_COLS = ["latitude", "longitude", "bedrooms", "bathrooms", "toilets", "size_sqm", "building_age", "parking_spaces"]
+  from sklearn.impute import SimpleImputer
+
+  # 1. Features and labels from the TRAINING set (drop price_m and listing_id from the features).
+  X = None          # train_set.drop(columns=["price_m", "listing_id"])
+  y = None          # train_set["price_m"].copy()
+
+  # 2. Fix the area spellings in X.
+  # X["area"] = X["area"].replace(AREA_FIX)
+
+  # 3. How many sizes are missing in the training features?
+  MISSING_SIZE_TRAIN = None
+
+  # 4. An imputer that fills with the median, fitted on the number columns.
+  imputer = None    # SimpleImputer(strategy="median"), then imputer.fit(X[NUM_COLS])
+
+  # 5. What median did it learn for size_sqm?  (imputer.statistics_ holds one per column, in NUM_COLS order)
+  SIZE_MEDIAN = None
+
+  # 6. Fill the gaps: a NumPy array with no missing values left.
+  X_num = None      # imputer.transform(X[NUM_COLS])
+tasks:
+  - prompt: "X and y come from the training set: 2,400 rows, price_m and listing_id are not features, and the 12 area names are clean."
+    tests: |
+      assert X is not None and len(X) == 2400 and len(y) == 2400, "use train_set"
+      assert "price_m" not in X.columns and "listing_id" not in X.columns
+      assert X["area"].nunique() == 12, f"{X['area'].nunique()} areas: apply AREA_FIX"
+    hint: "X = train_set.drop(columns=['price_m', 'listing_id']); y = train_set['price_m'].copy(); X['area'] = X['area'].replace(AREA_FIX)"
+  - prompt: "43 sizes are missing in the training set, and the imputer learned a median size of 159 m² (read from imputer.statistics_)."
+    tests: |
+      assert MISSING_SIZE_TRAIN == 43, f"MISSING_SIZE_TRAIN = {MISSING_SIZE_TRAIN}"
+      assert SIZE_MEDIAN == 159, f"SIZE_MEDIAN = {SIZE_MEDIAN}"
+      assert "statistics_" in __code__, "read it from imputer.statistics_"
+    hint: "X['size_sqm'].isna().sum(); SIZE_MEDIAN = imputer.statistics_[NUM_COLS.index('size_sqm')]"
+  - prompt: "X_num has no missing values left."
+    tests: |
+      import numpy as np
+      assert X_num is not None and X_num.shape == (2400, 8), f"shape {None if X_num is None else X_num.shape}"
+      assert not np.isnan(X_num).any(), "there are still gaps"

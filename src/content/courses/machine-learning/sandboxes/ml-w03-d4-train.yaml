@@ -1,0 +1,89 @@
+# Week 3 · Day 4 practice
+id: ml-w03-d4-train
+kind: python
+title: "Three models, one fair comparison"
+description: "Train linear regression and a decision tree, see the tree's 'perfect' score on its own training data, then expose it with 5-fold cross-validation. Then try a random forest."
+files: [lagos_housing.csv]
+starter: |
+  import numpy as np
+  import pandas as pd
+  from sklearn.model_selection import StratifiedShuffleSplit
+  from sklearn.base import BaseEstimator, TransformerMixin
+  from sklearn.pipeline import Pipeline
+  from sklearn.compose import ColumnTransformer
+  from sklearn.impute import SimpleImputer
+  from sklearn.preprocessing import OneHotEncoder, StandardScaler
+
+  df = pd.read_csv("lagos_housing.csv")
+  df["bed_cat"] = df["bedrooms"].clip(upper=5)
+  train_idx, test_idx = next(StratifiedShuffleSplit(n_splits=1, test_size=0.2, random_state=42).split(df, df["bed_cat"]))
+  train_set = df.iloc[train_idx].drop(columns="bed_cat")
+  test_set = df.iloc[test_idx].drop(columns="bed_cat")
+  X, y = train_set.drop(columns=["price_m", "listing_id"]), train_set["price_m"].copy()
+  X_test, y_test = test_set.drop(columns=["price_m", "listing_id"]), test_set["price_m"].copy()
+
+  AREA_FIX = {"surulere": "Surulere", "Ikeja Gra": "Ikeja GRA", "Ikeja G.R.A": "Ikeja GRA", "lekki phase 1": "Lekki Phase 1",
+              "Lekki Ph 1": "Lekki Phase 1", "V.I.": "Victoria Island", "Victoria island": "Victoria Island", "Ajah ": "Ajah"}
+  NUM_COLS = ["latitude", "longitude", "bedrooms", "bathrooms", "toilets", "size_sqm", "building_age", "parking_spaces"]
+
+  class AreaCleaner(BaseEstimator, TransformerMixin):
+      def fit(self, X, y=None):
+          return self
+      def transform(self, X):
+          X = X.copy()
+          X["area"] = X["area"].replace(AREA_FIX)
+          return X
+
+  class AddDistance(BaseEstimator, TransformerMixin):
+      def fit(self, X, y=None):
+          return self
+      def transform(self, X):
+          X = X.copy()
+          X["km_to_ikoyi"] = np.sqrt(((X["latitude"] - 6.452) * 111) ** 2 + ((X["longitude"] - 3.435) * 110) ** 2)
+          return X
+  from sklearn.linear_model import LinearRegression
+  from sklearn.tree import DecisionTreeRegressor
+  from sklearn.ensemble import RandomForestRegressor
+  from sklearn.model_selection import cross_val_score
+  from sklearn.metrics import mean_squared_error
+
+  num_pipeline = Pipeline([("imputer", SimpleImputer(strategy="median")), ("scaler", StandardScaler())])
+  preprocess = ColumnTransformer([
+      ("num", num_pipeline, NUM_COLS + ["km_to_ikoyi"]),
+      ("cat", OneHotEncoder(handle_unknown="ignore"), ["area", "property_type", "serviced"]),
+  ])
+  full_pipeline = Pipeline([("clean", AreaCleaner()), ("distance", AddDistance()), ("prepare", preprocess)])
+  X_prepared = full_pipeline.fit_transform(X)
+
+  def rmse(model, X_, y_):
+      return float(np.sqrt(mean_squared_error(y_, model.predict(X_))))
+
+  # 1. Train and measure each on the TRAINING data.
+  lin = None        # LinearRegression().fit(X_prepared, y)
+  tree = None       # DecisionTreeRegressor(random_state=42).fit(X_prepared, y)
+  LIN_TRAIN = None  # rmse(lin, X_prepared, y)
+  TREE_TRAIN = None
+
+  # 2. Cross-validate (5 folds). scikit-learn returns NEGATIVE mean squared errors.
+  def cv_rmse(model):
+      scores = cross_val_score(model, X_prepared, y, scoring="neg_mean_squared_error", cv=5)
+      return float(np.sqrt(-scores).mean())
+
+  LIN_CV = None
+  TREE_CV = None
+  FOREST_CV = None  # cv_rmse(RandomForestRegressor(n_estimators=30, random_state=42))
+tasks:
+  - prompt: "On its own training data: linear regression ₦46.6m, the decision tree ₦0 (too perfect)."
+    tests: |
+      assert LIN_TRAIN is not None and abs(LIN_TRAIN - 46.62) < 0.02, f"LIN_TRAIN = {LIN_TRAIN}"
+      assert TREE_TRAIN is not None and TREE_TRAIN < 1e-6, f"TREE_TRAIN = {TREE_TRAIN}"
+    hint: "lin = LinearRegression().fit(X_prepared, y); LIN_TRAIN = rmse(lin, X_prepared, y). Same for the tree."
+  - prompt: "Cross-validation tells the truth: linear about ₦47.3m, the tree about ₦46m (it shifts a little from computer to computer), nowhere near ₦0."
+    tests: |
+      assert LIN_CV is not None and abs(LIN_CV - 47.32) < 0.05, f"LIN_CV = {LIN_CV}"
+      assert TREE_CV is not None and 44.5 < TREE_CV < 48, f"TREE_CV = {TREE_CV}"
+    hint: "LIN_CV = cv_rmse(LinearRegression()); TREE_CV = cv_rmse(DecisionTreeRegressor(random_state=42))"
+  - prompt: "A random forest (30 trees) beats both: about ₦35m."
+    tests: |
+      assert FOREST_CV is not None and abs(FOREST_CV - 35.3) < 1.0, f"FOREST_CV = {FOREST_CV}"
+      assert FOREST_CV < TREE_CV and FOREST_CV < LIN_CV

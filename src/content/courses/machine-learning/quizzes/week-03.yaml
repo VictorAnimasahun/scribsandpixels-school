@@ -1,0 +1,406 @@
+# Machine Learning · Week 3 quizzes. Format and rules: src/content/QUIZZES.md
+week: 3
+days:
+
+  # ─────────────────────────── DAY 1 ───────────────────────────
+  - day: 1
+    gate:
+      title: "Checkpoint: Week 2 review"
+      covers: "Week 2: framing, RMSE and MAE, the first look with pandas, test sets, exploring and correlation"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: ml-w03-d1-g01, difficulty: easy, type: mcq, prompt: "Ìlé Homes' problem is…", choices: ["supervised multiple regression", "unsupervised clustering", "classification", "reinforcement"], answer: 0 }
+        - { id: ml-w03-d1-g02, difficulty: easy, type: mcq, prompt: "Which error measure punishes big misses more?", choices: ["RMSE", "MAE", "neither", "both equally"], answer: 0 }
+        - { id: ml-w03-d1-g03, difficulty: easy, type: mcq, prompt: "Columns, types and non-missing counts:", choices: ["df.info()", "df.head()", "df.hist()", "df.corr()"], answer: 0 }
+        - { id: ml-w03-d1-g04, difficulty: easy, type: truefalse, prompt: "You should explore the test set as carefully as the training set.", answer: false }
+        - { id: ml-w03-d1-g05, difficulty: easy, type: mcq, prompt: "Keeping each subgroup's share the same in the test set:", choices: ["stratified sampling", "random sampling", "one-hot encoding", "scaling"], answer: 0 }
+        - { id: ml-w03-d1-g06, difficulty: easy, type: mcq, prompt: "Lagos prices are capped at…", choices: ["₦500m", "₦75m", "₦1bn", "no cap"], answer: 0 }
+        - id: ml-w03-d1-g07
+          difficulty: medium
+          type: text
+          prompt: "Errors of 6, −6 and 0. MAE?"
+          accept: ["4", "4.0"]
+        - { id: ml-w03-d1-g08, difficulty: medium, type: mcq, prompt: "Mean price ₦128m, median ₦75m means…", choices: ["a long tail of expensive listings", "a typo", "the data is symmetric", "the median is wrong"], answer: 0 }
+        - { id: ml-w03-d1-g09, difficulty: medium, type: mcq, prompt: "Peeking at the test set leads to…", choices: ["data snooping bias", "underfitting", "a cap", "missing values"], answer: 0 }
+        - { id: ml-w03-d1-g10, difficulty: medium, type: mcq, prompt: "A random Lagos test set had too few 5-bedroom homes by about…", choices: ["16%", "1%", "50%", "0%"], answer: 0 }
+        - { id: ml-w03-d1-g11, difficulty: medium, type: mcq, prompt: "Correlation of −0.44 with distance to Ikoyi means…", choices: ["farther tends to be cheaper", "closer is cheaper", "no pattern", "it causes prices"], answer: 0 }
+        - { id: ml-w03-d1-g12, difficulty: medium, type: mcq, prompt: "Size per bedroom correlated less with price than size. The lesson?", choices: ["test combinations, don't assume they help", "never combine features", "size is useless", "correlation is broken"], answer: 0 }
+        - id: ml-w03-d1-g13
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            import pandas as pd
+            print(pd.Series(["Yaba", "yaba", "Ajah "]).str.strip().str.title().nunique())
+          accept: ["2"]
+        - { id: ml-w03-d1-g14, difficulty: medium, type: truefalse, prompt: "Correlation only detects straight-line relationships.", answer: true }
+        - { id: ml-w03-d1-g15, difficulty: medium, type: mcq, prompt: "The agents' reference performance: how many estimates were more than 20% off?", choices: ["half", "none", "all", "10%"], answer: 0 }
+        - { id: ml-w03-d1-g16, difficulty: hard, type: mcq, prompt: "Why stratify the Lagos split by bedrooms rather than by area?", choices: ["bedrooms has no missing or misspelt values and matters for price", "area doesn't matter", "bedrooms is the label", "it's alphabetical"], answer: 0 }
+        - { id: ml-w03-d1-g17, difficulty: hard, type: mcq, prompt: "Why not use price per m² as a feature?", choices: ["it's computed from the price: it leaks the answer", "it's text", "too slow", "it's always missing"], answer: 0 }
+        - id: ml-w03-d1-g18
+          difficulty: hard
+          type: text
+          prompt: "Errors of 0, 0, 0 and 8. RMSE?"
+          accept: ["4", "4.0"]
+    quizzes:
+      - kind: rapid-fire
+        title: "Missing values and scikit-learn's design"
+        secondsPerQuestion: 10
+        questions:
+          - { id: ml-w03-d1-rf01, difficulty: easy, type: mcq, prompt: "Fill gaps with the median:", choices: ["SimpleImputer(strategy='median')", "fillgaps()", "OneHotEncoder", "StandardScaler"], answer: 0 }
+          - { id: ml-w03-d1-rf02, difficulty: easy, type: mcq, prompt: "Anything that learns from data with .fit() is an…", choices: ["estimator", "imputer only", "array", "label"], answer: 0 }
+          - { id: ml-w03-d1-rf03, difficulty: easy, type: mcq, prompt: "Changes data with .transform():", choices: ["a transformer", "a predictor", "a label", "a pipeline only"], answer: 0 }
+          - { id: ml-w03-d1-rf04, difficulty: easy, type: mcq, prompt: "Makes predictions with .predict():", choices: ["a predictor", "a transformer", "an imputer", "a scaler"], answer: 0 }
+          - { id: ml-w03-d1-rf05, difficulty: easy, type: mcq, prompt: "imputer.statistics_ ends with _ because it is…", choices: ["learned from the data", "a hyperparameter", "private", "a typo"], answer: 0 }
+          - { id: ml-w03-d1-rf06, difficulty: easy, type: mcq, prompt: "strategy='median' is a…", choices: ["hyperparameter", "learned value", "label", "feature"], answer: 0 }
+          - { id: ml-w03-d1-rf07, difficulty: easy, type: mcq, prompt: "fit + transform in one call:", choices: ["fit_transform()", "transform_fit()", "do()", "run()"], answer: 0 }
+          - { id: ml-w03-d1-rf08, difficulty: easy, type: truefalse, prompt: "The test set's gaps should be filled with the training set's median.", answer: true }
+          - { id: ml-w03-d1-rf09, difficulty: easy, type: mcq, prompt: "Median size learned on the Lagos training set:", choices: ["159 m²", "2,320 m²", "22 m²", "75 m²"], answer: 0 }
+          - { id: ml-w03-d1-rf10, difficulty: easy, type: mcq, prompt: "Dropping size_sqm entirely is a bad idea because…", choices: ["it's the most useful feature", "it's text", "it's the label", "it's never missing"], answer: 0 }
+      - kind: brain-teaser
+        title: "Whose median?"
+        questions:
+          - { id: ml-w03-d1-bt01, difficulty: medium, type: mcq, prompt: "You compute a fresh median on the test set to fill its gaps. Problem?", choices: ["test information leaks into preparation", "it's slower", "it's the same anyway", "none"], answer: 0 }
+          - { id: ml-w03-d1-bt02, difficulty: medium, type: mcq, prompt: "Dropping listings with a missing size means a new listing with no size…", choices: ["can't be priced", "is priced at 0", "is priced by the median", "is fine"], answer: 0 }
+          - { id: ml-w03-d1-bt03, difficulty: medium, type: multi, prompt: "SimpleImputer is… (Select all.)", choices: ["an estimator", "a transformer", "a predictor"], answers: [0, 1] }
+          - { id: ml-w03-d1-bt04, difficulty: hard, type: mcq, prompt: "Why apply the imputer to ALL number columns, even ones with no gaps today?", choices: ["new data may have gaps in any column after launch", "it's required", "for speed", "to change the labels"], answer: 0 }
+
+  # ─────────────────────────── DAY 2 ───────────────────────────
+  - day: 2
+    gate:
+      title: "Checkpoint: cleaning the data"
+      covers: "Week 3 · Day 1: features vs labels, three ways to handle gaps, SimpleImputer, estimators/transformers/predictors"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: ml-w03-d2-g01, difficulty: easy, type: mcq, prompt: "Why separate features from labels?", choices: ["you transform the features, never the labels", "to delete the labels", "for speed", "pandas requires it"], answer: 0 }
+        - { id: ml-w03-d2-g02, difficulty: easy, type: mcq, prompt: "Three options for gaps:", choices: ["drop rows, drop the column, or fill", "ignore, guess, hide", "sort, scale, encode", "none"], answer: 0 }
+        - { id: ml-w03-d2-g03, difficulty: easy, type: mcq, prompt: "The imputer LEARNS the medians in…", choices: ["fit()", "transform()", "predict()", "print()"], answer: 0 }
+        - { id: ml-w03-d2-g04, difficulty: easy, type: truefalse, prompt: "LinearRegression is a predictor.", answer: true }
+        - { id: ml-w03-d2-g05, difficulty: easy, type: mcq, prompt: "Training-set listings with no size:", choices: ["43", "60", "0", "159"], answer: 0 }
+        - { id: ml-w03-d2-g06, difficulty: easy, type: mcq, prompt: "Hyperparameters are set…", choices: ["when you create the tool", "by fit()", "by the data", "after predicting"], answer: 0 }
+        - id: ml-w03-d2-g07
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            import numpy as np
+            from sklearn.impute import SimpleImputer
+            imp = SimpleImputer(strategy="median").fit([[1], [3], [np.nan], [10]])
+            print(imp.statistics_[0])
+          accept: ["3.0"]
+        - id: ml-w03-d2-g08
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            import numpy as np
+            from sklearn.impute import SimpleImputer
+            imp = SimpleImputer(strategy="median").fit([[2], [4]])
+            print(imp.transform([[np.nan]])[0][0])
+          accept: ["3.0"]
+        - { id: ml-w03-d2-g09, difficulty: medium, type: match, prompt: "Match the tool to its role.", pairs: [["SimpleImputer", "estimator + transformer"], ["LinearRegression", "estimator + predictor"], ["imputer.statistics_", "learned value"], ["strategy='median'", "hyperparameter"]] }
+        - { id: ml-w03-d2-g10, difficulty: medium, type: mcq, prompt: "scikit-learn's 'nonproliferation of classes' means datasets are…", choices: ["plain NumPy arrays or sparse matrices", "custom classes", "Excel files", "JSON"], answer: 0 }
+        - { id: ml-w03-d2-g11, difficulty: medium, type: mcq, prompt: "A predictor's score() method…", choices: ["measures prediction quality on given data", "trains it", "deletes data", "scales features"], answer: 0 }
+        - { id: ml-w03-d2-g12, difficulty: medium, type: mcq, prompt: "imputer.transform() returns…", choices: ["a NumPy array", "a CSV file", "a chart", "the labels"], answer: 0 }
+        - { id: ml-w03-d2-g13, difficulty: medium, type: truefalse, prompt: "fit_transform() can be faster than fit() then transform().", answer: true }
+        - { id: ml-w03-d2-g14, difficulty: medium, type: mcq, prompt: "Why must you SAVE the training median?", choices: ["to fill gaps in the test set and future data the same way", "for the report", "to delete it", "no reason"], answer: 0 }
+        - { id: ml-w03-d2-g15, difficulty: medium, type: mcq, prompt: "'Sensible defaults' in scikit-learn means…", choices: ["you can get a working baseline quickly", "no settings exist", "it picks your data", "always the best model"], answer: 0 }
+        - { id: ml-w03-d2-g16, difficulty: hard, type: mcq, prompt: "A model trained with gaps filled by 159 m². Next month the median of new listings is 180 m². You should…", choices: ["keep filling with 159 until you retrain on new data", "switch to 180 silently", "drop the column", "stop predicting"], answer: 0 }
+        - { id: ml-w03-d2-g17, difficulty: hard, type: mcq, prompt: "Which is NOT an estimator?", choices: ["a NumPy array", "SimpleImputer", "StandardScaler", "LinearRegression"], answer: 0 }
+        - { id: ml-w03-d2-g18, difficulty: hard, type: mcq, prompt: "Why compute the median rather than the mean for size?", choices: ["typos like 2,320 m² pull the mean, not the median", "the mean is illegal", "the median is faster", "no difference"], answer: 0 }
+    quizzes:
+      - kind: rapid-fire
+        title: "Encoding text"
+        secondsPerQuestion: 10
+        questions:
+          - { id: ml-w03-d2-rf01, difficulty: easy, type: mcq, prompt: "One yes/no column per category:", choices: ["one-hot encoding", "ordinal encoding", "scaling", "imputing"], answer: 0 }
+          - { id: ml-w03-d2-rf02, difficulty: easy, type: mcq, prompt: "Numbering categories 0, 1, 2…:", choices: ["ordinal encoding", "one-hot encoding", "standardization", "a pipeline"], answer: 0 }
+          - { id: ml-w03-d2-rf03, difficulty: easy, type: mcq, prompt: "Ordinal encoding suits…", choices: ["ordered categories like poor/fair/good", "areas", "brands", "colours"], answer: 0 }
+          - { id: ml-w03-d2-rf04, difficulty: easy, type: mcq, prompt: "12 areas one-hot encoded become…", choices: ["12 columns", "1 column", "2 columns", "144 columns"], answer: 0 }
+          - { id: ml-w03-d2-rf05, difficulty: easy, type: mcq, prompt: "A matrix storing only the non-zero entries:", choices: ["a sparse matrix", "a dense matrix", "a DataFrame", "a list"], answer: 0 }
+          - { id: ml-w03-d2-rf06, difficulty: easy, type: mcq, prompt: "A custom transformer's fit should return…", choices: ["self", "None", "the data", "0"], answer: 0 }
+          - { id: ml-w03-d2-rf07, difficulty: easy, type: mcq, prompt: "Inherit this to get fit_transform free:", choices: ["TransformerMixin", "BaseModel", "Pipeline", "DataFrame"], answer: 0 }
+          - { id: ml-w03-d2-rf08, difficulty: easy, type: truefalse, prompt: "One-hot encoding makes Ikorodu look 'close' to Ikoyi.", answer: false }
+          - { id: ml-w03-d2-rf09, difficulty: easy, type: mcq, prompt: "The new columns are sometimes called…", choices: ["dummy attributes", "labels", "folds", "clusters"], answer: 0 }
+          - { id: ml-w03-d2-rf10, difficulty: easy, type: mcq, prompt: "scikit-learn's one-hot tool:", choices: ["OneHotEncoder", "HotEncoder", "DummyMaker", "OrdinalEncoder"], answer: 0 }
+      - kind: brain-teaser
+        title: "Ordinal or one-hot?"
+        questions:
+          - { id: ml-w03-d2-bt01, difficulty: medium, type: mcq, prompt: "T-shirt size S/M/L/XL:", choices: ["ordinal", "one-hot", "drop it", "scale it"], answer: 0 }
+          - { id: ml-w03-d2-bt02, difficulty: medium, type: mcq, prompt: "The LGA a house is in:", choices: ["one-hot (or numbers like distance if there are many)", "ordinal", "drop it", "as a label"], answer: 0 }
+          - { id: ml-w03-d2-bt03, difficulty: medium, type: mcq, prompt: "Ordinal codes put Ikorodu at 4 and Ikoyi at 5. A model would wrongly treat them as…", choices: ["similar", "opposite", "missing", "labels"], answer: 0 }
+          - { id: ml-w03-d2-bt04, difficulty: hard, type: mcq, prompt: "A column with thousands of categories (every Lagos street). Géron suggests…", choices: ["replace it with useful numbers, or learn an embedding", "one-hot it anyway", "ordinal codes", "delete the data"], answer: 0 }
+
+  # ─────────────────────────── DAY 3 ───────────────────────────
+  - day: 3
+    gate:
+      title: "Checkpoint: encoding text"
+      covers: "Week 3 · Day 2: ordinal vs one-hot encoding, sparse matrices, custom transformers"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: ml-w03-d3-g01, difficulty: easy, type: mcq, prompt: "Why do models need text turned into numbers?", choices: ["they compute with numbers", "to save space", "Python rules", "they don't"], answer: 0 }
+        - { id: ml-w03-d3-g02, difficulty: easy, type: mcq, prompt: "A Yaba listing's one-hot area row has…", choices: ["a 1 in area_Yaba and 0s elsewhere", "all 1s", "the number 11", "no values"], answer: 0 }
+        - { id: ml-w03-d3-g03, difficulty: easy, type: mcq, prompt: "serviced (yes/no) one-hot encoded gives…", choices: ["2 columns", "1 column", "12 columns", "0 columns"], answer: 0 }
+        - { id: ml-w03-d3-g04, difficulty: easy, type: truefalse, prompt: "A custom transformer needs fit and transform methods.", answer: true }
+        - { id: ml-w03-d3-g05, difficulty: easy, type: mcq, prompt: "AddDistance's fit does…", choices: ["nothing to learn: return self", "learns medians", "trains a model", "deletes rows"], answer: 0 }
+        - { id: ml-w03-d3-g06, difficulty: easy, type: mcq, prompt: "BaseEstimator adds…", choices: ["get_params and set_params", "predict", "plotting", "data"], answer: 0 }
+        - id: ml-w03-d3-g07
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            from sklearn.preprocessing import OrdinalEncoder
+            enc = OrdinalEncoder().fit([["Yaba"], ["Ajah"], ["Ikoyi"]])
+            print(list(enc.categories_[0]))
+          accept: ["['Ajah', 'Ikoyi', 'Yaba']"]
+        - id: ml-w03-d3-g08
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            from sklearn.preprocessing import OneHotEncoder
+            enc = OneHotEncoder().fit([["no"], ["yes"]])
+            print(enc.transform([["yes"]]).toarray().tolist())
+          accept: ["[[0.0, 1.0]]"]
+        - { id: ml-w03-d3-g09, difficulty: medium, type: mcq, prompt: "Why copy X inside transform?", choices: ["so the caller's DataFrame isn't changed", "for speed", "pandas requires it", "no reason"], answer: 0 }
+        - { id: ml-w03-d3-g10, difficulty: medium, type: mcq, prompt: "Why make area cleaning a transformer, not a one-off line?", choices: ["it can run inside the pipeline on new data too", "it's shorter", "it's required", "for colour"], answer: 0 }
+        - { id: ml-w03-d3-g11, difficulty: medium, type: mcq, prompt: "toarray() on a sparse matrix…", choices: ["turns it into an ordinary (dense) NumPy array", "deletes it", "sorts it", "encodes it again"], answer: 0 }
+        - { id: ml-w03-d3-g12, difficulty: medium, type: mcq, prompt: "categories_ on an encoder holds…", choices: ["the categories it learned in fit", "the labels", "the hyperparameters", "the errors"], answer: 0 }
+        - id: ml-w03-d3-g13
+          difficulty: medium
+          type: text
+          prompt: "0.1° of latitude north of Ikoyi's centre, same longitude. km_to_ikoyi with Week 2's formula (×111)?"
+          accept: ["11.1"]
+        - { id: ml-w03-d3-g14, difficulty: medium, type: truefalse, prompt: "scikit-learn relies on duck typing: your class just needs the right methods.", answer: true }
+        - { id: ml-w03-d3-g15, difficulty: medium, type: mcq, prompt: "handle_unknown='ignore' in OneHotEncoder helps when…", choices: ["a new listing has a category not seen in training", "the data is big", "there are gaps", "always"], answer: 0 }
+        - { id: ml-w03-d3-g16, difficulty: hard, type: mcq, prompt: "Ordinal encoding would be fine for 'condition' (poor < fair < good < excellent) because…", choices: ["nearby numbers really are more similar", "it's text", "it has 4 values", "it's always fine"], answer: 0 }
+        - { id: ml-w03-d3-g17, difficulty: hard, type: mcq, prompt: "Without OneHotEncoder(handle_unknown='ignore'), a listing in a brand-new area would…", choices: ["make transform raise an error", "be priced at 0", "be skipped silently", "work fine"], answer: 0 }
+        - { id: ml-w03-d3-g18, difficulty: hard, type: mcq, prompt: "Avoid *args and **kwargs in a transformer's __init__ so that…", choices: ["get_params/set_params work (needed for tuning)", "it runs faster", "it can't be copied", "pandas accepts it"], answer: 0 }
+    quizzes:
+      - kind: rapid-fire
+        title: "Scaling and pipelines"
+        secondsPerQuestion: 10
+        questions:
+          - { id: ml-w03-d3-rf01, difficulty: easy, type: mcq, prompt: "Squeeze values into 0–1:", choices: ["min-max scaling", "standardization", "one-hot", "imputing"], answer: 0 }
+          - { id: ml-w03-d3-rf02, difficulty: easy, type: mcq, prompt: "Subtract the mean, divide by the std:", choices: ["standardization", "min-max", "ordinal", "clipping"], answer: 0 }
+          - { id: ml-w03-d3-rf03, difficulty: easy, type: mcq, prompt: "Less affected by outliers:", choices: ["standardization", "min-max scaling", "both equal", "neither"], answer: 0 }
+          - { id: ml-w03-d3-rf04, difficulty: easy, type: mcq, prompt: "scikit-learn's standardizer:", choices: ["StandardScaler", "MinMaxScaler", "Normalizer", "Imputer"], answer: 0 }
+          - { id: ml-w03-d3-rf05, difficulty: easy, type: mcq, prompt: "Chains steps that always run in order:", choices: ["Pipeline", "ColumnTransformer", "GridSearchCV", "OneHotEncoder"], answer: 0 }
+          - { id: ml-w03-d3-rf06, difficulty: easy, type: mcq, prompt: "Sends different columns to different steps:", choices: ["ColumnTransformer", "Pipeline", "StandardScaler", "train_test_split"], answer: 0 }
+          - { id: ml-w03-d3-rf07, difficulty: easy, type: mcq, prompt: "Prepared Lagos training data has how many columns?", choices: ["29", "13", "12", "3,000"], answer: 0 }
+          - { id: ml-w03-d3-rf08, difficulty: easy, type: truefalse, prompt: "You usually scale the target (price) too.", answer: false }
+          - { id: ml-w03-d3-rf09, difficulty: easy, type: mcq, prompt: "Scalers learn their numbers on…", choices: ["the training set", "the test set", "both", "new data"], answer: 0 }
+          - { id: ml-w03-d3-rf10, difficulty: easy, type: mcq, prompt: "Min-max scaling is also called…", choices: ["normalization", "regularization", "one-hot", "imputation"], answer: 0 }
+      - kind: brain-teaser
+        title: "Scale it, by hand"
+        questions:
+          - id: ml-w03-d3-bt01
+            difficulty: medium
+            type: text
+            prompt: "Min-max: min 20, max 120. What does 70 become?"
+            accept: ["0.5", ".5"]
+          - id: ml-w03-d3-bt02
+            difficulty: medium
+            type: text
+            prompt: "Standardize: mean 100, std 20. What does 140 become?"
+            accept: ["2", "2.0"]
+          - { id: ml-w03-d3-bt03, difficulty: medium, type: mcq, prompt: "After min-max scaling with the 2,320 m² typo, 97% of sizes fall below 0.2. Why?", choices: ["the typo became 1 and squashed everything else down", "most homes are tiny", "a bug", "standardization did it"], answer: 0 }
+          - { id: ml-w03-d3-bt04, difficulty: hard, type: mcq, prompt: "A neural network expects inputs from 0 to 1, but your data has outliers. Géron's trade-off:", choices: ["min-max fits the range but is outlier-sensitive; standardization is robust but unbounded", "always min-max", "always standardize", "no scaling needed"], answer: 0 }
+
+  # ─────────────────────────── DAY 4 ───────────────────────────
+  - day: 4
+    gate:
+      title: "Checkpoint: scaling and pipelines"
+      covers: "Week 3 · Day 3: min-max vs standardization, Pipeline, ColumnTransformer, preparing the test set"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: ml-w03-d4-g01, difficulty: easy, type: mcq, prompt: "Why scale features?", choices: ["many algorithms are thrown off by columns on very different scales", "to hide data", "to make labels", "for colour"], answer: 0 }
+        - { id: ml-w03-d4-g02, difficulty: easy, type: mcq, prompt: "On the test set, a fitted pipeline uses…", choices: ["transform()", "fit_transform()", "fit()", "predict() only"], answer: 0 }
+        - { id: ml-w03-d4-g03, difficulty: easy, type: mcq, prompt: "The garri line is a picture of…", choices: ["a pipeline", "a cluster", "a label", "a score"], answer: 0 }
+        - { id: ml-w03-d4-g04, difficulty: easy, type: truefalse, prompt: "After StandardScaler, training values average about 0.", answer: true }
+        - { id: ml-w03-d4-g05, difficulty: easy, type: mcq, prompt: "Number columns go through…", choices: ["impute, then scale", "one-hot", "ordinal codes", "nothing"], answer: 0 }
+        - { id: ml-w03-d4-g06, difficulty: easy, type: mcq, prompt: "Text columns go through…", choices: ["one-hot encoding", "scaling", "imputing with the median", "deletion"], answer: 0 }
+        - id: ml-w03-d4-g07
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            from sklearn.preprocessing import MinMaxScaler
+            print(MinMaxScaler().fit_transform([[0], [5], [10]]).ravel().tolist())
+          accept: ["[0.0, 0.5, 1.0]"]
+        - id: ml-w03-d4-g08
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            from sklearn.preprocessing import StandardScaler
+            print(StandardScaler().fit_transform([[1], [3]]).ravel().tolist())
+          accept: ["[-1.0, 1.0]"]
+        - { id: ml-w03-d4-g09, difficulty: medium, type: mcq, prompt: "The 29 Lagos columns are…", choices: ["9 numbers + 12 areas + 6 types + 2 serviced", "29 numbers", "13 raw columns", "12 areas only"], answer: 0 }
+        - { id: ml-w03-d4-g10, difficulty: medium, type: mcq, prompt: "Pipeline step names must not contain…", choices: ["double underscores __", "spaces", "capitals", "numbers"], answer: 0 }
+        - { id: ml-w03-d4-g11, difficulty: medium, type: mcq, prompt: "A pipeline whose last step is a transformer has…", choices: ["a transform method", "only predict", "no methods", "only fit"], answer: 0 }
+        - { id: ml-w03-d4-g12, difficulty: medium, type: mcq, prompt: "Calling pipeline.fit() calls…", choices: ["fit_transform on each step, then fit on the last", "only the last step", "nothing", "predict"], answer: 0 }
+        - { id: ml-w03-d4-g13, difficulty: medium, type: truefalse, prompt: "A pipeline makes it harder to forget a step when preparing new data.", answer: true }
+        - { id: ml-w03-d4-g14, difficulty: medium, type: mcq, prompt: "Standardized values are mostly between…", choices: ["about −2 and 2", "0 and 1 exactly", "0 and 100", "−1 and 0"], answer: 0 }
+        - { id: ml-w03-d4-g15, difficulty: medium, type: mcq, prompt: "Calling fit_transform on the test set would…", choices: ["re-learn medians and scales from test data: a leak", "be faster", "be fine", "delete rows"], answer: 0 }
+        - { id: ml-w03-d4-g16, difficulty: hard, type: mcq, prompt: "Géron's example: a median income of 100 by mistake. Min-max would…", choices: ["crush the normal 0–15 values into 0–0.15", "ignore it", "fix it", "make it 0"], answer: 0 }
+        - { id: ml-w03-d4-g17, difficulty: hard, type: mcq, prompt: "Which models care most about scaling?", choices: ["linear models, k-NN, neural networks", "decision trees", "random forests only", "none"], answer: 0 }
+        - { id: ml-w03-d4-g18, difficulty: hard, type: mcq, prompt: "Why does ColumnTransformer stack outputs into one matrix?", choices: ["the model needs one table of numbers", "for printing", "to save CSV", "it doesn't"], answer: 0 }
+    quizzes:
+      - kind: rapid-fire
+        title: "Training and cross-validation"
+        secondsPerQuestion: 10
+        questions:
+          - { id: ml-w03-d4-rf01, difficulty: easy, type: mcq, prompt: "Linear regression's training RMSE on Lagos:", choices: ["₦46.6m", "₦0", "₦3m", "₦500m"], answer: 0 }
+          - { id: ml-w03-d4-rf02, difficulty: easy, type: mcq, prompt: "The decision tree's training RMSE:", choices: ["₦0", "₦46.6m", "₦35m", "₦500m"], answer: 0 }
+          - { id: ml-w03-d4-rf03, difficulty: easy, type: mcq, prompt: "₦0 training error usually means…", choices: ["overfitting", "a perfect model", "underfitting", "a bug in pandas"], answer: 0 }
+          - { id: ml-w03-d4-rf04, difficulty: easy, type: mcq, prompt: "5-fold cross-validation trains…", choices: ["5 times", "once", "50 times", "never"], answer: 0 }
+          - { id: ml-w03-d4-rf05, difficulty: easy, type: mcq, prompt: "Each part in cross-validation is a…", choices: ["fold", "stratum", "cluster", "batch"], answer: 0 }
+          - { id: ml-w03-d4-rf06, difficulty: easy, type: mcq, prompt: "Best model by cross-validation:", choices: ["random forest", "linear regression", "decision tree", "none"], answer: 0 }
+          - { id: ml-w03-d4-rf07, difficulty: easy, type: mcq, prompt: "cross_val_score with errors returns…", choices: ["negative MSEs", "positive RMSEs", "accuracies", "labels"], answer: 0 }
+          - { id: ml-w03-d4-rf08, difficulty: easy, type: truefalse, prompt: "Cross-validation uses the test set.", answer: false }
+          - { id: ml-w03-d4-rf09, difficulty: easy, type: mcq, prompt: "A random forest is…", choices: ["many trees averaging their answers", "one big tree", "a line", "a cluster"], answer: 0 }
+          - { id: ml-w03-d4-rf10, difficulty: easy, type: mcq, prompt: "Linear regression on Lagos is…", choices: ["underfitting", "overfitting", "perfect", "unsupervised"], answer: 0 }
+      - kind: brain-teaser
+        title: "Read the scores"
+        questions:
+          - { id: ml-w03-d4-bt01, difficulty: medium, type: mcq, prompt: "Tree: ₦0 on training, about ₦46m cross-validated. Diagnosis?", choices: ["overfitting", "underfitting", "perfect", "data leak"], answer: 0 }
+          - { id: ml-w03-d4-bt02, difficulty: medium, type: mcq, prompt: "Linear: ₦46.6m on training, ₦47.3m cross-validated. Diagnosis?", choices: ["underfitting: similar and high", "overfitting", "perfect", "a bug"], answer: 0 }
+          - id: ml-w03-d4-bt03
+            difficulty: medium
+            type: text
+            prompt: "Fold RMSEs 30, 31, 29, 30, 80. The average?"
+            accept: ["40", "40.0"]
+          - { id: ml-w03-d4-bt04, difficulty: hard, type: mcq, prompt: "Why np.sqrt(-scores) after cross_val_score?", choices: ["scores are negative MSEs: negate, then root to get RMSE", "to make them smaller", "a scikit-learn bug", "to get accuracy"], answer: 0 }
+
+  # ─────────────────────────── DAY 5 ───────────────────────────
+  - day: 5
+    gate:
+      title: "Checkpoint: training and cross-validation"
+      covers: "Week 3 · Day 4: linear regression, decision tree, random forest, training error vs cross-validated error"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: ml-w03-d5-g01, difficulty: easy, type: mcq, prompt: "Cross-validation estimates performance without…", choices: ["touching the test set", "training", "data", "labels"], answer: 0 }
+        - { id: ml-w03-d5-g02, difficulty: easy, type: mcq, prompt: "The tree's ₦0 training error was…", choices: ["memorisation (overfitting)", "real skill", "underfitting", "a typo"], answer: 0 }
+        - { id: ml-w03-d5-g03, difficulty: easy, type: mcq, prompt: "Cross-validation also gives…", choices: ["how much the score wobbles (std)", "the labels", "new data", "the test score"], answer: 0 }
+        - { id: ml-w03-d5-g04, difficulty: easy, type: truefalse, prompt: "The random forest beat both the linear model and the tree in cross-validation.", answer: true }
+        - { id: ml-w03-d5-g05, difficulty: easy, type: mcq, prompt: "The random forest's cross-validated RMSE was about…", choices: ["₦35m", "₦0", "₦47m", "₦100m"], answer: 0 }
+        - { id: ml-w03-d5-g06, difficulty: easy, type: mcq, prompt: "A decision tree predicts by…", choices: ["asking yes/no questions about the features", "drawing one line", "averaging neighbours", "random guessing"], answer: 0 }
+        - id: ml-w03-d5-g07
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            import numpy as np
+            scores = np.array([-100.0, -400.0])
+            print(np.sqrt(-scores).tolist())
+          accept: ["[10.0, 20.0]"]
+        - id: ml-w03-d5-g08
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            from sklearn.tree import DecisionTreeRegressor
+            t = DecisionTreeRegressor().fit([[1], [2], [3]], [10, 20, 30])
+            print(t.predict([[2]])[0])
+          accept: ["20.0"]
+        - { id: ml-w03-d5-g09, difficulty: medium, type: mcq, prompt: "In Géron's California data, the tree was…", choices: ["worse than linear regression in cross-validation", "the best model", "perfect", "not tested"], answer: 0 }
+        - { id: ml-w03-d5-g10, difficulty: medium, type: mcq, prompt: "Linear regression's cross-validated RMSE std was ±4.0; the forest's ±1.9. The forest is…", choices: ["better and more consistent", "worse", "less consistent", "identical"], answer: 0 }
+        - { id: ml-w03-d5-g11, difficulty: medium, type: mcq, prompt: "Why might the forest still overfit?", choices: ["its training error is much lower than its validation error", "it's linear", "it uses one tree", "it can't"], answer: 0 }
+        - { id: ml-w03-d5-g12, difficulty: medium, type: mcq, prompt: "cv=5 means…", choices: ["5 folds", "5 features", "5 models", "5% test"], answer: 0 }
+        - { id: ml-w03-d5-g13, difficulty: medium, type: truefalse, prompt: "Training the forest takes longer than linear regression.", answer: true }
+        - { id: ml-w03-d5-g14, difficulty: medium, type: mcq, prompt: "Géron suggests trying many model types before tuning to…", choices: ["shortlist 2–5 promising ones", "pick the first", "find the slowest", "avoid testing"], answer: 0 }
+        - { id: ml-w03-d5-g15, difficulty: medium, type: mcq, prompt: "Fixes for the underfitting linear model include…", choices: ["a more powerful model or better features", "more regularization", "fewer features", "a smaller test set"], answer: 0 }
+        - { id: ml-w03-d5-g16, difficulty: hard, type: mcq, prompt: "One fold scores 80 while the rest score ~30. First step?", choices: ["investigate that fold's listings", "report the average", "drop cross-validation", "use the test set"], answer: 0 }
+        - { id: ml-w03-d5-g17, difficulty: hard, type: mcq, prompt: "Cross-validation multiplies training time by…", choices: ["the number of folds", "two", "nothing", "the number of features"], answer: 0 }
+        - { id: ml-w03-d5-g18, difficulty: hard, type: mcq, prompt: "Why compare models with cross-validation instead of one validation split?", choices: ["one split can be lucky or unlucky", "it's faster", "it uses the test set", "no reason"], answer: 0 }
+    quizzes:
+      - kind: rapid-fire
+        title: "Tuning and testing"
+        secondsPerQuestion: 10
+        questions:
+          - { id: ml-w03-d5-rf01, difficulty: easy, type: mcq, prompt: "Tries every combination of settings:", choices: ["GridSearchCV", "RandomizedSearchCV", "cross_val_score", "Pipeline"], answer: 0 }
+          - { id: ml-w03-d5-rf02, difficulty: easy, type: mcq, prompt: "Tries a fixed number of random combinations:", choices: ["RandomizedSearchCV", "GridSearchCV", "train_test_split", "OneHotEncoder"], answer: 0 }
+          - { id: ml-w03-d5-rf03, difficulty: easy, type: mcq, prompt: "The best settings after a search:", choices: ["best_params_", "settings()", "params_best", "top()"], answer: 0 }
+          - { id: ml-w03-d5-rf04, difficulty: easy, type: mcq, prompt: "Most important Lagos feature:", choices: ["size_sqm", "listing_id", "toilets", "serviced_no"], answer: 0 }
+          - { id: ml-w03-d5-rf05, difficulty: easy, type: mcq, prompt: "Second most important:", choices: ["km_to_ikoyi", "latitude", "bedrooms", "area_Yaba"], answer: 0 }
+          - { id: ml-w03-d5-rf06, difficulty: easy, type: mcq, prompt: "Test RMSE of the tuned forest:", choices: ["about ₦33m", "₦0", "₦47m", "₦128m"], answer: 0 }
+          - { id: ml-w03-d5-rf07, difficulty: easy, type: mcq, prompt: "Share of test predictions within 20%:", choices: ["about two-thirds", "100%", "10%", "50%"], answer: 0 }
+          - { id: ml-w03-d5-rf08, difficulty: easy, type: truefalse, prompt: "After seeing the test score, you may tweak settings to improve it.", answer: false }
+          - { id: ml-w03-d5-rf09, difficulty: easy, type: mcq, prompt: "A model's per-feature usefulness:", choices: ["feature_importances_", "coef_names", "score()", "best_score_"], answer: 0 }
+          - { id: ml-w03-d5-rf10, difficulty: easy, type: mcq, prompt: "Combining your best models:", choices: ["an ensemble", "a pipeline", "a fold", "a stratum"], answer: 0 }
+      - kind: brain-teaser
+        title: "Tune honestly"
+        questions:
+          - id: ml-w03-d5-bt01
+            difficulty: medium
+            type: text
+            prompt: "A grid of 2 × 3 settings, each cross-validated 3 times. How many training runs?"
+            accept: ["18"]
+          - { id: ml-w03-d5-bt02, difficulty: medium, type: mcq, prompt: "The agents had 50% within 20%; the model about two-thirds. So…", choices: ["the model beats how it's done today", "the model is worse", "they're equal", "can't compare"], answer: 0 }
+          - { id: ml-w03-d5-bt03, difficulty: medium, type: mcq, prompt: "Your own km_to_ikoyi ranked second in importance. This shows…", choices: ["good feature engineering pays off", "the model is broken", "location doesn't matter", "luck"], answer: 0 }
+          - { id: ml-w03-d5-bt04, difficulty: hard, type: mcq, prompt: "The test score disappoints. The honest move is…", choices: ["report it; improve data or features, then get a new test set", "tweak until it's good", "delete the test set", "use training error instead"], answer: 0 }
+
+  # ─────────────────────────── DAY 6 ───────────────────────────
+  - day: 6
+    gate:
+      title: "Checkpoint: tuning and the honest test"
+      covers: "Week 3 · Day 5: grid and randomized search, ensembles, feature importance, testing once"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: ml-w03-d6-g01, difficulty: easy, type: mcq, prompt: "Grid search's best Lagos forest:", choices: ["40 trees, max_features 12", "20 trees, max_features 4", "1 tree", "100 trees, 1 feature"], answer: 0 }
+        - { id: ml-w03-d6-g02, difficulty: easy, type: mcq, prompt: "n_estimators means…", choices: ["how many trees", "how many features", "how many folds", "how many rows"], answer: 0 }
+        - { id: ml-w03-d6-g03, difficulty: easy, type: mcq, prompt: "max_features means…", choices: ["features each tree may consider at a question", "the number of columns", "trees", "folds"], answer: 0 }
+        - { id: ml-w03-d6-g04, difficulty: easy, type: truefalse, prompt: "You use the test set once, at the end.", answer: true }
+        - { id: ml-w03-d6-g05, difficulty: easy, type: mcq, prompt: "The test set is prepared with…", choices: ["full_pipeline.transform", "full_pipeline.fit_transform", "a new pipeline", "nothing"], answer: 0 }
+        - { id: ml-w03-d6-g06, difficulty: easy, type: mcq, prompt: "Grid search chooses using…", choices: ["cross-validation on the training set", "the test set", "the labels only", "random guessing"], answer: 0 }
+        - id: ml-w03-d6-g07
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            import numpy as np
+            pred, real = np.array([110, 50]), np.array([100, 40])
+            print((abs(pred - real) / real <= 0.20).mean())
+          accept: ["0.5"]
+        - id: ml-w03-d6-g08
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            names = ["size", "km", "age"]
+            imps = [0.5, 0.3, 0.2]
+            print([n for _, n in sorted(zip(imps, names), reverse=True)[:2]])
+          accept: ["['size', 'km']"]
+        - { id: ml-w03-d6-g09, difficulty: medium, type: mcq, prompt: "Grid search improved the forest's cross-validated RMSE from ₦35.3m to about…", choices: ["just under ₦35m", "₦0", "₦50m", "₦10m"], answer: 0 }
+        - { id: ml-w03-d6-g10, difficulty: medium, type: mcq, prompt: "Randomized search is better than grid search when…", choices: ["the grid would be huge", "there's one setting", "data is tiny", "never"], answer: 0 }
+        - { id: ml-w03-d6-g11, difficulty: medium, type: mcq, prompt: "If a search's best value sits at the edge of your grid, you should…", choices: ["try values beyond it", "stop", "pick the middle", "ignore it"], answer: 0 }
+        - { id: ml-w03-d6-g12, difficulty: medium, type: mcq, prompt: "Low feature importance suggests…", choices: ["you might drop that feature", "it's the label", "the model is wrong", "nothing"], answer: 0 }
+        - { id: ml-w03-d6-g13, difficulty: medium, type: truefalse, prompt: "Feature importances can guide which features to drop or engineer.", answer: true }
+        - { id: ml-w03-d6-g14, difficulty: medium, type: mcq, prompt: "Detached duplex ranked third because…", choices: ["it's the priciest property type", "it's common", "a bug", "it's alphabetical"], answer: 0 }
+        - { id: ml-w03-d6-g15, difficulty: medium, type: mcq, prompt: "Géron suggests also analysing the best model's…", choices: ["errors, to see what to fix", "speed only", "colours", "file size"], answer: 0 }
+        - { id: ml-w03-d6-g16, difficulty: hard, type: mcq, prompt: "After heavy tuning, the test score is usually…", choices: ["a bit worse than the cross-validated score", "much better", "identical", "zero"], answer: 0 }
+        - { id: ml-w03-d6-g17, difficulty: hard, type: mcq, prompt: "Why compare to the agents' 50% rather than only report RMSE?", choices: ["the business decision is whether the model beats today's method", "RMSE is wrong", "agents asked", "no reason"], answer: 0 }
+        - { id: ml-w03-d6-g18, difficulty: hard, type: mcq, prompt: "The tuned forest's capped-listing error was about twice the rest. For the model card that means…", choices: ["don't trust it near or above ₦500m", "it's perfect", "drop all listings", "nothing"], answer: 0 }
+    quizzes:
+      - kind: rapid-fire
+        title: "Launch and monitor"
+        secondsPerQuestion: 10
+        questions:
+          - { id: ml-w03-d6-rf01, difficulty: easy, type: mcq, prompt: "Save a trained model (Géron):", choices: ["joblib.dump", "print", "pd.read_csv", "plt.show"], answer: 0 }
+          - { id: ml-w03-d6-rf02, difficulty: easy, type: mcq, prompt: "A model slowly getting worse as the world changes:", choices: ["data drift (model rot)", "overfitting", "a cap", "one-hot"], answer: 0 }
+          - { id: ml-w03-d6-rf03, difficulty: easy, type: mcq, prompt: "After launch you should…", choices: ["monitor accuracy and inputs", "forget it", "delete the data", "stop retraining"], answer: 0 }
+          - { id: ml-w03-d6-rf04, difficulty: easy, type: mcq, prompt: "Agents switch to square feet. The model…", choices: ["goes wrong silently unless inputs are watched", "adapts", "crashes loudly", "ignores it"], answer: 0 }
+          - { id: ml-w03-d6-rf05, difficulty: easy, type: mcq, prompt: "Keep backups so you can…", choices: ["roll back a bad version", "train faster", "skip testing", "delete logs"], answer: 0 }
+          - { id: ml-w03-d6-rf06, difficulty: easy, type: mcq, prompt: "The document handed over with a model:", choices: ["a model card", "a receipt", "a CSV", "a pipeline"], answer: 0 }
+          - { id: ml-w03-d6-rf07, difficulty: easy, type: truefalse, prompt: "A model is done once it's trained.", answer: false }
+          - { id: ml-w03-d6-rf08, difficulty: easy, type: mcq, prompt: "Lagos prices rise with inflation, so you should…", choices: ["retrain on fresh data regularly", "never retrain", "only test once", "drop old data forever"], answer: 0 }
+          - { id: ml-w03-d6-rf09, difficulty: easy, type: mcq, prompt: "The tuned model priced the Yaba flat at about…", choices: ["₦80m", "₦500m", "₦5m", "₦0"], answer: 0 }
+          - { id: ml-w03-d6-rf10, difficulty: easy, type: mcq, prompt: "A model card's 'limits' section says…", choices: ["where not to trust the model", "its file size", "the team's names", "the colours"], answer: 0 }
+      - kind: brain-teaser
+        title: "In production"
+        questions:
+          - { id: ml-w03-d6-bt01, difficulty: medium, type: multi, prompt: "Things to monitor after launch (Select all.)", choices: ["accuracy against real sale prices", "input data quality", "how often it's used", "the font size"], answers: [0, 1, 2] }
+          - { id: ml-w03-d6-bt02, difficulty: medium, type: mcq, prompt: "Why use the same pipeline for a brand-new listing?", choices: ["it gets identical cleaning, filling, scaling and encoding", "it's faster", "the model needs text", "no reason"], answer: 0 }
+          - { id: ml-w03-d6-bt03, difficulty: medium, type: mcq, prompt: "Monitoring a model is like monitoring a website because…", choices: ["things break quietly unless something watches", "both use HTML", "both need CSS", "they don't"], answer: 0 }
+          - { id: ml-w03-d6-bt04, difficulty: hard, type: mcq, prompt: "Best first improvement for the Lagos model?", choices: ["get the true prices above ₦500m (fix the cap)", "a prettier chart", "fewer listings", "drop size_sqm"], answer: 0 }

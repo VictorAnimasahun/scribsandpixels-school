@@ -139,6 +139,10 @@ for (const s of sandboxes) {
     if (bad || errors.length) {
       failures++
       console.log(`✗ ${s.id}: ${bad ? `${bad}/${results.length} not passing` : ''} ${errors.length ? `page errors: ${errors.join(' | ')}` : ''}`)
+      if (bad && s.kind === 'python') {
+        const failed = await page.locator('ol.tasks li').evaluateAll((lis) => lis.filter((li) => !li.textContent.includes('✅')).map((li) => li.innerText.replace(/\s+/g, ' ').slice(0, 300)))
+        for (const text of failed) console.log(`    ${text}`)
+      }
     } else console.log(`✓ ${s.id} (${s.kind}${results.length ? `, ${results.length} checked` : ', renders'})`)
   } catch (e) {
     failures++
