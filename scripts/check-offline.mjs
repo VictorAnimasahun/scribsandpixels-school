@@ -20,7 +20,20 @@ delete process.env.VITE_SUPABASE_URL
 delete process.env.VITE_SUPABASE_KEY
 await build({ root, logLevel: 'error', build: { outDir, emptyOutDir: true }, envDir: '/nonexistent' })
 const port = await freePort()
-const server = await preview({ root, logLevel: 'error', build: { outDir }, preview: { port, strictPort: true, host: '127.0.0.1' } })
+// `stall` makes the server sit on page requests for 20 s, like a stalled mobile connection. It's
+// done in the server because requests made by the service worker itself aren't routable from
+// the test browser.
+let stall = false
+const stallPages = {
+  name: 'stall-pages',
+  configurePreviewServer(server) {
+    server.middlewares.use((req, _res, next) => {
+      if (stall && (req.url === '/' || req.url.startsWith('/?') || req.url === '/index.html')) setTimeout(next, 20_000)
+      else next()
+    })
+  },
+}
+const server = await preview({ root, logLevel: 'error', plugins: [stallPages], build: { outDir }, preview: { port, strictPort: true, host: '127.0.0.1' } })
 const APP = `http://127.0.0.1:${port}/`
 
 const chrome = process.env.CHROME_PATH ?? ['/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', '/usr/bin/google-chrome'].find(existsSync)
@@ -65,6 +78,24 @@ await check('online: lessons and a Python sandbox load', async () => {
   await page.locator('.sandbox textarea').first().fill('print(6 * 7)', { timeout: 180_000 })
   await page.getByRole('button', { name: /Run/ }).first().click()
   await page.locator('.sandbox').getByText('42').first().waitFor({ timeout: 120_000 })
+})
+
+await check('a stalled connection shows the saved app within a few seconds (not a blank screen)', async () => {
+  // The page request hangs for 20 s (a stalled mobile connection); the service worker must give
+  // up waiting after 4 s and show the saved copy.
+  // Leave the app first: going to the same address with only a different #… is a jump inside the
+  // page, not a page load, and would never reach the network.
+  await page.goto('about:blank')
+  stall = true
+  try {
+    const t = Date.now()
+    await page.goto(`${APP}#/c/fullstack-ml/w/1/d/1`, { waitUntil: 'commit', timeout: 30_000 })
+    await page.locator('main h1').first().waitFor({ timeout: 10_000 })
+    const ms = Date.now() - t
+    expect(ms < 8_000, `took ${ms} ms`)
+  } finally {
+    stall = false
+  }
 })
 
 await context.setOffline(true)

@@ -28,9 +28,9 @@ async function visit(hash) {
   // A fresh load each time (not just a hash change), like opening a link in a new tab.
   // One retry: a slow response from the host shouldn't end the whole sweep.
   for (let tries = 1; ; tries++) {
-    await page.goto('about:blank')
-    await page.goto(base + hash, { waitUntil: 'domcontentloaded' })
     try {
+      await page.goto('about:blank')
+      await page.goto(base + hash, { waitUntil: 'domcontentloaded' })
       await page.waitForSelector('main h1, main .lock, main p', { timeout: 15000 })
       break
     } catch {

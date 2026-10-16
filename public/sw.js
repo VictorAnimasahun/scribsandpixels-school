@@ -11,7 +11,7 @@
  *   never stored.
  * Caches are capped so a phone's storage doesn't grow with every release.
  */
-const VERSION = 'v1'
+const VERSION = 'v2' // v2: network answers wait at most 4 s
 const PAGES = `snp-pages-${VERSION}`
 const ASSETS = `snp-assets-${VERSION}`
 const CDN = `snp-cdn-${VERSION}`
@@ -73,16 +73,28 @@ self.addEventListener('fetch', (event) => {
   // Not handled: the browser fetches it normally (API calls, sign-in, links to other sites).
 })
 
-/** Network first; the app shell from the cache when offline. Every page of the app is the same file. */
+/**
+ * Network first, but never stuck: if the network hasn't answered within NETWORK_WAIT and a saved
+ * copy exists, show the saved copy now and let the network answer update it for next time (a
+ * stalled mobile connection would otherwise leave a blank screen). Offline: the saved copy.
+ * Every page of the app is the same file.
+ */
+const NETWORK_WAIT = 4000
 async function page(request, event) {
   const cache = await caches.open(PAGES)
-  try {
-    const response = await fetch(request)
+  const fromNetwork = fetch(request).then((response) => {
     // A new release means new file names: save the new shell in the background.
     if (response.ok) event.waitUntil(saveShell(response.clone()).catch(() => undefined))
     return response
+  })
+  event.waitUntil(fromNetwork.catch(() => undefined)) // let a slow answer finish and update the cache
+  const saved = await cache.match(SCOPE, { ignoreVary: true })
+  try {
+    if (!saved) return await fromNetwork
+    const timeout = new Promise((resolve) => setTimeout(() => resolve(null), NETWORK_WAIT))
+    return (await Promise.race([fromNetwork, timeout])) ?? saved
   } catch {
-    return (await cache.match(SCOPE, { ignoreVary: true })) ?? new Response('You are offline and this page has not been saved yet.', { status: 503, headers: { 'Content-Type': 'text/plain; charset=utf-8' } })
+    return saved ?? new Response('You are offline and this page has not been saved yet.', { status: 503, headers: { 'Content-Type': 'text/plain; charset=utf-8' } })
   }
 }
 
