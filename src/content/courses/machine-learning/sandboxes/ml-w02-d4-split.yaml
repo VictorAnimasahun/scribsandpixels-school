@@ -1,0 +1,55 @@
+# Week 2 · Day 4 practice
+id: ml-w02-d4-split
+kind: python
+title: "Three ways to make a test set"
+description: "Random, by ID, and stratified by bedrooms. Then measure which test set keeps the bedroom mix honest."
+files: [lagos_housing.csv]
+starter: |
+  import numpy as np
+  import pandas as pd
+  from zlib import crc32
+  from sklearn.model_selection import train_test_split, StratifiedShuffleSplit
+
+  df = pd.read_csv("lagos_housing.csv")
+
+  # 1. A random 80/20 split, always the same shuffle (random_state=42).
+  train_set, test_set = None, None
+
+  # 2. By ID: listing LH0123 has number 123. It goes to the test set when
+  #    crc32(np.int64(number)) & 0xffffffff < 0.2 * 2**32   (Géron p. 58)
+  def in_test_by_id(number):
+      pass
+
+  # 3. Stratified by bedrooms: group 5 and 6 bedrooms together as "5".
+  df["bed_cat"] = None   # df["bedrooms"].clip(upper=5)
+  # Use StratifiedShuffleSplit(n_splits=1, test_size=0.2, random_state=42)
+  strat_train, strat_test = None, None
+
+  def worst_gap(test_part):
+      # The biggest % difference between a bedroom group's share in test_part
+      # and its share in the whole df. E.g. 8.7% vs 10.4% → about 16.4.
+      overall = df["bed_cat"].value_counts(normalize=True)
+      part = test_part["bed_cat"].value_counts(normalize=True)
+      return float(((part / overall - 1).abs() * 100).max())
+
+  # Compare a purely random test set (random_state=7) with the stratified one.
+tasks:
+  - prompt: "The random split has 2,400 training and 600 test listings."
+    tests: |
+      assert len(train_set) == 2400 and len(test_set) == 600, f"{len(train_set)}, {len(test_set)}"
+      assert test_set.index[0] == train_test_split(df, test_size=0.2, random_state=42)[1].index[0], "use random_state=42"
+    hint: "train_set, test_set = train_test_split(df, test_size=0.2, random_state=42)"
+  - prompt: "in_test_by_id puts 601 listings in the test set, and always the same ones."
+    tests: |
+      nums = df["listing_id"].str[2:].astype(int)
+      picked = [n for n in nums if in_test_by_id(n)]
+      assert len(picked) == 601, f"{len(picked)} in the test set"
+      assert in_test_by_id(1) == in_test_by_id(1), "the same ID must always give the same answer"
+    hint: "return crc32(np.int64(number)) & 0xffffffff < 0.2 * 2**32"
+  - prompt: "The stratified test set keeps every bedroom group within 1% of the whole data, while a random one (random_state=7) misses a group by more than 15%."
+    tests: |
+      assert len(strat_test) == 600, "the stratified test set should have 600 listings"
+      assert worst_gap(strat_test) < 1, f"stratified worst gap: {worst_gap(strat_test):.2f}%"
+      rand_test = train_test_split(df, test_size=0.2, random_state=7)[1]
+      assert worst_gap(rand_test) > 15, f"random worst gap: {worst_gap(rand_test):.2f}%"
+    hint: "split = StratifiedShuffleSplit(n_splits=1, test_size=0.2, random_state=42); train_idx, test_idx = next(split.split(df, df['bed_cat'])); strat_train, strat_test = df.iloc[train_idx], df.iloc[test_idx]"

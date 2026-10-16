@@ -14,18 +14,23 @@ type Pyodide = {
   setStderr(options: { write: (buffer: Uint8Array) => number }): void
   setStdin(options: { stdin: () => string | undefined }): void
   runPythonAsync(code: string, options?: { globals?: unknown }): Promise<unknown>
+  FS: { writeFile(path: string, data: Uint8Array): void }
   loadPackagesFromImports(code: string, options?: { messageCallback?: (message: string) => void; errorCallback?: (message: string) => void }): Promise<unknown>
   globals: { get(name: string): () => PyDict }
 }
 
-export type RunRequest = { id: number; code: string; stdin: string[]; tests?: string }
+/** files: data files to place next to the code before it runs ({ name, url }). */
+export type RunRequest = { id: number; code: string; stdin: string[]; tests?: string; files?: { name: string; url: string }[] }
 export type WorkerMessage =
   | { id: number; type: 'status'; text: string }
   | { id: number; type: 'out'; text: string }
+  /** A matplotlib figure the code drew, as a PNG data URL. */
+  | { id: number; type: 'image'; src: string }
   | { id: number; type: 'err'; text: string }
   | { id: number; type: 'done'; ok: boolean; error?: string }
 
 let pyodide: Promise<Pyodide> | null = null
+const fileCache: Record<string, Promise<Uint8Array>> = {}
 const MAX_OUTPUT = 100_000
 const OUTPUT_LIMIT = 'Output limit reached (100,000 characters). Is something printing in a loop?'
 const decoder = new TextDecoder()
@@ -44,7 +49,7 @@ function cleanTraceback(message: string): string {
 }
 
 self.onmessage = async (event: MessageEvent<RunRequest>) => {
-  const { id, code, stdin, tests } = event.data
+  const { id, code, stdin, tests, files } = event.data
   const post = (message: WorkerMessage) => self.postMessage(message)
   if (!pyodide) {
     post({ id, type: 'status', text: 'Loading Python (first run only, a few seconds)…' })
@@ -108,6 +113,25 @@ self.onmessage = async (event: MessageEvent<RunRequest>) => {
     }
   }
 
+  // Data files the lesson uses (e.g. lagos_housing.csv), downloaded once per worker and written
+  // next to the code, so open() and pd.read_csv() find them like files on a real computer.
+  for (const file of files ?? []) {
+    try {
+      fileCache[file.url] ??= fetch(file.url).then((r) => {
+        if (!r.ok) throw new Error(String(r.status))
+        return r.arrayBuffer()
+      }).then((b) => new Uint8Array(b))
+      py.FS.writeFile(file.name, await fileCache[file.url])
+    } catch {
+      delete fileCache[file.url]
+      post({ id, type: 'done', ok: false, error: `Couldn't load the data file ${file.name}. Check your connection and run again.` })
+      return
+    }
+  }
+  // Charts: draw off-screen (there's no window in a worker), then send each figure as an image.
+  const charts = /^\s*(?:import|from)\s+matplotlib\b/m.test(code)
+  if (charts) await py.runPythonAsync('import matplotlib\nmatplotlib.use("agg")\nimport matplotlib.pyplot as _plt\n_plt.close("all")')
+
   const globals = py.globals.get('dict')()
   // Run as a script, so `if __name__ == "__main__":` works (a bare dict would see builtins' __name__).
   globals.set('__name__', '__main__')
@@ -120,6 +144,19 @@ self.onmessage = async (event: MessageEvent<RunRequest>) => {
       await py.runPythonAsync(tests, { globals })
     }
     flush()
+    if (charts) {
+      const images = await py.runPythonAsync(`
+import base64, io
+import matplotlib.pyplot as _plt
+_out = []
+for _n in _plt.get_fignums():
+    _buf = io.BytesIO()
+    _plt.figure(_n).savefig(_buf, format="png", dpi=90, bbox_inches="tight")
+    _out.append(base64.b64encode(_buf.getvalue()).decode())
+_plt.close("all")
+"\\n".join(_out)`)
+      for (const png of String(images ?? '').split('\n').filter(Boolean)) post({ id, type: 'image', src: `data:image/png;base64,${png}` })
+    }
     post({ id, type: 'done', ok: true })
   } catch (error) {
     flush()

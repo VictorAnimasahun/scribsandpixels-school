@@ -1,0 +1,3001 @@
+listing_id,area,latitude,longitude,property_type,bedrooms,bathrooms,toilets,size_sqm,building_age,serviced,parking_spaces,price_m
+LH0001,Magodo,6.62262,3.37901,semi-detached duplex,4,4,5,300,3,no,2,344.2
+LH0002,Yaba,6.50694,3.38213,terrace,4,4,5,279,4,yes,2,159.0
+LH0003,Lekki Phase 1,6.44604,3.47938,semi-detached duplex,5,6,6,318,6,yes,3,454.6
+LH0004,Ikorodu,6.61466,3.50592,bungalow,3,2,2,242,31,yes,3,21.9
+LH0005,Yaba,6.5042,3.37936,flat,4,4,5,158,15,no,1,48.2
+LH0006,Lekki Phase 1,6.44943,3.467,flat,3,2,3,106,14,yes,2,121.1
+LH0007,Surulere,6.5092,3.35114,terrace,3,3,3,255,7,no,2,135.1
+LH0008,Surulere,6.51333,3.34849,flat,3,2,3,142,9,no,1,44.7
+LH0009,Ojodu,6.62636,3.36385,flat,2,2,3,148,16,no,2,46.3
+LH0010,Ajah,6.48346,3.56726,bungalow,4,3,4,145,13,no,1,25.2
+LH0011,Ikorodu,6.61483,3.4972,bungalow,2,2,2,151,2,no,0,15.6
+LH0012,Ikorodu,6.61786,3.51508,self-contain,1,1,1,44,15,no,0,4.8
+LH0013,Magodo,6.62433,3.37178,flat,2,2,2,91,4,yes,0,55.4
+LH0014,Lekki Phase 1,6.4541,3.47624,semi-detached duplex,4,4,4,308,1,yes,3,375.3
+LH0015,Ajah,6.45544,3.56456,bungalow,3,2,3,164,15,no,2,57.1
+LH0016,Ajah,6.47165,3.55677,flat,1,1,2,67,4,yes,1,20.6
+LH0017,Magodo,6.63204,3.39036,semi-detached duplex,4,3,4,272,5,no,1,199.1
+LH0018,Ikoyi,6.4672,3.43122,flat,2,3,4,174,3,no,3,370.0
+LH0019,Ajah,6.47942,3.55875,semi-detached duplex,5,5,5,325,25,no,2,88.0
+LH0020,Lekki Phase 1,6.44875,3.48468,terrace,4,4,5,254,22,yes,2,238.0
+LH0021,Gbagada,6.54987,3.38306,flat,3,3,4,85,0,no,0,40.5
+LH0022,Ikeja GRA,6.57327,3.34103,semi-detached duplex,5,5,6,292,14,yes,4,251.1
+LH0023,Lekki Phase 1,6.45862,3.47725,semi-detached duplex,5,5,6,239,21,yes,2,281.3
+LH0024,Ikorodu,6.62533,3.5106,bungalow,3,3,3,166,24,yes,1,17.2
+LH0025,Surulere,6.4889,3.36945,flat,4,4,5,158,14,no,3,55.1
+LH0026,Ikeja GRA,6.58741,3.34759,detached duplex,5,5,5,548,14,no,5,500
+LH0027,Ikeja GRA,6.5691,3.36374,flat,2,3,4,137,10,no,1,82.7
+LH0028,Ikoyi,6.44763,3.44235,flat,2,2,2,75,17,no,1,162.4
+LH0029,Ajah,6.46495,3.56353,terrace,4,5,5,230,2,no,3,102.1
+LH0030,Ikeja GRA,6.57681,3.3504,detached duplex,4,4,5,,17,yes,3,290.7
+LH0031,Surulere,6.49577,3.36054,bungalow,2,2,3,132,2,no,2,49.4
+LH0032,Ajah,6.46404,3.56618,semi-detached duplex,4,4,5,247,3,no,1,105.4
+LH0033,Ikorodu,6.6149,3.51016,bungalow,4,5,6,247,13,no,1,25.1
+LH0034,Ikorodu,6.6303,3.50044,self-contain,1,1,1,34,12,no,0,4.3
+LH0035,Festac,6.46756,3.28828,flat,1,1,1,78,5,no,1,22.9
+LH0036,Surulere,6.50326,3.34146,terrace,4,4,5,276,5,no,2,106.4
+LH0037,Gbagada,6.56234,3.37586,flat,2,2,3,,1,no,0,45.2
+LH0038,Ojodu,6.63711,3.36002,bungalow,3,3,4,204,23,yes,1,82.6
+LH0039,Ikorodu,6.59995,3.49806,flat,2,2,3,128,17,no,1,12.9
+LH0040,Ajah,6.46405,3.56232,semi-detached duplex,4,4,4,282,7,no,3,90.4
+LH0041,Lekki Phase 1,6.43156,3.47266,detached duplex,5,4,4,251,4,no,1,356.6
+LH0042,Gbagada,6.56044,3.3969,flat,2,2,3,900,22,no,1,51.9
+LH0043,Ajah,6.47287,3.58568,flat,1,1,2,62,7,no,1,16.0
+LH0044,Ikorodu,6.60051,3.50623,self-contain,1,1,1,43,8,no,2,5.3
+LH0045,Victoria Island,6.43422,3.42909,flat,1,1,2,76,6,no,1,119.7
+LH0046,Ajah,6.46967,3.57106,semi-detached duplex,5,5,6,351,2,yes,3,153.5
+LH0047,Gbagada,6.54968,3.38263,self-contain,1,1,1,27,13,no,1,10.3
+LH0048,Surulere,6.49973,3.36166,flat,2,2,3,121,18,no,0,32.7
+LH0049,Ojodu,6.6488,3.36875,self-contain,1,1,1,35,11,no,0,11.1
+LH0050,Lekki Phase 1,6.44368,3.46353,flat,1,1,1,58,10,yes,2,74.8
+LH0051,Ikeja GRA,6.58515,3.35077,flat,2,2,3,82,4,yes,0,75.7
+LH0052,Ojodu,6.63756,3.3756,semi-detached duplex,4,4,5,283,4,no,2,78.9
+LH0053,Festac,6.45227,3.27942,bungalow,3,3,3,179,17,no,2,27.3
+LH0054,Ajah,6.4601,3.54674,flat,4,4,5,174,9,yes,0,69.0
+LH0055,Ajah,6.46886,3.57468,bungalow,3,4,4,163,5,no,3,52.6
+LH0056,Ikorodu,6.60123,3.50673,bungalow,4,4,5,233,9,no,1,26.4
+LH0057,Ikoyi,6.44559,3.44816,flat,4,4,5,187,9,no,2,359.5
+LH0058,Lekki Phase 1,6.44029,3.47419,flat,4,5,6,189,14,no,2,194.5
+LH0059,Yaba,6.51145,3.38149,flat,4,3,3,186,2,no,1,80.4
+LH0060,Lekki Phase 1,6.44234,3.47163,semi-detached duplex,5,4,5,340,6,no,3,334.2
+LH0061,Ikeja GRA,6.58238,3.36402,detached duplex,5,5,6,324,9,no,2,269.8
+LH0062,Ikoyi,6.44639,3.42734,flat,3,3,4,139,3,yes,0,244.9
+LH0063,Festac,6.4702,3.28208,self-contain,1,1,1,28,4,no,0,10.8
+LH0064,Ojodu,6.62946,3.36982,bungalow,4,4,5,257,4,no,2,103.3
+LH0065,Ajah,6.47417,3.57769,bungalow,2,3,3,121,10,no,4,28.2
+LH0066,Ojodu,6.63601,3.37019,bungalow,3,3,4,244,12,yes,3,75.5
+LH0067,Festac,6.45523,3.2768,self-contain,1,1,1,40,13,yes,0,11.7
+LH0068,Yaba,6.50306,3.38825,flat,3,2,2,,3,no,1,59.4
+LH0069,Surulere,6.50369,3.35527,flat,2,2,3,88,1,no,0,51.0
+LH0070,Lekki Phase 1,6.45211,3.47809,flat,2,2,2,111,10,no,1,99.6
+LH0071,Surulere,6.49514,3.36378,terrace,4,5,6,274,6,no,2,72.9
+LH0072,Ikoyi,6.44885,3.43156,flat,3,2,3,145,7,no,0,204.6
+LH0073,Ikoyi,6.46036,3.4446,flat,2,2,2,79,34,yes,1,91.3
+LH0074,Ojodu,6.63966,3.37183,self-contain,1,1,1,40,8,no,0,11.1
+LH0075,Ikeja GRA,6.57664,3.35197,semi-detached duplex,4,4,5,240,9,yes,3,268.1
+LH0076,Ikorodu,6.61797,3.50974,self-contain,1,2,2,26,25,no,0,2.5
+LH0077,Festac,6.47412,3.26269,flat,1,1,1,62,8,no,2,20.8
+LH0078,Magodo,6.62579,3.38589,flat,1,,2,66,5,yes,1,34.2
+LH0079,Magodo,6.63775,3.37798,detached duplex,5,4,4,443,2,no,4,311.9
+LH0080,Surulere,6.51314,3.34959,flat,2,2,3,59,8,yes,0,23.3
+LH0081,Lekki Phase 1,6.43672,3.46318,detached duplex,4,3,4,389,13,yes,3,500
+LH0082,Surulere,6.51341,3.34618,flat,3,3,4,158,5,yes,2,68.5
+LH0083,Lekki Phase 1,6.44669,3.46767,semi-detached duplex,4,5,5,241,7,no,3,232.7
+LH0084,Gbagada,6.55576,3.38981,flat,2,1,2,108,11,no,1,63.7
+LH0085,Ikorodu,6.61845,3.5128,bungalow,4,4,4,210,8,no,2,27.1
+LH0086,Gbagada,6.54518,3.38257,semi-detached duplex,4,3,4,276,21,no,1,120.5
+LH0087,Ikorodu,6.62393,3.50938,bungalow,2,2,3,,12,no,3,20.0
+LH0088,Lekki Phase 1,6.44284,3.47393,terrace,4,4,4,237,14,yes,2,254.1
+LH0089,Magodo,6.62221,3.38723,detached duplex,5,5,6,460,7,no,3,375.9
+LH0090,Ajah,6.46381,3.56364,terrace,3,3,3,199,14,no,2,74.2
+LH0091,Ajah,6.46817,3.54719,semi-detached duplex,4,5,6,221,22,no,3,100.1
+LH0092,Ajah,6.47354,3.56591,flat,4,4,5,178,4,no,1,76.4
+LH0093,Ikeja GRA,6.57215,3.33965,flat,3,4,5,111,4,no,2,96.8
+LH0094,Ikeja GRA,6.58772,3.35773,detached duplex,5,5,6,586,7,yes,6,500
+LH0095,Ajah,6.45987,3.55587,flat,3,3,3,,8,no,1,52.6
+LH0096,Ajah,6.46015,3.56723,bungalow,3,2,2,136,10,no,2,30.9
+LH0097,Ojodu,6.63933,3.36947,self-contain,1,1,1,28,5,no,1,10.8
+LH0098,Ajah,6.46766,3.57006,terrace,3,3,4,200,3,no,1,102.5
+LH0099,Surulere,6.49251,3.33916,flat,3,3,4,164,15,no,1,47.2
+LH0100,Surulere,6.49421,3.3515,terrace,4,4,4,244,19,no,2,61.5
+LH0101,Lekki Phase 1,6.4526,3.48027,terrace,4,4,5,237,11,no,2,165.3
+LH0102,Ikorodu,6.61168,3.50788,self-contain,1,1,1,40,5,no,1,4.3
+LH0103,Lekki Phase 1,6.44039,3.46782,flat,1,1,2,91,11,no,1,71.2
+LH0104,Surulere,6.49626,3.35456,bungalow,4,4,4,183,7,no,1,62.9
+LH0105,Ikeja GRA,6.56428,3.35156,flat,3,3,4,131,5,no,2,86.5
+LH0106,Magodo,6.61081,3.38173,bungalow,3,3,4,168,9,no,2,87.5
+LH0107,Lekki Phase 1,6.44012,3.47871,terrace,3,2,2,177,9,yes,2,213.6
+LH0108,Ajah,6.4663,3.55772,terrace,4,4,5,217,5,no,1,77.4
+LH0109,Ojodu,6.64109,3.3693,flat,3,3,4,96,5,no,2,36.2
+LH0110,Yaba,6.51808,3.37617,terrace,3,3,4,248,2,no,2,110.8
+LH0111,Gbagada,6.53981,3.39241,flat,4,4,4,177,22,yes,0,80.7
+LH0112,Ajah,6.45431,3.57021,flat,3,3,4,111,5,yes,0,30.4
+LH0113,Ikorodu,6.61424,3.50622,flat,2,1,2,97,20,no,0,14.4
+LH0114,Lekki Phase 1,6.45248,3.46626,semi-detached duplex,4,4,4,251,9,no,1,218.8
+LH0115,Surulere,6.51087,3.35147,self-contain,1,1,1,34,7,yes,0,12.8
+LH0116,Festac,6.46217,3.29166,bungalow,3,3,4,255,3,no,3,78.3
+LH0117,Ajah,6.4552,3.5734,flat,2,1,1,104,12,no,0,34.0
+LH0118,Gbagada,6.55315,3.37548,semi-detached duplex,4,5,5,245,10,no,1,113.1
+LH0119,Ikeja GRA,6.58406,3.35556,detached duplex,4,3,4,288,2,no,2,313.4
+LH0120,Ajah,6.45657,3.5546,bungalow,4,5,6,165,7,no,1,48.4
+LH0121,Gbagada,6.55587,3.38795,flat,3,3,4,139,3,yes,1,108.5
+LH0122,Yaba,6.50048,3.36184,flat,3,2,3,141,5,yes,1,64.3
+LH0123,Festac,6.46034,3.29848,bungalow,3,2,3,164,1,no,1,52.1
+LH0124,Ajah,6.47737,3.58298,terrace,3,3,4,172,7,no,1,47.3
+LH0125,Yaba,6.50862,3.38017,flat,3,3,3,147,5,no,2,72.4
+LH0126,Ikeja GRA,6.57809,3.36708,terrace,3,4,5,199,7,yes,1,190.8
+LH0127,Ikeja GRA,6.5735,3.355,terrace,4,4,5,195,2,yes,2,218.5
+LH0128,Surulere,6.52016,3.35344,flat,3,3,4,135,5,no,0,60.9
+LH0129,Gbagada,6.55322,3.38101,semi-detached duplex,4,5,5,284,32,no,3,131.4
+LH0130,Victoria Island,6.43465,3.4202,terrace,3,3,3,182,8,yes,2,324.9
+LH0131,Ajah,6.46318,3.55902,flat,2,2,3,110,7,no,2,39.2
+LH0132,Victoria Island,6.42011,3.41027,flat,3,3,4,135,20,no,1,209.5
+LH0133,Lekki Phase 1,6.44738,3.47229,flat,4,4,5,183,13,yes,2,203.6
+LH0134,Surulere,6.51319,3.35093,terrace,3,2,2,219,6,yes,2,112.5
+LH0135,Lekki Phase 1,6.44079,3.46541,terrace,3,3,4,155,9,yes,0,148.9
+LH0136,Ikeja GRA,6.56012,3.35109,flat,1,1,2,55,6,no,0,36.7
+LH0137,Magodo,6.61983,3.38997,flat,4,4,5,185,15,no,2,104.7
+LH0138,Ajah,6.46386,3.56541,flat,4,3,4,149,9,yes,1,54.0
+LH0139,Ikorodu,6.61591,3.50173,detached duplex,5,5,6,340,2,no,3,72.3
+LH0140,Ajah,6.46648,3.55957,bungalow,2,2,3,138,6,no,3,38.8
+LH0141,Ajah,6.46681,3.56426,flat,3,3,4,138,18,no,1,38.3
+LH0142,Ajah,6.44795,3.56911,terrace,4,5,6,193,7,no,1,63.5
+LH0143,Ajah,6.47885,3.56881,bungalow,3,4,5,188,2,no,1,41.4
+LH0144,Lekki Phase 1,6.45677,3.47327,flat,2,2,3,137,7,yes,1,217.5
+LH0145,Festac,6.47487,3.26413,self-contain,1,1,1,27,13,yes,1,10.1
+LH0146,Gbagada,6.55701,3.3967,terrace,3,3,4,180,8,no,1,65.1
+LH0147,Ikeja GRA,6.57901,3.3529,detached duplex,5,6,7,402,7,no,5,500
+LH0148,Ajah,6.48333,3.56224,terrace,3,2,3,208,9,no,2,76.4
+LH0149,Surulere,6.49468,3.34849,flat,3,3,4,141,18,no,2,36.3
+LH0150,Ojodu,6.63132,3.35857,flat,2,2,3,58,11,no,0,13.4
+LH0151,Ikorodu,6.59753,3.49701,bungalow,2,2,3,125,7,no,1,9.7
+LH0152,Ikeja GRA,6.57985,3.36052,detached duplex,6,6,6,564,13,no,5,492.6
+LH0153,Ikeja GRA,6.58237,3.35411,semi-detached duplex,4,4,4,247,27,no,2,174.2
+LH0154,Ajah,6.47217,3.56169,bungalow,4,3,4,230,3,yes,2,77.7
+LH0155,Ikeja GRA,6.5662,3.35335,detached duplex,6,,8,434,4,no,3,391.7
+LH0156,Ajah,6.48165,3.57383,semi-detached duplex,4,4,4,316,3,no,3,121.2
+LH0157,Victoria Island,6.43001,3.42319,flat,1,2,3,104,7,yes,2,179.1
+LH0158,Ojodu,6.64653,3.37277,bungalow,3,3,4,170,11,no,2,39.0
+LH0159,Ajah,6.47575,3.55703,terrace,4,5,6,249,12,yes,2,84.2
+LH0160,Ikeja GRA,6.58196,3.33953,semi-detached duplex,5,5,5,303,5,yes,3,264.7
+LH0161,Gbagada,6.54963,3.3788,flat,4,3,4,181,8,no,2,107.8
+LH0162,Ikoyi,6.45498,3.41774,flat,4,4,5,179,12,yes,1,269.2
+LH0163,Ajah,6.48475,3.55733,terrace,4,4,5,252,1,no,1,75.5
+LH0164,Festac,6.46262,3.28946,terrace,4,4,5,252,9,yes,1,70.5
+LH0165,Festac,6.47561,3.26967,flat,3,3,4,124,2,no,2,37.4
+LH0166,Magodo,6.63502,3.38046,bungalow,3,3,3,164,10,no,1,100.9
+LH0167,Ikoyi,6.44782,3.42564,flat,2,2,3,111,4,yes,1,207.4
+LH0168,Magodo,6.63032,3.37161,detached duplex,4,4,5,253,6,no,3,333.4
+LH0169,Lekki Phase 1,6.45161,3.48354,semi-detached duplex,4,4,5,234,11,no,2,209.3
+LH0170,Ajah,6.46354,3.57205,semi-detached duplex,5,6,7,329,14,no,3,121.8
+LH0171,Surulere,6.50094,3.36151,self-contain,1,2,2,42,13,no,1,14.7
+LH0172,Ikeja G.R.A,6.58639,3.36595,detached duplex,5,6,7,420,4,yes,3,500
+LH0173,Festac,6.46909,3.29362,flat,2,2,3,76,4,no,0,28.7
+LH0174,Magodo,6.62057,3.38777,semi-detached duplex,4,4,5,326,8,no,2,223.0
+LH0175,Ikeja GRA,6.5768,3.34046,detached duplex,4,5,5,382,11,no,3,386.3
+LH0176,Gbagada,6.55762,3.4056,terrace,3,3,4,167,10,yes,0,81.3
+LH0177,Gbagada,6.56558,3.38166,flat,1,1,2,75,2,no,1,33.4
+LH0178,Yaba,6.51611,3.37544,self-contain,1,1,1,26,3,no,1,13.1
+LH0179,Ikoyi,6.45133,3.44005,detached duplex,5,5,5,415,9,no,3,500
+LH0180,Victoria Island,6.42122,3.42626,terrace,4,4,4,232,10,no,3,217.0
+LH0181,Lekki Phase 1,6.43991,3.45697,flat,2,2,2,107,6,no,1,108.7
+LH0182,Surulere,6.50961,3.35852,self-contain,1,2,2,26,16,no,0,6.0
+LH0183,Yaba,6.50896,3.37573,flat,3,2,3,153,4,no,2,91.7
+LH0184,Yaba,6.51017,3.37291,flat,3,4,4,153,5,no,2,62.9
+LH0185,Ikorodu,6.61645,3.49738,flat,3,2,3,150,3,no,2,19.1
+LH0186,Festac,6.45531,3.28281,flat,3,4,5,131,3,yes,2,43.6
+LH0187,Ikoyi,6.44106,3.44604,flat,3,3,3,144,4,yes,2,361.0
+LH0188,Gbagada,6.57148,3.38212,flat,1,2,2,69,7,no,1,35.3
+LH0189,Yaba,6.51441,3.38438,self-contain,1,1,1,44,9,no,0,21.5
+LH0190,Surulere,6.50888,3.35365,flat,4,3,4,157,7,no,1,75.8
+LH0191,Surulere,6.50553,3.37045,terrace,3,2,3,193,9,no,3,72.4
+LH0192,Surulere,6.47981,3.3473,flat,1,2,3,,10,no,1,36.0
+LH0193,Ikorodu,6.60886,3.52736,bungalow,2,2,2,91,10,no,0,10.9
+LH0194,Ikeja GRA,6.58429,3.35888,detached duplex,4,3,4,362,3,no,3,346.9
+LH0195,Surulere,6.4918,3.35551,flat,2,2,3,119,10,no,1,49.7
+LH0196,Ajah ,6.48124,3.56331,bungalow,3,2,3,110,25,no,2,24.6
+LH0197,Ikeja GRA,6.58113,3.34611,semi-detached duplex,4,4,5,260,14,yes,2,218.5
+LH0198,Ojodu,6.62668,3.36167,self-contain,1,1,1,24,45,no,0,5.6
+LH0199,Yaba,6.50783,3.38208,flat,3,4,5,80,9,no,0,39.0
+LH0200,Ikoyi,6.45048,3.4401,flat,2,1,2,107,25,yes,0,198.0
+LH0201,Magodo,6.62577,3.38562,detached duplex,4,3,4,326,13,yes,2,301.6
+LH0202,Lekki Phase 1,6.43897,3.45928,flat,2,2,3,93,9,yes,1,102.5
+LH0203,Ikoyi,6.45743,3.42759,semi-detached duplex,4,5,6,208,8,no,1,390.4
+LH0204,Ikorodu,6.62031,3.51471,self-contain,1,1,1,39,4,no,0,5.9
+LH0205,Ajah,6.46665,3.56917,semi-detached duplex,5,5,5,306,5,no,1,159.6
+LH0206,Ojodu,6.62504,3.37466,flat,2,3,4,138,10,no,1,47.6
+LH0207,Ikoyi,6.44033,3.42175,terrace,3,3,4,2320,8,yes,4,500
+LH0208,Festac,6.46701,3.2802,bungalow,3,2,3,173,18,no,3,38.6
+LH0209,Yaba,6.49972,3.36034,self-contain,1,1,1,22,7,no,0,8.1
+LH0210,Magodo,6.62986,3.36708,semi-detached duplex,4,4,5,223,9,no,3,124.6
+LH0211,Lekki Phase 1,6.43066,3.47185,semi-detached duplex,5,5,6,356,4,no,2,386.5
+LH0212,Yaba,6.51873,3.37229,flat,2,2,3,91,10,yes,1,78.9
+LH0213,Ikeja GRA,6.57963,3.34095,detached duplex,6,5,6,518,43,no,5,352.3
+LH0214,Gbagada,6.56493,3.3868,flat,3,3,4,167,8,no,3,94.9
+LH0215,Ikorodu,6.6092,3.5132,bungalow,3,3,3,215,30,no,3,15.0
+LH0216,Lekki Phase 1,6.45729,3.4695,semi-detached duplex,5,4,5,279,23,no,2,209.2
+LH0217,Ajah,6.47339,3.56576,terrace,4,4,5,189,4,no,2,88.5
+LH0218,Ajah,6.46401,3.57185,bungalow,4,4,4,211,25,no,2,53.6
+LH0219,Victoria Island,6.42663,3.43434,flat,3,2,2,143,24,yes,2,164.4
+LH0220,Lekki Phase 1,6.45042,3.47603,detached duplex,6,6,7,531,15,no,5,500
+LH0221,Magodo,6.62647,3.37752,semi-detached duplex,4,4,5,271,18,no,2,181.6
+LH0222,Ikorodu,6.62825,3.51158,flat,3,2,3,178,19,no,2,21.3
+LH0223,Ojodu,6.61583,3.36408,flat,1,1,2,75,7,no,1,30.0
+LH0224,Lekki Phase 1,6.44567,3.47693,detached duplex,4,4,4,356,7,no,4,348.2
+LH0225,Ikoyi,6.46324,3.43296,flat,4,4,5,179,17,no,1,318.4
+LH0226,surulere,6.49664,3.35509,flat,3,3,3,102,4,no,1,45.1
+LH0227,Ikorodu,6.6277,3.50466,bungalow,2,2,3,99,8,no,0,11.0
+LH0228,Magodo,6.6148,3.38197,semi-detached duplex,5,5,6,320,13,no,3,154.1
+LH0229,Surulere,6.49959,3.34871,flat,3,3,4,130,13,no,1,51.8
+LH0230,Ikoyi,6.43796,3.43401,terrace,3,3,4,190,12,no,3,318.1
+LH0231,Surulere,6.50996,3.35501,flat,4,3,4,188,6,no,2,76.1
+LH0232,Surulere,6.48845,3.36843,flat,2,2,3,88,7,no,1,30.0
+LH0233,Festac,6.45981,3.29169,flat,4,3,4,181,12,no,1,58.5
+LH0234,Ikeja GRA,6.58482,3.33749,flat,3,3,4,133,1,no,2,170.3
+LH0235,Ojodu,6.62676,3.37413,semi-detached duplex,4,4,5,340,7,no,4,143.3
+LH0236,Lekki Phase 1,6.43807,3.48114,terrace,4,5,6,245,2,no,1,298.2
+LH0237,Yaba,6.50677,3.3777,flat,4,4,4,183,9,no,3,81.7
+LH0238,Lekki Phase 1,6.4502,3.47258,detached duplex,6,5,5,550,16,yes,5,500
+LH0239,Ikoyi,6.45896,3.42372,flat,2,2,3,115,2,no,0,181.3
+LH0240,Surulere,6.51072,3.34667,terrace,4,4,5,236,5,no,2,96.7
+LH0241,Gbagada,6.55237,3.39427,flat,3,3,3,139,11,no,0,52.2
+LH0242,Surulere,6.49661,3.35649,flat,2,2,3,77,7,yes,0,46.2
+LH0243,Ikeja GRA,6.58543,3.35051,flat,4,3,4,171,9,no,1,141.0
+LH0244,Gbagada,6.55632,3.38742,terrace,3,2,3,237,13,no,1,133.7
+LH0245,Yaba,6.52323,3.37353,flat,2,2,3,62,43,no,0,16.4
+LH0246,Lekki Phase 1,6.4609,3.47028,terrace,4,4,5,192,33,no,2,147.5
+LH0247,Victoria Island,6.4379,3.4289,flat,2,2,3,84,13,no,1,116.0
+LH0248,Ajah,6.45875,3.55964,bungalow,3,3,4,175,17,no,2,45.1
+LH0249,Lekki Phase 1,6.45069,3.46551,flat,4,3,3,189,17,no,1,156.5
+LH0250,Lekki Phase 1,6.44101,3.46781,semi-detached duplex,4,4,5,248,9,no,4,234.9
+LH0251,Ajah,6.46173,3.55758,flat,3,3,4,156,5,no,2,44.2
+LH0252,Magodo,6.61591,3.36923,flat,3,3,4,122,17,no,2,63.2
+LH0253,Ojodu,6.64441,3.36977,flat,2,2,3,105,8,no,1,36.3
+LH0254,Surulere,6.49379,3.34715,flat,3,2,3,152,15,no,1,54.8
+LH0255,Yaba,6.51147,3.38457,flat,1,1,1,63,13,no,1,24.1
+LH0256,Ikeja GRA,6.57588,3.35608,detached duplex,5,5,5,394,7,no,3,488.5
+LH0257,Yaba,6.5135,3.38593,self-contain,1,1,1,41,2,no,1,18.0
+LH0258,Ajah,6.46641,3.57063,bungalow,3,3,4,147,13,no,1,34.7
+LH0259,Gbagada,6.54511,3.39751,flat,2,,2,85,17,no,0,36.3
+LH0260,Magodo,6.6168,3.38005,semi-detached duplex,4,4,4,236,15,no,2,130.9
+LH0261,Surulere,6.49799,3.35877,self-contain,1,1,1,31,1,yes,2,14.2
+LH0262,Victoria Island,6.432,3.41894,flat,2,3,4,96,26,no,0,99.5
+LH0263,Gbagada,6.5456,3.37609,terrace,4,3,4,222,9,no,4,140.7
+LH0264,Ikoyi,6.45504,3.45286,terrace,4,4,5,236,11,no,2,327.2
+LH0265,Ikorodu,6.60851,3.50721,flat,3,3,4,,11,yes,2,15.0
+LH0266,Yaba,6.50613,3.36649,terrace,3,3,4,157,18,no,1,58.3
+LH0267,Surulere,6.5067,3.34804,flat,3,4,5,138,25,no,1,38.2
+LH0268,Lekki Phase 1,6.45112,3.46381,flat,4,3,4,188,13,yes,1,238.0
+LH0269,Ajah,6.45796,3.55256,flat,3,3,3,133,10,no,3,40.7
+LH0270,Yaba,6.51581,3.36871,flat,3,4,5,113,31,no,1,41.0
+LH0271,Ojodu,6.65347,3.37077,self-contain,1,1,1,42,2,no,0,13.6
+LH0272,Lekki Phase 1,6.45039,3.48462,detached duplex,5,5,6,471,4,yes,4,500
+LH0273,Ikeja GRA,6.57616,3.34489,terrace,4,4,4,252,10,yes,1,282.8
+LH0274,Gbagada,6.56033,3.38545,semi-detached duplex,5,5,6,316,2,no,3,214.9
+LH0275,Victoria Island,6.43695,3.42042,terrace,3,2,3,183,21,no,2,221.2
+LH0276,Lekki Ph 1,6.44725,3.46823,flat,2,3,4,103,2,no,1,104.4
+LH0277,Surulere,6.49862,3.36468,flat,2,2,3,113,4,no,1,52.7
+LH0278,Victoria Island,6.42652,3.42144,flat,1,1,2,72,10,no,1,153.6
+LH0279,Festac,6.45945,3.2855,flat,3,3,3,172,5,no,3,64.8
+LH0280,Lekki Phase 1,6.43868,3.47535,flat,1,1,2,74,16,yes,1,74.6
+LH0281,Lekki Phase 1,6.44882,3.49402,semi-detached duplex,4,5,5,269,10,no,3,263.6
+LH0282,Festac,6.4691,3.29119,terrace,3,3,3,248,21,no,3,54.9
+LH0283,Ajah,6.46692,3.57309,flat,2,2,3,100,11,no,1,31.6
+LH0284,Lekki Phase 1,6.45683,3.47761,terrace,3,2,3,159,1,no,1,220.1
+LH0285,Festac,6.46585,3.27497,flat,2,3,4,80,1,yes,1,33.8
+LH0286,Ikeja GRA,6.57178,3.3535,detached duplex,5,5,6,526,5,yes,4,500
+LH0287,Lekki Phase 1,6.44315,3.46481,flat,2,2,3,61,1,no,1,83.2
+LH0288,Ojodu,6.65098,3.37954,bungalow,3,2,2,198,13,no,1,78.9
+LH0289,Lekki Phase 1,6.42996,3.4701,terrace,3,3,4,186,25,no,1,185.2
+LH0290,Ajah,6.45328,3.57483,flat,4,4,5,158,16,yes,0,47.3
+LH0291,Gbagada,6.57043,3.38605,semi-detached duplex,4,4,4,267,9,no,2,156.8
+LH0292,Yaba,6.50834,3.39424,terrace,4,4,5,226,21,no,2,93.5
+LH0293,Magodo,6.61289,3.37842,semi-detached duplex,4,4,4,228,2,yes,2,181.7
+LH0294,Ojodu,6.64511,3.37638,bungalow,3,3,4,251,11,no,2,63.6
+LH0295,Victoria Island,6.41954,3.42371,semi-detached duplex,4,4,5,249,4,yes,4,500
+LH0296,Ikeja GRA,6.56694,3.35356,flat,4,5,6,170,1,no,1,136.3
+LH0297,Ajah,6.46107,3.57267,bungalow,3,3,4,155,10,no,1,33.5
+LH0298,Ikorodu,6.6028,3.51689,self-contain,1,1,1,42,18,no,2,4.5
+LH0299,Ajah,6.46044,3.57457,semi-detached duplex,4,3,4,230,16,no,1,76.1
+LH0300,Yaba,6.49525,3.37622,self-contain,1,1,1,25,10,no,0,11.6
+LH0301,Magodo,6.62473,3.37909,flat,2,2,3,83,10,no,0,48.0
+LH0302,surulere,6.50283,3.35207,flat,4,4,4,190,7,no,2,80.6
+LH0303,Ikeja GRA,6.57587,3.35104,semi-detached duplex,4,4,4,252,6,no,3,276.9
+LH0304,Lekki Phase 1,6.44844,3.47731,flat,3,2,3,143,14,yes,1,136.9
+LH0305,Ajah,6.46913,3.55721,flat,1,1,2,,7,no,0,34.0
+LH0306,Ikeja GRA,6.58732,3.35565,detached duplex,5,6,6,483,8,no,5,406.5
+LH0307,Lekki Phase 1,6.44378,3.47506,flat,3,2,2,150,7,yes,0,165.9
+LH0308,Ikeja GRA,6.58312,3.36058,flat,2,2,2,81,14,no,1,51.8
+LH0309,Festac,6.47576,3.27854,bungalow,3,4,5,247,7,no,1,58.4
+LH0310,Ajah,6.45879,3.55247,flat,1,1,2,57,12,no,0,22.4
+LH0311,Ojodu,6.65265,3.38667,flat,3,2,3,85,17,no,1,29.0
+LH0312,Lekki Phase 1,6.43009,3.45574,flat,4,3,4,169,6,no,0,176.6
+LH0313,Ikorodu,6.61114,3.49773,flat,4,4,5,139,2,no,1,19.7
+LH0314,Ikeja GRA,6.58538,3.36966,flat,2,2,2,113,5,no,1,98.1
+LH0315,Lekki Phase 1,6.44588,3.47543,terrace,4,4,4,206,10,yes,2,199.3
+LH0316,Victoria Island,6.43701,3.41049,terrace,4,4,5,265,8,yes,2,372.3
+LH0317,Ikorodu,6.61475,3.51044,bungalow,2,1,2,157,1,no,2,28.8
+LH0318,Ikoyi,6.4501,3.42865,flat,4,4,5,173,8,no,2,397.3
+LH0319,Lekki Phase 1,6.43809,3.4847,terrace,3,3,4,253,2,no,3,296.3
+LH0320,Ikorodu,6.61672,3.50484,bungalow,3,3,3,212,6,no,2,31.2
+LH0321,Surulere,6.50252,3.36354,flat,2,2,3,95,5,no,2,52.9
+LH0322,Ikeja GRA,6.57657,3.36631,terrace,3,3,4,252,11,yes,1,247.8
+LH0323,Victoria Island,6.42695,3.41605,flat,2,2,3,95,10,yes,0,186.4
+LH0324,Ojodu,6.63938,3.36692,flat,3,4,5,128,21,no,2,24.5
+LH0325,Victoria Island,6.43057,3.42293,detached duplex,4,4,5,321,12,yes,4,488.6
+LH0326,Lekki Phase 1,6.45718,3.45802,semi-detached duplex,5,5,6,348,15,yes,3,409.4
+LH0327,Festac,6.45549,3.28107,flat,2,3,4,89,13,yes,0,23.9
+LH0328,Victoria Island,6.43316,3.41344,terrace,4,3,3,275,15,no,3,408.1
+LH0329,Gbagada,6.54599,3.39193,flat,3,3,4,141,3,yes,2,76.5
+LH0330,Lekki Phase 1,6.43403,3.48355,flat,2,3,3,84,11,yes,0,104.8
+LH0331,Ikoyi,6.44748,3.43908,detached duplex,5,4,5,254,13,yes,2,500
+LH0332,Ojodu,6.64161,3.3782,semi-detached duplex,5,5,6,350,13,no,2,140.7
+LH0333,Festac,6.47198,3.29162,flat,3,3,4,160,5,yes,1,68.5
+LH0334,Magodo,6.6105,3.39922,bungalow,4,4,4,218,9,no,3,127.0
+LH0335,Lekki Phase 1,6.44503,3.47389,semi-detached duplex,4,4,5,237,11,yes,2,288.7
+LH0336,Lekki Phase 1,6.43539,3.47596,flat,4,5,6,176,13,yes,0,201.9
+LH0337,lekki phase 1,6.44253,3.47715,flat,3,3,4,153,6,no,1,164.7
+LH0338,Gbagada,6.54156,3.40127,terrace,4,4,5,194,13,yes,2,101.2
+LH0339,Ikorodu,6.61398,3.50322,self-contain,1,1,1,44,6,no,1,5.9
+LH0340,Gbagada,6.55697,3.38834,flat,4,4,5,176,11,no,2,83.1
+LH0341,Ikorodu,6.6084,3.50557,self-contain,1,1,1,34,4,no,0,4.4
+LH0342,Lekki Phase 1,6.44858,3.47828,semi-detached duplex,4,4,5,352,6,yes,2,500
+LH0343,Ikeja GRA,6.56441,3.3473,flat,2,2,3,59,13,no,0,40.6
+LH0344,Gbagada,6.55132,3.39741,terrace,3,3,3,164,10,no,1,89.1
+LH0345,Surulere,6.50877,3.34696,flat,2,3,4,76,14,no,0,35.4
+LH0346,Lekki Phase 1,6.44756,3.47645,terrace,3,2,3,266,8,yes,2,212.3
+LH0347,Ikorodu,6.61536,3.49659,flat,1,2,3,127,1,no,1,19.1
+LH0348,Ajah,6.46163,3.56373,terrace,4,4,5,228,8,no,1,72.4
+LH0349,Surulere,6.49619,3.36021,self-contain,1,1,1,29,17,no,2,7.7
+LH0350,Festac,6.46623,3.28664,flat,2,3,3,96,5,no,0,36.4
+LH0351,Ikorodu,6.60879,3.49591,bungalow,4,4,5,242,1,no,2,33.1
+LH0352,Lekki Phase 1,6.45307,3.48466,terrace,4,4,5,251,4,no,1,372.6
+LH0353,Ikeja GRA,6.57739,3.34591,terrace,3,3,4,188,8,yes,1,170.5
+LH0354,Ikoyi,6.46223,3.44278,terrace,3,2,3,184,10,yes,1,345.5
+LH0355,Lekki Phase 1,6.44539,3.46556,flat,1,1,1,61,31,yes,0,32.2
+LH0356,Gbagada,6.55621,3.38721,terrace,3,3,4,194,18,no,0,99.8
+LH0357,Surulere,6.50184,3.35432,self-contain,1,1,1,30,30,yes,0,7.7
+LH0358,Ikorodu,6.62225,3.4992,bungalow,3,3,3,189,12,no,1,20.5
+LH0359,Lekki Phase 1,6.45059,3.48366,terrace,4,5,6,255,9,yes,4,319.6
+LH0360,Gbagada,6.56283,3.37781,flat,3,3,4,121,36,yes,2,42.1
+LH0361,Yaba,6.50414,3.37318,flat,2,1,1,85,11,no,0,36.0
+LH0362,Festac,6.47697,3.28144,flat,4,4,5,181,16,no,0,54.8
+LH0363,Ikorodu,6.60494,3.51102,bungalow,3,4,5,201,3,no,2,21.5
+LH0364,Ojodu,6.63975,3.37574,semi-detached duplex,4,4,5,273,10,no,1,156.5
+LH0365,Ajah,6.46928,3.56675,semi-detached duplex,4,4,5,,12,no,2,140.9
+LH0366,Lekki Phase 1,6.45352,3.47866,flat,1,1,2,64,10,no,0,89.4
+LH0367,Ojodu,6.64169,3.3625,flat,3,4,4,176,6,no,1,63.1
+LH0368,Surulere,6.52086,3.36459,flat,3,2,3,157,30,no,3,55.6
+LH0369,Lekki Phase 1,6.454,3.47877,terrace,4,4,5,242,15,no,3,208.0
+LH0370,Ikorodu,6.6117,3.51266,bungalow,4,4,5,129,4,no,1,13.1
+LH0371,Ikeja Gra,6.56455,3.3582,detached duplex,4,4,5,253,4,yes,2,270.8
+LH0372,Magodo,6.62887,3.3637,detached duplex,6,6,7,448,14,no,3,398.1
+LH0373,Festac,6.45865,3.27657,self-contain,1,1,1,36,7,no,0,13.7
+LH0374,Ikoyi,6.4447,3.43068,terrace,4,4,5,196,3,yes,0,402.8
+LH0375,Surulere,6.48809,3.35456,self-contain,1,1,1,32,22,no,1,10.2
+LH0376,Gbagada,6.557,3.38912,flat,3,3,3,152,10,no,1,62.9
+LH0377,Yaba,6.51739,3.38122,flat,3,3,4,108,11,no,1,60.8
+LH0378,Lekki Phase 1,6.43949,3.48393,flat,3,3,4,160,17,no,2,152.0
+LH0379,Magodo,6.62751,3.39066,detached duplex,6,6,6,591,4,no,6,500
+LH0380,Ajah,6.46654,3.56266,terrace,4,4,4,278,4,no,2,83.4
+LH0381,Ikoyi,6.45623,3.44439,detached duplex,4,4,5,305,5,no,3,500
+LH0382,Lekki Phase 1,6.42916,3.47316,flat,3,3,4,132,13,yes,0,126.5
+LH0383,Yaba,6.51188,3.38216,self-contain,1,2,2,29,38,no,0,8.4
+LH0384,Magodo,6.61716,3.36988,bungalow,2,2,3,214,3,no,3,106.3
+LH0385,Ikorodu,6.6231,3.5173,bungalow,3,3,4,122,34,no,2,10.4
+LH0386,Ikoyi,6.4447,3.43605,flat,2,2,3,96,4,no,1,190.1
+LH0387,Lekki Phase 1,6.43302,3.46942,flat,3,3,3,131,1,yes,0,175.0
+LH0388,Lekki Phase 1,6.44842,3.4812,flat,2,2,3,56,1,yes,0,45.8
+LH0389,Magodo,6.62686,3.37968,detached duplex,5,5,6,546,7,no,5,409.9
+LH0390,Lekki Phase 1,6.44086,3.47558,flat,2,2,3,81,12,yes,0,92.6
+LH0391,Ikorodu,6.62131,3.50227,flat,4,5,6,159,12,no,1,14.9
+LH0392,Ikorodu,6.62487,3.49652,detached duplex,6,7,8,,3,no,3,84.1
+LH0393,Gbagada,6.56649,3.38706,terrace,3,4,5,172,13,yes,2,103.7
+LH0394,Yaba,6.51074,3.39073,terrace,4,5,5,216,5,yes,0,131.3
+LH0395,Ojodu,6.63005,3.36049,self-contain,1,2,2,23,9,no,0,9.2
+LH0396,Ojodu,6.64759,3.37071,flat,1,1,1,61,16,no,1,18.6
+LH0397,Ikoyi,6.44951,3.44569,terrace,3,3,4,216,0,yes,2,500
+LH0398,Magodo,6.62348,3.37022,semi-detached duplex,4,4,4,234,21,no,4,173.1
+LH0399,Ajah,6.47389,3.5691,bungalow,2,2,3,171,10,no,1,50.0
+LH0400,Surulere,6.49365,3.34475,self-contain,1,1,1,34,6,yes,0,18.2
+LH0401,Ikorodu,6.61991,3.50285,self-contain,1,1,1,39,9,no,0,4.4
+LH0402,Festac,6.46344,3.28487,flat,3,3,3,114,7,no,1,38.4
+LH0403,Yaba,6.50503,3.37565,self-contain,1,1,1,38,4,no,2,20.2
+LH0404,Ikeja GRA,6.59425,3.36514,semi-detached duplex,4,3,4,312,11,yes,2,387.7
+LH0405,Gbagada,6.55295,3.38374,flat,3,3,4,133,9,no,2,66.7
+LH0406,Ikeja GRA,6.5734,3.3472,flat,1,1,2,79,16,no,2,59.1
+LH0407,Magodo,6.61379,3.37888,flat,4,4,5,,5,no,2,79.7
+LH0408,Lekki Phase 1,6.44203,3.48357,detached duplex,5,4,5,460,10,yes,4,500
+LH0409,Surulere,6.50246,3.36375,terrace,3,2,3,257,23,no,3,92.8
+LH0410,Ikeja GRA,6.56241,3.34005,terrace,4,4,5,189,15,no,3,126.2
+LH0411,Lekki Phase 1,6.45199,3.47014,flat,3,4,5,176,12,no,2,213.5
+LH0412,Gbagada,6.55468,3.38537,flat,1,1,2,83,5,no,2,48.7
+LH0413,Surulere,6.51269,3.34149,self-contain,1,1,1,41,4,no,1,21.5
+LH0414,Ikoyi,6.44236,3.43189,flat,2,2,2,67,7,yes,0,141.5
+LH0415,Surulere,6.50585,3.34682,self-contain,1,1,1,22,18,no,0,8.2
+LH0416,Ajah,6.47505,3.56008,bungalow,3,3,4,182,19,yes,0,53.3
+LH0417,Yaba,6.493,3.38781,flat,3,3,4,178,28,no,1,53.9
+LH0418,Lekki Phase 1,6.44159,3.47124,terrace,3,2,2,227,19,no,2,211.5
+LH0419,Ajah,6.46625,3.57091,flat,1,1,2,78,1,no,0,32.0
+LH0420,Ajah,6.4623,3.55869,bungalow,2,2,3,121,8,no,2,35.1
+LH0421,Ojodu,6.64868,3.37837,self-contain,1,1,1,37,23,no,1,9.4
+LH0422,Victoria Island,6.4294,3.42279,detached duplex,4,4,5,352,24,no,5,485.0
+LH0423,Surulere,6.50149,3.376,flat,4,3,4,168,0,no,1,63.3
+LH0424,Ikoyi,6.47063,3.42658,terrace,3,2,3,217,2,no,3,500
+LH0425,Ikoyi,6.43895,3.42454,terrace,4,4,5,253,10,yes,1,470.0
+LH0426,Surulere,6.50441,3.34508,self-contain,1,1,1,32,11,no,2,10.4
+LH0427,Lekki Phase 1,6.44661,3.46691,flat,3,3,3,115,4,yes,1,122.6
+LH0428,Ajah,6.46003,3.5635,flat,1,1,2,65,10,yes,0,24.6
+LH0429,Ojodu,6.64264,3.37371,self-contain,1,1,1,28,19,no,1,9.2
+LH0430,Ikorodu,6.61796,3.51456,self-contain,1,1,1,35,11,no,1,3.7
+LH0431,Lekki Phase 1,6.45301,3.47531,detached duplex,5,5,6,460,10,yes,5,500
+LH0432,Ojodu,6.63514,3.37309,flat,2,2,3,85,1,no,1,32.0
+LH0433,Yaba,6.50137,3.3843,self-contain,1,1,1,36,3,no,1,15.6
+LH0434,Ikeja GRA,6.57907,3.36891,terrace,3,3,4,150,33,yes,2,71.8
+LH0435,Yaba,6.50773,3.37915,flat,3,3,3,134,15,no,2,93.3
+LH0436,Victoria Island,6.42394,3.42547,flat,2,2,2,110,15,yes,1,125.5
+LH0437,Ajah,6.4564,3.55982,bungalow,4,5,5,246,7,yes,2,82.5
+LH0438,Ikorodu,6.61097,3.50602,self-contain,1,1,1,35,2,no,0,5.1
+LH0439,Surulere,6.50568,3.34037,self-contain,1,2,2,22,15,no,0,6.3
+LH0440,Festac,6.46953,3.2755,bungalow,3,3,4,142,25,no,1,32.3
+LH0441,Lekki Phase 1,6.4354,3.47474,terrace,3,4,5,248,12,yes,1,250.6
+LH0442,Surulere,6.49873,3.36127,terrace,4,3,4,266,9,no,2,124.2
+LH0443,Lekki Phase 1,6.45158,3.4707,flat,2,2,2,110,14,no,0,80.7
+LH0444,Gbagada,6.55754,3.38937,flat,1,1,1,60,10,no,0,33.4
+LH0445,Ikoyi,6.44477,3.443,flat,3,3,4,,16,yes,1,199.2
+LH0446,Ajah,6.4591,3.57161,terrace,4,4,5,176,1,no,1,77.3
+LH0447,Ikeja GRA,6.58101,3.34935,semi-detached duplex,4,3,3,,13,yes,1,339.1
+LH0448,Surulere,6.5144,3.35245,self-contain,1,1,1,33,4,yes,0,16.9
+LH0449,Lekki Phase 1,6.4521,3.4734,flat,1,1,2,104,8,no,2,96.5
+LH0450,Victoria Island,6.41414,3.42111,flat,2,2,3,109,4,no,1,114.2
+LH0451,Gbagada,6.56292,3.38075,self-contain,1,1,1,24,12,yes,0,8.9
+LH0452,Ajah,6.46925,3.56526,bungalow,3,3,4,228,5,yes,1,67.3
+LH0453,Ikeja GRA,6.57752,3.35488,flat,1,1,2,71,5,no,0,69.0
+LH0454,Ojodu,6.64694,3.37852,flat,3,3,4,166,11,yes,0,64.5
+LH0455,Ojodu,6.63966,3.36695,bungalow,4,4,5,184,1,no,1,50.0
+LH0456,Surulere,6.48901,3.35776,flat,2,2,3,72,12,no,1,20.6
+LH0457,Gbagada,6.54939,3.39035,flat,2,2,3,133,16,yes,2,57.4
+LH0458,Gbagada,6.55006,3.37061,flat,1,1,2,70,8,no,0,53.8
+LH0459,Lekki Phase 1,6.44859,3.45958,terrace,4,3,4,216,3,yes,1,380.1
+LH0460,Ikorodu,6.61248,3.50544,self-contain,1,2,2,23,4,no,0,2.8
+LH0461,Ikeja GRA,6.57312,3.3584,detached duplex,6,5,6,557,29,yes,5,500
+LH0462,Ajah,6.47216,3.56144,bungalow,3,3,4,185,18,no,2,37.0
+LH0463,Ojodu,6.64955,3.37428,flat,4,4,5,183,4,no,2,77.5
+LH0464,Ikorodu,6.62603,3.50649,self-contain,1,1,1,38,11,no,0,5.1
+LH0465,Ikeja GRA,6.57873,3.356,semi-detached duplex,5,5,6,263,10,yes,2,260.5
+LH0466,Yaba,6.5001,3.37597,terrace,4,5,6,271,11,no,1,115.6
+LH0467,Ikeja GRA,6.58034,3.34803,terrace,4,4,4,205,20,no,2,164.5
+LH0468,Ikoyi,6.4415,3.43595,terrace,4,4,5,234,13,no,2,500
+LH0469,Ikoyi,6.455,3.43905,flat,3,2,3,140,13,yes,1,330.7
+LH0470,Festac,6.46684,3.28662,self-contain,1,1,1,26,0,yes,0,8.9
+LH0471,Ikoyi,6.46203,3.43772,terrace,3,2,3,258,12,yes,2,500
+LH0472,Ikorodu,6.62453,3.50329,bungalow,3,3,4,107,15,no,0,12.3
+LH0473,Yaba,6.51148,3.38132,flat,1,1,2,71,16,no,1,30.8
+LH0474,Ajah,6.47645,3.56992,flat,2,1,1,126,5,yes,1,51.5
+LH0475,Gbagada,6.56159,3.39295,semi-detached duplex,4,4,4,275,6,yes,2,215.1
+LH0476,Magodo,6.59722,3.37421,semi-detached duplex,4,3,4,212,7,no,1,158.5
+LH0477,Ikeja GRA,6.58827,3.35424,flat,1,2,3,97,9,no,1,119.7
+LH0478,Festac,6.46797,3.28592,flat,2,2,3,95,5,no,1,32.1
+LH0479,Lekki Phase 1,6.43692,3.47876,flat,2,2,2,81,8,no,1,97.6
+LH0480,Lekki Phase 1,6.44497,3.46856,semi-detached duplex,4,5,5,281,3,no,2,302.6
+LH0481,Gbagada,6.56375,3.37422,flat,2,2,3,82,18,no,1,42.3
+LH0482,Victoria Island,6.43931,3.4187,flat,1,1,2,65,10,no,1,84.8
+LH0483,Surulere,6.49728,3.35488,bungalow,3,3,3,144,3,no,2,54.9
+LH0484,Ajah,6.47071,3.58025,semi-detached duplex,5,5,6,352,11,no,2,125.5
+LH0485,Ojodu,6.63427,3.37327,flat,4,4,5,188,20,no,2,48.8
+LH0486,Ajah,6.47683,3.5694,bungalow,3,3,4,257,10,no,4,71.7
+LH0487,Surulere,6.4993,3.34154,bungalow,4,3,4,257,8,yes,2,106.5
+LH0488,Lekki Phase 1,6.44851,3.47932,semi-detached duplex,4,4,5,241,0,no,2,304.6
+LH0489,Surulere,6.48982,3.34786,self-contain,1,1,1,23,23,yes,0,5.5
+LH0490,Festac,6.47411,3.28849,flat,3,3,4,121,10,no,2,33.4
+LH0491,Ajah,6.45704,3.5624,semi-detached duplex,5,5,6,342,16,no,2,132.6
+LH0492,Ikeja GRA,6.57779,3.35948,terrace,4,4,4,278,13,no,3,173.8
+LH0493,Gbagada,6.56455,3.38059,self-contain,1,1,1,45,10,no,1,30.8
+LH0494,Lekki Phase 1,6.4364,3.47968,terrace,3,3,4,193,27,no,1,183.1
+LH0495,Gbagada,6.55209,3.39708,semi-detached duplex,4,3,4,205,2,no,1,110.1
+LH0496,Festac,6.47977,3.29087,bungalow,4,5,6,230,22,no,1,48.2
+LH0497,Festac,6.46166,3.28558,terrace,3,3,3,223,9,no,1,66.8
+LH0498,Magodo,6.61862,3.38361,detached duplex,6,6,7,557,5,no,6,340.2
+LH0499,Ojodu,6.64938,3.36794,flat,1,1,1,120,11,yes,1,49.1
+LH0500,Victoria Island,6.43308,3.42408,flat,1,1,2,119,8,no,1,246.5
+LH0501,Magodo,6.61702,3.37511,detached duplex,6,7,8,456,11,yes,4,315.4
+LH0502,Ajah,6.46327,3.59214,terrace,3,2,2,231,3,no,1,76.3
+LH0503,Ojodu,6.63753,3.37009,self-contain,1,1,1,38,7,no,0,11.3
+LH0504,Ojodu,6.64395,3.37795,flat,2,2,3,101,7,no,1,36.8
+LH0505,Ojodu,6.64079,3.37096,bungalow,2,2,3,111,2,no,1,38.5
+LH0506,Gbagada,6.56125,3.39375,flat,4,4,4,143,8,no,0,66.6
+LH0507,Yaba,6.52134,3.38426,flat,4,4,5,176,7,no,2,100.5
+LH0508,Lekki Phase 1,6.44193,3.48342,flat,3,3,4,131,2,no,2,132.2
+LH0509,Ikorodu,6.60262,3.50917,bungalow,3,2,3,187,5,no,1,19.3
+LH0510,Ikoyi,6.45809,3.45003,flat,3,3,3,160,16,yes,1,306.5
+LH0511,Gbagada,6.55704,3.39538,flat,3,3,4,182,2,no,0,97.6
+LH0512,Gbagada,6.5495,3.37889,terrace,3,3,4,159,10,no,3,91.6
+LH0513,Surulere,6.49427,3.35501,flat,1,1,2,86,11,yes,0,37.9
+LH0514,Surulere,6.50747,3.35456,flat,1,1,1,65,13,no,0,23.9
+LH0515,Ajah ,6.4628,3.55817,semi-detached duplex,4,4,4,355,4,yes,1,148.6
+LH0516,Ikoyi,6.46308,3.42846,terrace,4,4,5,253,1,no,3,438.3
+LH0517,Surulere,6.48782,3.34779,terrace,4,4,4,275,7,no,2,116.5
+LH0518,Gbagada,6.5525,3.39784,flat,3,3,3,107,16,no,0,49.3
+LH0519,Ikoyi,6.46297,3.43652,semi-detached duplex,5,4,5,299,7,yes,1,500
+LH0520,Ajah,6.46456,3.56055,terrace,3,2,3,219,5,no,2,93.6
+LH0521,Ikorodu,6.6201,3.50199,detached duplex,6,6,7,529,6,no,4,67.1
+LH0522,Gbagada,6.54925,3.37606,flat,4,4,5,139,7,no,0,65.8
+LH0523,Lekki Phase 1,6.451,3.46706,flat,2,2,3,99,9,yes,0,94.6
+LH0524,Ajah,6.47761,3.5672,terrace,3,3,4,250,5,no,2,65.1
+LH0525,Yaba,6.50881,3.37203,self-contain,1,1,1,32,2,no,0,12.5
+LH0526,Ajah,6.48787,3.56629,flat,4,4,4,160,17,no,1,50.4
+LH0527,Ikoyi,6.45024,3.43152,flat,1,1,1,92,8,no,2,141.0
+LH0528,Surulere,6.5087,3.35311,self-contain,1,1,1,33,5,no,0,14.8
+LH0529,Yaba,6.50544,3.38213,self-contain,1,1,1,45,7,no,1,20.6
+LH0530,Magodo,6.62879,3.37961,semi-detached duplex,4,4,5,231,8,no,2,193.2
+LH0531,Lekki Phase 1,6.44878,3.46346,detached duplex,5,4,5,501,3,yes,5,500
+LH0532,Yaba,6.4966,3.38924,flat,2,2,3,78,8,no,0,22.7
+LH0533,Magodo,6.60899,3.3802,bungalow,4,4,5,231,17,yes,1,114.9
+LH0534,Surulere,6.49883,3.34956,bungalow,3,2,2,203,6,no,2,80.5
+LH0535,Yaba,6.50465,3.3683,flat,2,2,3,77,0,no,2,30.1
+LH0536,Magodo,6.61399,3.38269,flat,2,1,1,118,5,no,2,95.9
+LH0537,Lekki Phase 1,6.44021,3.48274,terrace,4,5,6,267,18,no,2,158.0
+LH0538,Ojodu,6.63183,3.36473,bungalow,3,3,4,207,2,no,1,68.9
+LH0539,Ajah,6.46844,3.582,flat,4,4,5,156,2,no,1,75.0
+LH0540,Victoria Island,6.4382,3.41881,terrace,4,4,5,230,10,yes,1,364.8
+LH0541,Ajah,6.46032,3.57269,flat,3,3,4,177,19,yes,0,71.0
+LH0542,Lekki Phase 1,6.44726,3.47948,flat,2,2,3,123,12,no,1,107.2
+LH0543,Ojodu,6.65395,3.38037,semi-detached duplex,4,,6,280,26,no,3,82.4
+LH0544,Ikeja GRA,6.58219,3.3485,flat,2,2,2,122,2,yes,0,110.1
+LH0545,Yaba,6.51799,3.37667,flat,4,4,5,172,13,no,2,86.6
+LH0546,Gbagada,6.54664,3.38954,terrace,4,4,5,249,7,no,2,203.8
+LH0547,Ikorodu,6.61251,3.50156,self-contain,1,1,1,40,7,no,1,6.3
+LH0548,Surulere,6.50754,3.34881,bungalow,3,3,4,207,9,no,3,67.2
+LH0549,Festac,6.47555,3.2803,flat,2,2,3,111,3,no,2,45.9
+LH0550,Surulere,6.50373,3.34233,flat,2,2,3,150,21,no,2,52.0
+LH0551,Lekki Phase 1,6.46078,3.48085,terrace,3,3,4,195,17,no,2,155.3
+LH0552,Surulere,6.49829,3.36138,terrace,4,4,5,274,11,no,2,102.5
+LH0553,Ojodu,6.65294,3.38109,self-contain,1,1,1,36,9,no,0,8.8
+LH0554,Ojodu,6.63012,3.35775,self-contain,1,1,1,26,2,no,0,8.9
+LH0555,Ikeja GRA,6.56191,3.35135,semi-detached duplex,4,3,3,211,29,no,2,122.8
+LH0556,Gbagada,6.55415,3.40612,semi-detached duplex,4,4,5,221,22,no,1,97.8
+LH0557,Yaba,6.5077,3.37502,flat,4,4,5,160,5,yes,0,122.3
+LH0558,Ojodu,6.64222,3.36022,semi-detached duplex,4,3,3,270,8,no,2,107.8
+LH0559,Surulere,6.49695,3.34696,flat,2,1,2,84,5,no,1,35.7
+LH0560,Gbagada,6.56294,3.39504,flat,2,2,2,101,10,no,0,46.2
+LH0561,Ikorodu,6.6088,3.50612,bungalow,2,2,3,137,16,no,0,13.8
+LH0562,Ojodu,6.63981,3.37447,flat,4,4,5,146,3,no,3,63.8
+LH0563,Ajah,6.46872,3.55229,flat,1,1,1,57,11,no,0,16.0
+LH0564,Lekki Phase 1,6.44703,3.46918,detached duplex,4,4,4,292,4,yes,2,493.8
+LH0565,Ajah,6.46544,3.55261,terrace,4,4,5,,19,no,2,103.3
+LH0566,Ikorodu,6.62107,3.50948,self-contain,1,1,1,39,8,no,1,3.7
+LH0567,Surulere,6.4907,3.35527,flat,4,4,5,154,9,no,1,97.9
+LH0568,Magodo,6.62782,3.36004,detached duplex,6,5,6,491,8,yes,3,500
+LH0569,Surulere,6.50675,3.34025,flat,4,4,5,188,9,no,1,81.7
+LH0570,Ikoyi,6.45822,3.43393,flat,4,4,5,189,6,no,2,370.2
+LH0571,Gbagada,6.54295,3.39077,self-contain,1,1,1,28,18,no,0,10.0
+LH0572,Yaba,6.51525,3.37159,flat,2,3,3,87,8,no,1,53.7
+LH0573,Ikeja GRA,6.58822,3.35869,terrace,3,3,4,221,5,no,2,212.2
+LH0574,Ikeja GRA,6.58939,3.34893,detached duplex,5,5,6,489,23,yes,5,439.2
+LH0575,Ajah,6.46103,3.56754,terrace,3,3,3,221,5,no,2,92.1
+LH0576,Ajah,6.46656,3.58137,bungalow,3,3,3,166,25,no,2,36.2
+LH0577,Ikorodu,6.61665,3.51129,self-contain,1,1,1,31,6,no,0,4.0
+LH0578,Magodo,6.62463,3.39104,detached duplex,5,4,5,437,18,yes,3,285.6
+LH0579,Gbagada,6.55516,3.38504,semi-detached duplex,4,4,5,287,8,no,1,155.8
+LH0580,Gbagada,6.55614,3.39864,self-contain,1,1,1,,6,yes,0,29.9
+LH0581,Gbagada,6.54983,3.37497,self-contain,1,1,1,28,7,no,0,14.5
+LH0582,Victoria Island,6.42968,3.41372,terrace,4,3,4,269,9,yes,2,500
+LH0583,Ajah,6.4689,3.53469,semi-detached duplex,4,4,5,245,12,no,2,69.2
+LH0584,Victoria Island,6.43004,3.42202,flat,4,4,5,169,12,yes,2,305.1
+LH0585,Gbagada,6.55609,3.4005,flat,3,3,4,187,24,no,2,71.5
+LH0586,Festac,6.46856,3.27288,flat,1,1,2,82,19,no,0,18.2
+LH0587,Victoria Island,6.42153,3.41954,terrace,4,4,5,242,14,no,2,226.1
+LH0588,Ikorodu,6.63187,3.50603,self-contain,1,1,1,27,15,yes,1,5.1
+LH0589,Ikorodu,6.60709,3.51204,self-contain,1,1,1,37,16,no,1,4.2
+LH0590,Gbagada,6.54815,3.38996,semi-detached duplex,4,4,4,294,24,yes,2,177.2
+LH0591,Ajah,6.45031,3.57275,semi-detached duplex,4,4,5,237,7,no,2,116.8
+LH0592,Yaba,6.51277,3.37775,self-contain,1,1,1,26,3,yes,1,19.0
+LH0593,Ikorodu,6.61687,3.50661,bungalow,3,2,2,159,18,no,1,20.7
+LH0594,Ikoyi,6.4545,3.43547,flat,2,2,3,119,8,no,1,294.2
+LH0595,Ikorodu,6.60471,3.5207,detached duplex,4,3,4,334,1,no,3,74.8
+LH0596,Ikoyi,6.45083,3.42098,flat,3,2,2,183,8,yes,3,339.9
+LH0597,Ajah,6.46569,3.56003,flat,2,2,3,118,7,no,1,30.2
+LH0598,Surulere,6.49969,3.35296,bungalow,4,4,5,219,7,no,1,79.5
+LH0599,Lekki Phase 1,6.45879,3.46432,flat,2,2,2,,4,yes,0,97.1
+LH0600,Gbagada,6.56882,3.37847,flat,3,3,4,153,2,no,2,93.3
+LH0601,Lekki Phase 1,6.44691,3.45878,flat,4,4,4,129,12,yes,2,104.5
+LH0602,Gbagada,6.53689,3.39705,self-contain,1,1,1,26,9,no,1,11.6
+LH0603,Victoria Island,6.43581,3.42938,flat,2,2,3,129,14,yes,0,166.2
+LH0604,Victoria Island,6.42281,3.41961,flat,2,1,2,104,4,yes,1,228.8
+LH0605,Gbagada,6.55024,3.39005,self-contain,1,1,1,23,7,no,1,8.7
+LH0606,Yaba,6.51632,3.38996,self-contain,1,1,1,45,11,no,1,21.0
+LH0607,Festac,6.47133,3.28924,bungalow,3,3,4,111,12,no,1,21.7
+LH0608,Yaba,6.50187,3.36834,self-contain,1,1,1,31,19,no,1,15.2
+LH0609,Ojodu,6.64505,3.38301,semi-detached duplex,4,5,6,289,4,no,2,119.3
+LH0610,Ikorodu,6.6127,3.51149,self-contain,1,1,1,27,4,no,1,2.6
+LH0611,Ajah,6.46208,3.56777,flat,3,,4,142,8,yes,1,66.9
+LH0612,Festac,6.4736,3.28329,flat,1,1,2,69,0,no,1,24.4
+LH0613,Festac,6.47411,3.28343,bungalow,3,3,4,209,0,yes,1,50.8
+LH0614,Ikorodu,6.62201,3.51363,flat,3,3,4,185,8,no,2,33.2
+LH0615,Surulere,6.48441,3.34812,flat,1,1,2,73,5,no,2,28.2
+LH0616,Lekki Phase 1,6.45431,3.46275,terrace,3,3,3,267,14,yes,3,321.5
+LH0617,Lekki Phase 1,6.44685,3.46946,terrace,4,4,5,256,5,no,1,285.5
+LH0618,Ajah,6.4608,3.56223,semi-detached duplex,4,4,5,246,5,no,2,79.4
+LH0619,Ikorodu,6.60925,3.5064,flat,2,2,3,68,3,no,1,15.7
+LH0620,Magodo,6.61619,3.38756,flat,2,1,1,117,9,no,0,77.8
+LH0621,Lekki Phase 1,6.45234,3.47744,terrace,3,3,4,155,1,yes,1,156.7
+LH0622,Festac,6.47981,3.27078,self-contain,1,1,1,34,7,no,0,12.1
+LH0623,Surulere,6.48869,3.35564,self-contain,1,1,1,44,19,no,2,15.0
+LH0624,Ajah,6.47689,3.5535,bungalow,3,3,3,170,12,no,2,36.4
+LH0625,Ikorodu,6.60712,3.51022,bungalow,3,4,5,163,1,no,0,16.2
+LH0626,Surulere,6.48561,3.34304,terrace,3,3,4,166,4,yes,2,74.3
+LH0627,Lekki Phase 1,6.44473,3.47394,semi-detached duplex,5,4,5,239,3,yes,2,246.8
+LH0628,Ojodu,6.62477,3.36045,self-contain,1,1,1,38,8,yes,3,14.2
+LH0629,Festac,6.48144,3.27289,bungalow,3,4,5,221,6,no,2,78.4
+LH0630,Ojodu,6.64206,3.37515,bungalow,3,3,4,209,4,no,2,68.5
+LH0631,Lekki Phase 1,6.43965,3.47792,semi-detached duplex,4,4,5,359,4,no,2,489.3
+LH0632,Lekki Phase 1,6.45252,3.46856,terrace,4,4,5,234,6,no,2,259.4
+LH0633,Surulere,6.4938,3.36213,flat,4,4,5,181,11,no,1,87.3
+LH0634,Yaba,6.50223,3.38314,flat,4,3,4,171,0,no,2,85.0
+LH0635,Ajah ,6.48094,3.56501,flat,3,3,4,112,4,no,0,32.9
+LH0636,surulere,6.4946,3.35965,terrace,3,2,3,175,23,no,1,71.6
+LH0637,Yaba,6.5113,3.38841,flat,2,2,3,91,9,no,1,38.5
+LH0638,Ajah,6.46368,3.56832,bungalow,3,3,4,223,5,yes,2,60.6
+LH0639,Ajah,6.47884,3.56257,semi-detached duplex,4,4,4,226,9,no,3,66.3
+LH0640,Magodo,6.61834,3.36857,detached duplex,6,7,8,569,9,no,3,500
+LH0641,Yaba,6.51122,3.3837,terrace,4,4,4,259,11,no,1,113.3
+LH0642,Magodo,6.60601,3.39289,detached duplex,6,6,7,592,9,no,3,494.3
+LH0643,Magodo,6.63177,3.37886,semi-detached duplex,5,4,5,357,5,no,4,285.3
+LH0644,Surulere,6.50174,3.35242,flat,2,1,2,90,6,no,3,24.9
+LH0645,Ojodu,6.63079,3.37045,flat,2,1,2,101,18,no,0,32.1
+LH0646,Ajah,6.46123,3.5644,terrace,4,4,5,275,17,no,2,64.9
+LH0647,Festac,6.47495,3.28687,self-contain,1,1,1,26,2,no,0,11.5
+LH0648,Ikeja GRA,6.58368,3.36511,detached duplex,5,5,5,285,4,yes,4,348.8
+LH0649,Victoria Island,6.43484,3.41238,terrace,4,5,5,198,15,yes,2,349.3
+LH0650,Lekki Phase 1,6.44016,3.47711,semi-detached duplex,5,5,6,316,12,yes,2,309.2
+LH0651,Ojodu,6.64629,3.38154,self-contain,1,1,1,43,10,no,0,12.2
+LH0652,Surulere,6.51045,3.34888,flat,3,3,3,151,7,no,1,66.1
+LH0653,Ikorodu,6.62642,3.51539,bungalow,4,4,4,244,6,yes,1,34.9
+LH0654,Lekki Phase 1,6.44897,3.48445,flat,1,1,2,69,16,no,1,65.1
+LH0655,Festac,6.45102,3.28423,terrace,4,4,4,259,9,no,1,102.7
+LH0656,Ikeja GRA,6.56726,3.35027,detached duplex,6,5,5,576,7,yes,5,500
+LH0657,Ajah,6.46189,3.5612,flat,1,1,1,70,16,yes,0,30.7
+LH0658,Ajah,6.47513,3.56004,bungalow,2,1,2,109,10,no,0,36.0
+LH0659,Ajah,6.46024,3.56157,bungalow,3,2,3,200,11,yes,2,55.8
+LH0660,Yaba,6.5098,3.37752,terrace,4,5,6,248,5,no,1,129.4
+LH0661,Ajah,6.46243,3.55079,flat,4,4,4,168,8,no,0,53.5
+LH0662,Festac,6.46065,3.28156,bungalow,2,2,2,188,11,yes,2,60.1
+LH0663,Lekki Phase 1,6.43121,3.47594,detached duplex,4,5,5,286,3,yes,2,500
+LH0664,Ojodu,6.6351,3.37276,bungalow,3,3,3,208,2,no,1,96.1
+LH0665,Lekki Phase 1,6.44706,3.47292,detached duplex,5,5,5,427,3,yes,4,500
+LH0666,Lekki Phase 1,6.45372,3.48777,detached duplex,4,4,5,362,3,yes,2,500
+LH0667,Lekki Phase 1,6.44661,3.47936,terrace,3,3,4,165,3,yes,0,201.1
+LH0668,Festac,6.4529,3.28535,flat,1,2,3,,20,no,1,19.4
+LH0669,Ojodu,6.63212,3.36185,semi-detached duplex,5,6,6,222,20,no,1,84.0
+LH0670,Surulere,6.49729,3.36455,flat,3,3,4,157,14,no,1,64.2
+LH0671,Gbagada,6.54851,3.38574,flat,3,3,3,171,19,no,1,95.3
+LH0672,Magodo,6.62203,3.37145,bungalow,4,5,5,202,6,no,3,143.4
+LH0673,Festac,6.465,3.28804,terrace,4,4,5,244,6,yes,3,77.0
+LH0674,Lekki Phase 1,6.44187,3.46805,flat,2,2,3,136,7,yes,1,182.2
+LH0675,Ikoyi,6.44501,3.43288,flat,3,2,2,154,14,no,2,415.0
+LH0676,Lekki Phase 1,6.4491,3.48926,flat,4,4,5,176,7,no,1,159.9
+LH0677,Surulere,6.50426,3.36083,flat,2,2,3,68,40,no,1,26.0
+LH0678,Victoria Island,6.42026,3.43522,flat,3,3,4,163,5,no,1,246.5
+LH0679,Magodo,6.6156,3.39863,bungalow,4,4,5,222,18,no,2,112.7
+LH0680,Yaba,6.50115,3.3835,self-contain,1,1,1,34,11,no,1,17.7
+LH0681,Festac,6.47703,3.27539,flat,4,4,5,187,7,yes,2,55.8
+LH0682,Lekki Phase 1,6.44874,3.46421,terrace,4,4,4,266,6,yes,2,175.3
+LH0683,Ikeja GRA,6.57255,3.35997,flat,1,1,2,100,19,yes,1,71.7
+LH0684,Lekki Phase 1,6.45278,3.46614,flat,3,3,4,115,3,yes,0,115.4
+LH0685,Ikorodu,6.61186,3.50562,bungalow,4,4,4,254,5,no,3,33.3
+LH0686,Ikoyi,6.46638,3.41882,flat,1,1,2,71,17,yes,0,125.0
+LH0687,Yaba,6.49789,3.38091,flat,2,3,4,142,6,no,1,68.3
+LH0688,Lekki Phase 1,6.43836,3.47012,terrace,4,4,5,278,6,no,2,354.5
+LH0689,Ikoyi,6.45016,3.43162,semi-detached duplex,4,4,5,230,3,yes,2,485.8
+LH0690,Ikorodu,6.61573,3.5124,self-contain,1,1,1,29,13,no,0,2.9
+LH0691,Yaba,6.50885,3.36764,terrace,4,4,5,187,26,no,1,74.0
+LH0692,Yaba,6.5115,3.37925,flat,3,3,4,154,19,no,0,53.7
+LH0693,Yaba,6.52223,3.36905,self-contain,1,1,1,38,16,no,0,18.4
+LH0694,Yaba,6.51256,3.39199,self-contain,1,1,1,41,18,yes,0,15.0
+LH0695,Gbagada,6.56281,3.39488,flat,3,2,3,154,11,yes,1,104.8
+LH0696,Lekki Phase 1,6.43958,3.49245,terrace,3,3,4,169,11,no,2,169.1
+LH0697,Gbagada,6.54577,3.39928,flat,4,4,4,180,7,no,2,63.8
+LH0698,Ojodu,6.64451,3.38024,flat,2,2,3,89,32,no,1,18.8
+LH0699,Ikoyi,6.44811,3.4395,detached duplex,4,5,5,319,2,no,4,500
+LH0700,Ikoyi,6.45335,3.42885,semi-detached duplex,4,4,4,258,6,no,2,383.2
+LH0701,Magodo,6.62341,3.38289,semi-detached duplex,4,3,4,211,11,no,2,136.9
+LH0702,Ikorodu,6.61393,3.51494,bungalow,3,2,3,174,18,no,1,16.8
+LH0703,Victoria Island,6.43254,3.42852,flat,2,2,3,110,9,no,0,178.5
+LH0704,Ojodu,6.65926,3.3586,bungalow,3,3,4,184,4,yes,0,63.8
+LH0705,Yaba,6.51605,3.39014,terrace,3,3,4,216,3,no,0,107.8
+LH0706,Ikorodu,6.6227,3.50204,bungalow,3,3,4,227,11,no,2,24.9
+LH0707,Lekki Phase 1,6.45636,3.47819,flat,3,3,4,139,7,yes,0,180.7
+LH0708,Ojodu,6.65413,3.3592,flat,2,2,3,68,4,no,0,29.6
+LH0709,Ikoyi,6.45255,3.43616,flat,3,2,3,110,15,yes,1,193.7
+LH0710,Victoria Island,6.42783,3.42452,semi-detached duplex,5,5,6,303,1,yes,3,500
+LH0711,Magodo,6.62449,3.3872,semi-detached duplex,5,5,6,275,7,yes,3,299.0
+LH0712,Surulere,6.49128,3.35617,flat,3,2,3,144,10,no,1,51.3
+LH0713,Ojodu,6.65887,3.38134,flat,2,2,3,129,8,no,2,32.5
+LH0714,Victoria Island,6.42877,3.42121,terrace,4,3,4,242,13,no,1,288.8
+LH0715,Ikorodu,6.61041,3.50168,self-contain,1,1,1,27,16,yes,0,4.4
+LH0716,Ikeja GRA,6.57113,3.36712,semi-detached duplex,5,4,5,270,27,no,3,163.3
+LH0717,Ajah,6.45173,3.57294,flat,2,2,3,61,2,no,0,24.4
+LH0718,Gbagada,6.53842,3.39301,flat,3,4,4,138,9,yes,1,91.2
+LH0719,Magodo,6.62681,3.38375,flat,3,2,3,136,2,no,1,102.8
+LH0720,Lekki Phase 1,6.46178,3.48664,terrace,3,3,3,222,8,no,1,276.4
+LH0721,Surulere,6.49085,3.35894,flat,3,3,3,179,21,no,2,55.1
+LH0722,Ojodu,6.64494,3.36456,flat,2,1,2,71,7,no,0,23.9
+LH0723,Magodo,6.63378,3.36864,flat,3,3,4,131,3,yes,1,114.5
+LH0724,Lekki Phase 1,6.44049,3.47067,terrace,3,3,4,242,3,yes,4,271.8
+LH0725,Magodo,6.61257,3.3775,detached duplex,5,5,5,387,7,no,2,395.1
+LH0726,Surulere,6.50459,3.36384,flat,4,3,4,181,6,no,1,94.4
+LH0727,Lekki Phase 1,6.45077,3.46739,terrace,4,4,5,222,10,yes,1,225.3
+LH0728,Ajah,6.468,3.56477,bungalow,2,2,3,100,8,no,2,22.4
+LH0729,Ojodu,6.64328,3.35963,flat,4,4,5,137,6,no,1,45.1
+LH0730,Surulere,6.50443,3.36771,self-contain,1,1,1,44,9,no,0,17.7
+LH0731,Ikeja GRA,6.58739,3.3307,semi-detached duplex,5,5,6,325,16,yes,2,308.1
+LH0732,Gbagada,6.5483,3.39107,flat,3,,4,96,7,no,0,48.6
+LH0733,Yaba,6.51729,3.36578,flat,1,1,2,71,9,no,1,33.9
+LH0734,Ikoyi,6.45039,3.43144,flat,2,2,3,119,16,no,0,165.0
+LH0735,Festac,6.47775,3.28313,flat,3,3,3,,1,no,2,62.6
+LH0736,Ojodu,6.63972,3.37707,flat,4,4,5,186,8,yes,2,90.1
+LH0737,Ikorodu,6.60949,3.49665,bungalow,3,3,3,132,14,no,1,18.1
+LH0738,Lekki Phase 1,6.44498,3.47092,semi-detached duplex,5,5,6,297,10,yes,2,330.4
+LH0739,Ajah,6.45725,3.57179,flat,3,3,4,144,9,no,1,58.5
+LH0740,Ikoyi,6.44825,3.43016,terrace,4,4,5,263,2,no,3,500
+LH0741,Magodo,6.61218,3.38429,bungalow,2,2,3,99,3,no,1,48.8
+LH0742,Festac,6.46289,3.2809,flat,3,3,4,152,4,no,2,51.7
+LH0743,Gbagada,6.56468,3.38507,semi-detached duplex,4,4,5,242,4,no,2,117.4
+LH0744,Ojodu,6.63324,3.37583,semi-detached duplex,4,4,5,253,0,no,3,128.4
+LH0745,Yaba,6.51778,3.37949,terrace,3,3,4,267,2,no,2,146.8
+LH0746,Ajah,6.46491,3.58059,flat,1,1,2,71,11,no,0,22.6
+LH0747,Ikeja GRA,6.57234,3.36605,detached duplex,4,4,5,265,4,no,1,349.6
+LH0748,Ikeja GRA,6.57622,3.35453,semi-detached duplex,4,4,5,289,7,no,3,264.9
+LH0749,Ikorodu,6.60761,3.51617,bungalow,3,3,4,221,3,no,1,25.9
+LH0750,Festac,6.47831,3.2818,bungalow,3,3,4,99,14,yes,0,24.6
+LH0751,Ojodu,6.65346,3.3609,flat,3,2,3,128,10,no,1,58.5
+LH0752,Surulere,6.49187,3.34157,flat,2,2,3,88,5,no,0,31.1
+LH0753,Magodo,6.63363,3.37913,detached duplex,6,6,6,579,5,no,5,500
+LH0754,Ikoyi,6.45466,3.4322,flat,3,2,3,131,19,yes,1,159.9
+LH0755,Gbagada,6.56369,3.40558,terrace,3,3,3,230,11,yes,1,120.6
+LH0756,Surulere,6.51781,3.35606,flat,1,1,1,104,3,no,0,46.5
+LH0757,Festac,6.47227,3.27789,flat,2,2,3,90,3,no,1,28.1
+LH0758,Ajah,6.46355,3.5634,terrace,4,4,4,238,13,no,3,58.2
+LH0759,Surulere,6.49766,3.37254,terrace,3,4,5,195,16,no,2,73.9
+LH0760,Lekki Phase 1,6.44766,3.48981,terrace,4,4,5,260,7,yes,3,316.1
+LH0761,Ajah,6.4634,3.55851,bungalow,3,2,3,193,2,no,2,67.6
+LH0762,Ojodu,6.63806,3.37447,bungalow,2,2,3,160,14,no,1,58.8
+LH0763,Ikoyi,6.45603,3.44377,flat,1,1,2,55,11,yes,1,75.2
+LH0764,Lekki Phase 1,6.44638,3.46387,terrace,4,4,4,229,4,no,0,308.8
+LH0765,Ojodu,6.63209,3.38004,self-contain,1,1,1,32,2,no,1,14.0
+LH0766,Gbagada,6.54801,3.38209,semi-detached duplex,4,3,3,334,11,yes,2,227.4
+LH0767,Ojodu,6.64034,3.36748,bungalow,4,4,5,256,13,yes,1,93.4
+LH0768,Ajah,6.47404,3.55454,bungalow,3,3,4,126,6,no,1,30.1
+LH0769,Gbagada,6.55112,3.38322,self-contain,1,1,1,42,9,no,1,20.4
+LH0770,Yaba,6.50055,3.37922,self-contain,1,1,1,35,14,no,0,17.3
+LH0771,Ajah,6.46583,3.56338,flat,1,1,1,79,7,no,0,20.9
+LH0772,Ajah,6.46098,3.5732,flat,1,1,1,58,4,no,0,25.0
+LH0773,Ajah,6.46121,3.56006,flat,2,2,3,88,0,no,1,35.6
+LH0774,Ikeja GRA,6.57186,3.35591,flat,1,1,2,66,13,yes,0,55.0
+LH0775,Gbagada,6.54465,3.38654,terrace,3,4,5,191,6,no,0,92.8
+LH0776,Yaba,6.51646,3.36762,flat,4,4,5,175,13,yes,1,84.7
+LH0777,Ajah,6.46761,3.57274,terrace,3,3,4,,8,no,2,67.9
+LH0778,Ikorodu,6.61767,3.50493,bungalow,4,4,5,232,21,no,3,23.2
+LH0779,Ikoyi,6.43528,3.44486,terrace,4,4,4,261,6,yes,1,398.0
+LH0780,Lekki Phase 1,6.43952,3.48418,flat,3,3,4,89,0,yes,1,103.8
+LH0781,Ikeja GRA,6.57494,3.36628,semi-detached duplex,5,5,5,260,14,yes,2,259.4
+LH0782,Ikeja GRA,6.59638,3.35977,flat,1,1,1,77,4,yes,0,80.7
+LH0783,Ikorodu,6.62343,3.52012,detached duplex,6,6,7,563,3,no,5,131.1
+LH0784,Festac,6.47934,3.29881,flat,3,2,2,159,4,no,2,62.5
+LH0785,Festac,6.46791,3.29028,bungalow,2,2,3,93,4,no,2,25.8
+LH0786,Ikeja GRA,6.57914,3.35992,terrace,3,2,3,182,41,no,2,92.8
+LH0787,Ojodu,6.64225,3.36351,bungalow,3,3,4,92,5,no,0,24.3
+LH0788,Yaba,6.52435,3.36602,flat,4,3,4,170,11,no,2,66.0
+LH0789,Lekki Phase 1,6.44638,3.47361,semi-detached duplex,4,3,3,225,14,yes,2,287.2
+LH0790,Festac,6.46517,3.28238,flat,3,4,5,152,5,yes,2,73.2
+LH0791,Festac,6.46984,3.26737,terrace,3,3,4,191,1,no,1,61.3
+LH0792,Ajah,6.46556,3.55772,terrace,4,4,4,193,7,no,2,60.8
+LH0793,Surulere,6.50913,3.37693,flat,1,1,1,61,13,no,2,29.2
+LH0794,Ikeja GRA,6.5841,3.35127,flat,1,1,2,70,12,no,2,57.5
+LH0795,Ajah,6.4654,3.5696,semi-detached duplex,5,5,5,353,9,yes,4,161.9
+LH0796,Festac,6.46039,3.27672,flat,3,3,4,140,12,no,1,45.0
+LH0797,Festac,6.4675,3.2946,bungalow,3,3,4,145,19,no,2,37.5
+LH0798,Yaba,6.50686,3.38103,flat,2,1,1,98,2,no,1,42.1
+LH0799,Yaba,6.51179,3.38726,flat,3,3,4,140,18,no,1,64.5
+LH0800,Ajah,6.45589,3.56361,terrace,3,2,3,245,9,no,2,128.7
+LH0801,Ikoyi,6.45796,3.43277,flat,3,3,4,139,13,no,1,215.6
+LH0802,Ikeja GRA,6.57626,3.35665,terrace,4,4,4,162,9,yes,0,169.1
+LH0803,Ikeja GRA,6.56478,3.34864,terrace,3,3,4,208,11,no,2,216.4
+LH0804,Ojodu,6.64439,3.36248,flat,2,2,2,134,1,no,1,48.0
+LH0805,Surulere,6.49852,3.35618,flat,3,3,4,132,3,no,2,57.1
+LH0806,Lekki Phase 1,6.44087,3.48264,detached duplex,6,6,6,578,21,yes,5,500
+LH0807,Ajah,6.47099,3.56459,flat,2,3,4,113,9,no,2,34.6
+LH0808,Gbagada,6.55491,3.39628,self-contain,1,1,1,45,30,no,0,16.4
+LH0809,Lekki Phase 1,6.44256,3.47988,terrace,4,4,5,265,8,no,3,248.3
+LH0810,Lekki Phase 1,6.44774,3.4753,detached duplex,4,4,5,356,25,yes,4,327.5
+LH0811,Lekki Phase 1,6.4472,3.463,terrace,4,4,5,194,9,yes,0,279.4
+LH0812,Yaba,6.51274,3.39188,flat,3,3,4,150,15,no,0,66.2
+LH0813,Ajah,6.46338,3.57301,semi-detached duplex,5,4,4,271,8,yes,3,120.5
+LH0814,Festac,6.46652,3.28973,bungalow,3,2,3,111,19,no,2,23.6
+LH0815,Surulere,6.51665,3.34279,flat,2,2,3,72,12,no,1,28.7
+LH0816,Gbagada,6.56069,3.37462,terrace,4,3,4,238,14,no,3,125.8
+LH0817,Ajah,6.48318,3.56203,flat,3,2,2,185,9,no,1,38.8
+LH0818,Gbagada,6.54773,3.38031,flat,3,3,4,123,10,yes,2,106.3
+LH0819,Gbagada,6.5513,3.38245,flat,2,2,3,94,9,no,1,45.1
+LH0820,Surulere,6.50269,3.35139,flat,3,4,4,136,5,no,1,62.3
+LH0821,Festac,6.47307,3.28016,flat,2,2,3,71,15,no,2,18.3
+LH0822,Ikeja GRA,6.5969,3.34355,flat,1,1,2,83,10,yes,0,46.8
+LH0823,Yaba,6.50342,3.38327,flat,3,3,4,150,4,yes,2,81.1
+LH0824,Gbagada,6.55821,3.37571,self-contain,1,1,1,41,9,no,0,15.7
+LH0825,Ajah,6.45204,3.57333,bungalow,3,4,5,133,18,no,2,25.2
+LH0826,Ajah,6.46773,3.58028,semi-detached duplex,4,3,3,316,3,no,3,136.5
+LH0827,Ojodu,6.6404,3.37076,flat,2,2,2,117,16,no,0,36.0
+LH0828,Festac,6.4672,3.29208,flat,2,3,3,115,12,no,1,32.6
+LH0829,Gbagada,6.54276,3.38549,self-contain,1,1,1,37,11,no,1,13.5
+LH0830,Magodo,6.61284,3.38275,flat,1,1,2,56,6,no,2,41.6
+LH0831,Ikeja GRA,6.59377,3.34157,semi-detached duplex,4,4,5,240,10,yes,3,190.3
+LH0832,Lekki Phase 1,6.43816,3.47164,detached duplex,5,5,5,428,1,yes,4,500
+LH0833,Surulere,6.5053,3.36753,bungalow,3,3,3,243,5,no,2,87.9
+LH0834,Yaba,6.51019,3.38565,self-contain,1,1,1,31,27,no,1,6.8
+LH0835,Ikeja Gra,6.57228,3.35999,detached duplex,5,5,5,369,11,yes,4,330.9
+LH0836,Festac,6.47359,3.28253,terrace,4,4,5,235,7,no,3,90.4
+LH0837,Lekki Phase 1,6.45238,3.46764,terrace,3,3,4,197,0,no,1,216.7
+LH0838,Gbagada,6.56135,3.39251,self-contain,1,2,2,22,4,no,0,7.8
+LH0839,Ikorodu,6.60471,3.51469,bungalow,4,4,4,240,6,no,2,34.6
+LH0840,Ikorodu,6.61475,3.49787,self-contain,1,1,1,32,29,no,1,2.3
+LH0841,Yaba,6.49921,3.3693,flat,4,5,6,163,27,no,2,55.6
+LH0842,Surulere,6.50609,3.35365,self-contain,1,2,2,40,10,no,0,13.9
+LH0843,Yaba,6.4999,3.38859,terrace,3,4,4,237,11,no,3,108.6
+LH0844,Gbagada,6.56078,3.38722,flat,1,1,1,78,10,no,1,36.3
+LH0845,Lekki Phase 1,6.45433,3.48401,flat,3,3,3,125,6,yes,2,145.3
+LH0846,Lekki Phase 1,6.44268,3.47481,semi-detached duplex,4,4,5,322,3,no,3,362.4
+LH0847,Gbagada,6.54918,3.37771,terrace,3,2,3,264,8,no,2,107.8
+LH0848,Ikoyi,6.45642,3.44053,flat,2,1,1,88,16,no,0,104.0
+LH0849,Gbagada,6.54982,3.37926,semi-detached duplex,5,5,6,337,7,no,2,165.3
+LH0850,Gbagada,6.5525,3.38229,self-contain,1,1,1,29,11,yes,1,15.7
+LH0851,Festac,6.46486,3.27883,terrace,4,4,5,218,9,no,1,55.5
+LH0852,Ikoyi,6.45486,3.44417,detached duplex,5,5,5,528,4,yes,5,500
+LH0853,Ikorodu,6.62163,3.51695,self-contain,1,1,1,33,6,no,0,4.6
+LH0854,Lekki Phase 1,6.46354,3.47549,flat,3,3,3,159,20,yes,1,114.8
+LH0855,Gbagada,6.56361,3.39336,self-contain,1,1,1,40,4,no,0,25.1
+LH0856,Magodo,6.61364,3.38291,flat,1,1,2,108,13,no,0,63.9
+LH0857,Ajah,6.46776,3.56741,bungalow,3,3,3,156,4,no,2,38.2
+LH0858,Ikeja GRA,6.5961,3.35537,flat,2,2,2,1340,2,no,0,105.4
+LH0859,Surulere,6.50438,3.35718,terrace,4,4,4,257,2,yes,2,142.3
+LH0860,Surulere,6.50568,3.35162,flat,1,1,1,96,17,no,0,30.6
+LH0861,Ikoyi,6.45533,3.44134,terrace,3,3,3,171,11,no,2,444.9
+LH0862,Gbagada,6.5516,3.39857,terrace,3,3,4,166,3,no,1,84.1
+LH0863,Festac,6.46816,3.28857,bungalow,3,4,5,230,3,no,1,58.3
+LH0864,Ikeja GRA,6.57357,3.35402,semi-detached duplex,4,4,5,267,1,yes,3,313.3
+LH0865,Ikorodu,6.61803,3.50427,self-contain,1,1,1,30,11,no,0,4.4
+LH0866,Magodo,6.61169,3.36784,semi-detached duplex,4,4,5,290,7,no,2,223.3
+LH0867,Ajah,6.48073,3.567,terrace,4,4,5,194,3,yes,2,87.6
+LH0868,Ajah,6.46906,3.56553,flat,3,3,3,173,2,no,0,71.7
+LH0869,Lekki Phase 1,6.4525,3.47459,terrace,3,3,4,253,19,no,3,294.9
+LH0870,Yaba,6.51247,3.3872,self-contain,1,2,2,32,20,no,0,13.1
+LH0871,Gbagada,6.56322,3.38823,flat,3,2,3,,7,no,0,75.4
+LH0872,Ikeja GRA,6.57543,3.35932,flat,1,1,2,57,3,no,2,46.9
+LH0873,Ikeja GRA,6.5657,3.34773,flat,2,3,3,116,4,yes,1,111.6
+LH0874,Lekki Phase 1,6.4496,3.47715,flat,3,3,4,82,19,yes,0,56.2
+LH0875,Festac,6.47704,3.29016,bungalow,3,3,4,252,3,yes,2,87.3
+LH0876,Festac,6.46058,3.27903,bungalow,4,4,4,165,10,no,1,51.0
+LH0877,Surulere,6.49235,3.35069,flat,3,3,4,126,6,yes,1,52.7
+LH0878,Ojodu,6.6341,3.38345,bungalow,4,3,4,186,2,no,0,100.9
+LH0879,Surulere,6.49665,3.35959,flat,3,3,3,161,5,no,2,77.5
+LH0880,Gbagada,6.54678,3.38839,terrace,3,3,4,189,12,no,1,120.6
+LH0881,Yaba,6.5003,3.37659,flat,2,2,2,105,10,no,2,37.6
+LH0882,Festac,6.47774,3.27257,flat,3,3,3,103,3,no,1,40.0
+LH0883,Ikorodu,6.63555,3.49757,flat,2,2,2,99,15,no,1,13.6
+LH0884,Magodo,6.62449,3.38641,flat,2,1,2,62,8,no,0,48.2
+LH0885,Gbagada,6.55431,3.3869,semi-detached duplex,4,4,5,248,7,yes,0,127.0
+LH0886,Victoria Island,6.42737,3.4238,semi-detached duplex,5,5,6,206,38,no,1,286.9
+LH0887,Lekki Phase 1,6.4515,3.46812,flat,4,4,5,179,19,yes,2,174.5
+LH0888,Ajah,6.46366,3.56554,semi-detached duplex,5,5,6,231,9,no,2,77.4
+LH0889,Magodo,6.62517,3.39169,detached duplex,4,4,5,291,27,no,2,154.8
+LH0890,Surulere,6.48223,3.3547,self-contain,1,1,1,26,4,no,2,15.6
+LH0891,Ajah,6.46239,3.56583,flat,4,4,5,161,19,no,2,49.5
+LH0892,Surulere,6.49923,3.34823,flat,3,3,3,152,13,yes,0,58.0
+LH0893,Lekki Phase 1,6.45434,3.4699,flat,3,2,3,169,14,no,2,157.5
+LH0894,Ajah,6.47479,3.55931,bungalow,4,4,5,167,22,no,2,35.4
+LH0895,Ajah,6.45919,3.54778,bungalow,4,4,5,138,14,no,1,33.5
+LH0896,Magodo,6.62296,3.39764,flat,2,1,2,119,3,no,1,60.0
+LH0897,Magodo,6.63761,3.37144,bungalow,3,3,3,205,12,no,3,104.0
+LH0898,Ikorodu,6.61848,3.51087,bungalow,2,2,3,125,6,no,1,14.3
+LH0899,Festac,6.47709,3.27407,bungalow,2,2,2,131,7,no,2,51.7
+LH0900,Ajah,6.4704,3.54846,semi-detached duplex,5,4,5,350,15,no,2,105.3
+LH0901,Ikeja GRA,6.58982,3.3486,terrace,4,4,5,275,16,no,1,219.1
+LH0902,Ojodu,6.65069,3.37264,semi-detached duplex,5,4,5,308,15,no,2,92.2
+LH0903,Lekki Phase 1,6.44022,3.47404,semi-detached duplex,4,4,5,278,26,yes,2,293.0
+LH0904,Ojodu,6.63941,3.36269,flat,2,1,2,99,9,no,2,32.4
+LH0905,Magodo,6.62557,3.38668,flat,3,3,3,178,2,no,2,124.1
+LH0906,Magodo,6.62226,3.38252,semi-detached duplex,4,4,5,247,16,no,3,185.6
+LH0907,Magodo,6.62898,3.37982,semi-detached duplex,4,4,4,222,2,no,1,138.3
+LH0908,Magodo,6.61481,3.37636,flat,4,5,6,155,11,no,3,94.3
+LH0909,Lekki Phase 1,6.43108,3.47176,terrace,4,4,5,267,1,no,1,400.7
+LH0910,Ojodu,6.64646,3.36634,bungalow,3,3,4,134,7,no,1,38.0
+LH0911,Ikorodu,6.61854,3.51571,bungalow,2,3,4,103,25,no,0,9.5
+LH0912,Victoria Island,6.42744,3.41872,flat,1,1,1,56,7,no,1,67.4
+LH0913,Ojodu,6.63381,3.35941,flat,1,1,2,97,6,no,1,37.9
+LH0914,Yaba,6.51265,3.37762,self-contain,1,1,1,23,1,no,0,9.8
+LH0915,Magodo,6.61999,3.38718,detached duplex,5,5,6,564,20,no,6,292.2
+LH0916,Surulere,6.50049,3.35856,self-contain,1,1,1,41,17,no,0,12.7
+LH0917,Magodo,6.62766,3.38423,bungalow,4,4,5,241,9,no,4,135.9
+LH0918,Festac,6.48921,3.28893,flat,3,3,3,176,6,no,2,62.1
+LH0919,Magodo,6.62578,3.38132,flat,4,5,5,169,10,no,3,119.4
+LH0920,Surulere,6.4901,3.35811,flat,2,3,3,98,2,no,0,55.8
+LH0921,Yaba,6.51071,3.38832,flat,3,3,4,156,11,no,2,80.7
+LH0922,Gbagada,6.54672,3.38698,flat,2,2,3,125,13,yes,0,45.4
+LH0923,V.I.,6.42096,3.43122,terrace,3,2,3,230,10,yes,2,307.0
+LH0924,Ikeja GRA,6.5658,3.36603,flat,2,2,3,89,12,yes,0,56.6
+LH0925,Ikeja GRA,6.57374,3.34403,flat,4,3,3,153,1,no,2,140.3
+LH0926,Ajah,6.47497,3.57118,bungalow,3,3,3,191,21,no,1,38.2
+LH0927,Gbagada,6.55742,3.40137,self-contain,1,1,1,34,13,yes,0,17.0
+LH0928,Ojodu,6.62583,3.36907,flat,2,2,3,83,12,no,1,35.8
+LH0929,Yaba,6.51651,3.38137,flat,1,1,2,70,15,yes,0,32.9
+LH0930,Yaba,6.50876,3.39136,self-contain,1,1,1,30,13,no,0,10.7
+LH0931,Festac,6.46427,3.29161,self-contain,1,1,1,22,24,no,1,4.3
+LH0932,Yaba,6.51349,3.38067,self-contain,1,1,1,34,7,no,1,15.4
+LH0933,Ikeja GRA,6.58122,3.35212,flat,2,2,2,79,14,yes,1,87.5
+LH0934,Surulere,6.48664,3.35874,flat,2,2,3,119,6,no,1,60.5
+LH0935,Ojodu,6.65555,3.36054,flat,2,2,3,132,7,yes,0,38.3
+LH0936,Ikorodu,6.61009,3.51269,self-contain,1,1,1,23,18,no,0,2.2
+LH0937,Lekki Phase 1,6.4624,3.47558,flat,2,2,3,78,7,no,0,62.8
+LH0938,Victoria Island,6.41679,3.42309,flat,1,1,2,73,7,no,0,111.4
+LH0939,Gbagada,6.5476,3.37938,flat,3,2,3,146,8,no,0,72.0
+LH0940,Ikoyi,6.45541,3.43438,terrace,3,2,3,161,8,yes,2,368.2
+LH0941,Surulere,6.48922,3.34686,bungalow,3,3,4,140,5,yes,1,70.2
+LH0942,Lekki Phase 1,6.4441,3.46448,flat,2,2,2,90,5,no,0,106.8
+LH0943,Ikeja GRA,6.57767,3.34848,detached duplex,6,5,5,541,7,yes,5,500
+LH0944,Ajah,6.46118,3.57629,flat,4,5,6,143,7,yes,3,46.2
+LH0945,Gbagada,6.54135,3.37068,flat,3,3,4,161,11,no,0,91.1
+LH0946,Surulere,6.5093,3.35629,flat,3,3,4,158,9,no,1,55.6
+LH0947,Ojodu,6.64525,3.36004,bungalow,3,4,4,187,4,yes,2,68.7
+LH0948,Lekki Phase 1,6.44313,3.47686,flat,2,2,3,137,10,no,0,137.6
+LH0949,Ajah,6.46397,3.57167,terrace,4,3,3,242,6,yes,2,99.0
+LH0950,Victoria Island,6.43047,3.42558,flat,1,1,2,82,12,yes,1,115.3
+LH0951,Ajah,6.46804,3.57125,terrace,4,4,5,267,20,no,3,83.8
+LH0952,Ajah,6.47278,3.56363,semi-detached duplex,5,5,6,302,4,no,4,106.6
+LH0953,Yaba,6.50706,3.36777,flat,2,2,2,,14,no,2,29.3
+LH0954,Gbagada,6.55275,3.37986,terrace,3,3,4,163,13,no,1,79.3
+LH0955,lekki phase 1,6.45233,3.4646,detached duplex,6,6,7,418,8,no,3,441.0
+LH0956,Ajah,6.46241,3.56267,bungalow,3,3,4,143,4,no,2,44.1
+LH0957,Ajah,6.46754,3.5642,bungalow,4,4,5,241,17,no,3,64.3
+LH0958,Ikoyi,6.46412,3.424,terrace,3,3,4,186,3,yes,2,287.8
+LH0959,Victoria Island,6.41377,3.43815,flat,4,4,5,164,5,no,0,254.2
+LH0960,Festac,6.47108,3.28291,self-contain,1,1,1,35,1,no,0,14.4
+LH0961,Gbagada,6.55528,3.39422,flat,2,2,2,94,14,no,2,57.1
+LH0962,Ikorodu,6.60581,3.50365,bungalow,4,4,5,249,9,no,3,29.8
+LH0963,Lekki Phase 1,6.46045,3.46554,flat,2,3,4,115,16,yes,2,88.2
+LH0964,Yaba,6.50524,3.39644,flat,2,1,2,62,16,no,1,19.1
+LH0965,Victoria Island,6.4119,3.41163,detached duplex,6,6,6,547,14,yes,6,500
+LH0966,Ikeja GRA,6.58407,3.35117,flat,3,3,4,165,14,no,1,110.7
+LH0967,Surulere,6.51004,3.36549,flat,2,2,3,113,4,no,2,58.8
+LH0968,Magodo,6.62326,3.3842,semi-detached duplex,4,5,6,280,4,yes,2,227.6
+LH0969,Ojodu,6.63914,3.36748,bungalow,2,2,2,112,43,no,2,17.8
+LH0970,Lekki Phase 1,6.45293,3.4813,flat,2,2,3,66,12,yes,1,60.7
+LH0971,Lekki Phase 1,6.45049,3.46667,terrace,3,4,5,215,17,no,1,137.5
+LH0972,Ajah,6.46163,3.57301,flat,1,1,1,56,10,no,1,24.5
+LH0973,Surulere,6.50728,3.36683,terrace,4,4,4,246,7,no,1,114.8
+LH0974,Magodo,6.6164,3.38505,flat,2,2,2,,9,no,2,89.9
+LH0975,Lekki Phase 1,6.43596,3.47628,terrace,4,4,5,226,7,no,2,223.9
+LH0976,Magodo,6.61159,3.37969,semi-detached duplex,5,5,5,309,7,no,3,255.6
+LH0977,Yaba,6.50504,3.37488,terrace,3,2,3,155,4,yes,2,89.7
+LH0978,Victoria Island,6.44279,3.43734,flat,1,1,2,72,5,yes,1,112.3
+LH0979,Ajah,6.45845,3.55836,bungalow,2,3,4,156,24,no,1,42.6
+LH0980,Gbagada,6.56127,3.39497,flat,2,2,3,126,8,no,2,62.3
+LH0981,Yaba,6.50704,3.39631,self-contain,1,1,1,32,7,no,0,12.4
+LH0982,Ikeja GRA,6.59218,3.36497,flat,2,2,2,115,7,yes,1,100.5
+LH0983,Yaba,6.51367,3.37887,flat,3,2,3,154,11,no,2,46.6
+LH0984,Ajah,6.45946,3.57273,semi-detached duplex,5,5,6,280,1,no,3,109.8
+LH0985,Ikoyi,6.45134,3.44045,flat,2,2,3,92,3,yes,1,183.9
+LH0986,Magodo,6.62084,3.38023,flat,4,3,4,165,30,no,2,67.8
+LH0987,Surulere,6.50688,3.36768,bungalow,3,3,4,151,5,no,2,53.3
+LH0988,Ikeja GRA,6.58182,3.3564,semi-detached duplex,5,4,5,282,34,yes,3,172.9
+LH0989,Magodo,6.62942,3.39179,detached duplex,4,4,5,272,25,no,3,117.8
+LH0990,Ikeja GRA,6.5912,3.3514,semi-detached duplex,5,5,6,277,6,no,2,239.2
+LH0991,Lekki Phase 1,6.45102,3.49141,detached duplex,6,6,6,516,13,yes,4,500
+LH0992,Lekki Phase 1,6.44858,3.46826,flat,3,3,4,158,9,no,1,204.8
+LH0993,Ajah,6.46199,3.57254,terrace,4,4,5,271,2,no,1,75.0
+LH0994,Yaba,6.50177,3.38091,flat,1,1,1,64,11,no,0,33.8
+LH0995,Magodo,6.62068,3.36962,semi-detached duplex,5,5,5,358,10,no,2,302.1
+LH0996,Magodo,6.62695,3.38753,flat,2,1,2,68,24,no,0,43.8
+LH0997,Surulere,6.49482,3.3579,terrace,4,3,3,176,8,no,2,86.3
+LH0998,Yaba,6.50574,3.368,self-contain,1,1,1,40,25,no,0,12.5
+LH0999,Victoria Island,6.4236,3.42213,flat,1,1,1,85,31,yes,0,80.8
+LH1000,Ajah ,6.45929,3.58284,bungalow,2,2,3,162,6,yes,3,59.9
+LH1001,Ojodu,6.66517,3.37189,flat,4,4,5,157,28,no,1,38.9
+LH1002,Lekki Phase 1,6.45136,3.4727,terrace,3,2,3,231,20,no,2,198.8
+LH1003,Lekki Phase 1,6.44213,3.47179,flat,2,2,3,99,5,yes,2,83.4
+LH1004,Ojodu,6.64944,3.36955,semi-detached duplex,5,4,4,321,28,no,3,141.2
+LH1005,Ikoyi,6.46012,3.44355,terrace,3,2,3,173,3,yes,1,446.2
+LH1006,Yaba,6.50724,3.37716,flat,1,1,1,69,0,no,2,46.9
+LH1007,Lekki Phase 1,6.44843,3.47053,terrace,4,4,4,244,24,yes,3,178.8
+LH1008,Ojodu,6.64286,3.38,flat,2,1,2,85,12,no,1,33.4
+LH1009,Yaba,6.49354,3.38529,self-contain,1,1,1,34,7,no,1,12.9
+LH1010,Ojodu,6.62548,3.37554,self-contain,1,1,1,38,15,no,0,13.1
+LH1011,Yaba,6.50762,3.38093,flat,3,3,4,118,3,yes,1,85.9
+LH1012,Victoria Island,6.43042,3.4275,terrace,3,4,5,260,12,no,2,341.2
+LH1013,Victoria Island,6.42794,3.41639,flat,2,1,2,93,7,yes,2,155.8
+LH1014,Ajah,6.46851,3.57112,bungalow,4,5,6,251,2,no,2,57.6
+LH1015,Lekki Phase 1,6.44106,3.48564,detached duplex,5,5,6,422,6,no,4,484.6
+LH1016,Surulere,6.48569,3.35732,flat,2,2,3,73,14,no,0,28.8
+LH1017,Festac,6.46273,3.2891,flat,3,2,3,120,18,yes,1,36.6
+LH1018,Ajah,6.46714,3.56614,semi-detached duplex,5,5,6,325,3,no,0,107.5
+LH1019,Gbagada,6.5526,3.38127,flat,3,2,3,167,8,no,2,124.5
+LH1020,Yaba,6.51734,3.37297,terrace,3,3,4,201,13,yes,2,86.9
+LH1021,Gbagada,6.55092,3.38638,semi-detached duplex,5,5,6,325,11,no,2,214.7
+LH1022,Lekki Phase 1,6.44334,3.47776,semi-detached duplex,4,4,4,217,10,no,2,263.8
+LH1023,Ikorodu,6.63033,3.51697,flat,2,2,3,99,11,yes,1,15.8
+LH1024,Yaba,6.51171,3.37711,flat,4,4,5,184,10,no,1,80.7
+LH1025,Gbagada,6.55499,3.38359,self-contain,1,1,1,270,36,no,0,10.0
+LH1026,Ojodu,6.61655,3.3649,self-contain,1,1,1,33,21,no,0,7.3
+LH1027,Ikeja GRA,6.58388,3.3615,semi-detached duplex,5,,4,210,18,yes,1,226.4
+LH1028,Yaba,6.5147,3.38657,flat,3,3,4,150,28,no,1,51.0
+LH1029,Ikoyi,6.4428,3.43208,flat,3,3,4,171,8,yes,2,444.7
+LH1030,Ojodu,6.63923,3.37473,self-contain,1,1,1,31,17,no,0,10.8
+LH1031,Ikoyi,6.45855,3.43832,flat,1,1,1,61,18,no,0,96.9
+LH1032,Ajah,6.46719,3.56427,bungalow,4,4,5,241,5,yes,2,108.0
+LH1033,Lekki Phase 1,6.45841,3.48065,terrace,4,5,6,255,8,yes,3,236.4
+LH1034,Surulere,6.50086,3.34547,terrace,3,3,4,199,11,no,1,81.7
+LH1035,Ajah,6.4713,3.57731,flat,2,3,4,155,9,no,0,42.4
+LH1036,Ikeja GRA,6.5771,3.35176,semi-detached duplex,4,4,4,213,9,yes,3,251.0
+LH1037,Ojodu,6.64583,3.36974,flat,3,3,3,154,9,no,1,52.6
+LH1038,Festac,6.47099,3.28748,self-contain,1,1,1,43,16,no,0,12.2
+LH1039,Victoria Island,6.43017,3.43109,flat,4,4,5,166,14,yes,2,296.1
+LH1040,Magodo,6.61206,3.39616,semi-detached duplex,5,5,6,329,5,no,3,242.1
+LH1041,Victoria Island,6.41795,3.41206,flat,2,2,3,99,10,yes,0,175.1
+LH1042,Ikorodu,6.62018,3.51522,bungalow,3,3,3,136,2,yes,0,17.9
+LH1043,Ikorodu,6.61287,3.50375,bungalow,4,4,4,146,7,no,0,13.5
+LH1044,Lekki Phase 1,6.4629,3.47122,terrace,3,2,2,225,16,yes,4,318.0
+LH1045,Festac,6.45194,3.2857,bungalow,2,,3,100,13,no,0,24.6
+LH1046,Festac,6.47741,3.2798,self-contain,1,1,1,26,5,no,0,8.2
+LH1047,Victoria Island,6.42034,3.42756,detached duplex,6,6,6,483,12,yes,4,500
+LH1048,Ajah,6.47134,3.57173,flat,4,4,5,,11,yes,1,63.3
+LH1049,Yaba,6.51605,3.36842,terrace,3,3,3,165,3,no,1,77.8
+LH1050,Victoria Island,6.42644,3.40776,flat,3,3,3,185,3,yes,2,293.4
+LH1051,Ikeja GRA,6.58323,3.33967,semi-detached duplex,5,5,6,274,6,no,2,304.0
+LH1052,Ajah,6.45091,3.56204,flat,2,2,2,128,11,no,2,35.1
+LH1053,Ojodu,6.63408,3.36282,flat,1,1,2,95,1,no,0,41.9
+LH1054,Surulere,6.50222,3.34858,flat,4,4,5,170,14,yes,1,62.6
+LH1055,Victoria Island,6.43661,3.42679,detached duplex,5,5,6,514,5,yes,4,500
+LH1056,Lekki Phase 1,6.44186,3.47304,flat,4,4,5,178,0,yes,2,218.3
+LH1057,Gbagada,6.56132,3.37984,flat,3,2,2,144,27,no,1,53.6
+LH1058,Lekki Phase 1,6.44242,3.46618,flat,4,5,6,183,17,no,1,139.0
+LH1059,Ikoyi,6.43325,3.42348,flat,3,2,3,189,2,no,2,454.9
+LH1060,Victoria Island,6.41662,3.43457,detached duplex,4,3,4,272,1,no,2,489.9
+LH1061,Ikoyi,6.45426,3.43563,flat,3,3,3,165,7,no,2,308.4
+LH1062,lekki phase 1,6.44368,3.47424,terrace,4,3,4,266,18,no,2,257.8
+LH1063,Festac,6.46481,3.28901,flat,1,1,2,74,10,no,0,31.8
+LH1064,Ajah,6.46267,3.56162,semi-detached duplex,4,4,5,253,17,no,2,68.2
+LH1065,Ikoyi,6.44878,3.44227,detached duplex,5,5,6,385,7,yes,4,500
+LH1066,Ikorodu,6.61237,3.50987,detached duplex,5,5,6,336,10,no,2,62.4
+LH1067,Victoria Island,6.43015,3.42283,semi-detached duplex,5,5,5,342,18,yes,3,500
+LH1068,Magodo,6.61393,3.36836,flat,2,2,3,126,29,no,1,51.0
+LH1069,Festac,6.46847,3.2936,flat,3,2,3,82,2,yes,3,34.4
+LH1070,Festac,6.47246,3.28829,bungalow,2,2,2,95,7,yes,0,24.6
+LH1071,Surulere,6.49009,3.35554,flat,3,3,4,119,4,yes,1,60.8
+LH1072,Ajah,6.4507,3.53943,semi-detached duplex,5,6,7,319,9,yes,4,116.7
+LH1073,Ikoyi,6.45362,3.44001,detached duplex,6,7,8,580,5,no,4,500
+LH1074,Festac,6.48523,3.2744,flat,2,2,3,126,10,no,1,46.6
+LH1075,Surulere,6.49949,3.3638,flat,4,5,6,188,6,no,1,81.8
+LH1076,Ikeja GRA,6.57714,3.36665,detached duplex,5,5,5,356,12,yes,3,446.7
+LH1077,Gbagada,6.55961,3.37712,flat,4,4,4,186,7,no,1,94.4
+LH1078,Festac,6.45509,3.28906,bungalow,3,3,4,194,24,yes,2,64.4
+LH1079,Magodo,6.62926,3.38726,semi-detached duplex,4,4,5,311,1,no,4,303.5
+LH1080,Surulere,6.50186,3.34599,flat,4,5,6,177,9,no,2,70.7
+LH1081,Gbagada,6.54507,3.38176,terrace,4,4,4,157,5,no,1,87.4
+LH1082,Yaba,6.50329,3.37639,flat,4,4,4,190,7,no,1,89.9
+LH1083,Ajah,6.46206,3.5604,flat,2,1,2,96,27,no,0,22.5
+LH1084,Surulere,6.50021,3.36575,flat,1,2,3,56,0,no,1,32.7
+LH1085,Lekki Phase 1,6.42895,3.4821,detached duplex,4,5,6,370,3,yes,4,500
+LH1086,Ikeja GRA,6.56633,3.33989,flat,1,1,2,65,6,no,1,66.2
+LH1087,Magodo,6.61319,3.36928,flat,4,5,6,161,7,yes,1,92.6
+LH1088,Magodo,6.63188,3.38232,flat,2,2,2,87,14,no,0,60.4
+LH1089,Ikorodu,6.61342,3.49574,self-contain,1,1,1,41,22,no,1,3.9
+LH1090,Lekki Phase 1,6.44909,3.46499,flat,3,3,3,121,2,yes,1,140.0
+LH1091,Victoria Island,6.43627,3.43374,flat,3,3,3,142,5,yes,1,258.7
+LH1092,Ajah,6.47906,3.58292,bungalow,3,3,4,251,14,no,2,64.8
+LH1093,Ikoyi,6.45093,3.43546,semi-detached duplex,4,4,4,293,9,no,4,402.7
+LH1094,Magodo,6.62935,3.37251,detached duplex,4,4,4,356,13,yes,2,208.7
+LH1095,Ajah,6.474,3.5603,terrace,4,4,4,206,2,yes,0,89.8
+LH1096,Gbagada,6.56784,3.39949,flat,3,4,5,134,14,no,2,93.3
+LH1097,Ikoyi,6.45267,3.43647,flat,1,1,2,83,7,no,1,119.8
+LH1098,Lekki Phase 1,6.43841,3.47992,flat,2,2,3,81,4,yes,0,96.2
+LH1099,Ikeja GRA,6.5932,3.36443,detached duplex,6,6,7,526,11,yes,2,500
+LH1100,Lekki Phase 1,6.44309,3.47865,semi-detached duplex,5,6,7,356,15,yes,3,470.2
+LH1101,Ajah,6.47368,3.56125,terrace,3,3,4,193,16,yes,3,48.1
+LH1102,Lekki Phase 1,6.44164,3.47453,flat,2,2,3,108,12,no,0,105.3
+LH1103,Gbagada,6.55692,3.39019,self-contain,1,1,1,,25,no,0,9.5
+LH1104,Yaba,6.51224,3.37775,flat,3,3,3,,1,yes,1,89.5
+LH1105,Festac,6.4685,3.28648,bungalow,3,3,4,168,5,no,0,44.3
+LH1106,Yaba,6.50406,3.37652,terrace,3,,3,157,9,no,0,74.8
+LH1107,Lekki Phase 1,6.46239,3.47635,terrace,4,4,5,194,5,yes,1,244.6
+LH1108,Ajah,6.47627,3.5768,flat,2,3,4,100,12,no,2,29.7
+LH1109,Ikeja GRA,6.57799,3.35165,semi-detached duplex,5,6,6,331,9,yes,3,378.6
+LH1110,Ojodu,6.64325,3.36302,flat,3,4,5,142,11,no,1,55.5
+LH1111,Lekki Phase 1,6.44964,3.48271,detached duplex,6,6,7,,29,yes,5,469.6
+LH1112,Magodo,6.63068,3.38913,detached duplex,4,4,5,329,2,no,2,206.0
+LH1113,Ikoyi,6.44547,3.43339,detached duplex,5,5,5,304,9,no,3,500
+LH1114,Lekki Phase 1,6.44673,3.47389,flat,1,1,1,68,22,no,0,47.3
+LH1115,Gbagada,6.54663,3.38669,semi-detached duplex,5,5,6,315,6,no,2,211.8
+LH1116,Gbagada,6.54835,3.3806,semi-detached duplex,5,5,6,277,13,no,3,134.6
+LH1117,Lekki Phase 1,6.44484,3.46215,terrace,4,4,5,225,0,no,2,275.4
+LH1118,Ikeja GRA,6.58784,3.3573,flat,4,4,5,183,17,yes,1,124.6
+LH1119,Ikorodu,6.61541,3.51551,bungalow,2,1,2,138,6,no,2,18.5
+LH1120,Magodo,6.61474,3.37695,detached duplex,6,6,7,555,12,no,4,447.0
+LH1121,Yaba,6.50212,3.38338,flat,2,2,3,108,7,no,0,69.3
+LH1122,Magodo,6.6384,3.39811,detached duplex,5,5,5,557,4,no,5,390.2
+LH1123,Lekki Ph 1,6.44026,3.46721,terrace,3,2,3,186,4,yes,2,214.2
+LH1124,Ajah,6.48105,3.56945,flat,2,1,2,98,9,yes,0,35.4
+LH1125,Ajah,6.47402,3.57573,terrace,4,3,4,267,11,no,3,95.2
+LH1126,Ikoyi,6.44361,3.43318,flat,2,2,3,127,11,yes,0,227.7
+LH1127,Ikorodu,6.60751,3.50897,bungalow,2,1,2,90,12,yes,0,9.8
+LH1128,Gbagada,6.53636,3.38655,flat,4,4,5,190,5,no,3,69.6
+LH1129,Lekki Phase 1,6.45013,3.48006,semi-detached duplex,4,3,3,327,9,yes,3,384.7
+LH1130,Gbagada,6.55696,3.39107,flat,2,2,3,97,8,no,1,50.9
+LH1131,Ikeja GRA,6.58973,3.35157,detached duplex,5,5,6,505,7,no,4,455.7
+LH1132,Yaba,6.50374,3.38697,terrace,4,3,4,158,8,no,2,80.8
+LH1133,Victoria Island,6.43962,3.43437,flat,3,3,4,119,8,yes,0,130.7
+LH1134,Lekki Phase 1,6.44951,3.45946,terrace,3,3,3,234,6,no,2,213.6
+LH1135,Lekki Phase 1,6.45118,3.48494,terrace,3,2,3,278,18,no,2,175.3
+LH1136,Ikeja GRA,6.57078,3.34125,flat,2,2,3,124,10,yes,0,101.3
+LH1137,Ajah,6.46659,3.57671,flat,4,4,5,162,9,yes,2,50.0
+LH1138,Lekki Phase 1,6.44558,3.47777,semi-detached duplex,4,3,3,267,6,yes,2,500
+LH1139,Lekki Phase 1,6.45363,3.48381,terrace,3,3,4,184,0,no,2,205.1
+LH1140,Ojodu,6.66014,3.35999,flat,3,3,4,178,5,no,2,76.3
+LH1141,Ojodu,6.64124,3.37008,bungalow,3,3,3,244,4,no,0,53.5
+LH1142,Surulere,6.49854,3.363,flat,2,2,3,125,12,no,0,56.0
+LH1143,Lekki Phase 1,6.45653,3.47856,semi-detached duplex,5,5,5,283,6,yes,2,377.8
+LH1144,Ikorodu,6.6181,3.51444,bungalow,4,4,5,200,2,no,2,22.1
+LH1145,Gbagada,6.5557,3.38203,terrace,4,3,3,278,12,no,3,116.9
+LH1146,Surulere,6.50717,3.35144,bungalow,3,2,3,194,10,no,3,67.1
+LH1147,Ikorodu,6.62191,3.49211,bungalow,2,1,2,107,13,yes,0,10.2
+LH1148,Surulere,6.50317,3.3535,flat,3,3,4,144,5,no,0,53.0
+LH1149,Victoria Island,6.42712,3.4244,detached duplex,4,4,5,283,2,yes,2,500
+LH1150,Ajah,6.46437,3.56171,semi-detached duplex,4,4,4,254,8,yes,2,83.3
+LH1151,Lekki Phase 1,6.45724,3.46936,detached duplex,4,4,5,252,6,no,2,279.8
+LH1152,Ikoyi,6.46136,3.40725,flat,2,2,3,71,11,no,1,140.3
+LH1153,Yaba,6.52608,3.39286,flat,2,2,3,94,4,no,1,55.9
+LH1154,Victoria Island,6.43832,3.42409,terrace,3,2,3,163,30,yes,1,142.7
+LH1155,Surulere,6.51071,3.35565,flat,4,5,5,153,9,no,0,52.1
+LH1156,Ikorodu,6.60831,3.4996,bungalow,4,,6,229,13,no,2,21.0
+LH1157,Ojodu,6.6406,3.37366,flat,4,4,5,184,36,yes,1,48.7
+LH1158,Ojodu,6.63363,3.36536,flat,4,4,5,187,12,no,2,72.2
+LH1159,Ajah,6.46925,3.56237,flat,1,1,2,62,15,yes,1,18.6
+LH1160,Ikeja GRA,6.57721,3.34925,semi-detached duplex,4,4,5,339,5,yes,5,358.1
+LH1161,Victoria Island,6.42198,3.43711,flat,1,1,2,73,6,yes,1,157.1
+LH1162,Lekki Phase 1,6.44931,3.45924,detached duplex,6,6,6,414,9,no,3,500
+LH1163,Victoria Island,6.42715,3.41705,flat,1,1,1,64,13,no,1,71.5
+LH1164,Ojodu,6.63586,3.36664,flat,2,1,2,119,31,no,1,30.6
+LH1165,Ajah,6.4692,3.57011,flat,2,2,3,59,18,no,2,15.0
+LH1166,Yaba,6.50587,3.36595,self-contain,1,1,1,36,4,no,0,17.3
+LH1167,Gbagada,6.54117,3.3902,flat,2,3,4,122,9,no,1,56.3
+LH1168,Lekki Phase 1,6.4504,3.4686,semi-detached duplex,4,4,4,329,8,yes,4,410.0
+LH1169,Ajah,6.45779,3.55612,terrace,3,3,4,185,7,no,1,61.5
+LH1170,Lekki Phase 1,6.4471,3.48352,semi-detached duplex,5,5,6,330,10,yes,3,356.2
+LH1171,Festac,6.46354,3.27264,terrace,3,3,3,216,36,no,3,48.8
+LH1172,Surulere,6.49883,3.34303,flat,2,3,3,113,2,no,1,50.9
+LH1173,Ajah,6.45741,3.56715,terrace,3,3,4,199,8,no,3,63.0
+LH1174,Surulere,6.48397,3.34872,flat,2,2,3,97,9,no,1,36.0
+LH1175,Lekki Phase 1,6.44875,3.45525,detached duplex,5,4,5,363,14,yes,3,473.8
+LH1176,Ajah,6.46712,3.56136,bungalow,3,3,4,190,9,no,2,61.6
+LH1177,Yaba,6.5082,3.37236,flat,2,2,3,113,14,no,0,35.0
+LH1178,Ikoyi,6.44903,3.44165,flat,2,3,4,76,18,no,1,115.0
+LH1179,Gbagada,6.55048,3.39194,flat,3,2,2,142,35,yes,2,79.1
+LH1180,Surulere,6.50238,3.35822,bungalow,3,2,3,137,5,no,1,41.6
+LH1181,Ajah,6.47017,3.57215,bungalow,3,2,2,258,12,no,2,66.9
+LH1182,Yaba,6.51424,3.37989,self-contain,1,1,1,29,4,no,0,10.8
+LH1183,Victoria Island,6.42334,3.42519,semi-detached duplex,5,5,6,257,0,yes,2,452.2
+LH1184,Ikorodu,6.62043,3.50104,detached duplex,4,5,6,322,5,yes,4,99.4
+LH1185,Ikeja GRA,6.58732,3.36223,detached duplex,5,5,6,481,4,yes,4,500
+LH1186,Yaba,6.50655,3.38885,self-contain,1,1,1,27,4,no,0,7.8
+LH1187,Ikorodu,6.61772,3.51941,bungalow,3,4,5,129,3,no,1,15.2
+LH1188,Ikorodu,6.61382,3.50733,bungalow,2,3,4,105,8,no,1,12.8
+LH1189,Gbagada,6.54344,3.38466,flat,4,5,6,131,7,no,2,77.3
+LH1190,Gbagada,6.55751,3.39027,flat,4,4,5,185,11,no,1,106.1
+LH1191,Ajah,6.47156,3.56671,bungalow,4,4,4,218,3,no,2,79.9
+LH1192,Ikeja GRA,6.57408,3.3554,terrace,3,3,4,250,13,yes,3,270.6
+LH1193,Yaba,6.51237,3.3878,flat,3,3,4,122,9,yes,1,57.8
+LH1194,Ojodu,6.65361,3.37741,semi-detached duplex,5,5,6,338,5,no,3,152.1
+LH1195,Ajah,6.46826,3.58197,flat,3,3,4,,4,no,3,66.6
+LH1196,Magodo,6.62421,3.371,bungalow,3,3,4,171,2,no,2,136.6
+LH1197,Yaba,6.50325,3.3643,flat,2,3,4,111,15,no,1,43.1
+LH1198,Ajah,6.46614,3.57526,terrace,3,3,4,151,5,no,1,52.2
+LH1199,Festac,6.47626,3.27638,flat,1,1,2,68,2,no,0,21.6
+LH1200,Ajah,6.4628,3.56904,bungalow,4,4,4,250,31,no,2,45.6
+LH1201,Ajah,6.47788,3.55744,bungalow,4,5,5,229,10,yes,2,83.1
+LH1202,Ajah,6.46644,3.57893,terrace,3,3,4,188,3,yes,3,93.4
+LH1203,Ikorodu,6.61565,3.51956,bungalow,2,1,2,138,19,no,1,13.9
+LH1204,Ikorodu,6.59105,3.50852,bungalow,3,2,2,170,20,no,3,17.7
+LH1205,Ikeja GRA,6.59355,3.35371,detached duplex,4,4,5,262,3,no,5,500
+LH1206,Ajah,6.46728,3.56862,bungalow,4,4,5,220,5,no,1,67.7
+LH1207,Surulere,6.49419,3.36445,flat,2,2,2,108,1,no,1,41.1
+LH1208,Yaba,6.51952,3.36498,flat,2,2,3,112,13,no,2,42.2
+LH1209,Magodo,6.62626,3.38384,flat,3,3,3,175,2,no,1,133.5
+LH1210,Magodo,6.61928,3.38167,flat,3,2,3,127,10,no,1,75.5
+LH1211,Lekki Phase 1,6.44311,3.47923,detached duplex,4,4,5,267,9,yes,3,356.6
+LH1212,Ikoyi,6.44818,3.44746,flat,3,3,4,177,18,yes,1,260.1
+LH1213,Gbagada,6.5547,3.39022,flat,1,1,2,60,11,no,1,30.6
+LH1214,Gbagada,6.55304,3.38362,flat,2,2,3,109,4,no,0,70.6
+LH1215,Ikorodu,6.61449,3.52022,flat,2,2,2,94,15,no,0,11.5
+LH1216,Surulere,6.49541,3.35439,flat,1,1,1,81,14,no,2,26.2
+LH1217,Ikorodu,6.61245,3.4974,bungalow,4,3,4,237,13,no,3,25.1
+LH1218,Ojodu,6.6507,3.37013,flat,4,3,4,183,4,no,1,57.7
+LH1219,Lekki Phase 1,6.43808,3.46776,flat,1,1,2,69,5,no,0,77.0
+LH1220,Yaba,6.50777,3.38382,self-contain,1,1,1,36,6,no,0,14.8
+LH1221,Yaba,6.50377,3.36932,flat,4,4,5,189,12,no,1,121.4
+LH1222,Ojodu,6.63622,3.37826,semi-detached duplex,5,5,6,341,10,no,2,135.3
+LH1223,Gbagada,6.55729,3.38418,flat,4,4,4,180,25,yes,2,100.5
+LH1224,Surulere,6.50257,3.35285,flat,2,2,3,129,22,no,1,45.0
+LH1225,Lekki Phase 1,6.45251,3.47769,flat,2,2,3,55,4,yes,0,48.0
+LH1226,Ojodu,6.64553,3.38022,flat,1,1,2,89,31,no,1,26.7
+LH1227,Gbagada,6.54779,3.38072,flat,2,2,3,127,14,no,2,65.1
+LH1228,Ikeja GRA,6.57674,3.35205,terrace,4,4,5,267,7,yes,2,217.6
+LH1229,Ajah,6.45969,3.57898,flat,2,2,3,96,5,no,1,39.8
+LH1230,Surulere,6.4856,3.35859,bungalow,3,4,5,162,3,no,2,57.2
+LH1231,Magodo,6.63511,3.3735,detached duplex,5,6,7,358,28,yes,4,210.2
+LH1232,Gbagada,6.55479,3.40707,semi-detached duplex,4,4,5,248,13,no,3,120.2
+LH1233,Yaba,6.49306,3.38165,flat,3,4,5,137,7,no,1,76.4
+LH1234,Magodo,6.61166,3.38501,semi-detached duplex,5,5,6,308,5,no,3,194.9
+LH1235,Magodo,6.62006,3.37748,detached duplex,6,6,6,578,17,no,5,454.6
+LH1236,Victoria Island,6.43605,3.4217,flat,3,3,3,145,14,yes,2,242.2
+LH1237,Lekki Ph 1,6.42999,3.46837,flat,4,4,4,164,15,yes,1,126.7
+LH1238,Ikoyi,6.44447,3.43637,flat,4,4,5,177,1,yes,1,423.7
+LH1239,Magodo,6.62076,3.37996,semi-detached duplex,4,5,6,270,17,no,2,183.1
+LH1240,Lekki Phase 1,6.44266,3.47346,flat,2,2,3,82,17,yes,0,61.0
+LH1241,Ikeja GRA,6.58264,3.36323,terrace,3,3,4,153,5,yes,1,109.0
+LH1242,Lekki Phase 1,6.45129,3.47079,detached duplex,5,5,6,456,3,yes,2,500
+LH1243,Yaba,6.50721,3.37053,flat,2,2,3,81,16,no,2,33.2
+LH1244,Ajah,6.46949,3.56996,bungalow,3,2,3,252,1,no,3,81.8
+LH1245,Ikoyi,6.46052,3.44385,semi-detached duplex,4,4,5,293,3,no,2,426.8
+LH1246,Lekki Phase 1,6.45156,3.47144,terrace,4,5,6,258,4,yes,3,375.2
+LH1247,Festac,6.46645,3.29728,flat,3,3,4,105,7,no,0,28.9
+LH1248,Yaba,6.50894,3.38556,self-contain,1,1,1,44,10,no,0,11.9
+LH1249,Ajah,6.46629,3.57624,bungalow,3,3,4,168,20,no,2,45.8
+LH1250,lekki phase 1,6.44857,3.45556,flat,4,4,4,165,10,no,2,133.4
+LH1251,Ikeja GRA,6.57823,3.34501,detached duplex,5,5,5,,9,yes,5,489.5
+LH1252,Ikeja GRA,6.58045,3.35841,flat,2,2,3,127,10,yes,1,116.3
+LH1253,Festac,6.4805,3.28713,self-contain,1,1,1,37,8,no,0,14.8
+LH1254,Ikeja GRA,6.56806,3.35649,detached duplex,4,4,5,392,6,no,4,319.0
+LH1255,Ajah,6.47084,3.5671,flat,1,1,2,56,15,no,0,17.9
+LH1256,Ajah,6.45971,3.56831,bungalow,2,2,3,119,12,no,0,36.2
+LH1257,Ikoyi,6.4483,3.45382,detached duplex,4,4,4,373,7,yes,2,500
+LH1258,Ojodu,6.64649,3.36734,flat,1,1,2,63,11,no,0,21.3
+LH1259,Ajah,6.46097,3.57393,semi-detached duplex,4,3,4,349,12,no,3,180.5
+LH1260,Ikoyi,6.45425,3.43308,flat,3,3,4,,16,yes,2,269.3
+LH1261,Ikoyi,6.46799,3.41898,semi-detached duplex,5,5,6,360,10,yes,3,500
+LH1262,Ikeja GRA,6.5706,3.35336,detached duplex,6,6,7,471,17,yes,4,401.6
+LH1263,Yaba,6.51884,3.37577,self-contain,1,1,1,29,3,no,0,14.1
+LH1264,Ajah,6.47142,3.57992,semi-detached duplex,5,4,4,299,4,yes,2,135.2
+LH1265,Lekki Phase 1,6.44645,3.4737,terrace,4,5,6,242,14,no,3,178.4
+LH1266,Gbagada,6.54951,3.39422,flat,2,2,3,119,12,yes,0,64.8
+LH1267,Lekki Phase 1,6.45889,3.48097,flat,3,2,3,159,8,no,2,133.6
+LH1268,Gbagada,6.56394,3.38206,flat,1,1,2,75,1,no,0,40.2
+LH1269,Lekki Phase 1,6.44171,3.47582,semi-detached duplex,5,4,5,242,13,yes,2,277.2
+LH1270,Ajah,6.47164,3.5704,flat,1,1,2,83,17,no,0,14.5
+LH1271,Ikorodu,6.61407,3.52161,self-contain,1,1,1,30,9,no,0,2.5
+LH1272,Ojodu,6.64599,3.37677,semi-detached duplex,4,5,6,276,8,no,2,92.6
+LH1273,Ajah,6.46269,3.56245,flat,2,2,3,150,14,no,1,45.6
+LH1274,Festac,6.44793,3.28311,bungalow,2,1,2,107,16,no,2,21.3
+LH1275,Ajah,6.45179,3.58729,bungalow,2,2,3,149,7,no,2,42.7
+LH1276,Ikeja GRA,6.5702,3.34986,flat,3,3,3,171,12,yes,2,195.4
+LH1277,Ojodu,6.64988,3.37959,flat,1,1,2,63,18,no,0,15.2
+LH1278,Ajah,6.45477,3.55985,semi-detached duplex,5,6,7,323,11,no,2,105.2
+LH1279,Lekki Phase 1,6.43629,3.4761,flat,3,3,3,108,16,no,2,85.5
+LH1280,Yaba,6.49724,3.3863,flat,3,2,3,158,14,no,2,69.6
+LH1281,Ajah,6.46429,3.55822,bungalow,3,3,3,170,4,no,1,56.4
+LH1282,Magodo,6.6155,3.38158,detached duplex,6,6,6,576,15,no,6,500
+LH1283,Victoria Island,6.42755,3.43131,terrace,4,4,5,237,3,yes,0,473.2
+LH1284,Yaba,6.51561,3.39056,self-contain,1,1,1,23,7,yes,1,10.9
+LH1285,Yaba,6.51473,3.3878,self-contain,1,1,1,29,14,no,0,9.2
+LH1286,Ikeja GRA,6.58803,3.35914,semi-detached duplex,4,5,6,330,16,yes,5,361.2
+LH1287,Yaba,6.50374,3.36924,self-contain,1,1,1,30,11,no,1,9.9
+LH1288,Ikoyi,6.44377,3.42715,semi-detached duplex,4,4,4,220,4,yes,2,500
+LH1289,Festac,6.46613,3.26589,bungalow,2,2,2,118,9,no,0,26.5
+LH1290,Ojodu,6.63151,3.36005,bungalow,2,2,3,93,5,yes,1,34.3
+LH1291,Ikoyi,6.4415,3.44322,detached duplex,5,6,6,309,14,no,3,500
+LH1292,Magodo,6.61521,3.36739,bungalow,3,3,4,230,5,no,1,135.1
+LH1293,Surulere,6.49442,3.34484,flat,2,2,2,,10,no,1,45.9
+LH1294,Surulere,6.50021,3.35607,flat,4,4,5,182,5,yes,3,86.6
+LH1295,Ajah,6.47578,3.55804,bungalow,2,2,2,163,7,no,2,37.0
+LH1296,Magodo,6.61887,3.37897,semi-detached duplex,4,4,4,223,11,yes,3,192.4
+LH1297,Magodo,6.63308,3.37594,detached duplex,4,5,5,437,18,yes,3,320.3
+LH1298,Ajah,6.46061,3.57862,semi-detached duplex,4,3,4,200,3,no,1,63.2
+LH1299,Festac,6.47564,3.27963,bungalow,3,3,4,175,7,no,2,79.9
+LH1300,Victoria Island,6.41413,3.42793,flat,4,4,5,146,22,yes,2,239.6
+LH1301,Surulere,6.49533,3.33898,flat,2,2,3,94,19,no,0,28.3
+LH1302,Lekki Phase 1,6.43442,3.47734,detached duplex,4,4,5,287,9,yes,3,352.9
+LH1303,Ajah,6.47453,3.57308,semi-detached duplex,5,5,5,314,17,yes,3,124.6
+LH1304,Ajah,6.47445,3.56775,terrace,4,3,4,234,11,no,2,100.9
+LH1305,Lekki Phase 1,6.44603,3.4867,flat,2,2,3,100,3,yes,1,123.8
+LH1306,Yaba,6.51129,3.37463,self-contain,1,2,2,23,2,no,0,12.5
+LH1307,Yaba,6.50967,3.38235,flat,3,3,3,184,30,no,1,63.4
+LH1308,Victoria Island,6.43125,3.41207,flat,3,2,2,184,11,yes,2,363.7
+LH1309,Festac,6.46795,3.28455,flat,2,3,3,103,15,no,1,39.2
+LH1310,Lekki Phase 1,6.44276,3.47257,detached duplex,6,5,5,575,11,no,4,500
+LH1311,Ojodu,6.64307,3.37697,self-contain,1,1,1,37,5,yes,0,14.7
+LH1312,Ikeja GRA,6.57476,3.33836,semi-detached duplex,5,5,5,211,32,no,2,113.2
+LH1313,Ikeja GRA,6.57591,3.35504,flat,3,3,3,162,5,yes,2,230.5
+LH1314,Ikeja GRA,6.57868,3.34506,flat,1,1,2,67,19,no,0,42.5
+LH1315,Victoria Island,6.43088,3.41899,flat,2,3,3,59,10,yes,0,88.7
+LH1316,Surulere,6.48916,3.35946,self-contain,1,1,1,36,13,no,0,10.8
+LH1317,Ojodu,6.65196,3.38063,flat,3,3,3,116,8,no,0,45.6
+LH1318,Lekki Phase 1,6.44935,3.4793,flat,3,3,4,101,6,no,3,84.5
+LH1319,Lekki Phase 1,6.4361,3.47697,flat,3,2,3,172,13,no,2,99.8
+LH1320,Lekki Phase 1,6.4432,3.47116,flat,2,2,3,78,3,yes,0,117.6
+LH1321,Surulere,6.4981,3.35298,flat,4,4,5,146,12,no,1,72.7
+LH1322,Magodo,6.61667,3.37285,semi-detached duplex,4,4,5,240,26,no,3,163.8
+LH1323,Ojodu,6.6451,3.36787,semi-detached duplex,5,6,7,338,3,no,3,128.4
+LH1324,Yaba,6.50631,3.37774,flat,1,1,2,84,8,yes,1,47.9
+LH1325,Ikorodu,6.61093,3.49634,self-contain,1,1,1,25,7,no,0,2.8
+LH1326,Ojodu,6.66169,3.38284,self-contain,1,1,1,24,14,no,0,5.3
+LH1327,Magodo,6.61314,3.38952,detached duplex,5,4,5,432,7,no,4,295.1
+LH1328,Ojodu,6.63977,3.3741,bungalow,4,4,5,238,7,no,3,63.8
+LH1329,Ikoyi,6.44675,3.42832,flat,2,2,3,79,23,no,1,108.1
+LH1330,Ajah,6.45812,3.57476,flat,1,1,2,63,30,no,1,16.4
+LH1331,Festac,6.48237,3.2803,bungalow,2,2,3,120,2,no,0,43.8
+LH1332,Gbagada,6.55627,3.38215,flat,1,1,2,92,9,no,1,46.2
+LH1333,Surulere,6.49544,3.36418,flat,3,3,4,100,9,no,2,49.6
+LH1334,Lekki Phase 1,6.45673,3.47626,semi-detached duplex,5,5,6,337,26,no,2,331.4
+LH1335,Ajah,6.46519,3.5709,flat,2,1,2,102,20,no,0,31.7
+LH1336,Gbagada,6.55069,3.39239,flat,4,4,4,187,9,no,3,107.7
+LH1337,Victoria Island,6.4172,3.42156,semi-detached duplex,4,4,5,237,10,no,2,401.5
+LH1338,Gbagada,6.53854,3.39615,semi-detached duplex,4,4,4,328,8,yes,2,207.9
+LH1339,Ikorodu,6.61021,3.49766,detached duplex,5,5,5,551,7,yes,6,95.3
+LH1340,Yaba,6.51097,3.38306,self-contain,1,1,1,40,12,no,1,17.1
+LH1341,Gbagada,6.55676,3.3809,flat,4,4,5,166,7,no,1,126.3
+LH1342,Magodo,6.6354,3.38221,detached duplex,6,6,6,581,2,no,3,500
+LH1343,Victoria Island,6.42527,3.42626,flat,2,2,3,93,2,yes,1,161.8
+LH1344,Yaba,6.51066,3.36301,flat,2,2,3,110,5,no,2,57.7
+LH1345,Festac,6.47622,3.26803,self-contain,1,1,1,26,32,no,0,6.2
+LH1346,Lekki Phase 1,6.44681,3.45946,flat,3,4,5,104,8,yes,3,103.8
+LH1347,Ikoyi,6.45621,3.43913,terrace,4,4,4,256,8,yes,1,485.4
+LH1348,Yaba,6.50585,3.38172,flat,2,2,2,107,6,no,0,44.8
+LH1349,Ikorodu,6.62382,3.51188,flat,2,2,3,64,13,no,1,8.7
+LH1350,Victoria Island,6.43366,3.42501,flat,3,3,3,121,7,yes,1,246.6
+LH1351,Ikeja GRA,6.58937,3.3506,detached duplex,6,6,6,570,12,yes,5,500
+LH1352,Ajah,6.47167,3.58168,terrace,4,4,5,195,9,no,3,64.7
+LH1353,Ikoyi,6.44954,3.42445,detached duplex,4,5,5,276,3,yes,4,500
+LH1354,Yaba,6.51252,3.37497,flat,3,3,4,169,5,no,1,60.0
+LH1355,Lekki Phase 1,6.45158,3.46422,terrace,4,4,5,274,10,no,1,276.8
+LH1356,Surulere,6.50832,3.36535,flat,1,1,2,63,14,yes,0,27.1
+LH1357,Ikorodu,6.61212,3.51738,bungalow,4,4,5,258,10,no,2,26.4
+LH1358,Ikeja GRA,6.58255,3.36869,terrace,3,2,3,215,7,no,2,130.2
+LH1359,Magodo,6.61882,3.39065,detached duplex,5,5,6,427,8,no,5,388.1
+LH1360,Lekki Phase 1,6.45221,3.47323,flat,3,3,4,106,6,no,1,92.1
+LH1361,Ojodu,6.63001,3.37658,flat,2,2,2,112,13,no,1,29.4
+LH1362,Surulere,6.50697,3.36332,bungalow,4,3,4,155,0,no,0,56.5
+LH1363,Ikorodu,6.60457,3.52239,bungalow,4,5,5,244,36,no,1,17.5
+LH1364,Festac,6.48548,3.28758,flat,2,2,3,145,29,no,2,28.5
+LH1365,Ikoyi,6.44533,3.44915,flat,1,1,2,56,5,no,0,103.8
+LH1366,Ajah,6.4613,3.56556,bungalow,3,2,3,201,7,no,2,54.3
+LH1367,Ajah,6.47555,3.57321,bungalow,2,2,2,99,31,no,0,17.3
+LH1368,Yaba,6.512,3.36279,self-contain,1,1,1,31,9,yes,1,18.9
+LH1369,Ajah,6.46909,3.56073,bungalow,3,3,3,244,23,no,4,42.8
+LH1370,Ikorodu,6.62096,3.51492,detached duplex,6,6,6,556,16,no,5,87.4
+LH1371,Ajah,6.45974,3.57236,bungalow,4,3,4,238,21,yes,2,66.7
+LH1372,Festac,6.48378,3.28214,flat,2,2,3,97,19,no,1,20.0
+LH1373,Surulere,6.49648,3.36041,flat,2,2,3,155,9,no,2,75.6
+LH1374,Ikeja GRA,6.58399,3.36503,detached duplex,5,5,6,480,5,yes,4,500
+LH1375,Lekki Phase 1,6.45553,3.47553,semi-detached duplex,4,5,6,,4,yes,4,445.0
+LH1376,Ikeja GRA,6.576,3.35212,flat,3,3,4,130,9,no,1,102.5
+LH1377,Ikorodu,6.61208,3.498,bungalow,2,1,2,140,11,no,2,18.8
+LH1378,Yaba,6.51082,3.37624,self-contain,1,1,1,41,24,no,1,23.8
+LH1379,Festac,6.45272,3.2861,flat,2,2,3,116,3,no,1,39.5
+LH1380,Ikeja GRA,6.58307,3.36676,flat,4,4,5,160,5,yes,2,161.2
+LH1381,Yaba,6.51577,3.37954,terrace,3,3,4,176,16,no,0,97.2
+LH1382,Ojodu,6.65559,3.37951,semi-detached duplex,5,5,6,253,16,yes,2,138.6
+LH1383,Magodo,6.61327,3.38079,flat,3,3,4,76,8,no,1,52.0
+LH1384,Ikeja GRA,6.56425,3.34001,flat,2,2,3,56,17,yes,0,47.4
+LH1385,Yaba,6.50904,3.37855,self-contain,1,1,1,23,5,yes,0,9.2
+LH1386,Ikorodu,6.62318,3.50881,flat,2,2,2,79,6,yes,2,14.8
+LH1387,Ajah,6.4839,3.56386,bungalow,3,3,4,178,7,no,2,58.1
+LH1388,Lekki Phase 1,6.45252,3.48463,flat,3,3,4,155,9,yes,1,145.5
+LH1389,Ikoyi,6.45377,3.44141,semi-detached duplex,4,5,6,249,20,yes,3,439.0
+LH1390,Ajah,6.46547,3.56266,flat,3,3,3,136,11,no,1,43.9
+LH1391,Yaba,6.50928,3.38186,flat,2,3,4,101,13,no,0,46.3
+LH1392,Victoria Island,6.43429,3.43916,flat,1,1,2,56,8,no,0,70.0
+LH1393,Ajah,6.47808,3.57069,semi-detached duplex,4,3,4,231,4,no,2,74.8
+LH1394,Ajah,6.46791,3.58068,semi-detached duplex,4,4,5,206,15,yes,2,88.1
+LH1395,Surulere,6.5059,3.35263,bungalow,2,1,2,113,34,yes,2,29.4
+LH1396,Festac,6.47237,3.30453,bungalow,3,2,3,216,45,yes,2,37.8
+LH1397,Yaba,6.51898,3.37645,self-contain,1,2,2,33,12,yes,0,14.2
+LH1398,Magodo,6.63156,3.36852,detached duplex,5,5,6,519,11,yes,4,469.5
+LH1399,Victoria Island,6.42468,3.41788,flat,2,2,2,148,11,yes,2,339.2
+LH1400,Ajah,6.46839,3.56033,bungalow,2,1,2,95,24,no,1,16.5
+LH1401,Ikorodu,6.61976,3.50905,bungalow,3,3,3,201,14,no,1,23.3
+LH1402,Ikoyi,6.44909,3.43025,terrace,3,3,4,178,5,no,0,265.9
+LH1403,Ikorodu,6.62095,3.50569,bungalow,3,2,3,201,8,no,0,27.8
+LH1404,Yaba,6.5103,3.38564,self-contain,1,1,1,27,8,no,0,11.1
+LH1405,Ojodu,6.65414,3.36713,flat,3,3,4,152,1,no,2,57.7
+LH1406,Ikorodu,6.61254,3.52475,flat,1,1,2,75,2,no,1,11.4
+LH1407,Ikeja Gra,6.57475,3.36172,flat,3,3,4,148,3,no,1,128.4
+LH1408,Festac,6.48051,3.28764,self-contain,1,1,1,41,9,no,0,14.4
+LH1409,lekki phase 1,6.43899,3.46376,terrace,4,3,3,249,2,no,2,310.9
+LH1410,Ojodu,6.6367,3.37697,flat,3,3,3,179,7,no,2,70.6
+LH1411,Ojodu,6.65341,3.37481,flat,1,2,3,80,5,no,1,32.0
+LH1412,Yaba,6.51266,3.37674,flat,4,3,3,156,6,no,2,70.0
+LH1413,Yaba,6.5109,3.36823,self-contain,1,1,1,29,4,no,1,15.5
+LH1414,Ikorodu,6.62884,3.50862,bungalow,3,3,4,171,8,no,1,14.3
+LH1415,Surulere,6.49955,3.3436,flat,3,2,3,111,23,no,2,53.4
+LH1416,Lekki Phase 1,6.44035,3.46885,terrace,3,3,4,162,5,yes,1,185.1
+LH1417,Ikeja GRA,6.5765,3.36139,detached duplex,6,5,6,583,15,no,5,500
+LH1418,Victoria Island,6.42561,3.41636,detached duplex,5,5,5,433,17,no,4,500
+LH1419,Lekki Phase 1,6.44464,3.48162,flat,2,2,3,132,4,yes,0,129.7
+LH1420,Festac,6.45395,3.29138,flat,3,3,3,128,4,no,1,52.5
+LH1421,Festac,6.45196,3.28431,flat,2,2,3,108,16,no,0,26.1
+LH1422,Ikoyi,6.44797,3.43088,terrace,3,3,4,249,10,yes,2,500
+LH1423,Yaba,6.51368,3.38398,flat,3,3,4,131,21,no,2,50.5
+LH1424,Ikeja GRA,6.57358,3.36062,detached duplex,5,5,5,297,4,yes,3,357.2
+LH1425,Ojodu,6.65099,3.36688,flat,2,2,2,134,12,no,2,43.9
+LH1426,Surulere,6.49739,3.36737,terrace,3,3,3,278,5,yes,3,195.9
+LH1427,Ikorodu,6.60463,3.50412,self-contain,1,1,1,35,12,no,0,3.5
+LH1428,Lekki Phase 1,6.44494,3.46951,flat,1,1,2,61,0,yes,1,102.0
+LH1429,Lekki Phase 1,6.42335,3.48845,flat,2,2,3,124,4,yes,1,129.7
+LH1430,Gbagada,6.54371,3.39542,flat,4,4,5,178,10,no,1,113.0
+LH1431,Lekki Phase 1,6.44352,3.49286,terrace,4,4,5,239,22,no,1,273.5
+LH1432,Ojodu,6.64485,3.36225,flat,1,1,2,66,19,no,2,16.0
+LH1433,Gbagada,6.55678,3.38285,semi-detached duplex,5,5,6,319,1,no,3,234.3
+LH1434,Ikeja GRA,6.5782,3.35447,flat,3,3,3,135,19,yes,1,117.8
+LH1435,Ikeja GRA,6.58696,3.36382,detached duplex,6,7,8,459,29,no,3,339.6
+LH1436,Yaba,6.50065,3.3753,flat,1,1,2,105,18,no,1,44.8
+LH1437,Yaba,6.50035,3.38912,flat,1,1,1,81,13,yes,0,36.7
+LH1438,Ajah,6.48236,3.57658,bungalow,2,1,2,161,10,yes,0,43.2
+LH1439,Surulere,6.51841,3.35123,flat,3,3,4,121,12,yes,1,56.7
+LH1440,Festac,6.46114,3.29208,flat,2,2,3,108,3,no,1,29.0
+LH1441,Lekki Phase 1,6.45466,3.46485,flat,2,3,4,138,31,no,2,108.1
+LH1442,Ikoyi,6.45897,3.41806,flat,3,2,2,140,4,yes,1,306.6
+LH1443,Lekki Phase 1,6.43988,3.4788,detached duplex,4,4,5,358,8,yes,3,454.8
+LH1444,Surulere,6.50994,3.34667,self-contain,1,1,1,31,0,no,1,10.0
+LH1445,Gbagada,6.54363,3.37528,flat,3,3,4,137,15,no,2,69.8
+LH1446,Lekki Phase 1,6.45933,3.47404,detached duplex,6,5,6,584,3,no,5,500
+LH1447,Victoria Island,6.4262,3.43053,flat,2,1,2,124,10,no,2,206.2
+LH1448,Lekki Phase 1,6.44303,3.48678,semi-detached duplex,5,5,5,317,24,no,2,240.5
+LH1449,Yaba,6.52191,3.37489,terrace,3,3,3,213,0,no,1,78.2
+LH1450,Ikorodu,6.62592,3.49569,bungalow,2,2,3,125,1,no,2,19.4
+LH1451,Magodo,6.62453,3.38343,flat,3,2,2,164,40,no,1,107.2
+LH1452,lekki phase 1,6.43926,3.47411,flat,1,1,1,66,18,yes,1,67.0
+LH1453,Gbagada,6.55718,3.37063,self-contain,1,1,1,30,10,no,0,13.8
+LH1454,Surulere,6.50052,3.35708,flat,4,4,4,176,7,no,4,80.8
+LH1455,Ajah,6.46212,3.56913,terrace,3,3,3,170,22,no,0,51.1
+LH1456,Lekki Phase 1,6.44172,3.46677,detached duplex,5,6,7,497,14,no,5,403.3
+LH1457,Festac,6.46887,3.28623,bungalow,2,2,3,121,17,no,1,36.7
+LH1458,Magodo,6.61366,3.39021,flat,1,2,3,81,3,no,1,53.4
+LH1459,Gbagada,6.55585,3.39272,flat,1,1,1,91,9,no,1,40.5
+LH1460,Lekki Phase 1,6.44783,3.47355,terrace,3,3,3,203,10,yes,1,230.6
+LH1461,Yaba,6.51159,3.39845,flat,1,1,2,78,18,no,1,35.2
+LH1462,Ikoyi,6.45525,3.43193,flat,2,2,2,94,14,no,1,168.4
+LH1463,Yaba,6.51173,3.38063,terrace,4,4,5,210,1,no,2,83.5
+LH1464,Victoria Island,6.42311,3.42359,flat,4,4,5,170,18,no,1,306.7
+LH1465,Lekki Phase 1,6.43823,3.47938,terrace,3,3,4,234,9,yes,2,234.0
+LH1466,Lekki Phase 1,6.44692,3.48459,detached duplex,4,,4,305,4,no,3,485.5
+LH1467,Ikeja GRA,6.57977,3.34957,terrace,4,4,5,256,7,yes,3,297.6
+LH1468,Festac,6.47449,3.28259,bungalow,4,4,5,238,8,no,2,78.1
+LH1469,Ajah,6.4555,3.5486,bungalow,4,4,5,234,12,yes,3,71.4
+LH1470,Victoria Island,6.42094,3.42376,detached duplex,6,5,5,516,10,no,5,500
+LH1471,Magodo,6.62469,3.38771,flat,2,2,3,84,18,no,1,42.6
+LH1472,Ikeja GRA,6.58549,3.36018,terrace,4,3,4,1770,2,no,2,173.6
+LH1473,Ajah,6.45622,3.56361,semi-detached duplex,5,5,6,317,16,yes,0,91.1
+LH1474,Festac,6.46821,3.29575,flat,2,2,2,131,13,yes,0,39.0
+LH1475,Gbagada,6.5597,3.39315,flat,2,2,3,92,16,yes,2,44.5
+LH1476,Surulere,6.49527,3.35876,terrace,4,4,5,221,13,no,2,65.0
+LH1477,Ikoyi,6.45984,3.4438,terrace,3,3,3,153,20,yes,1,234.4
+LH1478,Ikeja GRA,6.57437,3.35526,terrace,3,4,5,195,4,no,1,162.7
+LH1479,Victoria Island,6.42454,3.42343,terrace,4,4,5,268,23,no,2,274.7
+LH1480,Ajah,6.47255,3.57384,bungalow,3,3,4,143,11,no,1,38.2
+LH1481,Lekki Phase 1,6.44869,3.46441,detached duplex,5,5,5,517,12,no,3,500
+LH1482,Gbagada,6.54829,3.39053,flat,4,4,5,166,0,yes,1,107.6
+LH1483,Lekki Phase 1,6.44563,3.47442,semi-detached duplex,4,3,4,322,4,yes,2,339.7
+LH1484,Yaba,6.50871,3.37641,terrace,3,3,4,193,15,no,1,110.3
+LH1485,Surulere,6.50547,3.35264,self-contain,1,1,1,43,9,no,0,16.2
+LH1486,Ikoyi,6.44341,3.43183,detached duplex,4,3,3,412,6,no,2,500
+LH1487,Lekki Phase 1,6.45161,3.46215,terrace,3,2,2,210,23,no,3,203.8
+LH1488,Gbagada,6.54726,3.38396,flat,3,3,3,141,8,no,2,96.0
+LH1489,Ikorodu,6.62364,3.50959,flat,2,2,3,110,6,no,1,19.2
+LH1490,Lekki Phase 1,6.43432,3.46761,terrace,4,4,5,257,23,no,3,277.2
+LH1491,Gbagada,6.54256,3.39121,flat,3,3,3,154,15,no,3,51.5
+LH1492,Lekki Phase 1,6.44294,3.47224,detached duplex,4,4,5,363,16,yes,2,433.3
+LH1493,Festac,6.46189,3.29365,terrace,3,3,4,164,1,no,1,76.9
+LH1494,Yaba,6.4974,3.37839,self-contain,1,1,1,25,3,no,0,11.3
+LH1495,Magodo,6.61133,3.36522,detached duplex,6,5,6,507,8,no,5,376.8
+LH1496,Lekki Phase 1,6.44116,3.47135,flat,1,1,1,57,14,no,2,61.8
+LH1497,Ajah,6.46468,3.54415,bungalow,3,4,5,184,8,no,1,45.5
+LH1498,Ajah,6.45534,3.56067,flat,3,3,4,179,19,no,1,37.9
+LH1499,Victoria Island,6.42425,3.40912,flat,2,2,2,106,14,no,2,144.0
+LH1500,Ajah,6.45809,3.57089,flat,2,2,3,83,4,no,2,29.3
+LH1501,Ikoyi,6.44628,3.4495,flat,4,4,5,186,3,yes,1,329.2
+LH1502,Ikoyi,6.44695,3.44014,semi-detached duplex,5,5,6,360,8,no,3,500
+LH1503,Ikeja GRA,6.59226,3.35625,flat,4,4,5,170,10,yes,0,173.2
+LH1504,Ikorodu,6.61778,3.52074,self-contain,1,2,2,40,6,no,1,4.3
+LH1505,Surulere,6.50389,3.34716,self-contain,1,1,1,37,1,yes,0,15.7
+LH1506,Lekki Phase 1,6.45087,3.4696,flat,2,2,3,58,15,no,1,46.0
+LH1507,Ikorodu,6.62055,3.5155,flat,2,2,3,93,7,no,1,12.5
+LH1508,Festac,6.47742,3.28645,self-contain,1,1,1,45,13,no,2,17.9
+LH1509,Ajah,6.4717,3.55784,terrace,4,4,5,218,3,no,1,79.8
+LH1510,Surulere,6.49527,3.35079,bungalow,3,3,3,186,5,no,3,89.1
+LH1511,Surulere,6.48117,3.36239,flat,2,2,2,93,5,no,1,30.4
+LH1512,Ikeja GRA,6.57719,3.34388,semi-detached duplex,4,4,5,290,26,yes,2,202.0
+LH1513,Ikorodu,6.6193,3.51002,bungalow,2,2,2,92,13,no,0,9.8
+LH1514,Ajah,6.46267,3.57583,semi-detached duplex,5,5,5,330,5,no,3,97.4
+LH1515,Ajah,6.46542,3.57845,terrace,3,2,3,168,16,yes,0,49.5
+LH1516,Magodo,6.6258,3.37486,flat,1,1,2,79,14,no,0,45.0
+LH1517,Lekki Phase 1,6.44678,3.47213,semi-detached duplex,4,4,5,235,2,no,2,283.2
+LH1518,Ajah,6.47035,3.55797,flat,1,2,3,65,10,no,1,17.9
+LH1519,Surulere,6.50705,3.3608,self-contain,1,1,1,29,16,no,1,6.9
+LH1520,Ikorodu,6.61664,3.50992,bungalow,4,4,4,239,26,yes,2,19.8
+LH1521,Festac,6.46898,3.2926,flat,1,2,3,74,8,no,0,20.9
+LH1522,Ikorodu,6.61728,3.49886,bungalow,3,3,4,216,27,no,0,19.6
+LH1523,Gbagada,6.56746,3.38819,self-contain,1,1,1,35,0,no,0,20.9
+LH1524,Magodo,6.63272,3.38557,bungalow,3,2,3,163,2,no,2,101.3
+LH1525,Magodo,6.62654,3.37829,detached duplex,5,6,6,447,2,no,4,388.4
+LH1526,Gbagada,6.56743,3.38995,flat,4,4,5,177,2,no,1,107.6
+LH1527,Ikeja GRA,6.5847,3.3554,detached duplex,5,4,5,,6,yes,5,500
+LH1528,Victoria Island,6.42738,3.4236,flat,1,1,1,65,6,no,2,95.0
+LH1529,Ajah,6.46511,3.55234,flat,3,3,4,164,8,no,2,53.2
+LH1530,Festac,6.46736,3.28167,flat,3,3,3,180,2,no,2,60.4
+LH1531,Ikeja GRA,6.57108,3.35091,detached duplex,5,5,5,547,10,no,4,500
+LH1532,Surulere,6.5051,3.35506,flat,1,1,1,64,15,no,2,20.8
+LH1533,Ikoyi,6.4576,3.44188,flat,3,3,4,150,7,yes,1,289.5
+LH1534,Ajah,6.45542,3.56583,bungalow,2,2,2,146,7,no,2,46.8
+LH1535,Yaba,6.50936,3.38616,self-contain,1,1,1,42,9,no,1,19.3
+LH1536,Ikeja GRA,6.59028,3.34886,detached duplex,4,4,4,493,26,yes,5,391.1
+LH1537,Surulere,6.50054,3.34705,terrace,4,4,5,216,18,no,2,73.4
+LH1538,Lekki Phase 1,6.44783,3.48902,detached duplex,6,6,7,351,12,yes,3,442.9
+LH1539,Ojodu,6.65391,3.36998,self-contain,1,1,1,28,10,no,1,11.6
+LH1540,Yaba,6.51618,3.36754,flat,3,3,4,115,5,yes,1,59.9
+LH1541,Lekki Phase 1,6.44797,3.45817,terrace,4,4,5,270,1,yes,2,481.4
+LH1542,Gbagada,6.56266,3.4032,flat,3,2,3,158,11,no,1,49.3
+LH1543,Ikorodu,6.60816,3.5058,bungalow,3,2,2,123,9,no,2,12.3
+LH1544,Victoria Island,6.42494,3.42813,terrace,3,3,4,155,9,yes,1,318.7
+LH1545,Festac,6.47141,3.2971,flat,4,3,3,189,30,yes,2,50.9
+LH1546,Ikoyi,6.44107,3.42604,flat,4,4,4,164,10,yes,0,318.2
+LH1547,Ajah,6.46424,3.55589,flat,4,4,5,154,7,no,3,33.7
+LH1548,Lekki Phase 1,6.45678,3.46951,flat,3,3,4,170,20,yes,2,144.7
+LH1549,Lekki Phase 1,6.44516,3.48688,flat,1,2,3,57,3,no,1,45.3
+LH1550,Ojodu,6.63157,3.37176,self-contain,1,1,1,42,32,no,0,10.1
+LH1551,Ajah,6.45513,3.56014,flat,3,3,4,124,5,yes,0,52.2
+LH1552,Ajah,6.47029,3.57211,semi-detached duplex,5,4,5,292,2,no,2,90.9
+LH1553,Victoria Island,6.42349,3.41876,terrace,3,2,3,159,4,no,1,275.6
+LH1554,Ikeja GRA,6.58626,3.34848,detached duplex,5,5,6,404,2,no,3,443.9
+LH1555,Ajah,6.45657,3.56597,semi-detached duplex,5,4,4,,14,yes,3,97.7
+LH1556,Ojodu,6.63623,3.37406,flat,2,2,2,119,18,no,1,35.5
+LH1557,Magodo,6.63132,3.3818,bungalow,3,2,3,250,5,no,3,149.8
+LH1558,Ikoyi,6.45836,3.43782,semi-detached duplex,4,4,5,296,5,no,3,500
+LH1559,Festac,6.45942,3.27005,flat,1,1,1,78,13,no,1,26.4
+LH1560,Ajah,6.4685,3.56529,semi-detached duplex,5,5,6,310,13,yes,2,109.2
+LH1561,Lekki Phase 1,6.45643,3.46999,flat,2,2,2,118,1,no,0,161.5
+LH1562,Yaba,6.51132,3.37583,flat,1,2,3,70,5,yes,1,36.9
+LH1563,Ikeja GRA,6.57195,3.3596,semi-detached duplex,5,4,5,287,3,no,2,281.8
+LH1564,Festac,6.4651,3.28857,flat,3,3,3,164,10,no,1,32.9
+LH1565,Ikeja GRA,6.57894,3.35357,semi-detached duplex,5,4,4,359,8,yes,3,366.3
+LH1566,Magodo,6.62855,3.37159,flat,2,2,3,61,6,no,1,31.9
+LH1567,Victoria Island,6.43762,3.40565,flat,4,4,5,151,8,yes,0,268.9
+LH1568,Surulere,6.49478,3.351,flat,3,3,3,164,3,no,1,95.0
+LH1569,Lekki Phase 1,6.44634,3.47004,flat,1,1,2,61,10,yes,0,66.7
+LH1570,Yaba,6.50526,3.36965,flat,4,4,5,155,6,no,1,93.3
+LH1571,Lekki Phase 1,6.44414,3.47212,flat,3,3,4,105,21,yes,1,109.1
+LH1572,Magodo,6.63054,3.37291,semi-detached duplex,5,6,6,284,8,no,1,218.9
+LH1573,Ajah,6.48511,3.55073,bungalow,4,4,4,233,35,no,2,46.5
+LH1574,Yaba,6.50878,3.37608,flat,3,3,4,152,13,no,2,56.2
+LH1575,Festac,6.47728,3.28558,flat,4,4,4,168,4,yes,1,74.5
+LH1576,Lekki Phase 1,6.453,3.46545,detached duplex,5,5,6,321,27,yes,3,414.9
+LH1577,Ajah,6.46682,3.56263,terrace,3,3,4,194,2,no,1,83.8
+LH1578,Lekki Phase 1,6.45238,3.47057,flat,4,3,3,150,10,yes,1,138.0
+LH1579,Yaba,6.51577,3.38143,flat,1,1,1,61,12,no,1,28.6
+LH1580,Magodo,6.63068,3.37303,semi-detached duplex,4,3,4,200,12,yes,2,135.6
+LH1581,Ikorodu,6.61769,3.51175,bungalow,3,,3,117,11,no,0,14.5
+LH1582,Lekki Phase 1,6.44905,3.48684,terrace,4,5,6,191,8,yes,2,241.3
+LH1583,Ajah,6.45993,3.57174,bungalow,3,3,4,197,6,no,1,58.1
+LH1584,Ojodu,6.6338,3.35817,flat,4,5,6,174,16,yes,2,55.8
+LH1585,Lekki Phase 1,6.43532,3.47887,terrace,3,3,4,224,2,no,3,240.3
+LH1586,Ikeja GRA,6.56749,3.34566,flat,3,3,4,148,23,yes,2,105.5
+LH1587,Gbagada,6.54906,3.38757,flat,1,,2,57,15,yes,0,39.7
+LH1588,Festac,6.47279,3.27711,flat,1,1,2,63,11,no,2,23.9
+LH1589,Surulere,6.50123,3.35253,terrace,4,4,4,279,7,yes,2,149.9
+LH1590,Surulere,6.50042,3.35246,flat,1,2,3,102,8,no,1,38.8
+LH1591,Ajah,6.46868,3.5596,bungalow,3,2,3,152,8,no,1,38.7
+LH1592,Ikoyi,6.45398,3.43298,flat,2,2,3,163,7,yes,1,328.1
+LH1593,Ojodu,6.64648,3.37219,bungalow,4,4,5,175,10,no,1,57.2
+LH1594,Victoria Island,6.42913,3.42174,flat,2,2,3,156,17,yes,1,301.0
+LH1595,Ikoyi,6.44683,3.44127,terrace,3,3,3,229,9,yes,1,463.8
+LH1596,Ojodu,6.63646,3.3702,bungalow,4,4,5,237,7,yes,0,91.5
+LH1597,Ikeja GRA,6.57754,3.35919,flat,1,1,2,87,8,yes,1,83.8
+LH1598,Yaba,6.50542,3.36415,flat,2,2,3,91,6,no,1,32.3
+LH1599,Magodo,6.62609,3.39763,flat,2,2,2,88,2,no,0,53.7
+LH1600,Ajah,6.47948,3.59494,bungalow,3,3,4,157,27,no,1,47.7
+LH1601,Festac,6.47733,3.28159,flat,3,4,5,178,9,yes,2,76.9
+LH1602,Festac,6.46733,3.27549,flat,3,3,3,118,2,no,0,43.3
+LH1603,Lekki Phase 1,6.45251,3.47444,semi-detached duplex,5,5,6,331,18,no,3,326.8
+LH1604,Surulere,6.50669,3.36002,self-contain,1,1,1,30,18,no,1,10.4
+LH1605,Yaba,6.50707,3.37425,self-contain,1,2,2,44,6,yes,2,21.6
+LH1606,Victoria Island,6.42927,3.41744,flat,1,1,2,59,27,no,0,51.5
+LH1607,Gbagada,6.55537,3.38324,terrace,4,4,5,223,3,no,2,160.9
+LH1608,Surulere,6.49624,3.36965,self-contain,1,2,2,38,9,no,0,11.7
+LH1609,Surulere,6.48842,3.33721,self-contain,1,1,1,43,2,no,0,16.2
+LH1610,Ojodu,6.6279,3.37793,bungalow,3,3,4,196,21,yes,2,86.0
+LH1611,Yaba,6.49928,3.37376,flat,4,5,6,,9,no,2,94.0
+LH1612,Lekki Phase 1,6.43866,3.47753,flat,3,3,4,,13,yes,2,152.4
+LH1613,Ikorodu,6.61457,3.51046,self-contain,1,1,1,30,1,no,0,3.6
+LH1614,Gbagada,6.55984,3.39737,flat,4,3,4,182,9,no,2,88.4
+LH1615,Gbagada,6.56839,3.39972,self-contain,1,1,1,29,20,yes,1,13.0
+LH1616,Yaba,6.51633,3.38566,flat,2,2,3,105,7,yes,3,62.4
+LH1617,Magodo,6.61475,3.38401,bungalow,3,2,2,143,13,no,2,76.2
+LH1618,Ikeja GRA,6.5866,3.35355,detached duplex,6,6,7,551,22,no,5,500
+LH1619,Ajah,6.46771,3.56711,flat,2,3,4,106,2,no,0,37.2
+LH1620,Lekki Phase 1,6.46409,3.4669,semi-detached duplex,4,4,5,256,9,yes,2,361.0
+LH1621,Ikeja GRA,6.57191,3.3487,flat,2,1,2,128,4,no,2,135.3
+LH1622,Ojodu,6.64441,3.37871,bungalow,4,4,5,135,9,yes,1,34.8
+LH1623,Gbagada,6.56739,3.3752,semi-detached duplex,4,3,4,301,1,no,3,208.1
+LH1624,Ajah,6.46351,3.56925,flat,2,2,2,104,2,no,1,43.7
+LH1625,Ikeja GRA,6.58639,3.34577,terrace,4,5,5,226,11,no,2,180.1
+LH1626,Ajah,6.45792,3.56641,bungalow,3,2,3,225,15,yes,1,61.0
+LH1627,Surulere,6.49636,3.35591,flat,2,2,3,57,2,yes,0,28.4
+LH1628,Gbagada,6.56543,3.38833,flat,2,3,4,93,5,no,1,60.9
+LH1629,Ikoyi,6.46745,3.43139,detached duplex,5,5,5,380,10,yes,3,500
+LH1630,Ikorodu,6.62309,3.50292,bungalow,2,1,2,141,12,no,0,17.1
+LH1631,Ajah,6.46652,3.5703,flat,3,3,4,137,3,no,1,44.4
+LH1632,Surulere,6.5021,3.35154,flat,3,3,4,173,12,yes,2,93.1
+LH1633,Ojodu,6.63926,3.36797,bungalow,3,3,4,227,15,no,2,75.1
+LH1634,Victoria Island,6.43364,3.40716,terrace,3,4,5,253,4,yes,2,353.5
+LH1635,Gbagada,6.55031,3.39258,flat,4,4,5,148,22,no,2,72.3
+LH1636,Surulere,6.4923,3.3605,self-contain,1,1,1,35,21,no,1,8.8
+LH1637,Gbagada,6.53343,3.3773,self-contain,1,1,1,30,8,yes,0,21.0
+LH1638,Lekki Phase 1,6.44866,3.45663,flat,3,2,3,108,7,yes,0,103.9
+LH1639,Yaba,6.51572,3.37586,flat,3,3,4,182,23,yes,1,70.5
+LH1640,Yaba,6.50877,3.38938,flat,2,2,2,118,11,no,1,48.4
+LH1641,Ikorodu,6.62276,3.50366,bungalow,4,5,6,211,17,no,0,19.2
+LH1642,Festac,6.48112,3.28354,terrace,4,4,5,224,18,no,3,72.4
+LH1643,Gbagada,6.54342,3.39343,self-contain,1,1,1,43,7,no,0,19.9
+LH1644,Ikorodu,6.61796,3.51485,self-contain,1,1,1,27,3,no,0,3.5
+LH1645,Magodo,6.61632,3.38943,detached duplex,6,6,7,536,6,no,5,476.9
+LH1646,Ikeja GRA,6.57289,3.34825,terrace,4,4,4,198,10,yes,1,257.1
+LH1647,Ikeja GRA,6.5772,3.35967,terrace,3,3,3,190,1,yes,1,143.8
+LH1648,Ikorodu,6.62847,3.5096,bungalow,4,4,5,129,7,yes,2,15.6
+LH1649,Ikorodu,6.61354,3.51033,detached duplex,6,6,6,466,7,no,4,112.7
+LH1650,Lekki Phase 1,6.43663,3.47093,detached duplex,6,6,7,585,6,yes,6,500
+LH1651,Lekki Phase 1,6.44959,3.47058,flat,2,3,4,117,21,no,0,71.4
+LH1652,Lekki Phase 1,6.45423,3.47067,terrace,3,3,3,243,6,no,3,229.0
+LH1653,Ikeja GRA,6.59446,3.37164,flat,1,2,2,61,16,yes,0,44.9
+LH1654,Surulere,6.49352,3.35458,flat,2,2,2,99,1,no,0,38.8
+LH1655,Gbagada,6.56138,3.3828,flat,3,3,4,102,7,yes,1,63.5
+LH1656,Yaba,6.48974,3.38573,flat,3,2,2,154,2,no,0,67.8
+LH1657,Festac,6.47294,3.28303,bungalow,3,4,5,135,3,no,1,37.3
+LH1658,Festac,6.46945,3.28851,bungalow,3,4,5,141,12,yes,0,40.4
+LH1659,Ajah,6.45937,3.57052,bungalow,3,3,3,220,1,yes,3,93.9
+LH1660,Ikorodu,6.60735,3.50888,bungalow,3,3,4,166,5,no,1,23.1
+LH1661,Ikoyi,6.44767,3.4215,semi-detached duplex,5,5,6,278,2,no,3,500
+LH1662,Magodo,6.61547,3.39429,detached duplex,5,4,5,547,4,no,4,420.7
+LH1663,Ikeja GRA,6.58484,3.35449,terrace,3,3,4,201,16,no,1,205.7
+LH1664,Lekki Phase 1,6.44207,3.48575,terrace,3,3,4,184,5,yes,2,209.4
+LH1665,Magodo,6.62028,3.37381,detached duplex,6,6,7,459,23,no,5,262.7
+LH1666,Ikorodu,6.6219,3.51007,detached duplex,5,5,6,566,10,no,5,93.0
+LH1667,Gbagada,6.56283,3.38887,terrace,4,4,4,183,21,no,1,99.8
+LH1668,Yaba,6.51015,3.36326,self-contain,1,1,1,35,12,no,0,17.1
+LH1669,Yaba,6.51636,3.38919,flat,3,3,4,189,5,yes,1,99.1
+LH1670,Lekki Phase 1,6.43475,3.48581,detached duplex,4,4,5,306,1,yes,2,376.1
+LH1671,Ojodu,6.65083,3.35873,self-contain,1,1,1,25,5,no,2,7.9
+LH1672,Ajah,6.46901,3.56777,semi-detached duplex,4,4,5,267,15,no,1,86.3
+LH1673,Ajah,6.47157,3.55539,bungalow,2,2,2,193,7,no,3,53.4
+LH1674,Festac,6.46703,3.27483,flat,2,2,3,103,10,no,2,25.3
+LH1675,Magodo,6.6215,3.37588,flat,2,2,3,85,29,no,1,50.8
+LH1676,Surulere,6.497,3.36782,flat,3,4,5,162,8,no,0,84.6
+LH1677,Magodo,6.6357,3.37526,flat,1,1,1,105,13,no,1,63.1
+LH1678,Ojodu,6.64409,3.35462,bungalow,2,2,3,91,12,no,0,22.5
+LH1679,Magodo,6.61942,3.38479,bungalow,4,4,5,248,15,no,3,114.9
+LH1680,Ikeja GRA,6.58284,3.35564,flat,2,2,2,66,5,no,1,61.0
+LH1681,Gbagada,6.56618,3.38264,flat,2,2,3,74,24,no,0,18.6
+LH1682,Yaba,6.50641,3.37471,flat,1,1,1,83,12,no,1,34.8
+LH1683,Ikeja GRA,6.58169,3.35457,semi-detached duplex,5,5,6,280,2,yes,3,426.1
+LH1684,Ojodu,6.63943,3.38259,self-contain,1,1,1,41,3,no,1,19.6
+LH1685,Ikorodu,6.60689,3.50303,bungalow,2,2,2,96,2,no,0,14.2
+LH1686,Ikeja GRA,6.57825,3.35252,detached duplex,4,4,5,289,0,no,5,348.8
+LH1687,Ajah,6.4769,3.57041,semi-detached duplex,4,4,5,351,3,no,3,160.9
+LH1688,Lekki Phase 1,6.44524,3.472,terrace,4,4,5,266,4,yes,2,245.3
+LH1689,Festac,6.47532,3.26828,bungalow,3,3,4,166,5,no,0,58.4
+LH1690,Magodo,6.62106,3.38214,flat,1,2,3,66,4,no,0,31.2
+LH1691,Festac,6.47552,3.26831,bungalow,4,4,5,251,11,no,2,88.6
+LH1692,Victoria Island,6.43827,3.42173,flat,3,2,2,138,5,no,1,181.9
+LH1693,Victoria Island,6.4148,3.42023,flat,3,2,3,124,4,yes,0,223.3
+LH1694,Ikorodu,6.59897,3.50256,bungalow,2,2,2,137,10,no,1,13.4
+LH1695,Yaba,6.49984,3.36292,self-contain,1,1,1,26,5,no,1,11.9
+LH1696,Ajah,6.46332,3.549,semi-detached duplex,5,5,6,303,29,no,2,88.8
+LH1697,Victoria Island,6.43365,3.42284,detached duplex,4,5,6,327,11,yes,3,500
+LH1698,Gbagada,6.5493,3.38502,flat,3,3,4,127,15,no,1,49.6
+LH1699,Ojodu,6.65068,3.36581,flat,3,3,4,110,15,no,0,40.7
+LH1700,Ikeja GRA,6.5964,3.35725,semi-detached duplex,4,4,5,288,4,yes,2,310.7
+LH1701,Victoria Island,6.41718,3.44531,flat,1,1,2,74,16,yes,2,107.9
+LH1702,Lekki Phase 1,6.43884,3.47488,terrace,3,2,2,193,32,no,2,158.7
+LH1703,Ajah,6.46744,3.55434,bungalow,2,1,1,116,16,no,2,38.5
+LH1704,Lekki Phase 1,6.44511,3.46399,flat,3,3,4,171,12,no,4,186.0
+LH1705,Surulere,6.50801,3.35522,flat,2,2,3,99,8,no,1,42.5
+LH1706,Magodo,6.62729,3.39168,flat,2,3,4,120,2,no,0,58.0
+LH1707,Festac,6.46831,3.27202,terrace,3,2,3,162,4,no,1,55.1
+LH1708,Magodo,6.62458,3.3715,semi-detached duplex,5,5,6,279,4,no,2,224.5
+LH1709,Gbagada,6.56352,3.37234,flat,2,2,3,64,9,no,0,37.6
+LH1710,Victoria Island,6.43756,3.41154,flat,2,2,3,99,10,no,0,179.0
+LH1711,Ajah,6.48611,3.55849,terrace,4,5,6,239,4,no,1,96.0
+LH1712,Victoria Island,6.43777,3.42154,terrace,4,4,5,228,5,no,3,261.3
+LH1713,Yaba,6.5147,3.36835,flat,2,1,2,102,9,yes,1,48.2
+LH1714,Ikeja GRA,6.58098,3.35904,flat,3,2,3,150,9,no,3,165.3
+LH1715,Ojodu,6.63273,3.3764,self-contain,1,1,1,38,15,no,0,10.9
+LH1716,Lekki Phase 1,6.43677,3.47014,flat,3,3,4,120,11,yes,0,140.3
+LH1717,Magodo,6.61897,3.39652,semi-detached duplex,4,3,3,224,1,yes,2,268.5
+LH1718,Yaba,6.51026,3.38403,terrace,3,2,2,188,2,no,1,114.6
+LH1719,Ikorodu,6.60409,3.50807,bungalow,3,3,3,214,10,yes,0,32.0
+LH1720,Lekki Phase 1,6.44869,3.47602,semi-detached duplex,4,3,4,246,5,yes,2,408.0
+LH1721,Ojodu,6.6261,3.38785,flat,1,1,2,65,17,no,2,20.5
+LH1722,Ikeja GRA,6.58018,3.34126,flat,4,4,5,168,4,yes,2,109.0
+LH1723,Festac,6.46879,3.27065,flat,3,4,5,141,9,yes,1,47.3
+LH1724,Surulere,6.49229,3.33896,terrace,4,5,6,211,11,yes,1,110.2
+LH1725,Gbagada,6.55606,3.37684,terrace,3,3,4,177,10,no,1,104.5
+LH1726,Surulere,6.50083,3.36602,flat,1,2,3,76,30,no,1,17.0
+LH1727,Ajah,6.45082,3.56901,semi-detached duplex,4,3,3,218,8,no,2,87.2
+LH1728,Yaba,6.50651,3.36845,flat,1,2,2,74,5,no,0,40.7
+LH1729,Lekki Phase 1,6.45138,3.48477,flat,3,3,4,182,11,yes,2,176.8
+LH1730,Ajah,6.46291,3.56295,flat,3,2,3,158,18,yes,2,46.3
+LH1731,Gbagada,6.55985,3.39514,flat,2,1,2,109,6,no,2,48.7
+LH1732,Gbagada,6.55746,3.39875,semi-detached duplex,4,4,5,220,28,no,3,112.6
+LH1733,Festac,6.46101,3.26393,flat,1,1,1,86,15,no,1,31.2
+LH1734,Ikeja GRA,6.58834,3.35288,semi-detached duplex,4,4,4,209,4,no,1,150.1
+LH1735,Gbagada,6.54825,3.39563,flat,2,2,2,107,9,no,2,47.0
+LH1736,Gbagada,6.5536,3.38715,terrace,3,3,3,168,8,yes,1,117.4
+LH1737,Ikoyi,6.45783,3.42635,flat,1,1,2,64,6,no,0,163.6
+LH1738,Festac,6.47663,3.29148,bungalow,3,3,4,247,18,no,2,81.2
+LH1739,Magodo,6.61605,3.3843,flat,3,3,4,155,25,no,1,79.9
+LH1740,Ikoyi,6.4516,3.42245,terrace,4,4,5,170,3,yes,1,339.7
+LH1741,Ikorodu,6.61712,3.51233,flat,3,2,3,108,8,no,1,13.6
+LH1742,Yaba,6.50772,3.38161,self-contain,1,1,1,38,4,no,1,13.9
+LH1743,surulere,6.49188,3.34218,self-contain,1,1,1,35,10,no,0,13.0
+LH1744,Surulere,6.51454,3.35966,flat,4,4,4,,2,no,0,66.3
+LH1745,Lekki Phase 1,6.45019,3.4567,semi-detached duplex,4,4,5,353,23,no,3,365.8
+LH1746,Ikoyi,6.45981,3.44318,flat,4,4,5,176,10,yes,3,394.7
+LH1747,Lekki Phase 1,6.45349,3.45298,terrace,4,5,5,179,4,no,2,163.9
+LH1748,Ajah,6.46671,3.5769,flat,2,3,3,82,10,no,0,33.7
+LH1749,Magodo,6.62315,3.38446,semi-detached duplex,5,5,6,237,23,no,2,110.8
+LH1750,Festac,6.47362,3.29172,self-contain,1,1,1,24,11,no,0,6.0
+LH1751,Ikoyi,6.45155,3.4288,flat,1,1,2,66,15,yes,1,115.9
+LH1752,Yaba,6.50447,3.3758,terrace,3,3,3,220,22,yes,2,106.3
+LH1753,Surulere,6.49688,3.35419,flat,1,1,2,66,20,no,1,20.8
+LH1754,Gbagada,6.54328,3.39336,terrace,4,5,6,254,10,yes,3,161.6
+LH1755,Ajah,6.47943,3.56147,bungalow,3,3,4,120,6,no,1,33.2
+LH1756,Festac,6.4762,3.28493,flat,2,2,3,82,4,no,3,22.2
+LH1757,Yaba,6.51292,3.37249,flat,4,4,5,174,11,yes,1,68.3
+LH1758,Ikorodu,6.60761,3.49938,flat,4,4,5,153,11,no,0,20.5
+LH1759,Ajah,6.46943,3.56763,semi-detached duplex,4,4,5,357,6,no,3,94.2
+LH1760,Victoria Island,6.43763,3.4219,flat,1,1,1,92,2,no,1,150.5
+LH1761,Ikeja GRA,6.59628,3.35979,flat,3,3,4,148,8,no,1,152.1
+LH1762,Surulere,6.49793,3.35609,flat,2,2,3,71,1,yes,0,31.6
+LH1763,Yaba,6.50743,3.37965,terrace,4,3,4,211,10,no,3,161.7
+LH1764,Lekki Phase 1,6.45419,3.47118,detached duplex,6,5,6,546,35,yes,5,442.3
+LH1765,Gbagada,6.55524,3.38424,terrace,3,3,4,162,13,no,2,73.8
+LH1766,Lekki Phase 1,6.45136,3.47409,semi-detached duplex,5,5,6,247,37,yes,2,250.4
+LH1767,lekki phase 1,6.45517,3.46513,terrace,3,3,3,219,1,no,2,248.9
+LH1768,Ojodu,6.65361,3.37635,flat,4,3,4,161,7,yes,2,82.7
+LH1769,Ikoyi,6.44365,3.43609,flat,4,4,5,162,2,yes,2,348.6
+LH1770,Ikeja GRA,6.57135,3.35473,flat,2,3,4,109,8,no,1,99.8
+LH1771,Gbagada,6.55885,3.38152,self-contain,1,1,1,43,9,no,1,22.0
+LH1772,Yaba,6.51243,3.38256,flat,1,1,2,66,7,no,2,25.8
+LH1773,Festac,6.47087,3.27751,terrace,3,3,4,268,9,no,1,86.1
+LH1774,Festac,6.4637,3.28825,terrace,4,5,6,193,11,no,2,48.8
+LH1775,surulere,6.49089,3.35471,flat,3,3,4,130,2,no,0,58.0
+LH1776,Festac,6.46857,3.27675,bungalow,3,2,3,244,27,no,2,62.4
+LH1777,Lekki Phase 1,6.43701,3.48338,flat,3,3,4,175,12,no,3,191.9
+LH1778,Gbagada,6.546,3.38722,self-contain,1,1,1,28,11,no,1,11.3
+LH1779,Ajah,6.4598,3.56752,flat,4,4,4,188,2,no,1,69.4
+LH1780,Victoria Island,6.42457,3.4451,flat,2,1,2,76,3,yes,1,136.9
+LH1781,Festac,6.46274,3.29973,flat,2,2,3,152,3,no,2,50.3
+LH1782,Magodo,6.62685,3.38419,semi-detached duplex,5,5,5,203,6,no,4,137.7
+LH1783,Magodo,6.61606,3.37986,bungalow,3,3,4,159,8,yes,2,116.0
+LH1784,Ikoyi,6.44947,3.43261,semi-detached duplex,4,4,4,253,8,yes,2,464.3
+LH1785,Lekki Phase 1,6.45338,3.47503,flat,3,3,3,139,8,yes,1,146.2
+LH1786,Lekki Phase 1,6.45815,3.47058,terrace,3,3,4,248,9,no,1,226.9
+LH1787,Lekki Phase 1,6.45015,3.46714,terrace,4,4,4,246,10,no,2,204.8
+LH1788,Ajah,6.46991,3.5687,flat,2,2,3,73,24,no,0,16.6
+LH1789,Ikorodu,6.61853,3.50709,detached duplex,5,5,5,413,12,no,4,83.1
+LH1790,Yaba,6.51331,3.37195,terrace,4,5,5,215,17,yes,1,82.5
+LH1791,Ajah,6.46281,3.57339,bungalow,4,4,5,236,9,no,4,79.8
+LH1792,Festac,6.46156,3.28115,bungalow,2,2,2,131,9,yes,1,40.1
+LH1793,Surulere,6.49239,3.34344,terrace,3,2,3,241,3,no,2,107.8
+LH1794,Victoria Island,6.43916,3.41694,flat,3,3,3,156,13,yes,1,175.7
+LH1795,Ajah,6.48266,3.55834,flat,3,3,3,132,12,no,2,43.5
+LH1796,Ajah,6.47916,3.55995,bungalow,3,4,5,110,8,no,0,43.0
+LH1797,Surulere,6.49455,3.36459,flat,2,1,2,121,17,no,2,50.4
+LH1798,Lekki Phase 1,6.46192,3.46654,terrace,4,3,4,237,7,no,2,234.4
+LH1799,Lekki Phase 1,6.45043,3.47585,detached duplex,5,5,5,417,17,no,4,437.5
+LH1800,Surulere,6.49125,3.35593,self-contain,1,1,1,37,14,no,0,12.0
+LH1801,Ikorodu,6.62859,3.51049,bungalow,3,3,3,186,3,no,0,20.7
+LH1802,Surulere,6.49773,3.35614,flat,3,3,4,146,5,no,2,73.9
+LH1803,Magodo,6.61983,3.36804,semi-detached duplex,4,4,4,325,21,yes,3,240.1
+LH1804,Victoria Island,6.43212,3.40427,flat,2,2,3,119,12,no,2,149.8
+LH1805,Surulere,6.4948,3.37443,flat,2,2,3,115,14,no,1,39.7
+LH1806,Lekki Phase 1,6.43977,3.47326,terrace,3,,4,219,0,no,1,236.5
+LH1807,Surulere,6.49467,3.36799,flat,1,1,2,79,6,no,0,30.3
+LH1808,Surulere,6.51077,3.35311,flat,3,3,4,125,3,no,0,56.9
+LH1809,Lekki Phase 1,6.44397,3.47626,flat,4,4,4,178,15,yes,3,222.7
+LH1810,Festac,6.45676,3.27667,flat,2,2,2,102,20,no,1,26.9
+LH1811,Surulere,6.51177,3.35902,flat,2,1,2,100,9,no,0,43.0
+LH1812,Festac,6.46079,3.28844,bungalow,4,4,5,190,3,no,2,56.1
+LH1813,Ikorodu,6.62236,3.49627,self-contain,1,1,1,31,11,no,0,4.1
+LH1814,Ikorodu,6.61121,3.51893,self-contain,1,1,1,28,21,no,1,3.4
+LH1815,Ajah,6.47842,3.56097,bungalow,3,3,4,101,8,yes,1,25.7
+LH1816,Gbagada,6.55678,3.38436,terrace,3,4,4,235,9,no,3,154.4
+LH1817,Festac,6.47477,3.28014,bungalow,3,2,2,201,4,no,1,57.0
+LH1818,Ajah,6.464,3.56392,terrace,3,3,4,191,2,yes,4,86.0
+LH1819,Ajah,6.4747,3.56411,flat,3,3,4,125,12,no,0,34.1
+LH1820,Surulere,6.48389,3.34419,self-contain,1,1,1,31,4,no,0,13.7
+LH1821,Ajah,6.45828,3.56999,bungalow,3,2,3,239,13,no,4,63.3
+LH1822,Ajah,6.46522,3.55024,terrace,3,3,3,211,9,yes,2,120.2
+LH1823,Surulere,6.49797,3.35535,flat,3,3,4,171,1,no,2,105.8
+LH1824,Yaba,6.50508,3.3683,terrace,4,3,3,221,7,no,2,109.9
+LH1825,Surulere,6.4937,3.34832,flat,2,1,2,97,9,no,1,44.0
+LH1826,Surulere,6.50016,3.35153,bungalow,2,1,1,112,8,yes,2,41.1
+LH1827,Festac,6.45113,3.26353,terrace,4,4,5,160,18,no,3,47.6
+LH1828,Ikorodu,6.61613,3.51382,bungalow,4,3,3,203,3,no,1,28.1
+LH1829,Lekki Phase 1,6.43586,3.47906,semi-detached duplex,4,4,5,229,8,yes,2,301.8
+LH1830,Yaba,6.51604,3.36948,flat,2,3,4,114,9,no,0,28.9
+LH1831,Ikeja Gra,6.58489,3.35683,terrace,4,4,5,273,13,yes,2,263.4
+LH1832,Ajah,6.47196,3.56727,semi-detached duplex,4,3,3,,7,no,1,94.4
+LH1833,Ikoyi,6.4608,3.43885,flat,3,3,4,150,1,yes,1,425.7
+LH1834,Magodo,6.62124,3.3831,semi-detached duplex,5,4,4,339,8,no,3,235.6
+LH1835,Ikorodu,6.60342,3.50699,self-contain,1,1,1,37,2,no,1,6.8
+LH1836,Lekki Phase 1,6.44437,3.46521,flat,1,1,2,67,18,no,0,55.4
+LH1837,Magodo,6.61025,3.38135,bungalow,2,2,3,145,5,no,1,78.4
+LH1838,Lekki Phase 1,6.45776,3.48071,flat,2,2,2,66,18,no,0,55.4
+LH1839,Ikorodu,6.62905,3.50938,bungalow,2,2,2,149,14,yes,1,22.9
+LH1840,Surulere,6.50544,3.35728,flat,3,3,3,127,7,no,0,65.2
+LH1841,Ajah,6.47337,3.58105,flat,4,3,4,181,9,no,2,62.6
+LH1842,Gbagada,6.55353,3.4018,flat,1,2,3,71,17,yes,0,35.0
+LH1843,Lekki Phase 1,6.45724,3.47559,flat,2,1,2,67,8,yes,2,71.0
+LH1844,Victoria Island,6.41927,3.42402,detached duplex,5,5,6,370,3,yes,2,500
+LH1845,Yaba,6.4975,3.36961,flat,2,1,2,90,3,no,3,66.8
+LH1846,Ajah,6.45583,3.57709,terrace,4,4,5,277,12,no,4,109.1
+LH1847,Festac,6.45603,3.27883,flat,3,3,3,155,14,no,2,64.2
+LH1848,Ikorodu,6.62264,3.50898,bungalow,3,3,4,158,4,no,2,18.0
+LH1849,Festac,6.47142,3.2711,flat,4,4,5,183,12,no,2,45.8
+LH1850,Magodo,6.62406,3.38613,detached duplex,4,4,5,311,7,no,4,314.4
+LH1851,Magodo,6.63202,3.38344,detached duplex,4,4,4,368,2,no,4,269.9
+LH1852,Yaba,6.50597,3.38598,self-contain,1,1,1,31,6,no,0,12.0
+LH1853,Yaba,6.50824,3.37304,terrace,4,4,5,161,5,no,1,48.7
+LH1854,Yaba,6.51258,3.35836,flat,1,2,3,,6,no,0,42.8
+LH1855,Magodo,6.6054,3.39396,detached duplex,6,7,8,588,5,no,6,395.2
+LH1856,Ikorodu,6.63146,3.5078,bungalow,2,2,3,197,6,no,3,30.4
+LH1857,Ojodu,6.64924,3.3656,bungalow,3,2,2,230,4,yes,1,85.4
+LH1858,Yaba,6.50464,3.38325,flat,1,1,1,87,4,no,0,32.6
+LH1859,Surulere,6.49407,3.3504,self-contain,1,1,1,25,18,no,1,7.4
+LH1860,Ikorodu,6.61809,3.50385,bungalow,4,5,6,253,22,no,2,26.7
+LH1861,Ikorodu,6.61846,3.50436,detached duplex,6,6,7,578,7,no,4,109.1
+LH1862,Yaba,6.50358,3.3702,flat,2,2,3,126,15,no,0,48.7
+LH1863,Ajah,6.47217,3.58166,bungalow,3,3,3,244,10,yes,2,76.0
+LH1864,Ikoyi,6.45995,3.43276,semi-detached duplex,5,5,5,,8,yes,2,500
+LH1865,Lekki Phase 1,6.4428,3.46455,terrace,4,4,5,231,2,no,3,247.7
+LH1866,Gbagada,6.54037,3.38168,semi-detached duplex,5,5,5,325,6,no,4,153.8
+LH1867,Gbagada,6.55616,3.39214,semi-detached duplex,5,4,5,307,12,yes,3,157.6
+LH1868,Surulere,6.494,3.36198,flat,2,2,3,123,1,yes,0,50.0
+LH1869,Lekki Phase 1,6.4514,3.47974,detached duplex,4,4,4,331,18,no,2,328.2
+LH1870,Ajah,6.45861,3.57121,bungalow,3,3,4,151,17,no,1,35.6
+LH1871,Gbagada,6.56218,3.39041,flat,2,2,3,119,3,no,0,83.3
+LH1872,Festac,6.46826,3.29677,flat,4,4,5,188,16,no,2,61.4
+LH1873,Festac,6.4631,3.29483,bungalow,2,2,3,109,20,no,0,21.0
+LH1874,Magodo,6.62807,3.37454,detached duplex,4,5,6,381,8,yes,3,397.3
+LH1875,Victoria Island,6.42591,3.42152,flat,3,3,4,167,12,no,0,180.9
+LH1876,Victoria Island,6.42663,3.41894,flat,2,2,2,82,10,yes,2,109.7
+LH1877,Lekki Phase 1,6.46596,3.47326,flat,3,4,5,144,23,no,1,117.9
+LH1878,Ajah,6.46869,3.56808,bungalow,4,5,6,,10,no,2,60.9
+LH1879,Ojodu,6.64306,3.36471,self-contain,1,1,1,30,17,no,0,10.8
+LH1880,Magodo,6.61635,3.38381,semi-detached duplex,5,5,5,344,3,no,4,322.6
+LH1881,Gbagada,6.53942,3.37625,semi-detached duplex,5,6,7,261,26,yes,1,110.5
+LH1882,Yaba,6.51524,3.374,self-contain,1,1,1,28,17,yes,0,11.4
+LH1883,Ajah,6.45267,3.57337,semi-detached duplex,5,5,5,339,10,no,2,127.4
+LH1884,Festac,6.45864,3.27661,bungalow,2,2,2,92,15,no,1,17.5
+LH1885,Ojodu,6.62699,3.38025,flat,1,2,3,75,6,no,1,24.9
+LH1886,Lekki Phase 1,6.45941,3.4725,terrace,4,4,5,268,0,yes,2,301.1
+LH1887,Lekki Phase 1,6.43625,3.48287,detached duplex,4,4,5,378,10,no,2,411.9
+LH1888,Surulere,6.49633,3.36065,bungalow,3,4,5,164,1,no,1,59.5
+LH1889,Gbagada,6.56462,3.39577,flat,2,1,2,121,15,yes,2,65.0
+LH1890,Lekki Phase 1,6.44628,3.46538,flat,2,2,3,95,5,yes,1,81.4
+LH1891,Ikeja GRA,6.59559,3.34715,semi-detached duplex,5,5,6,279,13,no,2,163.7
+LH1892,Ikorodu,6.61703,3.52492,bungalow,4,4,5,243,25,no,4,23.2
+LH1893,Victoria Island,6.41536,3.41566,flat,2,2,3,76,4,no,1,99.8
+LH1894,Surulere,6.50413,3.36514,self-contain,1,1,1,45,13,no,1,16.1
+LH1895,Ikoyi,6.45566,3.45531,flat,3,2,3,132,25,yes,0,213.8
+LH1896,Ajah ,6.47786,3.57301,flat,1,1,2,88,23,no,2,20.8
+LH1897,Festac,6.46609,3.28021,bungalow,3,4,4,168,20,no,2,38.0
+LH1898,Ikeja GRA,6.60002,3.3458,detached duplex,5,5,6,496,17,no,3,489.0
+LH1899,Surulere,6.50761,3.35681,self-contain,1,1,1,40,11,no,0,16.4
+LH1900,Lekki Phase 1,6.44897,3.47547,semi-detached duplex,4,5,6,264,13,no,2,301.7
+LH1901,Lekki Phase 1,6.44997,3.4601,flat,3,3,3,165,8,yes,1,184.2
+LH1902,Ikeja GRA,6.56561,3.33195,terrace,4,4,4,265,11,no,3,223.3
+LH1903,Magodo,6.63443,3.36709,flat,3,3,4,156,20,no,1,94.7
+LH1904,Ikoyi,6.46322,3.43682,flat,2,2,2,106,6,no,1,166.9
+LH1905,Victoria Island,6.43015,3.42245,flat,3,3,4,153,11,no,1,240.6
+LH1906,Yaba,6.51682,3.37152,flat,2,2,3,107,5,no,2,46.8
+LH1907,Ajah,6.47132,3.57653,terrace,3,3,4,252,16,no,2,59.4
+LH1908,Ikoyi,6.46507,3.44454,terrace,4,4,5,240,4,yes,3,423.6
+LH1909,Ojodu,6.63538,3.35311,bungalow,2,2,3,155,7,yes,1,56.4
+LH1910,Gbagada,6.54767,3.38899,flat,2,2,2,129,11,no,0,76.1
+LH1911,Gbagada,6.55615,3.37768,flat,3,3,3,122,3,no,1,54.3
+LH1912,Lekki Phase 1,6.44671,3.47634,flat,1,1,1,70,6,yes,2,75.9
+LH1913,Ikoyi,6.46244,3.44278,flat,2,2,3,101,20,yes,0,153.3
+LH1914,Surulere,6.49157,3.35994,self-contain,1,1,1,40,9,yes,1,16.4
+LH1915,Ojodu,6.64139,3.36571,semi-detached duplex,5,5,6,243,22,no,2,72.7
+LH1916,Yaba,6.50972,3.37612,self-contain,1,2,2,23,9,no,0,10.8
+LH1917,Ojodu,6.63473,3.36201,flat,2,2,3,92,6,no,0,25.3
+LH1918,Surulere,6.50046,3.35446,flat,1,1,2,68,7,no,0,24.7
+LH1919,Yaba,6.50392,3.37472,flat,4,4,5,189,18,yes,2,89.9
+LH1920,Lekki Phase 1,6.44773,3.46307,flat,3,3,3,176,3,yes,2,246.4
+LH1921,Victoria Island,6.42048,3.41063,flat,2,1,2,100,22,no,0,166.8
+LH1922,Lekki Phase 1,6.43989,3.47833,flat,3,2,2,142,11,yes,3,221.5
+LH1923,Ajah,6.47559,3.55501,semi-detached duplex,5,5,6,297,5,no,2,97.5
+LH1924,Ojodu,6.63748,3.37007,flat,2,2,3,139,1,no,2,63.4
+LH1925,Gbagada,6.54835,3.40585,flat,4,4,5,186,18,no,1,85.7
+LH1926,Lekki Phase 1,6.44213,3.46644,terrace,4,4,5,200,14,no,0,222.6
+LH1927,Lekki Phase 1,6.45492,3.456,terrace,4,4,4,233,11,no,2,277.3
+LH1928,Ikorodu,6.62925,3.51119,self-contain,1,1,1,30,18,no,1,2.3
+LH1929,Yaba,6.51063,3.38546,flat,3,4,5,137,6,yes,0,69.9
+LH1930,Ajah,6.4724,3.56151,flat,3,3,3,137,35,no,2,49.1
+LH1931,Lekki Phase 1,6.44677,3.4712,flat,1,,2,58,10,yes,1,65.7
+LH1932,Ikorodu,6.61516,3.51478,self-contain,1,1,1,37,10,no,0,4.8
+LH1933,Yaba,6.51469,3.3843,flat,2,3,4,131,10,no,1,96.3
+LH1934,Ajah,6.47048,3.5512,flat,4,4,4,180,2,yes,0,66.4
+LH1935,Lekki Phase 1,6.44973,3.48325,semi-detached duplex,4,4,5,238,9,yes,0,277.2
+LH1936,Ikoyi,6.43778,3.44385,terrace,4,4,5,187,4,yes,1,500
+LH1937,Ajah,6.46114,3.57254,flat,3,3,3,124,12,no,1,38.4
+LH1938,Festac,6.46971,3.28121,bungalow,4,4,5,234,5,no,2,73.7
+LH1939,Magodo,6.61689,3.37453,flat,4,3,3,179,20,yes,2,117.8
+LH1940,Lekki Phase 1,6.44718,3.4714,semi-detached duplex,5,5,5,304,6,yes,2,335.8
+LH1941,Surulere,6.49983,3.36899,self-contain,1,2,2,26,8,no,1,9.9
+LH1942,Ikeja GRA,6.58473,3.355,flat,2,1,1,80,6,yes,1,80.6
+LH1943,Ikoyi,6.44913,3.44144,flat,3,3,4,,8,yes,1,178.7
+LH1944,Ajah,6.46679,3.56903,flat,1,1,2,83,6,yes,0,29.2
+LH1945,Lekki Phase 1,6.44192,3.46517,flat,2,2,2,114,28,no,1,77.8
+LH1946,Festac,6.47184,3.2741,terrace,3,3,4,230,6,no,2,62.2
+LH1947,Yaba,6.51127,3.38741,flat,3,3,4,125,25,no,2,53.1
+LH1948,Ajah,6.46449,3.55869,semi-detached duplex,4,4,5,202,27,no,1,46.4
+LH1949,Ikorodu,6.62016,3.51741,flat,3,4,5,186,4,no,2,32.9
+LH1950,Yaba,6.50457,3.36122,self-contain,1,1,1,36,13,no,1,9.6
+LH1951,Festac,6.48567,3.29271,flat,3,3,3,148,7,no,1,49.0
+LH1952,Magodo,6.60924,3.3797,semi-detached duplex,5,5,6,279,20,no,3,180.1
+LH1953,Surulere,6.49815,3.34462,bungalow,2,3,4,131,5,no,0,52.8
+LH1954,Ajah,6.46874,3.57241,bungalow,2,1,1,96,11,no,1,24.4
+LH1955,Surulere,6.50437,3.34954,flat,3,3,4,134,23,yes,2,53.7
+LH1956,Yaba,6.49805,3.37162,flat,2,1,2,111,18,no,1,42.1
+LH1957,Yaba,6.51229,3.37409,flat,2,1,1,90,18,no,0,21.7
+LH1958,Surulere,6.49331,3.35163,flat,1,2,3,69,11,no,1,25.1
+LH1959,Ajah,6.47771,3.56788,bungalow,2,1,1,111,18,no,1,35.2
+LH1960,Ajah,6.4642,3.56579,flat,1,1,2,91,5,yes,0,30.4
+LH1961,Gbagada,6.56185,3.39923,flat,1,1,2,62,20,no,1,27.7
+LH1962,Lekki Phase 1,6.44746,3.4598,flat,2,,2,103,7,no,2,76.5
+LH1963,Gbagada,6.55298,3.38356,flat,1,1,2,82,16,no,0,48.4
+LH1964,Festac,6.47344,3.26882,bungalow,4,4,5,236,8,no,2,58.7
+LH1965,Yaba,6.51276,3.37338,flat,3,3,4,128,7,no,3,45.6
+LH1966,Ikorodu,6.62059,3.52759,bungalow,2,3,4,137,3,no,1,15.5
+LH1967,Surulere,6.50136,3.33685,terrace,4,4,5,263,22,no,3,104.1
+LH1968,Surulere,6.48753,3.36086,flat,2,2,2,101,2,yes,1,53.0
+LH1969,Ojodu,6.63852,3.36919,semi-detached duplex,5,5,6,306,8,yes,2,146.4
+LH1970,Ikorodu,6.61384,3.5152,bungalow,2,2,3,97,23,no,1,12.7
+LH1971,Yaba,6.49936,3.37913,flat,3,3,3,165,3,no,1,76.5
+LH1972,Surulere,6.50659,3.35898,bungalow,3,3,3,171,11,no,2,54.8
+LH1973,Gbagada,6.54962,3.39398,semi-detached duplex,4,4,5,290,32,yes,1,99.6
+LH1974,Ikeja GRA,6.57222,3.35145,flat,3,2,3,134,15,no,1,106.1
+LH1975,Lekki Phase 1,6.43821,3.46981,flat,3,2,2,159,2,yes,2,192.7
+LH1976,Surulere,6.48302,3.36464,self-contain,1,1,1,42,17,no,1,13.1
+LH1977,Ojodu,6.64701,3.3732,flat,3,3,3,117,3,no,1,55.3
+LH1978,Magodo,6.6255,3.37554,detached duplex,5,5,6,319,5,yes,1,209.4
+LH1979,Ikorodu,6.62842,3.51299,bungalow,3,3,4,240,18,yes,1,33.3
+LH1980,Lekki Phase 1,6.44773,3.46739,flat,2,2,3,71,6,no,0,71.6
+LH1981,Ajah,6.46071,3.56871,flat,3,2,3,170,25,no,2,48.8
+LH1982,Magodo,6.62724,3.38583,detached duplex,5,5,6,306,2,no,2,249.9
+LH1983,Ajah,6.47197,3.56163,flat,3,3,3,125,3,yes,1,55.5
+LH1984,Gbagada,6.54931,3.40971,self-contain,1,1,1,31,5,no,0,15.3
+LH1985,Festac,6.4649,3.26779,flat,1,1,2,83,8,no,1,27.8
+LH1986,Ikeja GRA,6.58042,3.35999,semi-detached duplex,4,4,4,237,10,yes,0,200.4
+LH1987,Ikorodu,6.62029,3.50409,flat,3,4,5,,7,no,2,19.0
+LH1988,Gbagada,6.52916,3.3856,flat,2,2,3,178,28,no,1,85.8
+LH1989,Ikoyi,6.45553,3.43739,terrace,4,4,4,190,3,no,2,319.8
+LH1990,Lekki Phase 1,6.44647,3.45996,detached duplex,5,5,5,467,16,yes,4,500
+LH1991,Lekki Phase 1,6.45129,3.46688,terrace,3,3,3,161,4,yes,2,221.8
+LH1992,Surulere,6.50856,3.34932,self-contain,1,1,1,33,14,no,0,14.0
+LH1993,Festac,6.48066,3.28271,flat,3,3,4,141,7,no,1,45.4
+LH1994,Gbagada,6.5547,3.39981,semi-detached duplex,4,4,5,233,4,no,2,177.9
+LH1995,Ajah,6.47721,3.563,terrace,4,5,6,207,16,yes,2,84.9
+LH1996,Ikoyi,6.43699,3.42678,detached duplex,4,4,5,375,3,no,4,500
+LH1997,Gbagada,6.54872,3.37744,semi-detached duplex,5,5,5,347,10,no,3,216.0
+LH1998,Ajah,6.46535,3.57647,bungalow,2,1,2,111,15,no,1,26.7
+LH1999,Gbagada,6.55125,3.38085,self-contain,1,1,1,26,16,no,1,10.1
+LH2000,Lekki Phase 1,6.42511,3.47357,semi-detached duplex,5,5,6,276,23,yes,2,393.4
+LH2001,Gbagada,6.55056,3.39782,semi-detached duplex,4,5,6,270,15,no,2,150.9
+LH2002,Ikeja GRA,6.59113,3.36494,flat,1,1,1,,11,yes,1,105.3
+LH2003,Ojodu,6.64344,3.35879,flat,3,2,3,130,21,yes,1,43.1
+LH2004,Surulere,6.50585,3.33839,flat,2,2,2,82,9,no,0,25.1
+LH2005,Lekki Phase 1,6.45611,3.47555,semi-detached duplex,5,5,5,338,7,yes,4,453.7
+LH2006,Surulere,6.50047,3.35636,self-contain,1,1,1,26,5,no,0,9.9
+LH2007,Lekki Phase 1,6.4445,3.46608,semi-detached duplex,4,3,4,,18,no,3,257.1
+LH2008,Victoria Island,6.43828,3.42381,detached duplex,6,6,7,483,6,yes,4,500
+LH2009,Lekki Phase 1,6.4617,3.48646,flat,4,5,6,155,16,yes,1,147.7
+LH2010,Festac,6.47871,3.28997,bungalow,2,2,3,96,29,yes,1,13.1
+LH2011,Gbagada,6.56131,3.38851,semi-detached duplex,5,4,4,338,0,no,3,191.1
+LH2012,Ajah,6.46912,3.56863,flat,4,3,4,170,5,yes,0,56.2
+LH2013,Lekki Phase 1,6.44112,3.48596,flat,2,2,3,97,2,yes,1,116.6
+LH2014,Lekki Phase 1,6.44346,3.46801,flat,2,2,3,64,5,yes,0,83.3
+LH2015,Lekki Phase 1,6.44877,3.46878,semi-detached duplex,4,3,4,248,9,no,0,276.3
+LH2016,Ikoyi,6.45685,3.44086,detached duplex,6,6,7,446,25,no,3,500
+LH2017,Surulere,6.49741,3.33954,self-contain,1,1,1,43,12,no,1,15.5
+LH2018,Lekki Phase 1,6.45237,3.47965,semi-detached duplex,5,4,5,332,17,no,3,346.4
+LH2019,Lekki Phase 1,6.44373,3.4847,detached duplex,6,5,6,578,9,no,5,500
+LH2020,Victoria Island,6.43504,3.42917,semi-detached duplex,5,6,6,330,11,no,2,500
+LH2021,Lekki Phase 1,6.43642,3.47499,detached duplex,4,4,5,279,2,no,2,320.7
+LH2022,Gbagada,6.55251,3.38407,flat,2,1,1,126,0,no,0,71.4
+LH2023,Festac,6.47442,3.28203,terrace,4,4,5,275,12,no,3,101.7
+LH2024,Ajah,6.46493,3.5824,flat,4,4,5,187,17,no,1,50.4
+LH2025,Yaba,6.50396,3.36238,terrace,3,2,3,209,21,no,2,92.4
+LH2026,Victoria Island,6.42504,3.41748,detached duplex,5,4,4,353,6,no,4,500
+LH2027,Ikorodu,6.61973,3.49766,bungalow,2,2,3,141,5,no,2,16.7
+LH2028,Lekki Phase 1,6.45242,3.46386,flat,2,2,2,95,5,yes,2,121.8
+LH2029,Magodo,6.61597,3.3783,semi-detached duplex,4,4,5,220,6,no,3,152.8
+LH2030,Surulere,6.50501,3.35857,bungalow,3,3,4,227,12,no,4,104.2
+LH2031,Yaba,6.51016,3.34917,flat,3,3,4,183,11,no,1,81.5
+LH2032,Ajah,6.46986,3.56495,bungalow,3,4,4,170,1,yes,3,61.6
+LH2033,Ojodu,6.6476,3.36452,bungalow,4,4,4,257,12,yes,1,103.6
+LH2034,Ajah,6.47306,3.56773,terrace,3,3,3,236,4,no,2,71.5
+LH2035,Surulere,6.50181,3.33823,flat,3,3,4,119,10,no,0,44.9
+LH2036,Ajah,6.47424,3.56019,flat,2,1,1,96,15,yes,2,42.4
+LH2037,Yaba,6.51786,3.38143,flat,1,1,2,79,2,no,1,38.1
+LH2038,Yaba,6.49863,3.35643,self-contain,1,2,2,42,9,no,0,23.8
+LH2039,Lekki Phase 1,6.43956,3.4767,flat,4,4,5,181,13,yes,2,237.8
+LH2040,Yaba,6.51269,3.37727,terrace,3,3,4,240,31,no,3,85.3
+LH2041,Ikeja Gra,6.59683,3.34885,flat,4,4,5,176,17,no,1,127.4
+LH2042,Ajah,6.46937,3.57316,flat,4,3,3,185,4,yes,2,111.8
+LH2043,Festac,6.47405,3.29476,terrace,3,4,4,258,2,no,1,91.8
+LH2044,Yaba,6.51644,3.37174,self-contain,1,1,1,44,4,no,0,16.7
+LH2045,Yaba,6.50769,3.38626,terrace,3,3,4,168,5,no,2,88.0
+LH2046,Surulere,6.50132,3.36974,self-contain,1,1,1,,21,no,0,7.0
+LH2047,Gbagada,6.54554,3.38833,self-contain,1,1,1,29,28,yes,0,8.3
+LH2048,Gbagada,6.5455,3.3814,flat,1,1,2,67,10,no,1,29.9
+LH2049,Ikorodu,6.62707,3.50334,flat,2,2,3,135,10,no,0,19.7
+LH2050,Victoria Island,6.41896,3.42023,flat,4,4,5,160,4,no,3,288.2
+LH2051,Lekki Phase 1,6.43863,3.48202,terrace,4,5,6,268,9,no,1,269.8
+LH2052,Yaba,6.51432,3.37355,flat,3,3,4,177,3,no,1,73.4
+LH2053,Yaba,6.50729,3.37389,self-contain,1,1,1,43,5,yes,1,25.5
+LH2054,Lekki Phase 1,6.45654,3.46092,detached duplex,6,6,7,596,4,yes,4,500
+LH2055,Ajah,6.46611,3.5691,semi-detached duplex,4,4,5,299,8,no,3,131.8
+LH2056,Gbagada,6.55593,3.3785,flat,3,3,4,145,6,no,0,100.9
+LH2057,Ikorodu,6.62476,3.51458,bungalow,4,3,4,220,13,no,2,23.5
+LH2058,Gbagada,6.55703,3.38356,terrace,3,3,4,179,15,no,2,94.2
+LH2059,Ojodu,6.64116,3.36883,flat,2,2,3,95,33,no,2,27.6
+LH2060,Gbagada,6.55927,3.38585,self-contain,1,1,1,25,13,no,0,12.8
+LH2061,Gbagada,6.55026,3.38962,flat,2,2,3,118,4,no,1,50.0
+LH2062,Festac,6.46821,3.29041,flat,3,3,4,152,3,no,2,45.1
+LH2063,Ikeja GRA,6.59288,3.34897,semi-detached duplex,5,5,6,277,1,no,4,284.9
+LH2064,Ojodu,6.63657,3.37685,bungalow,2,1,2,91,15,no,1,20.9
+LH2065,Gbagada,6.56119,3.38783,flat,3,2,3,,10,yes,1,74.8
+LH2066,Surulere,6.5124,3.35459,flat,3,2,2,175,6,no,3,66.5
+LH2067,Ikeja GRA,6.58039,3.35732,detached duplex,5,5,6,374,11,yes,3,488.4
+LH2068,Surulere,6.49821,3.34925,flat,4,4,5,185,7,no,4,73.9
+LH2069,Surulere,6.49814,3.35218,terrace,4,4,5,274,11,no,1,108.4
+LH2070,Gbagada,6.54003,3.3751,flat,1,1,1,77,8,no,0,36.7
+LH2071,Magodo,6.62529,3.36603,detached duplex,5,4,5,358,7,no,3,403.3
+LH2072,Ikeja GRA,6.57763,3.34994,semi-detached duplex,4,,4,213,7,no,0,165.0
+LH2073,Festac,6.46411,3.27391,flat,2,2,2,119,9,yes,1,48.0
+LH2074,Lekki Phase 1,6.45207,3.47556,semi-detached duplex,5,5,6,357,3,no,3,500
+LH2075,Ajah,6.47589,3.56033,terrace,4,4,5,172,11,no,1,63.2
+LH2076,Ajah,6.47158,3.57267,bungalow,3,3,4,245,15,no,2,61.6
+LH2077,Ikoyi,6.47147,3.43218,detached duplex,4,4,5,381,15,no,3,500
+LH2078,Surulere,6.50184,3.36461,flat,1,1,2,66,6,no,1,33.2
+LH2079,Yaba,6.51548,3.38506,self-contain,1,1,1,39,27,yes,2,10.9
+LH2080,Magodo,6.6228,3.38639,bungalow,3,3,4,180,14,no,1,87.1
+LH2081,Ajah,6.47561,3.56946,semi-detached duplex,4,5,6,223,5,no,2,99.8
+LH2082,Gbagada,6.53573,3.40724,semi-detached duplex,5,5,5,322,5,no,2,176.4
+LH2083,Yaba,6.51311,3.38128,flat,3,3,4,120,11,yes,0,63.0
+LH2084,Surulere,6.48986,3.3464,terrace,3,4,5,,18,no,0,60.9
+LH2085,Ojodu,6.63233,3.36414,bungalow,3,3,4,135,5,no,1,43.4
+LH2086,Magodo,6.61346,3.37806,flat,4,5,5,186,0,no,1,105.3
+LH2087,Surulere,6.4871,3.35247,self-contain,1,1,1,37,2,no,0,12.8
+LH2088,Ikorodu,6.62567,3.50993,bungalow,3,3,4,190,13,no,2,21.9
+LH2089,Ikeja GRA,6.57961,3.35523,flat,3,3,3,114,10,yes,3,116.3
+LH2090,Magodo,6.6249,3.38427,semi-detached duplex,5,5,5,321,1,no,2,259.3
+LH2091,Yaba,6.4966,3.38345,terrace,3,4,5,157,21,no,1,51.7
+LH2092,Ojodu,6.63817,3.37523,flat,3,4,5,181,8,no,2,57.4
+LH2093,Gbagada,6.57137,3.38385,flat,1,1,2,61,2,no,1,35.0
+LH2094,Yaba,6.49941,3.38096,self-contain,1,1,1,41,4,yes,0,21.4
+LH2095,Lekki Phase 1,6.4419,3.48294,flat,3,3,4,138,4,no,1,101.9
+LH2096,Victoria Island,6.422,3.4204,flat,2,2,3,110,13,yes,1,203.9
+LH2097,Magodo,6.61406,3.39026,detached duplex,5,5,5,493,10,no,5,456.7
+LH2098,Ojodu,6.64221,3.36126,bungalow,2,2,2,170,10,no,0,54.8
+LH2099,Ikeja GRA,6.59099,3.35979,detached duplex,5,4,5,283,3,yes,3,221.3
+LH2100,Gbagada,6.54906,3.3916,flat,2,1,2,129,3,no,0,65.8
+LH2101,Ajah,6.47041,3.56268,flat,4,3,4,186,12,no,2,44.0
+LH2102,Yaba,6.51274,3.37897,flat,2,1,2,77,20,no,1,34.6
+LH2103,Yaba,6.49722,3.38024,flat,3,3,4,78,8,no,0,38.0
+LH2104,Victoria Island,6.4372,3.41102,flat,1,1,2,73,22,yes,2,133.1
+LH2105,Magodo,6.61668,3.38291,semi-detached duplex,4,4,5,236,12,yes,2,152.5
+LH2106,Ajah,6.47507,3.55706,flat,3,3,3,147,18,yes,1,47.7
+LH2107,Magodo,6.62961,3.38469,detached duplex,4,4,5,277,10,yes,3,242.8
+LH2108,Ojodu,6.63092,3.3841,flat,2,2,3,69,20,yes,1,25.0
+LH2109,Ikeja GRA,6.58139,3.34326,terrace,3,3,3,216,10,yes,2,149.6
+LH2110,Surulere,6.50381,3.36329,self-contain,1,1,1,27,8,no,0,12.3
+LH2111,Ajah,6.46585,3.57523,bungalow,2,2,3,138,9,no,1,45.6
+LH2112,Ikorodu,6.61148,3.50477,bungalow,3,2,3,168,18,no,1,19.8
+LH2113,Ikoyi,6.44734,3.42811,flat,4,5,6,185,10,no,1,285.2
+LH2114,Gbagada,6.56534,3.38775,terrace,3,4,5,,6,no,0,96.8
+LH2115,Victoria Island,6.43067,3.4211,terrace,3,3,4,156,7,yes,1,210.8
+LH2116,Victoria Island,6.42845,3.41799,terrace,3,3,4,180,7,yes,1,200.3
+LH2117,Gbagada,6.54982,3.37372,flat,4,3,4,170,20,no,1,75.7
+LH2118,Ikorodu,6.61744,3.51017,flat,3,3,3,158,15,no,1,23.0
+LH2119,Yaba,6.50485,3.38787,flat,3,3,4,173,4,no,1,75.5
+LH2120,Ajah,6.48337,3.56152,bungalow,4,4,4,247,13,no,3,68.3
+LH2121,Ikeja Gra,6.58819,3.33583,terrace,3,3,4,180,14,no,2,166.5
+LH2122,Yaba,6.51647,3.37619,self-contain,1,1,1,42,19,no,0,15.6
+LH2123,Ikoyi,6.45245,3.41011,detached duplex,4,5,6,291,7,yes,2,500
+LH2124,Ojodu,6.64659,3.38367,bungalow,4,5,5,250,1,yes,2,91.0
+LH2125,Gbagada,6.55417,3.38839,self-contain,1,1,1,30,0,no,0,16.6
+LH2126,Ikorodu,6.62278,3.51595,self-contain,1,1,1,38,10,no,0,4.5
+LH2127,Victoria Island,6.43101,3.42707,flat,2,,3,126,7,yes,2,200.7
+LH2128,Ikeja GRA,6.58154,3.36189,terrace,3,2,2,170,12,yes,2,216.4
+LH2129,Ikoyi,6.44954,3.44678,flat,3,3,4,135,2,no,0,256.3
+LH2130,Ikorodu,6.61109,3.51578,bungalow,3,3,4,210,25,yes,1,18.0
+LH2131,Ikorodu,6.61384,3.51533,bungalow,3,2,3,122,1,no,2,14.5
+LH2132,Ojodu,6.62317,3.36456,self-contain,1,1,1,34,8,no,0,13.6
+LH2133,Ajah,6.48335,3.56078,semi-detached duplex,5,5,6,280,9,no,1,110.6
+LH2134,Ikoyi,6.46816,3.42075,flat,3,3,4,129,1,yes,0,225.2
+LH2135,Ikeja Gra,6.57449,3.34899,flat,2,2,3,89,7,no,0,75.2
+LH2136,Ajah,6.46833,3.57645,semi-detached duplex,5,5,5,355,20,no,2,77.3
+LH2137,Gbagada,6.55602,3.39453,semi-detached duplex,4,4,4,261,19,no,2,145.9
+LH2138,Magodo,6.64123,3.39209,semi-detached duplex,5,6,6,328,12,no,2,157.5
+LH2139,Lekki Phase 1,6.43604,3.45846,flat,4,4,5,173,9,yes,0,179.1
+LH2140,Ojodu,6.65182,3.37538,bungalow,3,3,4,206,18,yes,1,75.0
+LH2141,Ikoyi,6.44323,3.43026,flat,2,2,3,114,18,no,1,140.1
+LH2142,Ajah,6.46829,3.56658,semi-detached duplex,4,4,5,258,24,no,3,84.6
+LH2143,Yaba,6.51165,3.36696,self-contain,1,1,1,41,17,no,0,17.0
+LH2144,Yaba,6.51203,3.36281,flat,3,3,3,140,11,yes,1,60.1
+LH2145,Gbagada,6.54641,3.38852,self-contain,1,1,1,32,13,no,1,14.1
+LH2146,Lekki Phase 1,6.45136,3.4755,detached duplex,4,4,4,319,13,yes,2,419.5
+LH2147,Ikeja GRA,6.57439,3.37066,semi-detached duplex,4,4,4,211,9,no,2,191.2
+LH2148,Ikeja GRA,6.55456,3.35547,flat,3,2,3,142,2,yes,1,144.7
+LH2149,Surulere,6.49828,3.36905,self-contain,1,1,1,44,3,no,1,14.4
+LH2150,Ikoyi,6.45551,3.42888,terrace,4,3,4,161,4,no,1,329.1
+LH2151,Ikorodu,6.61479,3.50284,bungalow,2,2,3,180,8,no,2,23.6
+LH2152,Festac,6.47052,3.27775,bungalow,4,4,5,234,5,no,3,78.9
+LH2153,Ajah,6.46951,3.57547,terrace,4,4,5,263,19,no,3,90.8
+LH2154,Magodo,6.62106,3.38965,flat,2,2,3,105,14,no,0,62.8
+LH2155,Ikeja GRA,6.5646,3.35083,semi-detached duplex,4,4,5,293,8,no,2,287.4
+LH2156,Lekki Phase 1,6.43915,3.46985,semi-detached duplex,4,4,5,222,28,no,2,203.2
+LH2157,Ikeja GRA,6.57974,3.35126,detached duplex,5,5,5,471,12,yes,4,418.4
+LH2158,Lekki Phase 1,6.45005,3.46689,flat,2,1,1,62,1,no,1,66.7
+LH2159,Gbagada,6.55315,3.39591,flat,4,4,5,187,4,no,3,102.8
+LH2160,surulere,6.49404,3.34636,flat,3,3,4,129,15,no,2,51.3
+LH2161,Surulere,6.49904,3.34576,terrace,3,4,5,191,9,no,2,68.9
+LH2162,Surulere,6.49817,3.35298,flat,4,5,5,189,6,no,3,101.8
+LH2163,Yaba,6.51815,3.39447,self-contain,1,2,2,22,5,yes,1,11.5
+LH2164,Magodo,6.61798,3.37824,flat,2,1,1,155,13,no,1,116.0
+LH2165,Festac,6.47418,3.28787,bungalow,3,3,3,230,9,no,3,66.5
+LH2166,Ikoyi,6.45137,3.43526,detached duplex,4,3,4,251,4,no,2,500
+LH2167,Yaba,6.51247,3.38038,terrace,3,3,4,200,6,yes,1,84.6
+LH2168,Ikoyi,6.45217,3.43388,flat,3,3,4,128,13,yes,1,205.1
+LH2169,Surulere,6.48469,3.3568,flat,3,3,4,150,12,no,2,55.1
+LH2170,Surulere,6.50535,3.33965,flat,1,1,1,82,1,no,0,44.6
+LH2171,Ojodu,6.63017,3.36571,semi-detached duplex,4,4,5,243,18,yes,3,72.1
+LH2172,Ikoyi,6.44592,3.44844,flat,3,3,4,144,21,yes,1,254.9
+LH2173,Magodo,6.63519,3.39247,flat,3,3,4,,2,yes,2,56.8
+LH2174,Ajah,6.46356,3.56569,bungalow,3,,5,206,19,yes,2,49.2
+LH2175,Ikoyi,6.45636,3.42936,flat,3,3,4,131,13,no,1,231.5
+LH2176,Ajah,6.47216,3.56586,bungalow,2,1,1,127,8,no,2,29.7
+LH2177,Ajah,6.46565,3.56096,bungalow,3,2,3,247,11,no,1,60.5
+LH2178,Surulere,6.4973,3.35058,flat,2,2,3,61,2,no,0,29.6
+LH2179,Ikoyi,6.46087,3.44239,flat,3,4,4,175,15,yes,1,337.1
+LH2180,Surulere,6.49078,3.3524,self-contain,1,2,2,31,7,no,2,9.0
+LH2181,Ikoyi,6.43462,3.43423,flat,3,3,4,154,12,no,2,228.9
+LH2182,Ikorodu,6.62099,3.51833,self-contain,1,2,2,44,11,no,0,5.7
+LH2183,Ikorodu,6.61355,3.51642,bungalow,4,4,5,216,6,yes,3,27.0
+LH2184,Lekki Phase 1,6.44856,3.479,terrace,4,4,5,258,8,yes,2,301.5
+LH2185,Victoria Island,6.42346,3.42243,flat,1,1,1,67,18,no,1,99.9
+LH2186,Ikeja GRA,6.58701,3.3357,semi-detached duplex,4,3,4,249,16,yes,2,274.4
+LH2187,Victoria Island,6.42325,3.41844,flat,2,3,3,92,33,no,1,83.1
+LH2188,Victoria Island,6.42182,3.42246,flat,3,3,4,133,6,no,1,169.3
+LH2189,Ajah,6.47256,3.56049,bungalow,3,3,4,189,12,no,1,65.1
+LH2190,Surulere,6.49749,3.33592,terrace,3,3,3,250,19,no,2,105.5
+LH2191,Gbagada,6.55628,3.37706,flat,1,1,1,67,11,no,1,24.9
+LH2192,Victoria Island,6.42718,3.41459,flat,3,3,4,116,12,yes,1,200.9
+LH2193,Lekki Phase 1,6.45544,3.47178,semi-detached duplex,5,5,6,356,23,yes,3,338.0
+LH2194,Gbagada,6.55447,3.39572,terrace,3,3,4,180,6,no,2,118.6
+LH2195,Ojodu,6.64958,3.37509,semi-detached duplex,4,4,4,219,8,no,1,100.9
+LH2196,Ikoyi,6.46329,3.42602,flat,3,3,4,171,2,no,2,399.4
+LH2197,Ikeja GRA,6.58697,3.36385,flat,3,3,4,105,8,no,1,115.1
+LH2198,Ajah ,6.46517,3.57629,semi-detached duplex,4,4,5,266,23,yes,2,100.2
+LH2199,Surulere,6.48698,3.36471,self-contain,1,2,2,43,12,no,0,15.0
+LH2200,Ikorodu,6.624,3.50722,self-contain,1,1,1,23,20,no,1,3.1
+LH2201,Ikeja GRA,6.56709,3.3581,semi-detached duplex,4,4,5,310,16,yes,1,374.8
+LH2202,Lekki Phase 1,6.45187,3.46605,flat,1,1,2,60,5,yes,0,56.3
+LH2203,Surulere,6.49765,3.36793,flat,4,4,5,187,31,no,3,43.7
+LH2204,Lekki Phase 1,6.43555,3.48281,flat,1,1,2,82,18,no,1,60.5
+LH2205,Gbagada,6.55021,3.37509,semi-detached duplex,4,4,5,226,12,no,3,169.0
+LH2206,Yaba,6.5196,3.39233,terrace,3,3,4,153,14,no,1,65.1
+LH2207,Surulere,6.51066,3.33961,flat,1,1,2,71,15,no,0,20.5
+LH2208,Ikeja G.R.A,6.57675,3.35362,detached duplex,6,7,8,470,11,yes,3,346.6
+LH2209,Ojodu,6.63494,3.36365,flat,4,4,5,165,25,no,2,46.5
+LH2210,Victoria island,6.42594,3.41055,flat,3,3,3,101,11,yes,2,169.4
+LH2211,Festac,6.47583,3.27449,bungalow,3,3,3,209,13,no,3,67.1
+LH2212,Ajah,6.47622,3.5596,terrace,3,3,4,257,7,no,2,118.4
+LH2213,Ikeja GRA,6.57756,3.36182,flat,2,1,1,65,2,no,0,68.3
+LH2214,Magodo,6.61289,3.38321,semi-detached duplex,4,4,5,253,4,no,1,227.8
+LH2215,Victoria Island,6.43094,3.39587,flat,3,3,4,140,25,no,0,104.9
+LH2216,Magodo,6.61177,3.37685,flat,3,3,4,159,17,no,1,79.4
+LH2217,Gbagada,6.55319,3.3934,terrace,4,4,4,154,4,no,3,110.6
+LH2218,Gbagada,6.55282,3.39929,flat,4,4,5,171,1,yes,1,114.0
+LH2219,Gbagada,6.55828,3.39393,terrace,3,2,3,183,6,no,3,122.7
+LH2220,Ikorodu,6.63282,3.49886,self-contain,1,1,1,36,8,yes,0,4.7
+LH2221,Festac,6.45655,3.28318,flat,4,4,5,162,3,no,1,61.9
+LH2222,Gbagada,6.55149,3.38773,flat,3,3,3,128,8,no,0,62.1
+LH2223,Lekki Phase 1,6.4453,3.47717,semi-detached duplex,5,5,5,234,3,yes,2,305.6
+LH2224,Yaba,6.51643,3.37106,self-contain,1,2,2,38,19,no,0,17.1
+LH2225,Festac,6.46954,3.28537,bungalow,2,2,3,103,7,no,1,29.4
+LH2226,Gbagada,6.57405,3.3872,flat,3,3,4,69,4,no,1,51.9
+LH2227,Ojodu,6.62854,3.37844,flat,2,1,2,147,8,no,2,52.6
+LH2228,Ikoyi,6.44277,3.43186,detached duplex,6,6,6,527,6,no,4,500
+LH2229,Lekki Phase 1,6.44807,3.4652,terrace,3,2,3,235,9,yes,3,348.7
+LH2230,Ojodu,6.64458,3.37131,flat,2,1,1,130,20,no,0,41.2
+LH2231,Yaba,6.51508,3.3934,terrace,3,3,4,166,10,no,2,100.2
+LH2232,Yaba,6.51956,3.38342,self-contain,1,1,1,34,14,yes,0,18.3
+LH2233,Ikeja GRA,6.57421,3.35307,semi-detached duplex,5,5,6,257,11,yes,2,325.8
+LH2234,Yaba,6.51634,3.3727,self-contain,1,1,1,38,19,yes,0,14.0
+LH2235,Lekki Phase 1,6.43795,3.47851,terrace,3,2,2,229,5,no,2,275.3
+LH2236,Lekki Phase 1,6.44526,3.46761,flat,1,1,2,56,2,no,1,67.9
+LH2237,Ajah,6.45792,3.55369,flat,3,3,3,127,0,no,1,40.9
+LH2238,Yaba,6.52162,3.36518,flat,1,2,3,66,5,no,1,29.3
+LH2239,Victoria Island,6.44603,3.41869,flat,4,4,5,185,17,no,1,241.0
+LH2240,Ikorodu,6.6295,3.50036,self-contain,1,1,1,43,6,no,2,4.6
+LH2241,Ajah,6.45906,3.54729,bungalow,3,3,4,147,9,no,2,41.8
+LH2242,Ajah,6.45672,3.56297,semi-detached duplex,4,4,5,243,4,yes,1,102.7
+LH2243,Ikorodu,6.61523,3.50087,bungalow,4,4,4,177,7,no,2,24.3
+LH2244,Ikoyi,6.4374,3.42474,flat,4,4,5,183,4,yes,1,311.6
+LH2245,Ikoyi,6.44196,3.44234,detached duplex,5,5,6,465,3,no,4,500
+LH2246,Ajah,6.47307,3.56602,terrace,3,3,3,161,35,no,2,51.2
+LH2247,Ikorodu,6.62201,3.50931,self-contain,1,2,2,39,13,no,1,3.5
+LH2248,Festac,6.45824,3.27168,terrace,4,4,5,274,13,yes,2,103.4
+LH2249,Gbagada,6.56349,3.39719,semi-detached duplex,4,4,5,221,4,no,3,111.5
+LH2250,Ojodu,6.63318,3.36968,flat,3,3,4,187,6,no,2,66.7
+LH2251,Ikorodu,6.61903,3.5141,detached duplex,6,6,6,521,25,no,5,50.0
+LH2252,Lekki Phase 1,6.44301,3.46474,semi-detached duplex,4,4,5,230,14,yes,2,242.3
+LH2253,Gbagada,6.55133,3.39939,flat,3,3,3,136,14,no,1,49.0
+LH2254,Ojodu,6.6207,3.36891,flat,4,4,5,172,8,no,2,72.5
+LH2255,Lekki Phase 1,6.44865,3.46404,detached duplex,4,4,5,406,6,no,4,378.4
+LH2256,Ikeja GRA,6.55954,3.35381,terrace,4,5,6,238,7,yes,1,167.2
+LH2257,Surulere,6.49636,3.34985,flat,2,1,2,121,8,no,2,72.8
+LH2258,Gbagada,6.55136,3.38392,flat,2,,2,114,2,no,0,66.6
+LH2259,Ajah,6.46775,3.55362,flat,2,2,3,133,6,no,0,44.0
+LH2260,Ikoyi,6.43774,3.44179,flat,2,1,2,93,20,yes,0,161.0
+LH2261,Ajah,6.47417,3.55203,terrace,3,3,3,159,11,no,0,51.0
+LH2262,Lekki Phase 1,6.43994,3.46191,flat,1,2,2,90,2,no,1,104.3
+LH2263,Ikoyi,6.44792,3.44046,detached duplex,5,5,6,445,11,no,5,500
+LH2264,Festac,6.47811,3.27969,terrace,3,4,5,216,6,yes,1,93.0
+LH2265,Ojodu,6.63768,3.36198,bungalow,2,2,3,123,6,no,0,45.2
+LH2266,Festac,6.45305,3.28004,terrace,3,3,4,270,22,yes,2,73.4
+LH2267,Ikorodu,6.61819,3.50989,bungalow,4,4,5,253,6,no,4,29.3
+LH2268,Lekki Phase 1,6.44635,3.47312,flat,3,2,3,185,3,yes,2,178.9
+LH2269,Yaba,6.52225,3.38678,terrace,4,3,3,258,31,yes,3,96.8
+LH2270,Yaba,6.50721,3.36358,flat,1,2,3,97,6,no,1,61.5
+LH2271,Yaba,6.49504,3.37398,flat,1,1,2,64,12,yes,1,23.7
+LH2272,Surulere,6.51595,3.34653,self-contain,1,1,1,43,17,no,0,13.4
+LH2273,Ikorodu,6.62015,3.522,flat,3,2,3,119,10,yes,3,15.9
+LH2274,Magodo,6.62277,3.37921,flat,1,,2,62,5,no,0,46.0
+LH2275,Surulere,6.49932,3.36152,flat,1,1,1,89,7,no,1,42.0
+LH2276,Ojodu,6.63837,3.36544,semi-detached duplex,5,6,6,318,12,no,3,129.7
+LH2277,Surulere,6.50875,3.35613,flat,3,2,3,136,11,no,2,51.6
+LH2278,Ikorodu,6.61449,3.5126,detached duplex,5,4,4,379,11,no,3,62.1
+LH2279,Ikeja GRA,6.57528,3.3535,flat,1,1,2,69,12,no,0,48.5
+LH2280,Ikeja G.R.A,6.58567,3.34976,flat,3,2,2,148,3,yes,1,133.7
+LH2281,Festac,6.47881,3.2763,flat,3,3,4,132,17,yes,2,37.3
+LH2282,Gbagada,6.55706,3.40574,flat,3,3,4,126,2,no,2,74.8
+LH2283,Yaba,6.50763,3.35652,flat,2,1,2,130,14,no,2,62.6
+LH2284,Gbagada,6.55664,3.39031,terrace,3,4,5,256,0,yes,2,116.4
+LH2285,Lekki Phase 1,6.44644,3.49307,terrace,4,3,3,207,2,yes,0,182.4
+LH2286,Ikeja GRA,6.58227,3.36476,detached duplex,5,5,5,512,9,no,4,500
+LH2287,Festac,6.47311,3.28341,bungalow,3,3,3,205,13,yes,2,36.4
+LH2288,Ajah,6.47031,3.56152,bungalow,2,2,3,134,33,yes,1,19.9
+LH2289,Ajah,6.46825,3.55625,bungalow,2,2,3,131,6,yes,0,41.6
+LH2290,Lekki Phase 1,6.44577,3.45867,terrace,4,4,5,240,15,yes,3,313.1
+LH2291,Ojodu,6.65018,3.35233,bungalow,3,3,3,176,2,no,1,46.6
+LH2292,Lekki Phase 1,6.45205,3.46502,semi-detached duplex,4,4,5,249,9,yes,3,334.5
+LH2293,Yaba,6.5091,3.38086,flat,3,2,3,157,6,no,1,90.0
+LH2294,Ajah,6.45196,3.57136,bungalow,3,3,3,124,6,no,0,34.0
+LH2295,Magodo,6.62105,3.38678,semi-detached duplex,5,5,6,327,7,no,3,255.3
+LH2296,Lekki Phase 1,6.44586,3.47732,terrace,4,4,5,269,22,yes,3,173.3
+LH2297,Ajah,6.48342,3.56332,semi-detached duplex,4,3,3,241,11,no,2,88.8
+LH2298,Gbagada,6.5394,3.40202,flat,1,1,1,56,6,no,1,31.3
+LH2299,Yaba,6.51063,3.37649,self-contain,1,1,1,24,7,yes,0,15.0
+LH2300,Ajah,6.48298,3.59111,terrace,3,3,4,255,3,yes,2,158.6
+LH2301,Ikoyi,6.44247,3.42488,flat,3,3,4,115,9,yes,1,260.7
+LH2302,Ikoyi,6.45074,3.41753,detached duplex,6,6,7,481,11,no,4,500
+LH2303,Lekki Phase 1,6.45361,3.47599,semi-detached duplex,4,4,4,242,15,no,2,255.6
+LH2304,Ajah,6.46525,3.5708,semi-detached duplex,4,3,4,226,1,yes,2,96.8
+LH2305,Ajah,6.46155,3.55764,bungalow,3,4,5,181,24,no,1,37.6
+LH2306,Ikeja GRA,6.58192,3.34509,flat,2,3,4,84,10,yes,1,85.0
+LH2307,Lekki Phase 1,6.44798,3.4888,flat,2,2,2,95,24,yes,1,84.6
+LH2308,Ajah,6.47521,3.57483,flat,2,2,3,138,14,no,1,44.8
+LH2309,Gbagada,6.5632,3.39064,self-contain,1,1,1,40,18,no,1,17.9
+LH2310,Magodo,6.62437,3.38671,semi-detached duplex,5,4,4,270,2,yes,2,273.6
+LH2311,Ajah,6.46322,3.566,terrace,4,3,3,212,2,no,2,81.4
+LH2312,Ajah,6.47292,3.57072,bungalow,2,2,2,95,9,no,2,35.6
+LH2313,Festac,6.46941,3.27562,terrace,4,4,4,271,4,yes,2,85.5
+LH2314,Ajah,6.48893,3.55046,bungalow,2,2,3,109,23,no,1,33.0
+LH2315,Gbagada,6.54931,3.38857,flat,3,3,3,146,2,yes,0,94.1
+LH2316,Ajah,6.46384,3.55997,flat,2,2,3,91,3,no,2,25.3
+LH2317,Yaba,6.50264,3.38786,flat,3,3,4,186,12,no,2,79.9
+LH2318,Yaba,6.51291,3.37099,flat,2,2,3,95,15,no,0,36.0
+LH2319,Yaba,6.50875,3.38218,terrace,3,3,3,252,10,no,1,98.9
+LH2320,Lekki Phase 1,6.44579,3.47438,semi-detached duplex,5,5,5,317,16,yes,3,500
+LH2321,Gbagada,6.54622,3.39002,flat,4,4,4,,11,yes,0,71.1
+LH2322,Yaba,6.52088,3.39048,terrace,4,4,5,276,4,no,2,136.0
+LH2323,Ikorodu,6.61684,3.50992,bungalow,3,2,3,206,9,yes,1,22.9
+LH2324,Ikeja GRA,6.57441,3.35433,flat,2,1,2,86,4,yes,1,91.8
+LH2325,Yaba,6.5017,3.37422,flat,3,2,3,114,1,no,0,39.6
+LH2326,Ojodu,6.63453,3.35997,self-contain,1,1,1,33,3,no,1,15.1
+LH2327,Lekki Phase 1,6.44641,3.4777,terrace,3,3,4,180,44,no,1,117.3
+LH2328,Gbagada,6.55126,3.38815,flat,3,3,4,165,22,yes,0,74.6
+LH2329,Ikoyi,6.45498,3.43666,semi-detached duplex,5,6,7,340,27,yes,3,481.3
+LH2330,Gbagada,6.54961,3.37461,terrace,4,5,6,188,16,no,1,68.4
+LH2331,Surulere,6.50153,3.35848,flat,2,2,3,105,6,yes,2,55.4
+LH2332,Ojodu,6.63202,3.36247,bungalow,2,1,2,141,7,no,1,33.6
+LH2333,Surulere,6.4855,3.34735,flat,4,5,6,152,2,no,1,69.4
+LH2334,Lekki Phase 1,6.45248,3.46083,flat,4,4,5,150,5,no,2,152.7
+LH2335,Lekki Phase 1,6.43909,3.48121,terrace,3,3,4,211,7,yes,3,237.2
+LH2336,Lekki Phase 1,6.45351,3.48925,terrace,4,4,5,238,3,yes,2,348.4
+LH2337,Ikeja GRA,6.58537,3.36353,flat,2,2,3,69,11,no,0,53.0
+LH2338,Yaba,6.52424,3.38627,flat,2,1,1,130,5,no,2,38.5
+LH2339,Yaba,6.50068,3.39195,flat,2,2,3,131,10,yes,1,76.9
+LH2340,Ajah,6.47508,3.56146,flat,3,3,4,111,11,yes,1,38.4
+LH2341,Yaba,6.5059,3.38867,self-contain,1,1,1,27,11,no,1,12.9
+LH2342,Ikeja GRA,6.5885,3.3645,terrace,3,2,2,214,5,no,0,241.7
+LH2343,Festac,6.46028,3.27041,flat,3,2,3,127,7,yes,2,48.5
+LH2344,Surulere,6.49835,3.3463,flat,2,2,2,136,13,no,2,51.9
+LH2345,Ajah,6.47395,3.56477,semi-detached duplex,5,5,6,359,20,yes,1,137.8
+LH2346,Ikorodu,6.61824,3.49448,flat,2,2,3,78,12,no,2,8.7
+LH2347,Ikorodu,6.61776,3.5036,bungalow,3,3,4,214,25,no,3,22.0
+LH2348,Ajah,6.48356,3.55192,terrace,4,4,5,268,5,no,3,99.1
+LH2349,Victoria Island,6.42488,3.41133,flat,2,2,3,76,21,yes,1,103.3
+LH2350,Lekki Phase 1,6.4538,3.47821,flat,2,2,3,122,13,yes,0,74.9
+LH2351,Lekki Phase 1,6.44556,3.45033,flat,1,1,1,63,9,no,1,72.3
+LH2352,Lekki Phase 1,6.447,3.4856,flat,3,2,2,150,8,yes,0,198.7
+LH2353,Magodo,6.61751,3.39066,bungalow,4,4,4,217,24,no,0,75.2
+LH2354,Festac,6.4673,3.28239,bungalow,4,4,5,236,15,no,3,49.6
+LH2355,Gbagada,6.54702,3.36822,semi-detached duplex,5,4,5,312,16,no,2,155.6
+LH2356,Ojodu,6.64674,3.36794,bungalow,3,3,4,123,13,no,1,36.8
+LH2357,Lekki Phase 1,6.45385,3.47221,terrace,4,5,6,274,10,yes,3,288.8
+LH2358,Surulere,6.48393,3.34121,terrace,3,3,4,225,18,no,2,94.6
+LH2359,Lekki Phase 1,6.44522,3.473,detached duplex,6,6,7,595,14,no,5,500
+LH2360,Lekki Phase 1,6.44271,3.4654,flat,3,3,4,57,9,no,1,36.9
+LH2361,Ajah,6.48459,3.56948,bungalow,4,4,4,158,9,no,0,48.7
+LH2362,Surulere,6.51053,3.35253,flat,3,4,5,148,4,yes,1,63.1
+LH2363,Victoria Island,6.42643,3.40915,flat,2,2,3,107,5,no,1,181.6
+LH2364,Ikoyi,6.46369,3.43854,flat,3,3,4,91,3,no,0,183.1
+LH2365,Ajah,6.46114,3.55791,bungalow,3,3,3,125,16,no,1,36.4
+LH2366,Ojodu,6.65597,3.36549,semi-detached duplex,5,5,5,217,26,no,1,59.1
+LH2367,Ojodu,6.63656,3.35715,bungalow,3,2,3,221,15,no,1,56.5
+LH2368,Lekki Phase 1,6.44431,3.46325,semi-detached duplex,4,4,5,213,8,yes,4,269.9
+LH2369,Festac,6.46426,3.27711,flat,3,3,4,137,9,no,1,35.8
+LH2370,Ikoyi,6.43632,3.43245,flat,2,2,3,75,1,no,0,159.5
+LH2371,Ajah,6.46473,3.56656,bungalow,2,2,3,175,4,no,2,58.2
+LH2372,Ojodu,6.64449,3.37085,bungalow,2,2,3,91,13,no,1,31.0
+LH2373,Yaba,6.50023,3.37634,terrace,4,3,4,,4,no,2,114.6
+LH2374,Ikeja GRA,6.57205,3.34,terrace,3,3,3,177,9,no,0,177.7
+LH2375,Ikoyi,6.43392,3.4464,flat,1,1,2,59,5,no,0,94.1
+LH2376,Ikeja GRA,6.58515,3.36644,detached duplex,4,5,6,385,8,no,3,442.1
+LH2377,Gbagada,6.54353,3.39627,flat,2,1,2,102,24,no,1,37.4
+LH2378,Magodo,6.61481,3.37291,bungalow,2,2,2,140,4,no,2,67.0
+LH2379,Lekki Phase 1,6.44179,3.47434,terrace,3,4,5,194,1,yes,3,211.9
+LH2380,Magodo,6.63467,3.36514,semi-detached duplex,4,4,4,239,13,no,2,172.5
+LH2381,Ajah,6.45971,3.57549,flat,1,1,1,92,11,no,0,28.4
+LH2382,Lekki Phase 1,6.43453,3.49309,flat,2,2,3,142,2,yes,0,193.5
+LH2383,Lekki Phase 1,6.44354,3.47031,detached duplex,4,4,5,321,5,yes,2,339.0
+LH2384,Lekki Phase 1,6.44835,3.46862,semi-detached duplex,4,4,4,305,9,no,2,245.6
+LH2385,Lekki Phase 1,6.4411,3.47685,semi-detached duplex,4,4,4,261,9,yes,1,299.6
+LH2386,Ojodu,6.6427,3.38418,semi-detached duplex,4,5,6,216,8,no,3,77.1
+LH2387,Ikoyi,6.44369,3.4275,flat,3,3,4,103,2,no,1,201.9
+LH2388,Yaba,6.50807,3.3899,flat,1,1,1,62,8,no,0,22.4
+LH2389,Ikeja GRA,6.58069,3.34833,semi-detached duplex,5,4,5,296,22,no,2,221.0
+LH2390,Yaba,6.50344,3.38302,self-contain,1,2,2,38,2,no,1,15.5
+LH2391,Surulere,6.49466,3.3602,flat,2,1,2,117,22,no,1,58.5
+LH2392,Ajah,6.47602,3.56906,flat,2,2,3,66,19,no,1,18.1
+LH2393,Ikoyi,6.44668,3.44204,flat,1,1,2,59,4,no,1,110.9
+LH2394,Ikorodu,6.61117,3.49988,bungalow,4,3,4,168,5,no,0,16.1
+LH2395,Yaba,6.49894,3.38697,self-contain,1,1,1,24,2,no,0,9.0
+LH2396,Gbagada,6.54418,3.39297,self-contain,1,2,2,39,3,yes,0,27.8
+LH2397,Yaba,6.50633,3.36708,self-contain,1,1,1,40,10,yes,1,18.2
+LH2398,Lekki Phase 1,6.4498,3.47046,detached duplex,4,5,6,270,13,yes,3,309.4
+LH2399,Ajah,6.47183,3.56274,flat,2,3,4,99,17,no,0,24.0
+LH2400,Yaba,6.51194,3.37389,terrace,3,3,3,177,14,no,0,86.4
+LH2401,Yaba,6.51221,3.38057,self-contain,1,1,1,40,13,no,0,17.0
+LH2402,Magodo,6.60948,3.36654,semi-detached duplex,4,4,5,235,1,no,2,231.2
+LH2403,Yaba,6.49605,3.37222,self-contain,1,1,1,25,5,no,0,11.8
+LH2404,Ikorodu,6.61036,3.51269,bungalow,3,4,4,248,13,yes,3,30.1
+LH2405,Ikoyi,6.44944,3.43472,detached duplex,5,5,6,515,3,yes,6,500
+LH2406,Yaba,6.5075,3.38218,flat,2,2,3,124,9,yes,2,68.4
+LH2407,Magodo,6.62514,3.38969,flat,3,2,3,135,5,no,1,117.1
+LH2408,Ajah,6.45131,3.57184,semi-detached duplex,4,4,5,266,11,no,2,83.2
+LH2409,Yaba,6.50597,3.36398,flat,3,3,4,163,25,no,3,38.3
+LH2410,Gbagada,6.55839,3.40062,flat,2,1,1,119,21,yes,1,51.0
+LH2411,Lekki Phase 1,6.44157,3.47494,terrace,4,4,5,188,2,yes,1,282.2
+LH2412,Festac,6.47274,3.27277,flat,3,3,4,149,16,yes,1,39.4
+LH2413,Ikoyi,6.45086,3.42929,flat,2,2,2,102,8,no,1,161.3
+LH2414,Surulere,6.4958,3.35943,flat,4,4,5,157,8,yes,2,84.4
+LH2415,Festac,6.46198,3.28394,terrace,4,4,5,195,13,yes,2,73.1
+LH2416,Yaba,6.51717,3.37828,flat,3,4,5,167,2,no,1,87.8
+LH2417,Ajah,6.46133,3.57327,flat,4,4,5,189,8,no,1,62.9
+LH2418,Magodo,6.61581,3.38259,semi-detached duplex,5,5,6,323,12,no,3,328.1
+LH2419,Lekki Phase 1,6.43681,3.47339,flat,2,1,1,95,12,yes,0,81.0
+LH2420,Gbagada,6.54673,3.40886,terrace,3,3,4,183,8,no,1,95.1
+LH2421,Ikeja GRA,6.57353,3.35834,detached duplex,4,3,3,371,13,yes,2,345.0
+LH2422,Ikoyi,6.43895,3.42963,flat,4,5,5,186,2,yes,0,347.8
+LH2423,Ojodu,6.62962,3.3702,flat,3,3,4,110,24,yes,2,29.2
+LH2424,Ajah,6.47877,3.57596,bungalow,3,2,3,194,10,no,1,43.8
+LH2425,Yaba,6.50848,3.38487,flat,4,4,5,181,7,no,0,74.9
+LH2426,Ikeja GRA,6.57334,3.36219,flat,3,4,4,132,14,yes,1,117.4
+LH2427,Victoria Island,6.43023,3.41657,terrace,3,3,3,158,6,yes,2,316.3
+LH2428,Lekki Phase 1,6.44406,3.47743,terrace,3,3,4,265,7,yes,3,316.7
+LH2429,Gbagada,6.55614,3.40396,flat,3,3,4,180,5,no,1,77.5
+LH2430,Ikorodu,6.62091,3.51401,bungalow,3,3,3,184,21,no,2,19.2
+LH2431,Ikeja GRA,6.58011,3.36093,flat,2,3,3,161,10,no,2,114.0
+LH2432,Lekki Phase 1,6.44844,3.46,flat,1,1,2,101,5,no,1,93.4
+LH2433,Yaba,6.50586,3.36626,self-contain,1,1,1,24,3,no,0,10.0
+LH2434,Ajah,6.46754,3.56385,terrace,3,2,2,185,8,no,2,62.2
+LH2435,Gbagada,6.55811,3.38589,self-contain,1,1,1,27,20,no,0,12.7
+LH2436,Ojodu,6.65271,3.37154,semi-detached duplex,4,4,4,285,26,no,3,52.3
+LH2437,Ikorodu,6.61834,3.50281,bungalow,2,2,3,133,11,no,0,16.4
+LH2438,Victoria Island,6.43546,3.42178,flat,1,1,2,77,11,yes,1,104.7
+LH2439,Gbagada,6.54287,3.3857,flat,3,3,4,144,2,yes,1,72.1
+LH2440,Ikoyi,6.45265,3.45845,terrace,3,2,2,173,22,no,3,272.9
+LH2441,Ajah,6.46744,3.56522,bungalow,3,3,3,158,10,no,1,34.7
+LH2442,Ajah,6.46085,3.56308,flat,1,1,1,57,23,no,1,12.8
+LH2443,Yaba,6.51938,3.37461,self-contain,1,1,1,,2,no,0,18.1
+LH2444,Surulere,6.49252,3.34726,bungalow,4,5,6,171,3,no,2,59.7
+LH2445,Ikeja GRA,6.59036,3.34979,flat,4,4,5,171,23,no,3,132.1
+LH2446,Ikorodu,6.61529,3.51181,bungalow,2,3,4,138,5,no,1,17.7
+LH2447,Ajah,6.476,3.55871,terrace,3,2,3,231,16,no,2,72.2
+LH2448,Ojodu,6.62812,3.38649,bungalow,2,2,3,111,6,no,0,28.0
+LH2449,Festac,6.47102,3.28338,flat,2,2,2,113,16,no,0,33.4
+LH2450,Yaba,6.50333,3.37573,flat,1,1,1,120,5,no,0,68.2
+LH2451,Gbagada,6.55055,3.39104,flat,2,2,2,147,5,yes,2,87.9
+LH2452,Ikeja GRA,6.58865,3.3679,detached duplex,5,5,6,333,14,no,3,284.9
+LH2453,Surulere,6.49923,3.35676,terrace,3,3,3,161,7,no,2,65.5
+LH2454,Ikeja GRA,6.57633,3.3659,terrace,3,3,4,259,33,yes,2,157.4
+LH2455,Festac,6.46799,3.26778,bungalow,2,1,2,125,4,no,1,41.5
+LH2456,Gbagada,6.54498,3.394,terrace,3,3,4,181,7,no,2,87.4
+LH2457,Ikeja GRA,6.5729,3.34765,detached duplex,6,6,7,588,5,yes,5,500
+LH2458,Lekki Phase 1,6.43756,3.47655,semi-detached duplex,5,5,5,245,9,yes,2,359.4
+LH2459,Ikorodu,6.6087,3.51754,bungalow,3,2,3,179,1,no,1,30.3
+LH2460,Yaba,6.51057,3.37765,flat,3,3,4,118,4,no,1,45.0
+LH2461,Ikorodu,6.60495,3.49863,flat,3,3,4,136,7,no,0,15.5
+LH2462,Lekki Phase 1,6.43932,3.46188,terrace,3,3,4,189,4,no,2,203.4
+LH2463,Ojodu,6.64317,3.36692,self-contain,1,2,2,27,4,no,0,8.8
+LH2464,Ojodu,6.63893,3.36359,bungalow,2,2,3,115,7,no,2,40.6
+LH2465,Ikoyi,6.4673,3.43124,flat,4,4,5,166,23,no,2,250.7
+LH2466,Lekki Phase 1,6.45613,3.46904,detached duplex,5,5,6,504,3,no,4,500
+LH2467,Ikeja GRA,6.58925,3.35338,flat,2,2,3,102,8,yes,1,97.1
+LH2468,Ajah,6.46731,3.57517,bungalow,3,3,4,126,5,yes,0,30.1
+LH2469,Yaba,6.51121,3.38851,flat,3,3,4,150,5,no,2,55.6
+LH2470,Festac,6.46186,3.27867,bungalow,3,3,4,216,13,no,1,56.5
+LH2471,Lekki Phase 1,6.45299,3.46576,terrace,4,4,5,206,10,no,2,210.8
+LH2472,Ajah,6.46576,3.57473,terrace,3,2,3,233,15,no,1,50.8
+LH2473,Gbagada,6.54833,3.39225,flat,3,2,2,132,14,no,2,49.3
+LH2474,Yaba,6.50623,3.37652,flat,1,1,2,64,8,no,2,38.9
+LH2475,Ajah,6.4784,3.56514,flat,3,2,2,134,21,no,3,26.5
+LH2476,Festac,6.46879,3.2816,flat,2,2,3,93,1,no,1,32.5
+LH2477,Victoria Island,6.42635,3.42147,semi-detached duplex,5,4,4,315,13,no,2,441.3
+LH2478,Magodo,6.63029,3.38924,semi-detached duplex,4,4,4,204,8,no,1,119.9
+LH2479,Ikeja GRA,6.5703,3.36589,flat,3,3,4,115,11,no,0,61.7
+LH2480,Yaba,6.51174,3.36445,flat,1,2,3,75,21,no,1,32.2
+LH2481,Festac,6.49131,3.28215,self-contain,1,1,1,23,16,no,1,6.9
+LH2482,Lekki Phase 1,6.44732,3.46514,semi-detached duplex,4,4,5,219,18,yes,1,221.2
+LH2483,Ikorodu,6.61204,3.50885,self-contain,1,1,1,24,16,no,0,2.4
+LH2484,Lekki Phase 1,6.44045,3.47113,terrace,3,4,5,164,11,no,1,149.4
+LH2485,Magodo,6.62889,3.36887,detached duplex,5,5,6,329,31,no,1,219.7
+LH2486,Ikeja GRA,6.59636,3.36422,detached duplex,4,5,6,352,18,no,2,326.2
+LH2487,Ikeja GRA,6.57369,3.35457,flat,3,2,3,110,18,yes,0,92.7
+LH2488,Victoria Island,6.42872,3.43011,flat,2,1,1,140,6,yes,1,239.2
+LH2489,Surulere,6.49994,3.36119,bungalow,4,4,5,219,22,no,3,89.7
+LH2490,Festac,6.47701,3.27891,bungalow,3,3,3,207,13,no,1,51.9
+LH2491,Surulere,6.50533,3.35574,bungalow,3,3,3,163,11,no,1,52.6
+LH2492,Ikoyi,6.45746,3.43716,semi-detached duplex,4,5,6,290,21,yes,3,500
+LH2493,Yaba,6.51239,3.38202,flat,3,3,4,145,19,yes,2,55.4
+LH2494,Magodo,6.60921,3.39005,flat,3,3,4,128,5,no,2,80.1
+LH2495,Magodo,6.6172,3.3848,flat,2,1,2,123,4,no,3,85.8
+LH2496,Gbagada,6.55589,3.38612,flat,3,3,4,176,5,no,2,91.5
+LH2497,Ikeja GRA,6.58335,3.35201,flat,2,1,1,117,9,yes,1,92.7
+LH2498,Surulere,6.49139,3.36232,terrace,4,4,5,268,9,no,3,72.8
+LH2499,Ikeja GRA,6.59352,3.35112,flat,2,2,2,116,5,no,0,120.7
+LH2500,Surulere,6.50073,3.35349,flat,2,3,3,94,18,no,0,28.6
+LH2501,Gbagada,6.56417,3.39269,self-contain,1,1,1,42,6,no,0,21.5
+LH2502,Lekki Phase 1,6.44019,3.47171,detached duplex,6,6,7,547,13,yes,5,500
+LH2503,Yaba,6.50704,3.35845,flat,3,4,4,124,9,no,1,57.5
+LH2504,Yaba,6.50702,3.38349,flat,2,2,2,96,4,no,0,58.6
+LH2505,Lekki Phase 1,6.44776,3.46634,flat,2,2,3,112,7,yes,1,127.6
+LH2506,Victoria Island,6.4247,3.42307,flat,2,3,4,60,2,no,0,78.5
+LH2507,Surulere,6.50027,3.35124,flat,2,2,3,107,5,no,1,51.4
+LH2508,Magodo,6.62634,3.37577,flat,4,4,5,183,5,yes,2,237.5
+LH2509,Ojodu,6.64146,3.37102,self-contain,1,2,2,28,5,yes,0,12.2
+LH2510,Lekki Phase 1,6.43985,3.48434,semi-detached duplex,5,6,6,311,14,yes,3,382.3
+LH2511,Ajah,6.47595,3.5651,terrace,3,3,4,,6,yes,0,39.2
+LH2512,surulere,6.49443,3.34382,flat,3,3,4,133,11,yes,2,66.5
+LH2513,Magodo,6.63427,3.36841,bungalow,2,3,4,183,8,no,1,93.0
+LH2514,Ikorodu,6.59616,3.50626,bungalow,4,4,5,248,3,no,1,25.4
+LH2515,surulere,6.51019,3.3527,bungalow,3,3,4,131,5,yes,3,48.1
+LH2516,Surulere,6.50401,3.34949,terrace,4,5,5,247,6,no,1,112.1
+LH2517,Ikorodu,6.61124,3.51346,detached duplex,4,4,5,266,7,no,3,49.4
+LH2518,Lekki Phase 1,6.44435,3.47457,terrace,3,3,4,222,7,no,2,324.8
+LH2519,Festac,6.46798,3.27101,bungalow,2,2,2,118,5,no,0,27.0
+LH2520,Ikoyi,6.45205,3.4349,flat,2,2,2,70,6,no,2,126.3
+LH2521,Lekki Phase 1,6.43124,3.46238,flat,3,3,4,119,5,no,0,107.2
+LH2522,Gbagada,6.55789,3.39978,semi-detached duplex,4,4,5,210,4,no,1,121.9
+LH2523,Ikeja G.R.A,6.57221,3.36327,flat,2,2,3,89,10,no,2,48.0
+LH2524,Surulere,6.49923,3.36006,flat,1,1,2,56,16,no,2,18.9
+LH2525,Ikorodu,6.61576,3.51108,bungalow,4,3,4,258,11,no,3,25.7
+LH2526,Yaba,6.51812,3.36989,terrace,4,4,5,240,4,no,4,132.8
+LH2527,Ojodu,6.64628,3.36039,flat,2,1,2,129,1,no,1,64.5
+LH2528,Yaba,6.50428,3.37039,flat,2,1,2,116,11,yes,2,60.5
+LH2529,Festac,6.47273,3.28805,flat,2,2,2,111,7,no,0,28.1
+LH2530,Ikorodu,6.60994,3.51141,flat,2,2,3,100,12,no,1,13.4
+LH2531,Lekki Phase 1,6.45002,3.46437,flat,1,1,2,77,4,no,2,96.4
+LH2532,Lekki Phase 1,6.43157,3.48511,terrace,4,4,5,266,10,yes,3,299.8
+LH2533,Ajah,6.47939,3.57086,flat,2,2,2,123,20,no,1,32.1
+LH2534,Gbagada,6.55769,3.37345,semi-detached duplex,5,5,5,309,7,yes,3,172.5
+LH2535,Ojodu,6.64355,3.37577,flat,1,1,1,68,14,no,0,22.1
+LH2536,Ajah,6.46341,3.55968,flat,2,1,2,90,3,no,0,33.8
+LH2537,Ikorodu,6.62996,3.51681,bungalow,3,3,4,200,6,no,2,26.6
+LH2538,Lekki Phase 1,6.44941,3.46985,flat,4,4,5,148,7,yes,0,163.3
+LH2539,Ojodu,6.65221,3.36797,self-contain,1,1,1,33,3,no,0,9.0
+LH2540,Ojodu,6.63377,3.35612,bungalow,3,2,3,162,22,no,0,37.1
+LH2541,Magodo,6.62303,3.38485,detached duplex,4,3,4,295,4,no,1,217.6
+LH2542,Victoria Island,6.43406,3.42038,terrace,4,3,4,279,17,yes,3,444.8
+LH2543,Ajah,6.46799,3.56125,terrace,4,3,4,262,16,no,3,69.6
+LH2544,Yaba,6.49754,3.36872,self-contain,1,1,1,30,9,no,1,16.1
+LH2545,Ikeja GRA,6.58786,3.35265,flat,3,3,4,158,17,no,2,185.7
+LH2546,Gbagada,6.54975,3.39825,flat,2,2,3,69,2,yes,1,42.1
+LH2547,Yaba,6.50884,3.36281,self-contain,1,1,1,45,22,no,0,13.9
+LH2548,Surulere,6.50017,3.36737,self-contain,1,1,1,45,14,no,0,11.7
+LH2549,Ajah,6.47158,3.57648,flat,3,3,4,162,10,no,2,58.4
+LH2550,Ikoyi,6.45813,3.42771,flat,2,2,3,86,23,yes,1,116.1
+LH2551,Festac,6.46417,3.27882,flat,3,3,3,109,11,no,1,25.9
+LH2552,Victoria Island,6.41815,3.43251,flat,4,4,5,159,6,no,3,401.4
+LH2553,Ikoyi,6.44331,3.4273,flat,2,1,1,82,18,yes,0,120.4
+LH2554,Yaba,6.51594,3.37168,flat,3,4,5,154,18,no,1,84.4
+LH2555,Ajah,6.4632,3.57162,bungalow,3,4,5,174,6,no,2,41.2
+LH2556,Gbagada,6.54634,3.3933,flat,2,1,2,115,3,no,0,55.9
+LH2557,Victoria Island,6.42678,3.41705,terrace,4,3,4,204,20,yes,1,296.6
+LH2558,Ikeja GRA,6.57684,3.36461,terrace,3,3,4,180,14,yes,2,151.8
+LH2559,Ajah,6.45934,3.57813,flat,2,2,2,104,27,no,2,27.4
+LH2560,Lekki Ph 1,6.44739,3.45432,flat,3,3,3,178,8,yes,2,178.5
+LH2561,Surulere,6.49088,3.36145,self-contain,1,1,1,,15,yes,2,13.3
+LH2562,Gbagada,6.56489,3.39168,terrace,3,3,4,,2,no,2,184.9
+LH2563,Ajah,6.4627,3.56532,bungalow,2,1,1,97,19,no,1,17.9
+LH2564,Surulere,6.49918,3.33142,flat,1,1,2,106,20,no,0,30.3
+LH2565,Victoria Island,6.41618,3.42239,flat,2,1,2,87,5,yes,0,184.5
+LH2566,Surulere,6.51526,3.35708,self-contain,1,1,1,37,9,no,0,13.1
+LH2567,Lekki Phase 1,6.44002,3.47967,terrace,4,3,4,273,3,yes,2,347.2
+LH2568,Ojodu,6.63011,3.37427,bungalow,3,2,2,166,18,yes,2,63.7
+LH2569,Ikoyi,6.46647,3.43791,flat,1,1,1,84,1,no,1,140.0
+LH2570,Gbagada,6.54141,3.38544,flat,4,4,5,141,17,no,1,70.4
+LH2571,Ikorodu,6.62206,3.52149,bungalow,2,2,3,199,10,no,1,25.4
+LH2572,Victoria Island,6.41411,3.41623,flat,4,3,4,163,6,yes,2,273.4
+LH2573,Yaba,6.51984,3.38557,self-contain,1,1,1,43,17,no,1,16.6
+LH2574,Ajah,6.47878,3.57627,bungalow,3,2,2,163,11,no,1,47.9
+LH2575,Surulere,6.49282,3.37002,flat,3,2,3,125,5,no,2,80.7
+LH2576,Yaba,6.50908,3.37546,self-contain,1,1,1,34,14,no,2,10.1
+LH2577,Ikoyi,6.45181,3.4423,flat,1,1,1,61,7,yes,1,126.4
+LH2578,Ajah,6.47301,3.56643,flat,3,3,3,128,3,yes,0,52.2
+LH2579,Ikeja GRA,6.57599,3.3577,terrace,3,3,4,224,16,no,2,137.5
+LH2580,Ojodu,6.64513,3.35263,flat,3,3,4,166,2,yes,0,65.3
+LH2581,Gbagada,6.55914,3.38709,terrace,3,3,4,188,7,no,2,103.6
+LH2582,Gbagada,6.54606,3.39459,flat,3,3,4,141,9,no,2,100.9
+LH2583,Lekki Phase 1,6.43852,3.48142,flat,2,2,3,151,5,yes,2,187.2
+LH2584,Ikeja GRA,6.58092,3.35012,flat,3,2,3,125,8,no,1,113.1
+LH2585,Gbagada,6.54968,3.39317,terrace,3,3,3,152,2,no,1,89.5
+LH2586,Ikeja GRA,6.58771,3.34349,terrace,3,2,3,205,15,no,1,127.2
+LH2587,Gbagada,6.54404,3.39536,flat,4,4,5,188,6,no,1,76.3
+LH2588,Ojodu,6.64822,3.3774,bungalow,3,3,3,200,5,yes,2,69.3
+LH2589,Lekki Phase 1,6.45012,3.48145,detached duplex,5,5,5,342,3,yes,4,450.1
+LH2590,Festac,6.47345,3.27659,bungalow,2,2,3,134,1,yes,2,49.8
+LH2591,Lekki Phase 1,6.45388,3.4625,flat,3,3,4,103,19,no,2,91.1
+LH2592,Ikorodu,6.60264,3.51005,flat,2,2,2,134,7,no,2,14.1
+LH2593,Surulere,6.51948,3.35551,flat,2,2,2,101,6,no,1,37.8
+LH2594,Lekki Phase 1,6.44355,3.47778,detached duplex,4,4,5,289,4,yes,3,356.8
+LH2595,Lekki Phase 1,6.45037,3.46845,terrace,4,3,4,270,14,no,2,224.1
+LH2596,Lekki Phase 1,6.45585,3.46846,flat,2,2,2,85,3,yes,1,99.3
+LH2597,Ajah,6.48149,3.56419,terrace,3,4,5,207,39,no,0,43.7
+LH2598,Surulere,6.48826,3.36008,bungalow,3,4,5,181,12,yes,2,54.6
+LH2599,Ikorodu,6.62391,3.50594,bungalow,3,3,4,210,17,no,4,22.2
+LH2600,Ikeja GRA,6.58984,3.3443,terrace,3,3,4,174,5,yes,0,129.7
+LH2601,Surulere,6.4863,3.35497,flat,3,3,4,170,16,no,1,68.3
+LH2602,Ojodu,6.64034,3.37287,self-contain,1,1,1,23,11,no,2,6.1
+LH2603,Festac,6.45178,3.27596,flat,4,4,4,169,17,no,2,37.8
+LH2604,Ojodu,6.64501,3.37222,self-contain,1,1,1,33,9,no,0,11.5
+LH2605,Festac,6.48191,3.27173,self-contain,1,1,1,39,10,no,0,14.4
+LH2606,Surulere,6.49947,3.35743,terrace,4,4,5,268,18,no,3,144.0
+LH2607,Festac,6.47116,3.28209,flat,2,3,3,109,15,yes,2,45.8
+LH2608,Lekki Phase 1,6.459,3.458,flat,3,4,5,139,17,yes,1,136.8
+LH2609,Victoria Island,6.43302,3.41257,flat,3,3,4,183,9,no,1,357.1
+LH2610,Surulere,6.49391,3.36413,terrace,4,5,6,208,5,no,2,99.1
+LH2611,Lekki Phase 1,6.43683,3.48406,terrace,4,4,4,245,5,no,3,281.3
+LH2612,Ikorodu,6.60213,3.49721,self-contain,1,1,1,23,2,no,0,4.0
+LH2613,Lekki Phase 1,6.4361,3.47444,flat,3,3,4,142,25,yes,3,180.4
+LH2614,Ikeja GRA,6.57112,3.36102,semi-detached duplex,5,5,6,274,10,no,1,311.8
+LH2615,Lekki Phase 1,6.4484,3.47534,detached duplex,6,5,6,480,4,yes,4,500
+LH2616,Ojodu,6.63391,3.37055,self-contain,1,1,1,30,9,yes,1,9.7
+LH2617,Gbagada,6.54658,3.39024,self-contain,1,1,1,23,9,no,1,10.8
+LH2618,Victoria Island,6.42225,3.42755,terrace,3,3,3,269,9,yes,2,431.6
+LH2619,Ikoyi,6.43831,3.41604,flat,3,3,3,175,17,yes,3,265.0
+LH2620,Gbagada,6.55177,3.38715,flat,1,1,2,57,4,no,1,34.3
+LH2621,Surulere,6.51243,3.35449,bungalow,3,3,4,177,13,no,1,69.2
+LH2622,Yaba,6.52016,3.36445,flat,1,1,2,61,13,no,0,21.8
+LH2623,Gbagada,6.55458,3.40424,flat,1,1,2,66,6,yes,2,43.6
+LH2624,Lekki Phase 1,6.44022,3.46388,terrace,3,2,2,157,15,yes,2,187.6
+LH2625,Ikorodu,6.59907,3.50896,bungalow,3,3,4,194,5,no,1,20.0
+LH2626,Ikorodu,6.62806,3.52619,bungalow,4,4,4,232,13,no,1,26.7
+LH2627,Gbagada,6.57673,3.3845,flat,3,3,3,107,2,no,1,62.6
+LH2628,Ajah,6.46801,3.57314,bungalow,4,3,4,235,6,no,2,59.2
+LH2629,Lekki Phase 1,6.45388,3.47582,terrace,4,4,5,193,12,no,2,164.8
+LH2630,Surulere,6.49753,3.35624,flat,3,3,4,132,6,yes,0,64.6
+LH2631,Yaba,6.50529,3.36312,self-contain,1,1,1,28,9,no,1,11.1
+LH2632,Ikorodu,6.61094,3.49269,self-contain,1,1,1,38,3,no,1,8.0
+LH2633,Victoria Island,6.4192,3.43007,detached duplex,6,6,7,600,6,yes,5,500
+LH2634,Gbagada,6.55067,3.39066,flat,3,2,3,150,11,no,3,75.3
+LH2635,Ajah ,6.45496,3.55297,semi-detached duplex,4,4,4,335,7,yes,2,111.7
+LH2636,Ikeja GRA,6.58602,3.34231,semi-detached duplex,5,4,5,275,16,yes,3,180.0
+LH2637,Magodo,6.62653,3.39876,bungalow,3,2,3,100,8,no,0,47.4
+LH2638,Gbagada,6.55441,3.39532,semi-detached duplex,4,3,4,299,5,no,3,243.9
+LH2639,Ikeja GRA,6.59095,3.3418,flat,1,1,1,69,14,no,1,51.7
+LH2640,Surulere,6.50588,3.37171,bungalow,4,5,6,212,45,no,3,59.4
+LH2641,Gbagada,6.55062,3.38945,flat,1,2,3,60,12,no,0,44.8
+LH2642,Ikorodu,6.61124,3.50646,bungalow,4,3,4,123,4,no,0,16.1
+LH2643,Ikoyi,6.44946,3.42727,flat,3,3,3,148,22,no,2,223.0
+LH2644,Surulere,6.48816,3.34943,self-contain,1,1,1,44,13,yes,1,18.8
+LH2645,Yaba,6.50375,3.37583,flat,3,3,4,91,2,no,1,36.2
+LH2646,Ikeja GRA,6.59722,3.36295,terrace,3,3,4,207,10,yes,2,181.7
+LH2647,Lekki Phase 1,6.45791,3.46626,semi-detached duplex,5,4,5,255,6,no,2,386.9
+LH2648,Surulere,6.50848,3.34783,flat,1,2,3,59,24,no,1,15.9
+LH2649,Festac,6.46486,3.29292,flat,3,3,3,113,4,no,2,50.5
+LH2650,Victoria Island,6.41879,3.4324,flat,2,2,3,63,9,yes,0,94.5
+LH2651,Yaba,6.51034,3.37729,terrace,4,4,5,200,39,yes,3,91.2
+LH2652,Ikoyi,6.44905,3.42911,flat,4,4,5,167,10,no,2,300.2
+LH2653,Victoria Island,6.43451,3.41999,terrace,4,3,4,243,10,yes,2,389.2
+LH2654,Surulere,6.50419,3.36268,flat,3,4,4,174,10,yes,1,78.3
+LH2655,Ikorodu,6.61454,3.4954,self-contain,1,1,1,30,16,yes,2,3.8
+LH2656,Surulere,6.49278,3.35952,flat,3,4,4,106,9,no,0,52.1
+LH2657,Ikeja GRA,6.57794,3.34964,detached duplex,5,5,6,,8,no,4,488.9
+LH2658,Ojodu,6.64471,3.35745,self-contain,1,1,1,25,32,no,0,7.3
+LH2659,Victoria Island,6.43323,3.40532,semi-detached duplex,5,5,6,324,5,no,3,500
+LH2660,Gbagada,6.56386,3.38806,flat,4,5,6,181,3,no,1,90.4
+LH2661,Yaba,6.48766,3.38512,terrace,3,2,2,186,24,no,2,54.5
+LH2662,Lekki Phase 1,6.44714,3.46527,flat,2,2,3,103,13,no,1,99.6
+LH2663,Yaba,6.49844,3.374,self-contain,1,1,1,42,2,yes,0,26.0
+LH2664,Ojodu,6.63436,3.36676,semi-detached duplex,4,3,4,320,13,no,3,94.2
+LH2665,Magodo,6.63528,3.37127,detached duplex,4,4,4,300,7,no,2,259.3
+LH2666,Surulere,6.50722,3.36627,flat,3,3,3,133,16,yes,1,50.6
+LH2667,Ikeja GRA,6.57655,3.35818,semi-detached duplex,5,6,6,339,15,yes,3,357.7
+LH2668,Ojodu,6.64566,3.36798,bungalow,3,3,4,228,18,no,2,41.2
+LH2669,Ojodu,6.64209,3.37523,semi-detached duplex,4,4,5,340,11,no,2,143.5
+LH2670,Surulere,6.50107,3.34704,flat,4,5,6,175,15,no,2,43.0
+LH2671,Lekki Phase 1,6.45545,3.47501,terrace,4,4,5,225,6,yes,2,191.7
+LH2672,Ikoyi,6.4561,3.42029,semi-detached duplex,5,5,5,211,14,yes,0,475.6
+LH2673,Ikeja GRA,6.58704,3.36506,flat,1,1,1,76,5,yes,2,77.1
+LH2674,Gbagada,6.55292,3.38512,flat,1,2,2,81,3,no,0,38.0
+LH2675,Ikeja GRA,6.57081,3.35035,terrace,4,3,4,215,2,no,1,164.2
+LH2676,Victoria Island,6.44427,3.42216,flat,2,2,3,131,10,yes,2,245.4
+LH2677,Festac,6.47679,3.28673,bungalow,3,3,4,103,2,no,0,31.7
+LH2678,Ojodu,6.63126,3.36472,self-contain,1,1,1,37,16,no,1,11.9
+LH2679,Ajah,6.47627,3.56432,terrace,4,5,6,156,1,no,2,63.7
+LH2680,Ikorodu,6.61453,3.51093,self-contain,1,1,1,28,17,no,0,1.9
+LH2681,Lekki Phase 1,6.44936,3.47231,flat,3,4,4,170,4,yes,0,166.0
+LH2682,Ikorodu,6.61098,3.51542,bungalow,4,4,5,232,14,yes,2,22.3
+LH2683,Gbagada,6.5468,3.38488,flat,1,1,1,99,2,yes,0,86.8
+LH2684,Ikoyi,6.45769,3.44347,flat,2,2,3,113,8,no,1,204.4
+LH2685,Ikeja GRA,6.57441,3.36333,detached duplex,5,5,5,495,3,no,4,500
+LH2686,Gbagada,6.55646,3.38527,terrace,4,4,5,240,3,no,2,130.2
+LH2687,Ikeja GRA,6.57526,3.35668,detached duplex,5,5,5,531,7,yes,5,500
+LH2688,Yaba,6.50651,3.3855,self-contain,1,2,2,32,10,no,1,16.8
+LH2689,Victoria Island,6.41424,3.41986,terrace,4,4,5,170,9,yes,1,381.3
+LH2690,Lekki Phase 1,6.44569,3.47716,detached duplex,4,3,4,420,3,yes,4,500
+LH2691,Yaba,6.50569,3.38138,flat,3,4,4,140,8,no,1,56.4
+LH2692,Surulere,6.50947,3.34596,terrace,3,2,2,253,4,no,0,119.9
+LH2693,Magodo,6.6308,3.39086,detached duplex,5,5,6,464,18,no,4,223.0
+LH2694,Lekki Phase 1,6.4343,3.47823,flat,1,1,1,76,2,yes,0,92.7
+LH2695,Lekki Phase 1,6.4469,3.46364,flat,1,2,3,86,11,yes,0,82.8
+LH2696,Ikeja GRA,6.58119,3.36312,flat,3,3,4,134,3,no,2,126.3
+LH2697,Yaba,6.49186,3.37754,flat,3,3,3,126,4,no,1,49.5
+LH2698,Gbagada,6.54704,3.39897,flat,3,4,5,108,22,no,1,41.7
+LH2699,Gbagada,6.55645,3.38383,self-contain,1,1,1,42,10,no,2,20.2
+LH2700,Lekki Phase 1,6.43955,3.47793,flat,3,3,4,137,11,yes,1,125.3
+LH2701,Ikorodu,6.61735,3.51042,flat,4,4,5,184,7,no,2,28.8
+LH2702,Lekki Phase 1,6.46939,3.46505,flat,2,2,3,72,1,no,0,64.9
+LH2703,Yaba,6.51815,3.3978,flat,4,4,5,161,12,no,2,95.7
+LH2704,Ajah,6.48004,3.58124,terrace,4,4,4,202,13,no,2,67.3
+LH2705,Ajah,6.47681,3.56616,flat,2,,1,115,4,no,0,46.2
+LH2706,Ajah,6.48218,3.57224,bungalow,2,2,3,97,19,no,1,22.6
+LH2707,Ikoyi,6.43608,3.43078,terrace,4,4,5,202,16,yes,1,373.8
+LH2708,Lekki Phase 1,6.45432,3.4667,flat,2,3,3,91,4,no,0,102.3
+LH2709,Gbagada,6.56331,3.3936,flat,2,3,4,60,3,yes,1,31.8
+LH2710,Ikorodu,6.61852,3.51359,detached duplex,4,3,3,352,7,no,3,51.9
+LH2711,Yaba,6.50754,3.37402,flat,2,3,4,89,9,no,0,29.8
+LH2712,Yaba,6.51951,3.38432,flat,4,5,5,121,10,no,1,56.6
+LH2713,Lekki Phase 1,6.43953,3.46276,detached duplex,6,5,5,465,2,no,3,500
+LH2714,Surulere,6.50134,3.34388,self-contain,1,1,1,44,11,no,0,14.8
+LH2715,Ajah,6.44338,3.57513,bungalow,3,3,4,159,1,no,1,40.4
+LH2716,Surulere,6.49853,3.35595,terrace,3,2,2,250,10,yes,2,113.4
+LH2717,Lekki Phase 1,6.44017,3.47181,terrace,3,2,3,220,5,yes,2,268.8
+LH2718,Ikeja GRA,6.58718,3.35285,detached duplex,5,4,5,364,0,yes,3,500
+LH2719,Ajah,6.46945,3.56662,terrace,4,4,5,159,14,no,3,46.6
+LH2720,Yaba,6.51548,3.37517,flat,1,1,2,76,7,no,1,32.3
+LH2721,Lekki Phase 1,6.45751,3.48184,terrace,3,3,4,150,4,yes,2,162.4
+LH2722,Lekki Phase 1,6.42747,3.46961,terrace,4,4,5,254,20,yes,2,211.8
+LH2723,Magodo,6.61444,3.38236,flat,3,3,3,116,19,no,2,58.9
+LH2724,Yaba,6.50913,3.38204,flat,2,2,3,139,12,no,2,82.6
+LH2725,Gbagada,6.54163,3.38906,semi-detached duplex,4,4,5,244,8,yes,2,150.4
+LH2726,Festac,6.46394,3.28561,bungalow,2,2,2,161,23,no,1,31.2
+LH2727,Ojodu,6.64266,3.37275,bungalow,2,2,3,116,11,yes,0,43.5
+LH2728,Ikoyi,6.44697,3.43239,terrace,4,4,5,268,4,yes,3,500
+LH2729,Festac,6.47187,3.28924,bungalow,3,3,3,224,13,no,2,79.5
+LH2730,Festac,6.48092,3.28985,self-contain,1,1,1,31,12,no,0,8.9
+LH2731,Ikorodu,6.59913,3.50895,detached duplex,5,4,4,344,9,yes,4,80.1
+LH2732,Gbagada,6.53925,3.39282,terrace,3,3,4,235,5,no,3,159.2
+LH2733,Ajah,6.46321,3.57004,semi-detached duplex,5,5,6,342,19,no,1,87.3
+LH2734,Ajah,6.48304,3.56755,flat,3,3,4,125,2,no,2,47.0
+LH2735,Ojodu,6.62631,3.36709,self-contain,1,1,1,26,27,no,0,8.7
+LH2736,Surulere,6.50893,3.36842,self-contain,1,1,1,36,13,no,0,17.0
+LH2737,Ajah,6.46947,3.57472,flat,3,4,5,179,2,yes,2,69.9
+LH2738,Gbagada,6.55397,3.39438,flat,2,1,2,131,11,no,2,64.9
+LH2739,Ajah,6.47233,3.56279,terrace,4,4,5,197,6,no,1,87.9
+LH2740,Festac,6.4612,3.27798,flat,3,3,4,154,10,yes,2,57.8
+LH2741,Ikorodu,6.61571,3.50849,bungalow,3,4,5,116,19,no,1,14.5
+LH2742,Gbagada,6.55072,3.37567,flat,3,3,4,115,19,no,1,46.6
+LH2743,Ikeja GRA,6.58355,3.35342,flat,3,2,3,66,11,no,0,62.4
+LH2744,Lekki Phase 1,6.44083,3.47939,detached duplex,5,4,5,328,9,yes,4,322.4
+LH2745,Victoria Island,6.42219,3.42832,flat,3,3,3,119,36,no,1,109.5
+LH2746,Lekki Phase 1,6.45266,3.47045,flat,3,4,5,130,19,no,1,111.9
+LH2747,Victoria Island,6.43074,3.4209,flat,2,2,3,59,8,no,1,146.5
+LH2748,Surulere,6.50202,3.35336,flat,1,1,1,96,12,yes,1,38.2
+LH2749,Ikoyi,6.45368,3.43867,flat,1,1,2,90,6,yes,0,210.3
+LH2750,Yaba,6.50903,3.39901,flat,2,2,3,124,3,no,1,42.5
+LH2751,Lekki Phase 1,6.44656,3.46054,terrace,3,3,4,258,11,no,2,230.8
+LH2752,Gbagada,6.55097,3.38544,self-contain,1,1,1,31,4,no,0,15.6
+LH2753,Magodo,6.63049,3.39178,bungalow,2,2,3,179,15,no,0,67.0
+LH2754,Victoria Island,6.42574,3.42843,flat,3,3,4,141,8,no,1,261.4
+LH2755,Ajah,6.47423,3.58572,terrace,3,3,4,155,5,no,1,56.3
+LH2756,Festac,6.4708,3.27022,bungalow,2,2,3,98,24,no,0,16.4
+LH2757,Ajah,6.46569,3.56823,flat,4,4,5,176,16,no,2,45.4
+LH2758,Lekki Phase 1,6.44184,3.46794,flat,3,3,3,184,9,yes,2,194.7
+LH2759,Ajah,6.47001,3.57168,flat,4,5,6,178,7,no,2,61.3
+LH2760,Magodo,6.62134,3.38928,detached duplex,4,5,6,422,4,no,2,465.8
+LH2761,Ajah,6.4651,3.56437,terrace,4,4,4,201,9,no,2,68.6
+LH2762,Yaba,6.515,3.37958,flat,1,1,1,77,12,no,1,37.1
+LH2763,Ojodu,6.64358,3.37964,flat,2,2,2,99,1,yes,1,39.8
+LH2764,Ojodu,6.64711,3.36213,flat,1,1,2,57,38,yes,1,14.2
+LH2765,Ajah,6.46001,3.57284,terrace,4,4,4,255,9,no,3,90.1
+LH2766,Ikeja GRA,6.57794,3.35822,detached duplex,4,3,4,251,4,yes,2,337.8
+LH2767,Ikeja GRA,6.58612,3.37408,detached duplex,5,4,4,512,9,yes,4,500
+LH2768,Surulere,6.48761,3.35861,flat,2,3,4,83,18,no,2,26.4
+LH2769,Ajah,6.4648,3.55524,bungalow,2,1,1,125,5,no,0,36.4
+LH2770,Ojodu,6.64776,3.36287,flat,3,3,4,109,16,no,1,39.2
+LH2771,Lekki Phase 1,6.45525,3.47833,semi-detached duplex,5,5,6,314,3,no,2,301.9
+LH2772,Magodo,6.61731,3.37792,bungalow,4,3,4,255,18,no,3,167.4
+LH2773,Festac,6.46036,3.2874,bungalow,4,4,4,170,2,no,2,51.7
+LH2774,Surulere,6.49425,3.35566,terrace,3,4,5,249,12,no,1,103.0
+LH2775,Ajah,6.46257,3.55682,flat,2,1,1,101,9,no,1,45.4
+LH2776,Ikorodu,6.6088,3.52619,flat,1,1,2,86,6,no,0,9.8
+LH2777,Ajah,6.45359,3.55333,terrace,3,3,4,199,5,no,3,112.8
+LH2778,Ikorodu,6.60881,3.51667,detached duplex,5,4,5,578,22,no,5,78.7
+LH2779,Gbagada,6.54795,3.37956,flat,2,2,3,105,11,no,1,37.2
+LH2780,Magodo,6.62184,3.36719,bungalow,2,2,2,130,4,no,1,72.8
+LH2781,Festac,6.47815,3.28791,flat,3,3,3,141,4,yes,0,53.0
+LH2782,Ikoyi,6.46052,3.43771,flat,2,1,1,128,28,yes,1,159.5
+LH2783,Ajah,6.46846,3.57278,semi-detached duplex,5,5,5,309,6,yes,3,145.1
+LH2784,Ojodu,6.64696,3.37077,bungalow,2,2,3,210,10,no,1,63.2
+LH2785,Gbagada,6.56026,3.38106,flat,1,1,2,83,8,yes,0,49.5
+LH2786,Ikoyi,6.43515,3.43794,flat,3,3,4,84,5,no,0,120.0
+LH2787,Ojodu,6.64659,3.36308,bungalow,3,3,3,190,13,yes,2,101.1
+LH2788,Lekki Phase 1,6.44665,3.48507,terrace,3,3,3,153,10,no,2,185.4
+LH2789,Yaba,6.49898,3.39192,self-contain,1,2,2,24,26,yes,0,6.8
+LH2790,Lekki Phase 1,6.44758,3.47082,terrace,3,3,4,215,7,no,2,194.5
+LH2791,Festac,6.46255,3.29022,flat,2,2,3,91,8,no,1,33.4
+LH2792,Festac,6.47244,3.28336,bungalow,3,2,2,251,9,yes,1,89.7
+LH2793,Yaba,6.50933,3.37652,self-contain,1,1,1,29,7,yes,0,15.8
+LH2794,Victoria Island,6.42211,3.41832,terrace,4,4,5,232,7,yes,2,371.6
+LH2795,Ikorodu,6.61053,3.51256,self-contain,1,2,2,22,11,no,1,2.4
+LH2796,Victoria Island,6.42145,3.42799,semi-detached duplex,4,4,5,201,11,yes,1,500
+LH2797,Festac,6.46892,3.29133,self-contain,1,1,1,33,15,no,0,8.0
+LH2798,Ikorodu,6.6209,3.49104,bungalow,3,2,3,187,12,no,3,23.1
+LH2799,Ikoyi,6.44203,3.43696,flat,1,1,2,79,3,no,1,118.4
+LH2800,Ojodu,6.6419,3.37628,flat,1,1,2,56,22,no,3,14.8
+LH2801,Surulere,6.504,3.36417,flat,2,3,4,141,6,no,2,69.5
+LH2802,Ikoyi,6.42668,3.41991,flat,2,3,4,97,5,no,1,178.0
+LH2803,Ikorodu,6.60729,3.51754,bungalow,3,3,3,,17,no,0,10.4
+LH2804,Gbagada,6.5525,3.38986,self-contain,1,1,1,38,16,no,1,18.4
+LH2805,Lekki Phase 1,6.45766,3.46792,terrace,4,4,5,260,26,yes,2,253.7
+LH2806,Ajah,6.45132,3.57165,flat,3,3,4,131,2,no,2,37.4
+LH2807,Ikeja Gra,6.58682,3.34647,detached duplex,4,3,4,280,11,no,3,314.6
+LH2808,Ajah,6.4567,3.5699,bungalow,3,3,3,133,17,no,2,30.7
+LH2809,Ajah,6.46834,3.55946,bungalow,4,4,5,191,5,yes,1,68.5
+LH2810,Gbagada,6.54236,3.39383,flat,1,1,2,125,31,no,2,49.0
+LH2811,Ikorodu,6.60954,3.50631,self-contain,1,1,1,44,3,yes,2,4.8
+LH2812,Ajah,6.47509,3.56125,bungalow,2,2,2,117,6,no,2,26.4
+LH2813,Gbagada,6.53375,3.37916,self-contain,1,1,1,42,12,no,1,20.1
+LH2814,Ajah,6.47236,3.56294,bungalow,3,4,5,140,12,no,2,30.8
+LH2815,Ikorodu,6.61269,3.51554,detached duplex,4,4,4,265,21,no,3,42.2
+LH2816,Gbagada,6.55554,3.38599,flat,3,3,4,147,8,no,1,60.1
+LH2817,Victoria Island,6.44217,3.42086,terrace,3,2,2,211,8,no,0,285.7
+LH2818,Ikorodu,6.59941,3.50177,flat,2,2,3,120,4,no,2,17.2
+LH2819,Lekki Phase 1,6.428,3.47475,flat,1,1,1,62,38,yes,0,53.6
+LH2820,Ikeja GRA,6.5878,3.35123,semi-detached duplex,5,5,5,331,6,yes,2,405.7
+LH2821,Ajah,6.47083,3.5569,terrace,4,4,4,275,8,no,1,110.7
+LH2822,Ikoyi,6.45712,3.43604,flat,1,1,2,89,32,yes,1,142.2
+LH2823,Lekki Phase 1,6.44916,3.47996,terrace,3,3,4,202,4,yes,1,215.8
+LH2824,Lekki Phase 1,6.4445,3.46912,flat,2,2,2,66,18,yes,1,82.1
+LH2825,Gbagada,6.55174,3.38953,semi-detached duplex,4,4,4,238,1,no,1,181.7
+LH2826,Magodo,6.62421,3.38691,semi-detached duplex,5,5,5,349,11,no,4,305.7
+LH2827,Yaba,6.50384,3.37382,flat,2,2,3,74,5,no,1,34.7
+LH2828,Gbagada,6.56307,3.38087,flat,1,1,2,74,20,no,0,31.5
+LH2829,Yaba,6.51517,3.38086,self-contain,1,1,1,30,9,no,0,16.4
+LH2830,Ikeja GRA,6.58239,3.35541,terrace,3,3,4,188,3,no,0,173.3
+LH2831,Yaba,6.5181,3.37633,flat,4,5,6,154,35,no,0,57.1
+LH2832,Gbagada,6.55401,3.39587,self-contain,1,1,1,37,36,no,1,12.0
+LH2833,Surulere,6.49291,3.3492,bungalow,3,3,3,220,8,no,1,89.6
+LH2834,Gbagada,6.54096,3.40676,semi-detached duplex,5,5,6,341,20,yes,3,230.3
+LH2835,Gbagada,6.55438,3.38373,semi-detached duplex,5,5,5,295,3,no,1,120.0
+LH2836,Yaba,6.502,3.37627,flat,1,2,3,84,14,yes,0,37.8
+LH2837,Victoria Island,6.41651,3.41776,flat,3,3,4,162,1,yes,2,252.7
+LH2838,Ikeja GRA,6.57975,3.34503,semi-detached duplex,5,5,6,347,8,yes,3,408.4
+LH2839,Lekki Phase 1,6.43923,3.47823,detached duplex,5,5,6,504,5,no,4,500
+LH2840,Ajah,6.4666,3.56687,flat,3,3,4,130,2,no,1,45.0
+LH2841,Yaba,6.51568,3.38969,self-contain,1,1,1,35,6,no,0,14.0
+LH2842,Festac,6.4463,3.28788,bungalow,3,2,3,156,10,no,2,40.1
+LH2843,Surulere,6.50257,3.3369,terrace,3,3,4,278,17,no,2,103.4
+LH2844,Lekki Phase 1,6.45021,3.46307,flat,2,1,1,70,3,yes,1,74.4
+LH2845,Ajah,6.45568,3.5792,flat,1,1,2,60,16,no,0,17.9
+LH2846,Gbagada,6.5488,3.37322,self-contain,1,1,1,29,8,yes,1,12.2
+LH2847,Surulere,6.49478,3.35583,flat,2,3,4,103,15,no,1,56.2
+LH2848,Ikorodu,6.61039,3.50999,bungalow,3,3,3,98,11,no,2,12.4
+LH2849,Lekki Phase 1,6.43133,3.46934,detached duplex,5,5,6,504,10,no,4,500
+LH2850,Ikorodu,6.61022,3.51254,bungalow,4,4,5,219,13,no,1,26.3
+LH2851,Yaba,6.51171,3.36613,flat,3,4,5,172,6,no,2,85.6
+LH2852,Lekki Phase 1,6.45166,3.47676,flat,1,1,2,87,4,no,0,80.6
+LH2853,Ajah,6.46317,3.56075,bungalow,2,2,3,111,19,no,2,23.7
+LH2854,Ajah,6.4771,3.57089,flat,1,,1,73,30,no,0,13.3
+LH2855,Festac,6.46184,3.28345,self-contain,1,2,2,28,18,no,0,8.2
+LH2856,Yaba,6.51444,3.39082,self-contain,1,1,1,36,20,no,1,15.6
+LH2857,Victoria Island,6.41828,3.41842,terrace,4,4,4,173,7,yes,2,235.4
+LH2858,Ikoyi,6.44418,3.4325,flat,4,4,5,159,6,no,2,298.7
+LH2859,Magodo,6.62833,3.3876,semi-detached duplex,5,,5,352,6,yes,4,312.7
+LH2860,Ajah,6.48466,3.55719,terrace,4,4,5,256,31,no,2,48.4
+LH2861,Lekki Phase 1,6.45119,3.46691,flat,4,4,4,,29,no,3,169.6
+LH2862,Lekki Phase 1,6.44135,3.48778,detached duplex,4,5,6,340,4,yes,4,337.7
+LH2863,Gbagada,6.54731,3.40129,terrace,4,4,5,211,45,no,1,83.5
+LH2864,V.I.,6.42113,3.43497,terrace,3,2,3,196,16,yes,2,266.7
+LH2865,Magodo,6.62865,3.38867,semi-detached duplex,4,4,5,255,16,no,3,139.8
+LH2866,Lekki Phase 1,6.43562,3.46426,flat,3,2,3,111,14,no,1,97.1
+LH2867,Yaba,6.50755,3.38259,self-contain,1,1,1,29,1,yes,1,14.3
+LH2868,Ikoyi,6.4463,3.44338,flat,4,5,5,188,12,yes,3,344.5
+LH2869,Ikeja GRA,6.58507,3.3515,flat,1,1,2,58,4,no,2,45.0
+LH2870,Gbagada,6.55894,3.3896,flat,4,5,6,175,8,no,1,95.2
+LH2871,Ajah,6.46914,3.58219,terrace,3,2,2,172,25,no,2,44.1
+LH2872,Yaba,6.52085,3.37499,flat,1,1,2,80,7,no,0,41.2
+LH2873,Lekki Phase 1,6.42645,3.46171,semi-detached duplex,4,4,4,356,5,yes,3,326.6
+LH2874,Ojodu,6.64255,3.3588,flat,1,1,2,95,13,yes,2,55.1
+LH2875,Festac,6.47538,3.27691,bungalow,2,2,3,169,8,no,1,57.1
+LH2876,Festac,6.47208,3.27838,flat,2,2,3,121,6,no,1,56.0
+LH2877,Ojodu,6.64401,3.37548,semi-detached duplex,4,4,4,300,24,yes,3,97.0
+LH2878,Ojodu,6.64283,3.364,self-contain,1,1,1,34,5,no,1,12.8
+LH2879,Lekki Phase 1,6.45803,3.46503,semi-detached duplex,4,4,5,235,15,yes,1,357.9
+LH2880,Lekki Phase 1,6.45364,3.46182,detached duplex,5,4,5,396,18,no,4,414.9
+LH2881,Lekki Phase 1,6.4303,3.47683,flat,1,2,3,71,7,yes,0,99.9
+LH2882,Yaba,6.49478,3.37822,flat,3,2,2,147,1,no,1,75.0
+LH2883,Ajah,6.46629,3.5624,semi-detached duplex,5,5,6,333,8,no,3,100.1
+LH2884,Magodo,6.60216,3.3785,bungalow,2,1,1,,4,no,2,76.1
+LH2885,Yaba,6.51023,3.3673,self-contain,1,1,1,37,8,no,1,17.2
+LH2886,Ikoyi,6.45048,3.44796,flat,3,,3,124,1,yes,1,222.9
+LH2887,Lekki Ph 1,6.4498,3.48314,terrace,4,4,5,202,3,no,1,214.7
+LH2888,Gbagada,6.55191,3.39384,flat,1,1,2,73,1,no,1,40.2
+LH2889,Magodo,6.60635,3.38707,detached duplex,5,5,6,313,4,no,1,208.5
+LH2890,Lekki Phase 1,6.44081,3.45736,flat,2,2,3,113,13,no,0,84.2
+LH2891,Ajah,6.47062,3.5642,bungalow,4,4,4,204,24,no,0,48.8
+LH2892,Festac,6.46943,3.2916,bungalow,2,2,3,114,4,no,1,37.8
+LH2893,Victoria Island,6.41287,3.4081,terrace,3,3,4,180,26,no,1,233.6
+LH2894,Lekki Phase 1,6.45943,3.47589,flat,1,1,2,67,14,no,0,71.7
+LH2895,Ajah,6.47044,3.56581,bungalow,4,4,4,190,14,no,2,58.5
+LH2896,Ikoyi,6.44203,3.43239,flat,2,2,3,124,16,no,0,237.9
+LH2897,Surulere,6.50222,3.35469,flat,4,4,5,163,9,yes,0,73.9
+LH2898,Victoria Island,6.43649,3.41613,flat,4,3,3,182,17,yes,1,252.2
+LH2899,Magodo,6.63085,3.36917,semi-detached duplex,4,4,4,236,9,yes,2,206.2
+LH2900,Surulere,6.50038,3.35327,flat,3,2,3,100,0,no,0,36.4
+LH2901,Ajah,6.45214,3.56435,semi-detached duplex,4,4,5,263,11,no,1,110.4
+LH2902,Festac,6.46702,3.29419,flat,2,2,3,96,17,no,2,20.5
+LH2903,Yaba,6.50101,3.39178,flat,2,2,3,107,14,no,1,43.6
+LH2904,Victoria Island,6.42641,3.41591,flat,1,1,2,85,5,no,0,109.9
+LH2905,Ajah,6.46732,3.5673,terrace,4,5,5,266,6,no,3,96.5
+LH2906,Ajah,6.47822,3.56456,bungalow,3,3,4,179,12,no,2,57.6
+LH2907,surulere,6.49098,3.36519,terrace,3,3,4,202,6,no,1,116.7
+LH2908,Yaba,6.51693,3.37532,flat,3,3,4,120,10,no,1,47.6
+LH2909,Ajah,6.46045,3.56925,semi-detached duplex,5,6,6,312,7,no,2,114.6
+LH2910,Surulere,6.50629,3.353,flat,2,2,3,111,1,no,0,38.7
+LH2911,surulere,6.49887,3.35289,bungalow,3,3,4,200,3,no,1,70.1
+LH2912,Gbagada,6.56771,3.39437,flat,1,1,2,106,5,no,1,54.3
+LH2913,Ajah,6.46174,3.55839,flat,3,3,4,,15,no,0,34.7
+LH2914,Lekki Phase 1,6.4302,3.47631,terrace,3,3,4,209,19,yes,1,161.9
+LH2915,Ikorodu,6.61678,3.49999,bungalow,3,3,4,226,24,no,2,16.8
+LH2916,Lekki Phase 1,6.44624,3.46677,terrace,3,2,3,185,5,yes,2,206.8
+LH2917,Surulere,6.49371,3.35077,terrace,4,4,5,162,3,no,1,66.4
+LH2918,Victoria Island,6.43219,3.41682,flat,2,2,3,140,16,yes,0,145.4
+LH2919,Ikeja GRA,6.58314,3.34601,flat,4,3,3,142,14,yes,1,108.1
+LH2920,Ikeja GRA,6.57696,3.3656,flat,2,1,1,73,12,yes,0,52.7
+LH2921,Surulere,6.50713,3.35302,bungalow,3,3,4,183,9,yes,2,63.6
+LH2922,Ikoyi,6.44605,3.43321,terrace,4,4,4,204,8,yes,2,341.8
+LH2923,Festac,6.47194,3.27269,self-contain,1,1,1,40,7,no,1,11.3
+LH2924,surulere,6.49606,3.36374,self-contain,1,1,1,38,11,no,1,17.7
+LH2925,Surulere,6.48124,3.35742,flat,4,4,5,180,12,yes,2,82.6
+LH2926,Victoria Island,6.42757,3.42362,terrace,3,3,3,163,14,no,2,212.8
+LH2927,Ikorodu,6.61621,3.50969,flat,3,3,4,125,3,no,1,22.7
+LH2928,Ojodu,6.63174,3.38203,semi-detached duplex,5,5,6,331,5,no,3,131.7
+LH2929,Gbagada,6.53781,3.40991,terrace,4,3,4,234,6,no,2,167.0
+LH2930,Ikeja GRA,6.57474,3.36652,detached duplex,4,5,6,311,41,yes,2,175.0
+LH2931,Surulere,6.50436,3.35552,flat,3,3,3,97,8,no,0,43.2
+LH2932,Ikoyi,6.43852,3.43032,terrace,4,4,5,180,8,no,1,356.9
+LH2933,Gbagada,6.54062,3.37964,terrace,3,3,3,159,5,yes,1,83.2
+LH2934,Lekki Phase 1,6.45206,3.48254,detached duplex,4,4,4,338,8,yes,4,391.4
+LH2935,Yaba,6.51296,3.37188,flat,1,1,2,62,16,no,0,24.5
+LH2936,Festac,6.46806,3.28108,flat,2,2,2,114,12,no,1,42.2
+LH2937,Yaba,6.49595,3.38253,flat,1,1,1,56,9,no,0,27.2
+LH2938,Ikoyi,6.4371,3.46065,terrace,4,3,3,240,8,no,2,416.1
+LH2939,Ikorodu,6.61623,3.51565,detached duplex,5,5,6,330,22,no,2,49.2
+LH2940,Ikoyi,6.44709,3.43049,flat,4,5,5,187,17,yes,3,291.2
+LH2941,Lekki Phase 1,6.44872,3.48433,detached duplex,5,4,5,396,9,no,5,500
+LH2942,Ikoyi,6.45674,3.43892,terrace,3,3,4,254,12,yes,3,500
+LH2943,Lekki Phase 1,6.46031,3.46074,terrace,3,3,4,262,5,no,1,198.5
+LH2944,Gbagada,6.55157,3.38053,flat,2,2,2,109,31,no,1,42.1
+LH2945,Ikorodu,6.62819,3.50511,flat,2,2,2,127,29,no,0,11.4
+LH2946,Ojodu,6.64644,3.373,flat,1,1,2,60,7,no,0,29.0
+LH2947,Lekki Phase 1,6.44129,3.47464,terrace,4,5,5,264,0,yes,3,456.4
+LH2948,Ajah,6.47991,3.56386,flat,4,3,3,190,16,yes,1,79.7
+LH2949,Ojodu,6.6309,3.36769,bungalow,3,3,3,180,3,no,2,58.2
+LH2950,Lekki Phase 1,6.44929,3.4743,terrace,4,4,5,219,21,no,2,242.6
+LH2951,Gbagada,6.55974,3.37268,flat,2,2,2,102,10,no,2,49.8
+LH2952,Yaba,6.51605,3.37088,self-contain,1,1,1,33,2,no,1,19.0
+LH2953,Yaba,6.51494,3.37656,flat,2,1,2,82,9,no,0,37.3
+LH2954,Lekki Phase 1,6.43954,3.46738,semi-detached duplex,5,5,5,326,15,no,2,389.5
+LH2955,Yaba,6.51233,3.36476,flat,1,2,3,72,10,no,1,24.4
+LH2956,Ikeja GRA,6.56641,3.34463,detached duplex,4,4,5,407,7,yes,4,500
+LH2957,Yaba,6.50664,3.38014,flat,4,4,5,175,12,no,4,72.8
+LH2958,Magodo,6.62583,3.36723,flat,2,2,3,117,19,no,2,83.2
+LH2959,Ikorodu,6.61281,3.49158,bungalow,4,4,5,250,4,yes,3,30.1
+LH2960,Lekki Phase 1,6.44529,3.48668,flat,3,3,3,143,37,no,2,81.3
+LH2961,Ajah,6.4613,3.57441,bungalow,3,3,4,210,5,no,3,54.9
+LH2962,Lekki Phase 1,6.45673,3.47729,semi-detached duplex,4,4,4,331,32,no,4,300.0
+LH2963,Ojodu,6.63312,3.36921,flat,1,1,2,82,8,no,2,29.4
+LH2964,Ajah,6.46594,3.57476,bungalow,4,5,6,194,6,no,2,53.1
+LH2965,Ikoyi,6.4561,3.43885,terrace,3,3,4,231,3,yes,1,499.7
+LH2966,Festac,6.46962,3.28488,flat,3,3,4,132,12,no,0,42.8
+LH2967,Ikeja GRA,6.56956,3.36033,flat,2,2,3,64,14,no,0,70.2
+LH2968,Ajah,6.47441,3.5682,bungalow,2,2,2,118,16,no,2,28.3
+LH2969,Lekki Phase 1,6.45552,3.46767,semi-detached duplex,4,4,4,203,5,yes,1,376.3
+LH2970,Ajah,6.45763,3.57402,bungalow,2,1,2,99,4,no,1,35.1
+LH2971,Ajah,6.46658,3.55894,flat,1,2,3,96,5,no,0,28.0
+LH2972,Gbagada,6.54033,3.38362,self-contain,1,1,1,42,3,no,2,24.5
+LH2973,Festac,6.47311,3.30285,bungalow,4,4,5,203,14,no,2,55.0
+LH2974,Ikeja GRA,6.577,3.33892,flat,1,1,1,62,18,yes,2,33.9
+LH2975,Victoria Island,6.41625,3.41862,flat,3,2,3,116,11,no,3,157.2
+LH2976,Yaba,6.50684,3.38351,flat,2,2,3,77,6,no,0,42.7
+LH2977,Ojodu,6.64522,3.36994,flat,3,4,5,181,5,no,0,54.4
+LH2978,Ajah,6.4696,3.56881,bungalow,3,3,4,258,6,no,2,62.0
+LH2979,Lekki Phase 1,6.44438,3.47609,flat,2,1,2,116,8,yes,2,124.5
+LH2980,Lekki Phase 1,6.43562,3.46336,flat,3,3,4,144,16,no,1,136.9
+LH2981,Ajah,6.48404,3.57343,flat,2,2,3,65,9,no,1,16.3
+LH2982,Ikeja GRA,6.5861,3.3649,flat,4,3,3,153,5,yes,1,124.8
+LH2983,Ikeja GRA,6.57915,3.35591,flat,4,4,4,167,5,yes,1,156.7
+LH2984,Yaba,6.50151,3.36943,flat,2,3,4,119,2,no,1,55.7
+LH2985,Festac,6.47659,3.29152,bungalow,4,4,4,214,6,yes,1,52.3
+LH2986,Ajah,6.46468,3.56197,bungalow,4,3,4,243,7,no,2,63.0
+LH2987,Ikoyi,6.46035,3.44196,detached duplex,5,5,6,428,4,yes,2,500
+LH2988,Ikorodu,6.62411,3.50659,self-contain,1,1,1,38,15,no,0,3.4
+LH2989,Victoria Island,6.44079,3.43276,flat,2,2,3,108,26,no,1,120.8
+LH2990,Yaba,6.51805,3.38454,terrace,3,4,5,230,9,yes,1,111.2
+LH2991,Gbagada,6.54989,3.39385,self-contain,1,1,1,29,2,no,0,12.0
+LH2992,Surulere,6.50116,3.35836,flat,3,3,4,107,1,no,1,38.3
+LH2993,Victoria Island,6.42771,3.41732,terrace,3,3,3,229,6,yes,3,500
+LH2994,Ajah,6.47341,3.56045,terrace,4,4,4,253,5,no,4,88.1
+LH2995,Festac,6.47316,3.2978,flat,2,2,2,96,9,no,1,27.8
+LH2996,Surulere,6.49764,3.34539,self-contain,1,1,1,26,4,no,2,11.0
+LH2997,Ajah,6.47889,3.56828,bungalow,3,3,4,173,9,yes,1,51.2
+LH2998,Lekki Phase 1,6.45324,3.45662,semi-detached duplex,4,4,5,295,7,yes,4,276.5
+LH2999,Surulere,6.50756,3.36592,self-contain,1,1,1,23,27,no,0,6.5
+LH3000,Lekki Phase 1,6.46108,3.46881,flat,2,2,3,94,3,yes,0,119.5

@@ -1,0 +1,46 @@
+# Week 2 · Day 3 practice
+id: ml-w02-d3-look
+kind: python
+title: "First look at 3,000 Lagos listings"
+description: "Load the data with pandas and answer six questions a careful data scientist asks first. Then draw the price histogram and find the cap. (First run: the data-science libraries download once, about 25 MB.)"
+files: [lagos_housing.csv]
+starter: |
+  import pandas as pd
+  import matplotlib.pyplot as plt
+
+  df = pd.read_csv("lagos_housing.csv")
+  print(df.head())
+  df.info()
+
+  # Answer each question with pandas (not by copying numbers from the screen).
+  N_ROWS = None            # how many listings?            hint: len(df)
+  MISSING_SIZE = None      # how many size_sqm values are missing?   df["size_sqm"].isna().sum()
+  N_AREA_SPELLINGS = None  # how many different spellings of `area`?  df["area"].nunique()
+  MEDIAN_PRICE = None      # median of price_m
+  N_CAPPED = None          # how many prices are exactly 500 (the cap)?
+  MAX_SIZE = None          # the largest size_sqm (a typo?)
+
+  print(df["area"].value_counts())
+
+  # Draw a histogram of price_m with 50 bins, then show it.
+tasks:
+  - prompt: "N_ROWS, MISSING_SIZE and N_AREA_SPELLINGS: 3,000 listings, 60 missing sizes, 20 spellings of 12 real areas."
+    tests: |
+      assert N_ROWS == 3000, f"N_ROWS = {N_ROWS}"
+      assert MISSING_SIZE == 60, f"MISSING_SIZE = {MISSING_SIZE}"
+      assert N_AREA_SPELLINGS == 20, f"N_AREA_SPELLINGS = {N_AREA_SPELLINGS}"
+    hint: "len(df), df['size_sqm'].isna().sum(), df['area'].nunique()"
+  - prompt: "MEDIAN_PRICE is ₦75.2m, N_CAPPED is 127, MAX_SIZE is 2,320 m² (computed with pandas)."
+    tests: |
+      assert MEDIAN_PRICE is not None and abs(MEDIAN_PRICE - 75.2) < 0.01, f"MEDIAN_PRICE = {MEDIAN_PRICE}"
+      assert N_CAPPED == 127, f"N_CAPPED = {N_CAPPED}"
+      assert MAX_SIZE == 2320, f"MAX_SIZE = {MAX_SIZE}"
+      for name in ["median()", "max()"]:
+          assert name in __code__, f"compute it with pandas: use {name}"
+    hint: "df['price_m'].median(), (df['price_m'] == 500).sum(), df['size_sqm'].max()"
+  - prompt: "Draw the price histogram (50 bins). Look for the spike at ₦500m."
+    tests: |
+      import matplotlib.pyplot as plt
+      assert plt.get_fignums(), "draw a chart: df['price_m'].hist(bins=50) or plt.hist(df['price_m'], bins=50)"
+      assert "bins=50" in __code__.replace(" ", ""), "use 50 bins"
+    hint: "df['price_m'].hist(bins=50) then plt.show(). The chart appears under the output."

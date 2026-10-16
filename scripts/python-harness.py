@@ -10,7 +10,12 @@ def fake_input(prompt=""):
     printed.write(prompt)
     if not lines: raise EOFError("EOF when reading a line")
     v = lines.pop(0); shown.append(v); return v
-os.chdir(tempfile.mkdtemp())
+os.environ.setdefault("MPLBACKEND", "Agg")  # charts render off-screen, like the browser
+work = tempfile.mkdtemp()
+import shutil
+for path in spec.get("files") or []:     # data files the sandbox declares, next to the code
+    shutil.copy(path, work)
+os.chdir(work)
 g = {"__name__": "__main__", "input": fake_input}
 ok, err = True, ""
 try:

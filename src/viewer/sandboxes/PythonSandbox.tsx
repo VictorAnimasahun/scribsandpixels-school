@@ -5,6 +5,12 @@ import { CodeEditor } from './shared.tsx'
 import { loadSaved, save } from './storage.ts'
 
 type Props = { sandbox: Extract<Sandbox, { kind: 'python' }> }
+
+/** Every course's data files, by file name → URL (hashed, cached offline by the service worker). */
+const dataFiles = Object.fromEntries(
+  Object.entries(import.meta.glob<string>('../../content/courses/*/datasets/*.csv', { query: '?url', import: 'default', eager: true }))
+    .map(([path, url]) => [path.split('/').pop()!, url]),
+)
 type RunResult = { ok: boolean; output: string; error?: string }
 
 const TASK_TIMEOUT_MS = 10_000
@@ -25,7 +31,7 @@ function useRunner() {
     for (const { finish } of [...pending.current.values()]) finish({ ok: false, output: '', error: reason })
   }
 
-  const run = (code: string, stdin: string[], onChunk: (m: WorkerMessage) => void, tests?: string) =>
+  const run = (code: string, stdin: string[], onChunk: (m: WorkerMessage) => void, tests?: string, files?: { name: string; url: string }[]) =>
     new Promise<RunResult>((resolve) => {
       worker.current ??= make()
       const w = worker.current
@@ -48,13 +54,14 @@ function useRunner() {
         if (m.type === 'status') {
           // Loading Python the first time doesn't count against the run's time limit.
           clearTimeout(pending.current.get(id)?.timer)
-          pending.current.set(id, { timer: arm(TASK_TIMEOUT_MS + 60_000), finish })
+          // (The data-science libraries are ~25 MB: on slow mobile data that can take minutes.)
+          pending.current.set(id, { timer: arm(TASK_TIMEOUT_MS + 300_000), finish })
         }
         if (m.type === 'done') finish({ ok: m.ok, output, error: m.error })
       }
       pending.current.set(id, { timer: arm(TASK_TIMEOUT_MS), finish })
       w.addEventListener('message', listener)
-      w.postMessage({ id, code, stdin, tests } satisfies RunRequest)
+      w.postMessage({ id, code, stdin, tests, files } satisfies RunRequest)
     })
 
   return { run, stop }
@@ -69,6 +76,8 @@ export default function PythonSandbox({ sandbox }: Props) {
   const [code, setCode] = useState(() => loadSaved(storageKey) ?? sandbox.starter ?? '')
   const [stdin, setStdin] = useState('')
   const [output, setOutput] = useState('')
+  const [images, setImages] = useState<string[]>([])
+  const files = (sandbox.files ?? []).filter((name) => dataFiles[name]).map((name) => ({ name, url: dataFiles[name] }))
   const [running, setRunning] = useState(false)
   const [taskState, setTaskState] = useState<Record<number, { passed: boolean; detail: string }>>({})
   const { run, stop } = useRunner()
@@ -78,9 +87,11 @@ export default function PythonSandbox({ sandbox }: Props) {
   const runCode = async () => {
     setRunning(true)
     setOutput('')
+    setImages([])
     const result = await run(code, stdin.split('\n').filter((l, i, all) => l !== '' || i < all.length - 1), (m) => {
       if (m.type === 'out' || m.type === 'err' || m.type === 'status') setOutput((o) => o + (m.type === 'status' ? `⏳ ${m.text}\n` : m.text))
-    })
+      if (m.type === 'image') setImages((all) => [...all, m.src])
+    }, undefined, files)
     if (!result.ok && result.error) setOutput((o) => `${o}\n❌ ${result.error}`)
     setRunning(false)
   }
@@ -88,7 +99,7 @@ export default function PythonSandbox({ sandbox }: Props) {
   const checkTasks = async () => {
     setRunning(true)
     for (const [i, task] of (sandbox.tasks ?? []).entries()) {
-      const result = await run(code, task.stdin ?? [], () => {}, task.tests)
+      const result = await run(code, task.stdin ?? [], () => {}, task.tests, files)
       if (result.error === 'Stopped.') break
       const passed = taskPassed(task, result)
       const missing = (task.expectOutput ?? []).filter((line) => !result.output.includes(line))
@@ -112,6 +123,9 @@ export default function PythonSandbox({ sandbox }: Props) {
       <label className="small muted">Input (one line per input() call)</label>
       <textarea className="stdin" rows={2} value={stdin} onChange={(e) => setStdin(e.target.value)} placeholder="e.g. Ada" />
       <pre className="console" aria-live="polite">{output || 'Output appears here.'}</pre>
+      {images.length > 0 && (
+        <div className="py-charts">{images.map((src, i) => <img key={i} src={src} alt={`Chart ${i + 1} drawn by your code`} />)}</div>
+      )}
       {sandbox.tasks?.length ? (
         <ol className="tasks">
           {sandbox.tasks.map((task, i) => (

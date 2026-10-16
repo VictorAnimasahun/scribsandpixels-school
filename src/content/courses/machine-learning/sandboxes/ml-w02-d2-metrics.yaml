@@ -1,0 +1,46 @@
+# Week 2 · Day 2 practice
+id: ml-w02-d2-metrics
+kind: python
+title: "RMSE vs MAE, and the one big miss"
+description: "Write the two error measures yourself, check them against the three Lekki listings you worked by hand, then add one wildly wrong prediction and see which measure reacts more."
+starter: |
+  import math
+
+  REAL = [45, 120, 60]        # ₦ millions
+  PREDICTED = [50, 100, 63]
+
+  def mae(predicted, real):
+      # Mean Absolute Error: average of abs(prediction - real)
+      pass
+
+  def rmse(predicted, real):
+      # Root Mean Square Error: square each error, average, square root
+      pass
+
+  print("MAE: ", mae(PREDICTED, REAL))
+  print("RMSE:", rmse(PREDICTED, REAL))
+
+  # A fourth listing: it really sold for ₦80m, but the model said ₦280m.
+  REAL_4 = REAL + [80]
+  PREDICTED_4 = PREDICTED + [280]
+  # Print both measures again for the four listings.
+tasks:
+  - prompt: "mae and rmse match your hand calculation: ₦9.33m and ₦12.03m."
+    tests: |
+      assert abs(mae(PREDICTED, REAL) - 9.3333) < 0.001, f"mae = {mae(PREDICTED, REAL)}"
+      assert abs(rmse(PREDICTED, REAL) - 12.0277) < 0.001, f"rmse = {rmse(PREDICTED, REAL)}"
+      assert mae([1, 2], [1, 2]) == 0 and rmse([1, 2], [1, 2]) == 0, "a perfect model has zero error"
+    hint: "errors = [p - r for p, r in zip(predicted, real)]; MAE: sum(abs(e) for e in errors) / len(errors); RMSE: math.sqrt(sum(e * e for e in errors) / len(errors))"
+  - prompt: "With the fourth listing, MAE becomes 57 and RMSE about 100.5: print both."
+    expectOutput: ["57.0"]
+    tests: |
+      assert abs(mae(PREDICTED_4, REAL_4) - 57.0) < 1e-9
+      assert abs(rmse(PREDICTED_4, REAL_4) - 100.541) < 0.001
+      assert "100.54" in __output__, "print rmse(PREDICTED_4, REAL_4) as well"
+    hint: "print(\"MAE: \", mae(PREDICTED_4, REAL_4)) and the same for rmse."
+  - prompt: "Show that RMSE reacted more: rmse_jump (new RMSE ÷ old RMSE) is bigger than mae_jump (new MAE ÷ old MAE)."
+    tests: |
+      assert abs(rmse_jump - rmse(PREDICTED_4, REAL_4) / rmse(PREDICTED, REAL)) < 1e-9, "rmse_jump = new RMSE / old RMSE"
+      assert abs(mae_jump - mae(PREDICTED_4, REAL_4) / mae(PREDICTED, REAL)) < 1e-9, "mae_jump = new MAE / old MAE"
+      assert rmse_jump > mae_jump
+    hint: "rmse_jump = rmse(PREDICTED_4, REAL_4) / rmse(PREDICTED, REAL) (about 8.4); mae_jump the same with mae (about 6.1). Squaring makes the ₦200m miss count far more."

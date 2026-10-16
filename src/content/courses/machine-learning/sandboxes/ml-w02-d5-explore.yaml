@@ -1,0 +1,46 @@
+# Week 2 · Day 5 practice
+id: ml-w02-d5-explore
+kind: python
+title: "Explore: a price map, correlations, two new features"
+description: "On the training set only: draw Lagos from the listings' coordinates coloured by price, find which columns move with price, and test whether two new features help."
+files: [lagos_housing.csv]
+starter: |
+  import numpy as np
+  import pandas as pd
+  import matplotlib.pyplot as plt
+  from sklearn.model_selection import StratifiedShuffleSplit
+
+  df = pd.read_csv("lagos_housing.csv")
+  df["bed_cat"] = df["bedrooms"].clip(upper=5)
+  train_idx, test_idx = next(StratifiedShuffleSplit(n_splits=1, test_size=0.2, random_state=42).split(df, df["bed_cat"]))
+  train = df.iloc[train_idx].copy()     # explore THIS only; the test set stays locked
+
+  # 1. The map: longitude across, latitude up, colour = price.
+  #    train.plot(kind="scatter", x="longitude", y="latitude", c="price_m", cmap="jet", alpha=0.4, colorbar=True)
+
+  # 2. Correlation of every number column with price_m (highest first).
+  #    corr = train.select_dtypes("number").corr()["price_m"].sort_values(ascending=False)
+  CORR_SIZE = None       # correlation of size_sqm with price_m
+
+  # 3. Two new features. Test each one's correlation with price_m.
+  train["size_per_bedroom"] = None   # size_sqm / bedrooms
+  train["km_to_ikoyi"] = None        # distance in km from (6.452, 3.435):
+  # np.sqrt(((train["latitude"] - 6.452) * 111) ** 2 + ((train["longitude"] - 3.435) * 110) ** 2)
+  CORR_SIZE_PER_BEDROOM = None
+  CORR_KM_TO_IKOYI = None
+tasks:
+  - prompt: "Draw the price map (a scatter of longitude vs latitude, coloured by price)."
+    tests: |
+      import matplotlib.pyplot as plt
+      assert plt.get_fignums(), "draw the scatter plot"
+      assert "latitude" in __code__ and "longitude" in __code__
+    hint: "Uncomment the train.plot(...) line, then plt.show()."
+  - prompt: "CORR_SIZE: size and price correlate at about 0.65 on the training set."
+    tests: |
+      assert CORR_SIZE is not None and abs(CORR_SIZE - 0.647) < 0.002, f"CORR_SIZE = {CORR_SIZE}"
+    hint: "CORR_SIZE = train['size_sqm'].corr(train['price_m'])  (pandas skips missing values)"
+  - prompt: "The two new features: size per bedroom correlates only about 0.30 with price (worse than size), distance to Ikoyi about −0.44 (better than latitude's −0.26)."
+    tests: |
+      assert abs(CORR_SIZE_PER_BEDROOM - 0.302) < 0.002, f"size per bedroom: {CORR_SIZE_PER_BEDROOM}"
+      assert abs(CORR_KM_TO_IKOYI - (-0.442)) < 0.002, f"km to Ikoyi: {CORR_KM_TO_IKOYI}"
+    hint: "Create both columns, then train['size_per_bedroom'].corr(train['price_m']) and the same for km_to_ikoyi."

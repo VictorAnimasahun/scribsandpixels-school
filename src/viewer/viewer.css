@@ -427,3 +427,5 @@ table.grid { border-collapse: collapse; font-size: 13px; }
 .pen { color: var(--pen); font-weight: 600; }
 .preview-wrap { position: relative; }
 .preview-wait { position: absolute; left: 8px; right: 8px; top: 8px; margin: 0; padding: 8px 10px; border-radius: var(--r-btn); background: var(--lime-tint); color: var(--green); font-size: 14px; pointer-events: none; }
+.py-charts { display: flex; flex-direction: column; gap: 10px; }
+.py-charts img { max-width: 100%; height: auto; border: 1px solid var(--rule); border-radius: var(--r-btn); background: var(--white); }

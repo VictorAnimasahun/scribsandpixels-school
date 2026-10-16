@@ -1,0 +1,419 @@
+# Machine Learning · Week 2 quizzes. Format and rules: src/content/QUIZZES.md
+week: 2
+days:
+
+  # ─────────────────────────── DAY 1 ───────────────────────────
+  - day: 1
+    gate:
+      title: "Checkpoint: Week 1 review"
+      covers: "Week 1: what ML is, kinds of learning, batch/online, instance/model, bad data, overfitting, testing and validating"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: ml-w02-d1-g01, difficulty: easy, type: mcq, prompt: "Machine learning means the computer…", choices: ["finds the rules from examples", "follows rules a person wrote", "never makes mistakes", "needs no data"], answer: 0 }
+        - { id: ml-w02-d1-g02, difficulty: easy, type: mcq, prompt: "Predicting a number is…", choices: ["regression", "classification", "clustering", "reinforcement"], answer: 0 }
+        - { id: ml-w02-d1-g03, difficulty: easy, type: mcq, prompt: "Finding groups with no labels:", choices: ["clustering", "regression", "classification", "validation"], answer: 0 }
+        - { id: ml-w02-d1-g04, difficulty: easy, type: truefalse, prompt: "A big sample can still suffer from sampling bias.", answer: true }
+        - { id: ml-w02-d1-g05, difficulty: easy, type: mcq, prompt: "Great on training data, poor on new data:", choices: ["overfitting", "underfitting", "batch learning", "inference"], answer: 0 }
+        - { id: ml-w02-d1-g06, difficulty: easy, type: mcq, prompt: "The set used once, at the very end:", choices: ["test set", "training set", "validation set", "feature set"], answer: 0 }
+        - { id: ml-w02-d1-g07, difficulty: medium, type: match, prompt: "Match.", pairs: [["k-nearest neighbours", "instance-based"], ["the best straight line", "model-based"], ["retrained monthly on everything", "batch"], ["learns from each new example", "online"]] }
+        - { id: ml-w02-d1-g08, difficulty: medium, type: mcq, prompt: "θ₀ and θ₁ in a line are…", choices: ["parameters found by training", "hyperparameters you choose", "labels", "features"], answer: 0 }
+        - { id: ml-w02-d1-g09, difficulty: medium, type: mcq, prompt: "Regularization is controlled by…", choices: ["a hyperparameter", "the labels", "the test set", "the learning rate only"], answer: 0 }
+        - { id: ml-w02-d1-g10, difficulty: medium, type: multi, prompt: "Bad data (Select all.)", choices: ["too few examples", "sampling bias", "typos and missing values", "irrelevant features", "a validation set"], answers: [0, 1, 2, 3] }
+        - { id: ml-w02-d1-g11, difficulty: medium, type: mcq, prompt: "Why a validation set as well as a test set?", choices: ["to choose models without tuning to the test set", "to have more training data", "it replaces labels", "for speed"], answer: 0 }
+        - { id: ml-w02-d1-g12, difficulty: medium, type: mcq, prompt: "Cross-validation…", choices: ["rotates the validation part and averages the scores", "uses the test set many times", "skips training", "removes features"], answer: 0 }
+        - id: ml-w02-d1-g13
+          difficulty: medium
+          type: text
+          prompt: "k-NN, k = 3: the three nearest flats rent for ₦2.0m, ₦2.3m and ₦2.6m. Prediction (₦m)?"
+          accept: ["2.3"]
+        - { id: ml-w02-d1-g14, difficulty: medium, type: mcq, prompt: "No Free Lunch says…", choices: ["no model is best for every problem", "data is free", "big models always win", "validation is optional"], answer: 0 }
+        - { id: ml-w02-d1-g15, difficulty: medium, type: truefalse, prompt: "In Week 1's project, the straight line beat the wigglier curves on validation error.", answer: true }
+        - { id: ml-w02-d1-g16, difficulty: hard, type: mcq, prompt: "99% training accuracy, 60% on new data. Which is NOT a fix?", choices: ["a much more complex model", "more data", "regularization", "fewer features"], answer: 0 }
+        - { id: ml-w02-d1-g17, difficulty: hard, type: mcq, prompt: "After picking a model on the validation set, Géron's recipe is to…", choices: ["retrain it on training + validation, then test once", "test it many times", "throw away the validation set", "train only on the test set"], answer: 0 }
+        - { id: ml-w02-d1-g18, difficulty: hard, type: mcq, prompt: "A learning rate that's too high makes an online system…", choices: ["adapt fast but forget older patterns", "never learn", "learn nothing new", "ignore all noise"], answer: 0 }
+    quizzes:
+      - kind: rapid-fire
+        title: "Framing a project"
+        secondsPerQuestion: 10
+        questions:
+          - { id: ml-w02-d1-rf01, difficulty: easy, type: mcq, prompt: "The first question on a project:", choices: ["what will the model's output be used for?", "which laptop?", "which colour scheme?", "how many layers?"], answer: 0 }
+          - { id: ml-w02-d1-rf02, difficulty: easy, type: mcq, prompt: "A sequence of data-processing stages:", choices: ["a pipeline", "a label", "a cluster", "a hyperparameter"], answer: 0 }
+          - { id: ml-w02-d1-rf03, difficulty: easy, type: mcq, prompt: "How it's done today gives you a…", choices: ["reference performance", "test set", "feature", "policy"], answer: 0 }
+          - { id: ml-w02-d1-rf04, difficulty: easy, type: mcq, prompt: "Predicting price from size, area AND bedrooms:", choices: ["multiple regression", "simple classification", "clustering", "reinforcement"], answer: 0 }
+          - { id: ml-w02-d1-rf05, difficulty: easy, type: mcq, prompt: "One predicted value per listing:", choices: ["univariate", "multivariate", "unsupervised", "online"], answer: 0 }
+          - { id: ml-w02-d1-rf06, difficulty: easy, type: mcq, prompt: "Price AND days-to-sell together:", choices: ["multivariate", "univariate", "clustering", "batch"], answer: 0 }
+          - { id: ml-w02-d1-rf07, difficulty: easy, type: mcq, prompt: "3,000 rows that don't stream in:", choices: ["batch learning is fine", "online learning is required", "no learning possible", "reinforcement"], answer: 0 }
+          - { id: ml-w02-d1-rf08, difficulty: easy, type: truefalse, prompt: "A broken pipeline stage can go unnoticed if nobody monitors it.", answer: true }
+          - { id: ml-w02-d1-rf09, difficulty: easy, type: mcq, prompt: "If the next system only needs cheap/fair/expensive, the task is…", choices: ["classification", "regression", "clustering", "dimensionality reduction"], answer: 0 }
+          - { id: ml-w02-d1-rf10, difficulty: easy, type: mcq, prompt: "Ìlé Homes' agents are often off by more than…", choices: ["20%", "1%", "90%", "0%"], answer: 0 }
+      - kind: brain-teaser
+        title: "Frame it"
+        questions:
+          - { id: ml-w02-d1-bt01, difficulty: medium, type: mcq, prompt: "Predict minutes until a driver arrives, from distance and live traffic:", choices: ["supervised multiple regression", "unsupervised clustering", "classification", "reinforcement only"], answer: 0 }
+          - { id: ml-w02-d1-bt02, difficulty: medium, type: mcq, prompt: "Why check assumptions early?", choices: ["the problem might really be classification, not regression", "to slow down", "to impress the boss", "it never matters"], answer: 0 }
+          - id: ml-w02-d1-bt03
+            difficulty: medium
+            type: text
+            prompt: "An agent estimated ₦60m; it sold for ₦50m. By how many percent was the estimate off? (number only)"
+            accept: ["20"]
+          - { id: ml-w02-d1-bt04, difficulty: hard, type: mcq, prompt: "Your model's output feeds another system. That means…", choices: ["you must monitor it: a silent failure poisons everything downstream", "accuracy doesn't matter", "you can skip testing", "it must be online"], answer: 0 }
+
+  # ─────────────────────────── DAY 2 ───────────────────────────
+  - day: 2
+    gate:
+      title: "Checkpoint: framing the problem"
+      covers: "Week 2 · Day 1: business objective, pipelines, reference performance, framing, checking assumptions"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: ml-w02-d2-g01, difficulty: easy, type: mcq, prompt: "Building the model is…", choices: ["a means to a business goal", "the goal itself", "optional", "only for fun"], answer: 0 }
+        - { id: ml-w02-d2-g02, difficulty: easy, type: mcq, prompt: "Ìlé Homes' price prediction feeds…", choices: ["a system that flags bargains and overpriced listings", "a printer", "the agents' salaries", "nothing"], answer: 0 }
+        - { id: ml-w02-d2-g03, difficulty: easy, type: mcq, prompt: "Labels exist, the answer is a number:", choices: ["supervised regression", "unsupervised clustering", "reinforcement", "classification"], answer: 0 }
+        - { id: ml-w02-d2-g04, difficulty: easy, type: truefalse, prompt: "Each stage of a data pipeline is fairly self-contained.", answer: true }
+        - { id: ml-w02-d2-g05, difficulty: easy, type: mcq, prompt: "The garri line (peel → grate → press → fry) is a picture of…", choices: ["a pipeline", "a cluster", "a test set", "a label"], answer: 0 }
+        - { id: ml-w02-d2-g06, difficulty: easy, type: mcq, prompt: "The current solution's error is your…", choices: ["reference performance to beat", "label", "learning rate", "test set"], answer: 0 }
+        - { id: ml-w02-d2-g07, difficulty: medium, type: match, prompt: "Match the word to Ìlé Homes.", pairs: [["supervised", "real prices are known"], ["regression", "the answer is ₦ millions"], ["multiple", "size, area, bedrooms…"], ["batch", "retrain monthly on all data"]] }
+        - { id: ml-w02-d2-g08, difficulty: medium, type: mcq, prompt: "Using several features to predict one value is…", choices: ["multiple, univariate regression", "multivariate classification", "clustering", "online learning"], answer: 0 }
+        - { id: ml-w02-d2-g09, difficulty: medium, type: mcq, prompt: "If data were huge, Géron suggests…", choices: ["splitting batch work across servers (MapReduce) or online learning", "deleting most of it", "skipping the test set", "using a calculator"], answer: 0 }
+        - { id: ml-w02-d2-g10, difficulty: medium, type: mcq, prompt: "A signal, in Géron's terms, is…", choices: ["a piece of information fed to an ML system", "a traffic light", "a label", "an error"], answer: 0 }
+        - id: ml-w02-d2-g11
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            est, real = [58, 100], [45, 120]
+            print(sum(abs(e - r) / r > 0.20 for e, r in zip(est, real)))
+          accept: ["1"]
+        - { id: ml-w02-d2-g12, difficulty: medium, type: truefalse, prompt: "Exactly 20% off counts as 'more than 20% off'.", answer: false }
+        - { id: ml-w02-d2-g13, difficulty: medium, type: mcq, prompt: "Half the agents' estimates being >20% off tells you…", choices: ["a model has room to help", "the model is finished", "the data is useless", "to use clustering"], answer: 0 }
+        - { id: ml-w02-d2-g14, difficulty: medium, type: mcq, prompt: "Downstream pipeline components can keep running when one breaks because…", choices: ["they use the last output the broken one produced", "they repair it", "they stop too", "they skip data"], answer: 0 }
+        - { id: ml-w02-d2-g15, difficulty: medium, type: mcq, prompt: "The danger of that robustness:", choices: ["stale data can go unnoticed without monitoring", "it's too fast", "it uses labels", "none"], answer: 0 }
+        - { id: ml-w02-d2-g16, difficulty: hard, type: mcq, prompt: "You built a regression model for months; the client turns prices into 3 bands. What should you have done?", choices: ["checked assumptions early and framed it as classification", "built a bigger model", "used online learning", "nothing could help"], answer: 0 }
+        - { id: ml-w02-d2-g17, difficulty: hard, type: mcq, prompt: "Which decides how much effort to spend tweaking the model?", choices: ["how the business will use and benefit from it", "the number of columns", "the laptop's speed", "Python's version"], answer: 0 }
+        - id: ml-w02-d2-g18
+          difficulty: hard
+          type: text
+          prompt: "Estimates 66, 40, 75 for real prices 60, 50, 75. How many are MORE than 20% off?"
+          accept: ["0"]
+          explain: "66 vs 60 is 10% off; 40 vs 50 is exactly 20% (not more); 75 vs 75 is 0%."
+    quizzes:
+      - kind: rapid-fire
+        title: "RMSE and MAE"
+        secondsPerQuestion: 10
+        questions:
+          - { id: ml-w02-d2-rf01, difficulty: easy, type: mcq, prompt: "MAE stands for…", choices: ["Mean Absolute Error", "Maximum Average Error", "Model Accuracy Estimate", "Mean Annual Earnings"], answer: 0 }
+          - { id: ml-w02-d2-rf02, difficulty: easy, type: mcq, prompt: "RMSE stands for…", choices: ["Root Mean Square Error", "Random Model Sample Error", "Real Mean Score Estimate", "Rows Minus Some Errors"], answer: 0 }
+          - { id: ml-w02-d2-rf03, difficulty: easy, type: mcq, prompt: "Which punishes big mistakes more?", choices: ["RMSE", "MAE", "both equally", "neither"], answer: 0 }
+          - { id: ml-w02-d2-rf04, difficulty: easy, type: mcq, prompt: "With many outliers, prefer…", choices: ["MAE", "RMSE", "accuracy", "no measure"], answer: 0 }
+          - { id: ml-w02-d2-rf05, difficulty: easy, type: mcq, prompt: "ŷ (y-hat) means…", choices: ["the model's prediction", "the real value", "the number of examples", "a feature"], answer: 0 }
+          - { id: ml-w02-d2-rf06, difficulty: easy, type: mcq, prompt: "m in Géron's notation is…", choices: ["the number of examples", "the mean", "the model", "metres"], answer: 0 }
+          - { id: ml-w02-d2-rf07, difficulty: easy, type: mcq, prompt: "Σ means…", choices: ["add them all up", "multiply", "the square root", "the average"], answer: 0 }
+          - { id: ml-w02-d2-rf08, difficulty: easy, type: mcq, prompt: "For RMSE and MAE, lower is…", choices: ["better", "worse", "the same", "random"], answer: 0 }
+          - { id: ml-w02-d2-rf09, difficulty: easy, type: truefalse, prompt: "RMSE is never smaller than MAE.", answer: true }
+          - { id: ml-w02-d2-rf10, difficulty: easy, type: mcq, prompt: "h in Géron's notation is…", choices: ["the model (hypothesis)", "the height", "the hour", "a hyperparameter"], answer: 0 }
+      - kind: brain-teaser
+        title: "Errors by hand"
+        questions:
+          - id: ml-w02-d2-bt01
+            difficulty: medium
+            type: text
+            prompt: "Errors of 5, −20 and 3. MAE? (2 decimals)"
+            accept: ["9.33"]
+          - id: ml-w02-d2-bt02
+            difficulty: medium
+            type: text
+            prompt: "Errors of 0, 0 and 30. RMSE? (1 decimal)"
+            accept: ["17.3"]
+          - id: ml-w02-d2-bt03
+            difficulty: medium
+            type: text
+            prompt: "Errors of 4 and −4. RMSE?"
+            accept: ["4", "4.0"]
+          - { id: ml-w02-d2-bt04, difficulty: hard, type: mcq, prompt: "Adding one ₦200m miss raised RMSE 8.4× but MAE only 6.1×. Why?", choices: ["squaring makes the big error count far more", "MAE ignores the new listing", "a bug", "RMSE uses medians"], answer: 0 }
+
+  # ─────────────────────────── DAY 3 ───────────────────────────
+  - day: 3
+    gate:
+      title: "Checkpoint: RMSE and MAE"
+      covers: "Week 2 · Day 2: performance measures, RMSE vs MAE, outliers, Géron's notation"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: ml-w02-d3-g01, difficulty: easy, type: mcq, prompt: "A performance measure for regression gives…", choices: ["one number for how wrong the model is", "a list of labels", "a chart", "the training time"], answer: 0 }
+        - { id: ml-w02-d3-g02, difficulty: easy, type: mcq, prompt: "MAE ignores…", choices: ["the sign of each error", "the size of each error", "the number of examples", "nothing"], answer: 0 }
+        - { id: ml-w02-d3-g03, difficulty: easy, type: mcq, prompt: "RMSE squares the errors, then…", choices: ["averages them and takes the square root", "adds 1", "picks the biggest", "sorts them"], answer: 0 }
+        - { id: ml-w02-d3-g04, difficulty: easy, type: truefalse, prompt: "A perfect model has an RMSE of 0.", answer: true }
+        - { id: ml-w02-d3-g05, difficulty: easy, type: mcq, prompt: "Why take the square root at the end of RMSE?", choices: ["to get back to naira, the same units as prices", "to make it negative", "to save memory", "no reason"], answer: 0 }
+        - { id: ml-w02-d3-g06, difficulty: easy, type: mcq, prompt: "y⁽ⁱ⁾ is…", choices: ["the real value (label) of example i", "the prediction", "the i-th feature", "the model"], answer: 0 }
+        - id: ml-w02-d3-g07
+          difficulty: medium
+          type: text
+          prompt: "Real 30, 40, 50; predicted 30, 40, 80. MAE?"
+          accept: ["10"]
+        - id: ml-w02-d3-g08
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            import math
+            errors = [3, -4]
+            print(math.sqrt(sum(e * e for e in errors) / len(errors)))
+          accept: ["3.5355339059327378"]
+        - { id: ml-w02-d3-g09, difficulty: medium, type: mcq, prompt: "Many districts have prices you can't trust (outliers). Géron suggests…", choices: ["MAE", "RMSE", "accuracy", "the test set"], answer: 0 }
+        - { id: ml-w02-d3-g10, difficulty: medium, type: mcq, prompt: "X (capital, bold) means…", choices: ["the table of all features, one row per example", "one number", "the labels", "an error"], answer: 0 }
+        - { id: ml-w02-d3-g11, difficulty: medium, type: mcq, prompt: "Géron calls the model h a…", choices: ["hypothesis", "histogram", "hyperparameter", "hash"], answer: 0 }
+        - { id: ml-w02-d3-g12, difficulty: medium, type: mcq, prompt: "RMSE corresponds to the ℓ₂ norm, MAE to…", choices: ["the ℓ₁ (Manhattan) norm", "ℓ₀", "ℓ∞", "no norm"], answer: 0 }
+        - id: ml-w02-d3-g13
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            pred, real = [50, 100, 63], [45, 120, 60]
+            print(sum(abs(p - r) for p, r in zip(pred, real)))
+          accept: ["28"]
+        - { id: ml-w02-d3-g14, difficulty: medium, type: truefalse, prompt: "The higher the norm index, the more it focuses on large values.", answer: true }
+        - { id: ml-w02-d3-g15, difficulty: medium, type: mcq, prompt: "Errors 1, 1, 1, 1 versus 0, 0, 0, 4 have the same MAE. Which has the bigger RMSE?", choices: ["0, 0, 0, 4", "1, 1, 1, 1", "the same", "can't tell"], answer: 0 }
+        - { id: ml-w02-d3-g16, difficulty: hard, type: mcq, prompt: "When outliers are rare (a bell-shaped curve), Géron says RMSE…", choices: ["performs very well and is preferred", "fails", "equals MAE", "can't be used"], answer: 0 }
+        - id: ml-w02-d3-g17
+          difficulty: hard
+          type: text
+          prompt: "Errors 1, 1, 1, 1 and 0, 0, 0, 4: RMSE of the second? (number only)"
+          accept: ["2", "2.0"]
+        - { id: ml-w02-d3-g18, difficulty: hard, type: mcq, prompt: "A manager fears the occasional disaster more than small daily errors. Report…", choices: ["RMSE", "MAE", "the median error", "accuracy"], answer: 0 }
+    quizzes:
+      - kind: rapid-fire
+        title: "pandas first look"
+        secondsPerQuestion: 10
+        questions:
+          - { id: ml-w02-d3-rf01, difficulty: easy, type: mcq, prompt: "Load a CSV:", choices: ["pd.read_csv()", "pd.open()", "df.load()", "csv.go()"], answer: 0 }
+          - { id: ml-w02-d3-rf02, difficulty: easy, type: mcq, prompt: "The first 5 rows:", choices: ["df.head()", "df.top()", "df.first()", "df.start()"], answer: 0 }
+          - { id: ml-w02-d3-rf03, difficulty: easy, type: mcq, prompt: "Columns, types and non-missing counts:", choices: ["df.info()", "df.describe()", "df.head()", "df.plot()"], answer: 0 }
+          - { id: ml-w02-d3-rf04, difficulty: easy, type: mcq, prompt: "Count of each value in a column:", choices: ["value_counts()", "count_values()", "unique()", "sum()"], answer: 0 }
+          - { id: ml-w02-d3-rf05, difficulty: easy, type: mcq, prompt: "Mean, std, min, quartiles, max:", choices: ["df.describe()", "df.info()", "df.hist()", "df.head()"], answer: 0 }
+          - { id: ml-w02-d3-rf06, difficulty: easy, type: mcq, prompt: "A pandas table is a…", choices: ["DataFrame", "DataTable", "Sheet", "Matrix only"], answer: 0 }
+          - { id: ml-w02-d3-rf07, difficulty: easy, type: mcq, prompt: "The 50% row of describe() is the…", choices: ["median", "mean", "maximum", "mode"], answer: 0 }
+          - { id: ml-w02-d3-rf08, difficulty: easy, type: mcq, prompt: "Number of different values:", choices: ["nunique()", "count()", "len()", "max()"], answer: 0 }
+          - { id: ml-w02-d3-rf09, difficulty: easy, type: mcq, prompt: "Missing values in a column:", choices: ["isna().sum()", "missing()", "null.count()", "empty()"], answer: 0 }
+          - { id: ml-w02-d3-rf10, difficulty: easy, type: mcq, prompt: "A chart of how often each value range occurs:", choices: ["a histogram", "a pie", "a map", "a table"], answer: 0 }
+      - kind: brain-teaser
+        title: "Read the first look"
+        questions:
+          - { id: ml-w02-d3-bt01, difficulty: medium, type: mcq, prompt: "The price histogram spikes at exactly ₦500m (127 listings). Most likely…", choices: ["prices were capped at 500", "500 is the most common real price", "a pandas bug", "the median"], answer: 0 }
+          - { id: ml-w02-d3-bt02, difficulty: medium, type: mcq, prompt: "Mean ₦128m, median ₦75m. Why?", choices: ["a few very expensive homes pull the mean up", "a typo", "the median is wrong", "they should be equal"], answer: 0 }
+          - { id: ml-w02-d3-bt03, difficulty: medium, type: mcq, prompt: "value_counts() lists 'Ajah' twice. Likely cause?", choices: ["one spelling has a trailing space", "two different towns", "a pandas error", "duplicates are normal"], answer: 0 }
+          - { id: ml-w02-d3-bt04, difficulty: hard, type: mcq, prompt: "The client needs precise prices above ₦500m. Géron's two options:", choices: ["collect the true prices, or drop those listings from training and test", "keep them at 500", "double them", "ignore the client"], answer: 0 }
+
+  # ─────────────────────────── DAY 4 ───────────────────────────
+  - day: 4
+    gate:
+      title: "Checkpoint: the first look"
+      covers: "Week 2 · Day 3: pandas (read_csv, head, info, value_counts, describe, hist), what the Lagos data showed"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: ml-w02-d4-g01, difficulty: easy, type: mcq, prompt: "How many Lagos listings are there?", choices: ["3,000", "300", "20,640", "12"], answer: 0 }
+        - { id: ml-w02-d4-g02, difficulty: easy, type: mcq, prompt: "Which column has 60 missing values?", choices: ["size_sqm", "price_m", "area", "bedrooms"], answer: 0 }
+        - { id: ml-w02-d4-g03, difficulty: easy, type: mcq, prompt: "How many real areas are in the data?", choices: ["12", "20", "3", "36"], answer: 0 }
+        - { id: ml-w02-d4-g04, difficulty: easy, type: truefalse, prompt: "info() shows how many non-missing values each column has.", answer: true }
+        - { id: ml-w02-d4-g05, difficulty: easy, type: mcq, prompt: "Text columns like area are…", choices: ["categorical attributes", "labels", "numbers", "missing"], answer: 0 }
+        - { id: ml-w02-d4-g06, difficulty: easy, type: mcq, prompt: "The median price is about…", choices: ["₦75m", "₦500m", "₦1m", "₦128m"], answer: 0 }
+        - id: ml-w02-d4-g07
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            import pandas as pd
+            df = pd.DataFrame({"area": ["Yaba", "Yaba", "Ikeja"]})
+            print(df["area"].nunique())
+          accept: ["2"]
+        - id: ml-w02-d4-g08
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            import pandas as pd
+            s = pd.Series([10, None, 30])
+            print(s.isna().sum())
+          accept: ["1"]
+        - id: ml-w02-d4-g09
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            import pandas as pd
+            print(pd.Series([10, 20, 90]).median())
+          accept: ["20.0"]
+        - { id: ml-w02-d4-g10, difficulty: medium, type: mcq, prompt: "A size of 2,320 m² for a Lagos home is probably…", choices: ["a typo (an extra zero)", "normal", "the median", "a capped value"], answer: 0 }
+        - { id: ml-w02-d4-g11, difficulty: medium, type: mcq, prompt: "Géron's California data was capped at…", choices: ["$500,000", "$1m", "$50,000", "no cap"], answer: 0 }
+        - { id: ml-w02-d4-g12, difficulty: medium, type: mcq, prompt: "A tail-heavy histogram means…", choices: ["values stretch much further right of the median than left", "the data is perfect", "everything is the same", "it's capped"], answer: 0 }
+        - { id: ml-w02-d4-g13, difficulty: medium, type: mcq, prompt: "The std row of describe() measures…", choices: ["how spread out the values are", "the median", "the number of rows", "the maximum"], answer: 0 }
+        - { id: ml-w02-d4-g14, difficulty: medium, type: truefalse, prompt: "25% of listings cost less than the 25% value in describe().", answer: true }
+        - { id: ml-w02-d4-g15, difficulty: medium, type: mcq, prompt: "Why might capped labels hurt the model?", choices: ["it may learn that nothing costs more than ₦500m", "they make training slower", "they hide the features", "they don't"], answer: 0 }
+        - id: ml-w02-d4-g16
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            import pandas as pd
+            prices = pd.Series([500, 120, 500, 75])
+            print((prices == 500).sum())
+          accept: ["2"]
+        - { id: ml-w02-d4-g17, difficulty: hard, type: mcq, prompt: "Géron's median income was scaled and capped. Working with preprocessed attributes is…", choices: ["common, but you should understand how they were computed", "forbidden", "always a bug", "irrelevant"], answer: 0 }
+        - { id: ml-w02-d4-g18, difficulty: hard, type: mcq, prompt: "Which first-look finding most changes the model's labels?", choices: ["prices capped at ₦500m", "a trailing space in 'Ajah '", "the column order", "the file name"], answer: 0 }
+    quizzes:
+      - kind: rapid-fire
+        title: "Test sets"
+        secondsPerQuestion: 10
+        questions:
+          - { id: ml-w02-d4-rf01, difficulty: easy, type: mcq, prompt: "Peeking at the test set causes…", choices: ["data snooping bias", "underfitting", "a capped label", "missing values"], answer: 0 }
+          - { id: ml-w02-d4-rf02, difficulty: easy, type: mcq, prompt: "A typical test share:", choices: ["20%", "90%", "1%", "50% always"], answer: 0 }
+          - { id: ml-w02-d4-rf03, difficulty: easy, type: mcq, prompt: "random_state=42 makes the split…", choices: ["the same every run", "random every run", "bigger", "stratified"], answer: 0 }
+          - { id: ml-w02-d4-rf04, difficulty: easy, type: mcq, prompt: "Picking the right number from each subgroup:", choices: ["stratified sampling", "random sampling", "clustering", "online learning"], answer: 0 }
+          - { id: ml-w02-d4-rf05, difficulty: easy, type: mcq, prompt: "Each subgroup is a…", choices: ["stratum", "cluster", "label", "fold"], answer: 0 }
+          - { id: ml-w02-d4-rf06, difficulty: easy, type: mcq, prompt: "scikit-learn's simple random split:", choices: ["train_test_split", "split_data", "make_test", "random_split"], answer: 0 }
+          - { id: ml-w02-d4-rf07, difficulty: easy, type: mcq, prompt: "scikit-learn's stratified splitter:", choices: ["StratifiedShuffleSplit", "StrataSplit", "FairSplit", "GroupSplit"], answer: 0 }
+          - { id: ml-w02-d4-rf08, difficulty: easy, type: truefalse, prompt: "Splitting by a hash of each ID keeps the test set stable when new data arrives.", answer: true }
+          - { id: ml-w02-d4-rf09, difficulty: easy, type: mcq, prompt: "Lagos split 80/20:", choices: ["2,400 train, 600 test", "2,000 / 1,000", "3,000 / 0", "1,500 / 1,500"], answer: 0 }
+          - { id: ml-w02-d4-rf10, difficulty: easy, type: mcq, prompt: "Why 42?", choices: ["no reason: it's a Hitchhiker's Guide joke", "it's the best seed", "required by Python", "the answer key"], answer: 0 }
+      - kind: brain-teaser
+        title: "Fair test sets"
+        questions:
+          - { id: ml-w02-d4-bt01, difficulty: medium, type: mcq, prompt: "A random test set has 8.7% five-bedroom homes vs 10.4% overall. That's…", choices: ["about 16% too few", "fine", "2% too many", "impossible"], answer: 0 }
+          - { id: ml-w02-d4-bt02, difficulty: medium, type: mcq, prompt: "Why stratify by bedrooms for house prices?", choices: ["bedrooms matter a lot for price, so each group should be fairly represented", "it's alphabetical", "to make it faster", "bedrooms are labels"], answer: 0 }
+          - { id: ml-w02-d4-bt03, difficulty: medium, type: mcq, prompt: "Reshuffling each time new data arrives means…", choices: ["over time the model sees the whole test set", "nothing changes", "the test set grows", "better accuracy"], answer: 0 }
+          - { id: ml-w02-d4-bt04, difficulty: hard, type: mcq, prompt: "6 students from Kebbi, 400 from Lagos, state matters. Best approach?", choices: ["stratify by state (or region if too small)", "pure random split", "drop Kebbi", "test only on Lagos"], answer: 0 }
+
+  # ─────────────────────────── DAY 5 ───────────────────────────
+  - day: 5
+    gate:
+      title: "Checkpoint: test sets"
+      covers: "Week 2 · Day 4: data snooping bias, random split, ID-hash split, stratified sampling"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: ml-w02-d5-g01, difficulty: easy, type: mcq, prompt: "When do you set aside the test set?", choices: ["right at the start, before exploring", "after training", "never", "at the end"], answer: 0 }
+        - { id: ml-w02-d5-g02, difficulty: easy, type: mcq, prompt: "Data snooping bias makes your test score…", choices: ["too optimistic", "too pessimistic", "exactly right", "zero"], answer: 0 }
+        - { id: ml-w02-d5-g03, difficulty: easy, type: mcq, prompt: "Stratified sampling keeps…", choices: ["each subgroup's share the same as in the whole data", "only the biggest group", "a random mix", "the labels secret"], answer: 0 }
+        - { id: ml-w02-d5-g04, difficulty: easy, type: truefalse, prompt: "Without a fixed random_state, each run makes a different test set.", answer: true }
+        - { id: ml-w02-d5-g05, difficulty: easy, type: mcq, prompt: "Lagos was stratified by…", choices: ["bedrooms (5 and 6 grouped)", "area spelling", "listing ID", "price"], answer: 0 }
+        - { id: ml-w02-d5-g06, difficulty: easy, type: mcq, prompt: "The hash split put how many listings in the test set?", choices: ["601", "600", "0", "3,000"], answer: 0 }
+        - id: ml-w02-d5-g07
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            import pandas as pd
+            print(pd.Series([1, 2, 6, 7]).clip(upper=5).tolist())
+          accept: ["[1, 2, 5, 5]"]
+        - id: ml-w02-d5-g08
+          difficulty: medium
+          type: text
+          prompt: "A test set has 100 rows; 30 are 3-bedroom. Its share as a decimal?"
+          accept: ["0.3", ".3"]
+        - { id: ml-w02-d5-g09, difficulty: medium, type: mcq, prompt: "Géron stratified California by…", choices: ["income categories", "ocean proximity", "latitude", "population"], answer: 0 }
+        - { id: ml-w02-d5-g10, difficulty: medium, type: mcq, prompt: "Strata should be…", choices: ["few enough that each is large", "as many as possible", "one per row", "random"], answer: 0 }
+        - { id: ml-w02-d5-g11, difficulty: medium, type: mcq, prompt: "Row index as an ID works only if…", choices: ["new rows are added at the end and none are deleted", "the data is small", "it's sorted by price", "always"], answer: 0 }
+        - { id: ml-w02-d5-g12, difficulty: medium, type: mcq, prompt: "Géron's fuel-poll picture: random picking might give…", choices: ["too few people from some region, tilting results", "perfect results", "no answers", "only experts"], answer: 0 }
+        - id: ml-w02-d5-g13
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            n = 3000
+            print(int(n * 0.2), n - int(n * 0.2))
+          accept: ["600 2400"]
+        - { id: ml-w02-d5-g14, difficulty: medium, type: truefalse, prompt: "The stratified Lagos test set was within 1% of the whole data in every bedroom group.", answer: true }
+        - { id: ml-w02-d5-g15, difficulty: medium, type: mcq, prompt: "Combining latitude and longitude into one ID can bias the split because…", choices: ["many listings share coordinates, so they land in the same set together", "coordinates change daily", "it's random", "it can't be computed"], answer: 0 }
+        - { id: ml-w02-d5-g16, difficulty: hard, type: mcq, prompt: "Why remove bed_cat after splitting (as Géron removes income_cat)?", choices: ["it was only a helper for the split, not a real feature", "it's a label", "it's wrong", "to save time"], answer: 0 }
+        - { id: ml-w02-d5-g17, difficulty: hard, type: mcq, prompt: "Pure random sampling is usually fine when…", choices: ["the dataset is large relative to the number of attributes", "the dataset is tiny", "there are many strata", "never"], answer: 0 }
+        - id: ml-w02-d5-g18
+          difficulty: hard
+          type: text
+          prompt: "Overall share 0.25, test share 0.20. Percentage gap, as Day 4 measured it? (number only)"
+          accept: ["20", "-20"]
+    quizzes:
+      - kind: rapid-fire
+        title: "Exploring and correlation"
+        secondsPerQuestion: 10
+        questions:
+          - { id: ml-w02-d5-rf01, difficulty: easy, type: mcq, prompt: "Explore which set?", choices: ["the training set only", "the test set", "both together", "neither"], answer: 0 }
+          - { id: ml-w02-d5-rf02, difficulty: easy, type: mcq, prompt: "Correlation ranges from…", choices: ["−1 to +1", "0 to 100", "0 to 1", "−∞ to +∞"], answer: 0 }
+          - { id: ml-w02-d5-rf03, difficulty: easy, type: mcq, prompt: "Close to +1 means…", choices: ["they rise together", "one rises as the other falls", "no relationship", "an error"], answer: 0 }
+          - { id: ml-w02-d5-rf04, difficulty: easy, type: mcq, prompt: "Close to −1 means…", choices: ["one rises as the other falls", "they rise together", "no relationship", "perfect"], answer: 0 }
+          - { id: ml-w02-d5-rf05, difficulty: easy, type: mcq, prompt: "Correlation only measures…", choices: ["straight-line relationships", "every relationship", "slopes", "causes"], answer: 0 }
+          - { id: ml-w02-d5-rf06, difficulty: easy, type: mcq, prompt: "alpha=0.4 in a scatter plot…", choices: ["makes dots see-through so crowded areas show", "colours by price", "adds labels", "zooms in"], answer: 0 }
+          - { id: ml-w02-d5-rf07, difficulty: easy, type: mcq, prompt: "Which Lagos column correlates most with price?", choices: ["size_sqm", "latitude", "building_age", "listing_id"], answer: 0 }
+          - { id: ml-w02-d5-rf08, difficulty: easy, type: truefalse, prompt: "Height in metres and in centimetres have a correlation of 1.", answer: true }
+          - { id: ml-w02-d5-rf09, difficulty: easy, type: mcq, prompt: "Pearson's r is also called…", choices: ["the standard correlation coefficient", "RMSE", "the median", "accuracy"], answer: 0 }
+          - { id: ml-w02-d5-rf10, difficulty: easy, type: mcq, prompt: "pandas: correlations of every pair of columns", choices: ["df.corr()", "df.relate()", "df.pairs()", "df.link()"], answer: 0 }
+      - kind: brain-teaser
+        title: "Read the correlations"
+        questions:
+          - { id: ml-w02-d5-bt01, difficulty: medium, type: mcq, prompt: "Latitude vs price: −0.26 in Lagos. Meaning?", choices: ["going north (away from the Island), prices tend to drop a little", "latitude causes price", "no relationship at all", "a strong positive link"], answer: 0 }
+          - { id: ml-w02-d5-bt02, difficulty: medium, type: mcq, prompt: "Size per bedroom correlated 0.30 vs size's 0.65. Conclusion?", choices: ["this combination doesn't help here: test, don't assume", "always use combinations", "size is useless", "a bug"], answer: 0 }
+          - { id: ml-w02-d5-bt03, difficulty: medium, type: mcq, prompt: "Distance to Ikoyi: −0.44. Compared with latitude (−0.26) it is…", choices: ["a stronger, more useful feature", "weaker", "the same", "a label"], answer: 0 }
+          - { id: ml-w02-d5-bt04, difficulty: hard, type: mcq, prompt: "A U-shaped relationship (high at both ends) can have a correlation of…", choices: ["about 0, despite a clear pattern", "exactly 1", "exactly −1", "it's impossible"], answer: 0 }
+
+  # ─────────────────────────── DAY 6 ───────────────────────────
+  - day: 6
+    gate:
+      title: "Checkpoint: exploring the data"
+      covers: "Week 2 · Day 5: the price map, correlation and its limits, combining features"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: ml-w02-d6-g01, difficulty: easy, type: mcq, prompt: "On the Lagos price map, the expensive cluster is…", choices: ["the Island (Ikoyi, VI, Lekki)", "Ikorodu", "evenly spread", "Festac"], answer: 0 }
+        - { id: ml-w02-d6-g02, difficulty: easy, type: mcq, prompt: "Size and price correlate at about…", choices: ["0.65", "−0.65", "0", "1"], answer: 0 }
+        - { id: ml-w02-d6-g03, difficulty: easy, type: mcq, prompt: "A correlation near 0 means…", choices: ["no straight-line relationship", "no relationship of any kind", "a perfect link", "a typo"], answer: 0 }
+        - { id: ml-w02-d6-g04, difficulty: easy, type: truefalse, prompt: "Correlation is the slope of the line.", answer: false }
+        - { id: ml-w02-d6-g05, difficulty: easy, type: mcq, prompt: "Older buildings are slightly cheaper: building_age correlation is…", choices: ["slightly negative (−0.09)", "strongly positive", "exactly 1", "0.65"], answer: 0 }
+        - { id: ml-w02-d6-g06, difficulty: easy, type: mcq, prompt: "Géron's useful combination was…", choices: ["rooms per household (and bedrooms per room)", "population squared", "latitude × longitude", "price per room"], answer: 0 }
+        - id: ml-w02-d6-g07
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            import pandas as pd
+            df = pd.DataFrame({"size": [100, 200, 300], "price": [10, 20, 30]})
+            print(df["size"].corr(df["price"]))
+          accept: ["1.0"]
+        - id: ml-w02-d6-g08
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            import pandas as pd
+            df = pd.DataFrame({"size": [100, 200], "bedrooms": [2, 4]})
+            print((df["size"] / df["bedrooms"]).tolist())
+          accept: ["[50.0, 50.0]"]
+        - { id: ml-w02-d6-g09, difficulty: medium, type: mcq, prompt: "Why build 'distance to Ikoyi' from latitude and longitude?", choices: ["price depends on closeness to an expensive hub, which raw coordinates don't capture directly", "to remove the coordinates", "it's a label", "for the map's colours"], answer: 0 }
+        - { id: ml-w02-d6-g10, difficulty: medium, type: mcq, prompt: "Géron's scatter of income vs value showed horizontal lines (e.g. at $450k). He suggests…", choices: ["maybe removing those districts so the model doesn't learn the quirks", "keeping them", "doubling them", "ignoring the plot"], answer: 0 }
+        - { id: ml-w02-d6-g11, difficulty: medium, type: mcq, prompt: "A scatter matrix shows…", choices: ["every chosen numeric column plotted against every other", "one chart", "the labels only", "a map"], answer: 0 }
+        - { id: ml-w02-d6-g12, difficulty: medium, type: mcq, prompt: "On a scatter matrix's diagonal pandas draws…", choices: ["a histogram of each column", "straight lines", "nothing", "the labels"], answer: 0 }
+        - { id: ml-w02-d6-g13, difficulty: medium, type: truefalse, prompt: "Exploration should be quick and iterative: you'll come back after the first model.", answer: true }
+        - { id: ml-w02-d6-g14, difficulty: medium, type: mcq, prompt: "Géron suggests a clustering algorithm on the map to…", choices: ["add features measuring closeness to cluster centres", "remove outliers", "label prices", "split the test set"], answer: 0 }
+        - { id: ml-w02-d6-g15, difficulty: medium, type: mcq, prompt: "Why not use 'price per m²' as a feature for predicting price?", choices: ["it's computed from the price itself: it leaks the answer", "it's too slow", "it's categorical", "no reason"], answer: 0 }
+        - { id: ml-w02-d6-g16, difficulty: hard, type: mcq, prompt: "Bedrooms 0.64, bathrooms 0.58, size 0.65 with price. Why might using all three not add much over size alone?", choices: ["they move together: bigger homes have more of each", "they're labels", "correlation is wrong", "they are text"], answer: 0 }
+        - { id: ml-w02-d6-g17, difficulty: hard, type: mcq, prompt: "Correlation of −0.44 with distance to Ikoyi means…", choices: ["farther from Ikoyi tends to mean cheaper, moderately", "Ikoyi causes prices", "44% of homes are near Ikoyi", "no pattern"], answer: 0 }
+        - { id: ml-w02-d6-g18, difficulty: hard, type: mcq, prompt: "You explored the training set and found a pattern. What must you NOT do?", choices: ["check it on the test set now", "note it", "build a feature from it", "plot it again"], answer: 0 }
+    quizzes:
+      - kind: rapid-fire
+        title: "The first-look report"
+        secondsPerQuestion: 10
+        questions:
+          - { id: ml-w02-d6-rf01, difficulty: easy, type: mcq, prompt: "Most expensive area (median):", choices: ["Ikoyi", "Ikorodu", "Yaba", "Festac"], answer: 0 }
+          - { id: ml-w02-d6-rf02, difficulty: easy, type: mcq, prompt: "Cheapest area (median):", choices: ["Ikorodu", "Ikoyi", "Lekki Phase 1", "Magodo"], answer: 0 }
+          - { id: ml-w02-d6-rf03, difficulty: easy, type: mcq, prompt: "Most expensive property type (median):", choices: ["detached duplex", "self-contain", "flat", "bungalow"], answer: 0 }
+          - { id: ml-w02-d6-rf04, difficulty: easy, type: mcq, prompt: "How many prices hit the cap?", choices: ["127", "12", "500", "3,000"], answer: 0 }
+          - { id: ml-w02-d6-rf05, difficulty: easy, type: mcq, prompt: "Group and take a median per group:", choices: ["df.groupby(col)[target].median()", "df.median(col)", "df.group()", "df.pivot()"], answer: 0 }
+          - { id: ml-w02-d6-rf06, difficulty: easy, type: mcq, prompt: "Fix spellings in a column:", choices: ["df[col].replace(mapping)", "df.spell()", "df.fix()", "df[col].sort()"], answer: 0 }
+          - { id: ml-w02-d6-rf07, difficulty: easy, type: mcq, prompt: "How many sizes are over 1,000 m²?", choices: ["3", "60", "0", "127"], answer: 0 }
+          - { id: ml-w02-d6-rf08, difficulty: easy, type: truefalse, prompt: "After cleaning, Lagos has 12 areas.", answer: true }
+          - { id: ml-w02-d6-rf09, difficulty: easy, type: mcq, prompt: "Ikoyi's median is about how many times Ikorodu's?", choices: ["20", "2", "100", "the same"], answer: 0 }
+          - { id: ml-w02-d6-rf10, difficulty: easy, type: mcq, prompt: "Sort a Series from biggest to smallest:", choices: ["sort_values(ascending=False)", "sort()", "reverse()", "order(desc)"], answer: 0 }
+      - kind: brain-teaser
+        title: "Spot the problem"
+        questions:
+          - { id: ml-w02-d6-bt01, difficulty: medium, type: mcq, prompt: "Two of the five size typos don't show up as sizes over 1,000 m². Why?", choices: ["small homes ×10 still look plausible (30 → 300 m²)", "they were fixed", "pandas hid them", "they're missing"], answer: 0 }
+          - { id: ml-w02-d6-bt02, difficulty: medium, type: mcq, prompt: "Which spelling is hardest to spot by eye?", choices: ["'Ajah ' with a trailing space", "'V.I.'", "'Lekki Ph 1'", "'surulere'"], answer: 0 }
+          - id: ml-w02-d6-bt03
+            difficulty: medium
+            type: text
+            prompt: "127 capped prices out of 3,000 listings: what percentage, to 1 decimal place?"
+            accept: ["4.2", "4.2%"]
+          - { id: ml-w02-d6-bt04, difficulty: hard, type: mcq, prompt: "A good report finding is…", choices: ["'Ikoyi's median is ₦328.6m, about 20× Ikorodu's ₦16.8m'", "'prices vary'", "'the data is big'", "'Lagos is nice'"], answer: 0 }

@@ -1,0 +1,54 @@
+# Week 2 · Day 6 weekly project
+id: ml-w02-d6-report
+kind: python
+title: "Ìlé Homes: the first-look report"
+description: "Clean the area names, then compute the numbers a manager wants: median price per area and per property type, how many prices are capped, which sizes look like typos."
+files: [lagos_housing.csv]
+starter: |
+  import pandas as pd
+
+  df = pd.read_csv("lagos_housing.csv")
+  print(sorted(df["area"].unique()))   # look at every spelling
+
+  # 1. Map every wrong spelling to its proper name (8 spellings need fixing).
+  AREA_FIX = {
+      "surulere": "Surulere",
+      # ... add the other 7
+  }
+  df["area_clean"] = df["area"].replace(AREA_FIX)
+
+  # 2. Median price per area, most expensive first.
+  BY_AREA = None        # df.groupby("area_clean")["price_m"].median().sort_values(ascending=False)
+
+  # 3. Median price per property type.
+  BY_TYPE = None
+
+  # 4. The data problems.
+  N_CAPPED = None       # prices exactly at the ₦500m cap
+  SHARE_CAPPED = None   # as a share of all listings (0 to 1)
+  N_HUGE = None         # listings with size_sqm over 1,000 m² (likely typos)
+
+  print(BY_AREA)
+  print(BY_TYPE)
+tasks:
+  - prompt: "After cleaning, there are exactly 12 areas."
+    tests: |
+      assert df["area_clean"].nunique() == 12, f"{df['area_clean'].nunique()} areas: {sorted(df['area_clean'].unique())}"
+    hint: "The bad spellings: 'surulere', 'Ikeja Gra', 'Ikeja G.R.A', 'lekki phase 1', 'Lekki Ph 1', 'V.I.', 'Victoria island', and 'Ajah ' (with a trailing space)."
+  - prompt: "BY_AREA: Ikoyi is the most expensive (median ₦328.6m) and Ikorodu the cheapest (₦16.8m)."
+    tests: |
+      assert BY_AREA is not None and BY_AREA.index[0] == "Ikoyi" and BY_AREA.index[-1] == "Ikorodu", "sort from most to least expensive"
+      assert abs(BY_AREA["Ikoyi"] - 328.6) < 0.01 and abs(BY_AREA["Ikorodu"] - 16.8) < 0.01, f"Ikoyi {BY_AREA['Ikoyi']}, Ikorodu {BY_AREA['Ikorodu']}"
+      assert len(BY_AREA) == 12
+    hint: "BY_AREA = df.groupby('area_clean')['price_m'].median().sort_values(ascending=False)"
+  - prompt: "BY_TYPE: a detached duplex's median is ₦454.7m and a self-contain's ₦11.8m."
+    tests: |
+      assert BY_TYPE is not None, "compute BY_TYPE"
+      assert abs(BY_TYPE["detached duplex"] - 454.7) < 0.01 and abs(BY_TYPE["self-contain"] - 11.8) < 0.01, f"detached duplex {BY_TYPE['detached duplex']}, self-contain {BY_TYPE['self-contain']}"
+    hint: "BY_TYPE = df.groupby('property_type')['price_m'].median()"
+  - prompt: "The problems: 127 capped prices (about 4.2% of listings) and 3 sizes over 1,000 m²."
+    tests: |
+      assert N_CAPPED == 127, f"N_CAPPED = {N_CAPPED}"
+      assert abs(SHARE_CAPPED - 127 / 3000) < 1e-9, f"SHARE_CAPPED = {SHARE_CAPPED}"
+      assert N_HUGE == 3, f"N_HUGE = {N_HUGE}"
+    hint: "(df['price_m'] == 500).sum(); divide by len(df); (df['size_sqm'] > 1000).sum()"

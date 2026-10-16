@@ -1,0 +1,39 @@
+# Week 2 · Day 1 practice
+id: ml-w02-d1-frame
+kind: python
+title: "Frame the problem, then find the number to beat"
+description: "Write down how Ìlé Homes' problem is framed, then measure how often the agents' own price estimates are more than 20% off: the reference performance your model must beat."
+starter: |
+  # 1. Frame the problem. Replace each "?" with the right word from the comment.
+  FRAMING = {
+      "supervision": "?",   # "supervised", "unsupervised" or "reinforcement"
+      "task": "?",          # "regression" or "classification"
+      "features": "?",      # "single" or "multiple"
+      "outputs": "?",       # "univariate" or "multivariate"
+      "learning": "?",      # "batch" or "online"
+  }
+
+  # 2. Ten listings that sold: the agent's estimate and the real price (₦ millions).
+  ESTIMATES = [58, 100, 61, 70, 44, 260, 96, 15, 180, 50]
+  ACTUAL    = [45, 120, 60, 88, 30, 250, 75, 15, 140, 52]
+
+  def share_off_by_more_than(estimates, actual, limit):
+      # The share (0 to 1) of estimates whose error is more than `limit`
+      # of the real price. Error as a share: abs(estimate - real) / real
+      pass
+
+  print("Agents more than 20% off:", share_off_by_more_than(ESTIMATES, ACTUAL, 0.20))
+tasks:
+  - prompt: "FRAMING describes Ìlé Homes' problem correctly."
+    tests: |
+      want = {"supervision": "supervised", "task": "regression", "features": "multiple", "outputs": "univariate", "learning": "batch"}
+      wrong = [k for k, v in want.items() if str(FRAMING.get(k, "")).strip().lower() != v]
+      assert not wrong, "look again at: " + ", ".join(wrong)
+    hint: "Labels (real prices) exist → supervised. A number → regression. Size, area, bedrooms… → multiple. One price per listing → univariate. 3,000 rows that don't stream in → batch."
+  - prompt: "share_off_by_more_than finds that half the agents' estimates (0.5) are more than 20% off."
+    tests: |
+      got = share_off_by_more_than(ESTIMATES, ACTUAL, 0.20)
+      assert got is not None and abs(got - 0.5) < 1e-9, f"got {got}"
+      assert abs(share_off_by_more_than([110, 90], [100, 100], 0.05) - 1.0) < 1e-9, "both are 10% off, so with a 5% limit the share is 1.0"
+      assert share_off_by_more_than([120], [100], 0.20) == 0, "exactly 20% off is not MORE than 20%"
+    hint: "Count the pairs where abs(e - a) / a > limit, then divide by len(actual)."
