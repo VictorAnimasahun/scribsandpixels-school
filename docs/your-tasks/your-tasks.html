@@ -60,8 +60,9 @@
     <tr><td class="mono">09</td><td>deploy_email_nudges()</td><td><span class="tag hold">ON HOLD</span></td></tr>
     <tr><td class="mono">10</td><td>switch_on_accounts()</td><td><span class="tag hold">✓ DONE 16 Oct</span></td></tr>
     <tr><td class="mono">11</td><td>install_the_app()</td><td><span class="tag now">WHEN READY</span></td></tr>
-    <tr><td class="mono">12</td><td>Understand what you did (05–11 explained)</td><td><span class="tag now">READ</span></td></tr>
-    <tr><td class="mono">13</td><td>Appendix: words, tools and message templates</td><td></td></tr>
+    <tr><td class="mono">12</td><td>deploy_only_after_tests()</td><td><span class="tag now">NEXT</span></td></tr>
+    <tr><td class="mono">13</td><td>Understand what you did (05–11 explained)</td><td><span class="tag now">READ</span></td></tr>
+    <tr><td class="mono">14</td><td>Appendix: words, tools and message templates</td><td></td></tr>
   </table>
   <div class="box warn" style="margin-top:16pt"><b>Where things stand (15 Oct).</b> Hosting, the subdomain, Supabase and Resend are done. Accounts are built into the app; <b>10 switches them on</b>. 09 (the nudge emails) comes after 10, once your own account has some progress in it.</div>
 </section>
@@ -468,7 +469,49 @@ npx supabase db push</pre>
 
 <!-- ─────────────────────────── 12 ─────────────────────────── -->
 <section class="page">
-  <h2>12 · Understand what you did</h2>
+  <h2>12 · deploy_only_after_tests() <span class="tag now">NEXT</span></h2>
+  <div class="proc">
+    <span class="sig">PROCEDURE deploy_only_after_tests() → school.scribsandpixels.com updates only when every check passed</span>
+    <table class="kv">
+      <tr><td>WHY</td><td>Today Vercel builds and publishes every push on its own, <b>without waiting for the tests</b>. A change that breaks something still reaches learners. After this, GitHub runs all the checks first and only then tells Vercel to publish.</td></tr>
+      <tr><td>INPUTS</td><td>Your Vercel login, your GitHub login, the password manager.</td></tr>
+      <tr><td>TIME</td><td>10 minutes</td></tr>
+    </table>
+    <ol class="steps">
+      <li>Create the key GitHub will use to publish for you. Vercel → your avatar (top right) → <b>Account Settings</b> → <b>Tokens</b> → <b>Create Token</b>.
+        <ul>
+          <li>Name: <code>github-actions-school</code></li>
+          <li>Scope: your team, <code>victor-animasahuns-projects</code></li>
+          <li>Expiration: <b>1 year</b> (put a calendar reminder for 11 months; the deploys stop when it expires)</li>
+        </ul>
+        → <b>Create</b> → copy it straight into the password manager as <span class="kw">SECRET</span> "Vercel token for GitHub". It's shown once.</li>
+      <li>Find the <b>Project ID</b>: open the project <code>scribsandpixels-school</code> → <b>Settings</b> → <b>General</b> → copy <b>Project ID</b> (starts with <code>prj_</code>).</li>
+      <li>Find the <b>Team ID</b>: Vercel → the team switcher (top left) → <b>Team Settings</b> (or Settings) → <b>General</b> → copy <b>Team ID</b> (starts with <code>team_</code>).</li>
+      <li>Give all three to GitHub as secrets. github.com/VictorAnimasahun/scribsandpixels-school → <b>Settings</b> → <b>Secrets and variables</b> → <b>Actions</b> → <b>New repository secret</b>, three times:
+        <ul>
+          <li>Name <code>VERCEL_TOKEN</code> → the token from step 1</li>
+          <li>Name <code>VERCEL_ORG_ID</code> → the Team ID (<code>team_…</code>)</li>
+          <li>Name <code>VERCEL_PROJECT_ID</code> → the Project ID (<code>prj_…</code>)</li>
+        </ul>
+        Names must be exactly these (capitals, underscores).</li>
+      <li>Send Claude: <code>Vercel secrets set.</code> Claude then runs the pipeline once, checks the site was published by GitHub, and only then switches off Vercel's own untested deploys (a one-line <code>vercel.json</code>).</li>
+    </ol>
+    <div class="box ok"><b>EXPECTED OUTPUT:</b> In GitHub → <b>Actions</b>, each push shows the checks, then a <b>vercel</b> step that publishes. Vercel's dashboard still lists every deployment.</div>
+    <div class="box stop"><b>ON ERROR:</b> Never paste the token into chat or a file. If it leaks: Vercel → Tokens → delete it, make a new one, update the GitHub secret.</div>
+  </div>
+  <h3>What you just did, explained</h3>
+  <table class="kv">
+    <tr><td>Access token</td><td>A key you give to someone else to act for you, like a spare key for a delivery service: it opens only what you allowed, it expires, and you can cancel it any time without changing your own password. GitHub uses it to tell Vercel "publish this".</td></tr>
+    <tr><td>Scope + expiry</td><td><i>Least privilege</i> again: limited to one team and one year, so a leaked token can do less, for less time.</td></tr>
+    <tr><td>Team ID / Project ID</td><td>The exact addresses of your Vercel account and of this project, so the token publishes to the right place. Not secret on their own, but kept with the token for tidiness.</td></tr>
+    <tr><td>GitHub secret vs variable</td><td>A <i>variable</i> (like the Supabase URL used for the app) is readable by anyone with access to the repo settings and printed in logs. A <i>secret</i> is write-only: after saving, nobody can read it back, not even you, and GitHub hides it in logs. Tokens are always secrets.</td></tr>
+    <tr><td>Why "tests first"</td><td>It's called a <i>deploy gate</i>: the release waits at the gate until every check (unit tests, database attacks, accounts in a browser, offline, every sandbox) is green. Professional teams never ship untested builds to users.</td></tr>
+  </table>
+</section>
+
+<!-- ─────────────────────────── 13 ─────────────────────────── -->
+<section class="page">
+  <h2>13 · Understand what you did</h2>
   <p>Every step in 05–11 is real engineering. This section explains each one: <b>what it is</b> (in plain words), <b>what each line means</b>, and <b>what breaks without it</b>. Read it slowly; this is Fullstack Weeks 15, 17, 19, 22 and 28 done for real.</p>
 
   <h3>1. Git, GitHub and "push to main"</h3>
@@ -550,9 +593,9 @@ npx supabase db push</pre>
   </table>
 </section>
 
-<!-- ─────────────────────────── 13 ─────────────────────────── -->
+<!-- ─────────────────────────── 14 ─────────────────────────── -->
 <section class="page">
-  <h2>13 · Appendix: words, tools and message templates</h2>
+  <h2>14 · Appendix: words, tools and message templates</h2>
   <h3>Message template: error</h3>
 <pre>ERROR in procedure &lt;number + name&gt;, step &lt;number&gt;.
 What I did: &lt;one sentence&gt;

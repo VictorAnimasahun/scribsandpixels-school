@@ -7,12 +7,14 @@
 - [x] Supabase project created, migrated and configured (12 Oct 2026): Auth URL Configuration + Vercel env vars done (procedure 07)
 - [ ] Resend (procedure 08): domain scribsandpixels.com **verified 14 Oct 2026** (region eu-west-1; DKIM `resend._domainkey`, `send`/`rsend` CNAMEs, `_dmarc` p=none, all in Spaceship DNS; root MX/SPF are Spaceship email forwarding, leave them). Still to do: API key in the password manager, Supabase Auth custom SMTP (smtp.resend.com:465, user `resend`, sender school@scribsandpixels.com), then a test email
 - [x] Accounts built (15 Oct 2026): sign-in by code or link, local-first sync with three-way merge, checkpoint attempts permanent on the server, sign-out clears the browser; proven by `check:db` and `check:accounts` (both in CI)
-- [ ] Vercel builds every push to main without waiting for the tests (CI only gates GitHub Pages). Make Vercel deploy only after CI passes (deploy from the workflow with a Vercel token, or an Ignored Build Step that checks the commit status)
+- [ ] Vercel deploys untested pushes: gated `vercel` job added to pages.yml (skips until secrets exist). **Victor: procedure 12** (token + IDs as GitHub secrets); then Claude verifies a CI deploy and commits `vercel.json` with `git.deploymentEnabled.main = false`
 - [x] Installable app (PWA) with offline lessons and Python (15 Oct 2026), proven by check:offline; real icons replace the Vite placeholder favicon
 - [ ] Watch check:offline in CI: one local run (of 5) failed the offline week-quiz and Python steps right after an edit; not reproduced since
 - [x] Android app (15 Oct 2026): Capacitor, APK built by CI on every push, published on the `android-latest` release; tested in the emulator (Today, Account)
 - [ ] Android: Capacitor logs "Error injecting safe area CSS" at start-up (its own early script; layout is correct in the emulator). Check on a real phone; Android WebView has no speech synthesis or recognition, so the French "listen"/"speak" buttons won't work in the app (the website on Chrome is fine)
 - [ ] Play Store: make a private release key (keep it in the password manager), a signed release build (AAB), store listing
+- [ ] **Victor: `npx supabase db push`** once more for `20261016090000_no_profile_delete.sql` (audit fix: learners could delete their own profile through the API)
+- [ ] Victor: Supabase → Authentication → Rate Limits: check the email limits (sign-up is open to any address, so the form could be used to flood someone's inbox); consider Turnstile/hCaptcha on sign-in later
 - [x] Procedure 10 done (16 Oct 2026): both migrations pushed, sign-in template with the code, signed in on laptop + phone, Victor is admin
 - [x] Student account (details + progress) and admin role/Learners page (15 Oct 2026), proven in check:db and check:accounts
 - [ ] Sign-in/Account screen design (claude.ai): built from the tokens for now (`AccountPage.tsx`, noted in `docs/design/README.md`)

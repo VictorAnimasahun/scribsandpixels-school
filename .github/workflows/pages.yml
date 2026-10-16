@@ -46,3 +46,38 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+
+  # school.scribsandpixels.com, deployed only after every check above has passed. Needs three
+  # repository secrets (task PDF procedure 12): VERCEL_TOKEN, VERCEL_ORG_ID, VERCEL_PROJECT_ID.
+  # Until they exist this job skips itself and Vercel keeps deploying on its own; once it works,
+  # vercel.json turns off Vercel's own (untested) deploys from main.
+  vercel:
+    needs: build
+    runs-on: ubuntu-latest
+    env:
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+    steps:
+      - name: Skip until the Vercel secrets are set
+        id: ready
+        run: |
+          if [ -n "$VERCEL_TOKEN" ] && [ -n "$VERCEL_ORG_ID" ] && [ -n "$VERCEL_PROJECT_ID" ]; then echo "ok=true" >> "$GITHUB_OUTPUT"
+          else echo "::notice::Vercel secrets not set yet: Vercel is still deploying by itself (see procedure 12)."; fi
+      - if: steps.ready.outputs.ok == 'true'
+        uses: actions/checkout@v4
+      - if: steps.ready.outputs.ok == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - if: steps.ready.outputs.ok == 'true'
+        run: npm ci
+      # Fetch the project's settings and its environment variables (VITE_SUPABASE_*) from Vercel,
+      # build exactly as Vercel would, then upload the result as the production deployment.
+      - if: steps.ready.outputs.ok == 'true'
+        run: npx vercel@latest pull --yes --environment=production --token="$VERCEL_TOKEN"
+      - if: steps.ready.outputs.ok == 'true'
+        run: npx vercel@latest build --prod --token="$VERCEL_TOKEN"
+      - if: steps.ready.outputs.ok == 'true'
+        run: npx vercel@latest deploy --prebuilt --prod --token="$VERCEL_TOKEN"

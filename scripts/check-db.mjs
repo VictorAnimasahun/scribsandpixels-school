@@ -146,6 +146,8 @@ await expectRows("an admin can't change another learner's settings", () => as(A,
 await expectRows("a student still sees only their own rows (the admin's included)", () => as(B, 'select 1 from public.study_days where user_id = $1', [A]), 0)
 await expectError('anon is refused is_admin()', () => as(null, 'select public.is_admin()'), /permission denied/)
 
+await expectError("a learner can't delete their own profile (it would wipe their progress and break the account)", () => as(B, 'delete from public.profiles where id = $1', [B]), /permission denied/)
+
 // Account deletion -------------------------------------------------------------
 await expectOk('deleting an account removes all its data (cascades past the attempt guard)', async () => {
   await db.query('delete from auth.users where id = $1', [A])
