@@ -51,7 +51,7 @@
 - [x] Error boundaries: a sandbox that fails to load (site redeployed while open) shows "Reload" instead of blanking the page
 - [x] `npm run sweep`: every page at phone width (606 pages: no JS errors, no sideways scroll); external link report
 - [x] Fixed: French main lab had a duplicate pattern id (Week 9 "where-is"), so those challenges opened the Week 3 builder; a test now forbids duplicates
-- [ ] Check by hand: automatetheboringstuff.com links (unreachable from the test machine on 3 Oct) and sites that block robots (realpython, forvo, innerfrench, myonlinetraininghub, upwork)
+- [x] Robot-blocked links checked in a real Chrome (16 Oct 2026): realpython (3), myonlinetraininghub, upwork, forvo and automatetheboringstuff all load. innerfrench.com sits behind a Cloudflare "Just a moment…" check that blocks automated browsers; open it once on a phone to confirm
 
 ## Content
 - [x] Fullstack + ML Week 3 (HTML & CSS) · Week 4 (Flexbox, responsive, Git + GitHub) · Week 5 (dictionaries, exceptions, modules, JSON) · Week 6 (Open-Meteo weather script, accessibility, portfolio, first gigs)
