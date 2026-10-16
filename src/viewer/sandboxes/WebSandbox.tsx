@@ -59,10 +59,19 @@ export default function WebSandbox({ sandbox }: Props) {
   // an identical srcDoc doesn't reload (Run/Check pressed twice showed nothing), and Chrome
   // sometimes never lays out a reused sandboxed frame after its srcDoc changes (layout checks failed).
   const [run, setRun] = useState(0)
+  // React pages download React (about 300 KB) the first time; on slow data the preview would look
+  // frozen. Shown from Run/Check until the page reports it ran; 'slow' after 8 s.
+  const [waiting, setWaiting] = useState<'no' | 'yes' | 'slow'>('no')
+  useEffect(() => {
+    if (waiting !== 'yes') return
+    const t = setTimeout(() => setWaiting('slow'), 8000)
+    return () => clearTimeout(t)
+  }, [waiting])
 
   const render = () => {
     save(runningKey, String(Date.now()))
     setLogs([])
+    if (sandbox.react) setWaiting('yes')
     const request = ++latest.current
     void page().then((html) => {
       if (request !== latest.current) return
@@ -113,6 +122,7 @@ export default function WebSandbox({ sandbox }: Props) {
         .then(() => settle(run)));
     </script>`
     save(runningKey, String(Date.now()))
+    if (sandbox.react) setWaiting('yes')
     const request = ++latest.current
     void page(checker).then((html) => {
       if (request !== latest.current) return
@@ -132,7 +142,7 @@ export default function WebSandbox({ sandbox }: Props) {
     const onMessage = (e: MessageEvent) => {
       // Only this sandbox's own preview: a page can hold two sandboxes, and their messages must not mix.
       if (!previewRef.current || e.source !== previewRef.current.contentWindow) return
-      if (e.data?.snpRan) remove(runningKey)
+      if (e.data?.snpRan) { remove(runningKey); setWaiting('no') }
       if (e.data?.snpConsole) setLogs((l) => [...l, { level: e.data.level, text: e.data.text }])
       if (Array.isArray(e.data?.snpChecks)) setResults(e.data.snpChecks as boolean[])
     }
@@ -155,7 +165,12 @@ export default function WebSandbox({ sandbox }: Props) {
       )}
       <CodeEditor key={tab} value={files[tab]} onChange={(v) => setFiles((f) => ({ ...f, [tab]: v }))} onRun={render} language={tab} rows={10} />
       {/* allow-forms: without it Chrome blocks form submission, so submit handlers never run */}
-      <iframe key={run} ref={previewRef} className="preview" title="Preview" sandbox="allow-scripts allow-modals allow-forms" srcDoc={doc} />
+      <div className="preview-wrap">
+        <iframe key={run} ref={previewRef} className="preview" title="Preview" sandbox="allow-scripts allow-modals allow-forms" srcDoc={doc} />
+        {waiting !== 'no' && (
+          <p className="preview-wait" role="status">{waiting === 'slow' ? 'Still loading React: slow connection, it downloads once and is then saved…' : 'Loading React…'}</p>
+        )}
+      </div>
       <pre className="console small">{logs.length ? logs.map((l) => `${l.level === 'log' ? '›' : l.level === 'warn' ? '⚠' : '✖'} ${l.text}`).join('\n') : 'console.log output appears here.'}</pre>
       {tasks.length > 0 && (
         <>

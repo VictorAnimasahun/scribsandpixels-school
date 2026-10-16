@@ -425,3 +425,5 @@ table.grid { border-collapse: collapse; font-size: 13px; }
 .learner-card { display: flex; flex-direction: column; gap: 6px; padding: 14px; border: 1px solid var(--rule); border-radius: var(--r); background: var(--sheet); }
 .learner-courses { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 2px; }
 .pen { color: var(--pen); font-weight: 600; }
+.preview-wrap { position: relative; }
+.preview-wait { position: absolute; left: 8px; right: 8px; top: 8px; margin: 0; padding: 8px 10px; border-radius: var(--r-btn); background: var(--lime-tint); color: var(--green); font-size: 14px; pointer-events: none; }

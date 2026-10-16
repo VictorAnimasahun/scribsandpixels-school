@@ -478,9 +478,15 @@ await check('ticks made offline are kept, and saved when the connection is back'
 
 // 5. Checkpoints: permanent on the server, whatever the browser says.
 await check("a checkpoint attempt is saved the moment it starts, and its result can't be faked later", async () => {
+  // A checkpoint pops up: the app records it exactly like this when a learner opens a random
+  // checkpoint day (students have no tester tools to force one).
+  await laptop.page.evaluate(() => {
+    const s = JSON.parse(localStorage.getItem('snp-test-state-v1'))
+    s.gates['fullstack-ml:2:1'] = { triggeredAt: Date.now(), attempts: [], seen: [] }
+    localStorage.setItem('snp-test-state-v1', JSON.stringify(s))
+  })
   await laptop.page.goto(`${APP}#/c/fullstack-ml/w/2/d/1`)
-  await laptop.page.locator('.tester > button').click()
-  await laptop.page.getByRole('button', { name: 'Force checkpoint on this day' }).click()
+  await laptop.page.reload()
   await laptop.page.getByRole('button', { name: /Start the checkpoint/ }).click()
   await laptop.page.waitForFunction(() => !!document.querySelector('.lock-card'), null, { timeout: 10_000 })
   // Saved as a provisional fail right away.
@@ -512,13 +518,6 @@ await check("a checkpoint attempt is saved the moment it starts, and its result 
   expect(final.passed === after.passed && final.score === after.score, `a final result changed on the server: ${JSON.stringify(after)} → ${JSON.stringify(final)}`)
   const local = (await localState(laptop.page)).gates['fullstack-ml:2:1'].attempts[0]
   expect(local.passed === final.passed && local.score === final.score, `the browser kept the tampered result: ${JSON.stringify(local)} vs server ${JSON.stringify(final)}`)
-})
-await check("the tester tools can't reset progress or end a cooldown while signed in", async () => {
-  await laptop.page.goto(APP)
-  await laptop.page.locator('.tester > button').click()
-  expect(!(await laptop.page.getByRole('button', { name: 'Reset my progress' }).count()), 'Reset is offered')
-  expect(!(await laptop.page.getByRole('button', { name: 'End cooldown now' }).count()), 'End cooldown is offered')
-  await laptop.page.locator('.tester > button').click()
 })
 
 // 6. Magic links.
@@ -610,6 +609,11 @@ await check('a student gets "admins only" on the admin page, and no admin link',
   await laptop.page.goto(`${APP}#/account`)
   expect(!(await laptop.page.getByRole('link', { name: 'See all learners' }).count()), 'a student is offered the admin page')
 })
+await check('a signed-in student has no tester tools (they could force a checkpoint on a real account)', async () => {
+  await laptop.page.goto(APP)
+  await laptop.page.locator('main h1').first().waitFor()
+  expect(!(await laptop.page.locator('.tester').count()), 'the 🧪 panel is shown to a student')
+})
 await check("an admin sees every learner, and the admin's own progress stays their own", async () => {
   const mineBefore = Object.keys((await localState(laptop.page)).checked).length
   await client.query("update public.profiles set role = 'admin' where id = $1", [victorId]) // what make-admin.sql does
@@ -625,6 +629,7 @@ await check("an admin sees every learner, and the admin's own progress stays the
   // Victor has finished days in Fullstack; busy@ has ticks but no finished day.
   await laptop.page.locator('.learner-card', { hasText: 'victor@example.com' }).getByText(/12-Month Fullstack \+ ML: \d+ days done/).waitFor()
   await laptop.page.locator('.learner-card', { hasText: 'busy@example.com' }).getByText('No finished days yet.').waitFor()
+  expect(await laptop.page.locator('.tester').count() === 1, 'the admin lost the tester tools')
   // The bug this guards against: admin read access must never pull other learners' ticks in.
   await laptop.page.goto(`${APP}#/account`)
   await laptop.page.getByRole('button', { name: 'Download from my account now' }).click()

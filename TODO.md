@@ -5,7 +5,7 @@
 - [x] Deployed on Vercel (9 Oct 2026): https://scribsandpixels-school.vercel.app (redeploys on every push to `main`; dashboard: https://vercel.com/victor-animasahuns-projects/scribsandpixels-school). Builds with base `/` because `GITHUB_PAGES` isn't set there.
 - [x] Subdomain live (9 Oct 2026): **https://school.scribsandpixels.com** is the main address, served by Vercel (CNAME → Vercel DNS, HTTPS, http redirects). Vercel is the main host; GitHub Pages stays as a copy (CI checks still run there).
 - [x] Supabase project created, migrated and configured (12 Oct 2026): Auth URL Configuration + Vercel env vars done (procedure 07)
-- [ ] Resend (procedure 08): domain scribsandpixels.com **verified 14 Oct 2026** (region eu-west-1; DKIM `resend._domainkey`, `send`/`rsend` CNAMEs, `_dmarc` p=none, all in Spaceship DNS; root MX/SPF are Spaceship email forwarding, leave them). Still to do: API key in the password manager, Supabase Auth custom SMTP (smtp.resend.com:465, user `resend`, sender school@scribsandpixels.com), then a test email
+- [x] Resend (procedure 08, 14–15 Oct 2026): domain scribsandpixels.com verified (eu-west-1; DKIM, `send`/`rsend` CNAMEs, `_dmarc` p=none in Spaceship DNS; root MX/SPF are Spaceship forwarding, leave them); API key in the password manager; Supabase Auth SMTP set; sign-in emails arrive with the code
 - [x] Accounts built (15 Oct 2026): sign-in by code or link, local-first sync with three-way merge, checkpoint attempts permanent on the server, sign-out clears the browser; proven by `check:db` and `check:accounts` (both in CI)
 - [ ] Vercel deploys untested pushes: gated `vercel` job added to pages.yml (skips until secrets exist). **Victor: procedure 12** (token + IDs as GitHub secrets); then Claude verifies a CI deploy and commits `vercel.json` with `git.deploymentEnabled.main = false`
 - [x] Installable app (PWA) with offline lessons and Python (15 Oct 2026), proven by check:offline; real icons replace the Vite placeholder favicon
@@ -69,13 +69,13 @@
 - [x] UI design built into the test build (9 Oct 2026): Today, day page, course year ledger, week page, checkpoint lock + cooldown, desktop sidebar (`docs/design/`)
 - [ ] UX pass (claude.ai): what the 10-minute version counts for · reading lessons during a cooldown · does a failed checkpoint keep the streak
 - [ ] UX pass (claude.ai), found 9 Oct: ticking a block then unticking it still marks today as a study day, so one tap keeps the streak (`setBlockDone` in `src/viewer/actions.ts`). Decide what counts as a study day (a whole day done? a block still ticked at midnight?)
-- [ ] First React lesson (Week 12 Day 1) downloads React (~300 KB) from cdnjs before the preview runs; on a slow connection it looks frozen. Show "Loading React…" in the preview while it downloads
+- [x] React sandboxes show "Loading React…" (then a slow-connection note after 8 s) until the preview has run (16 Oct 2026)
 - [x] Fixed 9 Oct: pressing ✓ Check on a React sandbox before its first preview finished building could hang forever (WebKit resolved the two builds out of order and the plain preview replaced the checking one). Only the newest Run/Check now updates the preview
 - [ ] Watch: `xl-w11-rules` timed out on a grid-cell click in 2 of 12 WebKit e2e runs on 9 Oct (all just after a deploy; 0 of the next 6, and it passes in full runs on every host). If it shows up again, print the full Playwright error (it names what blocks the click)
 - [x] "Need a nudge?" sheet: 10-minute version (`#/c/<slug>/w/<n>/d/<n>/short`) and the note work
 - [ ] "Remind me in an hour" email (shown disabled until accounts + Resend are live)
 - [ ] Daily log form + "Still confusing you" on Today (designed; needs saved logs)
-- [ ] Real accounts and saved progress (today progress lives in the browser only)
+- [x] Real accounts and saved progress (live 16 Oct 2026)
 - [ ] Move quiz answers server-side so learners can't read them in the page code
-- [ ] Remove the 🧪 Tester tools for real learners
+- [x] 🧪 Tester tools hidden from signed-in students (16 Oct 2026); still shown to admins and to visitors without an account. Remove entirely before a public launch
 - [ ] Email nudges (Resend), already drafted in `supabase/`, not active
