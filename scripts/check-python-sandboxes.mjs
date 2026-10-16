@@ -11,12 +11,16 @@ import { tmpdir } from 'node:os'
 const root = new URL('..', import.meta.url).pathname
 const harness = join(root, 'scripts/python-harness.py')
 const tmp = mkdtempSync(join(tmpdir(), 'pycheck-'))
+// The ML sandboxes import numpy/pandas/scikit-learn: use the pinned environment when it exists
+// (python3 -m venv .venv-ml && .venv-ml/bin/pip install -r scripts/requirements-ml.txt), so
+// solutions run on the same library versions as the browser's Pyodide.
+const PYTHON = process.env.PYTHON ?? (existsSync(join(root, '.venv-ml/bin/python')) ? join(root, '.venv-ml/bin/python') : 'python3')
 let failures = 0
 
 const run = (code, task) => {
   const spec = join(tmp, 'spec.json')
   writeFileSync(spec, JSON.stringify({ code, tests: task.tests, stdin: task.stdin, expectOutput: task.expectOutput }))
-  const r = spawnSync('python3', [harness, spec], { encoding: 'utf8' })
+  const r = spawnSync(PYTHON, [harness, spec], { encoding: 'utf8' })
   if (r.status !== 0) return { ok: false, err: r.stderr }
   return JSON.parse(r.stdout.trim().split('\n').pop())
 }

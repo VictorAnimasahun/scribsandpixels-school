@@ -1,0 +1,21 @@
+id: ml-main
+kind: python
+title: "ML playground"
+description: "Real Python with numpy, pandas and scikit-learn, in your browser. The first run downloads the libraries once (about 25 MB: use Wi-Fi), then they stay on your device."
+main: true
+starter: |
+  # Your machine-learning playground. Press Run (or Ctrl+Enter).
+  import numpy as np
+  import pandas as pd
+  from sklearn.linear_model import LinearRegression
+
+  flats = pd.DataFrame({
+      "size_m2": [45, 55, 60, 70, 80, 90, 100, 120],
+      "rent_m": [1.2, 1.5, 1.6, 1.9, 2.1, 2.4, 2.6, 3.1],
+  })
+  print(flats.describe())
+
+  model = LinearRegression()
+  model.fit(flats[["size_m2"]], flats["rent_m"])
+  print("theta0 =", round(model.intercept_, 4), " theta1 =", round(model.coef_[0], 5))
+  print("Rent for 84 m²: ₦", round(model.predict(pd.DataFrame({"size_m2": [84]}))[0], 2), "m")

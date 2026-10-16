@@ -1,0 +1,88 @@
+# Week 1 · Day 4 practice
+id: ml-w01-d4-clean
+kind: python
+title: "Clean a messy rentals table"
+description: "Real data is dirty: misspelled areas, missing sizes, a rent of ₦5 and another of ₦250 million. Count the problems, fix the names, drop the impossible rows, and fill the gaps two ways."
+starter: |
+  import statistics
+
+  # Yearly rents in Lagos, as typed by three different agents.
+  ROWS = [
+      {"area": "Lekki", "size": 120, "rent": 6_500_000},
+      {"area": "lekki ", "size": None, "rent": 7_200_000},
+      {"area": "Leki", "size": 95, "rent": 5_800_000},
+      {"area": "LEKKI", "size": 150, "rent": 9_000_000},
+      {"area": "Yaba", "size": 60, "rent": 1_600_000},
+      {"area": "yaba", "size": 70, "rent": 5},
+      {"area": "Yabba", "size": None, "rent": 1_900_000},
+      {"area": "Yaba", "size": 55, "rent": 1_450_000},
+      {"area": "Ikeja", "size": 85, "rent": 3_100_000},
+      {"area": " ikeja", "size": None, "rent": 2_800_000},
+      {"area": "Ikeja", "size": 90, "rent": 250_000_000},
+      {"area": "Ikeja", "size": 100, "rent": 3_600_000},
+  ]
+
+  def count_missing(rows, field):
+      # How many rows have None in this field?
+      pass
+
+  FIX = {"lekki": "Lekki", "leki": "Lekki", "yaba": "Yaba", "yabba": "Yaba", "ikeja": "Ikeja"}
+
+  def clean_area(name):
+      # Strip spaces, lowercase, then look the name up in FIX.  " ikeja" -> "Ikeja"
+      pass
+
+  def drop_impossible(rows):
+      # Keep only rows whose yearly rent is between ₦300,000 and ₦50,000,000 (inclusive).
+      # Return a NEW list.
+      pass
+
+  def fill_with_median(rows):
+      # Return new rows where a missing size becomes the median of all the known sizes.
+      pass
+
+  def fill_by_area(rows):
+      # Return new rows where a missing size becomes the median of the known sizes
+      # IN THE SAME AREA. (Is a Yaba flat really 95 m²?)
+      pass
+
+  print("Missing sizes:", count_missing(ROWS, "size"))
+  cleaned = [{**r, "area": clean_area(r["area"])} for r in ROWS]
+  kept = drop_impossible(cleaned)
+  print("Rows kept:", None if kept is None else len(kept))
+tasks:
+  - prompt: "count_missing(ROWS, 'size') finds the 3 rows with no size."
+    tests: |
+      assert count_missing(ROWS, "size") == 3, f"got {count_missing(ROWS, 'size')}"
+      assert count_missing(ROWS, "rent") == 0
+    hint: "sum(1 for r in rows if r[field] is None)"
+  - prompt: "clean_area turns every spelling into one of Lekki, Yaba or Ikeja."
+    tests: |
+      for raw, want in [("lekki ", "Lekki"), ("Leki", "Lekki"), ("LEKKI", "Lekki"), ("Yabba", "Yaba"), (" ikeja", "Ikeja"), ("Yaba", "Yaba")]:
+          assert clean_area(raw) == want, f"clean_area({raw!r}) = {clean_area(raw)!r}, expected {want!r}"
+    hint: "return FIX[name.strip().lower()]"
+  - prompt: "drop_impossible removes the ₦5 rent and the ₦250 million rent (10 rows left) without changing ROWS."
+    tests: |
+      cleaned = [{**r, "area": clean_area(r["area"])} for r in ROWS]
+      kept = drop_impossible(cleaned)
+      assert len(kept) == 10, f"{len(kept)} rows kept"
+      assert all(300_000 <= r["rent"] <= 50_000_000 for r in kept)
+      assert len(cleaned) == 12, "return a new list; don't remove from the one you were given"
+    hint: "[r for r in rows if 300_000 <= r['rent'] <= 50_000_000]"
+  - prompt: "fill_with_median gives each missing size the median of all known sizes after cleaning: 95 m²."
+    tests: |
+      cleaned = drop_impossible([{**r, "area": clean_area(r["area"])} for r in ROWS])
+      filled = fill_with_median(cleaned)
+      assert all(r["size"] is not None for r in filled), "some sizes are still missing"
+      assert [r["size"] for r in filled if r["rent"] in (7_200_000, 1_900_000, 2_800_000)] == [95, 95, 95]
+      assert any(r["size"] is None for r in cleaned), "make new rows; don't fill in the originals"
+    hint: "known = [r['size'] for r in rows if r['size'] is not None]; m = statistics.median(known); then build new dicts: {**r, 'size': m} when r['size'] is None, else r."
+  - prompt: "fill_by_area uses each area's own median: the Lekki flat gets 120 m², the Yaba flat 57.5 m², the Ikeja flat 92.5 m²."
+    tests: |
+      cleaned = drop_impossible([{**r, "area": clean_area(r["area"])} for r in ROWS])
+      filled = fill_by_area(cleaned)
+      got = {r["rent"]: r["size"] for r in filled}
+      assert got[7_200_000] == 120, f"Lekki gap filled with {got[7_200_000]}"
+      assert got[1_900_000] == 57.5, f"Yaba gap filled with {got[1_900_000]} (known Yaba sizes after dropping the ₦5 row: 60 and 55)"
+      assert got[2_800_000] == 92.5, f"Ikeja gap filled with {got[2_800_000]} (known Ikeja sizes after dropping the ₦250m row: 85 and 100)"
+    hint: "First build a dict: area → list of its known sizes. Then for each row with a missing size, use statistics.median(sizes[row['area']])."

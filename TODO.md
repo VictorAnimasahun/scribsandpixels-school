@@ -26,6 +26,8 @@
 - [x] Quiz engine: random weekly checkpoints (1–2/week), 70% pass, 60-min cooldown, new questions on retry
 - [x] French Week 1 · Excel Week 1 question banks
 - [x] French Weeks 2–16 · Excel Weeks 2–15 (Excel figures recomputed from the datasets)
+- [x] Machine Learning course started (16 Oct 2026): overview, Week 1 (Géron pp. 9–40) with 6 sandboxes + playground and ~200 quiz questions; ML libraries in the Python sandbox
+- [ ] ML Weeks 2–10 (plan: `fullstack-ml/phase-5-plan.md`), a week at a time; Week 2 needs the synthetic Lagos housing generator first; matplotlib charts need an image output in the Python sandbox (Week 2 histograms)
 - [ ] French Weeks 17–52
 - [ ] Excel Weeks 16–24
 - [x] Fullstack + ML Weeks 1–14 (every Python snippet checked by running it: `node scripts/check-quiz-code.mjs`)

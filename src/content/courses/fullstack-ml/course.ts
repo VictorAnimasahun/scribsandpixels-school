@@ -110,7 +110,7 @@ const phases: Phase[] = [
     topics: ['Scikit-Learn', 'Pandas', 'Neural networks', 'Keras & TensorFlow'],
     milestone: 'Train a model that predicts house prices in Lagos. Share on GitHub.',
     resources: [
-      { kind: 'book', title: 'Hands-On Machine Learning with Scikit-Learn, Keras & TensorFlow — Aurélien Géron (3rd Ed.)', url: 'https://www.oreilly.com/library/view/hands-on-machine-learning/9781098125967/', note: 'THE book. Start Chapter 1 in Week 35.' },
+      { kind: 'book', title: 'Hands-On Machine Learning with Scikit-Learn, Keras & TensorFlow — Aurélien Géron', url: 'https://www.oreilly.com/library/view/hands-on-machine-learning/9781098125967/', note: 'THE book. Taught day by day in the Machine Learning course (this school), which follows the 2nd edition, Chapters 1–9.' },
       { kind: 'video', title: 'Sentdex — ML with Python playlist', url: 'https://www.youtube.com/watch?v=OGxgnH8y2NM&list=PLQVvvaa0QuDfKTOs3Keq_kaG2P55YRn5v', note: 'Watch alongside the book' },
       { kind: 'video', title: '3Blue1Brown — Neural Networks', url: 'https://www.youtube.com/watch?v=aircAruvnKk', note: "Visual, essential. Watch before reading Géron's deep learning chapters." },
       { kind: 'video', title: 'Recommended ML video', url: 'https://youtu.be/1dKRdX9bfIo?si=6y7ebJBT3645vqM6' },
@@ -118,7 +118,7 @@ const phases: Phase[] = [
       { kind: 'interactive', title: 'Kaggle — Pandas course (free)', url: 'https://www.kaggle.com/learn/pandas' },
       { kind: 'reading', title: 'Géron GitHub notebooks (free code for the book)', url: 'https://github.com/ageron/handson-ml3' },
     ],
-    notes: [],
+    notes: [{ heading: 'Taught as its own course', items: ['Machine Learning: Zero to Model (10 weeks, in this school) teaches this phase day by day, and can be started at any time.', 'These weeks follow it: Week 35 = ML Week 1, …, Week 44 = ML Week 10.'] }],
     readingPlan: [
       { week: 35, chapter: 'Ch. 1', topic: 'The ML landscape' },
       { week: 36, chapter: 'Ch. 2', topic: 'End-to-end ML project' },

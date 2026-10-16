@@ -1,0 +1,56 @@
+# Week 1 · Day 3 practice
+id: ml-w01-d3-knn-line
+kind: python
+title: "Copy or model? Predicting a Yaba rent two ways"
+description: "Instance-based (k-nearest neighbours: average the most similar flats) vs model-based (the best straight line through all of them). Same question, two kinds of learning."
+starter: |
+  # Eight Yaba flats: size in m² and yearly rent in ₦ millions.
+  SIZES = [45, 55, 60, 70, 80, 90, 100, 120]
+  RENTS = [1.2, 1.5, 1.6, 1.9, 2.1, 2.4, 2.6, 3.1]
+
+  # ── Instance-based: k-nearest neighbours ──────────────────────
+  def knn_predict(size, k=3):
+      # 1. For every flat, how far is its size from `size`?  abs(s - size)
+      # 2. Take the k flats with the smallest distance.
+      # 3. Return the average of their rents.
+      pass
+
+  # ── Model-based: rent = theta0 + theta1 * size ────────────────
+  def fit_line(xs, ys):
+      # The best straight line (least squares), from the averages:
+      #   x_bar = average of xs,  y_bar = average of ys
+      #   theta1 = sum((x - x_bar) * (y - y_bar)) / sum((x - x_bar) ** 2)
+      #   theta0 = y_bar - theta1 * x_bar
+      # Return (theta0, theta1).
+      pass
+
+  def predict_line(size, theta0, theta1):
+      pass
+
+  print("k-NN, 84 m²:  ₦", knn_predict(84), "m")
+  line = fit_line(SIZES, RENTS)
+  print("Line:", line)
+  if line:
+      print("Line, 84 m²: ₦", predict_line(84, *line), "m")
+tasks:
+  - prompt: "knn_predict(84) averages the three closest flats (80, 90, 70 m²): about ₦2.13m."
+    tests: |
+      got = knn_predict(84)
+      assert got is not None and abs(got - 2.1333) < 0.001, f"knn_predict(84) = {got}, expected about 2.1333"
+      assert abs(knn_predict(65) - 1.6667) < 0.001, f"knn_predict(65) = {knn_predict(65)}, expected about 1.6667 (60, 70 and 55 m²)"
+      assert abs(knn_predict(84, k=1) - 2.1) < 0.001, "with k=1, it's just the single closest flat (80 m², ₦2.1m)"
+    hint: "pairs = sorted(zip([abs(s - size) for s in SIZES], RENTS)) puts the closest flats first; then average the rents of pairs[:k]."
+  - prompt: "fit_line finds the best line: theta0 ≈ 0.104 and theta1 ≈ 0.0251 (₦25,100 more rent per extra m²)."
+    tests: |
+      t0, t1 = fit_line(SIZES, RENTS)
+      assert abs(t1 - 0.025114) < 0.00001, f"theta1 = {t1}"
+      assert abs(t0 - 0.103693) < 0.0001, f"theta0 = {t0}"
+      a0, a1 = fit_line([1, 2, 3], [2, 4, 6])
+      assert abs(a1 - 2) < 1e-9 and abs(a0) < 1e-9, "fit_line([1,2,3], [2,4,6]) should be the line y = 0 + 2x"
+    hint: "x_bar = sum(xs) / len(xs). Then build the top and bottom sums with a loop over zip(xs, ys)."
+  - prompt: "predict_line(84, ...) gives about ₦2.21m."
+    tests: |
+      t0, t1 = fit_line(SIZES, RENTS)
+      got = predict_line(84, t0, t1)
+      assert abs(got - 2.2132) < 0.001, f"predict_line(84) = {got}"
+    hint: "return theta0 + theta1 * size"

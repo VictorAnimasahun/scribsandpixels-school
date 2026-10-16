@@ -1,0 +1,54 @@
+# Week 1 · Day 5 practice
+id: ml-w01-d5-overfit
+kind: python
+title: "Catch a model overfitting"
+description: "A straight line and a wiggly degree-4 curve learn from the same five Surulere flats. One is perfect on them. Test both on five new flats and see which you'd trust. (First run: numpy downloads once, about 3 MB.)"
+starter: |
+  import numpy as np
+
+  # Five flats the models learn from (size m² → yearly rent ₦m) …
+  TRAIN_X = [50, 65, 80, 95, 110]
+  TRAIN_Y = [1.4, 1.9, 2.0, 2.7, 2.9]
+  # … and five new flats they have never seen.
+  TEST_X = [55, 70, 88, 100, 115]
+  TEST_Y = [1.6, 2.0, 2.4, 2.7, 3.1]
+
+  def fit(degree):
+      # np.polyfit(xs, ys, degree) finds the best curve of that degree;
+      # np.poly1d(...) turns its numbers into a function you can call: model(80) → rent.
+      return np.poly1d(np.polyfit(TRAIN_X, TRAIN_Y, degree))
+
+  def mae(model, xs, ys):
+      # Mean absolute error: the average of |prediction − real rent|.
+      pass
+
+  line = fit(1)
+  curve = fit(4)
+
+  for name, model in [("line ", line), ("curve", curve)]:
+      print(name, "error on the 5 training flats:", mae(model, TRAIN_X, TRAIN_Y))
+      print(name, "error on the 5 NEW flats:     ", mae(model, TEST_X, TEST_Y))
+
+  print("Curve's rent for a 130 m² flat:", curve(130))
+tasks:
+  - prompt: "mae works: the line misses the training flats by about ₦0.096m on average."
+    tests: |
+      import numpy as np
+      got = mae(fit(1), TRAIN_X, TRAIN_Y)
+      assert got is not None and abs(got - 0.096) < 0.0005, f"line's training error = {got}, expected about 0.096"
+      assert abs(mae(lambda x: x, [1, 2, 3], [1, 2, 6]) - 1.0) < 1e-9, "mae(model, [1,2,3], [1,2,6]) for model(x)=x should be (0+0+3)/3 = 1"
+    hint: "sum(abs(model(x) - y) for x, y in zip(xs, ys)) / len(xs)  (or with numpy: np.mean(np.abs(model(np.array(xs)) - np.array(ys))))"
+  - prompt: "The curve is perfect on the flats it learned from (error ≈ 0) but about 7 times worse than the line on the new flats."
+    tests: |
+      train_curve = mae(fit(4), TRAIN_X, TRAIN_Y)
+      test_line, test_curve = mae(fit(1), TEST_X, TEST_Y), mae(fit(4), TEST_X, TEST_Y)
+      assert train_curve < 1e-6, f"curve's training error should be ~0, got {train_curve}"
+      assert abs(test_line - 0.0381) < 0.001, f"line on new flats: {test_line}"
+      assert abs(test_curve - 0.2657) < 0.001, f"curve on new flats: {test_curve}"
+      assert test_curve > 6 * test_line
+  - prompt: "Print what each model predicts for a 130 m² flat: the curve says negative rent (about −₦3.4m), the line about ₦3.4m."
+    expectOutput: ["-3.44"]
+    tests: |
+      assert fit(4)(130) < 0 and fit(1)(130) > 3, "the curve goes negative, the line stays sensible"
+      assert "3.44" in __output__.replace("-3.44", ""), "also print the line's prediction for 130 m² (about 3.447)"
+    hint: "Add print(\"Line's rent for a 130 m² flat:\", line(130)). The curve memorised five flats; outside them it goes wild."

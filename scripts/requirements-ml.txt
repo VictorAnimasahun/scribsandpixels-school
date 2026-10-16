@@ -1,0 +1,7 @@
+# The ML libraries the Python sandboxes can import, pinned to the versions in the browser's
+# Pyodide (v314.0.7), so a reference solution checked here behaves the same in the browser.
+numpy==2.4.6
+pandas==3.0.2
+scikit-learn==1.8.0
+scipy==1.18.0
+matplotlib==3.10.8

@@ -1,0 +1,449 @@
+# Machine Learning · Week 1 quizzes. Format and rules: src/content/QUIZZES.md
+week: 1
+days:
+
+  # ─────────────────────────── DAY 1 ───────────────────────────
+  - day: 1
+    gate:
+      title: "Checkpoint: how this course works, and the Python it assumes"
+      covers: "The course overview (daily structure, rules, books) and basic Python"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: ml-w01-d1-g01, difficulty: easy, type: mcq, prompt: "How long is this ML course?", choices: ["10 weeks", "52 weeks", "4 weeks", "6 months"], answer: 0 }
+        - { id: ml-w01-d1-g02, difficulty: easy, type: mcq, prompt: "In each lesson, when do you read the book pages?", choices: ["after the plain-words explanation", "before anything else", "only on Saturdays", "never: the lessons replace the book"], answer: 0 }
+        - { id: ml-w01-d1-g03, difficulty: easy, type: mcq, prompt: "The main book for Weeks 1–7 is…", choices: ["Géron, Hands-On Machine Learning", "Automate the Boring Stuff", "Eloquent JavaScript", "Klein, Python and Machine Learning"], answer: 0 }
+        - { id: ml-w01-d1-g04, difficulty: easy, type: truefalse, prompt: "The course rule is: picture first, words second, book third.", answer: true }
+        - { id: ml-w01-d1-g05, difficulty: easy, type: mcq, prompt: "What happens on Saturdays?", choices: ["a longer project day", "rest", "only quizzes", "nothing new"], answer: 0 }
+        - { id: ml-w01-d1-g06, difficulty: easy, type: mcq, prompt: "Where does the Python in the lessons run?", choices: ["in your browser, nothing to install", "only on a Linux server", "in Excel", "on your phone's calculator"], answer: 0 }
+        - { id: ml-w01-d1-g07, difficulty: medium, type: mcq, prompt: "In this school's copy of Géron, book page 9 is on PDF page…", choices: ["11", "9", "7", "19"], answer: 0, explain: "PDF page = book page + 2." }
+        - { id: ml-w01-d1-g08, difficulty: medium, type: mcq, prompt: "Why do the data-science libraries take a while the first time?", choices: ["they download once (about 25 MB), then stay on your device", "they are compiled from scratch every day", "the server is far away", "they need a password"], answer: 0 }
+        - id: ml-w01-d1-g09
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            rents = [1.2, 1.5, 1.6]
+            print(len(rents))
+          accept: ["3"]
+        - id: ml-w01-d1-g10
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            flat = {"area": "Yaba", "size": 60}
+            print(flat["size"] * 2)
+          accept: ["120"]
+        - id: ml-w01-d1-g11
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            total = 0
+            for r in [2, 3, 5]:
+                total += r
+            print(total)
+          accept: ["10"]
+        - id: ml-w01-d1-g12
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            def double(x):
+                return x * 2
+            print(double(4) + 1)
+          accept: ["9"]
+        - { id: ml-w01-d1-g13, difficulty: medium, type: mcq, prompt: "The Log's most useful line is…", choices: ["what confused me", "how long I studied", "my mood", "the date"], answer: 0 }
+        - { id: ml-w01-d1-g14, difficulty: medium, type: truefalse, prompt: "Every formula in this course is first worked by hand with a few numbers.", answer: true }
+        - { id: ml-w01-d1-g15, difficulty: medium, type: mcq, prompt: "Weeks 8–9 (neural networks) use which book?", choices: ["Klein, Python and Machine Learning", "Géron", "no book", "CS50 notes"], answer: 0 }
+        - id: ml-w01-d1-g16
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            sizes = [45, 60, 80]
+            print([s for s in sizes if s > 50])
+          accept: ["[60, 80]"]
+        - id: ml-w01-d1-g17
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            prices = {"Yaba": 1.6, "Lekki": 6.5}
+            print(max(prices, key=prices.get))
+          accept: ["Lekki"]
+        - id: ml-w01-d1-g18
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            xs = [1, 2, 3, 4]
+            print(sum(xs) / len(xs))
+          accept: ["2.5"]
+    quizzes:
+      - kind: rapid-fire
+        title: "What is machine learning?"
+        secondsPerQuestion: 10
+        questions:
+          - { id: ml-w01-d1-rf01, difficulty: easy, type: mcq, prompt: "Machine learning is…", choices: ["computers improving at a task by learning from data", "a robot that thinks", "writing more rules", "a faster computer"], answer: 0 }
+          - { id: ml-w01-d1-rf02, difficulty: easy, type: mcq, prompt: "Traditional programming:", choices: ["a person writes the rules", "the computer finds the rules", "no rules at all", "only for games"], answer: 0 }
+          - { id: ml-w01-d1-rf03, difficulty: easy, type: truefalse, prompt: "Downloading all of Wikipedia makes your computer 'learn'.", answer: false }
+          - { id: ml-w01-d1-rf04, difficulty: easy, type: mcq, prompt: "The examples a model learns from are called the…", choices: ["training set", "test drive", "rule book", "label maker"], answer: 0 }
+          - { id: ml-w01-d1-rf05, difficulty: easy, type: mcq, prompt: "In Mitchell's definition, E stands for…", choices: ["experience (the data)", "error", "evaluation", "electricity"], answer: 0 }
+          - { id: ml-w01-d1-rf06, difficulty: easy, type: mcq, prompt: "P stands for…", choices: ["performance measure", "parameter", "prediction", "Python"], answer: 0 }
+          - { id: ml-w01-d1-rf07, difficulty: easy, type: mcq, prompt: "The first mass-market ML app (1990s) was…", choices: ["the spam filter", "self-driving cars", "ChatGPT", "the calculator"], answer: 0 }
+          - { id: ml-w01-d1-rf08, difficulty: easy, type: truefalse, prompt: "VAT at a fixed 7.5% is a good job for machine learning.", answer: false }
+          - { id: ml-w01-d1-rf09, difficulty: easy, type: mcq, prompt: "Using ML to discover hidden patterns in lots of data is called…", choices: ["data mining", "data typing", "web scraping", "debugging"], answer: 0 }
+          - { id: ml-w01-d1-rf10, difficulty: easy, type: mcq, prompt: "Accuracy is…", choices: ["the share of examples classified correctly", "how fast a model runs", "the size of the data", "a kind of model"], answer: 0 }
+      - kind: brain-teaser
+        title: "Rules or learning?"
+        questions:
+          - { id: ml-w01-d1-bt01, difficulty: medium, type: mcq, prompt: "Scammers switch from 'BVN' to 'B V N'. Which filter copes without anyone changing the code?", choices: ["one that learns from newly reported messages", "one with a longer list of rules", "neither, ever", "a filter that blocks every SMS"], answer: 0 }
+          - { id: ml-w01-d1-bt02, difficulty: medium, type: multi, prompt: "Good jobs for ML (Select all.)", choices: ["recognising spoken Yoruba", "spotting new fraud patterns each month", "adding 7.5% VAT", "finding which products sell together"], answers: [0, 1, 3] }
+          - { id: ml-w01-d1-bt03, difficulty: medium, type: mcq, prompt: "Mama Nkechi predicts plates from her notebook. T, E, P: which is the notebook?", choices: ["E, the experience", "T, the task", "P, the performance measure", "none of them"], answer: 0 }
+          - { id: ml-w01-d1-bt04, difficulty: hard, type: mcq, prompt: "When is a learned filter clearly better than a rule-based one?", choices: ["when the patterns keep changing and the rules would be long", "when one fixed rule is always right", "when there is no data at all", "never: rules are always better"], answer: 0 }
+
+  # ─────────────────────────── DAY 2 ───────────────────────────
+  - day: 2
+    gate:
+      title: "Checkpoint: what machine learning is"
+      covers: "Week 1 · Day 1: ML vs rules, Mitchell's T/E/P, spam, when ML is worth it"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: ml-w01-d2-g01, difficulty: easy, type: mcq, prompt: "Machine learning means…", choices: ["the computer finds the rules from examples", "a person writes every rule", "a robot does your job", "programs without bugs"], answer: 0 }
+        - { id: ml-w01-d2-g02, difficulty: easy, type: mcq, prompt: "The data a model learns from:", choices: ["the training set", "the test set", "the rule list", "the output"], answer: 0 }
+        - { id: ml-w01-d2-g03, difficulty: easy, type: mcq, prompt: "One row of training data is a…", choices: ["training example (instance)", "feature", "label", "model"], answer: 0 }
+        - { id: ml-w01-d2-g04, difficulty: easy, type: truefalse, prompt: "A rule-based spam filter adapts by itself when scammers change their spelling.", answer: false }
+        - { id: ml-w01-d2-g05, difficulty: easy, type: mcq, prompt: "Non-spam email is called…", choices: ["ham", "jam", "clean", "safe"], answer: 0 }
+        - { id: ml-w01-d2-g06, difficulty: easy, type: mcq, prompt: "Mitchell's T is the…", choices: ["task", "test", "time", "theta"], answer: 0 }
+        - { id: ml-w01-d2-g07, difficulty: medium, type: match, prompt: "Match the buka example to Mitchell's letters.", pairs: [["predict tomorrow's plates", "T"], ["two years of notes", "E"], ["average error in plates", "P"]] }
+        - { id: ml-w01-d2-g08, difficulty: medium, type: mcq, prompt: "Which is NOT machine learning?", choices: ["copying Wikipedia to your laptop", "a spam filter learning from reports", "a model predicting rent from past listings", "a keyboard learning your words"], answer: 0 }
+        - { id: ml-w01-d2-g09, difficulty: medium, type: multi, prompt: "The four cases where ML shines (Select all.)", choices: ["long lists of rules", "no known solution", "a changing world", "getting insight from data", "a fixed formula"], answers: [0, 1, 2, 3] }
+        - { id: ml-w01-d2-g10, difficulty: medium, type: mcq, prompt: "Recognising speech is a good ML problem mainly because…", choices: ["nobody can write the rules for every voice", "it needs no data", "it's a fixed formula", "computers like sound"], answer: 0 }
+        - { id: ml-w01-d2-g11, difficulty: medium, type: mcq, prompt: "A learned spam filter's word list can teach people something new. This is…", choices: ["ML helping humans learn (data mining)", "overfitting", "a bug", "reinforcement learning"], answer: 0 }
+        - { id: ml-w01-d2-g12, difficulty: medium, type: mcq, prompt: "For a spam filter, a sensible P is…", choices: ["the share of messages labelled correctly", "the number of words", "how long training took", "the size of the inbox"], answer: 0 }
+        - id: ml-w01-d2-g13
+          difficulty: medium
+          type: text
+          prompt: "What does this print? (Day 1 sandbox)"
+          code: |
+            import re
+            def words(text):
+                return re.sub(r"[^a-z0-9]+", " ", text.lower()).split()
+            print(words("Send your BVN!"))
+          accept: ["['send', 'your', 'bvn']"]
+        - { id: ml-w01-d2-g14, difficulty: medium, type: truefalse, prompt: "In the Day 1 sandbox, 'send' wasn't learned as a spam word because it also appeared in an honest message.", answer: true }
+        - { id: ml-w01-d2-g15, difficulty: medium, type: mcq, prompt: "Why did 'in' and 'have' sneak into the learned spam words?", choices: ["10 examples are far too few", "they are scam words", "a bug in Python", "the rules added them"], answer: 0 }
+        - { id: ml-w01-d2-g16, difficulty: hard, type: mcq, prompt: "A bank's fraud rules fill 300 pages and still miss new tricks. What does ML offer?", choices: ["shorter code that adapts to new patterns from data", "a longer rule book", "no change", "a guarantee of zero fraud"], answer: 0 }
+        - { id: ml-w01-d2-g17, difficulty: hard, type: mcq, prompt: "'If its score on T (measured by P) improves with E.' A model's error stays the same however much data you add. Is it learning?", choices: ["no: more experience isn't improving it", "yes: it has data", "yes: it runs", "only if it's a neural network"], answer: 0 }
+        - id: ml-w01-d2-g18
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            spam_words = {"promo", "claim", "bvn"}
+            msg = ["win", "promo", "claim", "now"]
+            print(sum(1 for w in msg if w in spam_words) >= 2)
+          accept: ["True"]
+    quizzes:
+      - kind: rapid-fire
+        title: "Features, labels and kinds of learning"
+        secondsPerQuestion: 10
+        questions:
+          - { id: ml-w01-d2-rf01, difficulty: easy, type: mcq, prompt: "The column you want to predict is the…", choices: ["label", "feature", "index", "header"], answer: 0 }
+          - { id: ml-w01-d2-rf02, difficulty: easy, type: mcq, prompt: "The columns you already know are the…", choices: ["features", "labels", "outputs", "answers"], answer: 0 }
+          - { id: ml-w01-d2-rf03, difficulty: easy, type: mcq, prompt: "Predicting a number:", choices: ["regression", "classification", "clustering", "reinforcement"], answer: 0 }
+          - { id: ml-w01-d2-rf04, difficulty: easy, type: mcq, prompt: "Predicting a category:", choices: ["classification", "regression", "clustering", "dimensionality reduction"], answer: 0 }
+          - { id: ml-w01-d2-rf05, difficulty: easy, type: mcq, prompt: "Learning with labelled examples:", choices: ["supervised", "unsupervised", "reinforcement", "online"], answer: 0 }
+          - { id: ml-w01-d2-rf06, difficulty: easy, type: mcq, prompt: "Finding groups with no labels:", choices: ["clustering", "regression", "classification", "labelling"], answer: 0 }
+          - { id: ml-w01-d2-rf07, difficulty: easy, type: mcq, prompt: "Rewards and penalties:", choices: ["reinforcement learning", "supervised learning", "clustering", "regression"], answer: 0 }
+          - { id: ml-w01-d2-rf08, difficulty: easy, type: mcq, prompt: "A few labels plus lots of unlabelled data:", choices: ["semi-supervised", "supervised", "reinforcement", "batch"], answer: 0 }
+          - { id: ml-w01-d2-rf09, difficulty: easy, type: mcq, prompt: "In reinforcement learning, the learner is the…", choices: ["agent", "label", "feature", "teacher"], answer: 0 }
+          - { id: ml-w01-d2-rf10, difficulty: easy, type: mcq, prompt: "The strategy an RL agent learns is its…", choices: ["policy", "label", "dataset", "budget"], answer: 0 }
+      - kind: brain-teaser
+        title: "Name the kind of learning"
+        questions:
+          - { id: ml-w01-d2-bt01, difficulty: medium, type: mcq, prompt: "Predict a Corolla's price from year and mileage, using past sales.", choices: ["supervised regression", "supervised classification", "clustering", "reinforcement"], answer: 0 }
+          - { id: ml-w01-d2-bt02, difficulty: medium, type: mcq, prompt: "A card used in Abuja for years suddenly pays ₦900k abroad at 3 a.m.", choices: ["anomaly detection", "regression", "association rules", "semi-supervised"], answer: 0 }
+          - { id: ml-w01-d2-bt03, difficulty: medium, type: mcq, prompt: "Google Photos groups faces itself, then asks you to name each person once.", choices: ["semi-supervised", "reinforcement", "regression", "batch"], answer: 0 }
+          - { id: ml-w01-d2-bt04, difficulty: hard, type: mcq, prompt: "Merging 'age' and 'mileage' into one 'wear and tear' number is…", choices: ["dimensionality reduction (feature extraction)", "classification", "anomaly detection", "a label"], answer: 0 }
+
+  # ─────────────────────────── DAY 3 ───────────────────────────
+  - day: 3
+    gate:
+      title: "Checkpoint: kinds of learning"
+      covers: "Week 1 · Day 2: supervised (regression, classification), unsupervised, semi-supervised, reinforcement"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: ml-w01-d3-g01, difficulty: easy, type: mcq, prompt: "Supervised learning means the training data includes…", choices: ["the answers (labels)", "no answers", "only numbers", "rewards"], answer: 0 }
+        - { id: ml-w01-d3-g02, difficulty: easy, type: mcq, prompt: "'Price (₦m)' in a cars table is the…", choices: ["label", "feature", "instance", "policy"], answer: 0 }
+        - { id: ml-w01-d3-g03, difficulty: easy, type: mcq, prompt: "'Mileage' in a cars table is a…", choices: ["feature", "label", "model", "reward"], answer: 0 }
+        - { id: ml-w01-d3-g04, difficulty: easy, type: truefalse, prompt: "Predicting tomorrow's danfo fare is a classification task.", answer: false }
+        - { id: ml-w01-d3-g05, difficulty: easy, type: mcq, prompt: "Spam or not spam:", choices: ["classification", "regression", "clustering", "reinforcement"], answer: 0 }
+        - { id: ml-w01-d3-g06, difficulty: easy, type: mcq, prompt: "Sorting customers into groups nobody named:", choices: ["clustering", "classification", "regression", "reinforcement"], answer: 0 }
+        - { id: ml-w01-d3-g07, difficulty: medium, type: match, prompt: "Match the problem to the kind of learning.", pairs: [["rent of a Lekki flat", "regression"], ["diseased or healthy leaf", "classification"], ["groups of shoppers", "clustering"], ["robot learns by points", "reinforcement"]] }
+        - { id: ml-w01-d3-g08, difficulty: medium, type: mcq, prompt: "Géron also calls features…", choices: ["attributes or predictors", "labels", "targets", "policies"], answer: 0 }
+        - { id: ml-w01-d3-g09, difficulty: medium, type: mcq, prompt: "'People who buy Indomie also buy eggs' comes from…", choices: ["association rule learning", "regression", "reinforcement learning", "anomaly detection"], answer: 0 }
+        - { id: ml-w01-d3-g10, difficulty: medium, type: mcq, prompt: "Logistic Regression is usually used for…", choices: ["classification (it outputs a probability)", "clustering", "reinforcement", "storing data"], answer: 0, explain: "Despite the name: it can output '20% chance of spam'." }
+        - { id: ml-w01-d3-g11, difficulty: medium, type: mcq, prompt: "AlphaGo learned Go mainly by…", choices: ["reinforcement learning, playing itself", "reading the rules once", "clustering games", "a spreadsheet"], answer: 0 }
+        - { id: ml-w01-d3-g12, difficulty: medium, type: truefalse, prompt: "A visualization algorithm like t-SNE is unsupervised.", answer: true }
+        - id: ml-w01-d3-g13
+          difficulty: medium
+          type: text
+          prompt: "What does this print? (Day 2 sandbox)"
+          code: |
+            row = {"year": 2012, "price_m": 4.8}
+            features = {k: v for k, v in row.items() if k != "price_m"}
+            print(features)
+          accept: ["{'year': 2012}"]
+        - { id: ml-w01-d3-g14, difficulty: medium, type: mcq, prompt: "Novelty detection differs from anomaly detection because it expects…", choices: ["only normal data in training", "no data", "labels", "rewards"], answer: 0 }
+        - { id: ml-w01-d3-g15, difficulty: medium, type: mcq, prompt: "In reinforcement learning, a penalty is…", choices: ["a negative reward", "a label", "a feature", "a cluster"], answer: 0 }
+        - { id: ml-w01-d3-g16, difficulty: hard, type: mcq, prompt: "Predicting the price AND the days-to-sell of a house together is…", choices: ["multivariate (several outputs)", "classification", "clustering", "univariate"], answer: 0 }
+        - { id: ml-w01-d3-g17, difficulty: hard, type: mcq, prompt: "5,000 cassava photos: 50 labelled, the rest not. The best fit is…", choices: ["semi-supervised learning", "pure regression", "reinforcement learning", "no ML possible"], answer: 0 }
+        - { id: ml-w01-d3-g18, difficulty: hard, type: mcq, prompt: "Why must X and y stay in the same order?", choices: ["each label must line up with its own row of features", "Python requires sorting", "to save memory", "it doesn't matter"], answer: 0 }
+    quizzes:
+      - kind: rapid-fire
+        title: "Batch, online, instance, model"
+        secondsPerQuestion: 10
+        questions:
+          - { id: ml-w01-d3-rf01, difficulty: easy, type: mcq, prompt: "Trains on all the data at once, offline:", choices: ["batch learning", "online learning", "reinforcement", "clustering"], answer: 0 }
+          - { id: ml-w01-d3-rf02, difficulty: easy, type: mcq, prompt: "Learns from each new example as it arrives:", choices: ["online learning", "batch learning", "clustering", "a test set"], answer: 0 }
+          - { id: ml-w01-d3-rf03, difficulty: easy, type: mcq, prompt: "How fast an online system changes its mind:", choices: ["learning rate", "accuracy", "label", "batch size"], answer: 0 }
+          - { id: ml-w01-d3-rf04, difficulty: easy, type: mcq, prompt: "Learning from data too big for memory, a chunk at a time:", choices: ["out-of-core learning", "overfitting", "clustering", "inference"], answer: 0 }
+          - { id: ml-w01-d3-rf05, difficulty: easy, type: mcq, prompt: "'This flat is like those flats':", choices: ["instance-based learning", "model-based learning", "reinforcement", "batch"], answer: 0 }
+          - { id: ml-w01-d3-rf06, difficulty: easy, type: mcq, prompt: "'Draw the best line through the flats':", choices: ["model-based learning", "instance-based learning", "clustering", "anomaly detection"], answer: 0 }
+          - { id: ml-w01-d3-rf07, difficulty: easy, type: mcq, prompt: "θ₀ and θ₁ in rent = θ₀ + θ₁ × size are…", choices: ["model parameters", "labels", "features", "hyperparameters"], answer: 0 }
+          - { id: ml-w01-d3-rf08, difficulty: easy, type: mcq, prompt: "Measures how BAD a model is:", choices: ["cost function", "utility function", "label", "feature"], answer: 0 }
+          - { id: ml-w01-d3-rf09, difficulty: easy, type: mcq, prompt: "Using a trained model on new cases:", choices: ["inference", "training", "labelling", "cleaning"], answer: 0 }
+          - { id: ml-w01-d3-rf10, difficulty: easy, type: mcq, prompt: "k-Nearest Neighbours is…", choices: ["instance-based", "model-based", "unsupervised", "reinforcement"], answer: 0 }
+      - kind: brain-teaser
+        title: "Copy or model, by hand"
+        questions:
+          - id: ml-w01-d3-bt01
+            difficulty: medium
+            type: text
+            prompt: "k-NN with k = 3: rents of the three closest flats are ₦2.1m, ₦2.4m and ₦1.9m. Prediction in ₦m? (2 decimals)"
+            accept: ["2.13"]
+          - id: ml-w01-d3-bt02
+            difficulty: medium
+            type: text
+            prompt: "rent = 0.1 + 0.025 × size. Rent (₦m) of a 100 m² flat?"
+            accept: ["2.6"]
+          - { id: ml-w01-d3-bt03, difficulty: medium, type: mcq, prompt: "Feeding an online fraud model bad data from a broken system…", choices: ["slowly makes it worse, live: watch it and be ready to switch learning off", "has no effect", "makes it faster", "only matters for batch learning"], answer: 0 }
+          - { id: ml-w01-d3-bt04, difficulty: hard, type: mcq, prompt: "A high learning rate means the model…", choices: ["adapts fast but forgets older patterns", "never changes", "adapts slowly but steadily", "has more features"], answer: 0 }
+
+  # ─────────────────────────── DAY 4 ───────────────────────────
+  - day: 4
+    gate:
+      title: "Checkpoint: batch/online, instance/model"
+      covers: "Week 1 · Day 3: batch vs online learning, learning rate, instance-based (k-NN) vs model-based (the line)"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: ml-w01-d4-g01, difficulty: easy, type: mcq, prompt: "Retrained from scratch once a month on all listings:", choices: ["batch learning", "online learning", "reinforcement", "clustering"], answer: 0 }
+        - { id: ml-w01-d4-g02, difficulty: easy, type: mcq, prompt: "A phone keyboard learning your words as you type:", choices: ["online learning", "batch learning", "clustering", "regression only"], answer: 0 }
+        - { id: ml-w01-d4-g03, difficulty: easy, type: mcq, prompt: "k-NN predicts by…", choices: ["averaging the most similar examples", "drawing one line", "random guessing", "asking a person"], answer: 0 }
+        - { id: ml-w01-d4-g04, difficulty: easy, type: truefalse, prompt: "A model-based method keeps every training example to compare against.", answer: false }
+        - { id: ml-w01-d4-g05, difficulty: easy, type: mcq, prompt: "Finding the best θ₀ and θ₁ is called…", choices: ["training", "inference", "labelling", "testing"], answer: 0 }
+        - { id: ml-w01-d4-g06, difficulty: easy, type: mcq, prompt: "Batch learning is also called…", choices: ["offline learning", "incremental learning", "reinforcement learning", "out-of-core"], answer: 0 }
+        - id: ml-w01-d4-g07
+          difficulty: medium
+          type: text
+          prompt: "Sizes 45, 55, 60, 70, 80 m². Which 3 are nearest to 64 m²? Type them smallest first, separated by spaces."
+          accept: ["55 60 70"]
+        - id: ml-w01-d4-g08
+          difficulty: medium
+          type: text
+          prompt: "rent = θ₀ + θ₁ × size with θ₀ = 0.2 and θ₁ = 0.03. Rent (₦m) for 50 m²?"
+          accept: ["1.7"]
+        - { id: ml-w01-d4-g09, difficulty: medium, type: mcq, prompt: "θ₁ = 0.0251 (₦m per m²) means…", choices: ["about ₦25,100 more rent per extra m²", "rent is ₦25,100 per year", "25% of flats", "the base rent"], answer: 0 }
+        - { id: ml-w01-d4-g10, difficulty: medium, type: mcq, prompt: "A cost function for a line typically measures…", choices: ["the distance between its predictions and the real values", "how long training takes", "how many features there are", "the price of the computer"], answer: 0 }
+        - { id: ml-w01-d4-g11, difficulty: medium, type: mcq, prompt: "Online learning suits…", choices: ["data that arrives all the time and changes fast", "a dataset that never changes", "tiny one-off spreadsheets only", "no data"], answer: 0 }
+        - { id: ml-w01-d4-g12, difficulty: medium, type: mcq, prompt: "Out-of-core learning is usually run…", choices: ["offline, chunk by chunk", "live in production", "only on phones", "without data"], answer: 0, explain: "Which is why Géron says to think of 'online' as 'incremental'." }
+        - id: ml-w01-d4-g13
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            pairs = sorted([(4, 2.1), (14, 1.9), (6, 2.4)])
+            print([rent for _, rent in pairs[:2]])
+          accept: ["[2.1, 2.4]"]
+        - { id: ml-w01-d4-g14, difficulty: medium, type: truefalse, prompt: "k-NN and the line gave similar predictions for the 84 m² flat (₦2.13m vs ₦2.21m).", answer: true }
+        - { id: ml-w01-d4-g15, difficulty: medium, type: mcq, prompt: "Géron's 'does money make people happy?' example uses…", choices: ["a linear model of life satisfaction vs GDP per capita", "a neural network", "clustering countries", "reinforcement"], answer: 0 }
+        - id: ml-w01-d4-g16
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            xs, ys = [1, 2, 3], [2, 4, 6]
+            xb, yb = sum(xs) / 3, sum(ys) / 3
+            t1 = sum((x - xb) * (y - yb) for x, y in zip(xs, ys)) / sum((x - xb) ** 2 for x in xs)
+            print(t1, yb - t1 * xb)
+          accept: ["2.0 0.0"]
+        - { id: ml-w01-d4-g17, difficulty: hard, type: mcq, prompt: "Géron's Cyprus prediction with k-NN (k = 3) averaged Slovenia, Portugal and Spain because they…", choices: ["had the closest GDP per capita", "are neighbours on the map", "speak the same language", "were the newest data"], answer: 0 }
+        - { id: ml-w01-d4-g18, difficulty: hard, type: mcq, prompt: "To teach a batch system about new spam, you…", choices: ["train a new version on old + new data and swap it in", "add the new emails live", "change its learning rate", "nothing: it updates itself"], answer: 0 }
+    quizzes:
+      - kind: rapid-fire
+        title: "Bad data"
+        secondsPerQuestion: 10
+        questions:
+          - { id: ml-w01-d4-rf01, difficulty: easy, type: mcq, prompt: "'Garbage in, garbage out' means…", choices: ["bad data gives bad models", "delete old files", "code must be clean", "more data is always worse"], answer: 0 }
+          - { id: ml-w01-d4-rf02, difficulty: easy, type: mcq, prompt: "Polling only X (Twitter) users about an election causes…", choices: ["sampling bias", "overfitting", "underfitting", "a cost function"], answer: 0 }
+          - { id: ml-w01-d4-rf03, difficulty: easy, type: mcq, prompt: "A few unlucky, untypical examples by pure chance:", choices: ["sampling noise", "sampling bias", "regularization", "inference"], answer: 0 }
+          - { id: ml-w01-d4-rf04, difficulty: easy, type: mcq, prompt: "'Lekki', 'Leki', 'LEKKI' in one column:", choices: ["dirty data", "a feature", "a cluster", "a label"], answer: 0 }
+          - { id: ml-w01-d4-rf05, difficulty: easy, type: mcq, prompt: "The middle value of a sorted list:", choices: ["median", "mean", "mode", "maximum"], answer: 0 }
+          - { id: ml-w01-d4-rf06, difficulty: easy, type: mcq, prompt: "Predicting rent from the front door's colour uses an…", choices: ["irrelevant feature", "excellent feature", "label", "outlier"], answer: 0 }
+          - { id: ml-w01-d4-rf07, difficulty: easy, type: mcq, prompt: "Choosing and making good features:", choices: ["feature engineering", "feature deletion", "labelling", "clustering"], answer: 0 }
+          - { id: ml-w01-d4-rf08, difficulty: easy, type: mcq, prompt: "Keeping only the useful columns:", choices: ["feature selection", "feature extraction", "regression", "sampling"], answer: 0 }
+          - { id: ml-w01-d4-rf09, difficulty: easy, type: truefalse, prompt: "A huge sample can still be biased.", answer: true }
+          - { id: ml-w01-d4-rf10, difficulty: easy, type: mcq, prompt: "A rent of ₦5 in a rentals table is probably…", choices: ["an error (an outlier to fix or drop)", "a bargain", "a feature", "fine"], answer: 0 }
+      - kind: brain-teaser
+        title: "Clean it, by hand"
+        questions:
+          - id: ml-w01-d4-bt01
+            difficulty: medium
+            type: text
+            prompt: "Known sizes: 60, 55, 85, 100, 120 m². Median?"
+            accept: ["85"]
+          - id: ml-w01-d4-bt02
+            difficulty: medium
+            type: text
+            prompt: "Known Yaba sizes: 60 and 55 m². Median?"
+            accept: ["57.5"]
+          - { id: ml-w01-d4-bt03, difficulty: medium, type: mcq, prompt: "Filling a missing Yaba size with the median of ALL Lagos flats (95 m²) is…", choices: ["a worse guess than the median of Yaba flats", "always best", "the same thing", "forbidden"], answer: 0 }
+          - { id: ml-w01-d4-bt04, difficulty: hard, type: mcq, prompt: "The 1936 Literary Digest poll was wrong mainly because…", choices: ["its mailing lists favoured wealthier people, and few replied", "it was too small", "it used ML", "people lied"], answer: 0 }
+
+  # ─────────────────────────── DAY 5 ───────────────────────────
+  - day: 5
+    gate:
+      title: "Checkpoint: bad data"
+      covers: "Week 1 · Day 4: not enough data, sampling bias and noise, dirty data, irrelevant features, feature engineering"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: ml-w01-d5-g01, difficulty: easy, type: mcq, prompt: "The two big things that go wrong in ML:", choices: ["bad data and a bad model", "slow internet and old laptops", "too many labels", "Python versions"], answer: 0 }
+        - { id: ml-w01-d5-g02, difficulty: easy, type: mcq, prompt: "Training a national school model on Lagos private schools only:", choices: ["sampling bias", "overfitting", "a good sample", "online learning"], answer: 0 }
+        - { id: ml-w01-d5-g03, difficulty: easy, type: mcq, prompt: "Missing values, typos and impossible numbers:", choices: ["poor-quality (dirty) data", "irrelevant features", "regularization", "labels"], answer: 0 }
+        - { id: ml-w01-d5-g04, difficulty: easy, type: truefalse, prompt: "Data scientists spend a big part of their time cleaning data.", answer: true }
+        - { id: ml-w01-d5-g05, difficulty: easy, type: mcq, prompt: "'The agent's star sign' as a house-price feature is…", choices: ["irrelevant", "essential", "a label", "a cost function"], answer: 0 }
+        - { id: ml-w01-d5-g06, difficulty: easy, type: mcq, prompt: "Combining age and mileage into one feature:", choices: ["feature extraction", "feature selection", "sampling", "labelling"], answer: 0 }
+        - { id: ml-w01-d5-g07, difficulty: medium, type: match, prompt: "Match the problem to its name.", pairs: [["12 examples only", "not enough data"], ["polling only online people", "sampling bias"], ["dates written as 'yesterday'", "dirty data"], ["door colour predicts rent", "irrelevant feature"]] }
+        - { id: ml-w01-d5-g08, difficulty: medium, type: mcq, prompt: "Banko and Brill (2001) found that, with enough data, very different algorithms…", choices: ["performed almost equally well", "all failed", "needed GPUs", "overfitted"], answer: 0 }
+        - { id: ml-w01-d5-g09, difficulty: medium, type: multi, prompt: "Ways to handle a missing size (Select all.)", choices: ["drop the row", "fill it with a median", "ignore the size column", "invent a random number and hide it"], answers: [0, 1, 2] }
+        - { id: ml-w01-d5-g10, difficulty: medium, type: mcq, prompt: "Nonresponse bias means…", choices: ["the people who answer differ from those who don't", "nobody answered", "the answers were typed wrong", "the poll was online"], answer: 0 }
+        - id: ml-w01-d5-g11
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            rows = [{"rent": 5}, {"rent": 1_600_000}, {"rent": 250_000_000}]
+            print(len([r for r in rows if 300_000 <= r["rent"] <= 50_000_000]))
+          accept: ["1"]
+        - id: ml-w01-d5-g12
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            FIX = {"leki": "Lekki", "lekki": "Lekki"}
+            print(FIX[" Leki ".strip().lower()])
+          accept: ["Lekki"]
+        - id: ml-w01-d5-g13
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            import statistics
+            print(statistics.median([85, 100]))
+          accept: ["92.5"]
+        - { id: ml-w01-d5-g14, difficulty: medium, type: mcq, prompt: "Searching YouTube for 'funk music' to build a training set risks…", choices: ["a sample biased toward what the search engine shows", "too much data", "no labels at all", "overfitting only"], answer: 0 }
+        - { id: ml-w01-d5-g15, difficulty: medium, type: truefalse, prompt: "Collecting new data (e.g. distance to the nearest BRT stop) is part of feature engineering.", answer: true }
+        - { id: ml-w01-d5-g16, difficulty: hard, type: mcq, prompt: "Which should you do first with a new dataset?", choices: ["look for missing, impossible and inconsistent values", "train the biggest model", "delete half the columns", "publish the results"], answer: 0 }
+        - { id: ml-w01-d5-g17, difficulty: hard, type: mcq, prompt: "Filling missing sizes by AREA median beat the overall median because…", choices: ["flat sizes differ by area, so a same-area value is a better guess", "it is faster", "medians are always wrong", "Python prefers it"], answer: 0 }
+        - { id: ml-w01-d5-g18, difficulty: hard, type: mcq, prompt: "Dropping the ₦5 row before computing the Yaba median changed the result because…", choices: ["that row's size (70 m²) no longer counted", "₦5 is a size", "medians ignore rent", "it didn't change anything"], answer: 0 }
+    quizzes:
+      - kind: rapid-fire
+        title: "Overfitting and underfitting"
+        secondsPerQuestion: 10
+        questions:
+          - { id: ml-w01-d5-rf01, difficulty: easy, type: mcq, prompt: "Brilliant on training data, bad on new data:", choices: ["overfitting", "underfitting", "regularization", "inference"], answer: 0 }
+          - { id: ml-w01-d5-rf02, difficulty: easy, type: mcq, prompt: "Too simple to catch even the real pattern:", choices: ["underfitting", "overfitting", "clustering", "a test set"], answer: 0 }
+          - { id: ml-w01-d5-rf03, difficulty: easy, type: mcq, prompt: "Bisi memorised the past questions word for word. She's like a model that is…", choices: ["overfitting", "underfitting", "online", "unsupervised"], answer: 0 }
+          - { id: ml-w01-d5-rf04, difficulty: easy, type: mcq, prompt: "Forcing a model to stay simpler:", choices: ["regularization", "inference", "labelling", "clustering"], answer: 0 }
+          - { id: ml-w01-d5-rf05, difficulty: easy, type: mcq, prompt: "A setting you choose BEFORE training:", choices: ["hyperparameter", "parameter", "label", "feature"], answer: 0 }
+          - { id: ml-w01-d5-rf06, difficulty: easy, type: mcq, prompt: "θ₀ and θ₁, found BY training:", choices: ["parameters", "hyperparameters", "labels", "features"], answer: 0 }
+          - { id: ml-w01-d5-rf07, difficulty: easy, type: multi, prompt: "Fixes for overfitting (Select all.)", choices: ["a simpler model", "more data", "less noise", "a much more complex model"], answers: [0, 1, 2] }
+          - { id: ml-w01-d5-rf08, difficulty: easy, type: multi, prompt: "Fixes for underfitting (Select all.)", choices: ["a more powerful model", "better features", "less regularization", "throw away data"], answers: [0, 1, 2] }
+          - { id: ml-w01-d5-rf09, difficulty: easy, type: mcq, prompt: "StatQuest's 'high variance' is…", choices: ["overfitting", "underfitting", "a cost function", "a label"], answer: 0 }
+          - { id: ml-w01-d5-rf10, difficulty: easy, type: truefalse, prompt: "Zero training error guarantees a good model.", answer: false }
+      - kind: brain-teaser
+        title: "Which model would you trust?"
+        questions:
+          - { id: ml-w01-d5-bt01, difficulty: medium, type: mcq, prompt: "A curve fits five flats exactly and predicts −₦3.4m for a 130 m² flat. It is…", choices: ["overfitting", "underfitting", "perfect", "regularized"], answer: 0 }
+          - { id: ml-w01-d5-bt02, difficulty: medium, type: mcq, prompt: "99% on training, 61% on new data. First thing to try?", choices: ["simplify / regularize, or get more data", "a bigger model", "train longer on the same data", "nothing"], answer: 0 }
+          - { id: ml-w01-d5-bt03, difficulty: medium, type: mcq, prompt: "55% on training and 54% on new, where people get 90%:", choices: ["underfitting: a more powerful model or better features", "overfitting", "perfect", "sampling bias only"], answer: 0 }
+          - { id: ml-w01-d5-bt04, difficulty: hard, type: mcq, prompt: "Setting the regularization hyperparameter very high gives…", choices: ["an almost flat model that won't overfit but may miss the pattern", "a perfect model", "overfitting", "more features"], answer: 0 }
+
+  # ─────────────────────────── DAY 6 ───────────────────────────
+  - day: 6
+    gate:
+      title: "Checkpoint: overfitting and underfitting"
+      covers: "Week 1 · Day 5: overfitting, underfitting, regularization, parameters vs hyperparameters"
+      blueprint: { easy: 2, medium: 3, hard: 1 }
+      bank:
+        - { id: ml-w01-d6-g01, difficulty: easy, type: mcq, prompt: "Overfitting:", choices: ["great on training data, poor on new data", "poor on everything", "great on everything", "no data"], answer: 0 }
+        - { id: ml-w01-d6-g02, difficulty: easy, type: mcq, prompt: "Underfitting:", choices: ["too simple for the real pattern", "too complex", "perfect", "unsupervised"], answer: 0 }
+        - { id: ml-w01-d6-g03, difficulty: easy, type: mcq, prompt: "Regularization does what?", choices: ["keeps the model simpler", "adds more data", "removes labels", "speeds up the computer"], answer: 0 }
+        - { id: ml-w01-d6-g04, difficulty: easy, type: truefalse, prompt: "Hyperparameters are found by the training algorithm itself.", answer: false }
+        - { id: ml-w01-d6-g05, difficulty: easy, type: mcq, prompt: "Overfitting usually happens when the model is…", choices: ["too complex for how much (and how noisy) the data is", "too simple", "too fast", "trained online"], answer: 0 }
+        - { id: ml-w01-d6-g06, difficulty: easy, type: mcq, prompt: "Mean absolute error is…", choices: ["the average size of the mistakes", "the biggest mistake", "the number of examples", "the slope"], answer: 0 }
+        - id: ml-w01-d6-g07
+          difficulty: medium
+          type: text
+          prompt: "Predictions 2.0, 3.0 and 4.0; real values 2.5, 3.0 and 3.0. Mean absolute error?"
+          accept: ["0.5"]
+        - { id: ml-w01-d6-g08, difficulty: medium, type: mcq, prompt: "The 'countries with a w are happier' pattern shows a model…", choices: ["finding a pattern in noise (overfitting)", "underfitting", "clustering", "learning a real rule"], answer: 0 }
+        - { id: ml-w01-d6-g09, difficulty: medium, type: mcq, prompt: "Forcing θ₁ = 0 leaves a model that can only…", choices: ["move the line up or down (around the mean)", "tilt freely", "curve", "classify"], answer: 0 }
+        - { id: ml-w01-d6-g10, difficulty: medium, type: mcq, prompt: "Keeping θ₁ small (but not zero) gives the model…", choices: ["somewhere between one and two degrees of freedom", "zero freedom", "infinite freedom", "more data"], answer: 0 }
+        - id: ml-w01-d6-g11
+          difficulty: medium
+          type: text
+          prompt: "What does this print?"
+          code: |
+            import numpy as np
+            line = np.poly1d([2, 1])
+            print(line(3))
+          accept: ["7"]
+        - { id: ml-w01-d6-g12, difficulty: medium, type: mcq, prompt: "np.polyfit(xs, ys, 1) finds…", choices: ["the best straight line", "the median", "a random curve", "the labels"], answer: 0 }
+        - { id: ml-w01-d6-g13, difficulty: medium, type: truefalse, prompt: "In the Day 5 sandbox, the degree-4 curve did about 7 times worse than the line on the new flats.", answer: true }
+        - { id: ml-w01-d6-g14, difficulty: medium, type: multi, prompt: "Signs of overfitting (Select all.)", choices: ["very low training error", "much higher error on new data", "wild predictions just outside the training range", "similar errors on training and new data"], answers: [0, 1, 2] }
+        - { id: ml-w01-d6-g15, difficulty: medium, type: mcq, prompt: "200 features, 150 houses. Most likely problem?", choices: ["overfitting", "underfitting", "no problem", "sampling noise only"], answer: 0 }
+        - { id: ml-w01-d6-g16, difficulty: hard, type: mcq, prompt: "A model's training and new-data errors are both high and similar. Best fix?", choices: ["a more powerful model or better features", "more regularization", "fewer features", "a smaller model"], answer: 0 }
+        - { id: ml-w01-d6-g17, difficulty: hard, type: mcq, prompt: "Why can a degree-4 curve pass exactly through 5 points?", choices: ["it has 5 parameters, enough to hit 5 points", "the points are on a line", "numpy cheats", "it is regularized"], answer: 0 }
+        - id: ml-w01-d6-g18
+          difficulty: hard
+          type: text
+          prompt: "What does this print?"
+          code: |
+            def mae(model, xs, ys):
+                return sum(abs(model(x) - y) for x, y in zip(xs, ys)) / len(xs)
+            print(mae(lambda x: x, [1, 2, 3], [1, 2, 6]))
+          accept: ["1.0"]
+    quizzes:
+      - kind: rapid-fire
+        title: "Testing and validating"
+        secondsPerQuestion: 10
+        questions:
+          - { id: ml-w01-d6-rf01, difficulty: easy, type: mcq, prompt: "Data put aside until the very end:", choices: ["test set", "training set", "validation set", "feature set"], answer: 0 }
+          - { id: ml-w01-d6-rf02, difficulty: easy, type: mcq, prompt: "Data used to compare models and settings:", choices: ["validation set", "test set", "training set", "label set"], answer: 0 }
+          - { id: ml-w01-d6-rf03, difficulty: easy, type: mcq, prompt: "A common split:", choices: ["80% training, 20% test", "50/50 always", "10% training", "no split"], answer: 0 }
+          - { id: ml-w01-d6-rf04, difficulty: easy, type: mcq, prompt: "The error on new cases is the…", choices: ["generalization error", "training error", "cost of the laptop", "label error"], answer: 0 }
+          - { id: ml-w01-d6-rf05, difficulty: easy, type: truefalse, prompt: "It's fine to pick your model by its test-set score.", answer: false }
+          - { id: ml-w01-d6-rf06, difficulty: easy, type: mcq, prompt: "Rotating which part is the validation set and averaging:", choices: ["cross-validation", "overfitting", "online learning", "regularization"], answer: 0 }
+          - { id: ml-w01-d6-rf07, difficulty: easy, type: mcq, prompt: "Cross-validation's cost:", choices: ["you train several times (slower)", "you lose your data", "it needs labels twice", "nothing"], answer: 0 }
+          - { id: ml-w01-d6-rf08, difficulty: easy, type: mcq, prompt: "'No model is best for every problem':", choices: ["No Free Lunch theorem", "Moore's law", "Murphy's law", "overfitting"], answer: 0 }
+          - { id: ml-w01-d6-rf09, difficulty: easy, type: mcq, prompt: "Low training error + high test error =", choices: ["overfitting", "underfitting", "perfect", "sampling bias"], answer: 0 }
+          - { id: ml-w01-d6-rf10, difficulty: easy, type: mcq, prompt: "How many times do you use the test set?", choices: ["once, at the end", "after every change", "never", "every day"], answer: 0 }
+      - kind: brain-teaser
+        title: "Choose honestly"
+        questions:
+          - { id: ml-w01-d6-bt01, difficulty: medium, type: mcq, prompt: "You tried 100 settings and kept the best one on the test set (5% error). In real use it gets 15%. Why?", choices: ["you tuned it to that test set: the score flattered you", "bad luck only", "the computer changed", "the model forgot"], answer: 0 }
+          - { id: ml-w01-d6-bt02, difficulty: medium, type: mcq, prompt: "Training error falls from degree 1 to 5, but validation error is lowest at degree 1. Pick…", choices: ["degree 1", "degree 5", "degree 3", "whichever trains fastest"], answer: 0 }
+          - { id: ml-w01-d6-bt03, difficulty: medium, type: order, prompt: "Put Géron's recipe in order.", items: ["split into train, validation and test", "train candidates on the training set", "pick the best on the validation set", "retrain it on train + validation", "measure once on the test set"] }
+          - { id: ml-w01-d6-bt04, difficulty: hard, type: mcq, prompt: "A validation set that's too large is a problem because…", choices: ["candidates are compared after training on much less data than the final model", "it's too accurate", "it uses the test set", "it removes labels"], answer: 0, explain: "Géron: like choosing the fastest sprinter for a marathon." }

@@ -26,6 +26,11 @@ jobs:
       - run: npm ci
       - run: npm test
       - run: npm run check:db
+      # The ML sandboxes need numpy/pandas/scikit-learn, pinned to the browser's Pyodide versions.
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: python3 -m venv .venv-ml && .venv-ml/bin/pip install -q -r scripts/requirements-ml.txt
       - run: npm run check:python
       - run: npm run check:web
       - run: npm run check:accounts

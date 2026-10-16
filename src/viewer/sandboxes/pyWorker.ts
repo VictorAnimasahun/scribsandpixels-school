@@ -14,6 +14,7 @@ type Pyodide = {
   setStderr(options: { write: (buffer: Uint8Array) => number }): void
   setStdin(options: { stdin: () => string | undefined }): void
   runPythonAsync(code: string, options?: { globals?: unknown }): Promise<unknown>
+  loadPackagesFromImports(code: string, options?: { messageCallback?: (message: string) => void; errorCallback?: (message: string) => void }): Promise<unknown>
   globals: { get(name: string): () => PyDict }
 }
 
@@ -93,6 +94,19 @@ self.onmessage = async (event: MessageEvent<RunRequest>) => {
       return line
     },
   })
+
+  // The ML lessons import numpy, pandas, scikit-learn…: Pyodide fetches the ones the code (and
+  // its checks) import, once; the offline cache keeps them after that.
+  const ML = /^\s*(?:import|from)\s+(numpy|pandas|sklearn|scipy|matplotlib)\b/m
+  if (ML.test(code) || (tests && ML.test(tests))) {
+    post({ id, type: 'status', text: 'Loading the data-science libraries (numpy, pandas, scikit-learn: about 25 MB the first time, then saved on this device)…' })
+    try {
+      await py.loadPackagesFromImports(`${code}\n${tests ?? ''}`)
+    } catch {
+      post({ id, type: 'done', ok: false, error: "Couldn't download the data-science libraries. Check your connection (Wi-Fi is best for the first time) and run again." })
+      return
+    }
+  }
 
   const globals = py.globals.get('dict')()
   // Run as a script, so `if __name__ == "__main__":` works (a bare dict would see builtins' __name__).

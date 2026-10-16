@@ -1,9 +1,10 @@
-# Phase 5 plan (Weeks 35–44): Machine learning, from Victor's books (DRAFT, 16 Oct 2026)
+# Phase 5 plan (Weeks 35–44): Machine learning, from Victor's books (APPROVED by Victor, 16 Oct 2026)
+
+> **Approved and running as its own course** (`src/content/courses/machine-learning/`), because Victor wanted to start ML now, not at Week 35: plan Week 35 = ML course Week 1, …, Week 44 = Week 10. Decisions: neural networks from Klein; synthetic Lagos housing data; written now, a week at a time.
 
 **Phase:** Machine learning: teaching computers to learn. **Milestone:** a model that predicts house prices in Lagos, on GitHub.
 **Asked for (16 Oct 2026):** "read the ML book in my directory and pick pages from it to construct the machine learning lessons… break down those concepts in a way that doesn't make my head boil."
 
-Nothing below goes into `course.ts` or `weeks/` until Victor approves it. Change anything.
 
 ## The books (what Victor actually has)
 1. **Géron, *Hands-On Machine Learning with Scikit-Learn, Keras and TensorFlow*, 2nd edition, Early Release (Jan 2019)**, `~/Desktop/ml-book/hands-on-machine-learning.pdf`. 279 pages, **Chapters 1–9 only**: everything up to clustering, no neural-network chapters. Page numbers below are the book's printed page numbers (PDF page = book page + 2).

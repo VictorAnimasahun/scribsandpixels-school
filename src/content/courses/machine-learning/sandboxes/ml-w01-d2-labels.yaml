@@ -1,0 +1,63 @@
+# Week 1 · Day 2 practice
+id: ml-w01-d2-labels
+kind: python
+title: "Features, labels, and what kind of learning"
+description: "Every ML library wants your data in two parts: the features (what you know) and the labels (what you want to predict). Split a table of Lagos Corolla listings, then sort some problems into the kinds of learning."
+starter: |
+  # Second-hand Toyota Corollas for sale in Lagos. Each dict is one example (one car).
+  CARS = [
+      {"year": 2012, "mileage_km": 145000, "transmission": "automatic", "location": "Ikeja", "price_m": 4.8},
+      {"year": 2015, "mileage_km": 98000, "transmission": "automatic", "location": "Lekki", "price_m": 7.2},
+      {"year": 2010, "mileage_km": 190000, "transmission": "manual", "location": "Yaba", "price_m": 3.1},
+      {"year": 2014, "mileage_km": 120000, "transmission": "automatic", "location": "Surulere", "price_m": 6.0},
+      {"year": 2009, "mileage_km": 210000, "transmission": "manual", "location": "Ikeja", "price_m": 2.7},
+  ]
+
+  def split_features_label(rows, label):
+      # Return (X, y):
+      #   X = a list of dicts, each row WITHOUT the label column (the features)
+      #   y = a list of the label values, in the same order
+      # Don't change the original rows.
+      pass
+
+  X, y = split_features_label(CARS, "price_m")
+  print("First car's features:", X[0] if X else X)
+  print("Labels:", y)
+
+  # What kind of problem is each one? Replace every "?" with one of:
+  # "regression", "classification", "clustering", "anomaly detection", "reinforcement"
+  KINDS = {
+      "Predict tomorrow's danfo fare from Oshodi to CMS": "?",
+      "Decide whether an SMS is spam": "?",
+      "Group 10,000 customers by how they shop (no groups given)": "?",
+      "Flag a card payment that looks nothing like the owner's usual ones": "?",
+      "Teach a robot to walk by rewarding every step forward": "?",
+      "Predict a Lekki flat's yearly rent in naira": "?",
+      "Say whether a cassava leaf photo shows disease (photos already labelled)": "?",
+  }
+tasks:
+  - prompt: "split_features_label(CARS, 'price_m') returns the features without price_m and the five prices in order."
+    tests: |
+      X, y = split_features_label(CARS, "price_m")
+      assert y == [4.8, 7.2, 3.1, 6.0, 2.7], f"labels: {y}"
+      assert len(X) == 5 and all("price_m" not in row for row in X), "every features row must leave out price_m"
+      assert X[0] == {"year": 2012, "mileage_km": 145000, "transmission": "automatic", "location": "Ikeja"}, f"first row: {X[0]}"
+    hint: "For each row: y.append(row[label]) and X.append({k: v for k, v in row.items() if k != label})."
+  - prompt: "The original CARS rows still have their price_m (you made new dicts instead of deleting from the old ones)."
+    tests: |
+      split_features_label(CARS, "price_m")
+      assert all("price_m" in row for row in CARS), "don't `del row[label]` on the original rows: copy them"
+  - prompt: "Every problem in KINDS has the right kind of learning."
+    tests: |
+      want = {
+          "Predict tomorrow's danfo fare from Oshodi to CMS": "regression",
+          "Decide whether an SMS is spam": "classification",
+          "Group 10,000 customers by how they shop (no groups given)": "clustering",
+          "Flag a card payment that looks nothing like the owner's usual ones": "anomaly detection",
+          "Teach a robot to walk by rewarding every step forward": "reinforcement",
+          "Predict a Lekki flat's yearly rent in naira": "regression",
+          "Say whether a cassava leaf photo shows disease (photos already labelled)": "classification",
+      }
+      wrong = [k for k, v in want.items() if KINDS.get(k, "").strip().lower() != v]
+      assert not wrong, "check these again: " + " | ".join(wrong)
+    hint: "A number → regression. A category from labelled examples → classification. Groups with no labels → clustering. The odd one out → anomaly detection. Rewards and penalties → reinforcement."
