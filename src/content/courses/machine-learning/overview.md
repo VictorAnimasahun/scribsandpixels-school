@@ -43,6 +43,7 @@
 | Small tables in the lessons | 5 to 30 rows (Lagos flats, Corolla listings, scam SMS…), so you can see every number | Week 1 |
 | **Lagos housing** (synthetic) | ~3,000 Lagos property listings: area, type, bedrooms, bathrooms, size, age, serviced, price in ₦, with deliberate problems to clean | Week 2 |
 | scikit-learn's built-in sets | Handwritten digits (8×8), iris, wine: no download | Week 4 |
+| **Naija transactions** (synthetic) | 4,000 card, POS, transfer and ATM payments, about 3% of them fraud: amount, hour, distance from home, new device, foreign card, recent activity, account age | Week 4 |
 | NaijaMart (from the Excel course) | Customers and sales of a fictional Nigerian retail chain | Week 7 |
 
 The Lagos housing data is **made up but realistic** (real listing sites don't allow copying their data). It's generated from a fixed seed, so every "Check" answer in the lessons was computed from the actual file.

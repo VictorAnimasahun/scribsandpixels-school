@@ -1,0 +1,86 @@
+# Week 4 · Day 6 project
+id: ml-w04-d6-fraud
+kind: python
+title: "A fraud flagger for a Nigerian bank"
+description: "4,000 card, POS, transfer and ATM payments, about 3% of them fraud. Beat the 'never fraud' baseline, compare two models by ROC AUC, then choose the alarm threshold by what mistakes cost in naira, and test once."
+files: [naija_transactions.csv]
+starter: |
+  import numpy as np
+  import pandas as pd
+  from sklearn.model_selection import train_test_split, cross_val_predict
+  from sklearn.compose import ColumnTransformer
+  from sklearn.preprocessing import StandardScaler, OneHotEncoder
+  from sklearn.pipeline import Pipeline
+  from sklearn.linear_model import SGDClassifier
+  from sklearn.ensemble import RandomForestClassifier
+  from sklearn.metrics import roc_auc_score, confusion_matrix
+
+  df = pd.read_csv("naija_transactions.csv")
+  print(df.head())
+  print(df.groupby("foreign")["is_fraud"].mean())     # fraud rate for local vs foreign cards
+
+  # 1. How rare is fraud? Split with the same fraud share on both sides, then measure the lazy baseline.
+  FRAUD_RATE = None          # df["is_fraud"].mean()
+  train, test = train_test_split(df, test_size=0.2, stratify=df["is_fraud"], random_state=42)
+  X, y = train.drop(columns=["txn_id", "is_fraud"]), train["is_fraud"].values
+  X_test, y_test = test.drop(columns=["txn_id", "is_fraud"]), test["is_fraud"].values
+  NEVER_ACCURACY = None      # accuracy of always answering "not fraud" on the training set: 1 - y.mean()
+
+  # 2. Two models, each with its own preparation, compared on honest cross-validated scores.
+  NUM = ["amount_naira", "hour", "distance_km", "new_device", "foreign", "txns_last_24h", "account_age_days"]
+  prep = ColumnTransformer([("num", StandardScaler(), NUM), ("cat", OneHotEncoder(), ["merchant"])])
+  sgd = Pipeline([("prep", prep), ("clf", SGDClassifier(random_state=42))])
+  forest = Pipeline([("prep", prep), ("clf", RandomForestClassifier(n_estimators=100, min_samples_leaf=5, random_state=42))])
+
+  scores_sgd = None          # cross_val_predict(sgd, X, y, cv=3, method="decision_function")
+  probas = None              # cross_val_predict(forest, X, y, cv=3, method="predict_proba")[:, 1]
+  AUC_SGD = None
+  AUC_FOREST = None
+  CAUGHT_AT_HALF = None      # frauds the forest catches with the usual threshold of 0.5: ((probas >= 0.5) & (y == 1)).sum()
+
+  # 3. Choose the threshold by money. A missed fraud costs its full amount (the bank refunds the customer).
+  #    A false alarm costs ₦1,000 (a verification call, and an annoyed customer).
+  amounts = X["amount_naira"].values
+  FALSE_ALARM = 1000
+
+  def cost(flags, y_true, amounts):
+      # flags: True where the alarm rings. Return the naira cost of missed frauds plus false alarms.
+      pass
+
+  COST_NOTHING = None        # cost of never flagging: cost(np.zeros(len(y), dtype=bool), y, amounts)
+  THRESHOLDS = np.round(np.arange(0.01, 0.60, 0.01), 2)
+  BEST_THRESHOLD = None      # the threshold in THRESHOLDS with the lowest cost(probas >= t, y, amounts)
+  COST_BEST = None
+
+  # 4. The one honest test: train the forest on the whole training set, flag the test set at your threshold.
+  test_flags = None          # forest.fit(X, y).predict_proba(X_test)[:, 1] >= BEST_THRESHOLD
+  CAUGHT = None              # frauds caught on the test set
+  FALSE_ALARMS = None
+  TEST_COST = None           # cost(test_flags, y_test, X_test["amount_naira"].values)
+  TEST_COST_NOTHING = None
+tasks:
+  - prompt: "Fraud is about 2.9% of payments, so answering 'never fraud' is already about 97% accurate. Accuracy is useless here."
+    tests: |
+      assert FRAUD_RATE is not None and abs(FRAUD_RATE - 0.0285) < 1e-6, f"FRAUD_RATE = {FRAUD_RATE}"
+      assert NEVER_ACCURACY is not None and abs(NEVER_ACCURACY - 0.9716) < 0.0005, f"NEVER_ACCURACY = {NEVER_ACCURACY}"
+  - prompt: "ROC AUC: SGD about 0.89, the forest about 0.92. Yet at the usual 0.5 threshold the forest catches no fraud at all."
+    tests: |
+      assert AUC_SGD is not None and abs(AUC_SGD - 0.891) < 0.01, f"AUC_SGD = {AUC_SGD}"
+      assert AUC_FOREST is not None and abs(AUC_FOREST - 0.917) < 0.01, f"AUC_FOREST = {AUC_FOREST}"
+      assert CAUGHT_AT_HALF is not None and CAUGHT_AT_HALF <= 1, f"CAUGHT_AT_HALF = {CAUGHT_AT_HALF}"
+    hint: "probas holds the forest's fraud probabilities; ((probas >= 0.5) & (y == 1)).sum() counts frauds flagged."
+  - prompt: "Flagging nothing costs about ₦5.6m on the training payments. The cheapest threshold is a low one, around 0.04, costing well under ₦1m."
+    tests: |
+      flags = np.array([True, False, True, False]); yy = np.array([1, 1, 0, 0]); am = np.array([5000, 20000, 7000, 3000])
+      assert cost(flags, yy, am) == 20000 + 1000, f"cost on a 4-payment example = {cost(flags, yy, am)} (should be 21000: one missed ₦20,000 fraud + one false alarm)"
+      assert COST_NOTHING == 5645000, f"COST_NOTHING = {COST_NOTHING}"
+      assert BEST_THRESHOLD is not None and 0.02 <= BEST_THRESHOLD <= 0.06, f"BEST_THRESHOLD = {BEST_THRESHOLD}"
+      assert COST_BEST is not None and COST_BEST < 1000000, f"COST_BEST = {COST_BEST}"
+    hint: "missed = (y_true == 1) & ~flags; false_alarms = (y_true == 0) & flags; return amounts[missed].sum() + FALSE_ALARM * false_alarms.sum(). For the best: min(THRESHOLDS, key=lambda t: cost(probas >= t, y, amounts))."
+  - prompt: "On the test set it catches about 20 of the 23 frauds with about 130 false alarms, cutting losses from about ₦1.6m to about ₦0.24m."
+    tests: |
+      assert int(y_test.sum()) == 23
+      assert CAUGHT is not None and 18 <= CAUGHT <= 22, f"CAUGHT = {CAUGHT}"
+      assert FALSE_ALARMS is not None and 90 <= FALSE_ALARMS <= 180, f"FALSE_ALARMS = {FALSE_ALARMS}"
+      assert TEST_COST_NOTHING == 1590750, f"TEST_COST_NOTHING = {TEST_COST_NOTHING}"
+      assert TEST_COST is not None and TEST_COST < 400000, f"TEST_COST = {TEST_COST}"

@@ -1,0 +1,64 @@
+# Week 4 · Day 2 practice
+id: ml-w04-d2-confusion
+kind: python
+title: "Accuracy lies; the confusion matrix doesn't"
+description: "Write precision and recall yourself and test them on the bank's fraud alarm, see a do-nothing classifier score 90% accuracy, then build the 5-detector's confusion matrix with honest cross-validated predictions."
+starter: |
+  import numpy as np
+  from sklearn.datasets import load_digits
+  from sklearn.model_selection import train_test_split, cross_val_score, cross_val_predict
+  from sklearn.linear_model import SGDClassifier
+  from sklearn.base import BaseEstimator
+  from sklearn.metrics import confusion_matrix, precision_score, recall_score
+
+  # 1. By hand first. The bank's fraud alarm: TP 15, FP 10, FN 5, TN 970.
+  def precision(tp, fp):
+      # Of everything the alarm flagged, the share that really was fraud.
+      pass
+
+  def recall(tp, fn):
+      # Of all the real frauds, the share the alarm caught.
+      pass
+
+  print("alarm precision:", precision(15, 10), " recall:", recall(15, 5))
+
+  # Same digits and split as yesterday.
+  digits = load_digits()
+  X_train, X_test, y_train, y_test = train_test_split(digits.data, digits.target, test_size=0.2, random_state=42, stratify=digits.target)
+  y_train_5 = (y_train == 5)
+  sgd = SGDClassifier(random_state=42)
+
+  # 2. Accuracy with 3-fold cross-validation, then a classifier that never says "5".
+  SGD_ACCURACY = None    # cross_val_score(sgd, X_train, y_train_5, cv=3, scoring="accuracy").mean()
+
+  class Never5Classifier(BaseEstimator):
+      def fit(self, X, y=None):
+          return self
+      def predict(self, X):
+          pass           # return an array of False, one per row: np.zeros(len(X), dtype=bool)
+
+  NEVER5_ACCURACY = None
+
+  # 3. Honest predictions for every training image (each made by a model that never saw it).
+  y_train_pred = None    # cross_val_predict(sgd, X_train, y_train_5, cv=3)
+  CM = None              # confusion_matrix(y_train_5, y_train_pred)
+  PRECISION = None       # precision_score(...)
+  RECALL = None
+  print(CM)
+tasks:
+  - prompt: "Your functions give the bank's alarm 60% precision and 75% recall."
+    tests: |
+      assert precision(15, 10) is not None and abs(precision(15, 10) - 0.60) < 1e-9, f"precision(15, 10) = {precision(15, 10)}"
+      assert recall(15, 5) is not None and abs(recall(15, 5) - 0.75) < 1e-9, f"recall(15, 5) = {recall(15, 5)}"
+      assert abs(precision(4096, 1522) - 4096 / 5618) < 1e-9 and abs(recall(4096, 1325) - 4096 / 5421) < 1e-9, "check the formulas on Géron's numbers too"
+    hint: "precision = tp / (tp + fp); recall = tp / (tp + fn)"
+  - prompt: "The detector scores about 98.5% accuracy, but a classifier that never says '5' already scores about 90%."
+    tests: |
+      assert SGD_ACCURACY is not None and abs(SGD_ACCURACY - 0.9854) < 0.002, f"SGD_ACCURACY = {SGD_ACCURACY}"
+      assert NEVER5_ACCURACY is not None and abs(NEVER5_ACCURACY - 0.8991) < 0.002, f"NEVER5_ACCURACY = {NEVER5_ACCURACY}"
+    hint: "NEVER5_ACCURACY = cross_val_score(Never5Classifier(), X_train, y_train_5, cv=3, scoring='accuracy').mean(), after predict returns np.zeros(len(X), dtype=bool)."
+  - prompt: "Confusion matrix [[1288, 4], [17, 128]]: precision 97%, recall 88%. It misses 17 of the 145 fives."
+    tests: |
+      assert CM is not None and np.asarray(CM).tolist() == [[1288, 4], [17, 128]], f"CM = {None if CM is None else np.asarray(CM).tolist()}"
+      assert PRECISION is not None and abs(PRECISION - 128 / 132) < 1e-6, f"PRECISION = {PRECISION}"
+      assert RECALL is not None and abs(RECALL - 128 / 145) < 1e-6, f"RECALL = {RECALL}"

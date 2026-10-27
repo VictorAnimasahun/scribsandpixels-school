@@ -27,7 +27,8 @@
 - [x] French Week 1 · Excel Week 1 question banks
 - [x] French Weeks 2–16 · Excel Weeks 2–15 (Excel figures recomputed from the datasets)
 - [x] Machine Learning course started (16 Oct 2026): overview, Week 1 (Géron pp. 9–40) with 6 sandboxes + playground and ~200 quiz questions; ML libraries in the Python sandbox
-- [ ] ML Weeks 2–10 (plan: `fullstack-ml/phase-5-plan.md`), a week at a time; Week 2 needs the synthetic Lagos housing generator first; matplotlib charts need an image output in the Python sandbox (Week 2 histograms)
+- [x] ML Weeks 2–4 (16 Oct 2026): Lagos housing project (Weeks 2–3), classification + fraud flagger (Week 4); data files and matplotlib charts in the Python sandbox; every sandbox proven in CPython and in Chrome (Pyodide)
+- [ ] ML Weeks 5–10 (plan: `fullstack-ml/phase-5-plan.md`), a week at a time; Week 5 = Géron pp. 115–155 (how models learn: gradient descent, polynomial regression, learning curves, regularization, logistic regression)
 - [ ] French Weeks 17–52
 - [ ] Excel Weeks 16–24
 - [x] Fullstack + ML Weeks 1–14 (every Python snippet checked by running it: `node scripts/check-quiz-code.mjs`)

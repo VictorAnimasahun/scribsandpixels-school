@@ -1,0 +1,55 @@
+# Week 4 · Day 1 practice
+id: ml-w04-d1-digits
+kind: python
+title: "Meet the digits, then build a 5-detector"
+description: "Load scikit-learn's 1,797 handwritten digits, look at one as a grid of ink values and as a picture, set aside a test set, and train your first classifier: one that answers 'is this a 5?'"
+starter: |
+  import numpy as np
+  import matplotlib.pyplot as plt
+  from sklearn.datasets import load_digits
+  from sklearn.model_selection import train_test_split
+  from sklearn.linear_model import SGDClassifier
+
+  digits = load_digits()        # ships with scikit-learn: no download
+  X, y = digits.data, digits.target
+
+  # 1. How many images, and how many numbers (pixels) describe each one?
+  N_IMAGES = None    # X.shape[0]
+  N_PIXELS = None    # X.shape[1]
+
+  # 2. Lock away a test set FIRST (20%, the same share of every digit).
+  X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
+
+  # Look at the first training image: 64 numbers from 0 (blank) to 16 (full ink).
+  print(X_train[0].reshape(8, 8).astype(int))
+  print("label:", y_train[0])
+  plt.imshow(X_train[0].reshape(8, 8), cmap="binary")
+  plt.axis("off")
+  plt.show()
+
+  # 3. Turn the labels into yes/no answers: True for 5s, False for every other digit.
+  y_train_5 = None   # (y_train == 5)
+  y_test_5 = None
+  N_FIVES = None     # how many 5s are in the training set? (True counts as 1: use .sum())
+
+  # 4. Train a 5-detector and ask it about the first training image.
+  sgd = None         # SGDClassifier(random_state=42).fit(X_train, y_train_5)
+  FIRST_GUESS = None # sgd.predict([X_train[0]])[0]
+  FIRST_SCORE = None # sgd.decision_function([X_train[0]])[0]   (above 0 means "yes, a 5")
+tasks:
+  - prompt: "1,797 images, each described by 64 numbers (an 8 × 8 grid)."
+    tests: |
+      assert N_IMAGES == 1797, f"N_IMAGES = {N_IMAGES}"
+      assert N_PIXELS == 64, f"N_PIXELS = {N_PIXELS}"
+  - prompt: "The training set holds 145 fives out of 1,437 images (about 10%)."
+    tests: |
+      assert y_train_5 is not None and len(y_train_5) == 1437, "y_train_5 should have one True/False per training image"
+      assert y_test_5 is not None and len(y_test_5) == 360, "y_test_5 should have one True/False per test image"
+      assert N_FIVES == 145, f"N_FIVES = {N_FIVES}"
+  - prompt: "The detector says the first training image is a 5 (score about 179, well above 0), and it's right."
+    tests: |
+      assert sgd is not None, "train the SGDClassifier"
+      assert bool(FIRST_GUESS) is True, f"FIRST_GUESS = {FIRST_GUESS}"
+      assert FIRST_SCORE is not None and abs(FIRST_SCORE - 178.86) < 1, f"FIRST_SCORE = {FIRST_SCORE}"
+      assert y_train[0] == 5
+    hint: "sgd = SGDClassifier(random_state=42).fit(X_train, y_train_5), then FIRST_GUESS = sgd.predict([X_train[0]])[0]. predict wants a list of images, hence the square brackets."

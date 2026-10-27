@@ -34,16 +34,31 @@ async function visit(hash) {
       await page.waitForSelector('main h1, main .lock, main p', { timeout: 15000 })
       break
     } catch {
-      if (tries === 2) { flag(hash, 'never finished loading (twice)'); return { text: '', h1: '', wide: 0, links: [] } }
+      if (tries === 2) {
+        const seen = await page.evaluate(() => `readyState ${document.readyState}, main: ${JSON.stringify((document.querySelector('main')?.innerText ?? '(no <main>)').slice(0, 120))}, body: ${JSON.stringify(document.body?.innerText.slice(0, 120) ?? '')}`).catch((e) => `unreadable: ${e.message.split('\n')[0]}`)
+        flag(hash, `never finished loading (twice; ${seen}${errors.length ? `; JS error: ${errors[0]}` : ''})`)
+        return { text: '', h1: '', wide: 0, links: [] }
+      }
     }
   }
   await page.waitForTimeout(150)
-  const info = await page.evaluate(() => ({
+  const read = () => page.evaluate(() => ({
     text: document.querySelector('main')?.innerText ?? '',
     h1: document.querySelector('main h1')?.textContent ?? '',
     wide: document.documentElement.scrollWidth - window.innerWidth,
     links: [...document.querySelectorAll('main a[href]')].map((a) => a.getAttribute('href')),
   }))
+  let info
+  try {
+    info = await read()
+  } catch (e) {
+    // The page navigated mid-read (a dev-server reload, or the page itself). Once is tolerated; twice is a finding.
+    if (!/context was destroyed/.test(e.message)) throw e
+    await page.waitForLoadState('domcontentloaded')
+    await page.waitForSelector('main h1, main .lock, main p', { timeout: 15000 }).catch(() => {})
+    try { info = await read() } catch { flag(hash, `navigated away by itself (now at ${page.url()})`); return { text: '', h1: '', wide: 0, links: [] } }
+    console.log(`  (${hash}: navigated once while being read, now ${page.url()}; read again)`)
+  }
   if (errors.length) flag(hash, `JS error: ${errors[0]}`)
   if (info.wide > 2) {
     const culprit = await page.evaluate(() => {
@@ -96,18 +111,24 @@ for (const course of courses) {
 
 let dead = []
 if (checkExternal) {
-  const results = await Promise.all([...external].map(async ([url, where]) => {
-    for (const method of ['HEAD', 'GET']) {
+  const check = async ([url, where]) => {
+    // A connection that times out gets a second try: one slow handshake isn't a dead link.
+    for (const method of ['HEAD', 'GET', 'GET']) {
       try {
         const r = await fetch(url, { method, redirect: 'follow', signal: AbortSignal.timeout(15000), headers: { 'user-agent': 'Mozilla/5.0 (Macintosh) link-check' } })
         if (r.ok) return null
         if (method === 'GET') return { url, where, status: r.status }
       } catch (e) {
-        if (method === 'GET') return { url, where, status: e.name === 'TimeoutError' ? 'timeout' : 'unreachable' }
+        if (method === 'GET' && !/CONNECT_TIMEOUT|ECONNRESET/.test(e.cause?.code ?? '')) return { url, where, status: e.name === 'TimeoutError' ? 'timeout' : 'unreachable' }
       }
     }
-    return null
-  }))
+    return { url, where, status: 'unreachable' }
+  }
+  // A few at a time: firing all ~150 checks at once makes most of them time out before they connect
+  // (measured 26 Oct 2026: 126 of 151 "unreachable" at once, 12 of 151 eight at a time).
+  const results = []
+  const queue = [...external]
+  await Promise.all(Array.from({ length: 8 }, async () => { while (queue.length) results.push(await check(queue.shift())) }))
   dead = results.filter(Boolean)
 }
 

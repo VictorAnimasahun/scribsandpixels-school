@@ -1,0 +1,68 @@
+# Week 4 · Day 5 practice
+id: ml-w04-d5-multiclass
+kind: python
+title: "All ten digits, and where it gets confused"
+description: "Train one classifier for all ten digits, see the ten scores behind each answer, measure what scaling adds, then read the confusion matrix to find the mistakes it makes most. Finish with two labels per image."
+starter: |
+  import numpy as np
+  import matplotlib.pyplot as plt
+  from sklearn.datasets import load_digits
+  from sklearn.model_selection import train_test_split, cross_val_score, cross_val_predict
+  from sklearn.linear_model import SGDClassifier
+  from sklearn.multiclass import OneVsOneClassifier
+  from sklearn.preprocessing import StandardScaler
+  from sklearn.neighbors import KNeighborsClassifier
+  from sklearn.metrics import confusion_matrix, f1_score
+
+  digits = load_digits()
+  X_train, X_test, y_train, y_test = train_test_split(digits.data, digits.target, test_size=0.2, random_state=42, stratify=digits.target)
+
+  # 1. Train on all ten labels (y_train, not y_train_5). scikit-learn quietly trains 10 detectors.
+  sgd = None             # SGDClassifier(random_state=42).fit(X_train, y_train)
+  GUESS = None           # sgd.predict([X_train[0]])[0]
+  N_SCORES = None        # how many scores decision_function gives for ONE image: len(sgd.decision_function([X_train[0]])[0])
+  ovo = None             # OneVsOneClassifier(SGDClassifier(random_state=42)).fit(X_train, y_train)
+  N_DUELS = None         # len(ovo.estimators_)
+
+  # 2. Accuracy (3-fold), raw pixels vs scaled pixels.
+  ACC_RAW = None         # cross_val_score(SGDClassifier(random_state=42), X_train, y_train, cv=3).mean()
+  X_train_scaled = StandardScaler().fit_transform(X_train)
+  ACC_SCALED = None
+
+  # 3. Error analysis on the scaled version.
+  y_pred = cross_val_predict(SGDClassifier(random_state=42), X_train_scaled, y_train, cv=3)
+  cm = confusion_matrix(y_train, y_pred)
+  print(cm)
+  # Rows are the TRUE digit, columns what it was CALLED. Turn counts into rates per row, then hide the correct answers.
+  rates = cm / cm.sum(axis=1, keepdims=True)
+  np.fill_diagonal(rates, 0)
+  plt.matshow(rates, cmap="gray"); plt.xlabel("called"); plt.ylabel("true digit"); plt.show()
+
+  WORST = None           # (true digit, called digit) with the highest error rate: np.unravel_index(rates.argmax(), rates.shape)
+  MOST_CALLED_WRONGLY = None   # the digit that wrong answers land on most: the column with the most errors
+
+  # 4. Multilabel: two yes/no answers per image (is it 7 or more? is it odd?).
+  y_multilabel = np.c_[y_train >= 7, y_train % 2 == 1]
+  knn = None             # KNeighborsClassifier().fit(X_train, y_multilabel)
+  TWO_LABELS = None      # knn.predict([X_train[0]])[0].tolist()   (the first image is a 5)
+  MACRO_F1 = None        # f1_score(y_multilabel, cross_val_predict(KNeighborsClassifier(), X_train, y_multilabel, cv=3), average="macro")
+tasks:
+  - prompt: "It calls the first image a 5, using 10 scores (one per digit). One-versus-one needs 45 duels."
+    tests: |
+      assert GUESS == 5, f"GUESS = {GUESS}"
+      assert N_SCORES == 10, f"N_SCORES = {N_SCORES}"
+      assert N_DUELS == 45, f"N_DUELS = {N_DUELS}"
+  - prompt: "Accuracy over all ten digits: about 92% on raw pixels, about 94% once scaled (a random guess gets 10%)."
+    tests: |
+      assert ACC_RAW is not None and abs(ACC_RAW - 0.9221) < 0.003, f"ACC_RAW = {ACC_RAW}"
+      assert ACC_SCALED is not None and abs(ACC_SCALED - 0.9429) < 0.003, f"ACC_SCALED = {ACC_SCALED}"
+    hint: "Same line as ACC_RAW, with X_train_scaled instead of X_train."
+  - prompt: "Its worst mistake is calling 1s '8' (about 5% of the 1s), and 8 is the answer most wrong guesses land on (38 of them)."
+    tests: |
+      assert WORST is not None and tuple(int(v) for v in WORST) == (1, 8), f"WORST = {WORST}"
+      assert MOST_CALLED_WRONGLY == 8, f"MOST_CALLED_WRONGLY = {MOST_CALLED_WRONGLY}"
+    hint: "Column sums of errors: (cm.sum(axis=0) - np.diag(cm)), then .argmax()."
+  - prompt: "For the first image (a 5) the multilabel model answers [False, True]: not 7 or more, odd. Macro F1 about 0.98."
+    tests: |
+      assert TWO_LABELS is not None and [bool(v) for v in TWO_LABELS] == [False, True], f"TWO_LABELS = {TWO_LABELS}"
+      assert MACRO_F1 is not None and abs(MACRO_F1 - 0.978) < 0.003, f"MACRO_F1 = {MACRO_F1}"

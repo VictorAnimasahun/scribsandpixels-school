@@ -1,0 +1,59 @@
+# Week 4 · Day 4 practice
+id: ml-w04-d4-roc
+kind: python
+title: "Two detectors, one ROC chart"
+description: "Compute the false positive rate by hand, then draw ROC curves for the SGD detector and a random forest, measure the area under each, and check the forest's precision and recall."
+starter: |
+  import numpy as np
+  import matplotlib.pyplot as plt
+  from sklearn.datasets import load_digits
+  from sklearn.model_selection import train_test_split, cross_val_predict
+  from sklearn.linear_model import SGDClassifier
+  from sklearn.ensemble import RandomForestClassifier
+  from sklearn.metrics import roc_curve, roc_auc_score, precision_score, recall_score
+
+  # 1. By hand. The bank's alarm: TP 15, FP 10, FN 5, TN 970.
+  def false_positive_rate(fp, tn):
+      # Of all the INNOCENT transactions, the share the alarm wrongly flagged.
+      pass
+
+  print("alarm FPR:", false_positive_rate(10, 970))
+
+  digits = load_digits()
+  X_train, X_test, y_train, y_test = train_test_split(digits.data, digits.target, test_size=0.2, random_state=42, stratify=digits.target)
+  y_train_5 = (y_train == 5)
+
+  # 2. SGD gives scores; the forest gives probabilities. Use the probability of "5" as its score.
+  y_scores_sgd = cross_val_predict(SGDClassifier(random_state=42), X_train, y_train_5, cv=3, method="decision_function")
+  y_probas_forest = None   # cross_val_predict(RandomForestClassifier(random_state=42), X_train, y_train_5, cv=3, method="predict_proba")
+  y_scores_forest = None   # y_probas_forest[:, 1]   (column 1 = the probability of True)
+
+  AUC_SGD = None           # roc_auc_score(y_train_5, y_scores_sgd)
+  AUC_FOREST = None
+
+  # Draw both curves and the dashed line of a coin toss.
+  # fpr, tpr, _ = roc_curve(y_train_5, y_scores_sgd)
+  # fpr_f, tpr_f, _ = roc_curve(y_train_5, y_scores_forest)
+  # plt.plot(fpr, tpr, "b:", label="SGD"); plt.plot(fpr_f, tpr_f, label="Random forest")
+  # plt.plot([0, 1], [0, 1], "k--"); plt.xlabel("False positive rate"); plt.ylabel("True positive rate (recall)")
+  # plt.legend(); plt.show()
+
+  # 3. The forest's precision and recall if you call it a 5 at probability 0.5 or more.
+  FOREST_PRECISION = None
+  FOREST_RECALL = None
+tasks:
+  - prompt: "The bank's alarm wrongly flags 10 of 980 innocent transactions: an FPR of about 1%."
+    tests: |
+      assert false_positive_rate(10, 970) is not None and abs(false_positive_rate(10, 970) - 10 / 980) < 1e-9, f"false_positive_rate(10, 970) = {false_positive_rate(10, 970)}"
+    hint: "fp / (fp + tn): the innocent transactions are the false alarms plus the correctly ignored ones."
+  - prompt: "Area under the ROC curve: SGD about 0.981, the forest about 0.995 (1.0 is perfect, 0.5 is a coin toss)."
+    tests: |
+      assert AUC_SGD is not None and abs(AUC_SGD - 0.9807) < 0.002, f"AUC_SGD = {AUC_SGD}"
+      assert y_scores_forest is not None and np.ndim(y_scores_forest) == 1, "y_scores_forest should be ONE column: y_probas_forest[:, 1]"
+      assert AUC_FOREST is not None and abs(AUC_FOREST - 0.9952) < 0.003, f"AUC_FOREST = {AUC_FOREST}"
+      assert AUC_FOREST > AUC_SGD
+  - prompt: "At probability 0.5 the forest is never wrong when it says '5' (100% precision) but finds only about 81% of them."
+    tests: |
+      assert FOREST_PRECISION is not None and FOREST_PRECISION > 0.99, f"FOREST_PRECISION = {FOREST_PRECISION}"
+      assert FOREST_RECALL is not None and abs(FOREST_RECALL - 0.814) < 0.03, f"FOREST_RECALL = {FOREST_RECALL}"
+    hint: "said_five = y_scores_forest >= 0.5, then precision_score(y_train_5, said_five) and recall_score(y_train_5, said_five)."

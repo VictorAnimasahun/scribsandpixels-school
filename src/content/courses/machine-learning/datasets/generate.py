@@ -10,7 +10,7 @@ lagos_housing.csv   3,000 Lagos property listings for sale (Weeks 2-3, 10)
     Like Geron's California data, it has deliberate problems to find and fix: missing sizes and
     bathrooms, inconsistent area spellings, a few size typos (an extra zero), and prices capped
     at N500m (anything above was recorded as 500).
-naija_transactions.csv   4,000 card/POS/transfer payments, about 2.5% fraud (Week 4)
+naija_transactions.csv   4,000 card/POS/transfer payments, about 3% fraud (Week 4)
 """
 import csv
 import math
@@ -125,9 +125,9 @@ def transactions(n=4000):
         foreign = int(rng.random() < 0.03)
         txns_24h = int(rng.poisson(2.5))
         account_age_days = int(rng.gamma(2.0, 400))
-        z = (-4.6 + 1.6 * new_device + 2.2 * foreign + 0.9 * (hour < 5) + 0.0035 * distance * 10
-             + 0.55 * math.log1p(amount / 10000) + 0.18 * max(0, txns_24h - 3) + 0.8 * (merchant == "online")
-             - 0.0008 * account_age_days)
+        z = (-6.7 + 3.6 * new_device + 4.0 * foreign + 2.8 * (hour < 5) + 0.13 * distance
+             + 1.5 * math.log1p(amount / 10000) + 0.85 * max(0, txns_24h - 3) + 1.7 * (merchant == "online")
+             - 0.0045 * account_age_days)
         fraud = int(rng.random() < 1 / (1 + math.exp(-z)))
         rows.append({"txn_id": f"TX{i + 1:05d}", "amount_naira": amount, "hour": hour, "merchant": merchant,
                      "distance_km": distance, "new_device": new_device, "foreign": foreign,
