@@ -24,8 +24,11 @@
 
 ## Nudge (life trackers + class nudges; plan: `docs/nudge-plan.md`, from `~/Desktop/my_everything_app`)
 - [x] Core (27 Oct 2026): trackers (9 presets + your own, 5 kinds, daily/weekly goals, streaks), insights engine with the spec's guardrails (outlier-proof trends), class nudges from the school's rules, local store; migration `20261027090000_nudge.sql` (private unless the learner shares with admins), attacked in check:db
-- [ ] Screens: Nudge Today (class nudges + tracker cards, quick log), set-up (presets, your own, goals, order, reminders), Stats + insights, share-with-coach switch on Account
-- [ ] Sync to `nudge_trackers` / `nudge_entries` (same three-way merge as course progress), extend check:accounts; clear on sign-out
+- [x] Screens (27 Oct 2026): `#/nudge` Today (class nudges, tracker cards with logging per kind, yesterday switch, one insight a day), `#/nudge/trackers` (switch on/off, order, edit goals and reminder hour, make your own), `#/nudge/stats` (14-day charts with table view, streaks, insights). Driven in Chrome at phone and desktop width
+- [x] Insights must be statistically significant (27 Oct): one 5% shared across every comparison; pure noise fooled 35% of learners with the spec's thresholds alone, 3.9% now
+- [ ] Share-with-coach switch on Account (with sync: sharing means nothing while data is only in the browser)
+- [ ] claude.ai design pass for Nudge's screens (built from the school's tokens for now)
+- [ ] Sync to `nudge_trackers` / `nudge_entries` (same three-way merge as course progress), extend check:accounts; then clear Nudge on sign-out (not before: today the browser holds the only copy)
 - [ ] Its own install: `#/nudge` start page + second manifest; Nudge Android app id in CI
 - [ ] Reminders per tracker through `send-nudges` (needs the function deployed: setup item 3)
 - [ ] **Victor: `npx supabase db push`** for `20261027090000_nudge.sql` (safe before the screens exist: new tables only)

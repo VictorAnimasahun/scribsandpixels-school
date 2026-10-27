@@ -63,6 +63,17 @@ describe('classNudges', () => {
     expect(found[0]).toMatchObject({ key: 'gate-cooldown:machine-learning:2:2:2', link: '#/c/machine-learning/w/2/d/2', text: 'Machine Learning: Zero to Model: the checkpoint opens again at 11:30.' })
   })
 
+  it('points at a checkpoint that popped up and is still waiting, and forgets it once passed', () => {
+    const waiting: GateRecord = { triggeredAt: Date.parse('2026-10-27T08:00:00Z'), attempts: [], seen: [] }
+    const state = { ...empty, ...enrolled, checked: tick([...week1, [2, 1]]), weekQuizzes: { 'machine-learning:1': passed }, gates: { 'machine-learning:2:2': waiting } }
+    expect(classNudges([ml], state, TUESDAY, at('11:00'), LAGOS)[0]).toEqual({
+      key: 'gate-waiting:machine-learning:2:2:1', urgency: 3, link: '#/c/machine-learning/w/2/d/2',
+      text: 'Machine Learning: Zero to Model: a checkpoint is waiting. Pass it to open Week 2, Day 2.',
+    })
+    const done = { ...state, gates: { 'machine-learning:2:2': passed } }
+    expect(classNudges([ml], done, TUESDAY, at('11:00'), LAGOS).map((n) => n.key)).toEqual(['today:machine-learning:2:2'])
+  })
+
   it('warns about the study streak after 5 pm on a study day with nothing ticked', () => {
     // Saturday and Monday studied; Sunday is rest, so the streak is 2.
     const state = { ...empty, studied: { '2026-10-24': true as const, '2026-10-26': true as const } }

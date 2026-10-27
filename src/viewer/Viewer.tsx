@@ -11,7 +11,8 @@ import { ErrorBoundary } from './ErrorBoundary.tsx'
 import { CoursePage, DayPage, WeekPage } from './pages.tsx'
 import { QuizPlayer } from './QuizPlayer.tsx'
 import { SandboxHost } from './sandboxes/SandboxHost.tsx'
-import { href, useRoute, type Route } from './router.ts'
+import { NudgeApp } from './nudge/NudgeApp.tsx'
+import { href, isNudgeRoute, useRoute, type Route } from './router.ts'
 import { dayKey, resetProgress, update, useStore, type State } from './store.ts'
 import { TodayPage } from './TodayPage.tsx'
 import { activeCourseOf, shortTitle } from './today.ts'
@@ -205,6 +206,7 @@ function Navigation({ route, activeSlug }: { route: Route; activeSlug: string })
         {catalog.map((c) => (
           <a key={c.slug} className={`side-link course ${c.slug === activeSlug ? 'active' : ''}`} href={href.course(c.slug)}>{shortTitle(c.title)}</a>
         ))}
+        <a className="side-link" href={href.nudge()}><Icon name="heart" />Nudge</a>
         <a className={`side-link ${onAccount ? 'on' : ''}`} href={href.account()} aria-current={onAccount ? 'page' : undefined}><Icon name="user" />Account</a>
         {isAdmin(account) && <a className={`side-link ${onAdmin ? 'on' : ''}`} href={href.admin()} aria-current={onAdmin ? 'page' : undefined}><Icon name="table" />Learners</a>}
         <p className="side-foot">
@@ -216,6 +218,7 @@ function Navigation({ route, activeSlug }: { route: Route; activeSlug: string })
       <nav className="tabbar" aria-label="Main">
         <a className={onToday ? 'on' : ''} href={href.home()} aria-current={onToday ? 'page' : undefined}><Icon name="today" size={22} />Today</a>
         <a className={onCourse ? 'on' : ''} href={href.course(activeSlug)} aria-current={onCourse ? 'page' : undefined}><Icon name="course" size={22} />Course</a>
+        <a href={href.nudge()}><Icon name="heart" size={22} />Nudge</a>
         <a className={onAccount ? 'on' : ''} href={href.account()} aria-current={onAccount ? 'page' : undefined}><Icon name="user" size={22} />Account</a>
       </nav>
     </>
@@ -234,12 +237,21 @@ export function Viewer() {
     if (accountConfig && (hasStoredSession() || urlHasAuthResult())) void loadSync()
   }, [])
 
-  const course = route.page !== 'home' && route.page !== 'account' && route.page !== 'admin' ? findCourse(route.slug) : undefined
+  const course = 'slug' in route ? findCourse(route.slug) : undefined
   // Opening a course page makes it the course Today shows.
   useEffect(() => {
     if (course && state.activeCourse !== course.slug) update((s) => ({ ...s, activeCourse: course.slug }))
   }, [course, state.activeCourse])
   const activeSlug = course?.slug ?? activeCourseOf(state).slug
+
+  // Nudge is its own app: a school checkpoint doesn't lock it (Nudge is where you're told one is waiting).
+  if (isNudgeRoute(route)) {
+    return (
+      <ErrorBoundary label="page" resetKey={window.location.hash}>
+        <NudgeApp route={route} />
+      </ErrorBoundary>
+    )
+  }
 
   let page
   if (route.page === 'account') page = <AccountPage />

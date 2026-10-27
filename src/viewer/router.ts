@@ -8,11 +8,25 @@ export type Route =
   | { page: 'sandbox'; slug: string; id: string }
   | { page: 'account' }
   | { page: 'admin' }
+  // Nudge, the life-tracking app that shares the school's account (docs/nudge-plan.md).
+  | { page: 'nudge' }
+  | { page: 'nudge-trackers' }
+  | { page: 'nudge-tracker'; id: string }  // edit one; id 'new' makes one
+  | { page: 'nudge-stats' }
+
+export type NudgeRoute = Extract<Route, { page: `nudge${string}` }>
+export const isNudgeRoute = (r: Route): r is NudgeRoute => r.page.startsWith('nudge')
 
 export function parseRoute(hash: string): Route {
   const parts = hash.replace(/^#\/?/, '').split('/').filter(Boolean)
   if (parts[0] === 'account') return { page: 'account' }
   if (parts[0] === 'admin') return { page: 'admin' }
+  if (parts[0] === 'nudge') {
+    if (parts[1] === 'trackers' && parts[2]) return { page: 'nudge-tracker', id: parts[2] }
+    if (parts[1] === 'trackers') return { page: 'nudge-trackers' }
+    if (parts[1] === 'stats') return { page: 'nudge-stats' }
+    return { page: 'nudge' }
+  }
   if (parts[0] !== 'c' || !parts[1]) return { page: 'home' }
   const slug = parts[1]
   const week = Number(parts[3])
@@ -33,6 +47,10 @@ export const href = {
   sandbox: (slug: string, id: string) => `#/c/${slug}/s/${id}`,
   account: () => '#/account',
   admin: () => '#/admin',
+  nudge: () => '#/nudge',
+  nudgeTrackers: () => '#/nudge/trackers',
+  nudgeTracker: (id: string) => `#/nudge/trackers/${id}`,
+  nudgeStats: () => '#/nudge/stats',
 }
 
 export function useRoute(): Route {

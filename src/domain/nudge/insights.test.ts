@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
+import { seededRandom } from '../quizGate.ts'
 import { addDays } from '../streak.ts'
-import { baseline, correlation, dayOfWeek, deviation, insights, pearson, robustSlope, trend, type Named } from './insights.ts'
+import { anovaP, baseline, correlation, correlationP, dayOfWeek, deviation, fTestP, insights, pearson, robustSlope, trend, tTestP, type Named } from './insights.ts'
 
 const water: Named = { id: 'water', name: 'Water', kind: 'count', unit: 'cups' }
 const sleep: Named = { id: 'sleep', name: 'Sleep', kind: 'duration', unit: 'h' }
@@ -34,6 +35,50 @@ describe('statistics', () => {
   it('baseline', () => {
     expect(baseline([2, 4, 4, 4, 5, 5, 7, 9], 8)).toEqual({ mean: 5, sd: 2 })
     expect(baseline([2, 4, 4], 8)).toBeNull()
+  })
+})
+
+describe('significance', () => {
+  // Critical values from standard statistical tables: each sits exactly at p = 0.05.
+  it('t-test p-values match the tables', () => {
+    expect(tTestP(12.706, 1)).toBeCloseTo(0.05, 3)
+    expect(tTestP(2.228, 10)).toBeCloseTo(0.05, 3)
+    expect(tTestP(2.042, 30)).toBeCloseTo(0.05, 3)
+    expect(tTestP(0, 10)).toBeCloseTo(1, 6)
+  })
+  it('correlation p-values match the critical r tables', () => {
+    expect(correlationP(0.532, 14)).toBeCloseTo(0.05, 2) // why |r| >= 0.4 alone isn't enough at 14 days
+    expect(correlationP(0.361, 30)).toBeCloseTo(0.05, 2)
+    expect(correlationP(1, 14)).toBe(0)
+  })
+  it('F-test and ANOVA p-values match the tables', () => {
+    expect(fTestP(4.965, 1, 10)).toBeCloseTo(0.05, 3)
+    expect(fTestP(3.354, 2, 27)).toBeCloseTo(0.05, 3)
+    expect(anovaP([[1, 2, 3], [1, 2, 3], [1, 2, 3]])).toBeCloseTo(1, 6)
+    expect(anovaP([[5, 5, 5], [9, 9, 9]])).toBe(0)
+  })
+})
+
+const food: Named = { id: 'food', name: 'Food', kind: 'number', unit: 'kcal' }
+
+describe('noise is not a pattern', () => {
+  it('scattered exercise is not a downward trend', () => {
+    // The made-up log that the first version called "going down by 6.3 min" in the browser (27 Oct).
+    const minutes: Record<string, number> = {}
+    for (let i = 20; i >= 1; i--) if (i % 3) minutes[addDays(TODAY, -i)] = 20 + ((i * 11) % 40)
+    expect(trend(exercise, minutes, TODAY)).toBeNull()
+  })
+  it('independent random trackers are almost never called a pattern', () => {
+    // 200 learners, each with 5 trackers of pure noise over 30 days: with the spec's thresholds
+    // alone, 69 of them saw a chance pattern; with one 5% shared across comparisons, about 1 in 20.
+    const trackers: Named[] = [water, sleep, exercise, steps, food]
+    let fooled = 0
+    for (let learner = 0; learner < 200; learner++) {
+      const random = seededRandom(1000 + learner)
+      const logs = Object.fromEntries(trackers.map((t) => [t.id, Object.fromEntries(Array.from({ length: 30 }, (_, i) => [addDays(TODAY, -i - 1), 50 + random() * 20]))]))
+      if (insights(trackers, logs, TODAY).some((i) => i.kind !== 'deviation')) fooled++
+    }
+    expect(fooled / 200).toBeLessThanOrEqual(0.06) // one shared 5%, plus sampling wobble
   })
 })
 

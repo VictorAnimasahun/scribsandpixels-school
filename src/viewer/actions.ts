@@ -7,7 +7,7 @@ import type { IconName } from './ui.tsx'
 export const resourceIcon = (kind: ResourceKind): IconName =>
   kind === 'video' || kind === 'audio' ? 'play' : kind === 'reading' || kind === 'book' ? 'book' : kind === 'dataset' ? 'table' : 'code'
 
-const timeZone = () => {
+export const timeZone = () => {
   try { return Intl.DateTimeFormat().resolvedOptions().timeZone || 'Africa/Lagos' } catch { return 'Africa/Lagos' }
 }
 

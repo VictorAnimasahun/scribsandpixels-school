@@ -72,9 +72,12 @@ export function classNudges(
     for (const [key, record] of Object.entries(state.gates)) {
       if (!key.startsWith(`${course.slug}:`)) continue
       const status = gateStatus(attemptsOf(record), now)
-      if (status.kind !== 'cooldown') continue
+      if (status.kind === 'passed') continue
       const [week, day] = key.slice(course.slug.length + 1).split(':').map(Number)
-      out.push({ key: `gate-cooldown:${key}:${status.attempt}`, urgency: 3, text: `${name}: the checkpoint opens again at ${clock(status.until, timeZone)}.`, link: href.day(course.slug, week, day) })
+      if (status.kind === 'cooldown')
+        out.push({ key: `gate-cooldown:${key}:${status.attempt}`, urgency: 3, text: `${name}: the checkpoint opens again at ${clock(status.until, timeZone)}.`, link: href.day(course.slug, week, day) })
+      else
+        out.push({ key: `gate-waiting:${key}:${status.attempt}`, urgency: 3, text: `${name}: a checkpoint is waiting. Pass it to open Week ${week}, Day ${day}.`, link: href.day(course.slug, week, day) })
     }
   }
 
