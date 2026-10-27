@@ -148,10 +148,48 @@ await expectError('anon is refused is_admin()', () => as(null, 'select public.is
 
 await expectError("a learner can't delete their own profile (it would wipe their progress and break the account)", () => as(B, 'delete from public.profiles where id = $1', [B]), /permission denied/)
 
+// Nudge: life trackers, private unless the learner consents ---------------------
+const C = '00000000-0000-0000-0000-00000000000c'
+await db.query(`insert into auth.users (id, email) values ($1, 'c@example.com')`, [C])
+const tracker = (id) => `insert into public.nudge_trackers (user_id, tracker_id, name, kind, unit, target_direction, target_value, target_per) values ($1, '${id}', 'Water', 'count', 'cups', 'atLeast', 8, 'day')`
+await expectOk('B switches on a preset tracker', () => as(B, tracker('water'), [B], { keep: true }))
+await expectOk('B makes their own tracker', () => as(B, `insert into public.nudge_trackers (user_id, tracker_id, name, kind, unit, target_direction, target_value, target_per, reminder_hour) values ($1, 'c-steps001', 'Steps', 'count', 'steps', 'atLeast', 8000, 'day', 21)`, [B], { keep: true }))
+await expectOk('B logs a day', () => as(B, `insert into public.nudge_entries (user_id, tracker_id, logged_on, value) values ($1, 'water', '2026-10-26', 6), ($1, 'c-steps001', '2026-10-26', 9120)`, [B], { keep: true }))
+await expectOk('B changes a logged value', () => as(B, `update public.nudge_entries set value = 8 where user_id = $1 and tracker_id = 'water'`, [B], { keep: true }))
+await expectOk('A (an admin) has trackers of their own', () => as(A, tracker('sleep'), [A], { keep: true }).then(() => as(A, `insert into public.nudge_entries (user_id, tracker_id, logged_on, value) values ($1, 'sleep', '2026-10-26', 7)`, [A], { keep: true })))
+await expectError('a tracker id is a preset name or c- plus 8 characters', () => as(B, tracker('Water!'), [B]), /check/)
+await expectError('unknown tracker kinds are refused', () => as(B, `insert into public.nudge_trackers (user_id, tracker_id, name, kind) values ($1, 'mood', 'Mood', 'feelings')`, [B]), /check/)
+await expectError('a goal needs its direction, value and period together', () => as(B, `insert into public.nudge_trackers (user_id, tracker_id, name, kind, target_value) values ($1, 'mood', 'Mood', 'scale', 4)`, [B]), /target_all_or_nothing/)
+await expectError('a tracker needs a name', () => as(B, `insert into public.nudge_trackers (user_id, tracker_id, name, kind) values ($1, 'mood', '   ', 'scale')`, [B]), /check/)
+await expectError('reminder hours are 0–23', () => as(B, `update public.nudge_trackers set reminder_hour = 24 where user_id = $1`, [B]), /check/)
+await expectError('absurd values are refused', () => as(B, `insert into public.nudge_entries (user_id, tracker_id, logged_on, value) values ($1, 'water', '2026-10-27', 1e9)`, [B]), /check/)
+await expectError('an entry needs one of your own trackers', () => as(B, `insert into public.nudge_entries (user_id, tracker_id, logged_on, value) values ($1, 'sleep', '2026-10-27', 7)`, [B]), /foreign key|violates/)
+await expectError("B can't add a tracker for C", () => as(B, tracker('water'), [C]), /row-level security/)
+await expectError("B can't log a day for A, even on A's own tracker", () => as(B, `insert into public.nudge_entries (user_id, tracker_id, logged_on, value) values ($1, 'sleep', '2026-10-27', 2)`, [A]), /row-level security/)
+await expectRows("another learner can't read B's trackers or entries", () => as(C, 'select 1 from public.nudge_trackers union all select 1 from public.nudge_entries'), 0)
+await expectRows("anon can't read anyone's life data", () => as(null, 'select 1 from public.nudge_trackers union all select 1 from public.nudge_entries'), 0)
+await expectRows("an admin can't read B's life data without consent", () => as(A, 'select 1 from public.nudge_entries where user_id = $1', [B]), 0)
+await expectRows("an admin can't switch on B's consent for them", () => as(A, 'update public.profiles set share_life_with_admin = true where id = $1', [B]), 0)
+await expectOk('B switches on sharing with their coach', () => as(B, 'update public.profiles set share_life_with_admin = true where id = $1', [B], { keep: true }))
+await expectRows('with consent, an admin can read B\'s trackers and entries', () => as(A, 'select 1 from public.nudge_trackers where user_id = $1 union all select 1 from public.nudge_entries where user_id = $1', [B]), 4)
+await expectRows('consent is for admins only: another student still sees nothing', () => as(C, 'select 1 from public.nudge_entries'), 0)
+await expectRows("with consent, an admin still can't change B's entries", () => as(A, `update public.nudge_entries set value = 0 where user_id = $1`, [B]), 0)
+await expectRows("with consent, an admin still can't delete B's trackers", () => as(A, `delete from public.nudge_trackers where user_id = $1`, [B]), 0)
+await expectError("with consent, an admin still can't log for B", () => as(A, `insert into public.nudge_entries (user_id, tracker_id, logged_on, value) values ($1, 'water', '2026-10-27', 1)`, [B]), /row-level security/)
+await expectOk('B switches sharing off again', () => as(B, 'update public.profiles set share_life_with_admin = false where id = $1', [B], { keep: true }))
+await expectRows('the moment consent is withdrawn, the admin sees nothing', () => as(A, 'select 1 from public.nudge_trackers where user_id = $1 union all select 1 from public.nudge_entries where user_id = $1', [B]), 0)
+await expectError('anon is refused the consent check', () => as(null, `select public.can_read_life_of('${B}')`), /permission denied/)
+await expectError('nobody keeps more than 60 trackers', () => as(C, `insert into public.nudge_trackers (user_id, tracker_id, name, kind) select $1, 'c-' || lpad(n::text, 8, '0'), 'T' || n, 'check' from generate_series(1, 61) n`, [C]), /too many trackers/)
+await expectOk('deleting a tracker deletes its entries', async () => {
+  await as(B, `delete from public.nudge_trackers where user_id = $1 and tracker_id = 'c-steps001'`, [B], { keep: true })
+  const { rows } = await db.query(`select count(*)::int as n from public.nudge_entries where user_id = $1 and tracker_id = 'c-steps001'`, [B])
+  if (rows[0].n !== 0) throw new Error(`${rows[0].n} entries left`)
+})
+
 // Account deletion -------------------------------------------------------------
 await expectOk('deleting an account removes all its data (cascades past the attempt guard)', async () => {
   await db.query('delete from auth.users where id = $1', [A])
-  for (const table of ['profiles', 'study_days', 'checkpoints', 'checkpoint_attempts']) {
+  for (const table of ['profiles', 'study_days', 'checkpoints', 'checkpoint_attempts', 'nudge_trackers', 'nudge_entries']) {
     const column = table === 'profiles' ? 'id' : 'user_id'
     const { rows } = await db.query(`select count(*)::int as n from public.${table} where ${column} = $1`, [A])
     if (rows[0].n !== 0) throw new Error(`${rows[0].n} rows left in ${table}`)

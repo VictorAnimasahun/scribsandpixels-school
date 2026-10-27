@@ -22,6 +22,15 @@
 - [ ] The nudge function only knows Fullstack: register French and Excel in `scripts/sync-functions.ts` (needs their `course.ts`) so their learners get nudges
 - [ ] Daily log UI (the 3 prompts) + "Still confusing you": `api.ts` has `saveLog`/`listLogs`; the domain's "day complete" also wants the log
 
+## Nudge (life trackers + class nudges; plan: `docs/nudge-plan.md`, from `~/Desktop/my_everything_app`)
+- [x] Core (27 Oct 2026): trackers (9 presets + your own, 5 kinds, daily/weekly goals, streaks), insights engine with the spec's guardrails (outlier-proof trends), class nudges from the school's rules, local store; migration `20261027090000_nudge.sql` (private unless the learner shares with admins), attacked in check:db
+- [ ] Screens: Nudge Today (class nudges + tracker cards, quick log), set-up (presets, your own, goals, order, reminders), Stats + insights, share-with-coach switch on Account
+- [ ] Sync to `nudge_trackers` / `nudge_entries` (same three-way merge as course progress), extend check:accounts; clear on sign-out
+- [ ] Its own install: `#/nudge` start page + second manifest; Nudge Android app id in CI
+- [ ] Reminders per tracker through `send-nudges` (needs the function deployed: setup item 3)
+- [ ] **Victor: `npx supabase db push`** for `20261027090000_nudge.sql` (safe before the screens exist: new tables only)
+- [ ] Slice 2: day planner + assistant chat (Anthropic key as a Supabase secret), personalization bandit, Get Ready, voice
+
 ## Quizzes (a slice at a time, no mass generation)
 - [x] Quiz engine: random weekly checkpoints (1–2/week), 70% pass, 60-min cooldown, new questions on retry
 - [x] French Week 1 · Excel Week 1 question banks
