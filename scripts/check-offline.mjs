@@ -39,13 +39,38 @@ const APP = `http://127.0.0.1:${port}/`
 const chrome = process.env.CHROME_PATH ?? ['/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', '/usr/bin/google-chrome'].find(existsSync)
 const browser = await chromium.launch({ executablePath: chrome, headless: !process.env.HEADED })
 const context = await browser.newContext({ viewport: { width: 390, height: 844 } })
+// A fixed learner. A fresh browser would get a random one, and about 1 in 4 random learners has a
+// checkpoint on Week 1 Day 1: visiting that day then locks the app mid-check (the week quiz and
+// the Python sandbox never appear), which made this check fail at random (measured 27 Oct 2026).
+// This learner's Week 1 checkpoints fall on other days. Set only if nothing is saved yet, so the
+// progress this check makes survives its own page loads.
+const LEARNER = process.env.LEARNER ?? 'offline1'
+await context.addInitScript((id) => {
+  try { if (!localStorage.getItem('snp-test-state-v1')) localStorage.setItem('snp-test-state-v1', JSON.stringify({ learnerId: id })) } catch { /* no storage */ }
+}, LEARNER)
 const page = await context.newPage()
 const errors = []
 page.on('pageerror', (e) => errors.push(e.message))
 
+// What failed to load, so an offline failure says which file was missing from the saved copy.
+const failedRequests = []
+context.on('requestfailed', (r) => failedRequests.push(`${r.url().replace(APP, '/')} (${r.failure()?.errorText})`))
+context.on('weberror', (e) => errors.push(e.error().message))
+
 let failures = 0
 async function check(name, fn) {
-  try { await fn(); console.log(`✓ ${name}`) } catch (e) { failures++; console.log(`✗ ${name}\n    ${e.message.split('\n').slice(0, 3).join('\n    ')}`) }
+  failedRequests.length = 0
+  try { await fn(); console.log(`✓ ${name}`) } catch (e) {
+    failures++
+    console.log(`✗ ${name}\n    ${e.message.split('\n').slice(0, 3).join('\n    ')}`)
+    if (failedRequests.length) console.log(`    failed requests: ${[...new Set(failedRequests)].slice(0, 8).join(', ')}`)
+    const saved = await page.evaluate(async () => {
+      const out = {}
+      for (const name of await caches.keys()) out[name] = (await (await caches.open(name)).keys()).length
+      return out
+    }).catch((err) => `unreadable: ${err.message.split('\n')[0]}`)
+    console.log(`    saved copies: ${JSON.stringify(saved)}`)
+  }
 }
 const expect = (cond, message) => { if (!cond) throw new Error(message) }
 
