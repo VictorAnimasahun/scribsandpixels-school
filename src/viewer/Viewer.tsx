@@ -158,8 +158,11 @@ function TesterTools() {
   const pending = pendingGate(state)
   const gateDays = route.page === 'week' || route.page === 'day' ? gateDaysForWeek(state.learnerId, route.slug, route.week) : null
   // A test build tool: shown to admins and to people trying the school without an account, never
-  // to signed-in students (it can force a checkpoint on their real account).
-  if (signedIn && !isAdmin(account)) return null
+  // to signed-in students (it can force a checkpoint on their real account). Just after a page
+  // load the saved session isn't restored yet (sync 'off'): a session in storage counts as signed
+  // in, or a student would see the panel for that moment (caught by check:accounts in CI, 28 Oct).
+  const signingIn = account.state === 'off' && hasStoredSession()
+  if ((signedIn || signingIn) && !isAdmin(account)) return null
   return (
     <div className={`tester ${open ? 'open' : ''}`}>
       <button type="button" onClick={() => { setOpen(!open); setConfirmReset(false) }} aria-label="Tester tools" title="Tester tools">{open ? 'Close' : '🧪'}</button>

@@ -612,7 +612,21 @@ await check('a student gets "admins only" on the admin page, and no admin link',
   await laptop.page.goto(`${APP}#/account`)
   expect(!(await laptop.page.getByRole('link', { name: 'See all learners' }).count()), 'a student is offered the admin page')
 })
-await check('a signed-in student has no tester tools (they could force a checkpoint on a real account)', async () => {
+await check('a signed-in student has no tester tools, not even while the page is loading (they could force a checkpoint on a real account)', async () => {
+  // Hold back the sync code for a moment after a reload: the window in which the saved session
+  // isn't restored yet. CI caught the panel showing in that window on 28 Oct; this makes it wide.
+  // (A request still being held when the test moves on may already be done by then: ignore that.)
+  const slow = async (route) => { await new Promise((r) => setTimeout(r, 2500)); await route.continue().catch(() => {}) }
+  await laptop.page.route(/\/src\/viewer\/sync\.ts/, slow)
+  try {
+    await laptop.page.goto(APP)
+    await laptop.page.locator('main h1').first().waitFor()
+    expect(!(await laptop.page.locator('.tester').count()), 'the 🧪 panel shows while the session is being restored')
+  } finally {
+    await laptop.page.unroute(/\/src\/viewer\/sync\.ts/, slow)
+  }
+  await laptop.page.goto(`${APP}#/account`)
+  await saveLine(laptop.page).getByText(/Saved to your account/).waitFor({ timeout: 20_000 })
   await laptop.page.goto(APP)
   await laptop.page.locator('main h1').first().waitFor()
   expect(!(await laptop.page.locator('.tester').count()), 'the 🧪 panel is shown to a student')
