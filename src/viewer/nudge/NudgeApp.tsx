@@ -12,6 +12,7 @@ import { useStore } from '../store.ts'
 import { partOfDay } from '../today.ts'
 import { Icon } from '../ui.tsx'
 import { DaysChart } from './DaysChart.tsx'
+import { useNudgeInstall } from './nudgeInstall.ts'
 import { bump, clearValue, logValue, move, removeTracker, saveTracker, shownTrackers, updateNudge, useNudge, type NudgeState } from './nudgeStore.ts'
 
 /*
@@ -62,6 +63,7 @@ function NudgeNav({ route }: { route: NudgeRoute }) {
 }
 
 export function NudgeApp({ route }: { route: NudgeRoute }) {
+  useNudgeInstall()
   let page
   if (route.page === 'nudge-trackers') page = <TrackersPage />
   else if (route.page === 'nudge-tracker') page = <TrackerEditor key={route.id} id={route.id} />

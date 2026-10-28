@@ -1,0 +1,17 @@
+{
+  "name": "Nudge",
+  "short_name": "Nudge",
+  "description": "Your life trackers, and a nudge when the school is waiting for you. Part of Scribs & Pixels School.",
+  "id": "./nudge",
+  "start_url": "./#/nudge",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F2F5EC",
+  "theme_color": "#F2F5EC",
+  "icons": [
+    { "src": "icons/nudge-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/nudge-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/nudge-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

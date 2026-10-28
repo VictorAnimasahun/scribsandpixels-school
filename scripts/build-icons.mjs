@@ -12,15 +12,19 @@ mkdirSync(out, { recursive: true })
 const PAPER = '#F2F5EC', GREEN = '#164F3B', LIME = '#C7E85C'
 const font = `<link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,600&display=block" rel="stylesheet">`
 
-/** kind 'any': paper background, tilted tile. 'maskable': full-bleed green, the S inside the 80% safe zone. */
-const page = (kind, size) => `<!doctype html><html><head>${font}<style>
+/** The school's mark: a green tile with a lime S. Nudge's is its inverse: a lime tile with a green N. */
+const SCHOOL = { letter: 'S', tile: GREEN, ink: LIME }
+const NUDGE = { letter: 'N', tile: LIME, ink: GREEN }
+
+/** kind 'any': paper background, tilted tile. 'maskable': full-bleed tile colour, the letter inside the 80% safe zone. */
+const page = (kind, size, mark = SCHOOL) => `<!doctype html><html><head>${font}<style>
   html, body { margin: 0; width: ${size}px; height: ${size}px; }
-  body { display: grid; place-items: center; background: ${kind === 'maskable' ? GREEN : PAPER}; }
-  .tile { width: ${size * 0.74}px; height: ${size * 0.74}px; border-radius: ${size * 0.06}px; background: ${GREEN};
+  body { display: grid; place-items: center; background: ${kind === 'maskable' ? mark.tile : PAPER}; }
+  .tile { width: ${size * 0.74}px; height: ${size * 0.74}px; border-radius: ${size * 0.06}px; background: ${mark.tile};
           display: grid; place-items: center; transform: rotate(-6deg); }
-  .s { font: 600 ${kind === 'maskable' ? size * 0.5 : size * 0.52}px 'Literata', Georgia, serif; color: ${LIME}; line-height: 1;
+  .s { font: 600 ${kind === 'maskable' ? size * 0.5 : size * 0.52}px 'Literata', Georgia, serif; color: ${mark.ink}; line-height: 1;
        transform: translateY(-${size * 0.02}px) ${kind === 'maskable' ? 'rotate(-6deg)' : ''}; }
-</style></head><body>${kind === 'maskable' ? `<span class="s">S</span>` : `<div class="tile"><span class="s">S</span></div>`}</body></html>`
+</style></head><body>${kind === 'maskable' ? `<span class="s">${mark.letter}</span>` : `<div class="tile"><span class="s">${mark.letter}</span></div>`}</body></html>`
 
 const chrome = process.env.CHROME_PATH ?? ['/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', '/usr/bin/google-chrome'].find(existsSync)
 const browser = await chromium.launch({ executablePath: chrome })
@@ -30,10 +34,15 @@ const targets = [
   ['icon-maskable-512.png', 'maskable', 512],
   ['apple-touch-icon.png', 'any', 180],
   ['favicon-48.png', 'any', 48],
+  // Nudge, installed as its own app (public/nudge-manifest.webmanifest).
+  ['nudge-192.png', 'any', 192, NUDGE],
+  ['nudge-512.png', 'any', 512, NUDGE],
+  ['nudge-maskable-512.png', 'maskable', 512, NUDGE],
+  ['nudge-apple-touch-icon.png', 'any', 180, NUDGE],
 ]
-for (const [file, kind, size] of targets) {
+for (const [file, kind, size, mark] of targets) {
   const p = await browser.newPage({ viewport: { width: size, height: size } })
-  await p.setContent(page(kind, size))
+  await p.setContent(page(kind, size, mark))
   await p.evaluate(() => document.fonts.ready)
   const literata = await p.evaluate(() => document.fonts.check("600 40px 'Literata'"))
   if (!literata) throw new Error('Literata did not load (no network?): the icons would use a fallback font')

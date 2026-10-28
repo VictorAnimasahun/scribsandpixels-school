@@ -29,7 +29,8 @@
 - [x] Share-with-coach switch on Account; the Learners page shows a sharing learner's trackers (days logged this week, latest value), proven in check:accounts (on, seen; off, gone at once)
 - [ ] claude.ai design pass for Nudge's screens (built from the school's tokens for now)
 - [x] Sync (28 Oct 2026): trackers and entries, same three-way merge as course progress (`nudge/nudgeSyncModel.ts`), its own base `snp-nudge-sync-v1`; sign-out clears Nudge. check:accounts: phone→laptop, a tracker made on one device, un-logging everywhere. Without the Nudge tables (migration not pushed) Nudge stays local, course sync carries on and sign-out keeps the unsaved trackers: `NO_NUDGE=1 npm run check:accounts` (both runs in CI)
-- [ ] Its own install: `#/nudge` start page + second manifest; Nudge Android app id in CI
+- [x] Its own install on the web (28 Oct 2026): `public/nudge-manifest.webmanifest` (id `./nudge`, start `#/nudge`), lime N icons from `build-icons.mjs`; while Nudge is on screen the page points at it (`nudge/nudgeInstall.ts`), so Install / Add to Home Screen makes a Nudge icon. check:offline asks Chrome (DevTools protocol) which manifest each page uses and whether anything blocks installing
+- [ ] Nudge Android app (second app id, built by CI next to the school APK)
 - [ ] Reminders per tracker through `send-nudges` (needs the function deployed: setup item 3)
 - [ ] **Victor: `npx supabase login`, then `npx supabase db push --linked`** (the 28 Oct attempt failed: no access token). Applies `20261016090000_no_profile_delete.sql` and `20261027090000_nudge.sql`; until then Nudge stays in the browser
 - [ ] Slice 2: day planner + assistant chat (Anthropic key as a Supabase secret), personalization bandit, Get Ready, voice
