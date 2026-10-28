@@ -1,19 +1,19 @@
 # Nudge in the school: plan
 
 **Decided with Victor (26 Oct 2026):**
-- It's **its own app**, because it also nudges about class work (lessons due, quizzes waiting, cooldowns ending), not only life trackers.
+- ~~It's **its own app**~~ **Changed (28 Oct 2026): Nudge stays part of the school** ("leave it inside Scribs school, at least for now"). It's a section of the school (`#/nudge`, in the sidebar) with no separate install. A separate web install and Android app were built and then removed at Victor's request; they're in git history (commits f4e6901 and ba50627) if that's ever wanted.
+- It nudges about class work (lessons due, quizzes waiting, cooldowns ending), not only life trackers.
 - **Customisable:** preset trackers you can switch on and off, your own trackers, your own goals, card order and reminders.
 - **First slice:** trackers and insights, with no AI.
 - **Privacy:** admins see a learner's life data **only if that learner opts in**.
 
 Source app: `~/Desktop/my_everything_app` (Kotlin, "Nudge"). Its specs are in `~/Downloads/Personal assistant app/files.zip`: day planner, insights engine, personalization (bandit), notifications/AI, voice replies, backend `/suggest`. The Kotlin repo is the reference and is not changed from here.
 
-## What "separate" means here
-Nudge is a separate **app** for the person, with its own home screen icon, start page and navigation. It shares the school's **code, account and database**:
+## How it fits
+Nudge is a section of the school, with its own screens and navigation inside it. It shares the school's **code, account, install and database**:
 - It can read school progress directly, so "Week 4 Day 2 is waiting" and "your checkpoint cooldown ends at 18:40" come for free from the existing domain rules (`today.ts`, `progress.ts`, `quizGate.ts`).
 - One sign-in. The same Supabase project, the same row-level security style and the same tests.
-- **Web:** route `#/nudge` with its own layout, plus a second install manifest (`/nudge/manifest.webmanifest`, start URL `#/nudge`). On a phone it installs as its own "Nudge" icon.
-- **Android:** a second Capacitor app id (`com.scribsandpixels.nudge`), built from the same web bundle with Nudge as its start page, published next to the school APK by CI.
+- **Web and Android:** route `#/nudge` with its own layout, inside the school's install and the school's APK.
 
 Why not a separate codebase? Two copies of the account, sync and progress logic would drift. The class nudges would need an API just to ask the school what's due.
 
@@ -46,7 +46,7 @@ This is a port of the spec's `insights-engine-spec.md`, as pure TypeScript with 
 ### Reminders
 - Per tracker: on or off, and an hour.
 - Delivered by email through the existing `send-nudges` function. This needs the function deployed, which is still on Victor's setup list.
-- Android notifications come with the Nudge APK, in slice 2.
+- Android notifications come with the school APK, in slice 2.
 
 ### Data and privacy
 - **New migration:**

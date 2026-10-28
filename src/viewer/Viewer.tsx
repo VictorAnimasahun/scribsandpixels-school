@@ -247,7 +247,7 @@ export function Viewer() {
   }, [course, state.activeCourse])
   const activeSlug = course?.slug ?? activeCourseOf(state).slug
 
-  // Nudge is its own app: a school checkpoint doesn't lock it (Nudge is where you're told one is waiting).
+  // Nudge has its own screens: a school checkpoint doesn't lock it (Nudge is where you're told one is waiting).
   if (isNudgeRoute(route)) {
     return (
       <ErrorBoundary label="page" resetKey={window.location.hash}>

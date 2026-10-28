@@ -1,5 +1,4 @@
-# Builds the Android apps (Capacitor) on every push to main: the school and Nudge (two build
-# flavours of one project, see android/app/build.gradle), and publishes both APKs on the
+# Builds the Android app (Capacitor) on every push to main and publishes the APK on the
 # "android-latest" release: https://github.com/VictorAnimasahun/scribsandpixels-school/releases/tag/android-latest
 # Test builds are signed with the fixed debug key in android/app/debug.keystore, so each new APK
 # installs as an update over the last one.
@@ -39,27 +38,21 @@ jobs:
           VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL }}
           VITE_SUPABASE_KEY: ${{ vars.VITE_SUPABASE_KEY }}
       - run: npx cap sync android
-      # Nudge's Capacitor config: the school's, with Nudge's id, name and start page (#/nudge).
-      - run: node scripts/android-nudge-config.mjs
-      - run: ./gradlew assembleSchoolDebug assembleNudgeDebug --no-daemon
+      - run: ./gradlew assembleDebug --no-daemon
         working-directory: android
-      - run: |
-          cp android/app/build/outputs/apk/school/debug/app-school-debug.apk scribsandpixels-school.apk
-          cp android/app/build/outputs/apk/nudge/debug/app-nudge-debug.apk nudge.apk
+      - run: cp android/app/build/outputs/apk/debug/app-debug.apk scribsandpixels-school.apk
       - uses: actions/upload-artifact@v4
         with:
-          name: android-apks
-          path: |
-            scribsandpixels-school.apk
-            nudge.apk
+          name: scribsandpixels-school-apk
+          path: scribsandpixels-school.apk
       - name: Publish on the android-latest release
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          notes="Test build ${GITHUB_RUN_NUMBER} from ${GITHUB_SHA::7}. Two apps: scribsandpixels-school.apk (the school) and nudge.apk (Nudge, your life trackers; same account). On your phone: download one, open it, allow 'install unknown apps' for your browser when asked, then Install. Each new build installs over the last one."
+          notes="Test build ${GITHUB_RUN_NUMBER} from ${GITHUB_SHA::7}. On your phone: download scribsandpixels-school.apk, open it, allow 'install unknown apps' for your browser when asked, then Install. Each new build installs over the last one."
           if gh release view android-latest >/dev/null 2>&1; then
             gh release edit android-latest --notes "$notes"
           else
             gh release create android-latest --prerelease --title "Android app (latest test build)" --notes "$notes"
           fi
-          gh release upload android-latest scribsandpixels-school.apk nudge.apk --clobber
+          gh release upload android-latest scribsandpixels-school.apk --clobber

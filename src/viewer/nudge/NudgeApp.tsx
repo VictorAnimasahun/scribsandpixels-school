@@ -12,11 +12,10 @@ import { useStore } from '../store.ts'
 import { partOfDay } from '../today.ts'
 import { Icon } from '../ui.tsx'
 import { DaysChart } from './DaysChart.tsx'
-import { useNudgeInstall } from './nudgeInstall.ts'
 import { bump, clearValue, logValue, move, removeTracker, saveTracker, shownTrackers, updateNudge, useNudge, type NudgeState } from './nudgeStore.ts'
 
 /*
- * Nudge: its own app (own home, own navigation) on the school's code and account. It tells you
+ * Nudge: a section of the school with its own home and navigation, on the school's code and account. It tells you
  * what the school is waiting for and keeps the life trackers you chose. Plan: docs/nudge-plan.md.
  */
 
@@ -63,7 +62,6 @@ function NudgeNav({ route }: { route: NudgeRoute }) {
 }
 
 export function NudgeApp({ route }: { route: NudgeRoute }) {
-  useNudgeInstall()
   let page
   if (route.page === 'nudge-trackers') page = <TrackersPage />
   else if (route.page === 'nudge-tracker') page = <TrackerEditor key={route.id} id={route.id} />

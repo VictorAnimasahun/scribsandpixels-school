@@ -86,35 +86,12 @@ await check('the install manifest and every icon load', async () => {
   for (const needle of ['rel="manifest"', 'rel="apple-touch-icon"', 'name="theme-color"']) expect(html.includes(needle), `index.html lacks ${needle}`)
 })
 
-await check('Nudge installs as its own app (Chrome reports its own manifest, icon and no install blockers)', async () => {
-  const manifest = await (await fetch(`${APP}nudge-manifest.webmanifest`)).json()
-  expect(manifest.name === 'Nudge' && manifest.start_url === './#/nudge' && manifest.id === './nudge', `nudge manifest: ${JSON.stringify(manifest).slice(0, 120)}`)
-  for (const icon of manifest.icons) {
-    const res = await fetch(new URL(icon.src, `${APP}nudge-manifest.webmanifest`))
-    expect(res.ok && res.headers.get('content-type')?.includes('image/png'), `${icon.src}: ${res.status}`)
-  }
-  // Ask Chrome itself which manifest each page uses, and whether anything stops installing it.
+await check('Nudge is part of the school: on #/nudge Chrome still offers the school install', async () => {
   const cdp = await context.newCDPSession(page)
-  const manifestOf = async (hash) => {
-    await page.goto(`${APP}${hash}`)
-    await page.locator('main h1').first().waitFor({ timeout: 15_000 })
-    await page.waitForTimeout(500)
-    const m = await cdp.send('Page.getAppManifest')
-    const { installabilityErrors } = await cdp.send('Page.getInstallabilityErrors')
-    return { url: m.url, errors: [...m.errors.map((e) => e.message), ...installabilityErrors.map((e) => e.errorId)] }
-  }
-  const nudge = await manifestOf('#/nudge')
-  expect(nudge.url.endsWith('/nudge-manifest.webmanifest'), `on #/nudge Chrome uses ${nudge.url}`)
-  expect((await page.title()) === 'Nudge', `title on #/nudge: ${await page.title()}`)
-  const school = await manifestOf('#/')
-  expect(school.url.endsWith('/manifest.webmanifest') && !school.url.includes('nudge'), `back in the school Chrome uses ${school.url}`)
-  // Test browsers are incognito, where Chrome never offers installs ('in-incognito'), for any site.
-  // That alone is allowed, and only if the school (installable for real users) reports the same:
-  // anything Nudge has that the school doesn't is a real blocker.
-  const ENVIRONMENT = new Set(['in-incognito', 'no-matching-service-worker'])
-  expect(!nudge.errors.filter((e) => !ENVIRONMENT.has(e)).length, `Nudge install blockers: ${nudge.errors.join(', ')}`)
-  const extra = nudge.errors.filter((e) => !school.errors.includes(e))
-  expect(!extra.length, `Nudge has install blockers the school doesn't: ${extra.join(', ')}`)
+  await page.goto(`${APP}#/nudge`)
+  await page.locator('main h1').first().waitFor({ timeout: 15_000 })
+  const { url } = await cdp.send('Page.getAppManifest')
+  expect(url.endsWith('/manifest.webmanifest'), `on #/nudge Chrome uses ${url}`)
   await cdp.detach()
 })
 

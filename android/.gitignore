@@ -97,7 +97,5 @@ app/src/main/assets/public
 
 # Generated Config files
 app/src/main/assets/capacitor.config.json
-# Generated from it by scripts/android-nudge-config.mjs
-app/src/nudge/assets/capacitor.config.json
 app/src/main/assets/capacitor.plugins.json
 app/src/main/res/xml/config.xml

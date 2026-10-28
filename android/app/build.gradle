@@ -29,20 +29,6 @@ android {
             keyPassword 'android'
         }
     }
-    // Two apps from one project and one web build: the school, and Nudge (the life trackers,
-    // starting on #/nudge). Nudge's own name, icons, splash and Capacitor config are in src/nudge
-    // (made by scripts/build-nudge-android.mjs and scripts/android-nudge-config.mjs).
-    flavorDimensions = ["app"]
-    productFlavors {
-        school {
-            dimension "app"
-            applicationId "com.scribsandpixels.school"
-        }
-        nudge {
-            dimension "app"
-            applicationId "com.scribsandpixels.nudge"
-        }
-    }
     buildTypes {
         debug {
             signingConfig signingConfigs.debug
