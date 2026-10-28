@@ -13,7 +13,6 @@
 - [x] Android app (15 Oct 2026): Capacitor, APK built by CI on every push, published on the `android-latest` release; tested in the emulator (Today, Account)
 - [ ] Android: Capacitor logs "Error injecting safe area CSS" at start-up (its own early script; layout is correct in the emulator). Check on a real phone; Android WebView has no speech synthesis or recognition, so the French "listen"/"speak" buttons won't work in the app (the website on Chrome is fine)
 - [ ] Play Store: make a private release key (keep it in the password manager), a signed release build (AAB), store listing
-- [ ] **Victor: `npx supabase db push`** once more for `20261016090000_no_profile_delete.sql` (audit fix: learners could delete their own profile through the API)
 - [ ] Victor: Supabase → Authentication → Rate Limits: check the email limits (sign-up is open to any address, so the form could be used to flood someone's inbox); consider Turnstile/hCaptcha on sign-in later
 - [x] Procedure 10 done (16 Oct 2026): both migrations pushed, sign-in template with the code, signed in on laptop + phone, Victor is admin
 - [x] Student account (details + progress) and admin role/Learners page (15 Oct 2026), proven in check:db and check:accounts
@@ -33,7 +32,7 @@
 - [x] Nudge Android app (28 Oct 2026): flavour `nudge`, `com.scribsandpixels.nudge`, own name/icons/splash, starts on `#/nudge`; both APKs built locally and checked (package, label, config inside the APK); CI publishes `nudge.apk` next to the school's
 - [ ] **Victor:** install `nudge.apk` from the android-latest release and confirm it opens on Nudge (not verified on a device: no emulator or phone attached here)
 - [ ] Reminders per tracker through `send-nudges` (needs the function deployed: setup item 3)
-- [ ] **Victor: `npx supabase login`, then `npx supabase db push --linked`** (the 28 Oct attempt failed: no access token). Applies `20261016090000_no_profile_delete.sql` and `20261027090000_nudge.sql`; until then Nudge stays in the browser
+- [x] Victor pushed `20261016090000_no_profile_delete.sql` and `20261027090000_nudge.sql` (28 Oct 2026, after `npx supabase login`: the CLI's token had expired); confirmed on the live API (tables and `share_life_with_admin` answer 200)
 - [ ] Slice 2: day planner + assistant chat (Anthropic key as a Supabase secret), personalization bandit, Get Ready, voice
 
 ## Quizzes (a slice at a time, no mass generation)
