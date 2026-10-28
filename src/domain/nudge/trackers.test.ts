@@ -39,6 +39,7 @@ describe('validValue', () => {
     expect(validValue('number', 72.4)).toBe(true)
     expect(validValue('number', NaN)).toBe(false)
     expect(validValue('number', Infinity)).toBe(false)
+    expect(validValue('feelings' as never, 1)).toBe(false) // old or tampered data never crashes
   })
 })
 

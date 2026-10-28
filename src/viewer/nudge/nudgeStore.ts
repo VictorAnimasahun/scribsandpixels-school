@@ -109,6 +109,12 @@ export function updateNudge(change: (draft: NudgeState) => NudgeState) {
 
 export const getNudgeState = () => state
 
+/** Called on every change (from this tab or another one): account sync listens here. */
+export function subscribeNudge(listener: () => void): () => void {
+  listeners.add(listener)
+  return () => { listeners.delete(listener) }
+}
+
 /** Signing out: nothing of the last learner's life data stays in this browser. */
 export const clearNudge = () => updateNudge(() => sanitiseNudge(null))
 

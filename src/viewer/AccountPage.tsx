@@ -149,7 +149,7 @@ function Details() {
     try {
       const api = await import('../lib/api.ts')
       const name = draft.displayName?.trim() || null
-      await api.updateProfile({ displayName: name, timezone: draft.timezone, emailNudges: draft.emailNudges, nudgeHour: draft.nudgeHour })
+      await api.updateProfile({ displayName: name, timezone: draft.timezone, emailNudges: draft.emailNudges, nudgeHour: draft.nudgeHour, ...(draft.shareLife !== profile.shareLife ? { shareLife: draft.shareLife } : {}) })
       const saved = { ...draft, displayName: name }
       setProfile(saved)
       setDraft(saved)
@@ -183,6 +183,12 @@ function Details() {
             {Array.from({ length: 24 }, (_, h) => <option key={h} value={h}>{hourLabel(h)}</option>)}
           </select>
         </label>
+        {draft.shareLife !== null && (
+          <label className="check-field">
+            <input type="checkbox" checked={draft.shareLife} onChange={(e) => { setDraft({ ...draft, shareLife: e.target.checked }); setState('idle') }} />
+            <span>Let the school's coaches see my Nudge trackers (food, sleep, mood and the rest). They can read them, never change them, and lose sight of them as soon as you untick this.</span>
+          </label>
+        )}
         <div className="row">
           <button type="submit" className="btn primary small-btn" disabled={!changed || state === 'saving'}>{state === 'saving' ? 'Saving…' : 'Save details'}</button>
           {state === 'saved' && !changed && <span className="status ok" role="status">Saved</span>}

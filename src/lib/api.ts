@@ -106,11 +106,16 @@ type ProfileRow = { id: string; email: string; display_name: string | null; time
 
 export async function getProfile(): Promise<Profile> {
   // By id: an admin can read every profile, so "the one row I can see" isn't enough.
-  const r = check(await requireSupabase().from('profiles').select('id, email, display_name, timezone, email_nudges, nudge_hour').eq('id', await userId()).single()) as ProfileRow
-  return { id: r.id, email: r.email, displayName: r.display_name, timezone: r.timezone, emailNudges: r.email_nudges, nudgeHour: r.nudge_hour }
+  const uid = await userId()
+  const r = check(await requireSupabase().from('profiles').select('id, email, display_name, timezone, email_nudges, nudge_hour').eq('id', uid).single()) as ProfileRow
+  // Asked separately: before the Nudge migration is on the server this column doesn't exist, and
+  // that mustn't stop the rest of the details loading.
+  const share = await requireSupabase().from('profiles').select('share_life_with_admin').eq('id', uid).single()
+  const shareLife = share.error ? null : !!(share.data as { share_life_with_admin: boolean }).share_life_with_admin
+  return { id: r.id, email: r.email, displayName: r.display_name, timezone: r.timezone, emailNudges: r.email_nudges, nudgeHour: r.nudge_hour, shareLife }
 }
 
-export async function updateProfile(changes: Partial<Pick<Profile, 'displayName' | 'timezone' | 'emailNudges' | 'nudgeHour'>>) {
+export async function updateProfile(changes: Partial<Pick<Profile, 'displayName' | 'timezone' | 'emailNudges' | 'nudgeHour' | 'shareLife'>>) {
   check(
     await requireSupabase()
       .from('profiles')
@@ -119,6 +124,7 @@ export async function updateProfile(changes: Partial<Pick<Profile, 'displayName'
         ...(changes.timezone !== undefined ? { timezone: changes.timezone } : {}),
         ...(changes.emailNudges !== undefined ? { email_nudges: changes.emailNudges } : {}),
         ...(changes.nudgeHour !== undefined ? { nudge_hour: changes.nudgeHour } : {}),
+        ...(changes.shareLife !== undefined && changes.shareLife !== null ? { share_life_with_admin: changes.shareLife } : {}),
       })
       .eq('id', await userId()),
   )

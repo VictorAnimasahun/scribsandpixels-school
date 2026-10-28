@@ -4,10 +4,13 @@ import { isAdmin, isSignedIn, useAccountStatus } from './accountStatus.ts'
 import { summarise, type LearnerSummary } from './adminSummary.ts'
 import { loadSync } from './loadSync.ts'
 import { href } from './router.ts'
+import { todayDate } from './actions.ts'
+import { sharedNudge, type SharedTracker } from './nudge/adminNudge.ts'
+import { addDays } from '../domain/streak.ts'
 
 const date = (iso: string) => new Date(`${iso}T12:00:00Z`).toLocaleDateString([], { weekday: 'short', day: 'numeric', month: 'short' })
 
-function LearnerCard({ l }: { l: LearnerSummary }) {
+function LearnerCard({ l, nudge }: { l: LearnerSummary; nudge?: SharedTracker[] }) {
   return (
     <article className="learner-card">
       <div className="split">
@@ -35,6 +38,14 @@ function LearnerCard({ l }: { l: LearnerSummary }) {
           ))}
         </ul>
       ) : <p className="small muted">No finished days yet.</p>}
+      {nudge && nudge.length > 0 && (
+        <div className="small">
+          <b>Nudge, shared with you:</b>
+          <ul className="learner-courses">
+            {nudge.map((t) => <li key={t.name}>{t.name}: logged {t.daysLogged} of the last 7 days{t.latest ? ` · latest ${t.latest}` : ''}</li>)}
+          </ul>
+        </div>
+      )}
       <p className="small muted-2">Joined {new Date(l.joined).toLocaleDateString()} · their time zone {l.timezone}</p>
     </article>
   )
@@ -43,6 +54,7 @@ function LearnerCard({ l }: { l: LearnerSummary }) {
 export function AdminPage() {
   const status = useAccountStatus()
   const [learners, setLearners] = useState<LearnerSummary[] | null>(null)
+  const [nudge, setNudge] = useState<Map<string, SharedTracker[]>>(new Map())
   const [error, setError] = useState<string | null>(null)
   const [reload, setReload] = useState(0)
   const admin = isAdmin(status)
@@ -51,9 +63,10 @@ export function AdminPage() {
   useEffect(() => {
     if (!admin) return
     let live = true
+    const today = todayDate()
     import('../lib/admin.ts')
-      .then((m) => m.loadAdminRows())
-      .then((rows) => { if (live) setLearners(summarise(rows, catalog)) })
+      .then((m) => Promise.all([m.loadAdminRows(), m.loadSharedNudge(addDays(today, -60))]))
+      .then(([rows, shared]) => { if (live) { setLearners(summarise(rows, catalog)); setNudge(sharedNudge(shared.trackers, shared.entries, today)) } })
       .catch((e: Error) => { if (live) setError(e.message) })
     return () => { live = false }
   }, [admin, reload])
@@ -75,8 +88,8 @@ export function AdminPage() {
       <div className="row"><button type="button" className="btn ghost small-btn" onClick={() => { setLearners(null); setError(null); setReload((n) => n + 1) }}>Refresh</button></div>
       {error && <p className="banner warn" role="alert">Couldn't load learners: {error}</p>}
       {!learners && !error && <p className="muted">Loading learners…</p>}
-      {learners?.map((l) => <LearnerCard key={l.id} l={l} />)}
-      <p className="small muted-2">Admins see progress only, not learners' daily logs, wins or job applications, and can't change anyone's data.</p>
+      {learners?.map((l) => <LearnerCard key={l.id} l={l} nudge={nudge.get(l.id)} />)}
+      <p className="small muted-2">Admins see progress only, not learners' daily logs, wins or job applications, and can't change anyone's data. Nudge trackers appear only for learners who chose to share them.</p>
     </div>
   )
 }

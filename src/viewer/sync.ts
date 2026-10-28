@@ -5,6 +5,8 @@ import { requireSupabase } from '../lib/supabase.ts'
 import { getAccountStatus, setAccountStatus } from './accountStatus.ts'
 import { clearAll, getState, sanitise, subscribe, update } from './store.ts'
 import { diff, EMPTY, fromRows, isEmpty, merge, sameSynced, syncedPart, type Ops, type RemoteRows, type Synced } from './syncModel.ts'
+import { clearNudge, getNudgeState, sanitiseNudge, subscribeNudge, updateNudge } from './nudge/nudgeStore.ts'
+import { applyNudgeSynced, diffNudge, EMPTY_NUDGE, isEmptyNudge, mergeNudge, nudgeFromRows, nudgeSyncedPart, sameNudge, type EntryRow, type NudgeOps, type NudgeSynced, type TrackerRow } from './nudge/nudgeSyncModel.ts'
 import { isDayDone } from './today.ts'
 
 /*
@@ -35,7 +37,29 @@ function writeMeta(meta: Meta) {
   try { localStorage.setItem(META_KEY, JSON.stringify(meta)) } catch { /* sync still works this session */ }
 }
 function clearMeta() {
-  try { localStorage.removeItem(META_KEY) } catch { /* nothing to clear */ }
+  try { localStorage.removeItem(META_KEY); localStorage.removeItem(NUDGE_META_KEY) } catch { /* nothing to clear */ }
+}
+
+// Nudge's trackers sync the same way, with their own base (nudge/nudgeSyncModel.ts).
+const NUDGE_META_KEY = 'snp-nudge-sync-v1'
+type NudgeMeta = { userId: string; base: NudgeSynced }
+function readNudgeMeta(): NudgeMeta | null {
+  try {
+    const raw = JSON.parse(localStorage.getItem(NUDGE_META_KEY) ?? 'null')
+    if (raw && typeof raw.userId === 'string' && raw.base) {
+      // The base went through JSON: rebuild it through the store's checks, like everything else saved.
+      const entries: Record<string, Record<string, number>> = {}
+      for (const [key, v] of Object.entries(raw.base.entries ?? {})) { const [id, d] = key.split('|'); (entries[id] ??= {})[d] = v as number }
+      const clean = sanitiseNudge({ trackers: Object.values(raw.base.trackers ?? {}), entries })
+      return { userId: raw.userId, base: Object.keys(raw.base.trackers ?? {}).length ? nudgeSyncedPart(clean) : EMPTY_NUDGE }
+    }
+  } catch {
+    // unreadable: treated as never synced
+  }
+  return null
+}
+function writeNudgeMeta(meta: NudgeMeta) {
+  try { localStorage.setItem(NUDGE_META_KEY, JSON.stringify(meta)) } catch { /* sync still works this session */ }
 }
 
 /** 'slug:week:day' for every day whose blocks are all ticked (the day_progress rows). */
@@ -153,6 +177,35 @@ async function pushOps(ops: Ops, uid: string) {
   if (ops.appState) await run(db.from('profiles').update({ app_state: ops.appState }).eq('id', uid))
 }
 
+// ─── Nudge rows ─────────────────────────────────────────────────────────────
+
+/** The Nudge tables aren't on this server yet (their migration hasn't been pushed): Nudge stays local. */
+class NudgeUnavailable extends Error {}
+const missingTable = (e: { code?: string; message?: string }) => e.code === '42P01' || e.code === 'PGRST205' || /could not find the table|does not exist/i.test(e.message ?? '')
+
+async function pullNudge(uid: string): Promise<NudgeSynced> {
+  try {
+    const [trackers, entries] = await Promise.all([
+      fetchAll<TrackerRow>('nudge_trackers', 'tracker_id, name, kind, unit, target_direction, target_value, target_per, sort_order, enabled, reminder_hour', ['tracker_id'], uid),
+      fetchAll<EntryRow>('nudge_entries', 'tracker_id, logged_on, value', ['tracker_id', 'logged_on'], uid),
+    ])
+    return nudgeFromRows(trackers, entries)
+  } catch (error) {
+    if (missingTable(error as { code?: string; message?: string })) throw new NudgeUnavailable('Nudge tables missing')
+    throw error
+  }
+}
+
+async function pushNudgeOps(ops: NudgeOps, uid: string) {
+  const db = requireSupabase()
+  const mine = <T extends object>(rows: T[]) => rows.map((r) => ({ ...r, user_id: uid }))
+  // Trackers before their entries (entries reference them); a deleted tracker takes its entries (cascade).
+  for (const rows of chunks(mine(ops.trackersUpsert))) await run(db.from('nudge_trackers').upsert(rows, { onConflict: 'user_id,tracker_id' }))
+  for (const rows of chunks(mine(ops.entriesUpsert))) await run(db.from('nudge_entries').upsert(rows, { onConflict: 'user_id,tracker_id,logged_on' }))
+  await inParallel(ops.entriesDelete, (r) => run(db.from('nudge_entries').delete().match({ ...r, user_id: uid })))
+  if (ops.trackersDelete.length) await run(db.from('nudge_trackers').delete().eq('user_id', uid).in('tracker_id', ops.trackersDelete))
+}
+
 // ─── The engine ─────────────────────────────────────────────────────────────
 
 let user: User | null = null
@@ -163,6 +216,9 @@ let retryTimer: ReturnType<typeof setTimeout> | undefined
 let retryDelay = 5_000
 let lastPull = 0
 let unsubscribeStore: (() => void) | null = null
+let unsubscribeNudge: (() => void) | null = null
+/** Set when the server has no Nudge tables: Nudge keeps working locally, course sync carries on. */
+let nudgeOff = false
 
 /** One sync job at a time in this tab, and (where the browser supports it) across tabs. */
 let queue: Promise<unknown> = Promise.resolve()
@@ -201,6 +257,48 @@ async function reconcile(uid: string): Promise<void> {
   // account keeps the one the learner has, which they may have chosen on purpose.
   const newAccount = Object.keys(remote.checked).length === 0 && Object.keys(remote.studied).length === 0 && Object.keys(remote.gates).length === 0
   if (firstHere && newAccount) await rememberTimezone(uid)
+  await reconcileNudge(uid)
+}
+
+/** Nudge's half of reconcile: same three-way merge, its own base. */
+async function reconcileNudge(uid: string): Promise<void> {
+  if (nudgeOff) return
+  let remote: NudgeSynced
+  try {
+    remote = await pullNudge(uid)
+  } catch (error) {
+    if (error instanceof NudgeUnavailable) { nudgeOff = true; return }
+    throw error
+  }
+  const meta = readNudgeMeta()
+  const local = nudgeSyncedPart(getNudgeState())
+  // Same rules as course progress: this account's base, another account's leftovers ignored, or a first sign-in here.
+  const merged = meta?.userId === uid ? mergeNudge(meta.base, local, remote) : meta ? remote : mergeNudge(EMPTY_NUDGE, local, remote)
+  if (!sameNudge(local, merged)) updateNudge((s) => applyNudgeSynced(s, merged))
+  const ops = diffNudge(remote, merged)
+  if (!isEmptyNudge(ops)) await pushNudgeOps(ops, uid)
+  writeNudgeMeta({ userId: uid, base: merged })
+}
+
+async function pushNudge(uid: string): Promise<void> {
+  if (nudgeOff) return
+  const meta = readNudgeMeta()
+  if (meta?.userId !== uid) return reconcileNudge(uid)
+  const current = nudgeSyncedPart(getNudgeState())
+  const ops = diffNudge(meta.base, current)
+  if (isEmptyNudge(ops)) return
+  setAccountStatus({ state: 'saving' })
+  await pushNudgeOps(ops, uid)
+  writeNudgeMeta({ userId: uid, base: current })
+}
+
+/** Everything this browser holds is on the server (Nudge counts unless the server has no Nudge tables). */
+function allSaved(uid: string): boolean {
+  const meta = readMeta()
+  if (meta?.userId !== uid || !sameSynced(meta.base, syncedPart(getState()))) return false
+  if (nudgeOff) return true
+  const n = readNudgeMeta()
+  return n?.userId === uid && sameNudge(n.base, nudgeSyncedPart(getNudgeState()))
 }
 
 /** Send this browser's changes since the last sync. */
@@ -209,10 +307,12 @@ async function push(uid: string): Promise<void> {
   if (meta?.userId !== uid) return reconcile(uid)
   const current = syncedPart(getState())
   const ops = diff(meta.base, current, doneDays)
-  if (isEmpty(ops)) return
-  setAccountStatus({ state: 'saving' })
-  await pushOps(ops, uid)
-  writeMeta({ userId: uid, base: current })
+  if (!isEmpty(ops)) {
+    setAccountStatus({ state: 'saving' })
+    await pushOps(ops, uid)
+    writeMeta({ userId: uid, base: current })
+  }
+  await pushNudge(uid)
 }
 
 /** Run a sync job, turning failures into status (and retries) instead of errors. */
@@ -235,8 +335,7 @@ async function attempt(job: (uid: string) => Promise<void>): Promise<void> {
     clearTimeout(retryTimer)
     saved()
     // Changes made while that was running go out next.
-    const meta = readMeta()
-    if (meta && !sameSynced(meta.base, syncedPart(getState()))) schedulePush()
+    if (!allSaved(uid)) schedulePush()
   } catch (error) {
     const e = error instanceof SyncError ? error : classify(error)
     if (e.kind === 'offline') {
@@ -275,6 +374,7 @@ async function onSignedIn(next: User) {
   user = next
   setAccountStatus({ state: 'loading', email: next.email ?? null, userId: next.id, message: null })
   unsubscribeStore ??= subscribe(schedulePush)
+  unsubscribeNudge ??= subscribeNudge(schedulePush)
   await attempt(reconcile)
 }
 
@@ -285,6 +385,9 @@ function onSignedOut(expected: boolean) {
   clearTimeout(retryTimer)
   unsubscribeStore?.()
   unsubscribeStore = null
+  unsubscribeNudge?.()
+  unsubscribeNudge = null
+  nudgeOff = false
   setAccountStatus({
     state: 'signed-out', email: null, userId: null, role: null, savedAt: null,
     // Signed out somewhere else, or the session ran out: the progress here is kept, and signing
@@ -365,9 +468,9 @@ export async function verifyCode(email: string, code: string): Promise<void> {
 
 /** True when everything made here is on the server (safe to sign out). */
 export async function saveNow(): Promise<boolean> {
+  const uid = user?.id
   await attempt(push)
-  const meta = readMeta()
-  return !!meta && sameSynced(meta.base, syncedPart(getState()))
+  return !!uid && allSaved(uid)
 }
 
 /**
@@ -382,8 +485,12 @@ export async function signOut(discard = false): Promise<boolean> {
   } catch {
     // signed out locally anyway: the saved session is removed below by clearing storage
   }
+  // Nudge's trackers are cleared too, unless the server had nowhere to keep them (its tables not
+  // pushed yet): then this browser holds the only copy, and wiping it would lose them for good.
+  const nudgeHadNowhere = nudgeOff
   clearMeta()
   clearAll()
+  if (!nudgeHadNowhere) clearNudge()
   onSignedOut(true)
   setAccountStatus({ message: null })
   signingOut = false

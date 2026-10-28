@@ -26,12 +26,12 @@
 - [x] Core (27 Oct 2026): trackers (9 presets + your own, 5 kinds, daily/weekly goals, streaks), insights engine with the spec's guardrails (outlier-proof trends), class nudges from the school's rules, local store; migration `20261027090000_nudge.sql` (private unless the learner shares with admins), attacked in check:db
 - [x] Screens (27 Oct 2026): `#/nudge` Today (class nudges, tracker cards with logging per kind, yesterday switch, one insight a day), `#/nudge/trackers` (switch on/off, order, edit goals and reminder hour, make your own), `#/nudge/stats` (14-day charts with table view, streaks, insights). Driven in Chrome at phone and desktop width
 - [x] Insights must be statistically significant (27 Oct): one 5% shared across every comparison; pure noise fooled 35% of learners with the spec's thresholds alone, 3.9% now
-- [ ] Share-with-coach switch on Account (with sync: sharing means nothing while data is only in the browser)
+- [x] Share-with-coach switch on Account; the Learners page shows a sharing learner's trackers (days logged this week, latest value), proven in check:accounts (on, seen; off, gone at once)
 - [ ] claude.ai design pass for Nudge's screens (built from the school's tokens for now)
-- [ ] Sync to `nudge_trackers` / `nudge_entries` (same three-way merge as course progress), extend check:accounts; then clear Nudge on sign-out (not before: today the browser holds the only copy)
+- [x] Sync (28 Oct 2026): trackers and entries, same three-way merge as course progress (`nudge/nudgeSyncModel.ts`), its own base `snp-nudge-sync-v1`; sign-out clears Nudge. check:accounts: phone→laptop, a tracker made on one device, un-logging everywhere. Without the Nudge tables (migration not pushed) Nudge stays local, course sync carries on and sign-out keeps the unsaved trackers: `NO_NUDGE=1 npm run check:accounts` (both runs in CI)
 - [ ] Its own install: `#/nudge` start page + second manifest; Nudge Android app id in CI
 - [ ] Reminders per tracker through `send-nudges` (needs the function deployed: setup item 3)
-- [ ] **Victor: `npx supabase db push`** for `20261027090000_nudge.sql` (safe before the screens exist: new tables only)
+- [ ] **Victor: `npx supabase login`, then `npx supabase db push --linked`** (the 28 Oct attempt failed: no access token). Applies `20261016090000_no_profile_delete.sql` and `20261027090000_nudge.sql`; until then Nudge stays in the browser
 - [ ] Slice 2: day planner + assistant chat (Anthropic key as a Supabase secret), personalization bandit, Get Ready, voice
 
 ## Quizzes (a slice at a time, no mass generation)

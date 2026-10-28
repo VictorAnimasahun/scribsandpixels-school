@@ -1,4 +1,5 @@
 import type { AdminRows } from '../viewer/adminSummary.ts'
+import type { SharedEntryRow, SharedTrackerRow } from '../viewer/nudge/adminNudge.ts'
 import { requireSupabase } from './supabase.ts'
 
 /*
@@ -30,4 +31,32 @@ export async function loadAdminRows(): Promise<AdminRows> {
     fetchAll<AdminRows['attempts'][number]>('checkpoint_attempts', 'user_id, kind, key, passed, score, finished_at', ['user_id', 'kind', 'key', 'attempt']),
   ])
   return { profiles, enrollments, days, studyDays, attempts }
+}
+
+/**
+ * Nudge trackers of learners who chose to share them (row security returns no others), plus the
+ * admin's own. Empty when the server doesn't have the Nudge tables yet.
+ */
+export async function loadSharedNudge(since: string): Promise<{ trackers: SharedTrackerRow[]; entries: SharedEntryRow[] }> {
+  try {
+    const db = requireSupabase()
+    const [trackers, entries] = await Promise.all([
+      fetchAll<SharedTrackerRow>('nudge_trackers', 'user_id, tracker_id, name, kind, unit, enabled, sort_order', ['user_id', 'tracker_id']),
+      (async () => {
+        const out: SharedEntryRow[] = []
+        for (let from = 0; ; from += 1000) {
+          const { data, error } = await db.from('nudge_entries').select('user_id, tracker_id, logged_on, value').gte('logged_on', since)
+            .order('user_id').order('tracker_id').order('logged_on').range(from, from + 999)
+          if (error) throw new Error(error.message)
+          out.push(...(data as SharedEntryRow[]))
+          if (data.length < 1000) return out
+        }
+      })(),
+    ])
+    return { trackers, entries }
+  } catch (error) {
+    // Most likely the Nudge migration isn't on the server yet; the rest of the page still works.
+    console.warn('Nudge trackers not loaded for the admin page:', (error as Error).message)
+    return { trackers: [], entries: [] }
+  }
 }

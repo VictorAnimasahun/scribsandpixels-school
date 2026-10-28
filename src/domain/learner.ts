@@ -10,6 +10,8 @@ export type Profile = {
   timezone: string
   emailNudges: boolean
   nudgeHour: number
+  /** Let admins read Nudge's life trackers; null when the server doesn't have Nudge yet. */
+  shareLife: boolean | null
 }
 
 export type Enrollment = {

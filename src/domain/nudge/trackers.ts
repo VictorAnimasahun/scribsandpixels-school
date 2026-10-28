@@ -77,7 +77,8 @@ const RANGE: Readonly<Record<TrackerKind, readonly [number, number]>> = {
 
 /** Whether one day's value can be logged for this kind (a mood of 7 or 30 hours of sleep can't). */
 export function validValue(kind: TrackerKind, value: number): boolean {
-  if (!Number.isFinite(value)) return false
+  // An unknown kind (old or tampered data) holds nothing, rather than crashing on the lookup.
+  if (!Number.isFinite(value) || !(kind in RANGE)) return false
   const [lo, hi] = RANGE[kind]
   if (value < lo || value > hi) return false
   return kind === 'number' || kind === 'duration' ? true : Number.isInteger(value)
@@ -86,6 +87,7 @@ export function validValue(kind: TrackerKind, value: number): boolean {
 /** Problems with a tracker the learner made or edited, in plain words; empty when it can be saved. */
 export function trackerProblems(t: Pick<Tracker, 'name' | 'kind' | 'unit' | 'target' | 'reminderHour'>): string[] {
   const out: string[] = []
+  if (!(t.kind in RANGE)) return ['Pick what kind of thing you log.']
   const name = t.name.trim()
   if (!name) out.push('Give it a name.')
   if (name.length > 40) out.push('Keep the name to 40 characters or fewer.')

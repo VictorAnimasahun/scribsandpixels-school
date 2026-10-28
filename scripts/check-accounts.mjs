@@ -56,7 +56,10 @@ await db.exec(`
   alter default privileges in schema public grant select, insert, update, delete on tables to anon, authenticated, service_role;
   alter default privileges in schema public grant execute on functions to anon, authenticated, service_role;
 `)
-for (const file of readdirSync(join(root, 'supabase/migrations')).filter((f) => f.endsWith('.sql')).sort()) {
+// NO_NUDGE=1: a server whose Nudge migration hasn't been pushed yet (the live project, until it is).
+// Course sync must carry on, and Nudge must keep its data in the browser.
+const NO_NUDGE = !!process.env.NO_NUDGE
+for (const file of readdirSync(join(root, 'supabase/migrations')).filter((f) => f.endsWith('.sql') && !(NO_NUDGE && f.includes('_nudge'))).sort()) {
   await db.exec(readFileSync(join(root, 'supabase/migrations', file), 'utf8'))
 }
 
@@ -648,6 +651,102 @@ await check('signing in on another device keeps a time zone the learner chose', 
   await d.context.close()
 })
 
+// 9b. Nudge: life trackers sync like course progress, and an admin sees them only with consent.
+if (NO_NUDGE) {
+  await check('without the Nudge tables, Nudge still works in the browser and course saving carries on', async () => {
+    await phone.page.goto(`${APP}#/nudge`)
+    await phone.page.locator('section.tracker-card', { has: phone.page.locator('h3', { hasText: 'Word of the day' }) }).getByRole('button', { name: 'Mark as done' }).click()
+    await tickDay(phone.page, 1, 5)
+    await eventually('Day 5 to be saved', async () => (await sql('select 1 from day_progress where user_id = $1 and week = 1 and day = 5', [victorId])).length === 1)
+    await phone.page.goto(`${APP}#/account`)
+    await saveLine(phone.page).getByText(/Saved to your account/).waitFor({ timeout: 20_000 })
+    expect(!(await phone.page.getByLabel(/see my Nudge trackers/).count()), 'the share switch is offered by a server without Nudge')
+  })
+}
+
+const nudgeState = (page) => page.evaluate(() => JSON.parse(localStorage.getItem('snp-nudge-v1') ?? '{}'))
+const today = new Intl.DateTimeFormat('en-CA', { year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date())
+const card = (page, name) => page.locator('section.tracker-card', { has: page.locator('h3', { hasText: name }) })
+async function download(page) {
+  await page.goto(`${APP}#/account`)
+  await page.getByRole('button', { name: 'Download from my account now' }).click()
+}
+if (!NO_NUDGE) {
+await check('Nudge: water logged on the phone reaches the server and then the laptop', async () => {
+  await phone.page.goto(`${APP}#/nudge/trackers`)
+  await phone.page.locator('.tracker-list li', { hasText: 'Water' }).locator('input[type=checkbox]').check()
+  await phone.page.goto(`${APP}#/nudge`)
+  await card(phone.page, 'Water').getByRole('button', { name: /One more/ }).click()
+  await card(phone.page, 'Water').getByRole('button', { name: /One more/ }).click()
+  await eventually('2 cups to reach the server', async () => (await sql("select value from nudge_entries where user_id = $1 and tracker_id = 'water' and logged_on = $2", [victorId, today]))[0]?.value === 2)
+  const [t] = await sql("select enabled from nudge_trackers where user_id = $1 and tracker_id = 'water'", [victorId])
+  expect(t?.enabled === true, `water tracker on the server: ${JSON.stringify(t)}`)
+  await download(laptop.page)
+  await laptop.page.waitForFunction((d) => JSON.parse(localStorage.getItem('snp-nudge-v1') ?? '{}').entries?.water?.[d] === 2, today, { timeout: 10_000 })
+})
+await check('Nudge: a tracker made on the laptop arrives on the phone', async () => {
+  await laptop.page.goto(`${APP}#/nudge/trackers/new`)
+  await laptop.page.getByLabel('Name', { exact: true }).fill('Pages read')
+  await laptop.page.getByLabel('Unit', { exact: true }).fill('pages')
+  await laptop.page.getByLabel('Goal value').fill('20')
+  await laptop.page.getByRole('button', { name: 'Save' }).click()
+  await laptop.page.waitForURL(/#\/nudge\/trackers$/)
+  await eventually('the new tracker to reach the server', async () => (await sql("select 1 from nudge_trackers where user_id = $1 and name = 'Pages read' and target_value = 20", [victorId])).length === 1)
+  await download(phone.page)
+  await phone.page.waitForFunction(() => (JSON.parse(localStorage.getItem('snp-nudge-v1') ?? '{}').trackers ?? []).some((t) => t.name === 'Pages read'), null, { timeout: 10_000 })
+})
+await check('Nudge: un-logging a day on one device removes it everywhere', async () => {
+  await phone.page.goto(`${APP}#/nudge`)
+  await card(phone.page, 'Word of the day').getByRole('button', { name: 'Mark as done' }).click()
+  await eventually('the tick to reach the server', async () => (await sql("select 1 from nudge_entries where user_id = $1 and tracker_id = 'word'", [victorId])).length === 1)
+  await download(laptop.page)
+  await laptop.page.waitForFunction((d) => JSON.parse(localStorage.getItem('snp-nudge-v1') ?? '{}').entries?.word?.[d] === 1, today, { timeout: 10_000 })
+  await laptop.page.goto(`${APP}#/nudge`)
+  await card(laptop.page, 'Word of the day').getByRole('button', { name: 'Done', exact: true }).click() // un-tick
+  await eventually('the un-tick to reach the server', async () => (await sql("select 1 from nudge_entries where user_id = $1 and tracker_id = 'word'", [victorId])).length === 0)
+  await download(phone.page)
+  await phone.page.waitForFunction((d) => !(JSON.parse(localStorage.getItem('snp-nudge-v1') ?? '{}').entries?.word ?? {})[d], today, { timeout: 10_000 })
+})
+await check("Nudge: an admin sees a learner's trackers only while that learner shares them", async () => {
+  const ada = await device('ada-nudge')
+  await signIn(ada.page, 'ada@example.com')
+  await ada.page.goto(`${APP}#/nudge`)
+  await card(ada.page, 'Word of the day').getByRole('button', { name: 'Mark as done' }).click()
+  const adaId = users.get('ada@example.com').id
+  await eventually("ada's tick to reach the server", async () => (await sql("select 1 from nudge_entries where user_id = $1 and tracker_id = 'word'", [adaId])).length === 1)
+  const adaCard = () => laptop.page.locator('.learner-card', { hasText: 'ada@example.com' })
+  // Through the page's Refresh button: going to #/admin while already there doesn't reload anything.
+  const openLearners = async () => {
+    await laptop.page.goto(`${APP}#/admin`)
+    await laptop.page.getByRole('button', { name: 'Refresh' }).click()
+    await adaCard().waitFor()
+  }
+  await openLearners()
+  expect(!(await adaCard().getByText('Nudge, shared with you').count()), "the admin sees ada's trackers before she shared them")
+  // Ada switches sharing on, on her Account page.
+  await ada.page.goto(`${APP}#/account`)
+  await ada.page.getByLabel(/see my Nudge trackers/).check()
+  await ada.page.getByRole('button', { name: 'Save details' }).click()
+  await ada.page.locator('.status.ok', { hasText: /^Saved$/ }).waitFor()
+  expect((await sql('select share_life_with_admin from profiles where id = $1', [adaId]))[0].share_life_with_admin === true, 'consent not saved')
+  await openLearners()
+  await adaCard().getByText(/Word of the day: logged 1 of the last 7 days/).waitFor({ timeout: 10_000 })
+  // And off again: gone at once.
+  await ada.page.goto(`${APP}#/account`)
+  await ada.page.getByLabel(/see my Nudge trackers/).uncheck()
+  await ada.page.getByRole('button', { name: 'Save details' }).click()
+  await ada.page.locator('.status.ok', { hasText: /^Saved$/ }).waitFor()
+  await openLearners()
+  await adaCard().getByText(/Joined/).waitFor()
+  await laptop.page.waitForTimeout(1500)
+  expect(!(await adaCard().getByText('Nudge, shared with you').count()), "the admin still sees ada's trackers after she stopped sharing")
+  // The admin's own Nudge stays the admin's own (other learners' rows never pulled in).
+  const mine = await nudgeState(laptop.page)
+  expect(!(mine.trackers ?? []).some((t) => t.name === 'Ada'), 'leak')
+  await ada.context.close()
+})
+}
+
 // 10. Signing out.
 await check('signing out clears this browser but keeps the account', async () => {
   const rowsBefore = (await sql('select count(*)::int as n from block_progress where user_id = $1', [victorId]))[0].n
@@ -657,6 +756,11 @@ await check('signing out clears this browser but keeps the account', async () =>
   const state = await localState(laptop.page)
   expect(Object.keys(state.checked ?? {}).length === 0, 'ticks left in the browser')
   expect((await syncMeta(laptop.page)) === null, 'sync data left in the browser')
+  if (!NO_NUDGE) {
+    const nudge = await nudgeState(laptop.page)
+    expect(!Object.values(nudge.entries ?? {}).some((byDate) => Object.keys(byDate).length) && !(nudge.trackers ?? []).some((t) => t.name === 'Pages read'), 'Nudge trackers left in the browser')
+    expect((await laptop.page.evaluate(() => localStorage.getItem('snp-nudge-sync-v1'))) === null, 'Nudge sync data left in the browser')
+  }
   const session = await laptop.page.evaluate(() => Object.keys(localStorage).filter((k) => k.startsWith('sb-') && k.endsWith('-auth-token')))
   expect(session.length === 0, 'session left in the browser')
   const rowsAfter = (await sql('select count(*)::int as n from block_progress where user_id = $1', [victorId]))[0].n
@@ -676,6 +780,15 @@ await check('signing out with unsaved changes asks first', async () => {
   await phone.page.evaluate(() => window.dispatchEvent(new Event('online')))
   await eventually('Day 4 to be saved', async () => (await sql('select 1 from day_progress where user_id = $1 and week = 1 and day = 4', [victorId])).length === 1, 20_000)
 })
+if (NO_NUDGE) {
+  await check('signing out keeps Nudge data the server had nowhere to keep (it would be lost otherwise)', async () => {
+    await phone.page.goto(`${APP}#/account`)
+    await phone.page.getByRole('button', { name: 'Sign out' }).click()
+    await phone.page.waitForURL(/#\/$/)
+    expect(Object.keys((await nudgeState(phone.page)).entries?.word ?? {}).length === 1, 'the unsaved Nudge tick was wiped')
+    expect(Object.keys((await localState(phone.page)).checked ?? {}).length === 0, 'course ticks left (those were saved)')
+  })
+}
 
 await check('no JavaScript errors on any device', async () => {
   expect(!pageErrors.length, pageErrors.slice(0, 5).join('\n'))

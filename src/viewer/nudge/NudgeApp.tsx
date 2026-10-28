@@ -3,6 +3,8 @@ import { catalog } from '../../content/catalog.ts'
 import { insights } from '../../domain/nudge/insights.ts'
 import { customId, formatValue, mondayOf, PRESETS, progressToward, trackerStreak, type Target, type Tracker, type TrackerKind } from '../../domain/nudge/trackers.ts'
 import { addDays } from '../../domain/streak.ts'
+import { accountConfig } from '../../lib/accountConfig.ts'
+import { isSignedIn, useAccountStatus } from '../accountStatus.ts'
 import { timeZone, todayDate } from '../actions.ts'
 import { classNudges } from '../classNudges.ts'
 import { href, type NudgeRoute } from '../router.ts'
@@ -29,6 +31,7 @@ const KIND_LABEL: Record<TrackerKind, string> = {
 // ─── Shell ─────────────────────────────────────────────────────────────────
 
 function NudgeNav({ route }: { route: NudgeRoute }) {
+  const account = useAccountStatus()
   const links = [
     { to: href.nudge(), on: route.page === 'nudge', icon: 'today' as const, label: 'Today' },
     { to: href.nudgeTrackers(), on: route.page === 'nudge-trackers' || route.page === 'nudge-tracker', icon: 'sliders' as const, label: 'Trackers' },
@@ -42,7 +45,11 @@ function NudgeNav({ route }: { route: NudgeRoute }) {
           <a key={l.to} className={`side-link ${l.on ? 'on' : ''}`} href={l.to} aria-current={l.on ? 'page' : undefined}><Icon name={l.icon} />{l.label}</a>
         ))}
         <a className="side-link" href={href.home()}><Icon name="course" />Back to the school</a>
-        <p className="side-foot">Your trackers are saved in this browser. Syncing them to your account is coming next.</p>
+        <p className="side-foot">
+          {isSignedIn(account)
+            ? <>Signed in as {account.email}.<br />{account.state === 'offline' || account.state === 'error' ? 'Not saved yet: will retry.' : 'Your trackers are saved to your account.'}</>
+            : <>Your trackers are saved in this browser only.{accountConfig && <a className="side-account" href={href.account()}>Sign in to keep them</a>}</>}
+        </p>
       </nav>
       <nav className="tabbar" aria-label="Nudge">
         {links.map((l) => (

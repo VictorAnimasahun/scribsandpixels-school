@@ -34,6 +34,10 @@ jobs:
       - run: npm run check:python
       - run: npm run check:web
       - run: npm run check:accounts
+      # The same against a server without the Nudge tables (a project whose migration isn't pushed yet).
+      - run: npm run check:accounts
+        env:
+          NO_NUDGE: '1'
       - run: npm run check:offline
       - run: npm run build
         env:
